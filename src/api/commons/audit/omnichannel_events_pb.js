@@ -635,3 +635,16 @@ export const OmnichannelSystemMessageUnitsEvent = proto3.makeMessageType(
   ],
 );
 
+/**
+ * OmniChannelAgentMessageSentEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelPaymentLinkSentEvent
+ */
+export const OmnichannelPaymentLinkSentEvent = proto3.makeMessageType(
+  "api.commons.audit.OmnichannelPaymentLinkSentEvent",
+  () => [
+    { no: 1, name: "message", kind: "message", T: OmniMessage },
+    { no: 2, name: "link", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

@@ -364,6 +364,13 @@ export declare enum EventType {
   OMNICHANNEL_SYSTEM_MESSAGE_UNITS = 356,
 
   /**
+   * omnichannel payment link was sent
+   *
+   * @generated from enum value: OMNICHANNEL_PAYMENT_LINK_SENT = 357;
+   */
+  OMNICHANNEL_PAYMENT_LINK_SENT = 357,
+
+  /**
    * ASM
    * agent logs into asm
    *

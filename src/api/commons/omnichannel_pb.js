@@ -242,6 +242,7 @@ export const OmniSenderType = proto3.makeEnum(
     {no: 1, name: "OMNI_SENDER_TYPE_CUSTOMER", localName: "CUSTOMER"},
     {no: 2, name: "OMNI_SENDER_TYPE_SYSTEM", localName: "SYSTEM"},
     {no: 3, name: "OMNI_SENDER_TYPE_MANAGER", localName: "MANAGER"},
+    {no: 4, name: "OMNI_SENDER_TYPE_FLOW", localName: "FLOW"},
   ],
 );
 
@@ -428,7 +429,7 @@ export const OmniCampaignModuleConfig = proto3.makeMessageType(
     { no: 16, name: "stop_on_task_deplete", kind: "message", T: BoolValue },
     { no: 17, name: "attachments", kind: "message", T: OmniAttachment, repeated: true },
     { no: 18, name: "compliance_rule_set_id", kind: "message", T: StringValue },
-    { no: 19, name: "payment_portal_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 19, name: "payment_portal_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
@@ -852,6 +853,7 @@ export const OmniConversation_ConversationDetails = proto3.makeMessageType(
     { no: 1, name: "campaign_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "support_email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "campaign_shorten_url", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "payment_portal_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
   {localName: "OmniConversation_ConversationDetails"},
 );

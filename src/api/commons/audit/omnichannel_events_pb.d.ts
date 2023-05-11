@@ -1992,3 +1992,38 @@ export declare class OmnichannelSystemMessageUnitsEvent extends Message<Omnichan
   static equals(a: OmnichannelSystemMessageUnitsEvent | PlainMessage<OmnichannelSystemMessageUnitsEvent> | undefined, b: OmnichannelSystemMessageUnitsEvent | PlainMessage<OmnichannelSystemMessageUnitsEvent> | undefined): boolean;
 }
 
+/**
+ * OmniChannelAgentMessageSentEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelPaymentLinkSentEvent
+ */
+export declare class OmnichannelPaymentLinkSentEvent extends Message<OmnichannelPaymentLinkSentEvent> {
+  /**
+   * the message sent
+   *
+   * @generated from field: api.commons.OmniMessage message = 1;
+   */
+  message?: OmniMessage;
+
+  /**
+   * the payment link
+   *
+   * @generated from field: string link = 2;
+   */
+  link: string;
+
+  constructor(data?: PartialMessage<OmnichannelPaymentLinkSentEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.OmnichannelPaymentLinkSentEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmnichannelPaymentLinkSentEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmnichannelPaymentLinkSentEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmnichannelPaymentLinkSentEvent;
+
+  static equals(a: OmnichannelPaymentLinkSentEvent | PlainMessage<OmnichannelPaymentLinkSentEvent> | undefined, b: OmnichannelPaymentLinkSentEvent | PlainMessage<OmnichannelPaymentLinkSentEvent> | undefined): boolean;
+}
+

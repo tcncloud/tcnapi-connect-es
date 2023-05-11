@@ -75,6 +75,7 @@ export const EventType = proto3.makeEnum(
     {no: 354, name: "OMNICHANNEL_MANAGER_MESSAGE_UNITS"},
     {no: 355, name: "OMNICHANNEL_CUSTOMER_MESSAGE_UNITS"},
     {no: 356, name: "OMNICHANNEL_SYSTEM_MESSAGE_UNITS"},
+    {no: 357, name: "OMNICHANNEL_PAYMENT_LINK_SENT"},
     {no: 400, name: "ASM_AGENT_LOGIN"},
     {no: 401, name: "ASM_OPEN_VOICE"},
     {no: 402, name: "ASM_OPEN_OMNI_AGENT"},

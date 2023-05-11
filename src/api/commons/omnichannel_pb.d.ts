@@ -672,6 +672,11 @@ export declare enum OmniSenderType {
    * @generated from enum value: OMNI_SENDER_TYPE_MANAGER = 3;
    */
   MANAGER = 3,
+
+  /**
+   * @generated from enum value: OMNI_SENDER_TYPE_FLOW = 4;
+   */
+  FLOW = 4,
 }
 
 /**
@@ -1285,11 +1290,11 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
   complianceRuleSetId?: string;
 
   /**
-   * Payment Portal Sids
+   * Payment Portal Ids
    *
-   * @generated from field: repeated int64 payment_portal_sids = 19;
+   * @generated from field: repeated string payment_portal_ids = 19;
    */
-  paymentPortalSids: bigint[];
+  paymentPortalIds: string[];
 
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
@@ -2823,6 +2828,13 @@ export declare class OmniConversation_ConversationDetails extends Message<OmniCo
    * @generated from field: bool campaign_shorten_url = 3;
    */
   campaignShortenUrl: boolean;
+
+  /**
+   * payment portal ids
+   *
+   * @generated from field: repeated string payment_portal_ids = 4;
+   */
+  paymentPortalIds: string[];
 
   constructor(data?: PartialMessage<OmniConversation_ConversationDetails>);
 
