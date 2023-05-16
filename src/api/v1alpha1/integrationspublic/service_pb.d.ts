@@ -90,7 +90,7 @@ export declare class Value extends Message<Value> {
    * a value does *not* have to match the validation enum.
    * a value that does not match its validation enum is just invalid.
    *
-   * @generated from field: api.commons.public.Validation validation = 8;
+   * @generated from field: api.commons.integrations.Validation validation = 8;
    */
   validation: Validation;
 
@@ -378,21 +378,21 @@ export declare class GetLinkDataRes extends Message<GetLinkDataRes> {
   /**
    * how the user verifies identity for this portal
    *
-   * @generated from field: api.commons.public.VerificationFlow verification = 5;
+   * @generated from field: api.commons.integrations.VerificationFlow verification = 5;
    */
   verification?: VerificationFlow;
 
   /**
    * how the user retrieves invoice for this portal
    *
-   * @generated from field: api.commons.public.InvoiceFlow invoice = 6;
+   * @generated from field: api.commons.integrations.InvoiceFlow invoice = 6;
    */
   invoice?: InvoiceFlow;
 
   /**
    * all the accepted payment flows for this portal
    *
-   * @generated from field: repeated api.commons.public.PaymentFlow payments = 7;
+   * @generated from field: repeated api.commons.integrations.PaymentFlow payments = 7;
    */
   payments: PaymentFlow[];
 
@@ -428,7 +428,7 @@ export declare class GetLinkDataRes extends Message<GetLinkDataRes> {
  */
 export declare class GetLinkDataRes_FieldNames extends Message<GetLinkDataRes_FieldNames> {
   /**
-   * @generated from field: api.commons.public.Flow flow = 8;
+   * @generated from field: api.commons.integrations.Flow flow = 8;
    */
   flow?: Flow;
 
@@ -438,7 +438,7 @@ export declare class GetLinkDataRes_FieldNames extends Message<GetLinkDataRes_Fi
   fieldNames: string[];
 
   /**
-   * @generated from field: repeated api.commons.public.FieldDefinition fields = 10;
+   * @generated from field: repeated api.commons.integrations.FieldDefinition fields = 10;
    */
   fields: FieldDefinition[];
 
@@ -693,7 +693,7 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   /**
    * the parsed data
    *
-   * @generated from field: api.commons.public.Invoices invoices = 4;
+   * @generated from field: api.commons.integrations.Invoices invoices = 4;
    */
   invoices?: Invoices;
 
@@ -732,7 +732,7 @@ export declare class SubmitPaymentReq extends Message<SubmitPaymentReq> {
   paymentFields: { [key: string]: Value };
 
   /**
-   * @generated from field: api.commons.public.PaymentFlow payment_flow = 4;
+   * @generated from field: api.commons.integrations.PaymentFlow payment_flow = 4;
    */
   paymentFlow?: PaymentFlow;
 
@@ -854,7 +854,7 @@ export declare class GetReceiptRes extends Message<GetReceiptRes> {
   /**
    * flow name, type and options used
    *
-   * @generated from field: api.commons.public.PaymentFlow payment_flow = 6;
+   * @generated from field: api.commons.integrations.PaymentFlow payment_flow = 6;
    */
   paymentFlow?: PaymentFlow;
 

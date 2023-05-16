@@ -74,7 +74,7 @@ export declare class IntegrationConfigs extends Message<IntegrationConfigs> {
  */
 export declare class GetIntegrationConfigReq extends Message<GetIntegrationConfigReq> {
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 3;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 3;
    */
   integrationId: IntegrationType$1;
 
@@ -117,7 +117,7 @@ export declare class UpdateIntegrationConfigReq extends Message<UpdateIntegratio
   id: string;
 
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 4;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 4;
    */
   integrationId: IntegrationType$1;
 
@@ -156,7 +156,7 @@ export declare class UpdateIntegrationConfigReq extends Message<UpdateIntegratio
  */
 export declare class DeleteIntegrationConfigReq extends Message<DeleteIntegrationConfigReq> {
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 4;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 4;
    */
   integrationId: IntegrationType$1;
 
@@ -205,14 +205,14 @@ export declare class ProcessReq extends Message<ProcessReq> {
   /**
    * the id of handler we want to trigger
    *
-   * @generated from field: api.commons.public.IntegrationType integration_id = 3;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 3;
    */
   integrationId: IntegrationType$1;
 
   /**
    * which integration config is going to be triggered
    *
-   * @generated from field: api.commons.public.RequestMethod method_id = 4;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 4;
    */
   methodId: RequestMethod$1;
 
@@ -357,7 +357,7 @@ export declare class IntegrationInfo extends Message<IntegrationInfo> {
   /**
    * identifies which integration handler this is
    *
-   * @generated from field: api.commons.public.IntegrationType integration_id = 2;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 2;
    */
   integrationId: IntegrationType$1;
 
@@ -378,7 +378,7 @@ export declare class IntegrationInfo extends Message<IntegrationInfo> {
   /**
    * the plugin fields for this integration.
    * These fields should be set on the plugin level and not the runtime.
-   * key is a value starting at api.commons.public.Visiblity.VISIBILITY_GROUP
+   * key is a value starting at api.commons.integrations.Visiblity.VISIBILITY_GROUP
    * and ending at 99 more than that value, or parameters marked VISIBILITY_ANYWHERE
    *
    * @generated from field: map<int32, api.v1alpha1.integrations.Parameter> group_params = 5;
@@ -414,14 +414,14 @@ export declare class MethodInfo extends Message<MethodInfo> {
   /**
    * identifies which method this is
    *
-   * @generated from field: api.commons.public.RequestMethod method_id = 2;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 2;
    */
   methodId: RequestMethod$1;
 
   /**
    * what type of method call this is: PAYMENT, INQUIRY, or VERIFY
    *
-   * @generated from field: api.commons.public.TransactionType tx_type = 3;
+   * @generated from field: api.commons.integrations.TransactionType tx_type = 3;
    */
   txType: TransactionType$1;
 
@@ -489,7 +489,7 @@ export declare class Parameter extends Message<Parameter> {
    * the type of the field. The value of the key value pair needs to be this type in the request payload
    * right now this will be STRING, NUMBER, BOOL
    *
-   * @generated from field: api.commons.public.ValueType param_type = 2;
+   * @generated from field: api.commons.integrations.ValueType param_type = 2;
    */
   paramType: ValueType;
 
@@ -552,7 +552,7 @@ export declare class Parameter extends Message<Parameter> {
   /**
    * what type of data value we accept
    *
-   * @generated from field: api.commons.public.Validation validation = 10;
+   * @generated from field: api.commons.integrations.Validation validation = 10;
    */
   validation: Validation$1;
 
@@ -631,7 +631,7 @@ export declare class GetAggregatedMetadataReq extends Message<GetAggregatedMetad
   end?: Timestamp;
 
   /**
-   * @generated from field: api.commons.public.RequestMethod method_id = 5;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 5;
    */
   methodId: RequestMethod$1;
 
@@ -751,7 +751,7 @@ export declare class IntegrationTransactionReportRow extends Message<Integration
   /**
    * integration used
    *
-   * @generated from field: api.commons.public.IntegrationType integration_id = 5;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 5;
    */
   integrationId: IntegrationType$1;
 
@@ -763,7 +763,7 @@ export declare class IntegrationTransactionReportRow extends Message<Integration
   /**
    * external service method
    *
-   * @generated from field: api.commons.public.RequestMethod method_id = 6;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 6;
    */
   methodId: RequestMethod$1;
 
@@ -775,14 +775,14 @@ export declare class IntegrationTransactionReportRow extends Message<Integration
   /**
    * payment, data inquiry, etc.
    *
-   * @generated from field: api.commons.public.TransactionType transaction_type = 7;
+   * @generated from field: api.commons.integrations.TransactionType transaction_type = 7;
    */
   transactionType: TransactionType$1;
 
   /**
    * email/web/sms/ivr/chat
    *
-   * @generated from field: api.commons.public.RequestSource request_source = 8;
+   * @generated from field: api.commons.integrations.RequestSource request_source = 8;
    */
   requestSource: RequestSource$1;
 
@@ -941,7 +941,7 @@ export declare class GetIntegrationTransactionReportDataReq extends Message<GetI
   pageNum: number;
 
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 9;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 9;
    */
   integrationId: IntegrationType$1;
 
@@ -1123,7 +1123,7 @@ export declare class SearchIntegrationTransactionsRes extends Message<SearchInte
  */
 export declare class IntegrationType extends Message<IntegrationType> {
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 1;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 1;
    */
   integrationId: IntegrationType$1;
 
@@ -1147,7 +1147,7 @@ export declare class IntegrationType extends Message<IntegrationType> {
  */
 export declare class RequestMethod extends Message<RequestMethod> {
   /**
-   * @generated from field: api.commons.public.RequestMethod method_id = 1;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 1;
    */
   methodId: RequestMethod$1;
 
@@ -1171,7 +1171,7 @@ export declare class RequestMethod extends Message<RequestMethod> {
  */
 export declare class TransactionType extends Message<TransactionType> {
   /**
-   * @generated from field: api.commons.public.TransactionType transaction_type = 1;
+   * @generated from field: api.commons.integrations.TransactionType transaction_type = 1;
    */
   transactionType: TransactionType$1;
 
@@ -1195,7 +1195,7 @@ export declare class TransactionType extends Message<TransactionType> {
  */
 export declare class RequestSource extends Message<RequestSource> {
   /**
-   * @generated from field: api.commons.public.RequestSource request_source = 1;
+   * @generated from field: api.commons.integrations.RequestSource request_source = 1;
    */
   requestSource: RequestSource$1;
 
@@ -1219,7 +1219,7 @@ export declare class RequestSource extends Message<RequestSource> {
  */
 export declare class TransactionResult extends Message<TransactionResult> {
   /**
-   * @generated from field: api.commons.public.TransactionResult result = 1;
+   * @generated from field: api.commons.integrations.TransactionResult result = 1;
    */
   result: TransactionResult$1;
 
@@ -1245,7 +1245,7 @@ export declare class TransactionResult extends Message<TransactionResult> {
  */
 export declare class ListIntegrationConfigNamesReq extends Message<ListIntegrationConfigNamesReq> {
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 4;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 4;
    */
   integrationId: IntegrationType$1;
 
@@ -1269,7 +1269,7 @@ export declare class ListIntegrationConfigNamesReq extends Message<ListIntegrati
  */
 export declare class ListIntegrationConfigNamesRes extends Message<ListIntegrationConfigNamesRes> {
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 3;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 3;
    */
   integrationId: IntegrationType$1;
 
@@ -1633,7 +1633,7 @@ export declare class PaymentLinkConfig extends Message<PaymentLinkConfig> {
   /**
    * which integration will be used in the links
    *
-   * @generated from field: api.commons.public.IntegrationType integration_id = 6 [deprecated = true];
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 6 [deprecated = true];
    * @deprecated
    */
   integrationId: IntegrationType$1;
@@ -1641,13 +1641,13 @@ export declare class PaymentLinkConfig extends Message<PaymentLinkConfig> {
   /**
    * the verification method. This is used if there is no collection_id to enrich link data
    *
-   * @generated from field: api.commons.public.RequestMethod verification_method_id = 7 [deprecated = true];
+   * @generated from field: api.commons.integrations.RequestMethod verification_method_id = 7 [deprecated = true];
    * @deprecated
    */
   verificationMethodId: RequestMethod$1;
 
   /**
-   * @generated from field: api.commons.public.RequestMethod invoice_method_id = 8 [deprecated = true];
+   * @generated from field: api.commons.integrations.RequestMethod invoice_method_id = 8 [deprecated = true];
    * @deprecated
    */
   invoiceMethodId: RequestMethod$1;
@@ -1655,7 +1655,7 @@ export declare class PaymentLinkConfig extends Message<PaymentLinkConfig> {
   /**
    * which method will be called when a payment portal link is process
    *
-   * @generated from field: api.commons.public.RequestMethod payment_method_id = 9 [deprecated = true];
+   * @generated from field: api.commons.integrations.RequestMethod payment_method_id = 9 [deprecated = true];
    * @deprecated
    */
   paymentMethodId: RequestMethod$1;
@@ -2058,13 +2058,13 @@ export declare class Request extends Message<Request> {
 /**
  * This type only exists because typescript can't handle
  * a map with an enum as a value from another packages
- * map<string, api.commons.public.Validation>
+ * map<string, api.commons.integrations.Validation>
  *
  * @generated from message api.v1alpha1.integrations.Validation
  */
 export declare class Validation extends Message<Validation> {
   /**
-   * @generated from field: api.commons.public.Validation enum = 1;
+   * @generated from field: api.commons.integrations.Validation enum = 1;
    */
   enum: Validation$1;
 
@@ -2088,12 +2088,12 @@ export declare class Validation extends Message<Validation> {
  */
 export declare class MethodCall extends Message<MethodCall> {
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 1;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 1;
    */
   integrationId: IntegrationType$1;
 
   /**
-   * @generated from field: api.commons.public.RequestMethod method_id = 2;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 2;
    */
   methodId: RequestMethod$1;
 
@@ -2368,7 +2368,7 @@ export declare class CalendarSummary extends Message<CalendarSummary> {
  */
 export declare class IntegrationTypeSummary extends Message<IntegrationTypeSummary> {
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_type = 1;
+   * @generated from field: api.commons.integrations.IntegrationType integration_type = 1;
    */
   integrationType: IntegrationType$1;
 
@@ -2687,7 +2687,7 @@ export declare class UnknownField extends Message<UnknownField> {
    * it is not allowed to give a provided field with a FieldSource
    * not in this list
    *
-   * @generated from field: repeated api.commons.public.FieldSource potential_sources = 3;
+   * @generated from field: repeated api.commons.integrations.FieldSource potential_sources = 3;
    */
   potentialSources: FieldSource[];
 
@@ -2752,7 +2752,7 @@ export declare class ProvidedField extends Message<ProvidedField> {
    *  - provided by the verification/invoice/payment config/journey data source
    *  - provided by the verification/invoice/payment api call
    *
-   * @generated from field: api.commons.public.FieldSource provided_by = 3;
+   * @generated from field: api.commons.integrations.FieldSource provided_by = 3;
    */
   providedBy: FieldSource;
 
@@ -2868,7 +2868,7 @@ export declare class Value extends Message<Value> {
    * a value does *not* have to match the validation enum.
    * a value that does not match its validation enum is just invalid.
    *
-   * @generated from field: api.commons.public.Validation validation = 8;
+   * @generated from field: api.commons.integrations.Validation validation = 8;
    */
   validation: Validation$1;
 
@@ -2970,7 +2970,7 @@ export declare class Condition extends Message<Condition> {
   /**
    * what operation we are confirming
    *
-   * @generated from field: api.commons.public.CompareOperation op = 2;
+   * @generated from field: api.commons.integrations.CompareOperation op = 2;
    */
   op: CompareOperation;
 
@@ -3006,7 +3006,7 @@ export declare class IntegrationConfig extends Message<IntegrationConfig> {
   id: string;
 
   /**
-   * @generated from field: api.commons.public.IntegrationType integration_id = 4;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 4;
    */
   integrationId: IntegrationType$1;
 
@@ -3050,7 +3050,7 @@ export declare class IntegrationConfig extends Message<IntegrationConfig> {
   conds?: Conditions;
 
   /**
-   * @generated from field: api.commons.public.RequestMethod method_id = 15;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 15;
    */
   methodId: RequestMethod$1;
 
@@ -3086,35 +3086,35 @@ export declare class IntegrationTransaction extends Message<IntegrationTransacti
   /**
    * integration used
    *
-   * @generated from field: api.commons.public.IntegrationType integration_id = 5;
+   * @generated from field: api.commons.integrations.IntegrationType integration_id = 5;
    */
   integrationId: IntegrationType$1;
 
   /**
    * external service method
    *
-   * @generated from field: api.commons.public.RequestMethod method_id = 6;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 6;
    */
   methodId: RequestMethod$1;
 
   /**
    * payment, data inquiry, etc.
    *
-   * @generated from field: api.commons.public.TransactionType transaction_type = 7;
+   * @generated from field: api.commons.integrations.TransactionType transaction_type = 7;
    */
   transactionType: TransactionType$1;
 
   /**
    * email/web/sms/ivr/chat
    *
-   * @generated from field: api.commons.public.RequestSource request_source = 8;
+   * @generated from field: api.commons.integrations.RequestSource request_source = 8;
    */
   requestSource: RequestSource$1;
 
   /**
    * success/failure
    *
-   * @generated from field: api.commons.public.TransactionResult result = 9;
+   * @generated from field: api.commons.integrations.TransactionResult result = 9;
    */
   result: TransactionResult$1;
 
@@ -3234,7 +3234,7 @@ export declare class Task extends Message<Task> {
   /**
    * the type of the source for this link. ex: Email, Sms, Chat
    *
-   * @generated from field: api.commons.public.RequestSource src = 3;
+   * @generated from field: api.commons.integrations.RequestSource src = 3;
    */
   src: RequestSource$1;
 
@@ -3644,17 +3644,17 @@ export declare class PortalType extends Message<PortalType> {
  */
 export declare class PaymentPortal extends Message<PaymentPortal> {
   /**
-   * @generated from field: api.commons.public.VerificationFlow verification = 8;
+   * @generated from field: api.commons.integrations.VerificationFlow verification = 8;
    */
   verification?: VerificationFlow;
 
   /**
-   * @generated from field: api.commons.public.InvoiceFlow invoice = 9;
+   * @generated from field: api.commons.integrations.InvoiceFlow invoice = 9;
    */
   invoice?: InvoiceFlow;
 
   /**
-   * @generated from field: repeated api.commons.public.PaymentFlow payments = 10;
+   * @generated from field: repeated api.commons.integrations.PaymentFlow payments = 10;
    */
   payments: PaymentFlow[];
 
@@ -3763,7 +3763,7 @@ export declare class PluginInstance extends Message<PluginInstance> {
   lastEdited?: Timestamp;
 
   /**
-   * @generated from field: api.commons.public.RequestMethod method_id = 12;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 12;
    */
   methodId: RequestMethod$1;
 
@@ -3885,7 +3885,7 @@ export declare class GetPortalLinksByDateRangeReq extends Message<GetPortalLinks
   pageNum: number;
 
   /**
-   * @generated from field: api.commons.public.RequestMethod method_id = 7;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 7;
    */
   methodId: RequestMethod$1;
 

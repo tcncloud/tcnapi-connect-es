@@ -1168,14 +1168,14 @@ export declare class ListFlowFieldNamesReq_Entity extends Message<ListFlowFieldN
   /**
    * the single flow we are interested in checking
    *
-   * @generated from field: api.commons.public.Flow flow = 3;
+   * @generated from field: api.commons.integrations.Flow flow = 3;
    */
   flow?: Flow;
 
   /**
    * the location the flow will check for fields
    *
-   * @generated from field: api.commons.public.FlowFieldLoc loc = 4;
+   * @generated from field: api.commons.integrations.FlowFieldLoc loc = 4;
    */
   loc: FlowFieldLoc;
 
@@ -1227,7 +1227,7 @@ export declare class ListFlowFieldNamesRes extends Message<ListFlowFieldNamesRes
  */
 export declare class ListAvailableVerificationFieldsReq extends Message<ListAvailableVerificationFieldsReq> {
   /**
-   * @generated from field: api.commons.public.VerificationFlow verification = 1;
+   * @generated from field: api.commons.integrations.VerificationFlow verification = 1;
    */
   verification?: VerificationFlow;
 
@@ -1253,7 +1253,7 @@ export declare class ListAvailableVerificationFieldsReq extends Message<ListAvai
  */
 export declare class ListAvailableVerificationFieldsRes extends Message<ListAvailableVerificationFieldsRes> {
   /**
-   * @generated from field: repeated api.commons.public.FieldDefinition verification_fields = 2;
+   * @generated from field: repeated api.commons.integrations.FieldDefinition verification_fields = 2;
    */
   verificationFields: FieldDefinition[];
 
@@ -1279,7 +1279,7 @@ export declare class ListAvailableVerificationFieldsRes extends Message<ListAvai
  */
 export declare class ListAvailablePaymentFieldsReq extends Message<ListAvailablePaymentFieldsReq> {
   /**
-   * @generated from field: api.commons.public.PaymentFlow payment = 1;
+   * @generated from field: api.commons.integrations.PaymentFlow payment = 1;
    */
   payment?: PaymentFlow;
 
@@ -1305,7 +1305,7 @@ export declare class ListAvailablePaymentFieldsReq extends Message<ListAvailable
  */
 export declare class ListAvailablePaymentFieldsRes extends Message<ListAvailablePaymentFieldsRes> {
   /**
-   * @generated from field: repeated api.commons.public.FieldDefinition payment_fields = 2;
+   * @generated from field: repeated api.commons.integrations.FieldDefinition payment_fields = 2;
    */
   paymentFields: FieldDefinition[];
 

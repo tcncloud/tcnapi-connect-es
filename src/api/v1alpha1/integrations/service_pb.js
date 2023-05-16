@@ -632,7 +632,7 @@ export const Request = proto3.makeMessageType(
 /**
  * This type only exists because typescript can't handle
  * a map with an enum as a value from another packages
- * map<string, api.commons.public.Validation>
+ * map<string, api.commons.integrations.Validation>
  *
  * @generated from message api.v1alpha1.integrations.Validation
  */
