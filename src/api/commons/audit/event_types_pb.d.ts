@@ -590,6 +590,13 @@ export declare enum EventType {
   SCORECARDS_CREATE_AUTO_EVALUATION_EVENT = 521,
 
   /**
+   * update evaluation event
+   *
+   * @generated from enum value: SCORECARDS_UPDATE_EVALUATION_EVENT = 522;
+   */
+  SCORECARDS_UPDATE_EVALUATION_EVENT = 522,
+
+  /**
    * Tickets Events
    * create event
    *

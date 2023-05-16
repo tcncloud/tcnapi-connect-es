@@ -107,6 +107,7 @@ export const EventType = proto3.makeEnum(
     {no: 519, name: "SCORECARDS_UPDATE_SCORECARD_QUESTION_EVENT"},
     {no: 520, name: "SCORECARDS_DELETE_SCORECARD_QUESTION_EVENT"},
     {no: 521, name: "SCORECARDS_CREATE_AUTO_EVALUATION_EVENT"},
+    {no: 522, name: "SCORECARDS_UPDATE_EVALUATION_EVENT"},
     {no: 600, name: "TICKET_CREATE_EVENT"},
     {no: 601, name: "TICKET_EDIT_EVENT"},
     {no: 602, name: "TICKET_CLOSE_EVENT"},
