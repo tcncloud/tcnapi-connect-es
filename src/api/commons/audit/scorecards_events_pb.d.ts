@@ -541,6 +541,69 @@ export declare class ScorecardsCreateEvaluationEvent extends Message<ScorecardsC
 }
 
 /**
+ * ScorecardsUpdateEvaluationEvent is event when an evaluation library evaluation is updated
+ *
+ * @generated from message api.commons.audit.ScorecardsUpdateEvaluationEvent
+ */
+export declare class ScorecardsUpdateEvaluationEvent extends Message<ScorecardsUpdateEvaluationEvent> {
+  /**
+   * id of the evaluation being updated
+   *
+   * @generated from field: int64 evaluation_id = 1;
+   */
+  evaluationId: bigint;
+
+  /**
+   * id of evaluated scorecard
+   *
+   * @generated from field: int64 scorecard_id = 2;
+   */
+  scorecardId: bigint;
+
+  /**
+   * user_id of person performing evaluation
+   *
+   * @generated from field: string scorer_id = 3;
+   */
+  scorerId: string;
+
+  /**
+   * agent user id of agent getting evaluated
+   *
+   * @generated from field: string agent_user_id = 4;
+   */
+  agentUserId: string;
+
+  /**
+   * sid of the call being evaluated
+   *
+   * @generated from field: int64 call_sid = 5;
+   */
+  callSid: bigint;
+
+  /**
+   * the evaluation being updated
+   *
+   * @generated from field: api.commons.Evaluation evaluation = 6;
+   */
+  evaluation?: Evaluation;
+
+  constructor(data?: PartialMessage<ScorecardsUpdateEvaluationEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.ScorecardsUpdateEvaluationEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScorecardsUpdateEvaluationEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScorecardsUpdateEvaluationEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScorecardsUpdateEvaluationEvent;
+
+  static equals(a: ScorecardsUpdateEvaluationEvent | PlainMessage<ScorecardsUpdateEvaluationEvent> | undefined, b: ScorecardsUpdateEvaluationEvent | PlainMessage<ScorecardsUpdateEvaluationEvent> | undefined): boolean;
+}
+
+/**
  * ScorecardsDeleteEvaluationEvent is event when an evaluation library evaluation is deleted
  *
  * @generated from message api.commons.audit.ScorecardsDeleteEvaluationEvent

@@ -148,6 +148,23 @@ export const ScorecardsCreateEvaluationEvent = proto3.makeMessageType(
 );
 
 /**
+ * ScorecardsUpdateEvaluationEvent is event when an evaluation library evaluation is updated
+ *
+ * @generated from message api.commons.audit.ScorecardsUpdateEvaluationEvent
+ */
+export const ScorecardsUpdateEvaluationEvent = proto3.makeMessageType(
+  "api.commons.audit.ScorecardsUpdateEvaluationEvent",
+  () => [
+    { no: 1, name: "evaluation_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "scorecard_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "scorer_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "agent_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "call_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "evaluation", kind: "message", T: Evaluation },
+  ],
+);
+
+/**
  * ScorecardsDeleteEvaluationEvent is event when an evaluation library evaluation is deleted
  *
  * @generated from message api.commons.audit.ScorecardsDeleteEvaluationEvent

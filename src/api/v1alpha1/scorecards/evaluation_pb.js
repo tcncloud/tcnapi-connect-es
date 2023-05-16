@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { FieldMask, proto3 } from "@bufbuild/protobuf";
 import { Evaluation, TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
@@ -25,6 +25,27 @@ export const CreateEvaluationRequest = proto3.makeMessageType(
  */
 export const CreateEvaluationResponse = proto3.makeMessageType(
   "api.v1alpha1.scorecards.CreateEvaluationResponse",
+  () => [
+    { no: 1, name: "evaluation", kind: "message", T: Evaluation },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.scorecards.UpdateEvaluationRequest
+ */
+export const UpdateEvaluationRequest = proto3.makeMessageType(
+  "api.v1alpha1.scorecards.UpdateEvaluationRequest",
+  () => [
+    { no: 1, name: "evaluation", kind: "message", T: Evaluation },
+    { no: 2, name: "update_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.scorecards.UpdateEvaluationResponse
+ */
+export const UpdateEvaluationResponse = proto3.makeMessageType(
+  "api.v1alpha1.scorecards.UpdateEvaluationResponse",
   () => [
     { no: 1, name: "evaluation", kind: "message", T: Evaluation },
   ],

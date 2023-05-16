@@ -10,7 +10,7 @@ import type { DummyEvent } from "./events_pb.js";
 import type { VanaBillingReportEvent, VanaFlagEvent, VanaFlagReviewEvent, VanaFlagSummaryEvent } from "./vana_events_pb.js";
 import type { OmnichannelAgentAssignConversationEvent, OmnichannelAgentMessageUnitsEvent, OmnichannelAgentReassignConversationEvent, OmnichannelAgentSuspendEvent, OmnichannelAgentTextMessageEvent, OmnichannelAgentUnassignConversationEvent, OmnichannelArchiveCampaignEvent, OmnichannelArchiveModuleEvent, OmnichannelBeginWrapUpEvent, OmnichannelCloseConversationEvent, OmnichannelCompleteCampaignEvent, OmnichannelCompleteModuleEvent, OmnichannelConnectedInboxCreatedEvent, OmnichannelConnectedInboxPollEvent, OmnichannelCreateCampaignEvent, OmnichannelCreateConversationEvent, OmnichannelCreateProjectEvent, OmnichannelCustomerMessageUnitsEvent, OmnichannelCustomerTextMessageEvent, OmnichannelDailyConversationReportEvent, OmnichannelDailyProjectReportEvent, OmnichannelErrorModuleEvent, OmnichannelFailModuleEvent, OmnichannelFinishWrapUpEvent, OmnichannelManagerMessageUnitsEvent, OmnichannelManagerTextMessageEvent, OmnichannelModuleInitialReplyEvent, OmnichannelPauseCampaignEvent, OmnichannelPauseModuleEvent, OmnichannelPaymentLinkSentEvent, OmnichannelResumeCampaignEvent, OmnichannelResumeModuleEvent, OmnichannelScheduleModuleEvent, OmnichannelSetConversationCollectedDataEvent, OmnichannelSmsMessageSentModuleEvent, OmnichannelStartCampaignEvent, OmnichannelStartModuleEvent, OmnichannelSuccessModuleEvent, OmnichannelSystemMessageUnitsEvent, OmnichannelT10Event, OmnichannelT11Event, OmnichannelTaskMessageSentEvent, OmnichannelUpdateCampaignEvent, OmnichannelUpdateModuleEvent } from "./omnichannel_events_pb.js";
 import type { AsmActivateConversationEvent, AsmAgentLoginEvent, AsmAgentLogoutEvent, AsmAgentStateChangedEvent, AsmDeactivateConversationEvent, AsmOpenOmniAgentEvent, AsmOpenVoiceEvent, AsmPauseEvent, AsmResumeEvent } from "./asm_events_pb.js";
-import type { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, ScorecardsCreateCategoryEvent, ScorecardsCreateEvaluationEvent, ScorecardsCreateEvaluationQuestionEvent, ScorecardsCreateQuestionEvent, ScorecardsCreateScorecardEvent, ScorecardsCreateScorecardQuestionEvent, ScorecardsCreateSectionEvent, ScorecardsDeleteCategoryEvent, ScorecardsDeleteEvaluationEvent, ScorecardsDeleteEvaluationQuestionEvent, ScorecardsDeleteQuestionEvent, ScorecardsDeleteScorecardEvent, ScorecardsDeleteScorecardQuestionEvent, ScorecardsDeleteSectionEvent, ScorecardsUpdateCategoryEvent, ScorecardsUpdateEvaluationQuestionEvent, ScorecardsUpdateQuestionEvent, ScorecardsUpdateScorecardEvent, ScorecardsUpdateScorecardQuestionEvent, ScorecardsUpdateSectionEvent } from "./scorecards_events_pb.js";
+import type { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, ScorecardsCreateCategoryEvent, ScorecardsCreateEvaluationEvent, ScorecardsCreateEvaluationQuestionEvent, ScorecardsCreateQuestionEvent, ScorecardsCreateScorecardEvent, ScorecardsCreateScorecardQuestionEvent, ScorecardsCreateSectionEvent, ScorecardsDeleteCategoryEvent, ScorecardsDeleteEvaluationEvent, ScorecardsDeleteEvaluationQuestionEvent, ScorecardsDeleteQuestionEvent, ScorecardsDeleteScorecardEvent, ScorecardsDeleteScorecardQuestionEvent, ScorecardsDeleteSectionEvent, ScorecardsUpdateCategoryEvent, ScorecardsUpdateEvaluationEvent, ScorecardsUpdateEvaluationQuestionEvent, ScorecardsUpdateQuestionEvent, ScorecardsUpdateScorecardEvent, ScorecardsUpdateScorecardQuestionEvent, ScorecardsUpdateSectionEvent } from "./scorecards_events_pb.js";
 import type { TicketEvent } from "./tickets_events_pb.js";
 import type { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 
@@ -700,6 +700,14 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: ScorecardsCreateAutoEvaluationEvent;
     case: "scorecardsCreateAutoEvaluationEvent";
+  } | {
+    /**
+     * evaluation library evaluation updated
+     *
+     * @generated from field: api.commons.audit.ScorecardsUpdateEvaluationEvent scorecards_update_evaluation_event = 522;
+     */
+    value: ScorecardsUpdateEvaluationEvent;
+    case: "scorecardsUpdateEvaluationEvent";
   } | {
     /**
      * Tickets Events
