@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Evaluation, TimeFilter } from "../../commons/scorecards_pb.js";
 
@@ -61,63 +61,6 @@ export declare class CreateEvaluationResponse extends Message<CreateEvaluationRe
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEvaluationResponse;
 
   static equals(a: CreateEvaluationResponse | PlainMessage<CreateEvaluationResponse> | undefined, b: CreateEvaluationResponse | PlainMessage<CreateEvaluationResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v1alpha1.scorecards.UpdateEvaluationRequest
- */
-export declare class UpdateEvaluationRequest extends Message<UpdateEvaluationRequest> {
-  /**
-   * Required - evaluation that is to be updated
-   *
-   * @generated from field: api.commons.Evaluation evaluation = 1;
-   */
-  evaluation?: Evaluation;
-
-  /**
-   * Required - specification of which fields should be updated
-   *
-   * @generated from field: google.protobuf.FieldMask update_mask = 2;
-   */
-  updateMask?: FieldMask;
-
-  constructor(data?: PartialMessage<UpdateEvaluationRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.scorecards.UpdateEvaluationRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvaluationRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvaluationRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvaluationRequest;
-
-  static equals(a: UpdateEvaluationRequest | PlainMessage<UpdateEvaluationRequest> | undefined, b: UpdateEvaluationRequest | PlainMessage<UpdateEvaluationRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v1alpha1.scorecards.UpdateEvaluationResponse
- */
-export declare class UpdateEvaluationResponse extends Message<UpdateEvaluationResponse> {
-  /**
-   * @generated from field: api.commons.Evaluation evaluation = 1;
-   */
-  evaluation?: Evaluation;
-
-  constructor(data?: PartialMessage<UpdateEvaluationResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.scorecards.UpdateEvaluationResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateEvaluationResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateEvaluationResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateEvaluationResponse;
-
-  static equals(a: UpdateEvaluationResponse | PlainMessage<UpdateEvaluationResponse> | undefined, b: UpdateEvaluationResponse | PlainMessage<UpdateEvaluationResponse> | undefined): boolean;
 }
 
 /**
