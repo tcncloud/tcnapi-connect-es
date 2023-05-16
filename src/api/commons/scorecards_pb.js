@@ -268,7 +268,6 @@ export const AutoEvaluationQuestion = proto3.makeMessageType(
     { no: 7, name: "passed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 8, name: "sort_order", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 11, name: "risk_level", kind: "enum", T: proto3.getEnumType(RiskLevel) },
-    { no: 14, name: "expression_matched", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -403,7 +402,6 @@ export const Scorecard = proto3.makeMessageType(
     { no: 15, name: "state", kind: "enum", T: proto3.getEnumType(ScorecardState) },
     { no: 16, name: "is_ad_hoc", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 19, name: "custom_field_keys", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 20, name: "call_type", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
   ],
 );
 

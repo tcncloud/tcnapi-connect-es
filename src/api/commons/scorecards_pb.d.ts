@@ -861,13 +861,6 @@ export declare class AutoEvaluationQuestion extends Message<AutoEvaluationQuesti
    */
   riskLevel: RiskLevel;
 
-  /**
-   * Whether the flag expression matched.
-   *
-   * @generated from field: bool expression_matched = 14;
-   */
-  expressionMatched: boolean;
-
   constructor(data?: PartialMessage<AutoEvaluationQuestion>);
 
   static readonly runtime: typeof proto3;
@@ -1392,13 +1385,6 @@ export declare class Scorecard extends Message<Scorecard> {
    * @generated from field: repeated string custom_field_keys = 19;
    */
   customFieldKeys: string[];
-
-  /**
-   * call types supported by scorecard
-   *
-   * @generated from field: api.commons.CallType.Enum call_type = 20;
-   */
-  callType: CallType_Enum;
 
   constructor(data?: PartialMessage<Scorecard>);
 
