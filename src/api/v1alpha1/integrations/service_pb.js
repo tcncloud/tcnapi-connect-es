@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { CompareOperation, FieldSource, IntegrationType as IntegrationType$1, InvoiceFlow, PaymentFlow, RequestMethod as RequestMethod$1, RequestSource as RequestSource$1, TransactionResult as TransactionResult$1, TransactionType as TransactionType$1, Validation as Validation$1, ValueType, VerificationFlow } from "../../commons/public/integrations_pb.js";
+import { CompareOperation, FieldSource, IntegrationType as IntegrationType$1, InvoiceFlow, PaymentFlow, RequestMethod as RequestMethod$1, RequestSource as RequestSource$1, TransactionResult as TransactionResult$1, TransactionType as TransactionType$1, Validation as Validation$1, ValueType, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.ListJourneyConfigsReq

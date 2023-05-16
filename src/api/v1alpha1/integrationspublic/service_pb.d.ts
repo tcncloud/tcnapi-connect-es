@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { FieldDefinition, Flow, InvoiceFlow, Invoices, PaymentFlow, Validation, VerificationFlow } from "../../commons/public/integrations_pb.js";
+import type { FieldDefinition, Flow, InvoiceFlow, Invoices, PaymentFlow, Validation, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrationspublic.Values

@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
-import { FieldDefinition, Flow, InvoiceFlow, Invoices, PaymentFlow, Validation, VerificationFlow } from "../../commons/public/integrations_pb.js";
+import { FieldDefinition, Flow, InvoiceFlow, Invoices, PaymentFlow, Validation, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrationspublic.Values

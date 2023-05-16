@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task } from "./service_pb.js";
-import type { FieldDefinition, Flow, FlowFieldLoc, PaymentFlow, VerificationFlow } from "../../commons/public/integrations_pb.js";
+import type { FieldDefinition, Flow, FlowFieldLoc, PaymentFlow, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.UpsertPortalConfigReq
