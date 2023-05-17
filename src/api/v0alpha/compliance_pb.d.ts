@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../commons/acd_pb.js";
-import type { Channel, ContentType, DateExp, DnclExp, Entity, FrequencyExp, HolidayExp, LocationExp, MetaFieldExp, MonthExp, PhoneType, PhoneTypeExp, PluginExp, SubEntity, TimeExp, Verb, WeekdayExp } from "../commons/compliance_pb.js";
+import type { Channel, ContentType, PhoneType, Rule } from "../commons/compliance_pb.js";
 import type { CommType } from "../commons/communication_pb.js";
 import type { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -750,7 +750,7 @@ export declare class CheckRuleSetReq extends Message<CheckRuleSetReq> {
  */
 export declare class CheckRuleSetRes extends Message<CheckRuleSetRes> {
   /**
-   * @generated from field: repeated api.v0alpha.Rule rules = 1;
+   * @generated from field: repeated api.commons.Rule rules = 1;
    */
   rules: Rule[];
 
@@ -1016,7 +1016,7 @@ export declare class CreateRuleSetReq extends Message<CreateRuleSetReq> {
   rulesText: string;
 
   /**
-   * @generated from field: repeated api.v0alpha.Rule rules = 7;
+   * @generated from field: repeated api.commons.Rule rules = 7;
    */
   rules: Rule[];
 
@@ -1191,7 +1191,7 @@ export declare class RuleSet extends Message<RuleSet> {
   sha: string;
 
   /**
-   * @generated from field: repeated api.v0alpha.Rule rules = 20;
+   * @generated from field: repeated api.commons.Rule rules = 20;
    */
   rules: Rule[];
 
@@ -1208,135 +1208,6 @@ export declare class RuleSet extends Message<RuleSet> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RuleSet;
 
   static equals(a: RuleSet | PlainMessage<RuleSet> | undefined, b: RuleSet | PlainMessage<RuleSet> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.Rule
- */
-export declare class Rule extends Message<Rule> {
-  /**
-   * @generated from field: api.commons.Verb verb = 1;
-   */
-  verb: Verb;
-
-  /**
-   * @generated from field: api.commons.Entity entity = 2;
-   */
-  entity: Entity;
-
-  /**
-   * @generated from field: api.commons.SubEntity sub_entity = 3;
-   */
-  subEntity: SubEntity;
-
-  /**
-   * @generated from field: repeated api.v0alpha.Selector selectors = 4;
-   */
-  selectors: Selector[];
-
-  constructor(data?: PartialMessage<Rule>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.Rule";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Rule;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Rule;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Rule;
-
-  static equals(a: Rule | PlainMessage<Rule> | undefined, b: Rule | PlainMessage<Rule> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.Selector
- */
-export declare class Selector extends Message<Selector> {
-  /**
-   * @generated from oneof api.v0alpha.Selector.selection_rule
-   */
-  selectionRule: {
-    /**
-     * @generated from field: api.commons.TimeExp time = 1;
-     */
-    value: TimeExp;
-    case: "time";
-  } | {
-    /**
-     * @generated from field: api.commons.WeekdayExp week = 2;
-     */
-    value: WeekdayExp;
-    case: "week";
-  } | {
-    /**
-     * @generated from field: api.commons.DnclExp dncl = 3;
-     */
-    value: DnclExp;
-    case: "dncl";
-  } | {
-    /**
-     * @generated from field: api.commons.FrequencyExp frequency = 4;
-     */
-    value: FrequencyExp;
-    case: "frequency";
-  } | {
-    /**
-     * @generated from field: api.commons.LocationExp location = 5;
-     */
-    value: LocationExp;
-    case: "location";
-  } | {
-    /**
-     * @generated from field: api.commons.PhoneTypeExp phone_type = 6;
-     */
-    value: PhoneTypeExp;
-    case: "phoneType";
-  } | {
-    /**
-     * @generated from field: api.commons.MonthExp month = 7;
-     */
-    value: MonthExp;
-    case: "month";
-  } | {
-    /**
-     * @generated from field: api.commons.HolidayExp holiday = 8;
-     */
-    value: HolidayExp;
-    case: "holiday";
-  } | {
-    /**
-     * @generated from field: api.commons.DateExp date = 9;
-     */
-    value: DateExp;
-    case: "date";
-  } | {
-    /**
-     * @generated from field: api.commons.MetaFieldExp meta = 10;
-     */
-    value: MetaFieldExp;
-    case: "meta";
-  } | {
-    /**
-     * @generated from field: api.commons.PluginExp plugin = 11;
-     */
-    value: PluginExp;
-    case: "plugin";
-  } | { case: undefined; value?: undefined };
-
-  constructor(data?: PartialMessage<Selector>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.Selector";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Selector;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Selector;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Selector;
-
-  static equals(a: Selector | PlainMessage<Selector> | undefined, b: Selector | PlainMessage<Selector> | undefined): boolean;
 }
 
 /**

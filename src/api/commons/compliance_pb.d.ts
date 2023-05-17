@@ -233,6 +233,140 @@ export declare enum ConsentAbsentAction {
 }
 
 /**
+ * @generated from message api.commons.Rule
+ */
+export declare class Rule extends Message<Rule> {
+  /**
+   * @generated from field: api.commons.Verb verb = 1;
+   */
+  verb: Verb;
+
+  /**
+   * @generated from field: api.commons.Entity entity = 2;
+   */
+  entity: Entity;
+
+  /**
+   * @generated from field: api.commons.SubEntity sub_entity = 3;
+   */
+  subEntity: SubEntity;
+
+  /**
+   * @generated from field: repeated api.commons.Selector selectors = 4;
+   */
+  selectors: Selector[];
+
+  /**
+   * @generated from field: string rule_text = 6;
+   */
+  ruleText: string;
+
+  constructor(data?: PartialMessage<Rule>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.Rule";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Rule;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Rule;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Rule;
+
+  static equals(a: Rule | PlainMessage<Rule> | undefined, b: Rule | PlainMessage<Rule> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.Selector
+ */
+export declare class Selector extends Message<Selector> {
+  /**
+   * @generated from oneof api.commons.Selector.selection_rule
+   */
+  selectionRule: {
+    /**
+     * @generated from field: api.commons.TimeExp time = 1;
+     */
+    value: TimeExp;
+    case: "time";
+  } | {
+    /**
+     * @generated from field: api.commons.WeekdayExp week = 2;
+     */
+    value: WeekdayExp;
+    case: "week";
+  } | {
+    /**
+     * @generated from field: api.commons.DnclExp dncl = 3;
+     */
+    value: DnclExp;
+    case: "dncl";
+  } | {
+    /**
+     * @generated from field: api.commons.FrequencyExp frequency = 4;
+     */
+    value: FrequencyExp;
+    case: "frequency";
+  } | {
+    /**
+     * @generated from field: api.commons.LocationExp location = 5;
+     */
+    value: LocationExp;
+    case: "location";
+  } | {
+    /**
+     * @generated from field: api.commons.PhoneTypeExp phone_type = 6;
+     */
+    value: PhoneTypeExp;
+    case: "phoneType";
+  } | {
+    /**
+     * @generated from field: api.commons.MonthExp month = 7;
+     */
+    value: MonthExp;
+    case: "month";
+  } | {
+    /**
+     * @generated from field: api.commons.DateExp date = 8;
+     */
+    value: DateExp;
+    case: "date";
+  } | {
+    /**
+     * @generated from field: api.commons.HolidayExp holiday = 9;
+     */
+    value: HolidayExp;
+    case: "holiday";
+  } | {
+    /**
+     * @generated from field: api.commons.MetaFieldExp meta = 10;
+     */
+    value: MetaFieldExp;
+    case: "meta";
+  } | {
+    /**
+     * @generated from field: api.commons.PluginExp plugin = 11;
+     */
+    value: PluginExp;
+    case: "plugin";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<Selector>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.Selector";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Selector;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Selector;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Selector;
+
+  static equals(a: Selector | PlainMessage<Selector> | undefined, b: Selector | PlainMessage<Selector> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.TimeExp
  */
 export declare class TimeExp extends Message<TimeExp> {

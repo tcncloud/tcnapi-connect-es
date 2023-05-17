@@ -124,6 +124,40 @@ export const ConsentAbsentAction = proto3.makeEnum(
 );
 
 /**
+ * @generated from message api.commons.Rule
+ */
+export const Rule = proto3.makeMessageType(
+  "api.commons.Rule",
+  () => [
+    { no: 1, name: "verb", kind: "enum", T: proto3.getEnumType(Verb) },
+    { no: 2, name: "entity", kind: "enum", T: proto3.getEnumType(Entity) },
+    { no: 3, name: "sub_entity", kind: "enum", T: proto3.getEnumType(SubEntity) },
+    { no: 4, name: "selectors", kind: "message", T: Selector, repeated: true },
+    { no: 6, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.Selector
+ */
+export const Selector = proto3.makeMessageType(
+  "api.commons.Selector",
+  () => [
+    { no: 1, name: "time", kind: "message", T: TimeExp, oneof: "selection_rule" },
+    { no: 2, name: "week", kind: "message", T: WeekdayExp, oneof: "selection_rule" },
+    { no: 3, name: "dncl", kind: "message", T: DnclExp, oneof: "selection_rule" },
+    { no: 4, name: "frequency", kind: "message", T: FrequencyExp, oneof: "selection_rule" },
+    { no: 5, name: "location", kind: "message", T: LocationExp, oneof: "selection_rule" },
+    { no: 6, name: "phone_type", kind: "message", T: PhoneTypeExp, oneof: "selection_rule" },
+    { no: 7, name: "month", kind: "message", T: MonthExp, oneof: "selection_rule" },
+    { no: 8, name: "date", kind: "message", T: DateExp, oneof: "selection_rule" },
+    { no: 9, name: "holiday", kind: "message", T: HolidayExp, oneof: "selection_rule" },
+    { no: 10, name: "meta", kind: "message", T: MetaFieldExp, oneof: "selection_rule" },
+    { no: 11, name: "plugin", kind: "message", T: PluginExp, oneof: "selection_rule" },
+  ],
+);
+
+/**
  * @generated from message api.commons.TimeExp
  */
 export const TimeExp = proto3.makeMessageType(
