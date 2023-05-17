@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Month, Weekday_Enum } from "./enums_pb.js";
+import type { CommType } from "./communication_pb.js";
 
 /**
  * @generated from enum api.commons.Verb
@@ -1049,5 +1050,219 @@ export declare class ConsentCondition extends Message<ConsentCondition> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConsentCondition;
 
   static equals(a: ConsentCondition | PlainMessage<ConsentCondition> | undefined, b: ConsentCondition | PlainMessage<ConsentCondition> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ScenarioData
+ */
+export declare class ScenarioData extends Message<ScenarioData> {
+  /**
+   * @generated from field: api.commons.CommType comm_type = 1;
+   */
+  commType?: CommType;
+
+  /**
+   * @generated from field: string phone_number = 2;
+   */
+  phoneNumber: string;
+
+  /**
+   * @generated from field: string country_code = 3 [deprecated = true];
+   * @deprecated
+   */
+  countryCode: string;
+
+  /**
+   * @generated from field: string email = 4;
+   */
+  email: string;
+
+  /**
+   * @generated from field: map<string, string> call_metadata = 5;
+   */
+  callMetadata: { [key: string]: string };
+
+  /**
+   * @generated from field: google.protobuf.Timestamp time_of_call = 6;
+   */
+  timeOfCall?: Timestamp;
+
+  /**
+   * @generated from field: int64 frequency_count = 7;
+   */
+  frequencyCount: bigint;
+
+  /**
+   * @generated from field: int64 frequency_duration = 8;
+   */
+  frequencyDuration: bigint;
+
+  /**
+   * @generated from field: bool dncl_blocks = 9;
+   */
+  dnclBlocks: boolean;
+
+  /**
+   * @generated from field: string country = 10;
+   */
+  country: string;
+
+  /**
+   * @generated from field: string state = 11;
+   */
+  state: string;
+
+  /**
+   * @generated from field: string county = 12;
+   */
+  county: string;
+
+  /**
+   * @generated from field: string city = 13;
+   */
+  city: string;
+
+  /**
+   * @generated from field: string province = 14;
+   */
+  province: string;
+
+  /**
+   * @generated from field: api.commons.PhoneType phone_type = 15;
+   */
+  phoneType: PhoneType;
+
+  /**
+   * time_zone uses the iana timezone format. Defaults to utc
+   *
+   * @generated from field: string time_zone = 16;
+   */
+  timeZone: string;
+
+  /**
+   * @generated from field: repeated string holidays = 17;
+   */
+  holidays: string[];
+
+  /**
+   * @generated from field: api.commons.CountryCode country_code_data = 18;
+   */
+  countryCodeData?: CountryCode;
+
+  constructor(data?: PartialMessage<ScenarioData>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ScenarioData";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScenarioData;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScenarioData;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScenarioData;
+
+  static equals(a: ScenarioData | PlainMessage<ScenarioData> | undefined, b: ScenarioData | PlainMessage<ScenarioData> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.CountryCode
+ */
+export declare class CountryCode extends Message<CountryCode> {
+  /**
+   * @generated from field: int64 country_code = 1;
+   */
+  countryCode: bigint;
+
+  /**
+   * @generated from field: string country_name = 2;
+   */
+  countryName: string;
+
+  /**
+   * @generated from field: string country_id = 3;
+   */
+  countryId: string;
+
+  constructor(data?: PartialMessage<CountryCode>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.CountryCode";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CountryCode;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CountryCode;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CountryCode;
+
+  static equals(a: CountryCode | PlainMessage<CountryCode> | undefined, b: CountryCode | PlainMessage<CountryCode> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ScenarioResult
+ */
+export declare class ScenarioResult extends Message<ScenarioResult> {
+  /**
+   * @generated from field: bool passed_value = 5;
+   */
+  passedValue: boolean;
+
+  /**
+   * @generated from field: repeated api.commons.ScenarioRuleResponse should_allow_responses = 2;
+   */
+  shouldAllowResponses: ScenarioRuleResponse[];
+
+  /**
+   * @generated from field: repeated api.commons.ScenarioRuleResponse should_deny_responses = 3;
+   */
+  shouldDenyResponses: ScenarioRuleResponse[];
+
+  /**
+   * @generated from field: string scenario_name = 4;
+   */
+  scenarioName: string;
+
+  constructor(data?: PartialMessage<ScenarioResult>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ScenarioResult";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScenarioResult;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScenarioResult;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScenarioResult;
+
+  static equals(a: ScenarioResult | PlainMessage<ScenarioResult> | undefined, b: ScenarioResult | PlainMessage<ScenarioResult> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ScenarioRuleResponse
+ */
+export declare class ScenarioRuleResponse extends Message<ScenarioRuleResponse> {
+  /**
+   * @generated from field: string rule_text = 1;
+   */
+  ruleText: string;
+
+  /**
+   * @generated from field: bool permit_value = 3;
+   */
+  permitValue: boolean;
+
+  constructor(data?: PartialMessage<ScenarioRuleResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ScenarioRuleResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScenarioRuleResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScenarioRuleResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScenarioRuleResponse;
+
+  static equals(a: ScenarioRuleResponse | PlainMessage<ScenarioRuleResponse> | undefined, b: ScenarioRuleResponse | PlainMessage<ScenarioRuleResponse> | undefined): boolean;
 }
 

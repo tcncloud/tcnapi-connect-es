@@ -5,7 +5,7 @@
 
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../commons/acd_pb.js";
-import { Channel, ConsentCondition, ContentType, PhoneType, Rule } from "../commons/compliance_pb.js";
+import { Channel, ConsentCondition, ContentType, Rule, ScenarioData, ScenarioResult } from "../commons/compliance_pb.js";
 import { CommType } from "../commons/communication_pb.js";
 import { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -533,18 +533,6 @@ export const ExportScrubListRes = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.CountryCode
- */
-export const CountryCode = proto3.makeMessageType(
-  "api.v0alpha.CountryCode",
-  () => [
-    { no: 1, name: "country_code", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "country_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "country_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
  * @generated from message api.v0alpha.Scenario
  */
 export const Scenario = proto3.makeMessageType(
@@ -555,33 +543,6 @@ export const Scenario = proto3.makeMessageType(
     { no: 4, name: "should_deny", kind: "message", T: ScenarioData },
     { no: 5, name: "last_execution_result", kind: "message", T: ScenarioResult },
     { no: 6, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ScenarioData
- */
-export const ScenarioData = proto3.makeMessageType(
-  "api.v0alpha.ScenarioData",
-  () => [
-    { no: 1, name: "comm_type", kind: "message", T: CommType },
-    { no: 2, name: "phone_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "call_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
-    { no: 6, name: "time_of_call", kind: "message", T: Timestamp },
-    { no: 7, name: "frequency_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 8, name: "frequency_duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 9, name: "dncl_blocks", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 10, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: "county", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 14, name: "province", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 15, name: "phone_type", kind: "enum", T: proto3.getEnumType(PhoneType) },
-    { no: 16, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 17, name: "holidays", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 18, name: "country_code_data", kind: "message", T: CountryCode },
   ],
 );
 
@@ -684,30 +645,6 @@ export const RunAssignedScenariosRes = proto3.makeMessageType(
     { no: 2, name: "results", kind: "message", T: ScenarioResult, repeated: true },
     { no: 4, name: "passed_value", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "cpl_rule_set_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ScenarioResult
- */
-export const ScenarioResult = proto3.makeMessageType(
-  "api.v0alpha.ScenarioResult",
-  () => [
-    { no: 5, name: "passed_value", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "should_allow_responses", kind: "message", T: ScenarioRuleResponse, repeated: true },
-    { no: 3, name: "should_deny_responses", kind: "message", T: ScenarioRuleResponse, repeated: true },
-    { no: 4, name: "scenario_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ScenarioRuleResponse
- */
-export const ScenarioRuleResponse = proto3.makeMessageType(
-  "api.v0alpha.ScenarioRuleResponse",
-  () => [
-    { no: 1, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "permit_value", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
