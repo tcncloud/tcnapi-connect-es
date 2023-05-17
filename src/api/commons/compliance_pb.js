@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
+import { Month, Weekday } from "./enums_pb.js";
 
 /**
  * @generated from enum api.commons.Verb
@@ -119,6 +120,220 @@ export const ConsentAbsentAction = proto3.makeEnum(
   [
     {no: 0, name: "CONSENT_ABSENT_ACTION_ALLOW", localName: "ALLOW"},
     {no: 1, name: "CONSENT_ABSENT_ACTION_DENY", localName: "DENY"},
+  ],
+);
+
+/**
+ * @generated from message api.commons.TimeExp
+ */
+export const TimeExp = proto3.makeMessageType(
+  "api.commons.TimeExp",
+  () => [
+    { no: 1, name: "start_hour", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "end_hour", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.WeekdayExp
+ */
+export const WeekdayExp = proto3.makeMessageType(
+  "api.commons.WeekdayExp",
+  () => [
+    { no: 1, name: "day", kind: "message", T: Weekday },
+    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.DnclExp
+ */
+export const DnclExp = proto3.makeMessageType(
+  "api.commons.DnclExp",
+  () => [
+    { no: 1, name: "list_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "field_names", kind: "message", T: FieldNamesMod },
+  ],
+);
+
+/**
+ * @generated from message api.commons.FrequencyExp
+ */
+export const FrequencyExp = proto3.makeMessageType(
+  "api.commons.FrequencyExp",
+  () => [
+    { no: 1, name: "count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "results", kind: "message", T: ResultsMod },
+    { no: 4, name: "dispositions", kind: "message", T: DispositionMod },
+    { no: 5, name: "field_names", kind: "message", T: FieldNamesMod },
+    { no: 6, name: "checking_entities", kind: "message", T: EntityExp, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.LocationExp
+ */
+export const LocationExp = proto3.makeMessageType(
+  "api.commons.LocationExp",
+  () => [
+    { no: 1, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "county", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "province", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "postal_codes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "area_codes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.PhoneTypeExp
+ */
+export const PhoneTypeExp = proto3.makeMessageType(
+  "api.commons.PhoneTypeExp",
+  () => [
+    { no: 1, name: "phone_type", kind: "enum", T: proto3.getEnumType(PhoneType) },
+  ],
+);
+
+/**
+ * @generated from message api.commons.MonthExp
+ */
+export const MonthExp = proto3.makeMessageType(
+  "api.commons.MonthExp",
+  () => [
+    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
+    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.DateExp
+ */
+export const DateExp = proto3.makeMessageType(
+  "api.commons.DateExp",
+  () => [
+    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
+    { no: 2, name: "day", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "year", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.HolidayExp
+ */
+export const HolidayExp = proto3.makeMessageType(
+  "api.commons.HolidayExp",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.MetaFieldExp
+ */
+export const MetaFieldExp = proto3.makeMessageType(
+  "api.commons.MetaFieldExp",
+  () => [
+    { no: 1, name: "field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.PluginExp
+ */
+export const PluginExp = proto3.makeMessageType(
+  "api.commons.PluginExp",
+  () => [
+    { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(PluginType) },
+    { no: 4, name: "tcn_strict", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "license_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "reference_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "from_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "env", kind: "enum", T: proto3.getEnumType(Environment) },
+    { no: 7, name: "profile_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "content_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "topic", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "absent_action", kind: "enum", T: proto3.getEnumType(ConsentAbsentAction) },
+    { no: 10, name: "date_last_contact", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.EntityExp
+ */
+export const EntityExp = proto3.makeMessageType(
+  "api.commons.EntityExp",
+  () => [
+    { no: 1, name: "sub_entity", kind: "enum", T: proto3.getEnumType(SubEntity) },
+    { no: 2, name: "entity", kind: "enum", T: proto3.getEnumType(Entity) },
+  ],
+);
+
+/**
+ * @generated from message api.commons.FieldNamesMod
+ */
+export const FieldNamesMod = proto3.makeMessageType(
+  "api.commons.FieldNamesMod",
+  () => [
+    { no: 1, name: "field_names", kind: "message", T: Field, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.ResultsMod
+ */
+export const ResultsMod = proto3.makeMessageType(
+  "api.commons.ResultsMod",
+  () => [
+    { no: 1, name: "results", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.DispositionMod
+ */
+export const DispositionMod = proto3.makeMessageType(
+  "api.commons.DispositionMod",
+  () => [
+    { no: 1, name: "dispositions", kind: "message", T: DispositionField, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.DispositionField
+ */
+export const DispositionField = proto3.makeMessageType(
+  "api.commons.DispositionField",
+  () => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "pairs", kind: "message", T: DispositionPair, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.DispositionPair
+ */
+export const DispositionPair = proto3.makeMessageType(
+  "api.commons.DispositionPair",
+  () => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.Field
+ */
+export const Field = proto3.makeMessageType(
+  "api.commons.Field",
+  () => [
+    { no: 1, name: "Field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "Content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

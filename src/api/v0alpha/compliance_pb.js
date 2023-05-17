@@ -5,9 +5,9 @@
 
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../commons/acd_pb.js";
-import { Channel, ConsentAbsentAction, ContentType, Entity, Environment, PhoneType, PluginType, SubEntity, Verb } from "../commons/compliance_pb.js";
+import { Channel, ContentType, DateExp, DnclExp, Entity, FrequencyExp, HolidayExp, LocationExp, MetaFieldExp, MonthExp, PhoneType, PhoneTypeExp, PluginExp, SubEntity, TimeExp, Verb, WeekdayExp } from "../commons/compliance_pb.js";
 import { CommType } from "../commons/communication_pb.js";
-import { Month, Weekday_Enum } from "../commons/enums_pb.js";
+import { Weekday_Enum } from "../commons/enums_pb.js";
 
 /**
  * request used to process an outbound call against a rule set
@@ -457,137 +457,6 @@ export const Selector = proto3.makeMessageType(
     { no: 9, name: "date", kind: "message", T: DateExp, oneof: "selection_rule" },
     { no: 10, name: "meta", kind: "message", T: MetaFieldExp, oneof: "selection_rule" },
     { no: 11, name: "plugin", kind: "message", T: PluginExp, oneof: "selection_rule" },
-  ],
-);
-
-/**
- * Expressions/Selectors
- *
- * @generated from message api.v0alpha.HolidayExp
- */
-export const HolidayExp = proto3.makeMessageType(
-  "api.v0alpha.HolidayExp",
-  () => [
-    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
-    { no: 2, name: "day", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.TimeExp
- */
-export const TimeExp = proto3.makeMessageType(
-  "api.v0alpha.TimeExp",
-  () => [
-    { no: 1, name: "start_hour", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "end_hour", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.WeekdayExp
- */
-export const WeekdayExp = proto3.makeMessageType(
-  "api.v0alpha.WeekdayExp",
-  () => [
-    { no: 1, name: "day", kind: "enum", T: proto3.getEnumType(Weekday_Enum) },
-    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.MonthExp
- */
-export const MonthExp = proto3.makeMessageType(
-  "api.v0alpha.MonthExp",
-  () => [
-    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
-    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.DateExp
- */
-export const DateExp = proto3.makeMessageType(
-  "api.v0alpha.DateExp",
-  () => [
-    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
-    { no: 2, name: "day", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "year", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.DnclExp
- */
-export const DnclExp = proto3.makeMessageType(
-  "api.v0alpha.DnclExp",
-  () => [
-    { no: 1, name: "list_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "field_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.FrequencyExp
- */
-export const FrequencyExp = proto3.makeMessageType(
-  "api.v0alpha.FrequencyExp",
-  () => [
-    { no: 1, name: "count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.LocationExp
- */
-export const LocationExp = proto3.makeMessageType(
-  "api.v0alpha.LocationExp",
-  () => [
-    { no: 1, name: "location", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.PhoneTypeExp
- */
-export const PhoneTypeExp = proto3.makeMessageType(
-  "api.v0alpha.PhoneTypeExp",
-  () => [
-    { no: 1, name: "phone_type", kind: "enum", T: proto3.getEnumType(PhoneType) },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.MetaFieldExp
- */
-export const MetaFieldExp = proto3.makeMessageType(
-  "api.v0alpha.MetaFieldExp",
-  () => [
-    { no: 1, name: "field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.PluginExp
- */
-export const PluginExp = proto3.makeMessageType(
-  "api.v0alpha.PluginExp",
-  () => [
-    { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(PluginType) },
-    { no: 4, name: "tcn_strict", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "license_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "reference_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "from_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "env", kind: "enum", T: proto3.getEnumType(Environment) },
-    { no: 7, name: "profile", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "content_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "topic", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: "absent_action", kind: "enum", T: proto3.getEnumType(ConsentAbsentAction) },
-    { no: 10, name: "date_last_contact", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

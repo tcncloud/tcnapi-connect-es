@@ -6,9 +6,9 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../commons/acd_pb.js";
-import type { Channel, ConsentAbsentAction, ContentType, Entity, Environment, PhoneType, PluginType, SubEntity, Verb } from "../commons/compliance_pb.js";
+import type { Channel, ContentType, DateExp, DnclExp, Entity, FrequencyExp, HolidayExp, LocationExp, MetaFieldExp, MonthExp, PhoneType, PhoneTypeExp, PluginExp, SubEntity, TimeExp, Verb, WeekdayExp } from "../commons/compliance_pb.js";
 import type { CommType } from "../commons/communication_pb.js";
-import type { Month, Weekday_Enum } from "../commons/enums_pb.js";
+import type { Weekday_Enum } from "../commons/enums_pb.js";
 
 /**
  * request used to process an outbound call against a rule set
@@ -1258,67 +1258,67 @@ export declare class Selector extends Message<Selector> {
    */
   selectionRule: {
     /**
-     * @generated from field: api.v0alpha.TimeExp time = 1;
+     * @generated from field: api.commons.TimeExp time = 1;
      */
     value: TimeExp;
     case: "time";
   } | {
     /**
-     * @generated from field: api.v0alpha.WeekdayExp week = 2;
+     * @generated from field: api.commons.WeekdayExp week = 2;
      */
     value: WeekdayExp;
     case: "week";
   } | {
     /**
-     * @generated from field: api.v0alpha.DnclExp dncl = 3;
+     * @generated from field: api.commons.DnclExp dncl = 3;
      */
     value: DnclExp;
     case: "dncl";
   } | {
     /**
-     * @generated from field: api.v0alpha.FrequencyExp frequency = 4;
+     * @generated from field: api.commons.FrequencyExp frequency = 4;
      */
     value: FrequencyExp;
     case: "frequency";
   } | {
     /**
-     * @generated from field: api.v0alpha.LocationExp location = 5;
+     * @generated from field: api.commons.LocationExp location = 5;
      */
     value: LocationExp;
     case: "location";
   } | {
     /**
-     * @generated from field: api.v0alpha.PhoneTypeExp phone_type = 6;
+     * @generated from field: api.commons.PhoneTypeExp phone_type = 6;
      */
     value: PhoneTypeExp;
     case: "phoneType";
   } | {
     /**
-     * @generated from field: api.v0alpha.MonthExp month = 7;
+     * @generated from field: api.commons.MonthExp month = 7;
      */
     value: MonthExp;
     case: "month";
   } | {
     /**
-     * @generated from field: api.v0alpha.HolidayExp holiday = 8;
+     * @generated from field: api.commons.HolidayExp holiday = 8;
      */
     value: HolidayExp;
     case: "holiday";
   } | {
     /**
-     * @generated from field: api.v0alpha.DateExp date = 9;
+     * @generated from field: api.commons.DateExp date = 9;
      */
     value: DateExp;
     case: "date";
   } | {
     /**
-     * @generated from field: api.v0alpha.MetaFieldExp meta = 10;
+     * @generated from field: api.commons.MetaFieldExp meta = 10;
      */
     value: MetaFieldExp;
     case: "meta";
   } | {
     /**
-     * @generated from field: api.v0alpha.PluginExp plugin = 11;
+     * @generated from field: api.commons.PluginExp plugin = 11;
      */
     value: PluginExp;
     case: "plugin";
@@ -1337,386 +1337,6 @@ export declare class Selector extends Message<Selector> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Selector;
 
   static equals(a: Selector | PlainMessage<Selector> | undefined, b: Selector | PlainMessage<Selector> | undefined): boolean;
-}
-
-/**
- * Expressions/Selectors
- *
- * @generated from message api.v0alpha.HolidayExp
- */
-export declare class HolidayExp extends Message<HolidayExp> {
-  /**
-   * @generated from field: api.commons.Month month = 1;
-   */
-  month: Month;
-
-  /**
-   * @generated from field: int64 day = 2;
-   */
-  day: bigint;
-
-  /**
-   * @generated from field: string name = 3;
-   */
-  name: string;
-
-  constructor(data?: PartialMessage<HolidayExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.HolidayExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HolidayExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HolidayExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HolidayExp;
-
-  static equals(a: HolidayExp | PlainMessage<HolidayExp> | undefined, b: HolidayExp | PlainMessage<HolidayExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.TimeExp
- */
-export declare class TimeExp extends Message<TimeExp> {
-  /**
-   * @generated from field: string start_hour = 1;
-   */
-  startHour: string;
-
-  /**
-   * @generated from field: string end_hour = 2;
-   */
-  endHour: string;
-
-  constructor(data?: PartialMessage<TimeExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.TimeExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TimeExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TimeExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TimeExp;
-
-  static equals(a: TimeExp | PlainMessage<TimeExp> | undefined, b: TimeExp | PlainMessage<TimeExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.WeekdayExp
- */
-export declare class WeekdayExp extends Message<WeekdayExp> {
-  /**
-   * @generated from field: api.commons.Weekday.Enum day = 1;
-   */
-  day: Weekday_Enum;
-
-  /**
-   * @generated from field: string text = 2;
-   */
-  text: string;
-
-  constructor(data?: PartialMessage<WeekdayExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.WeekdayExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WeekdayExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WeekdayExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WeekdayExp;
-
-  static equals(a: WeekdayExp | PlainMessage<WeekdayExp> | undefined, b: WeekdayExp | PlainMessage<WeekdayExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.MonthExp
- */
-export declare class MonthExp extends Message<MonthExp> {
-  /**
-   * @generated from field: api.commons.Month month = 1;
-   */
-  month: Month;
-
-  /**
-   * @generated from field: string text = 2;
-   */
-  text: string;
-
-  constructor(data?: PartialMessage<MonthExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.MonthExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MonthExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MonthExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MonthExp;
-
-  static equals(a: MonthExp | PlainMessage<MonthExp> | undefined, b: MonthExp | PlainMessage<MonthExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.DateExp
- */
-export declare class DateExp extends Message<DateExp> {
-  /**
-   * @generated from field: api.commons.Month month = 1;
-   */
-  month: Month;
-
-  /**
-   * @generated from field: int64 day = 2;
-   */
-  day: bigint;
-
-  /**
-   * @generated from field: int64 year = 3;
-   */
-  year: bigint;
-
-  constructor(data?: PartialMessage<DateExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.DateExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DateExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DateExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DateExp;
-
-  static equals(a: DateExp | PlainMessage<DateExp> | undefined, b: DateExp | PlainMessage<DateExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.DnclExp
- */
-export declare class DnclExp extends Message<DnclExp> {
-  /**
-   * @generated from field: string list_name = 1;
-   */
-  listName: string;
-
-  /**
-   * @generated from field: string field_name = 2;
-   */
-  fieldName: string;
-
-  constructor(data?: PartialMessage<DnclExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.DnclExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DnclExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DnclExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DnclExp;
-
-  static equals(a: DnclExp | PlainMessage<DnclExp> | undefined, b: DnclExp | PlainMessage<DnclExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.FrequencyExp
- */
-export declare class FrequencyExp extends Message<FrequencyExp> {
-  /**
-   * Maximum number of tries
-   *
-   * @generated from field: int64 count = 1;
-   */
-  count: bigint;
-
-  /**
-   * Measured in nanoseconds
-   *
-   * @generated from field: int64 duration = 2;
-   */
-  duration: bigint;
-
-  constructor(data?: PartialMessage<FrequencyExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.FrequencyExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FrequencyExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FrequencyExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FrequencyExp;
-
-  static equals(a: FrequencyExp | PlainMessage<FrequencyExp> | undefined, b: FrequencyExp | PlainMessage<FrequencyExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.LocationExp
- */
-export declare class LocationExp extends Message<LocationExp> {
-  /**
-   * @generated from field: string location = 1;
-   */
-  location: string;
-
-  constructor(data?: PartialMessage<LocationExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.LocationExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LocationExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LocationExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LocationExp;
-
-  static equals(a: LocationExp | PlainMessage<LocationExp> | undefined, b: LocationExp | PlainMessage<LocationExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.PhoneTypeExp
- */
-export declare class PhoneTypeExp extends Message<PhoneTypeExp> {
-  /**
-   * @generated from field: api.commons.PhoneType phone_type = 1;
-   */
-  phoneType: PhoneType;
-
-  constructor(data?: PartialMessage<PhoneTypeExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.PhoneTypeExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PhoneTypeExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PhoneTypeExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PhoneTypeExp;
-
-  static equals(a: PhoneTypeExp | PlainMessage<PhoneTypeExp> | undefined, b: PhoneTypeExp | PlainMessage<PhoneTypeExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.MetaFieldExp
- */
-export declare class MetaFieldExp extends Message<MetaFieldExp> {
-  /**
-   * @generated from field: string field = 1;
-   */
-  field: string;
-
-  constructor(data?: PartialMessage<MetaFieldExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.MetaFieldExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MetaFieldExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MetaFieldExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MetaFieldExp;
-
-  static equals(a: MetaFieldExp | PlainMessage<MetaFieldExp> | undefined, b: MetaFieldExp | PlainMessage<MetaFieldExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.PluginExp
- */
-export declare class PluginExp extends Message<PluginExp> {
-  /**
-   * @generated from field: api.commons.PluginType type = 1;
-   */
-  type: PluginType;
-
-  /**
-   * true/false deny on errors
-   *
-   * @generated from field: bool tcn_strict = 4;
-   */
-  tcnStrict: boolean;
-
-  /**
-   * gryphon
-   *
-   * @generated from field: string license_id = 2;
-   */
-  licenseId: string;
-
-  /**
-   * @generated from field: string reference_key = 3;
-   */
-  referenceKey: string;
-
-  /**
-   * @generated from field: string from_number = 5;
-   */
-  fromNumber: string;
-
-  /**
-   * @generated from field: api.commons.Environment env = 6;
-   */
-  env: Environment;
-
-  /**
-   * tcn_consent
-   *
-   * @generated from field: string profile = 7;
-   */
-  profile: string;
-
-  /**
-   * field to use as content
-   *
-   * @generated from field: string content_field = 8;
-   */
-  contentField: string;
-
-  /**
-   * consent topic
-   *
-   * @generated from field: string topic = 9;
-   */
-  topic: string;
-
-  /**
-   * consent absent action (deny/allow if consent doesn't exist)
-   *
-   * @generated from field: api.commons.ConsentAbsentAction absent_action = 11;
-   */
-  absentAction: ConsentAbsentAction;
-
-  /**
-   * rnd
-   * date of last contact
-   *
-   * @generated from field: string date_last_contact = 10;
-   */
-  dateLastContact: string;
-
-  constructor(data?: PartialMessage<PluginExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.PluginExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PluginExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PluginExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PluginExp;
-
-  static equals(a: PluginExp | PlainMessage<PluginExp> | undefined, b: PluginExp | PlainMessage<PluginExp> | undefined): boolean;
 }
 
 /**
