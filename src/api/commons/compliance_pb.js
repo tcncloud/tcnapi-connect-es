@@ -3,8 +3,8 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
-import { Month, Weekday } from "./enums_pb.js";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { Month, Weekday_Enum } from "./enums_pb.js";
 
 /**
  * @generated from enum api.commons.Verb
@@ -174,7 +174,7 @@ export const TimeExp = proto3.makeMessageType(
 export const WeekdayExp = proto3.makeMessageType(
   "api.commons.WeekdayExp",
   () => [
-    { no: 1, name: "day", kind: "message", T: Weekday },
+    { no: 1, name: "day", kind: "enum", T: proto3.getEnumType(Weekday_Enum) },
     { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -368,6 +368,25 @@ export const Field = proto3.makeMessageType(
   () => [
     { no: 1, name: "Field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "Content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * ConsentCondition defines conditions
+ * required for a consent to take affect
+ *
+ * @generated from message api.commons.ConsentCondition
+ */
+export const ConsentCondition = proto3.makeMessageType(
+  "api.commons.ConsentCondition",
+  () => [
+    { no: 1, name: "consent_condition_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "consent_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "days_of_the_week", kind: "enum", T: proto3.getEnumType(Weekday_Enum), repeated: true },
+    { no: 11, name: "time_of_day_from", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "time_of_day_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "from_date", kind: "message", T: Timestamp },
+    { no: 14, name: "to_date", kind: "message", T: Timestamp },
   ],
 );
 

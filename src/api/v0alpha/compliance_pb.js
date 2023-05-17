@@ -5,7 +5,7 @@
 
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../commons/acd_pb.js";
-import { Channel, ContentType, PhoneType, Rule } from "../commons/compliance_pb.js";
+import { Channel, ConsentCondition, ContentType, PhoneType, Rule } from "../commons/compliance_pb.js";
 import { CommType } from "../commons/communication_pb.js";
 import { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -962,25 +962,6 @@ export const Consent = proto3.makeMessageType(
     { no: 26, name: "conditions", kind: "message", T: ConsentCondition, repeated: true },
     { no: 27, name: "content_type", kind: "enum", T: proto3.getEnumType(ContentType) },
     { no: 28, name: "channel_type", kind: "enum", T: proto3.getEnumType(Channel) },
-  ],
-);
-
-/**
- * ConsentCondition defines conditions
- * required for a consent to take affect
- *
- * @generated from message api.v0alpha.ConsentCondition
- */
-export const ConsentCondition = proto3.makeMessageType(
-  "api.v0alpha.ConsentCondition",
-  () => [
-    { no: 1, name: "consent_condition_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "consent_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 10, name: "days_of_the_week", kind: "enum", T: proto3.getEnumType(Weekday_Enum), repeated: true },
-    { no: 11, name: "time_of_day_from", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: "time_of_day_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: "from_date", kind: "message", T: Timestamp },
-    { no: 14, name: "to_date", kind: "message", T: Timestamp },
   ],
 );
 

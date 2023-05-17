@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../commons/acd_pb.js";
-import type { Channel, ContentType, PhoneType, Rule } from "../commons/compliance_pb.js";
+import type { Channel, ConsentCondition, ContentType, PhoneType, Rule } from "../commons/compliance_pb.js";
 import type { CommType } from "../commons/communication_pb.js";
 import type { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -2540,7 +2540,7 @@ export declare class CreateConsentReq extends Message<CreateConsentReq> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 26;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 26;
    */
   conditions: ConsentCondition[];
 
@@ -2789,7 +2789,7 @@ export declare class Consent extends Message<Consent> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 26;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 26;
    */
   conditions: ConsentCondition[];
 
@@ -2818,77 +2818,6 @@ export declare class Consent extends Message<Consent> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Consent;
 
   static equals(a: Consent | PlainMessage<Consent> | undefined, b: Consent | PlainMessage<Consent> | undefined): boolean;
-}
-
-/**
- * ConsentCondition defines conditions
- * required for a consent to take affect
- *
- * @generated from message api.v0alpha.ConsentCondition
- */
-export declare class ConsentCondition extends Message<ConsentCondition> {
-  /**
-   * Condition id
-   *
-   * @generated from field: int64 consent_condition_id = 1;
-   */
-  consentConditionId: bigint;
-
-  /**
-   * Consent it belongs to
-   *
-   * @generated from field: int64 consent_id = 2;
-   */
-  consentId: bigint;
-
-  /**
-   * Days of week the condition is applicable to
-   *
-   * @generated from field: repeated api.commons.Weekday.Enum days_of_the_week = 10;
-   */
-  daysOfTheWeek: Weekday_Enum[];
-
-  /**
-   * Time of day condition starts
-   *
-   * @generated from field: string time_of_day_from = 11;
-   */
-  timeOfDayFrom: string;
-
-  /**
-   * Time of day condition ends
-   *
-   * @generated from field: string time_of_day_to = 12;
-   */
-  timeOfDayTo: string;
-
-  /**
-   * Date condition starts
-   *
-   * @generated from field: google.protobuf.Timestamp from_date = 13;
-   */
-  fromDate?: Timestamp;
-
-  /**
-   * Date condition ends
-   *
-   * @generated from field: google.protobuf.Timestamp to_date = 14;
-   */
-  toDate?: Timestamp;
-
-  constructor(data?: PartialMessage<ConsentCondition>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ConsentCondition";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConsentCondition;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConsentCondition;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConsentCondition;
-
-  static equals(a: ConsentCondition | PlainMessage<ConsentCondition> | undefined, b: ConsentCondition | PlainMessage<ConsentCondition> | undefined): boolean;
 }
 
 /**
@@ -3027,7 +2956,7 @@ export declare class UpdateConsentReq extends Message<UpdateConsentReq> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 26;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 26;
    */
   conditions: ConsentCondition[];
 
@@ -3812,7 +3741,7 @@ export declare class ConsentByContent extends Message<ConsentByContent> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 22;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 22;
    */
   conditions: ConsentCondition[];
 
@@ -3997,7 +3926,7 @@ export declare class GetConsentByProfileAndContentRes extends Message<GetConsent
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 22;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 22;
    */
   conditions: ConsentCondition[];
 

@@ -3,9 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Month, Weekday } from "./enums_pb.js";
+import type { Month, Weekday_Enum } from "./enums_pb.js";
 
 /**
  * @generated from enum api.commons.Verb
@@ -400,9 +400,9 @@ export declare class TimeExp extends Message<TimeExp> {
  */
 export declare class WeekdayExp extends Message<WeekdayExp> {
   /**
-   * @generated from field: api.commons.Weekday day = 1;
+   * @generated from field: api.commons.Weekday.Enum day = 1;
    */
-  day?: Weekday;
+  day: Weekday_Enum;
 
   /**
    * @generated from field: string text = 2;
@@ -978,5 +978,76 @@ export declare class Field extends Message<Field> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Field;
 
   static equals(a: Field | PlainMessage<Field> | undefined, b: Field | PlainMessage<Field> | undefined): boolean;
+}
+
+/**
+ * ConsentCondition defines conditions
+ * required for a consent to take affect
+ *
+ * @generated from message api.commons.ConsentCondition
+ */
+export declare class ConsentCondition extends Message<ConsentCondition> {
+  /**
+   * Condition id
+   *
+   * @generated from field: int64 consent_condition_id = 1;
+   */
+  consentConditionId: bigint;
+
+  /**
+   * Consent it belongs to
+   *
+   * @generated from field: int64 consent_id = 2;
+   */
+  consentId: bigint;
+
+  /**
+   * Days of week the condition is applicable to
+   *
+   * @generated from field: repeated api.commons.Weekday.Enum days_of_the_week = 10;
+   */
+  daysOfTheWeek: Weekday_Enum[];
+
+  /**
+   * Time of day condition starts
+   *
+   * @generated from field: string time_of_day_from = 11;
+   */
+  timeOfDayFrom: string;
+
+  /**
+   * Time of day condition ends
+   *
+   * @generated from field: string time_of_day_to = 12;
+   */
+  timeOfDayTo: string;
+
+  /**
+   * Date condition starts
+   *
+   * @generated from field: google.protobuf.Timestamp from_date = 13;
+   */
+  fromDate?: Timestamp;
+
+  /**
+   * Date condition ends
+   *
+   * @generated from field: google.protobuf.Timestamp to_date = 14;
+   */
+  toDate?: Timestamp;
+
+  constructor(data?: PartialMessage<ConsentCondition>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ConsentCondition";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConsentCondition;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConsentCondition;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConsentCondition;
+
+  static equals(a: ConsentCondition | PlainMessage<ConsentCondition> | undefined, b: ConsentCondition | PlainMessage<ConsentCondition> | undefined): boolean;
 }
 
