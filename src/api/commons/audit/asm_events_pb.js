@@ -130,3 +130,15 @@ export const AsmResumeEvent = proto3.makeMessageType(
   ],
 );
 
+/**
+ * AsmConversationPulledEvent -
+ *
+ * @generated from message api.commons.audit.AsmConversationPulledEvent
+ */
+export const AsmConversationPulledEvent = proto3.makeMessageType(
+  "api.commons.audit.AsmConversationPulledEvent",
+  () => [
+    { no: 1, name: "conversation", kind: "message", T: OmniConversation },
+  ],
+);
+
