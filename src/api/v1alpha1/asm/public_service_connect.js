@@ -18,9 +18,8 @@
 // @ts-nocheck
 
 import { AsmSession, AssignNewConversationReq, AssignNewConversationRes, CreateSessionReq, CreateSessionRes, DisableVoiceReq, DisableVoiceRes, EnableVoiceReq, EnableVoiceRes, EndSessionReq, EndSessionRes, GetCurrentSessionReq, GetQueuesDetailsReq, ListAgentsReq, ListAgentsRes, ListConversationsReq, ListConversationsRes, ManagerStreamAgentStateReq, PushEventsReq, PushEventsRes, SetConversationCollectedDataReq, SetConversationCollectedDataRes, StreamAgentStateReq } from "./service_pb.js";
-import { StreamAgentStateRes } from "../../commons/asm_pb.js";
+import { ManagerStreamAgentStateRes, StreamAgentStateRes } from "../../commons/asm_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { AgentState } from "../../commons/acd_pb.js";
 import { GetQueuesDetailsRes } from "../../commons/omnichannel_pb.js";
 
 /**
@@ -49,7 +48,7 @@ export const Asm = {
     managerStreamAgentState: {
       name: "ManagerStreamAgentState",
       I: ManagerStreamAgentStateReq,
-      O: AgentState,
+      O: ManagerStreamAgentStateRes,
       kind: MethodKind.ServerStreaming,
     },
     /**

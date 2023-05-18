@@ -94,6 +94,17 @@ export const StreamAgentStateRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.ManagerStreamAgentStateRes
+ */
+export const ManagerStreamAgentStateRes = proto3.makeMessageType(
+  "api.commons.ManagerStreamAgentStateRes",
+  () => [
+    { no: 1, name: "state", kind: "message", T: AgentState, oneof: "manager_agent_state" },
+    { no: 2, name: "heart_beat", kind: "message", T: KeepAlive, oneof: "manager_agent_state" },
+  ],
+);
+
+/**
  * @generated from message api.commons.KeepAlive
  */
 export const KeepAlive = proto3.makeMessageType(
