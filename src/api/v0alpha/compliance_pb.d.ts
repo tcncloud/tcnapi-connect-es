@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../commons/acd_pb.js";
-import type { Channel, ConsentCondition, ContentType, Rule, ScenarioData, ScenarioResult } from "../commons/compliance_pb.js";
+import type { Channel, ConsentCondition, ContentType, Rule, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
 import type { CommType } from "../commons/communication_pb.js";
 import type { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -185,41 +185,6 @@ export declare class ScrubList extends Message<ScrubList> {
 }
 
 /**
- * Scrub entry details information
- *
- * @generated from message api.v0alpha.ScrubEntryDetails
- */
-export declare class ScrubEntryDetails extends Message<ScrubEntryDetails> {
-  /**
-   * entry content (phone number, sms, email ...)
-   *
-   * @generated from field: string content = 1;
-   */
-  content: string;
-
-  /**
-   * date when entry should expire
-   *
-   * @generated from field: google.protobuf.Timestamp expiration_date = 2;
-   */
-  expirationDate?: Timestamp;
-
-  constructor(data?: PartialMessage<ScrubEntryDetails>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ScrubEntryDetails";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScrubEntryDetails;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScrubEntryDetails;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScrubEntryDetails;
-
-  static equals(a: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined, b: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined): boolean;
-}
-
-/**
  * @generated from message api.v0alpha.CreateScrubListReq
  */
 export declare class CreateScrubListReq extends Message<CreateScrubListReq> {
@@ -246,7 +211,7 @@ export declare class CreateScrubListReq extends Message<CreateScrubListReq> {
   countryCode: string;
 
   /**
-   * @generated from field: repeated api.v0alpha.ScrubEntryDetails scrub_entry_details = 13;
+   * @generated from field: repeated api.commons.ScrubEntryDetails scrub_entry_details = 13;
    */
   scrubEntryDetails: ScrubEntryDetails[];
 
@@ -304,7 +269,7 @@ export declare class AddScrubListEntriesReq extends Message<AddScrubListEntriesR
   /**
    * the list of scrub entries that are sent in order to be added
    *
-   * @generated from field: repeated api.v0alpha.ScrubEntryDetails scrub_entry_details = 13;
+   * @generated from field: repeated api.commons.ScrubEntryDetails scrub_entry_details = 13;
    */
   scrubEntryDetails: ScrubEntryDetails[];
 
@@ -3598,6 +3563,11 @@ export declare class GetConsentByProfileAndContentReq extends Message<GetConsent
    * @generated from field: api.commons.ContentType content_type = 5;
    */
   contentType: ContentType;
+
+  /**
+   * @generated from field: api.commons.Channel channel_type = 6;
+   */
+  channelType: Channel;
 
   constructor(data?: PartialMessage<GetConsentByProfileAndContentReq>);
 

@@ -5,7 +5,7 @@
 
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../commons/acd_pb.js";
-import { Channel, ConsentCondition, ContentType, Rule, ScenarioData, ScenarioResult } from "../commons/compliance_pb.js";
+import { Channel, ConsentCondition, ContentType, Rule, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
 import { CommType } from "../commons/communication_pb.js";
 import { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -60,19 +60,6 @@ export const ScrubList = proto3.makeMessageType(
   () => [
     { no: 2, name: "list_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "entries", kind: "message", T: ScrubEntry, repeated: true },
-  ],
-);
-
-/**
- * Scrub entry details information
- *
- * @generated from message api.v0alpha.ScrubEntryDetails
- */
-export const ScrubEntryDetails = proto3.makeMessageType(
-  "api.v0alpha.ScrubEntryDetails",
-  () => [
-    { no: 1, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "expiration_date", kind: "message", T: Timestamp },
   ],
 );
 
@@ -1239,6 +1226,7 @@ export const GetConsentByProfileAndContentReq = proto3.makeMessageType(
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "profile_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "content_type", kind: "enum", T: proto3.getEnumType(ContentType) },
+    { no: 6, name: "channel_type", kind: "enum", T: proto3.getEnumType(Channel) },
   ],
 );
 

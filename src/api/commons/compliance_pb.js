@@ -454,3 +454,16 @@ export const ScenarioRuleResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Scrub entry details information
+ *
+ * @generated from message api.commons.ScrubEntryDetails
+ */
+export const ScrubEntryDetails = proto3.makeMessageType(
+  "api.commons.ScrubEntryDetails",
+  () => [
+    { no: 1, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expiration_date", kind: "message", T: Timestamp },
+  ],
+);
+

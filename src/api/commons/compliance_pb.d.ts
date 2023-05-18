@@ -1266,3 +1266,38 @@ export declare class ScenarioRuleResponse extends Message<ScenarioRuleResponse> 
   static equals(a: ScenarioRuleResponse | PlainMessage<ScenarioRuleResponse> | undefined, b: ScenarioRuleResponse | PlainMessage<ScenarioRuleResponse> | undefined): boolean;
 }
 
+/**
+ * Scrub entry details information
+ *
+ * @generated from message api.commons.ScrubEntryDetails
+ */
+export declare class ScrubEntryDetails extends Message<ScrubEntryDetails> {
+  /**
+   * entry content (phone number, sms, email ...)
+   *
+   * @generated from field: string content = 1;
+   */
+  content: string;
+
+  /**
+   * date when entry should expire
+   *
+   * @generated from field: google.protobuf.Timestamp expiration_date = 2;
+   */
+  expirationDate?: Timestamp;
+
+  constructor(data?: PartialMessage<ScrubEntryDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ScrubEntryDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScrubEntryDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScrubEntryDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScrubEntryDetails;
+
+  static equals(a: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined, b: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined): boolean;
+}
+
