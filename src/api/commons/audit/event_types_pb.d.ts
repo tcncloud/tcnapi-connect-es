@@ -435,6 +435,13 @@ export declare enum EventType {
   ASM_RESUME_EVENT = 408,
 
   /**
+   * asm conversation pulled event
+   *
+   * @generated from enum value: ASM_CONVERSATION_PULLED_EVENT = 409;
+   */
+  ASM_CONVERSATION_PULLED_EVENT = 409,
+
+  /**
    * Scorecards
    * create question event
    *

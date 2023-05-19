@@ -9,7 +9,7 @@ import type { EventType } from "./event_types_pb.js";
 import type { DummyEvent } from "./events_pb.js";
 import type { VanaBillingReportEvent, VanaFlagEvent, VanaFlagReviewEvent, VanaFlagSummaryEvent } from "./vana_events_pb.js";
 import type { OmnichannelAgentAssignConversationEvent, OmnichannelAgentMessageUnitsEvent, OmnichannelAgentReassignConversationEvent, OmnichannelAgentSuspendEvent, OmnichannelAgentTextMessageEvent, OmnichannelAgentUnassignConversationEvent, OmnichannelArchiveCampaignEvent, OmnichannelArchiveModuleEvent, OmnichannelBeginWrapUpEvent, OmnichannelCloseConversationEvent, OmnichannelCompleteCampaignEvent, OmnichannelCompleteModuleEvent, OmnichannelConnectedInboxCreatedEvent, OmnichannelConnectedInboxPollEvent, OmnichannelCreateCampaignEvent, OmnichannelCreateConversationEvent, OmnichannelCreateProjectEvent, OmnichannelCustomerMessageUnitsEvent, OmnichannelCustomerTextMessageEvent, OmnichannelDailyConversationReportEvent, OmnichannelDailyProjectReportEvent, OmnichannelErrorModuleEvent, OmnichannelFailModuleEvent, OmnichannelFinishWrapUpEvent, OmnichannelManagerMessageUnitsEvent, OmnichannelManagerTextMessageEvent, OmnichannelModuleInitialReplyEvent, OmnichannelPauseCampaignEvent, OmnichannelPauseModuleEvent, OmnichannelPaymentLinkSentEvent, OmnichannelResumeCampaignEvent, OmnichannelResumeModuleEvent, OmnichannelScheduleModuleEvent, OmnichannelSetConversationCollectedDataEvent, OmnichannelSmsMessageSentModuleEvent, OmnichannelStartCampaignEvent, OmnichannelStartModuleEvent, OmnichannelSuccessModuleEvent, OmnichannelSystemMessageUnitsEvent, OmnichannelT10Event, OmnichannelT11Event, OmnichannelTaskMessageSentEvent, OmnichannelUpdateCampaignEvent, OmnichannelUpdateModuleEvent } from "./omnichannel_events_pb.js";
-import type { AsmActivateConversationEvent, AsmAgentLoginEvent, AsmAgentLogoutEvent, AsmAgentStateChangedEvent, AsmDeactivateConversationEvent, AsmOpenOmniAgentEvent, AsmOpenVoiceEvent, AsmPauseEvent, AsmResumeEvent } from "./asm_events_pb.js";
+import type { AsmActivateConversationEvent, AsmAgentLoginEvent, AsmAgentLogoutEvent, AsmAgentStateChangedEvent, AsmConversationPulledEvent, AsmDeactivateConversationEvent, AsmOpenOmniAgentEvent, AsmOpenVoiceEvent, AsmPauseEvent, AsmResumeEvent } from "./asm_events_pb.js";
 import type { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, ScorecardsCreateCategoryEvent, ScorecardsCreateEvaluationEvent, ScorecardsCreateEvaluationQuestionEvent, ScorecardsCreateQuestionEvent, ScorecardsCreateScorecardEvent, ScorecardsCreateScorecardQuestionEvent, ScorecardsCreateSectionEvent, ScorecardsDeleteCategoryEvent, ScorecardsDeleteEvaluationEvent, ScorecardsDeleteEvaluationQuestionEvent, ScorecardsDeleteQuestionEvent, ScorecardsDeleteScorecardEvent, ScorecardsDeleteScorecardQuestionEvent, ScorecardsDeleteSectionEvent, ScorecardsUpdateCategoryEvent, ScorecardsUpdateEvaluationEvent, ScorecardsUpdateEvaluationQuestionEvent, ScorecardsUpdateQuestionEvent, ScorecardsUpdateScorecardEvent, ScorecardsUpdateScorecardQuestionEvent, ScorecardsUpdateSectionEvent } from "./scorecards_events_pb.js";
 import type { TicketEvent } from "./tickets_events_pb.js";
 import type { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
@@ -523,6 +523,14 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: AsmResumeEvent;
     case: "asmResumeEvent";
+  } | {
+    /**
+     * asm conversation pulled event
+     *
+     * @generated from field: api.commons.audit.AsmConversationPulledEvent asm_conversation_pulled_event = 409;
+     */
+    value: AsmConversationPulledEvent;
+    case: "asmConversationPulledEvent";
   } | {
     /**
      * Scorecards events class 500
