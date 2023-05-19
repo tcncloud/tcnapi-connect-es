@@ -7,6 +7,18 @@ import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { CallType_Enum } from "./acd_pb.js";
 
 /**
+ * @generated from enum api.commons.CategoryType
+ */
+export const CategoryType = proto3.makeEnum(
+  "api.commons.CategoryType",
+  [
+    {no: 0, name: "INVALID"},
+    {no: 1, name: "SKILL_CALLS"},
+    {no: 2, name: "MANUAL_DIAL"},
+  ],
+);
+
+/**
  * Evaluation is how a scorecard gets evaluated.
  * It is not a boolean because it might grow (i.e. MIXED).
  *
@@ -133,6 +145,7 @@ export const Category = proto3.makeMessageType(
     { no: 7, name: "version", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 10, name: "call_types", kind: "enum", T: proto3.getEnumType(CallType_Enum), repeated: true },
     { no: 11, name: "is_system", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "category_type", kind: "enum", T: proto3.getEnumType(CategoryType) },
   ],
 );
 
