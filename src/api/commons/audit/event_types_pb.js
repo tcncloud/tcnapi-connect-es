@@ -85,7 +85,6 @@ export const EventType = proto3.makeEnum(
     {no: 406, name: "ASM_AGENT_LOGOUT"},
     {no: 407, name: "ASM_PAUSE_EVENT"},
     {no: 408, name: "ASM_RESUME_EVENT"},
-    {no: 409, name: "ASM_CONVERSATION_PULLED_EVENT"},
     {no: 500, name: "SCORECARDS_CREATE_QUESTION_EVENT"},
     {no: 501, name: "SCORECARDS_UPDATE_QUESTION_EVENT"},
     {no: 502, name: "SCORECARDS_DELETE_QUESTION_EVENT"},

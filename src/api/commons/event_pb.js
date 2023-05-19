@@ -86,7 +86,6 @@ export const AsmEvent = proto3.makeMessageType(
     { no: 8, name: "send_status_asm_event", kind: "message", T: SendStatusAsmEvent, oneof: "event" },
     { no: 9, name: "pause_event", kind: "message", T: PauseEvent, oneof: "event" },
     { no: 10, name: "resume_event", kind: "message", T: ResumeEvent, oneof: "event" },
-    { no: 11, name: "conversation_pulled_event", kind: "message", T: ConversationPulledEvent, oneof: "event" },
   ],
 );
 
@@ -146,15 +145,5 @@ export const PauseEvent = proto3.makeMessageType(
 export const ResumeEvent = proto3.makeMessageType(
   "api.commons.ResumeEvent",
   [],
-);
-
-/**
- * @generated from message api.commons.ConversationPulledEvent
- */
-export const ConversationPulledEvent = proto3.makeMessageType(
-  "api.commons.ConversationPulledEvent",
-  () => [
-    { no: 1, name: "conversation", kind: "message", T: OmniConversation },
-  ],
 );
 

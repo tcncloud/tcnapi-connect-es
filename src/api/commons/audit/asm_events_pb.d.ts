@@ -365,31 +365,3 @@ export declare class AsmResumeEvent extends Message<AsmResumeEvent> {
   static equals(a: AsmResumeEvent | PlainMessage<AsmResumeEvent> | undefined, b: AsmResumeEvent | PlainMessage<AsmResumeEvent> | undefined): boolean;
 }
 
-/**
- * AsmConversationPulledEvent -
- *
- * @generated from message api.commons.audit.AsmConversationPulledEvent
- */
-export declare class AsmConversationPulledEvent extends Message<AsmConversationPulledEvent> {
-  /**
-   * the conversation pulled
-   *
-   * @generated from field: api.commons.OmniConversation conversation = 1;
-   */
-  conversation?: OmniConversation;
-
-  constructor(data?: PartialMessage<AsmConversationPulledEvent>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.audit.AsmConversationPulledEvent";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AsmConversationPulledEvent;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AsmConversationPulledEvent;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AsmConversationPulledEvent;
-
-  static equals(a: AsmConversationPulledEvent | PlainMessage<AsmConversationPulledEvent> | undefined, b: AsmConversationPulledEvent | PlainMessage<AsmConversationPulledEvent> | undefined): boolean;
-}
-
