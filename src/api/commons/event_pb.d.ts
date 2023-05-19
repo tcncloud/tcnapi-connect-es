@@ -256,6 +256,12 @@ export declare class AsmEvent extends Message<AsmEvent> {
      */
     value: ResumeEvent;
     case: "resumeEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.ConversationPulledEvent conversation_pulled_event = 11;
+     */
+    value: ConversationPulledEvent;
+    case: "conversationPulledEvent";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<AsmEvent>);
@@ -419,5 +425,29 @@ export declare class ResumeEvent extends Message<ResumeEvent> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResumeEvent;
 
   static equals(a: ResumeEvent | PlainMessage<ResumeEvent> | undefined, b: ResumeEvent | PlainMessage<ResumeEvent> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ConversationPulledEvent
+ */
+export declare class ConversationPulledEvent extends Message<ConversationPulledEvent> {
+  /**
+   * @generated from field: api.commons.OmniConversation conversation = 1;
+   */
+  conversation?: OmniConversation;
+
+  constructor(data?: PartialMessage<ConversationPulledEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ConversationPulledEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConversationPulledEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConversationPulledEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConversationPulledEvent;
+
+  static equals(a: ConversationPulledEvent | PlainMessage<ConversationPulledEvent> | undefined, b: ConversationPulledEvent | PlainMessage<ConversationPulledEvent> | undefined): boolean;
 }
 

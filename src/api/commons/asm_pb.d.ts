@@ -337,6 +337,42 @@ export declare class StreamAgentStateRes extends Message<StreamAgentStateRes> {
 }
 
 /**
+ * @generated from message api.commons.ManagerStreamAgentStateRes
+ */
+export declare class ManagerStreamAgentStateRes extends Message<ManagerStreamAgentStateRes> {
+  /**
+   * @generated from oneof api.commons.ManagerStreamAgentStateRes.manager_agent_state
+   */
+  managerAgentState: {
+    /**
+     * @generated from field: api.commons.AgentState state = 1;
+     */
+    value: AgentState;
+    case: "state";
+  } | {
+    /**
+     * @generated from field: api.commons.KeepAlive heart_beat = 2;
+     */
+    value: KeepAlive;
+    case: "heartBeat";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<ManagerStreamAgentStateRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ManagerStreamAgentStateRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ManagerStreamAgentStateRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ManagerStreamAgentStateRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ManagerStreamAgentStateRes;
+
+  static equals(a: ManagerStreamAgentStateRes | PlainMessage<ManagerStreamAgentStateRes> | undefined, b: ManagerStreamAgentStateRes | PlainMessage<ManagerStreamAgentStateRes> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.KeepAlive
  */
 export declare class KeepAlive extends Message<KeepAlive> {
