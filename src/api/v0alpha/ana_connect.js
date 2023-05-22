@@ -51,6 +51,7 @@ export const Ana = {
     },
     /**
      * set default time filter for given ana account
+     * org.Permission_EDIT_CLIENT_PREFERENCES
      *
      * @generated from rpc api.v0alpha.Ana.SetDefaultTimeFilter
      */
@@ -62,6 +63,7 @@ export const Ana = {
     },
     /**
      * sets the dashboard that is shown by default for neo
+     * org.Permission_EDIT_CLIENT_PREFERENCES
      *
      * @generated from rpc api.v0alpha.Ana.SetDefaultDashboard
      */
@@ -73,6 +75,7 @@ export const Ana = {
     },
     /**
      * gets account details for the client
+     * org.Permission_VIEW_REPORTS
      *
      * @generated from rpc api.v0alpha.Ana.GetAccount
      */
@@ -106,6 +109,7 @@ export const Ana = {
     },
     /**
      * creates and returns a url to download billing for the month provided or the previous month if none is provided
+     * org.Permission_VIEW_BILLING
      *
      * @generated from rpc api.v0alpha.Ana.GenerateMonthlyBilling
      */
@@ -117,6 +121,7 @@ export const Ana = {
     },
     /**
      * gets the ana_account timezone for the client
+     * org.Permission_VIEW_REPORTS
      *
      * @generated from rpc api.v0alpha.Ana.GetTimeZone
      */
@@ -128,6 +133,7 @@ export const Ana = {
     },
     /**
      * updates the timezone for the account
+     * org.Permission_VIEW_REPORTS
      *
      * @generated from rpc api.v0alpha.Ana.SetTimeZone
      */
@@ -174,6 +180,7 @@ export const Ana = {
     },
     /**
      * enable custom report usage for the client
+     * org.Permission_EDIT_CLIENT_PREFERENCES
      *
      * @generated from rpc api.v0alpha.Ana.EnableCustomReports
      */
@@ -185,6 +192,7 @@ export const Ana = {
     },
     /**
      * disable custom report usage for the client
+     * org.Permission_EDIT_CLIENT_PREFERENCES
      *
      * @generated from rpc api.v0alpha.Ana.DisableCustomReports
      */
@@ -196,6 +204,7 @@ export const Ana = {
     },
     /**
      * allow the client to be adopted by another account
+     * org.Permission_EDIT_CLIENT_PREFERENCES
      *
      * @generated from rpc api.v0alpha.Ana.MakeAdoptable
      */
@@ -207,6 +216,7 @@ export const Ana = {
     },
     /**
      * disallow other accounts from adopting the client
+     * org.Permission_EDIT_CLIENT_PREFERENCES
      *
      * @generated from rpc api.v0alpha.Ana.MakeUnadoptable
      */
