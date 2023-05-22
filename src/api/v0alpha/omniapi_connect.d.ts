@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ArchiveCampaignReq, ArchiveCampaignRes, CannedMessage, CannedMessageGroup, CannedMessageWithGroup, CloseProjectByIdReq, CloseProjectByIdRes, CreateCampaignReq, CreateCannedMessageGroupReq, CreateCannedMessageReq, CreateConnectedInboxRes, CreateCustomUnsubscribeLinkRes, CreateDispositionReq, CreateDispositionRes, CreateProjectReq, CreateProjectRes, CreateSignatureReq, CreateSignatureRes, CreateTasksReq, CreateTasksRes, CreateVerifiedEmailRes, DeleteCannedMessageByIdReq, DeleteCannedMessageByIdRes, DeleteCannedMessageGroupReq, DeleteCannedMessageGroupRes, DeleteConnectedInboxBySidReq, DeleteCustomUnsubscribeLinkReq, DeleteDispositionReq, DeleteSignatureReq, DeleteSignatureRes, DeleteVerifiedEmailReq, EditProjectByIdReq, EditProjectByIdRes, GetAvailableHeadersReq, GetAvailableHeadersRes, GetCampaignByIdReq, GetCannedMessageByIdReq, GetCannedMessageGroupByIdReq, GetConnectedInboxBySidReq, GetOffLoadedTextMessageReq, GetOffLoadedTextMessageRes, GetOmniAttachmentReq, GetPendingGoogleXOAuth2DataReq, GetPendingGoogleXOAuth2DataRes, GetProjectByIdReq, GetTaskReq, GetVerifiedEmailBySidReq, ListCampaignsReq, ListCampaignsRes, ListCannedMessageGroupsReq, ListCannedMessageGroupsRes, ListCannedMessagesByGroupIdReq, ListCannedMessagesByGroupIdRes, ListCannedMessagesReq, ListCannedMessagesRes, ListConnectedInboxesReq, ListConnectedInboxesRes, ListContactListsReq, ListContactListsRes, ListConversationsReq, ListConversationsRes, ListCustomUnsubscribeLinksRes, ListDispositionsReq, ListDispositionsRes, ListMessagesReq, ListProjectsReq, ListProjectsRes, ListSignaturesReq, ListSignaturesRes, ListTasksReq, ListTasksRes, ListVerifiedEmailsReq, ListVerifiedEmailsRes, ManagerListMessagesReq, PauseCampaignReq, PauseCampaignRes, Project, ResendVerifiedEmailReq, ResendVerifiedEmailRes, ResumeCampaignReq, ResumeCampaignRes, SendEmailNotificationReq, SendEmailNotificationRes, SendFeedbackEmailReq, SendFeedbackEmailRes, SendgridAccountByClientReq, SendgridAccountByClientRes, SendOmniMessageReq, SuggestResponseReq, SuggestResponseRes, TestConnectedInboxRes, UpdateCampaignPacingSpeedReq, UpdateCampaignPacingSpeedRes, UpdateCampaignReq, UpdateCampaignRes, UpdateCannedMessageGroupReq, UpdateCannedMessageGroupRes, UpdateCannedMessageReq, UpdateConnectedInboxReq, UpdateCustomUnsubscribeLinkReq, UpdateCustomUnsubscribeLinkRes, UpdateDispositionReq, UpdateSignatureReq, UpdateSignatureRes, UpdateVerifiedEmailReq } from "./omniapi_pb.js";
+import { ArchiveCampaignReq, ArchiveCampaignRes, CannedMessage, CannedMessageGroup, CannedMessageWithGroup, CloseProjectByIdReq, CloseProjectByIdRes, CreateCampaignReq, CreateCannedMessageGroupReq, CreateCannedMessageReq, CreateConnectedInboxRes, CreateCustomUnsubscribeLinkRes, CreateDispositionReq, CreateDispositionRes, CreateProjectReq, CreateProjectRes, CreateSignatureReq, CreateSignatureRes, CreateTasksReq, CreateTasksRes, CreateVerifiedEmailRes, DeleteCannedMessageByIdReq, DeleteCannedMessageByIdRes, DeleteCannedMessageGroupReq, DeleteCannedMessageGroupRes, DeleteConnectedInboxBySidReq, DeleteCustomUnsubscribeLinkReq, DeleteDispositionReq, DeleteSignatureReq, DeleteSignatureRes, DeleteVerifiedEmailReq, EditProjectByIdReq, EditProjectByIdRes, GetAvailableHeadersReq, GetAvailableHeadersRes, GetCampaignByIdReq, GetCannedMessageByIdReq, GetCannedMessageGroupByIdReq, GetConnectedInboxBySidReq, GetOmniAttachmentReq, GetPendingGoogleXOAuth2DataReq, GetPendingGoogleXOAuth2DataRes, GetProjectByIdReq, GetTaskReq, GetVerifiedEmailBySidReq, ListCampaignsReq, ListCampaignsRes, ListCannedMessageGroupsReq, ListCannedMessageGroupsRes, ListCannedMessagesByGroupIdReq, ListCannedMessagesByGroupIdRes, ListCannedMessagesReq, ListCannedMessagesRes, ListConnectedInboxesReq, ListConnectedInboxesRes, ListContactListsReq, ListContactListsRes, ListConversationsReq, ListConversationsRes, ListCustomUnsubscribeLinksRes, ListDispositionsReq, ListDispositionsRes, ListMessagesReq, ListProjectsReq, ListProjectsRes, ListSignaturesReq, ListSignaturesRes, ListTasksReq, ListTasksRes, ListVerifiedEmailsReq, ListVerifiedEmailsRes, ManagerListMessagesReq, PauseCampaignReq, PauseCampaignRes, Project, ResendVerifiedEmailReq, ResendVerifiedEmailRes, ResumeCampaignReq, ResumeCampaignRes, SendEmailNotificationReq, SendEmailNotificationRes, SendFeedbackEmailReq, SendFeedbackEmailRes, SendgridAccountByClientReq, SendgridAccountByClientRes, SendOmniMessageReq, SuggestResponseReq, SuggestResponseRes, TestConnectedInboxRes, UpdateCampaignPacingSpeedReq, UpdateCampaignPacingSpeedRes, UpdateCampaignReq, UpdateCampaignRes, UpdateCannedMessageGroupReq, UpdateCannedMessageGroupRes, UpdateCannedMessageReq, UpdateConnectedInboxReq, UpdateCustomUnsubscribeLinkReq, UpdateCustomUnsubscribeLinkRes, UpdateDispositionReq, UpdateSignatureReq, UpdateSignatureRes, UpdateVerifiedEmailReq } from "./omniapi_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { ConnectedInbox, OmniAttachment, OmniCampaign, OmniCustomUnsubscribeLink, OmniMessage, OmniTask, VerifiedEmail } from "../commons/omnichannel_pb.js";
 import { Empty } from "../commons/types_pb.js";
@@ -56,19 +56,6 @@ export declare const OmniApi: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * List campaigns defined by ListCampaignsReq.
-     * The method will return a ListCampaignsReq entity that will contain
-     * all the campaigns within the specified filter.
-     *
-     * @generated from rpc api.v0alpha.OmniApi.ListCampaigns
-     */
-    readonly listCampaigns: {
-      readonly name: "ListCampaigns",
-      readonly I: typeof ListCampaignsReq,
-      readonly O: typeof ListCampaignsRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
      * pause a campaign
      *
      * @generated from rpc api.v0alpha.OmniApi.PauseCampaign
@@ -115,42 +102,6 @@ export declare const OmniApi: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * Get the text message for an off-loaded text message payload. Used
-     * only for managers/agents/users. It is not for customers.
-     *
-     * @generated from rpc api.v0alpha.OmniApi.GetOffLoadedTextMessage
-     */
-    readonly getOffLoadedTextMessage: {
-      readonly name: "GetOffLoadedTextMessage",
-      readonly I: typeof GetOffLoadedTextMessageReq,
-      readonly O: typeof GetOffLoadedTextMessageRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Get a stream of new conversation message for a given conversation. Used
-     * only for managers. It is not for customers.
-     *
-     * @generated from rpc api.v0alpha.OmniApi.ManagerListMessages
-     */
-    readonly managerListMessages: {
-      readonly name: "ManagerListMessages",
-      readonly I: typeof ManagerListMessagesReq,
-      readonly O: typeof OmniMessage,
-      readonly kind: MethodKind.ServerStreaming,
-    },
-    /**
-     * Get a stream of conversation message for a given conversation. Used
-     * only for agents/users. It is not for customers.
-     *
-     * @generated from rpc api.v0alpha.OmniApi.ListMessages
-     */
-    readonly listMessages: {
-      readonly name: "ListMessages",
-      readonly I: typeof ListMessagesReq,
-      readonly O: typeof OmniMessage,
-      readonly kind: MethodKind.ServerStreaming,
-    },
-    /**
      * Send a chat message
      *
      * @generated from rpc api.v0alpha.OmniApi.SendOmniMessage
@@ -170,30 +121,6 @@ export declare const OmniApi: {
       readonly name: "ManagerSendOmniMessage",
       readonly I: typeof SendOmniMessageReq,
       readonly O: typeof Empty,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * lists all conversation and assigned users for a given date range.
-     * Required permissions:
-     *    OMNI_BOSS
-     *
-     * @generated from rpc api.v0alpha.OmniApi.ManagerListConversations
-     */
-    readonly managerListConversations: {
-      readonly name: "ManagerListConversations",
-      readonly I: typeof ListConversationsReq,
-      readonly O: typeof ListConversationsRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Experimental API
-     *
-     * @generated from rpc api.v0alpha.OmniApi.SuggestResponse
-     */
-    readonly suggestResponse: {
-      readonly name: "SuggestResponse",
-      readonly I: typeof SuggestResponseReq,
-      readonly O: typeof SuggestResponseRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -282,6 +209,56 @@ export declare const OmniApi: {
       readonly name: "DeleteCustomUnsubscribeLink",
       readonly I: typeof DeleteCustomUnsubscribeLinkReq,
       readonly O: typeof Empty,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * List campaigns defined by ListCampaignsReq.
+     * The method will return a ListCampaignsReq entity that will contain
+     * all the campaigns within the specified filter.
+     *
+     * @generated from rpc api.v0alpha.OmniApi.ListCampaigns
+     */
+    readonly listCampaigns: {
+      readonly name: "ListCampaigns",
+      readonly I: typeof ListCampaignsReq,
+      readonly O: typeof ListCampaignsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Get a stream of new conversation message for a given conversation. Used
+     * only for managers. It is not for customers.
+     *
+     * @generated from rpc api.v0alpha.OmniApi.ManagerListMessages
+     */
+    readonly managerListMessages: {
+      readonly name: "ManagerListMessages",
+      readonly I: typeof ManagerListMessagesReq,
+      readonly O: typeof OmniMessage,
+      readonly kind: MethodKind.ServerStreaming,
+    },
+    /**
+     * Get a stream of conversation message for a given conversation. Used
+     * only for agents/users. It is not for customers.
+     *
+     * @generated from rpc api.v0alpha.OmniApi.ListMessages
+     */
+    readonly listMessages: {
+      readonly name: "ListMessages",
+      readonly I: typeof ListMessagesReq,
+      readonly O: typeof OmniMessage,
+      readonly kind: MethodKind.ServerStreaming,
+    },
+    /**
+     * lists all conversation and assigned users for a given date range.
+     * Required permissions:
+     *    OMNI_BOSS
+     *
+     * @generated from rpc api.v0alpha.OmniApi.ManagerListConversations
+     */
+    readonly managerListConversations: {
+      readonly name: "ManagerListConversations",
+      readonly I: typeof ListConversationsReq,
+      readonly O: typeof ListConversationsRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -442,22 +419,6 @@ export declare const OmniApi: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * Send email notification defined by SendEmailNotificationReq message for the specified
-     * subject, message and array of to email addresses.
-     * The method will return a stream of SendEmailNotificationRes messages
-     * containing result true/false after notified by email for the client_sid.
-     * Required permissions:
-     *      OMNI_BOSS
-     *
-     * @generated from rpc api.v0alpha.OmniApi.SendEmailNotification
-     */
-    readonly sendEmailNotification: {
-      readonly name: "SendEmailNotification",
-      readonly I: typeof SendEmailNotificationReq,
-      readonly O: typeof SendEmailNotificationRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
      * Delete verify email record based on verified email id defined by
      * DeleteVerifiedEmailReq for the specified client.
      * This method will return a DeleteVerifiedEmailRes message/entity.
@@ -540,6 +501,22 @@ export declare const OmniApi: {
       readonly name: "GetPendingGoogleXOAuth2Data",
       readonly I: typeof GetPendingGoogleXOAuth2DataReq,
       readonly O: typeof GetPendingGoogleXOAuth2DataRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Send email notification defined by SendEmailNotificationReq message for the specified
+     * subject, message and array of to email addresses.
+     * The method will return a stream of SendEmailNotificationRes messages
+     * containing result true/false after notified by email for the client_sid.
+     * Required permissions:
+     *      OMNI_BOSS
+     *
+     * @generated from rpc api.v0alpha.OmniApi.SendEmailNotification
+     */
+    readonly sendEmailNotification: {
+      readonly name: "SendEmailNotification",
+      readonly I: typeof SendEmailNotificationReq,
+      readonly O: typeof SendEmailNotificationRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -627,6 +604,17 @@ export declare const OmniApi: {
       readonly name: "UpdateSignature",
       readonly I: typeof UpdateSignatureReq,
       readonly O: typeof UpdateSignatureRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * SuggestResponse
+     *
+     * @generated from rpc api.v0alpha.OmniApi.SuggestResponse
+     */
+    readonly suggestResponse: {
+      readonly name: "SuggestResponse",
+      readonly I: typeof SuggestResponseReq,
+      readonly O: typeof SuggestResponseRes,
       readonly kind: MethodKind.Unary,
     },
     /**
