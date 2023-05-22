@@ -467,3 +467,15 @@ export const ScrubEntryDetails = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.commons.RuleResponse
+ */
+export const RuleResponse = proto3.makeMessageType(
+  "api.commons.RuleResponse",
+  () => [
+    { no: 1, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "permit", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "plugin_response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

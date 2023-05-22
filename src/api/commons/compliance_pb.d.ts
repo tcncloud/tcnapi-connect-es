@@ -1301,3 +1301,43 @@ export declare class ScrubEntryDetails extends Message<ScrubEntryDetails> {
   static equals(a: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined, b: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.commons.RuleResponse
+ */
+export declare class RuleResponse extends Message<RuleResponse> {
+  /**
+   * the rule text
+   *
+   * @generated from field: string rule_text = 1;
+   */
+  ruleText: string;
+
+  /**
+   * indicates if the rule allowed or denied the request
+   *
+   * @generated from field: bool permit = 2;
+   */
+  permit: boolean;
+
+  /**
+   * the response from the plugin
+   *
+   * @generated from field: string plugin_response = 3;
+   */
+  pluginResponse: string;
+
+  constructor(data?: PartialMessage<RuleResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.RuleResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RuleResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RuleResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RuleResponse;
+
+  static equals(a: RuleResponse | PlainMessage<RuleResponse> | undefined, b: RuleResponse | PlainMessage<RuleResponse> | undefined): boolean;
+}
+

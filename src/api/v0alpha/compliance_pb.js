@@ -4,8 +4,7 @@
 // @ts-nocheck
 
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
-import { CallType_Enum } from "../commons/acd_pb.js";
-import { Channel, ConsentCondition, ContentType, Rule, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
+import { Channel, ConsentCondition, ContentType, Rule, RuleResponse, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
 import { CommType } from "../commons/communication_pb.js";
 import { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -22,20 +21,8 @@ export const ProcessOutboundCallReq = proto3.makeMessageType(
     { no: 3, name: "phone_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "call_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 5, name: "source_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 6, name: "source_field", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
+    { no: 6, name: "source_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.RuleResponse
- */
-export const RuleResponse = proto3.makeMessageType(
-  "api.v0alpha.RuleResponse",
-  () => [
-    { no: 1, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "permit", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 3, name: "plugin_response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

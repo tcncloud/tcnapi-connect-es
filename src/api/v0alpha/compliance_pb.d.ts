@@ -5,8 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { CallType_Enum } from "../commons/acd_pb.js";
-import type { Channel, ConsentCondition, ContentType, Rule, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
+import type { Channel, ConsentCondition, ContentType, Rule, RuleResponse, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
 import type { CommType } from "../commons/communication_pb.js";
 import type { Weekday_Enum } from "../commons/enums_pb.js";
 
@@ -54,9 +53,9 @@ export declare class ProcessOutboundCallReq extends Message<ProcessOutboundCallR
   /**
    * The call type of the caller associated with this process request
    *
-   * @generated from field: api.commons.CallType.Enum source_field = 6;
+   * @generated from field: string source_field = 6;
    */
-  sourceField: CallType_Enum;
+  sourceField: string;
 
   /**
    * The caller id being called from
@@ -81,46 +80,6 @@ export declare class ProcessOutboundCallReq extends Message<ProcessOutboundCallR
 }
 
 /**
- * @generated from message api.v0alpha.RuleResponse
- */
-export declare class RuleResponse extends Message<RuleResponse> {
-  /**
-   * the rule text
-   *
-   * @generated from field: string rule_text = 1;
-   */
-  ruleText: string;
-
-  /**
-   * indicates if the rule allowed or denied the request
-   *
-   * @generated from field: bool permit = 2;
-   */
-  permit: boolean;
-
-  /**
-   * the response from the plugin
-   *
-   * @generated from field: string plugin_response = 3;
-   */
-  pluginResponse: string;
-
-  constructor(data?: PartialMessage<RuleResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.RuleResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RuleResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RuleResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RuleResponse;
-
-  static equals(a: RuleResponse | PlainMessage<RuleResponse> | undefined, b: RuleResponse | PlainMessage<RuleResponse> | undefined): boolean;
-}
-
-/**
  * response given after processing something against a rule set
  *
  * @generated from message api.v0alpha.ProcessRes
@@ -136,7 +95,7 @@ export declare class ProcessRes extends Message<ProcessRes> {
   /**
    * the list of rules checked against
    *
-   * @generated from field: repeated api.v0alpha.RuleResponse rule_responses = 2;
+   * @generated from field: repeated api.commons.RuleResponse rule_responses = 2;
    */
   ruleResponses: RuleResponse[];
 
