@@ -1423,9 +1423,9 @@ export declare class Scorecard extends Message<Scorecard> {
   /**
    * call types supported by scorecard
    *
-   * @generated from field: api.commons.CallType.Enum call_type = 20;
+   * @generated from field: repeated api.commons.CallType.Enum call_types = 20;
    */
-  callType: CallType_Enum;
+  callTypes: CallType_Enum[];
 
   constructor(data?: PartialMessage<Scorecard>);
 

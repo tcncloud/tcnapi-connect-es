@@ -416,7 +416,7 @@ export const Scorecard = proto3.makeMessageType(
     { no: 15, name: "state", kind: "enum", T: proto3.getEnumType(ScorecardState) },
     { no: 16, name: "is_ad_hoc", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 19, name: "custom_field_keys", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 20, name: "call_type", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
+    { no: 20, name: "call_types", kind: "enum", T: proto3.getEnumType(CallType_Enum), repeated: true },
   ],
 );
 
