@@ -4,10 +4,9 @@
 // @ts-nocheck
 
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
-import { CallType_Enum } from "../commons/acd_pb.js";
-import { Channel, ConsentAbsentAction, ContentType, Entity, Environment, PhoneType, PluginType, SubEntity, Verb } from "../commons/compliance_pb.js";
+import { Channel, ConsentCondition, ContentType, Rule, RuleResponse, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
 import { CommType } from "../commons/communication_pb.js";
-import { Month, Weekday_Enum } from "../commons/enums_pb.js";
+import { Weekday_Enum } from "../commons/enums_pb.js";
 
 /**
  * request used to process an outbound call against a rule set
@@ -22,20 +21,8 @@ export const ProcessOutboundCallReq = proto3.makeMessageType(
     { no: 3, name: "phone_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "call_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 5, name: "source_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 6, name: "source_field", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
+    { no: 6, name: "source_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.RuleResponse
- */
-export const RuleResponse = proto3.makeMessageType(
-  "api.v0alpha.RuleResponse",
-  () => [
-    { no: 1, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "permit", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 3, name: "plugin_response", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -60,19 +47,6 @@ export const ScrubList = proto3.makeMessageType(
   () => [
     { no: 2, name: "list_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "entries", kind: "message", T: ScrubEntry, repeated: true },
-  ],
-);
-
-/**
- * Scrub entry details information
- *
- * @generated from message api.v0alpha.ScrubEntryDetails
- */
-export const ScrubEntryDetails = proto3.makeMessageType(
-  "api.v0alpha.ScrubEntryDetails",
-  () => [
-    { no: 1, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "expiration_date", kind: "message", T: Timestamp },
   ],
 );
 
@@ -428,170 +402,6 @@ export const RuleSet = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.Rule
- */
-export const Rule = proto3.makeMessageType(
-  "api.v0alpha.Rule",
-  () => [
-    { no: 1, name: "verb", kind: "enum", T: proto3.getEnumType(Verb) },
-    { no: 2, name: "entity", kind: "enum", T: proto3.getEnumType(Entity) },
-    { no: 3, name: "sub_entity", kind: "enum", T: proto3.getEnumType(SubEntity) },
-    { no: 4, name: "selectors", kind: "message", T: Selector, repeated: true },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.Selector
- */
-export const Selector = proto3.makeMessageType(
-  "api.v0alpha.Selector",
-  () => [
-    { no: 1, name: "time", kind: "message", T: TimeExp, oneof: "selection_rule" },
-    { no: 2, name: "week", kind: "message", T: WeekdayExp, oneof: "selection_rule" },
-    { no: 3, name: "dncl", kind: "message", T: DnclExp, oneof: "selection_rule" },
-    { no: 4, name: "frequency", kind: "message", T: FrequencyExp, oneof: "selection_rule" },
-    { no: 5, name: "location", kind: "message", T: LocationExp, oneof: "selection_rule" },
-    { no: 6, name: "phone_type", kind: "message", T: PhoneTypeExp, oneof: "selection_rule" },
-    { no: 7, name: "month", kind: "message", T: MonthExp, oneof: "selection_rule" },
-    { no: 8, name: "holiday", kind: "message", T: HolidayExp, oneof: "selection_rule" },
-    { no: 9, name: "date", kind: "message", T: DateExp, oneof: "selection_rule" },
-    { no: 10, name: "meta", kind: "message", T: MetaFieldExp, oneof: "selection_rule" },
-    { no: 11, name: "plugin", kind: "message", T: PluginExp, oneof: "selection_rule" },
-  ],
-);
-
-/**
- * Expressions/Selectors
- *
- * @generated from message api.v0alpha.HolidayExp
- */
-export const HolidayExp = proto3.makeMessageType(
-  "api.v0alpha.HolidayExp",
-  () => [
-    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
-    { no: 2, name: "day", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.TimeExp
- */
-export const TimeExp = proto3.makeMessageType(
-  "api.v0alpha.TimeExp",
-  () => [
-    { no: 1, name: "start_hour", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "end_hour", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.WeekdayExp
- */
-export const WeekdayExp = proto3.makeMessageType(
-  "api.v0alpha.WeekdayExp",
-  () => [
-    { no: 1, name: "day", kind: "enum", T: proto3.getEnumType(Weekday_Enum) },
-    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.MonthExp
- */
-export const MonthExp = proto3.makeMessageType(
-  "api.v0alpha.MonthExp",
-  () => [
-    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
-    { no: 2, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.DateExp
- */
-export const DateExp = proto3.makeMessageType(
-  "api.v0alpha.DateExp",
-  () => [
-    { no: 1, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
-    { no: 2, name: "day", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "year", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.DnclExp
- */
-export const DnclExp = proto3.makeMessageType(
-  "api.v0alpha.DnclExp",
-  () => [
-    { no: 1, name: "list_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "field_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.FrequencyExp
- */
-export const FrequencyExp = proto3.makeMessageType(
-  "api.v0alpha.FrequencyExp",
-  () => [
-    { no: 1, name: "count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.LocationExp
- */
-export const LocationExp = proto3.makeMessageType(
-  "api.v0alpha.LocationExp",
-  () => [
-    { no: 1, name: "location", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.PhoneTypeExp
- */
-export const PhoneTypeExp = proto3.makeMessageType(
-  "api.v0alpha.PhoneTypeExp",
-  () => [
-    { no: 1, name: "phone_type", kind: "enum", T: proto3.getEnumType(PhoneType) },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.MetaFieldExp
- */
-export const MetaFieldExp = proto3.makeMessageType(
-  "api.v0alpha.MetaFieldExp",
-  () => [
-    { no: 1, name: "field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.PluginExp
- */
-export const PluginExp = proto3.makeMessageType(
-  "api.v0alpha.PluginExp",
-  () => [
-    { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(PluginType) },
-    { no: 4, name: "tcn_strict", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "license_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "reference_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "from_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "env", kind: "enum", T: proto3.getEnumType(Environment) },
-    { no: 7, name: "profile", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "content_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "topic", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: "absent_action", kind: "enum", T: proto3.getEnumType(ConsentAbsentAction) },
-    { no: 10, name: "date_last_contact", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
  * @generated from message api.v0alpha.GetDefaultRulesReq
  */
 export const GetDefaultRulesReq = proto3.makeMessageType(
@@ -697,18 +507,6 @@ export const ExportScrubListRes = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.CountryCode
- */
-export const CountryCode = proto3.makeMessageType(
-  "api.v0alpha.CountryCode",
-  () => [
-    { no: 1, name: "country_code", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "country_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "country_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
  * @generated from message api.v0alpha.Scenario
  */
 export const Scenario = proto3.makeMessageType(
@@ -719,33 +517,6 @@ export const Scenario = proto3.makeMessageType(
     { no: 4, name: "should_deny", kind: "message", T: ScenarioData },
     { no: 5, name: "last_execution_result", kind: "message", T: ScenarioResult },
     { no: 6, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ScenarioData
- */
-export const ScenarioData = proto3.makeMessageType(
-  "api.v0alpha.ScenarioData",
-  () => [
-    { no: 1, name: "comm_type", kind: "message", T: CommType },
-    { no: 2, name: "phone_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "call_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
-    { no: 6, name: "time_of_call", kind: "message", T: Timestamp },
-    { no: 7, name: "frequency_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 8, name: "frequency_duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 9, name: "dncl_blocks", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 10, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: "county", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 14, name: "province", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 15, name: "phone_type", kind: "enum", T: proto3.getEnumType(PhoneType) },
-    { no: 16, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 17, name: "holidays", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 18, name: "country_code_data", kind: "message", T: CountryCode },
   ],
 );
 
@@ -848,30 +619,6 @@ export const RunAssignedScenariosRes = proto3.makeMessageType(
     { no: 2, name: "results", kind: "message", T: ScenarioResult, repeated: true },
     { no: 4, name: "passed_value", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "cpl_rule_set_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ScenarioResult
- */
-export const ScenarioResult = proto3.makeMessageType(
-  "api.v0alpha.ScenarioResult",
-  () => [
-    { no: 5, name: "passed_value", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "should_allow_responses", kind: "message", T: ScenarioRuleResponse, repeated: true },
-    { no: 3, name: "should_deny_responses", kind: "message", T: ScenarioRuleResponse, repeated: true },
-    { no: 4, name: "scenario_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ScenarioRuleResponse
- */
-export const ScenarioRuleResponse = proto3.makeMessageType(
-  "api.v0alpha.ScenarioRuleResponse",
-  () => [
-    { no: 1, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "permit_value", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -1126,25 +873,6 @@ export const Consent = proto3.makeMessageType(
     { no: 26, name: "conditions", kind: "message", T: ConsentCondition, repeated: true },
     { no: 27, name: "content_type", kind: "enum", T: proto3.getEnumType(ContentType) },
     { no: 28, name: "channel_type", kind: "enum", T: proto3.getEnumType(Channel) },
-  ],
-);
-
-/**
- * ConsentCondition defines conditions
- * required for a consent to take affect
- *
- * @generated from message api.v0alpha.ConsentCondition
- */
-export const ConsentCondition = proto3.makeMessageType(
-  "api.v0alpha.ConsentCondition",
-  () => [
-    { no: 1, name: "consent_condition_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "consent_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 10, name: "days_of_the_week", kind: "enum", T: proto3.getEnumType(Weekday_Enum), repeated: true },
-    { no: 11, name: "time_of_day_from", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: "time_of_day_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: "from_date", kind: "message", T: Timestamp },
-    { no: 14, name: "to_date", kind: "message", T: Timestamp },
   ],
 );
 
@@ -1485,6 +1213,7 @@ export const GetConsentByProfileAndContentReq = proto3.makeMessageType(
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "profile_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "content_type", kind: "enum", T: proto3.getEnumType(ContentType) },
+    { no: 6, name: "channel_type", kind: "enum", T: proto3.getEnumType(Channel) },
   ],
 );
 

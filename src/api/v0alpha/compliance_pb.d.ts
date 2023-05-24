@@ -5,10 +5,9 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { CallType_Enum } from "../commons/acd_pb.js";
-import type { Channel, ConsentAbsentAction, ContentType, Entity, Environment, PhoneType, PluginType, SubEntity, Verb } from "../commons/compliance_pb.js";
+import type { Channel, ConsentCondition, ContentType, Rule, RuleResponse, ScenarioData, ScenarioResult, ScrubEntryDetails } from "../commons/compliance_pb.js";
 import type { CommType } from "../commons/communication_pb.js";
-import type { Month, Weekday_Enum } from "../commons/enums_pb.js";
+import type { Weekday_Enum } from "../commons/enums_pb.js";
 
 /**
  * request used to process an outbound call against a rule set
@@ -54,9 +53,9 @@ export declare class ProcessOutboundCallReq extends Message<ProcessOutboundCallR
   /**
    * The call type of the caller associated with this process request
    *
-   * @generated from field: api.commons.CallType.Enum source_field = 6;
+   * @generated from field: string source_field = 6;
    */
-  sourceField: CallType_Enum;
+  sourceField: string;
 
   /**
    * The caller id being called from
@@ -81,46 +80,6 @@ export declare class ProcessOutboundCallReq extends Message<ProcessOutboundCallR
 }
 
 /**
- * @generated from message api.v0alpha.RuleResponse
- */
-export declare class RuleResponse extends Message<RuleResponse> {
-  /**
-   * the rule text
-   *
-   * @generated from field: string rule_text = 1;
-   */
-  ruleText: string;
-
-  /**
-   * indicates if the rule allowed or denied the request
-   *
-   * @generated from field: bool permit = 2;
-   */
-  permit: boolean;
-
-  /**
-   * the response from the plugin
-   *
-   * @generated from field: string plugin_response = 3;
-   */
-  pluginResponse: string;
-
-  constructor(data?: PartialMessage<RuleResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.RuleResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RuleResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RuleResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RuleResponse;
-
-  static equals(a: RuleResponse | PlainMessage<RuleResponse> | undefined, b: RuleResponse | PlainMessage<RuleResponse> | undefined): boolean;
-}
-
-/**
  * response given after processing something against a rule set
  *
  * @generated from message api.v0alpha.ProcessRes
@@ -136,7 +95,7 @@ export declare class ProcessRes extends Message<ProcessRes> {
   /**
    * the list of rules checked against
    *
-   * @generated from field: repeated api.v0alpha.RuleResponse rule_responses = 2;
+   * @generated from field: repeated api.commons.RuleResponse rule_responses = 2;
    */
   ruleResponses: RuleResponse[];
 
@@ -185,41 +144,6 @@ export declare class ScrubList extends Message<ScrubList> {
 }
 
 /**
- * Scrub entry details information
- *
- * @generated from message api.v0alpha.ScrubEntryDetails
- */
-export declare class ScrubEntryDetails extends Message<ScrubEntryDetails> {
-  /**
-   * entry content (phone number, sms, email ...)
-   *
-   * @generated from field: string content = 1;
-   */
-  content: string;
-
-  /**
-   * date when entry should expire
-   *
-   * @generated from field: google.protobuf.Timestamp expiration_date = 2;
-   */
-  expirationDate?: Timestamp;
-
-  constructor(data?: PartialMessage<ScrubEntryDetails>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ScrubEntryDetails";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScrubEntryDetails;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScrubEntryDetails;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScrubEntryDetails;
-
-  static equals(a: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined, b: ScrubEntryDetails | PlainMessage<ScrubEntryDetails> | undefined): boolean;
-}
-
-/**
  * @generated from message api.v0alpha.CreateScrubListReq
  */
 export declare class CreateScrubListReq extends Message<CreateScrubListReq> {
@@ -246,7 +170,7 @@ export declare class CreateScrubListReq extends Message<CreateScrubListReq> {
   countryCode: string;
 
   /**
-   * @generated from field: repeated api.v0alpha.ScrubEntryDetails scrub_entry_details = 13;
+   * @generated from field: repeated api.commons.ScrubEntryDetails scrub_entry_details = 13;
    */
   scrubEntryDetails: ScrubEntryDetails[];
 
@@ -304,7 +228,7 @@ export declare class AddScrubListEntriesReq extends Message<AddScrubListEntriesR
   /**
    * the list of scrub entries that are sent in order to be added
    *
-   * @generated from field: repeated api.v0alpha.ScrubEntryDetails scrub_entry_details = 13;
+   * @generated from field: repeated api.commons.ScrubEntryDetails scrub_entry_details = 13;
    */
   scrubEntryDetails: ScrubEntryDetails[];
 
@@ -750,7 +674,7 @@ export declare class CheckRuleSetReq extends Message<CheckRuleSetReq> {
  */
 export declare class CheckRuleSetRes extends Message<CheckRuleSetRes> {
   /**
-   * @generated from field: repeated api.v0alpha.Rule rules = 1;
+   * @generated from field: repeated api.commons.Rule rules = 1;
    */
   rules: Rule[];
 
@@ -1016,7 +940,7 @@ export declare class CreateRuleSetReq extends Message<CreateRuleSetReq> {
   rulesText: string;
 
   /**
-   * @generated from field: repeated api.v0alpha.Rule rules = 7;
+   * @generated from field: repeated api.commons.Rule rules = 7;
    */
   rules: Rule[];
 
@@ -1191,7 +1115,7 @@ export declare class RuleSet extends Message<RuleSet> {
   sha: string;
 
   /**
-   * @generated from field: repeated api.v0alpha.Rule rules = 20;
+   * @generated from field: repeated api.commons.Rule rules = 20;
    */
   rules: Rule[];
 
@@ -1208,515 +1132,6 @@ export declare class RuleSet extends Message<RuleSet> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RuleSet;
 
   static equals(a: RuleSet | PlainMessage<RuleSet> | undefined, b: RuleSet | PlainMessage<RuleSet> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.Rule
- */
-export declare class Rule extends Message<Rule> {
-  /**
-   * @generated from field: api.commons.Verb verb = 1;
-   */
-  verb: Verb;
-
-  /**
-   * @generated from field: api.commons.Entity entity = 2;
-   */
-  entity: Entity;
-
-  /**
-   * @generated from field: api.commons.SubEntity sub_entity = 3;
-   */
-  subEntity: SubEntity;
-
-  /**
-   * @generated from field: repeated api.v0alpha.Selector selectors = 4;
-   */
-  selectors: Selector[];
-
-  constructor(data?: PartialMessage<Rule>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.Rule";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Rule;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Rule;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Rule;
-
-  static equals(a: Rule | PlainMessage<Rule> | undefined, b: Rule | PlainMessage<Rule> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.Selector
- */
-export declare class Selector extends Message<Selector> {
-  /**
-   * @generated from oneof api.v0alpha.Selector.selection_rule
-   */
-  selectionRule: {
-    /**
-     * @generated from field: api.v0alpha.TimeExp time = 1;
-     */
-    value: TimeExp;
-    case: "time";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.WeekdayExp week = 2;
-     */
-    value: WeekdayExp;
-    case: "week";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.DnclExp dncl = 3;
-     */
-    value: DnclExp;
-    case: "dncl";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.FrequencyExp frequency = 4;
-     */
-    value: FrequencyExp;
-    case: "frequency";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.LocationExp location = 5;
-     */
-    value: LocationExp;
-    case: "location";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.PhoneTypeExp phone_type = 6;
-     */
-    value: PhoneTypeExp;
-    case: "phoneType";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.MonthExp month = 7;
-     */
-    value: MonthExp;
-    case: "month";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.HolidayExp holiday = 8;
-     */
-    value: HolidayExp;
-    case: "holiday";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.DateExp date = 9;
-     */
-    value: DateExp;
-    case: "date";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.MetaFieldExp meta = 10;
-     */
-    value: MetaFieldExp;
-    case: "meta";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.PluginExp plugin = 11;
-     */
-    value: PluginExp;
-    case: "plugin";
-  } | { case: undefined; value?: undefined };
-
-  constructor(data?: PartialMessage<Selector>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.Selector";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Selector;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Selector;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Selector;
-
-  static equals(a: Selector | PlainMessage<Selector> | undefined, b: Selector | PlainMessage<Selector> | undefined): boolean;
-}
-
-/**
- * Expressions/Selectors
- *
- * @generated from message api.v0alpha.HolidayExp
- */
-export declare class HolidayExp extends Message<HolidayExp> {
-  /**
-   * @generated from field: api.commons.Month month = 1;
-   */
-  month: Month;
-
-  /**
-   * @generated from field: int64 day = 2;
-   */
-  day: bigint;
-
-  /**
-   * @generated from field: string name = 3;
-   */
-  name: string;
-
-  constructor(data?: PartialMessage<HolidayExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.HolidayExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HolidayExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HolidayExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HolidayExp;
-
-  static equals(a: HolidayExp | PlainMessage<HolidayExp> | undefined, b: HolidayExp | PlainMessage<HolidayExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.TimeExp
- */
-export declare class TimeExp extends Message<TimeExp> {
-  /**
-   * @generated from field: string start_hour = 1;
-   */
-  startHour: string;
-
-  /**
-   * @generated from field: string end_hour = 2;
-   */
-  endHour: string;
-
-  constructor(data?: PartialMessage<TimeExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.TimeExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TimeExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TimeExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TimeExp;
-
-  static equals(a: TimeExp | PlainMessage<TimeExp> | undefined, b: TimeExp | PlainMessage<TimeExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.WeekdayExp
- */
-export declare class WeekdayExp extends Message<WeekdayExp> {
-  /**
-   * @generated from field: api.commons.Weekday.Enum day = 1;
-   */
-  day: Weekday_Enum;
-
-  /**
-   * @generated from field: string text = 2;
-   */
-  text: string;
-
-  constructor(data?: PartialMessage<WeekdayExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.WeekdayExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WeekdayExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WeekdayExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WeekdayExp;
-
-  static equals(a: WeekdayExp | PlainMessage<WeekdayExp> | undefined, b: WeekdayExp | PlainMessage<WeekdayExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.MonthExp
- */
-export declare class MonthExp extends Message<MonthExp> {
-  /**
-   * @generated from field: api.commons.Month month = 1;
-   */
-  month: Month;
-
-  /**
-   * @generated from field: string text = 2;
-   */
-  text: string;
-
-  constructor(data?: PartialMessage<MonthExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.MonthExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MonthExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MonthExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MonthExp;
-
-  static equals(a: MonthExp | PlainMessage<MonthExp> | undefined, b: MonthExp | PlainMessage<MonthExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.DateExp
- */
-export declare class DateExp extends Message<DateExp> {
-  /**
-   * @generated from field: api.commons.Month month = 1;
-   */
-  month: Month;
-
-  /**
-   * @generated from field: int64 day = 2;
-   */
-  day: bigint;
-
-  /**
-   * @generated from field: int64 year = 3;
-   */
-  year: bigint;
-
-  constructor(data?: PartialMessage<DateExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.DateExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DateExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DateExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DateExp;
-
-  static equals(a: DateExp | PlainMessage<DateExp> | undefined, b: DateExp | PlainMessage<DateExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.DnclExp
- */
-export declare class DnclExp extends Message<DnclExp> {
-  /**
-   * @generated from field: string list_name = 1;
-   */
-  listName: string;
-
-  /**
-   * @generated from field: string field_name = 2;
-   */
-  fieldName: string;
-
-  constructor(data?: PartialMessage<DnclExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.DnclExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DnclExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DnclExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DnclExp;
-
-  static equals(a: DnclExp | PlainMessage<DnclExp> | undefined, b: DnclExp | PlainMessage<DnclExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.FrequencyExp
- */
-export declare class FrequencyExp extends Message<FrequencyExp> {
-  /**
-   * Maximum number of tries
-   *
-   * @generated from field: int64 count = 1;
-   */
-  count: bigint;
-
-  /**
-   * Measured in nanoseconds
-   *
-   * @generated from field: int64 duration = 2;
-   */
-  duration: bigint;
-
-  constructor(data?: PartialMessage<FrequencyExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.FrequencyExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FrequencyExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FrequencyExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FrequencyExp;
-
-  static equals(a: FrequencyExp | PlainMessage<FrequencyExp> | undefined, b: FrequencyExp | PlainMessage<FrequencyExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.LocationExp
- */
-export declare class LocationExp extends Message<LocationExp> {
-  /**
-   * @generated from field: string location = 1;
-   */
-  location: string;
-
-  constructor(data?: PartialMessage<LocationExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.LocationExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LocationExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LocationExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LocationExp;
-
-  static equals(a: LocationExp | PlainMessage<LocationExp> | undefined, b: LocationExp | PlainMessage<LocationExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.PhoneTypeExp
- */
-export declare class PhoneTypeExp extends Message<PhoneTypeExp> {
-  /**
-   * @generated from field: api.commons.PhoneType phone_type = 1;
-   */
-  phoneType: PhoneType;
-
-  constructor(data?: PartialMessage<PhoneTypeExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.PhoneTypeExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PhoneTypeExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PhoneTypeExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PhoneTypeExp;
-
-  static equals(a: PhoneTypeExp | PlainMessage<PhoneTypeExp> | undefined, b: PhoneTypeExp | PlainMessage<PhoneTypeExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.MetaFieldExp
- */
-export declare class MetaFieldExp extends Message<MetaFieldExp> {
-  /**
-   * @generated from field: string field = 1;
-   */
-  field: string;
-
-  constructor(data?: PartialMessage<MetaFieldExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.MetaFieldExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MetaFieldExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MetaFieldExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MetaFieldExp;
-
-  static equals(a: MetaFieldExp | PlainMessage<MetaFieldExp> | undefined, b: MetaFieldExp | PlainMessage<MetaFieldExp> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.PluginExp
- */
-export declare class PluginExp extends Message<PluginExp> {
-  /**
-   * @generated from field: api.commons.PluginType type = 1;
-   */
-  type: PluginType;
-
-  /**
-   * true/false deny on errors
-   *
-   * @generated from field: bool tcn_strict = 4;
-   */
-  tcnStrict: boolean;
-
-  /**
-   * gryphon
-   *
-   * @generated from field: string license_id = 2;
-   */
-  licenseId: string;
-
-  /**
-   * @generated from field: string reference_key = 3;
-   */
-  referenceKey: string;
-
-  /**
-   * @generated from field: string from_number = 5;
-   */
-  fromNumber: string;
-
-  /**
-   * @generated from field: api.commons.Environment env = 6;
-   */
-  env: Environment;
-
-  /**
-   * tcn_consent
-   *
-   * @generated from field: string profile = 7;
-   */
-  profile: string;
-
-  /**
-   * field to use as content
-   *
-   * @generated from field: string content_field = 8;
-   */
-  contentField: string;
-
-  /**
-   * consent topic
-   *
-   * @generated from field: string topic = 9;
-   */
-  topic: string;
-
-  /**
-   * consent absent action (deny/allow if consent doesn't exist)
-   *
-   * @generated from field: api.commons.ConsentAbsentAction absent_action = 11;
-   */
-  absentAction: ConsentAbsentAction;
-
-  /**
-   * rnd
-   * date of last contact
-   *
-   * @generated from field: string date_last_contact = 10;
-   */
-  dateLastContact: string;
-
-  constructor(data?: PartialMessage<PluginExp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.PluginExp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PluginExp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PluginExp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PluginExp;
-
-  static equals(a: PluginExp | PlainMessage<PluginExp> | undefined, b: PluginExp | PlainMessage<PluginExp> | undefined): boolean;
 }
 
 /**
@@ -1999,40 +1414,6 @@ export declare class ExportScrubListRes extends Message<ExportScrubListRes> {
 }
 
 /**
- * @generated from message api.v0alpha.CountryCode
- */
-export declare class CountryCode extends Message<CountryCode> {
-  /**
-   * @generated from field: int64 country_code = 1;
-   */
-  countryCode: bigint;
-
-  /**
-   * @generated from field: string country_name = 2;
-   */
-  countryName: string;
-
-  /**
-   * @generated from field: string country_id = 3;
-   */
-  countryId: string;
-
-  constructor(data?: PartialMessage<CountryCode>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.CountryCode";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CountryCode;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CountryCode;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CountryCode;
-
-  static equals(a: CountryCode | PlainMessage<CountryCode> | undefined, b: CountryCode | PlainMessage<CountryCode> | undefined): boolean;
-}
-
-/**
  * @generated from message api.v0alpha.Scenario
  */
 export declare class Scenario extends Message<Scenario> {
@@ -2042,17 +1423,17 @@ export declare class Scenario extends Message<Scenario> {
   cplScenarioId: bigint;
 
   /**
-   * @generated from field: api.v0alpha.ScenarioData should_allow = 3;
+   * @generated from field: api.commons.ScenarioData should_allow = 3;
    */
   shouldAllow?: ScenarioData;
 
   /**
-   * @generated from field: api.v0alpha.ScenarioData should_deny = 4;
+   * @generated from field: api.commons.ScenarioData should_deny = 4;
    */
   shouldDeny?: ScenarioData;
 
   /**
-   * @generated from field: api.v0alpha.ScenarioResult last_execution_result = 5;
+   * @generated from field: api.commons.ScenarioResult last_execution_result = 5;
    */
   lastExecutionResult?: ScenarioResult;
 
@@ -2077,128 +1458,16 @@ export declare class Scenario extends Message<Scenario> {
 }
 
 /**
- * @generated from message api.v0alpha.ScenarioData
- */
-export declare class ScenarioData extends Message<ScenarioData> {
-  /**
-   * @generated from field: api.commons.CommType comm_type = 1;
-   */
-  commType?: CommType;
-
-  /**
-   * @generated from field: string phone_number = 2;
-   */
-  phoneNumber: string;
-
-  /**
-   * @generated from field: string country_code = 3 [deprecated = true];
-   * @deprecated
-   */
-  countryCode: string;
-
-  /**
-   * @generated from field: string email = 4;
-   */
-  email: string;
-
-  /**
-   * @generated from field: map<string, string> call_metadata = 5;
-   */
-  callMetadata: { [key: string]: string };
-
-  /**
-   * @generated from field: google.protobuf.Timestamp time_of_call = 6;
-   */
-  timeOfCall?: Timestamp;
-
-  /**
-   * @generated from field: int64 frequency_count = 7;
-   */
-  frequencyCount: bigint;
-
-  /**
-   * @generated from field: int64 frequency_duration = 8;
-   */
-  frequencyDuration: bigint;
-
-  /**
-   * @generated from field: bool dncl_blocks = 9;
-   */
-  dnclBlocks: boolean;
-
-  /**
-   * @generated from field: string country = 10;
-   */
-  country: string;
-
-  /**
-   * @generated from field: string state = 11;
-   */
-  state: string;
-
-  /**
-   * @generated from field: string county = 12;
-   */
-  county: string;
-
-  /**
-   * @generated from field: string city = 13;
-   */
-  city: string;
-
-  /**
-   * @generated from field: string province = 14;
-   */
-  province: string;
-
-  /**
-   * @generated from field: api.commons.PhoneType phone_type = 15;
-   */
-  phoneType: PhoneType;
-
-  /**
-   * time_zone uses the iana timezone format. Defaults to utc
-   *
-   * @generated from field: string time_zone = 16;
-   */
-  timeZone: string;
-
-  /**
-   * @generated from field: repeated string holidays = 17;
-   */
-  holidays: string[];
-
-  /**
-   * @generated from field: api.v0alpha.CountryCode country_code_data = 18;
-   */
-  countryCodeData?: CountryCode;
-
-  constructor(data?: PartialMessage<ScenarioData>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ScenarioData";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScenarioData;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScenarioData;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScenarioData;
-
-  static equals(a: ScenarioData | PlainMessage<ScenarioData> | undefined, b: ScenarioData | PlainMessage<ScenarioData> | undefined): boolean;
-}
-
-/**
  * @generated from message api.v0alpha.CreateScenarioReq
  */
 export declare class CreateScenarioReq extends Message<CreateScenarioReq> {
   /**
-   * @generated from field: api.v0alpha.ScenarioData should_allow = 2;
+   * @generated from field: api.commons.ScenarioData should_allow = 2;
    */
   shouldAllow?: ScenarioData;
 
   /**
-   * @generated from field: api.v0alpha.ScenarioData should_deny = 3;
+   * @generated from field: api.commons.ScenarioData should_deny = 3;
    */
   shouldDeny?: ScenarioData;
 
@@ -2414,7 +1683,7 @@ export declare class RunAssignedScenariosReq extends Message<RunAssignedScenario
  */
 export declare class RunAssignedScenariosRes extends Message<RunAssignedScenariosRes> {
   /**
-   * @generated from field: repeated api.v0alpha.ScenarioResult results = 2;
+   * @generated from field: repeated api.commons.ScenarioResult results = 2;
    */
   results: ScenarioResult[];
 
@@ -2441,74 +1710,6 @@ export declare class RunAssignedScenariosRes extends Message<RunAssignedScenario
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RunAssignedScenariosRes;
 
   static equals(a: RunAssignedScenariosRes | PlainMessage<RunAssignedScenariosRes> | undefined, b: RunAssignedScenariosRes | PlainMessage<RunAssignedScenariosRes> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.ScenarioResult
- */
-export declare class ScenarioResult extends Message<ScenarioResult> {
-  /**
-   * @generated from field: bool passed_value = 5;
-   */
-  passedValue: boolean;
-
-  /**
-   * @generated from field: repeated api.v0alpha.ScenarioRuleResponse should_allow_responses = 2;
-   */
-  shouldAllowResponses: ScenarioRuleResponse[];
-
-  /**
-   * @generated from field: repeated api.v0alpha.ScenarioRuleResponse should_deny_responses = 3;
-   */
-  shouldDenyResponses: ScenarioRuleResponse[];
-
-  /**
-   * @generated from field: string scenario_name = 4;
-   */
-  scenarioName: string;
-
-  constructor(data?: PartialMessage<ScenarioResult>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ScenarioResult";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScenarioResult;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScenarioResult;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScenarioResult;
-
-  static equals(a: ScenarioResult | PlainMessage<ScenarioResult> | undefined, b: ScenarioResult | PlainMessage<ScenarioResult> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.ScenarioRuleResponse
- */
-export declare class ScenarioRuleResponse extends Message<ScenarioRuleResponse> {
-  /**
-   * @generated from field: string rule_text = 1;
-   */
-  ruleText: string;
-
-  /**
-   * @generated from field: bool permit_value = 3;
-   */
-  permitValue: boolean;
-
-  constructor(data?: PartialMessage<ScenarioRuleResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ScenarioRuleResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScenarioRuleResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScenarioRuleResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScenarioRuleResponse;
-
-  static equals(a: ScenarioRuleResponse | PlainMessage<ScenarioRuleResponse> | undefined, b: ScenarioRuleResponse | PlainMessage<ScenarioRuleResponse> | undefined): boolean;
 }
 
 /**
@@ -2641,7 +1842,7 @@ export declare class AssignedScenario extends Message<AssignedScenario> {
   enabled: boolean;
 
   /**
-   * @generated from field: api.v0alpha.ScenarioResult last_execution_result = 3;
+   * @generated from field: api.commons.ScenarioResult last_execution_result = 3;
    */
   lastExecutionResult?: ScenarioResult;
 
@@ -3049,7 +2250,7 @@ export declare class CreateConsentReq extends Message<CreateConsentReq> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 26;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 26;
    */
   conditions: ConsentCondition[];
 
@@ -3298,7 +2499,7 @@ export declare class Consent extends Message<Consent> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 26;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 26;
    */
   conditions: ConsentCondition[];
 
@@ -3327,77 +2528,6 @@ export declare class Consent extends Message<Consent> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Consent;
 
   static equals(a: Consent | PlainMessage<Consent> | undefined, b: Consent | PlainMessage<Consent> | undefined): boolean;
-}
-
-/**
- * ConsentCondition defines conditions
- * required for a consent to take affect
- *
- * @generated from message api.v0alpha.ConsentCondition
- */
-export declare class ConsentCondition extends Message<ConsentCondition> {
-  /**
-   * Condition id
-   *
-   * @generated from field: int64 consent_condition_id = 1;
-   */
-  consentConditionId: bigint;
-
-  /**
-   * Consent it belongs to
-   *
-   * @generated from field: int64 consent_id = 2;
-   */
-  consentId: bigint;
-
-  /**
-   * Days of week the condition is applicable to
-   *
-   * @generated from field: repeated api.commons.Weekday.Enum days_of_the_week = 10;
-   */
-  daysOfTheWeek: Weekday_Enum[];
-
-  /**
-   * Time of day condition starts
-   *
-   * @generated from field: string time_of_day_from = 11;
-   */
-  timeOfDayFrom: string;
-
-  /**
-   * Time of day condition ends
-   *
-   * @generated from field: string time_of_day_to = 12;
-   */
-  timeOfDayTo: string;
-
-  /**
-   * Date condition starts
-   *
-   * @generated from field: google.protobuf.Timestamp from_date = 13;
-   */
-  fromDate?: Timestamp;
-
-  /**
-   * Date condition ends
-   *
-   * @generated from field: google.protobuf.Timestamp to_date = 14;
-   */
-  toDate?: Timestamp;
-
-  constructor(data?: PartialMessage<ConsentCondition>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ConsentCondition";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConsentCondition;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConsentCondition;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConsentCondition;
-
-  static equals(a: ConsentCondition | PlainMessage<ConsentCondition> | undefined, b: ConsentCondition | PlainMessage<ConsentCondition> | undefined): boolean;
 }
 
 /**
@@ -3536,7 +2666,7 @@ export declare class UpdateConsentReq extends Message<UpdateConsentReq> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 26;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 26;
    */
   conditions: ConsentCondition[];
 
@@ -4321,7 +3451,7 @@ export declare class ConsentByContent extends Message<ConsentByContent> {
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 22;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 22;
    */
   conditions: ConsentCondition[];
 
@@ -4392,6 +3522,11 @@ export declare class GetConsentByProfileAndContentReq extends Message<GetConsent
    * @generated from field: api.commons.ContentType content_type = 5;
    */
   contentType: ContentType;
+
+  /**
+   * @generated from field: api.commons.Channel channel_type = 6;
+   */
+  channelType: Channel;
 
   constructor(data?: PartialMessage<GetConsentByProfileAndContentReq>);
 
@@ -4506,7 +3641,7 @@ export declare class GetConsentByProfileAndContentRes extends Message<GetConsent
   /**
    * Consent Conditions
    *
-   * @generated from field: repeated api.v0alpha.ConsentCondition conditions = 22;
+   * @generated from field: repeated api.commons.ConsentCondition conditions = 22;
    */
   conditions: ConsentCondition[];
 
