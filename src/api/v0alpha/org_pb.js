@@ -4685,6 +4685,7 @@ export const CreateUserByOrgIdResponse = proto3.makeMessageType(
 export const UpdateUserPasswordRequest = proto3.makeMessageType(
   "api.v0alpha.UpdateUserPasswordRequest",
   () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "current_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
@@ -4699,22 +4700,21 @@ export const UpdateUserPasswordResponse = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.UpdateUserPasswordByUserIdRequest
+ * @generated from message api.v0alpha.UpdateMyUserPasswordRequest
  */
-export const UpdateUserPasswordByUserIdRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateUserPasswordByUserIdRequest",
+export const UpdateMyUserPasswordRequest = proto3.makeMessageType(
+  "api.v0alpha.UpdateMyUserPasswordRequest",
   () => [
-    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "current_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * @generated from message api.v0alpha.UpdateUserPasswordByUserIdResponse
+ * @generated from message api.v0alpha.UpdateMyUserPasswordResponse
  */
-export const UpdateUserPasswordByUserIdResponse = proto3.makeMessageType(
-  "api.v0alpha.UpdateUserPasswordByUserIdResponse",
+export const UpdateMyUserPasswordResponse = proto3.makeMessageType(
+  "api.v0alpha.UpdateMyUserPasswordResponse",
   [],
 );
 
@@ -4740,30 +4740,6 @@ export const UpdateUserPasswordByOrgIdResponse = proto3.makeMessageType(
 );
 
 /**
- * Request message for the GetUserPasswordReset rpc.
- *
- * @generated from message api.v0alpha.GetMyUserPasswordResetLinkRequest
- */
-export const GetMyUserPasswordResetLinkRequest = proto3.makeMessageType(
-  "api.v0alpha.GetMyUserPasswordResetLinkRequest",
-  () => [
-    { no: 1, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * Response message for the GetUserPasswordReset rpc.
- *
- * @generated from message api.v0alpha.GetMyUserPasswordResetLinkResponse
- */
-export const GetMyUserPasswordResetLinkResponse = proto3.makeMessageType(
-  "api.v0alpha.GetMyUserPasswordResetLinkResponse",
-  () => [
-    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
  * Request message for the GetUserPasswordResetLinkRequest rpc.
  *
  * @generated from message api.v0alpha.GetUserPasswordResetLinkRequest
@@ -4783,6 +4759,30 @@ export const GetUserPasswordResetLinkRequest = proto3.makeMessageType(
  */
 export const GetUserPasswordResetLinkResponse = proto3.makeMessageType(
   "api.v0alpha.GetUserPasswordResetLinkResponse",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Request message for the GetUserPasswordReset rpc.
+ *
+ * @generated from message api.v0alpha.GetMyUserPasswordResetLinkRequest
+ */
+export const GetMyUserPasswordResetLinkRequest = proto3.makeMessageType(
+  "api.v0alpha.GetMyUserPasswordResetLinkRequest",
+  () => [
+    { no: 1, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for the GetUserPasswordReset rpc.
+ *
+ * @generated from message api.v0alpha.GetMyUserPasswordResetLinkResponse
+ */
+export const GetMyUserPasswordResetLinkResponse = proto3.makeMessageType(
+  "api.v0alpha.GetMyUserPasswordResetLinkResponse",
   () => [
     { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],

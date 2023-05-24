@@ -13148,9 +13148,15 @@ export declare class CreateUserByOrgIdResponse extends Message<CreateUserByOrgId
  */
 export declare class UpdateUserPasswordRequest extends Message<UpdateUserPasswordRequest> {
   /**
-   * the USER_EDIT_PASSWORD permission is require
-   * to update the current user's own password.
+   * the USER_EDIT permission is require
+   * to update another user's password
+   * in the same org as the current user.
    *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
    * @generated from field: string password = 2;
    */
   password: string;
@@ -13195,19 +13201,13 @@ export declare class UpdateUserPasswordResponse extends Message<UpdateUserPasswo
 }
 
 /**
- * @generated from message api.v0alpha.UpdateUserPasswordByUserIdRequest
+ * @generated from message api.v0alpha.UpdateMyUserPasswordRequest
  */
-export declare class UpdateUserPasswordByUserIdRequest extends Message<UpdateUserPasswordByUserIdRequest> {
+export declare class UpdateMyUserPasswordRequest extends Message<UpdateMyUserPasswordRequest> {
   /**
-   * the USER_EDIT permission is require
-   * to update another user's password
-   * in the same org as the current user.
+   * the USER_EDIT_PASSWORD permission is require
+   * to update the current user's own password.
    *
-   * @generated from field: string user_id = 1;
-   */
-  userId: string;
-
-  /**
    * @generated from field: string password = 2;
    */
   password: string;
@@ -13217,38 +13217,38 @@ export declare class UpdateUserPasswordByUserIdRequest extends Message<UpdateUse
    */
   currentPassword: string;
 
-  constructor(data?: PartialMessage<UpdateUserPasswordByUserIdRequest>);
+  constructor(data?: PartialMessage<UpdateMyUserPasswordRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.UpdateUserPasswordByUserIdRequest";
+  static readonly typeName = "api.v0alpha.UpdateMyUserPasswordRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUserPasswordByUserIdRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMyUserPasswordRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUserPasswordByUserIdRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMyUserPasswordRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUserPasswordByUserIdRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMyUserPasswordRequest;
 
-  static equals(a: UpdateUserPasswordByUserIdRequest | PlainMessage<UpdateUserPasswordByUserIdRequest> | undefined, b: UpdateUserPasswordByUserIdRequest | PlainMessage<UpdateUserPasswordByUserIdRequest> | undefined): boolean;
+  static equals(a: UpdateMyUserPasswordRequest | PlainMessage<UpdateMyUserPasswordRequest> | undefined, b: UpdateMyUserPasswordRequest | PlainMessage<UpdateMyUserPasswordRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message api.v0alpha.UpdateUserPasswordByUserIdResponse
+ * @generated from message api.v0alpha.UpdateMyUserPasswordResponse
  */
-export declare class UpdateUserPasswordByUserIdResponse extends Message<UpdateUserPasswordByUserIdResponse> {
-  constructor(data?: PartialMessage<UpdateUserPasswordByUserIdResponse>);
+export declare class UpdateMyUserPasswordResponse extends Message<UpdateMyUserPasswordResponse> {
+  constructor(data?: PartialMessage<UpdateMyUserPasswordResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.UpdateUserPasswordByUserIdResponse";
+  static readonly typeName = "api.v0alpha.UpdateMyUserPasswordResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUserPasswordByUserIdResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMyUserPasswordResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUserPasswordByUserIdResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMyUserPasswordResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUserPasswordByUserIdResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMyUserPasswordResponse;
 
-  static equals(a: UpdateUserPasswordByUserIdResponse | PlainMessage<UpdateUserPasswordByUserIdResponse> | undefined, b: UpdateUserPasswordByUserIdResponse | PlainMessage<UpdateUserPasswordByUserIdResponse> | undefined): boolean;
+  static equals(a: UpdateMyUserPasswordResponse | PlainMessage<UpdateMyUserPasswordResponse> | undefined, b: UpdateMyUserPasswordResponse | PlainMessage<UpdateMyUserPasswordResponse> | undefined): boolean;
 }
 
 /**
@@ -13314,62 +13314,6 @@ export declare class UpdateUserPasswordByOrgIdResponse extends Message<UpdateUse
 }
 
 /**
- * Request message for the GetUserPasswordReset rpc.
- *
- * @generated from message api.v0alpha.GetMyUserPasswordResetLinkRequest
- */
-export declare class GetMyUserPasswordResetLinkRequest extends Message<GetMyUserPasswordResetLinkRequest> {
-  /**
-   * The time to live (in seconds) of the generated link. This will default to 180 if set to 0.
-   *
-   * @generated from field: int64 ttl = 1;
-   */
-  ttl: bigint;
-
-  constructor(data?: PartialMessage<GetMyUserPasswordResetLinkRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.GetMyUserPasswordResetLinkRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserPasswordResetLinkRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkRequest;
-
-  static equals(a: GetMyUserPasswordResetLinkRequest | PlainMessage<GetMyUserPasswordResetLinkRequest> | undefined, b: GetMyUserPasswordResetLinkRequest | PlainMessage<GetMyUserPasswordResetLinkRequest> | undefined): boolean;
-}
-
-/**
- * Response message for the GetUserPasswordReset rpc.
- *
- * @generated from message api.v0alpha.GetMyUserPasswordResetLinkResponse
- */
-export declare class GetMyUserPasswordResetLinkResponse extends Message<GetMyUserPasswordResetLinkResponse> {
-  /**
-   * the generated link url.
-   *
-   * @generated from field: string url = 1;
-   */
-  url: string;
-
-  constructor(data?: PartialMessage<GetMyUserPasswordResetLinkResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.GetMyUserPasswordResetLinkResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserPasswordResetLinkResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkResponse;
-
-  static equals(a: GetMyUserPasswordResetLinkResponse | PlainMessage<GetMyUserPasswordResetLinkResponse> | undefined, b: GetMyUserPasswordResetLinkResponse | PlainMessage<GetMyUserPasswordResetLinkResponse> | undefined): boolean;
-}
-
-/**
  * Request message for the GetUserPasswordResetLinkRequest rpc.
  *
  * @generated from message api.v0alpha.GetUserPasswordResetLinkRequest
@@ -13430,6 +13374,62 @@ export declare class GetUserPasswordResetLinkResponse extends Message<GetUserPas
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserPasswordResetLinkResponse;
 
   static equals(a: GetUserPasswordResetLinkResponse | PlainMessage<GetUserPasswordResetLinkResponse> | undefined, b: GetUserPasswordResetLinkResponse | PlainMessage<GetUserPasswordResetLinkResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetUserPasswordReset rpc.
+ *
+ * @generated from message api.v0alpha.GetMyUserPasswordResetLinkRequest
+ */
+export declare class GetMyUserPasswordResetLinkRequest extends Message<GetMyUserPasswordResetLinkRequest> {
+  /**
+   * The time to live (in seconds) of the generated link. This will default to 180 if set to 0.
+   *
+   * @generated from field: int64 ttl = 1;
+   */
+  ttl: bigint;
+
+  constructor(data?: PartialMessage<GetMyUserPasswordResetLinkRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.GetMyUserPasswordResetLinkRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserPasswordResetLinkRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkRequest;
+
+  static equals(a: GetMyUserPasswordResetLinkRequest | PlainMessage<GetMyUserPasswordResetLinkRequest> | undefined, b: GetMyUserPasswordResetLinkRequest | PlainMessage<GetMyUserPasswordResetLinkRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetUserPasswordReset rpc.
+ *
+ * @generated from message api.v0alpha.GetMyUserPasswordResetLinkResponse
+ */
+export declare class GetMyUserPasswordResetLinkResponse extends Message<GetMyUserPasswordResetLinkResponse> {
+  /**
+   * the generated link url.
+   *
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  constructor(data?: PartialMessage<GetMyUserPasswordResetLinkResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.GetMyUserPasswordResetLinkResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserPasswordResetLinkResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserPasswordResetLinkResponse;
+
+  static equals(a: GetMyUserPasswordResetLinkResponse | PlainMessage<GetMyUserPasswordResetLinkResponse> | undefined, b: GetMyUserPasswordResetLinkResponse | PlainMessage<GetMyUserPasswordResetLinkResponse> | undefined): boolean;
 }
 
 /**
