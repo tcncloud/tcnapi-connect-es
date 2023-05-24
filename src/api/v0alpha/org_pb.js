@@ -6260,6 +6260,31 @@ export const AddUserSubscriptionResponse = proto3.makeMessageType(
 );
 
 /**
+ * Request to add a user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionRequest
+ */
+export const AddMyUserSubscriptionRequest = proto3.makeMessageType(
+  "api.v0alpha.AddMyUserSubscriptionRequest",
+  () => [
+    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
+  ],
+);
+
+/**
+ * Response to adding a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionResponse
+ */
+export const AddMyUserSubscriptionResponse = proto3.makeMessageType(
+  "api.v0alpha.AddMyUserSubscriptionResponse",
+  () => [
+    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
+  ],
+);
+
+/**
  * Request for getting a user subscription.
  *
  * @generated from message api.v0alpha.GetUserSubscriptionRequest

@@ -17620,6 +17620,62 @@ export declare class AddUserSubscriptionResponse extends Message<AddUserSubscrip
 }
 
 /**
+ * Request to add a user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionRequest
+ */
+export declare class AddMyUserSubscriptionRequest extends Message<AddMyUserSubscriptionRequest> {
+  /**
+   * Required.
+   * All fields (except subscription id) must be set.
+   *
+   * @generated from field: api.v0alpha.UserSubscription subscription = 1;
+   */
+  subscription?: UserSubscription;
+
+  constructor(data?: PartialMessage<AddMyUserSubscriptionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.AddMyUserSubscriptionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMyUserSubscriptionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionRequest;
+
+  static equals(a: AddMyUserSubscriptionRequest | PlainMessage<AddMyUserSubscriptionRequest> | undefined, b: AddMyUserSubscriptionRequest | PlainMessage<AddMyUserSubscriptionRequest> | undefined): boolean;
+}
+
+/**
+ * Response to adding a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionResponse
+ */
+export declare class AddMyUserSubscriptionResponse extends Message<AddMyUserSubscriptionResponse> {
+  /**
+   * @generated from field: api.v0alpha.UserSubscription subscription = 1;
+   */
+  subscription?: UserSubscription;
+
+  constructor(data?: PartialMessage<AddMyUserSubscriptionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.AddMyUserSubscriptionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMyUserSubscriptionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionResponse;
+
+  static equals(a: AddMyUserSubscriptionResponse | PlainMessage<AddMyUserSubscriptionResponse> | undefined, b: AddMyUserSubscriptionResponse | PlainMessage<AddMyUserSubscriptionResponse> | undefined): boolean;
+}
+
+/**
  * Request for getting a user subscription.
  *
  * @generated from message api.v0alpha.GetUserSubscriptionRequest
