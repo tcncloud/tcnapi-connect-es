@@ -8,6 +8,26 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "./acd_pb.js";
 
 /**
+ * @generated from enum api.commons.CategoryType
+ */
+export declare enum CategoryType {
+  /**
+   * @generated from enum value: INVALID = 0;
+   */
+  INVALID = 0,
+
+  /**
+   * @generated from enum value: SKILL_CALLS = 1;
+   */
+  SKILL_CALLS = 1,
+
+  /**
+   * @generated from enum value: MANUAL_DIAL = 2;
+   */
+  MANUAL_DIAL = 2,
+}
+
+/**
  * Evaluation is how a scorecard gets evaluated.
  * It is not a boolean because it might grow (i.e. MIXED).
  *
@@ -322,6 +342,13 @@ export declare class Category extends Message<Category> {
    * @generated from field: bool is_system = 11;
    */
   isSystem: boolean;
+
+  /**
+   * Type of category, (skill calls or manual calls)
+   *
+   * @generated from field: api.commons.CategoryType category_type = 12;
+   */
+  categoryType: CategoryType;
 
   constructor(data?: PartialMessage<Category>);
 
@@ -1396,9 +1423,9 @@ export declare class Scorecard extends Message<Scorecard> {
   /**
    * call types supported by scorecard
    *
-   * @generated from field: api.commons.CallType.Enum call_type = 20;
+   * @generated from field: repeated api.commons.CallType.Enum call_types = 20;
    */
-  callType: CallType_Enum;
+  callTypes: CallType_Enum[];
 
   constructor(data?: PartialMessage<Scorecard>);
 
