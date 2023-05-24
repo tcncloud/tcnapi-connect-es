@@ -312,18 +312,18 @@ export const UserDirectoryEntry = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.GetMyTempUserTokenReq
+ * @generated from message api.v0alpha.GetTempUserTokenReq
  */
-export const GetMyTempUserTokenReq = proto3.makeMessageType(
-  "api.v0alpha.GetMyTempUserTokenReq",
+export const GetTempUserTokenReq = proto3.makeMessageType(
+  "api.v0alpha.GetTempUserTokenReq",
   [],
 );
 
 /**
- * @generated from message api.v0alpha.GetMyTempUserTokenRes
+ * @generated from message api.v0alpha.GetTempUserTokenRes
  */
-export const GetMyTempUserTokenRes = proto3.makeMessageType(
-  "api.v0alpha.GetMyTempUserTokenRes",
+export const GetTempUserTokenRes = proto3.makeMessageType(
+  "api.v0alpha.GetTempUserTokenRes",
   () => [
     { no: 1, name: "region_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -707,41 +707,10 @@ export const AssignAgentProfileGroupsResponse = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.UpdateMyUserRequest
+ * @generated from message api.v0alpha.UpdateUserRequest
  */
-export const UpdateMyUserRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateMyUserRequest",
-  () => [
-    { no: 11, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "partner_agent_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 16, name: "time_zone_override", kind: "message", T: TimeZoneWrapper },
-    { no: 6, name: "linkback_numbers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 7, name: "caller_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 8, name: "user_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "default_app", kind: "enum", T: proto3.getEnumType(OperatorApplications) },
-    { no: 10, name: "user_caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: "password_reset_required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 14, name: "agent_profile_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 18, name: "label_entities", kind: "message", T: Label, repeated: true },
-    { no: 17, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.UpdateMyUserResponse
- */
-export const UpdateMyUserResponse = proto3.makeMessageType(
-  "api.v0alpha.UpdateMyUserResponse",
-  [],
-);
-
-/**
- * @generated from message api.v0alpha.UpdateUserByUserIdRequest
- */
-export const UpdateUserByUserIdRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateUserByUserIdRequest",
+export const UpdateUserRequest = proto3.makeMessageType(
+  "api.v0alpha.UpdateUserRequest",
   () => [
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -761,10 +730,40 @@ export const UpdateUserByUserIdRequest = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.UpdateUserByUserIdResponse
+ * @generated from message api.v0alpha.UpdateUserResponse
  */
-export const UpdateUserByUserIdResponse = proto3.makeMessageType(
-  "api.v0alpha.UpdateUserByUserIdResponse",
+export const UpdateUserResponse = proto3.makeMessageType(
+  "api.v0alpha.UpdateUserResponse",
+  [],
+);
+
+/**
+ * @generated from message api.v0alpha.UpdateMyUserRequest
+ */
+export const UpdateMyUserRequest = proto3.makeMessageType(
+  "api.v0alpha.UpdateMyUserRequest",
+  () => [
+    { no: 11, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "partner_agent_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "time_zone_override", kind: "message", T: TimeZoneWrapper },
+    { no: 6, name: "linkback_numbers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "caller_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "user_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "default_app", kind: "enum", T: proto3.getEnumType(OperatorApplications) },
+    { no: 13, name: "password_reset_required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "agent_profile_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 18, name: "label_entities", kind: "message", T: Label, repeated: true },
+    { no: 17, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.UpdateMyUserResponse
+ */
+export const UpdateMyUserResponse = proto3.makeMessageType(
+  "api.v0alpha.UpdateMyUserResponse",
   [],
 );
 
@@ -4681,10 +4680,10 @@ export const CreateUserByOrgIdResponse = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.UpdateMyUserPasswordRequest
+ * @generated from message api.v0alpha.UpdateUserPasswordRequest
  */
-export const UpdateMyUserPasswordRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateMyUserPasswordRequest",
+export const UpdateUserPasswordRequest = proto3.makeMessageType(
+  "api.v0alpha.UpdateUserPasswordRequest",
   () => [
     { no: 2, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "current_password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -4692,10 +4691,10 @@ export const UpdateMyUserPasswordRequest = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.UpdateMyUserPasswordResponse
+ * @generated from message api.v0alpha.UpdateUserPasswordResponse
  */
-export const UpdateMyUserPasswordResponse = proto3.makeMessageType(
-  "api.v0alpha.UpdateMyUserPasswordResponse",
+export const UpdateUserPasswordResponse = proto3.makeMessageType(
+  "api.v0alpha.UpdateUserPasswordResponse",
   [],
 );
 
@@ -4765,12 +4764,12 @@ export const GetMyUserPasswordResetLinkResponse = proto3.makeMessageType(
 );
 
 /**
- * Request message for the GetUserPasswordResetLinkByUserIdRequest rpc.
+ * Request message for the GetUserPasswordResetLinkRequest rpc.
  *
- * @generated from message api.v0alpha.GetUserPasswordResetLinkByUserIdRequest
+ * @generated from message api.v0alpha.GetUserPasswordResetLinkRequest
  */
-export const GetUserPasswordResetLinkByUserIdRequest = proto3.makeMessageType(
-  "api.v0alpha.GetUserPasswordResetLinkByUserIdRequest",
+export const GetUserPasswordResetLinkRequest = proto3.makeMessageType(
+  "api.v0alpha.GetUserPasswordResetLinkRequest",
   () => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
@@ -4778,12 +4777,12 @@ export const GetUserPasswordResetLinkByUserIdRequest = proto3.makeMessageType(
 );
 
 /**
- * Response message for the GetUserPasswordResetLinkByUserIdRequest rpc.
+ * Response message for the GetUserPasswordResetLinkRequest rpc.
  *
- * @generated from message api.v0alpha.GetUserPasswordResetLinkByUserIdResponse
+ * @generated from message api.v0alpha.GetUserPasswordResetLinkResponse
  */
-export const GetUserPasswordResetLinkByUserIdResponse = proto3.makeMessageType(
-  "api.v0alpha.GetUserPasswordResetLinkByUserIdResponse",
+export const GetUserPasswordResetLinkResponse = proto3.makeMessageType(
+  "api.v0alpha.GetUserPasswordResetLinkResponse",
   () => [
     { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
@@ -6254,31 +6253,6 @@ export const AddUserSubscriptionRequest = proto3.makeMessageType(
  */
 export const AddUserSubscriptionResponse = proto3.makeMessageType(
   "api.v0alpha.AddUserSubscriptionResponse",
-  () => [
-    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
-  ],
-);
-
-/**
- * Request to add a user subscription.
- *
- * @generated from message api.v0alpha.AddMyUserSubscriptionRequest
- */
-export const AddMyUserSubscriptionRequest = proto3.makeMessageType(
-  "api.v0alpha.AddMyUserSubscriptionRequest",
-  () => [
-    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
-  ],
-);
-
-/**
- * Response to adding a user subscription.
- * Contains a single user subscription.
- *
- * @generated from message api.v0alpha.AddMyUserSubscriptionResponse
- */
-export const AddMyUserSubscriptionResponse = proto3.makeMessageType(
-  "api.v0alpha.AddMyUserSubscriptionResponse",
   () => [
     { no: 1, name: "subscription", kind: "message", T: UserSubscription },
   ],
