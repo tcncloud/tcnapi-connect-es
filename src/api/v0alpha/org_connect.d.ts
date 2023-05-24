@@ -1442,7 +1442,7 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * GetVoiceAnalyticsPreferences updates the all preferences except for enabled for voice analytics
+     * UpdateVoiceAnalyticsPreferences updates the all preferences except for enabled for voice analytics
      *
      * @generated from rpc api.v0alpha.Org.UpdateVoiceAnalyticsPreferences
      */
@@ -1453,7 +1453,7 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * GetVoiceAnalyticsPreferencesEnabled updates the enabled prefernece for voice analytics
+     * UpdateVoiceAnalyticsPreferencesEnabled updates the enabled prefernece for voice analytics
      *
      * @generated from rpc api.v0alpha.Org.UpdateVoiceAnalyticsPreferencesEnabled
      */
