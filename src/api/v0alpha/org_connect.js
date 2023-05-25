@@ -1453,7 +1453,7 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateVoiceAnalyticsPreferencesEnabled updates the enabled prefernece for voice analytics
+     * UpdateVoiceAnalyticsPreferencesEnabled updates the enabled preferences for voice analytics
      *
      * @generated from rpc api.v0alpha.Org.UpdateVoiceAnalyticsPreferencesEnabled
      */
