@@ -951,6 +951,14 @@ export declare class UserDirectoryEntry extends Message<UserDirectoryEntry> {
  * @generated from message api.v0alpha.GetTempUserTokenReq
  */
 export declare class GetTempUserTokenReq extends Message<GetTempUserTokenReq> {
+  /**
+   * DEPRECATED: user_id was previously optional,
+   * of user_id needs to be provided, use GetTempUserTokenByUserId rpc
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<GetTempUserTokenReq>);
 
   static readonly runtime: typeof proto3;
@@ -2175,6 +2183,14 @@ export declare class UpdateUserRequest extends Message<UpdateUserRequest> {
   defaultApp: OperatorApplications;
 
   /**
+   * DEPRECATED: user_caller_id was previously optional,
+   * if user_caller_id needs to be provided, use UpdateUserCallerId rpc
+   *
+   * @generated from field: string user_caller_id = 10;
+   */
+  userCallerId: string;
+
+  /**
    * @generated from field: bool password_reset_required = 13;
    */
   passwordResetRequired: boolean;
@@ -2353,126 +2369,51 @@ export declare class UpdateMyUserResponse extends Message<UpdateMyUserResponse> 
 }
 
 /**
- * @generated from message api.v0alpha.UpdateUserByCallerIdRequest
+ * @generated from message api.v0alpha.UpdateUserCallerIdRequest
  */
-export declare class UpdateUserByCallerIdRequest extends Message<UpdateUserByCallerIdRequest> {
+export declare class UpdateUserCallerIdRequest extends Message<UpdateUserCallerIdRequest> {
   /**
-   * @generated from field: string user_id = 2;
+   * @generated from field: string user_id = 1;
    */
   userId: string;
 
   /**
-   * @generated from field: string first_name = 11;
-   */
-  firstName: string;
-
-  /**
-   * @generated from field: string last_name = 12;
-   */
-  lastName: string;
-
-  /**
-   * @generated from field: string partner_agent_id = 4;
-   */
-  partnerAgentId: string;
-
-  /**
-   * User TimeZone with wrapper for nullable timezone
-   *
-   * @generated from field: api.commons.TimeZoneWrapper time_zone_override = 16;
-   */
-  timeZoneOverride?: TimeZoneWrapper;
-
-  /**
-   * @generated from field: repeated string linkback_numbers = 6;
-   */
-  linkbackNumbers: string[];
-
-  /**
-   * @generated from field: repeated string caller_ids = 7;
-   */
-  callerIds: string[];
-
-  /**
-   * @generated from field: string user_name = 8;
-   */
-  userName: string;
-
-  /**
-   * Default app the user starts on
-   *
-   * @generated from field: api.commons.OperatorApplications default_app = 9;
-   */
-  defaultApp: OperatorApplications;
-
-  /**
-   * @generated from field: string user_caller_id = 10;
+   * @generated from field: string user_caller_id = 2;
    */
   userCallerId: string;
 
-  /**
-   * @generated from field: bool password_reset_required = 13;
-   */
-  passwordResetRequired: boolean;
-
-  /**
-   * @generated from field: string agent_profile_group_id = 14;
-   */
-  agentProfileGroupId: string;
-
-  /**
-   * A list of labels to assign to the user
-   *
-   * @generated from field: repeated api.v0alpha.Label label_entities = 18;
-   */
-  labelEntities: Label[];
-
-  /**
-   * The users email
-   *
-   * @generated from field: string email = 17;
-   */
-  email: string;
-
-  /**
-   * List of all fields being updated
-   *
-   * @generated from field: google.protobuf.FieldMask field_mask = 100;
-   */
-  fieldMask?: FieldMask;
-
-  constructor(data?: PartialMessage<UpdateUserByCallerIdRequest>);
+  constructor(data?: PartialMessage<UpdateUserCallerIdRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.UpdateUserByCallerIdRequest";
+  static readonly typeName = "api.v0alpha.UpdateUserCallerIdRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUserByCallerIdRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUserCallerIdRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUserByCallerIdRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUserCallerIdRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUserByCallerIdRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUserCallerIdRequest;
 
-  static equals(a: UpdateUserByCallerIdRequest | PlainMessage<UpdateUserByCallerIdRequest> | undefined, b: UpdateUserByCallerIdRequest | PlainMessage<UpdateUserByCallerIdRequest> | undefined): boolean;
+  static equals(a: UpdateUserCallerIdRequest | PlainMessage<UpdateUserCallerIdRequest> | undefined, b: UpdateUserCallerIdRequest | PlainMessage<UpdateUserCallerIdRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message api.v0alpha.UpdateUserByCallerIdResponse
+ * @generated from message api.v0alpha.UpdateUserCallerIdResponse
  */
-export declare class UpdateUserByCallerIdResponse extends Message<UpdateUserByCallerIdResponse> {
-  constructor(data?: PartialMessage<UpdateUserByCallerIdResponse>);
+export declare class UpdateUserCallerIdResponse extends Message<UpdateUserCallerIdResponse> {
+  constructor(data?: PartialMessage<UpdateUserCallerIdResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.UpdateUserByCallerIdResponse";
+  static readonly typeName = "api.v0alpha.UpdateUserCallerIdResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUserByCallerIdResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUserCallerIdResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUserByCallerIdResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUserCallerIdResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUserByCallerIdResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUserCallerIdResponse;
 
-  static equals(a: UpdateUserByCallerIdResponse | PlainMessage<UpdateUserByCallerIdResponse> | undefined, b: UpdateUserByCallerIdResponse | PlainMessage<UpdateUserByCallerIdResponse> | undefined): boolean;
+  static equals(a: UpdateUserCallerIdResponse | PlainMessage<UpdateUserCallerIdResponse> | undefined, b: UpdateUserCallerIdResponse | PlainMessage<UpdateUserCallerIdResponse> | undefined): boolean;
 }
 
 /**
@@ -2824,6 +2765,14 @@ export declare class UpdateUserDisabledRequest extends Message<UpdateUserDisable
    * @generated from field: bool disable = 2;
    */
   disable: boolean;
+
+  /**
+   * DEPRECATED: org id was previously optional,
+   * if org_id needs to be provided, use UpdateUserDisabledByOrgId rpc
+   *
+   * @generated from field: string org_id = 3;
+   */
+  orgId: string;
 
   constructor(data?: PartialMessage<UpdateUserDisabledRequest>);
 
@@ -12885,32 +12834,40 @@ export declare class GetClientInfoDisplayTemplateResponse extends Message<GetCli
  */
 export declare class CreateUserRequest extends Message<CreateUserRequest> {
   /**
-   * @generated from field: string first_name = 1;
+   * DEPRECATED: org_id was previously optional,
+   * if org_id needs to be provided, use CreateUserByOrgId rpc
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string first_name = 2;
    */
   firstName: string;
 
   /**
-   * @generated from field: string last_name = 2;
+   * @generated from field: string last_name = 3;
    */
   lastName: string;
 
   /**
-   * @generated from field: string email = 3;
+   * @generated from field: string email = 4;
    */
   email: string;
 
   /**
-   * @generated from field: string user_name = 4;
+   * @generated from field: string user_name = 5;
    */
   userName: string;
 
   /**
-   * @generated from field: string password = 5;
+   * @generated from field: string password = 6;
    */
   password: string;
 
   /**
-   * @generated from field: repeated string permission_group_ids = 6;
+   * @generated from field: repeated string permission_group_ids = 7;
    */
   permissionGroupIds: string[];
 
@@ -13166,6 +13123,14 @@ export declare class UpdateUserPasswordRequest extends Message<UpdateUserPasswor
    */
   currentPassword: string;
 
+  /**
+   * DEPRECATED: org_id was previously optional,
+   * if org_id needs to be provided, use UpdateUserPasswordByOrgId rpc
+   *
+   * @generated from field: string org_id = 4;
+   */
+  orgId: string;
+
   constructor(data?: PartialMessage<UpdateUserPasswordRequest>);
 
   static readonly runtime: typeof proto3;
@@ -13327,9 +13292,17 @@ export declare class GetUserPasswordResetLinkRequest extends Message<GetUserPass
   userId: string;
 
   /**
+   * DEPRECATED: org_id was previously optional,
+   * if org_id needs to be provided, use GetUserPasswordResetLinkByOrgId rpc
+   *
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
    * The time to live (in seconds) of the generated link. This will default to 180 if set to 0.
    *
-   * @generated from field: int64 ttl = 12;
+   * @generated from field: int64 ttl = 3;
    */
   ttl: bigint;
 
@@ -15517,6 +15490,14 @@ export declare class ListOwnedOrgsByOrgIdResponse extends Message<ListOwnedOrgsB
  * @generated from message api.v0alpha.ListOwnedOrgsRequest
  */
 export declare class ListOwnedOrgsRequest extends Message<ListOwnedOrgsRequest> {
+  /**
+   * DEPRECATED: org_id was previously optional,
+   * if org_id needs to be providedm use ListOwnedOrgsByOrgId rpc
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
   constructor(data?: PartialMessage<ListOwnedOrgsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -16722,6 +16703,14 @@ export declare class GetOrgBillingSettingsByOrgIdResponse extends Message<GetOrg
  * @generated from message api.v0alpha.GetOrgBillingSettingsRequest
  */
 export declare class GetOrgBillingSettingsRequest extends Message<GetOrgBillingSettingsRequest> {
+  /**
+   * DEPRECATED: org_id was previously optional,
+   * if org_id needs to be provided, use GetOrgBillingSettingsByOrgId rpc
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
   constructor(data?: PartialMessage<GetOrgBillingSettingsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -18136,6 +18125,14 @@ export declare class GetUserEmailVerifiedRequest extends Message<GetUserEmailVer
    */
   userId: string;
 
+  /**
+   * DEPRECATED. the org_id was previously optional,
+   * if org_id needs to be provided, use GetUserEmailVerifiedByOrgId rpc
+   *
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
   constructor(data?: PartialMessage<GetUserEmailVerifiedRequest>);
 
   static readonly runtime: typeof proto3;
@@ -18311,6 +18308,14 @@ export declare class SendUserVerificationEmailRequest extends Message<SendUserVe
    */
   userId: string;
 
+  /**
+   * DEPRECATED. the org_id was previously optional,
+   * if org_id needs to be provided, use SendUserVerificationEmailByOrgId rpc
+   *
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
   constructor(data?: PartialMessage<SendUserVerificationEmailRequest>);
 
   static readonly runtime: typeof proto3;
@@ -18415,6 +18420,14 @@ export declare class ManualUserEmailVerificationRequest extends Message<ManualUs
    * @generated from field: string user_id = 1;
    */
   userId: string;
+
+  /**
+   * DEPRECATED. the org_id was previously optional,
+   * if org_id needs to be provided, use ManualUserEmailVerificationByOrgId rpc
+   *
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
 
   constructor(data?: PartialMessage<ManualUserEmailVerificationRequest>);
 
