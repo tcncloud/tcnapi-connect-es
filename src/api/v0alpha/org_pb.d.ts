@@ -953,9 +953,10 @@ export declare class UserDirectoryEntry extends Message<UserDirectoryEntry> {
 export declare class GetTempUserTokenReq extends Message<GetTempUserTokenReq> {
   /**
    * DEPRECATED: user_id was previously optional,
-   * of user_id needs to be provided, use GetTempUserTokenByUserId rpc
+   * if user_id needs to be provided, use GetTempUserTokenByUserId rpc
    *
-   * @generated from field: string user_id = 1;
+   * @generated from field: string user_id = 1 [deprecated = true];
+   * @deprecated
    */
   userId: string;
 
@@ -1123,6 +1124,24 @@ export declare class AdminListUserDescriptionsResponse extends Message<AdminList
  * @generated from message api.v0alpha.ListUserDescriptionsRequest
  */
 export declare class ListUserDescriptionsRequest extends Message<ListUserDescriptionsRequest> {
+  /**
+   * DEPRECATED. region_id was previously optional,
+   * if region_id needs to be provided, use AdminListUserDescriptions rpc
+   *
+   * @generated from field: string region_id = 1 [deprecated = true];
+   * @deprecated
+   */
+  regionId: string;
+
+  /**
+   * DEPRECATED. org_id_filter was previously optional,
+   * if org_id_filter needs to be provided, use AdminListUserDescriptions rpc
+   *
+   * @generated from field: string org_id_filter = 2 [deprecated = true];
+   * @deprecated
+   */
+  orgIdFilter: string;
+
   constructor(data?: PartialMessage<ListUserDescriptionsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -2186,7 +2205,8 @@ export declare class UpdateUserRequest extends Message<UpdateUserRequest> {
    * DEPRECATED: user_caller_id was previously optional,
    * if user_caller_id needs to be provided, use UpdateUserCallerId rpc
    *
-   * @generated from field: string user_caller_id = 10;
+   * @generated from field: string user_caller_id = 10 [deprecated = true];
+   * @deprecated
    */
   userCallerId: string;
 
@@ -2770,7 +2790,8 @@ export declare class UpdateUserDisabledRequest extends Message<UpdateUserDisable
    * DEPRECATED: org id was previously optional,
    * if org_id needs to be provided, use UpdateUserDisabledByOrgId rpc
    *
-   * @generated from field: string org_id = 3;
+   * @generated from field: string org_id = 3 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -3252,6 +3273,14 @@ export declare class ListPermissionGroupsByOrgIdResponse extends Message<ListPer
  * @generated from message api.v0alpha.ListPermissionGroupsRequest
  */
 export declare class ListPermissionGroupsRequest extends Message<ListPermissionGroupsRequest> {
+  /**
+   * DEPRECATED: Use ListPermissionGroupsByOrgId rpc if this field was used
+   *
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
+   */
+  orgId: string;
+
   constructor(data?: PartialMessage<ListPermissionGroupsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -3836,6 +3865,14 @@ export declare class ListP3PermissionGroupsByOrgIdResponse extends Message<ListP
  * @generated from message api.v0alpha.ListP3PermissionGroupsRequest
  */
 export declare class ListP3PermissionGroupsRequest extends Message<ListP3PermissionGroupsRequest> {
+  /**
+   * DEPRECATED: if provided use ListP3PermissionGroupsByOrgId rpc instead
+   *
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
+   */
+  orgId: string;
+
   constructor(data?: PartialMessage<ListP3PermissionGroupsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -4053,6 +4090,14 @@ export declare class UpdateP3PermissionGroupByOrgIdResponse extends Message<Upda
  * @generated from message api.v0alpha.UpdateP3PermissionGroupRequest
  */
 export declare class UpdateP3PermissionGroupRequest extends Message<UpdateP3PermissionGroupRequest> {
+  /**
+   * DEPRECATED: org_id. If this was previously used use the UpdateP3PermissionGroupByOrgId rpc instead.
+   *
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
+   */
+  orgId: string;
+
   /**
    * @generated from field: string permission_group_id = 2;
    */
@@ -12837,7 +12882,8 @@ export declare class CreateUserRequest extends Message<CreateUserRequest> {
    * DEPRECATED: org_id was previously optional,
    * if org_id needs to be provided, use CreateUserByOrgId rpc
    *
-   * @generated from field: string org_id = 1;
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -13127,7 +13173,8 @@ export declare class UpdateUserPasswordRequest extends Message<UpdateUserPasswor
    * DEPRECATED: org_id was previously optional,
    * if org_id needs to be provided, use UpdateUserPasswordByOrgId rpc
    *
-   * @generated from field: string org_id = 4;
+   * @generated from field: string org_id = 4 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -13295,7 +13342,8 @@ export declare class GetUserPasswordResetLinkRequest extends Message<GetUserPass
    * DEPRECATED: org_id was previously optional,
    * if org_id needs to be provided, use GetUserPasswordResetLinkByOrgId rpc
    *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -15494,7 +15542,8 @@ export declare class ListOwnedOrgsRequest extends Message<ListOwnedOrgsRequest> 
    * DEPRECATED: org_id was previously optional,
    * if org_id needs to be providedm use ListOwnedOrgsByOrgId rpc
    *
-   * @generated from field: string org_id = 1;
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -16707,7 +16756,8 @@ export declare class GetOrgBillingSettingsRequest extends Message<GetOrgBillingS
    * DEPRECATED: org_id was previously optional,
    * if org_id needs to be provided, use GetOrgBillingSettingsByOrgId rpc
    *
-   * @generated from field: string org_id = 1;
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -18129,7 +18179,8 @@ export declare class GetUserEmailVerifiedRequest extends Message<GetUserEmailVer
    * DEPRECATED. the org_id was previously optional,
    * if org_id needs to be provided, use GetUserEmailVerifiedByOrgId rpc
    *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -18312,7 +18363,8 @@ export declare class SendUserVerificationEmailRequest extends Message<SendUserVe
    * DEPRECATED. the org_id was previously optional,
    * if org_id needs to be provided, use SendUserVerificationEmailByOrgId rpc
    *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -18425,7 +18477,8 @@ export declare class ManualUserEmailVerificationRequest extends Message<ManualUs
    * DEPRECATED. the org_id was previously optional,
    * if org_id needs to be provided, use ManualUserEmailVerificationByOrgId rpc
    *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 

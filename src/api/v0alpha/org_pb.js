@@ -379,7 +379,10 @@ export const AdminListUserDescriptionsResponse = proto3.makeMessageType(
  */
 export const ListUserDescriptionsRequest = proto3.makeMessageType(
   "api.v0alpha.ListUserDescriptionsRequest",
-  [],
+  () => [
+    { no: 1, name: "region_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "org_id_filter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**
@@ -1059,7 +1062,9 @@ export const ListPermissionGroupsByOrgIdResponse = proto3.makeMessageType(
  */
 export const ListPermissionGroupsRequest = proto3.makeMessageType(
   "api.v0alpha.ListPermissionGroupsRequest",
-  [],
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**
@@ -1304,7 +1309,9 @@ export const ListP3PermissionGroupsByOrgIdResponse = proto3.makeMessageType(
  */
 export const ListP3PermissionGroupsRequest = proto3.makeMessageType(
   "api.v0alpha.ListP3PermissionGroupsRequest",
-  [],
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**
@@ -1383,6 +1390,7 @@ export const UpdateP3PermissionGroupByOrgIdResponse = proto3.makeMessageType(
 export const UpdateP3PermissionGroupRequest = proto3.makeMessageType(
   "api.v0alpha.UpdateP3PermissionGroupRequest",
   () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "permission_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
