@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AcceptLinkbackRecordingTermsRequest, AcceptLinkbackRecordingTermsResponse, AddLoginToUserRequest, AddLoginToUserResponse, AddOrgBillingOverrideRequest, AddOrgBillingOverrideResponse, AddPermissionToAccountOwnerPermissionGroupRequest, AddPermissionToAccountOwnerPermissionGroupResponse, AddPermissionToOrgDefaultGroupRequest, AddPermissionToOrgDefaultGroupResponse, AddUserRegionRequest, AddUserRegionResponse, AddUserSubscriptionRequest, AddUserSubscriptionResponse, AdminGetUserDetailsRequest, ArchiveOrganizationRequest, ArchiveOrganizationResponse, AssignAgentProfileGroupsRequest, AssignAgentProfileGroupsResponse, AssignUserPermissionGroupRequest, AssignUserPermissionGroupResponse, AssignUsersP3PermissionGroupRequest, AssignUsersP3PermissionGroupResponse, AssignUsersPermissionGroupRequest, AssignUsersPermissionGroupResponse, AssignUserToAccountOwnerPermissionGroupRequest, AssignUserToAccountOwnerPermissionGroupResponse, ClearEmailUnsubscribeAcknowledgementRequest, ClearEmailUnsubscribeAcknowledgementResponse, ConvertOrgToManualRequest, ConvertOrgToManualResponse, CopyQueueConfigReq, CopyQueueConfigRes, CreateAgentPauseCodeRequest, CreateAgentPauseCodeResponse, CreateAgentProfileGroupRequest, CreateAgentProfileGroupResponse, CreateAgentStatisticsTemplateRequest, CreateAgentStatisticsTemplateResponse, CreateAgentTriggerTemplateRequest, CreateAgentTriggerTemplateResponse, CreateAuthConnectionRequest, CreateAuthConnectionResponse, CreateClientInfoDisplayTemplateRequest, CreateClientInfoDisplayTemplateResponse, CreateCustomReportFilterRequest, CreateCustomReportFilterResponse, CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreateP3PermissionGroupRequest, CreateP3PermissionGroupResponse, CreatePermissionGroupRequest, CreatePermissionGroupResponse, CreateQueueConfigReq, CreateQueueConfigRes, CreateUserRequest, CreateUserResponse, CreateWebLinkTemplateRequest, CreateWebLinkTemplateResponse, DeleteAgentPauseCodeRequest, DeleteAgentPauseCodeResponse, DeleteAgentProfileGroupRequest, DeleteAgentProfileGroupResponse, DeleteAgentStatisticsTemplateRequest, DeleteAgentStatisticsTemplateResponse, DeleteAgentTriggerTemplateRequest, DeleteAgentTriggerTemplateResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, DeleteClientInfoDisplayTemplateRequest, DeleteClientInfoDisplayTemplateResponse, DeleteCustomReportFilterRequest, DeleteCustomReportFilterResponse, DeleteP3PermissionGroupRequest, DeleteP3PermissionGroupResponse, DeletePermissionGroupRequest, DeletePermissionGroupResponse, DeleteQueueConfigReq, DeleteQueueConfigRes, DeleteWebLinkTemplateRequest, DeleteWebLinkTemplateResponse, EditAgentQuickViewPreferencesRequest, EditAgentQuickViewPreferencesResponse, EditBackofficeThemePreferenceRequest, EditBackofficeThemePreferenceResponse, GetAdminClientPreferencesRequest, GetAdminClientPreferencesResponse, GetAgentPreferencesRequest, GetAgentPreferencesResponse, GetAgentProfileGroupRequest, GetAgentProfileGroupResponse, GetAgentQuickViewPreferencesRequest, GetAgentQuickViewPreferencesResponse, GetAgentSettingsRequest, GetAgentSettingsResponse, GetAgentTriggerTemplateRequest, GetAgentTriggerTemplateResponse, GetAgentUsersRequest, GetAgentUsersResponse, GetAllQueueConfigSoundsReq, GetAllQueueConfigSoundsRes, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, GetAuthenticationPreferencesRequest, GetAuthenticationPreferencesResponse, GetBackofficeThemePreferenceRequest, GetBackofficeThemePreferenceResponse, GetBroadcastPreferencesRequest, GetBroadcastPreferencesResponse, GetBusinessPreferencesRequest, GetBusinessPreferencesResponse, GetClientInfoDisplayTemplateRequest, GetClientInfoDisplayTemplateResponse, GetCompliancePreferencesRequest, GetCompliancePreferencesResponse, GetContactPreferencesRequest, GetContactPreferencesResponse, GetCountriesListRequest, GetCountriesListResponse, GetDashboardGeneralPreferencesRequest, GetDashboardGeneralPreferencesResponse, GetDashboardQueuePreferencesRequest, GetDashboardQueuePreferencesResponse, GetEmailSmsPreferencesRequest, GetEmailSmsPreferencesResponse, GetEndOfDayPreferencesRequest, GetEndOfDayPreferencesResponse, GetFilterPreferencesRequest, GetFilterPreferencesResponse, GetOrganizationPreferencesRequest, GetOrganizationPreferencesResponse, GetOrganizationProfileByIdRequest, GetOrganizationProfileRequest, GetOrganizationProfileResponse, GetOrgBillingSettingsRequest, GetOrgBillingSettingsResponse, GetOrgDefaultSuperUserGroupRequest, GetOrgDefaultSuperUserGroupResponse, GetP3OwningOrgRequest, GetP3OwningOrgResponse, GetPermissionsRequest, GetPermissionsResponse, GetPhonePreferencesRequest, GetPhonePreferencesResponse, GetQueueConfigReq, GetQueueConfigRes, GetQueueConfigSoundReq, GetQueueConfigSoundRes, GetRecordingPreferencesRequest, GetRecordingPreferencesResponse, GetRegionsRequest, GetRegionsResponse, GetSchedulePreferencesRequest, GetSchedulePreferencesResponse, GetScorecardsPreferencesRequest, GetScorecardsPreferencesResponse, GetSystemDefaultBillingRatesRequest, GetSystemDefaultBillingRatesResponse, GetSystemEnvironmentDetailsRequest, GetSystemEnvironmentDetailsResponse, GetTempUserTokenReq, GetTempUserTokenRes, GetUserBlockedRequest, GetUserBlockedResponse, GetUserDetailsRequest, GetUserDirectoryRequest, GetUserDirectoryResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserSubscriptionRequest, GetUserSubscriptionResponse, GetVoiceAnalyticsPreferencesRequest, GetVoiceAnalyticsPreferencesResponse, GetWebhookPreferencesRequest, GetWebhookPreferencesResponse, GetWebLinkTemplateRequest, GetWebLinkTemplateResponse, InitDefaultPermissionGroupsRequest, InitDefaultPermissionGroupsResponse, LinkbackUpdateBroadcastTemplatesRequest, LinkbackUpdateBroadcastTemplatesResponse, ListAgentPauseCodesRequest, ListAgentPauseCodesResponse, ListAgentProfileGroupsRequest, ListAgentProfileGroupsResponse, ListAgentResponseGroupsRequest, ListAgentResponseGroupsResponse, ListAgentStatisticsTemplatesRequest, ListAgentStatisticsTemplatesResponse, ListAgentTriggerTemplatesRequest, ListAgentTriggerTemplatesResponse, ListArchivedOrganizationsRequest, ListArchivedOrganizationsResponse, ListClientInfoDisplayTemplatesRequest, ListClientInfoDisplayTemplatesResponse, ListCustomReportFiltersRequest, ListCustomReportFiltersResponse, ListLastTemplateElementsRequest, ListLastTemplateElementsResponse, ListLoginHistoryRequest, ListLoginHistoryResponse, ListOrganizationDescriptionsRequest, ListOrganizationDescriptionsResponse, ListOrganizationUserDescriptionsRequest, ListOrganizationUserDescriptionsResponse, ListOrgSubscriptionsRequest, ListOrgSubscriptionsResponse, ListOwnedOrgsRequest, ListOwnedOrgsResponse, ListOwnedUsersRequest, ListOwnedUsersResponse, ListP3PermissionGroupsRequest, ListP3PermissionGroupsResponse, ListP3UnMigratedUsersRequest, ListP3UnMigratedUsersResponse, ListPermissionGroupsRequest, ListPermissionGroupsResponse, ListQueueConfigsReq, ListQueueConfigsRes, ListRegionalOrganizationsRequest, ListRegionalOrganizationsResponse, ListUserDescriptionsRequest, ListUserDescriptionsResponse, ListUserSubscriptionsRequest, ListUserSubscriptionsResponse, ListWebLinkTemplatesRequest, ListWebLinkTemplatesResponse, ManualUserEmailVerificationRequest, ManualUserEmailVerificationResponse, MigrateP3UserRequest, MigrateP3UserResponse, RecordEmailUnsubscribeAcknowledgementRequest, RecordEmailUnsubscribeAcknowledgementResponse, RegisterOrganizationRequest, RegisterOrganizationResponse, RemoveLoginStrikesRequest, RemoveLoginStrikesResponse, RemoveOrgBillingOverrideRequest, RemoveOrgBillingOverrideResponse, RemovePermissionFromOrgDefaultGroupRequest, RemovePermissionFromOrgDefaultGroupResponse, RemoveUserLoginStrikesRequest, RemoveUserLoginStrikesResponse, RemoveUserRegionRequest, RemoveUserRegionResponse, RemoveUserSubscriptionRequest, RemoveUserSubscriptionResponse, ResetUserRequirePasswordResetRequest, ResetUserRequirePasswordResetResponse, RevokeAccountOwnerPermissionFromUserRequest, RevokeAccountOwnerPermissionFromUserResponse, RevokePermissionToAccountOwnerPermissionGroupRequest, RevokePermissionToAccountOwnerPermissionGroupResponse, RevokeUserPermissionGroupRequest, RevokeUserPermissionGroupResponse, RevokeUsersP3PermissionGroupRequest, RevokeUsersP3PermissionGroupResponse, RevokeUsersPermissionGroupRequest, RevokeUsersPermissionGroupResponse, SendUserVerificationEmailRequest, SendUserVerificationEmailResponse, SetAllQueueConfigSoundsFromSourceReq, SetAllQueueConfigSoundsFromSourceRes, SetOrgBillingSettingsRequest, SetOrgBillingSettingsResponse, SetQueueConfigSoundReq, SetQueueConfigSoundRes, UnArchiveOrganizationRequest, UnArchiveOrganizationResponse, UnblockUserRequest, UnblockUserResponse, UpdateAdminClientPreferencesRequest, UpdateAdminClientPreferencesResponse, UpdateAgentPauseCodeRequest, UpdateAgentPauseCodeResponse, UpdateAgentPreferencesRequest, UpdateAgentPreferencesResponse, UpdateAgentProfileGroupRequest, UpdateAgentProfileGroupResponse, UpdateAgentStatisticsTemplateRequest, UpdateAgentStatisticsTemplateResponse, UpdateAgentTriggerTemplateRequest, UpdateAgentTriggerTemplateResponse, UpdateAuthConnectionSettingsRequest, UpdateAuthConnectionSettingsResponse, UpdateAuthenticationPreferencesRequest, UpdateAuthenticationPreferencesResponse, UpdateBroadcastPreferencesRequest, UpdateBroadcastPreferencesResponse, UpdateBulkUsersDisabledRequest, UpdateBulkUsersDisabledResponse, UpdateBusinessPreferencesRequest, UpdateBusinessPreferencesResponse, UpdateClientInfoDisplayTemplateRequest, UpdateClientInfoDisplayTemplateResponse, UpdateCompliancePreferencesRequest, UpdateCompliancePreferencesResponse, UpdateContactPreferencesRequest, UpdateContactPreferencesResponse, UpdateCustomReportFilterRequest, UpdateCustomReportFilterResponse, UpdateDashboardGeneralPreferencesRequest, UpdateDashboardGeneralPreferencesResponse, UpdateDashboardQueuePreferencesRequest, UpdateDashboardQueuePreferencesResponse, UpdateEmailSmsPreferencesRequest, UpdateEmailSmsPreferencesResponse, UpdateEndOfDayPreferencesRequest, UpdateEndOfDayPreferencesResponse, UpdateFilterPreferencesRequest, UpdateFilterPreferencesResponse, UpdateOrganizationPreferencesRequest, UpdateOrganizationPreferencesResponse, UpdateOrganizationRequest, UpdateOrganizationResponse, UpdateP3OwningOrgRequest, UpdateP3OwningOrgResponse, UpdateP3PermissionGroupRequest, UpdateP3PermissionGroupResponse, UpdateP3UserNameRequest, UpdateP3UserNameResponse, UpdateP3UserSidsRequest, UpdateP3UserSidsResponse, UpdatePermissionGroupRequest, UpdatePermissionGroupResponse, UpdatePhonePreferencesRequest, UpdatePhonePreferencesResponse, UpdateQueueConfigReq, UpdateQueueConfigRes, UpdateRecordingPreferencesRequest, UpdateRecordingPreferencesResponse, UpdateSchedulePreferencesRequest, UpdateSchedulePreferencesResponse, UpdateScorecardsPreferencesRequest, UpdateScorecardsPreferencesResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserNeoPermissionGroupsRequest, UpdateUserNeoPermissionGroupsResponse, UpdateUserPasswordRequest, UpdateUserPasswordResponse, UpdateUserRequest, UpdateUserResponse, UpdateUserSubscriptionRequest, UpdateUserSubscriptionResponse, UpdateVoiceAnalyticsPreferencesRequest, UpdateVoiceAnalyticsPreferencesResponse, UpdateWebhookPreferencesRequest, UpdateWebhookPreferencesResponse, UpdateWebLinkTemplateRequest, UpdateWebLinkTemplateResponse, UserDetails } from "./org_pb.js";
+import { AcceptLinkbackRecordingTermsRequest, AcceptLinkbackRecordingTermsResponse, AddLoginToUserRequest, AddLoginToUserResponse, AddOrgBillingOverrideRequest, AddOrgBillingOverrideResponse, AddPermissionToAccountOwnerPermissionGroupRequest, AddPermissionToAccountOwnerPermissionGroupResponse, AddPermissionToOrgDefaultGroupRequest, AddPermissionToOrgDefaultGroupResponse, AddUserRegionRequest, AddUserRegionResponse, AddUserSubscriptionRequest, AddUserSubscriptionResponse, AdminGetUserDetailsRequest, AdminListUserDescriptionsRequest, AdminListUserDescriptionsResponse, ArchiveOrganizationRequest, ArchiveOrganizationResponse, AssignAgentProfileGroupsRequest, AssignAgentProfileGroupsResponse, AssignUserPermissionGroupRequest, AssignUserPermissionGroupResponse, AssignUsersP3PermissionGroupRequest, AssignUsersP3PermissionGroupResponse, AssignUsersPermissionGroupRequest, AssignUsersPermissionGroupResponse, AssignUserToAccountOwnerPermissionGroupRequest, AssignUserToAccountOwnerPermissionGroupResponse, ClearEmailUnsubscribeAcknowledgementRequest, ClearEmailUnsubscribeAcknowledgementResponse, ConvertOrgToManualRequest, ConvertOrgToManualResponse, CopyQueueConfigReq, CopyQueueConfigRes, CreateAgentPauseCodeRequest, CreateAgentPauseCodeResponse, CreateAgentProfileGroupRequest, CreateAgentProfileGroupResponse, CreateAgentStatisticsTemplateRequest, CreateAgentStatisticsTemplateResponse, CreateAgentTriggerTemplateRequest, CreateAgentTriggerTemplateResponse, CreateAuthConnectionRequest, CreateAuthConnectionResponse, CreateClientInfoDisplayTemplateRequest, CreateClientInfoDisplayTemplateResponse, CreateCustomReportFilterRequest, CreateCustomReportFilterResponse, CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreateP3PermissionGroupRequest, CreateP3PermissionGroupResponse, CreatePermissionGroupRequest, CreatePermissionGroupResponse, CreateQueueConfigReq, CreateQueueConfigRes, CreateUserByOrgIdRequest, CreateUserByOrgIdResponse, CreateUserRequest, CreateUserResponse, CreateWebLinkTemplateRequest, CreateWebLinkTemplateResponse, DeleteAgentPauseCodeRequest, DeleteAgentPauseCodeResponse, DeleteAgentProfileGroupRequest, DeleteAgentProfileGroupResponse, DeleteAgentStatisticsTemplateRequest, DeleteAgentStatisticsTemplateResponse, DeleteAgentTriggerTemplateRequest, DeleteAgentTriggerTemplateResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, DeleteClientInfoDisplayTemplateRequest, DeleteClientInfoDisplayTemplateResponse, DeleteCustomReportFilterRequest, DeleteCustomReportFilterResponse, DeleteP3PermissionGroupRequest, DeleteP3PermissionGroupResponse, DeletePermissionGroupRequest, DeletePermissionGroupResponse, DeleteQueueConfigReq, DeleteQueueConfigRes, DeleteWebLinkTemplateRequest, DeleteWebLinkTemplateResponse, EditAgentQuickViewPreferencesRequest, EditAgentQuickViewPreferencesResponse, EditBackofficeThemePreferenceRequest, EditBackofficeThemePreferenceResponse, GetAdminClientPreferencesRequest, GetAdminClientPreferencesResponse, GetAgentPreferencesRequest, GetAgentPreferencesResponse, GetAgentProfileGroupRequest, GetAgentProfileGroupResponse, GetAgentQuickViewPreferencesRequest, GetAgentQuickViewPreferencesResponse, GetAgentSettingsRequest, GetAgentSettingsResponse, GetAgentTriggerTemplateRequest, GetAgentTriggerTemplateResponse, GetAgentUsersRequest, GetAgentUsersResponse, GetAllQueueConfigSoundsReq, GetAllQueueConfigSoundsRes, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, GetAuthenticationPreferencesRequest, GetAuthenticationPreferencesResponse, GetBackofficeThemePreferenceRequest, GetBackofficeThemePreferenceResponse, GetBroadcastPreferencesRequest, GetBroadcastPreferencesResponse, GetBusinessPreferencesRequest, GetBusinessPreferencesResponse, GetClientInfoDisplayTemplateRequest, GetClientInfoDisplayTemplateResponse, GetCompliancePreferencesRequest, GetCompliancePreferencesResponse, GetContactPreferencesRequest, GetContactPreferencesResponse, GetCountriesListRequest, GetCountriesListResponse, GetDashboardGeneralPreferencesRequest, GetDashboardGeneralPreferencesResponse, GetDashboardQueuePreferencesRequest, GetDashboardQueuePreferencesResponse, GetEmailSmsPreferencesRequest, GetEmailSmsPreferencesResponse, GetEndOfDayPreferencesRequest, GetEndOfDayPreferencesResponse, GetFilterPreferencesRequest, GetFilterPreferencesResponse, GetMyUserDetailsRequest, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetOrganizationPreferencesRequest, GetOrganizationPreferencesResponse, GetOrganizationProfileByIdRequest, GetOrganizationProfileRequest, GetOrganizationProfileResponse, GetOrgBillingSettingsByOrgIdRequest, GetOrgBillingSettingsByOrgIdResponse, GetOrgBillingSettingsRequest, GetOrgBillingSettingsResponse, GetOrgDefaultSuperUserGroupRequest, GetOrgDefaultSuperUserGroupResponse, GetP3OwningOrgRequest, GetP3OwningOrgResponse, GetPermissionsRequest, GetPermissionsResponse, GetPhonePreferencesRequest, GetPhonePreferencesResponse, GetQueueConfigReq, GetQueueConfigRes, GetQueueConfigSoundReq, GetQueueConfigSoundRes, GetRecordingPreferencesRequest, GetRecordingPreferencesResponse, GetRegionsRequest, GetRegionsResponse, GetSchedulePreferencesRequest, GetSchedulePreferencesResponse, GetScorecardsPreferencesRequest, GetScorecardsPreferencesResponse, GetSystemDefaultBillingRatesRequest, GetSystemDefaultBillingRatesResponse, GetSystemEnvironmentDetailsRequest, GetSystemEnvironmentDetailsResponse, GetTempUserTokenByUserIdReq, GetTempUserTokenByUserIdRes, GetTempUserTokenReq, GetTempUserTokenRes, GetUserBlockedRequest, GetUserBlockedResponse, GetUserDetailsRequest, GetUserDirectoryRequest, GetUserDirectoryResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserSubscriptionRequest, GetUserSubscriptionResponse, GetVoiceAnalyticsPreferencesRequest, GetVoiceAnalyticsPreferencesResponse, GetWebhookPreferencesRequest, GetWebhookPreferencesResponse, GetWebLinkTemplateRequest, GetWebLinkTemplateResponse, InitDefaultPermissionGroupsRequest, InitDefaultPermissionGroupsResponse, LinkbackUpdateBroadcastTemplatesRequest, LinkbackUpdateBroadcastTemplatesResponse, ListAgentPauseCodesRequest, ListAgentPauseCodesResponse, ListAgentProfileGroupsRequest, ListAgentProfileGroupsResponse, ListAgentResponseGroupsRequest, ListAgentResponseGroupsResponse, ListAgentStatisticsTemplatesRequest, ListAgentStatisticsTemplatesResponse, ListAgentTriggerTemplatesRequest, ListAgentTriggerTemplatesResponse, ListArchivedOrganizationsRequest, ListArchivedOrganizationsResponse, ListClientInfoDisplayTemplatesRequest, ListClientInfoDisplayTemplatesResponse, ListCustomReportFiltersRequest, ListCustomReportFiltersResponse, ListLastTemplateElementsRequest, ListLastTemplateElementsResponse, ListLoginHistoryRequest, ListLoginHistoryResponse, ListOrganizationDescriptionsRequest, ListOrganizationDescriptionsResponse, ListOrganizationUserDescriptionsRequest, ListOrganizationUserDescriptionsResponse, ListOrgSubscriptionsRequest, ListOrgSubscriptionsResponse, ListOwnedOrgsByOrgIdRequest, ListOwnedOrgsByOrgIdResponse, ListOwnedOrgsRequest, ListOwnedOrgsResponse, ListOwnedUsersRequest, ListOwnedUsersResponse, ListP3PermissionGroupsByOrgIdRequest, ListP3PermissionGroupsByOrgIdResponse, ListP3PermissionGroupsRequest, ListP3PermissionGroupsResponse, ListP3UnMigratedUsersRequest, ListP3UnMigratedUsersResponse, ListPermissionGroupsByOrgIdRequest, ListPermissionGroupsByOrgIdResponse, ListPermissionGroupsRequest, ListPermissionGroupsResponse, ListQueueConfigsReq, ListQueueConfigsRes, ListRegionalOrganizationsRequest, ListRegionalOrganizationsResponse, ListUserDescriptionsRequest, ListUserDescriptionsResponse, ListUserSubscriptionsRequest, ListUserSubscriptionsResponse, ListWebLinkTemplatesRequest, ListWebLinkTemplatesResponse, ManualUserEmailVerificationByOrgIdRequest, ManualUserEmailVerificationByOrgIdResponse, ManualUserEmailVerificationRequest, ManualUserEmailVerificationResponse, MigrateP3UserRequest, MigrateP3UserResponse, RecordEmailUnsubscribeAcknowledgementRequest, RecordEmailUnsubscribeAcknowledgementResponse, RegisterOrganizationRequest, RegisterOrganizationResponse, RemoveLoginStrikesRequest, RemoveLoginStrikesResponse, RemoveMyUserSubscriptionRequest, RemoveMyUserSubscriptionResponse, RemoveOrgBillingOverrideRequest, RemoveOrgBillingOverrideResponse, RemovePermissionFromOrgDefaultGroupRequest, RemovePermissionFromOrgDefaultGroupResponse, RemoveUserLoginStrikesRequest, RemoveUserLoginStrikesResponse, RemoveUserRegionRequest, RemoveUserRegionResponse, RemoveUserSubscriptionRequest, RemoveUserSubscriptionResponse, ResetUserRequirePasswordResetRequest, ResetUserRequirePasswordResetResponse, RevokeAccountOwnerPermissionFromUserRequest, RevokeAccountOwnerPermissionFromUserResponse, RevokePermissionToAccountOwnerPermissionGroupRequest, RevokePermissionToAccountOwnerPermissionGroupResponse, RevokeUserPermissionGroupRequest, RevokeUserPermissionGroupResponse, RevokeUsersP3PermissionGroupRequest, RevokeUsersP3PermissionGroupResponse, RevokeUsersPermissionGroupRequest, RevokeUsersPermissionGroupResponse, SendUserVerificationEmailByOrgIdRequest, SendUserVerificationEmailByOrgIdResponse, SendUserVerificationEmailRequest, SendUserVerificationEmailResponse, SetAllQueueConfigSoundsFromSourceReq, SetAllQueueConfigSoundsFromSourceRes, SetOrgBillingSettingsRequest, SetOrgBillingSettingsResponse, SetQueueConfigSoundReq, SetQueueConfigSoundRes, UnArchiveOrganizationRequest, UnArchiveOrganizationResponse, UnblockUserRequest, UnblockUserResponse, UpdateAdminClientPreferencesRequest, UpdateAdminClientPreferencesResponse, UpdateAgentPauseCodeRequest, UpdateAgentPauseCodeResponse, UpdateAgentPreferencesRequest, UpdateAgentPreferencesResponse, UpdateAgentProfileGroupRequest, UpdateAgentProfileGroupResponse, UpdateAgentStatisticsTemplateRequest, UpdateAgentStatisticsTemplateResponse, UpdateAgentTriggerTemplateRequest, UpdateAgentTriggerTemplateResponse, UpdateAuthConnectionSettingsRequest, UpdateAuthConnectionSettingsResponse, UpdateAuthenticationPreferencesRequest, UpdateAuthenticationPreferencesResponse, UpdateBroadcastPreferencesRequest, UpdateBroadcastPreferencesResponse, UpdateBulkUsersDisabledRequest, UpdateBulkUsersDisabledResponse, UpdateBusinessPreferencesRequest, UpdateBusinessPreferencesResponse, UpdateClientInfoDisplayTemplateRequest, UpdateClientInfoDisplayTemplateResponse, UpdateCompliancePreferencesRequest, UpdateCompliancePreferencesResponse, UpdateContactPreferencesRequest, UpdateContactPreferencesResponse, UpdateCustomReportFilterRequest, UpdateCustomReportFilterResponse, UpdateDashboardGeneralPreferencesRequest, UpdateDashboardGeneralPreferencesResponse, UpdateDashboardQueuePreferencesRequest, UpdateDashboardQueuePreferencesResponse, UpdateEmailSmsPreferencesRequest, UpdateEmailSmsPreferencesResponse, UpdateEndOfDayPreferencesRequest, UpdateEndOfDayPreferencesResponse, UpdateFilterPreferencesRequest, UpdateFilterPreferencesResponse, UpdateMyUserPasswordRequest, UpdateMyUserPasswordResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateOrganizationPreferencesRequest, UpdateOrganizationPreferencesResponse, UpdateOrganizationRequest, UpdateOrganizationResponse, UpdateP3OwningOrgRequest, UpdateP3OwningOrgResponse, UpdateP3PermissionGroupByOrgIdRequest, UpdateP3PermissionGroupByOrgIdResponse, UpdateP3PermissionGroupRequest, UpdateP3PermissionGroupResponse, UpdateP3UserNameRequest, UpdateP3UserNameResponse, UpdateP3UserSidsRequest, UpdateP3UserSidsResponse, UpdatePermissionGroupRequest, UpdatePermissionGroupResponse, UpdatePhonePreferencesRequest, UpdatePhonePreferencesResponse, UpdateQueueConfigReq, UpdateQueueConfigRes, UpdateRecordingPreferencesRequest, UpdateRecordingPreferencesResponse, UpdateSchedulePreferencesRequest, UpdateSchedulePreferencesResponse, UpdateScorecardsPreferencesRequest, UpdateScorecardsPreferencesResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserNeoPermissionGroupsRequest, UpdateUserNeoPermissionGroupsResponse, UpdateUserPasswordByOrgIdRequest, UpdateUserPasswordByOrgIdResponse, UpdateUserPasswordRequest, UpdateUserPasswordResponse, UpdateUserRequest, UpdateUserResponse, UpdateUserSubscriptionRequest, UpdateUserSubscriptionResponse, UpdateVoiceAnalyticsPreferencesEnabledRequest, UpdateVoiceAnalyticsPreferencesEnabledResponse, UpdateVoiceAnalyticsPreferencesRequest, UpdateVoiceAnalyticsPreferencesResponse, UpdateWebhookPreferencesRequest, UpdateWebhookPreferencesResponse, UpdateWebLinkTemplateRequest, UpdateWebLinkTemplateResponse, UserDetails } from "./org_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -151,6 +151,15 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * @generated from rpc api.v0alpha.Org.AdminListUserDescriptions
+     */
+    adminListUserDescriptions: {
+      name: "AdminListUserDescriptions",
+      I: AdminListUserDescriptionsRequest,
+      O: AdminListUserDescriptionsResponse,
+      kind: MethodKind.ServerStreaming,
+    },
+    /**
      * @generated from rpc api.v0alpha.Org.ListUserDescriptions
      */
     listUserDescriptions: {
@@ -177,6 +186,15 @@ export const Org = {
       name: "GetRegions",
       I: GetRegionsRequest,
       O: GetRegionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v0alpha.Org.GetMyUserDetails
+     */
+    getMyUserDetails: {
+      name: "GetMyUserDetails",
+      I: GetMyUserDetailsRequest,
+      O: UserDetails,
       kind: MethodKind.Unary,
     },
     /**
@@ -300,13 +318,7 @@ export const Org = {
     },
     /**
      * UpdateUser updates a user as defined by the UpdateUserRequest.
-     * Required Permissions:
-     * USER_EDIT if the user_id is given on the request.
-     * NONE (TODO: create & use new perm) if the user_id is NOT given.
-     *  This will only the currently logged in user.
-     *  Only some of the fields on the request message can be updated
-     *  for the currently logged in user: time_zone, linkback_numbers,
-     *  caller_ids, and default_app.
+     * Required Permissions: USER_EDIT (default)
      *
      * @generated from rpc api.v0alpha.Org.UpdateUser
      */
@@ -317,10 +329,36 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * UpdateMyUser updates the currently logged in user as defined by the UpdateMyUserRequest.
+     * Required Permissions: USER_EDIT_OPTIONS
+     * Only some of the fields on the request message can be updated
+     * for the currently logged in user: time_zone, linkback_numbers,
+     * caller_ids, and default_app.
+     *
+     * @generated from rpc api.v0alpha.Org.UpdateMyUser
+     */
+    updateMyUser: {
+      name: "UpdateMyUser",
+      I: UpdateMyUserRequest,
+      O: UpdateMyUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateUserCallerId updates a user's caller id as defined by the UpdateUserCallerIdRequest.
+     * Required Permissions: USER_EDIT_AGENT_CALLER_ID
+     *
+     * @generated from rpc api.v0alpha.Org.UpdateUserCallerId
+     */
+    updateUserCallerId: {
+      name: "UpdateUserCallerId",
+      I: UpdateUserCallerIdRequest,
+      O: UpdateUserCallerIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * CreateUser creates a new user as defined by the CreateUserRequest
      * request message.
-     * Required Permissions:
-     * USER_CREATE, CUSTOMER_SUPPORT if adding to an org other than your own
+     * Required Permissions: USER_CREATE
      *
      * @generated from rpc api.v0alpha.Org.CreateUser
      */
@@ -328,6 +366,19 @@ export const Org = {
       name: "CreateUser",
       I: CreateUserRequest,
       O: CreateUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * CreateUserByOrgId creates a new user as defined by the CreateUserByOrgIdRequest
+     * request message to a specific org.
+     * Required Permissions: CUSTOMER_SUPPORT
+     *
+     * @generated from rpc api.v0alpha.Org.CreateUserByOrgId
+     */
+    createUserByOrgId: {
+      name: "CreateUserByOrgId",
+      I: CreateUserByOrgIdRequest,
+      O: CreateUserByOrgIdResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -342,11 +393,9 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateUserPassword updates a users password to the
-     * password given on the request message.
-     * Required Permissions:
-     * USER_EDIT if user_id was given on the request (Update another user's password)
-     * USER_EDIT_PASSWORD if user_id is retrieved from token (Update your own password)
+     * UpdateUserPassword updates a user's password (in the same org as the current user)
+     * to the password given on the request message.
+     * Required Permissions: USER_EDIT (Update another user's password in the same org)
      *
      * @generated from rpc api.v0alpha.Org.UpdateUserPassword
      */
@@ -354,6 +403,32 @@ export const Org = {
       name: "UpdateUserPassword",
       I: UpdateUserPasswordRequest,
       O: UpdateUserPasswordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateMyUserPassword updates the current user's password to the
+     * password given on the request message.
+     * Required Permissions: USER_EDIT_PASSWORD (Update your own password)
+     *
+     * @generated from rpc api.v0alpha.Org.UpdateMyUserPassword
+     */
+    updateMyUserPassword: {
+      name: "UpdateMyUserPassword",
+      I: UpdateMyUserPasswordRequest,
+      O: UpdateMyUserPasswordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateUserPasswordByOrgId updates a specific user's password
+     * from a specific org to the password given on the request message.
+     * Required Permissions: CUSTOMER_SUPPORT (Update a user's password from an org)
+     *
+     * @generated from rpc api.v0alpha.Org.UpdateUserPasswordByOrgId
+     */
+    updateUserPasswordByOrgId: {
+      name: "UpdateUserPasswordByOrgId",
+      I: UpdateUserPasswordByOrgIdRequest,
+      O: UpdateUserPasswordByOrgIdResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -369,11 +444,10 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * Generate a password reset link for a user.
-     * Required Permissions:
-     *  USER_EDIT_PASSWORD if user_id not given on request.
+     * GetUserPasswordResetLink generates a password reset link for a user
+     * in the same org as the current user.
+     * Required Permissions: USER_EDIT
      *  USER_EDIT if user_id given on the request.
-     *  CUSTOMER_SUPPORT if user_id & org_id given on request. User_id must be given if org_id is.
      *
      * @generated from rpc api.v0alpha.Org.GetUserPasswordResetLink
      */
@@ -384,10 +458,33 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * GetMyUserPasswordResetLink generate a password reset link for the current user.
+     * Required Permissions: USER_EDIT_PASSWORD
+     *
+     * @generated from rpc api.v0alpha.Org.GetMyUserPasswordResetLink
+     */
+    getMyUserPasswordResetLink: {
+      name: "GetMyUserPasswordResetLink",
+      I: GetMyUserPasswordResetLinkRequest,
+      O: GetMyUserPasswordResetLinkResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetUserPasswordResetLinkByOrgId generates a password reset link
+     * for a specific user in a specific org.
+     * Required Permissions: CUSTOMER_SUPPORT
+     *
+     * @generated from rpc api.v0alpha.Org.GetUserPasswordResetLinkByOrgId
+     */
+    getUserPasswordResetLinkByOrgId: {
+      name: "GetUserPasswordResetLinkByOrgId",
+      I: GetUserPasswordResetLinkByOrgIdRequest,
+      O: GetUserPasswordResetLinkByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Returns whether or not the given user's email is verified.
-     * Required Permissions:
-     *  USER_EDIT if org_id not given on request.
-     *  CUSTOMER_SUPPORT if org_id given on request.
+     * Required Permissions: USER_EDIT
      *
      * @generated from rpc api.v0alpha.Org.GetUserEmailVerified
      */
@@ -398,10 +495,31 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * GetUserEmailVerifiedByOrgId returns whether or not the given user's email
+     * from a specific org is verified.
+     * Required Permissions: CUSTOMER_SUPPORT
+     *
+     * @generated from rpc api.v0alpha.Org.GetUserEmailVerifiedByOrgId
+     */
+    getUserEmailVerifiedByOrgId: {
+      name: "GetUserEmailVerifiedByOrgId",
+      I: GetUserEmailVerifiedByOrgIdRequest,
+      O: GetUserEmailVerifiedByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Sends a verfication email to the given users email.
-     * Required Permissions:
-     *  USER_EDIT if org_id not given on request.
-     *  CUSTOMER_SUPPORT if org_id given on request.
+     *
+     * @generated from rpc api.v0alpha.Org.SendUserVerificationEmailByOrgId
+     */
+    sendUserVerificationEmailByOrgId: {
+      name: "SendUserVerificationEmailByOrgId",
+      I: SendUserVerificationEmailByOrgIdRequest,
+      O: SendUserVerificationEmailByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Sends a verfication email to the given users email.
      *
      * @generated from rpc api.v0alpha.Org.SendUserVerificationEmail
      */
@@ -413,9 +531,17 @@ export const Org = {
     },
     /**
      * Sets the given user's to verified without needing to send a verification email.
-     * Required Permissions:
-     *  USER_EDIT if org_id not given on request.
-     *  CUSTOMER_SUPPORT if org_id given on request.
+     *
+     * @generated from rpc api.v0alpha.Org.ManualUserEmailVerificationByOrgId
+     */
+    manualUserEmailVerificationByOrgId: {
+      name: "ManualUserEmailVerificationByOrgId",
+      I: ManualUserEmailVerificationByOrgIdRequest,
+      O: ManualUserEmailVerificationByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Sets the given user's to verified without needing to send a verification email.
      *
      * @generated from rpc api.v0alpha.Org.ManualUserEmailVerification
      */
@@ -426,9 +552,9 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * Authenticates impersonation and generates token to be used.
-     * Required Permissions:
-     * CUSTOMER_SUPPORT
+     * GetTempUserToken authenticates impersonation and generates token
+     * to be used for the current user.
+     * Required Permissions: None, anyone authorized can use this
      *
      * @generated from rpc api.v0alpha.Org.GetTempUserToken
      */
@@ -436,6 +562,19 @@ export const Org = {
       name: "GetTempUserToken",
       I: GetTempUserTokenReq,
       O: GetTempUserTokenRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetTempUserTokenByUserId authenticates impersonation and generates token
+     * to be used for the user with the given user_id.
+     * Required Permissions: CUSTOMER_SUPPORT
+     *
+     * @generated from rpc api.v0alpha.Org.GetTempUserTokenByUserId
+     */
+    getTempUserTokenByUserId: {
+      name: "GetTempUserTokenByUserId",
+      I: GetTempUserTokenByUserIdReq,
+      O: GetTempUserTokenByUserIdRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -488,8 +627,6 @@ export const Org = {
     },
     /**
      * UpdateUserDisabled updates a specified user to disabled or enabled. A disabled user cannot log in.
-     * Required Permissions:
-     *    - USER_EDIT
      *
      * @generated from rpc api.v0alpha.Org.UpdateUserDisabled
      */
@@ -497,6 +634,17 @@ export const Org = {
       name: "UpdateUserDisabled",
       I: UpdateUserDisabledRequest,
       O: UpdateUserDisabledResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateUserDisabledByOrgId updates a specified user in a specific organization to disabled or enabled.
+     *
+     * @generated from rpc api.v0alpha.Org.UpdateUserDisabledByOrgId
+     */
+    updateUserDisabledByOrgId: {
+      name: "UpdateUserDisabledByOrgId",
+      I: UpdateUserDisabledByOrgIdRequest,
+      O: UpdateUserDisabledByOrgIdResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -516,8 +664,23 @@ export const Org = {
      * Returns the billing data for the given org. Billing data
      * will only be included for countries present on the org's
      * allowed countries preference.
-     * Required Permissions:
-     *    CUSTOMER_SUPPORT
+     * Errors:
+     *    - grpc.InvalidArgument: The org_id on the request was invalid.
+     *    - grpc.NotFound: The given org_id did not exist.
+     *    - grpc.Internal: An unexpected error occurred while getting the orgs billing settings.
+     *
+     * @generated from rpc api.v0alpha.Org.GetOrgBillingSettingsByOrgId
+     */
+    getOrgBillingSettingsByOrgId: {
+      name: "GetOrgBillingSettingsByOrgId",
+      I: GetOrgBillingSettingsByOrgIdRequest,
+      O: GetOrgBillingSettingsByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns the billing data for the current org. Billing data
+     * will only be included for countries present on the org's
+     * allowed countries preference.
      * Errors:
      *    - grpc.InvalidArgument: The org_id on the request was invalid.
      *    - grpc.NotFound: The given org_id did not exist.
@@ -597,6 +760,17 @@ export const Org = {
       name: "GetSystemDefaultBillingRates",
       I: GetSystemDefaultBillingRatesRequest,
       O: GetSystemDefaultBillingRatesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListPermissionGroupsByOrgId returns the list of an org's permission groups.
+     *
+     * @generated from rpc api.v0alpha.Org.ListPermissionGroupsByOrgId
+     */
+    listPermissionGroupsByOrgId: {
+      name: "ListPermissionGroupsByOrgId",
+      I: ListPermissionGroupsByOrgIdRequest,
+      O: ListPermissionGroupsByOrgIdResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -793,6 +967,17 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * ListP3PermissionGroupsByOrgId returns the list of an org's P3 permission groups.
+     *
+     * @generated from rpc api.v0alpha.Org.ListP3PermissionGroupsByOrgId
+     */
+    listP3PermissionGroupsByOrgId: {
+      name: "ListP3PermissionGroupsByOrgId",
+      I: ListP3PermissionGroupsByOrgIdRequest,
+      O: ListP3PermissionGroupsByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * ListP3PermissionGroups returns the list of an org's P3 permission groups.
      *
      * @generated from rpc api.v0alpha.Org.ListP3PermissionGroups
@@ -834,6 +1019,17 @@ export const Org = {
       name: "CreateP3PermissionGroup",
       I: CreateP3PermissionGroupRequest,
       O: CreateP3PermissionGroupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Update p3 permission group
+     *
+     * @generated from rpc api.v0alpha.Org.UpdateP3PermissionGroupByOrgId
+     */
+    updateP3PermissionGroupByOrgId: {
+      name: "UpdateP3PermissionGroupByOrgId",
+      I: UpdateP3PermissionGroupByOrgIdRequest,
+      O: UpdateP3PermissionGroupByOrgIdResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -1246,7 +1442,7 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * GetVoiceAnalyticsPreferences updates the all preferences for voice analytics
+     * UpdateVoiceAnalyticsPreferences updates the all preferences except for enabled for voice analytics
      *
      * @generated from rpc api.v0alpha.Org.UpdateVoiceAnalyticsPreferences
      */
@@ -1254,6 +1450,17 @@ export const Org = {
       name: "UpdateVoiceAnalyticsPreferences",
       I: UpdateVoiceAnalyticsPreferencesRequest,
       O: UpdateVoiceAnalyticsPreferencesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateVoiceAnalyticsPreferencesEnabled updates the enabled preferences for voice analytics
+     *
+     * @generated from rpc api.v0alpha.Org.UpdateVoiceAnalyticsPreferencesEnabled
+     */
+    updateVoiceAnalyticsPreferencesEnabled: {
+      name: "UpdateVoiceAnalyticsPreferencesEnabled",
+      I: UpdateVoiceAnalyticsPreferencesEnabledRequest,
+      O: UpdateVoiceAnalyticsPreferencesEnabledResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -2006,8 +2213,17 @@ export const Org = {
     },
     /**
      * Gets all orgs under the p3 hierarchy
-     * Required Permissions:
-     * PERMISSION_ORG_VIEW
+     *
+     * @generated from rpc api.v0alpha.Org.ListOwnedOrgsByOrgId
+     */
+    listOwnedOrgsByOrgId: {
+      name: "ListOwnedOrgsByOrgId",
+      I: ListOwnedOrgsByOrgIdRequest,
+      O: ListOwnedOrgsByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Gets all orgs under the p3 hierarchy
      *
      * @generated from rpc api.v0alpha.Org.ListOwnedOrgs
      */
@@ -2128,10 +2344,7 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * Adds a user subscription to users list of subscriptions
-     * Required Permissions:
-     *    USER_EDIT if user id IS provided
-     *    EDIT_USER_OPTIONS if user id NOT provided
+     * Adds a user subscription to user's list of subscriptions
      *
      * @generated from rpc api.v0alpha.Org.AddUserSubscription
      */
@@ -2142,10 +2355,7 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * Removes a user subscription from a users list of subscription
-     * Required Permissions:
-     *    USER_EDIT if user id IS provided
-     *    EDIT_USER_OPTIONS if user id NOT provided
+     * Removes a user subscription from a specified user's list of subscriptions
      *
      * @generated from rpc api.v0alpha.Org.RemoveUserSubscription
      */
@@ -2153,6 +2363,17 @@ export const Org = {
       name: "RemoveUserSubscription",
       I: RemoveUserSubscriptionRequest,
       O: RemoveUserSubscriptionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Removes a user subscription from a user's list of subscriptions
+     *
+     * @generated from rpc api.v0alpha.Org.RemoveMyUserSubscription
+     */
+    removeMyUserSubscription: {
+      name: "RemoveMyUserSubscription",
+      I: RemoveMyUserSubscriptionRequest,
+      O: RemoveMyUserSubscriptionResponse,
       kind: MethodKind.Unary,
     },
     /**
