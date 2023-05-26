@@ -4934,6 +4934,26 @@ export const ListQueueConfigsRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v0alpha.ListQueueConfigsByOrgIdReq
+ */
+export const ListQueueConfigsByOrgIdReq = proto3.makeMessageType(
+  "api.v0alpha.ListQueueConfigsByOrgIdReq",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.ListQueueConfigsByOrgIdRes
+ */
+export const ListQueueConfigsByOrgIdRes = proto3.makeMessageType(
+  "api.v0alpha.ListQueueConfigsByOrgIdRes",
+  () => [
+    { no: 1, name: "configs", kind: "message", T: QueueConfig, repeated: true },
+  ],
+);
+
+/**
  * @generated from message api.v0alpha.DeleteQueueConfigReq
  */
 export const DeleteQueueConfigReq = proto3.makeMessageType(
@@ -6265,6 +6285,31 @@ export const AddUserSubscriptionResponse = proto3.makeMessageType(
 );
 
 /**
+ * Request to add a user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionRequest
+ */
+export const AddMyUserSubscriptionRequest = proto3.makeMessageType(
+  "api.v0alpha.AddMyUserSubscriptionRequest",
+  () => [
+    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
+  ],
+);
+
+/**
+ * Response to adding a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionResponse
+ */
+export const AddMyUserSubscriptionResponse = proto3.makeMessageType(
+  "api.v0alpha.AddMyUserSubscriptionResponse",
+  () => [
+    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
+  ],
+);
+
+/**
  * Request for getting a user subscription.
  *
  * @generated from message api.v0alpha.GetUserSubscriptionRequest
@@ -6291,6 +6336,31 @@ export const GetUserSubscriptionResponse = proto3.makeMessageType(
 );
 
 /**
+ * Request for getting a user subscription.
+ *
+ * @generated from message api.v0alpha.GetMyUserSubscriptionRequest
+ */
+export const GetMyUserSubscriptionRequest = proto3.makeMessageType(
+  "api.v0alpha.GetMyUserSubscriptionRequest",
+  () => [
+    { no: 2, name: "subscription_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response for getting a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.GetMyUserSubscriptionResponse
+ */
+export const GetMyUserSubscriptionResponse = proto3.makeMessageType(
+  "api.v0alpha.GetMyUserSubscriptionResponse",
+  () => [
+    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
+  ],
+);
+
+/**
  * Request for updating a user subscription.
  *
  * @generated from message api.v0alpha.UpdateUserSubscriptionRequest
@@ -6311,6 +6381,32 @@ export const UpdateUserSubscriptionRequest = proto3.makeMessageType(
  */
 export const UpdateUserSubscriptionResponse = proto3.makeMessageType(
   "api.v0alpha.UpdateUserSubscriptionResponse",
+  () => [
+    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
+  ],
+);
+
+/**
+ * Request for updating a user subscription.
+ *
+ * @generated from message api.v0alpha.UpdateMyUserSubscriptionRequest
+ */
+export const UpdateMyUserSubscriptionRequest = proto3.makeMessageType(
+  "api.v0alpha.UpdateMyUserSubscriptionRequest",
+  () => [
+    { no: 1, name: "subscription", kind: "message", T: UserSubscription },
+    { no: 2, name: "field_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * Response for updating a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.UpdateMyUserSubscriptionResponse
+ */
+export const UpdateMyUserSubscriptionResponse = proto3.makeMessageType(
+  "api.v0alpha.UpdateMyUserSubscriptionResponse",
   () => [
     { no: 1, name: "subscription", kind: "message", T: UserSubscription },
   ],
@@ -6381,6 +6477,29 @@ export const ListUserSubscriptionsRequest = proto3.makeMessageType(
  */
 export const ListUserSubscriptionsResponse = proto3.makeMessageType(
   "api.v0alpha.ListUserSubscriptionsResponse",
+  () => [
+    { no: 1, name: "subscriptions", kind: "message", T: UserSubscription, repeated: true },
+  ],
+);
+
+/**
+ * Request for listing subscriptions for a user.
+ *
+ * @generated from message api.v0alpha.ListMyUserSubscriptionsRequest
+ */
+export const ListMyUserSubscriptionsRequest = proto3.makeMessageType(
+  "api.v0alpha.ListMyUserSubscriptionsRequest",
+  [],
+);
+
+/**
+ * Response for listing subscriptions for a user.
+ * Contains a user subscriptions (plural) object.
+ *
+ * @generated from message api.v0alpha.ListMyUserSubscriptionsResponse
+ */
+export const ListMyUserSubscriptionsResponse = proto3.makeMessageType(
+  "api.v0alpha.ListMyUserSubscriptionsResponse",
   () => [
     { no: 1, name: "subscriptions", kind: "message", T: UserSubscription, repeated: true },
   ],

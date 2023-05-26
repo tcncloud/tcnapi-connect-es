@@ -13761,10 +13761,10 @@ export declare class ConvertOrgToManualResponse extends Message<ConvertOrgToManu
  */
 export declare class ListQueueConfigsReq extends Message<ListQueueConfigsReq> {
   /**
-   * If org_id is left empty, the org_id will be
-   * retreived from the users token.
+   * DEPRECATED: if org_id was provided use ListQueueConfigsByOrgId rpc instead.
    *
-   * @generated from field: string org_id = 1;
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -13807,6 +13807,59 @@ export declare class ListQueueConfigsRes extends Message<ListQueueConfigsRes> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListQueueConfigsRes;
 
   static equals(a: ListQueueConfigsRes | PlainMessage<ListQueueConfigsRes> | undefined, b: ListQueueConfigsRes | PlainMessage<ListQueueConfigsRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ListQueueConfigsByOrgIdReq
+ */
+export declare class ListQueueConfigsByOrgIdReq extends Message<ListQueueConfigsByOrgIdReq> {
+  /**
+   * If org_id is left empty, the org_id will be
+   * retreived from the users token.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  constructor(data?: PartialMessage<ListQueueConfigsByOrgIdReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListQueueConfigsByOrgIdReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListQueueConfigsByOrgIdReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListQueueConfigsByOrgIdReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListQueueConfigsByOrgIdReq;
+
+  static equals(a: ListQueueConfigsByOrgIdReq | PlainMessage<ListQueueConfigsByOrgIdReq> | undefined, b: ListQueueConfigsByOrgIdReq | PlainMessage<ListQueueConfigsByOrgIdReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ListQueueConfigsByOrgIdRes
+ */
+export declare class ListQueueConfigsByOrgIdRes extends Message<ListQueueConfigsByOrgIdRes> {
+  /**
+   * configs is a list of a clients custom queue configurations.
+   *
+   * @generated from field: repeated api.v0alpha.QueueConfig configs = 1;
+   */
+  configs: QueueConfig[];
+
+  constructor(data?: PartialMessage<ListQueueConfigsByOrgIdRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListQueueConfigsByOrgIdRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListQueueConfigsByOrgIdRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListQueueConfigsByOrgIdRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListQueueConfigsByOrgIdRes;
+
+  static equals(a: ListQueueConfigsByOrgIdRes | PlainMessage<ListQueueConfigsByOrgIdRes> | undefined, b: ListQueueConfigsByOrgIdRes | PlainMessage<ListQueueConfigsByOrgIdRes> | undefined): boolean;
 }
 
 /**
@@ -17654,6 +17707,62 @@ export declare class AddUserSubscriptionResponse extends Message<AddUserSubscrip
 }
 
 /**
+ * Request to add a user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionRequest
+ */
+export declare class AddMyUserSubscriptionRequest extends Message<AddMyUserSubscriptionRequest> {
+  /**
+   * Required.
+   * All fields (except subscription id) must be set.
+   *
+   * @generated from field: api.v0alpha.UserSubscription subscription = 1;
+   */
+  subscription?: UserSubscription;
+
+  constructor(data?: PartialMessage<AddMyUserSubscriptionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.AddMyUserSubscriptionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMyUserSubscriptionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionRequest;
+
+  static equals(a: AddMyUserSubscriptionRequest | PlainMessage<AddMyUserSubscriptionRequest> | undefined, b: AddMyUserSubscriptionRequest | PlainMessage<AddMyUserSubscriptionRequest> | undefined): boolean;
+}
+
+/**
+ * Response to adding a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.AddMyUserSubscriptionResponse
+ */
+export declare class AddMyUserSubscriptionResponse extends Message<AddMyUserSubscriptionResponse> {
+  /**
+   * @generated from field: api.v0alpha.UserSubscription subscription = 1;
+   */
+  subscription?: UserSubscription;
+
+  constructor(data?: PartialMessage<AddMyUserSubscriptionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.AddMyUserSubscriptionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddMyUserSubscriptionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddMyUserSubscriptionResponse;
+
+  static equals(a: AddMyUserSubscriptionResponse | PlainMessage<AddMyUserSubscriptionResponse> | undefined, b: AddMyUserSubscriptionResponse | PlainMessage<AddMyUserSubscriptionResponse> | undefined): boolean;
+}
+
+/**
  * Request for getting a user subscription.
  *
  * @generated from message api.v0alpha.GetUserSubscriptionRequest
@@ -17713,6 +17822,61 @@ export declare class GetUserSubscriptionResponse extends Message<GetUserSubscrip
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserSubscriptionResponse;
 
   static equals(a: GetUserSubscriptionResponse | PlainMessage<GetUserSubscriptionResponse> | undefined, b: GetUserSubscriptionResponse | PlainMessage<GetUserSubscriptionResponse> | undefined): boolean;
+}
+
+/**
+ * Request for getting a user subscription.
+ *
+ * @generated from message api.v0alpha.GetMyUserSubscriptionRequest
+ */
+export declare class GetMyUserSubscriptionRequest extends Message<GetMyUserSubscriptionRequest> {
+  /**
+   * Required.
+   *
+   * @generated from field: string subscription_id = 2;
+   */
+  subscriptionId: string;
+
+  constructor(data?: PartialMessage<GetMyUserSubscriptionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.GetMyUserSubscriptionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserSubscriptionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserSubscriptionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserSubscriptionRequest;
+
+  static equals(a: GetMyUserSubscriptionRequest | PlainMessage<GetMyUserSubscriptionRequest> | undefined, b: GetMyUserSubscriptionRequest | PlainMessage<GetMyUserSubscriptionRequest> | undefined): boolean;
+}
+
+/**
+ * Response for getting a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.GetMyUserSubscriptionResponse
+ */
+export declare class GetMyUserSubscriptionResponse extends Message<GetMyUserSubscriptionResponse> {
+  /**
+   * @generated from field: api.v0alpha.UserSubscription subscription = 1;
+   */
+  subscription?: UserSubscription;
+
+  constructor(data?: PartialMessage<GetMyUserSubscriptionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.GetMyUserSubscriptionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserSubscriptionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserSubscriptionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserSubscriptionResponse;
+
+  static equals(a: GetMyUserSubscriptionResponse | PlainMessage<GetMyUserSubscriptionResponse> | undefined, b: GetMyUserSubscriptionResponse | PlainMessage<GetMyUserSubscriptionResponse> | undefined): boolean;
 }
 
 /**
@@ -17777,6 +17941,70 @@ export declare class UpdateUserSubscriptionResponse extends Message<UpdateUserSu
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUserSubscriptionResponse;
 
   static equals(a: UpdateUserSubscriptionResponse | PlainMessage<UpdateUserSubscriptionResponse> | undefined, b: UpdateUserSubscriptionResponse | PlainMessage<UpdateUserSubscriptionResponse> | undefined): boolean;
+}
+
+/**
+ * Request for updating a user subscription.
+ *
+ * @generated from message api.v0alpha.UpdateMyUserSubscriptionRequest
+ */
+export declare class UpdateMyUserSubscriptionRequest extends Message<UpdateMyUserSubscriptionRequest> {
+  /**
+   * Required.
+   * Must have org id and subscription id.
+   *
+   * @generated from field: api.v0alpha.UserSubscription subscription = 1;
+   */
+  subscription?: UserSubscription;
+
+  /**
+   * Required. Only fields in field mask will be updated.
+   * Valid fields include: "filters", "room303"
+   *
+   * @generated from field: google.protobuf.FieldMask field_mask = 2;
+   */
+  fieldMask?: FieldMask;
+
+  constructor(data?: PartialMessage<UpdateMyUserSubscriptionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateMyUserSubscriptionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMyUserSubscriptionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMyUserSubscriptionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMyUserSubscriptionRequest;
+
+  static equals(a: UpdateMyUserSubscriptionRequest | PlainMessage<UpdateMyUserSubscriptionRequest> | undefined, b: UpdateMyUserSubscriptionRequest | PlainMessage<UpdateMyUserSubscriptionRequest> | undefined): boolean;
+}
+
+/**
+ * Response for updating a user subscription.
+ * Contains a single user subscription.
+ *
+ * @generated from message api.v0alpha.UpdateMyUserSubscriptionResponse
+ */
+export declare class UpdateMyUserSubscriptionResponse extends Message<UpdateMyUserSubscriptionResponse> {
+  /**
+   * @generated from field: api.v0alpha.UserSubscription subscription = 1;
+   */
+  subscription?: UserSubscription;
+
+  constructor(data?: PartialMessage<UpdateMyUserSubscriptionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateMyUserSubscriptionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateMyUserSubscriptionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateMyUserSubscriptionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateMyUserSubscriptionResponse;
+
+  static equals(a: UpdateMyUserSubscriptionResponse | PlainMessage<UpdateMyUserSubscriptionResponse> | undefined, b: UpdateMyUserSubscriptionResponse | PlainMessage<UpdateMyUserSubscriptionResponse> | undefined): boolean;
 }
 
 /**
@@ -17937,6 +18165,54 @@ export declare class ListUserSubscriptionsResponse extends Message<ListUserSubsc
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserSubscriptionsResponse;
 
   static equals(a: ListUserSubscriptionsResponse | PlainMessage<ListUserSubscriptionsResponse> | undefined, b: ListUserSubscriptionsResponse | PlainMessage<ListUserSubscriptionsResponse> | undefined): boolean;
+}
+
+/**
+ * Request for listing subscriptions for a user.
+ *
+ * @generated from message api.v0alpha.ListMyUserSubscriptionsRequest
+ */
+export declare class ListMyUserSubscriptionsRequest extends Message<ListMyUserSubscriptionsRequest> {
+  constructor(data?: PartialMessage<ListMyUserSubscriptionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListMyUserSubscriptionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyUserSubscriptionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyUserSubscriptionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyUserSubscriptionsRequest;
+
+  static equals(a: ListMyUserSubscriptionsRequest | PlainMessage<ListMyUserSubscriptionsRequest> | undefined, b: ListMyUserSubscriptionsRequest | PlainMessage<ListMyUserSubscriptionsRequest> | undefined): boolean;
+}
+
+/**
+ * Response for listing subscriptions for a user.
+ * Contains a user subscriptions (plural) object.
+ *
+ * @generated from message api.v0alpha.ListMyUserSubscriptionsResponse
+ */
+export declare class ListMyUserSubscriptionsResponse extends Message<ListMyUserSubscriptionsResponse> {
+  /**
+   * @generated from field: repeated api.v0alpha.UserSubscription subscriptions = 1;
+   */
+  subscriptions: UserSubscription[];
+
+  constructor(data?: PartialMessage<ListMyUserSubscriptionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListMyUserSubscriptionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListMyUserSubscriptionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListMyUserSubscriptionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListMyUserSubscriptionsResponse;
+
+  static equals(a: ListMyUserSubscriptionsResponse | PlainMessage<ListMyUserSubscriptionsResponse> | undefined, b: ListMyUserSubscriptionsResponse | PlainMessage<ListMyUserSubscriptionsResponse> | undefined): boolean;
 }
 
 /**
