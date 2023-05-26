@@ -1939,9 +1939,6 @@ export const Org = {
     },
     /**
      * Lists the names of the custom queue configs.
-     * Required Permissions:
-     *    ORG_VIEW (If @org_id is empty)
-     *    CUSTOMER_SUPPORT (If @org_id is NOT empty)
      * Errors:
      *   - grpc.Internal: An error occurred while getting the config names.
      *   - grpc.NotFound: The given @org_id was not found (if @org_id is NOT empty).
@@ -1956,9 +1953,6 @@ export const Org = {
     },
     /**
      * Lists the names of the custom queue configs.
-     * Required Permissions:
-     *    ORG_VIEW (If @org_id is empty)
-     *    CUSTOMER_SUPPORT (If @org_id is NOT empty)
      * Errors:
      *   - grpc.Internal: An error occurred while getting the config names.
      *   - grpc.NotFound: The given @org_id was not found (if @org_id is NOT empty).
