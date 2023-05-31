@@ -4,7 +4,8 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { Scorecard, ScorecardState } from "../../commons/scorecards_pb.js";
+import { EvaluationType, Scorecard, ScorecardState } from "../../commons/scorecards_pb.js";
+import { CallType_Enum } from "../../commons/acd_pb.js";
 
 /**
  * CreateScorecardRequest is the request to create a scorecard.
@@ -41,6 +42,8 @@ export const ListScorecardsRequest = proto3.makeMessageType(
     { no: 2, name: "author_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 3, name: "category_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
     { no: 4, name: "states", kind: "enum", T: proto3.getEnumType(ScorecardState), repeated: true },
+    { no: 5, name: "evaluation_types", kind: "enum", T: proto3.getEnumType(EvaluationType), repeated: true },
+    { no: 6, name: "call_types", kind: "enum", T: proto3.getEnumType(CallType_Enum), repeated: true },
   ],
 );
 
