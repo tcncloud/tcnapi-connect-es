@@ -5,7 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Scorecard, ScorecardState } from "../../commons/scorecards_pb.js";
+import type { EvaluationType, Scorecard, ScorecardState } from "../../commons/scorecards_pb.js";
+import type { CallType_Enum } from "../../commons/acd_pb.js";
 
 /**
  * CreateScorecardRequest is the request to create a scorecard.
@@ -85,6 +86,20 @@ export declare class ListScorecardsRequest extends Message<ListScorecardsRequest
    * @generated from field: repeated api.commons.ScorecardState states = 4;
    */
   states: ScorecardState[];
+
+  /**
+   * Optional. Results include scorecard with any of the given types
+   *
+   * @generated from field: repeated api.commons.EvaluationType evaluation_types = 5;
+   */
+  evaluationTypes: EvaluationType[];
+
+  /**
+   * Optional. Results include scorecard with any of the given call types.
+   *
+   * @generated from field: repeated api.commons.CallType.Enum call_types = 6;
+   */
+  callTypes: CallType_Enum[];
 
   constructor(data?: PartialMessage<ListScorecardsRequest>);
 
