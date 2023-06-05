@@ -9896,16 +9896,9 @@ export declare class CreateShiftInstanceReq extends Message<CreateShiftInstanceR
    * If null it will create a new unassigned WfmAgent for the shift instance.
    * If given more than one sid, then a copy of the instance will be created for each agent.
    *
-   * @generated from field: repeated google.protobuf.Int64Value wfm_agent_sid = 6;
+   * @generated from field: repeated google.protobuf.Int64Value wfm_agent_sids = 6;
    */
-  wfmAgentSid: Int64Value[];
-
-  /**
-   * Metric types for the shift instance.
-   *
-   * @generated from field: repeated api.commons.PerformanceMetricType metric_types = 7;
-   */
-  metricTypes: PerformanceMetricType[];
+  wfmAgentSids: Int64Value[];
 
   constructor(data?: PartialMessage<CreateShiftInstanceReq>);
 
