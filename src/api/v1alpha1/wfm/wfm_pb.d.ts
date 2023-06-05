@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, Int64Value, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AvailabilityOption, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
@@ -9892,12 +9892,13 @@ export declare class CreateShiftInstanceReq extends Message<CreateShiftInstanceR
   isLocked: boolean;
 
   /**
-   * ID of the wfm agent for the shift instance. If null it will
-   * create a new unassigned WfmAgent for the shift instance.
+   * ID of the wfm agents for the shift instance.
+   * If null it will create a new unassigned WfmAgent for the shift instance.
+   * If given more than one sid, then a copy of the instance will be created for each agent.
    *
-   * @generated from field: google.protobuf.Int64Value wfm_agent_sid = 6;
+   * @generated from field: repeated google.protobuf.Int64Value wfm_agent_sid = 6;
    */
-  wfmAgentSid?: bigint;
+  wfmAgentSid: Int64Value[];
 
   /**
    * Metric types for the shift instance.
@@ -9928,18 +9929,18 @@ export declare class CreateShiftInstanceReq extends Message<CreateShiftInstanceR
  */
 export declare class CreateShiftInstanceRes extends Message<CreateShiftInstanceRes> {
   /**
-   * Shift instance that was created.
+   * Any shift instances that were created.
    *
-   * @generated from field: api.v1alpha1.wfm.ShiftInstance shift_instance = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance shift_instance = 1;
    */
-  shiftInstance?: ShiftInstance;
+  shiftInstance: ShiftInstance[];
 
   /**
-   * Performance metrics that this shift instance has.
+   * Diagnostics to report cause if shift instances fail to build.
    *
-   * @generated from field: repeated api.v1alpha1.wfm.PerformanceMetric performance_metrics = 2;
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
    */
-  performanceMetrics: PerformanceMetric[];
+  diagnostics: Diagnostic[];
 
   constructor(data?: PartialMessage<CreateShiftInstanceRes>);
 

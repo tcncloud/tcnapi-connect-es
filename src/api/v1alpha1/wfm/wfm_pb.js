@@ -3399,7 +3399,7 @@ export const CreateShiftInstanceReq = proto3.makeMessageType(
     { no: 3, name: "start_datetime", kind: "message", T: Timestamp },
     { no: 4, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 5, name: "is_locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 6, name: "wfm_agent_sid", kind: "message", T: Int64Value },
+    { no: 6, name: "wfm_agent_sid", kind: "message", T: Int64Value, repeated: true },
     { no: 7, name: "metric_types", kind: "enum", T: proto3.getEnumType(PerformanceMetricType), repeated: true },
   ],
 );
@@ -3412,8 +3412,8 @@ export const CreateShiftInstanceReq = proto3.makeMessageType(
 export const CreateShiftInstanceRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.CreateShiftInstanceRes",
   () => [
-    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
-    { no: 2, name: "performance_metrics", kind: "message", T: PerformanceMetric, repeated: true },
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance, repeated: true },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );
 
