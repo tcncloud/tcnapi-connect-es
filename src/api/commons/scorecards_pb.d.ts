@@ -220,6 +220,11 @@ export declare enum RiskLevel {
    * @generated from enum value: RISK_LEVEL_HIGH = 3;
    */
   HIGH = 3,
+
+  /**
+   * @generated from enum value: RISK_LEVEL_RISK_FREE = 4;
+   */
+  RISK_FREE = 4,
 }
 
 /**
