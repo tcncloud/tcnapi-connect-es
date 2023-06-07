@@ -126,8 +126,7 @@ export const UpdateSkillProfileRes = proto3.makeMessageType(
 export const UpdateSkillProfileProficienciesReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "proficiencies", kind: "message", T: UpdateSkillProfileProficienciesReq_Proficiency, repeated: true },
+    { no: 1, name: "proficiencies", kind: "message", T: UpdateSkillProfileProficienciesReq_Proficiency, repeated: true },
   ],
 );
 

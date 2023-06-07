@@ -702,7 +702,7 @@ export const WFM = {
     },
     /**
      * Calculates the averages for call characteristics using the historical data of the given @skill_profile_sids and org sending the request.
-     * If no @skill_profile_sids are given, it will calculate the averages for all skill profiles for the given @org_id.
+     * If no @skill_profile_sids are given, it will calculate the averages for all skill profiles for the org sending the request.
      * Averages will be weighted by the number of calls that each historical data interval has.
      * Once the averages are calculated, they will be updated in the db for those skill profiles.
      *
@@ -1444,7 +1444,7 @@ export const WFM = {
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @agent_availability_pattern_sid or @org_id have invalid values.
+     *   - grpc.Invalid: the @agent_availability_pattern_sid has an invalid value.
      *   - grpc.NotFound: the @agent_availability_pattern with the given sid doesn't exist.
      *   - grpc.Internal: error occurs when removing the agent availability pattern.
      *
@@ -1630,7 +1630,7 @@ export const WFM = {
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @org_id, @entity_type, or @belongs_to_entity have invalid values.
+     *   - grpc.Invalid: the @entity_type, or @belongs_to_entity have invalid values.
      *   - grpc.Internal: error occurs when getting the config entities.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListConfigEntities

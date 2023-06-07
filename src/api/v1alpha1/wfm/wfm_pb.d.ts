@@ -372,16 +372,9 @@ export declare class UpdateSkillProfileRes extends Message<UpdateSkillProfileRes
  */
 export declare class UpdateSkillProfileProficienciesReq extends Message<UpdateSkillProfileProficienciesReq> {
   /**
-   * Org ID that the skill profiles belong to.
-   *
-   * @generated from field: string org_id = 1;
-   */
-  orgId: string;
-
-  /**
    * Proficiencies to update.
    *
-   * @generated from field: repeated api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency proficiencies = 2;
+   * @generated from field: repeated api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency proficiencies = 1;
    */
   proficiencies: UpdateSkillProfileProficienciesReq_Proficiency[];
 
