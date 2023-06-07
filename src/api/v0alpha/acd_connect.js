@@ -47,15 +47,6 @@ export const Acd = {
   typeName: "api.v0alpha.Acd",
   methods: {
     /**
-     * @generated from rpc api.v0alpha.Acd.AgentGetStatusStream
-     */
-    agentGetStatusStream: {
-      name: "AgentGetStatusStream",
-      I: AgentGetStatusRequest,
-      O: AgentGetStatusReply,
-      kind: MethodKind.ServerStreaming,
-    },
-    /**
      * @generated from rpc api.v0alpha.Acd.AgentGetStatus
      */
     agentGetStatus: {
