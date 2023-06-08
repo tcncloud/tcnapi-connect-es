@@ -47,6 +47,15 @@ export declare const Acd: {
   readonly typeName: "api.v0alpha.Acd",
   readonly methods: {
     /**
+     * @generated from rpc api.v0alpha.Acd.AgentGetStatusStream
+     */
+    readonly agentGetStatusStream: {
+      readonly name: "AgentGetStatusStream",
+      readonly I: typeof AgentGetStatusRequest,
+      readonly O: typeof AgentGetStatusReply,
+      readonly kind: MethodKind.ServerStreaming,
+    },
+    /**
      * @generated from rpc api.v0alpha.Acd.AgentGetStatus
      */
     readonly agentGetStatus: {
