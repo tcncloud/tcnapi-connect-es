@@ -198,6 +198,64 @@ export declare class AgentGetConnectedPartyReply extends Message<AgentGetConnect
 }
 
 /**
+ * @generated from message api.v0alpha.ManagerAgentGetConnectedPartyRequest
+ */
+export declare class ManagerAgentGetConnectedPartyRequest extends Message<ManagerAgentGetConnectedPartyRequest> {
+  /**
+   * @generated from field: int64 session_sid = 1;
+   */
+  sessionSid: bigint;
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  constructor(data?: PartialMessage<ManagerAgentGetConnectedPartyRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ManagerAgentGetConnectedPartyRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ManagerAgentGetConnectedPartyRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ManagerAgentGetConnectedPartyRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ManagerAgentGetConnectedPartyRequest;
+
+  static equals(a: ManagerAgentGetConnectedPartyRequest | PlainMessage<ManagerAgentGetConnectedPartyRequest> | undefined, b: ManagerAgentGetConnectedPartyRequest | PlainMessage<ManagerAgentGetConnectedPartyRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ManagerAgentGetConnectedPartyReply
+ */
+export declare class ManagerAgentGetConnectedPartyReply extends Message<ManagerAgentGetConnectedPartyReply> {
+  /**
+   * @generated from field: int64 call_id = 2;
+   */
+  callId: bigint;
+
+  /**
+   * @generated from field: api.commons.CallType.Enum call_type = 3;
+   */
+  callType: CallType_Enum;
+
+  constructor(data?: PartialMessage<ManagerAgentGetConnectedPartyReply>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ManagerAgentGetConnectedPartyReply";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ManagerAgentGetConnectedPartyReply;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ManagerAgentGetConnectedPartyReply;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ManagerAgentGetConnectedPartyReply;
+
+  static equals(a: ManagerAgentGetConnectedPartyReply | PlainMessage<ManagerAgentGetConnectedPartyReply> | undefined, b: ManagerAgentGetConnectedPartyReply | PlainMessage<ManagerAgentGetConnectedPartyReply> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v0alpha.AgentIntercomRequest
  */
 export declare class AgentIntercomRequest extends Message<AgentIntercomRequest> {
