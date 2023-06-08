@@ -107,6 +107,7 @@ export const RiskLevel = proto3.makeEnum(
     {no: 1, name: "RISK_LEVEL_LOW", localName: "LOW"},
     {no: 2, name: "RISK_LEVEL_MEDIUM", localName: "MEDIUM"},
     {no: 3, name: "RISK_LEVEL_HIGH", localName: "HIGH"},
+    {no: 4, name: "RISK_LEVEL_RISK_FREE", localName: "RISK_FREE"},
   ],
 );
 
