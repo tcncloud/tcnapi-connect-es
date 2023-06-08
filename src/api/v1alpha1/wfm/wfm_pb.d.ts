@@ -7730,6 +7730,13 @@ export declare class ListConfigEntitiesReq extends Message<ListConfigEntitiesReq
    */
   memberDepth: number;
 
+  /**
+   * ID of the scenario that the entities desired belong to, must match the scenario of @belongs_to_entity.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 5;
+   */
+  scheduleScenarioSid: bigint;
+
   constructor(data?: PartialMessage<ListConfigEntitiesReq>);
 
   static readonly runtime: typeof proto3;
