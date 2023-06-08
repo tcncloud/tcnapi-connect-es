@@ -77,28 +77,6 @@ export const AgentGetConnectedPartyReply = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.ManagerAgentGetConnectedPartyRequest
- */
-export const ManagerAgentGetConnectedPartyRequest = proto3.makeMessageType(
-  "api.v0alpha.ManagerAgentGetConnectedPartyRequest",
-  () => [
-    { no: 1, name: "session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ManagerAgentGetConnectedPartyReply
- */
-export const ManagerAgentGetConnectedPartyReply = proto3.makeMessageType(
-  "api.v0alpha.ManagerAgentGetConnectedPartyReply",
-  () => [
-    { no: 2, name: "call_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "call_type", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
-  ],
-);
-
-/**
  * @generated from message api.v0alpha.AgentIntercomRequest
  */
 export const AgentIntercomRequest = proto3.makeMessageType(
