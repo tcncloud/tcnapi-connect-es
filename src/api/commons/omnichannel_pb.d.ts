@@ -4009,13 +4009,6 @@ export declare class VerifiedEmail extends Message<VerifiedEmail> {
   verifiedEmailSid: bigint;
 
   /**
-   * verification key
-   *
-   * @generated from field: google.protobuf.StringValue verification_key = 2;
-   */
-  verificationKey?: string;
-
-  /**
    * connected email address
    *
    * @generated from field: string email_address = 3;
