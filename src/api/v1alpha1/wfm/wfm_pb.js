@@ -3244,6 +3244,36 @@ export const CreateDraftScheduleRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the UpdateDraftSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateDraftScheduleReq
+ */
+export const UpdateDraftScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateDraftScheduleReq",
+  () => [
+    { no: 1, name: "draft_schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 5, name: "delete_shifts_not_in_range", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "copy_shifts_into_new_range", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "get_updated_shifts", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the UpdateDraftSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateDraftScheduleRes
+ */
+export const UpdateDraftScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateDraftScheduleRes",
+  () => [
+    { no: 1, name: "draft_schedule", kind: "message", T: DraftSchedule },
+  ],
+);
+
+/**
  * Request message for the BuildDraftSchedule RPC.
  *
  * @generated from message api.v1alpha1.wfm.BuildDraftScheduleReq
