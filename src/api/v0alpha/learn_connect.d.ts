@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -117,6 +117,17 @@ export declare const Learn: {
       readonly name: "Standalone",
       readonly I: typeof StandaloneReq,
       readonly O: typeof StandaloneRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * delete standalone articles from learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.DeleteStandalone
+     */
+    readonly deleteStandalone: {
+      readonly name: "DeleteStandalone",
+      readonly I: typeof DeleteStandaloneReq,
+      readonly O: typeof DeleteStandaloneRes,
       readonly kind: MethodKind.Unary,
     },
   }

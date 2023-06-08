@@ -708,3 +708,66 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
   static equals(a: LearnStandaloneDetails | PlainMessage<LearnStandaloneDetails> | undefined, b: LearnStandaloneDetails | PlainMessage<LearnStandaloneDetails> | undefined): boolean;
 }
 
+/**
+ * request to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneReq
+ */
+export declare class DeleteStandaloneReq extends Message<DeleteStandaloneReq> {
+  /**
+   * locale used for the markdown contents
+   *
+   * @generated from field: string locale = 1;
+   */
+  locale: string;
+
+  /**
+   * orgId
+   *
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
+   * list of article names
+   *
+   * @generated from field: repeated string article_names = 3;
+   */
+  articleNames: string[];
+
+  constructor(data?: PartialMessage<DeleteStandaloneReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.DeleteStandaloneReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteStandaloneReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteStandaloneReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteStandaloneReq;
+
+  static equals(a: DeleteStandaloneReq | PlainMessage<DeleteStandaloneReq> | undefined, b: DeleteStandaloneReq | PlainMessage<DeleteStandaloneReq> | undefined): boolean;
+}
+
+/**
+ * response to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneRes
+ */
+export declare class DeleteStandaloneRes extends Message<DeleteStandaloneRes> {
+  constructor(data?: PartialMessage<DeleteStandaloneRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.DeleteStandaloneRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteStandaloneRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteStandaloneRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteStandaloneRes;
+
+  static equals(a: DeleteStandaloneRes | PlainMessage<DeleteStandaloneRes> | undefined, b: DeleteStandaloneRes | PlainMessage<DeleteStandaloneRes> | undefined): boolean;
+}
+

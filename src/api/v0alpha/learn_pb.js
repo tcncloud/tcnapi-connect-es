@@ -274,3 +274,27 @@ export const LearnStandaloneDetails = proto3.makeMessageType(
   ],
 );
 
+/**
+ * request to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneReq
+ */
+export const DeleteStandaloneReq = proto3.makeMessageType(
+  "api.v0alpha.DeleteStandaloneReq",
+  () => [
+    { no: 1, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "article_names", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * response to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneRes
+ */
+export const DeleteStandaloneRes = proto3.makeMessageType(
+  "api.v0alpha.DeleteStandaloneRes",
+  [],
+);
+
