@@ -722,16 +722,9 @@ export declare class DeleteStandaloneReq extends Message<DeleteStandaloneReq> {
   locale: string;
 
   /**
-   * orgId
-   *
-   * @generated from field: string org_id = 2;
-   */
-  orgId: string;
-
-  /**
    * list of article names
    *
-   * @generated from field: repeated string article_names = 3;
+   * @generated from field: repeated string article_names = 2;
    */
   articleNames: string[];
 
