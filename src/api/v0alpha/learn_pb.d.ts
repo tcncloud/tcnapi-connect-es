@@ -21,6 +21,8 @@ import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValu
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * request to check if learning page url exists
+ *
  * @generated from message api.v0alpha.ExistReq
  */
 export declare class ExistReq extends Message<ExistReq> {
@@ -50,6 +52,8 @@ export declare class ExistReq extends Message<ExistReq> {
 }
 
 /**
+ * response for checking if learning page  url exists
+ *
  * @generated from message api.v0alpha.ExistRes
  */
 export declare class ExistRes extends Message<ExistRes> {
@@ -74,6 +78,8 @@ export declare class ExistRes extends Message<ExistRes> {
 }
 
 /**
+ * request to retreive learning pages content from the url
+ *
  * @generated from message api.v0alpha.ContentReq
  */
 export declare class ContentReq extends Message<ContentReq> {
@@ -103,6 +109,8 @@ export declare class ContentReq extends Message<ContentReq> {
 }
 
 /**
+ * response to retreive learning pages content
+ *
  * @generated from message api.v0alpha.ContentRes
  */
 export declare class ContentRes extends Message<ContentRes> {
@@ -141,6 +149,8 @@ export declare class ContentRes extends Message<ContentRes> {
 }
 
 /**
+ * request to retreive last user edited learning pages content
+ *
  * @generated from message api.v0alpha.ContentEditorDataReq
  */
 export declare class ContentEditorDataReq extends Message<ContentEditorDataReq> {
@@ -170,6 +180,8 @@ export declare class ContentEditorDataReq extends Message<ContentEditorDataReq> 
 }
 
 /**
+ * response to retreive last user edited learning pages content
+ *
  * @generated from message api.v0alpha.ContentEditorDataRes
  */
 export declare class ContentEditorDataRes extends Message<ContentEditorDataRes> {
@@ -196,6 +208,8 @@ export declare class ContentEditorDataRes extends Message<ContentEditorDataRes> 
 }
 
 /**
+ * request to update learning pages content based on the url
+ *
  * @generated from message api.v0alpha.UpdateReq
  */
 export declare class UpdateReq extends Message<UpdateReq> {
@@ -237,6 +251,8 @@ export declare class UpdateReq extends Message<UpdateReq> {
 }
 
 /**
+ * response to update learning pages content
+ *
  * @generated from message api.v0alpha.UpdateRes
  */
 export declare class UpdateRes extends Message<UpdateRes> {

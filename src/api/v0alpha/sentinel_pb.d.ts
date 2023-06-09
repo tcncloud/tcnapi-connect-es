@@ -22,6 +22,8 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Level } from "../commons/logging_pb.js";
 
 /**
+ * sentinel event
+ *
  * @generated from message api.v0alpha.SentinelEvent
  */
 export declare class SentinelEvent extends Message<SentinelEvent> {
@@ -52,6 +54,8 @@ export declare class SentinelEvent extends Message<SentinelEvent> {
 }
 
 /**
+ * log events details to be sent
+ *
  * @generated from message api.v0alpha.LogEvent
  */
 export declare class LogEvent extends Message<LogEvent> {
@@ -115,6 +119,8 @@ export declare class LogEvent extends Message<LogEvent> {
 }
 
 /**
+ * request to sentinel send events
+ *
  * @generated from message api.v0alpha.SendEventsReq
  */
 export declare class SendEventsReq extends Message<SendEventsReq> {
@@ -139,6 +145,8 @@ export declare class SendEventsReq extends Message<SendEventsReq> {
 }
 
 /**
+ * response to sentinel send events
+ *
  * @generated from message api.v0alpha.SendEventsRes
  */
 export declare class SendEventsRes extends Message<SendEventsRes> {
