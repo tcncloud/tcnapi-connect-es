@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -29,6 +29,8 @@ export declare const Learn: {
   readonly typeName: "api.v0alpha.Learn",
   readonly methods: {
     /**
+     * check if learning page already exists
+     *
      * @generated from rpc api.v0alpha.Learn.Exist
      */
     readonly exist: {
@@ -38,30 +40,14 @@ export declare const Learn: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * retreive content from learning pages
+     *
      * @generated from rpc api.v0alpha.Learn.Content
      */
     readonly content: {
       readonly name: "Content",
       readonly I: typeof ContentReq,
       readonly O: typeof ContentRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v0alpha.Learn.ContentEditorData
-     */
-    readonly contentEditorData: {
-      readonly name: "ContentEditorData",
-      readonly I: typeof ContentEditorDataReq,
-      readonly O: typeof ContentEditorDataRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v0alpha.Learn.Update
-     */
-    readonly update: {
-      readonly name: "Update",
-      readonly I: typeof UpdateReq,
-      readonly O: typeof UpdateRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -76,17 +62,6 @@ export declare const Learn: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * upload url for static images
-     *
-     * @generated from rpc api.v0alpha.Learn.StoreStaticImage
-     */
-    readonly storeStaticImage: {
-      readonly name: "StoreStaticImage",
-      readonly I: typeof StoreStaticImageReq,
-      readonly O: typeof StoreStaticImageRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
      * search content in learning pages
      *
      * @generated from rpc api.v0alpha.Learn.SearchContent
@@ -95,6 +70,50 @@ export declare const Learn: {
       readonly name: "SearchContent",
       readonly I: typeof SearchContentReq,
       readonly O: typeof SearchRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * get standalone articles from learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.Standalone
+     */
+    readonly standalone: {
+      readonly name: "Standalone",
+      readonly I: typeof StandaloneReq,
+      readonly O: typeof StandaloneRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * retrieve user who edited the content last
+     *
+     * @generated from rpc api.v0alpha.Learn.ContentEditorData
+     */
+    readonly contentEditorData: {
+      readonly name: "ContentEditorData",
+      readonly I: typeof ContentEditorDataReq,
+      readonly O: typeof ContentEditorDataRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * update contents for learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.Update
+     */
+    readonly update: {
+      readonly name: "Update",
+      readonly I: typeof UpdateReq,
+      readonly O: typeof UpdateRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * upload url for static images
+     *
+     * @generated from rpc api.v0alpha.Learn.StoreStaticImage
+     */
+    readonly storeStaticImage: {
+      readonly name: "StoreStaticImage",
+      readonly I: typeof StoreStaticImageReq,
+      readonly O: typeof StoreStaticImageRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -109,14 +128,14 @@ export declare const Learn: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * get standalone articles from learning pages
+     * delete standalone articles from learning pages
      *
-     * @generated from rpc api.v0alpha.Learn.Standalone
+     * @generated from rpc api.v0alpha.Learn.DeleteStandalone
      */
-    readonly standalone: {
-      readonly name: "Standalone",
-      readonly I: typeof StandaloneReq,
-      readonly O: typeof StandaloneRes,
+    readonly deleteStandalone: {
+      readonly name: "DeleteStandalone",
+      readonly I: typeof DeleteStandaloneReq,
+      readonly O: typeof DeleteStandaloneRes,
       readonly kind: MethodKind.Unary,
     },
   }
