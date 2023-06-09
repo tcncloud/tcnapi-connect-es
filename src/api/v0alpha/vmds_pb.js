@@ -158,6 +158,39 @@ export const DownloadMessageRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v0alpha.DownloadSpecifiedMessagesReq
+ */
+export const DownloadSpecifiedMessagesReq = proto3.makeMessageType(
+  "api.v0alpha.DownloadSpecifiedMessagesReq",
+  () => [
+    { no: 1, name: "messages", kind: "message", T: DownloadSpecifiedMessagesReq_MessageReq, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.DownloadSpecifiedMessagesReq.MessageReq
+ */
+export const DownloadSpecifiedMessagesReq_MessageReq = proto3.makeMessageType(
+  "api.v0alpha.DownloadSpecifiedMessagesReq.MessageReq",
+  () => [
+    { no: 1, name: "mail_box", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "caller_sid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "caller_type", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
+  ],
+  {localName: "DownloadSpecifiedMessagesReq_MessageReq"},
+);
+
+/**
+ * @generated from message api.v0alpha.DownloadSpecifiedMessagesRes
+ */
+export const DownloadSpecifiedMessagesRes = proto3.makeMessageType(
+  "api.v0alpha.DownloadSpecifiedMessagesRes",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message api.v0alpha.GetUploadGreetingUrlReq
  */
 export const GetUploadGreetingUrlReq = proto3.makeMessageType(

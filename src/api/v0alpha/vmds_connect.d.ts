@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteGreetingReq, DeleteGreetingRes, DeleteVoicemailReq, DeleteVoicemailRes, DownloadGreetingForExtensionReq, DownloadGreetingForExtensionRes, DownloadGreetingReq, DownloadGreetingRes, DownloadMessageReq, DownloadMessageRes, DownloadMessagesReq, DownloadMessagesRes, GetUploadGreetingUrlReq, GetUploadGreetingUrlRes, GetVoicemailCountReq, GetVoicemailCountRes, GetVoicemailMetadataReq, GetVoicemailMetadataRes, ListAvailableGreetingsReq, ListAvailableGreetingsRes, ProcessGreetingUploadReq, ProcessGreetingUploadRes, UpdateGreetingForExtensionReq, UpdateGreetingForExtensionRes, UpdateUploadNameReq, UpdateUploadNameRes, UpdateVoicemailFlagReadReq, UpdateVoicemailFlagReadRes } from "./vmds_pb.js";
+import { DeleteGreetingReq, DeleteGreetingRes, DeleteVoicemailReq, DeleteVoicemailRes, DownloadGreetingForExtensionReq, DownloadGreetingForExtensionRes, DownloadGreetingReq, DownloadGreetingRes, DownloadMessageReq, DownloadMessageRes, DownloadMessagesReq, DownloadMessagesRes, DownloadSpecifiedMessagesReq, DownloadSpecifiedMessagesRes, GetUploadGreetingUrlReq, GetUploadGreetingUrlRes, GetVoicemailCountReq, GetVoicemailCountRes, GetVoicemailMetadataReq, GetVoicemailMetadataRes, ListAvailableGreetingsReq, ListAvailableGreetingsRes, ProcessGreetingUploadReq, ProcessGreetingUploadRes, UpdateGreetingForExtensionReq, UpdateGreetingForExtensionRes, UpdateUploadNameReq, UpdateUploadNameRes, UpdateVoicemailFlagReadReq, UpdateVoicemailFlagReadRes } from "./vmds_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -73,6 +73,15 @@ export declare const Vmds: {
       readonly name: "DownloadMessage",
       readonly I: typeof DownloadMessageReq,
       readonly O: typeof DownloadMessageRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v0alpha.Vmds.DownloadSpecifiedMessages
+     */
+    readonly downloadSpecifiedMessages: {
+      readonly name: "DownloadSpecifiedMessages",
+      readonly I: typeof DownloadSpecifiedMessagesReq,
+      readonly O: typeof DownloadSpecifiedMessagesRes,
       readonly kind: MethodKind.Unary,
     },
     /**
