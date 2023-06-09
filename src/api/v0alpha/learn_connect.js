@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -29,6 +29,8 @@ export const Learn = {
   typeName: "api.v0alpha.Learn",
   methods: {
     /**
+     * check if learning page already exists
+     *
      * @generated from rpc api.v0alpha.Learn.Exist
      */
     exist: {
@@ -38,30 +40,14 @@ export const Learn = {
       kind: MethodKind.Unary,
     },
     /**
+     * retreive content from learning pages
+     *
      * @generated from rpc api.v0alpha.Learn.Content
      */
     content: {
       name: "Content",
       I: ContentReq,
       O: ContentRes,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v0alpha.Learn.ContentEditorData
-     */
-    contentEditorData: {
-      name: "ContentEditorData",
-      I: ContentEditorDataReq,
-      O: ContentEditorDataRes,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v0alpha.Learn.Update
-     */
-    update: {
-      name: "Update",
-      I: UpdateReq,
-      O: UpdateRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -76,17 +62,6 @@ export const Learn = {
       kind: MethodKind.Unary,
     },
     /**
-     * upload url for static images
-     *
-     * @generated from rpc api.v0alpha.Learn.StoreStaticImage
-     */
-    storeStaticImage: {
-      name: "StoreStaticImage",
-      I: StoreStaticImageReq,
-      O: StoreStaticImageRes,
-      kind: MethodKind.Unary,
-    },
-    /**
      * search content in learning pages
      *
      * @generated from rpc api.v0alpha.Learn.SearchContent
@@ -95,6 +70,50 @@ export const Learn = {
       name: "SearchContent",
       I: SearchContentReq,
       O: SearchRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * get standalone articles from learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.Standalone
+     */
+    standalone: {
+      name: "Standalone",
+      I: StandaloneReq,
+      O: StandaloneRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * retrieve user who edited the content last
+     *
+     * @generated from rpc api.v0alpha.Learn.ContentEditorData
+     */
+    contentEditorData: {
+      name: "ContentEditorData",
+      I: ContentEditorDataReq,
+      O: ContentEditorDataRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * update contents for learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.Update
+     */
+    update: {
+      name: "Update",
+      I: UpdateReq,
+      O: UpdateRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * upload url for static images
+     *
+     * @generated from rpc api.v0alpha.Learn.StoreStaticImage
+     */
+    storeStaticImage: {
+      name: "StoreStaticImage",
+      I: StoreStaticImageReq,
+      O: StoreStaticImageRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -109,14 +128,14 @@ export const Learn = {
       kind: MethodKind.Unary,
     },
     /**
-     * get standalone articles from learning pages
+     * delete standalone articles from learning pages
      *
-     * @generated from rpc api.v0alpha.Learn.Standalone
+     * @generated from rpc api.v0alpha.Learn.DeleteStandalone
      */
-    standalone: {
-      name: "Standalone",
-      I: StandaloneReq,
-      O: StandaloneRes,
+    deleteStandalone: {
+      name: "DeleteStandalone",
+      I: DeleteStandaloneReq,
+      O: DeleteStandaloneRes,
       kind: MethodKind.Unary,
     },
   }
