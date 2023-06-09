@@ -21,6 +21,8 @@ import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { Level } from "../commons/logging_pb.js";
 
 /**
+ * sentinel event
+ *
  * @generated from message api.v0alpha.SentinelEvent
  */
 export const SentinelEvent = proto3.makeMessageType(
@@ -31,6 +33,8 @@ export const SentinelEvent = proto3.makeMessageType(
 );
 
 /**
+ * log events details to be sent
+ *
  * @generated from message api.v0alpha.LogEvent
  */
 export const LogEvent = proto3.makeMessageType(
@@ -48,6 +52,8 @@ export const LogEvent = proto3.makeMessageType(
 );
 
 /**
+ * request to sentinel send events
+ *
  * @generated from message api.v0alpha.SendEventsReq
  */
 export const SendEventsReq = proto3.makeMessageType(
@@ -58,6 +64,8 @@ export const SendEventsReq = proto3.makeMessageType(
 );
 
 /**
+ * response to sentinel send events
+ *
  * @generated from message api.v0alpha.SendEventsRes
  */
 export const SendEventsRes = proto3.makeMessageType(
