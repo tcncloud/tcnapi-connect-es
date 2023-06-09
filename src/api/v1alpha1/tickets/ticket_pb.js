@@ -38,6 +38,7 @@ export const CreateTicketReq = proto3.makeMessageType(
     { no: 10, name: "ticket_skills", kind: "message", T: Skills, repeated: true },
     { no: 11, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 12, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
+    { no: 13, name: "assign_self", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -321,6 +322,30 @@ export const ReplyCommentRes = proto3.makeMessageType(
   "api.v1alpha1.tickets.ReplyCommentRes",
   () => [
     { no: 1, name: "is_created", kind: "message", T: ConfirmReplyComment },
+  ],
+);
+
+/**
+ * CreateSelfAssignReq -
+ *
+ * @generated from message api.v1alpha1.tickets.CreateSelfAssignReq
+ */
+export const CreateSelfAssignReq = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CreateSelfAssignReq",
+  () => [
+    { no: 1, name: "ticket_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * CreateSelfAssignRes -
+ *
+ * @generated from message api.v1alpha1.tickets.CreateSelfAssignRes
+ */
+export const CreateSelfAssignRes = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CreateSelfAssignRes",
+  () => [
+    { no: 1, name: "is_assigned", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

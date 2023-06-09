@@ -124,6 +124,11 @@ export declare class Ticket extends Message<Ticket> {
    */
   ticketSla: Sla[];
 
+  /**
+   * @generated from field: string assignee = 18;
+   */
+  assignee: string;
+
   constructor(data?: PartialMessage<Ticket>);
 
   static readonly runtime: typeof proto3;

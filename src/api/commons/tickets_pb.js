@@ -29,6 +29,7 @@ export const Ticket = proto3.makeMessageType(
     { no: 15, name: "ticket_skills", kind: "message", T: Skills, repeated: true },
     { no: 16, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 17, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
+    { no: 18, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
