@@ -2697,6 +2697,7 @@ export const ListConfigEntitiesReq = proto3.makeMessageType(
     { no: 2, name: "belongs_to_entity", kind: "message", T: ParentEntity },
     { no: 3, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 4, name: "member_depth", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
