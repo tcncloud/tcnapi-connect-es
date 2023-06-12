@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBillingPlanReq, CreateBillingPlanRes, DeleteBillingDetailsReq, DeleteBillingDetailsRes, GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
+import { GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -14,19 +14,6 @@ import { MethodKind } from "@bufbuild/protobuf";
 export const Billing = {
   typeName: "api.v1alpha1.billing.Billing",
   methods: {
-    /**
-     * CreateBillingPlan - saves the provided billing plan, and returns the saved
-     * plan. However, in an organization's Billing Plan there can only ever be
-     * one billing detail with a specific config type and event type.
-     *
-     * @generated from rpc api.v1alpha1.billing.Billing.CreateBillingPlan
-     */
-    createBillingPlan: {
-      name: "CreateBillingPlan",
-      I: CreateBillingPlanReq,
-      O: CreateBillingPlanRes,
-      kind: MethodKind.Unary,
-    },
     /**
      * GetBillingPlan - returns the billing plan for the provided organization.
      *
@@ -53,18 +40,6 @@ export const Billing = {
       name: "UpdateBillingPlan",
       I: UpdateBillingPlanReq,
       O: UpdateBillingPlanRes,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * DeleteBillingDetails - deletes the provided billing details. If the billing
-     * details do not exist, this won't do anything.
-     *
-     * @generated from rpc api.v1alpha1.billing.Billing.DeleteBillingDetails
-     */
-    deleteBillingDetails: {
-      name: "DeleteBillingDetails",
-      I: DeleteBillingDetailsReq,
-      O: DeleteBillingDetailsRes,
       kind: MethodKind.Unary,
     },
     /**

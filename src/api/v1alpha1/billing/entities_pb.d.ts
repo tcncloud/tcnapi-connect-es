@@ -9,63 +9,6 @@ import type { Detail, Plan } from "../../commons/billing/detail_pb.js";
 import type { Invoice } from "../../commons/billing/invoice_pb.js";
 
 /**
- * CreateBillingPlanReq - request to create a billing plan for an organization
- *
- * @generated from message api.v1alpha1.billing.CreateBillingPlanReq
- */
-export declare class CreateBillingPlanReq extends Message<CreateBillingPlanReq> {
-  /**
-   * Required. the billing plan to create
-   *
-   * @generated from field: api.commons.billing.Plan billing_plan = 1;
-   */
-  billingPlan?: Plan;
-
-  constructor(data?: PartialMessage<CreateBillingPlanReq>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.billing.CreateBillingPlanReq";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateBillingPlanReq;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateBillingPlanReq;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateBillingPlanReq;
-
-  static equals(a: CreateBillingPlanReq | PlainMessage<CreateBillingPlanReq> | undefined, b: CreateBillingPlanReq | PlainMessage<CreateBillingPlanReq> | undefined): boolean;
-}
-
-/**
- * CreateBillingPlanRes - result of creating a billing plan; contains the
- * created billing plan
- *
- * @generated from message api.v1alpha1.billing.CreateBillingPlanRes
- */
-export declare class CreateBillingPlanRes extends Message<CreateBillingPlanRes> {
-  /**
-   * the created billing plan
-   *
-   * @generated from field: api.commons.billing.Plan billing_plan = 1;
-   */
-  billingPlan?: Plan;
-
-  constructor(data?: PartialMessage<CreateBillingPlanRes>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.billing.CreateBillingPlanRes";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateBillingPlanRes;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateBillingPlanRes;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateBillingPlanRes;
-
-  static equals(a: CreateBillingPlanRes | PlainMessage<CreateBillingPlanRes> | undefined, b: CreateBillingPlanRes | PlainMessage<CreateBillingPlanRes> | undefined): boolean;
-}
-
-/**
  * GetBillingPlanReq - request to get an organization's billing plan
  *
  * @generated from message api.v1alpha1.billing.GetBillingPlanReq
@@ -204,55 +147,6 @@ export declare class UpdateBillingPlanRes extends Message<UpdateBillingPlanRes> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateBillingPlanRes;
 
   static equals(a: UpdateBillingPlanRes | PlainMessage<UpdateBillingPlanRes> | undefined, b: UpdateBillingPlanRes | PlainMessage<UpdateBillingPlanRes> | undefined): boolean;
-}
-
-/**
- * DeleteBillingDetailsReq - request to delete billing details
- *
- * @generated from message api.v1alpha1.billing.DeleteBillingDetailsReq
- */
-export declare class DeleteBillingDetailsReq extends Message<DeleteBillingDetailsReq> {
-  /**
-   * the identifiers of the billing details to delete
-   *
-   * @generated from field: repeated int64 billing_detail_sids = 1;
-   */
-  billingDetailSids: bigint[];
-
-  constructor(data?: PartialMessage<DeleteBillingDetailsReq>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.billing.DeleteBillingDetailsReq";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteBillingDetailsReq;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteBillingDetailsReq;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteBillingDetailsReq;
-
-  static equals(a: DeleteBillingDetailsReq | PlainMessage<DeleteBillingDetailsReq> | undefined, b: DeleteBillingDetailsReq | PlainMessage<DeleteBillingDetailsReq> | undefined): boolean;
-}
-
-/**
- * DeleteBillingDetailsRes - result of deleting billing details
- *
- * @generated from message api.v1alpha1.billing.DeleteBillingDetailsRes
- */
-export declare class DeleteBillingDetailsRes extends Message<DeleteBillingDetailsRes> {
-  constructor(data?: PartialMessage<DeleteBillingDetailsRes>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.billing.DeleteBillingDetailsRes";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteBillingDetailsRes;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteBillingDetailsRes;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteBillingDetailsRes;
-
-  static equals(a: DeleteBillingDetailsRes | PlainMessage<DeleteBillingDetailsRes> | undefined, b: DeleteBillingDetailsRes | PlainMessage<DeleteBillingDetailsRes> | undefined): boolean;
 }
 
 /**
