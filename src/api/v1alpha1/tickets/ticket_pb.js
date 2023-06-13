@@ -68,7 +68,7 @@ export const EditTicketReq = proto3.makeMessageType(
 );
 
 /**
- * EditTicketReq - Request for EditTicketReq
+ * EditTicketRes - Response for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketRes
  */
@@ -100,6 +100,8 @@ export const ListTicketsRes = proto3.makeMessageType(
 );
 
 /**
+ * AssignTicketReq
+ *
  * @generated from message api.v1alpha1.tickets.AssignTicketReq
  */
 export const AssignTicketReq = proto3.makeMessageType(
@@ -112,6 +114,8 @@ export const AssignTicketReq = proto3.makeMessageType(
 );
 
 /**
+ * AssignTicketRes
+ *
  * @generated from message api.v1alpha1.tickets.AssignTicketRes
  */
 export const AssignTicketRes = proto3.makeMessageType(

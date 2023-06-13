@@ -6,6 +6,24 @@
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * EditColumnType Fields
+ *
+ * @generated from enum api.commons.EditColumnType
+ */
+export const EditColumnType = proto3.makeEnum(
+  "api.commons.EditColumnType",
+  [
+    {no: 0, name: "NONE_COLUMN"},
+    {no: 1, name: "DESCRIPTION"},
+    {no: 2, name: "SKILLS"},
+    {no: 3, name: "STATUS"},
+    {no: 4, name: "DUE_DATE"},
+    {no: 5, name: "SLA"},
+    {no: 6, name: "ASSIGNEE"},
+  ],
+);
+
+/**
  * Ticket - Fields for Ticket creation, List tickets and view ticket
  *
  * @generated from message api.commons.Ticket
@@ -55,6 +73,7 @@ export const Skills = proto3.makeMessageType(
   "api.commons.Skills",
   () => [
     { no: 1, name: "skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mandatory_preferred", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -106,7 +125,7 @@ export const CloseTicket = proto3.makeMessageType(
 );
 
 /**
- * ConfirmClose - Boolean response Field post closing a Ticket
+ * ConfirmClose - Boolean response for closing a Ticket
  *
  * @generated from message api.commons.ConfirmClose
  */
@@ -240,6 +259,7 @@ export const EditAttribute = proto3.makeMessageType(
     { no: 2, name: "from_val", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "to_val", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "is_edited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "edit_column_type", kind: "enum", T: proto3.getEnumType(EditColumnType) },
   ],
 );
 
