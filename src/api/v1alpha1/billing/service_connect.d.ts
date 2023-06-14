@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBillingPlanReq, CreateBillingPlanRes, DeleteBillingDetailsReq, DeleteBillingDetailsRes, GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
+import { GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -14,19 +14,6 @@ import { MethodKind } from "@bufbuild/protobuf";
 export declare const Billing: {
   readonly typeName: "api.v1alpha1.billing.Billing",
   readonly methods: {
-    /**
-     * CreateBillingPlan - saves the provided billing plan, and returns the saved
-     * plan. However, in an organization's Billing Plan there can only ever be
-     * one billing detail with a specific config type and event type.
-     *
-     * @generated from rpc api.v1alpha1.billing.Billing.CreateBillingPlan
-     */
-    readonly createBillingPlan: {
-      readonly name: "CreateBillingPlan",
-      readonly I: typeof CreateBillingPlanReq,
-      readonly O: typeof CreateBillingPlanRes,
-      readonly kind: MethodKind.Unary,
-    },
     /**
      * GetBillingPlan - returns the billing plan for the provided organization.
      *
@@ -53,18 +40,6 @@ export declare const Billing: {
       readonly name: "UpdateBillingPlan",
       readonly I: typeof UpdateBillingPlanReq,
       readonly O: typeof UpdateBillingPlanRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * DeleteBillingDetails - deletes the provided billing details. If the billing
-     * details do not exist, this won't do anything.
-     *
-     * @generated from rpc api.v1alpha1.billing.Billing.DeleteBillingDetails
-     */
-    readonly deleteBillingDetails: {
-      readonly name: "DeleteBillingDetails",
-      readonly I: typeof DeleteBillingDetailsReq,
-      readonly O: typeof DeleteBillingDetailsRes,
       readonly kind: MethodKind.Unary,
     },
     /**
