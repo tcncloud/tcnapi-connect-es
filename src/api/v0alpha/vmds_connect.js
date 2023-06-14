@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteGreetingReq, DeleteGreetingRes, DeleteVoicemailReq, DeleteVoicemailRes, DownloadGreetingForExtensionReq, DownloadGreetingForExtensionRes, DownloadGreetingReq, DownloadGreetingRes, DownloadMessageReq, DownloadMessageRes, DownloadMessagesReq, DownloadMessagesRes, DownloadSpecifiedMessagesReq, DownloadSpecifiedMessagesRes, GetUploadGreetingUrlReq, GetUploadGreetingUrlRes, GetVoicemailCountReq, GetVoicemailCountRes, GetVoicemailMetadataReq, GetVoicemailMetadataRes, ListAvailableGreetingsReq, ListAvailableGreetingsRes, ProcessGreetingUploadReq, ProcessGreetingUploadRes, UpdateGreetingForExtensionReq, UpdateGreetingForExtensionRes, UpdateUploadNameReq, UpdateUploadNameRes, UpdateVoicemailFlagReadReq, UpdateVoicemailFlagReadRes } from "./vmds_pb.js";
+import { DeleteGreetingReq, DeleteGreetingRes, DeleteVoicemailReq, DeleteVoicemailRes, DownloadGreetingForExtensionReq, DownloadGreetingForExtensionRes, DownloadGreetingReq, DownloadGreetingRes, DownloadMessageReq, DownloadMessageRes, DownloadMessagesReq, DownloadMessagesRes, GetUploadGreetingUrlReq, GetUploadGreetingUrlRes, GetVoicemailCountReq, GetVoicemailCountRes, GetVoicemailMetadataReq, GetVoicemailMetadataRes, ListAvailableGreetingsReq, ListAvailableGreetingsRes, ProcessGreetingUploadReq, ProcessGreetingUploadRes, UpdateGreetingForExtensionReq, UpdateGreetingForExtensionRes, UpdateUploadNameReq, UpdateUploadNameRes, UpdateVoicemailFlagReadReq, UpdateVoicemailFlagReadRes } from "./vmds_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -73,15 +73,6 @@ export const Vmds = {
       name: "DownloadMessage",
       I: DownloadMessageReq,
       O: DownloadMessageRes,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v0alpha.Vmds.DownloadSpecifiedMessages
-     */
-    downloadSpecifiedMessages: {
-      name: "DownloadSpecifiedMessages",
-      I: DownloadSpecifiedMessagesReq,
-      O: DownloadSpecifiedMessagesRes,
       kind: MethodKind.Unary,
     },
     /**
