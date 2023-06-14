@@ -36,7 +36,7 @@ export const StatusState = proto3.makeEnum(
 export const QueueType = proto3.makeEnum(
   "api.commons.QueueType",
   [
-    {no: 0, name: "Agent_Queue_Call"},
+    {no: 0, name: "AGENT_QUEUE_CALL"},
     {no: 1, name: "ON_HOLD_CALL"},
     {no: 2, name: "HQM_CALL"},
   ],

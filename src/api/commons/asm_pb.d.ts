@@ -60,9 +60,9 @@ export declare enum StatusState {
  */
 export declare enum QueueType {
   /**
-   * @generated from enum value: Agent_Queue_Call = 0;
+   * @generated from enum value: AGENT_QUEUE_CALL = 0;
    */
-  Agent_Queue_Call = 0,
+  AGENT_QUEUE_CALL = 0,
 
   /**
    * @generated from enum value: ON_HOLD_CALL = 1;
