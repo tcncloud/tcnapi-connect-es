@@ -7,48 +7,6 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * EditColumnType Fields
- *
- * @generated from enum api.commons.EditColumnType
- */
-export declare enum EditColumnType {
-  /**
-   * @generated from enum value: NONE_COLUMN = 0;
-   */
-  NONE_COLUMN = 0,
-
-  /**
-   * @generated from enum value: DESCRIPTION = 1;
-   */
-  DESCRIPTION = 1,
-
-  /**
-   * @generated from enum value: SKILLS = 2;
-   */
-  SKILLS = 2,
-
-  /**
-   * @generated from enum value: STATUS = 3;
-   */
-  STATUS = 3,
-
-  /**
-   * @generated from enum value: DUE_DATE = 4;
-   */
-  DUE_DATE = 4,
-
-  /**
-   * @generated from enum value: SLA = 5;
-   */
-  SLA = 5,
-
-  /**
-   * @generated from enum value: ASSIGNEE = 6;
-   */
-  ASSIGNEE = 6,
-}
-
-/**
  * Ticket - Fields for Ticket creation, List tickets and view ticket
  *
  * @generated from message api.commons.Ticket
@@ -804,14 +762,11 @@ export declare class EditAttribute extends Message<EditAttribute> {
   toVal: string;
 
   /**
+   * EditColumnType edit_column_type = 5;
+   *
    * @generated from field: bool is_edited = 4;
    */
   isEdited: boolean;
-
-  /**
-   * @generated from field: api.commons.EditColumnType edit_column_type = 5;
-   */
-  editColumnType: EditColumnType;
 
   constructor(data?: PartialMessage<EditAttribute>);
 
