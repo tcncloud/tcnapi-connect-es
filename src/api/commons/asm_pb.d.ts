@@ -56,26 +56,6 @@ export declare enum StatusState {
 }
 
 /**
- * @generated from enum api.commons.QueueType
- */
-export declare enum QueueType {
-  /**
-   * @generated from enum value: AGENT_QUEUE_CALL = 0;
-   */
-  AGENT_QUEUE_CALL = 0,
-
-  /**
-   * @generated from enum value: ON_HOLD_CALL = 1;
-   */
-  ON_HOLD_CALL = 1,
-
-  /**
-   * @generated from enum value: HQM_CALL = 2;
-   */
-  HQM_CALL = 2,
-}
-
-/**
  * TODO remove unused fields
  *
  * @generated from message api.commons.DashboardAgentInfo
@@ -477,13 +457,6 @@ export declare class QueueCallAdd extends Message<QueueCallAdd> {
    * @generated from field: map<string, bool> skills = 9;
    */
   skills: { [key: string]: boolean };
-
-  /**
-   * queueType
-   *
-   * @generated from field: api.commons.QueueType queue_type = 10;
-   */
-  queueType: QueueType;
 
   constructor(data?: PartialMessage<QueueCallAdd>);
 

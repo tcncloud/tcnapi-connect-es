@@ -31,18 +31,6 @@ export const StatusState = proto3.makeEnum(
 );
 
 /**
- * @generated from enum api.commons.QueueType
- */
-export const QueueType = proto3.makeEnum(
-  "api.commons.QueueType",
-  [
-    {no: 0, name: "AGENT_QUEUE_CALL"},
-    {no: 1, name: "ON_HOLD_CALL"},
-    {no: 2, name: "HQM_CALL"},
-  ],
-);
-
-/**
  * TODO remove unused fields
  *
  * @generated from message api.commons.DashboardAgentInfo
@@ -139,7 +127,6 @@ export const QueueCallAdd = proto3.makeMessageType(
     { no: 7, name: "queued_notification_type", kind: "enum", T: proto3.getEnumType(QueuedNotificationType) },
     { no: 8, name: "caller_sid", kind: "message", T: CallerSid },
     { no: 9, name: "skills", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 8 /* ScalarType.BOOL */} },
-    { no: 10, name: "queue_type", kind: "enum", T: proto3.getEnumType(QueueType) },
   ],
 );
 
