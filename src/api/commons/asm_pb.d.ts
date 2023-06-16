@@ -426,9 +426,9 @@ export declare class QueueCallAdd extends Message<QueueCallAdd> {
   /**
    * formatted skills that the call requires.
    *
-   * @generated from field: repeated string skills = 5;
+   * @generated from field: map<string, string> formatted_skills = 5;
    */
-  skills: string[];
+  formattedSkills: { [key: string]: string };
 
   /**
    * indicates if the call is specific to the agent (multi-hold) or it can be picked up by multiple agents (queued and HQM calls).
@@ -450,6 +450,13 @@ export declare class QueueCallAdd extends Message<QueueCallAdd> {
    * @generated from field: api.commons.CallerSid caller_sid = 8;
    */
   callerSid?: CallerSid;
+
+  /**
+   * skills
+   *
+   * @generated from field: map<string, bool> skills = 9;
+   */
+  skills: { [key: string]: boolean };
 
   constructor(data?: PartialMessage<QueueCallAdd>);
 

@@ -122,10 +122,11 @@ export const QueueCallAdd = proto3.makeMessageType(
     { no: 2, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "start_date", kind: "message", T: Timestamp },
     { no: 4, name: "hold_date", kind: "message", T: Timestamp },
-    { no: 5, name: "skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "formatted_skills", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 6, name: "agent_specific", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 7, name: "queued_notification_type", kind: "enum", T: proto3.getEnumType(QueuedNotificationType) },
     { no: 8, name: "caller_sid", kind: "message", T: CallerSid },
+    { no: 9, name: "skills", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 8 /* ScalarType.BOOL */} },
   ],
 );
 
