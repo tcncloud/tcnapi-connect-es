@@ -37,22 +37,8 @@ export const GetBillingPlanRes = proto3.makeMessageType(
 export const UpdateBillingPlanReq = proto3.makeMessageType(
   "api.v1alpha1.billing.UpdateBillingPlanReq",
   () => [
-    { no: 1, name: "updates", kind: "message", T: UpdateBillingPlanReq_UpdateReq, repeated: true },
+    { no: 1, name: "billing_details", kind: "message", T: Detail, repeated: true },
   ],
-);
-
-/**
- * UpdateReq - request to update a single billing detail
- *
- * @generated from message api.v1alpha1.billing.UpdateBillingPlanReq.UpdateReq
- */
-export const UpdateBillingPlanReq_UpdateReq = proto3.makeMessageType(
-  "api.v1alpha1.billing.UpdateBillingPlanReq.UpdateReq",
-  () => [
-    { no: 1, name: "billing_detail", kind: "message", T: Detail },
-    { no: 2, name: "fields", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-  ],
-  {localName: "UpdateBillingPlanReq_UpdateReq"},
 );
 
 /**
