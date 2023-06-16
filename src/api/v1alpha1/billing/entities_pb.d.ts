@@ -64,11 +64,11 @@ export declare class GetBillingPlanRes extends Message<GetBillingPlanRes> {
  */
 export declare class UpdateBillingPlanReq extends Message<UpdateBillingPlanReq> {
   /**
-   * Required. the updates to perform on the billing plan
+   * Required. the billing details to update
    *
-   * @generated from field: repeated api.v1alpha1.billing.UpdateBillingPlanReq.UpdateReq updates = 1;
+   * @generated from field: repeated api.commons.billing.Detail billing_details = 1;
    */
-  updates: UpdateBillingPlanReq_UpdateReq[];
+  billingDetails: Detail[];
 
   constructor(data?: PartialMessage<UpdateBillingPlanReq>);
 
@@ -83,41 +83,6 @@ export declare class UpdateBillingPlanReq extends Message<UpdateBillingPlanReq> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateBillingPlanReq;
 
   static equals(a: UpdateBillingPlanReq | PlainMessage<UpdateBillingPlanReq> | undefined, b: UpdateBillingPlanReq | PlainMessage<UpdateBillingPlanReq> | undefined): boolean;
-}
-
-/**
- * UpdateReq - request to update a single billing detail
- *
- * @generated from message api.v1alpha1.billing.UpdateBillingPlanReq.UpdateReq
- */
-export declare class UpdateBillingPlanReq_UpdateReq extends Message<UpdateBillingPlanReq_UpdateReq> {
-  /**
-   * Required. the billing detail to update
-   *
-   * @generated from field: api.commons.billing.Detail billing_detail = 1;
-   */
-  billingDetail?: Detail;
-
-  /**
-   * Required. the mask of fields to update for the billing detail
-   *
-   * @generated from field: repeated string fields = 2;
-   */
-  fields: string[];
-
-  constructor(data?: PartialMessage<UpdateBillingPlanReq_UpdateReq>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.billing.UpdateBillingPlanReq.UpdateReq";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateBillingPlanReq_UpdateReq;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateBillingPlanReq_UpdateReq;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateBillingPlanReq_UpdateReq;
-
-  static equals(a: UpdateBillingPlanReq_UpdateReq | PlainMessage<UpdateBillingPlanReq_UpdateReq> | undefined, b: UpdateBillingPlanReq_UpdateReq | PlainMessage<UpdateBillingPlanReq_UpdateReq> | undefined): boolean;
 }
 
 /**
