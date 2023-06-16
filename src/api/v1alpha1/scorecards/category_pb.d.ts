@@ -83,9 +83,10 @@ export declare class ListCategoriesRequest extends Message<ListCategoriesRequest
   skillProfiles: bigint[];
 
   /**
-   * Optional. Returns categories with any call type.
+   * Deprecated.
    *
-   * @generated from field: repeated api.commons.CallType.Enum call_types = 4;
+   * @generated from field: repeated api.commons.CallType.Enum call_types = 4 [deprecated = true];
+   * @deprecated
    */
   callTypes: CallType_Enum[];
 

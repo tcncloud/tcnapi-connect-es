@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditTicketReq, EditTicketRes, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditTicketReq, EditTicketRes, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -178,6 +178,17 @@ export declare const Tickets: {
       readonly name: "ListTicketAuditLog",
       readonly I: typeof ListTicketAuditLogReq,
       readonly O: typeof ListTicketAuditLogRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to assign a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.AssignSelf
+     */
+    readonly assignSelf: {
+      readonly name: "AssignSelf",
+      readonly I: typeof CreateSelfAssignReq,
+      readonly O: typeof CreateSelfAssignRes,
       readonly kind: MethodKind.Unary,
     },
   }

@@ -21,6 +21,8 @@ import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValu
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * request to check if learning page url exists
+ *
  * @generated from message api.v0alpha.ExistReq
  */
 export declare class ExistReq extends Message<ExistReq> {
@@ -50,6 +52,8 @@ export declare class ExistReq extends Message<ExistReq> {
 }
 
 /**
+ * response for checking if learning page  url exists
+ *
  * @generated from message api.v0alpha.ExistRes
  */
 export declare class ExistRes extends Message<ExistRes> {
@@ -74,6 +78,8 @@ export declare class ExistRes extends Message<ExistRes> {
 }
 
 /**
+ * request to retreive learning pages content from the url
+ *
  * @generated from message api.v0alpha.ContentReq
  */
 export declare class ContentReq extends Message<ContentReq> {
@@ -103,6 +109,8 @@ export declare class ContentReq extends Message<ContentReq> {
 }
 
 /**
+ * response to retreive learning pages content
+ *
  * @generated from message api.v0alpha.ContentRes
  */
 export declare class ContentRes extends Message<ContentRes> {
@@ -141,6 +149,8 @@ export declare class ContentRes extends Message<ContentRes> {
 }
 
 /**
+ * request to retreive last user edited learning pages content
+ *
  * @generated from message api.v0alpha.ContentEditorDataReq
  */
 export declare class ContentEditorDataReq extends Message<ContentEditorDataReq> {
@@ -170,6 +180,8 @@ export declare class ContentEditorDataReq extends Message<ContentEditorDataReq> 
 }
 
 /**
+ * response to retreive last user edited learning pages content
+ *
  * @generated from message api.v0alpha.ContentEditorDataRes
  */
 export declare class ContentEditorDataRes extends Message<ContentEditorDataRes> {
@@ -196,6 +208,8 @@ export declare class ContentEditorDataRes extends Message<ContentEditorDataRes> 
 }
 
 /**
+ * request to update learning pages content based on the url
+ *
  * @generated from message api.v0alpha.UpdateReq
  */
 export declare class UpdateReq extends Message<UpdateReq> {
@@ -237,6 +251,8 @@ export declare class UpdateReq extends Message<UpdateReq> {
 }
 
 /**
+ * response to update learning pages content
+ *
  * @generated from message api.v0alpha.UpdateRes
  */
 export declare class UpdateRes extends Message<UpdateRes> {
@@ -706,5 +722,61 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LearnStandaloneDetails;
 
   static equals(a: LearnStandaloneDetails | PlainMessage<LearnStandaloneDetails> | undefined, b: LearnStandaloneDetails | PlainMessage<LearnStandaloneDetails> | undefined): boolean;
+}
+
+/**
+ * request to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneReq
+ */
+export declare class DeleteStandaloneReq extends Message<DeleteStandaloneReq> {
+  /**
+   * locale used for the markdown contents
+   *
+   * @generated from field: string locale = 1;
+   */
+  locale: string;
+
+  /**
+   * list of article names
+   *
+   * @generated from field: repeated string article_names = 2;
+   */
+  articleNames: string[];
+
+  constructor(data?: PartialMessage<DeleteStandaloneReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.DeleteStandaloneReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteStandaloneReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteStandaloneReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteStandaloneReq;
+
+  static equals(a: DeleteStandaloneReq | PlainMessage<DeleteStandaloneReq> | undefined, b: DeleteStandaloneReq | PlainMessage<DeleteStandaloneReq> | undefined): boolean;
+}
+
+/**
+ * response to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneRes
+ */
+export declare class DeleteStandaloneRes extends Message<DeleteStandaloneRes> {
+  constructor(data?: PartialMessage<DeleteStandaloneRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.DeleteStandaloneRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteStandaloneRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteStandaloneRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteStandaloneRes;
+
+  static equals(a: DeleteStandaloneRes | PlainMessage<DeleteStandaloneRes> | undefined, b: DeleteStandaloneRes | PlainMessage<DeleteStandaloneRes> | undefined): boolean;
 }
 

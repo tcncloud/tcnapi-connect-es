@@ -1192,7 +1192,6 @@ export const VerifiedEmail = proto3.makeMessageType(
   "api.commons.VerifiedEmail",
   () => [
     { no: 1, name: "verified_email_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "verification_key", kind: "message", T: StringValue },
     { no: 3, name: "email_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "created_on", kind: "message", T: Timestamp },

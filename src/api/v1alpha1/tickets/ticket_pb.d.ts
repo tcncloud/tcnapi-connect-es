@@ -107,6 +107,11 @@ export declare class CreateTicketReq extends Message<CreateTicketReq> {
    */
   ticketSla: Sla[];
 
+  /**
+   * @generated from field: bool assign_self = 13;
+   */
+  assignSelf: boolean;
+
   constructor(data?: PartialMessage<CreateTicketReq>);
 
   static readonly runtime: typeof proto3;
@@ -834,5 +839,57 @@ export declare class ReplyCommentRes extends Message<ReplyCommentRes> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReplyCommentRes;
 
   static equals(a: ReplyCommentRes | PlainMessage<ReplyCommentRes> | undefined, b: ReplyCommentRes | PlainMessage<ReplyCommentRes> | undefined): boolean;
+}
+
+/**
+ * CreateSelfAssignReq -
+ *
+ * @generated from message api.v1alpha1.tickets.CreateSelfAssignReq
+ */
+export declare class CreateSelfAssignReq extends Message<CreateSelfAssignReq> {
+  /**
+   * @generated from field: int64 ticket_sid = 1;
+   */
+  ticketSid: bigint;
+
+  constructor(data?: PartialMessage<CreateSelfAssignReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CreateSelfAssignReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSelfAssignReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSelfAssignReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSelfAssignReq;
+
+  static equals(a: CreateSelfAssignReq | PlainMessage<CreateSelfAssignReq> | undefined, b: CreateSelfAssignReq | PlainMessage<CreateSelfAssignReq> | undefined): boolean;
+}
+
+/**
+ * CreateSelfAssignRes -
+ *
+ * @generated from message api.v1alpha1.tickets.CreateSelfAssignRes
+ */
+export declare class CreateSelfAssignRes extends Message<CreateSelfAssignRes> {
+  /**
+   * @generated from field: bool is_assigned = 1;
+   */
+  isAssigned: boolean;
+
+  constructor(data?: PartialMessage<CreateSelfAssignRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CreateSelfAssignRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSelfAssignRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSelfAssignRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSelfAssignRes;
+
+  static equals(a: CreateSelfAssignRes | PlainMessage<CreateSelfAssignRes> | undefined, b: CreateSelfAssignRes | PlainMessage<CreateSelfAssignRes> | undefined): boolean;
 }
 

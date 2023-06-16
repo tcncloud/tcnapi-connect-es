@@ -2696,6 +2696,7 @@ export const ListConfigEntitiesReq = proto3.makeMessageType(
     { no: 2, name: "belongs_to_entity", kind: "message", T: ParentEntity },
     { no: 3, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 4, name: "member_depth", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -3239,6 +3240,36 @@ export const CreateDraftScheduleRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.CreateDraftScheduleRes",
   () => [
     { no: 1, name: "draft_schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for the UpdateDraftSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateDraftScheduleReq
+ */
+export const UpdateDraftScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateDraftScheduleReq",
+  () => [
+    { no: 1, name: "draft_schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 5, name: "delete_shifts_not_in_range", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "copy_shifts_into_new_range", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "get_updated_shifts", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the UpdateDraftSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateDraftScheduleRes
+ */
+export const UpdateDraftScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateDraftScheduleRes",
+  () => [
+    { no: 1, name: "draft_schedule", kind: "message", T: DraftSchedule },
   ],
 );
 

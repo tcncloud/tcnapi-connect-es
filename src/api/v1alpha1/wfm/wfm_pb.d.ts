@@ -7723,6 +7723,13 @@ export declare class ListConfigEntitiesReq extends Message<ListConfigEntitiesReq
    */
   memberDepth: number;
 
+  /**
+   * ID of the scenario that the entities desired belong to, must match the scenario of @belongs_to_entity.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 5;
+   */
+  scheduleScenarioSid: bigint;
+
   constructor(data?: PartialMessage<ListConfigEntitiesReq>);
 
   static readonly runtime: typeof proto3;
@@ -9375,6 +9382,105 @@ export declare class CreateDraftScheduleRes extends Message<CreateDraftScheduleR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDraftScheduleRes;
 
   static equals(a: CreateDraftScheduleRes | PlainMessage<CreateDraftScheduleRes> | undefined, b: CreateDraftScheduleRes | PlainMessage<CreateDraftScheduleRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the UpdateDraftSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateDraftScheduleReq
+ */
+export declare class UpdateDraftScheduleReq extends Message<UpdateDraftScheduleReq> {
+  /**
+   * ID of the draft schedule to be updated.
+   *
+   * @generated from field: int64 draft_schedule_sid = 1;
+   */
+  draftScheduleSid: bigint;
+
+  /**
+   * Name of the draft schedule.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * Description of the draft schedule.
+   *
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  /**
+   * Range to retrieve shift instances and segments from the published schedule to use for this draft schedule.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 4;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Set to true to delete any shift instances belonging to the draft schedule, which are outside of the new @datetime_range.
+   * If false, instances outside of the new @datetime_range will be retained, for use if the datetime range is expanded to cover the instances in the future.
+   *
+   * @generated from field: bool delete_shifts_not_in_range = 5;
+   */
+  deleteShiftsNotInRange: boolean;
+
+  /**
+   * Set to true to copy shift instances from the published schedule into regions of the schedule with no shift instances.
+   *
+   * @generated from field: bool copy_shifts_into_new_range = 6;
+   */
+  copyShiftsIntoNewRange: boolean;
+
+  /**
+   * Set to true to get the draft schedule with the updated schedule range, shift instances, and shift segments
+   *
+   * @generated from field: bool get_updated_shifts = 7;
+   */
+  getUpdatedShifts: boolean;
+
+  constructor(data?: PartialMessage<UpdateDraftScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateDraftScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDraftScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDraftScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDraftScheduleReq;
+
+  static equals(a: UpdateDraftScheduleReq | PlainMessage<UpdateDraftScheduleReq> | undefined, b: UpdateDraftScheduleReq | PlainMessage<UpdateDraftScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateDraftSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateDraftScheduleRes
+ */
+export declare class UpdateDraftScheduleRes extends Message<UpdateDraftScheduleRes> {
+  /**
+   * The newly updated draft schedule.
+   *
+   * @generated from field: api.v1alpha1.wfm.DraftSchedule draft_schedule = 1;
+   */
+  draftSchedule?: DraftSchedule;
+
+  constructor(data?: PartialMessage<UpdateDraftScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateDraftScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDraftScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDraftScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDraftScheduleRes;
+
+  static equals(a: UpdateDraftScheduleRes | PlainMessage<UpdateDraftScheduleRes> | undefined, b: UpdateDraftScheduleRes | PlainMessage<UpdateDraftScheduleRes> | undefined): boolean;
 }
 
 /**

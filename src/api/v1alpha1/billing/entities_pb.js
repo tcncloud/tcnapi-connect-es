@@ -8,31 +8,6 @@ import { Detail, Plan } from "../../commons/billing/detail_pb.js";
 import { Invoice } from "../../commons/billing/invoice_pb.js";
 
 /**
- * CreateBillingPlanReq - request to create a billing plan for an organization
- *
- * @generated from message api.v1alpha1.billing.CreateBillingPlanReq
- */
-export const CreateBillingPlanReq = proto3.makeMessageType(
-  "api.v1alpha1.billing.CreateBillingPlanReq",
-  () => [
-    { no: 1, name: "billing_plan", kind: "message", T: Plan },
-  ],
-);
-
-/**
- * CreateBillingPlanRes - result of creating a billing plan; contains the
- * created billing plan
- *
- * @generated from message api.v1alpha1.billing.CreateBillingPlanRes
- */
-export const CreateBillingPlanRes = proto3.makeMessageType(
-  "api.v1alpha1.billing.CreateBillingPlanRes",
-  () => [
-    { no: 1, name: "billing_plan", kind: "message", T: Plan },
-  ],
-);
-
-/**
  * GetBillingPlanReq - request to get an organization's billing plan
  *
  * @generated from message api.v1alpha1.billing.GetBillingPlanReq
@@ -91,28 +66,6 @@ export const UpdateBillingPlanRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "billing_plan", kind: "message", T: Plan },
   ],
-);
-
-/**
- * DeleteBillingDetailsReq - request to delete billing details
- *
- * @generated from message api.v1alpha1.billing.DeleteBillingDetailsReq
- */
-export const DeleteBillingDetailsReq = proto3.makeMessageType(
-  "api.v1alpha1.billing.DeleteBillingDetailsReq",
-  () => [
-    { no: 1, name: "billing_detail_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-  ],
-);
-
-/**
- * DeleteBillingDetailsRes - result of deleting billing details
- *
- * @generated from message api.v1alpha1.billing.DeleteBillingDetailsRes
- */
-export const DeleteBillingDetailsRes = proto3.makeMessageType(
-  "api.v1alpha1.billing.DeleteBillingDetailsRes",
-  [],
 );
 
 /**

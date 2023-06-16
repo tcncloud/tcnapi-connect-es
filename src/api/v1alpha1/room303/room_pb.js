@@ -3,8 +3,13 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { Room, RoomType } from "../../commons/room303_pb.js";
+import { UserArchivedStateFilter } from "../../commons/user_pb.js";
+import { Skill, User } from "../../commons/org/user_pb.js";
+import { P3PermissionGroup, PermissionGroup } from "../../commons/org/permissions_pb.js";
+import { Label } from "../../commons/org/labels_pb.js";
+import { Trust } from "../../commons/org/trusts_pb.js";
 
 /**
  * @generated from message api.v1alpha1.room303.CreateRoomRequest
@@ -62,5 +67,94 @@ export const ArchiveRoomRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
+);
+
+/**
+ * Request message for the ListUsersByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.room303.ListUsersByOrgIdRequest
+ */
+export const ListUsersByOrgIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.room303.ListUsersByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "archived_filter", kind: "enum", T: proto3.getEnumType(UserArchivedStateFilter) },
+  ],
+);
+
+/**
+ * Response message for the ListsUserByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.room303.ListUsersByOrgIdResponse
+ */
+export const ListUsersByOrgIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.room303.ListUsersByOrgIdResponse",
+  () => [
+    { no: 1, name: "user_details", kind: "message", T: UserDetails, repeated: true },
+  ],
+);
+
+/**
+ * Wrapper for associating non entity fields with an User
+ *
+ * @generated from message api.v1alpha1.room303.UserDetails
+ */
+export const UserDetails = proto3.makeMessageType(
+  "api.v1alpha1.room303.UserDetails",
+  () => [
+    { no: 1, name: "user", kind: "message", T: User },
+    { no: 2, name: "org_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "hunt_group", kind: "message", T: UserDetails_HuntGroup },
+    { no: 4, name: "agent_profile_group", kind: "message", T: UserDetails_AgentProfileGroup },
+    { no: 5, name: "skills", kind: "message", T: Skill, repeated: true },
+    { no: 6, name: "permission_groups", kind: "message", T: PermissionGroup, repeated: true },
+    { no: 7, name: "p3_permission_group", kind: "message", T: P3PermissionGroup },
+    { no: 8, name: "delegated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "labels", kind: "message", T: Label, repeated: true },
+    { no: 10, name: "login_info", kind: "message", T: UserDetails_LoginInfo },
+    { no: 11, name: "billing_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "trusts", kind: "message", T: Trust, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.room303.UserDetails.HuntGroup
+ */
+export const UserDetails_HuntGroup = proto3.makeMessageType(
+  "api.v1alpha1.room303.UserDetails.HuntGroup",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "UserDetails_HuntGroup"},
+);
+
+/**
+ * @generated from message api.v1alpha1.room303.UserDetails.AgentProfileGroup
+ */
+export const UserDetails_AgentProfileGroup = proto3.makeMessageType(
+  "api.v1alpha1.room303.UserDetails.AgentProfileGroup",
+  () => [
+    { no: 1, name: "agent_profile_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "agent_profile_group_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "UserDetails_AgentProfileGroup"},
+);
+
+/**
+ * @generated from message api.v1alpha1.room303.UserDetails.LoginInfo
+ */
+export const UserDetails_LoginInfo = proto3.makeMessageType(
+  "api.v1alpha1.room303.UserDetails.LoginInfo",
+  () => [
+    { no: 1, name: "last_ip", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "last_login", kind: "message", T: Timestamp },
+    { no: 3, name: "last_password_reset", kind: "message", T: Timestamp },
+    { no: 4, name: "logins_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "has_blocked_ips", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+  {localName: "UserDetails_LoginInfo"},
 );
 

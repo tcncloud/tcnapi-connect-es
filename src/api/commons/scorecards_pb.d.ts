@@ -220,6 +220,11 @@ export declare enum RiskLevel {
    * @generated from enum value: RISK_LEVEL_HIGH = 3;
    */
   HIGH = 3,
+
+  /**
+   * @generated from enum value: RISK_LEVEL_RISK_FREE = 4;
+   */
+  RISK_FREE = 4,
 }
 
 /**
@@ -330,9 +335,10 @@ export declare class Category extends Message<Category> {
   version: number;
 
   /**
-   * call types supported by the category
+   * Deprecated. Use scorecard.call_types
    *
-   * @generated from field: repeated api.commons.CallType.Enum call_types = 10;
+   * @generated from field: repeated api.commons.CallType.Enum call_types = 10 [deprecated = true];
+   * @deprecated
    */
   callTypes: CallType_Enum[];
 

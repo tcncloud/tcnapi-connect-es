@@ -7,7 +7,7 @@ import { AddRoomMemberRequest, GetRoomMemberRequest, JoinRoomRequest, ListRoomMe
 import { Member, Room } from "../../commons/room303_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { BulkMarkMessageReadRequest, BulkMarkMessageReadResponse, CreateMessageRequest, CreateMessageResponse, DeleteMessageRequest, DeleteMessageResponse, EditMessageRequest, EditMessageResponse, GetMessagesRequest, GetMessagesResponse, GetUnreadStatsRequest, GetUnreadStatsResponse, MarkAllMessagesReadRequest, MarkAllMessagesReadResponse, MarkMessageReadRequest, MarkMessageReadResponse, StreamMessageUpdatesRequest, StreamMessageUpdatesResponse } from "./message_pb.js";
-import { ArchiveRoomRequest, CreateRoomRequest, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse } from "./room_pb.js";
+import { ArchiveRoomRequest, CreateRoomRequest, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse } from "./room_pb.js";
 
 /**
  * @generated from service api.v1alpha1.room303.Room303API
@@ -217,6 +217,15 @@ export const Room303API = {
       I: ArchiveRoomRequest,
       O: Room,
       kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.room303.Room303API.ListUsersByOrgId
+     */
+    listUsersByOrgId: {
+      name: "ListUsersByOrgId",
+      I: ListUsersByOrgIdRequest,
+      O: ListUsersByOrgIdResponse,
+      kind: MethodKind.ServerStreaming,
     },
   }
 };

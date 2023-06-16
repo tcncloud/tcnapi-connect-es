@@ -20,6 +20,8 @@
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * request to check if learning page url exists
+ *
  * @generated from message api.v0alpha.ExistReq
  */
 export const ExistReq = proto3.makeMessageType(
@@ -31,6 +33,8 @@ export const ExistReq = proto3.makeMessageType(
 );
 
 /**
+ * response for checking if learning page  url exists
+ *
  * @generated from message api.v0alpha.ExistRes
  */
 export const ExistRes = proto3.makeMessageType(
@@ -41,6 +45,8 @@ export const ExistRes = proto3.makeMessageType(
 );
 
 /**
+ * request to retreive learning pages content from the url
+ *
  * @generated from message api.v0alpha.ContentReq
  */
 export const ContentReq = proto3.makeMessageType(
@@ -52,6 +58,8 @@ export const ContentReq = proto3.makeMessageType(
 );
 
 /**
+ * response to retreive learning pages content
+ *
  * @generated from message api.v0alpha.ContentRes
  */
 export const ContentRes = proto3.makeMessageType(
@@ -64,6 +72,8 @@ export const ContentRes = proto3.makeMessageType(
 );
 
 /**
+ * request to retreive last user edited learning pages content
+ *
  * @generated from message api.v0alpha.ContentEditorDataReq
  */
 export const ContentEditorDataReq = proto3.makeMessageType(
@@ -75,6 +85,8 @@ export const ContentEditorDataReq = proto3.makeMessageType(
 );
 
 /**
+ * response to retreive last user edited learning pages content
+ *
  * @generated from message api.v0alpha.ContentEditorDataRes
  */
 export const ContentEditorDataRes = proto3.makeMessageType(
@@ -85,6 +97,8 @@ export const ContentEditorDataRes = proto3.makeMessageType(
 );
 
 /**
+ * request to update learning pages content based on the url
+ *
  * @generated from message api.v0alpha.UpdateReq
  */
 export const UpdateReq = proto3.makeMessageType(
@@ -98,6 +112,8 @@ export const UpdateReq = proto3.makeMessageType(
 );
 
 /**
+ * response to update learning pages content
+ *
  * @generated from message api.v0alpha.UpdateRes
  */
 export const UpdateRes = proto3.makeMessageType(
@@ -272,5 +288,28 @@ export const LearnStandaloneDetails = proto3.makeMessageType(
     { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "last_edited_timestamp", kind: "message", T: Timestamp },
   ],
+);
+
+/**
+ * request to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneReq
+ */
+export const DeleteStandaloneReq = proto3.makeMessageType(
+  "api.v0alpha.DeleteStandaloneReq",
+  () => [
+    { no: 1, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "article_names", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * response to delete standalone articles
+ *
+ * @generated from message api.v0alpha.DeleteStandaloneRes
+ */
+export const DeleteStandaloneRes = proto3.makeMessageType(
+  "api.v0alpha.DeleteStandaloneRes",
+  [],
 );
 
