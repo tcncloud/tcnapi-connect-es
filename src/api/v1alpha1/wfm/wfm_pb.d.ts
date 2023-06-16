@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, Int64Value, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AvailabilityOption, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
@@ -9886,12 +9886,12 @@ export declare class CreateShiftInstanceReq extends Message<CreateShiftInstanceR
 
   /**
    * ID of the wfm agents for the shift instance.
-   * If null it will create a new unassigned WfmAgent for the shift instance.
+   * If empty it will create a new unassigned WfmAgent for the shift instance.
    * If given more than one sid, then a copy of the instance will be created for each agent.
    *
-   * @generated from field: repeated google.protobuf.Int64Value wfm_agent_sids = 6;
+   * @generated from field: repeated int64 wfm_agent_sids = 6;
    */
-  wfmAgentSids: Int64Value[];
+  wfmAgentSids: bigint[];
 
   constructor(data?: PartialMessage<CreateShiftInstanceReq>);
 
