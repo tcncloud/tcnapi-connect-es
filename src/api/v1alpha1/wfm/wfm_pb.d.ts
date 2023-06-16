@@ -9977,16 +9977,9 @@ export declare class CreateShiftInstanceReq extends Message<CreateShiftInstanceR
   startDatetime?: Timestamp;
 
   /**
-   * Width in minutes of the shift instance.
-   *
-   * @generated from field: int32 width_in_minutes = 4;
-   */
-  widthInMinutes: number;
-
-  /**
    * Indicates whether the shift instance is locked.
    *
-   * @generated from field: bool is_locked = 5;
+   * @generated from field: bool is_locked = 4;
    */
   isLocked: boolean;
 
@@ -9995,7 +9988,7 @@ export declare class CreateShiftInstanceReq extends Message<CreateShiftInstanceR
    * If empty it will create a new unassigned WfmAgent for the shift instance.
    * If given more than one sid, then a copy of the instance will be created for each agent.
    *
-   * @generated from field: repeated int64 wfm_agent_sids = 6;
+   * @generated from field: repeated int64 wfm_agent_sids = 5;
    */
   wfmAgentSids: bigint[];
 

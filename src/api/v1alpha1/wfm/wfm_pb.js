@@ -3427,9 +3427,8 @@ export const CreateShiftInstanceReq = proto3.makeMessageType(
     { no: 1, name: "draft_schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "start_datetime", kind: "message", T: Timestamp },
-    { no: 4, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 5, name: "is_locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 6, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "is_locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 
