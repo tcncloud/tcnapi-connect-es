@@ -69,6 +69,10 @@ export const RequestMethod = proto3.makeEnum(
     {no: 204, name: "REQUEST_METHOD_RELATIENT_POSTPATIENTBALANCE", localName: "RELATIENT_POSTPATIENTBALANCE"},
     {no: 205, name: "REQUEST_METHOD_RELATIENT_GETPATIENT", localName: "RELATIENT_GETPATIENT"},
     {no: 206, name: "REQUEST_METHOD_RELATIENT_POSTBALANCEBYID", localName: "RELATIENT_POSTBALANCEBYID"},
+    {no: 207, name: "REQUEST_METHOD_RELATIENT_CREATE_FORTIS_ACHTOKEN", localName: "RELATIENT_CREATE_FORTIS_ACHTOKEN"},
+    {no: 208, name: "REQUEST_METHOD_RELATIENT_CREATE_FORTIS_CCTOKEN", localName: "RELATIENT_CREATE_FORTIS_CCTOKEN"},
+    {no: 209, name: "REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT", localName: "RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT"},
+    {no: 210, name: "REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_CC_PAYMENT", localName: "RELATIENT_FORTIS_TOKEN_CC_PAYMENT"},
     {no: 301, name: "REQUEST_METHOD_CYBERSOURCE_CREDITPAYMENT", localName: "CYBERSOURCE_CREDITPAYMENT"},
     {no: 302, name: "REQUEST_METHOD_CYBERSOURCE_ECHECKPAYMENT", localName: "CYBERSOURCE_ECHECKPAYMENT"},
     {no: 401, name: "REQUEST_METHOD_CIRCPRO_PHONELOOKUPWITHBUNDLE", localName: "CIRCPRO_PHONELOOKUPWITHBUNDLE"},
@@ -622,6 +626,10 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 204, name: "relatient_post_patient_balance", kind: "message", T: ExecuteRelatientPostPatientBalance, oneof: "value" },
     { no: 205, name: "relatient_get_patient", kind: "message", T: ExecuteRelatientGetPatient, oneof: "value" },
     { no: 206, name: "relatient_post_balance_by_id", kind: "message", T: ExecuteRelatientPostBalanceById, oneof: "value" },
+    { no: 207, name: "relatient_create_fortis_achtoken", kind: "message", T: ExecuteRelatientCreateFortisAchtoken, oneof: "value" },
+    { no: 208, name: "relatient_create_fortis_cctoken", kind: "message", T: ExecuteRelatientCreateFortisCctoken, oneof: "value" },
+    { no: 209, name: "relatient_fortis_token_ach_debit_payment", kind: "message", T: ExecuteRelatientFortisTokenAchDebitPayment, oneof: "value" },
+    { no: 210, name: "relatient_fortis_token_cc_payment", kind: "message", T: ExecuteRelatientFortisTokenCcPayment, oneof: "value" },
     { no: 301, name: "cybersource_credit_payment", kind: "message", T: ExecuteCybersourceCreditPayment, oneof: "value" },
     { no: 302, name: "cybersource_echeck_payment", kind: "message", T: ExecuteCybersourceEcheckPayment, oneof: "value" },
     { no: 401, name: "circpro_phone_lookup_with_bundle", kind: "message", T: ExecuteCircproPhoneLookupWithBundle, oneof: "value" },
@@ -1002,6 +1010,38 @@ export const ExecuteRelatientGetPatient = proto3.makeMessageType(
  */
 export const ExecuteRelatientPostBalanceById = proto3.makeMessageType(
   "api.commons.integrations.ExecuteRelatientPostBalanceById",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisAchtoken
+ */
+export const ExecuteRelatientCreateFortisAchtoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientCreateFortisAchtoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisCctoken
+ */
+export const ExecuteRelatientCreateFortisCctoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientCreateFortisCctoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment
+ */
+export const ExecuteRelatientFortisTokenAchDebitPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenCcPayment
+ */
+export const ExecuteRelatientFortisTokenCcPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientFortisTokenCcPayment",
   [],
 );
 
