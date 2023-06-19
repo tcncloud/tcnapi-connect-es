@@ -241,6 +241,26 @@ export declare enum RequestMethod {
   RELATIENT_POSTBALANCEBYID = 206,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_CREATE_FORTIS_ACHTOKEN = 207;
+   */
+  RELATIENT_CREATE_FORTIS_ACHTOKEN = 207,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_CREATE_FORTIS_CCTOKEN = 208;
+   */
+  RELATIENT_CREATE_FORTIS_CCTOKEN = 208,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 209;
+   */
+  RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 209,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_CC_PAYMENT = 210;
+   */
+  RELATIENT_FORTIS_TOKEN_CC_PAYMENT = 210,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_CYBERSOURCE_CREDITPAYMENT = 301;
    */
   CYBERSOURCE_CREDITPAYMENT = 301,
@@ -2268,6 +2288,30 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
     case: "relatientPostBalanceById";
   } | {
     /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientCreateFortisAchtoken relatient_create_fortis_achtoken = 207;
+     */
+    value: ExecuteRelatientCreateFortisAchtoken;
+    case: "relatientCreateFortisAchtoken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientCreateFortisCctoken relatient_create_fortis_cctoken = 208;
+     */
+    value: ExecuteRelatientCreateFortisCctoken;
+    case: "relatientCreateFortisCctoken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment relatient_fortis_token_ach_debit_payment = 209;
+     */
+    value: ExecuteRelatientFortisTokenAchDebitPayment;
+    case: "relatientFortisTokenAchDebitPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientFortisTokenCcPayment relatient_fortis_token_cc_payment = 210;
+     */
+    value: ExecuteRelatientFortisTokenCcPayment;
+    case: "relatientFortisTokenCcPayment";
+  } | {
+    /**
      * @generated from field: api.commons.integrations.ExecuteCybersourceCreditPayment cybersource_credit_payment = 301;
      */
     value: ExecuteCybersourceCreditPayment;
@@ -3738,6 +3782,82 @@ export declare class ExecuteRelatientPostBalanceById extends Message<ExecuteRela
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientPostBalanceById;
 
   static equals(a: ExecuteRelatientPostBalanceById | PlainMessage<ExecuteRelatientPostBalanceById> | undefined, b: ExecuteRelatientPostBalanceById | PlainMessage<ExecuteRelatientPostBalanceById> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisAchtoken
+ */
+export declare class ExecuteRelatientCreateFortisAchtoken extends Message<ExecuteRelatientCreateFortisAchtoken> {
+  constructor(data?: PartialMessage<ExecuteRelatientCreateFortisAchtoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientCreateFortisAchtoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientCreateFortisAchtoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisAchtoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisAchtoken;
+
+  static equals(a: ExecuteRelatientCreateFortisAchtoken | PlainMessage<ExecuteRelatientCreateFortisAchtoken> | undefined, b: ExecuteRelatientCreateFortisAchtoken | PlainMessage<ExecuteRelatientCreateFortisAchtoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisCctoken
+ */
+export declare class ExecuteRelatientCreateFortisCctoken extends Message<ExecuteRelatientCreateFortisCctoken> {
+  constructor(data?: PartialMessage<ExecuteRelatientCreateFortisCctoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientCreateFortisCctoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientCreateFortisCctoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisCctoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisCctoken;
+
+  static equals(a: ExecuteRelatientCreateFortisCctoken | PlainMessage<ExecuteRelatientCreateFortisCctoken> | undefined, b: ExecuteRelatientCreateFortisCctoken | PlainMessage<ExecuteRelatientCreateFortisCctoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment
+ */
+export declare class ExecuteRelatientFortisTokenAchDebitPayment extends Message<ExecuteRelatientFortisTokenAchDebitPayment> {
+  constructor(data?: PartialMessage<ExecuteRelatientFortisTokenAchDebitPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientFortisTokenAchDebitPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenAchDebitPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenAchDebitPayment;
+
+  static equals(a: ExecuteRelatientFortisTokenAchDebitPayment | PlainMessage<ExecuteRelatientFortisTokenAchDebitPayment> | undefined, b: ExecuteRelatientFortisTokenAchDebitPayment | PlainMessage<ExecuteRelatientFortisTokenAchDebitPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenCcPayment
+ */
+export declare class ExecuteRelatientFortisTokenCcPayment extends Message<ExecuteRelatientFortisTokenCcPayment> {
+  constructor(data?: PartialMessage<ExecuteRelatientFortisTokenCcPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientFortisTokenCcPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientFortisTokenCcPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenCcPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenCcPayment;
+
+  static equals(a: ExecuteRelatientFortisTokenCcPayment | PlainMessage<ExecuteRelatientFortisTokenCcPayment> | undefined, b: ExecuteRelatientFortisTokenCcPayment | PlainMessage<ExecuteRelatientFortisTokenCcPayment> | undefined): boolean;
 }
 
 /**
