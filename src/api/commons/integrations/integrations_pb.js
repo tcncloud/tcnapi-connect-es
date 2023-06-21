@@ -48,6 +48,7 @@ export const IntegrationType = proto3.makeEnum(
     {no: 3200, name: "INTEGRATION_TYPE_I2C", localName: "I2C"},
     {no: 3300, name: "INTEGRATION_TYPE_OPAYO", localName: "OPAYO"},
     {no: 3400, name: "INTEGRATION_TYPE_SHIFT4", localName: "SHIFT4"},
+    {no: 3500, name: "INTEGRATION_TYPE_POSCORP", localName: "POSCORP"},
   ],
 );
 
@@ -219,6 +220,9 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3210, name: "REQUEST_METHOD_I2C_TRANSACTION_HISTORY", localName: "I2C_TRANSACTION_HISTORY"},
     {no: 3301, name: "REQUEST_METHOD_OPAYO_CCPAYMENTS", localName: "OPAYO_CCPAYMENTS"},
     {no: 3401, name: "REQUEST_METHOD_SHIFT4_CCPAYMENTS", localName: "SHIFT4_CCPAYMENTS"},
+    {no: 3501, name: "REQUEST_METHOD_POSCORP_ACCESSTOKEN", localName: "POSCORP_ACCESSTOKEN"},
+    {no: 3502, name: "REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR", localName: "POSCORP_LOOKUP_GUARANTOR"},
+    {no: 3503, name: "REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS", localName: "POSCORP_UPDATE_PAYMENT_STATUS"},
   ],
 );
 
@@ -776,6 +780,9 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3210, name: "i2c_transaction_history", kind: "message", T: ExecuteI2cTransactionHistory, oneof: "value" },
     { no: 3301, name: "opayo_cc_payment", kind: "message", T: ExecuteOpayoCcPayments, oneof: "value" },
     { no: 3401, name: "shift4_cc_payment", kind: "message", T: ExecuteShift4CcPayments, oneof: "value" },
+    { no: 3501, name: "poscorp_accesstoken", kind: "message", T: ExecutePoscorpAccesstoken, oneof: "value" },
+    { no: 3502, name: "poscorp_lookup_guarantor", kind: "message", T: ExecutePoscorpLookupGuarantor, oneof: "value" },
+    { no: 3503, name: "poscorp_update_payment_status", kind: "message", T: ExecutePoscorpUpdatePaymentStatus, oneof: "value" },
   ],
 );
 
@@ -2210,6 +2217,30 @@ export const ExecuteOpayoCcPayments = proto3.makeMessageType(
  */
 export const ExecuteShift4CcPayments = proto3.makeMessageType(
   "api.commons.integrations.ExecuteShift4CcPayments",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpAccesstoken
+ */
+export const ExecutePoscorpAccesstoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePoscorpAccesstoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpLookupGuarantor
+ */
+export const ExecutePoscorpLookupGuarantor = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePoscorpLookupGuarantor",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpUpdatePaymentStatus
+ */
+export const ExecutePoscorpUpdatePaymentStatus = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePoscorpUpdatePaymentStatus",
   [],
 );
 

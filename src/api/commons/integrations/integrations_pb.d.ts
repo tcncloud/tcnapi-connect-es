@@ -186,6 +186,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_SHIFT4 = 3400;
    */
   SHIFT4 = 3400,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_POSCORP = 3500;
+   */
+  POSCORP = 3500,
 }
 
 /**
@@ -989,6 +994,21 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_SHIFT4_CCPAYMENTS = 3401;
    */
   SHIFT4_CCPAYMENTS = 3401,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_POSCORP_ACCESSTOKEN = 3501;
+   */
+  POSCORP_ACCESSTOKEN = 3501,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR = 3502;
+   */
+  POSCORP_LOOKUP_GUARANTOR = 3502,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS = 3503;
+   */
+  POSCORP_UPDATE_PAYMENT_STATUS = 3503,
 }
 
 /**
@@ -3186,6 +3206,24 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteShift4CcPayments;
     case: "shift4CcPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePoscorpAccesstoken poscorp_accesstoken = 3501;
+     */
+    value: ExecutePoscorpAccesstoken;
+    case: "poscorpAccesstoken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePoscorpLookupGuarantor poscorp_lookup_guarantor = 3502;
+     */
+    value: ExecutePoscorpLookupGuarantor;
+    case: "poscorpLookupGuarantor";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePoscorpUpdatePaymentStatus poscorp_update_payment_status = 3503;
+     */
+    value: ExecutePoscorpUpdatePaymentStatus;
+    case: "poscorpUpdatePaymentStatus";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -6632,5 +6670,62 @@ export declare class ExecuteShift4CcPayments extends Message<ExecuteShift4CcPaym
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteShift4CcPayments;
 
   static equals(a: ExecuteShift4CcPayments | PlainMessage<ExecuteShift4CcPayments> | undefined, b: ExecuteShift4CcPayments | PlainMessage<ExecuteShift4CcPayments> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpAccesstoken
+ */
+export declare class ExecutePoscorpAccesstoken extends Message<ExecutePoscorpAccesstoken> {
+  constructor(data?: PartialMessage<ExecutePoscorpAccesstoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePoscorpAccesstoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePoscorpAccesstoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePoscorpAccesstoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePoscorpAccesstoken;
+
+  static equals(a: ExecutePoscorpAccesstoken | PlainMessage<ExecutePoscorpAccesstoken> | undefined, b: ExecutePoscorpAccesstoken | PlainMessage<ExecutePoscorpAccesstoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpLookupGuarantor
+ */
+export declare class ExecutePoscorpLookupGuarantor extends Message<ExecutePoscorpLookupGuarantor> {
+  constructor(data?: PartialMessage<ExecutePoscorpLookupGuarantor>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePoscorpLookupGuarantor";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePoscorpLookupGuarantor;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePoscorpLookupGuarantor;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePoscorpLookupGuarantor;
+
+  static equals(a: ExecutePoscorpLookupGuarantor | PlainMessage<ExecutePoscorpLookupGuarantor> | undefined, b: ExecutePoscorpLookupGuarantor | PlainMessage<ExecutePoscorpLookupGuarantor> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpUpdatePaymentStatus
+ */
+export declare class ExecutePoscorpUpdatePaymentStatus extends Message<ExecutePoscorpUpdatePaymentStatus> {
+  constructor(data?: PartialMessage<ExecutePoscorpUpdatePaymentStatus>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePoscorpUpdatePaymentStatus";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePoscorpUpdatePaymentStatus;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePoscorpUpdatePaymentStatus;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePoscorpUpdatePaymentStatus;
+
+  static equals(a: ExecutePoscorpUpdatePaymentStatus | PlainMessage<ExecutePoscorpUpdatePaymentStatus> | undefined, b: ExecutePoscorpUpdatePaymentStatus | PlainMessage<ExecutePoscorpUpdatePaymentStatus> | undefined): boolean;
 }
 
