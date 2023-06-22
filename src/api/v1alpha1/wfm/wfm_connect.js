@@ -1236,6 +1236,7 @@ export const WFM = {
     },
     /**
      * Lists the shift templates matching the specified @shift_template_sids for the org sending the request.
+     * If @include_placement_rules is set to true, the @shift_templates will be returned with their member placement rules.
      * Required permissions:
      *   NONE
      * Errors:

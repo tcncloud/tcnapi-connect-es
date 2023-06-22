@@ -5903,6 +5903,13 @@ export declare class ListShiftTemplatesBySidsReq extends Message<ListShiftTempla
    */
   shiftTemplateSids: bigint[];
 
+  /**
+   * Indicates whether the @shift_templates in the response should include member placement rules.
+   *
+   * @generated from field: bool include_placement_rules = 32;
+   */
+  includePlacementRules: boolean;
+
   constructor(data?: PartialMessage<ListShiftTemplatesBySidsReq>);
 
   static readonly runtime: typeof proto3;
