@@ -219,6 +219,8 @@ export const Room303API = {
       kind: MethodKind.Unary,
     },
     /**
+     * ListUsersNames returns a list of users with names and ids
+     *
      * @generated from rpc api.v1alpha1.room303.Room303API.ListUsersNames
      */
     listUsersNames: {
