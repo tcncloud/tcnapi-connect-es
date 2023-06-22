@@ -27,7 +27,7 @@ export const Tickets = {
       kind: MethodKind.Unary,
     },
     /**
-     * Public Method to create a ticket.
+     * Public Method to edit a ticket.
      *
      * @generated from rpc api.v1alpha1.tickets.Tickets.EditTicket
      */
@@ -60,7 +60,7 @@ export const Tickets = {
       kind: MethodKind.Unary,
     },
     /**
-     * Closes the ticket
+     * Public Method to Close a ticket
      *
      * @generated from rpc api.v1alpha1.tickets.Tickets.CloseTicket
      */
