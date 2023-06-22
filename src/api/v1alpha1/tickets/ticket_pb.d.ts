@@ -112,6 +112,11 @@ export declare class CreateTicketReq extends Message<CreateTicketReq> {
    */
   assignSelf: boolean;
 
+  /**
+   * @generated from field: string assign_other = 14;
+   */
+  assignOther: string;
+
   constructor(data?: PartialMessage<CreateTicketReq>);
 
   static readonly runtime: typeof proto3;
@@ -189,7 +194,7 @@ export declare class EditTicketReq extends Message<EditTicketReq> {
 }
 
 /**
- * EditTicketReq - Request for EditTicketReq
+ * EditTicketRes - Response for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketRes
  */
@@ -260,6 +265,8 @@ export declare class ListTicketsRes extends Message<ListTicketsRes> {
 }
 
 /**
+ * AssignTicketReq
+ *
  * @generated from message api.v1alpha1.tickets.AssignTicketReq
  */
 export declare class AssignTicketReq extends Message<AssignTicketReq> {
@@ -298,6 +305,8 @@ export declare class AssignTicketReq extends Message<AssignTicketReq> {
 }
 
 /**
+ * AssignTicketRes
+ *
  * @generated from message api.v1alpha1.tickets.AssignTicketRes
  */
 export declare class AssignTicketRes extends Message<AssignTicketRes> {

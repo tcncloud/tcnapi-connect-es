@@ -55,6 +55,7 @@ export const Skills = proto3.makeMessageType(
   "api.commons.Skills",
   () => [
     { no: 1, name: "skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "is_preferred", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -106,7 +107,7 @@ export const CloseTicket = proto3.makeMessageType(
 );
 
 /**
- * ConfirmClose - Boolean response Field post closing a Ticket
+ * ConfirmClose - Boolean response for closing a Ticket
  *
  * @generated from message api.commons.ConfirmClose
  */
