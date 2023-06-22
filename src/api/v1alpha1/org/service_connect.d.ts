@@ -14,6 +14,7 @@ import { AcceptTrustRequest, AcceptTrustResponse, AssignTrustRequest, AssignTrus
 import { AssignLabelRequest, AssignLabelResponse, CreateLabelRequest, CreateLabelResponse, DeleteLabelRequest, DeleteLabelResponse, GetAssignableLabelsRequest, GetAssignableLabelsResponse, GetAssignmentCountsRequest, GetAssignmentCountsResponse, GetLabelRequest, GetLabelResponse, ListLabelsRequest, ListLabelsResponse, UnassignLabelRequest, UnassignLabelResponse, UpdateLabelRequest, UpdateLabelResponse } from "./labels_pb.js";
 import { AssignAccountOwnerPermissionToUserRequest, AssignAccountOwnerPermissionToUserResponse, AssignUsersPermissionGroupRequest, AssignUsersPermissionGroupResponse, CreatePermissionGroupRequest, CreatePermissionGroupResponse, DeletePermissionGroupRequest, DeletePermissionGroupResponse, GetAccountOwnerGroupRequest, GetAccountOwnerGroupResponse, GetLicensesRequest, GetLicensesResponse, GetOrgLicensesRequest, GetOrgLicensesResponse, GetPermissionsRequest, GetPermissionsResponse, GetUserPermissionsRequest, GetUserPermissionsResponse, InitDefaultPermissionGroupsRequest, InitDefaultPermissionGroupsResponse, ListPermissionGroupsByOrgIdRequest, ListPermissionGroupsByOrgIdResponse, ListPermissionGroupsRequest, ListPermissionGroupsResponse, RemovePermissionFromAllPermissionGroupsRequest, RemovePermissionFromAllPermissionGroupsResponse, RevokeAccountOwnerPermissionFromUserRequest, RevokeAccountOwnerPermissionFromUserResponse, RevokeUsersPermissionGroupRequest, RevokeUsersPermissionGroupResponse, UpdateLicensesRequest, UpdateLicensesResponse, UpdatePermissionGroupRequest, UpdatePermissionGroupResponse } from "./permissions_pb.js";
 import { AssignUsersP3PermissionGroupRequest, AssignUsersP3PermissionGroupResponse, CreateP3PermissionGroupRequest, CreateP3PermissionGroupResponse, DeleteP3PermissionGroupRequest, DeleteP3PermissionGroupResponse, ListP3PermissionGroupsRequest, ListP3PermissionGroupsResponse, RevokeUsersP3PermissionGroupRequest, RevokeUsersP3PermissionGroupResponse, UpdateP3PermissionGroupByOrgIdRequest, UpdateP3PermissionGroupByOrgIdResponse, UpdateP3PermissionGroupRequest, UpdateP3PermissionGroupResponse } from "./p3_permissions_pb.js";
+import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, UpdateAuthConnectionGroupsRequest, UpdateAuthConnectionGroupsResponse, UpdateAuthConnectionSecretRequest, UpdateAuthConnectionSecretResponse } from "./auth_connections_pb.js";
 
 /**
  * ORGANIZATION
@@ -1706,6 +1707,61 @@ export declare const Org: {
       readonly name: "RevokeUsersP3PermissionGroup",
       readonly I: typeof RevokeUsersP3PermissionGroupRequest,
       readonly O: typeof RevokeUsersP3PermissionGroupResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateAuthConnection creates a new auth0 connection.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.CreateAuthConnection
+     */
+    readonly createAuthConnection: {
+      readonly name: "CreateAuthConnection",
+      readonly I: typeof CreateAuthConnectionRequest,
+      readonly O: typeof CreateAuthConnectionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetAuthConnectionSettings gets auth0 connection settings.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.GetAuthConnectionSettings
+     */
+    readonly getAuthConnectionSettings: {
+      readonly name: "GetAuthConnectionSettings",
+      readonly I: typeof GetAuthConnectionSettingsRequest,
+      readonly O: typeof GetAuthConnectionSettingsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteAuthConnection removes the current orgs auth settings.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.DeleteAuthConnection
+     */
+    readonly deleteAuthConnection: {
+      readonly name: "DeleteAuthConnection",
+      readonly I: typeof DeleteAuthConnectionRequest,
+      readonly O: typeof DeleteAuthConnectionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateAuthConnectionSecret updates a connections secret.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.UpdateAuthConnectionSecret
+     */
+    readonly updateAuthConnectionSecret: {
+      readonly name: "UpdateAuthConnectionSecret",
+      readonly I: typeof UpdateAuthConnectionSecretRequest,
+      readonly O: typeof UpdateAuthConnectionSecretResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateAuthConnectionGroups updates a connections groups.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.UpdateAuthConnectionGroups
+     */
+    readonly updateAuthConnectionGroups: {
+      readonly name: "UpdateAuthConnectionGroups",
+      readonly I: typeof UpdateAuthConnectionGroupsRequest,
+      readonly O: typeof UpdateAuthConnectionGroupsResponse,
       readonly kind: MethodKind.Unary,
     },
   }
