@@ -5906,7 +5906,7 @@ export declare class ListShiftTemplatesBySidsReq extends Message<ListShiftTempla
   /**
    * Indicates whether the @shift_templates in the response should include member placement rules.
    *
-   * @generated from field: bool include_placement_rules = 32;
+   * @generated from field: bool include_placement_rules = 2;
    */
   includePlacementRules: boolean;
 
