@@ -39,6 +39,7 @@ export const CreateTicketReq = proto3.makeMessageType(
     { no: 11, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 12, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
     { no: 13, name: "assign_self", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "assign_other", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

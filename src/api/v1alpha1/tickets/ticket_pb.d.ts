@@ -112,6 +112,11 @@ export declare class CreateTicketReq extends Message<CreateTicketReq> {
    */
   assignSelf: boolean;
 
+  /**
+   * @generated from field: string assign_other = 14;
+   */
+  assignOther: string;
+
   constructor(data?: PartialMessage<CreateTicketReq>);
 
   static readonly runtime: typeof proto3;

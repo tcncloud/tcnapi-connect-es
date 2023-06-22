@@ -187,11 +187,11 @@ export declare class Skills extends Message<Skills> {
   skillId: string;
 
   /**
-   * Mandatory = 1, Preferred = 2
+   * Mandatory = 0, Preferred = 1
    *
-   * @generated from field: int64 mandatory_preferred = 2;
+   * @generated from field: bool is_preferred = 2;
    */
-  mandatoryPreferred: bigint;
+  isPreferred: boolean;
 
   constructor(data?: PartialMessage<Skills>);
 

@@ -55,7 +55,7 @@ export const Skills = proto3.makeMessageType(
   "api.commons.Skills",
   () => [
     { no: 1, name: "skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "mandatory_preferred", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "is_preferred", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
