@@ -101,6 +101,8 @@ export const UserDetails = proto3.makeMessageType(
   () => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

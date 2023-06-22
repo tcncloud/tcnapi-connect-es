@@ -242,6 +242,20 @@ export declare class UserDetails extends Message<UserDetails> {
    */
   userName: string;
 
+  /**
+   * user first name
+   *
+   * @generated from field: string first_name = 3;
+   */
+  firstName: string;
+
+  /**
+   * user last name
+   *
+   * @generated from field: string last_name = 4;
+   */
+  lastName: string;
+
   constructor(data?: PartialMessage<UserDetails>);
 
   static readonly runtime: typeof proto3;
