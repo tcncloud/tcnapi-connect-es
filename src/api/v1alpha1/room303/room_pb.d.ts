@@ -3,10 +3,14 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Room, RoomType } from "../../commons/room303_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
+import type { Skill, User } from "../../commons/org/user_pb.js";
+import type { P3PermissionGroup, PermissionGroup } from "../../commons/org/permissions_pb.js";
+import type { Label } from "../../commons/org/labels_pb.js";
+import type { Trust } from "../../commons/org/trusts_pb.js";
 
 /**
  * @generated from message api.v1alpha1.room303.CreateRoomRequest
@@ -153,11 +157,11 @@ export declare class ArchiveRoomRequest extends Message<ArchiveRoomRequest> {
 }
 
 /**
- * Request message for the ListUsersNames rpc.
+ * Request message for the ListUsersByOrgId rpc.
  *
- * @generated from message api.v1alpha1.room303.ListUsersNamesRequest
+ * @generated from message api.v1alpha1.room303.ListUsersByOrgIdRequest
  */
-export declare class ListUsersNamesRequest extends Message<ListUsersNamesRequest> {
+export declare class ListUsersByOrgIdRequest extends Message<ListUsersByOrgIdRequest> {
   /**
    * Filter by org ID.
    *
@@ -179,82 +183,116 @@ export declare class ListUsersNamesRequest extends Message<ListUsersNamesRequest
    */
   archivedFilter: UserArchivedStateFilter;
 
-  constructor(data?: PartialMessage<ListUsersNamesRequest>);
+  constructor(data?: PartialMessage<ListUsersByOrgIdRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.room303.ListUsersNamesRequest";
+  static readonly typeName = "api.v1alpha1.room303.ListUsersByOrgIdRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersNamesRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersByOrgIdRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersNamesRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersByOrgIdRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersNamesRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersByOrgIdRequest;
 
-  static equals(a: ListUsersNamesRequest | PlainMessage<ListUsersNamesRequest> | undefined, b: ListUsersNamesRequest | PlainMessage<ListUsersNamesRequest> | undefined): boolean;
+  static equals(a: ListUsersByOrgIdRequest | PlainMessage<ListUsersByOrgIdRequest> | undefined, b: ListUsersByOrgIdRequest | PlainMessage<ListUsersByOrgIdRequest> | undefined): boolean;
 }
 
 /**
- * Response message for the ListUsersNames rpc.
+ * Response message for the ListsUserByOrgId rpc.
  *
- * @generated from message api.v1alpha1.room303.ListUsersNamesResponse
+ * @generated from message api.v1alpha1.room303.ListUsersByOrgIdResponse
  */
-export declare class ListUsersNamesResponse extends Message<ListUsersNamesResponse> {
+export declare class ListUsersByOrgIdResponse extends Message<ListUsersByOrgIdResponse> {
   /**
-   * List of returned users with names and ids
+   * List of returned users with masked data.
    *
    * @generated from field: repeated api.v1alpha1.room303.UserDetails user_details = 1;
    */
   userDetails: UserDetails[];
 
-  constructor(data?: PartialMessage<ListUsersNamesResponse>);
+  constructor(data?: PartialMessage<ListUsersByOrgIdResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.room303.ListUsersNamesResponse";
+  static readonly typeName = "api.v1alpha1.room303.ListUsersByOrgIdResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersNamesResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersByOrgIdResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersNamesResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersByOrgIdResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersNamesResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersByOrgIdResponse;
 
-  static equals(a: ListUsersNamesResponse | PlainMessage<ListUsersNamesResponse> | undefined, b: ListUsersNamesResponse | PlainMessage<ListUsersNamesResponse> | undefined): boolean;
+  static equals(a: ListUsersByOrgIdResponse | PlainMessage<ListUsersByOrgIdResponse> | undefined, b: ListUsersByOrgIdResponse | PlainMessage<ListUsersByOrgIdResponse> | undefined): boolean;
 }
 
 /**
- * wrapper for listing user names with ids
+ * Wrapper for associating non entity fields with an User
  *
  * @generated from message api.v1alpha1.room303.UserDetails
  */
 export declare class UserDetails extends Message<UserDetails> {
   /**
-   * The ID of the user
-   *
-   * @generated from field: string user_id = 1;
+   * @generated from field: api.commons.org.User user = 1;
    */
-  userId: string;
+  user?: User;
 
   /**
-   * The name of the user.
-   *
-   * @generated from field: string user_name = 2;
+   * @generated from field: string org_name = 2;
    */
-  userName: string;
+  orgName: string;
 
   /**
-   * user first name
-   *
-   * @generated from field: string first_name = 3;
+   * @generated from field: api.v1alpha1.room303.UserDetails.HuntGroup hunt_group = 3;
    */
-  firstName: string;
+  huntGroup?: UserDetails_HuntGroup;
 
   /**
-   * user last name
-   *
-   * @generated from field: string last_name = 4;
+   * @generated from field: api.v1alpha1.room303.UserDetails.AgentProfileGroup agent_profile_group = 4;
    */
-  lastName: string;
+  agentProfileGroup?: UserDetails_AgentProfileGroup;
+
+  /**
+   * @generated from field: repeated api.commons.org.Skill skills = 5;
+   */
+  skills: Skill[];
+
+  /**
+   * @generated from field: repeated api.commons.org.PermissionGroup permission_groups = 6;
+   */
+  permissionGroups: PermissionGroup[];
+
+  /**
+   * @generated from field: api.commons.org.P3PermissionGroup p3_permission_group = 7;
+   */
+  p3PermissionGroup?: P3PermissionGroup;
+
+  /**
+   * @generated from field: bool delegated = 8;
+   */
+  delegated: boolean;
+
+  /**
+   * @generated from field: repeated api.commons.org.Label labels = 9;
+   */
+  labels: Label[];
+
+  /**
+   * @generated from field: api.v1alpha1.room303.UserDetails.LoginInfo login_info = 10;
+   */
+  loginInfo?: UserDetails_LoginInfo;
+
+  /**
+   * Billing_prefix + clientSid. Used for integrations and billing. This is from the organization
+   *
+   * @generated from field: string billing_id = 11;
+   */
+  billingId: string;
+
+  /**
+   * @generated from field: repeated api.commons.org.Trust trusts = 12;
+   */
+  trusts: Trust[];
 
   constructor(data?: PartialMessage<UserDetails>);
 
@@ -269,5 +307,112 @@ export declare class UserDetails extends Message<UserDetails> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserDetails;
 
   static equals(a: UserDetails | PlainMessage<UserDetails> | undefined, b: UserDetails | PlainMessage<UserDetails> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.room303.UserDetails.HuntGroup
+ */
+export declare class UserDetails_HuntGroup extends Message<UserDetails_HuntGroup> {
+  /**
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * @generated from field: string hunt_group_name = 2;
+   */
+  huntGroupName: string;
+
+  constructor(data?: PartialMessage<UserDetails_HuntGroup>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.UserDetails.HuntGroup";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserDetails_HuntGroup;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserDetails_HuntGroup;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserDetails_HuntGroup;
+
+  static equals(a: UserDetails_HuntGroup | PlainMessage<UserDetails_HuntGroup> | undefined, b: UserDetails_HuntGroup | PlainMessage<UserDetails_HuntGroup> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.room303.UserDetails.AgentProfileGroup
+ */
+export declare class UserDetails_AgentProfileGroup extends Message<UserDetails_AgentProfileGroup> {
+  /**
+   * @generated from field: string agent_profile_group_id = 1;
+   */
+  agentProfileGroupId: string;
+
+  /**
+   * @generated from field: string agent_profile_group_name = 2;
+   */
+  agentProfileGroupName: string;
+
+  constructor(data?: PartialMessage<UserDetails_AgentProfileGroup>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.UserDetails.AgentProfileGroup";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserDetails_AgentProfileGroup;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserDetails_AgentProfileGroup;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserDetails_AgentProfileGroup;
+
+  static equals(a: UserDetails_AgentProfileGroup | PlainMessage<UserDetails_AgentProfileGroup> | undefined, b: UserDetails_AgentProfileGroup | PlainMessage<UserDetails_AgentProfileGroup> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.room303.UserDetails.LoginInfo
+ */
+export declare class UserDetails_LoginInfo extends Message<UserDetails_LoginInfo> {
+  /**
+   * @generated from field: string last_ip = 1;
+   */
+  lastIp: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_login = 2;
+   */
+  lastLogin?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_password_reset = 3;
+   */
+  lastPasswordReset?: Timestamp;
+
+  /**
+   * @generated from field: int64 logins_count = 4;
+   */
+  loginsCount: bigint;
+
+  /**
+   * @generated from field: bool has_blocked_ips = 5;
+   */
+  hasBlockedIps: boolean;
+
+  /**
+   * @generated from field: bool email_verified = 6;
+   */
+  emailVerified: boolean;
+
+  constructor(data?: PartialMessage<UserDetails_LoginInfo>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.UserDetails.LoginInfo";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserDetails_LoginInfo;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserDetails_LoginInfo;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserDetails_LoginInfo;
+
+  static equals(a: UserDetails_LoginInfo | PlainMessage<UserDetails_LoginInfo> | undefined, b: UserDetails_LoginInfo | PlainMessage<UserDetails_LoginInfo> | undefined): boolean;
 }
 

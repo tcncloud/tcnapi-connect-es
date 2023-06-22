@@ -1943,29 +1943,6 @@ export const DeleteWFMAgentMembershipsRes = proto3.makeMessageType(
 );
 
 /**
- * Request message for the DeleteWFMAgentsMemberships RPC
- *
- * @generated from message api.v1alpha1.wfm.DeleteWFMAgentsMembershipsReq
- */
-export const DeleteWFMAgentsMembershipsReq = proto3.makeMessageType(
-  "api.v1alpha1.wfm.DeleteWFMAgentsMembershipsReq",
-  () => [
-    { no: 1, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-    { no: 2, name: "agent_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-  ],
-);
-
-/**
- * Response message for DeleteWFMAgentsMemberships RPC
- *
- * @generated from message api.v1alpha1.wfm.DeleteWFMAgentsMembershipsRes
- */
-export const DeleteWFMAgentsMembershipsRes = proto3.makeMessageType(
-  "api.v1alpha1.wfm.DeleteWFMAgentsMembershipsRes",
-  [],
-);
-
-/**
  * DOW Placement
  *
  * @generated from message api.v1alpha1.wfm.DOWPlacement

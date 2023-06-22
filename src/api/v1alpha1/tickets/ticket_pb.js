@@ -39,7 +39,6 @@ export const CreateTicketReq = proto3.makeMessageType(
     { no: 11, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 12, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
     { no: 13, name: "assign_self", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 14, name: "assign_other", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -69,7 +68,7 @@ export const EditTicketReq = proto3.makeMessageType(
 );
 
 /**
- * EditTicketRes - Response for EditTicketReq
+ * EditTicketReq - Request for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketRes
  */
@@ -101,8 +100,6 @@ export const ListTicketsRes = proto3.makeMessageType(
 );
 
 /**
- * AssignTicketReq
- *
  * @generated from message api.v1alpha1.tickets.AssignTicketReq
  */
 export const AssignTicketReq = proto3.makeMessageType(
@@ -115,8 +112,6 @@ export const AssignTicketReq = proto3.makeMessageType(
 );
 
 /**
- * AssignTicketRes
- *
  * @generated from message api.v1alpha1.tickets.AssignTicketRes
  */
 export const AssignTicketRes = proto3.makeMessageType(

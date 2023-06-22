@@ -7,7 +7,7 @@ import { AddRoomMemberRequest, GetRoomMemberRequest, JoinRoomRequest, ListRoomMe
 import { Member, Room } from "../../commons/room303_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { BulkMarkMessageReadRequest, BulkMarkMessageReadResponse, CreateMessageRequest, CreateMessageResponse, DeleteMessageRequest, DeleteMessageResponse, EditMessageRequest, EditMessageResponse, GetMessagesRequest, GetMessagesResponse, GetUnreadStatsRequest, GetUnreadStatsResponse, MarkAllMessagesReadRequest, MarkAllMessagesReadResponse, MarkMessageReadRequest, MarkMessageReadResponse, StreamMessageUpdatesRequest, StreamMessageUpdatesResponse } from "./message_pb.js";
-import { ArchiveRoomRequest, CreateRoomRequest, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersNamesRequest, ListUsersNamesResponse } from "./room_pb.js";
+import { ArchiveRoomRequest, CreateRoomRequest, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse } from "./room_pb.js";
 
 /**
  * @generated from service api.v1alpha1.room303.Room303API
@@ -219,14 +219,12 @@ export declare const Room303API: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * ListUsersNames returns a list of users with names and ids
-     *
-     * @generated from rpc api.v1alpha1.room303.Room303API.ListUsersNames
+     * @generated from rpc api.v1alpha1.room303.Room303API.ListUsersByOrgId
      */
-    readonly listUsersNames: {
-      readonly name: "ListUsersNames",
-      readonly I: typeof ListUsersNamesRequest,
-      readonly O: typeof ListUsersNamesResponse,
+    readonly listUsersByOrgId: {
+      readonly name: "ListUsersByOrgId",
+      readonly I: typeof ListUsersByOrgIdRequest,
+      readonly O: typeof ListUsersByOrgIdResponse,
       readonly kind: MethodKind.ServerStreaming,
     },
   }
