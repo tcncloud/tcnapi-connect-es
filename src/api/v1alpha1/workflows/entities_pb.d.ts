@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { FlowDefinition } from "../../commons/workflows/entities_pb.js";
+import type { FlowDefinition, FlowState } from "../../commons/workflows/entities_pb.js";
 
 /**
  * ListFlowDefinitionsRequest is the request object for listing flow definitions
@@ -243,5 +243,114 @@ export declare class DeleteFlowDefinitionByIdResponse extends Message<DeleteFlow
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionByIdResponse;
 
   static equals(a: DeleteFlowDefinitionByIdResponse | PlainMessage<DeleteFlowDefinitionByIdResponse> | undefined, b: DeleteFlowDefinitionByIdResponse | PlainMessage<DeleteFlowDefinitionByIdResponse> | undefined): boolean;
+}
+
+/**
+ * SaveFlowStateRequest is the request object for saving a flow state
+ *
+ * @generated from message api.v1alpha1.workflows.SaveFlowStateRequest
+ */
+export declare class SaveFlowStateRequest extends Message<SaveFlowStateRequest> {
+  /**
+   * @generated from field: api.commons.workflows.FlowState flow_state = 1;
+   */
+  flowState?: FlowState;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 2;
+   */
+  updateMask?: FieldMask;
+
+  constructor(data?: PartialMessage<SaveFlowStateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.workflows.SaveFlowStateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveFlowStateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveFlowStateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveFlowStateRequest;
+
+  static equals(a: SaveFlowStateRequest | PlainMessage<SaveFlowStateRequest> | undefined, b: SaveFlowStateRequest | PlainMessage<SaveFlowStateRequest> | undefined): boolean;
+}
+
+/**
+ * SaveFlowStateResponse is the response object for saving a flow state
+ *
+ * @generated from message api.v1alpha1.workflows.SaveFlowStateResponse
+ */
+export declare class SaveFlowStateResponse extends Message<SaveFlowStateResponse> {
+  /**
+   * @generated from field: api.commons.workflows.FlowState flow_state = 1;
+   */
+  flowState?: FlowState;
+
+  constructor(data?: PartialMessage<SaveFlowStateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.workflows.SaveFlowStateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SaveFlowStateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SaveFlowStateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SaveFlowStateResponse;
+
+  static equals(a: SaveFlowStateResponse | PlainMessage<SaveFlowStateResponse> | undefined, b: SaveFlowStateResponse | PlainMessage<SaveFlowStateResponse> | undefined): boolean;
+}
+
+/**
+ * GetFlowStateRequest is the request object for getting a flow state
+ *
+ * @generated from message api.v1alpha1.workflows.GetFlowStateRequest
+ */
+export declare class GetFlowStateRequest extends Message<GetFlowStateRequest> {
+  /**
+   * @generated from field: string flow_state_id = 1;
+   */
+  flowStateId: string;
+
+  constructor(data?: PartialMessage<GetFlowStateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.workflows.GetFlowStateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetFlowStateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetFlowStateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetFlowStateRequest;
+
+  static equals(a: GetFlowStateRequest | PlainMessage<GetFlowStateRequest> | undefined, b: GetFlowStateRequest | PlainMessage<GetFlowStateRequest> | undefined): boolean;
+}
+
+/**
+ * GetFlowStateResponse is the response object for getting a flow state
+ *
+ * @generated from message api.v1alpha1.workflows.GetFlowStateResponse
+ */
+export declare class GetFlowStateResponse extends Message<GetFlowStateResponse> {
+  /**
+   * @generated from field: api.commons.workflows.FlowState flow_state = 1;
+   */
+  flowState?: FlowState;
+
+  constructor(data?: PartialMessage<GetFlowStateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.workflows.GetFlowStateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetFlowStateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetFlowStateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetFlowStateResponse;
+
+  static equals(a: GetFlowStateResponse | PlainMessage<GetFlowStateResponse> | undefined, b: GetFlowStateResponse | PlainMessage<GetFlowStateResponse> | undefined): boolean;
 }
 

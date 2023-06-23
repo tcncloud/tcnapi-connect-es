@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse } from "./entities_pb.js";
+import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, GetFlowStateRequest, GetFlowStateResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse, SaveFlowStateRequest, SaveFlowStateResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -54,6 +54,37 @@ export const WorkflowsDefinitionsService = {
       name: "DeleteFlowDefinitionById",
       I: DeleteFlowDefinitionByIdRequest,
       O: DeleteFlowDefinitionByIdResponse,
+      kind: MethodKind.Unary,
+    },
+  }
+};
+
+/**
+ * @generated from service api.v1alpha1.workflows.WorkflowsStateService
+ */
+export const WorkflowsStateService = {
+  typeName: "api.v1alpha1.workflows.WorkflowsStateService",
+  methods: {
+    /**
+     * GetFlowState lists flow state
+     *
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsStateService.GetFlowState
+     */
+    getFlowState: {
+      name: "GetFlowState",
+      I: GetFlowStateRequest,
+      O: GetFlowStateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SaveFlowState saves flow state
+     *
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsStateService.SaveFlowState
+     */
+    saveFlowState: {
+      name: "SaveFlowState",
+      I: SaveFlowStateRequest,
+      O: SaveFlowStateResponse,
       kind: MethodKind.Unary,
     },
   }
