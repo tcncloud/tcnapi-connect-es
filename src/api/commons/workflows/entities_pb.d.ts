@@ -34,11 +34,6 @@ export declare class FlowDefinition extends Message$1<FlowDefinition> {
   entryNodeId: string;
 
   /**
-   * @generated from field: string org_id = 5;
-   */
-  orgId: string;
-
-  /**
    * @generated from field: repeated api.commons.workflows.NodeDefinition nodes = 10;
    */
   nodes: NodeDefinition[];
