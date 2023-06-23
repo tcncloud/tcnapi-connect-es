@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteFlowDefinitionRequest, DeleteFlowDefinitionResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse } from "./entities_pb.js";
+import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -48,12 +48,12 @@ export const WorkflowsDefinitionsService = {
     /**
      * DeleteFlowDefinition deletes a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.DeleteFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.DeleteFlowDefinitionById
      */
-    deleteFlowDefinition: {
-      name: "DeleteFlowDefinition",
-      I: DeleteFlowDefinitionRequest,
-      O: DeleteFlowDefinitionResponse,
+    deleteFlowDefinitionById: {
+      name: "DeleteFlowDefinitionById",
+      I: DeleteFlowDefinitionByIdRequest,
+      O: DeleteFlowDefinitionByIdResponse,
       kind: MethodKind.Unary,
     },
   }
