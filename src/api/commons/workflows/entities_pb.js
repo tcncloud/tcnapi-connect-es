@@ -18,6 +18,7 @@ export const FlowDefinition = proto3.makeMessageType(
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "entry_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "nodes", kind: "message", T: NodeDefinition, repeated: true },
     { no: 11, name: "error_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],

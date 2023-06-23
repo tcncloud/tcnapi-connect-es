@@ -5592,6 +5592,62 @@ export declare class DeleteWFMAgentMembershipsRes extends Message<DeleteWFMAgent
 }
 
 /**
+ * Request message for the DeleteWFMAgentsMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteWFMAgentsMembershipsReq
+ */
+export declare class DeleteWFMAgentsMembershipsReq extends Message<DeleteWFMAgentsMembershipsReq> {
+  /**
+   * ID of the wfm agents to delete the association of.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 1;
+   */
+  wfmAgentSids: bigint[];
+
+  /**
+   * ID of the agent groups that the agents associate with.
+   *
+   * @generated from field: repeated int64 agent_group_sids = 2;
+   */
+  agentGroupSids: bigint[];
+
+  constructor(data?: PartialMessage<DeleteWFMAgentsMembershipsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteWFMAgentsMembershipsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWFMAgentsMembershipsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWFMAgentsMembershipsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWFMAgentsMembershipsReq;
+
+  static equals(a: DeleteWFMAgentsMembershipsReq | PlainMessage<DeleteWFMAgentsMembershipsReq> | undefined, b: DeleteWFMAgentsMembershipsReq | PlainMessage<DeleteWFMAgentsMembershipsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for DeleteWFMAgentsMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteWFMAgentsMembershipsRes
+ */
+export declare class DeleteWFMAgentsMembershipsRes extends Message<DeleteWFMAgentsMembershipsRes> {
+  constructor(data?: PartialMessage<DeleteWFMAgentsMembershipsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteWFMAgentsMembershipsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWFMAgentsMembershipsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWFMAgentsMembershipsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWFMAgentsMembershipsRes;
+
+  static equals(a: DeleteWFMAgentsMembershipsRes | PlainMessage<DeleteWFMAgentsMembershipsRes> | undefined, b: DeleteWFMAgentsMembershipsRes | PlainMessage<DeleteWFMAgentsMembershipsRes> | undefined): boolean;
+}
+
+/**
  * DOW Placement
  *
  * @generated from message api.v1alpha1.wfm.DOWPlacement
@@ -5902,6 +5958,13 @@ export declare class ListShiftTemplatesBySidsReq extends Message<ListShiftTempla
    * @generated from field: repeated int64 shift_template_sids = 1;
    */
   shiftTemplateSids: bigint[];
+
+  /**
+   * Indicates whether the @shift_templates in the response should include member placement rules.
+   *
+   * @generated from field: bool include_placement_rules = 2;
+   */
+  includePlacementRules: boolean;
 
   constructor(data?: PartialMessage<ListShiftTemplatesBySidsReq>);
 
