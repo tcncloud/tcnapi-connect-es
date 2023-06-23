@@ -2063,6 +2063,7 @@ export const ListShiftTemplatesBySidsReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListShiftTemplatesBySidsReq",
   () => [
     { no: 1, name: "shift_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "include_placement_rules", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
