@@ -53,6 +53,35 @@ export const FlagSnapshot = proto3.makeMessageType(
     { no: 9, name: "create_time", kind: "message", T: Timestamp },
     { no: 10, name: "must_review", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "must_notify", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 12, name: "bool_expr", kind: "message", T: FlagSnapshot_BoolExpr },
   ],
+);
+
+/**
+ * BoolExpr defines a boolean expression of filters.
+ *
+ * @generated from message api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr
+ */
+export const FlagSnapshot_BoolExpr = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr",
+  () => [
+    { no: 1, name: "and", kind: "message", T: FlagSnapshot_BoolExpr, repeated: true },
+    { no: 2, name: "or", kind: "message", T: FlagSnapshot_BoolExpr, repeated: true },
+    { no: 3, name: "filter", kind: "message", T: FlagSnapshot_BoolExpr_Filter },
+  ],
+  {localName: "FlagSnapshot_BoolExpr"},
+);
+
+/**
+ * Filter defines a filter.
+ *
+ * @generated from message api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter
+ */
+export const FlagSnapshot_BoolExpr_Filter = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter",
+  () => [
+    { no: 1, name: "filter_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+  {localName: "FlagSnapshot_BoolExpr_Filter"},
 );
 
