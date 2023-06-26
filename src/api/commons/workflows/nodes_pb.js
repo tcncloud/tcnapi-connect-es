@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
+import { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
 import { OmniNodeError, OmniNodePrompt, OmniNodeSetSkill, OmniNodeToAgent } from "./omni_pb.js";
 
 /**
@@ -19,6 +20,12 @@ export const NodeDefinition = proto3.makeMessageType(
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "outputs", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 6, name: "error_node_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 101, name: "print", kind: "message", T: NodePrint, oneof: "definition" },
+    { no: 102, name: "random", kind: "message", T: NodeRandom, oneof: "definition" },
+    { no: 103, name: "console_input", kind: "message", T: NodeConsoleInput, oneof: "definition" },
+    { no: 104, name: "comparator", kind: "message", T: NodeComparator, oneof: "definition" },
+    { no: 105, name: "store_input", kind: "message", T: NodeStoreInput, oneof: "definition" },
+    { no: 1000, name: "chatbot", kind: "message", T: NodeChatbot, oneof: "definition" },
     { no: 201, name: "omni_prompt", kind: "message", T: OmniNodePrompt, oneof: "definition" },
     { no: 202, name: "omni_set_skill", kind: "message", T: OmniNodeSetSkill, oneof: "definition" },
     { no: 203, name: "omni_to_agent", kind: "message", T: OmniNodeToAgent, oneof: "definition" },

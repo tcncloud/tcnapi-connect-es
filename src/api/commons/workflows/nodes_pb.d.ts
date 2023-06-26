@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
 import type { OmniNodeError, OmniNodePrompt, OmniNodeSetSkill, OmniNodeToAgent } from "./omni_pb.js";
 
 /**
@@ -46,6 +47,42 @@ export declare class NodeDefinition extends Message<NodeDefinition> {
    * @generated from oneof api.commons.workflows.NodeDefinition.definition
    */
   definition: {
+    /**
+     * @generated from field: api.commons.workflows.NodePrint print = 101;
+     */
+    value: NodePrint;
+    case: "print";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.NodeRandom random = 102;
+     */
+    value: NodeRandom;
+    case: "random";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.NodeConsoleInput console_input = 103;
+     */
+    value: NodeConsoleInput;
+    case: "consoleInput";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.NodeComparator comparator = 104;
+     */
+    value: NodeComparator;
+    case: "comparator";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.NodeStoreInput store_input = 105;
+     */
+    value: NodeStoreInput;
+    case: "storeInput";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.NodeChatbot chatbot = 1000;
+     */
+    value: NodeChatbot;
+    case: "chatbot";
+  } | {
     /**
      * @generated from field: api.commons.workflows.OmniNodePrompt omni_prompt = 201;
      */
