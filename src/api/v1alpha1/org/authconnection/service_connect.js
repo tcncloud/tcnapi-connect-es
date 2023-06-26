@@ -7,15 +7,15 @@ import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthCo
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service api.v1alpha1.org.authconnection.AuthConnection
+ * @generated from service api.v1alpha1.org.authconnection.AuthConnectionService
  */
-export const AuthConnection = {
-  typeName: "api.v1alpha1.org.authconnection.AuthConnection",
+export const AuthConnectionService = {
+  typeName: "api.v1alpha1.org.authconnection.AuthConnectionService",
   methods: {
     /**
      * CreateAuthConnection creates a new auth0 connection.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.CreateAuthConnection
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.CreateAuthConnection
      */
     createAuthConnection: {
       name: "CreateAuthConnection",
@@ -26,7 +26,7 @@ export const AuthConnection = {
     /**
      * GetAuthConnectionSettings gets auth0 connection settings.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.GetAuthConnectionSettings
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.GetAuthConnectionSettings
      */
     getAuthConnectionSettings: {
       name: "GetAuthConnectionSettings",
@@ -37,7 +37,7 @@ export const AuthConnection = {
     /**
      * DeleteAuthConnection removes the current orgs auth settings.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.DeleteAuthConnection
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.DeleteAuthConnection
      */
     deleteAuthConnection: {
       name: "DeleteAuthConnection",
@@ -48,7 +48,7 @@ export const AuthConnection = {
     /**
      * UpdateAuthConnectionSecret updates a connections secret.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.UpdateAuthConnectionSecret
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.UpdateAuthConnectionSecret
      */
     updateAuthConnectionSecret: {
       name: "UpdateAuthConnectionSecret",
@@ -59,7 +59,7 @@ export const AuthConnection = {
     /**
      * UpdateAuthConnectionGroups updates a connections groups.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.UpdateAuthConnectionGroups
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.UpdateAuthConnectionGroups
      */
     updateAuthConnectionGroups: {
       name: "UpdateAuthConnectionGroups",

@@ -7,15 +7,15 @@ import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthCo
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service api.v1alpha1.org.authconnection.AuthConnection
+ * @generated from service api.v1alpha1.org.authconnection.AuthConnectionService
  */
-export declare const AuthConnection: {
-  readonly typeName: "api.v1alpha1.org.authconnection.AuthConnection",
+export declare const AuthConnectionService: {
+  readonly typeName: "api.v1alpha1.org.authconnection.AuthConnectionService",
   readonly methods: {
     /**
      * CreateAuthConnection creates a new auth0 connection.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.CreateAuthConnection
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.CreateAuthConnection
      */
     readonly createAuthConnection: {
       readonly name: "CreateAuthConnection",
@@ -26,7 +26,7 @@ export declare const AuthConnection: {
     /**
      * GetAuthConnectionSettings gets auth0 connection settings.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.GetAuthConnectionSettings
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.GetAuthConnectionSettings
      */
     readonly getAuthConnectionSettings: {
       readonly name: "GetAuthConnectionSettings",
@@ -37,7 +37,7 @@ export declare const AuthConnection: {
     /**
      * DeleteAuthConnection removes the current orgs auth settings.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.DeleteAuthConnection
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.DeleteAuthConnection
      */
     readonly deleteAuthConnection: {
       readonly name: "DeleteAuthConnection",
@@ -48,7 +48,7 @@ export declare const AuthConnection: {
     /**
      * UpdateAuthConnectionSecret updates a connections secret.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.UpdateAuthConnectionSecret
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.UpdateAuthConnectionSecret
      */
     readonly updateAuthConnectionSecret: {
       readonly name: "UpdateAuthConnectionSecret",
@@ -59,7 +59,7 @@ export declare const AuthConnection: {
     /**
      * UpdateAuthConnectionGroups updates a connections groups.
      *
-     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnection.UpdateAuthConnectionGroups
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.UpdateAuthConnectionGroups
      */
     readonly updateAuthConnectionGroups: {
       readonly name: "UpdateAuthConnectionGroups",
