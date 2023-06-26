@@ -243,6 +243,13 @@ export declare class FlagSnapshot_BoolExpr extends Message<FlagSnapshot_BoolExpr
    */
   filter?: FlagSnapshot_BoolExpr_Filter;
 
+  /**
+   * Optional. Boolean not operator.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr not = 4;
+   */
+  not?: FlagSnapshot_BoolExpr;
+
   constructor(data?: PartialMessage<FlagSnapshot_BoolExpr>);
 
   static readonly runtime: typeof proto3;
