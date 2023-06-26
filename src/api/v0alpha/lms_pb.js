@@ -648,6 +648,7 @@ export const Process = proto3.makeMessageType(
     { no: 72, name: "bulk_web_entrypoint", kind: "message", T: BulkWebEntrypointProcess, oneof: "proc" },
     { no: 73, name: "omni_exchange_process", kind: "message", T: OmniExchangeProcess, oneof: "proc" },
     { no: 74, name: "web_exchange_process", kind: "message", T: WebExchangeProcess, oneof: "proc" },
+    { no: 75, name: "split", kind: "message", T: SplitCreiteria, oneof: "proc" },
   ],
 );
 
@@ -2552,6 +2553,69 @@ export const CjsSecureSearchCriteriaField = proto3.makeMessageType(
     { no: 1, name: "cjs_secure_search_criteria_field_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "cjs_secure_search_criteria_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "field_type", kind: "enum", T: proto3.getEnumType(FieldType) },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.SplitCreiteria
+ */
+export const SplitCreiteria = proto3.makeMessageType(
+  "api.v0alpha.SplitCreiteria",
+  () => [
+    { no: 1, name: "unique", kind: "message", T: SplitByUnique, oneof: "action" },
+    { no: 2, name: "max_size", kind: "message", T: SplitByMaxSize, oneof: "action" },
+    { no: 3, name: "equal_parts", kind: "message", T: SplitByEqualParts, oneof: "action" },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.UniquePair
+ */
+export const UniquePair = proto3.makeMessageType(
+  "api.v0alpha.UniquePair",
+  () => [
+    { no: 1, name: "split_on_fields", kind: "message", T: FieldIndex },
+    { no: 2, name: "split_value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.SplitByNamedUnique
+ */
+export const SplitByNamedUnique = proto3.makeMessageType(
+  "api.v0alpha.SplitByNamedUnique",
+  () => [
+    { no: 1, name: "named_fields", kind: "message", T: UniquePair, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.SplitByUnique
+ */
+export const SplitByUnique = proto3.makeMessageType(
+  "api.v0alpha.SplitByUnique",
+  () => [
+    { no: 1, name: "split_on_fields", kind: "message", T: FieldIndex, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.SplitByMaxSize
+ */
+export const SplitByMaxSize = proto3.makeMessageType(
+  "api.v0alpha.SplitByMaxSize",
+  () => [
+    { no: 1, name: "max_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.SplitByEqualParts
+ */
+export const SplitByEqualParts = proto3.makeMessageType(
+  "api.v0alpha.SplitByEqualParts",
+  () => [
+    { no: 1, name: "part_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
