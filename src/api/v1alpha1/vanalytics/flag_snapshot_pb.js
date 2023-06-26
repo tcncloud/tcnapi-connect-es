@@ -68,6 +68,7 @@ export const FlagSnapshot_BoolExpr = proto3.makeMessageType(
     { no: 1, name: "and", kind: "message", T: FlagSnapshot_BoolExpr, repeated: true },
     { no: 2, name: "or", kind: "message", T: FlagSnapshot_BoolExpr, repeated: true },
     { no: 3, name: "filter", kind: "message", T: FlagSnapshot_BoolExpr_Filter },
+    { no: 4, name: "not", kind: "message", T: FlagSnapshot_BoolExpr },
   ],
   {localName: "FlagSnapshot_BoolExpr"},
 );
