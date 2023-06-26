@@ -474,8 +474,8 @@ export declare enum Permission {
   /**
    * Enables access to workflows builder
    *
-   * @generated from enum value: PERMISSION_WORKFLOWS_EDIT = 4000;
+   * @generated from enum value: PERMISSION_WORKFLOWS = 4000;
    */
-  WORKFLOWS_EDIT = 4000,
+  WORKFLOWS = 4000,
 }
 
