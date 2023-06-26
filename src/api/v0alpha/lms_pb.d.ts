@@ -2026,9 +2026,9 @@ export declare class Process extends Message<Process> {
     case: "webExchangeProcess";
   } | {
     /**
-     * @generated from field: api.v0alpha.SplitCreiteria split = 75;
+     * @generated from field: api.v0alpha.SplitCriteria split = 75;
      */
-    value: SplitCreiteria;
+    value: SplitCriteria;
     case: "split";
   } | { case: undefined; value?: undefined };
 
@@ -8469,11 +8469,11 @@ export declare class CjsSecureSearchCriteriaField extends Message<CjsSecureSearc
 }
 
 /**
- * @generated from message api.v0alpha.SplitCreiteria
+ * @generated from message api.v0alpha.SplitCriteria
  */
-export declare class SplitCreiteria extends Message<SplitCreiteria> {
+export declare class SplitCriteria extends Message<SplitCriteria> {
   /**
-   * @generated from oneof api.v0alpha.SplitCreiteria.action
+   * @generated from oneof api.v0alpha.SplitCriteria.action
    */
   action: {
     /**
@@ -8495,19 +8495,19 @@ export declare class SplitCreiteria extends Message<SplitCreiteria> {
     case: "equalParts";
   } | { case: undefined; value?: undefined };
 
-  constructor(data?: PartialMessage<SplitCreiteria>);
+  constructor(data?: PartialMessage<SplitCriteria>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.SplitCreiteria";
+  static readonly typeName = "api.v0alpha.SplitCriteria";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitCreiteria;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitCriteria;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitCreiteria;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitCriteria;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitCreiteria;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitCriteria;
 
-  static equals(a: SplitCreiteria | PlainMessage<SplitCreiteria> | undefined, b: SplitCreiteria | PlainMessage<SplitCreiteria> | undefined): boolean;
+  static equals(a: SplitCriteria | PlainMessage<SplitCriteria> | undefined, b: SplitCriteria | PlainMessage<SplitCriteria> | undefined): boolean;
 }
 
 /**

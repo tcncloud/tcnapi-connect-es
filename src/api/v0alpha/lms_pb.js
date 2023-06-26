@@ -648,7 +648,7 @@ export const Process = proto3.makeMessageType(
     { no: 72, name: "bulk_web_entrypoint", kind: "message", T: BulkWebEntrypointProcess, oneof: "proc" },
     { no: 73, name: "omni_exchange_process", kind: "message", T: OmniExchangeProcess, oneof: "proc" },
     { no: 74, name: "web_exchange_process", kind: "message", T: WebExchangeProcess, oneof: "proc" },
-    { no: 75, name: "split", kind: "message", T: SplitCreiteria, oneof: "proc" },
+    { no: 75, name: "split", kind: "message", T: SplitCriteria, oneof: "proc" },
   ],
 );
 
@@ -2557,10 +2557,10 @@ export const CjsSecureSearchCriteriaField = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.SplitCreiteria
+ * @generated from message api.v0alpha.SplitCriteria
  */
-export const SplitCreiteria = proto3.makeMessageType(
-  "api.v0alpha.SplitCreiteria",
+export const SplitCriteria = proto3.makeMessageType(
+  "api.v0alpha.SplitCriteria",
   () => [
     { no: 1, name: "unique", kind: "message", T: SplitByUnique, oneof: "action" },
     { no: 2, name: "max_size", kind: "message", T: SplitByMaxSize, oneof: "action" },
