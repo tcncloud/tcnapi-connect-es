@@ -7,15 +7,15 @@ import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetF
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service api.v1alpha1.workflows.WorkflowsDefinitionsService
+ * @generated from service api.v1alpha1.workflows.WorkflowsDefinitionService
  */
-export const WorkflowsDefinitionsService = {
-  typeName: "api.v1alpha1.workflows.WorkflowsDefinitionsService",
+export const WorkflowsDefinitionService = {
+  typeName: "api.v1alpha1.workflows.WorkflowsDefinitionService",
   methods: {
     /**
      * ListFlowDefinitions lists flow definitions
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.ListFlowDefinitions
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.ListFlowDefinitions
      */
     listFlowDefinitions: {
       name: "ListFlowDefinitions",
@@ -26,7 +26,7 @@ export const WorkflowsDefinitionsService = {
     /**
      * SaveFlowDefinition creates or updates a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.SaveFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.SaveFlowDefinition
      */
     saveFlowDefinition: {
       name: "SaveFlowDefinition",
@@ -37,7 +37,7 @@ export const WorkflowsDefinitionsService = {
     /**
      * GetFlowDefinition gets a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.GetFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.GetFlowDefinition
      */
     getFlowDefinition: {
       name: "GetFlowDefinition",
@@ -48,7 +48,7 @@ export const WorkflowsDefinitionsService = {
     /**
      * DeleteFlowDefinition deletes a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.DeleteFlowDefinitionById
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.DeleteFlowDefinitionById
      */
     deleteFlowDefinitionById: {
       name: "DeleteFlowDefinitionById",

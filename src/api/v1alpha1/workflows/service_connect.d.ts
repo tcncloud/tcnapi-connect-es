@@ -7,15 +7,15 @@ import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetF
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service api.v1alpha1.workflows.WorkflowsDefinitionsService
+ * @generated from service api.v1alpha1.workflows.WorkflowsDefinitionService
  */
-export declare const WorkflowsDefinitionsService: {
-  readonly typeName: "api.v1alpha1.workflows.WorkflowsDefinitionsService",
+export declare const WorkflowsDefinitionService: {
+  readonly typeName: "api.v1alpha1.workflows.WorkflowsDefinitionService",
   readonly methods: {
     /**
      * ListFlowDefinitions lists flow definitions
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.ListFlowDefinitions
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.ListFlowDefinitions
      */
     readonly listFlowDefinitions: {
       readonly name: "ListFlowDefinitions",
@@ -26,7 +26,7 @@ export declare const WorkflowsDefinitionsService: {
     /**
      * SaveFlowDefinition creates or updates a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.SaveFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.SaveFlowDefinition
      */
     readonly saveFlowDefinition: {
       readonly name: "SaveFlowDefinition",
@@ -37,7 +37,7 @@ export declare const WorkflowsDefinitionsService: {
     /**
      * GetFlowDefinition gets a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.GetFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.GetFlowDefinition
      */
     readonly getFlowDefinition: {
       readonly name: "GetFlowDefinition",
@@ -48,7 +48,7 @@ export declare const WorkflowsDefinitionsService: {
     /**
      * DeleteFlowDefinition deletes a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionsService.DeleteFlowDefinitionById
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.DeleteFlowDefinitionById
      */
     readonly deleteFlowDefinitionById: {
       readonly name: "DeleteFlowDefinitionById",
