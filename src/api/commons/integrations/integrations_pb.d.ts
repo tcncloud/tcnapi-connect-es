@@ -621,6 +621,46 @@ export declare enum RequestMethod {
   EXPERIAN_ACH_PAYMENTPLANREQUEST = 2005,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY = 2006;
+   */
+  EXPERIAN_STELLA_CARD_ENTRY = 2006,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_ECHECK = 2007;
+   */
+  EXPERIAN_STELLA_ECHECK = 2007,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION = 2008;
+   */
+  EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION = 2008,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_TOKEN_PAYMENT = 2009;
+   */
+  EXPERIAN_STELLA_TOKEN_PAYMENT = 2009,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_ACH_TOKENIZATION = 20010;
+   */
+  EXPERIAN_STELLA_ACH_TOKENIZATION = 20010,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN = 2011;
+   */
+  EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN = 2011,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS = 2012;
+   */
+  EXPERIAN_STELLA_PAYMENT_PLANS = 2012,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_AUTH = 2013;
+   */
+  EXPERIAN_STELLA_AUTH = 2013,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_NEWSCYCLE_LOGIN = 2101;
    */
   NEWSCYCLE_LOGIN = 2101,
@@ -2756,6 +2796,54 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteExperianAchPaymentPlanRequest;
     case: "experianAchPaymentPlanRequest";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaCardEntry experian_stella_card_entry = 2006;
+     */
+    value: ExecuteExperianStellaCardEntry;
+    case: "experianStellaCardEntry";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaECheck experian_stella_echeck = 2007;
+     */
+    value: ExecuteExperianStellaECheck;
+    case: "experianStellaEcheck";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization experian_stella_card_device_tokenization = 2008;
+     */
+    value: ExecuteExperianStellaCardDeviceTokenization;
+    case: "experianStellaCardDeviceTokenization";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaTokenPayment experian_stella_token_payment = 2009;
+     */
+    value: ExecuteExperianStellaTokenPayment;
+    case: "experianStellaTokenPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaAchTokenization experian_stella_ach_tokenization = 2010;
+     */
+    value: ExecuteExperianStellaAchTokenization;
+    case: "experianStellaAchTokenization";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaAddusaepaytoken experian_stella_add_usa_epay_token = 2011;
+     */
+    value: ExecuteExperianStellaAddusaepaytoken;
+    case: "experianStellaAddUsaEpayToken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaPaymentPlans experian_stella_payment_plans = 2012;
+     */
+    value: ExecuteExperianStellaPaymentPlans;
+    case: "experianStellaPaymentPlans";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaAuth experian_stella_auth = 2013;
+     */
+    value: ExecuteExperianStellaAuth;
+    case: "experianStellaAuth";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteNewscycleLogin newscycle_login = 2101;
@@ -5245,6 +5333,158 @@ export declare class ExecuteExperianAchPaymentPlanRequest extends Message<Execut
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianAchPaymentPlanRequest;
 
   static equals(a: ExecuteExperianAchPaymentPlanRequest | PlainMessage<ExecuteExperianAchPaymentPlanRequest> | undefined, b: ExecuteExperianAchPaymentPlanRequest | PlainMessage<ExecuteExperianAchPaymentPlanRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardEntry
+ */
+export declare class ExecuteExperianStellaCardEntry extends Message<ExecuteExperianStellaCardEntry> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaCardEntry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaCardEntry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaCardEntry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardEntry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardEntry;
+
+  static equals(a: ExecuteExperianStellaCardEntry | PlainMessage<ExecuteExperianStellaCardEntry> | undefined, b: ExecuteExperianStellaCardEntry | PlainMessage<ExecuteExperianStellaCardEntry> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaECheck
+ */
+export declare class ExecuteExperianStellaECheck extends Message<ExecuteExperianStellaECheck> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaECheck>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaECheck";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaECheck;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaECheck;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaECheck;
+
+  static equals(a: ExecuteExperianStellaECheck | PlainMessage<ExecuteExperianStellaECheck> | undefined, b: ExecuteExperianStellaECheck | PlainMessage<ExecuteExperianStellaECheck> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization
+ */
+export declare class ExecuteExperianStellaCardDeviceTokenization extends Message<ExecuteExperianStellaCardDeviceTokenization> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaCardDeviceTokenization>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaCardDeviceTokenization;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardDeviceTokenization;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardDeviceTokenization;
+
+  static equals(a: ExecuteExperianStellaCardDeviceTokenization | PlainMessage<ExecuteExperianStellaCardDeviceTokenization> | undefined, b: ExecuteExperianStellaCardDeviceTokenization | PlainMessage<ExecuteExperianStellaCardDeviceTokenization> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaTokenPayment
+ */
+export declare class ExecuteExperianStellaTokenPayment extends Message<ExecuteExperianStellaTokenPayment> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaTokenPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaTokenPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaTokenPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaTokenPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaTokenPayment;
+
+  static equals(a: ExecuteExperianStellaTokenPayment | PlainMessage<ExecuteExperianStellaTokenPayment> | undefined, b: ExecuteExperianStellaTokenPayment | PlainMessage<ExecuteExperianStellaTokenPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAchTokenization
+ */
+export declare class ExecuteExperianStellaAchTokenization extends Message<ExecuteExperianStellaAchTokenization> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaAchTokenization>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaAchTokenization";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaAchTokenization;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAchTokenization;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAchTokenization;
+
+  static equals(a: ExecuteExperianStellaAchTokenization | PlainMessage<ExecuteExperianStellaAchTokenization> | undefined, b: ExecuteExperianStellaAchTokenization | PlainMessage<ExecuteExperianStellaAchTokenization> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAddusaepaytoken
+ */
+export declare class ExecuteExperianStellaAddusaepaytoken extends Message<ExecuteExperianStellaAddusaepaytoken> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaAddusaepaytoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaAddusaepaytoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaAddusaepaytoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAddusaepaytoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAddusaepaytoken;
+
+  static equals(a: ExecuteExperianStellaAddusaepaytoken | PlainMessage<ExecuteExperianStellaAddusaepaytoken> | undefined, b: ExecuteExperianStellaAddusaepaytoken | PlainMessage<ExecuteExperianStellaAddusaepaytoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaPaymentPlans
+ */
+export declare class ExecuteExperianStellaPaymentPlans extends Message<ExecuteExperianStellaPaymentPlans> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaPaymentPlans>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaPaymentPlans";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaPaymentPlans;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaPaymentPlans;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaPaymentPlans;
+
+  static equals(a: ExecuteExperianStellaPaymentPlans | PlainMessage<ExecuteExperianStellaPaymentPlans> | undefined, b: ExecuteExperianStellaPaymentPlans | PlainMessage<ExecuteExperianStellaPaymentPlans> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAuth
+ */
+export declare class ExecuteExperianStellaAuth extends Message<ExecuteExperianStellaAuth> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaAuth>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaAuth";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaAuth;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAuth;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAuth;
+
+  static equals(a: ExecuteExperianStellaAuth | PlainMessage<ExecuteExperianStellaAuth> | undefined, b: ExecuteExperianStellaAuth | PlainMessage<ExecuteExperianStellaAuth> | undefined): boolean;
 }
 
 /**
