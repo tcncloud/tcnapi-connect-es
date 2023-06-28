@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, GetFlowStateRequest, GetFlowStateResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse, SaveFlowStateRequest, SaveFlowStateResponse } from "./entities_pb.js";
+import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -54,37 +54,6 @@ export declare const WorkflowsDefinitionService: {
       readonly name: "DeleteFlowDefinitionById",
       readonly I: typeof DeleteFlowDefinitionByIdRequest,
       readonly O: typeof DeleteFlowDefinitionByIdResponse,
-      readonly kind: MethodKind.Unary,
-    },
-  }
-};
-
-/**
- * @generated from service api.v1alpha1.workflows.WorkflowsStateService
- */
-export declare const WorkflowsStateService: {
-  readonly typeName: "api.v1alpha1.workflows.WorkflowsStateService",
-  readonly methods: {
-    /**
-     * GetFlowState lists flow state
-     *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsStateService.GetFlowState
-     */
-    readonly getFlowState: {
-      readonly name: "GetFlowState",
-      readonly I: typeof GetFlowStateRequest,
-      readonly O: typeof GetFlowStateResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * SaveFlowState saves flow state
-     *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsStateService.SaveFlowState
-     */
-    readonly saveFlowState: {
-      readonly name: "SaveFlowState",
-      readonly I: typeof SaveFlowStateRequest,
-      readonly O: typeof SaveFlowStateResponse,
       readonly kind: MethodKind.Unary,
     },
   }
