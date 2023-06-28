@@ -7548,6 +7548,13 @@ export declare class CopyScenarioReq extends Message<CopyScenarioReq> {
    */
   description: string;
 
+  /**
+   * Datetime range that the schedules for the new scenario will cover when built using the copied schedule scenario.
+   *
+   * @generated from field: api.commons.DatetimeRange schedule_range = 5;
+   */
+  scheduleRange?: DatetimeRange;
+
   constructor(data?: PartialMessage<CopyScenarioReq>);
 
   static readonly runtime: typeof proto3;
