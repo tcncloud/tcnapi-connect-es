@@ -193,14 +193,6 @@ export declare class FlagSnapshot extends Message<FlagSnapshot> {
    */
   mustNotify: boolean;
 
-  /**
-   * Required. Boolean expression of filters which a transcript must match
-   * for this flag to be applied.
-   *
-   * @generated from field: api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr bool_expr = 12;
-   */
-  boolExpr?: FlagSnapshot_BoolExpr;
-
   constructor(data?: PartialMessage<FlagSnapshot>);
 
   static readonly runtime: typeof proto3;
@@ -214,82 +206,5 @@ export declare class FlagSnapshot extends Message<FlagSnapshot> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlagSnapshot;
 
   static equals(a: FlagSnapshot | PlainMessage<FlagSnapshot> | undefined, b: FlagSnapshot | PlainMessage<FlagSnapshot> | undefined): boolean;
-}
-
-/**
- * BoolExpr defines a boolean expression of filters.
- *
- * @generated from message api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr
- */
-export declare class FlagSnapshot_BoolExpr extends Message<FlagSnapshot_BoolExpr> {
-  /**
-   * Optional. Boolean and operator.
-   *
-   * @generated from field: repeated api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr and = 1;
-   */
-  and: FlagSnapshot_BoolExpr[];
-
-  /**
-   * Optional. Boolean or operator.
-   *
-   * @generated from field: repeated api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr or = 2;
-   */
-  or: FlagSnapshot_BoolExpr[];
-
-  /**
-   * Optional. Filter to match.
-   *
-   * @generated from field: api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter filter = 3;
-   */
-  filter?: FlagSnapshot_BoolExpr_Filter;
-
-  /**
-   * Optional. Boolean not operator.
-   *
-   * @generated from field: api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr not = 4;
-   */
-  not?: FlagSnapshot_BoolExpr;
-
-  constructor(data?: PartialMessage<FlagSnapshot_BoolExpr>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlagSnapshot_BoolExpr;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlagSnapshot_BoolExpr;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlagSnapshot_BoolExpr;
-
-  static equals(a: FlagSnapshot_BoolExpr | PlainMessage<FlagSnapshot_BoolExpr> | undefined, b: FlagSnapshot_BoolExpr | PlainMessage<FlagSnapshot_BoolExpr> | undefined): boolean;
-}
-
-/**
- * Filter defines a filter.
- *
- * @generated from message api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter
- */
-export declare class FlagSnapshot_BoolExpr_Filter extends Message<FlagSnapshot_BoolExpr_Filter> {
-  /**
-   * Required. Filter sid.
-   *
-   * @generated from field: int64 filter_sid = 1;
-   */
-  filterSid: bigint;
-
-  constructor(data?: PartialMessage<FlagSnapshot_BoolExpr_Filter>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr.Filter";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlagSnapshot_BoolExpr_Filter;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlagSnapshot_BoolExpr_Filter;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlagSnapshot_BoolExpr_Filter;
-
-  static equals(a: FlagSnapshot_BoolExpr_Filter | PlainMessage<FlagSnapshot_BoolExpr_Filter> | undefined, b: FlagSnapshot_BoolExpr_Filter | PlainMessage<FlagSnapshot_BoolExpr_Filter> | undefined): boolean;
 }
 
