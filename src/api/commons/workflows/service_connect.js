@@ -7,13 +7,13 @@ import { GetFlowDefinitionRequest, GetFlowDefinitionResponse, GetFlowStateReques
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service api.commons.workflows.WorkflowsDefinitionsService
+ * @generated from service api.commons.workflows.WorkflowsDefinitionService
  */
-export const WorkflowsDefinitionsService = {
-  typeName: "api.commons.workflows.WorkflowsDefinitionsService",
+export const WorkflowsDefinitionService = {
+  typeName: "api.commons.workflows.WorkflowsDefinitionService",
   methods: {
     /**
-     * @generated from rpc api.commons.workflows.WorkflowsDefinitionsService.SaveFlowDefinition
+     * @generated from rpc api.commons.workflows.WorkflowsDefinitionService.SaveFlowDefinition
      */
     saveFlowDefinition: {
       name: "SaveFlowDefinition",
@@ -22,7 +22,7 @@ export const WorkflowsDefinitionsService = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc api.commons.workflows.WorkflowsDefinitionsService.GetFlowDefinition
+     * @generated from rpc api.commons.workflows.WorkflowsDefinitionService.GetFlowDefinition
      */
     getFlowDefinition: {
       name: "GetFlowDefinition",
