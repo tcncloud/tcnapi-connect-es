@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { FlowDefinition, FlowState } from "../../commons/workflows/entities_pb.js";
+import { FlowDefinition } from "../../commons/workflows/entities_pb.js";
 
 /**
  * ListFlowDefinitionsRequest is the request object for listing flow definitions
@@ -101,55 +101,6 @@ export const DeleteFlowDefinitionResponse = proto3.makeMessageType(
   "api.v1alpha1.workflows.DeleteFlowDefinitionResponse",
   () => [
     { no: 1, name: "result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
- * SaveFlowStateRequest is the request object for saving a flow state
- *
- * @generated from message api.v1alpha1.workflows.SaveFlowStateRequest
- */
-export const SaveFlowStateRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.SaveFlowStateRequest",
-  () => [
-    { no: 1, name: "flow_state", kind: "message", T: FlowState },
-    { no: 2, name: "update_mask", kind: "message", T: FieldMask },
-  ],
-);
-
-/**
- * SaveFlowStateResponse is the response object for saving a flow state
- *
- * @generated from message api.v1alpha1.workflows.SaveFlowStateResponse
- */
-export const SaveFlowStateResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.SaveFlowStateResponse",
-  () => [
-    { no: 1, name: "flow_state", kind: "message", T: FlowState },
-  ],
-);
-
-/**
- * GetFlowStateRequest is the request object for getting a flow state
- *
- * @generated from message api.v1alpha1.workflows.GetFlowStateRequest
- */
-export const GetFlowStateRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.GetFlowStateRequest",
-  () => [
-    { no: 1, name: "flow_state_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * GetFlowStateResponse is the response object for getting a flow state
- *
- * @generated from message api.v1alpha1.workflows.GetFlowStateResponse
- */
-export const GetFlowStateResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.GetFlowStateResponse",
-  () => [
-    { no: 1, name: "flow_state", kind: "message", T: FlowState },
   ],
 );
 
