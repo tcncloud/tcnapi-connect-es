@@ -48,10 +48,10 @@ export declare const WorkflowsDefinitionService: {
     /**
      * DeleteFlowDefinition deletes a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.DeleteFlowDefinitionById
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsDefinitionService.DeleteFlowDefinition
      */
-    readonly deleteFlowDefinitionById: {
-      readonly name: "DeleteFlowDefinitionById",
+    readonly deleteFlowDefinition: {
+      readonly name: "DeleteFlowDefinition",
       readonly I: typeof DeleteFlowDefinitionRequest,
       readonly O: typeof DeleteFlowDefinitionResponse,
       readonly kind: MethodKind.Unary,
