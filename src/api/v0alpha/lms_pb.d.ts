@@ -2024,6 +2024,12 @@ export declare class Process extends Message<Process> {
      */
     value: WebExchangeProcess;
     case: "webExchangeProcess";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.SplitCriteria split = 75;
+     */
+    value: SplitCriteria;
+    case: "split";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Process>);
@@ -8460,5 +8466,172 @@ export declare class CjsSecureSearchCriteriaField extends Message<CjsSecureSearc
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CjsSecureSearchCriteriaField;
 
   static equals(a: CjsSecureSearchCriteriaField | PlainMessage<CjsSecureSearchCriteriaField> | undefined, b: CjsSecureSearchCriteriaField | PlainMessage<CjsSecureSearchCriteriaField> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.SplitCriteria
+ */
+export declare class SplitCriteria extends Message<SplitCriteria> {
+  /**
+   * @generated from oneof api.v0alpha.SplitCriteria.action
+   */
+  action: {
+    /**
+     * @generated from field: api.v0alpha.SplitByUnique unique = 1;
+     */
+    value: SplitByUnique;
+    case: "unique";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.SplitByMaxSize max_size = 2;
+     */
+    value: SplitByMaxSize;
+    case: "maxSize";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.SplitByEqualParts equal_parts = 3;
+     */
+    value: SplitByEqualParts;
+    case: "equalParts";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<SplitCriteria>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SplitCriteria";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitCriteria;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitCriteria;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitCriteria;
+
+  static equals(a: SplitCriteria | PlainMessage<SplitCriteria> | undefined, b: SplitCriteria | PlainMessage<SplitCriteria> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.UniquePair
+ */
+export declare class UniquePair extends Message<UniquePair> {
+  /**
+   * @generated from field: api.v0alpha.FieldIndex split_on_fields = 1;
+   */
+  splitOnFields?: FieldIndex;
+
+  /**
+   * @generated from field: string split_value = 2;
+   */
+  splitValue: string;
+
+  constructor(data?: PartialMessage<UniquePair>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UniquePair";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UniquePair;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UniquePair;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UniquePair;
+
+  static equals(a: UniquePair | PlainMessage<UniquePair> | undefined, b: UniquePair | PlainMessage<UniquePair> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.SplitByNamedUnique
+ */
+export declare class SplitByNamedUnique extends Message<SplitByNamedUnique> {
+  /**
+   * @generated from field: repeated api.v0alpha.UniquePair named_fields = 1;
+   */
+  namedFields: UniquePair[];
+
+  constructor(data?: PartialMessage<SplitByNamedUnique>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SplitByNamedUnique";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitByNamedUnique;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitByNamedUnique;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitByNamedUnique;
+
+  static equals(a: SplitByNamedUnique | PlainMessage<SplitByNamedUnique> | undefined, b: SplitByNamedUnique | PlainMessage<SplitByNamedUnique> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.SplitByUnique
+ */
+export declare class SplitByUnique extends Message<SplitByUnique> {
+  /**
+   * @generated from field: repeated api.v0alpha.FieldIndex split_on_fields = 1;
+   */
+  splitOnFields: FieldIndex[];
+
+  constructor(data?: PartialMessage<SplitByUnique>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SplitByUnique";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitByUnique;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitByUnique;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitByUnique;
+
+  static equals(a: SplitByUnique | PlainMessage<SplitByUnique> | undefined, b: SplitByUnique | PlainMessage<SplitByUnique> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.SplitByMaxSize
+ */
+export declare class SplitByMaxSize extends Message<SplitByMaxSize> {
+  /**
+   * @generated from field: int32 max_size = 1;
+   */
+  maxSize: number;
+
+  constructor(data?: PartialMessage<SplitByMaxSize>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SplitByMaxSize";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitByMaxSize;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitByMaxSize;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitByMaxSize;
+
+  static equals(a: SplitByMaxSize | PlainMessage<SplitByMaxSize> | undefined, b: SplitByMaxSize | PlainMessage<SplitByMaxSize> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.SplitByEqualParts
+ */
+export declare class SplitByEqualParts extends Message<SplitByEqualParts> {
+  /**
+   * @generated from field: int32 part_size = 1;
+   */
+  partSize: number;
+
+  constructor(data?: PartialMessage<SplitByEqualParts>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SplitByEqualParts";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitByEqualParts;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitByEqualParts;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitByEqualParts;
+
+  static equals(a: SplitByEqualParts | PlainMessage<SplitByEqualParts> | undefined, b: SplitByEqualParts | PlainMessage<SplitByEqualParts> | undefined): boolean;
 }
 

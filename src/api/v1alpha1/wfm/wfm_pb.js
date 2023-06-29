@@ -2639,6 +2639,7 @@ export const CopyScenarioReq = proto3.makeMessageType(
     { no: 2, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "schedule_range", kind: "message", T: DatetimeRange },
   ],
 );
 

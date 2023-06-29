@@ -145,6 +145,14 @@ export const RequestMethod = proto3.makeEnum(
     {no: 2003, name: "REQUEST_METHOD_EXPERIAN_BALANCEREQUEST", localName: "EXPERIAN_BALANCEREQUEST"},
     {no: 2004, name: "REQUEST_METHOD_EXPERIAN_ACH_PAYMENT_REQUEST", localName: "EXPERIAN_ACH_PAYMENT_REQUEST"},
     {no: 2005, name: "REQUEST_METHOD_EXPERIAN_ACH_PAYMENTPLANREQUEST", localName: "EXPERIAN_ACH_PAYMENTPLANREQUEST"},
+    {no: 2006, name: "REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY", localName: "EXPERIAN_STELLA_CARD_ENTRY"},
+    {no: 2007, name: "REQUEST_METHOD_EXPERIAN_STELLA_ECHECK", localName: "EXPERIAN_STELLA_ECHECK"},
+    {no: 2008, name: "REQUEST_METHOD_EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION", localName: "EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION"},
+    {no: 2009, name: "REQUEST_METHOD_EXPERIAN_STELLA_TOKEN_PAYMENT", localName: "EXPERIAN_STELLA_TOKEN_PAYMENT"},
+    {no: 2010, name: "REQUEST_METHOD_EXPERIAN_STELLA_ACH_TOKENIZATION", localName: "EXPERIAN_STELLA_ACH_TOKENIZATION"},
+    {no: 2011, name: "REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN", localName: "EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN"},
+    {no: 2012, name: "REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS", localName: "EXPERIAN_STELLA_PAYMENT_PLANS"},
+    {no: 2013, name: "REQUEST_METHOD_EXPERIAN_STELLA_AUTH", localName: "EXPERIAN_STELLA_AUTH"},
     {no: 2101, name: "REQUEST_METHOD_NEWSCYCLE_LOGIN", localName: "NEWSCYCLE_LOGIN"},
     {no: 2102, name: "REQUEST_METHOD_NEWSCYCLE_SEARCHPAGE", localName: "NEWSCYCLE_SEARCHPAGE"},
     {no: 2103, name: "REQUEST_METHOD_NEWSCYCLE_BILLINGINFO", localName: "NEWSCYCLE_BILLINGINFO"},
@@ -705,6 +713,14 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 2003, name: "experian_balancerequest", kind: "message", T: ExecuteExperianBalancerequest, oneof: "value" },
     { no: 2004, name: "experian_ach_payment_request", kind: "message", T: ExecuteExperianAchPaymentRequest, oneof: "value" },
     { no: 2005, name: "experian_ach_payment_plan_request", kind: "message", T: ExecuteExperianAchPaymentPlanRequest, oneof: "value" },
+    { no: 2006, name: "experian_stella_card_entry", kind: "message", T: ExecuteExperianStellaCardEntry, oneof: "value" },
+    { no: 2007, name: "experian_stella_echeck", kind: "message", T: ExecuteExperianStellaECheck, oneof: "value" },
+    { no: 2008, name: "experian_stella_card_device_tokenization", kind: "message", T: ExecuteExperianStellaCardDeviceTokenization, oneof: "value" },
+    { no: 2009, name: "experian_stella_token_payment", kind: "message", T: ExecuteExperianStellaTokenPayment, oneof: "value" },
+    { no: 2010, name: "experian_stella_ach_tokenization", kind: "message", T: ExecuteExperianStellaAchTokenization, oneof: "value" },
+    { no: 2011, name: "experian_stella_add_usa_epay_token", kind: "message", T: ExecuteExperianStellaAddusaepaytoken, oneof: "value" },
+    { no: 2012, name: "experian_stella_payment_plans", kind: "message", T: ExecuteExperianStellaPaymentPlans, oneof: "value" },
+    { no: 2013, name: "experian_stella_auth", kind: "message", T: ExecuteExperianStellaAuth, oneof: "value" },
     { no: 2101, name: "newscycle_login", kind: "message", T: ExecuteNewscycleLogin, oneof: "value" },
     { no: 2102, name: "newscycle_search_page", kind: "message", T: ExecuteNewscycleSearchPage, oneof: "value" },
     { no: 2103, name: "newscycle_billing_info", kind: "message", T: ExecuteNewscycleBillingInfo, oneof: "value" },
@@ -1617,6 +1633,70 @@ export const ExecuteExperianAchPaymentRequest = proto3.makeMessageType(
  */
 export const ExecuteExperianAchPaymentPlanRequest = proto3.makeMessageType(
   "api.commons.integrations.ExecuteExperianAchPaymentPlanRequest",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardEntry
+ */
+export const ExecuteExperianStellaCardEntry = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaCardEntry",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaECheck
+ */
+export const ExecuteExperianStellaECheck = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaECheck",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization
+ */
+export const ExecuteExperianStellaCardDeviceTokenization = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaTokenPayment
+ */
+export const ExecuteExperianStellaTokenPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaTokenPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAchTokenization
+ */
+export const ExecuteExperianStellaAchTokenization = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaAchTokenization",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAddusaepaytoken
+ */
+export const ExecuteExperianStellaAddusaepaytoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaAddusaepaytoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaPaymentPlans
+ */
+export const ExecuteExperianStellaPaymentPlans = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaPaymentPlans",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAuth
+ */
+export const ExecuteExperianStellaAuth = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaAuth",
   [],
 );
 
