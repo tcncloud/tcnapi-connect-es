@@ -4366,6 +4366,8 @@ export declare class GetCannedMessageGroupByIdReq extends Message<GetCannedMessa
 }
 
 /**
+ * request to list user skills
+ *
  * @generated from message api.v0alpha.ListUserSkillsReq
  */
 export declare class ListUserSkillsReq extends Message<ListUserSkillsReq> {
@@ -4396,6 +4398,8 @@ export declare class ListUserSkillsReq extends Message<ListUserSkillsReq> {
 }
 
 /**
+ * respose to list users skills
+ *
  * @generated from message api.v0alpha.ListUserSkillsRes
  */
 export declare class ListUserSkillsRes extends Message<ListUserSkillsRes> {
@@ -4420,25 +4424,35 @@ export declare class ListUserSkillsRes extends Message<ListUserSkillsRes> {
 }
 
 /**
+ * skill details
+ *
  * @generated from message api.v0alpha.OmniSkill
  */
 export declare class OmniSkill extends Message<OmniSkill> {
   /**
+   * region
+   *
    * @generated from field: string region = 1;
    */
   region: string;
 
   /**
+   * p3 id
+   *
    * @generated from field: string p3_id = 2;
    */
   p3Id: string;
 
   /**
+   * skill name
+   *
    * @generated from field: string name = 3;
    */
   name: string;
 
   /**
+   * skill description
+   *
    * @generated from field: string description = 4;
    */
   description: string;

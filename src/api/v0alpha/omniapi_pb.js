@@ -1631,6 +1631,8 @@ export const GetCannedMessageGroupByIdReq = proto3.makeMessageType(
 );
 
 /**
+ * request to list user skills
+ *
  * @generated from message api.v0alpha.ListUserSkillsReq
  */
 export const ListUserSkillsReq = proto3.makeMessageType(
@@ -1641,6 +1643,8 @@ export const ListUserSkillsReq = proto3.makeMessageType(
 );
 
 /**
+ * respose to list users skills
+ *
  * @generated from message api.v0alpha.ListUserSkillsRes
  */
 export const ListUserSkillsRes = proto3.makeMessageType(
@@ -1651,6 +1655,8 @@ export const ListUserSkillsRes = proto3.makeMessageType(
 );
 
 /**
+ * skill details
+ *
  * @generated from message api.v0alpha.OmniSkill
  */
 export const OmniSkill = proto3.makeMessageType(
