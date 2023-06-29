@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { DeleteFlowDefinitionByIdRequest, DeleteFlowDefinitionByIdResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse } from "./entities_pb.js";
+import { DeleteFlowDefinitionRequest, DeleteFlowDefinitionResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, SaveFlowDefinitionRequest, SaveFlowDefinitionResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -52,8 +52,8 @@ export declare const WorkflowsDefinitionService: {
      */
     readonly deleteFlowDefinitionById: {
       readonly name: "DeleteFlowDefinitionById",
-      readonly I: typeof DeleteFlowDefinitionByIdRequest,
-      readonly O: typeof DeleteFlowDefinitionByIdResponse,
+      readonly I: typeof DeleteFlowDefinitionRequest,
+      readonly O: typeof DeleteFlowDefinitionResponse,
       readonly kind: MethodKind.Unary,
     },
   }

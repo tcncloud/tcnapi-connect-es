@@ -192,9 +192,9 @@ export declare class GetFlowDefinitionResponse extends Message<GetFlowDefinition
 /**
  * DeleteFlowDefinitionsRequest is the request object for deleting a flow definition
  *
- * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionByIdRequest
+ * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionRequest
  */
-export declare class DeleteFlowDefinitionByIdRequest extends Message<DeleteFlowDefinitionByIdRequest> {
+export declare class DeleteFlowDefinitionRequest extends Message<DeleteFlowDefinitionRequest> {
   /**
    * The ID of the flow definition to delete
    *
@@ -202,27 +202,27 @@ export declare class DeleteFlowDefinitionByIdRequest extends Message<DeleteFlowD
    */
   flowDefinitionId: string;
 
-  constructor(data?: PartialMessage<DeleteFlowDefinitionByIdRequest>);
+  constructor(data?: PartialMessage<DeleteFlowDefinitionRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.workflows.DeleteFlowDefinitionByIdRequest";
+  static readonly typeName = "api.v1alpha1.workflows.DeleteFlowDefinitionRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFlowDefinitionByIdRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFlowDefinitionRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionByIdRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionByIdRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionRequest;
 
-  static equals(a: DeleteFlowDefinitionByIdRequest | PlainMessage<DeleteFlowDefinitionByIdRequest> | undefined, b: DeleteFlowDefinitionByIdRequest | PlainMessage<DeleteFlowDefinitionByIdRequest> | undefined): boolean;
+  static equals(a: DeleteFlowDefinitionRequest | PlainMessage<DeleteFlowDefinitionRequest> | undefined, b: DeleteFlowDefinitionRequest | PlainMessage<DeleteFlowDefinitionRequest> | undefined): boolean;
 }
 
 /**
  * DeleteFlowDefinitionsResponse is the response object for deleting a flow definition
  *
- * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionByIdResponse
+ * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionResponse
  */
-export declare class DeleteFlowDefinitionByIdResponse extends Message<DeleteFlowDefinitionByIdResponse> {
+export declare class DeleteFlowDefinitionResponse extends Message<DeleteFlowDefinitionResponse> {
   /**
    * true if the flow definition was deleted
    *
@@ -230,19 +230,19 @@ export declare class DeleteFlowDefinitionByIdResponse extends Message<DeleteFlow
    */
   result: boolean;
 
-  constructor(data?: PartialMessage<DeleteFlowDefinitionByIdResponse>);
+  constructor(data?: PartialMessage<DeleteFlowDefinitionResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.workflows.DeleteFlowDefinitionByIdResponse";
+  static readonly typeName = "api.v1alpha1.workflows.DeleteFlowDefinitionResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFlowDefinitionByIdResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteFlowDefinitionResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionByIdResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionByIdResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteFlowDefinitionResponse;
 
-  static equals(a: DeleteFlowDefinitionByIdResponse | PlainMessage<DeleteFlowDefinitionByIdResponse> | undefined, b: DeleteFlowDefinitionByIdResponse | PlainMessage<DeleteFlowDefinitionByIdResponse> | undefined): boolean;
+  static equals(a: DeleteFlowDefinitionResponse | PlainMessage<DeleteFlowDefinitionResponse> | undefined, b: DeleteFlowDefinitionResponse | PlainMessage<DeleteFlowDefinitionResponse> | undefined): boolean;
 }
 
 /**

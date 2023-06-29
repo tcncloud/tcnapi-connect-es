@@ -83,10 +83,10 @@ export const GetFlowDefinitionResponse = proto3.makeMessageType(
 /**
  * DeleteFlowDefinitionsRequest is the request object for deleting a flow definition
  *
- * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionByIdRequest
+ * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionRequest
  */
-export const DeleteFlowDefinitionByIdRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.DeleteFlowDefinitionByIdRequest",
+export const DeleteFlowDefinitionRequest = proto3.makeMessageType(
+  "api.v1alpha1.workflows.DeleteFlowDefinitionRequest",
   () => [
     { no: 1, name: "flow_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
@@ -95,10 +95,10 @@ export const DeleteFlowDefinitionByIdRequest = proto3.makeMessageType(
 /**
  * DeleteFlowDefinitionsResponse is the response object for deleting a flow definition
  *
- * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionByIdResponse
+ * @generated from message api.v1alpha1.workflows.DeleteFlowDefinitionResponse
  */
-export const DeleteFlowDefinitionByIdResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.DeleteFlowDefinitionByIdResponse",
+export const DeleteFlowDefinitionResponse = proto3.makeMessageType(
+  "api.v1alpha1.workflows.DeleteFlowDefinitionResponse",
   () => [
     { no: 1, name: "result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
