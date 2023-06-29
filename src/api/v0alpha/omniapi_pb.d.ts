@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
+import type { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
  * @generated from message api.v0alpha.SuggestResponseReq
@@ -4362,5 +4363,103 @@ export declare class GetCannedMessageGroupByIdReq extends Message<GetCannedMessa
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCannedMessageGroupByIdReq;
 
   static equals(a: GetCannedMessageGroupByIdReq | PlainMessage<GetCannedMessageGroupByIdReq> | undefined, b: GetCannedMessageGroupByIdReq | PlainMessage<GetCannedMessageGroupByIdReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ListUserSkillsReq
+ */
+export declare class ListUserSkillsReq extends Message<ListUserSkillsReq> {
+  /**
+   * Filters the response to only contain skills with the
+   * given types. Leaving this field empty will return
+   * all skill types. The PBX SkillType is not
+   * supported and will cause an error if present.
+   * Should use AGENT_PBX or HUNT_GROUP_PBX.
+   *
+   * @generated from field: repeated api.commons.SkillType.Enum type_filters = 1;
+   */
+  typeFilters: SkillType_Enum[];
+
+  constructor(data?: PartialMessage<ListUserSkillsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListUserSkillsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserSkillsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserSkillsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserSkillsReq;
+
+  static equals(a: ListUserSkillsReq | PlainMessage<ListUserSkillsReq> | undefined, b: ListUserSkillsReq | PlainMessage<ListUserSkillsReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ListUserSkillsRes
+ */
+export declare class ListUserSkillsRes extends Message<ListUserSkillsRes> {
+  /**
+   * @generated from field: repeated api.v0alpha.OmniSkill skills = 1;
+   */
+  skills: OmniSkill[];
+
+  constructor(data?: PartialMessage<ListUserSkillsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListUserSkillsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUserSkillsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUserSkillsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUserSkillsRes;
+
+  static equals(a: ListUserSkillsRes | PlainMessage<ListUserSkillsRes> | undefined, b: ListUserSkillsRes | PlainMessage<ListUserSkillsRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.OmniSkill
+ */
+export declare class OmniSkill extends Message<OmniSkill> {
+  /**
+   * @generated from field: string region = 1;
+   */
+  region: string;
+
+  /**
+   * @generated from field: string p3_id = 2;
+   */
+  p3Id: string;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: api.commons.SkillType.Enum type = 5;
+   */
+  type: SkillType_Enum;
+
+  constructor(data?: PartialMessage<OmniSkill>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.OmniSkill";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniSkill;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniSkill;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniSkill;
+
+  static equals(a: OmniSkill | PlainMessage<OmniSkill> | undefined, b: OmniSkill | PlainMessage<OmniSkill> | undefined): boolean;
 }
 
