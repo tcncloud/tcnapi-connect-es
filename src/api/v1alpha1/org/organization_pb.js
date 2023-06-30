@@ -7,6 +7,7 @@ import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { ClientSkin, TimeZone } from "../../commons/org_pb.js";
 import { Country } from "../../commons/country_pb.js";
 import { Organization } from "../../commons/org/organization_pb.js";
+import { SkillType_Enum } from "../../commons/wfm_pb.js";
 
 /**
  * CreateOrganizationRequest request for creating a new organization.
@@ -361,5 +362,45 @@ export const ListArchivedOrganizationsResponse_OrganizationDetails = proto3.make
     { no: 5, name: "last_scheduled_date", kind: "message", T: Timestamp },
   ],
   {localName: "ListArchivedOrganizationsResponse_OrganizationDetails"},
+);
+
+/**
+ * request to list org skills
+ *
+ * @generated from message api.v1alpha1.org.ListOrgSkillsReq
+ */
+export const ListOrgSkillsReq = proto3.makeMessageType(
+  "api.v1alpha1.org.ListOrgSkillsReq",
+  () => [
+    { no: 1, name: "type_filters", kind: "enum", T: proto3.getEnumType(SkillType_Enum), repeated: true },
+  ],
+);
+
+/**
+ * respose to list org skills
+ *
+ * @generated from message api.v1alpha1.org.ListOrgSkillsRes
+ */
+export const ListOrgSkillsRes = proto3.makeMessageType(
+  "api.v1alpha1.org.ListOrgSkillsRes",
+  () => [
+    { no: 1, name: "skills", kind: "message", T: OrgSkill, repeated: true },
+  ],
+);
+
+/**
+ * skill details
+ *
+ * @generated from message api.v1alpha1.org.OrgSkill
+ */
+export const OrgSkill = proto3.makeMessageType(
+  "api.v1alpha1.org.OrgSkill",
+  () => [
+    { no: 1, name: "region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "p3_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "type", kind: "enum", T: proto3.getEnumType(SkillType_Enum) },
+  ],
 );
 

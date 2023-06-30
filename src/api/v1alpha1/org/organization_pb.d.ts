@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { ClientSkin, TimeZone } from "../../commons/org_pb.js";
 import type { Country } from "../../commons/country_pb.js";
 import type { Organization } from "../../commons/org/organization_pb.js";
+import type { SkillType_Enum } from "../../commons/wfm_pb.js";
 
 /**
  * CreateOrganizationRequest request for creating a new organization.
@@ -986,5 +987,117 @@ export declare class ListArchivedOrganizationsResponse_OrganizationDetails exten
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListArchivedOrganizationsResponse_OrganizationDetails;
 
   static equals(a: ListArchivedOrganizationsResponse_OrganizationDetails | PlainMessage<ListArchivedOrganizationsResponse_OrganizationDetails> | undefined, b: ListArchivedOrganizationsResponse_OrganizationDetails | PlainMessage<ListArchivedOrganizationsResponse_OrganizationDetails> | undefined): boolean;
+}
+
+/**
+ * request to list org skills
+ *
+ * @generated from message api.v1alpha1.org.ListOrgSkillsReq
+ */
+export declare class ListOrgSkillsReq extends Message<ListOrgSkillsReq> {
+  /**
+   * Filters the response to only contain skills with the
+   * given types. Leaving this field empty will return
+   * all skill types. The PBX SkillType is not
+   * supported and will cause an error if present.
+   * Should use AGENT_PBX or HUNT_GROUP_PBX.
+   *
+   * @generated from field: repeated api.commons.SkillType.Enum type_filters = 1;
+   */
+  typeFilters: SkillType_Enum[];
+
+  constructor(data?: PartialMessage<ListOrgSkillsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListOrgSkillsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrgSkillsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrgSkillsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrgSkillsReq;
+
+  static equals(a: ListOrgSkillsReq | PlainMessage<ListOrgSkillsReq> | undefined, b: ListOrgSkillsReq | PlainMessage<ListOrgSkillsReq> | undefined): boolean;
+}
+
+/**
+ * respose to list org skills
+ *
+ * @generated from message api.v1alpha1.org.ListOrgSkillsRes
+ */
+export declare class ListOrgSkillsRes extends Message<ListOrgSkillsRes> {
+  /**
+   * @generated from field: repeated api.v1alpha1.org.OrgSkill skills = 1;
+   */
+  skills: OrgSkill[];
+
+  constructor(data?: PartialMessage<ListOrgSkillsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListOrgSkillsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrgSkillsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrgSkillsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrgSkillsRes;
+
+  static equals(a: ListOrgSkillsRes | PlainMessage<ListOrgSkillsRes> | undefined, b: ListOrgSkillsRes | PlainMessage<ListOrgSkillsRes> | undefined): boolean;
+}
+
+/**
+ * skill details
+ *
+ * @generated from message api.v1alpha1.org.OrgSkill
+ */
+export declare class OrgSkill extends Message<OrgSkill> {
+  /**
+   * region
+   *
+   * @generated from field: string region = 1;
+   */
+  region: string;
+
+  /**
+   * p3 id
+   *
+   * @generated from field: string p3_id = 2;
+   */
+  p3Id: string;
+
+  /**
+   * skill name
+   *
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * skill description
+   *
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: api.commons.SkillType.Enum type = 5;
+   */
+  type: SkillType_Enum;
+
+  constructor(data?: PartialMessage<OrgSkill>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.OrgSkill";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OrgSkill;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OrgSkill;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrgSkill;
+
+  static equals(a: OrgSkill | PlainMessage<OrgSkill> | undefined, b: OrgSkill | PlainMessage<OrgSkill> | undefined): boolean;
 }
 
