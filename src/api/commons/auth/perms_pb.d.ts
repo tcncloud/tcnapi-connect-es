@@ -470,5 +470,12 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_TICKETS_ADMIN = 3101;
    */
   TICKETS_ADMIN = 3101,
+
+  /**
+   * Enables access to workflows builder
+   *
+   * @generated from enum value: PERMISSION_WORKFLOWS = 4000;
+   */
+  WORKFLOWS = 4000,
 }
 
