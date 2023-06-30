@@ -5,6 +5,7 @@
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
+import { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
  * @generated from message api.v0alpha.SuggestResponseReq
@@ -1626,6 +1627,46 @@ export const GetCannedMessageGroupByIdReq = proto3.makeMessageType(
   "api.v0alpha.GetCannedMessageGroupByIdReq",
   () => [
     { no: 1, name: "canned_message_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * request to list user skills
+ *
+ * @generated from message api.v0alpha.ListUserSkillsReq
+ */
+export const ListUserSkillsReq = proto3.makeMessageType(
+  "api.v0alpha.ListUserSkillsReq",
+  () => [
+    { no: 1, name: "type_filters", kind: "enum", T: proto3.getEnumType(SkillType_Enum), repeated: true },
+  ],
+);
+
+/**
+ * respose to list users skills
+ *
+ * @generated from message api.v0alpha.ListUserSkillsRes
+ */
+export const ListUserSkillsRes = proto3.makeMessageType(
+  "api.v0alpha.ListUserSkillsRes",
+  () => [
+    { no: 1, name: "skills", kind: "message", T: OmniSkill, repeated: true },
+  ],
+);
+
+/**
+ * skill details
+ *
+ * @generated from message api.v0alpha.OmniSkill
+ */
+export const OmniSkill = proto3.makeMessageType(
+  "api.v0alpha.OmniSkill",
+  () => [
+    { no: 1, name: "region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "p3_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "type", kind: "enum", T: proto3.getEnumType(SkillType_Enum) },
   ],
 );
 
