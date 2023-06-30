@@ -4404,9 +4404,9 @@ export declare class ListUserSkillsReq extends Message<ListUserSkillsReq> {
  */
 export declare class ListUserSkillsRes extends Message<ListUserSkillsRes> {
   /**
-   * @generated from field: repeated api.v0alpha.OmniSkill skills = 1;
+   * @generated from field: repeated api.v0alpha.UserSkill skills = 1;
    */
-  skills: OmniSkill[];
+  skills: UserSkill[];
 
   constructor(data?: PartialMessage<ListUserSkillsRes>);
 
@@ -4424,11 +4424,11 @@ export declare class ListUserSkillsRes extends Message<ListUserSkillsRes> {
 }
 
 /**
- * skill details
+ * user skill details
  *
- * @generated from message api.v0alpha.OmniSkill
+ * @generated from message api.v0alpha.UserSkill
  */
-export declare class OmniSkill extends Message<OmniSkill> {
+export declare class UserSkill extends Message<UserSkill> {
   /**
    * region
    *
@@ -4462,18 +4462,18 @@ export declare class OmniSkill extends Message<OmniSkill> {
    */
   type: SkillType_Enum;
 
-  constructor(data?: PartialMessage<OmniSkill>);
+  constructor(data?: PartialMessage<UserSkill>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.OmniSkill";
+  static readonly typeName = "api.v0alpha.UserSkill";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniSkill;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserSkill;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniSkill;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserSkill;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniSkill;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserSkill;
 
-  static equals(a: OmniSkill | PlainMessage<OmniSkill> | undefined, b: OmniSkill | PlainMessage<OmniSkill> | undefined): boolean;
+  static equals(a: UserSkill | PlainMessage<UserSkill> | undefined, b: UserSkill | PlainMessage<UserSkill> | undefined): boolean;
 }
 

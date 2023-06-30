@@ -1650,17 +1650,17 @@ export const ListUserSkillsReq = proto3.makeMessageType(
 export const ListUserSkillsRes = proto3.makeMessageType(
   "api.v0alpha.ListUserSkillsRes",
   () => [
-    { no: 1, name: "skills", kind: "message", T: OmniSkill, repeated: true },
+    { no: 1, name: "skills", kind: "message", T: UserSkill, repeated: true },
   ],
 );
 
 /**
- * skill details
+ * user skill details
  *
- * @generated from message api.v0alpha.OmniSkill
+ * @generated from message api.v0alpha.UserSkill
  */
-export const OmniSkill = proto3.makeMessageType(
-  "api.v0alpha.OmniSkill",
+export const UserSkill = proto3.makeMessageType(
+  "api.v0alpha.UserSkill",
   () => [
     { no: 1, name: "region", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "p3_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
