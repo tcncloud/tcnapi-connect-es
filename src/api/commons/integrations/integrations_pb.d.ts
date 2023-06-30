@@ -191,6 +191,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_POSCORP = 3500;
    */
   POSCORP = 3500,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_PIANO = 3600;
+   */
+  PIANO = 3600,
 }
 
 /**
@@ -1049,6 +1054,16 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS = 3503;
    */
   POSCORP_UPDATE_PAYMENT_STATUS = 3503,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_GET_USER = 3601;
+   */
+  PIANO_GET_USER = 3601,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_UPDATE_USER = 3602;
+   */
+  PIANO_UPDATE_USER = 3602,
 }
 
 /**
@@ -3312,6 +3327,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecutePoscorpUpdatePaymentStatus;
     case: "poscorpUpdatePaymentStatus";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoGetUser PIANO_GET_USER = 3601;
+     */
+    value: ExecutePianoGetUser;
+    case: "PIANOGETUSER";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoUpdateUser PIANO_UPDATE_USER = 3602;
+     */
+    value: ExecutePianoUpdateUser;
+    case: "PIANOUPDATEUSER";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -6967,5 +6994,43 @@ export declare class ExecutePoscorpUpdatePaymentStatus extends Message<ExecutePo
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePoscorpUpdatePaymentStatus;
 
   static equals(a: ExecutePoscorpUpdatePaymentStatus | PlainMessage<ExecutePoscorpUpdatePaymentStatus> | undefined, b: ExecutePoscorpUpdatePaymentStatus | PlainMessage<ExecutePoscorpUpdatePaymentStatus> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetUser
+ */
+export declare class ExecutePianoGetUser extends Message<ExecutePianoGetUser> {
+  constructor(data?: PartialMessage<ExecutePianoGetUser>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoGetUser";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoGetUser;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoGetUser;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoGetUser;
+
+  static equals(a: ExecutePianoGetUser | PlainMessage<ExecutePianoGetUser> | undefined, b: ExecutePianoGetUser | PlainMessage<ExecutePianoGetUser> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateUser
+ */
+export declare class ExecutePianoUpdateUser extends Message<ExecutePianoUpdateUser> {
+  constructor(data?: PartialMessage<ExecutePianoUpdateUser>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoUpdateUser";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoUpdateUser;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoUpdateUser;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoUpdateUser;
+
+  static equals(a: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined, b: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined): boolean;
 }
 
