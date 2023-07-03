@@ -49,6 +49,7 @@ export const IntegrationType = proto3.makeEnum(
     {no: 3300, name: "INTEGRATION_TYPE_OPAYO", localName: "OPAYO"},
     {no: 3400, name: "INTEGRATION_TYPE_SHIFT4", localName: "SHIFT4"},
     {no: 3500, name: "INTEGRATION_TYPE_POSCORP", localName: "POSCORP"},
+    {no: 3600, name: "INTEGRATION_TYPE_PIANO", localName: "PIANO"},
   ],
 );
 
@@ -231,6 +232,8 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3501, name: "REQUEST_METHOD_POSCORP_ACCESSTOKEN", localName: "POSCORP_ACCESSTOKEN"},
     {no: 3502, name: "REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR", localName: "POSCORP_LOOKUP_GUARANTOR"},
     {no: 3503, name: "REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS", localName: "POSCORP_UPDATE_PAYMENT_STATUS"},
+    {no: 3601, name: "REQUEST_METHOD_PIANO_GET_USER", localName: "PIANO_GET_USER"},
+    {no: 3602, name: "REQUEST_METHOD_PIANO_UPDATE_USER", localName: "PIANO_UPDATE_USER"},
   ],
 );
 
@@ -799,6 +802,8 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3501, name: "poscorp_accesstoken", kind: "message", T: ExecutePoscorpAccesstoken, oneof: "value" },
     { no: 3502, name: "poscorp_lookup_guarantor", kind: "message", T: ExecutePoscorpLookupGuarantor, oneof: "value" },
     { no: 3503, name: "poscorp_update_payment_status", kind: "message", T: ExecutePoscorpUpdatePaymentStatus, oneof: "value" },
+    { no: 3601, name: "PIANO_GET_USER", kind: "message", T: ExecutePianoGetUser, oneof: "value" },
+    { no: 3602, name: "PIANO_UPDATE_USER", kind: "message", T: ExecutePianoUpdateUser, oneof: "value" },
   ],
 );
 
@@ -2321,6 +2326,22 @@ export const ExecutePoscorpLookupGuarantor = proto3.makeMessageType(
  */
 export const ExecutePoscorpUpdatePaymentStatus = proto3.makeMessageType(
   "api.commons.integrations.ExecutePoscorpUpdatePaymentStatus",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetUser
+ */
+export const ExecutePianoGetUser = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoGetUser",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateUser
+ */
+export const ExecutePianoUpdateUser = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoUpdateUser",
   [],
 );
 
