@@ -6,13 +6,29 @@
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
- * AuthConnectionSettings is the entity for oidc connection information.
+ * ConnectionType defines the different provider types an auth connection can be.
+ *
+ * @generated from enum api.commons.org.ConnectionType
+ */
+export const ConnectionType = proto3.makeEnum(
+  "api.commons.org.ConnectionType",
+  [
+    {no: 0, name: "CONNECTION_TYPE_NONE", localName: "NONE"},
+    {no: 1, name: "CONNECTION_TYPE_OIDC", localName: "OIDC"},
+  ],
+);
+
+/**
+ * AuthConnectionSettings is the entity for sso connection information.
  *
  * @generated from message api.commons.org.AuthConnectionSettings
  */
 export const AuthConnectionSettings = proto3.makeMessageType(
   "api.commons.org.AuthConnectionSettings",
   () => [
+    { no: 8, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "type", kind: "enum", T: proto3.getEnumType(ConnectionType) },
     { no: 1, name: "issuer_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "tenant_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },

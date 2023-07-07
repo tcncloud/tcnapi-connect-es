@@ -7,11 +7,49 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * AuthConnectionSettings is the entity for oidc connection information.
+ * ConnectionType defines the different provider types an auth connection can be.
+ *
+ * @generated from enum api.commons.org.ConnectionType
+ */
+export declare enum ConnectionType {
+  /**
+   * @generated from enum value: CONNECTION_TYPE_NONE = 0;
+   */
+  NONE = 0,
+
+  /**
+   * @generated from enum value: CONNECTION_TYPE_OIDC = 1;
+   */
+  OIDC = 1,
+}
+
+/**
+ * AuthConnectionSettings is the entity for sso connection information.
  *
  * @generated from message api.commons.org.AuthConnectionSettings
  */
 export declare class AuthConnectionSettings extends Message<AuthConnectionSettings> {
+  /**
+   * org_id is the id of the organization the connection belongs too.
+   *
+   * @generated from field: string org_id = 8;
+   */
+  orgId: string;
+
+  /**
+   * name is the name of the connection.
+   *
+   * @generated from field: string name = 9;
+   */
+  name: string;
+
+  /**
+   * type is what type of provider is used for the connection.
+   *
+   * @generated from field: api.commons.org.ConnectionType type = 10;
+   */
+  type: ConnectionType;
+
   /**
    * issuer_url is the url provided by the identity provider
    * used to get authorization tokens.
