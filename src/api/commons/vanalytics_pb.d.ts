@@ -77,18 +77,13 @@ export declare enum Language {
   ENGLISH = 0,
 
   /**
-   * @generated from enum value: LANGUAGE_AUTO_DETECT = 1;
+   * @generated from enum value: LANGUAGE_SPANISH = 1;
    */
-  AUTO_DETECT = 1,
+  SPANISH = 1,
 
   /**
-   * @generated from enum value: LANGUAGE_SPANISH = 2;
+   * @generated from enum value: LANGUAGE_ROMANIAN = 2;
    */
-  SPANISH = 2,
-
-  /**
-   * @generated from enum value: LANGUAGE_ROMANIAN = 3;
-   */
-  ROMANIAN = 3,
+  ROMANIAN = 2,
 }
 
