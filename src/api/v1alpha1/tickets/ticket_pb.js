@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketSla } from "../../commons/tickets_pb.js";
 
 /**
@@ -65,6 +65,34 @@ export const EditTicketReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "ticket_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "edit_value", kind: "message", T: EditAttribute },
+  ],
+);
+
+/**
+ * EditMaskTicketReq - Request for EditMaskTicket
+ * EditTicketReq would be deprecated
+ *
+ * @generated from message api.v1alpha1.tickets.EditMaskTicketReq
+ */
+export const EditMaskTicketReq = proto3.makeMessageType(
+  "api.v1alpha1.tickets.EditMaskTicketReq",
+  () => [
+    { no: 1, name: "ticket_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "edit_value", kind: "message", T: Ticket },
+    { no: 3, name: "edited_fields_mask", kind: "message", T: FieldMask, repeated: true },
+  ],
+);
+
+/**
+ * EditMaskTicketRes - Response for EditMaskTicketReq
+ * EditTicketRes would be deprecated
+ *
+ * @generated from message api.v1alpha1.tickets.EditMaskTicketRes
+ */
+export const EditMaskTicketRes = proto3.makeMessageType(
+  "api.v1alpha1.tickets.EditMaskTicketRes",
+  () => [
+    { no: 1, name: "is_edited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

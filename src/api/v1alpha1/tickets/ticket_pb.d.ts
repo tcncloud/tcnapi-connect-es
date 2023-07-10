@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketSla } from "../../commons/tickets_pb.js";
 
@@ -191,6 +191,70 @@ export declare class EditTicketReq extends Message<EditTicketReq> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditTicketReq;
 
   static equals(a: EditTicketReq | PlainMessage<EditTicketReq> | undefined, b: EditTicketReq | PlainMessage<EditTicketReq> | undefined): boolean;
+}
+
+/**
+ * EditMaskTicketReq - Request for EditMaskTicket
+ * EditTicketReq would be deprecated
+ *
+ * @generated from message api.v1alpha1.tickets.EditMaskTicketReq
+ */
+export declare class EditMaskTicketReq extends Message<EditMaskTicketReq> {
+  /**
+   * @generated from field: int64 ticket_sid = 1;
+   */
+  ticketSid: bigint;
+
+  /**
+   * @generated from field: api.commons.Ticket edit_value = 2;
+   */
+  editValue?: Ticket;
+
+  /**
+   * @generated from field: repeated google.protobuf.FieldMask edited_fields_mask = 3;
+   */
+  editedFieldsMask: FieldMask[];
+
+  constructor(data?: PartialMessage<EditMaskTicketReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.EditMaskTicketReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditMaskTicketReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditMaskTicketReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditMaskTicketReq;
+
+  static equals(a: EditMaskTicketReq | PlainMessage<EditMaskTicketReq> | undefined, b: EditMaskTicketReq | PlainMessage<EditMaskTicketReq> | undefined): boolean;
+}
+
+/**
+ * EditMaskTicketRes - Response for EditMaskTicketReq
+ * EditTicketRes would be deprecated
+ *
+ * @generated from message api.v1alpha1.tickets.EditMaskTicketRes
+ */
+export declare class EditMaskTicketRes extends Message<EditMaskTicketRes> {
+  /**
+   * @generated from field: bool is_edited = 1;
+   */
+  isEdited: boolean;
+
+  constructor(data?: PartialMessage<EditMaskTicketRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.EditMaskTicketRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditMaskTicketRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditMaskTicketRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditMaskTicketRes;
+
+  static equals(a: EditMaskTicketRes | PlainMessage<EditMaskTicketRes> | undefined, b: EditMaskTicketRes | PlainMessage<EditMaskTicketRes> | undefined): boolean;
 }
 
 /**
