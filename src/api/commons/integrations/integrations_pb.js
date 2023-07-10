@@ -107,6 +107,7 @@ export const RequestMethod = proto3.makeEnum(
     {no: 802, name: "REQUEST_METHOD_INSTAMED_VOIDPAYMENT", localName: "INSTAMED_VOIDPAYMENT"},
     {no: 901, name: "REQUEST_METHOD_USAEPAY_SUBMITCCPAYMENTS", localName: "USAEPAY_SUBMITCCPAYMENTS"},
     {no: 902, name: "REQUEST_METHOD_USAEPAY_SUBMITACHPAYMENTS", localName: "USAEPAY_SUBMITACHPAYMENTS"},
+    {no: 903, name: "REQUEST_METHOD_USAEPAY_GETCCTOKEN", localName: "USAEPAY_GETCCTOKEN"},
     {no: 1001, name: "REQUEST_METHOD_EZIDEBIT_SUBMITCCPAYMENTS", localName: "EZIDEBIT_SUBMITCCPAYMENTS"},
     {no: 1002, name: "REQUEST_METHOD_EZIDEBIT_SUBMITACHPAYMENTS", localName: "EZIDEBIT_SUBMITACHPAYMENTS"},
     {no: 1101, name: "REQUEST_METHOD_BAMBORA_SUBMITCCPAYMENTS", localName: "BAMBORA_SUBMITCCPAYMENTS"},
@@ -677,6 +678,7 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 802, name: "instamed_void_payment", kind: "message", T: ExecuteInstamedVoidPayment, oneof: "value" },
     { no: 901, name: "usaepay_submit_cc_payments", kind: "message", T: ExecuteUsaepaySubmitCcPayments, oneof: "value" },
     { no: 902, name: "usaepay_submit_ach_payments", kind: "message", T: ExecuteUsaepaySubmitAchPayments, oneof: "value" },
+    { no: 903, name: "usaepay_get_cc_token", kind: "message", T: ExecuteUsaepayGetCcToken, oneof: "value" },
     { no: 1001, name: "ezidebit_submit_cc_payments", kind: "message", T: ExecuteEzidebitSubmitCcPayments, oneof: "value" },
     { no: 1002, name: "ezidebit_submit_ach_payments", kind: "message", T: ExecuteEzidebitSubmitAchPayments, oneof: "value" },
     { no: 1101, name: "bambora_submit_cc_payments", kind: "message", T: ExecuteBamboraSubmitCcPayments, oneof: "value" },
@@ -1326,6 +1328,14 @@ export const ExecuteUsaepaySubmitCcPayments = proto3.makeMessageType(
  */
 export const ExecuteUsaepaySubmitAchPayments = proto3.makeMessageType(
   "api.commons.integrations.ExecuteUsaepaySubmitAchPayments",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteUsaepayGetCcToken
+ */
+export const ExecuteUsaepayGetCcToken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteUsaepayGetCcToken",
   [],
 );
 
