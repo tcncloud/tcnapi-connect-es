@@ -65,3 +65,30 @@ export declare enum Interval {
   LAST_180_DAYS = 10,
 }
 
+/**
+ * Language enumerates transcript language options.
+ *
+ * @generated from enum api.commons.Language
+ */
+export declare enum Language {
+  /**
+   * @generated from enum value: LANGUAGE_ENGLISH = 0;
+   */
+  ENGLISH = 0,
+
+  /**
+   * @generated from enum value: LANGUAGE_AUTO_DETECT = 1;
+   */
+  AUTO_DETECT = 1,
+
+  /**
+   * @generated from enum value: LANGUAGE_SPANISH = 2;
+   */
+  SPANISH = 2,
+
+  /**
+   * @generated from enum value: LANGUAGE_ROMANIAN = 3;
+   */
+  ROMANIAN = 3,
+}
+

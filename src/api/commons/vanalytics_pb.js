@@ -27,3 +27,18 @@ export const Interval = proto3.makeEnum(
   ],
 );
 
+/**
+ * Language enumerates transcript language options.
+ *
+ * @generated from enum api.commons.Language
+ */
+export const Language = proto3.makeEnum(
+  "api.commons.Language",
+  [
+    {no: 0, name: "LANGUAGE_ENGLISH", localName: "ENGLISH"},
+    {no: 1, name: "LANGUAGE_AUTO_DETECT", localName: "AUTO_DETECT"},
+    {no: 2, name: "LANGUAGE_SPANISH", localName: "SPANISH"},
+    {no: 3, name: "LANGUAGE_ROMANIAN", localName: "ROMANIAN"},
+  ],
+);
+
