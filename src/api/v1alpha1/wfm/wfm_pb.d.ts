@@ -8733,13 +8733,6 @@ export declare class DraftSchedule extends Message<DraftSchedule> {
    */
   performanceMetrics: PerformanceMetric[];
 
-  /**
-   * Schedule Scenario of the draft schedule.
-   *
-   * @generated from field: int64 schedule_scenario_sid = 10;
-   */
-  scheduleScenarioSid: bigint;
-
   constructor(data?: PartialMessage<DraftSchedule>);
 
   static readonly runtime: typeof proto3;

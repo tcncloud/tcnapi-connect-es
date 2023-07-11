@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CjsSearchDefinition, CjsSecureSearchCriteria, CollectionEntry, CollectionMetadata, DeleteCjsSearchDefinitionReq, DeleteCollectionEntryReq, DeleteCollectionReq, Element, Events, ExecuteCjsSearchDefinitionReq, ExecuteCjsSearchDefinitionRes, Field, Fields, FileTemplate, FindFieldUsagesReq, FindFieldUsagesRes, FindInvalidElementsReq, FindInvalidElementsRes, GetCjsSearchDefinitionReq, GetCjsSecureSearchCriteriaReq, GetCollectionEntriesReq, GetCollectionEntriesRes, GetCollectionReq, GetComplianceScrubListsReq, GetComplianceScrubListsRes, GetFileTemplatesReq, GetHistoryReq, GetHistoryRes, GetPublicKeyReq, ListAvailableFieldsByElementIdReq, ListCampaignLinksRes, ListCjsSearchDefinitionsReq, ListCjsSearchDefinitionsRes, ListCollectionsReq, ListCollectionsRes, ListElementsReq, ListFieldsReq, PaginatedSearchRes, ParseReq, ParseRes, PeekListReq, PeekListRes, ProcessElementReq, ProcessFields, PublicKey, ResetCollectionReq, SearchCollectionsPaginatedReq, StreamCollectionReq, UpdateFieldReq, ViewQueueReq } from "./lms_pb.js";
+import { CjsSearchDefinition, CjsSecureSearchCriteria, CollectionEntry, CollectionMetadata, DeleteCjsSearchDefinitionReq, DeleteCollectionEntryReq, DeleteCollectionReq, Element, Events, ExecuteCjsSearchDefinitionReq, ExecuteCjsSearchDefinitionRes, Field, Fields, FileTemplate, FindFieldUsagesReq, FindFieldUsagesRes, FindInvalidElementsReq, FindInvalidElementsRes, GetCjsSearchDefinitionReq, GetCjsSecureSearchCriteriaReq, GetCollectionEntriesReq, GetCollectionEntriesRes, GetCollectionReq, GetComplianceScrubListsReq, GetComplianceScrubListsRes, GetFileTemplatesReq, GetHistoryReq, GetHistoryRes, GetPublicKeyReq, ListAutocompleteFieldsReq, ListAutocompleteFieldsRes, ListAvailableFieldsByElementIdReq, ListCampaignLinksRes, ListCjsSearchDefinitionsReq, ListCjsSearchDefinitionsRes, ListCollectionsReq, ListCollectionsRes, ListElementsReq, ListFieldsForElementReq, ListFieldsForElementRes, ListFieldsReq, PaginatedSearchRes, ParseReq, ParseRes, PeekListReq, PeekListRes, ProcessElementReq, ProcessFields, PublicKey, ResetCollectionReq, SearchCollectionsPaginatedReq, StreamCollectionReq, UpdateFieldReq, ViewQueueReq } from "./lms_pb.js";
 import { Empty, MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -118,6 +118,24 @@ export declare const LMS: {
       readonly name: "ListAvailableFieldsByElementId",
       readonly I: typeof ListAvailableFieldsByElementIdReq,
       readonly O: typeof ProcessFields,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v0alpha.LMS.ListFieldsForElement
+     */
+    readonly listFieldsForElement: {
+      readonly name: "ListFieldsForElement",
+      readonly I: typeof ListFieldsForElementReq,
+      readonly O: typeof ListFieldsForElementRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v0alpha.LMS.ListAutocompleteFields
+     */
+    readonly listAutocompleteFields: {
+      readonly name: "ListAutocompleteFields",
+      readonly I: typeof ListAutocompleteFieldsReq,
+      readonly O: typeof ListAutocompleteFieldsRes,
       readonly kind: MethodKind.Unary,
     },
     /**
