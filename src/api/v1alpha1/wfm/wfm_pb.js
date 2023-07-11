@@ -3053,6 +3053,7 @@ export const DraftSchedule = proto3.makeMessageType(
     { no: 7, name: "created_by_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
     { no: 9, name: "performance_metrics", kind: "message", T: PerformanceMetric, repeated: true },
+    { no: 10, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
