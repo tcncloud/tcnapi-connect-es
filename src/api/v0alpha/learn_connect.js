@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -136,6 +136,28 @@ export const Learn = {
       name: "DeleteStandalone",
       I: DeleteStandaloneReq,
       O: DeleteStandaloneRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * get snippet from learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.Snippet
+     */
+    snippet: {
+      name: "Snippet",
+      I: SnippetReq,
+      O: SnippetRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * delete learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.DeleteLearnPages
+     */
+    deleteLearnPages: {
+      name: "DeleteLearnPages",
+      I: DeleteLearnPagesReq,
+      O: DeleteLearnPagesRes,
       kind: MethodKind.Unary,
     },
   }

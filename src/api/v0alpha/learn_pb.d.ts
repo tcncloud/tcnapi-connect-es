@@ -780,3 +780,155 @@ export declare class DeleteStandaloneRes extends Message<DeleteStandaloneRes> {
   static equals(a: DeleteStandaloneRes | PlainMessage<DeleteStandaloneRes> | undefined, b: DeleteStandaloneRes | PlainMessage<DeleteStandaloneRes> | undefined): boolean;
 }
 
+/**
+ * request to get snippets
+ *
+ * @generated from message api.v0alpha.SnippetReq
+ */
+export declare class SnippetReq extends Message<SnippetReq> {
+  /**
+   * locale used for the markdown contents
+   *
+   * @generated from field: string locale = 1;
+   */
+  locale: string;
+
+  constructor(data?: PartialMessage<SnippetReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SnippetReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SnippetReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SnippetReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SnippetReq;
+
+  static equals(a: SnippetReq | PlainMessage<SnippetReq> | undefined, b: SnippetReq | PlainMessage<SnippetReq> | undefined): boolean;
+}
+
+/**
+ * response to get snippets
+ *
+ * @generated from message api.v0alpha.SnippetRes
+ */
+export declare class SnippetRes extends Message<SnippetRes> {
+  /**
+   * @generated from field: repeated api.v0alpha.LearnSnippetDetails snippet_details = 1;
+   */
+  snippetDetails: LearnSnippetDetails[];
+
+  constructor(data?: PartialMessage<SnippetRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SnippetRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SnippetRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SnippetRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SnippetRes;
+
+  static equals(a: SnippetRes | PlainMessage<SnippetRes> | undefined, b: SnippetRes | PlainMessage<SnippetRes> | undefined): boolean;
+}
+
+/**
+ * snippet details
+ *
+ * @generated from message api.v0alpha.LearnSnippetDetails
+ */
+export declare class LearnSnippetDetails extends Message<LearnSnippetDetails> {
+  /**
+   * storage bucket
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * markdown content
+   *
+   * @generated from field: string content = 2;
+   */
+  content: string;
+
+  /**
+   * The last time this learning content was edited.
+   *
+   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3;
+   */
+  lastEditedTimestamp?: Timestamp;
+
+  constructor(data?: PartialMessage<LearnSnippetDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.LearnSnippetDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LearnSnippetDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LearnSnippetDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LearnSnippetDetails;
+
+  static equals(a: LearnSnippetDetails | PlainMessage<LearnSnippetDetails> | undefined, b: LearnSnippetDetails | PlainMessage<LearnSnippetDetails> | undefined): boolean;
+}
+
+/**
+ * request to delete learn pages
+ *
+ * @generated from message api.v0alpha.DeleteLearnPagesReq
+ */
+export declare class DeleteLearnPagesReq extends Message<DeleteLearnPagesReq> {
+  /**
+   * locale used for the markdown contents
+   *
+   * @generated from field: string locale = 1;
+   */
+  locale: string;
+
+  /**
+   * list of learning urls to be deleted
+   *
+   * @generated from field: repeated string url = 2;
+   */
+  url: string[];
+
+  constructor(data?: PartialMessage<DeleteLearnPagesReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.DeleteLearnPagesReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLearnPagesReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLearnPagesReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLearnPagesReq;
+
+  static equals(a: DeleteLearnPagesReq | PlainMessage<DeleteLearnPagesReq> | undefined, b: DeleteLearnPagesReq | PlainMessage<DeleteLearnPagesReq> | undefined): boolean;
+}
+
+/**
+ * response to delete learn pages
+ *
+ * @generated from message api.v0alpha.DeleteLearnPagesRes
+ */
+export declare class DeleteLearnPagesRes extends Message<DeleteLearnPagesRes> {
+  constructor(data?: PartialMessage<DeleteLearnPagesRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.DeleteLearnPagesRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLearnPagesRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLearnPagesRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLearnPagesRes;
+
+  static equals(a: DeleteLearnPagesRes | PlainMessage<DeleteLearnPagesRes> | undefined, b: DeleteLearnPagesRes | PlainMessage<DeleteLearnPagesRes> | undefined): boolean;
+}
+
