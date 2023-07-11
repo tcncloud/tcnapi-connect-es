@@ -97,6 +97,28 @@ export const EditMaskTicketRes = proto3.makeMessageType(
 );
 
 /**
+ * ListAllocatedTicketRes -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAllocatedTicketRes
+ */
+export const ListAllocatedTicketRes = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListAllocatedTicketRes",
+  () => [
+    { no: 1, name: "ticket_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * ListAllocatedTicketReq -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAllocatedTicketReq
+ */
+export const ListAllocatedTicketReq = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListAllocatedTicketReq",
+  [],
+);
+
+/**
  * EditTicketRes - Response for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketRes

@@ -258,6 +258,53 @@ export declare class EditMaskTicketRes extends Message<EditMaskTicketRes> {
 }
 
 /**
+ * ListAllocatedTicketRes -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAllocatedTicketRes
+ */
+export declare class ListAllocatedTicketRes extends Message<ListAllocatedTicketRes> {
+  /**
+   * @generated from field: repeated int64 ticket_sid = 1;
+   */
+  ticketSid: bigint[];
+
+  constructor(data?: PartialMessage<ListAllocatedTicketRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListAllocatedTicketRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAllocatedTicketRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAllocatedTicketRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAllocatedTicketRes;
+
+  static equals(a: ListAllocatedTicketRes | PlainMessage<ListAllocatedTicketRes> | undefined, b: ListAllocatedTicketRes | PlainMessage<ListAllocatedTicketRes> | undefined): boolean;
+}
+
+/**
+ * ListAllocatedTicketReq -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAllocatedTicketReq
+ */
+export declare class ListAllocatedTicketReq extends Message<ListAllocatedTicketReq> {
+  constructor(data?: PartialMessage<ListAllocatedTicketReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListAllocatedTicketReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAllocatedTicketReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAllocatedTicketReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAllocatedTicketReq;
+
+  static equals(a: ListAllocatedTicketReq | PlainMessage<ListAllocatedTicketReq> | undefined, b: ListAllocatedTicketReq | PlainMessage<ListAllocatedTicketReq> | undefined): boolean;
+}
+
+/**
  * EditTicketRes - Response for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketRes
