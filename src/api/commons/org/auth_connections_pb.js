@@ -26,9 +26,6 @@ export const ConnectionType = proto3.makeEnum(
 export const AuthConnectionSettings = proto3.makeMessageType(
   "api.commons.org.AuthConnectionSettings",
   () => [
-    { no: 8, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: "type", kind: "enum", T: proto3.getEnumType(ConnectionType) },
     { no: 1, name: "issuer_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "tenant_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -36,6 +33,9 @@ export const AuthConnectionSettings = proto3.makeMessageType(
     { no: 5, name: "secret_expiration", kind: "message", T: AuthConnectionSettings_SecretExpiration },
     { no: 6, name: "default_group", kind: "message", T: GroupItem },
     { no: 7, name: "custom_groups", kind: "message", T: GroupItem, repeated: true },
+    { no: 8, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "type", kind: "enum", T: proto3.getEnumType(ConnectionType) },
   ],
 );
 

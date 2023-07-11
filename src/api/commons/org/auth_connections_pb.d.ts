@@ -30,27 +30,6 @@ export declare enum ConnectionType {
  */
 export declare class AuthConnectionSettings extends Message<AuthConnectionSettings> {
   /**
-   * org_id is the id of the organization the connection belongs too.
-   *
-   * @generated from field: string org_id = 8;
-   */
-  orgId: string;
-
-  /**
-   * name is the name of the connection.
-   *
-   * @generated from field: string name = 9;
-   */
-  name: string;
-
-  /**
-   * type is what type of provider is used for the connection.
-   *
-   * @generated from field: api.commons.org.ConnectionType type = 10;
-   */
-  type: ConnectionType;
-
-  /**
    * issuer_url is the url provided by the identity provider
    * used to get authorization tokens.
    *
@@ -111,6 +90,27 @@ export declare class AuthConnectionSettings extends Message<AuthConnectionSettin
    * @generated from field: repeated api.commons.org.GroupItem custom_groups = 7;
    */
   customGroups: GroupItem[];
+
+  /**
+   * org_id is the id of the organization the connection belongs too.
+   *
+   * @generated from field: string org_id = 8;
+   */
+  orgId: string;
+
+  /**
+   * name is the name of the connection.
+   *
+   * @generated from field: string name = 9;
+   */
+  name: string;
+
+  /**
+   * type is what type of provider is used for the connection.
+   *
+   * @generated from field: api.commons.org.ConnectionType type = 10;
+   */
+  type: ConnectionType;
 
   constructor(data?: PartialMessage<AuthConnectionSettings>);
 
