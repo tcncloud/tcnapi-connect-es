@@ -79,6 +79,7 @@ export const Permission = proto3.makeEnum(
     {no: 2001, name: "PERMISSION_DELIVERY_NOTIFICATIONS_EDIT", localName: "DELIVERY_NOTIFICATIONS_EDIT"},
     {no: 3100, name: "PERMISSION_TICKETS_APP", localName: "TICKETS_APP"},
     {no: 3101, name: "PERMISSION_TICKETS_ADMIN", localName: "TICKETS_ADMIN"},
+    {no: 4000, name: "PERMISSION_WORKFLOWS", localName: "WORKFLOWS"},
   ],
 );
 

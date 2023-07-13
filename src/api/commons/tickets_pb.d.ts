@@ -186,6 +186,13 @@ export declare class Skills extends Message<Skills> {
    */
   skillId: string;
 
+  /**
+   * Mandatory = 0, Preferred = 1
+   *
+   * @generated from field: bool is_preferred = 2;
+   */
+  isPreferred: boolean;
+
   constructor(data?: PartialMessage<Skills>);
 
   static readonly runtime: typeof proto3;
@@ -357,7 +364,7 @@ export declare class CloseTicket extends Message<CloseTicket> {
 }
 
 /**
- * ConfirmClose - Boolean response Field post closing a Ticket
+ * ConfirmClose - Boolean response for closing a Ticket
  *
  * @generated from message api.commons.ConfirmClose
  */
@@ -755,6 +762,8 @@ export declare class EditAttribute extends Message<EditAttribute> {
   toVal: string;
 
   /**
+   * EditColumnType edit_column_type = 5;
+   *
    * @generated from field: bool is_edited = 4;
    */
   isEdited: boolean;

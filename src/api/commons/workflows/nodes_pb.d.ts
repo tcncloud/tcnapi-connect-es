@@ -7,6 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
 import type { OmniNodeError, OmniNodePrompt, OmniNodeSetSkill, OmniNodeToAgent } from "./omni_pb.js";
+import type { OmniBotNodeTestEnd, OmniBotNodeTestStart, OmniBotNodeTestStep } from "./omni_bot_pb.js";
 
 /**
  * A node is a single step in a flow
@@ -106,6 +107,24 @@ export declare class NodeDefinition extends Message<NodeDefinition> {
      */
     value: OmniNodeError;
     case: "omniError";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.OmniBotNodeTestStart omni_bot_test_start = 301;
+     */
+    value: OmniBotNodeTestStart;
+    case: "omniBotTestStart";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.OmniBotNodeTestStep omni_bot_test_step = 302;
+     */
+    value: OmniBotNodeTestStep;
+    case: "omniBotTestStep";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.OmniBotNodeTestEnd omni_bot_test_end = 303;
+     */
+    value: OmniBotNodeTestEnd;
+    case: "omniBotTestEnd";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<NodeDefinition>);

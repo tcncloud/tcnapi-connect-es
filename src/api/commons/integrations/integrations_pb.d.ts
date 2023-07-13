@@ -186,6 +186,16 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_SHIFT4 = 3400;
    */
   SHIFT4 = 3400,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_POSCORP = 3500;
+   */
+  POSCORP = 3500,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_PIANO = 3600;
+   */
+  PIANO = 3600,
 }
 
 /**
@@ -239,6 +249,26 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_RELATIENT_POSTBALANCEBYID = 206;
    */
   RELATIENT_POSTBALANCEBYID = 206,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_CREATE_FORTIS_ACHTOKEN = 207;
+   */
+  RELATIENT_CREATE_FORTIS_ACHTOKEN = 207,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_CREATE_FORTIS_CCTOKEN = 208;
+   */
+  RELATIENT_CREATE_FORTIS_CCTOKEN = 208,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 209;
+   */
+  RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT = 209,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_CC_PAYMENT = 210;
+   */
+  RELATIENT_FORTIS_TOKEN_CC_PAYMENT = 210,
 
   /**
    * @generated from enum value: REQUEST_METHOD_CYBERSOURCE_CREDITPAYMENT = 301;
@@ -399,6 +429,11 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_USAEPAY_SUBMITACHPAYMENTS = 902;
    */
   USAEPAY_SUBMITACHPAYMENTS = 902,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_USAEPAY_GETCCTOKEN = 903;
+   */
+  USAEPAY_GETCCTOKEN = 903,
 
   /**
    * @generated from enum value: REQUEST_METHOD_EZIDEBIT_SUBMITCCPAYMENTS = 1001;
@@ -594,6 +629,46 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_EXPERIAN_ACH_PAYMENTPLANREQUEST = 2005;
    */
   EXPERIAN_ACH_PAYMENTPLANREQUEST = 2005,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY = 2006;
+   */
+  EXPERIAN_STELLA_CARD_ENTRY = 2006,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_ECHECK = 2007;
+   */
+  EXPERIAN_STELLA_ECHECK = 2007,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION = 2008;
+   */
+  EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION = 2008,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_TOKEN_PAYMENT = 2009;
+   */
+  EXPERIAN_STELLA_TOKEN_PAYMENT = 2009,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_ACH_TOKENIZATION = 2010;
+   */
+  EXPERIAN_STELLA_ACH_TOKENIZATION = 2010,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN = 2011;
+   */
+  EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN = 2011,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS = 2012;
+   */
+  EXPERIAN_STELLA_PAYMENT_PLANS = 2012,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_AUTH = 2013;
+   */
+  EXPERIAN_STELLA_AUTH = 2013,
 
   /**
    * @generated from enum value: REQUEST_METHOD_NEWSCYCLE_LOGIN = 2101;
@@ -969,6 +1044,31 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_SHIFT4_CCPAYMENTS = 3401;
    */
   SHIFT4_CCPAYMENTS = 3401,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_POSCORP_ACCESSTOKEN = 3501;
+   */
+  POSCORP_ACCESSTOKEN = 3501,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR = 3502;
+   */
+  POSCORP_LOOKUP_GUARANTOR = 3502,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS = 3503;
+   */
+  POSCORP_UPDATE_PAYMENT_STATUS = 3503,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_GET_USER = 3601;
+   */
+  PIANO_GET_USER = 3601,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_UPDATE_USER = 3602;
+   */
+  PIANO_UPDATE_USER = 3602,
 }
 
 /**
@@ -2268,6 +2368,30 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
     case: "relatientPostBalanceById";
   } | {
     /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientCreateFortisAchtoken relatient_create_fortis_achtoken = 207;
+     */
+    value: ExecuteRelatientCreateFortisAchtoken;
+    case: "relatientCreateFortisAchtoken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientCreateFortisCctoken relatient_create_fortis_cctoken = 208;
+     */
+    value: ExecuteRelatientCreateFortisCctoken;
+    case: "relatientCreateFortisCctoken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment relatient_fortis_token_ach_debit_payment = 209;
+     */
+    value: ExecuteRelatientFortisTokenAchDebitPayment;
+    case: "relatientFortisTokenAchDebitPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteRelatientFortisTokenCcPayment relatient_fortis_token_cc_payment = 210;
+     */
+    value: ExecuteRelatientFortisTokenCcPayment;
+    case: "relatientFortisTokenCcPayment";
+  } | {
+    /**
      * @generated from field: api.commons.integrations.ExecuteCybersourceCreditPayment cybersource_credit_payment = 301;
      */
     value: ExecuteCybersourceCreditPayment;
@@ -2458,6 +2582,12 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteUsaepaySubmitAchPayments;
     case: "usaepaySubmitAchPayments";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteUsaepayGetCcToken usaepay_get_cc_token = 903;
+     */
+    value: ExecuteUsaepayGetCcToken;
+    case: "usaepayGetCcToken";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteEzidebitSubmitCcPayments ezidebit_submit_cc_payments = 1001;
@@ -2692,6 +2822,54 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteExperianAchPaymentPlanRequest;
     case: "experianAchPaymentPlanRequest";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaCardEntry experian_stella_card_entry = 2006;
+     */
+    value: ExecuteExperianStellaCardEntry;
+    case: "experianStellaCardEntry";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaECheck experian_stella_echeck = 2007;
+     */
+    value: ExecuteExperianStellaECheck;
+    case: "experianStellaEcheck";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization experian_stella_card_device_tokenization = 2008;
+     */
+    value: ExecuteExperianStellaCardDeviceTokenization;
+    case: "experianStellaCardDeviceTokenization";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaTokenPayment experian_stella_token_payment = 2009;
+     */
+    value: ExecuteExperianStellaTokenPayment;
+    case: "experianStellaTokenPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaAchTokenization experian_stella_ach_tokenization = 2010;
+     */
+    value: ExecuteExperianStellaAchTokenization;
+    case: "experianStellaAchTokenization";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaAddusaepaytoken experian_stella_add_usa_epay_token = 2011;
+     */
+    value: ExecuteExperianStellaAddusaepaytoken;
+    case: "experianStellaAddUsaEpayToken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaPaymentPlans experian_stella_payment_plans = 2012;
+     */
+    value: ExecuteExperianStellaPaymentPlans;
+    case: "experianStellaPaymentPlans";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaAuth experian_stella_auth = 2013;
+     */
+    value: ExecuteExperianStellaAuth;
+    case: "experianStellaAuth";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteNewscycleLogin newscycle_login = 2101;
@@ -3142,6 +3320,36 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteShift4CcPayments;
     case: "shift4CcPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePoscorpAccesstoken poscorp_accesstoken = 3501;
+     */
+    value: ExecutePoscorpAccesstoken;
+    case: "poscorpAccesstoken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePoscorpLookupGuarantor poscorp_lookup_guarantor = 3502;
+     */
+    value: ExecutePoscorpLookupGuarantor;
+    case: "poscorpLookupGuarantor";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePoscorpUpdatePaymentStatus poscorp_update_payment_status = 3503;
+     */
+    value: ExecutePoscorpUpdatePaymentStatus;
+    case: "poscorpUpdatePaymentStatus";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoGetUser PIANO_GET_USER = 3601;
+     */
+    value: ExecutePianoGetUser;
+    case: "PIANOGETUSER";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoUpdateUser PIANO_UPDATE_USER = 3602;
+     */
+    value: ExecutePianoUpdateUser;
+    case: "PIANOUPDATEUSER";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -3738,6 +3946,82 @@ export declare class ExecuteRelatientPostBalanceById extends Message<ExecuteRela
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientPostBalanceById;
 
   static equals(a: ExecuteRelatientPostBalanceById | PlainMessage<ExecuteRelatientPostBalanceById> | undefined, b: ExecuteRelatientPostBalanceById | PlainMessage<ExecuteRelatientPostBalanceById> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisAchtoken
+ */
+export declare class ExecuteRelatientCreateFortisAchtoken extends Message<ExecuteRelatientCreateFortisAchtoken> {
+  constructor(data?: PartialMessage<ExecuteRelatientCreateFortisAchtoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientCreateFortisAchtoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientCreateFortisAchtoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisAchtoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisAchtoken;
+
+  static equals(a: ExecuteRelatientCreateFortisAchtoken | PlainMessage<ExecuteRelatientCreateFortisAchtoken> | undefined, b: ExecuteRelatientCreateFortisAchtoken | PlainMessage<ExecuteRelatientCreateFortisAchtoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisCctoken
+ */
+export declare class ExecuteRelatientCreateFortisCctoken extends Message<ExecuteRelatientCreateFortisCctoken> {
+  constructor(data?: PartialMessage<ExecuteRelatientCreateFortisCctoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientCreateFortisCctoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientCreateFortisCctoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisCctoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientCreateFortisCctoken;
+
+  static equals(a: ExecuteRelatientCreateFortisCctoken | PlainMessage<ExecuteRelatientCreateFortisCctoken> | undefined, b: ExecuteRelatientCreateFortisCctoken | PlainMessage<ExecuteRelatientCreateFortisCctoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment
+ */
+export declare class ExecuteRelatientFortisTokenAchDebitPayment extends Message<ExecuteRelatientFortisTokenAchDebitPayment> {
+  constructor(data?: PartialMessage<ExecuteRelatientFortisTokenAchDebitPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientFortisTokenAchDebitPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenAchDebitPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenAchDebitPayment;
+
+  static equals(a: ExecuteRelatientFortisTokenAchDebitPayment | PlainMessage<ExecuteRelatientFortisTokenAchDebitPayment> | undefined, b: ExecuteRelatientFortisTokenAchDebitPayment | PlainMessage<ExecuteRelatientFortisTokenAchDebitPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenCcPayment
+ */
+export declare class ExecuteRelatientFortisTokenCcPayment extends Message<ExecuteRelatientFortisTokenCcPayment> {
+  constructor(data?: PartialMessage<ExecuteRelatientFortisTokenCcPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteRelatientFortisTokenCcPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteRelatientFortisTokenCcPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenCcPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteRelatientFortisTokenCcPayment;
+
+  static equals(a: ExecuteRelatientFortisTokenCcPayment | PlainMessage<ExecuteRelatientFortisTokenCcPayment> | undefined, b: ExecuteRelatientFortisTokenCcPayment | PlainMessage<ExecuteRelatientFortisTokenCcPayment> | undefined): boolean;
 }
 
 /**
@@ -4346,6 +4630,25 @@ export declare class ExecuteUsaepaySubmitAchPayments extends Message<ExecuteUsae
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteUsaepaySubmitAchPayments;
 
   static equals(a: ExecuteUsaepaySubmitAchPayments | PlainMessage<ExecuteUsaepaySubmitAchPayments> | undefined, b: ExecuteUsaepaySubmitAchPayments | PlainMessage<ExecuteUsaepaySubmitAchPayments> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteUsaepayGetCcToken
+ */
+export declare class ExecuteUsaepayGetCcToken extends Message<ExecuteUsaepayGetCcToken> {
+  constructor(data?: PartialMessage<ExecuteUsaepayGetCcToken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteUsaepayGetCcToken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteUsaepayGetCcToken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteUsaepayGetCcToken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteUsaepayGetCcToken;
+
+  static equals(a: ExecuteUsaepayGetCcToken | PlainMessage<ExecuteUsaepayGetCcToken> | undefined, b: ExecuteUsaepayGetCcToken | PlainMessage<ExecuteUsaepayGetCcToken> | undefined): boolean;
 }
 
 /**
@@ -5087,6 +5390,158 @@ export declare class ExecuteExperianAchPaymentPlanRequest extends Message<Execut
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianAchPaymentPlanRequest;
 
   static equals(a: ExecuteExperianAchPaymentPlanRequest | PlainMessage<ExecuteExperianAchPaymentPlanRequest> | undefined, b: ExecuteExperianAchPaymentPlanRequest | PlainMessage<ExecuteExperianAchPaymentPlanRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardEntry
+ */
+export declare class ExecuteExperianStellaCardEntry extends Message<ExecuteExperianStellaCardEntry> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaCardEntry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaCardEntry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaCardEntry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardEntry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardEntry;
+
+  static equals(a: ExecuteExperianStellaCardEntry | PlainMessage<ExecuteExperianStellaCardEntry> | undefined, b: ExecuteExperianStellaCardEntry | PlainMessage<ExecuteExperianStellaCardEntry> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaECheck
+ */
+export declare class ExecuteExperianStellaECheck extends Message<ExecuteExperianStellaECheck> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaECheck>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaECheck";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaECheck;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaECheck;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaECheck;
+
+  static equals(a: ExecuteExperianStellaECheck | PlainMessage<ExecuteExperianStellaECheck> | undefined, b: ExecuteExperianStellaECheck | PlainMessage<ExecuteExperianStellaECheck> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization
+ */
+export declare class ExecuteExperianStellaCardDeviceTokenization extends Message<ExecuteExperianStellaCardDeviceTokenization> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaCardDeviceTokenization>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaCardDeviceTokenization;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardDeviceTokenization;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardDeviceTokenization;
+
+  static equals(a: ExecuteExperianStellaCardDeviceTokenization | PlainMessage<ExecuteExperianStellaCardDeviceTokenization> | undefined, b: ExecuteExperianStellaCardDeviceTokenization | PlainMessage<ExecuteExperianStellaCardDeviceTokenization> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaTokenPayment
+ */
+export declare class ExecuteExperianStellaTokenPayment extends Message<ExecuteExperianStellaTokenPayment> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaTokenPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaTokenPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaTokenPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaTokenPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaTokenPayment;
+
+  static equals(a: ExecuteExperianStellaTokenPayment | PlainMessage<ExecuteExperianStellaTokenPayment> | undefined, b: ExecuteExperianStellaTokenPayment | PlainMessage<ExecuteExperianStellaTokenPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAchTokenization
+ */
+export declare class ExecuteExperianStellaAchTokenization extends Message<ExecuteExperianStellaAchTokenization> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaAchTokenization>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaAchTokenization";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaAchTokenization;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAchTokenization;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAchTokenization;
+
+  static equals(a: ExecuteExperianStellaAchTokenization | PlainMessage<ExecuteExperianStellaAchTokenization> | undefined, b: ExecuteExperianStellaAchTokenization | PlainMessage<ExecuteExperianStellaAchTokenization> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAddusaepaytoken
+ */
+export declare class ExecuteExperianStellaAddusaepaytoken extends Message<ExecuteExperianStellaAddusaepaytoken> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaAddusaepaytoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaAddusaepaytoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaAddusaepaytoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAddusaepaytoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAddusaepaytoken;
+
+  static equals(a: ExecuteExperianStellaAddusaepaytoken | PlainMessage<ExecuteExperianStellaAddusaepaytoken> | undefined, b: ExecuteExperianStellaAddusaepaytoken | PlainMessage<ExecuteExperianStellaAddusaepaytoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaPaymentPlans
+ */
+export declare class ExecuteExperianStellaPaymentPlans extends Message<ExecuteExperianStellaPaymentPlans> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaPaymentPlans>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaPaymentPlans";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaPaymentPlans;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaPaymentPlans;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaPaymentPlans;
+
+  static equals(a: ExecuteExperianStellaPaymentPlans | PlainMessage<ExecuteExperianStellaPaymentPlans> | undefined, b: ExecuteExperianStellaPaymentPlans | PlainMessage<ExecuteExperianStellaPaymentPlans> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAuth
+ */
+export declare class ExecuteExperianStellaAuth extends Message<ExecuteExperianStellaAuth> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaAuth>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaAuth";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaAuth;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAuth;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAuth;
+
+  static equals(a: ExecuteExperianStellaAuth | PlainMessage<ExecuteExperianStellaAuth> | undefined, b: ExecuteExperianStellaAuth | PlainMessage<ExecuteExperianStellaAuth> | undefined): boolean;
 }
 
 /**
@@ -6512,5 +6967,100 @@ export declare class ExecuteShift4CcPayments extends Message<ExecuteShift4CcPaym
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteShift4CcPayments;
 
   static equals(a: ExecuteShift4CcPayments | PlainMessage<ExecuteShift4CcPayments> | undefined, b: ExecuteShift4CcPayments | PlainMessage<ExecuteShift4CcPayments> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpAccesstoken
+ */
+export declare class ExecutePoscorpAccesstoken extends Message<ExecutePoscorpAccesstoken> {
+  constructor(data?: PartialMessage<ExecutePoscorpAccesstoken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePoscorpAccesstoken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePoscorpAccesstoken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePoscorpAccesstoken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePoscorpAccesstoken;
+
+  static equals(a: ExecutePoscorpAccesstoken | PlainMessage<ExecutePoscorpAccesstoken> | undefined, b: ExecutePoscorpAccesstoken | PlainMessage<ExecutePoscorpAccesstoken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpLookupGuarantor
+ */
+export declare class ExecutePoscorpLookupGuarantor extends Message<ExecutePoscorpLookupGuarantor> {
+  constructor(data?: PartialMessage<ExecutePoscorpLookupGuarantor>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePoscorpLookupGuarantor";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePoscorpLookupGuarantor;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePoscorpLookupGuarantor;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePoscorpLookupGuarantor;
+
+  static equals(a: ExecutePoscorpLookupGuarantor | PlainMessage<ExecutePoscorpLookupGuarantor> | undefined, b: ExecutePoscorpLookupGuarantor | PlainMessage<ExecutePoscorpLookupGuarantor> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpUpdatePaymentStatus
+ */
+export declare class ExecutePoscorpUpdatePaymentStatus extends Message<ExecutePoscorpUpdatePaymentStatus> {
+  constructor(data?: PartialMessage<ExecutePoscorpUpdatePaymentStatus>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePoscorpUpdatePaymentStatus";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePoscorpUpdatePaymentStatus;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePoscorpUpdatePaymentStatus;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePoscorpUpdatePaymentStatus;
+
+  static equals(a: ExecutePoscorpUpdatePaymentStatus | PlainMessage<ExecutePoscorpUpdatePaymentStatus> | undefined, b: ExecutePoscorpUpdatePaymentStatus | PlainMessage<ExecutePoscorpUpdatePaymentStatus> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetUser
+ */
+export declare class ExecutePianoGetUser extends Message<ExecutePianoGetUser> {
+  constructor(data?: PartialMessage<ExecutePianoGetUser>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoGetUser";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoGetUser;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoGetUser;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoGetUser;
+
+  static equals(a: ExecutePianoGetUser | PlainMessage<ExecutePianoGetUser> | undefined, b: ExecutePianoGetUser | PlainMessage<ExecutePianoGetUser> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateUser
+ */
+export declare class ExecutePianoUpdateUser extends Message<ExecutePianoUpdateUser> {
+  constructor(data?: PartialMessage<ExecutePianoUpdateUser>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoUpdateUser";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoUpdateUser;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoUpdateUser;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoUpdateUser;
+
+  static equals(a: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined, b: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined): boolean;
 }
 

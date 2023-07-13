@@ -48,6 +48,8 @@ export const IntegrationType = proto3.makeEnum(
     {no: 3200, name: "INTEGRATION_TYPE_I2C", localName: "I2C"},
     {no: 3300, name: "INTEGRATION_TYPE_OPAYO", localName: "OPAYO"},
     {no: 3400, name: "INTEGRATION_TYPE_SHIFT4", localName: "SHIFT4"},
+    {no: 3500, name: "INTEGRATION_TYPE_POSCORP", localName: "POSCORP"},
+    {no: 3600, name: "INTEGRATION_TYPE_PIANO", localName: "PIANO"},
   ],
 );
 
@@ -69,6 +71,10 @@ export const RequestMethod = proto3.makeEnum(
     {no: 204, name: "REQUEST_METHOD_RELATIENT_POSTPATIENTBALANCE", localName: "RELATIENT_POSTPATIENTBALANCE"},
     {no: 205, name: "REQUEST_METHOD_RELATIENT_GETPATIENT", localName: "RELATIENT_GETPATIENT"},
     {no: 206, name: "REQUEST_METHOD_RELATIENT_POSTBALANCEBYID", localName: "RELATIENT_POSTBALANCEBYID"},
+    {no: 207, name: "REQUEST_METHOD_RELATIENT_CREATE_FORTIS_ACHTOKEN", localName: "RELATIENT_CREATE_FORTIS_ACHTOKEN"},
+    {no: 208, name: "REQUEST_METHOD_RELATIENT_CREATE_FORTIS_CCTOKEN", localName: "RELATIENT_CREATE_FORTIS_CCTOKEN"},
+    {no: 209, name: "REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT", localName: "RELATIENT_FORTIS_TOKEN_ACH_DEBIT_PAYMENT"},
+    {no: 210, name: "REQUEST_METHOD_RELATIENT_FORTIS_TOKEN_CC_PAYMENT", localName: "RELATIENT_FORTIS_TOKEN_CC_PAYMENT"},
     {no: 301, name: "REQUEST_METHOD_CYBERSOURCE_CREDITPAYMENT", localName: "CYBERSOURCE_CREDITPAYMENT"},
     {no: 302, name: "REQUEST_METHOD_CYBERSOURCE_ECHECKPAYMENT", localName: "CYBERSOURCE_ECHECKPAYMENT"},
     {no: 401, name: "REQUEST_METHOD_CIRCPRO_PHONELOOKUPWITHBUNDLE", localName: "CIRCPRO_PHONELOOKUPWITHBUNDLE"},
@@ -101,6 +107,7 @@ export const RequestMethod = proto3.makeEnum(
     {no: 802, name: "REQUEST_METHOD_INSTAMED_VOIDPAYMENT", localName: "INSTAMED_VOIDPAYMENT"},
     {no: 901, name: "REQUEST_METHOD_USAEPAY_SUBMITCCPAYMENTS", localName: "USAEPAY_SUBMITCCPAYMENTS"},
     {no: 902, name: "REQUEST_METHOD_USAEPAY_SUBMITACHPAYMENTS", localName: "USAEPAY_SUBMITACHPAYMENTS"},
+    {no: 903, name: "REQUEST_METHOD_USAEPAY_GETCCTOKEN", localName: "USAEPAY_GETCCTOKEN"},
     {no: 1001, name: "REQUEST_METHOD_EZIDEBIT_SUBMITCCPAYMENTS", localName: "EZIDEBIT_SUBMITCCPAYMENTS"},
     {no: 1002, name: "REQUEST_METHOD_EZIDEBIT_SUBMITACHPAYMENTS", localName: "EZIDEBIT_SUBMITACHPAYMENTS"},
     {no: 1101, name: "REQUEST_METHOD_BAMBORA_SUBMITCCPAYMENTS", localName: "BAMBORA_SUBMITCCPAYMENTS"},
@@ -140,6 +147,14 @@ export const RequestMethod = proto3.makeEnum(
     {no: 2003, name: "REQUEST_METHOD_EXPERIAN_BALANCEREQUEST", localName: "EXPERIAN_BALANCEREQUEST"},
     {no: 2004, name: "REQUEST_METHOD_EXPERIAN_ACH_PAYMENT_REQUEST", localName: "EXPERIAN_ACH_PAYMENT_REQUEST"},
     {no: 2005, name: "REQUEST_METHOD_EXPERIAN_ACH_PAYMENTPLANREQUEST", localName: "EXPERIAN_ACH_PAYMENTPLANREQUEST"},
+    {no: 2006, name: "REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY", localName: "EXPERIAN_STELLA_CARD_ENTRY"},
+    {no: 2007, name: "REQUEST_METHOD_EXPERIAN_STELLA_ECHECK", localName: "EXPERIAN_STELLA_ECHECK"},
+    {no: 2008, name: "REQUEST_METHOD_EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION", localName: "EXPERIAN_STELLA_CARD_DEVICE_TOKENIZATION"},
+    {no: 2009, name: "REQUEST_METHOD_EXPERIAN_STELLA_TOKEN_PAYMENT", localName: "EXPERIAN_STELLA_TOKEN_PAYMENT"},
+    {no: 2010, name: "REQUEST_METHOD_EXPERIAN_STELLA_ACH_TOKENIZATION", localName: "EXPERIAN_STELLA_ACH_TOKENIZATION"},
+    {no: 2011, name: "REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN", localName: "EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN"},
+    {no: 2012, name: "REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS", localName: "EXPERIAN_STELLA_PAYMENT_PLANS"},
+    {no: 2013, name: "REQUEST_METHOD_EXPERIAN_STELLA_AUTH", localName: "EXPERIAN_STELLA_AUTH"},
     {no: 2101, name: "REQUEST_METHOD_NEWSCYCLE_LOGIN", localName: "NEWSCYCLE_LOGIN"},
     {no: 2102, name: "REQUEST_METHOD_NEWSCYCLE_SEARCHPAGE", localName: "NEWSCYCLE_SEARCHPAGE"},
     {no: 2103, name: "REQUEST_METHOD_NEWSCYCLE_BILLINGINFO", localName: "NEWSCYCLE_BILLINGINFO"},
@@ -215,6 +230,11 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3210, name: "REQUEST_METHOD_I2C_TRANSACTION_HISTORY", localName: "I2C_TRANSACTION_HISTORY"},
     {no: 3301, name: "REQUEST_METHOD_OPAYO_CCPAYMENTS", localName: "OPAYO_CCPAYMENTS"},
     {no: 3401, name: "REQUEST_METHOD_SHIFT4_CCPAYMENTS", localName: "SHIFT4_CCPAYMENTS"},
+    {no: 3501, name: "REQUEST_METHOD_POSCORP_ACCESSTOKEN", localName: "POSCORP_ACCESSTOKEN"},
+    {no: 3502, name: "REQUEST_METHOD_POSCORP_LOOKUP_GUARANTOR", localName: "POSCORP_LOOKUP_GUARANTOR"},
+    {no: 3503, name: "REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS", localName: "POSCORP_UPDATE_PAYMENT_STATUS"},
+    {no: 3601, name: "REQUEST_METHOD_PIANO_GET_USER", localName: "PIANO_GET_USER"},
+    {no: 3602, name: "REQUEST_METHOD_PIANO_UPDATE_USER", localName: "PIANO_UPDATE_USER"},
   ],
 );
 
@@ -622,6 +642,10 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 204, name: "relatient_post_patient_balance", kind: "message", T: ExecuteRelatientPostPatientBalance, oneof: "value" },
     { no: 205, name: "relatient_get_patient", kind: "message", T: ExecuteRelatientGetPatient, oneof: "value" },
     { no: 206, name: "relatient_post_balance_by_id", kind: "message", T: ExecuteRelatientPostBalanceById, oneof: "value" },
+    { no: 207, name: "relatient_create_fortis_achtoken", kind: "message", T: ExecuteRelatientCreateFortisAchtoken, oneof: "value" },
+    { no: 208, name: "relatient_create_fortis_cctoken", kind: "message", T: ExecuteRelatientCreateFortisCctoken, oneof: "value" },
+    { no: 209, name: "relatient_fortis_token_ach_debit_payment", kind: "message", T: ExecuteRelatientFortisTokenAchDebitPayment, oneof: "value" },
+    { no: 210, name: "relatient_fortis_token_cc_payment", kind: "message", T: ExecuteRelatientFortisTokenCcPayment, oneof: "value" },
     { no: 301, name: "cybersource_credit_payment", kind: "message", T: ExecuteCybersourceCreditPayment, oneof: "value" },
     { no: 302, name: "cybersource_echeck_payment", kind: "message", T: ExecuteCybersourceEcheckPayment, oneof: "value" },
     { no: 401, name: "circpro_phone_lookup_with_bundle", kind: "message", T: ExecuteCircproPhoneLookupWithBundle, oneof: "value" },
@@ -654,6 +678,7 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 802, name: "instamed_void_payment", kind: "message", T: ExecuteInstamedVoidPayment, oneof: "value" },
     { no: 901, name: "usaepay_submit_cc_payments", kind: "message", T: ExecuteUsaepaySubmitCcPayments, oneof: "value" },
     { no: 902, name: "usaepay_submit_ach_payments", kind: "message", T: ExecuteUsaepaySubmitAchPayments, oneof: "value" },
+    { no: 903, name: "usaepay_get_cc_token", kind: "message", T: ExecuteUsaepayGetCcToken, oneof: "value" },
     { no: 1001, name: "ezidebit_submit_cc_payments", kind: "message", T: ExecuteEzidebitSubmitCcPayments, oneof: "value" },
     { no: 1002, name: "ezidebit_submit_ach_payments", kind: "message", T: ExecuteEzidebitSubmitAchPayments, oneof: "value" },
     { no: 1101, name: "bambora_submit_cc_payments", kind: "message", T: ExecuteBamboraSubmitCcPayments, oneof: "value" },
@@ -693,6 +718,14 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 2003, name: "experian_balancerequest", kind: "message", T: ExecuteExperianBalancerequest, oneof: "value" },
     { no: 2004, name: "experian_ach_payment_request", kind: "message", T: ExecuteExperianAchPaymentRequest, oneof: "value" },
     { no: 2005, name: "experian_ach_payment_plan_request", kind: "message", T: ExecuteExperianAchPaymentPlanRequest, oneof: "value" },
+    { no: 2006, name: "experian_stella_card_entry", kind: "message", T: ExecuteExperianStellaCardEntry, oneof: "value" },
+    { no: 2007, name: "experian_stella_echeck", kind: "message", T: ExecuteExperianStellaECheck, oneof: "value" },
+    { no: 2008, name: "experian_stella_card_device_tokenization", kind: "message", T: ExecuteExperianStellaCardDeviceTokenization, oneof: "value" },
+    { no: 2009, name: "experian_stella_token_payment", kind: "message", T: ExecuteExperianStellaTokenPayment, oneof: "value" },
+    { no: 2010, name: "experian_stella_ach_tokenization", kind: "message", T: ExecuteExperianStellaAchTokenization, oneof: "value" },
+    { no: 2011, name: "experian_stella_add_usa_epay_token", kind: "message", T: ExecuteExperianStellaAddusaepaytoken, oneof: "value" },
+    { no: 2012, name: "experian_stella_payment_plans", kind: "message", T: ExecuteExperianStellaPaymentPlans, oneof: "value" },
+    { no: 2013, name: "experian_stella_auth", kind: "message", T: ExecuteExperianStellaAuth, oneof: "value" },
     { no: 2101, name: "newscycle_login", kind: "message", T: ExecuteNewscycleLogin, oneof: "value" },
     { no: 2102, name: "newscycle_search_page", kind: "message", T: ExecuteNewscycleSearchPage, oneof: "value" },
     { no: 2103, name: "newscycle_billing_info", kind: "message", T: ExecuteNewscycleBillingInfo, oneof: "value" },
@@ -768,6 +801,11 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3210, name: "i2c_transaction_history", kind: "message", T: ExecuteI2cTransactionHistory, oneof: "value" },
     { no: 3301, name: "opayo_cc_payment", kind: "message", T: ExecuteOpayoCcPayments, oneof: "value" },
     { no: 3401, name: "shift4_cc_payment", kind: "message", T: ExecuteShift4CcPayments, oneof: "value" },
+    { no: 3501, name: "poscorp_accesstoken", kind: "message", T: ExecutePoscorpAccesstoken, oneof: "value" },
+    { no: 3502, name: "poscorp_lookup_guarantor", kind: "message", T: ExecutePoscorpLookupGuarantor, oneof: "value" },
+    { no: 3503, name: "poscorp_update_payment_status", kind: "message", T: ExecutePoscorpUpdatePaymentStatus, oneof: "value" },
+    { no: 3601, name: "PIANO_GET_USER", kind: "message", T: ExecutePianoGetUser, oneof: "value" },
+    { no: 3602, name: "PIANO_UPDATE_USER", kind: "message", T: ExecutePianoUpdateUser, oneof: "value" },
   ],
 );
 
@@ -1002,6 +1040,38 @@ export const ExecuteRelatientGetPatient = proto3.makeMessageType(
  */
 export const ExecuteRelatientPostBalanceById = proto3.makeMessageType(
   "api.commons.integrations.ExecuteRelatientPostBalanceById",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisAchtoken
+ */
+export const ExecuteRelatientCreateFortisAchtoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientCreateFortisAchtoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientCreateFortisCctoken
+ */
+export const ExecuteRelatientCreateFortisCctoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientCreateFortisCctoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment
+ */
+export const ExecuteRelatientFortisTokenAchDebitPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientFortisTokenAchDebitPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteRelatientFortisTokenCcPayment
+ */
+export const ExecuteRelatientFortisTokenCcPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteRelatientFortisTokenCcPayment",
   [],
 );
 
@@ -1258,6 +1328,14 @@ export const ExecuteUsaepaySubmitCcPayments = proto3.makeMessageType(
  */
 export const ExecuteUsaepaySubmitAchPayments = proto3.makeMessageType(
   "api.commons.integrations.ExecuteUsaepaySubmitAchPayments",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteUsaepayGetCcToken
+ */
+export const ExecuteUsaepayGetCcToken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteUsaepayGetCcToken",
   [],
 );
 
@@ -1570,6 +1648,70 @@ export const ExecuteExperianAchPaymentRequest = proto3.makeMessageType(
  */
 export const ExecuteExperianAchPaymentPlanRequest = proto3.makeMessageType(
   "api.commons.integrations.ExecuteExperianAchPaymentPlanRequest",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardEntry
+ */
+export const ExecuteExperianStellaCardEntry = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaCardEntry",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaECheck
+ */
+export const ExecuteExperianStellaECheck = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaECheck",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization
+ */
+export const ExecuteExperianStellaCardDeviceTokenization = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaCardDeviceTokenization",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaTokenPayment
+ */
+export const ExecuteExperianStellaTokenPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaTokenPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAchTokenization
+ */
+export const ExecuteExperianStellaAchTokenization = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaAchTokenization",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAddusaepaytoken
+ */
+export const ExecuteExperianStellaAddusaepaytoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaAddusaepaytoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaPaymentPlans
+ */
+export const ExecuteExperianStellaPaymentPlans = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaPaymentPlans",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaAuth
+ */
+export const ExecuteExperianStellaAuth = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaAuth",
   [],
 );
 
@@ -2170,6 +2312,46 @@ export const ExecuteOpayoCcPayments = proto3.makeMessageType(
  */
 export const ExecuteShift4CcPayments = proto3.makeMessageType(
   "api.commons.integrations.ExecuteShift4CcPayments",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpAccesstoken
+ */
+export const ExecutePoscorpAccesstoken = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePoscorpAccesstoken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpLookupGuarantor
+ */
+export const ExecutePoscorpLookupGuarantor = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePoscorpLookupGuarantor",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePoscorpUpdatePaymentStatus
+ */
+export const ExecutePoscorpUpdatePaymentStatus = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePoscorpUpdatePaymentStatus",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetUser
+ */
+export const ExecutePianoGetUser = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoGetUser",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateUser
+ */
+export const ExecutePianoUpdateUser = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoUpdateUser",
   [],
 );
 

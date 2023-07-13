@@ -1942,6 +1942,29 @@ export const DeleteWFMAgentMembershipsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the DeleteWFMAgentsMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteWFMAgentsMembershipsReq
+ */
+export const DeleteWFMAgentsMembershipsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteWFMAgentsMembershipsReq",
+  () => [
+    { no: 1, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "agent_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for DeleteWFMAgentsMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteWFMAgentsMembershipsRes
+ */
+export const DeleteWFMAgentsMembershipsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteWFMAgentsMembershipsRes",
+  [],
+);
+
+/**
  * DOW Placement
  *
  * @generated from message api.v1alpha1.wfm.DOWPlacement
@@ -2039,6 +2062,7 @@ export const ListShiftTemplatesBySidsReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListShiftTemplatesBySidsReq",
   () => [
     { no: 1, name: "shift_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "include_placement_rules", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -2614,6 +2638,7 @@ export const CopyScenarioReq = proto3.makeMessageType(
     { no: 2, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "schedule_range", kind: "message", T: DatetimeRange },
   ],
 );
 
@@ -3027,6 +3052,7 @@ export const DraftSchedule = proto3.makeMessageType(
     { no: 7, name: "created_by_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
     { no: 9, name: "performance_metrics", kind: "message", T: PerformanceMetric, repeated: true },
+    { no: 10, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
