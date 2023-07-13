@@ -3466,7 +3466,7 @@ export const CreateShiftInstanceReq = proto3.makeMessageType(
 export const CreateShiftInstanceRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.CreateShiftInstanceRes",
   () => [
-    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance, repeated: true },
+    { no: 1, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );

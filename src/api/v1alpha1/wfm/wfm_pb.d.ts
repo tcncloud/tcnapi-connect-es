@@ -10093,9 +10093,9 @@ export declare class CreateShiftInstanceRes extends Message<CreateShiftInstanceR
   /**
    * Any shift instances that were created.
    *
-   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance shift_instance = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance shift_instances = 1;
    */
-  shiftInstance: ShiftInstance[];
+  shiftInstances: ShiftInstance[];
 
   /**
    * Diagnostics to report cause if shift instances fail to build.
