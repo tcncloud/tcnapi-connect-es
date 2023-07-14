@@ -2624,6 +2624,8 @@ export const ScheduleScenario = proto3.makeMessageType(
     { no: 6, name: "is_default", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 7, name: "copied_from_scenario_sid", kind: "message", T: Int64Value },
     { no: 8, name: "schedule_range", kind: "message", T: DatetimeRange },
+    { no: 9, name: "datetime_set_to_inactive", kind: "message", T: Timestamp },
+    { no: 10, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -3053,6 +3055,7 @@ export const DraftSchedule = proto3.makeMessageType(
     { no: 7, name: "created_by_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
     { no: 9, name: "performance_metrics", kind: "message", T: PerformanceMetric, repeated: true },
+    { no: 10, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

@@ -431,6 +431,11 @@ export declare enum RequestMethod {
   USAEPAY_SUBMITACHPAYMENTS = 902,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_USAEPAY_GETCCTOKEN = 903;
+   */
+  USAEPAY_GETCCTOKEN = 903,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_EZIDEBIT_SUBMITCCPAYMENTS = 1001;
    */
   EZIDEBIT_SUBMITCCPAYMENTS = 1001,
@@ -2579,6 +2584,12 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
     case: "usaepaySubmitAchPayments";
   } | {
     /**
+     * @generated from field: api.commons.integrations.ExecuteUsaepayGetCcToken usaepay_get_cc_token = 903;
+     */
+    value: ExecuteUsaepayGetCcToken;
+    case: "usaepayGetCcToken";
+  } | {
+    /**
      * @generated from field: api.commons.integrations.ExecuteEzidebitSubmitCcPayments ezidebit_submit_cc_payments = 1001;
      */
     value: ExecuteEzidebitSubmitCcPayments;
@@ -4619,6 +4630,25 @@ export declare class ExecuteUsaepaySubmitAchPayments extends Message<ExecuteUsae
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteUsaepaySubmitAchPayments;
 
   static equals(a: ExecuteUsaepaySubmitAchPayments | PlainMessage<ExecuteUsaepaySubmitAchPayments> | undefined, b: ExecuteUsaepaySubmitAchPayments | PlainMessage<ExecuteUsaepaySubmitAchPayments> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteUsaepayGetCcToken
+ */
+export declare class ExecuteUsaepayGetCcToken extends Message<ExecuteUsaepayGetCcToken> {
+  constructor(data?: PartialMessage<ExecuteUsaepayGetCcToken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteUsaepayGetCcToken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteUsaepayGetCcToken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteUsaepayGetCcToken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteUsaepayGetCcToken;
+
+  static equals(a: ExecuteUsaepayGetCcToken | PlainMessage<ExecuteUsaepayGetCcToken> | undefined, b: ExecuteUsaepayGetCcToken | PlainMessage<ExecuteUsaepayGetCcToken> | undefined): boolean;
 }
 
 /**
