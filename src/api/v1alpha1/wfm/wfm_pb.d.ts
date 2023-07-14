@@ -7492,6 +7492,20 @@ export declare class ScheduleScenario extends Message<ScheduleScenario> {
    */
   scheduleRange?: DatetimeRange;
 
+  /**
+   * Datetime that the sceneario was set to inactive.
+   *
+   * @generated from field: google.protobuf.Timestamp datetime_set_to_inactive = 9;
+   */
+  datetimeSetToInactive?: Timestamp;
+
+  /**
+   * Indicates whether or not the scenario is active.
+   *
+   * @generated from field: bool is_active = 10;
+   */
+  isActive: boolean;
+
   constructor(data?: PartialMessage<ScheduleScenario>);
 
   static readonly runtime: typeof proto3;

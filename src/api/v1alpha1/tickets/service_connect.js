@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditTicketReq, EditTicketRes, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -189,6 +189,27 @@ export const Tickets = {
       name: "AssignSelf",
       I: CreateSelfAssignReq,
       O: CreateSelfAssignRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Public Method to edit a ticket.
+     * EditTicket would be deprecated
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.EditMaskTicket
+     */
+    editMaskTicket: {
+      name: "EditMaskTicket",
+      I: EditMaskTicketReq,
+      O: EditMaskTicketRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListAllocatedTickets
+     */
+    listAllocatedTickets: {
+      name: "ListAllocatedTickets",
+      I: ListAllocatedTicketReq,
+      O: ListAllocatedTicketRes,
       kind: MethodKind.Unary,
     },
   }

@@ -2623,6 +2623,8 @@ export const ScheduleScenario = proto3.makeMessageType(
     { no: 6, name: "is_default", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 7, name: "copied_from_scenario_sid", kind: "message", T: Int64Value },
     { no: 8, name: "schedule_range", kind: "message", T: DatetimeRange },
+    { no: 9, name: "datetime_set_to_inactive", kind: "message", T: Timestamp },
+    { no: 10, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
