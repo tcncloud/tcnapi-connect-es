@@ -126,7 +126,6 @@ export const UpdateSkillProfileRes = proto3.makeMessageType(
 export const UpdateSkillProfileProficienciesReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "proficiencies", kind: "message", T: UpdateSkillProfileProficienciesReq_Proficiency, repeated: true },
   ],
 );
@@ -3447,6 +3446,7 @@ export const DeleteDraftScheduleRes = proto3.makeMessageType(
 
 /**
  * Request message for the CreateShiftInstance RPC
+ * Method is Unimplimented. Use CreateShiftInstanceV2 instead.
  *
  * @generated from message api.v1alpha1.wfm.CreateShiftInstanceReq
  */
@@ -3473,6 +3473,35 @@ export const CreateShiftInstanceRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
     { no: 2, name: "performance_metrics", kind: "message", T: PerformanceMetric, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the CreateShiftInstanceV2 RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateShiftInstanceV2Req
+ */
+export const CreateShiftInstanceV2Req = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateShiftInstanceV2Req",
+  () => [
+    { no: 1, name: "draft_schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "start_datetime", kind: "message", T: Timestamp },
+    { no: 4, name: "is_locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the CreateShiftInstanceV2 RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateShiftInstanceV2Res
+ */
+export const CreateShiftInstanceV2Res = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateShiftInstanceV2Res",
+  () => [
+    { no: 1, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );
 

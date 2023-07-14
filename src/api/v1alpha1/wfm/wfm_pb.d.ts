@@ -372,13 +372,6 @@ export declare class UpdateSkillProfileRes extends Message<UpdateSkillProfileRes
  */
 export declare class UpdateSkillProfileProficienciesReq extends Message<UpdateSkillProfileProficienciesReq> {
   /**
-   * Org ID that the skill profiles belong to.
-   *
-   * @generated from field: string org_id = 1;
-   */
-  orgId: string;
-
-  /**
    * Proficiencies to update.
    *
    * @generated from field: repeated api.v1alpha1.wfm.UpdateSkillProfileProficienciesReq.Proficiency proficiencies = 2;
@@ -10049,6 +10042,7 @@ export declare class DeleteDraftScheduleRes extends Message<DeleteDraftScheduleR
 
 /**
  * Request message for the CreateShiftInstance RPC
+ * Method is Unimplimented. Use CreateShiftInstanceV2 instead.
  *
  * @generated from message api.v1alpha1.wfm.CreateShiftInstanceReq
  */
@@ -10151,6 +10145,99 @@ export declare class CreateShiftInstanceRes extends Message<CreateShiftInstanceR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateShiftInstanceRes;
 
   static equals(a: CreateShiftInstanceRes | PlainMessage<CreateShiftInstanceRes> | undefined, b: CreateShiftInstanceRes | PlainMessage<CreateShiftInstanceRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateShiftInstanceV2 RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateShiftInstanceV2Req
+ */
+export declare class CreateShiftInstanceV2Req extends Message<CreateShiftInstanceV2Req> {
+  /**
+   * ID of the draft schedule for the shift instance.
+   *
+   * @generated from field: int64 draft_schedule_sid = 1;
+   */
+  draftScheduleSid: bigint;
+
+  /**
+   * ID of the shift template for the shift instance.
+   *
+   * @generated from field: int64 shift_template_sid = 2;
+   */
+  shiftTemplateSid: bigint;
+
+  /**
+   * Start datetime of the shift instance.
+   *
+   * @generated from field: google.protobuf.Timestamp start_datetime = 3;
+   */
+  startDatetime?: Timestamp;
+
+  /**
+   * Indicates whether the shift instance is locked.
+   *
+   * @generated from field: bool is_locked = 4;
+   */
+  isLocked: boolean;
+
+  /**
+   * ID of the wfm agents for the shift instance.
+   * If empty it will create a new unassigned WfmAgent for the shift instance.
+   * If given more than one sid, then a copy of the instance will be created for each agent.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 5;
+   */
+  wfmAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<CreateShiftInstanceV2Req>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateShiftInstanceV2Req";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateShiftInstanceV2Req;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateShiftInstanceV2Req;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateShiftInstanceV2Req;
+
+  static equals(a: CreateShiftInstanceV2Req | PlainMessage<CreateShiftInstanceV2Req> | undefined, b: CreateShiftInstanceV2Req | PlainMessage<CreateShiftInstanceV2Req> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateShiftInstanceV2 RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateShiftInstanceV2Res
+ */
+export declare class CreateShiftInstanceV2Res extends Message<CreateShiftInstanceV2Res> {
+  /**
+   * Any shift instances that were created.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance shift_instances = 1;
+   */
+  shiftInstances: ShiftInstance[];
+
+  /**
+   * Diagnostics to report cause if shift instances fail to build.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<CreateShiftInstanceV2Res>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateShiftInstanceV2Res";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateShiftInstanceV2Res;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateShiftInstanceV2Res;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateShiftInstanceV2Res;
+
+  static equals(a: CreateShiftInstanceV2Res | PlainMessage<CreateShiftInstanceV2Res> | undefined, b: CreateShiftInstanceV2Res | PlainMessage<CreateShiftInstanceV2Res> | undefined): boolean;
 }
 
 /**
