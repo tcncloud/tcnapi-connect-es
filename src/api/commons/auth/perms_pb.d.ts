@@ -409,7 +409,7 @@ export declare enum Permission {
   INTEGRATIONS_JOURNEY = 1302,
 
   /**
-   * Enables Agents to view portals.option
+   * Enables Agents to view portals.
    *
    * @generated from enum value: PERMISSION_INTEGRATIONS_PORTALS_VIEW = 1303;
    */
