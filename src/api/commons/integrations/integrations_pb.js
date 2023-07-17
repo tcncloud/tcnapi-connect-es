@@ -569,6 +569,8 @@ export const PaymentFlow = proto3.makeMessageType(
     { no: 6, name: "authorize_net_paypal", kind: "message", T: PaymentAuthorizeNetPaypal, oneof: "value" },
     { no: 7, name: "authorize_net_apple_pay", kind: "message", T: PaymentAuthorizeNetApplePay, oneof: "value" },
     { no: 8, name: "authorize_net_google_pay", kind: "message", T: PaymentAuthorizeNetGooglePay, oneof: "value" },
+    { no: 9, name: "payway_submit_card_sale_request", kind: "message", T: PaymentPaywaySubmitCardSaleRequest, oneof: "value" },
+    { no: 10, name: "payway_submit_ach_alert_request", kind: "message", T: PaymentPaywaySubmitACHAlertRequest, oneof: "value" },
     { no: 20, name: "payment_fields", kind: "message", T: FieldDefinition, repeated: true },
   ],
 );
@@ -974,6 +976,22 @@ export const PaymentAuthorizeNetApplePay = proto3.makeMessageType(
  */
 export const PaymentAuthorizeNetGooglePay = proto3.makeMessageType(
   "api.commons.integrations.PaymentAuthorizeNetGooglePay",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.PaymentPaywaySubmitCardSaleRequest
+ */
+export const PaymentPaywaySubmitCardSaleRequest = proto3.makeMessageType(
+  "api.commons.integrations.PaymentPaywaySubmitCardSaleRequest",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.PaymentPaywaySubmitACHAlertRequest
+ */
+export const PaymentPaywaySubmitACHAlertRequest = proto3.makeMessageType(
+  "api.commons.integrations.PaymentPaywaySubmitACHAlertRequest",
   [],
 );
 
