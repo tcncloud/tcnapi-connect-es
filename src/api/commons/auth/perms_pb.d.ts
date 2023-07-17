@@ -409,6 +409,13 @@ export declare enum Permission {
   INTEGRATIONS_JOURNEY = 1302,
 
   /**
+   * Enables Agents to view portals.option
+   *
+   * @generated from enum value: PERMISSION_INTEGRATIONS_PORTALS_VIEW = 1303;
+   */
+  INTEGRATIONS_PORTALS_VIEW = 1303,
+
+  /**
    * Enables access to WFM app
    *
    * @generated from enum value: PERMISSION_WFM = 1500;
