@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ExportGeneratedInvoicesReq, ExportGeneratedInvoicesRes, GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
+import { ExportGeneratedInvoiceReq, ExportGeneratedInvoiceRes, GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -62,8 +62,8 @@ export const Billing = {
      */
     exportGeneratedInvoice: {
       name: "ExportGeneratedInvoice",
-      I: ExportGeneratedInvoicesReq,
-      O: ExportGeneratedInvoicesRes,
+      I: ExportGeneratedInvoiceReq,
+      O: ExportGeneratedInvoiceRes,
       kind: MethodKind.Unary,
     },
   }

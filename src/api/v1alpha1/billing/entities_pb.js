@@ -79,6 +79,8 @@ export const GetInvoiceReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "invoice", kind: "message", T: Invoice, oneof: "format" },
+    { no: 4, name: "csv", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
   ],
 );
 
@@ -90,18 +92,19 @@ export const GetInvoiceReq = proto3.makeMessageType(
 export const GetInvoiceRes = proto3.makeMessageType(
   "api.v1alpha1.billing.GetInvoiceRes",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice, oneof: "format" },
-    { no: 2, name: "csv", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
+    { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 2, name: "invoice_format", kind: "message", T: Invoice, oneof: "format" },
+    { no: 3, name: "csv", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
   ],
 );
 
 /**
  * ExportGenerateInvoicesReq - request to export a generated invoice
  *
- * @generated from message api.v1alpha1.billing.ExportGeneratedInvoicesReq
+ * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceReq
  */
-export const ExportGeneratedInvoicesReq = proto3.makeMessageType(
-  "api.v1alpha1.billing.ExportGeneratedInvoicesReq",
+export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
+  "api.v1alpha1.billing.ExportGeneratedInvoiceReq",
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -111,10 +114,10 @@ export const ExportGeneratedInvoicesReq = proto3.makeMessageType(
 /**
  * ExportGeneratedInvoicesRes - result of exporting a generated invoice
  *
- * @generated from message api.v1alpha1.billing.ExportGeneratedInvoicesRes
+ * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceRes
  */
-export const ExportGeneratedInvoicesRes = proto3.makeMessageType(
-  "api.v1alpha1.billing.ExportGeneratedInvoicesRes",
+export const ExportGeneratedInvoiceRes = proto3.makeMessageType(
+  "api.v1alpha1.billing.ExportGeneratedInvoiceRes",
   () => [
     { no: 1, name: "invoice", kind: "message", T: Invoice, oneof: "format" },
     { no: 2, name: "csv", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },

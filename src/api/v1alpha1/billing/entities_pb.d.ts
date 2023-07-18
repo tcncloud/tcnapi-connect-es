@@ -35,7 +35,7 @@ export declare enum InvoiceFormat {
  */
 export declare class GetBillingPlanReq extends Message<GetBillingPlanReq> {
   /**
-   * organization identifier
+   * Required. the identifier of the organization to get the plan for
    *
    * @generated from field: string org_id = 1;
    */
@@ -98,7 +98,7 @@ export declare class UpdateBillingPlanReq extends Message<UpdateBillingPlanReq> 
   billingDetails: Detail[];
 
   /**
-   * organization identifier
+   * Required. the identifier of the organization to get the plan for
    *
    * @generated from field: string org_id = 2;
    */
@@ -165,11 +165,30 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
   invoiceDate?: Timestamp;
 
   /**
-   * organization identifier
+   * Required. the identifier of the organization to get the plan for
    *
    * @generated from field: string org_id = 2;
    */
   orgId: string;
+
+  /**
+   * the invoice for the organization
+   *
+   * @generated from oneof api.v1alpha1.billing.GetInvoiceReq.format
+   */
+  format: {
+    /**
+     * @generated from field: api.commons.billing.Invoice invoice = 3;
+     */
+    value: Invoice;
+    case: "invoice";
+  } | {
+    /**
+     * @generated from field: string csv = 4;
+     */
+    value: string;
+    case: "csv";
+  } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<GetInvoiceReq>);
 
@@ -193,19 +212,26 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
  */
 export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   /**
+   * depricated
+   *
+   * @generated from field: api.commons.billing.Invoice invoice = 1;
+   */
+  invoice?: Invoice;
+
+  /**
    * the invoice for the organization
    *
    * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.format
    */
   format: {
     /**
-     * @generated from field: api.commons.billing.Invoice invoice = 1;
+     * @generated from field: api.commons.billing.Invoice invoice_format = 2;
      */
     value: Invoice;
-    case: "invoice";
+    case: "invoiceFormat";
   } | {
     /**
-     * @generated from field: string csv = 2;
+     * @generated from field: string csv = 3;
      */
     value: string;
     case: "csv";
@@ -229,9 +255,9 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
 /**
  * ExportGenerateInvoicesReq - request to export a generated invoice
  *
- * @generated from message api.v1alpha1.billing.ExportGeneratedInvoicesReq
+ * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceReq
  */
-export declare class ExportGeneratedInvoicesReq extends Message<ExportGeneratedInvoicesReq> {
+export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedInvoiceReq> {
   /**
    * Optional. the date of the invoice to retrieve. If not specified,
    * will return the invoice associated with the current billing cycle.
@@ -243,37 +269,37 @@ export declare class ExportGeneratedInvoicesReq extends Message<ExportGeneratedI
   invoiceDate?: Timestamp;
 
   /**
-   * organization identifier
+   * Required. the identifier of the organization to get the plan for
    *
    * @generated from field: string org_id = 2;
    */
   orgId: string;
 
-  constructor(data?: PartialMessage<ExportGeneratedInvoicesReq>);
+  constructor(data?: PartialMessage<ExportGeneratedInvoiceReq>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.billing.ExportGeneratedInvoicesReq";
+  static readonly typeName = "api.v1alpha1.billing.ExportGeneratedInvoiceReq";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportGeneratedInvoicesReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportGeneratedInvoiceReq;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportGeneratedInvoicesReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportGeneratedInvoiceReq;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportGeneratedInvoicesReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportGeneratedInvoiceReq;
 
-  static equals(a: ExportGeneratedInvoicesReq | PlainMessage<ExportGeneratedInvoicesReq> | undefined, b: ExportGeneratedInvoicesReq | PlainMessage<ExportGeneratedInvoicesReq> | undefined): boolean;
+  static equals(a: ExportGeneratedInvoiceReq | PlainMessage<ExportGeneratedInvoiceReq> | undefined, b: ExportGeneratedInvoiceReq | PlainMessage<ExportGeneratedInvoiceReq> | undefined): boolean;
 }
 
 /**
  * ExportGeneratedInvoicesRes - result of exporting a generated invoice
  *
- * @generated from message api.v1alpha1.billing.ExportGeneratedInvoicesRes
+ * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceRes
  */
-export declare class ExportGeneratedInvoicesRes extends Message<ExportGeneratedInvoicesRes> {
+export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedInvoiceRes> {
   /**
    * the invoice for the organization
    *
-   * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoicesRes.format
+   * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.format
    */
   format: {
     /**
@@ -289,18 +315,18 @@ export declare class ExportGeneratedInvoicesRes extends Message<ExportGeneratedI
     case: "csv";
   } | { case: undefined; value?: undefined };
 
-  constructor(data?: PartialMessage<ExportGeneratedInvoicesRes>);
+  constructor(data?: PartialMessage<ExportGeneratedInvoiceRes>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.billing.ExportGeneratedInvoicesRes";
+  static readonly typeName = "api.v1alpha1.billing.ExportGeneratedInvoiceRes";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportGeneratedInvoicesRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportGeneratedInvoiceRes;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportGeneratedInvoicesRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportGeneratedInvoiceRes;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportGeneratedInvoicesRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportGeneratedInvoiceRes;
 
-  static equals(a: ExportGeneratedInvoicesRes | PlainMessage<ExportGeneratedInvoicesRes> | undefined, b: ExportGeneratedInvoicesRes | PlainMessage<ExportGeneratedInvoicesRes> | undefined): boolean;
+  static equals(a: ExportGeneratedInvoiceRes | PlainMessage<ExportGeneratedInvoiceRes> | undefined, b: ExportGeneratedInvoiceRes | PlainMessage<ExportGeneratedInvoiceRes> | undefined): boolean;
 }
 
