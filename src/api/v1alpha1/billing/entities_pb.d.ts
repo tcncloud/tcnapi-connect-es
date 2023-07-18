@@ -172,7 +172,8 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
   orgId: string;
 
   /**
-   * the invoice for the organization. Optional field that will use the proto format as the default
+   * Optional. the invoice for the organization. If not specified,
+   * will use the proto format as the default
    *
    * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3;
    */
