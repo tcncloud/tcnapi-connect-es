@@ -248,13 +248,6 @@ export declare enum Permission {
   VOICEMAIL_DOWNLOAD = 1401,
 
   /**
-   * Enables Agents to view portals.
-   *
-   * @generated from enum value: PERMISSION_AGENT_PORTALS_VIEW = 340;
-   */
-  AGENT_PORTALS_VIEW = 340,
-
-  /**
    * Enables access to voice analytics app.
    *
    * @generated from enum value: PERMISSION_VOICE_ANALYTICS = 500;

@@ -653,17 +653,17 @@ export declare class DateExp extends Message<DateExp> {
  */
 export declare class HolidayExp extends Message<HolidayExp> {
   /**
-   * @generated from field: string name = 1;
+   * @generated from field: string name = 3;
    */
   name: string;
 
   /**
-   * @generated from field: string country = 2;
+   * @generated from field: string country = 4;
    */
   country: string;
 
   /**
-   * @generated from field: string type = 3;
+   * @generated from field: string type = 5;
    */
   type: string;
 

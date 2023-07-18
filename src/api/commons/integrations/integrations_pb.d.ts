@@ -2097,18 +2097,6 @@ export declare class PaymentFlow extends Message<PaymentFlow> {
      */
     value: PaymentAuthorizeNetGooglePay;
     case: "authorizeNetGooglePay";
-  } | {
-    /**
-     * @generated from field: api.commons.integrations.PaymentPaywaySubmitCardSaleRequest payway_submit_card_sale_request = 9;
-     */
-    value: PaymentPaywaySubmitCardSaleRequest;
-    case: "paywaySubmitCardSaleRequest";
-  } | {
-    /**
-     * @generated from field: api.commons.integrations.PaymentPaywaySubmitACHAlertRequest payway_submit_ach_alert_request = 10;
-     */
-    value: PaymentPaywaySubmitACHAlertRequest;
-    case: "paywaySubmitAchAlertRequest";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -3804,44 +3792,6 @@ export declare class PaymentAuthorizeNetGooglePay extends Message<PaymentAuthori
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentAuthorizeNetGooglePay;
 
   static equals(a: PaymentAuthorizeNetGooglePay | PlainMessage<PaymentAuthorizeNetGooglePay> | undefined, b: PaymentAuthorizeNetGooglePay | PlainMessage<PaymentAuthorizeNetGooglePay> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.integrations.PaymentPaywaySubmitCardSaleRequest
- */
-export declare class PaymentPaywaySubmitCardSaleRequest extends Message<PaymentPaywaySubmitCardSaleRequest> {
-  constructor(data?: PartialMessage<PaymentPaywaySubmitCardSaleRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.integrations.PaymentPaywaySubmitCardSaleRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentPaywaySubmitCardSaleRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentPaywaySubmitCardSaleRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPaywaySubmitCardSaleRequest;
-
-  static equals(a: PaymentPaywaySubmitCardSaleRequest | PlainMessage<PaymentPaywaySubmitCardSaleRequest> | undefined, b: PaymentPaywaySubmitCardSaleRequest | PlainMessage<PaymentPaywaySubmitCardSaleRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.integrations.PaymentPaywaySubmitACHAlertRequest
- */
-export declare class PaymentPaywaySubmitACHAlertRequest extends Message<PaymentPaywaySubmitACHAlertRequest> {
-  constructor(data?: PartialMessage<PaymentPaywaySubmitACHAlertRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.integrations.PaymentPaywaySubmitACHAlertRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentPaywaySubmitACHAlertRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentPaywaySubmitACHAlertRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPaywaySubmitACHAlertRequest;
-
-  static equals(a: PaymentPaywaySubmitACHAlertRequest | PlainMessage<PaymentPaywaySubmitACHAlertRequest> | undefined, b: PaymentPaywaySubmitACHAlertRequest | PlainMessage<PaymentPaywaySubmitACHAlertRequest> | undefined): boolean;
 }
 
 /**
