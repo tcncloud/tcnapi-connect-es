@@ -98,7 +98,7 @@ export declare class UpdateBillingPlanReq extends Message<UpdateBillingPlanReq> 
   billingDetails: Detail[];
 
   /**
-   * Required. the identifier of the organization to get the plan for
+   * Required. the identifier of the organization to update the plan for
    *
    * @generated from field: string org_id = 2;
    */
@@ -165,30 +165,18 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
   invoiceDate?: Timestamp;
 
   /**
-   * Required. the identifier of the organization to get the plan for
+   * Required. the identifier of the organization to update the plan for
    *
    * @generated from field: string org_id = 2;
    */
   orgId: string;
 
   /**
-   * the invoice for the organization
+   * the invoice for the organization. Optional field that will use the proto format as the default
    *
-   * @generated from oneof api.v1alpha1.billing.GetInvoiceReq.format
+   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3;
    */
-  format: {
-    /**
-     * @generated from field: api.commons.billing.Invoice invoice = 3;
-     */
-    value: Invoice;
-    case: "invoice";
-  } | {
-    /**
-     * @generated from field: string csv = 4;
-     */
-    value: string;
-    case: "csv";
-  } | { case: undefined; value?: undefined };
+  format: InvoiceFormat;
 
   constructor(data?: PartialMessage<GetInvoiceReq>);
 
@@ -212,7 +200,7 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
  */
 export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   /**
-   * depricated
+   * deprecated
    *
    * @generated from field: api.commons.billing.Invoice invoice = 1;
    */
