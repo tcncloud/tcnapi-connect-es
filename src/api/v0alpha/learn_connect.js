@@ -74,6 +74,7 @@ export const Learn = {
     },
     /**
      * get standalone articles from learning pages
+     * we allow all the logged in agents/admins to view standalone articles
      *
      * @generated from rpc api.v0alpha.Learn.Standalone
      */

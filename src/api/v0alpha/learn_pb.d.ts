@@ -641,6 +641,13 @@ export declare class StandaloneReq extends Message<StandaloneReq> {
    */
   locale: string;
 
+  /**
+   * category
+   *
+   * @generated from field: string category = 2;
+   */
+  category: string;
+
   constructor(data?: PartialMessage<StandaloneReq>);
 
   static readonly runtime: typeof proto3;
@@ -694,20 +701,6 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
    * @generated from field: string name = 1;
    */
   name: string;
-
-  /**
-   * markdown content
-   *
-   * @generated from field: string content = 2;
-   */
-  content: string;
-
-  /**
-   * The last time this learning content was edited.
-   *
-   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3;
-   */
-  lastEditedTimestamp?: Timestamp;
 
   constructor(data?: PartialMessage<LearnStandaloneDetails>);
 
