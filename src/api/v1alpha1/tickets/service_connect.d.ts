@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListSkillsReq, ListSkillsRes, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListUsersReq, ListUsersRes, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -210,6 +210,28 @@ export declare const Tickets: {
       readonly name: "ListAllocatedTickets",
       readonly I: typeof ListAllocatedTicketReq,
       readonly O: typeof ListAllocatedTicketRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * public method to fetch list of skills for a tickets user
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListSkills
+     */
+    readonly listSkills: {
+      readonly name: "ListSkills",
+      readonly I: typeof ListSkillsReq,
+      readonly O: typeof ListSkillsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * public method to fetch list of users for a tickets user
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListUsers
+     */
+    readonly listUsers: {
+      readonly name: "ListUsers",
+      readonly I: typeof ListUsersReq,
+      readonly O: typeof ListUsersRes,
       readonly kind: MethodKind.Unary,
     },
   }

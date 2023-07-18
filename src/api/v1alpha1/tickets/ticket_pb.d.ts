@@ -1013,3 +1013,160 @@ export declare class CreateSelfAssignRes extends Message<CreateSelfAssignRes> {
   static equals(a: CreateSelfAssignRes | PlainMessage<CreateSelfAssignRes> | undefined, b: CreateSelfAssignRes | PlainMessage<CreateSelfAssignRes> | undefined): boolean;
 }
 
+/**
+ * ListSkillsReq - request message
+ *
+ * @generated from message api.v1alpha1.tickets.ListSkillsReq
+ */
+export declare class ListSkillsReq extends Message<ListSkillsReq> {
+  constructor(data?: PartialMessage<ListSkillsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListSkillsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillsReq;
+
+  static equals(a: ListSkillsReq | PlainMessage<ListSkillsReq> | undefined, b: ListSkillsReq | PlainMessage<ListSkillsReq> | undefined): boolean;
+}
+
+/**
+ * ListSkillsRes - response message wraps p3 skills Id and name
+ *
+ * @generated from message api.v1alpha1.tickets.ListSkillsRes
+ */
+export declare class ListSkillsRes extends Message<ListSkillsRes> {
+  /**
+   * @generated from field: repeated api.v1alpha1.tickets.Skill skills = 1;
+   */
+  skills: Skill[];
+
+  constructor(data?: PartialMessage<ListSkillsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListSkillsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillsRes;
+
+  static equals(a: ListSkillsRes | PlainMessage<ListSkillsRes> | undefined, b: ListSkillsRes | PlainMessage<ListSkillsRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.Skill
+ */
+export declare class Skill extends Message<Skill> {
+  /**
+   * @generated from field: string skill_id = 1;
+   */
+  skillId: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  constructor(data?: PartialMessage<Skill>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.Skill";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Skill;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Skill;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Skill;
+
+  static equals(a: Skill | PlainMessage<Skill> | undefined, b: Skill | PlainMessage<Skill> | undefined): boolean;
+}
+
+/**
+ * ListUsersReq - Users request message
+ *
+ * @generated from message api.v1alpha1.tickets.ListUsersReq
+ */
+export declare class ListUsersReq extends Message<ListUsersReq> {
+  constructor(data?: PartialMessage<ListUsersReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListUsersReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersReq;
+
+  static equals(a: ListUsersReq | PlainMessage<ListUsersReq> | undefined, b: ListUsersReq | PlainMessage<ListUsersReq> | undefined): boolean;
+}
+
+/**
+ * ListUserRes - response wraps userId, first_name, last_name
+ *
+ * @generated from message api.v1alpha1.tickets.ListUsersRes
+ */
+export declare class ListUsersRes extends Message<ListUsersRes> {
+  /**
+   * @generated from field: repeated api.v1alpha1.tickets.User users = 1;
+   */
+  users: User[];
+
+  constructor(data?: PartialMessage<ListUsersRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListUsersRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersRes;
+
+  static equals(a: ListUsersRes | PlainMessage<ListUsersRes> | undefined, b: ListUsersRes | PlainMessage<ListUsersRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.User
+ */
+export declare class User extends Message<User> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * @generated from field: string first_name = 2;
+   */
+  firstName: string;
+
+  /**
+   * @generated from field: string last_name = 3;
+   */
+  lastName: string;
+
+  constructor(data?: PartialMessage<User>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.User";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): User;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): User;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): User;
+
+  static equals(a: User | PlainMessage<User> | undefined, b: User | PlainMessage<User> | undefined): boolean;
+}
+

@@ -404,3 +404,70 @@ export const CreateSelfAssignRes = proto3.makeMessageType(
   ],
 );
 
+/**
+ * ListSkillsReq - request message
+ *
+ * @generated from message api.v1alpha1.tickets.ListSkillsReq
+ */
+export const ListSkillsReq = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListSkillsReq",
+  [],
+);
+
+/**
+ * ListSkillsRes - response message wraps p3 skills Id and name
+ *
+ * @generated from message api.v1alpha1.tickets.ListSkillsRes
+ */
+export const ListSkillsRes = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListSkillsRes",
+  () => [
+    { no: 1, name: "skills", kind: "message", T: Skill, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.Skill
+ */
+export const Skill = proto3.makeMessageType(
+  "api.v1alpha1.tickets.Skill",
+  () => [
+    { no: 1, name: "skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * ListUsersReq - Users request message
+ *
+ * @generated from message api.v1alpha1.tickets.ListUsersReq
+ */
+export const ListUsersReq = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListUsersReq",
+  [],
+);
+
+/**
+ * ListUserRes - response wraps userId, first_name, last_name
+ *
+ * @generated from message api.v1alpha1.tickets.ListUsersRes
+ */
+export const ListUsersRes = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListUsersRes",
+  () => [
+    { no: 1, name: "users", kind: "message", T: User, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.User
+ */
+export const User = proto3.makeMessageType(
+  "api.v1alpha1.tickets.User",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
