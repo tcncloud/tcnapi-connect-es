@@ -220,10 +220,10 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
     case: "invoiceFormat";
   } | {
     /**
-     * @generated from field: string csv = 3;
+     * @generated from field: string csv_url = 3;
      */
     value: string;
-    case: "csv";
+    case: "csvUrl";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<GetInvoiceRes>);
@@ -298,10 +298,10 @@ export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedIn
     case: "invoice";
   } | {
     /**
-     * @generated from field: string csv = 2;
+     * @generated from field: string csv_url = 2;
      */
     value: string;
-    case: "csv";
+    case: "csvUrl";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExportGeneratedInvoiceRes>);
