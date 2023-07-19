@@ -63,6 +63,7 @@ export declare const Learn: {
     },
     /**
      * search content in learning pages
+     * we allow all the logged in agents/admins to view snippet content
      *
      * @generated from rpc api.v0alpha.Learn.SearchContent
      */
@@ -70,7 +71,7 @@ export declare const Learn: {
       readonly name: "SearchContent",
       readonly I: typeof SearchContentReq,
       readonly O: typeof SearchRes,
-      readonly kind: MethodKind.Unary,
+      readonly kind: MethodKind.ServerStreaming,
     },
     /**
      * get standalone articles from learning pages
