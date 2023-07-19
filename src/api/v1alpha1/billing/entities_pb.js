@@ -92,7 +92,7 @@ export const GetInvoiceRes = proto3.makeMessageType(
   "api.v1alpha1.billing.GetInvoiceRes",
   () => [
     { no: 1, name: "invoice", kind: "message", T: Invoice },
-    { no: 2, name: "invoice_format", kind: "message", T: Invoice, oneof: "format" },
+    { no: 2, name: "proto", kind: "message", T: Invoice, oneof: "format" },
     { no: 3, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
   ],
 );
@@ -107,6 +107,7 @@ export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
   ],
 );
 
@@ -118,7 +119,7 @@ export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
 export const ExportGeneratedInvoiceRes = proto3.makeMessageType(
   "api.v1alpha1.billing.ExportGeneratedInvoiceRes",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice, oneof: "format" },
+    { no: 1, name: "proto", kind: "message", T: Invoice, oneof: "format" },
     { no: 2, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
   ],
 );

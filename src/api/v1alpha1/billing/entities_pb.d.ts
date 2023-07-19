@@ -214,10 +214,10 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
    */
   format: {
     /**
-     * @generated from field: api.commons.billing.Invoice invoice_format = 2;
+     * @generated from field: api.commons.billing.Invoice proto = 2;
      */
     value: Invoice;
-    case: "invoiceFormat";
+    case: "proto";
   } | {
     /**
      * @generated from field: string csv_url = 3;
@@ -264,6 +264,14 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
    */
   orgId: string;
 
+  /**
+   * Optional. the invoice for the organization. If not specified,
+   * will use the proto format as the default
+   *
+   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3;
+   */
+  format: InvoiceFormat;
+
   constructor(data?: PartialMessage<ExportGeneratedInvoiceReq>);
 
   static readonly runtime: typeof proto3;
@@ -292,10 +300,10 @@ export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedIn
    */
   format: {
     /**
-     * @generated from field: api.commons.billing.Invoice invoice = 1;
+     * @generated from field: api.commons.billing.Invoice proto = 1;
      */
     value: Invoice;
-    case: "invoice";
+    case: "proto";
   } | {
     /**
      * @generated from field: string csv_url = 2;
