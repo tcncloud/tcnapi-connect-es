@@ -15,7 +15,8 @@ export declare class OmniBotNodeTestStart extends Message<OmniBotNodeTestStart> 
   /**
    * deprecated
    *
-   * @generated from field: string data = 1;
+   * @generated from field: string data = 1 [deprecated = true];
+   * @deprecated
    */
   data: string;
 
@@ -43,7 +44,8 @@ export declare class OmniBotNodeTestStep extends Message<OmniBotNodeTestStep> {
   /**
    * deprecated
    *
-   * @generated from field: string data = 1;
+   * @generated from field: string data = 1 [deprecated = true];
+   * @deprecated
    */
   data: string;
 
@@ -71,7 +73,8 @@ export declare class OmniBotNodeTestEnd extends Message<OmniBotNodeTestEnd> {
   /**
    * deprecated
    *
-   * @generated from field: string error = 1;
+   * @generated from field: string error = 1 [deprecated = true];
+   * @deprecated
    */
   error: string;
 
