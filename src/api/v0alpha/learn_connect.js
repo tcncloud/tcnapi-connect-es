@@ -63,12 +63,24 @@ export const Learn = {
     },
     /**
      * search content in learning pages
-     * we allow all the logged in agents/admins to view snippet content
+     * we allow all the logged in agents/admins to view search content
      *
      * @generated from rpc api.v0alpha.Learn.SearchContent
      */
     searchContent: {
       name: "SearchContent",
+      I: SearchContentReq,
+      O: SearchRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * stream search content results in learning pages
+     * we allow all the logged in agents/admins to view search content
+     *
+     * @generated from rpc api.v0alpha.Learn.ListSearchResults
+     */
+    listSearchResults: {
+      name: "ListSearchResults",
       I: SearchContentReq,
       O: SearchRes,
       kind: MethodKind.ServerStreaming,
