@@ -312,3 +312,64 @@ export const DeleteStandaloneRes = proto3.makeMessageType(
   [],
 );
 
+/**
+ * request to get snippets
+ *
+ * @generated from message api.v0alpha.SnippetReq
+ */
+export const SnippetReq = proto3.makeMessageType(
+  "api.v0alpha.SnippetReq",
+  () => [
+    { no: 1, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to get snippets
+ *
+ * @generated from message api.v0alpha.SnippetRes
+ */
+export const SnippetRes = proto3.makeMessageType(
+  "api.v0alpha.SnippetRes",
+  () => [
+    { no: 1, name: "snippet_details", kind: "message", T: LearnSnippetDetails, repeated: true },
+  ],
+);
+
+/**
+ * snippet details
+ *
+ * @generated from message api.v0alpha.LearnSnippetDetails
+ */
+export const LearnSnippetDetails = proto3.makeMessageType(
+  "api.v0alpha.LearnSnippetDetails",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_edited_timestamp", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * request to delete learn pages
+ *
+ * @generated from message api.v0alpha.DeleteLearnPagesReq
+ */
+export const DeleteLearnPagesReq = proto3.makeMessageType(
+  "api.v0alpha.DeleteLearnPagesReq",
+  () => [
+    { no: 1, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * response to delete learn pages
+ *
+ * @generated from message api.v0alpha.DeleteLearnPagesRes
+ */
+export const DeleteLearnPagesRes = proto3.makeMessageType(
+  "api.v0alpha.DeleteLearnPagesRes",
+  [],
+);
+
