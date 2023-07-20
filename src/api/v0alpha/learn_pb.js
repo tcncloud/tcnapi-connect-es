@@ -286,8 +286,6 @@ export const LearnStandaloneDetails = proto3.makeMessageType(
   "api.v0alpha.LearnStandaloneDetails",
   () => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "last_edited_timestamp", kind: "message", T: Timestamp },
   ],
 );
 
