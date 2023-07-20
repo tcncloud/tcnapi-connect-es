@@ -3256,6 +3256,7 @@ export const CreateDraftScheduleReq = proto3.makeMessageType(
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "scheduling_range", kind: "message", T: DatetimeRange },
+    { no: 4, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

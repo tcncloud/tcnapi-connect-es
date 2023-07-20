@@ -9432,6 +9432,13 @@ export declare class CreateDraftScheduleReq extends Message<CreateDraftScheduleR
    */
   schedulingRange?: DatetimeRange;
 
+  /**
+   * ID of the schedule scenario that the draft schedule will be associated with.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 4;
+   */
+  scheduleScenarioSid: bigint;
+
   constructor(data?: PartialMessage<CreateDraftScheduleReq>);
 
   static readonly runtime: typeof proto3;
