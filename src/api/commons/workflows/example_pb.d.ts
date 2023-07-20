@@ -180,17 +180,17 @@ export declare class NodeChatbot extends Message<NodeChatbot> {
  */
 export declare class DiceDocument extends Message<DiceDocument> {
   /**
-   * @generated from field: int32 dice_value = 1;
+   * @generated from field: int32 diceValue = 1;
    */
   diceValue: number;
 
   /**
-   * @generated from field: int32 dice_value_max = 2;
+   * @generated from field: int32 diceValueMax = 2;
    */
   diceValueMax: number;
 
   /**
-   * @generated from field: int32 dice_value_min = 3;
+   * @generated from field: int32 diceValueMin = 3;
    */
   diceValueMin: number;
 
