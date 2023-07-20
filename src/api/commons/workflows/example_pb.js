@@ -84,11 +84,11 @@ export const NodeChatbot = proto3.makeMessageType(
 export const DiceDocument = proto3.makeMessageType(
   "api.commons.workflows.DiceDocument",
   () => [
-    { no: 11, name: "dice_value", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 12, name: "dice_value_max", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 13, name: "dice_value_min", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 14, name: "last_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 15, name: "variables", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 1, name: "dice_value", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "dice_value_max", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "dice_value_min", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "last_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "variables", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 100, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
