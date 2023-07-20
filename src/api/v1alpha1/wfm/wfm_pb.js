@@ -3256,6 +3256,7 @@ export const CreateDraftScheduleReq = proto3.makeMessageType(
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "scheduling_range", kind: "message", T: DatetimeRange },
+    { no: 4, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -3558,6 +3559,35 @@ export const UpdateShiftInstanceRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
     { no: 2, name: "performance_metrics", kind: "message", T: PerformanceMetric, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the UpdateShiftInstanceV2 RPC
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceV2Req
+ */
+export const UpdateShiftInstanceV2Req = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateShiftInstanceV2Req",
+  () => [
+    { no: 1, name: "shift_instance_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "start_datetime", kind: "message", T: Timestamp },
+    { no: 3, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "is_locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the UpdateShiftInstanceV2 RPC
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceV2Res
+ */
+export const UpdateShiftInstanceV2Res = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateShiftInstanceV2Res",
+  () => [
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );
 
