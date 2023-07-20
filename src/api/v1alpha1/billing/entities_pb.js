@@ -79,6 +79,7 @@ export const GetInvoiceReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
     { no: 4, name: "invoice_format", kind: "enum", T: proto3.getEnumType(InvoiceFormat$1) },
   ],
 );
@@ -108,6 +109,7 @@ export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
     { no: 4, name: "invoice_format", kind: "enum", T: proto3.getEnumType(InvoiceFormat$1) },
   ],
 );

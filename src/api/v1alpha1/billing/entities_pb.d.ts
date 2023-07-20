@@ -175,6 +175,15 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
    * Optional. the format the invoice is returned using. If not specified,
    * will use the proto format as the default
    *
+   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
+   * @deprecated
+   */
+  format: InvoiceFormat;
+
+  /**
+   * Optional. the format the invoice is returned using. If not specified,
+   * will use the proto format as the default
+   *
    * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4;
    */
   invoiceFormat: InvoiceFormat$1;
@@ -227,6 +236,8 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   } | { case: undefined; value?: undefined };
 
   /**
+   * the billing cycle of the invoice requested
+   *
    * @generated from field: string billing_cycle = 4;
    */
   billingCycle: string;
@@ -268,6 +279,15 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
    * @generated from field: string org_id = 2;
    */
   orgId: string;
+
+  /**
+   * Optional. the format the invoice is returned using. If not specified,
+   * will use the proto format as the default
+   *
+   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
+   * @deprecated
+   */
+  format: InvoiceFormat;
 
   /**
    * Optional. the invoice for the organization. If not specified,
@@ -318,6 +338,8 @@ export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedIn
   } | { case: undefined; value?: undefined };
 
   /**
+   * the billing cycle of the invoice requested
+   *
    * @generated from field: string billing_cycle = 3;
    */
   billingCycle: string;

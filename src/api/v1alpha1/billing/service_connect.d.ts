@@ -43,11 +43,11 @@ export declare const Billing: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * GetInvoice - returns the invoice for the organization. If a date is
-     * provided, this will return the invoice for the organization that
-     * corresponds to the billing cycle that contains the provided date. If
-     * no date is provided, this will return the invoice as it currently
-     * stands for the current billing cycle.
+     * GetInvoice - returns the invoice for the organization.
+     * If a date is provided, this will return the invoice for the
+     * organization that corresponds to the billing cycle that contains
+     * the provided date. If no date is provided, this will return the
+     * invoice as it currently stands for the current billing cycle.
      *
      * @generated from rpc api.v1alpha1.billing.Billing.GetInvoice
      */
@@ -58,6 +58,15 @@ export declare const Billing: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * GetInvoice - returns the invoice for the organization.
+     * If a date is provided, this will return the invoice for the
+     * organization that corresponds to the billing cycle that contains
+     * the provided date. If no date is provided, this will return the
+     * invoice, as it has been last generated, for the current billing cycle.
+     * This differs from GetInvoice in that it returns the invoice as
+     * it was last generated. It will not take into account new billing
+     * events since the last generation.
+     *
      * @generated from rpc api.v1alpha1.billing.Billing.ExportGeneratedInvoice
      */
     readonly exportGeneratedInvoice: {
