@@ -5,7 +5,7 @@
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { Detail, Plan } from "../../commons/billing/detail_pb.js";
-import { Invoice } from "../../commons/billing/invoice_pb.js";
+import { Invoice, InvoiceFormat as InvoiceFormat$1 } from "../../commons/billing/invoice_pb.js";
 
 /**
  * @generated from enum api.v1alpha1.billing.InvoiceFormat
@@ -79,7 +79,7 @@ export const GetInvoiceReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
+    { no: 4, name: "invoice_format", kind: "enum", T: proto3.getEnumType(InvoiceFormat$1) },
   ],
 );
 
@@ -94,6 +94,7 @@ export const GetInvoiceRes = proto3.makeMessageType(
     { no: 1, name: "invoice", kind: "message", T: Invoice },
     { no: 2, name: "proto", kind: "message", T: Invoice, oneof: "format" },
     { no: 3, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
+    { no: 4, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -107,7 +108,7 @@ export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
+    { no: 4, name: "invoice_format", kind: "enum", T: proto3.getEnumType(InvoiceFormat$1) },
   ],
 );
 
@@ -121,6 +122,7 @@ export const ExportGeneratedInvoiceRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "proto", kind: "message", T: Invoice, oneof: "format" },
     { no: 2, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
+    { no: 3, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

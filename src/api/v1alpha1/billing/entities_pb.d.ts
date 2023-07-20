@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Detail, Plan } from "../../commons/billing/detail_pb.js";
-import type { Invoice } from "../../commons/billing/invoice_pb.js";
+import type { Invoice, InvoiceFormat as InvoiceFormat$1 } from "../../commons/billing/invoice_pb.js";
 
 /**
  * @generated from enum api.v1alpha1.billing.InvoiceFormat
@@ -172,12 +172,12 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
   orgId: string;
 
   /**
-   * Optional. the invoice for the organization. If not specified,
+   * Optional. the format the invoice is returned using. If not specified,
    * will use the proto format as the default
    *
-   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3;
+   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4;
    */
-  format: InvoiceFormat;
+  invoiceFormat: InvoiceFormat$1;
 
   constructor(data?: PartialMessage<GetInvoiceReq>);
 
@@ -226,6 +226,11 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
     case: "csvUrl";
   } | { case: undefined; value?: undefined };
 
+  /**
+   * @generated from field: string billing_cycle = 4;
+   */
+  billingCycle: string;
+
   constructor(data?: PartialMessage<GetInvoiceRes>);
 
   static readonly runtime: typeof proto3;
@@ -268,9 +273,9 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
    * Optional. the invoice for the organization. If not specified,
    * will use the proto format as the default
    *
-   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3;
+   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4;
    */
-  format: InvoiceFormat;
+  invoiceFormat: InvoiceFormat$1;
 
   constructor(data?: PartialMessage<ExportGeneratedInvoiceReq>);
 
@@ -311,6 +316,11 @@ export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedIn
     value: string;
     case: "csvUrl";
   } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from field: string billing_cycle = 3;
+   */
+  billingCycle: string;
 
   constructor(data?: PartialMessage<ExportGeneratedInvoiceRes>);
 
