@@ -642,7 +642,7 @@ export declare class StandaloneReq extends Message<StandaloneReq> {
   locale: string;
 
   /**
-   * category
+   * categorize the articles
    *
    * @generated from field: string category = 2;
    */
@@ -701,6 +701,20 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
    * @generated from field: string name = 1;
    */
   name: string;
+
+  /**
+   * markdown content
+   *
+   * @generated from field: string content = 2;
+   */
+  content: string;
+
+  /**
+   * The last time this learning content was edited.
+   *
+   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3;
+   */
+  lastEditedTimestamp?: Timestamp;
 
   constructor(data?: PartialMessage<LearnStandaloneDetails>);
 

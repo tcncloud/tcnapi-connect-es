@@ -63,6 +63,7 @@ export declare const Learn: {
     },
     /**
      * search content in learning pages
+     * we allow all the logged in agents/admins to view search content
      *
      * @generated from rpc api.v0alpha.Learn.SearchContent
      */
@@ -71,6 +72,18 @@ export declare const Learn: {
       readonly I: typeof SearchContentReq,
       readonly O: typeof SearchRes,
       readonly kind: MethodKind.Unary,
+    },
+    /**
+     * stream search content results in learning pages
+     * we allow all the logged in agents/admins to view search content
+     *
+     * @generated from rpc api.v0alpha.Learn.ListSearchResults
+     */
+    readonly listSearchResults: {
+      readonly name: "ListSearchResults",
+      readonly I: typeof SearchContentReq,
+      readonly O: typeof SearchRes,
+      readonly kind: MethodKind.ServerStreaming,
     },
     /**
      * get standalone articles from learning pages

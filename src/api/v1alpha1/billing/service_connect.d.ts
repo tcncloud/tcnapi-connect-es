@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
+import { ExportGeneratedInvoiceReq, ExportGeneratedInvoiceRes, GetBillingPlanReq, GetBillingPlanRes, GetInvoiceReq, GetInvoiceRes, UpdateBillingPlanReq, UpdateBillingPlanRes } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -55,6 +55,15 @@ export declare const Billing: {
       readonly name: "GetInvoice",
       readonly I: typeof GetInvoiceReq,
       readonly O: typeof GetInvoiceRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.billing.Billing.ExportGeneratedInvoice
+     */
+    readonly exportGeneratedInvoice: {
+      readonly name: "ExportGeneratedInvoice",
+      readonly I: typeof ExportGeneratedInvoiceReq,
+      readonly O: typeof ExportGeneratedInvoiceRes,
       readonly kind: MethodKind.Unary,
     },
   }

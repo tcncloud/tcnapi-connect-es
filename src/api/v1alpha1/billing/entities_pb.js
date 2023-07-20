@@ -8,13 +8,27 @@ import { Detail, Plan } from "../../commons/billing/detail_pb.js";
 import { Invoice } from "../../commons/billing/invoice_pb.js";
 
 /**
+ * @generated from enum api.v1alpha1.billing.InvoiceFormat
+ */
+export const InvoiceFormat = proto3.makeEnum(
+  "api.v1alpha1.billing.InvoiceFormat",
+  [
+    {no: 0, name: "INVOICE_FORMAT_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "INVOICE_FORMAT_PROTO", localName: "PROTO"},
+    {no: 2, name: "INVOICE_FORMAT_CSV", localName: "CSV"},
+  ],
+);
+
+/**
  * GetBillingPlanReq - request to get an organization's billing plan
  *
  * @generated from message api.v1alpha1.billing.GetBillingPlanReq
  */
 export const GetBillingPlanReq = proto3.makeMessageType(
   "api.v1alpha1.billing.GetBillingPlanReq",
-  [],
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**
@@ -38,6 +52,7 @@ export const UpdateBillingPlanReq = proto3.makeMessageType(
   "api.v1alpha1.billing.UpdateBillingPlanReq",
   () => [
     { no: 1, name: "billing_details", kind: "message", T: Detail, repeated: true },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -63,6 +78,8 @@ export const GetInvoiceReq = proto3.makeMessageType(
   "api.v1alpha1.billing.GetInvoiceReq",
   () => [
     { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
   ],
 );
 
@@ -75,6 +92,35 @@ export const GetInvoiceRes = proto3.makeMessageType(
   "api.v1alpha1.billing.GetInvoiceRes",
   () => [
     { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 2, name: "proto", kind: "message", T: Invoice, oneof: "format" },
+    { no: 3, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
+  ],
+);
+
+/**
+ * ExportGenerateInvoicesReq - request to export a generated invoice
+ *
+ * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceReq
+ */
+export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
+  "api.v1alpha1.billing.ExportGeneratedInvoiceReq",
+  () => [
+    { no: 1, name: "invoice_date", kind: "message", T: Timestamp },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
+  ],
+);
+
+/**
+ * ExportGeneratedInvoicesRes - result of exporting a generated invoice
+ *
+ * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceRes
+ */
+export const ExportGeneratedInvoiceRes = proto3.makeMessageType(
+  "api.v1alpha1.billing.ExportGeneratedInvoiceRes",
+  () => [
+    { no: 1, name: "proto", kind: "message", T: Invoice, oneof: "format" },
+    { no: 2, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
   ],
 );
 
