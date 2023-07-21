@@ -239,6 +239,8 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   } | { case: undefined; value?: undefined };
 
   /**
+   * the invoice in the format requested
+   *
    * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.invoice_data
    */
   invoiceData: {
@@ -360,6 +362,8 @@ export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedIn
   } | { case: undefined; value?: undefined };
 
   /**
+   * the invoice in the format requested
+   *
    * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.invoice_data
    */
   invoiceData: {
