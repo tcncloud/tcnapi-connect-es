@@ -95,6 +95,8 @@ export const GetInvoiceRes = proto3.makeMessageType(
     { no: 1, name: "invoice", kind: "message", T: Invoice },
     { no: 2, name: "proto", kind: "message", T: Invoice, oneof: "format" },
     { no: 3, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
+    { no: 100, name: "invoice_proto", kind: "message", T: Invoice, oneof: "invoice_data" },
+    { no: 1001, name: "invoice_csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "invoice_data" },
     { no: 4, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -124,7 +126,9 @@ export const ExportGeneratedInvoiceRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "proto", kind: "message", T: Invoice, oneof: "format" },
     { no: 2, name: "csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "format" },
-    { no: 3, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 100, name: "invoice_proto", kind: "message", T: Invoice, oneof: "invoice_data" },
+    { no: 1001, name: "invoice_csv_url", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "invoice_data" },
+    { no: 4, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

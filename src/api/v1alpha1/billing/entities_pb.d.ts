@@ -212,27 +212,47 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   /**
    * deprecated
    *
-   * @generated from field: api.commons.billing.Invoice invoice = 1;
+   * @generated from field: api.commons.billing.Invoice invoice = 1 [deprecated = true];
+   * @deprecated
    */
   invoice?: Invoice;
 
   /**
-   * the invoice for the organization
+   * deprecated
    *
    * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.format
    */
   format: {
     /**
-     * @generated from field: api.commons.billing.Invoice proto = 2;
+     * @generated from field: api.commons.billing.Invoice proto = 2 [deprecated = true];
+     * @deprecated
      */
     value: Invoice;
     case: "proto";
   } | {
     /**
-     * @generated from field: string csv_url = 3;
+     * @generated from field: string csv_url = 3 [deprecated = true];
+     * @deprecated
      */
     value: string;
     case: "csvUrl";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.invoice_data
+   */
+  invoiceData: {
+    /**
+     * @generated from field: api.commons.billing.Invoice invoice_proto = 100;
+     */
+    value: Invoice;
+    case: "invoiceProto";
+  } | {
+    /**
+     * @generated from field: string invoice_csv_url = 1001;
+     */
+    value: string;
+    case: "invoiceCsvUrl";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -319,28 +339,47 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
  */
 export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedInvoiceRes> {
   /**
-   * the invoice for the organization
+   * deprecated
    *
    * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.format
    */
   format: {
     /**
-     * @generated from field: api.commons.billing.Invoice proto = 1;
+     * @generated from field: api.commons.billing.Invoice proto = 1 [deprecated = true];
+     * @deprecated
      */
     value: Invoice;
     case: "proto";
   } | {
     /**
-     * @generated from field: string csv_url = 2;
+     * @generated from field: string csv_url = 2 [deprecated = true];
+     * @deprecated
      */
     value: string;
     case: "csvUrl";
   } | { case: undefined; value?: undefined };
 
   /**
+   * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.invoice_data
+   */
+  invoiceData: {
+    /**
+     * @generated from field: api.commons.billing.Invoice invoice_proto = 100;
+     */
+    value: Invoice;
+    case: "invoiceProto";
+  } | {
+    /**
+     * @generated from field: string invoice_csv_url = 1001;
+     */
+    value: string;
+    case: "invoiceCsvUrl";
+  } | { case: undefined; value?: undefined };
+
+  /**
    * the billing cycle of the invoice requested
    *
-   * @generated from field: string billing_cycle = 3;
+   * @generated from field: string billing_cycle = 4;
    */
   billingCycle: string;
 
