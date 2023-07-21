@@ -2004,6 +2004,7 @@ export const ShiftTemplate = proto3.makeMessageType(
     { no: 14, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 15, name: "member_placement_rules", kind: "message", T: PlacementRule, repeated: true },
     { no: 16, name: "DOW_placements", kind: "message", T: DOWPlacement, repeated: true },
+    { no: 17, name: "member_agent_groups", kind: "message", T: AgentGroup, repeated: true },
   ],
 );
 

@@ -5819,6 +5819,13 @@ export declare class ShiftTemplate extends Message<ShiftTemplate> {
    */
   DOWPlacements: DOWPlacement[];
 
+  /**
+   * agent groups that are children of call center node
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.AgentGroup member_agent_groups = 17;
+   */
+  memberAgentGroups: AgentGroup[];
+
   constructor(data?: PartialMessage<ShiftTemplate>);
 
   static readonly runtime: typeof proto3;
