@@ -526,6 +526,15 @@ export declare const LMS: {
       readonly O: typeof Empty,
       readonly kind: MethodKind.Unary,
     },
+    /**
+     * @generated from rpc api.v0alpha.LMS.GetQueuedEventsStatusByElementId
+     */
+    readonly getQueuedEventsStatusByElementId: {
+      readonly name: "GetQueuedEventsStatusByElementId",
+      readonly I: typeof ElementPK,
+      readonly O: typeof Events,
+      readonly kind: MethodKind.Unary,
+    },
   }
 };
 
