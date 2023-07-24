@@ -5,7 +5,7 @@
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { OperatorApplications } from "../../commons/org_pb.js";
-import { Encryption } from "../../commons/delivery_pb.js";
+import { Encryption, TransferStatus } from "../../commons/delivery_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -289,15 +289,20 @@ export const History = proto3.makeMessageType(
   "api.v1alpha1.delivery.History",
   () => [
     { no: 1, name: "sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "transfer_config_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "transfer_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "delivery_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 8, name: "created_on", kind: "message", T: Timestamp },
-    { no: 9, name: "transfer_start", kind: "message", T: Timestamp },
-    { no: 10, name: "transfer_complete", kind: "message", T: Timestamp },
-    { no: 11, name: "origin", kind: "enum", T: proto3.getEnumType(OperatorApplications) },
+    { no: 7, name: "created_on", kind: "message", T: Timestamp },
+    { no: 8, name: "transfer_start", kind: "message", T: Timestamp },
+    { no: 9, name: "transfer_complete", kind: "message", T: Timestamp },
+    { no: 10, name: "message_payload", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "message_payload_len", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "origin", kind: "enum", T: proto3.getEnumType(OperatorApplications) },
+    { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(TransferStatus) },
+    { no: 14, name: "is_inbound", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 15, name: "transaction_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

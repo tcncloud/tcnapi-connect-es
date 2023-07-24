@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { OperatorApplications } from "../../commons/org_pb.js";
-import type { Encryption } from "../../commons/delivery_pb.js";
+import type { Encryption, TransferStatus } from "../../commons/delivery_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -770,6 +770,11 @@ export declare class History extends Message<History> {
   sid: bigint;
 
   /**
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
    * @generated from field: string transfer_config_name = 3;
    */
   transferConfigName: string;
@@ -792,37 +797,63 @@ export declare class History extends Message<History> {
   error: string;
 
   /**
-   * @generated from field: bool success = 7;
-   */
-  success: boolean;
-
-  /**
    * when the transaction was first opened
    *
-   * @generated from field: google.protobuf.Timestamp created_on = 8;
+   * @generated from field: google.protobuf.Timestamp created_on = 7;
    */
   createdOn?: Timestamp;
 
   /**
    * when upload of deps is finished and we started moving the files
    *
-   * @generated from field: google.protobuf.Timestamp transfer_start = 9;
+   * @generated from field: google.protobuf.Timestamp transfer_start = 8;
    */
   transferStart?: Timestamp;
 
   /**
    * when the record was inserted into the db (delivery ended)
    *
-   * @generated from field: google.protobuf.Timestamp transfer_complete = 10;
+   * @generated from field: google.protobuf.Timestamp transfer_complete = 9;
    */
   transferComplete?: Timestamp;
 
   /**
+   * this should only be the first 64 chars of the message_payload
+   *
+   * @generated from field: string message_payload = 10;
+   */
+  messagePayload: string;
+
+  /**
+   * this represents the full actual length of the message_payload from the frontend
+   *
+   * @generated from field: int32 message_payload_len = 11;
+   */
+  messagePayloadLen: number;
+
+  /**
    * the application calling for delivery
    *
-   * @generated from field: api.commons.OperatorApplications origin = 11;
+   * @generated from field: api.commons.OperatorApplications origin = 12;
    */
   origin: OperatorApplications;
+
+  /**
+   * the status of the delivery
+   *
+   * @generated from field: api.commons.TransferStatus status = 13;
+   */
+  status: TransferStatus;
+
+  /**
+   * @generated from field: bool is_inbound = 14;
+   */
+  isInbound: boolean;
+
+  /**
+   * @generated from field: int64 transaction_sid = 15;
+   */
+  transactionSid: bigint;
 
   constructor(data?: PartialMessage<History>);
 
