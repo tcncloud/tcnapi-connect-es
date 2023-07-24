@@ -702,6 +702,22 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
    */
   name: string;
 
+  /**
+   * deprecated
+   *
+   * @generated from field: string content = 2 [deprecated = true];
+   * @deprecated
+   */
+  content: string;
+
+  /**
+   * deprecated
+   *
+   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3 [deprecated = true];
+   * @deprecated
+   */
+  lastEditedTimestamp?: Timestamp;
+
   constructor(data?: PartialMessage<LearnStandaloneDetails>);
 
   static readonly runtime: typeof proto3;
