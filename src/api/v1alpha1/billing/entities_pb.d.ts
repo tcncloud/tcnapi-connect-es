@@ -172,8 +172,7 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
   orgId: string;
 
   /**
-   * Optional. the format the invoice is returned using. If not specified,
-   * will use the proto format as the default
+   * deprecated
    *
    * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
    * @deprecated
@@ -251,7 +250,7 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
     case: "invoiceProto";
   } | {
     /**
-     * @generated from field: string invoice_csv_url = 1001;
+     * @generated from field: string invoice_csv_url = 101;
      */
     value: string;
     case: "invoiceCsvUrl";
@@ -303,8 +302,7 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
   orgId: string;
 
   /**
-   * Optional. the format the invoice is returned using. If not specified,
-   * will use the proto format as the default
+   * deprecated
    *
    * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
    * @deprecated
@@ -374,7 +372,7 @@ export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedIn
     case: "invoiceProto";
   } | {
     /**
-     * @generated from field: string invoice_csv_url = 1001;
+     * @generated from field: string invoice_csv_url = 101;
      */
     value: string;
     case: "invoiceCsvUrl";
