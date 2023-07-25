@@ -10261,14 +10261,14 @@ export declare class CreateShiftInstanceV2Res extends Message<CreateShiftInstanc
  */
 export declare class SwapShiftInstancesReq extends Message<SwapShiftInstancesReq> {
   /**
-   * ID of the wfm agent sid that the shift instances had.
+   * ID of the wfm agent that will swap instances with @wfm_agent_sid2.
    *
    * @generated from field: int64 wfm_agent_sid1 = 1;
    */
   wfmAgentSid1: bigint;
 
   /**
-   * ID of the wfm agent sid that the shift instances will have.
+   * ID of the wfm agent that will swap instances with @wfm_agent_sid1.
    *
    * @generated from field: int64 wfm_agent_sid2 = 2;
    */
