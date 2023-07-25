@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -205,11 +205,45 @@ export const Tickets = {
     },
     /**
      * @generated from rpc api.v1alpha1.tickets.Tickets.ListAllocatedTickets
+     * @deprecated
      */
     listAllocatedTickets: {
       name: "ListAllocatedTickets",
       I: ListAllocatedTicketReq,
       O: ListAllocatedTicketRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * public method - to return list of available tickets to pick for an Agent
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListAvailableAgentTickets
+     */
+    listAvailableAgentTickets: {
+      name: "ListAvailableAgentTickets",
+      I: ListAvailableAgentTicketsRequest,
+      O: ListAvailableAgentTicketsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * public method to fetch list of skills for a tickets user
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListSkills
+     */
+    listSkills: {
+      name: "ListSkills",
+      I: ListSkillsRequest,
+      O: ListSkillsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * public method to fetch list of users for a tickets user
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListUsers
+     */
+    listUsers: {
+      name: "ListUsers",
+      I: ListUsersRequest,
+      O: ListUsersResponse,
       kind: MethodKind.Unary,
     },
   }
