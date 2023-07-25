@@ -133,6 +133,13 @@ export declare class ContentRes extends Message<ContentRes> {
    */
   images: LearnImage[];
 
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
+
   constructor(data?: PartialMessage<ContentRes>);
 
   static readonly runtime: typeof proto3;
@@ -236,11 +243,11 @@ export declare class UpdateReq extends Message<UpdateReq> {
   message: string;
 
   /**
-   * previously existing name
+   * title of the article
    *
-   * @generated from field: string previous_name = 13;
+   * @generated from field: string title = 13;
    */
-  previousName: string;
+  title: string;
 
   constructor(data?: PartialMessage<UpdateReq>);
 
