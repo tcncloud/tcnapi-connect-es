@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -63,6 +63,7 @@ export declare const Learn: {
     },
     /**
      * search content in learning pages
+     * we allow all the logged in agents/admins to view search content
      *
      * @generated from rpc api.v0alpha.Learn.SearchContent
      */
@@ -71,6 +72,18 @@ export declare const Learn: {
       readonly I: typeof SearchContentReq,
       readonly O: typeof SearchRes,
       readonly kind: MethodKind.Unary,
+    },
+    /**
+     * stream search content results in learning pages
+     * we allow all the logged in agents/admins to view search content
+     *
+     * @generated from rpc api.v0alpha.Learn.ListSearchResults
+     */
+    readonly listSearchResults: {
+      readonly name: "ListSearchResults",
+      readonly I: typeof SearchContentReq,
+      readonly O: typeof SearchRes,
+      readonly kind: MethodKind.ServerStreaming,
     },
     /**
      * get standalone articles from learning pages
@@ -136,6 +149,29 @@ export declare const Learn: {
       readonly name: "DeleteStandalone",
       readonly I: typeof DeleteStandaloneReq,
       readonly O: typeof DeleteStandaloneRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * get snippet content from learning pages
+     * we allow all the logged in agents/admins to view snippet content
+     *
+     * @generated from rpc api.v0alpha.Learn.Snippet
+     */
+    readonly snippet: {
+      readonly name: "Snippet",
+      readonly I: typeof SnippetReq,
+      readonly O: typeof SnippetRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * delete learning pages
+     *
+     * @generated from rpc api.v0alpha.Learn.DeleteLearnPages
+     */
+    readonly deleteLearnPages: {
+      readonly name: "DeleteLearnPages",
+      readonly I: typeof DeleteLearnPagesReq,
+      readonly O: typeof DeleteLearnPagesRes,
       readonly kind: MethodKind.Unary,
     },
   }
