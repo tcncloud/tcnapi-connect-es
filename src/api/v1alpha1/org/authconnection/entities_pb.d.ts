@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AuthConnectionSettings, GroupItem } from "../../../commons/org/auth_connections_pb.js";
 
@@ -241,6 +241,13 @@ export declare class UpdateAuthConnectionSecretRequest extends Message<UpdateAut
    */
   clientSecret: string;
 
+  /**
+   * OPTIONAL: The date the secret will expire.
+   *
+   * @generated from field: api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration secret_expiration = 3;
+   */
+  secretExpiration?: UpdateAuthConnectionSecretRequest_SecretExpiration;
+
   constructor(data?: PartialMessage<UpdateAuthConnectionSecretRequest>);
 
   static readonly runtime: typeof proto3;
@@ -254,6 +261,30 @@ export declare class UpdateAuthConnectionSecretRequest extends Message<UpdateAut
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAuthConnectionSecretRequest;
 
   static equals(a: UpdateAuthConnectionSecretRequest | PlainMessage<UpdateAuthConnectionSecretRequest> | undefined, b: UpdateAuthConnectionSecretRequest | PlainMessage<UpdateAuthConnectionSecretRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration
+ */
+export declare class UpdateAuthConnectionSecretRequest_SecretExpiration extends Message<UpdateAuthConnectionSecretRequest_SecretExpiration> {
+  /**
+   * @generated from field: google.protobuf.Timestamp date = 1;
+   */
+  date?: Timestamp;
+
+  constructor(data?: PartialMessage<UpdateAuthConnectionSecretRequest_SecretExpiration>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAuthConnectionSecretRequest_SecretExpiration;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAuthConnectionSecretRequest_SecretExpiration;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAuthConnectionSecretRequest_SecretExpiration;
+
+  static equals(a: UpdateAuthConnectionSecretRequest_SecretExpiration | PlainMessage<UpdateAuthConnectionSecretRequest_SecretExpiration> | undefined, b: UpdateAuthConnectionSecretRequest_SecretExpiration | PlainMessage<UpdateAuthConnectionSecretRequest_SecretExpiration> | undefined): boolean;
 }
 
 /**
