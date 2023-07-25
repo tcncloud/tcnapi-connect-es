@@ -235,6 +235,13 @@ export declare class UpdateReq extends Message<UpdateReq> {
    */
   message: string;
 
+  /**
+   * previously existing name
+   *
+   * @generated from field: string previous_name = 13;
+   */
+  previousName: string;
+
   constructor(data?: PartialMessage<UpdateReq>);
 
   static readonly runtime: typeof proto3;

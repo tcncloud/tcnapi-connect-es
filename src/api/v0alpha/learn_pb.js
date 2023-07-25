@@ -108,6 +108,7 @@ export const UpdateReq = proto3.makeMessageType(
     { no: 2, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "previous_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
