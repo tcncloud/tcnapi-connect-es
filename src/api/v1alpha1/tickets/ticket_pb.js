@@ -100,7 +100,6 @@ export const EditMaskTicketRes = proto3.makeMessageType(
  * ListAllocatedTicketRes -
  *
  * @generated from message api.v1alpha1.tickets.ListAllocatedTicketRes
- * @deprecated
  */
 export const ListAllocatedTicketRes = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListAllocatedTicketRes",
@@ -113,32 +112,9 @@ export const ListAllocatedTicketRes = proto3.makeMessageType(
  * ListAllocatedTicketReq -
  *
  * @generated from message api.v1alpha1.tickets.ListAllocatedTicketReq
- * @deprecated
  */
 export const ListAllocatedTicketReq = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListAllocatedTicketReq",
-  [],
-);
-
-/**
- * ListAvailableAgentTicketsResponse -
- *
- * @generated from message api.v1alpha1.tickets.ListAvailableAgentTicketsResponse
- */
-export const ListAvailableAgentTicketsResponse = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListAvailableAgentTicketsResponse",
-  () => [
-    { no: 1, name: "ticket_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-  ],
-);
-
-/**
- * ListAvailableAgentTicketsRequest -
- *
- * @generated from message api.v1alpha1.tickets.ListAvailableAgentTicketsRequest
- */
-export const ListAvailableAgentTicketsRequest = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListAvailableAgentTicketsRequest",
   [],
 );
 
@@ -425,73 +401,6 @@ export const CreateSelfAssignRes = proto3.makeMessageType(
   "api.v1alpha1.tickets.CreateSelfAssignRes",
   () => [
     { no: 1, name: "is_assigned", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
- * ListSkillsRequest - request message
- *
- * @generated from message api.v1alpha1.tickets.ListSkillsRequest
- */
-export const ListSkillsRequest = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListSkillsRequest",
-  [],
-);
-
-/**
- * ListSkillsResponse - response message wraps p3 skills Id and name
- *
- * @generated from message api.v1alpha1.tickets.ListSkillsResponse
- */
-export const ListSkillsResponse = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListSkillsResponse",
-  () => [
-    { no: 1, name: "skills", kind: "message", T: Skill, repeated: true },
-  ],
-);
-
-/**
- * @generated from message api.v1alpha1.tickets.Skill
- */
-export const Skill = proto3.makeMessageType(
-  "api.v1alpha1.tickets.Skill",
-  () => [
-    { no: 1, name: "skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * ListUsersRequest - Users request message
- *
- * @generated from message api.v1alpha1.tickets.ListUsersRequest
- */
-export const ListUsersRequest = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListUsersRequest",
-  [],
-);
-
-/**
- * ListUsersResponse - response wraps userId, first_name, last_name
- *
- * @generated from message api.v1alpha1.tickets.ListUsersResponse
- */
-export const ListUsersResponse = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListUsersResponse",
-  () => [
-    { no: 1, name: "users", kind: "message", T: User, repeated: true },
-  ],
-);
-
-/**
- * @generated from message api.v1alpha1.tickets.User
- */
-export const User = proto3.makeMessageType(
-  "api.v1alpha1.tickets.User",
-  () => [
-    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
