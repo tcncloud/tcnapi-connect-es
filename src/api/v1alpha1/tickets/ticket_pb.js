@@ -405,22 +405,22 @@ export const CreateSelfAssignRes = proto3.makeMessageType(
 );
 
 /**
- * ListSkillsReq - request message
+ * ListSkillsRequest - request message
  *
- * @generated from message api.v1alpha1.tickets.ListSkillsReq
+ * @generated from message api.v1alpha1.tickets.ListSkillsRequest
  */
-export const ListSkillsReq = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListSkillsReq",
+export const ListSkillsRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListSkillsRequest",
   [],
 );
 
 /**
- * ListSkillsRes - response message wraps p3 skills Id and name
+ * ListSkillsResponse - response message wraps p3 skills Id and name
  *
- * @generated from message api.v1alpha1.tickets.ListSkillsRes
+ * @generated from message api.v1alpha1.tickets.ListSkillsResponse
  */
-export const ListSkillsRes = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListSkillsRes",
+export const ListSkillsResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListSkillsResponse",
   () => [
     { no: 1, name: "skills", kind: "message", T: Skill, repeated: true },
   ],
@@ -438,22 +438,22 @@ export const Skill = proto3.makeMessageType(
 );
 
 /**
- * ListUsersReq - Users request message
+ * ListUsersRequest - Users request message
  *
- * @generated from message api.v1alpha1.tickets.ListUsersReq
+ * @generated from message api.v1alpha1.tickets.ListUsersRequest
  */
-export const ListUsersReq = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListUsersReq",
+export const ListUsersRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListUsersRequest",
   [],
 );
 
 /**
- * ListUserRes - response wraps userId, first_name, last_name
+ * ListUsersResponse - response wraps userId, first_name, last_name
  *
- * @generated from message api.v1alpha1.tickets.ListUsersRes
+ * @generated from message api.v1alpha1.tickets.ListUsersResponse
  */
-export const ListUsersRes = proto3.makeMessageType(
-  "api.v1alpha1.tickets.ListUsersRes",
+export const ListUsersResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListUsersResponse",
   () => [
     { no: 1, name: "users", kind: "message", T: User, repeated: true },
   ],
