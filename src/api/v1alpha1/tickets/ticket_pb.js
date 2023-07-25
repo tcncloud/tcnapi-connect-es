@@ -100,6 +100,7 @@ export const EditMaskTicketRes = proto3.makeMessageType(
  * ListAllocatedTicketRes -
  *
  * @generated from message api.v1alpha1.tickets.ListAllocatedTicketRes
+ * @deprecated
  */
 export const ListAllocatedTicketRes = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListAllocatedTicketRes",
@@ -112,9 +113,32 @@ export const ListAllocatedTicketRes = proto3.makeMessageType(
  * ListAllocatedTicketReq -
  *
  * @generated from message api.v1alpha1.tickets.ListAllocatedTicketReq
+ * @deprecated
  */
 export const ListAllocatedTicketReq = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListAllocatedTicketReq",
+  [],
+);
+
+/**
+ * ListAvailableAgentTicketsResponse -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAvailableAgentTicketsResponse
+ */
+export const ListAvailableAgentTicketsResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListAvailableAgentTicketsResponse",
+  () => [
+    { no: 1, name: "ticket_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * ListAvailableAgentTicketsRequest -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAvailableAgentTicketsRequest
+ */
+export const ListAvailableAgentTicketsRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListAvailableAgentTicketsRequest",
   [],
 );
 

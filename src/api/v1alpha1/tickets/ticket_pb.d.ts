@@ -261,6 +261,7 @@ export declare class EditMaskTicketRes extends Message<EditMaskTicketRes> {
  * ListAllocatedTicketRes -
  *
  * @generated from message api.v1alpha1.tickets.ListAllocatedTicketRes
+ * @deprecated
  */
 export declare class ListAllocatedTicketRes extends Message<ListAllocatedTicketRes> {
   /**
@@ -287,6 +288,7 @@ export declare class ListAllocatedTicketRes extends Message<ListAllocatedTicketR
  * ListAllocatedTicketReq -
  *
  * @generated from message api.v1alpha1.tickets.ListAllocatedTicketReq
+ * @deprecated
  */
 export declare class ListAllocatedTicketReq extends Message<ListAllocatedTicketReq> {
   constructor(data?: PartialMessage<ListAllocatedTicketReq>);
@@ -302,6 +304,53 @@ export declare class ListAllocatedTicketReq extends Message<ListAllocatedTicketR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAllocatedTicketReq;
 
   static equals(a: ListAllocatedTicketReq | PlainMessage<ListAllocatedTicketReq> | undefined, b: ListAllocatedTicketReq | PlainMessage<ListAllocatedTicketReq> | undefined): boolean;
+}
+
+/**
+ * ListAvailableAgentTicketsResponse -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAvailableAgentTicketsResponse
+ */
+export declare class ListAvailableAgentTicketsResponse extends Message<ListAvailableAgentTicketsResponse> {
+  /**
+   * @generated from field: repeated int64 ticket_sid = 1;
+   */
+  ticketSid: bigint[];
+
+  constructor(data?: PartialMessage<ListAvailableAgentTicketsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListAvailableAgentTicketsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAvailableAgentTicketsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAvailableAgentTicketsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAvailableAgentTicketsResponse;
+
+  static equals(a: ListAvailableAgentTicketsResponse | PlainMessage<ListAvailableAgentTicketsResponse> | undefined, b: ListAvailableAgentTicketsResponse | PlainMessage<ListAvailableAgentTicketsResponse> | undefined): boolean;
+}
+
+/**
+ * ListAvailableAgentTicketsRequest -
+ *
+ * @generated from message api.v1alpha1.tickets.ListAvailableAgentTicketsRequest
+ */
+export declare class ListAvailableAgentTicketsRequest extends Message<ListAvailableAgentTicketsRequest> {
+  constructor(data?: PartialMessage<ListAvailableAgentTicketsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListAvailableAgentTicketsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAvailableAgentTicketsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAvailableAgentTicketsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAvailableAgentTicketsRequest;
+
+  static equals(a: ListAvailableAgentTicketsRequest | PlainMessage<ListAvailableAgentTicketsRequest> | undefined, b: ListAvailableAgentTicketsRequest | PlainMessage<ListAvailableAgentTicketsRequest> | undefined): boolean;
 }
 
 /**
