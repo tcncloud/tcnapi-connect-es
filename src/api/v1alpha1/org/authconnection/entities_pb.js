@@ -144,6 +144,7 @@ export const UpdateAuthConnectionGroupsRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "default_group", kind: "message", T: GroupItem },
     { no: 2, name: "custom_groups", kind: "message", T: GroupItem, repeated: true },
+    { no: 3, name: "connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

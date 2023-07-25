@@ -330,6 +330,13 @@ export declare class UpdateAuthConnectionGroupsRequest extends Message<UpdateAut
    */
   customGroups: GroupItem[];
 
+  /**
+   * the connection that will be updated.
+   *
+   * @generated from field: string connection_id = 3;
+   */
+  connectionId: string;
+
   constructor(data?: PartialMessage<UpdateAuthConnectionGroupsRequest>);
 
   static readonly runtime: typeof proto3;
