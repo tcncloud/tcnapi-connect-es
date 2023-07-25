@@ -473,121 +473,6 @@ export declare class ListAvailableFieldsByElementIdReq extends Message<ListAvail
 }
 
 /**
- * @generated from message api.v0alpha.ListFieldsForElementReq
- */
-export declare class ListFieldsForElementReq extends Message<ListFieldsForElementReq> {
-  /**
-   * @generated from field: string element_id = 1;
-   */
-  elementId: string;
-
-  constructor(data?: PartialMessage<ListFieldsForElementReq>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ListFieldsForElementReq";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFieldsForElementReq;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFieldsForElementReq;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFieldsForElementReq;
-
-  static equals(a: ListFieldsForElementReq | PlainMessage<ListFieldsForElementReq> | undefined, b: ListFieldsForElementReq | PlainMessage<ListFieldsForElementReq> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.ListFieldsForElementRes
- */
-export declare class ListFieldsForElementRes extends Message<ListFieldsForElementRes> {
-  /**
-   * @generated from field: repeated api.v0alpha.Field fields = 1;
-   */
-  fields: Field[];
-
-  constructor(data?: PartialMessage<ListFieldsForElementRes>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ListFieldsForElementRes";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFieldsForElementRes;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFieldsForElementRes;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFieldsForElementRes;
-
-  static equals(a: ListFieldsForElementRes | PlainMessage<ListFieldsForElementRes> | undefined, b: ListFieldsForElementRes | PlainMessage<ListFieldsForElementRes> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.ListAutocompleteFieldsReq
- */
-export declare class ListAutocompleteFieldsReq extends Message<ListAutocompleteFieldsReq> {
-  constructor(data?: PartialMessage<ListAutocompleteFieldsReq>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ListAutocompleteFieldsReq";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAutocompleteFieldsReq;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAutocompleteFieldsReq;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAutocompleteFieldsReq;
-
-  static equals(a: ListAutocompleteFieldsReq | PlainMessage<ListAutocompleteFieldsReq> | undefined, b: ListAutocompleteFieldsReq | PlainMessage<ListAutocompleteFieldsReq> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.ListAutocompleteFieldsRes
- */
-export declare class ListAutocompleteFieldsRes extends Message<ListAutocompleteFieldsRes> {
-  /**
-   * @generated from field: repeated api.v0alpha.Field fields = 1;
-   */
-  fields: Field[];
-
-  constructor(data?: PartialMessage<ListAutocompleteFieldsRes>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ListAutocompleteFieldsRes";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAutocompleteFieldsRes;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAutocompleteFieldsRes;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAutocompleteFieldsRes;
-
-  static equals(a: ListAutocompleteFieldsRes | PlainMessage<ListAutocompleteFieldsRes> | undefined, b: ListAutocompleteFieldsRes | PlainMessage<ListAutocompleteFieldsRes> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v0alpha.ElementPK
- */
-export declare class ElementPK extends Message<ElementPK> {
-  /**
-   * @generated from field: string element_id = 1;
-   */
-  elementId: string;
-
-  constructor(data?: PartialMessage<ElementPK>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ElementPK";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ElementPK;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ElementPK;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ElementPK;
-
-  static equals(a: ElementPK | PlainMessage<ElementPK> | undefined, b: ElementPK | PlainMessage<ElementPK> | undefined): boolean;
-}
-
-/**
  * REPLACES PipelineElement and List
  *
  * @generated from message api.v0alpha.Element
@@ -7025,15 +6910,9 @@ export declare class ListMetrics extends Message<ListMetrics> {
    * all the field types that exist. field_types[i] has a name of field_names[i].
    * THeir indexes match up
    *
-   * @generated from field: repeated api.commons.RecordType field_types = 4 [deprecated = true];
-   * @deprecated
+   * @generated from field: repeated api.commons.RecordType field_types = 4;
    */
   fieldTypes: RecordType[];
-
-  /**
-   * @generated from field: repeated api.commons.FieldType ftypes = 18;
-   */
-  ftypes: FieldType[];
 
   /**
    * the counts of the field_name[i], field_type[i] pairs.

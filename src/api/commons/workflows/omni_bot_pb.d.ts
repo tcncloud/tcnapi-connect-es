@@ -13,10 +13,9 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export declare class OmniBotNodeTestStart extends Message<OmniBotNodeTestStart> {
   /**
-   * deprecated
+   * Optional. Startup data to be used by the test.
    *
-   * @generated from field: string data = 1 [deprecated = true];
-   * @deprecated
+   * @generated from field: string data = 1;
    */
   data: string;
 
@@ -42,10 +41,9 @@ export declare class OmniBotNodeTestStart extends Message<OmniBotNodeTestStart> 
  */
 export declare class OmniBotNodeTestStep extends Message<OmniBotNodeTestStep> {
   /**
-   * deprecated
+   * Required. Data to be used by the test.
    *
-   * @generated from field: string data = 1 [deprecated = true];
-   * @deprecated
+   * @generated from field: string data = 1;
    */
   data: string;
 
@@ -71,10 +69,9 @@ export declare class OmniBotNodeTestStep extends Message<OmniBotNodeTestStep> {
  */
 export declare class OmniBotNodeTestEnd extends Message<OmniBotNodeTestEnd> {
   /**
-   * deprecated
+   * Optional. Error message if the test failed.
    *
-   * @generated from field: string error = 1 [deprecated = true];
-   * @deprecated
+   * @generated from field: string error = 1;
    */
   error: string;
 

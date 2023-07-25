@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, UpdateAuthConnectionGroupsRequest, UpdateAuthConnectionGroupsResponse, UpdateAuthConnectionSecretRequest, UpdateAuthConnectionSecretResponse } from "./entities_pb.js";
+import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, GetAuthConnectionRequest, GetAuthConnectionResponse, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, UpdateAuthConnectionGroupsRequest, UpdateAuthConnectionGroupsResponse, UpdateAuthConnectionSecretRequest, UpdateAuthConnectionSecretResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -24,7 +24,8 @@ export const AuthConnectionService = {
       kind: MethodKind.Unary,
     },
     /**
-     * GetAuthConnectionSettings gets auth0 connection settings.
+     * GetAuthConnectionSettings gets auth connection settings.
+     * DEPRECATED: use GetAuthConnection
      *
      * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.GetAuthConnectionSettings
      */
@@ -32,6 +33,17 @@ export const AuthConnectionService = {
       name: "GetAuthConnectionSettings",
       I: GetAuthConnectionSettingsRequest,
       O: GetAuthConnectionSettingsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetAuthConnection gets an existing auth connection.
+     *
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.GetAuthConnection
+     */
+    getAuthConnection: {
+      name: "GetAuthConnection",
+      I: GetAuthConnectionRequest,
+      O: GetAuthConnectionResponse,
       kind: MethodKind.Unary,
     },
     /**

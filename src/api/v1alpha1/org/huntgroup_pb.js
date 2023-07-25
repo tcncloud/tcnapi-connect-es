@@ -163,52 +163,6 @@ export const CreateDataDipTemplateResponse = proto3.makeMessageType(
 );
 
 /**
- * Request message for UpdateDataDipTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.UpdateDataDipTemplateRequest
- */
-export const UpdateDataDipTemplateRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.UpdateDataDipTemplateRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "template", kind: "message", T: DataDipConfig },
-  ],
-);
-
-/**
- * Response message for UpdateDataDipTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.UpdateDataDipTemplateResponse
- */
-export const UpdateDataDipTemplateResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.UpdateDataDipTemplateResponse",
-  [],
-);
-
-/**
- * Request message for DeleteDataDipTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.DeleteDataDipTemplateRequest
- */
-export const DeleteDataDipTemplateRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.DeleteDataDipTemplateRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "xml_client_property_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * Response message for DeleteDataDipTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.DeleteDataDipTemplateResponse
- */
-export const DeleteDataDipTemplateResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.DeleteDataDipTemplateResponse",
-  [],
-);
-
-/**
  * Request message for the ListAgentResponseAutoRules RPC method.
  *
  * @generated from message api.v1alpha1.org.ListAgentResponseAutoRulesRequest

@@ -5819,13 +5819,6 @@ export declare class ShiftTemplate extends Message<ShiftTemplate> {
    */
   DOWPlacements: DOWPlacement[];
 
-  /**
-   * agent groups that are children of call center node
-   *
-   * @generated from field: repeated api.v1alpha1.wfm.AgentGroup member_agent_groups = 17;
-   */
-  memberAgentGroups: AgentGroup[];
-
   constructor(data?: PartialMessage<ShiftTemplate>);
 
   static readonly runtime: typeof proto3;
@@ -9439,13 +9432,6 @@ export declare class CreateDraftScheduleReq extends Message<CreateDraftScheduleR
    */
   schedulingRange?: DatetimeRange;
 
-  /**
-   * ID of the schedule scenario that the draft schedule will be associated with.
-   *
-   * @generated from field: int64 schedule_scenario_sid = 4;
-   */
-  scheduleScenarioSid: bigint;
-
   constructor(data?: PartialMessage<CreateDraftScheduleReq>);
 
   static readonly runtime: typeof proto3;
@@ -10422,99 +10408,6 @@ export declare class UpdateShiftInstanceRes extends Message<UpdateShiftInstanceR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShiftInstanceRes;
 
   static equals(a: UpdateShiftInstanceRes | PlainMessage<UpdateShiftInstanceRes> | undefined, b: UpdateShiftInstanceRes | PlainMessage<UpdateShiftInstanceRes> | undefined): boolean;
-}
-
-/**
- * Request message for the UpdateShiftInstanceV2 RPC
- *
- * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceV2Req
- */
-export declare class UpdateShiftInstanceV2Req extends Message<UpdateShiftInstanceV2Req> {
-  /**
-   * ID of the shift instance to update.
-   *
-   * @generated from field: int64 shift_instance_sid = 1;
-   */
-  shiftInstanceSid: bigint;
-
-  /**
-   * The new start time for the updated shift instance.
-   *
-   * @generated from field: google.protobuf.Timestamp start_datetime = 2;
-   */
-  startDatetime?: Timestamp;
-
-  /**
-   * The width of the updated shift instance
-   *
-   * @generated from field: int32 width_in_minutes = 3;
-   */
-  widthInMinutes: number;
-
-  /**
-   * The updated wfm agent to be assigned to @shift_segment_sid.
-   *
-   * @generated from field: int64 wfm_agent_sid = 4;
-   */
-  wfmAgentSid: bigint;
-
-  /**
-   * If true, locks @shift_instance_sid, so that it may not be updated again without being unlocked.
-   * if true and the shift instance already is locked, the instance will not have any fields updated.
-   * If false, will unlock a currently locked shift instance and allow it to be updated.
-   *
-   * @generated from field: bool is_locked = 5;
-   */
-  isLocked: boolean;
-
-  constructor(data?: PartialMessage<UpdateShiftInstanceV2Req>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.UpdateShiftInstanceV2Req";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateShiftInstanceV2Req;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateShiftInstanceV2Req;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShiftInstanceV2Req;
-
-  static equals(a: UpdateShiftInstanceV2Req | PlainMessage<UpdateShiftInstanceV2Req> | undefined, b: UpdateShiftInstanceV2Req | PlainMessage<UpdateShiftInstanceV2Req> | undefined): boolean;
-}
-
-/**
- * Response message for the UpdateShiftInstanceV2 RPC
- *
- * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceV2Res
- */
-export declare class UpdateShiftInstanceV2Res extends Message<UpdateShiftInstanceV2Res> {
-  /**
-   * The updated shift instance.
-   *
-   * @generated from field: api.v1alpha1.wfm.ShiftInstance shift_instance = 1;
-   */
-  shiftInstance?: ShiftInstance;
-
-  /**
-   * A list of diagnostics for any errors encountered, which prevented the update.
-   *
-   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
-   */
-  diagnostics: Diagnostic[];
-
-  constructor(data?: PartialMessage<UpdateShiftInstanceV2Res>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.UpdateShiftInstanceV2Res";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateShiftInstanceV2Res;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateShiftInstanceV2Res;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShiftInstanceV2Res;
-
-  static equals(a: UpdateShiftInstanceV2Res | PlainMessage<UpdateShiftInstanceV2Res> | undefined, b: UpdateShiftInstanceV2Res | PlainMessage<UpdateShiftInstanceV2Res> | undefined): boolean;
 }
 
 /**

@@ -26,7 +26,9 @@ export const CreateAuthConnectionRequest = proto3.makeMessageType(
  */
 export const CreateAuthConnectionResponse = proto3.makeMessageType(
   "api.v1alpha1.org.authconnection.CreateAuthConnectionResponse",
-  [],
+  () => [
+    { no: 1, name: "connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**
@@ -46,6 +48,30 @@ export const GetAuthConnectionSettingsRequest = proto3.makeMessageType(
  */
 export const GetAuthConnectionSettingsResponse = proto3.makeMessageType(
   "api.v1alpha1.org.authconnection.GetAuthConnectionSettingsResponse",
+  () => [
+    { no: 1, name: "settings", kind: "message", T: AuthConnectionSettings },
+  ],
+);
+
+/**
+ * Request message for the GetAuthConnection rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.GetAuthConnectionRequest
+ */
+export const GetAuthConnectionRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.GetAuthConnectionRequest",
+  () => [
+    { no: 1, name: "connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the GetAuthConnection rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.GetAuthConnectionResponse
+ */
+export const GetAuthConnectionResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.GetAuthConnectionResponse",
   () => [
     { no: 1, name: "settings", kind: "message", T: AuthConnectionSettings },
   ],

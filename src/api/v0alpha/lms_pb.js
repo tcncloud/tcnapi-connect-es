@@ -197,54 +197,6 @@ export const ListAvailableFieldsByElementIdReq = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.ListFieldsForElementReq
- */
-export const ListFieldsForElementReq = proto3.makeMessageType(
-  "api.v0alpha.ListFieldsForElementReq",
-  () => [
-    { no: 1, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ListFieldsForElementRes
- */
-export const ListFieldsForElementRes = proto3.makeMessageType(
-  "api.v0alpha.ListFieldsForElementRes",
-  () => [
-    { no: 1, name: "fields", kind: "message", T: Field, repeated: true },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ListAutocompleteFieldsReq
- */
-export const ListAutocompleteFieldsReq = proto3.makeMessageType(
-  "api.v0alpha.ListAutocompleteFieldsReq",
-  [],
-);
-
-/**
- * @generated from message api.v0alpha.ListAutocompleteFieldsRes
- */
-export const ListAutocompleteFieldsRes = proto3.makeMessageType(
-  "api.v0alpha.ListAutocompleteFieldsRes",
-  () => [
-    { no: 1, name: "fields", kind: "message", T: Field, repeated: true },
-  ],
-);
-
-/**
- * @generated from message api.v0alpha.ElementPK
- */
-export const ElementPK = proto3.makeMessageType(
-  "api.v0alpha.ElementPK",
-  () => [
-    { no: 1, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
  * REPLACES PipelineElement and List
  *
  * @generated from message api.v0alpha.Element
@@ -2113,7 +2065,6 @@ export const ListMetrics = proto3.makeMessageType(
     { no: 2, name: "output_record_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "field_names", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 4, name: "field_types", kind: "enum", T: proto3.getEnumType(RecordType), repeated: true },
-    { no: 18, name: "ftypes", kind: "enum", T: proto3.getEnumType(FieldType), repeated: true },
     { no: 5, name: "field_counts", kind: "scalar", T: 5 /* ScalarType.INT32 */, repeated: true },
     { no: 6, name: "run_type", kind: "enum", T: proto3.getEnumType(RunType) },
     { no: 7, name: "success_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },

@@ -51,6 +51,13 @@ export declare class CreateAuthConnectionRequest extends Message<CreateAuthConne
  * @generated from message api.v1alpha1.org.authconnection.CreateAuthConnectionResponse
  */
 export declare class CreateAuthConnectionResponse extends Message<CreateAuthConnectionResponse> {
+  /**
+   * The id of the newly created auth connection.
+   *
+   * @generated from field: string connection_id = 1;
+   */
+  connectionId: string;
+
   constructor(data?: PartialMessage<CreateAuthConnectionResponse>);
 
   static readonly runtime: typeof proto3;
@@ -111,6 +118,60 @@ export declare class GetAuthConnectionSettingsResponse extends Message<GetAuthCo
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAuthConnectionSettingsResponse;
 
   static equals(a: GetAuthConnectionSettingsResponse | PlainMessage<GetAuthConnectionSettingsResponse> | undefined, b: GetAuthConnectionSettingsResponse | PlainMessage<GetAuthConnectionSettingsResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetAuthConnection rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.GetAuthConnectionRequest
+ */
+export declare class GetAuthConnectionRequest extends Message<GetAuthConnectionRequest> {
+  /**
+   * The id of the connetion to retrieve.
+   *
+   * @generated from field: string connection_id = 1;
+   */
+  connectionId: string;
+
+  constructor(data?: PartialMessage<GetAuthConnectionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.authconnection.GetAuthConnectionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAuthConnectionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAuthConnectionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAuthConnectionRequest;
+
+  static equals(a: GetAuthConnectionRequest | PlainMessage<GetAuthConnectionRequest> | undefined, b: GetAuthConnectionRequest | PlainMessage<GetAuthConnectionRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetAuthConnection rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.GetAuthConnectionResponse
+ */
+export declare class GetAuthConnectionResponse extends Message<GetAuthConnectionResponse> {
+  /**
+   * @generated from field: api.commons.org.AuthConnectionSettings settings = 1;
+   */
+  settings?: AuthConnectionSettings;
+
+  constructor(data?: PartialMessage<GetAuthConnectionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.authconnection.GetAuthConnectionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetAuthConnectionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetAuthConnectionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetAuthConnectionResponse;
+
+  static equals(a: GetAuthConnectionResponse | PlainMessage<GetAuthConnectionResponse> | undefined, b: GetAuthConnectionResponse | PlainMessage<GetAuthConnectionResponse> | undefined): boolean;
 }
 
 /**
