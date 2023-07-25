@@ -723,6 +723,13 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
    */
   lastEditedTimestamp?: Timestamp;
 
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
+
   constructor(data?: PartialMessage<LearnStandaloneDetails>);
 
   static readonly runtime: typeof proto3;
