@@ -924,41 +924,7 @@ export const Transcript = proto3.makeMessageType(
     { no: 20, name: "delete_time", kind: "message", T: Timestamp },
     { no: 21, name: "number_format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 22, name: "agent_response", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: AgentResponse} },
-    { no: 23, name: "phone", kind: "message", T: Transcript_Phone },
   ],
-);
-
-/**
- * @generated from message api.v1alpha1.vanalytics.Transcript.Phone
- */
-export const Transcript_Phone = proto3.makeMessageType(
-  "api.v1alpha1.vanalytics.Transcript.Phone",
-  () => [
-    { no: 1, name: "cc", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 2, name: "ndc", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 3, name: "prefix", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 4, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 5, name: "iso2", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 6, name: "region_code", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 7, name: "region_name", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 8, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 9, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 10, name: "utc", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
-    { no: 11, name: "location", kind: "message", T: Transcript_Phone_Location, repeated: true },
-  ],
-  {localName: "Transcript_Phone"},
-);
-
-/**
- * @generated from message api.v1alpha1.vanalytics.Transcript.Phone.Location
- */
-export const Transcript_Phone_Location = proto3.makeMessageType(
-  "api.v1alpha1.vanalytics.Transcript.Phone.Location",
-  () => [
-    { no: 1, name: "lon", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
-    { no: 2, name: "lat", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
-  ],
-  {localName: "Transcript_Phone_Location"},
 );
 
 /**

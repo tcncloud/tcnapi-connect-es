@@ -2597,11 +2597,6 @@ export declare class Transcript extends Message<Transcript> {
    */
   agentResponse: { [key: string]: AgentResponse };
 
-  /**
-   * @generated from field: api.v1alpha1.vanalytics.Transcript.Phone phone = 23;
-   */
-  phone?: Transcript_Phone;
-
   constructor(data?: PartialMessage<Transcript>);
 
   static readonly runtime: typeof proto3;
@@ -2615,109 +2610,6 @@ export declare class Transcript extends Message<Transcript> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Transcript;
 
   static equals(a: Transcript | PlainMessage<Transcript> | undefined, b: Transcript | PlainMessage<Transcript> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v1alpha1.vanalytics.Transcript.Phone
- */
-export declare class Transcript_Phone extends Message<Transcript_Phone> {
-  /**
-   * @generated from field: repeated string cc = 1;
-   */
-  cc: string[];
-
-  /**
-   * @generated from field: repeated string ndc = 2;
-   */
-  ndc: string[];
-
-  /**
-   * @generated from field: repeated string prefix = 3;
-   */
-  prefix: string[];
-
-  /**
-   * @generated from field: repeated string city = 4;
-   */
-  city: string[];
-
-  /**
-   * @generated from field: repeated string iso2 = 5;
-   */
-  iso2: string[];
-
-  /**
-   * @generated from field: repeated string region_code = 6;
-   */
-  regionCode: string[];
-
-  /**
-   * @generated from field: repeated string region_name = 7;
-   */
-  regionName: string[];
-
-  /**
-   * @generated from field: repeated string time_zone = 8;
-   */
-  timeZone: string[];
-
-  /**
-   * @generated from field: repeated string type = 9;
-   */
-  type: string[];
-
-  /**
-   * @generated from field: repeated float utc = 10;
-   */
-  utc: number[];
-
-  /**
-   * @generated from field: repeated api.v1alpha1.vanalytics.Transcript.Phone.Location location = 11;
-   */
-  location: Transcript_Phone_Location[];
-
-  constructor(data?: PartialMessage<Transcript_Phone>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.vanalytics.Transcript.Phone";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Transcript_Phone;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Transcript_Phone;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Transcript_Phone;
-
-  static equals(a: Transcript_Phone | PlainMessage<Transcript_Phone> | undefined, b: Transcript_Phone | PlainMessage<Transcript_Phone> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v1alpha1.vanalytics.Transcript.Phone.Location
- */
-export declare class Transcript_Phone_Location extends Message<Transcript_Phone_Location> {
-  /**
-   * @generated from field: double lon = 1;
-   */
-  lon: number;
-
-  /**
-   * @generated from field: double lat = 2;
-   */
-  lat: number;
-
-  constructor(data?: PartialMessage<Transcript_Phone_Location>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.vanalytics.Transcript.Phone.Location";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Transcript_Phone_Location;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Transcript_Phone_Location;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Transcript_Phone_Location;
-
-  static equals(a: Transcript_Phone_Location | PlainMessage<Transcript_Phone_Location> | undefined, b: Transcript_Phone_Location | PlainMessage<Transcript_Phone_Location> | undefined): boolean;
 }
 
 /**
