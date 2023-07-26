@@ -244,7 +244,187 @@ export const SearchQuery = proto3.makeMessageType(
     { no: 8, name: "results", kind: "message", T: SearchQuery_Results },
     { no: 9, name: "agent_response", kind: "message", T: SearchQuery_AgentResponse },
     { no: 10, name: "agent_call_log", kind: "message", T: SearchQuery_AgentCallLog },
+    { no: 11, name: "phone", kind: "message", T: SearchQuery_Phone },
   ],
+);
+
+/**
+ * Phone defines a query on the phone.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Phone
+ */
+export const SearchQuery_Phone = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Phone",
+  () => [
+    { no: 1, name: "cc", kind: "message", T: SearchQuery_Cc },
+    { no: 2, name: "ndc", kind: "message", T: SearchQuery_Ndc },
+    { no: 3, name: "prefix", kind: "message", T: SearchQuery_Prefix },
+    { no: 4, name: "city", kind: "message", T: SearchQuery_City },
+    { no: 5, name: "iso2", kind: "message", T: SearchQuery_Iso2 },
+    { no: 6, name: "region_code", kind: "message", T: SearchQuery_RegionCode },
+    { no: 7, name: "region_name", kind: "message", T: SearchQuery_RegionName },
+    { no: 8, name: "time_zone", kind: "message", T: SearchQuery_TimeZone },
+    { no: 9, name: "type", kind: "message", T: SearchQuery_Type },
+    { no: 10, name: "utc", kind: "message", T: SearchQuery_Utc },
+    { no: 11, name: "location", kind: "message", T: SearchQuery_Location },
+  ],
+  {localName: "SearchQuery_Phone"},
+);
+
+/**
+ * Cc defines a query on the phone country code.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Cc
+ */
+export const SearchQuery_Cc = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Cc",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_Cc"},
+);
+
+/**
+ * Ndc defines a query on the phone ndc.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Ndc
+ */
+export const SearchQuery_Ndc = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Ndc",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_Ndc"},
+);
+
+/**
+ * Prefix defines a query on the phone prefix.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Prefix
+ */
+export const SearchQuery_Prefix = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Prefix",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_Prefix"},
+);
+
+/**
+ * City defines a query on the phone city.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.City
+ */
+export const SearchQuery_City = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.City",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_City"},
+);
+
+/**
+ * Iso2 defines a query on the phone Iso2.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Iso2
+ */
+export const SearchQuery_Iso2 = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Iso2",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_Iso2"},
+);
+
+/**
+ * RegionCode defines a query on the phone region code.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.RegionCode
+ */
+export const SearchQuery_RegionCode = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.RegionCode",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_RegionCode"},
+);
+
+/**
+ * RegionName defines a query on the phone region name.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.RegionName
+ */
+export const SearchQuery_RegionName = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.RegionName",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_RegionName"},
+);
+
+/**
+ * TimeZone defines a query on the phone time zone.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.TimeZone
+ */
+export const SearchQuery_TimeZone = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.TimeZone",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_TimeZone"},
+);
+
+/**
+ * Type defines a query on the phone type.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Type
+ */
+export const SearchQuery_Type = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Type",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "SearchQuery_Type"},
+);
+
+/**
+ * Utc defines a query on the phone utc.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Utc
+ */
+export const SearchQuery_Utc = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Utc",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+  {localName: "SearchQuery_Utc"},
+);
+
+/**
+ * Location defines a query on the phone location.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Location
+ */
+export const SearchQuery_Location = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Location",
+  () => [
+    { no: 1, name: "zip_code_proximity", kind: "message", T: SearchQuery_Location_ZipCodeProximity },
+  ],
+  {localName: "SearchQuery_Location"},
+);
+
+/**
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity
+ */
+export const SearchQuery_Location_ZipCodeProximity = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity",
+  () => [
+    { no: 1, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "zip_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "distance", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "SearchQuery_Location_ZipCodeProximity"},
 );
 
 /**
@@ -744,7 +924,41 @@ export const Transcript = proto3.makeMessageType(
     { no: 20, name: "delete_time", kind: "message", T: Timestamp },
     { no: 21, name: "number_format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 22, name: "agent_response", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: AgentResponse} },
+    { no: 23, name: "phone", kind: "message", T: Transcript_Phone },
   ],
+);
+
+/**
+ * @generated from message api.v1alpha1.vanalytics.Transcript.Phone
+ */
+export const Transcript_Phone = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.Transcript.Phone",
+  () => [
+    { no: 1, name: "cc", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "ndc", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "prefix", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "city", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "iso2", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "region_code", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "region_name", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 9, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "utc", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+    { no: 11, name: "location", kind: "message", T: Transcript_Phone_Location, repeated: true },
+  ],
+  {localName: "Transcript_Phone"},
+);
+
+/**
+ * @generated from message api.v1alpha1.vanalytics.Transcript.Phone.Location
+ */
+export const Transcript_Phone_Location = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.Transcript.Phone.Location",
+  () => [
+    { no: 1, name: "lon", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "lat", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+  {localName: "Transcript_Phone_Location"},
 );
 
 /**
