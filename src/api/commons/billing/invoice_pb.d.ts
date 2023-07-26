@@ -75,6 +75,26 @@ export declare enum Product {
 }
 
 /**
+ * @generated from enum api.commons.billing.InvoiceFormat
+ */
+export declare enum InvoiceFormat {
+  /**
+   * @generated from enum value: INVOICE_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: INVOICE_FORMAT_PROTO = 1;
+   */
+  PROTO = 1,
+
+  /**
+   * @generated from enum value: INVOICE_FORMAT_CSV = 2;
+   */
+  CSV = 2,
+}
+
+/**
  * Invoice - a collection of products with their total rated amount for
  * a selected month or month-to-date.
  *

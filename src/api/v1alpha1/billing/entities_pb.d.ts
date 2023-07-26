@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Detail, Plan } from "../../commons/billing/detail_pb.js";
-import type { Invoice } from "../../commons/billing/invoice_pb.js";
+import type { Invoice, InvoiceFormat as InvoiceFormat$1 } from "../../commons/billing/invoice_pb.js";
 
 /**
  * @generated from enum api.v1alpha1.billing.InvoiceFormat
@@ -172,12 +172,20 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
   orgId: string;
 
   /**
-   * Optional. the invoice for the organization. If not specified,
-   * will use the proto format as the default
+   * deprecated
    *
-   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3;
+   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
+   * @deprecated
    */
   format: InvoiceFormat;
+
+  /**
+   * Optional. the format the invoice is returned using. If not specified,
+   * will use the proto format as the default
+   *
+   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4;
+   */
+  invoiceFormat: InvoiceFormat$1;
 
   constructor(data?: PartialMessage<GetInvoiceReq>);
 
@@ -203,28 +211,57 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   /**
    * deprecated
    *
-   * @generated from field: api.commons.billing.Invoice invoice = 1;
+   * @generated from field: api.commons.billing.Invoice invoice = 1 [deprecated = true];
+   * @deprecated
    */
   invoice?: Invoice;
 
   /**
-   * the invoice for the organization
+   * deprecated
    *
    * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.format
    */
   format: {
     /**
-     * @generated from field: api.commons.billing.Invoice proto = 2;
+     * @generated from field: api.commons.billing.Invoice proto = 2 [deprecated = true];
+     * @deprecated
      */
     value: Invoice;
     case: "proto";
   } | {
     /**
-     * @generated from field: string csv_url = 3;
+     * @generated from field: string csv_url = 3 [deprecated = true];
+     * @deprecated
      */
     value: string;
     case: "csvUrl";
   } | { case: undefined; value?: undefined };
+
+  /**
+   * the invoice in the format requested
+   *
+   * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.invoice_data
+   */
+  invoiceData: {
+    /**
+     * @generated from field: api.commons.billing.Invoice invoice_proto = 100;
+     */
+    value: Invoice;
+    case: "invoiceProto";
+  } | {
+    /**
+     * @generated from field: string invoice_csv_url = 101;
+     */
+    value: string;
+    case: "invoiceCsvUrl";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * the billing cycle of the invoice requested
+   *
+   * @generated from field: string billing_cycle = 4;
+   */
+  billingCycle: string;
 
   constructor(data?: PartialMessage<GetInvoiceRes>);
 
@@ -265,12 +302,20 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
   orgId: string;
 
   /**
+   * deprecated
+   *
+   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
+   * @deprecated
+   */
+  format: InvoiceFormat;
+
+  /**
    * Optional. the invoice for the organization. If not specified,
    * will use the proto format as the default
    *
-   * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3;
+   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4;
    */
-  format: InvoiceFormat;
+  invoiceFormat: InvoiceFormat$1;
 
   constructor(data?: PartialMessage<ExportGeneratedInvoiceReq>);
 
@@ -294,23 +339,51 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
  */
 export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedInvoiceRes> {
   /**
-   * the invoice for the organization
+   * deprecated
    *
    * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.format
    */
   format: {
     /**
-     * @generated from field: api.commons.billing.Invoice proto = 1;
+     * @generated from field: api.commons.billing.Invoice proto = 1 [deprecated = true];
+     * @deprecated
      */
     value: Invoice;
     case: "proto";
   } | {
     /**
-     * @generated from field: string csv_url = 2;
+     * @generated from field: string csv_url = 2 [deprecated = true];
+     * @deprecated
      */
     value: string;
     case: "csvUrl";
   } | { case: undefined; value?: undefined };
+
+  /**
+   * the invoice in the format requested
+   *
+   * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.invoice_data
+   */
+  invoiceData: {
+    /**
+     * @generated from field: api.commons.billing.Invoice invoice_proto = 100;
+     */
+    value: Invoice;
+    case: "invoiceProto";
+  } | {
+    /**
+     * @generated from field: string invoice_csv_url = 101;
+     */
+    value: string;
+    case: "invoiceCsvUrl";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * the billing cycle of the invoice requested
+   *
+   * @generated from field: string billing_cycle = 4;
+   */
+  billingCycle: string;
 
   constructor(data?: PartialMessage<ExportGeneratedInvoiceRes>);
 

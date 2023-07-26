@@ -30,6 +30,18 @@ export const Product = proto3.makeEnum(
 );
 
 /**
+ * @generated from enum api.commons.billing.InvoiceFormat
+ */
+export const InvoiceFormat = proto3.makeEnum(
+  "api.commons.billing.InvoiceFormat",
+  [
+    {no: 0, name: "INVOICE_FORMAT_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "INVOICE_FORMAT_PROTO", localName: "PROTO"},
+    {no: 2, name: "INVOICE_FORMAT_CSV", localName: "CSV"},
+  ],
+);
+
+/**
  * Invoice - a collection of products with their total rated amount for
  * a selected month or month-to-date.
  *

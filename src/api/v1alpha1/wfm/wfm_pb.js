@@ -3530,6 +3530,7 @@ export const SwapShiftInstancesRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.SwapShiftInstancesRes",
   () => [
     { no: 1, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );
 
@@ -3589,6 +3590,32 @@ export const UpdateShiftInstanceV2Res = proto3.makeMessageType(
   () => [
     { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the ListShiftInstanceSidsForAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstanceSidsForAgentReq
+ */
+export const ListShiftInstanceSidsForAgentReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListShiftInstanceSidsForAgentReq",
+  () => [
+    { no: 1, name: "schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 2, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 3, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * ListShiftInstanceSidsForAgent response RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstanceSidsForAgentRes
+ */
+export const ListShiftInstanceSidsForAgentRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListShiftInstanceSidsForAgentRes",
+  () => [
+    { no: 1, name: "shift_instance_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 
