@@ -526,6 +526,15 @@ export const LMS = {
       O: Empty,
       kind: MethodKind.Unary,
     },
+    /**
+     * @generated from rpc api.v0alpha.LMS.GetQueuedEventsStatusByElementId
+     */
+    getQueuedEventsStatusByElementId: {
+      name: "GetQueuedEventsStatusByElementId",
+      I: ElementPK,
+      O: Events,
+      kind: MethodKind.Unary,
+    },
   }
 };
 
