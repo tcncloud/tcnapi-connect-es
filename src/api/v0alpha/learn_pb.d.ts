@@ -133,6 +133,13 @@ export declare class ContentRes extends Message<ContentRes> {
    */
   images: LearnImage[];
 
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
+
   constructor(data?: PartialMessage<ContentRes>);
 
   static readonly runtime: typeof proto3;
@@ -234,6 +241,13 @@ export declare class UpdateReq extends Message<UpdateReq> {
    * @generated from field: string message = 12;
    */
   message: string;
+
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 13;
+   */
+  title: string;
 
   constructor(data?: PartialMessage<UpdateReq>);
 
@@ -709,6 +723,13 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
    */
   lastEditedTimestamp?: Timestamp;
 
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
+
   constructor(data?: PartialMessage<LearnStandaloneDetails>);
 
   static readonly runtime: typeof proto3;
@@ -860,6 +881,13 @@ export declare class LearnSnippetDetails extends Message<LearnSnippetDetails> {
    * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3;
    */
   lastEditedTimestamp?: Timestamp;
+
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
 
   constructor(data?: PartialMessage<LearnSnippetDetails>);
 
