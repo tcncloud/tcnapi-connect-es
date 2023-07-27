@@ -770,11 +770,6 @@ export declare class History extends Message<History> {
   sid: bigint;
 
   /**
-   * @generated from field: string org_id = 2;
-   */
-  orgId: string;
-
-  /**
    * @generated from field: string transfer_config_name = 3;
    */
   transferConfigName: string;
@@ -797,61 +792,71 @@ export declare class History extends Message<History> {
   error: string;
 
   /**
+   * @generated from field: bool success = 7;
+   */
+  success: boolean;
+
+  /**
    * when the transaction was first opened
    *
-   * @generated from field: google.protobuf.Timestamp created_on = 7;
+   * @generated from field: google.protobuf.Timestamp created_on = 8;
    */
   createdOn?: Timestamp;
 
   /**
    * when upload of deps is finished and we started moving the files
    *
-   * @generated from field: google.protobuf.Timestamp transfer_start = 8;
+   * @generated from field: google.protobuf.Timestamp transfer_start = 9;
    */
   transferStart?: Timestamp;
 
   /**
    * when the record was inserted into the db (delivery ended)
    *
-   * @generated from field: google.protobuf.Timestamp transfer_complete = 9;
+   * @generated from field: google.protobuf.Timestamp transfer_complete = 10;
    */
   transferComplete?: Timestamp;
 
   /**
+   * the application calling for delivery
+   *
+   * @generated from field: api.commons.OperatorApplications origin = 11;
+   */
+  origin: OperatorApplications;
+
+  /**
+   * @generated from field: string org_id = 12;
+   */
+  orgId: string;
+
+  /**
    * this should only be the first 64 chars of the message_payload
    *
-   * @generated from field: string message_payload = 10;
+   * @generated from field: string message_payload = 13;
    */
   messagePayload: string;
 
   /**
    * this represents the full actual length of the message_payload from the frontend
    *
-   * @generated from field: int32 message_payload_len = 11;
+   * @generated from field: int32 message_payload_len = 14;
    */
   messagePayloadLen: number;
 
   /**
-   * the application calling for delivery
-   *
-   * @generated from field: api.commons.OperatorApplications origin = 12;
-   */
-  origin: OperatorApplications;
-
-  /**
    * the status of the delivery
    *
-   * @generated from field: api.commons.TransferStatus status = 13;
+   * @generated from field: api.commons.TransferStatus status = 15;
    */
   status: TransferStatus;
 
   /**
-   * @generated from field: bool is_inbound = 14;
+   * @generated from field: bool is_inbound = 16;
    */
   isInbound: boolean;
 
   /**
-   * @generated from field: int64 transaction_sid = 15;
+   * @generated from field: int64 transaction_sid = 17;
    */
   transactionSid: bigint;
 
