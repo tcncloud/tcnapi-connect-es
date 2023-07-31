@@ -263,6 +263,7 @@ export const AutoEvaluation = proto3.makeMessageType(
     { no: 10, name: "transcript_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 11, name: "expression_matched", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 12, name: "risk_level", kind: "enum", T: proto3.getEnumType(RiskLevel) },
+    { no: 16, name: "call_length", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
