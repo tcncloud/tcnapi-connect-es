@@ -66,5 +66,10 @@ export declare enum AppName {
    * @generated from enum value: LEARN = 11;
    */
   LEARN = 11,
+
+  /**
+   * @generated from enum value: BILLING = 12;
+   */
+  BILLING = 12,
 }
 
