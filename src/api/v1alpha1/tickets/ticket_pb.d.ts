@@ -313,9 +313,11 @@ export declare class ListAllocatedTicketReq extends Message<ListAllocatedTicketR
  */
 export declare class ListAvailableAgentTicketsResponse extends Message<ListAvailableAgentTicketsResponse> {
   /**
-   * @generated from field: repeated int64 ticket_sid = 1;
+   * repeated int64 ticket_sid = 1 [jstype = JS_STRING];
+   *
+   * @generated from field: repeated api.commons.Ticket ticket = 2;
    */
-  ticketSid: bigint[];
+  ticket: Ticket[];
 
   constructor(data?: PartialMessage<ListAvailableAgentTicketsResponse>);
 

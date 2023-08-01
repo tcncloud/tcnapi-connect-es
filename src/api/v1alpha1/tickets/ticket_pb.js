@@ -128,7 +128,7 @@ export const ListAllocatedTicketReq = proto3.makeMessageType(
 export const ListAvailableAgentTicketsResponse = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListAvailableAgentTicketsResponse",
   () => [
-    { no: 1, name: "ticket_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "ticket", kind: "message", T: Ticket, repeated: true },
   ],
 );
 
