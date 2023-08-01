@@ -444,6 +444,13 @@ export declare enum Permission {
   SCORECARDS_EVALUATE = 1602,
 
   /**
+   * Enables access to flag eval features.
+   *
+   * @generated from enum value: PERMISSION_SCORECARDS_FLAG_EVAL = 1603;
+   */
+  SCORECARDS_FLAG_EVAL = 1603,
+
+  /**
    * Enables access to Dev Tools app.
    *
    * @generated from enum value: PERMISSION_DEV_TOOLS = 1800;
