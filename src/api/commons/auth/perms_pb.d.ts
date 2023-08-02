@@ -484,5 +484,19 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_WORKFLOWS = 4000;
    */
   WORKFLOWS = 4000,
+
+  /**
+   * Enables access to view PBX Manager.
+   *
+   * @generated from enum value: PERMISSION_PBX_MANAGER_VIEW = 4100;
+   */
+  PBX_MANAGER_VIEW = 4100,
+
+  /**
+   * Enables access to create, update, or delete in PBX Manager.
+   *
+   * @generated from enum value: PERMISSION_PBX_MANAGER_EDIT = 4101;
+   */
+  PBX_MANAGER_EDIT = 4101,
 }
 
