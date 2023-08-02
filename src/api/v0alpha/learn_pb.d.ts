@@ -655,6 +655,13 @@ export declare class StandaloneReq extends Message<StandaloneReq> {
    */
   locale: string;
 
+  /**
+   * categorize the articles
+   *
+   * @generated from field: string category = 2;
+   */
+  category: string;
+
   constructor(data?: PartialMessage<StandaloneReq>);
 
   static readonly runtime: typeof proto3;
@@ -710,16 +717,18 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
   name: string;
 
   /**
-   * markdown content
+   * deprecated
    *
-   * @generated from field: string content = 2;
+   * @generated from field: string content = 2 [deprecated = true];
+   * @deprecated
    */
   content: string;
 
   /**
-   * The last time this learning content was edited.
+   * deprecated
    *
-   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3;
+   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3 [deprecated = true];
+   * @deprecated
    */
   lastEditedTimestamp?: Timestamp;
 

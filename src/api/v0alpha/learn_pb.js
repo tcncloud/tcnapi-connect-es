@@ -263,6 +263,7 @@ export const StandaloneReq = proto3.makeMessageType(
   "api.v0alpha.StandaloneReq",
   () => [
     { no: 1, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
