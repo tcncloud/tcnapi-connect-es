@@ -23,6 +23,7 @@ export const AppName = proto3.makeEnum(
     {no: 9, name: "INTEGRATIONS"},
     {no: 10, name: "OMNICHANNEL"},
     {no: 11, name: "LEARN"},
+    {no: 12, name: "BILLING"},
   ],
 );
 

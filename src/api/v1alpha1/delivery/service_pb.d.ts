@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { OperatorApplications } from "../../commons/org_pb.js";
-import type { Encryption } from "../../commons/delivery_pb.js";
+import type { Encryption, TransferStatus } from "../../commons/delivery_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -823,6 +823,42 @@ export declare class History extends Message<History> {
    * @generated from field: api.commons.OperatorApplications origin = 11;
    */
   origin: OperatorApplications;
+
+  /**
+   * @generated from field: string org_id = 12;
+   */
+  orgId: string;
+
+  /**
+   * this should only be the first 64 chars of the message_payload
+   *
+   * @generated from field: string message_payload = 13;
+   */
+  messagePayload: string;
+
+  /**
+   * this represents the full actual length of the message_payload from the frontend
+   *
+   * @generated from field: int32 message_payload_len = 14;
+   */
+  messagePayloadLen: number;
+
+  /**
+   * the status of the delivery
+   *
+   * @generated from field: api.commons.TransferStatus status = 15;
+   */
+  status: TransferStatus;
+
+  /**
+   * @generated from field: bool is_inbound = 16;
+   */
+  isInbound: boolean;
+
+  /**
+   * @generated from field: int64 transaction_sid = 17;
+   */
+  transactionSid: bigint;
 
   constructor(data?: PartialMessage<History>);
 
