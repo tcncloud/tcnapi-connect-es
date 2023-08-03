@@ -10261,14 +10261,14 @@ export declare class CreateShiftInstanceV2Res extends Message<CreateShiftInstanc
  */
 export declare class SwapShiftInstancesReq extends Message<SwapShiftInstancesReq> {
   /**
-   * ID of the wfm agent sid that the shift instances had.
+   * ID of the wfm agent that will swap instances with @wfm_agent_sid2.
    *
    * @generated from field: int64 wfm_agent_sid1 = 1;
    */
   wfmAgentSid1: bigint;
 
   /**
-   * ID of the wfm agent sid that the shift instances will have.
+   * ID of the wfm agent that will swap instances with @wfm_agent_sid1.
    *
    * @generated from field: int64 wfm_agent_sid2 = 2;
    */
@@ -10308,6 +10308,13 @@ export declare class SwapShiftInstancesRes extends Message<SwapShiftInstancesRes
    * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance shift_instances = 1;
    */
   shiftInstances: ShiftInstance[];
+
+  /**
+   * Diagnostics for any overlapping shift instances.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
 
   constructor(data?: PartialMessage<SwapShiftInstancesRes>);
 
@@ -10515,6 +10522,148 @@ export declare class UpdateShiftInstanceV2Res extends Message<UpdateShiftInstanc
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShiftInstanceV2Res;
 
   static equals(a: UpdateShiftInstanceV2Res | PlainMessage<UpdateShiftInstanceV2Res> | undefined, b: UpdateShiftInstanceV2Res | PlainMessage<UpdateShiftInstanceV2Res> | undefined): boolean;
+}
+
+/**
+ * Request message for the CopyShiftInstancesToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq
+ */
+export declare class CopyShiftInstancesToScheduleReq extends Message<CopyShiftInstancesToScheduleReq> {
+  /**
+   * Schedule that the @shift_instance_sids will be copied into.
+   *
+   * @generated from field: api.commons.ScheduleSelector destination_schedule = 1;
+   */
+  destinationSchedule?: ScheduleSelector;
+
+  /**
+   * IDs of the shift instances to copy into @destination_schedule.
+   *
+   * @generated from field: repeated int64 shift_instance_sids = 2;
+   */
+  shiftInstanceSids: bigint[];
+
+  /**
+   * If set to true, overlapping shifts will be permitted, and return a warning diagnostic after persisting.
+   * Otherwise, any overlapping shifts for agents in the @destination_schedule will return an error diagnostic and no shifts will be copied.
+   *
+   * @generated from field: bool overlap_as_warning = 3;
+   */
+  overlapAsWarning: boolean;
+
+  constructor(data?: PartialMessage<CopyShiftInstancesToScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyShiftInstancesToScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleReq;
+
+  static equals(a: CopyShiftInstancesToScheduleReq | PlainMessage<CopyShiftInstancesToScheduleReq> | undefined, b: CopyShiftInstancesToScheduleReq | PlainMessage<CopyShiftInstancesToScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CopyShiftInstancesToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyShiftInstancesToScheduleRes
+ */
+export declare class CopyShiftInstancesToScheduleRes extends Message<CopyShiftInstancesToScheduleRes> {
+  /**
+   * A list of diagnostics for any errors encountered, which prevented the copy.
+   * If @overlap_as_warning is set to true, warning diagnostics for overlaps may be returned after a sucessful copy.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<CopyShiftInstancesToScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyShiftInstancesToScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyShiftInstancesToScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleRes;
+
+  static equals(a: CopyShiftInstancesToScheduleRes | PlainMessage<CopyShiftInstancesToScheduleRes> | undefined, b: CopyShiftInstancesToScheduleRes | PlainMessage<CopyShiftInstancesToScheduleRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListShiftInstanceSidsForAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstanceSidsForAgentReq
+ */
+export declare class ListShiftInstanceSidsForAgentReq extends Message<ListShiftInstanceSidsForAgentReq> {
+  /**
+   * Schedule to get the shift instance sids from.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 1;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * The datetime range over which to get the shift instance sids.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 2;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * wfm agent to get shifts for.
+   *
+   * @generated from field: int64 wfm_agent_sid = 3;
+   */
+  wfmAgentSid: bigint;
+
+  constructor(data?: PartialMessage<ListShiftInstanceSidsForAgentReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListShiftInstanceSidsForAgentReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShiftInstanceSidsForAgentReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShiftInstanceSidsForAgentReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShiftInstanceSidsForAgentReq;
+
+  static equals(a: ListShiftInstanceSidsForAgentReq | PlainMessage<ListShiftInstanceSidsForAgentReq> | undefined, b: ListShiftInstanceSidsForAgentReq | PlainMessage<ListShiftInstanceSidsForAgentReq> | undefined): boolean;
+}
+
+/**
+ * ListShiftInstanceSidsForAgent response RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstanceSidsForAgentRes
+ */
+export declare class ListShiftInstanceSidsForAgentRes extends Message<ListShiftInstanceSidsForAgentRes> {
+  /**
+   * Requested shift instance sids.
+   *
+   * @generated from field: repeated int64 shift_instance_sids = 1;
+   */
+  shiftInstanceSids: bigint[];
+
+  constructor(data?: PartialMessage<ListShiftInstanceSidsForAgentRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListShiftInstanceSidsForAgentRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShiftInstanceSidsForAgentRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShiftInstanceSidsForAgentRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShiftInstanceSidsForAgentRes;
+
+  static equals(a: ListShiftInstanceSidsForAgentRes | PlainMessage<ListShiftInstanceSidsForAgentRes> | undefined, b: ListShiftInstanceSidsForAgentRes | PlainMessage<ListShiftInstanceSidsForAgentRes> | undefined): boolean;
 }
 
 /**

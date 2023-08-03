@@ -51,6 +51,7 @@ export const Card = proto3.makeEnum(
     {no: 7, name: "CARD_HUNT_GROUPS", localName: "HUNT_GROUPS"},
     {no: 8, name: "CARD_SOUNDBOARD", localName: "SOUNDBOARD"},
     {no: 9, name: "CARD_SUBSCRIPTIONS", localName: "SUBSCRIPTIONS"},
+    {no: 10, name: "CARD_PBX_MANAGER", localName: "PBX_MANAGER"},
   ],
 );
 

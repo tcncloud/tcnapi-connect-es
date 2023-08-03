@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { AuthConnectionSettings, GroupItem } from "../../../commons/org/auth_connections_pb.js";
 
 /**
@@ -26,7 +26,9 @@ export const CreateAuthConnectionRequest = proto3.makeMessageType(
  */
 export const CreateAuthConnectionResponse = proto3.makeMessageType(
   "api.v1alpha1.org.authconnection.CreateAuthConnectionResponse",
-  [],
+  () => [
+    { no: 1, name: "connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**
@@ -46,6 +48,30 @@ export const GetAuthConnectionSettingsRequest = proto3.makeMessageType(
  */
 export const GetAuthConnectionSettingsResponse = proto3.makeMessageType(
   "api.v1alpha1.org.authconnection.GetAuthConnectionSettingsResponse",
+  () => [
+    { no: 1, name: "settings", kind: "message", T: AuthConnectionSettings },
+  ],
+);
+
+/**
+ * Request message for the GetAuthConnection rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.GetAuthConnectionRequest
+ */
+export const GetAuthConnectionRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.GetAuthConnectionRequest",
+  () => [
+    { no: 1, name: "connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the GetAuthConnection rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.GetAuthConnectionResponse
+ */
+export const GetAuthConnectionResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.GetAuthConnectionResponse",
   () => [
     { no: 1, name: "settings", kind: "message", T: AuthConnectionSettings },
   ],
@@ -83,7 +109,19 @@ export const UpdateAuthConnectionSecretRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "client_secret", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "secret_expiration", kind: "message", T: UpdateAuthConnectionSecretRequest_SecretExpiration },
   ],
+);
+
+/**
+ * @generated from message api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration
+ */
+export const UpdateAuthConnectionSecretRequest_SecretExpiration = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.UpdateAuthConnectionSecretRequest.SecretExpiration",
+  () => [
+    { no: 1, name: "date", kind: "message", T: Timestamp },
+  ],
+  {localName: "UpdateAuthConnectionSecretRequest_SecretExpiration"},
 );
 
 /**
@@ -106,6 +144,7 @@ export const UpdateAuthConnectionGroupsRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "default_group", kind: "message", T: GroupItem },
     { no: 2, name: "custom_groups", kind: "message", T: GroupItem, repeated: true },
+    { no: 3, name: "connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

@@ -5,7 +5,7 @@
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { OperatorApplications } from "../../commons/org_pb.js";
-import { Encryption } from "../../commons/delivery_pb.js";
+import { Encryption, TransferStatus } from "../../commons/delivery_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -298,6 +298,12 @@ export const History = proto3.makeMessageType(
     { no: 9, name: "transfer_start", kind: "message", T: Timestamp },
     { no: 10, name: "transfer_complete", kind: "message", T: Timestamp },
     { no: 11, name: "origin", kind: "enum", T: proto3.getEnumType(OperatorApplications) },
+    { no: 12, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "message_payload", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "message_payload_len", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 15, name: "status", kind: "enum", T: proto3.getEnumType(TransferStatus) },
+    { no: 16, name: "is_inbound", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "transaction_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

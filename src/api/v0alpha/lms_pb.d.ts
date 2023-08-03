@@ -433,6 +433,13 @@ export declare class ProcessElementReq extends Message<ProcessElementReq> {
    */
   elementId: string;
 
+  /**
+   * says if it was triggered by a cron or manually
+   *
+   * @generated from field: string process_message = 2;
+   */
+  processMessage: string;
+
   constructor(data?: PartialMessage<ProcessElementReq>);
 
   static readonly runtime: typeof proto3;

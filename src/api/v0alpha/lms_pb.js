@@ -183,6 +183,7 @@ export const ProcessElementReq = proto3.makeMessageType(
   "api.v0alpha.ProcessElementReq",
   () => [
     { no: 1, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "process_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

@@ -804,6 +804,13 @@ export declare class SearchQuery extends Message<SearchQuery> {
    */
   agentCallLog?: SearchQuery_AgentCallLog;
 
+  /**
+   * Optional. Queries on phone.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Phone phone = 11;
+   */
+  phone?: SearchQuery_Phone;
+
   constructor(data?: PartialMessage<SearchQuery>);
 
   static readonly runtime: typeof proto3;
@@ -817,6 +824,450 @@ export declare class SearchQuery extends Message<SearchQuery> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery;
 
   static equals(a: SearchQuery | PlainMessage<SearchQuery> | undefined, b: SearchQuery | PlainMessage<SearchQuery> | undefined): boolean;
+}
+
+/**
+ * Phone defines a query on the phone.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Phone
+ */
+export declare class SearchQuery_Phone extends Message<SearchQuery_Phone> {
+  /**
+   * Optional. Queries on phone country code.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Cc cc = 1;
+   */
+  cc?: SearchQuery_Cc;
+
+  /**
+   * Optional. Queries on phone ndc (area code).
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Ndc ndc = 2;
+   */
+  ndc?: SearchQuery_Ndc;
+
+  /**
+   * Optional. Queries on phone subscriber number prefix.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Prefix prefix = 3;
+   */
+  prefix?: SearchQuery_Prefix;
+
+  /**
+   * Optional. Queries on phone city.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.City city = 4;
+   */
+  city?: SearchQuery_City;
+
+  /**
+   * Optional. Queries on phone iso2 country code.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Iso2 iso2 = 5;
+   */
+  iso2?: SearchQuery_Iso2;
+
+  /**
+   * Optional. Queries on phone region code.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.RegionCode region_code = 6;
+   */
+  regionCode?: SearchQuery_RegionCode;
+
+  /**
+   * Optional. Queries on phone region name.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.RegionName region_name = 7;
+   */
+  regionName?: SearchQuery_RegionName;
+
+  /**
+   * Optional. Queries on phone time zone.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.TimeZone time_zone = 8;
+   */
+  timeZone?: SearchQuery_TimeZone;
+
+  /**
+   * Optional. Queries on phone number type.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Type type = 9;
+   */
+  type?: SearchQuery_Type;
+
+  /**
+   * Optional. Queries on phone number utc.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Utc utc = 10;
+   */
+  utc?: SearchQuery_Utc;
+
+  /**
+   * Optional. Queries on phone number location.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Location location = 11;
+   */
+  location?: SearchQuery_Location;
+
+  constructor(data?: PartialMessage<SearchQuery_Phone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Phone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Phone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Phone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Phone;
+
+  static equals(a: SearchQuery_Phone | PlainMessage<SearchQuery_Phone> | undefined, b: SearchQuery_Phone | PlainMessage<SearchQuery_Phone> | undefined): boolean;
+}
+
+/**
+ * Cc defines a query on the phone country code.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Cc
+ */
+export declare class SearchQuery_Cc extends Message<SearchQuery_Cc> {
+  /**
+   * Optional. Queries where cc in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_Cc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Cc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Cc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Cc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Cc;
+
+  static equals(a: SearchQuery_Cc | PlainMessage<SearchQuery_Cc> | undefined, b: SearchQuery_Cc | PlainMessage<SearchQuery_Cc> | undefined): boolean;
+}
+
+/**
+ * Ndc defines a query on the phone ndc.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Ndc
+ */
+export declare class SearchQuery_Ndc extends Message<SearchQuery_Ndc> {
+  /**
+   * Optional. Queries where ndc in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_Ndc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Ndc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Ndc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Ndc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Ndc;
+
+  static equals(a: SearchQuery_Ndc | PlainMessage<SearchQuery_Ndc> | undefined, b: SearchQuery_Ndc | PlainMessage<SearchQuery_Ndc> | undefined): boolean;
+}
+
+/**
+ * Prefix defines a query on the phone prefix.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Prefix
+ */
+export declare class SearchQuery_Prefix extends Message<SearchQuery_Prefix> {
+  /**
+   * Optional. Queries where prefix in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_Prefix>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Prefix";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Prefix;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Prefix;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Prefix;
+
+  static equals(a: SearchQuery_Prefix | PlainMessage<SearchQuery_Prefix> | undefined, b: SearchQuery_Prefix | PlainMessage<SearchQuery_Prefix> | undefined): boolean;
+}
+
+/**
+ * City defines a query on the phone city.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.City
+ */
+export declare class SearchQuery_City extends Message<SearchQuery_City> {
+  /**
+   * Optional. Queries where city in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_City>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.City";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_City;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_City;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_City;
+
+  static equals(a: SearchQuery_City | PlainMessage<SearchQuery_City> | undefined, b: SearchQuery_City | PlainMessage<SearchQuery_City> | undefined): boolean;
+}
+
+/**
+ * Iso2 defines a query on the phone Iso2.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Iso2
+ */
+export declare class SearchQuery_Iso2 extends Message<SearchQuery_Iso2> {
+  /**
+   * Optional. Queries where iso2 in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_Iso2>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Iso2";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Iso2;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Iso2;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Iso2;
+
+  static equals(a: SearchQuery_Iso2 | PlainMessage<SearchQuery_Iso2> | undefined, b: SearchQuery_Iso2 | PlainMessage<SearchQuery_Iso2> | undefined): boolean;
+}
+
+/**
+ * RegionCode defines a query on the phone region code.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.RegionCode
+ */
+export declare class SearchQuery_RegionCode extends Message<SearchQuery_RegionCode> {
+  /**
+   * Optional. Queries where region code in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_RegionCode>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.RegionCode";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_RegionCode;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_RegionCode;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_RegionCode;
+
+  static equals(a: SearchQuery_RegionCode | PlainMessage<SearchQuery_RegionCode> | undefined, b: SearchQuery_RegionCode | PlainMessage<SearchQuery_RegionCode> | undefined): boolean;
+}
+
+/**
+ * RegionName defines a query on the phone region name.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.RegionName
+ */
+export declare class SearchQuery_RegionName extends Message<SearchQuery_RegionName> {
+  /**
+   * Optional. Queries where region name in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_RegionName>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.RegionName";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_RegionName;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_RegionName;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_RegionName;
+
+  static equals(a: SearchQuery_RegionName | PlainMessage<SearchQuery_RegionName> | undefined, b: SearchQuery_RegionName | PlainMessage<SearchQuery_RegionName> | undefined): boolean;
+}
+
+/**
+ * TimeZone defines a query on the phone time zone.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.TimeZone
+ */
+export declare class SearchQuery_TimeZone extends Message<SearchQuery_TimeZone> {
+  /**
+   * Optional. Queries where time zone in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_TimeZone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.TimeZone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_TimeZone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_TimeZone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_TimeZone;
+
+  static equals(a: SearchQuery_TimeZone | PlainMessage<SearchQuery_TimeZone> | undefined, b: SearchQuery_TimeZone | PlainMessage<SearchQuery_TimeZone> | undefined): boolean;
+}
+
+/**
+ * Type defines a query on the phone type.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Type
+ */
+export declare class SearchQuery_Type extends Message<SearchQuery_Type> {
+  /**
+   * Optional. Queries where type in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  constructor(data?: PartialMessage<SearchQuery_Type>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Type";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Type;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Type;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Type;
+
+  static equals(a: SearchQuery_Type | PlainMessage<SearchQuery_Type> | undefined, b: SearchQuery_Type | PlainMessage<SearchQuery_Type> | undefined): boolean;
+}
+
+/**
+ * Utc defines a query on the phone utc.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Utc
+ */
+export declare class SearchQuery_Utc extends Message<SearchQuery_Utc> {
+  /**
+   * Optional. Queries where utc in list provided.
+   *
+   * @generated from field: repeated float in = 1;
+   */
+  in: number[];
+
+  constructor(data?: PartialMessage<SearchQuery_Utc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Utc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Utc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Utc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Utc;
+
+  static equals(a: SearchQuery_Utc | PlainMessage<SearchQuery_Utc> | undefined, b: SearchQuery_Utc | PlainMessage<SearchQuery_Utc> | undefined): boolean;
+}
+
+/**
+ * Location defines a query on the phone location.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Location
+ */
+export declare class SearchQuery_Location extends Message<SearchQuery_Location> {
+  /**
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity zip_code_proximity = 1;
+   */
+  zipCodeProximity?: SearchQuery_Location_ZipCodeProximity;
+
+  constructor(data?: PartialMessage<SearchQuery_Location>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Location";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Location;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Location;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Location;
+
+  static equals(a: SearchQuery_Location | PlainMessage<SearchQuery_Location> | undefined, b: SearchQuery_Location | PlainMessage<SearchQuery_Location> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity
+ */
+export declare class SearchQuery_Location_ZipCodeProximity extends Message<SearchQuery_Location_ZipCodeProximity> {
+  /**
+   * Required. Queries on phone number country code.
+   *
+   * @generated from field: string country_code = 1;
+   */
+  countryCode: string;
+
+  /**
+   * Required. Queries where phone location is within distance of zipcode.
+   *
+   * @generated from field: string zip_code = 2;
+   */
+  zipCode: string;
+
+  /**
+   * Required. Queries where phone location is within distance (km or mi) of zipcode. For example: 100km.
+   *
+   * @generated from field: string distance = 3;
+   */
+  distance: string;
+
+  constructor(data?: PartialMessage<SearchQuery_Location_ZipCodeProximity>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchQuery.Location.ZipCodeProximity";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchQuery_Location_ZipCodeProximity;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchQuery_Location_ZipCodeProximity;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchQuery_Location_ZipCodeProximity;
+
+  static equals(a: SearchQuery_Location_ZipCodeProximity | PlainMessage<SearchQuery_Location_ZipCodeProximity> | undefined, b: SearchQuery_Location_ZipCodeProximity | PlainMessage<SearchQuery_Location_ZipCodeProximity> | undefined): boolean;
 }
 
 /**

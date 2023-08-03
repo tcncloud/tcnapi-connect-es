@@ -133,6 +133,13 @@ export declare class ContentRes extends Message<ContentRes> {
    */
   images: LearnImage[];
 
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
+
   constructor(data?: PartialMessage<ContentRes>);
 
   static readonly runtime: typeof proto3;
@@ -234,6 +241,13 @@ export declare class UpdateReq extends Message<UpdateReq> {
    * @generated from field: string message = 12;
    */
   message: string;
+
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 13;
+   */
+  title: string;
 
   constructor(data?: PartialMessage<UpdateReq>);
 
@@ -641,6 +655,13 @@ export declare class StandaloneReq extends Message<StandaloneReq> {
    */
   locale: string;
 
+  /**
+   * categorize the articles
+   *
+   * @generated from field: string category = 2;
+   */
+  category: string;
+
   constructor(data?: PartialMessage<StandaloneReq>);
 
   static readonly runtime: typeof proto3;
@@ -696,18 +717,27 @@ export declare class LearnStandaloneDetails extends Message<LearnStandaloneDetai
   name: string;
 
   /**
-   * markdown content
+   * deprecated
    *
-   * @generated from field: string content = 2;
+   * @generated from field: string content = 2 [deprecated = true];
+   * @deprecated
    */
   content: string;
 
   /**
-   * The last time this learning content was edited.
+   * deprecated
    *
-   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3;
+   * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3 [deprecated = true];
+   * @deprecated
    */
   lastEditedTimestamp?: Timestamp;
+
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
 
   constructor(data?: PartialMessage<LearnStandaloneDetails>);
 
@@ -860,6 +890,13 @@ export declare class LearnSnippetDetails extends Message<LearnSnippetDetails> {
    * @generated from field: google.protobuf.Timestamp last_edited_timestamp = 3;
    */
   lastEditedTimestamp?: Timestamp;
+
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 4;
+   */
+  title: string;
 
   constructor(data?: PartialMessage<LearnSnippetDetails>);
 

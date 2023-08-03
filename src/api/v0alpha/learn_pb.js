@@ -68,6 +68,7 @@ export const ContentRes = proto3.makeMessageType(
     { no: 1, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "last_edited_timestamp", kind: "message", T: Timestamp },
     { no: 3, name: "images", kind: "message", T: LearnImage, repeated: true },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -108,6 +109,7 @@ export const UpdateReq = proto3.makeMessageType(
     { no: 2, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -261,6 +263,7 @@ export const StandaloneReq = proto3.makeMessageType(
   "api.v0alpha.StandaloneReq",
   () => [
     { no: 1, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "category", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -287,6 +290,7 @@ export const LearnStandaloneDetails = proto3.makeMessageType(
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "last_edited_timestamp", kind: "message", T: Timestamp },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -348,6 +352,7 @@ export const LearnSnippetDetails = proto3.makeMessageType(
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "last_edited_timestamp", kind: "message", T: Timestamp },
+    { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
