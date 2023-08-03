@@ -255,11 +255,6 @@ export declare enum Permission {
   AGENT_PORTALS_VIEW = 340,
 
   /**
-   * @generated from enum value: PERMISSION_OMNI_AGENT = 350;
-   */
-  OMNI_AGENT = 350,
-
-  /**
    * Enables access to voice analytics app.
    *
    * @generated from enum value: PERMISSION_VOICE_ANALYTICS = 500;
