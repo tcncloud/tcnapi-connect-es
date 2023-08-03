@@ -166,6 +166,13 @@ export declare enum Permission {
   SUBSCRIPTION_MANAGEMENT = 140,
 
   /**
+   * Enables access to experimental features or feature extensions to org features that have existing permissions but are not ready for customers.  Never to be used alone must accompany another permission.
+   *
+   * @generated from enum value: PERMISSION_ORG_EXPERIMENTAL_FEATURE = 190;
+   */
+  ORG_EXPERIMENTAL_FEATURE = 190,
+
+  /**
    * Enables the customer support tools.
    *
    * @generated from enum value: PERMISSION_CUSTOMER_SUPPORT = 200;
@@ -199,6 +206,13 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_TCN_BILLING = 240;
    */
   TCN_BILLING = 240,
+
+  /**
+   * Enables access to experimental features or feature extensions to support features that have existing permissions but are not ready for employee access.  Never to be used alone must accompany another permission.
+   *
+   * @generated from enum value: PERMISSION_SUPPORT_EXPERIMENTAL_FEATURE = 250;
+   */
+  SUPPORT_EXPERIMENTAL_FEATURE = 250,
 
   /**
    * Enables access to agent.
