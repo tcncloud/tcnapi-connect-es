@@ -317,6 +317,11 @@ export declare class ListAvailableAgentTicketsResponse extends Message<ListAvail
    */
   ticketSid: bigint[];
 
+  /**
+   * @generated from field: repeated api.commons.Ticket ticket = 2;
+   */
+  ticket: Ticket[];
+
   constructor(data?: PartialMessage<ListAvailableAgentTicketsResponse>);
 
   static readonly runtime: typeof proto3;
