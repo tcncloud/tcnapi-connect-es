@@ -7,15 +7,15 @@ import { DeleteFlowDefinitionRequest, DeleteFlowDefinitionResponse, GetFlowDefin
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * @generated from service api.v1alpha1.workflows.Workflows
+ * @generated from service api.v1alpha1.workflows.WorkflowsService
  */
-export declare const Workflows: {
-  readonly typeName: "api.v1alpha1.workflows.Workflows",
+export declare const WorkflowsService: {
+  readonly typeName: "api.v1alpha1.workflows.WorkflowsService",
   readonly methods: {
     /**
      * ListFlowDefinitions lists flow definitions
      *
-     * @generated from rpc api.v1alpha1.workflows.Workflows.ListFlowDefinitions
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsService.ListFlowDefinitions
      */
     readonly listFlowDefinitions: {
       readonly name: "ListFlowDefinitions",
@@ -26,7 +26,7 @@ export declare const Workflows: {
     /**
      * SaveFlowDefinition creates or updates a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.Workflows.SaveFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsService.SaveFlowDefinition
      */
     readonly saveFlowDefinition: {
       readonly name: "SaveFlowDefinition",
@@ -37,7 +37,7 @@ export declare const Workflows: {
     /**
      * GetFlowDefinition gets a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.Workflows.GetFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsService.GetFlowDefinition
      */
     readonly getFlowDefinition: {
       readonly name: "GetFlowDefinition",
@@ -48,7 +48,7 @@ export declare const Workflows: {
     /**
      * DeleteFlowDefinition deletes a flow definition
      *
-     * @generated from rpc api.v1alpha1.workflows.Workflows.DeleteFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowsService.DeleteFlowDefinition
      */
     readonly deleteFlowDefinition: {
       readonly name: "DeleteFlowDefinition",
