@@ -3594,6 +3594,32 @@ export const UpdateShiftInstanceV2Res = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the CopyShiftInstancesToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq
+ */
+export const CopyShiftInstancesToScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq",
+  () => [
+    { no: 1, name: "destination_schedule", kind: "message", T: ScheduleSelector },
+    { no: 2, name: "shift_instance_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "overlap_as_warning", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the CopyShiftInstancesToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyShiftInstancesToScheduleRes
+ */
+export const CopyShiftInstancesToScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyShiftInstancesToScheduleRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the ListShiftInstanceSidsForAgent RPC
  *
  * @generated from message api.v1alpha1.wfm.ListShiftInstanceSidsForAgentReq
