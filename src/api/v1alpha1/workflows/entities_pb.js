@@ -27,7 +27,6 @@ export const ListFlowDefinitionsResponse = proto3.makeMessageType(
   "api.v1alpha1.workflows.ListFlowDefinitionsResponse",
   () => [
     { no: 1, name: "flow_definitions", kind: "message", T: FlowDefinition, repeated: true },
-    { no: 2, name: "filter_mask", kind: "message", T: FieldMask },
   ],
 );
 

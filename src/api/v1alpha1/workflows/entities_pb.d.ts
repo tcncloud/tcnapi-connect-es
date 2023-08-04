@@ -48,13 +48,6 @@ export declare class ListFlowDefinitionsResponse extends Message<ListFlowDefinit
    */
   flowDefinitions: FlowDefinition[];
 
-  /**
-   * The fields to filter
-   *
-   * @generated from field: google.protobuf.FieldMask filter_mask = 2;
-   */
-  filterMask?: FieldMask;
-
   constructor(data?: PartialMessage<ListFlowDefinitionsResponse>);
 
   static readonly runtime: typeof proto3;
