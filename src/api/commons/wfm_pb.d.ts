@@ -1445,3 +1445,59 @@ export declare class ScheduleSelector extends Message<ScheduleSelector> {
   static equals(a: ScheduleSelector | PlainMessage<ScheduleSelector> | undefined, b: ScheduleSelector | PlainMessage<ScheduleSelector> | undefined): boolean;
 }
 
+/**
+ * Indetifier for a skill profile category.
+ *
+ * @generated from message api.commons.SkillProfileCategory
+ */
+export declare class SkillProfileCategory extends Message<SkillProfileCategory> {
+  /**
+   * ID of either a skill profile or a skill profile group determined by @skill_profile_category_type.
+   *
+   * @generated from field: int64 skill_profile_category_sid = 1;
+   */
+  skillProfileCategorySid: bigint;
+
+  /**
+   * Category type for @skill_profile_category_sid.
+   *
+   * @generated from field: api.commons.SkillProfileCategory.CategoryType skill_profile_category_type = 2;
+   */
+  skillProfileCategoryType: SkillProfileCategory_CategoryType;
+
+  constructor(data?: PartialMessage<SkillProfileCategory>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.SkillProfileCategory";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SkillProfileCategory;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SkillProfileCategory;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SkillProfileCategory;
+
+  static equals(a: SkillProfileCategory | PlainMessage<SkillProfileCategory> | undefined, b: SkillProfileCategory | PlainMessage<SkillProfileCategory> | undefined): boolean;
+}
+
+/**
+ * enum representing the type of a of skill profile category.
+ *
+ * @generated from enum api.commons.SkillProfileCategory.CategoryType
+ */
+export declare enum SkillProfileCategory_CategoryType {
+  /**
+   * Single skill profile.
+   *
+   * @generated from enum value: SINGLE_SKILL_PROFILE = 0;
+   */
+  SINGLE_SKILL_PROFILE = 0,
+
+  /**
+   * Skill profile group.
+   *
+   * @generated from enum value: SKILL_PROFILE_GROUP = 1;
+   */
+  SKILL_PROFILE_GROUP = 1,
+}
+
