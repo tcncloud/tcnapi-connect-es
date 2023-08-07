@@ -1915,6 +1915,8 @@ export const ReshapeAction_Convert = proto3.makeMessageType(
   "api.v0alpha.ReshapeAction.Convert",
   () => [
     { no: 17, name: "newType", kind: "enum", T: proto3.getEnumType(RecordType) },
+    { no: 18, name: "new_field", kind: "message", T: Field },
+    { no: 19, name: "default_value", kind: "message", T: RecordFieldProto },
   ],
   {localName: "ReshapeAction_Convert"},
 );
