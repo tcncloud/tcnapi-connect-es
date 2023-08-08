@@ -686,3 +686,16 @@ export const AgentState = proto3.makeMessageType(
   ],
 );
 
+/**
+ * a packet of audio data
+ *
+ * @generated from message api.commons.AudioSenderPacket
+ */
+export const AudioSenderPacket = proto3.makeMessageType(
+  "api.commons.AudioSenderPacket",
+  () => [
+    { no: 1, name: "direction", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "frame", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ],
+);
+

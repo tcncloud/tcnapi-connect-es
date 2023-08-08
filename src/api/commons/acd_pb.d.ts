@@ -2491,3 +2491,38 @@ export declare class AgentState extends Message<AgentState> {
   static equals(a: AgentState | PlainMessage<AgentState> | undefined, b: AgentState | PlainMessage<AgentState> | undefined): boolean;
 }
 
+/**
+ * a packet of audio data
+ *
+ * @generated from message api.commons.AudioSenderPacket
+ */
+export declare class AudioSenderPacket extends Message<AudioSenderPacket> {
+  /**
+   * 0 = agent, 1 = customer
+   *
+   * @generated from field: int32 direction = 1;
+   */
+  direction: number;
+
+  /**
+   * the audio data
+   *
+   * @generated from field: bytes frame = 2;
+   */
+  frame: Uint8Array;
+
+  constructor(data?: PartialMessage<AudioSenderPacket>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.AudioSenderPacket";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AudioSenderPacket;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AudioSenderPacket;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AudioSenderPacket;
+
+  static equals(a: AudioSenderPacket | PlainMessage<AudioSenderPacket> | undefined, b: AudioSenderPacket | PlainMessage<AudioSenderPacket> | undefined): boolean;
+}
+
