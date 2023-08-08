@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -6689,18 +6689,11 @@ export declare class GetOpenTimesBitmapsReq extends Message<GetOpenTimesBitmapsR
   datetimeRange?: DatetimeRange;
 
   /**
-   * Indicates that only the weekmaps of the patterns will be used to generate the bitmaps.
+   * Indicates the type of bitmaps to generate.
    *
-   * @generated from field: bool only_weekmaps = 5;
+   * @generated from field: api.commons.BitmapType bitmap_type = 5;
    */
-  onlyWeekmaps: boolean;
-
-  /**
-   * Indicates that only the calendar items of the patterns will be used to generate the bitmaps.
-   *
-   * @generated from field: bool only_calendar_items = 6;
-   */
-  onlyCalendarItems: boolean;
+  bitmapType: BitmapType;
 
   constructor(data?: PartialMessage<GetOpenTimesBitmapsReq>);
 
@@ -7047,18 +7040,11 @@ export declare class GetAvailabilityBitmapsReq extends Message<GetAvailabilityBi
   datetimeRange?: DatetimeRange;
 
   /**
-   * Indicates that only the weekmaps of the patterns will be used to generate the bitmaps.
+   * Indicates the type of bitmaps to generate.
    *
-   * @generated from field: bool only_weekmaps = 5;
+   * @generated from field: api.commons.BitmapType bitmap_type = 5;
    */
-  onlyWeekmaps: boolean;
-
-  /**
-   * Indicates that only the calendar items of the patterns will be used to generate the bitmaps.
-   *
-   * @generated from field: bool only_calendar_items = 6;
-   */
-  onlyCalendarItems: boolean;
+  bitmapType: BitmapType;
 
   constructor(data?: PartialMessage<GetAvailabilityBitmapsReq>);
 

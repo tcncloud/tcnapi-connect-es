@@ -280,6 +280,20 @@ export const SchedulingTargetType = proto3.makeEnum(
 );
 
 /**
+ * Enum representing the options for bitmap creation.
+ *
+ * @generated from enum api.commons.BitmapType
+ */
+export const BitmapType = proto3.makeEnum(
+  "api.commons.BitmapType",
+  [
+    {no: 0, name: "COMPLETE"},
+    {no: 1, name: "ONLY_WEEKMAPS"},
+    {no: 2, name: "ONLY_CALENDAR_ITEMS"},
+  ],
+);
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
