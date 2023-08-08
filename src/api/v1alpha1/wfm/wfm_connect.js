@@ -1401,6 +1401,9 @@ export const WFM = {
     /**
      * Gets the inherited, own, and resulting bitmaps for the open times patterns of @node_to_check for @schedule_scenario_sid and the org sending the request.
      * The @schedule_scenario_sid must match the scenario of the @node_to_check.
+     * If @only_weekmaps is set to true, the bitmaps will be generated only using weekmaps.
+     * If @only_calendar_items is set to true, the birmaps will be generated only using calendar items.
+     * Both @only_weekmaps and @only_calendar_items must be set to false in order to generate the effective bitmaps for the @entities_to_check.
      * The bitmaps will be generated for the span of @datetime_range.
      * Required permissions:
      *   NONE
@@ -1479,6 +1482,9 @@ export const WFM = {
      * @entities_to_check must have the entity_type field set with a wfm agent, agent group or a type of node.
      * If an availability bitmap is requested for an agent group, the bitmaps for all of it's member agents will be returned instead.
      * The bitmaps will be generated for the span of @datetime_range.
+     * If @only_weekmaps is set to true, the bitmaps will be generated only using weekmaps.
+     * If @only_calendar_items is set to true, the birmaps will be generated only using calendar items.
+     * Both @only_weekmaps and @only_calendar_items must be set to false in order to generate the effective bitmaps for the @entities_to_check.
      * Required permissions:
      *   NONE
      * Errors:

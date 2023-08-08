@@ -6688,6 +6688,20 @@ export declare class GetOpenTimesBitmapsReq extends Message<GetOpenTimesBitmapsR
    */
   datetimeRange?: DatetimeRange;
 
+  /**
+   * Indicates that only the weekmaps of the patterns will be used to generate the bitmaps.
+   *
+   * @generated from field: bool only_weekmaps = 5;
+   */
+  onlyWeekmaps: boolean;
+
+  /**
+   * Indicates that only the calendar items of the patterns will be used to generate the bitmaps.
+   *
+   * @generated from field: bool only_calendar_items = 6;
+   */
+  onlyCalendarItems: boolean;
+
   constructor(data?: PartialMessage<GetOpenTimesBitmapsReq>);
 
   static readonly runtime: typeof proto3;
@@ -7031,6 +7045,20 @@ export declare class GetAvailabilityBitmapsReq extends Message<GetAvailabilityBi
    * @generated from field: api.commons.DatetimeRange datetime_range = 4;
    */
   datetimeRange?: DatetimeRange;
+
+  /**
+   * Indicates that only the weekmaps of the patterns will be used to generate the bitmaps.
+   *
+   * @generated from field: bool only_weekmaps = 5;
+   */
+  onlyWeekmaps: boolean;
+
+  /**
+   * Indicates that only the calendar items of the patterns will be used to generate the bitmaps.
+   *
+   * @generated from field: bool only_calendar_items = 6;
+   */
+  onlyCalendarItems: boolean;
 
   constructor(data?: PartialMessage<GetAvailabilityBitmapsReq>);
 
