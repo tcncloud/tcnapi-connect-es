@@ -41,6 +41,88 @@ export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
 }
 
 /**
+ * @generated from message api.commons.workflows.OmniNodeSendMessage
+ */
+export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
+  /**
+   * @generated from field: string prompt = 1;
+   */
+  prompt: string;
+
+  /**
+   * @generated from field: repeated string options = 3;
+   */
+  options: string[];
+
+  constructor(data?: PartialMessage<OmniNodeSendMessage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeSendMessage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeSendMessage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeSendMessage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeSendMessage;
+
+  static equals(a: OmniNodeSendMessage | PlainMessage<OmniNodeSendMessage> | undefined, b: OmniNodeSendMessage | PlainMessage<OmniNodeSendMessage> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.workflows.OmniNodeStore
+ */
+export declare class OmniNodeStore extends Message<OmniNodeStore> {
+  /**
+   * @generated from field: string store_to = 1;
+   */
+  storeTo: string;
+
+  constructor(data?: PartialMessage<OmniNodeStore>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeStore";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeStore;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeStore;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeStore;
+
+  static equals(a: OmniNodeStore | PlainMessage<OmniNodeStore> | undefined, b: OmniNodeStore | PlainMessage<OmniNodeStore> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.workflows.OmniNodeCompare
+ */
+export declare class OmniNodeCompare extends Message<OmniNodeCompare> {
+  /**
+   * @generated from field: string input = 1;
+   */
+  input: string;
+
+  /**
+   * @generated from field: repeated string validOptions = 2;
+   */
+  validOptions: string[];
+
+  constructor(data?: PartialMessage<OmniNodeCompare>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeCompare";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeCompare;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeCompare;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeCompare;
+
+  static equals(a: OmniNodeCompare | PlainMessage<OmniNodeCompare> | undefined, b: OmniNodeCompare | PlainMessage<OmniNodeCompare> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.workflows.OmniNodeSetSkill
  */
 export declare class OmniNodeSetSkill extends Message<OmniNodeSetSkill> {
