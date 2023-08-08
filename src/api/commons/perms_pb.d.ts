@@ -1900,11 +1900,6 @@ export declare enum Permission {
   EXECUTE_INTEGRATION_MESSAGES = 291,
 
   /**
-   * @generated from enum value: SCHEDULE_RESEND_CAMPAIGN = 292;
-   */
-  SCHEDULE_RESEND_CAMPAIGN = 292,
-
-  /**
    * migration permissions
    *
    * @generated from enum value: APP_AGENT = 2000;
