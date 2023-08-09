@@ -1805,6 +1805,9 @@ export const ReshapeAction = proto3.makeMessageType(
     { no: 29, name: "remove_field", kind: "message", T: ReshapeAction_RemoveField, oneof: "action" },
     { no: 30, name: "add_new_field", kind: "message", T: ReshapeAction_AddNewField, oneof: "action" },
     { no: 31, name: "change_currency_type", kind: "message", T: ReshapeAction_ChangeCurrencyType, oneof: "action" },
+    { no: 32, name: "divide", kind: "message", T: ReshapeAction_Divide, oneof: "action" },
+    { no: 33, name: "multiply", kind: "message", T: ReshapeAction_Multiply, oneof: "action" },
+    { no: 34, name: "modulo", kind: "message", T: ReshapeAction_Modulo, oneof: "action" },
     { no: 40, name: "merge", kind: "message", T: ReshapeAction_Merge, oneof: "action" },
     { no: 41, name: "set_field_value", kind: "message", T: ReshapeAction_SetFieldValue, oneof: "action" },
     { no: 45, name: "add_new_field_from_field", kind: "message", T: ReshapeAction_AddNewFieldFromField, oneof: "action" },
@@ -1919,6 +1922,48 @@ export const ReshapeAction_Convert = proto3.makeMessageType(
     { no: 19, name: "default_value", kind: "message", T: RecordFieldProto },
   ],
   {localName: "ReshapeAction_Convert"},
+);
+
+/**
+ * Represents a message for division operation.
+ *
+ * @generated from message api.v0alpha.ReshapeAction.Divide
+ */
+export const ReshapeAction_Divide = proto3.makeMessageType(
+  "api.v0alpha.ReshapeAction.Divide",
+  () => [
+    { no: 1, name: "default_value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "divisor", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+  {localName: "ReshapeAction_Divide"},
+);
+
+/**
+ * Represents a message for multiplication operation.
+ *
+ * @generated from message api.v0alpha.ReshapeAction.Multiply
+ */
+export const ReshapeAction_Multiply = proto3.makeMessageType(
+  "api.v0alpha.ReshapeAction.Multiply",
+  () => [
+    { no: 1, name: "default_value", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 2, name: "multiplier", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+  ],
+  {localName: "ReshapeAction_Multiply"},
+);
+
+/**
+ * Represents a message for modulo operation.
+ *
+ * @generated from message api.v0alpha.ReshapeAction.Modulo
+ */
+export const ReshapeAction_Modulo = proto3.makeMessageType(
+  "api.v0alpha.ReshapeAction.Modulo",
+  () => [
+    { no: 1, name: "default_value", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "modulus", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+  {localName: "ReshapeAction_Modulo"},
 );
 
 /**
