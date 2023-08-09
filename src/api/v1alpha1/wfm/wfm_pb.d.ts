@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -6688,6 +6688,13 @@ export declare class GetOpenTimesBitmapsReq extends Message<GetOpenTimesBitmapsR
    */
   datetimeRange?: DatetimeRange;
 
+  /**
+   * Indicates the type of bitmaps to generate.
+   *
+   * @generated from field: api.commons.BitmapType bitmap_type = 5;
+   */
+  bitmapType: BitmapType;
+
   constructor(data?: PartialMessage<GetOpenTimesBitmapsReq>);
 
   static readonly runtime: typeof proto3;
@@ -7031,6 +7038,13 @@ export declare class GetAvailabilityBitmapsReq extends Message<GetAvailabilityBi
    * @generated from field: api.commons.DatetimeRange datetime_range = 4;
    */
   datetimeRange?: DatetimeRange;
+
+  /**
+   * Indicates the type of bitmaps to generate.
+   *
+   * @generated from field: api.commons.BitmapType bitmap_type = 5;
+   */
+  bitmapType: BitmapType;
 
   constructor(data?: PartialMessage<GetAvailabilityBitmapsReq>);
 

@@ -763,6 +763,34 @@ export declare enum SchedulingTargetType {
 }
 
 /**
+ * Enum representing the options for bitmap creation.
+ *
+ * @generated from enum api.commons.BitmapType
+ */
+export declare enum BitmapType {
+  /**
+   * The complete bitmap type. Bitmaps will be generated using all relevant pattern data.
+   *
+   * @generated from enum value: COMPLETE = 0;
+   */
+  COMPLETE = 0,
+
+  /**
+   * The bitmaps will be created using only the weekmaps from the patterns.
+   *
+   * @generated from enum value: ONLY_WEEKMAPS = 1;
+   */
+  ONLY_WEEKMAPS = 1,
+
+  /**
+   * The bitmaps will be created using only the calendar items from the patterns.
+   *
+   * @generated from enum value: ONLY_CALENDAR_ITEMS = 2;
+   */
+  ONLY_CALENDAR_ITEMS = 2,
+}
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
