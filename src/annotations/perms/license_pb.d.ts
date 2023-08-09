@@ -93,6 +93,11 @@ export declare enum Application {
    * @generated from enum value: APPLICATION_WORKFLOWS = 16;
    */
   WORKFLOWS = 16,
+
+  /**
+   * @generated from enum value: APPLICATION_NEWSROOM = 17;
+   */
+  NEWSROOM = 17,
 }
 
 /**
