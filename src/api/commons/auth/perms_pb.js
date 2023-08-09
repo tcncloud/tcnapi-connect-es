@@ -68,6 +68,7 @@ export const Permission = proto3.makeEnum(
     {no: 1000, name: "PERMISSION_LMS_VIEW", localName: "LMS_VIEW"},
     {no: 1001, name: "PERMISSION_LMS_EDIT", localName: "LMS_EDIT"},
     {no: 1200, name: "PERMISSION_OMNI_BOSS", localName: "OMNI_BOSS"},
+    {no: 1210, name: "PERMISSION_OMNI_PORTALS_VIEW", localName: "OMNI_PORTALS_VIEW"},
     {no: 1300, name: "PERMISSION_INTEGRATIONS_VIEW", localName: "INTEGRATIONS_VIEW"},
     {no: 1301, name: "PERMISSION_INTEGRATIONS_PAYMENT", localName: "INTEGRATIONS_PAYMENT"},
     {no: 1302, name: "PERMISSION_INTEGRATIONS_JOURNEY", localName: "INTEGRATIONS_JOURNEY"},
@@ -82,6 +83,8 @@ export const Permission = proto3.makeEnum(
     {no: 3100, name: "PERMISSION_TICKETS_APP", localName: "TICKETS_APP"},
     {no: 3101, name: "PERMISSION_TICKETS_ADMIN", localName: "TICKETS_ADMIN"},
     {no: 4000, name: "PERMISSION_WORKFLOWS", localName: "WORKFLOWS"},
+    {no: 4100, name: "PERMISSION_PBX_MANAGER_VIEW", localName: "PBX_MANAGER_VIEW"},
+    {no: 4101, name: "PERMISSION_PBX_MANAGER_EDIT", localName: "PBX_MANAGER_EDIT"},
   ],
 );
 

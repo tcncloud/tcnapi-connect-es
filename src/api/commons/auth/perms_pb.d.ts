@@ -395,6 +395,11 @@ export declare enum Permission {
   OMNI_BOSS = 1200,
 
   /**
+   * @generated from enum value: PERMISSION_OMNI_PORTALS_VIEW = 1210;
+   */
+  OMNI_PORTALS_VIEW = 1210,
+
+  /**
    * Enables access to viewing the integrations app.
    *
    * @generated from enum value: PERMISSION_INTEGRATIONS_VIEW = 1300;
@@ -491,5 +496,19 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_WORKFLOWS = 4000;
    */
   WORKFLOWS = 4000,
+
+  /**
+   * Enables access to view PBX Manager.
+   *
+   * @generated from enum value: PERMISSION_PBX_MANAGER_VIEW = 4100;
+   */
+  PBX_MANAGER_VIEW = 4100,
+
+  /**
+   * Enables access to create, update, or delete in PBX Manager.
+   *
+   * @generated from enum value: PERMISSION_PBX_MANAGER_EDIT = 4101;
+   */
+  PBX_MANAGER_EDIT = 4101,
 }
 

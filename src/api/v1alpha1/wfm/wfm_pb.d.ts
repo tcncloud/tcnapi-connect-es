@@ -10525,6 +10525,78 @@ export declare class UpdateShiftInstanceV2Res extends Message<UpdateShiftInstanc
 }
 
 /**
+ * Request message for the CopyShiftInstancesToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq
+ */
+export declare class CopyShiftInstancesToScheduleReq extends Message<CopyShiftInstancesToScheduleReq> {
+  /**
+   * Schedule that the @shift_instance_sids will be copied into.
+   *
+   * @generated from field: api.commons.ScheduleSelector destination_schedule = 1;
+   */
+  destinationSchedule?: ScheduleSelector;
+
+  /**
+   * IDs of the shift instances to copy into @destination_schedule.
+   *
+   * @generated from field: repeated int64 shift_instance_sids = 2;
+   */
+  shiftInstanceSids: bigint[];
+
+  /**
+   * If set to true, overlapping shifts will be permitted, and return a warning diagnostic after persisting.
+   * Otherwise, any overlapping shifts for agents in the @destination_schedule will return an error diagnostic and no shifts will be copied.
+   *
+   * @generated from field: bool overlap_as_warning = 3;
+   */
+  overlapAsWarning: boolean;
+
+  constructor(data?: PartialMessage<CopyShiftInstancesToScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyShiftInstancesToScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleReq;
+
+  static equals(a: CopyShiftInstancesToScheduleReq | PlainMessage<CopyShiftInstancesToScheduleReq> | undefined, b: CopyShiftInstancesToScheduleReq | PlainMessage<CopyShiftInstancesToScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CopyShiftInstancesToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyShiftInstancesToScheduleRes
+ */
+export declare class CopyShiftInstancesToScheduleRes extends Message<CopyShiftInstancesToScheduleRes> {
+  /**
+   * A list of diagnostics for any errors encountered, which prevented the copy.
+   * If @overlap_as_warning is set to true, warning diagnostics for overlaps may be returned after a sucessful copy.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<CopyShiftInstancesToScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyShiftInstancesToScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyShiftInstancesToScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyShiftInstancesToScheduleRes;
+
+  static equals(a: CopyShiftInstancesToScheduleRes | PlainMessage<CopyShiftInstancesToScheduleRes> | undefined, b: CopyShiftInstancesToScheduleRes | PlainMessage<CopyShiftInstancesToScheduleRes> | undefined): boolean;
+}
+
+/**
  * Request message for the ListShiftInstanceSidsForAgent RPC
  *
  * @generated from message api.v1alpha1.wfm.ListShiftInstanceSidsForAgentReq

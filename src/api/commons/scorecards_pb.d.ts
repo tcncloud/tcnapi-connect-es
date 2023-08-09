@@ -817,6 +817,13 @@ export declare class AutoEvaluation extends Message<AutoEvaluation> {
    */
   riskLevel: RiskLevel;
 
+  /**
+   * duration of the call audio
+   *
+   * @generated from field: int32 call_length = 16;
+   */
+  callLength: number;
+
   constructor(data?: PartialMessage<AutoEvaluation>);
 
   static readonly runtime: typeof proto3;

@@ -152,5 +152,10 @@ export declare enum Card {
    * @generated from enum value: CARD_SUBSCRIPTIONS = 9;
    */
   SUBSCRIPTIONS = 9,
+
+  /**
+   * @generated from enum value: CARD_PBX_MANAGER = 10;
+   */
+  PBX_MANAGER = 10,
 }
 
