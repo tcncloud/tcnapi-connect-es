@@ -1149,6 +1149,9 @@ export declare class ListAgentsResponse_AgentDetails extends Message<ListAgentsR
   huntGroup?: ListAgentsResponse_AgentDetails_HuntGroup;
 
   /**
+   * Reserving a space for labels
+   * reserved "labels";
+   * reserved 9;
    * Whether the agent is delegated (sso related)
    *
    * @generated from field: bool delegated = 10;
@@ -1429,6 +1432,9 @@ export declare class ListUsersResponse_UserDetails extends Message<ListUsersResp
   permissionGroupIds: string[];
 
   /**
+   * Reserving a space for labels
+   * reserved "labels";
+   * reserved 10;
    * Whether the user is an account owner
    *
    * @generated from field: bool account_owner = 11;
@@ -1590,6 +1596,9 @@ export declare class ListUsersByOrgIdResponse_UserDetails extends Message<ListUs
   permissionGroupIds: string[];
 
   /**
+   * Reserving a space for labels
+   * reserved "labels";
+   * reserved 9;
    * Whether the user is an account owner
    *
    * @generated from field: bool account_owner = 10;
@@ -1751,6 +1760,9 @@ export declare class ListUsersByRegionResponse_UserDetails extends Message<ListU
   permissionGroupIds: string[];
 
   /**
+   * Reserving a space for labels
+   * reserved "labels";
+   * reserved 10;
    * Whether the user is an account owner
    *
    * @generated from field: bool account_owner = 11;

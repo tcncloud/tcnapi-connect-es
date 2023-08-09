@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
 import type { OmniNodeError, OmniNodePrompt, OmniNodeSetSkill, OmniNodeToAgent } from "./omni_pb.js";
 import type { OmniBotNodeTestEnd, OmniBotNodeTestStart, OmniBotNodeTestStep } from "./omni_bot_pb.js";
+import type { TestBotNodeTestEnd, TestBotNodeTestStart, TestBotNodeTestStep } from "./test_bot_pb.js";
 
 /**
  * A node is a single step in a flow
@@ -109,22 +110,43 @@ export declare class NodeDefinition extends Message<NodeDefinition> {
     case: "omniError";
   } | {
     /**
-     * @generated from field: api.commons.workflows.OmniBotNodeTestStart omni_bot_test_start = 301;
+     * @generated from field: api.commons.workflows.OmniBotNodeTestStart omni_bot_test_start = 301 [deprecated = true];
+     * @deprecated
      */
     value: OmniBotNodeTestStart;
     case: "omniBotTestStart";
   } | {
     /**
-     * @generated from field: api.commons.workflows.OmniBotNodeTestStep omni_bot_test_step = 302;
+     * @generated from field: api.commons.workflows.OmniBotNodeTestStep omni_bot_test_step = 302 [deprecated = true];
+     * @deprecated
      */
     value: OmniBotNodeTestStep;
     case: "omniBotTestStep";
   } | {
     /**
-     * @generated from field: api.commons.workflows.OmniBotNodeTestEnd omni_bot_test_end = 303;
+     * @generated from field: api.commons.workflows.OmniBotNodeTestEnd omni_bot_test_end = 303 [deprecated = true];
+     * @deprecated
      */
     value: OmniBotNodeTestEnd;
     case: "omniBotTestEnd";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.TestBotNodeTestStart test_bot_test_start = 401;
+     */
+    value: TestBotNodeTestStart;
+    case: "testBotTestStart";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.TestBotNodeTestStep test_bot_test_step = 402;
+     */
+    value: TestBotNodeTestStep;
+    case: "testBotTestStep";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.TestBotNodeTestEnd test_bot_test_end = 403;
+     */
+    value: TestBotNodeTestEnd;
+    case: "testBotTestEnd";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<NodeDefinition>);

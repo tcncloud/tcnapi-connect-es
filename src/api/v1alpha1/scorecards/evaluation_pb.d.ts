@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Evaluation, TimeFilter } from "../../commons/scorecards_pb.js";
+import type { Evaluation, Scorecard, TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
  * CreateEvaluationRequest is request to create a new evaluation
@@ -364,5 +364,64 @@ export declare class ListEvaluationsResponse extends Message<ListEvaluationsResp
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvaluationsResponse;
 
   static equals(a: ListEvaluationsResponse | PlainMessage<ListEvaluationsResponse> | undefined, b: ListEvaluationsResponse | PlainMessage<ListEvaluationsResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.scorecards.PreviewEvaluationScoreRequest
+ */
+export declare class PreviewEvaluationScoreRequest extends Message<PreviewEvaluationScoreRequest> {
+  /**
+   * Required - evaluation to preview score of
+   *
+   * @generated from field: api.commons.Evaluation evaluation = 2;
+   */
+  evaluation?: Evaluation;
+
+  /**
+   * Required - scorecard the evaluation belongs too
+   *
+   * @generated from field: api.commons.Scorecard scorecard = 3;
+   */
+  scorecard?: Scorecard;
+
+  constructor(data?: PartialMessage<PreviewEvaluationScoreRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.PreviewEvaluationScoreRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewEvaluationScoreRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewEvaluationScoreRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewEvaluationScoreRequest;
+
+  static equals(a: PreviewEvaluationScoreRequest | PlainMessage<PreviewEvaluationScoreRequest> | undefined, b: PreviewEvaluationScoreRequest | PlainMessage<PreviewEvaluationScoreRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.scorecards.PreviewEvaluationScoreResponse
+ */
+export declare class PreviewEvaluationScoreResponse extends Message<PreviewEvaluationScoreResponse> {
+  /**
+   * preview of scored evaluation
+   *
+   * @generated from field: api.commons.Evaluation evaluation = 1;
+   */
+  evaluation?: Evaluation;
+
+  constructor(data?: PartialMessage<PreviewEvaluationScoreResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.PreviewEvaluationScoreResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PreviewEvaluationScoreResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PreviewEvaluationScoreResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PreviewEvaluationScoreResponse;
+
+  static equals(a: PreviewEvaluationScoreResponse | PlainMessage<PreviewEvaluationScoreResponse> | undefined, b: PreviewEvaluationScoreResponse | PlainMessage<PreviewEvaluationScoreResponse> | undefined): boolean;
 }
 
