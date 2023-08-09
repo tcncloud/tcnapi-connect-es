@@ -395,6 +395,11 @@ export declare enum Permission {
   OMNI_BOSS = 1200,
 
   /**
+   * @generated from enum value: PERMISSION_OMNI_PORTALS_VIEW = 1210;
+   */
+  OMNI_PORTALS_VIEW = 1210,
+
+  /**
    * Enables access to viewing the integrations app.
    *
    * @generated from enum value: PERMISSION_INTEGRATIONS_VIEW = 1300;
@@ -442,6 +447,13 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_SCORECARDS_EVALUATE = 1602;
    */
   SCORECARDS_EVALUATE = 1602,
+
+  /**
+   * Enables access to flag eval features.
+   *
+   * @generated from enum value: PERMISSION_SCORECARDS_FLAG_EVAL = 1603;
+   */
+  SCORECARDS_FLAG_EVAL = 1603,
 
   /**
    * Enables access to Dev Tools app.

@@ -6521,9 +6521,20 @@ export declare class ReshapeAction_SubtractField extends Message<ReshapeAction_S
  */
 export declare class ReshapeAction_Convert extends Message<ReshapeAction_Convert> {
   /**
-   * @generated from field: api.commons.RecordType newType = 17;
+   * @generated from field: api.commons.RecordType newType = 17 [deprecated = true];
+   * @deprecated
    */
   newType: RecordType;
+
+  /**
+   * @generated from field: api.v0alpha.Field new_field = 18;
+   */
+  newField?: Field;
+
+  /**
+   * @generated from field: api.v0alpha.RecordFieldProto default_value = 19;
+   */
+  defaultValue?: RecordFieldProto;
 
   constructor(data?: PartialMessage<ReshapeAction_Convert>);
 

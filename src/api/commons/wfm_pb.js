@@ -280,6 +280,20 @@ export const SchedulingTargetType = proto3.makeEnum(
 );
 
 /**
+ * Enum representing the options for bitmap creation.
+ *
+ * @generated from enum api.commons.BitmapType
+ */
+export const BitmapType = proto3.makeEnum(
+  "api.commons.BitmapType",
+  [
+    {no: 0, name: "COMPLETE"},
+    {no: 1, name: "ONLY_WEEKMAPS"},
+    {no: 2, name: "ONLY_CALENDAR_ITEMS"},
+  ],
+);
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
@@ -481,6 +495,32 @@ export const ScheduleSelector = proto3.makeMessageType(
   () => [
     { no: 1, name: "schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "schedule_type", kind: "enum", T: proto3.getEnumType(ScheduleType) },
+  ],
+);
+
+/**
+ * Indetifier for a skill profile category.
+ *
+ * @generated from message api.commons.SkillProfileCategory
+ */
+export const SkillProfileCategory = proto3.makeMessageType(
+  "api.commons.SkillProfileCategory",
+  () => [
+    { no: 1, name: "skill_profile_category_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "skill_profile_category_type", kind: "enum", T: proto3.getEnumType(SkillProfileCategory_CategoryType) },
+  ],
+);
+
+/**
+ * enum representing the type of a of skill profile category.
+ *
+ * @generated from enum api.commons.SkillProfileCategory.CategoryType
+ */
+export const SkillProfileCategory_CategoryType = proto3.makeEnum(
+  "api.commons.SkillProfileCategory.CategoryType",
+  [
+    {no: 0, name: "SINGLE_SKILL_PROFILE"},
+    {no: 1, name: "SKILL_PROFILE_GROUP"},
   ],
 );
 

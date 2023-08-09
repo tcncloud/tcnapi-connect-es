@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { Evaluation, TimeFilter } from "../../commons/scorecards_pb.js";
+import { Evaluation, Scorecard, TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
  * CreateEvaluationRequest is request to create a new evaluation
@@ -148,6 +148,27 @@ export const ListEvaluationsResponse = proto3.makeMessageType(
   "api.v1alpha1.scorecards.ListEvaluationsResponse",
   () => [
     { no: 1, name: "evaluations", kind: "message", T: Evaluation, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.scorecards.PreviewEvaluationScoreRequest
+ */
+export const PreviewEvaluationScoreRequest = proto3.makeMessageType(
+  "api.v1alpha1.scorecards.PreviewEvaluationScoreRequest",
+  () => [
+    { no: 2, name: "evaluation", kind: "message", T: Evaluation },
+    { no: 3, name: "scorecard", kind: "message", T: Scorecard },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.scorecards.PreviewEvaluationScoreResponse
+ */
+export const PreviewEvaluationScoreResponse = proto3.makeMessageType(
+  "api.v1alpha1.scorecards.PreviewEvaluationScoreResponse",
+  () => [
+    { no: 1, name: "evaluation", kind: "message", T: Evaluation },
   ],
 );
 

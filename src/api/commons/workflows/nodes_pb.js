@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 import { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
 import { OmniNodeError, OmniNodePrompt, OmniNodeSetSkill, OmniNodeToAgent } from "./omni_pb.js";
 import { OmniBotNodeTestEnd, OmniBotNodeTestStart, OmniBotNodeTestStep } from "./omni_bot_pb.js";
+import { TestBotNodeTestEnd, TestBotNodeTestStart, TestBotNodeTestStep } from "./test_bot_pb.js";
 
 /**
  * A node is a single step in a flow
@@ -34,6 +35,9 @@ export const NodeDefinition = proto3.makeMessageType(
     { no: 301, name: "omni_bot_test_start", kind: "message", T: OmniBotNodeTestStart, oneof: "definition" },
     { no: 302, name: "omni_bot_test_step", kind: "message", T: OmniBotNodeTestStep, oneof: "definition" },
     { no: 303, name: "omni_bot_test_end", kind: "message", T: OmniBotNodeTestEnd, oneof: "definition" },
+    { no: 401, name: "test_bot_test_start", kind: "message", T: TestBotNodeTestStart, oneof: "definition" },
+    { no: 402, name: "test_bot_test_step", kind: "message", T: TestBotNodeTestStep, oneof: "definition" },
+    { no: 403, name: "test_bot_test_end", kind: "message", T: TestBotNodeTestEnd, oneof: "definition" },
   ],
 );
 
