@@ -50,6 +50,7 @@ export const IntegrationType = proto3.makeEnum(
     {no: 3400, name: "INTEGRATION_TYPE_SHIFT4", localName: "SHIFT4"},
     {no: 3500, name: "INTEGRATION_TYPE_POSCORP", localName: "POSCORP"},
     {no: 3600, name: "INTEGRATION_TYPE_PIANO", localName: "PIANO"},
+    {no: 3700, name: "INTEGRATION_TYPE_EPIC", localName: "EPIC"},
   ],
 );
 
@@ -235,6 +236,13 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3503, name: "REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS", localName: "POSCORP_UPDATE_PAYMENT_STATUS"},
     {no: 3601, name: "REQUEST_METHOD_PIANO_GET_USER", localName: "PIANO_GET_USER"},
     {no: 3602, name: "REQUEST_METHOD_PIANO_UPDATE_USER", localName: "PIANO_UPDATE_USER"},
+    {no: 3701, name: "REQUEST_METHOD_EPIC_GET_TOKEN", localName: "EPIC_GET_TOKEN"},
+    {no: 3702, name: "REQUEST_METHOD_EPIC_GET_PATIENT", localName: "EPIC_GET_PATIENT"},
+    {no: 3703, name: "REQUEST_METHOD_EPIC_MATCH_PATIENT", localName: "EPIC_MATCH_PATIENT"},
+    {no: 3704, name: "REQUEST_METHOD_EPIC_SEARCH_APPOINTMENT", localName: "EPIC_SEARCH_APPOINTMENT"},
+    {no: 3705, name: "REQUEST_METHOD_EPIC_FIND_APPOINTMENT", localName: "EPIC_FIND_APPOINTMENT"},
+    {no: 3706, name: "REQUEST_METHOD_EPIC_BOOK_APPOINTMENT", localName: "EPIC_BOOK_APPOINTMENT"},
+    {no: 3707, name: "REQUEST_METHOD_EPIC_GET_ACCOUNT", localName: "EPIC_GET_ACCOUNT"},
   ],
 );
 
@@ -808,6 +816,13 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3503, name: "poscorp_update_payment_status", kind: "message", T: ExecutePoscorpUpdatePaymentStatus, oneof: "value" },
     { no: 3601, name: "PIANO_GET_USER", kind: "message", T: ExecutePianoGetUser, oneof: "value" },
     { no: 3602, name: "PIANO_UPDATE_USER", kind: "message", T: ExecutePianoUpdateUser, oneof: "value" },
+    { no: 3701, name: "epic_get_token", kind: "message", T: ExecuteEpicGetToken, oneof: "value" },
+    { no: 3702, name: "epic_get_patient", kind: "message", T: ExecuteEpicGetPatient, oneof: "value" },
+    { no: 3703, name: "epic_match_patient", kind: "message", T: ExecuteEpicMatchPatient, oneof: "value" },
+    { no: 3704, name: "epic_search_appointment", kind: "message", T: ExecuteEpicSearchAppointment, oneof: "value" },
+    { no: 3705, name: "epic_find_appointment", kind: "message", T: ExecuteEpicFindAppointment, oneof: "value" },
+    { no: 3706, name: "epic_book_appointment", kind: "message", T: ExecuteEpicBookAppointment, oneof: "value" },
+    { no: 3707, name: "epic_get_account", kind: "message", T: ExecuteEpicGetAccount, oneof: "value" },
   ],
 );
 
@@ -2370,6 +2385,62 @@ export const ExecutePianoGetUser = proto3.makeMessageType(
  */
 export const ExecutePianoUpdateUser = proto3.makeMessageType(
   "api.commons.integrations.ExecutePianoUpdateUser",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetToken
+ */
+export const ExecuteEpicGetToken = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicGetToken",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetPatient
+ */
+export const ExecuteEpicGetPatient = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicGetPatient",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicMatchPatient
+ */
+export const ExecuteEpicMatchPatient = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicMatchPatient",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicSearchAppointment
+ */
+export const ExecuteEpicSearchAppointment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicSearchAppointment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicFindAppointment
+ */
+export const ExecuteEpicFindAppointment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicFindAppointment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicBookAppointment
+ */
+export const ExecuteEpicBookAppointment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicBookAppointment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetAccount
+ */
+export const ExecuteEpicGetAccount = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicGetAccount",
   [],
 );
 
