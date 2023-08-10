@@ -3449,6 +3449,35 @@ export const DeleteDraftScheduleRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the CopyScheduleToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleReq
+ */
+export const CopyScheduleToScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyScheduleToScheduleReq",
+  () => [
+    { no: 1, name: "source_schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 2, name: "destination_schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 3, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 4, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 5, name: "start_datetimes_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "overlap_as_warning", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the CopyScheduleToScheduleRes RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleRes
+ */
+export const CopyScheduleToScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyScheduleToScheduleRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the CreateShiftInstance RPC
  * Method is Unimplimented. Use CreateShiftInstanceV2 instead.
  *
