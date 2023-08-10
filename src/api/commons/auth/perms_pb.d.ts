@@ -510,5 +510,20 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_PBX_MANAGER_EDIT = 4101;
    */
   PBX_MANAGER_EDIT = 4101,
+
+  /**
+   * No view permissions required for Newsroom home
+   * Enables access to create, update, and archive in Newsroom manager
+   *
+   * @generated from enum value: PERMISSION_NEWSROOM_EDIT = 4200;
+   */
+  NEWSROOM_EDIT = 4200,
+
+  /**
+   * Enables access to publish in Newsroom manager
+   *
+   * @generated from enum value: PERMISSION_NEWSROOM_PUBLISH = 4201;
+   */
+  NEWSROOM_PUBLISH = 4201,
 }
 
