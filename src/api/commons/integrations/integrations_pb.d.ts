@@ -196,6 +196,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_PIANO = 3600;
    */
   PIANO = 3600,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_EPIC = 3700;
+   */
+  EPIC = 3700,
 }
 
 /**
@@ -1069,6 +1074,41 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_PIANO_UPDATE_USER = 3602;
    */
   PIANO_UPDATE_USER = 3602,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_GET_TOKEN = 3701;
+   */
+  EPIC_GET_TOKEN = 3701,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_GET_PATIENT = 3702;
+   */
+  EPIC_GET_PATIENT = 3702,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_MATCH_PATIENT = 3703;
+   */
+  EPIC_MATCH_PATIENT = 3703,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_SEARCH_APPOINTMENT = 3704;
+   */
+  EPIC_SEARCH_APPOINTMENT = 3704,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_FIND_APPOINTMENT = 3705;
+   */
+  EPIC_FIND_APPOINTMENT = 3705,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_BOOK_APPOINTMENT = 3706;
+   */
+  EPIC_BOOK_APPOINTMENT = 3706,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_GET_ACCOUNT = 3707;
+   */
+  EPIC_GET_ACCOUNT = 3707,
 }
 
 /**
@@ -3362,6 +3402,48 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecutePianoUpdateUser;
     case: "PIANOUPDATEUSER";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicGetToken epic_get_token = 3701;
+     */
+    value: ExecuteEpicGetToken;
+    case: "epicGetToken";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicGetPatient epic_get_patient = 3702;
+     */
+    value: ExecuteEpicGetPatient;
+    case: "epicGetPatient";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicMatchPatient epic_match_patient = 3703;
+     */
+    value: ExecuteEpicMatchPatient;
+    case: "epicMatchPatient";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicSearchAppointment epic_search_appointment = 3704;
+     */
+    value: ExecuteEpicSearchAppointment;
+    case: "epicSearchAppointment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicFindAppointment epic_find_appointment = 3705;
+     */
+    value: ExecuteEpicFindAppointment;
+    case: "epicFindAppointment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicBookAppointment epic_book_appointment = 3706;
+     */
+    value: ExecuteEpicBookAppointment;
+    case: "epicBookAppointment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicGetAccount epic_get_account = 3707;
+     */
+    value: ExecuteEpicGetAccount;
+    case: "epicGetAccount";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -7112,5 +7194,138 @@ export declare class ExecutePianoUpdateUser extends Message<ExecutePianoUpdateUs
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoUpdateUser;
 
   static equals(a: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined, b: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetToken
+ */
+export declare class ExecuteEpicGetToken extends Message<ExecuteEpicGetToken> {
+  constructor(data?: PartialMessage<ExecuteEpicGetToken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicGetToken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicGetToken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicGetToken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicGetToken;
+
+  static equals(a: ExecuteEpicGetToken | PlainMessage<ExecuteEpicGetToken> | undefined, b: ExecuteEpicGetToken | PlainMessage<ExecuteEpicGetToken> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetPatient
+ */
+export declare class ExecuteEpicGetPatient extends Message<ExecuteEpicGetPatient> {
+  constructor(data?: PartialMessage<ExecuteEpicGetPatient>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicGetPatient";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicGetPatient;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicGetPatient;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicGetPatient;
+
+  static equals(a: ExecuteEpicGetPatient | PlainMessage<ExecuteEpicGetPatient> | undefined, b: ExecuteEpicGetPatient | PlainMessage<ExecuteEpicGetPatient> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicMatchPatient
+ */
+export declare class ExecuteEpicMatchPatient extends Message<ExecuteEpicMatchPatient> {
+  constructor(data?: PartialMessage<ExecuteEpicMatchPatient>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicMatchPatient";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicMatchPatient;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicMatchPatient;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicMatchPatient;
+
+  static equals(a: ExecuteEpicMatchPatient | PlainMessage<ExecuteEpicMatchPatient> | undefined, b: ExecuteEpicMatchPatient | PlainMessage<ExecuteEpicMatchPatient> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicSearchAppointment
+ */
+export declare class ExecuteEpicSearchAppointment extends Message<ExecuteEpicSearchAppointment> {
+  constructor(data?: PartialMessage<ExecuteEpicSearchAppointment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicSearchAppointment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicSearchAppointment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicSearchAppointment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicSearchAppointment;
+
+  static equals(a: ExecuteEpicSearchAppointment | PlainMessage<ExecuteEpicSearchAppointment> | undefined, b: ExecuteEpicSearchAppointment | PlainMessage<ExecuteEpicSearchAppointment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicFindAppointment
+ */
+export declare class ExecuteEpicFindAppointment extends Message<ExecuteEpicFindAppointment> {
+  constructor(data?: PartialMessage<ExecuteEpicFindAppointment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicFindAppointment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicFindAppointment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicFindAppointment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicFindAppointment;
+
+  static equals(a: ExecuteEpicFindAppointment | PlainMessage<ExecuteEpicFindAppointment> | undefined, b: ExecuteEpicFindAppointment | PlainMessage<ExecuteEpicFindAppointment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicBookAppointment
+ */
+export declare class ExecuteEpicBookAppointment extends Message<ExecuteEpicBookAppointment> {
+  constructor(data?: PartialMessage<ExecuteEpicBookAppointment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicBookAppointment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicBookAppointment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicBookAppointment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicBookAppointment;
+
+  static equals(a: ExecuteEpicBookAppointment | PlainMessage<ExecuteEpicBookAppointment> | undefined, b: ExecuteEpicBookAppointment | PlainMessage<ExecuteEpicBookAppointment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetAccount
+ */
+export declare class ExecuteEpicGetAccount extends Message<ExecuteEpicGetAccount> {
+  constructor(data?: PartialMessage<ExecuteEpicGetAccount>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicGetAccount";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicGetAccount;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicGetAccount;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicGetAccount;
+
+  static equals(a: ExecuteEpicGetAccount | PlainMessage<ExecuteEpicGetAccount> | undefined, b: ExecuteEpicGetAccount | PlainMessage<ExecuteEpicGetAccount> | undefined): boolean;
 }
 

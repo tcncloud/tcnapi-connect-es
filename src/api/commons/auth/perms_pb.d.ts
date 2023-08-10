@@ -449,6 +449,13 @@ export declare enum Permission {
   SCORECARDS_EVALUATE = 1602,
 
   /**
+   * Enables access to flag eval features.
+   *
+   * @generated from enum value: PERMISSION_SCORECARDS_FLAG_EVAL = 1603;
+   */
+  SCORECARDS_FLAG_EVAL = 1603,
+
+  /**
    * Enables access to Dev Tools app.
    *
    * @generated from enum value: PERMISSION_DEV_TOOLS = 1800;
@@ -503,5 +510,20 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_PBX_MANAGER_EDIT = 4101;
    */
   PBX_MANAGER_EDIT = 4101,
+
+  /**
+   * No view permissions required for Newsroom home
+   * Enables access to create, update, and archive in Newsroom manager
+   *
+   * @generated from enum value: PERMISSION_NEWSROOM_EDIT = 4200;
+   */
+  NEWSROOM_EDIT = 4200,
+
+  /**
+   * Enables access to publish in Newsroom manager
+   *
+   * @generated from enum value: PERMISSION_NEWSROOM_PUBLISH = 4201;
+   */
+  NEWSROOM_PUBLISH = 4201,
 }
 

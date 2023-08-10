@@ -6284,6 +6284,24 @@ export declare class ReshapeAction extends Message<ReshapeAction> {
     case: "changeCurrencyType";
   } | {
     /**
+     * @generated from field: api.v0alpha.ReshapeAction.Divide divide = 32;
+     */
+    value: ReshapeAction_Divide;
+    case: "divide";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.ReshapeAction.Multiply multiply = 33;
+     */
+    value: ReshapeAction_Multiply;
+    case: "multiply";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.ReshapeAction.Modulo modulo = 34;
+     */
+    value: ReshapeAction_Modulo;
+    case: "modulo";
+  } | {
+    /**
      * @generated from field: api.v0alpha.ReshapeAction.Merge merge = 40;
      */
     value: ReshapeAction_Merge;
@@ -6549,6 +6567,111 @@ export declare class ReshapeAction_Convert extends Message<ReshapeAction_Convert
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReshapeAction_Convert;
 
   static equals(a: ReshapeAction_Convert | PlainMessage<ReshapeAction_Convert> | undefined, b: ReshapeAction_Convert | PlainMessage<ReshapeAction_Convert> | undefined): boolean;
+}
+
+/**
+ * Represents a message for division operation.
+ *
+ * @generated from message api.v0alpha.ReshapeAction.Divide
+ */
+export declare class ReshapeAction_Divide extends Message<ReshapeAction_Divide> {
+  /**
+   * The default value to be used if no other value is provided.
+   *
+   * @generated from field: double default_value = 1;
+   */
+  defaultValue: number;
+
+  /**
+   * The divisor to be used for the division operation.
+   *
+   * @generated from field: double divisor = 2;
+   */
+  divisor: number;
+
+  constructor(data?: PartialMessage<ReshapeAction_Divide>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReshapeAction.Divide";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReshapeAction_Divide;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReshapeAction_Divide;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReshapeAction_Divide;
+
+  static equals(a: ReshapeAction_Divide | PlainMessage<ReshapeAction_Divide> | undefined, b: ReshapeAction_Divide | PlainMessage<ReshapeAction_Divide> | undefined): boolean;
+}
+
+/**
+ * Represents a message for multiplication operation.
+ *
+ * @generated from message api.v0alpha.ReshapeAction.Multiply
+ */
+export declare class ReshapeAction_Multiply extends Message<ReshapeAction_Multiply> {
+  /**
+   * The default value to be used if no other value is provided.
+   *
+   * @generated from field: double default_value = 1;
+   */
+  defaultValue: number;
+
+  /**
+   * The multiplier to be used for the multiplication operation.
+   *
+   * @generated from field: double multiplier = 2;
+   */
+  multiplier: number;
+
+  constructor(data?: PartialMessage<ReshapeAction_Multiply>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReshapeAction.Multiply";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReshapeAction_Multiply;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReshapeAction_Multiply;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReshapeAction_Multiply;
+
+  static equals(a: ReshapeAction_Multiply | PlainMessage<ReshapeAction_Multiply> | undefined, b: ReshapeAction_Multiply | PlainMessage<ReshapeAction_Multiply> | undefined): boolean;
+}
+
+/**
+ * Represents a message for modulo operation.
+ *
+ * @generated from message api.v0alpha.ReshapeAction.Modulo
+ */
+export declare class ReshapeAction_Modulo extends Message<ReshapeAction_Modulo> {
+  /**
+   * The default value to be used if no other value is provided.
+   *
+   * @generated from field: int32 default_value = 1;
+   */
+  defaultValue: number;
+
+  /**
+   * The modulus to be used for the modulo operation.
+   *
+   * @generated from field: int32 modulus = 2;
+   */
+  modulus: number;
+
+  constructor(data?: PartialMessage<ReshapeAction_Modulo>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReshapeAction.Modulo";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReshapeAction_Modulo;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReshapeAction_Modulo;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReshapeAction_Modulo;
+
+  static equals(a: ReshapeAction_Modulo | PlainMessage<ReshapeAction_Modulo> | undefined, b: ReshapeAction_Modulo | PlainMessage<ReshapeAction_Modulo> | undefined): boolean;
 }
 
 /**
