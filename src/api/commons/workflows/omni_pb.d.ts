@@ -50,9 +50,9 @@ export declare class OmniNodeInject extends Message<OmniNodeInject> {
   storeTo: string;
 
   /**
-   * @generated from field: optional string data = 2;
+   * @generated from field: string data = 2;
    */
-  data?: string;
+  data: string;
 
   constructor(data?: PartialMessage<OmniNodeInject>);
 
@@ -79,9 +79,9 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
   prompt: string;
 
   /**
-   * @generated from field: optional string options_key = 3;
+   * @generated from field: string options_key = 3;
    */
-  optionsKey?: string;
+  optionsKey: string;
 
   constructor(data?: PartialMessage<OmniNodeSendMessage>);
 
@@ -132,9 +132,9 @@ export declare class OmniNodeCompare extends Message<OmniNodeCompare> {
   input: string;
 
   /**
-   * @generated from field: optional string options_key = 2;
+   * @generated from field: string options_key = 2;
    */
-  optionsKey?: string;
+  optionsKey: string;
 
   constructor(data?: PartialMessage<OmniNodeCompare>);
 
