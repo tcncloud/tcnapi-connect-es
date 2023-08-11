@@ -41,6 +41,35 @@ export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
 }
 
 /**
+ * @generated from message api.commons.workflows.OmniNodeInject
+ */
+export declare class OmniNodeInject extends Message<OmniNodeInject> {
+  /**
+   * @generated from field: string store_to = 1;
+   */
+  storeTo: string;
+
+  /**
+   * @generated from field: optional string data = 2;
+   */
+  data?: string;
+
+  constructor(data?: PartialMessage<OmniNodeInject>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeInject";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeInject;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeInject;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeInject;
+
+  static equals(a: OmniNodeInject | PlainMessage<OmniNodeInject> | undefined, b: OmniNodeInject | PlainMessage<OmniNodeInject> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
 export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
@@ -50,9 +79,9 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
   prompt: string;
 
   /**
-   * @generated from field: repeated string options = 3;
+   * @generated from field: optional string options_key = 3;
    */
-  options: string[];
+  optionsKey?: string;
 
   constructor(data?: PartialMessage<OmniNodeSendMessage>);
 
@@ -103,9 +132,9 @@ export declare class OmniNodeCompare extends Message<OmniNodeCompare> {
   input: string;
 
   /**
-   * @generated from field: repeated string validOptions = 2;
+   * @generated from field: optional string options_key = 2;
    */
-  validOptions: string[];
+  optionsKey?: string;
 
   constructor(data?: PartialMessage<OmniNodeCompare>);
 

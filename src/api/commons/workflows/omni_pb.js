@@ -18,13 +18,24 @@ export const OmniNodePrompt = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.workflows.OmniNodeInject
+ */
+export const OmniNodeInject = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeInject",
+  () => [
+    { no: 1, name: "store_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "data", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
+  ],
+);
+
+/**
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
 export const OmniNodeSendMessage = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeSendMessage",
   () => [
     { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "options_key", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
 
@@ -45,7 +56,7 @@ export const OmniNodeCompare = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeCompare",
   () => [
     { no: 1, name: "input", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "validOptions", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "options_key", kind: "scalar", T: 9 /* ScalarType.STRING */, opt: true },
   ],
 );
 
