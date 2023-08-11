@@ -76,6 +76,7 @@ export const Permission = proto3.makeEnum(
     {no: 1600, name: "PERMISSION_SCORECARDS", localName: "SCORECARDS"},
     {no: 1601, name: "PERMISSION_SCORECARDS_MANAGE", localName: "SCORECARDS_MANAGE"},
     {no: 1602, name: "PERMISSION_SCORECARDS_EVALUATE", localName: "SCORECARDS_EVALUATE"},
+    {no: 1603, name: "PERMISSION_SCORECARDS_FLAG_EVAL", localName: "SCORECARDS_FLAG_EVAL"},
     {no: 1800, name: "PERMISSION_DEV_TOOLS", localName: "DEV_TOOLS"},
     {no: 2000, name: "PERMISSION_DELIVERY_NOTIFICATIONS_VIEW", localName: "DELIVERY_NOTIFICATIONS_VIEW"},
     {no: 2001, name: "PERMISSION_DELIVERY_NOTIFICATIONS_EDIT", localName: "DELIVERY_NOTIFICATIONS_EDIT"},
@@ -84,6 +85,8 @@ export const Permission = proto3.makeEnum(
     {no: 4000, name: "PERMISSION_WORKFLOWS", localName: "WORKFLOWS"},
     {no: 4100, name: "PERMISSION_PBX_MANAGER_VIEW", localName: "PBX_MANAGER_VIEW"},
     {no: 4101, name: "PERMISSION_PBX_MANAGER_EDIT", localName: "PBX_MANAGER_EDIT"},
+    {no: 4200, name: "PERMISSION_NEWSROOM_EDIT", localName: "NEWSROOM_EDIT"},
+    {no: 4201, name: "PERMISSION_NEWSROOM_PUBLISH", localName: "NEWSROOM_PUBLISH"},
   ],
 );
 

@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -6688,6 +6688,13 @@ export declare class GetOpenTimesBitmapsReq extends Message<GetOpenTimesBitmapsR
    */
   datetimeRange?: DatetimeRange;
 
+  /**
+   * Indicates the type of bitmaps to generate.
+   *
+   * @generated from field: api.commons.BitmapType bitmap_type = 5;
+   */
+  bitmapType: BitmapType;
+
   constructor(data?: PartialMessage<GetOpenTimesBitmapsReq>);
 
   static readonly runtime: typeof proto3;
@@ -7031,6 +7038,13 @@ export declare class GetAvailabilityBitmapsReq extends Message<GetAvailabilityBi
    * @generated from field: api.commons.DatetimeRange datetime_range = 4;
    */
   datetimeRange?: DatetimeRange;
+
+  /**
+   * Indicates the type of bitmaps to generate.
+   *
+   * @generated from field: api.commons.BitmapType bitmap_type = 5;
+   */
+  bitmapType: BitmapType;
 
   constructor(data?: PartialMessage<GetAvailabilityBitmapsReq>);
 
@@ -10052,6 +10066,100 @@ export declare class DeleteDraftScheduleRes extends Message<DeleteDraftScheduleR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDraftScheduleRes;
 
   static equals(a: DeleteDraftScheduleRes | PlainMessage<DeleteDraftScheduleRes> | undefined, b: DeleteDraftScheduleRes | PlainMessage<DeleteDraftScheduleRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CopyScheduleToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleReq
+ */
+export declare class CopyScheduleToScheduleReq extends Message<CopyScheduleToScheduleReq> {
+  /**
+   * The schedule that shifts will be copied from.
+   *
+   * @generated from field: api.commons.ScheduleSelector source_schedule_selector = 1;
+   */
+  sourceScheduleSelector?: ScheduleSelector;
+
+  /**
+   * The schedule that the shifts will be copied to.
+   *
+   * @generated from field: api.commons.ScheduleSelector destination_schedule_selector = 2;
+   */
+  destinationScheduleSelector?: ScheduleSelector;
+
+  /**
+   * The node that the shifts to copy should be associated with.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 3;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * The datetime range over which to get the shift instance sids.
+   * If no range is provided, the scheduling range for the @destination_schedule_selector will be used if it is a draft schedule, otherwise the range of the @source_schedule_selector will be used.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 4;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Set to true to copy shifts that start within the range being copied, otherwise any shift that overlaps the range will be copied.
+   *
+   * @generated from field: bool start_datetimes_only = 5;
+   */
+  startDatetimesOnly: boolean;
+
+  /**
+   * Set to true to allow the shifts to be copied when there is a resulting overlap conflict for an agents shifts, with diagnostic warnings being returned after.
+   * Otherwise, overlap conflicts will return diagnostic errors and cause no shifts to be copied.
+   *
+   * @generated from field: bool overlap_as_warning = 6;
+   */
+  overlapAsWarning: boolean;
+
+  constructor(data?: PartialMessage<CopyScheduleToScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyScheduleToScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyScheduleToScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleReq;
+
+  static equals(a: CopyScheduleToScheduleReq | PlainMessage<CopyScheduleToScheduleReq> | undefined, b: CopyScheduleToScheduleReq | PlainMessage<CopyScheduleToScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CopyScheduleToScheduleRes RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleRes
+ */
+export declare class CopyScheduleToScheduleRes extends Message<CopyScheduleToScheduleRes> {
+  /**
+   * A list of diagnostics for any errors encountered, which prevented the copy.
+   * If @overlap_as_warning is set to true, warning diagnostics for overlaps may be returned after a sucessful copy.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<CopyScheduleToScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyScheduleToScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyScheduleToScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleRes;
+
+  static equals(a: CopyScheduleToScheduleRes | PlainMessage<CopyScheduleToScheduleRes> | undefined, b: CopyScheduleToScheduleRes | PlainMessage<CopyScheduleToScheduleRes> | undefined): boolean;
 }
 
 /**

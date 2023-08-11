@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -2337,6 +2337,7 @@ export const GetOpenTimesBitmapsReq = proto3.makeMessageType(
     { no: 2, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 4, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 5, name: "bitmap_type", kind: "enum", T: proto3.getEnumType(BitmapType) },
   ],
 );
 
@@ -2464,6 +2465,7 @@ export const GetAvailabilityBitmapsReq = proto3.makeMessageType(
     { no: 2, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 4, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 5, name: "bitmap_type", kind: "enum", T: proto3.getEnumType(BitmapType) },
   ],
 );
 
@@ -3444,6 +3446,35 @@ export const DeleteDraftScheduleReq = proto3.makeMessageType(
 export const DeleteDraftScheduleRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DeleteDraftScheduleRes",
   [],
+);
+
+/**
+ * Request message for the CopyScheduleToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleReq
+ */
+export const CopyScheduleToScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyScheduleToScheduleReq",
+  () => [
+    { no: 1, name: "source_schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 2, name: "destination_schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 3, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 4, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 5, name: "start_datetimes_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "overlap_as_warning", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the CopyScheduleToScheduleRes RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleRes
+ */
+export const CopyScheduleToScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyScheduleToScheduleRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
 );
 
 /**
