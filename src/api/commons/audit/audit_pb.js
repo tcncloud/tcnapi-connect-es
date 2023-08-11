@@ -12,6 +12,7 @@ import { AsmActivateConversationEvent, AsmAgentLoginEvent, AsmAgentLogoutEvent, 
 import { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, ScorecardsCreateCategoryEvent, ScorecardsCreateEvaluationEvent, ScorecardsCreateEvaluationQuestionEvent, ScorecardsCreateQuestionEvent, ScorecardsCreateScorecardEvent, ScorecardsCreateScorecardQuestionEvent, ScorecardsCreateSectionEvent, ScorecardsDeleteCategoryEvent, ScorecardsDeleteEvaluationEvent, ScorecardsDeleteEvaluationQuestionEvent, ScorecardsDeleteQuestionEvent, ScorecardsDeleteScorecardEvent, ScorecardsDeleteScorecardQuestionEvent, ScorecardsDeleteSectionEvent, ScorecardsUpdateCategoryEvent, ScorecardsUpdateEvaluationEvent, ScorecardsUpdateEvaluationQuestionEvent, ScorecardsUpdateQuestionEvent, ScorecardsUpdateScorecardEvent, ScorecardsUpdateScorecardQuestionEvent, ScorecardsUpdateSectionEvent } from "./scorecards_events_pb.js";
 import { TicketEvent } from "./tickets_events_pb.js";
 import { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
+import { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -112,6 +113,7 @@ export const AuditEvent = proto3.makeMessageType(
     { no: 601, name: "ticket_event", kind: "message", T: TicketEvent, oneof: "event" },
     { no: 700, name: "compliance_rnd_query_event", kind: "message", T: ComplianceRndQueryEvent, oneof: "event" },
     { no: 701, name: "compliance_rnd_query_cached_event", kind: "message", T: ComplianceRndQueryEvent, oneof: "event" },
+    { no: 800, name: "agent_training_create_learning_opportunity_event", kind: "message", T: AgentTrainingCreateLearningOpportunityEvent, oneof: "event" },
   ],
 );
 
