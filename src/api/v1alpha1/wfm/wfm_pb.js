@@ -3372,32 +3372,6 @@ export const PublishDraftScheduleRes = proto3.makeMessageType(
 );
 
 /**
- * Request message for the ResetDraftSchedule RPC
- *
- * @generated from message api.v1alpha1.wfm.ResetDraftScheduleReq
- */
-export const ResetDraftScheduleReq = proto3.makeMessageType(
-  "api.v1alpha1.wfm.ResetDraftScheduleReq",
-  () => [
-    { no: 1, name: "draft_schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "datetime_range", kind: "message", T: DatetimeRange },
-    { no: 3, name: "unlocked_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
- * Response message for the ResetDraftSchedule RPC
- *
- * @generated from message api.v1alpha1.wfm.ResetDraftScheduleRes
- */
-export const ResetDraftScheduleRes = proto3.makeMessageType(
-  "api.v1alpha1.wfm.ResetDraftScheduleRes",
-  () => [
-    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
-  ],
-);
-
-/**
  * Request message for the GetDraftSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.GetDraftScheduleReq
