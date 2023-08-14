@@ -41,32 +41,27 @@ export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
 }
 
 /**
- * @generated from message api.commons.workflows.OmniNodeInject
+ * @generated from message api.commons.workflows.OmniNodeOptions
  */
-export declare class OmniNodeInject extends Message<OmniNodeInject> {
+export declare class OmniNodeOptions extends Message<OmniNodeOptions> {
   /**
-   * @generated from field: string store_to = 1;
+   * @generated from field: repeated string options = 1;
    */
-  storeTo: string;
+  options: string[];
 
-  /**
-   * @generated from field: string data = 2;
-   */
-  data: string;
-
-  constructor(data?: PartialMessage<OmniNodeInject>);
+  constructor(data?: PartialMessage<OmniNodeOptions>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.workflows.OmniNodeInject";
+  static readonly typeName = "api.commons.workflows.OmniNodeOptions";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeInject;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeOptions;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeInject;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeOptions;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeInject;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeOptions;
 
-  static equals(a: OmniNodeInject | PlainMessage<OmniNodeInject> | undefined, b: OmniNodeInject | PlainMessage<OmniNodeInject> | undefined): boolean;
+  static equals(a: OmniNodeOptions | PlainMessage<OmniNodeOptions> | undefined, b: OmniNodeOptions | PlainMessage<OmniNodeOptions> | undefined): boolean;
 }
 
 /**
@@ -79,9 +74,9 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
   prompt: string;
 
   /**
-   * @generated from field: string options_key = 3;
+   * @generated from field: string options = 3;
    */
-  optionsKey: string;
+  options: string;
 
   constructor(data?: PartialMessage<OmniNodeSendMessage>);
 
@@ -123,32 +118,32 @@ export declare class OmniNodeStore extends Message<OmniNodeStore> {
 }
 
 /**
- * @generated from message api.commons.workflows.OmniNodeCompare
+ * @generated from message api.commons.workflows.OmniNodeDecision
  */
-export declare class OmniNodeCompare extends Message<OmniNodeCompare> {
+export declare class OmniNodeDecision extends Message<OmniNodeDecision> {
   /**
-   * @generated from field: string input = 1;
+   * @generated from field: string options = 1;
+   */
+  options: string;
+
+  /**
+   * @generated from field: string input = 2;
    */
   input: string;
 
-  /**
-   * @generated from field: string options_key = 2;
-   */
-  optionsKey: string;
-
-  constructor(data?: PartialMessage<OmniNodeCompare>);
+  constructor(data?: PartialMessage<OmniNodeDecision>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.workflows.OmniNodeCompare";
+  static readonly typeName = "api.commons.workflows.OmniNodeDecision";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeCompare;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeDecision;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeCompare;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeDecision;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeCompare;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeDecision;
 
-  static equals(a: OmniNodeCompare | PlainMessage<OmniNodeCompare> | undefined, b: OmniNodeCompare | PlainMessage<OmniNodeCompare> | undefined): boolean;
+  static equals(a: OmniNodeDecision | PlainMessage<OmniNodeDecision> | undefined, b: OmniNodeDecision | PlainMessage<OmniNodeDecision> | undefined): boolean;
 }
 
 /**

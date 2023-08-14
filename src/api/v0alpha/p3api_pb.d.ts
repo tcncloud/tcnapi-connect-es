@@ -2833,6 +2833,13 @@ export declare class ManualDialSettings extends Message<ManualDialSettings> {
   useTimezoneValidationZip: ManualDialSettings_ZipCodeValidation;
 
   /**
+   * Control whether the reject option is available to the approvers.
+   *
+   * @generated from field: bool enable_reject_option_for_approvers = 29;
+   */
+  enableRejectOptionForApprovers: boolean;
+
+  /**
    * enable/disable the SIP address
    *
    * @generated from field: bool enable_sip_address = 30;
