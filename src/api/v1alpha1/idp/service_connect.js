@@ -3,12 +3,82 @@
 /* eslint-disable */
 // @ts-nocheck
 
+import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, GetAuthConnectionRequest, GetAuthConnectionResponse, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, UpdateAuthConnectionGroupsRequest, UpdateAuthConnectionGroupsResponse, UpdateAuthConnectionSecretRequest, UpdateAuthConnectionSecretResponse } from "./entities_pb.js";
+import { MethodKind } from "@bufbuild/protobuf";
+
 /**
- * @generated from service api.v1alpha1.idp.IdentityProvider
+ * @generated from service api.v1alpha1.idp.IdentityProviderService
  */
-export const IdentityProvider = {
-  typeName: "api.v1alpha1.idp.IdentityProvider",
+export const IdentityProviderService = {
+  typeName: "api.v1alpha1.idp.IdentityProviderService",
   methods: {
+    /**
+     * CreateAuthConnection creates a new auth0 connection.
+     *
+     * @generated from rpc api.v1alpha1.idp.IdentityProviderService.CreateAuthConnection
+     */
+    createAuthConnection: {
+      name: "CreateAuthConnection",
+      I: CreateAuthConnectionRequest,
+      O: CreateAuthConnectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetAuthConnectionSettings gets auth connection settings.
+     * DEPRECATED: use GetAuthConnection
+     *
+     * @generated from rpc api.v1alpha1.idp.IdentityProviderService.GetAuthConnectionSettings
+     */
+    getAuthConnectionSettings: {
+      name: "GetAuthConnectionSettings",
+      I: GetAuthConnectionSettingsRequest,
+      O: GetAuthConnectionSettingsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetAuthConnection gets an existing auth connection.
+     *
+     * @generated from rpc api.v1alpha1.idp.IdentityProviderService.GetAuthConnection
+     */
+    getAuthConnection: {
+      name: "GetAuthConnection",
+      I: GetAuthConnectionRequest,
+      O: GetAuthConnectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteAuthConnection removes the current orgs auth settings.
+     *
+     * @generated from rpc api.v1alpha1.idp.IdentityProviderService.DeleteAuthConnection
+     */
+    deleteAuthConnection: {
+      name: "DeleteAuthConnection",
+      I: DeleteAuthConnectionRequest,
+      O: DeleteAuthConnectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateAuthConnectionSecret updates a connections secret.
+     *
+     * @generated from rpc api.v1alpha1.idp.IdentityProviderService.UpdateAuthConnectionSecret
+     */
+    updateAuthConnectionSecret: {
+      name: "UpdateAuthConnectionSecret",
+      I: UpdateAuthConnectionSecretRequest,
+      O: UpdateAuthConnectionSecretResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateAuthConnectionGroups updates a connections groups.
+     *
+     * @generated from rpc api.v1alpha1.idp.IdentityProviderService.UpdateAuthConnectionGroups
+     */
+    updateAuthConnectionGroups: {
+      name: "UpdateAuthConnectionGroups",
+      I: UpdateAuthConnectionGroupsRequest,
+      O: UpdateAuthConnectionGroupsResponse,
+      kind: MethodKind.Unary,
+    },
   }
 };
 
