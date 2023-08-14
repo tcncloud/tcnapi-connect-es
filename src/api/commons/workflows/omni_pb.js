@@ -23,7 +23,8 @@ export const OmniNodePrompt = proto3.makeMessageType(
 export const OmniNodeOptions = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeOptions",
   () => [
-    { no: 1, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "store_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
