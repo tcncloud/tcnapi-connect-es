@@ -70,6 +70,35 @@ export declare class OmniNodeInject extends Message<OmniNodeInject> {
 }
 
 /**
+ * @generated from message api.commons.workflows.OmniNodeInjectMessage
+ */
+export declare class OmniNodeInjectMessage extends Message<OmniNodeInjectMessage> {
+  /**
+   * @generated from field: string store_to = 1;
+   */
+  storeTo: string;
+
+  /**
+   * @generated from field: string message_key = 2;
+   */
+  messageKey: string;
+
+  constructor(data?: PartialMessage<OmniNodeInjectMessage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeInjectMessage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeInjectMessage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeInjectMessage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeInjectMessage;
+
+  static equals(a: OmniNodeInjectMessage | PlainMessage<OmniNodeInjectMessage> | undefined, b: OmniNodeInjectMessage | PlainMessage<OmniNodeInjectMessage> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
 export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {

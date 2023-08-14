@@ -29,6 +29,17 @@ export const OmniNodeInject = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.workflows.OmniNodeInjectMessage
+ */
+export const OmniNodeInjectMessage = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeInjectMessage",
+  () => [
+    { no: 1, name: "store_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "message_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
 export const OmniNodeSendMessage = proto3.makeMessageType(
