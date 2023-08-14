@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AutoEvaluation, TimeFilter } from "../../commons/scorecards_pb.js";
+import type { AutoEvaluation } from "../../commons/scorecards_pb.js";
 
 /**
  * GetAutoEvaluationRequest is the request to get an auto evaluation
@@ -75,13 +75,6 @@ export declare class ListAutoEvaluationsRequest extends Message<ListAutoEvaluati
    * @generated from field: repeated int64 scorecard_ids = 2;
    */
   scorecardIds: bigint[];
-
-  /**
-   * Optional, filter completed timestamp by a specific range
-   *
-   * @generated from field: api.commons.TimeFilter completed_at = 3;
-   */
-  completedAt?: TimeFilter;
 
   constructor(data?: PartialMessage<ListAutoEvaluationsRequest>);
 
