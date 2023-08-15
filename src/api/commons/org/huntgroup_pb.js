@@ -75,6 +75,7 @@ export const GeneralSettings = proto3.makeMessageType(
     { no: 701, name: "require_manual_approval_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 702, name: "enable_manual_approval_of_sms", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 703, name: "require_manual_approval_number_sms", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 704, name: "disable_reject_option_for_approvers", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 800, name: "alphanumeric_keypad", kind: "message", T: GeneralSettings_AlphanumericKeypad },
     { no: 801, name: "enable_call_desktop_notifications", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 802, name: "inbound_compliance_metadata", kind: "message", T: GeneralSettings_InboundComplianceMetadata },
@@ -418,7 +419,6 @@ export const ManualDialSettings = proto3.makeMessageType(
     { no: 26, name: "data_dip_result_handling", kind: "enum", T: proto3.getEnumType(ManualDialDataDipHandling) },
     { no: 27, name: "data_dip_integration_mappings", kind: "message", T: ManualDialSettings_DataDipIntegrationMapping, repeated: true },
     { no: 28, name: "data_dip_integration_handling", kind: "enum", T: proto3.getEnumType(ManualDialDataDipHandling) },
-    { no: 29, name: "enable_reject_option_for_approvers", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

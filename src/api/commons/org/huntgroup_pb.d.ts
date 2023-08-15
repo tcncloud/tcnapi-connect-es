@@ -363,6 +363,13 @@ export declare class GeneralSettings extends Message<GeneralSettings> {
   requireManualApprovalNumberSms: boolean;
 
   /**
+   * Control whether the reject option is available to the approvers.
+   *
+   * @generated from field: bool disable_reject_option_for_approvers = 704;
+   */
+  disableRejectOptionForApprovers: boolean;
+
+  /**
    * Alphanumeric keypad properties. `Alphanumeric Keypad`
    *
    * @generated from field: api.commons.org.GeneralSettings.AlphanumericKeypad alphanumeric_keypad = 800;
@@ -1521,13 +1528,6 @@ export declare class ManualDialSettings extends Message<ManualDialSettings> {
    * @generated from field: api.commons.ManualDialDataDipHandling data_dip_integration_handling = 28;
    */
   dataDipIntegrationHandling: ManualDialDataDipHandling;
-
-  /**
-   * Control whether the reject option is available to the approvers.
-   *
-   * @generated from field: bool enable_reject_option_for_approvers = 29;
-   */
-  enableRejectOptionForApprovers: boolean;
 
   constructor(data?: PartialMessage<ManualDialSettings>);
 

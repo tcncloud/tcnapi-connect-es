@@ -941,7 +941,6 @@ export const ManualDialSettings = proto3.makeMessageType(
     { no: 26, name: "compliance_metadata", kind: "message", T: ComplianceMetadata, repeated: true },
     { no: 27, name: "enable_metadata", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 28, name: "use_timezone_validation_zip", kind: "enum", T: proto3.getEnumType(ManualDialSettings_ZipCodeValidation) },
-    { no: 29, name: "enable_reject_option_for_approvers", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 30, name: "enable_sip_address", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 31, name: "mask_manual_dial_caller_id", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 32, name: "enable_manual_dial_data_dip", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -1257,6 +1256,7 @@ export const ManualApprovalSettings = proto3.makeMessageType(
     { no: 2, name: "confirm", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "sms_allowed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 4, name: "sms_number_confirmation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "disable_reject_option_for_approvers", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
