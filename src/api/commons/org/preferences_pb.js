@@ -417,7 +417,7 @@ export const SchedulePreferences = proto3.makeMessageType(
     { no: 17, name: "use_campaign_linking", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 18, name: "campaign_links", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 19, name: "default_campaign_link_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 20, name: "resend_cancelled_campaigns", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 20, name: "prohibit_cancelled_resend", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
