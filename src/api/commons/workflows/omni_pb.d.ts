@@ -45,9 +45,9 @@ export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
  */
 export declare class OmniNodeOptions extends Message<OmniNodeOptions> {
   /**
-   * @generated from field: string store_to = 1;
+   * @generated from field: string options_id = 1;
    */
-  storeTo: string;
+  optionsId: string;
 
   /**
    * @generated from field: repeated string options = 2;
