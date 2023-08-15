@@ -18,6 +18,49 @@ export const OmniNodePrompt = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.workflows.OmniNodeOptions
+ */
+export const OmniNodeOptions = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeOptions",
+  () => [
+    { no: 1, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.workflows.OmniNodeSendMessage
+ */
+export const OmniNodeSendMessage = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeSendMessage",
+  () => [
+    { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.workflows.OmniNodeStore
+ */
+export const OmniNodeStore = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeStore",
+  () => [
+    { no: 1, name: "store_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.workflows.OmniNodeDecision
+ */
+export const OmniNodeDecision = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeDecision",
+  () => [
+    { no: 1, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "input", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message api.commons.workflows.OmniNodeSetSkill
  */
 export const OmniNodeSetSkill = proto3.makeMessageType(

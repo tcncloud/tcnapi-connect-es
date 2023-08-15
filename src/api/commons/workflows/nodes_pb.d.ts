@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
-import type { OmniNodeError, OmniNodePrompt, OmniNodeSetSkill, OmniNodeToAgent } from "./omni_pb.js";
+import type { OmniNodeDecision, OmniNodeError, OmniNodeOptions, OmniNodePrompt, OmniNodeSendMessage, OmniNodeSetSkill, OmniNodeStore, OmniNodeToAgent } from "./omni_pb.js";
 import type { OmniBotNodeTestEnd, OmniBotNodeTestStart, OmniBotNodeTestStep } from "./omni_bot_pb.js";
 import type { TestBotNodeTestEnd, TestBotNodeTestStart, TestBotNodeTestStep } from "./test_bot_pb.js";
 
@@ -108,6 +108,30 @@ export declare class NodeDefinition extends Message<NodeDefinition> {
      */
     value: OmniNodeError;
     case: "omniError";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.OmniNodeOptions omni_options = 205;
+     */
+    value: OmniNodeOptions;
+    case: "omniOptions";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.OmniNodeSendMessage omni_send_message = 206;
+     */
+    value: OmniNodeSendMessage;
+    case: "omniSendMessage";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.OmniNodeStore omni_store = 207;
+     */
+    value: OmniNodeStore;
+    case: "omniStore";
+  } | {
+    /**
+     * @generated from field: api.commons.workflows.OmniNodeDecision omni_decision = 208;
+     */
+    value: OmniNodeDecision;
+    case: "omniDecision";
   } | {
     /**
      * @generated from field: api.commons.workflows.OmniBotNodeTestStart omni_bot_test_start = 301 [deprecated = true];
