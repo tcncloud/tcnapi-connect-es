@@ -79,7 +79,7 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
   prompt: string;
 
   /**
-   * @generated from field: string options = 3;
+   * @generated from field: string options = 2;
    */
   options: string;
 

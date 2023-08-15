@@ -35,7 +35,7 @@ export const OmniNodeSendMessage = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeSendMessage",
   () => [
     { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
