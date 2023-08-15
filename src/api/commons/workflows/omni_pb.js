@@ -6,6 +6,8 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
+ * OmniNodePrompt is the PoC all-in-one version to send a message (optionally displaying options) and store the user input
+ *
  * @generated from message api.commons.workflows.OmniNodePrompt
  */
 export const OmniNodePrompt = proto3.makeMessageType(
@@ -18,6 +20,8 @@ export const OmniNodePrompt = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeOptions will store a list of options under a given subkey in the payload.options
+ *
  * @generated from message api.commons.workflows.OmniNodeOptions
  */
 export const OmniNodeOptions = proto3.makeMessageType(
@@ -29,6 +33,8 @@ export const OmniNodeOptions = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeSendMessage will send a message, optionally displaying options
+ *
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
 export const OmniNodeSendMessage = proto3.makeMessageType(
@@ -40,6 +46,8 @@ export const OmniNodeSendMessage = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeStore will store the text value of an incoming message under a given key in the payload
+ *
  * @generated from message api.commons.workflows.OmniNodeStore
  */
 export const OmniNodeStore = proto3.makeMessageType(
@@ -50,6 +58,8 @@ export const OmniNodeStore = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeDecision compares the input against previously stored options (via OmniNodeOptions)
+ *
  * @generated from message api.commons.workflows.OmniNodeDecision
  */
 export const OmniNodeDecision = proto3.makeMessageType(
@@ -61,6 +71,8 @@ export const OmniNodeDecision = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeSetSkill adds the given string as a skill on the coversation
+ *
  * @generated from message api.commons.workflows.OmniNodeSetSkill
  */
 export const OmniNodeSetSkill = proto3.makeMessageType(
@@ -71,6 +83,8 @@ export const OmniNodeSetSkill = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeToAgent removes the conversation from the flow (updates the status)
+ *
  * @generated from message api.commons.workflows.OmniNodeToAgent
  */
 export const OmniNodeToAgent = proto3.makeMessageType(
@@ -79,6 +93,8 @@ export const OmniNodeToAgent = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeError will send an error message to the user and log an error
+ *
  * @generated from message api.commons.workflows.OmniNodeError
  */
 export const OmniNodeError = proto3.makeMessageType(

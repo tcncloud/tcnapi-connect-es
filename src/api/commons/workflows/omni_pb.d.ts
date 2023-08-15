@@ -7,20 +7,28 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * OmniNodePrompt is the PoC all-in-one version to send a message (optionally displaying options) and store the user input
+ *
  * @generated from message api.commons.workflows.OmniNodePrompt
  */
 export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
   /**
+   * the base message to send
+   *
    * @generated from field: string prompt = 1;
    */
   prompt: string;
 
   /**
+   * the name (key in payload) under which to store the user input
+   *
    * @generated from field: string store_to = 2;
    */
   storeTo: string;
 
   /**
+   * a list of options to display along with the prompt
+   *
    * @generated from field: repeated string options = 3;
    */
   options: string[];
@@ -41,15 +49,21 @@ export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
 }
 
 /**
+ * OmniNodeOptions will store a list of options under a given subkey in the payload.options
+ *
  * @generated from message api.commons.workflows.OmniNodeOptions
  */
 export declare class OmniNodeOptions extends Message<OmniNodeOptions> {
   /**
+   * the name (key in payload.options) under which to store the options
+   *
    * @generated from field: string options_id = 1;
    */
   optionsId: string;
 
   /**
+   * the list of options to store
+   *
    * @generated from field: repeated string options = 2;
    */
   options: string[];
@@ -70,15 +84,21 @@ export declare class OmniNodeOptions extends Message<OmniNodeOptions> {
 }
 
 /**
+ * OmniNodeSendMessage will send a message, optionally displaying options
+ *
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
 export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
   /**
+   * the base message to send
+   *
    * @generated from field: string prompt = 1;
    */
   prompt: string;
 
   /**
+   * (Optional) an options ID previously stored via OmniNodeOptions (references an OmniNodeOptions.options_id)
+   *
    * @generated from field: string options = 2;
    */
   options: string;
@@ -99,10 +119,14 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
 }
 
 /**
+ * OmniNodeStore will store the text value of an incoming message under a given key in the payload
+ *
  * @generated from message api.commons.workflows.OmniNodeStore
  */
 export declare class OmniNodeStore extends Message<OmniNodeStore> {
   /**
+   * the name (key in payload) under which to store the input (e.g. "input_text")
+   *
    * @generated from field: string store_to = 1;
    */
   storeTo: string;
@@ -123,15 +147,22 @@ export declare class OmniNodeStore extends Message<OmniNodeStore> {
 }
 
 /**
+ * OmniNodeDecision compares the input against previously stored options (via OmniNodeOptions)
+ *
  * @generated from message api.commons.workflows.OmniNodeDecision
  */
 export declare class OmniNodeDecision extends Message<OmniNodeDecision> {
   /**
+   * an options ID previously stored via OmniNodeOptions (references an OmniNodeOptions.options_id)
+   *
    * @generated from field: string options = 1;
    */
   options: string;
 
   /**
+   * the input stored in the payload, to extract from json
+   *   e.g. "{{input_text}}" a previously stored key from OmniNodeStore
+   *
    * @generated from field: string input = 2;
    */
   input: string;
@@ -152,10 +183,14 @@ export declare class OmniNodeDecision extends Message<OmniNodeDecision> {
 }
 
 /**
+ * OmniNodeSetSkill adds the given string as a skill on the coversation
+ *
  * @generated from message api.commons.workflows.OmniNodeSetSkill
  */
 export declare class OmniNodeSetSkill extends Message<OmniNodeSetSkill> {
   /**
+   * the skill to add to the conversation
+   *
    * @generated from field: string skill = 1;
    */
   skill: string;
@@ -176,6 +211,8 @@ export declare class OmniNodeSetSkill extends Message<OmniNodeSetSkill> {
 }
 
 /**
+ * OmniNodeToAgent removes the conversation from the flow (updates the status)
+ *
  * @generated from message api.commons.workflows.OmniNodeToAgent
  */
 export declare class OmniNodeToAgent extends Message<OmniNodeToAgent> {
@@ -195,10 +232,14 @@ export declare class OmniNodeToAgent extends Message<OmniNodeToAgent> {
 }
 
 /**
+ * OmniNodeError will send an error message to the user and log an error
+ *
  * @generated from message api.commons.workflows.OmniNodeError
  */
 export declare class OmniNodeError extends Message<OmniNodeError> {
   /**
+   * the error message to send/log
+   *
    * @generated from field: string error = 1;
    */
   error: string;
