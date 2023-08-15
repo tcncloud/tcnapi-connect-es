@@ -1494,9 +1494,9 @@ export declare class SchedulePreferences extends Message<SchedulePreferences> {
   /**
    * Whether user canceled campaigns can be resent in the organization.
    *
-   * @generated from field: bool prohibit_cancelled_resend = 20;
+   * @generated from field: bool resend_cancelled_campaigns = 20;
    */
-  prohibitCancelledResend: boolean;
+  resendCancelledCampaigns: boolean;
 
   constructor(data?: PartialMessage<SchedulePreferences>);
 
