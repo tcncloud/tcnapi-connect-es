@@ -1529,6 +1529,15 @@ export declare class ManualDialSettings extends Message<ManualDialSettings> {
    */
   dataDipIntegrationHandling: ManualDialDataDipHandling;
 
+  /**
+   * Control whether the reject option is available to the approvers.
+   * Please use disable_reject_option_for_approvers under GeneralSettings.
+   *
+   * @generated from field: bool enable_reject_option_for_approvers = 29 [deprecated = true];
+   * @deprecated
+   */
+  enableRejectOptionForApprovers: boolean;
+
   constructor(data?: PartialMessage<ManualDialSettings>);
 
   static readonly runtime: typeof proto3;

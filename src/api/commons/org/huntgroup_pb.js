@@ -419,6 +419,7 @@ export const ManualDialSettings = proto3.makeMessageType(
     { no: 26, name: "data_dip_result_handling", kind: "enum", T: proto3.getEnumType(ManualDialDataDipHandling) },
     { no: 27, name: "data_dip_integration_mappings", kind: "message", T: ManualDialSettings_DataDipIntegrationMapping, repeated: true },
     { no: 28, name: "data_dip_integration_handling", kind: "enum", T: proto3.getEnumType(ManualDialDataDipHandling) },
+    { no: 29, name: "enable_reject_option_for_approvers", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
