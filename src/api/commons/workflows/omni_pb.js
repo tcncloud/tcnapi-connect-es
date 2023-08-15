@@ -41,7 +41,7 @@ export const OmniNodeSendMessage = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeSendMessage",
   () => [
     { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -53,7 +53,7 @@ export const OmniNodeSendMessage = proto3.makeMessageType(
 export const OmniNodeStore = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeStore",
   () => [
-    { no: 1, name: "store_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -65,7 +65,7 @@ export const OmniNodeStore = proto3.makeMessageType(
 export const OmniNodeDecision = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeDecision",
   () => [
-    { no: 1, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "input", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );

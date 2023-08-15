@@ -99,9 +99,9 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
   /**
    * (Optional) an options ID previously stored via OmniNodeOptions (references an OmniNodeOptions.options_id)
    *
-   * @generated from field: string options = 2;
+   * @generated from field: string options_id = 2;
    */
-  options: string;
+  optionsId: string;
 
   constructor(data?: PartialMessage<OmniNodeSendMessage>);
 
@@ -127,9 +127,9 @@ export declare class OmniNodeStore extends Message<OmniNodeStore> {
   /**
    * the name (key in payload) under which to store the input (e.g. "input_text")
    *
-   * @generated from field: string store_to = 1;
+   * @generated from field: string store_id = 1;
    */
-  storeTo: string;
+  storeId: string;
 
   constructor(data?: PartialMessage<OmniNodeStore>);
 
@@ -155,13 +155,13 @@ export declare class OmniNodeDecision extends Message<OmniNodeDecision> {
   /**
    * an options ID previously stored via OmniNodeOptions (references an OmniNodeOptions.options_id)
    *
-   * @generated from field: string options = 1;
+   * @generated from field: string options_id = 1;
    */
-  options: string;
+  optionsId: string;
 
   /**
    * the input stored in the payload, to extract from json
-   *   e.g. "{{input_text}}" a previously stored key from OmniNodeStore
+   *   e.g. "{{input_text}}" to extract a previously stored key from OmniNodeStore
    *
    * @generated from field: string input = 2;
    */
