@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { AutoEvaluation } from "../../commons/scorecards_pb.js";
+import { AutoEvaluation, TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
  * GetAutoEvaluationRequest is the request to get an auto evaluation
@@ -39,6 +39,7 @@ export const ListAutoEvaluationsRequest = proto3.makeMessageType(
   "api.v1alpha1.scorecards.ListAutoEvaluationsRequest",
   () => [
     { no: 2, name: "scorecard_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "completed_at", kind: "message", T: TimeFilter },
   ],
 );
 
