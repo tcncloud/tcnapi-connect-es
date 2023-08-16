@@ -267,6 +267,27 @@ export declare class OmniNodeToAgent extends Message<OmniNodeToAgent> {
 }
 
 /**
+ * OmniNodeToMatcher removes the conversation from the flow (updates the status)
+ *
+ * @generated from message api.commons.workflows.OmniNodeToMatcher
+ */
+export declare class OmniNodeToMatcher extends Message<OmniNodeToMatcher> {
+  constructor(data?: PartialMessage<OmniNodeToMatcher>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeToMatcher";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeToMatcher;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeToMatcher;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeToMatcher;
+
+  static equals(a: OmniNodeToMatcher | PlainMessage<OmniNodeToMatcher> | undefined, b: OmniNodeToMatcher | PlainMessage<OmniNodeToMatcher> | undefined): boolean;
+}
+
+/**
  * OmniNodeError will send an error message to the user and log an error
  *
  * @generated from message api.commons.workflows.OmniNodeError

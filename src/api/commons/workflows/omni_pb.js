@@ -106,6 +106,16 @@ export const OmniNodeToAgent = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeToMatcher removes the conversation from the flow (updates the status)
+ *
+ * @generated from message api.commons.workflows.OmniNodeToMatcher
+ */
+export const OmniNodeToMatcher = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeToMatcher",
+  [],
+);
+
+/**
  * OmniNodeError will send an error message to the user and log an error
  *
  * @generated from message api.commons.workflows.OmniNodeError
