@@ -46,27 +46,27 @@ export const OmniNodeSendMessage = proto3.makeMessageType(
 );
 
 /**
- * OmniNodeStore will store the text value of an incoming message under a given key in the payload
+ * OmniNodeUserInput will store the text value of an incoming message under a given key in the payload
  *
- * @generated from message api.commons.workflows.OmniNodeStore
+ * @generated from message api.commons.workflows.OmniNodeUserInput
  */
-export const OmniNodeStore = proto3.makeMessageType(
-  "api.commons.workflows.OmniNodeStore",
+export const OmniNodeUserInput = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeUserInput",
   () => [
     { no: 1, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * OmniNodeDecision compares the input against previously stored options (via OmniNodeOptions)
+ * OmniNodeBranching compares the input against previously stored options (via OmniNodeOptions)
  *
- * @generated from message api.commons.workflows.OmniNodeDecision
+ * @generated from message api.commons.workflows.OmniNodeBranching
  */
-export const OmniNodeDecision = proto3.makeMessageType(
-  "api.commons.workflows.OmniNodeDecision",
+export const OmniNodeBranching = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeBranching",
   () => [
     { no: 1, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "input", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

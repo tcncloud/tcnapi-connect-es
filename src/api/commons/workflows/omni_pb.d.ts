@@ -119,11 +119,11 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
 }
 
 /**
- * OmniNodeStore will store the text value of an incoming message under a given key in the payload
+ * OmniNodeUserInput will store the text value of an incoming message under a given key in the payload
  *
- * @generated from message api.commons.workflows.OmniNodeStore
+ * @generated from message api.commons.workflows.OmniNodeUserInput
  */
-export declare class OmniNodeStore extends Message<OmniNodeStore> {
+export declare class OmniNodeUserInput extends Message<OmniNodeUserInput> {
   /**
    * the name (key in payload) under which to store the input (e.g. "input_text")
    *
@@ -131,27 +131,27 @@ export declare class OmniNodeStore extends Message<OmniNodeStore> {
    */
   storeId: string;
 
-  constructor(data?: PartialMessage<OmniNodeStore>);
+  constructor(data?: PartialMessage<OmniNodeUserInput>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.workflows.OmniNodeStore";
+  static readonly typeName = "api.commons.workflows.OmniNodeUserInput";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeStore;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeUserInput;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeStore;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeUserInput;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeStore;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeUserInput;
 
-  static equals(a: OmniNodeStore | PlainMessage<OmniNodeStore> | undefined, b: OmniNodeStore | PlainMessage<OmniNodeStore> | undefined): boolean;
+  static equals(a: OmniNodeUserInput | PlainMessage<OmniNodeUserInput> | undefined, b: OmniNodeUserInput | PlainMessage<OmniNodeUserInput> | undefined): boolean;
 }
 
 /**
- * OmniNodeDecision compares the input against previously stored options (via OmniNodeOptions)
+ * OmniNodeBranching compares the input against previously stored options (via OmniNodeOptions)
  *
- * @generated from message api.commons.workflows.OmniNodeDecision
+ * @generated from message api.commons.workflows.OmniNodeBranching
  */
-export declare class OmniNodeDecision extends Message<OmniNodeDecision> {
+export declare class OmniNodeBranching extends Message<OmniNodeBranching> {
   /**
    * an options ID previously stored via OmniNodeOptions (references an OmniNodeOptions.options_id)
    *
@@ -160,26 +160,25 @@ export declare class OmniNodeDecision extends Message<OmniNodeDecision> {
   optionsId: string;
 
   /**
-   * the input stored in the payload, to extract from json
-   *   e.g. "{{input_text}}" to extract a previously stored key from OmniNodeStore
+   * key of data stored in the payload to compare against the options (likely references an OmniNodeUserInput.store_id)
    *
-   * @generated from field: string input = 2;
+   * @generated from field: string store_id = 2;
    */
-  input: string;
+  storeId: string;
 
-  constructor(data?: PartialMessage<OmniNodeDecision>);
+  constructor(data?: PartialMessage<OmniNodeBranching>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.workflows.OmniNodeDecision";
+  static readonly typeName = "api.commons.workflows.OmniNodeBranching";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeDecision;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeBranching;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeDecision;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeBranching;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeDecision;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeBranching;
 
-  static equals(a: OmniNodeDecision | PlainMessage<OmniNodeDecision> | undefined, b: OmniNodeDecision | PlainMessage<OmniNodeDecision> | undefined): boolean;
+  static equals(a: OmniNodeBranching | PlainMessage<OmniNodeBranching> | undefined, b: OmniNodeBranching | PlainMessage<OmniNodeBranching> | undefined): boolean;
 }
 
 /**

@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
-import type { OmniNodeDecision, OmniNodeError, OmniNodeOptions, OmniNodePrompt, OmniNodeSendMessage, OmniNodeSetSkill, OmniNodeStore, OmniNodeToAgent } from "./omni_pb.js";
+import type { OmniNodeBranching, OmniNodeError, OmniNodeOptions, OmniNodePrompt, OmniNodeSendMessage, OmniNodeSetSkill, OmniNodeToAgent, OmniNodeUserInput } from "./omni_pb.js";
 import type { OmniBotNodeTestEnd, OmniBotNodeTestStart, OmniBotNodeTestStep } from "./omni_bot_pb.js";
 import type { TestBotNodeTestEnd, TestBotNodeTestStart, TestBotNodeTestStep } from "./test_bot_pb.js";
 
@@ -122,16 +122,16 @@ export declare class NodeDefinition extends Message<NodeDefinition> {
     case: "omniSendMessage";
   } | {
     /**
-     * @generated from field: api.commons.workflows.OmniNodeStore omni_store = 207;
+     * @generated from field: api.commons.workflows.OmniNodeUserInput omni_user_input = 207;
      */
-    value: OmniNodeStore;
-    case: "omniStore";
+    value: OmniNodeUserInput;
+    case: "omniUserInput";
   } | {
     /**
-     * @generated from field: api.commons.workflows.OmniNodeDecision omni_decision = 208;
+     * @generated from field: api.commons.workflows.OmniNodeBranching omni_branching = 208;
      */
-    value: OmniNodeDecision;
-    case: "omniDecision";
+    value: OmniNodeBranching;
+    case: "omniBranching";
   } | {
     /**
      * @generated from field: api.commons.workflows.OmniBotNodeTestStart omni_bot_test_start = 301 [deprecated = true];

@@ -5,7 +5,7 @@
 
 import { proto3 } from "@bufbuild/protobuf";
 import { NodeChatbot, NodeComparator, NodeConsoleInput, NodePrint, NodeRandom, NodeStoreInput } from "./example_pb.js";
-import { OmniNodeDecision, OmniNodeError, OmniNodeOptions, OmniNodePrompt, OmniNodeSendMessage, OmniNodeSetSkill, OmniNodeStore, OmniNodeToAgent } from "./omni_pb.js";
+import { OmniNodeBranching, OmniNodeError, OmniNodeOptions, OmniNodePrompt, OmniNodeSendMessage, OmniNodeSetSkill, OmniNodeToAgent, OmniNodeUserInput } from "./omni_pb.js";
 import { OmniBotNodeTestEnd, OmniBotNodeTestStart, OmniBotNodeTestStep } from "./omni_bot_pb.js";
 import { TestBotNodeTestEnd, TestBotNodeTestStart, TestBotNodeTestStep } from "./test_bot_pb.js";
 
@@ -34,8 +34,8 @@ export const NodeDefinition = proto3.makeMessageType(
     { no: 204, name: "omni_error", kind: "message", T: OmniNodeError, oneof: "definition" },
     { no: 205, name: "omni_options", kind: "message", T: OmniNodeOptions, oneof: "definition" },
     { no: 206, name: "omni_send_message", kind: "message", T: OmniNodeSendMessage, oneof: "definition" },
-    { no: 207, name: "omni_store", kind: "message", T: OmniNodeStore, oneof: "definition" },
-    { no: 208, name: "omni_decision", kind: "message", T: OmniNodeDecision, oneof: "definition" },
+    { no: 207, name: "omni_user_input", kind: "message", T: OmniNodeUserInput, oneof: "definition" },
+    { no: 208, name: "omni_branching", kind: "message", T: OmniNodeBranching, oneof: "definition" },
     { no: 301, name: "omni_bot_test_start", kind: "message", T: OmniBotNodeTestStart, oneof: "definition" },
     { no: 302, name: "omni_bot_test_step", kind: "message", T: OmniBotNodeTestStep, oneof: "definition" },
     { no: 303, name: "omni_bot_test_end", kind: "message", T: OmniBotNodeTestEnd, oneof: "definition" },
