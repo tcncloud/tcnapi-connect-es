@@ -79,6 +79,19 @@ export const OmniNodeSetSkill = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeSetSkill",
   () => [
     { no: 1, name: "skill", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * OmniNodeSetSkills adds the given strings as a skills on the coversation
+ *
+ * @generated from message api.commons.workflows.OmniNodeSetSkills
+ */
+export const OmniNodeSetSkills = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeSetSkills",
+  () => [
+    { no: 1, name: "skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
