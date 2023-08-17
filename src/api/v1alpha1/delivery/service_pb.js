@@ -406,7 +406,6 @@ export const CredentialData = proto3.makeMessageType(
     { no: 3, name: "ssh_key_pair", kind: "message", T: SSHKeyPair, oneof: "data" },
     { no: 4, name: "pgp_key_pair", kind: "message", T: PGPKeyPair, oneof: "data" },
     { no: 5, name: "aes_password", kind: "message", T: AESPassword, oneof: "data" },
-    { no: 6, name: "user_default_ssh", kind: "message", T: UserDefaultSSH, oneof: "data" },
   ],
 );
 
@@ -460,18 +459,6 @@ export const AESPassword = proto3.makeMessageType(
   "api.v1alpha1.delivery.AESPassword",
   () => [
     { no: 1, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * will use default ssh key on pod file system
- *
- * @generated from message api.v1alpha1.delivery.UserDefaultSSH
- */
-export const UserDefaultSSH = proto3.makeMessageType(
-  "api.v1alpha1.delivery.UserDefaultSSH",
-  () => [
-    { no: 1, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

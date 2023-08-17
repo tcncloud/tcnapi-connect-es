@@ -1207,12 +1207,6 @@ export declare class CredentialData extends Message<CredentialData> {
      */
     value: AESPassword;
     case: "aesPassword";
-  } | {
-    /**
-     * @generated from field: api.v1alpha1.delivery.UserDefaultSSH user_default_ssh = 6;
-     */
-    value: UserDefaultSSH;
-    case: "userDefaultSsh";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<CredentialData>);
@@ -1363,32 +1357,6 @@ export declare class AESPassword extends Message<AESPassword> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AESPassword;
 
   static equals(a: AESPassword | PlainMessage<AESPassword> | undefined, b: AESPassword | PlainMessage<AESPassword> | undefined): boolean;
-}
-
-/**
- * will use default ssh key on pod file system
- *
- * @generated from message api.v1alpha1.delivery.UserDefaultSSH
- */
-export declare class UserDefaultSSH extends Message<UserDefaultSSH> {
-  /**
-   * @generated from field: string username = 1;
-   */
-  username: string;
-
-  constructor(data?: PartialMessage<UserDefaultSSH>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.delivery.UserDefaultSSH";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserDefaultSSH;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserDefaultSSH;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserDefaultSSH;
-
-  static equals(a: UserDefaultSSH | PlainMessage<UserDefaultSSH> | undefined, b: UserDefaultSSH | PlainMessage<UserDefaultSSH> | undefined): boolean;
 }
 
 /**
