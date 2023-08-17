@@ -51,6 +51,7 @@ export const IntegrationType = proto3.makeEnum(
     {no: 3500, name: "INTEGRATION_TYPE_POSCORP", localName: "POSCORP"},
     {no: 3600, name: "INTEGRATION_TYPE_PIANO", localName: "PIANO"},
     {no: 3700, name: "INTEGRATION_TYPE_EPIC", localName: "EPIC"},
+    {no: 3800, name: "INTEGRATION_TYPE_NEWZWARE", localName: "NEWZWARE"},
   ],
 );
 
@@ -243,6 +244,10 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3705, name: "REQUEST_METHOD_EPIC_FIND_APPOINTMENT", localName: "EPIC_FIND_APPOINTMENT"},
     {no: 3706, name: "REQUEST_METHOD_EPIC_BOOK_APPOINTMENT", localName: "EPIC_BOOK_APPOINTMENT"},
     {no: 3707, name: "REQUEST_METHOD_EPIC_GET_ACCOUNT", localName: "EPIC_GET_ACCOUNT"},
+    {no: 3801, name: "REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP", localName: "NEWZWARE_PHONE_LOOKUP"},
+    {no: 3802, name: "REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY", localName: "NEWZWARE_ACCOUNT_INQUIRY"},
+    {no: 3803, name: "REQUEST_METHOD_NEWZWARE_CC_PAYMENT", localName: "NEWZWARE_CC_PAYMENT"},
+    {no: 3804, name: "REQUEST_METHOD_NEWZWARE_ACH_PAYMENT", localName: "NEWZWARE_ACH_PAYMENT"},
   ],
 );
 
@@ -559,6 +564,8 @@ export const InvoiceFlow = proto3.makeMessageType(
     { no: 11, name: "authorize_net_custom_http", kind: "message", T: InvoiceAuthorizeNetCustomHttp, oneof: "value" },
     { no: 12, name: "journey", kind: "message", T: InvoiceJourney, oneof: "value" },
     { no: 13, name: "dynamic_journey", kind: "message", T: InvoiceDynamicJourney, oneof: "value" },
+    { no: 14, name: "newzware_lookup_phone", kind: "message", T: InvoiceNewzwareLookupPhone, oneof: "value" },
+    { no: 15, name: "newzware_account_inquiry", kind: "message", T: InvoiceNewzwareAccountInquiry, oneof: "value" },
     { no: 3, name: "invoice_template", kind: "message", T: InvoiceTemplate },
   ],
 );
@@ -579,6 +586,8 @@ export const PaymentFlow = proto3.makeMessageType(
     { no: 8, name: "authorize_net_google_pay", kind: "message", T: PaymentAuthorizeNetGooglePay, oneof: "value" },
     { no: 9, name: "payway_submit_card_sale_request", kind: "message", T: PaymentPaywaySubmitCardSaleRequest, oneof: "value" },
     { no: 10, name: "payway_submit_ach_alert_request", kind: "message", T: PaymentPaywaySubmitACHAlertRequest, oneof: "value" },
+    { no: 11, name: "newzware_cc", kind: "message", T: PaymentNewzwareCc, oneof: "value" },
+    { no: 12, name: "newzware_ach", kind: "message", T: PaymentNewzwareAch, oneof: "value" },
     { no: 20, name: "payment_fields", kind: "message", T: FieldDefinition, repeated: true },
   ],
 );
@@ -596,6 +605,8 @@ export const VerificationFlow = proto3.makeMessageType(
     { no: 6, name: "authorize_net_customer_profile", kind: "message", T: VerificationAuthorizeNetCustomerProfile, oneof: "value" },
     { no: 7, name: "authorize_net_link_data", kind: "message", T: VerificationAuthorizeNetLinkData, oneof: "value" },
     { no: 12, name: "journey", kind: "message", T: VerificationJourney, oneof: "value" },
+    { no: 13, name: "newzware_lookup_phone", kind: "message", T: VerificationNewzwareLookupPhone, oneof: "value" },
+    { no: 14, name: "newzware_account_inquiry", kind: "message", T: VerificationNewzwareAccountInquiry, oneof: "value" },
     { no: 20, name: "verification_fields", kind: "message", T: FieldDefinition, repeated: true },
   ],
 );
@@ -823,6 +834,10 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3705, name: "epic_find_appointment", kind: "message", T: ExecuteEpicFindAppointment, oneof: "value" },
     { no: 3706, name: "epic_book_appointment", kind: "message", T: ExecuteEpicBookAppointment, oneof: "value" },
     { no: 3707, name: "epic_get_account", kind: "message", T: ExecuteEpicGetAccount, oneof: "value" },
+    { no: 3801, name: "newzware_phone_lookup", kind: "message", T: ExecuteNewzwarePhoneLookup, oneof: "value" },
+    { no: 3802, name: "newzware_account_inquiry", kind: "message", T: ExecuteNewzwareAccountInquiry, oneof: "value" },
+    { no: 3803, name: "newzware_cc_payment", kind: "message", T: ExecuteNewzwareCcPayment, oneof: "value" },
+    { no: 3804, name: "newzware_ach_Payment", kind: "message", T: ExecuteNewzwareAchPayment, oneof: "value" },
   ],
 );
 
@@ -881,6 +896,22 @@ export const InvoiceDynamicJourney = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.integrations.InvoiceNewzwareLookupPhone
+ */
+export const InvoiceNewzwareLookupPhone = proto3.makeMessageType(
+  "api.commons.integrations.InvoiceNewzwareLookupPhone",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.InvoiceNewzwareAccountInquiry
+ */
+export const InvoiceNewzwareAccountInquiry = proto3.makeMessageType(
+  "api.commons.integrations.InvoiceNewzwareAccountInquiry",
+  [],
+);
+
+/**
  * verification flows
  *
  * @generated from message api.commons.integrations.VerificationExperianQueryBalance
@@ -934,6 +965,22 @@ export const VerificationJourney = proto3.makeMessageType(
     { no: 4, name: "zip_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "last4_ssn", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
+);
+
+/**
+ * @generated from message api.commons.integrations.VerificationNewzwareLookupPhone
+ */
+export const VerificationNewzwareLookupPhone = proto3.makeMessageType(
+  "api.commons.integrations.VerificationNewzwareLookupPhone",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.VerificationNewzwareAccountInquiry
+ */
+export const VerificationNewzwareAccountInquiry = proto3.makeMessageType(
+  "api.commons.integrations.VerificationNewzwareAccountInquiry",
+  [],
 );
 
 /**
@@ -1007,6 +1054,22 @@ export const PaymentPaywaySubmitCardSaleRequest = proto3.makeMessageType(
  */
 export const PaymentPaywaySubmitACHAlertRequest = proto3.makeMessageType(
   "api.commons.integrations.PaymentPaywaySubmitACHAlertRequest",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.PaymentNewzwareCc
+ */
+export const PaymentNewzwareCc = proto3.makeMessageType(
+  "api.commons.integrations.PaymentNewzwareCc",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.PaymentNewzwareAch
+ */
+export const PaymentNewzwareAch = proto3.makeMessageType(
+  "api.commons.integrations.PaymentNewzwareAch",
   [],
 );
 
@@ -2441,6 +2504,38 @@ export const ExecuteEpicBookAppointment = proto3.makeMessageType(
  */
 export const ExecuteEpicGetAccount = proto3.makeMessageType(
   "api.commons.integrations.ExecuteEpicGetAccount",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwarePhoneLookup
+ */
+export const ExecuteNewzwarePhoneLookup = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwarePhoneLookup",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareAccountInquiry
+ */
+export const ExecuteNewzwareAccountInquiry = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareAccountInquiry",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareCcPayment
+ */
+export const ExecuteNewzwareCcPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareCcPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareAchPayment
+ */
+export const ExecuteNewzwareAchPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareAchPayment",
   [],
 );
 

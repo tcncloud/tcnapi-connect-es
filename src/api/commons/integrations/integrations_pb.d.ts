@@ -201,6 +201,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_EPIC = 3700;
    */
   EPIC = 3700,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_NEWZWARE = 3800;
+   */
+  NEWZWARE = 3800,
 }
 
 /**
@@ -1109,6 +1114,26 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_EPIC_GET_ACCOUNT = 3707;
    */
   EPIC_GET_ACCOUNT = 3707,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP = 3801;
+   */
+  NEWZWARE_PHONE_LOOKUP = 3801,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY = 3802;
+   */
+  NEWZWARE_ACCOUNT_INQUIRY = 3802,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_CC_PAYMENT = 3803;
+   */
+  NEWZWARE_CC_PAYMENT = 3803,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_ACH_PAYMENT = 3804;
+   */
+  NEWZWARE_ACH_PAYMENT = 3804,
 }
 
 /**
@@ -2059,6 +2084,18 @@ export declare class InvoiceFlow extends Message<InvoiceFlow> {
      */
     value: InvoiceDynamicJourney;
     case: "dynamicJourney";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.InvoiceNewzwareLookupPhone newzware_lookup_phone = 14;
+     */
+    value: InvoiceNewzwareLookupPhone;
+    case: "newzwareLookupPhone";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.InvoiceNewzwareAccountInquiry newzware_account_inquiry = 15;
+     */
+    value: InvoiceNewzwareAccountInquiry;
+    case: "newzwareAccountInquiry";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -2149,6 +2186,18 @@ export declare class PaymentFlow extends Message<PaymentFlow> {
      */
     value: PaymentPaywaySubmitACHAlertRequest;
     case: "paywaySubmitAchAlertRequest";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentNewzwareCc newzware_cc = 11;
+     */
+    value: PaymentNewzwareCc;
+    case: "newzwareCc";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentNewzwareAch newzware_ach = 12;
+     */
+    value: PaymentNewzwareAch;
+    case: "newzwareAch";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -2224,6 +2273,18 @@ export declare class VerificationFlow extends Message<VerificationFlow> {
      */
     value: VerificationJourney;
     case: "journey";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.VerificationNewzwareLookupPhone newzware_lookup_phone = 13;
+     */
+    value: VerificationNewzwareLookupPhone;
+    case: "newzwareLookupPhone";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.VerificationNewzwareAccountInquiry newzware_account_inquiry = 14;
+     */
+    value: VerificationNewzwareAccountInquiry;
+    case: "newzwareAccountInquiry";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -3444,6 +3505,30 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteEpicGetAccount;
     case: "epicGetAccount";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwarePhoneLookup newzware_phone_lookup = 3801;
+     */
+    value: ExecuteNewzwarePhoneLookup;
+    case: "newzwarePhoneLookup";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwareAccountInquiry newzware_account_inquiry = 3802;
+     */
+    value: ExecuteNewzwareAccountInquiry;
+    case: "newzwareAccountInquiry";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwareCcPayment newzware_cc_payment = 3803;
+     */
+    value: ExecuteNewzwareCcPayment;
+    case: "newzwareCcPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwareAchPayment newzware_ach_Payment = 3804;
+     */
+    value: ExecuteNewzwareAchPayment;
+    case: "newzwareAchPayment";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -3590,6 +3675,44 @@ export declare class InvoiceDynamicJourney extends Message<InvoiceDynamicJourney
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InvoiceDynamicJourney;
 
   static equals(a: InvoiceDynamicJourney | PlainMessage<InvoiceDynamicJourney> | undefined, b: InvoiceDynamicJourney | PlainMessage<InvoiceDynamicJourney> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.InvoiceNewzwareLookupPhone
+ */
+export declare class InvoiceNewzwareLookupPhone extends Message<InvoiceNewzwareLookupPhone> {
+  constructor(data?: PartialMessage<InvoiceNewzwareLookupPhone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.InvoiceNewzwareLookupPhone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InvoiceNewzwareLookupPhone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InvoiceNewzwareLookupPhone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InvoiceNewzwareLookupPhone;
+
+  static equals(a: InvoiceNewzwareLookupPhone | PlainMessage<InvoiceNewzwareLookupPhone> | undefined, b: InvoiceNewzwareLookupPhone | PlainMessage<InvoiceNewzwareLookupPhone> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.InvoiceNewzwareAccountInquiry
+ */
+export declare class InvoiceNewzwareAccountInquiry extends Message<InvoiceNewzwareAccountInquiry> {
+  constructor(data?: PartialMessage<InvoiceNewzwareAccountInquiry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.InvoiceNewzwareAccountInquiry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InvoiceNewzwareAccountInquiry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InvoiceNewzwareAccountInquiry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InvoiceNewzwareAccountInquiry;
+
+  static equals(a: InvoiceNewzwareAccountInquiry | PlainMessage<InvoiceNewzwareAccountInquiry> | undefined, b: InvoiceNewzwareAccountInquiry | PlainMessage<InvoiceNewzwareAccountInquiry> | undefined): boolean;
 }
 
 /**
@@ -3751,6 +3874,44 @@ export declare class VerificationJourney extends Message<VerificationJourney> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerificationJourney;
 
   static equals(a: VerificationJourney | PlainMessage<VerificationJourney> | undefined, b: VerificationJourney | PlainMessage<VerificationJourney> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.VerificationNewzwareLookupPhone
+ */
+export declare class VerificationNewzwareLookupPhone extends Message<VerificationNewzwareLookupPhone> {
+  constructor(data?: PartialMessage<VerificationNewzwareLookupPhone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.VerificationNewzwareLookupPhone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerificationNewzwareLookupPhone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerificationNewzwareLookupPhone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerificationNewzwareLookupPhone;
+
+  static equals(a: VerificationNewzwareLookupPhone | PlainMessage<VerificationNewzwareLookupPhone> | undefined, b: VerificationNewzwareLookupPhone | PlainMessage<VerificationNewzwareLookupPhone> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.VerificationNewzwareAccountInquiry
+ */
+export declare class VerificationNewzwareAccountInquiry extends Message<VerificationNewzwareAccountInquiry> {
+  constructor(data?: PartialMessage<VerificationNewzwareAccountInquiry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.VerificationNewzwareAccountInquiry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerificationNewzwareAccountInquiry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerificationNewzwareAccountInquiry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerificationNewzwareAccountInquiry;
+
+  static equals(a: VerificationNewzwareAccountInquiry | PlainMessage<VerificationNewzwareAccountInquiry> | undefined, b: VerificationNewzwareAccountInquiry | PlainMessage<VerificationNewzwareAccountInquiry> | undefined): boolean;
 }
 
 /**
@@ -3924,6 +4085,44 @@ export declare class PaymentPaywaySubmitACHAlertRequest extends Message<PaymentP
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPaywaySubmitACHAlertRequest;
 
   static equals(a: PaymentPaywaySubmitACHAlertRequest | PlainMessage<PaymentPaywaySubmitACHAlertRequest> | undefined, b: PaymentPaywaySubmitACHAlertRequest | PlainMessage<PaymentPaywaySubmitACHAlertRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentNewzwareCc
+ */
+export declare class PaymentNewzwareCc extends Message<PaymentNewzwareCc> {
+  constructor(data?: PartialMessage<PaymentNewzwareCc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentNewzwareCc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentNewzwareCc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentNewzwareCc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentNewzwareCc;
+
+  static equals(a: PaymentNewzwareCc | PlainMessage<PaymentNewzwareCc> | undefined, b: PaymentNewzwareCc | PlainMessage<PaymentNewzwareCc> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentNewzwareAch
+ */
+export declare class PaymentNewzwareAch extends Message<PaymentNewzwareAch> {
+  constructor(data?: PartialMessage<PaymentNewzwareAch>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentNewzwareAch";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentNewzwareAch;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentNewzwareAch;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentNewzwareAch;
+
+  static equals(a: PaymentNewzwareAch | PlainMessage<PaymentNewzwareAch> | undefined, b: PaymentNewzwareAch | PlainMessage<PaymentNewzwareAch> | undefined): boolean;
 }
 
 /**
@@ -7327,5 +7526,81 @@ export declare class ExecuteEpicGetAccount extends Message<ExecuteEpicGetAccount
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicGetAccount;
 
   static equals(a: ExecuteEpicGetAccount | PlainMessage<ExecuteEpicGetAccount> | undefined, b: ExecuteEpicGetAccount | PlainMessage<ExecuteEpicGetAccount> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwarePhoneLookup
+ */
+export declare class ExecuteNewzwarePhoneLookup extends Message<ExecuteNewzwarePhoneLookup> {
+  constructor(data?: PartialMessage<ExecuteNewzwarePhoneLookup>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwarePhoneLookup";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwarePhoneLookup;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwarePhoneLookup;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwarePhoneLookup;
+
+  static equals(a: ExecuteNewzwarePhoneLookup | PlainMessage<ExecuteNewzwarePhoneLookup> | undefined, b: ExecuteNewzwarePhoneLookup | PlainMessage<ExecuteNewzwarePhoneLookup> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareAccountInquiry
+ */
+export declare class ExecuteNewzwareAccountInquiry extends Message<ExecuteNewzwareAccountInquiry> {
+  constructor(data?: PartialMessage<ExecuteNewzwareAccountInquiry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwareAccountInquiry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwareAccountInquiry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwareAccountInquiry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareAccountInquiry;
+
+  static equals(a: ExecuteNewzwareAccountInquiry | PlainMessage<ExecuteNewzwareAccountInquiry> | undefined, b: ExecuteNewzwareAccountInquiry | PlainMessage<ExecuteNewzwareAccountInquiry> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareCcPayment
+ */
+export declare class ExecuteNewzwareCcPayment extends Message<ExecuteNewzwareCcPayment> {
+  constructor(data?: PartialMessage<ExecuteNewzwareCcPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwareCcPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwareCcPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwareCcPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareCcPayment;
+
+  static equals(a: ExecuteNewzwareCcPayment | PlainMessage<ExecuteNewzwareCcPayment> | undefined, b: ExecuteNewzwareCcPayment | PlainMessage<ExecuteNewzwareCcPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareAchPayment
+ */
+export declare class ExecuteNewzwareAchPayment extends Message<ExecuteNewzwareAchPayment> {
+  constructor(data?: PartialMessage<ExecuteNewzwareAchPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwareAchPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwareAchPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwareAchPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareAchPayment;
+
+  static equals(a: ExecuteNewzwareAchPayment | PlainMessage<ExecuteNewzwareAchPayment> | undefined, b: ExecuteNewzwareAchPayment | PlainMessage<ExecuteNewzwareAchPayment> | undefined): boolean;
 }
 
