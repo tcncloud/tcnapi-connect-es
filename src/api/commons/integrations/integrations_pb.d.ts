@@ -2086,13 +2086,7 @@ export declare class InvoiceFlow extends Message<InvoiceFlow> {
     case: "dynamicJourney";
   } | {
     /**
-     * @generated from field: api.commons.integrations.InvoiceNewzwareLookupPhone newzware_lookup_phone = 14;
-     */
-    value: InvoiceNewzwareLookupPhone;
-    case: "newzwareLookupPhone";
-  } | {
-    /**
-     * @generated from field: api.commons.integrations.InvoiceNewzwareAccountInquiry newzware_account_inquiry = 15;
+     * @generated from field: api.commons.integrations.InvoiceNewzwareAccountInquiry newzware_account_inquiry = 14;
      */
     value: InvoiceNewzwareAccountInquiry;
     case: "newzwareAccountInquiry";
@@ -3675,25 +3669,6 @@ export declare class InvoiceDynamicJourney extends Message<InvoiceDynamicJourney
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InvoiceDynamicJourney;
 
   static equals(a: InvoiceDynamicJourney | PlainMessage<InvoiceDynamicJourney> | undefined, b: InvoiceDynamicJourney | PlainMessage<InvoiceDynamicJourney> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.integrations.InvoiceNewzwareLookupPhone
- */
-export declare class InvoiceNewzwareLookupPhone extends Message<InvoiceNewzwareLookupPhone> {
-  constructor(data?: PartialMessage<InvoiceNewzwareLookupPhone>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.integrations.InvoiceNewzwareLookupPhone";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InvoiceNewzwareLookupPhone;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InvoiceNewzwareLookupPhone;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InvoiceNewzwareLookupPhone;
-
-  static equals(a: InvoiceNewzwareLookupPhone | PlainMessage<InvoiceNewzwareLookupPhone> | undefined, b: InvoiceNewzwareLookupPhone | PlainMessage<InvoiceNewzwareLookupPhone> | undefined): boolean;
 }
 
 /**

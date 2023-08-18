@@ -564,8 +564,7 @@ export const InvoiceFlow = proto3.makeMessageType(
     { no: 11, name: "authorize_net_custom_http", kind: "message", T: InvoiceAuthorizeNetCustomHttp, oneof: "value" },
     { no: 12, name: "journey", kind: "message", T: InvoiceJourney, oneof: "value" },
     { no: 13, name: "dynamic_journey", kind: "message", T: InvoiceDynamicJourney, oneof: "value" },
-    { no: 14, name: "newzware_lookup_phone", kind: "message", T: InvoiceNewzwareLookupPhone, oneof: "value" },
-    { no: 15, name: "newzware_account_inquiry", kind: "message", T: InvoiceNewzwareAccountInquiry, oneof: "value" },
+    { no: 14, name: "newzware_account_inquiry", kind: "message", T: InvoiceNewzwareAccountInquiry, oneof: "value" },
     { no: 3, name: "invoice_template", kind: "message", T: InvoiceTemplate },
   ],
 );
@@ -893,14 +892,6 @@ export const InvoiceDynamicJourney = proto3.makeMessageType(
     { no: 2, name: "total_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "journey_fields", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: ListOfStrings} },
   ],
-);
-
-/**
- * @generated from message api.commons.integrations.InvoiceNewzwareLookupPhone
- */
-export const InvoiceNewzwareLookupPhone = proto3.makeMessageType(
-  "api.commons.integrations.InvoiceNewzwareLookupPhone",
-  [],
 );
 
 /**
