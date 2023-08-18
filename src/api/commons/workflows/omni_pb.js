@@ -42,6 +42,7 @@ export const OmniNodeSendMessage = proto3.makeMessageType(
   () => [
     { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
@@ -67,6 +68,7 @@ export const OmniNodeBranching = proto3.makeMessageType(
   () => [
     { no: 1, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

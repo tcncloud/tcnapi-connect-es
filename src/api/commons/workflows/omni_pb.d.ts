@@ -103,6 +103,13 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
    */
   optionsId: string;
 
+  /**
+   * the list of options to select from as the correct response
+   *
+   * @generated from field: repeated string options = 3;
+   */
+  options: string[];
+
   constructor(data?: PartialMessage<OmniNodeSendMessage>);
 
   static readonly runtime: typeof proto3;
@@ -165,6 +172,13 @@ export declare class OmniNodeBranching extends Message<OmniNodeBranching> {
    * @generated from field: string store_id = 2;
    */
   storeId: string;
+
+  /**
+   * the list of options to use for branching
+   *
+   * @generated from field: repeated string options = 3;
+   */
+  options: string[];
 
   constructor(data?: PartialMessage<OmniNodeBranching>);
 
