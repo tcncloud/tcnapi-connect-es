@@ -14,9 +14,7 @@ import { LearningOpportunity } from "../agent_training_pb.js";
 export const AgentTrainingCreateLearningOpportunityEvent = proto3.makeMessageType(
   "api.commons.audit.AgentTrainingCreateLearningOpportunityEvent",
   () => [
-    { no: 1, name: "agent_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
+    { no: 1, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
   ],
 );
 

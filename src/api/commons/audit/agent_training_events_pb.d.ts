@@ -14,23 +14,9 @@ import type { LearningOpportunity } from "../agent_training_pb.js";
  */
 export declare class AgentTrainingCreateLearningOpportunityEvent extends Message<AgentTrainingCreateLearningOpportunityEvent> {
   /**
-   * the agent receiving the learning opportunity
-   *
-   * @generated from field: string agent_user_id = 1;
-   */
-  agentUserId: string;
-
-  /**
-   * info or context for the learning opportunity
-   *
-   * @generated from field: string description = 2;
-   */
-  description: string;
-
-  /**
    * learning opportunity created
    *
-   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 3;
+   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 1;
    */
   learningOpportunity?: LearningOpportunity;
 
