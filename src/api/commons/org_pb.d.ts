@@ -1544,6 +1544,13 @@ export declare enum OperatorApplications {
    * @generated from enum value: AGENT_BETA_APP = 32;
    */
   AGENT_BETA_APP = 32,
+
+  /**
+   * Newsroom
+   *
+   * @generated from enum value: NEWSROOM_APP = 33;
+   */
+  NEWSROOM_APP = 33,
 }
 
 /**

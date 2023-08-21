@@ -3372,6 +3372,32 @@ export const PublishDraftScheduleRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ResetDraftSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ResetDraftScheduleReq
+ */
+export const ResetDraftScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ResetDraftScheduleReq",
+  () => [
+    { no: 1, name: "draft_schedule_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 3, name: "unlocked_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the ResetDraftSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ResetDraftScheduleRes
+ */
+export const ResetDraftScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ResetDraftScheduleRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the GetDraftSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.GetDraftScheduleReq
@@ -3446,6 +3472,35 @@ export const DeleteDraftScheduleReq = proto3.makeMessageType(
 export const DeleteDraftScheduleRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DeleteDraftScheduleRes",
   [],
+);
+
+/**
+ * Request message for the CopyScheduleToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleReq
+ */
+export const CopyScheduleToScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyScheduleToScheduleReq",
+  () => [
+    { no: 1, name: "source_schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 2, name: "destination_schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 3, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 4, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 5, name: "start_datetimes_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "overlap_as_warning", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the CopyScheduleToScheduleRes RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleRes
+ */
+export const CopyScheduleToScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyScheduleToScheduleRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
 );
 
 /**

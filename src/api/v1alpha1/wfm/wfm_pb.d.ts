@@ -9852,6 +9852,77 @@ export declare class PublishDraftScheduleRes extends Message<PublishDraftSchedul
 }
 
 /**
+ * Request message for the ResetDraftSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ResetDraftScheduleReq
+ */
+export declare class ResetDraftScheduleReq extends Message<ResetDraftScheduleReq> {
+  /**
+   * ID of the draft schedule to reset.
+   *
+   * @generated from field: int64 draft_schedule_sid = 1;
+   */
+  draftScheduleSid: bigint;
+
+  /**
+   * Date range to of the draft to reset.
+   * If left blank, the full range for the draft schedule will be used by default.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 2;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Set to true to only delete unlocked shifts from @draft_schedule_sid.
+   *
+   * @generated from field: bool unlocked_only = 3;
+   */
+  unlockedOnly: boolean;
+
+  constructor(data?: PartialMessage<ResetDraftScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ResetDraftScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetDraftScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetDraftScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetDraftScheduleReq;
+
+  static equals(a: ResetDraftScheduleReq | PlainMessage<ResetDraftScheduleReq> | undefined, b: ResetDraftScheduleReq | PlainMessage<ResetDraftScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ResetDraftSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ResetDraftScheduleRes
+ */
+export declare class ResetDraftScheduleRes extends Message<ResetDraftScheduleRes> {
+  /**
+   * Set of diagnostic reports for any newly created overlap conflicts..
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<ResetDraftScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ResetDraftScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ResetDraftScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ResetDraftScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ResetDraftScheduleRes;
+
+  static equals(a: ResetDraftScheduleRes | PlainMessage<ResetDraftScheduleRes> | undefined, b: ResetDraftScheduleRes | PlainMessage<ResetDraftScheduleRes> | undefined): boolean;
+}
+
+/**
  * Request message for the GetDraftSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.GetDraftScheduleReq
@@ -10066,6 +10137,100 @@ export declare class DeleteDraftScheduleRes extends Message<DeleteDraftScheduleR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDraftScheduleRes;
 
   static equals(a: DeleteDraftScheduleRes | PlainMessage<DeleteDraftScheduleRes> | undefined, b: DeleteDraftScheduleRes | PlainMessage<DeleteDraftScheduleRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CopyScheduleToSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleReq
+ */
+export declare class CopyScheduleToScheduleReq extends Message<CopyScheduleToScheduleReq> {
+  /**
+   * The schedule that shifts will be copied from.
+   *
+   * @generated from field: api.commons.ScheduleSelector source_schedule_selector = 1;
+   */
+  sourceScheduleSelector?: ScheduleSelector;
+
+  /**
+   * The schedule that the shifts will be copied to.
+   *
+   * @generated from field: api.commons.ScheduleSelector destination_schedule_selector = 2;
+   */
+  destinationScheduleSelector?: ScheduleSelector;
+
+  /**
+   * The node that the shifts to copy should be associated with.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 3;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * The datetime range over which to get the shift instance sids.
+   * If no range is provided, the scheduling range for the @destination_schedule_selector will be used if it is a draft schedule, otherwise the range of the @source_schedule_selector will be used.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 4;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Set to true to copy shifts that start within the range being copied, otherwise any shift that overlaps the range will be copied.
+   *
+   * @generated from field: bool start_datetimes_only = 5;
+   */
+  startDatetimesOnly: boolean;
+
+  /**
+   * Set to true to allow the shifts to be copied when there is a resulting overlap conflict for an agents shifts, with diagnostic warnings being returned after.
+   * Otherwise, overlap conflicts will return diagnostic errors and cause no shifts to be copied.
+   *
+   * @generated from field: bool overlap_as_warning = 6;
+   */
+  overlapAsWarning: boolean;
+
+  constructor(data?: PartialMessage<CopyScheduleToScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyScheduleToScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyScheduleToScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleReq;
+
+  static equals(a: CopyScheduleToScheduleReq | PlainMessage<CopyScheduleToScheduleReq> | undefined, b: CopyScheduleToScheduleReq | PlainMessage<CopyScheduleToScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CopyScheduleToScheduleRes RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleRes
+ */
+export declare class CopyScheduleToScheduleRes extends Message<CopyScheduleToScheduleRes> {
+  /**
+   * A list of diagnostics for any errors encountered, which prevented the copy.
+   * If @overlap_as_warning is set to true, warning diagnostics for overlaps may be returned after a sucessful copy.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<CopyScheduleToScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyScheduleToScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyScheduleToScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyScheduleToScheduleRes;
+
+  static equals(a: CopyScheduleToScheduleRes | PlainMessage<CopyScheduleToScheduleRes> | undefined, b: CopyScheduleToScheduleRes | PlainMessage<CopyScheduleToScheduleRes> | undefined): boolean;
 }
 
 /**

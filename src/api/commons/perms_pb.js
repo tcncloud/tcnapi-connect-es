@@ -291,6 +291,7 @@ export const Permission = proto3.makeEnum(
     {no: 289, name: "DELETE_INTEGRATION_MESSAGES"},
     {no: 290, name: "EDIT_INTEGRATION_MESSAGES"},
     {no: 291, name: "EXECUTE_INTEGRATION_MESSAGES"},
+    {no: 292, name: "SCHEDULE_RESEND_CAMPAIGN"},
     {no: 2000, name: "APP_AGENT"},
     {no: 2001, name: "APP_BACKOFFICE"},
   ],
