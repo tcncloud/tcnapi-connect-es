@@ -71,18 +71,6 @@ export const OmniNodeSetSkill = proto3.makeMessageType(
 );
 
 /**
- * OmniNodeSetSkills adds the given strings as a skills on the coversation
- *
- * @generated from message api.commons.workflows.OmniNodeSetSkills
- */
-export const OmniNodeSetSkills = proto3.makeMessageType(
-  "api.commons.workflows.OmniNodeSetSkills",
-  () => [
-    { no: 1, name: "skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-  ],
-);
-
-/**
  * OmniNodeToAgent removes the conversation from the flow (updates the status)
  *
  * @generated from message api.commons.workflows.OmniNodeToAgent

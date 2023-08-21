@@ -183,34 +183,6 @@ export declare class OmniNodeSetSkill extends Message<OmniNodeSetSkill> {
 }
 
 /**
- * OmniNodeSetSkills adds the given strings as a skills on the coversation
- *
- * @generated from message api.commons.workflows.OmniNodeSetSkills
- */
-export declare class OmniNodeSetSkills extends Message<OmniNodeSetSkills> {
-  /**
-   * the skills to add to the conversation
-   *
-   * @generated from field: repeated string skills = 1;
-   */
-  skills: string[];
-
-  constructor(data?: PartialMessage<OmniNodeSetSkills>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.workflows.OmniNodeSetSkills";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeSetSkills;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeSetSkills;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeSetSkills;
-
-  static equals(a: OmniNodeSetSkills | PlainMessage<OmniNodeSetSkills> | undefined, b: OmniNodeSetSkills | PlainMessage<OmniNodeSetSkills> | undefined): boolean;
-}
-
-/**
  * OmniNodeToAgent removes the conversation from the flow (updates the status)
  *
  * @generated from message api.commons.workflows.OmniNodeToAgent
