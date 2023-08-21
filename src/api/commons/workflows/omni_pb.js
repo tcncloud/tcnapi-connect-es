@@ -6,6 +6,17 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from enum api.commons.workflows.ScrublistAction
+ */
+export const ScrublistAction = proto3.makeEnum(
+  "api.commons.workflows.ScrublistAction",
+  [
+    {no: 0, name: "ADD"},
+    {no: 1, name: "REMOVE"},
+  ],
+);
+
+/**
  * @generated from message api.commons.workflows.OmniNodePrompt
  */
 export const OmniNodePrompt = proto3.makeMessageType(
@@ -43,5 +54,40 @@ export const OmniNodeError = proto3.makeMessageType(
   () => [
     { no: 1, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
+);
+
+/**
+ * @generated from message api.commons.workflows.OmniNodeWebhook
+ */
+export const OmniNodeWebhook = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeWebhook",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "method", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "headers", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+  ],
+);
+
+/**
+ * take an action on a scrublist, either add or remove (other?)
+ *
+ * @generated from message api.commons.workflows.OmniNodeScrublist
+ */
+export const OmniNodeScrublist = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeScrublist",
+  () => [
+    { no: 1, name: "action", kind: "enum", T: proto3.getEnumType(ScrublistAction) },
+  ],
+);
+
+/**
+ * close out the conversation
+ *
+ * @generated from message api.commons.workflows.OmniNodeEndConversation
+ */
+export const OmniNodeEndConversation = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeEndConversation",
+  [],
 );
 

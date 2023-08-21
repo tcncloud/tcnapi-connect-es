@@ -7,6 +7,21 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from enum api.commons.workflows.ScrublistAction
+ */
+export declare enum ScrublistAction {
+  /**
+   * @generated from enum value: ADD = 0;
+   */
+  ADD = 0,
+
+  /**
+   * @generated from enum value: REMOVE = 1;
+   */
+  REMOVE = 1,
+}
+
+/**
  * @generated from message api.commons.workflows.OmniNodePrompt
  */
 export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
@@ -105,5 +120,91 @@ export declare class OmniNodeError extends Message<OmniNodeError> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeError;
 
   static equals(a: OmniNodeError | PlainMessage<OmniNodeError> | undefined, b: OmniNodeError | PlainMessage<OmniNodeError> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.workflows.OmniNodeWebhook
+ */
+export declare class OmniNodeWebhook extends Message<OmniNodeWebhook> {
+  /**
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  /**
+   * @generated from field: string method = 2;
+   */
+  method: string;
+
+  /**
+   * @generated from field: string body = 3;
+   */
+  body: string;
+
+  /**
+   * @generated from field: map<string, string> headers = 4;
+   */
+  headers: { [key: string]: string };
+
+  constructor(data?: PartialMessage<OmniNodeWebhook>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeWebhook";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeWebhook;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeWebhook;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeWebhook;
+
+  static equals(a: OmniNodeWebhook | PlainMessage<OmniNodeWebhook> | undefined, b: OmniNodeWebhook | PlainMessage<OmniNodeWebhook> | undefined): boolean;
+}
+
+/**
+ * take an action on a scrublist, either add or remove (other?)
+ *
+ * @generated from message api.commons.workflows.OmniNodeScrublist
+ */
+export declare class OmniNodeScrublist extends Message<OmniNodeScrublist> {
+  /**
+   * @generated from field: api.commons.workflows.ScrublistAction action = 1;
+   */
+  action: ScrublistAction;
+
+  constructor(data?: PartialMessage<OmniNodeScrublist>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeScrublist";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeScrublist;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeScrublist;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeScrublist;
+
+  static equals(a: OmniNodeScrublist | PlainMessage<OmniNodeScrublist> | undefined, b: OmniNodeScrublist | PlainMessage<OmniNodeScrublist> | undefined): boolean;
+}
+
+/**
+ * close out the conversation
+ *
+ * @generated from message api.commons.workflows.OmniNodeEndConversation
+ */
+export declare class OmniNodeEndConversation extends Message<OmniNodeEndConversation> {
+  constructor(data?: PartialMessage<OmniNodeEndConversation>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.workflows.OmniNodeEndConversation";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeEndConversation;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeEndConversation;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeEndConversation;
+
+  static equals(a: OmniNodeEndConversation | PlainMessage<OmniNodeEndConversation> | undefined, b: OmniNodeEndConversation | PlainMessage<OmniNodeEndConversation> | undefined): boolean;
 }
 
