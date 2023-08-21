@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse } from "./learning_opportunity_pb.js";
+import { CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -32,6 +32,39 @@ export declare const AgentTrainingService: {
       readonly name: "ListLearningOpportunities",
       readonly I: typeof ListLearningOpportunitiesRequest,
       readonly O: typeof ListLearningOpportunitiesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateLearningOpportunity updates a learning opportunity.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.UpdateLearningOpportunity
+     */
+    readonly updateLearningOpportunity: {
+      readonly name: "UpdateLearningOpportunity",
+      readonly I: typeof UpdateLearningOpportunityRequest,
+      readonly O: typeof UpdateLearningOpportunityResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteLearningOpportunity deletes a learning opportunity.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.DeleteLearningOpportunity
+     */
+    readonly deleteLearningOpportunity: {
+      readonly name: "DeleteLearningOpportunity",
+      readonly I: typeof DeleteLearningOpportunityRequest,
+      readonly O: typeof DeleteLearningOpportunityResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetLearningOpportunity gets a learning opportunity.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.GetLearningOpportunity
+     */
+    readonly getLearningOpportunity: {
+      readonly name: "GetLearningOpportunity",
+      readonly I: typeof GetLearningOpportunityRequest,
+      readonly O: typeof GetLearningOpportunityResponse,
       readonly kind: MethodKind.Unary,
     },
   }

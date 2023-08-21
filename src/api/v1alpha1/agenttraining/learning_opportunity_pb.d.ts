@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { LearningOpportunity } from "../../commons/agent_training_pb.js";
 
@@ -104,5 +104,166 @@ export declare class ListLearningOpportunitiesResponse extends Message<ListLearn
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLearningOpportunitiesResponse;
 
   static equals(a: ListLearningOpportunitiesResponse | PlainMessage<ListLearningOpportunitiesResponse> | undefined, b: ListLearningOpportunitiesResponse | PlainMessage<ListLearningOpportunitiesResponse> | undefined): boolean;
+}
+
+/**
+ * UpdateLearningOpportunityRequest represents a request to update a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest
+ */
+export declare class UpdateLearningOpportunityRequest extends Message<UpdateLearningOpportunityRequest> {
+  /**
+   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 1;
+   */
+  learningOpportunity?: LearningOpportunity;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask update_mask = 2;
+   */
+  updateMask?: FieldMask;
+
+  constructor(data?: PartialMessage<UpdateLearningOpportunityRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateLearningOpportunityRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateLearningOpportunityRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateLearningOpportunityRequest;
+
+  static equals(a: UpdateLearningOpportunityRequest | PlainMessage<UpdateLearningOpportunityRequest> | undefined, b: UpdateLearningOpportunityRequest | PlainMessage<UpdateLearningOpportunityRequest> | undefined): boolean;
+}
+
+/**
+ * UpdateLearningOpportunityResponse represents the updated learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.UpdateLearningOpportunityResponse
+ */
+export declare class UpdateLearningOpportunityResponse extends Message<UpdateLearningOpportunityResponse> {
+  /**
+   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 1;
+   */
+  learningOpportunity?: LearningOpportunity;
+
+  constructor(data?: PartialMessage<UpdateLearningOpportunityResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.UpdateLearningOpportunityResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateLearningOpportunityResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateLearningOpportunityResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateLearningOpportunityResponse;
+
+  static equals(a: UpdateLearningOpportunityResponse | PlainMessage<UpdateLearningOpportunityResponse> | undefined, b: UpdateLearningOpportunityResponse | PlainMessage<UpdateLearningOpportunityResponse> | undefined): boolean;
+}
+
+/**
+ * DeleteLearningOpportunityRequest represents a request to delete a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest
+ */
+export declare class DeleteLearningOpportunityRequest extends Message<DeleteLearningOpportunityRequest> {
+  /**
+   * @generated from field: int64 learning_opportunity_id = 1;
+   */
+  learningOpportunityId: bigint;
+
+  constructor(data?: PartialMessage<DeleteLearningOpportunityRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLearningOpportunityRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLearningOpportunityRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLearningOpportunityRequest;
+
+  static equals(a: DeleteLearningOpportunityRequest | PlainMessage<DeleteLearningOpportunityRequest> | undefined, b: DeleteLearningOpportunityRequest | PlainMessage<DeleteLearningOpportunityRequest> | undefined): boolean;
+}
+
+/**
+ * DeleteLearningOpportunityResponse represents the deleted learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityResponse
+ */
+export declare class DeleteLearningOpportunityResponse extends Message<DeleteLearningOpportunityResponse> {
+  /**
+   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 1;
+   */
+  learningOpportunity?: LearningOpportunity;
+
+  constructor(data?: PartialMessage<DeleteLearningOpportunityResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.DeleteLearningOpportunityResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLearningOpportunityResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLearningOpportunityResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLearningOpportunityResponse;
+
+  static equals(a: DeleteLearningOpportunityResponse | PlainMessage<DeleteLearningOpportunityResponse> | undefined, b: DeleteLearningOpportunityResponse | PlainMessage<DeleteLearningOpportunityResponse> | undefined): boolean;
+}
+
+/**
+ * GetLearningOpportunityRequest represents a request to get a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.GetLearningOpportunityRequest
+ */
+export declare class GetLearningOpportunityRequest extends Message<GetLearningOpportunityRequest> {
+  /**
+   * @generated from field: int64 learning_opportunity = 1;
+   */
+  learningOpportunity: bigint;
+
+  constructor(data?: PartialMessage<GetLearningOpportunityRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.GetLearningOpportunityRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLearningOpportunityRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLearningOpportunityRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLearningOpportunityRequest;
+
+  static equals(a: GetLearningOpportunityRequest | PlainMessage<GetLearningOpportunityRequest> | undefined, b: GetLearningOpportunityRequest | PlainMessage<GetLearningOpportunityRequest> | undefined): boolean;
+}
+
+/**
+ * GetLearningOpportunityResponse represents the gotten learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.GetLearningOpportunityResponse
+ */
+export declare class GetLearningOpportunityResponse extends Message<GetLearningOpportunityResponse> {
+  /**
+   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 1;
+   */
+  learningOpportunity?: LearningOpportunity;
+
+  constructor(data?: PartialMessage<GetLearningOpportunityResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.GetLearningOpportunityResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetLearningOpportunityResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetLearningOpportunityResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetLearningOpportunityResponse;
+
+  static equals(a: GetLearningOpportunityResponse | PlainMessage<GetLearningOpportunityResponse> | undefined, b: GetLearningOpportunityResponse | PlainMessage<GetLearningOpportunityResponse> | undefined): boolean;
 }
 

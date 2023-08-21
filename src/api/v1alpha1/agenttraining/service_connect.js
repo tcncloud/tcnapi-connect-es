@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse } from "./learning_opportunity_pb.js";
+import { CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -32,6 +32,39 @@ export const AgentTrainingService = {
       name: "ListLearningOpportunities",
       I: ListLearningOpportunitiesRequest,
       O: ListLearningOpportunitiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateLearningOpportunity updates a learning opportunity.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.UpdateLearningOpportunity
+     */
+    updateLearningOpportunity: {
+      name: "UpdateLearningOpportunity",
+      I: UpdateLearningOpportunityRequest,
+      O: UpdateLearningOpportunityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteLearningOpportunity deletes a learning opportunity.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.DeleteLearningOpportunity
+     */
+    deleteLearningOpportunity: {
+      name: "DeleteLearningOpportunity",
+      I: DeleteLearningOpportunityRequest,
+      O: DeleteLearningOpportunityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetLearningOpportunity gets a learning opportunity.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.GetLearningOpportunity
+     */
+    getLearningOpportunity: {
+      name: "GetLearningOpportunity",
+      I: GetLearningOpportunityRequest,
+      O: GetLearningOpportunityResponse,
       kind: MethodKind.Unary,
     },
   }

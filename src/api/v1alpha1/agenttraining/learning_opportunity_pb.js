@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { FieldMask, proto3 } from "@bufbuild/protobuf";
 import { LearningOpportunity } from "../../commons/agent_training_pb.js";
 
 /**
@@ -49,6 +49,79 @@ export const ListLearningOpportunitiesResponse = proto3.makeMessageType(
   "api.v1alpha1.agenttraining.ListLearningOpportunitiesResponse",
   () => [
     { no: 1, name: "learning_opportunities", kind: "message", T: LearningOpportunity, repeated: true },
+  ],
+);
+
+/**
+ * UpdateLearningOpportunityRequest represents a request to update a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest
+ */
+export const UpdateLearningOpportunityRequest = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest",
+  () => [
+    { no: 1, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
+    { no: 2, name: "update_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * UpdateLearningOpportunityResponse represents the updated learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.UpdateLearningOpportunityResponse
+ */
+export const UpdateLearningOpportunityResponse = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.UpdateLearningOpportunityResponse",
+  () => [
+    { no: 1, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
+  ],
+);
+
+/**
+ * DeleteLearningOpportunityRequest represents a request to delete a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest
+ */
+export const DeleteLearningOpportunityRequest = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest",
+  () => [
+    { no: 1, name: "learning_opportunity_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * DeleteLearningOpportunityResponse represents the deleted learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityResponse
+ */
+export const DeleteLearningOpportunityResponse = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.DeleteLearningOpportunityResponse",
+  () => [
+    { no: 1, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
+  ],
+);
+
+/**
+ * GetLearningOpportunityRequest represents a request to get a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.GetLearningOpportunityRequest
+ */
+export const GetLearningOpportunityRequest = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.GetLearningOpportunityRequest",
+  () => [
+    { no: 1, name: "learning_opportunity", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * GetLearningOpportunityResponse represents the gotten learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.GetLearningOpportunityResponse
+ */
+export const GetLearningOpportunityResponse = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.GetLearningOpportunityResponse",
+  () => [
+    { no: 1, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
   ],
 );
 
