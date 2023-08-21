@@ -113,12 +113,12 @@ export declare class ListLearningOpportunitiesResponse extends Message<ListLearn
  */
 export declare class UpdateLearningOpportunityRequest extends Message<UpdateLearningOpportunityRequest> {
   /**
-   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 1;
+   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 2;
    */
   learningOpportunity?: LearningOpportunity;
 
   /**
-   * @generated from field: google.protobuf.FieldMask update_mask = 2;
+   * @generated from field: google.protobuf.FieldMask update_mask = 3;
    */
   updateMask?: FieldMask;
 
@@ -170,7 +170,7 @@ export declare class UpdateLearningOpportunityResponse extends Message<UpdateLea
  */
 export declare class DeleteLearningOpportunityRequest extends Message<DeleteLearningOpportunityRequest> {
   /**
-   * @generated from field: int64 learning_opportunity_id = 1;
+   * @generated from field: int64 learning_opportunity_id = 3;
    */
   learningOpportunityId: bigint;
 
@@ -222,7 +222,7 @@ export declare class DeleteLearningOpportunityResponse extends Message<DeleteLea
  */
 export declare class GetLearningOpportunityRequest extends Message<GetLearningOpportunityRequest> {
   /**
-   * @generated from field: int64 learning_opportunity = 1;
+   * @generated from field: int64 learning_opportunity = 2;
    */
   learningOpportunity: bigint;
 

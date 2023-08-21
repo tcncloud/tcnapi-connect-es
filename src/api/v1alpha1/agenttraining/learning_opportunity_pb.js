@@ -60,8 +60,8 @@ export const ListLearningOpportunitiesResponse = proto3.makeMessageType(
 export const UpdateLearningOpportunityRequest = proto3.makeMessageType(
   "api.v1alpha1.agenttraining.UpdateLearningOpportunityRequest",
   () => [
-    { no: 1, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
-    { no: 2, name: "update_mask", kind: "message", T: FieldMask },
+    { no: 2, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
+    { no: 3, name: "update_mask", kind: "message", T: FieldMask },
   ],
 );
 
@@ -85,7 +85,7 @@ export const UpdateLearningOpportunityResponse = proto3.makeMessageType(
 export const DeleteLearningOpportunityRequest = proto3.makeMessageType(
   "api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest",
   () => [
-    { no: 1, name: "learning_opportunity_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "learning_opportunity_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -109,7 +109,7 @@ export const DeleteLearningOpportunityResponse = proto3.makeMessageType(
 export const GetLearningOpportunityRequest = proto3.makeMessageType(
   "api.v1alpha1.agenttraining.GetLearningOpportunityRequest",
   () => [
-    { no: 1, name: "learning_opportunity", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "learning_opportunity", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
