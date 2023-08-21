@@ -49,42 +49,7 @@ export declare class OmniNodePrompt extends Message<OmniNodePrompt> {
 }
 
 /**
- * OmniNodeOptions will store a list of options under a given subkey in the payload.options
- *
- * @generated from message api.commons.workflows.OmniNodeOptions
- */
-export declare class OmniNodeOptions extends Message<OmniNodeOptions> {
-  /**
-   * the name (key in payload.options) under which to store the options
-   *
-   * @generated from field: string options_id = 1;
-   */
-  optionsId: string;
-
-  /**
-   * the list of options to store
-   *
-   * @generated from field: repeated string options = 2;
-   */
-  options: string[];
-
-  constructor(data?: PartialMessage<OmniNodeOptions>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.workflows.OmniNodeOptions";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniNodeOptions;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniNodeOptions;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniNodeOptions;
-
-  static equals(a: OmniNodeOptions | PlainMessage<OmniNodeOptions> | undefined, b: OmniNodeOptions | PlainMessage<OmniNodeOptions> | undefined): boolean;
-}
-
-/**
- * OmniNodeSendMessage will send a message, optionally displaying options
+ * OmniNodeSendMessage will send a message, displaying options if provided
  *
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
@@ -97,16 +62,9 @@ export declare class OmniNodeSendMessage extends Message<OmniNodeSendMessage> {
   prompt: string;
 
   /**
-   * (Optional) an options ID previously stored via OmniNodeOptions (references an OmniNodeOptions.options_id)
-   *
-   * @generated from field: string options_id = 2;
-   */
-  optionsId: string;
-
-  /**
    * the list of options to select from as the correct response
    *
-   * @generated from field: repeated string options = 3;
+   * @generated from field: repeated string options = 2;
    */
   options: string[];
 
@@ -154,29 +112,22 @@ export declare class OmniNodeUserInput extends Message<OmniNodeUserInput> {
 }
 
 /**
- * OmniNodeBranching compares the input against previously stored options (via OmniNodeOptions)
+ * OmniNodeBranching compares the input against a list of options
  *
  * @generated from message api.commons.workflows.OmniNodeBranching
  */
 export declare class OmniNodeBranching extends Message<OmniNodeBranching> {
   /**
-   * an options ID previously stored via OmniNodeOptions (references an OmniNodeOptions.options_id)
-   *
-   * @generated from field: string options_id = 1;
-   */
-  optionsId: string;
-
-  /**
    * key of data stored in the payload to compare against the options (likely references an OmniNodeUserInput.store_id)
    *
-   * @generated from field: string store_id = 2;
+   * @generated from field: string store_id = 1;
    */
   storeId: string;
 
   /**
    * the list of options to use for branching
    *
-   * @generated from field: repeated string options = 3;
+   * @generated from field: repeated string options = 2;
    */
   options: string[];
 

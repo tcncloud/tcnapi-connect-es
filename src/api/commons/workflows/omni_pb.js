@@ -20,20 +20,7 @@ export const OmniNodePrompt = proto3.makeMessageType(
 );
 
 /**
- * OmniNodeOptions will store a list of options under a given subkey in the payload.options
- *
- * @generated from message api.commons.workflows.OmniNodeOptions
- */
-export const OmniNodeOptions = proto3.makeMessageType(
-  "api.commons.workflows.OmniNodeOptions",
-  () => [
-    { no: 1, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-  ],
-);
-
-/**
- * OmniNodeSendMessage will send a message, optionally displaying options
+ * OmniNodeSendMessage will send a message, displaying options if provided
  *
  * @generated from message api.commons.workflows.OmniNodeSendMessage
  */
@@ -41,8 +28,7 @@ export const OmniNodeSendMessage = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeSendMessage",
   () => [
     { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
@@ -59,16 +45,15 @@ export const OmniNodeUserInput = proto3.makeMessageType(
 );
 
 /**
- * OmniNodeBranching compares the input against previously stored options (via OmniNodeOptions)
+ * OmniNodeBranching compares the input against a list of options
  *
  * @generated from message api.commons.workflows.OmniNodeBranching
  */
 export const OmniNodeBranching = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeBranching",
   () => [
-    { no: 1, name: "options_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
