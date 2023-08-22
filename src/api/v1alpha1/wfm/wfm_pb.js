@@ -3453,6 +3453,35 @@ export const ListDraftSchedulesRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleReq
+ */
+export const ClearScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ClearScheduleReq",
+  () => [
+    { no: 1, name: "schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 2, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 3, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 4, name: "invert_datetime_range", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "start_datetimes_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "delete_locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleRes
+ */
+export const ClearScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ClearScheduleRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the DeleteDraftSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.DeleteDraftScheduleReq
