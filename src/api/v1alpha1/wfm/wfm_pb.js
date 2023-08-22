@@ -3475,6 +3475,31 @@ export const DeleteDraftScheduleRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListShiftInstancesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstancesBySidReq
+ */
+export const ListShiftInstancesBySidReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListShiftInstancesBySidReq",
+  () => [
+    { no: 1, name: "shift_instance_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "include_shift_segments", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the ListShiftInstancesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstancesBySidRes
+ */
+export const ListShiftInstancesBySidRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListShiftInstancesBySidRes",
+  () => [
+    { no: 1, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
+  ],
+);
+
+/**
  * Request message for the CopyScheduleToSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.CopyScheduleToScheduleReq
