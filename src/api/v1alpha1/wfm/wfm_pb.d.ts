@@ -10160,6 +10160,29 @@ export declare class ListShiftInstancesBySidReq extends Message<ListShiftInstanc
    */
   includeShiftSegments: boolean;
 
+  /**
+   * Set to true to include shift template in the returned shift instance.
+   *
+   * @generated from field: bool include_shift_template = 3;
+   */
+  includeShiftTemplate: boolean;
+
+  /**
+   * Set to true to include scheduling activity in each of the returned shift segments.
+   * Only effective when include_shift_segments is also set to true.
+   *
+   * @generated from field: bool include_scheduling_activity = 4;
+   */
+  includeSchedulingActivity: boolean;
+
+  /**
+   * Set to true to include non skill activity in each of the returned scheduling activities.
+   * Only effective when include_scheduling_activity and include_shift_segments are also set to true.
+   *
+   * @generated from field: bool include_activity = 5;
+   */
+  includeActivity: boolean;
+
   constructor(data?: PartialMessage<ListShiftInstancesBySidReq>);
 
   static readonly runtime: typeof proto3;

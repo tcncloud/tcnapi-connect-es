@@ -3484,6 +3484,9 @@ export const ListShiftInstancesBySidReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "shift_instance_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
     { no: 2, name: "include_shift_segments", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "include_shift_template", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "include_scheduling_activity", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "include_activity", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
