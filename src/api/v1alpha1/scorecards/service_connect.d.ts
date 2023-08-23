@@ -12,7 +12,7 @@ import { CreateSectionRequest, CreateSectionResponse, DeleteSectionRequest, Dele
 import { CreateEvaluationRequest, CreateEvaluationResponse, DeleteEvaluationRequest, DeleteEvaluationResponse, GetEvaluationRequest, GetEvaluationResponse, ListEvaluationsRequest, ListEvaluationsResponse, PreviewEvaluationScoreRequest, PreviewEvaluationScoreResponse, ScoreEvaluationRequest, ScoreEvaluationResponse, UpdateEvaluationRequest, UpdateEvaluationResponse } from "./evaluation_pb.js";
 import { CreateEvaluationQuestionRequest, CreateEvaluationQuestionResponse, DeleteEvaluationQuestionRequest, DeleteEvaluationQuestionResponse, UpdateEvaluationQuestionRequest, UpdateEvaluationQuestionResponse } from "./evaluation_question_pb.js";
 import { CreateAutoQuestionRequest, CreateAutoQuestionResponse, DeleteAutoQuestionRequest, DeleteAutoQuestionResponse, GetAutoQuestionRequest, GetAutoQuestionResponse, UpdateAutoQuestionRequest, UpdateAutoQuestionResponse } from "./auto_question_pb.js";
-import { DeleteAutoEvaluationRequest, DeleteAutoEvaluationResponse, GetAutoEvaluationRequest, GetAutoEvaluationResponse, ListAutoEvaluationsRequest, ListAutoEvaluationsResponse } from "./auto_evaluation_pb.js";
+import { DeleteAutoEvaluationRequest, DeleteAutoEvaluationResponse, GetAutoEvaluationRequest, GetAutoEvaluationResponse, ListAutoEvaluationsRequest, ListAutoEvaluationsResponse, StreamAutoEvaluationsRequest, StreamAutoEvaluationsResponse } from "./auto_evaluation_pb.js";
 
 /**
  * @generated from service api.v1alpha1.scorecards.Scorecards
@@ -492,6 +492,17 @@ export declare const Scorecards: {
       readonly name: "ListAutoEvaluations",
       readonly I: typeof ListAutoEvaluationsRequest,
       readonly O: typeof ListAutoEvaluationsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * StreamAutoEvaluations streams a list of auto evaluations
+     *
+     * @generated from rpc api.v1alpha1.scorecards.Scorecards.StreamAutoEvaluations
+     */
+    readonly streamAutoEvaluations: {
+      readonly name: "StreamAutoEvaluations",
+      readonly I: typeof StreamAutoEvaluationsRequest,
+      readonly O: typeof StreamAutoEvaluationsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
