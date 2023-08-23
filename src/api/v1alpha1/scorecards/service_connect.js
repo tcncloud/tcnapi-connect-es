@@ -503,7 +503,7 @@ export const Scorecards = {
       name: "StreamAutoEvaluations",
       I: StreamAutoEvaluationsRequest,
       O: StreamAutoEvaluationsResponse,
-      kind: MethodKind.Unary,
+      kind: MethodKind.ServerStreaming,
     },
     /**
      * DeleteAutoEvaluation deletes an auto evaluations

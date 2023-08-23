@@ -503,7 +503,7 @@ export declare const Scorecards: {
       readonly name: "StreamAutoEvaluations",
       readonly I: typeof StreamAutoEvaluationsRequest,
       readonly O: typeof StreamAutoEvaluationsResponse,
-      readonly kind: MethodKind.Unary,
+      readonly kind: MethodKind.ServerStreaming,
     },
     /**
      * DeleteAutoEvaluation deletes an auto evaluations
