@@ -577,6 +577,13 @@ export declare class OmnichannelManagerTextMessageEvent extends Message<Omnichan
    */
   asmSessionSid?: bigint;
 
+  /**
+   * user id
+   *
+   * @generated from field: string user_id = 7;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<OmnichannelManagerTextMessageEvent>);
 
   static readonly runtime: typeof proto3;

@@ -176,6 +176,7 @@ export const OmnichannelManagerTextMessageEvent = proto3.makeMessageType(
     { no: 4, name: "message", kind: "message", T: OmniMessage },
     { no: 5, name: "conversation", kind: "message", T: OmniConversation },
     { no: 6, name: "asm_session_sid", kind: "message", T: Int64Value },
+    { no: 7, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
