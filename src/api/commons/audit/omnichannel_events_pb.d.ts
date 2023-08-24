@@ -1005,16 +1005,9 @@ export declare class OmnichannelSetConversationCollectedDataEvent extends Messag
   collectedData?: ConversationCollectedData;
 
   /**
-   * conversation this message belongs to
-   *
-   * @generated from field: api.commons.OmniConversation conversation = 6;
-   */
-  conversation?: OmniConversation;
-
-  /**
    * the AsmSession Sid
    *
-   * @generated from field: google.protobuf.Int64Value asm_session_sid = 7;
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 6;
    */
   asmSessionSid?: bigint;
 

@@ -301,8 +301,7 @@ export const OmnichannelSetConversationCollectedDataEvent = proto3.makeMessageTy
     { no: 3, name: "channel_type", kind: "enum", T: proto3.getEnumType(ChannelType) },
     { no: 4, name: "campaign_direction", kind: "enum", T: proto3.getEnumType(CampaignDirection) },
     { no: 5, name: "collected_data", kind: "message", T: ConversationCollectedData },
-    { no: 6, name: "conversation", kind: "message", T: OmniConversation },
-    { no: 7, name: "asm_session_sid", kind: "message", T: Int64Value },
+    { no: 6, name: "asm_session_sid", kind: "message", T: Int64Value },
   ],
 );
 
