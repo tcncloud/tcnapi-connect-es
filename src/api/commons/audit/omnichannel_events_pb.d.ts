@@ -899,6 +899,13 @@ export declare class OmnichannelCloseConversationEvent extends Message<Omnichann
    */
   asmSessionSid?: bigint;
 
+  /**
+   * the id of the agent
+   *
+   * @generated from field: string user_id = 4;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<OmnichannelCloseConversationEvent>);
 
   static readonly runtime: typeof proto3;
