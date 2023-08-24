@@ -92,6 +92,7 @@ export const OmnichannelAgentAssignConversationEvent = proto3.makeMessageType(
     { no: 4, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "conversation", kind: "message", T: OmniConversation },
     { no: 6, name: "message", kind: "message", T: OmniMessage },
+    { no: 7, name: "asm_session_sid", kind: "message", T: Int64Value },
   ],
 );
 
@@ -109,6 +110,7 @@ export const OmnichannelAgentUnassignConversationEvent = proto3.makeMessageType(
     { no: 4, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "conversation", kind: "message", T: OmniConversation },
     { no: 6, name: "message", kind: "message", T: OmniMessage },
+    { no: 7, name: "asm_session_sid", kind: "message", T: Int64Value },
   ],
 );
 
@@ -157,6 +159,8 @@ export const OmnichannelAgentTextMessageEvent = proto3.makeMessageType(
     { no: 3, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 4, name: "message", kind: "message", T: OmniMessage },
     { no: 5, name: "conversation", kind: "message", T: OmniConversation },
+    { no: 6, name: "asm_session_sid", kind: "message", T: Int64Value },
+    { no: 7, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -171,6 +175,7 @@ export const OmnichannelManagerTextMessageEvent = proto3.makeMessageType(
     { no: 3, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 4, name: "message", kind: "message", T: OmniMessage },
     { no: 5, name: "conversation", kind: "message", T: OmniConversation },
+    { no: 6, name: "asm_session_sid", kind: "message", T: Int64Value },
   ],
 );
 
@@ -204,6 +209,8 @@ export const OmnichannelBeginWrapUpEvent = proto3.makeMessageType(
     { no: 3, name: "channel_type", kind: "enum", T: proto3.getEnumType(ChannelType) },
     { no: 4, name: "conversation", kind: "message", T: OmniConversation },
     { no: 5, name: "message", kind: "message", T: OmniMessage },
+    { no: 6, name: "asm_session_sid", kind: "message", T: Int64Value },
+    { no: 7, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -261,6 +268,7 @@ export const OmnichannelCloseConversationEvent = proto3.makeMessageType(
   () => [
     { no: 1, name: "message", kind: "message", T: OmniMessage },
     { no: 2, name: "conversation", kind: "message", T: OmniConversation },
+    { no: 3, name: "asm_session_sid", kind: "message", T: Int64Value },
   ],
 );
 
@@ -293,6 +301,8 @@ export const OmnichannelSetConversationCollectedDataEvent = proto3.makeMessageTy
     { no: 3, name: "channel_type", kind: "enum", T: proto3.getEnumType(ChannelType) },
     { no: 4, name: "campaign_direction", kind: "enum", T: proto3.getEnumType(CampaignDirection) },
     { no: 5, name: "collected_data", kind: "message", T: ConversationCollectedData },
+    { no: 6, name: "conversation", kind: "message", T: OmniConversation },
+    { no: 7, name: "asm_session_sid", kind: "message", T: Int64Value },
   ],
 );
 

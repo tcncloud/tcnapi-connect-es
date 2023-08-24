@@ -269,6 +269,13 @@ export declare class OmnichannelAgentAssignConversationEvent extends Message<Omn
    */
   message?: OmniMessage;
 
+  /**
+   * the AsmSession Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 7;
+   */
+  asmSessionSid?: bigint;
+
   constructor(data?: PartialMessage<OmnichannelAgentAssignConversationEvent>);
 
   static readonly runtime: typeof proto3;
@@ -331,6 +338,13 @@ export declare class OmnichannelAgentUnassignConversationEvent extends Message<O
    * @generated from field: api.commons.OmniMessage message = 6;
    */
   message?: OmniMessage;
+
+  /**
+   * the AsmSession Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 7;
+   */
+  asmSessionSid?: bigint;
 
   constructor(data?: PartialMessage<OmnichannelAgentUnassignConversationEvent>);
 
@@ -500,6 +514,20 @@ export declare class OmnichannelAgentTextMessageEvent extends Message<Omnichanne
    */
   conversation?: OmniConversation;
 
+  /**
+   * the AsmSession Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 6;
+   */
+  asmSessionSid?: bigint;
+
+  /**
+   * the id of the agent
+   *
+   * @generated from field: string user_id = 7;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<OmnichannelAgentTextMessageEvent>);
 
   static readonly runtime: typeof proto3;
@@ -541,6 +569,13 @@ export declare class OmnichannelManagerTextMessageEvent extends Message<Omnichan
    * @generated from field: api.commons.OmniConversation conversation = 5;
    */
   conversation?: OmniConversation;
+
+  /**
+   * the AsmSession Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 6;
+   */
+  asmSessionSid?: bigint;
 
   constructor(data?: PartialMessage<OmnichannelManagerTextMessageEvent>);
 
@@ -660,6 +695,20 @@ export declare class OmnichannelBeginWrapUpEvent extends Message<OmnichannelBegi
    * @generated from field: api.commons.OmniMessage message = 5;
    */
   message?: OmniMessage;
+
+  /**
+   * the AsmSession Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 6;
+   */
+  asmSessionSid?: bigint;
+
+  /**
+   * the id of the agent
+   *
+   * @generated from field: string user_id = 7;
+   */
+  userId: string;
 
   constructor(data?: PartialMessage<OmnichannelBeginWrapUpEvent>);
 
@@ -836,6 +885,13 @@ export declare class OmnichannelCloseConversationEvent extends Message<Omnichann
    */
   conversation?: OmniConversation;
 
+  /**
+   * the AsmSession Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 3;
+   */
+  asmSessionSid?: bigint;
+
   constructor(data?: PartialMessage<OmnichannelCloseConversationEvent>);
 
   static readonly runtime: typeof proto3;
@@ -947,6 +1003,20 @@ export declare class OmnichannelSetConversationCollectedDataEvent extends Messag
    * @generated from field: api.commons.ConversationCollectedData collected_data = 5;
    */
   collectedData?: ConversationCollectedData;
+
+  /**
+   * conversation this message belongs to
+   *
+   * @generated from field: api.commons.OmniConversation conversation = 6;
+   */
+  conversation?: OmniConversation;
+
+  /**
+   * the AsmSession Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 7;
+   */
+  asmSessionSid?: bigint;
 
   constructor(data?: PartialMessage<OmnichannelSetConversationCollectedDataEvent>);
 
