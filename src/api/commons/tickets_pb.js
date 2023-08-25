@@ -50,7 +50,8 @@ export const TicketAction = proto3.makeMessageType(
     { no: 6, name: "expiry_date", kind: "message", T: Timestamp },
     { no: 7, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 9, name: "action_skills", kind: "message", T: Skills, repeated: true },
+    { no: 9, name: "action_skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 10, name: "action_sla_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

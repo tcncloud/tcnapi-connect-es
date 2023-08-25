@@ -1377,3 +1377,56 @@ export declare class AssignTicketActionResponse extends Message<AssignTicketActi
   static equals(a: AssignTicketActionResponse | PlainMessage<AssignTicketActionResponse> | undefined, b: AssignTicketActionResponse | PlainMessage<AssignTicketActionResponse> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusRequest
+ */
+export declare class ChangeTicketStatusRequest extends Message<ChangeTicketStatusRequest> {
+  /**
+   * @generated from field: int64 ticket_id = 1;
+   */
+  ticketId: bigint;
+
+  /**
+   * @generated from field: int64 status_id = 2;
+   */
+  statusId: bigint;
+
+  constructor(data?: PartialMessage<ChangeTicketStatusRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ChangeTicketStatusRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeTicketStatusRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeTicketStatusRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeTicketStatusRequest;
+
+  static equals(a: ChangeTicketStatusRequest | PlainMessage<ChangeTicketStatusRequest> | undefined, b: ChangeTicketStatusRequest | PlainMessage<ChangeTicketStatusRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusResponse
+ */
+export declare class ChangeTicketStatusResponse extends Message<ChangeTicketStatusResponse> {
+  /**
+   * @generated from field: bool is_status_edited = 1;
+   */
+  isStatusEdited: boolean;
+
+  constructor(data?: PartialMessage<ChangeTicketStatusResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ChangeTicketStatusResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeTicketStatusResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeTicketStatusResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeTicketStatusResponse;
+
+  static equals(a: ChangeTicketStatusResponse | PlainMessage<ChangeTicketStatusResponse> | undefined, b: ChangeTicketStatusResponse | PlainMessage<ChangeTicketStatusResponse> | undefined): boolean;
+}
+

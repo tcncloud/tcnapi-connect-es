@@ -213,10 +213,18 @@ export declare class TicketAction extends Message<TicketAction> {
 
   /**
    * Skills needed for the action to be completed
+   * For action we need only skill id and not mandatory/optional
    *
-   * @generated from field: repeated api.commons.Skills action_skills = 9;
+   * @generated from field: repeated string action_skills = 9;
    */
-  actionSkills: Skills[];
+  actionSkills: string[];
+
+  /**
+   * SLA Id for the ACTION
+   *
+   * @generated from field: int64 action_sla_id = 10;
+   */
+  actionSlaId: bigint;
 
   constructor(data?: PartialMessage<TicketAction>);
 

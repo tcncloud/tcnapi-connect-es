@@ -559,3 +559,24 @@ export const AssignTicketActionResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusRequest
+ */
+export const ChangeTicketStatusRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ChangeTicketStatusRequest",
+  () => [
+    { no: 1, name: "ticket_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "status_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusResponse
+ */
+export const ChangeTicketStatusResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ChangeTicketStatusResponse",
+  () => [
+    { no: 1, name: "is_status_edited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
