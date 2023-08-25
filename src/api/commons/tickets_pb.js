@@ -30,6 +30,27 @@ export const Ticket = proto3.makeMessageType(
     { no: 16, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 17, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
     { no: 18, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 19, name: "ticket_action", kind: "message", T: TicketAction, repeated: true },
+  ],
+);
+
+/**
+ * TICKET_ACTION - New messgae have actions mapped to tickets
+ *
+ * @generated from message api.commons.TicketAction
+ */
+export const TicketAction = proto3.makeMessageType(
+  "api.commons.TicketAction",
+  () => [
+    { no: 1, name: "ticket_action_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "action_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "ticket_context", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "ticket_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "start_date", kind: "message", T: Timestamp },
+    { no: 6, name: "expiry_date", kind: "message", T: Timestamp },
+    { no: 7, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "action_skills", kind: "message", T: Skills, repeated: true },
   ],
 );
 
@@ -224,14 +245,6 @@ export const EditTicket = proto3.makeMessageType(
 );
 
 /**
- *
- * Description = 1
- * Skills = 2
- * Status = 3
- * Due Date = 4
- * SLA = 5
- * All Values must come as String. BE to convert values to int64, JSON and DateTime
- *
  * @generated from message api.commons.EditAttribute
  */
 export const EditAttribute = proto3.makeMessageType(

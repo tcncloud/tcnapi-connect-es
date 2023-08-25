@@ -129,6 +129,11 @@ export declare class Ticket extends Message<Ticket> {
    */
   assignee: string;
 
+  /**
+   * @generated from field: repeated api.commons.TicketAction ticket_action = 19;
+   */
+  ticketAction: TicketAction[];
+
   constructor(data?: PartialMessage<Ticket>);
 
   static readonly runtime: typeof proto3;
@@ -142,6 +147,90 @@ export declare class Ticket extends Message<Ticket> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Ticket;
 
   static equals(a: Ticket | PlainMessage<Ticket> | undefined, b: Ticket | PlainMessage<Ticket> | undefined): boolean;
+}
+
+/**
+ * TICKET_ACTION - New messgae have actions mapped to tickets
+ *
+ * @generated from message api.commons.TicketAction
+ */
+export declare class TicketAction extends Message<TicketAction> {
+  /**
+   * snowflake id
+   *
+   * @generated from field: int64 ticket_action_id = 1;
+   */
+  ticketActionId: bigint;
+
+  /**
+   * action id from ACTION_MASTER table, Only callback for now
+   *
+   * @generated from field: int64 action_id = 2;
+   */
+  actionId: bigint;
+
+  /**
+   * Description for the Action
+   *
+   * @generated from field: string ticket_context = 3;
+   */
+  ticketContext: string;
+
+  /**
+   * ticket id from ticket table
+   *
+   * @generated from field: int64 ticket_id = 4;
+   */
+  ticketId: bigint;
+
+  /**
+   * Start Date of the ACTION
+   *
+   * @generated from field: google.protobuf.Timestamp start_date = 5;
+   */
+  startDate?: Timestamp;
+
+  /**
+   * Expiry date of the ACTION
+   *
+   * @generated from field: google.protobuf.Timestamp expiry_date = 6;
+   */
+  expiryDate?: Timestamp;
+
+  /**
+   * Agent to whom ACTION is assigned. Only one assignee per action
+   *
+   * @generated from field: string assignee = 7;
+   */
+  assignee: string;
+
+  /**
+   * Ticket action status can be 1 == OPEN and 2 == CLOSE
+   *
+   * @generated from field: int64 status = 8;
+   */
+  status: bigint;
+
+  /**
+   * Skills needed for the action to be completed
+   *
+   * @generated from field: repeated api.commons.Skills action_skills = 9;
+   */
+  actionSkills: Skills[];
+
+  constructor(data?: PartialMessage<TicketAction>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TicketAction";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TicketAction;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TicketAction;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketAction;
+
+  static equals(a: TicketAction | PlainMessage<TicketAction> | undefined, b: TicketAction | PlainMessage<TicketAction> | undefined): boolean;
 }
 
 /**
@@ -733,14 +822,6 @@ export declare class EditTicket extends Message<EditTicket> {
 }
 
 /**
- *
- * Description = 1
- * Skills = 2
- * Status = 3
- * Due Date = 4
- * SLA = 5
- * All Values must come as String. BE to convert values to int64, JSON and DateTime
- *
  * @generated from message api.commons.EditAttribute
  */
 export declare class EditAttribute extends Message<EditAttribute> {
@@ -762,8 +843,6 @@ export declare class EditAttribute extends Message<EditAttribute> {
   toVal: string;
 
   /**
-   * EditColumnType edit_column_type = 5;
-   *
    * @generated from field: bool is_edited = 4;
    */
   isEdited: boolean;
