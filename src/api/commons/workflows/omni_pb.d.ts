@@ -7,9 +7,9 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * @generated from enum api.commons.workflows.ScrublistAction
+ * @generated from enum api.commons.workflows.OmniNodeScrublistAction
  */
-export declare enum ScrublistAction {
+export declare enum OmniNodeScrublistAction {
   /**
    * @generated from enum value: ADD = 0;
    */
@@ -168,9 +168,9 @@ export declare class OmniNodeWebhook extends Message<OmniNodeWebhook> {
  */
 export declare class OmniNodeScrublist extends Message<OmniNodeScrublist> {
   /**
-   * @generated from field: api.commons.workflows.ScrublistAction action = 1;
+   * @generated from field: api.commons.workflows.OmniNodeScrublistAction action = 1;
    */
-  action: ScrublistAction;
+  action: OmniNodeScrublistAction;
 
   constructor(data?: PartialMessage<OmniNodeScrublist>);
 

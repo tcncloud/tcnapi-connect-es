@@ -6,10 +6,10 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
- * @generated from enum api.commons.workflows.ScrublistAction
+ * @generated from enum api.commons.workflows.OmniNodeScrublistAction
  */
-export const ScrublistAction = proto3.makeEnum(
-  "api.commons.workflows.ScrublistAction",
+export const OmniNodeScrublistAction = proto3.makeEnum(
+  "api.commons.workflows.OmniNodeScrublistAction",
   [
     {no: 0, name: "ADD"},
     {no: 1, name: "REMOVE"},
@@ -77,7 +77,7 @@ export const OmniNodeWebhook = proto3.makeMessageType(
 export const OmniNodeScrublist = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeScrublist",
   () => [
-    { no: 1, name: "action", kind: "enum", T: proto3.getEnumType(ScrublistAction) },
+    { no: 1, name: "action", kind: "enum", T: proto3.getEnumType(OmniNodeScrublistAction) },
   ],
 );
 
