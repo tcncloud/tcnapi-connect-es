@@ -7,6 +7,61 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from enum api.commons.TimeScale
+ */
+export declare enum TimeScale {
+  /**
+   * @generated from enum value: TIME_SCALE_MINUTE = 0;
+   */
+  MINUTE = 0,
+
+  /**
+   * @generated from enum value: TIME_SCALE_HOUR = 1;
+   */
+  HOUR = 1,
+
+  /**
+   * @generated from enum value: TIME_SCALE_DAY = 2;
+   */
+  DAY = 2,
+
+  /**
+   * @generated from enum value: TIME_SCALE_WEEK = 3;
+   */
+  WEEK = 3,
+
+  /**
+   * @generated from enum value: TIME_SCALE_MONTH = 4;
+   */
+  MONTH = 4,
+
+  /**
+   * @generated from enum value: TIME_SCALE_YEAR = 5;
+   */
+  YEAR = 5,
+}
+
+/**
+ * @generated from enum api.commons.TicketStatus
+ */
+export declare enum TicketStatus {
+  /**
+   * @generated from enum value: TICKET_STATUS_NEW = 0;
+   */
+  NEW = 0,
+
+  /**
+   * @generated from enum value: TICKET_STATUS_OPEN = 1;
+   */
+  OPEN = 1,
+
+  /**
+   * @generated from enum value: TICKET_STATUS_CLOSE = 2;
+   */
+  CLOSE = 2,
+}
+
+/**
  * Ticket - Fields for Ticket creation, List tickets and view ticket
  *
  * @generated from message api.commons.Ticket
@@ -134,6 +189,11 @@ export declare class Ticket extends Message<Ticket> {
    */
   ticketAction: TicketAction[];
 
+  /**
+   * @generated from field: api.commons.TicketStatus ticket_status = 20;
+   */
+  ticketStatus: TicketStatus;
+
   constructor(data?: PartialMessage<Ticket>);
 
   static readonly runtime: typeof proto3;
@@ -147,6 +207,35 @@ export declare class Ticket extends Message<Ticket> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Ticket;
 
   static equals(a: Ticket | PlainMessage<Ticket> | undefined, b: Ticket | PlainMessage<Ticket> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.Duration
+ */
+export declare class Duration extends Message<Duration> {
+  /**
+   * @generated from field: int64 value = 1;
+   */
+  value: bigint;
+
+  /**
+   * @generated from field: api.commons.TimeScale scale = 2;
+   */
+  scale: TimeScale;
+
+  constructor(data?: PartialMessage<Duration>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.Duration";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Duration;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Duration;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Duration;
+
+  static equals(a: Duration | PlainMessage<Duration> | undefined, b: Duration | PlainMessage<Duration> | undefined): boolean;
 }
 
 /**
@@ -186,30 +275,23 @@ export declare class TicketAction extends Message<TicketAction> {
   /**
    * Start Date of the ACTION
    *
-   * @generated from field: google.protobuf.Timestamp start_date = 5;
+   * @generated from field: google.protobuf.Timestamp start_ts = 5;
    */
-  startDate?: Timestamp;
+  startTs?: Timestamp;
 
   /**
    * Expiry date of the ACTION
    *
-   * @generated from field: google.protobuf.Timestamp expiry_date = 6;
+   * @generated from field: google.protobuf.Timestamp expiry_ts = 6;
    */
-  expiryDate?: Timestamp;
+  expiryTs?: Timestamp;
 
   /**
-   * Agent to whom ACTION is assigned. Only one assignee per action
+   * Ticket action status can be 1 == AVAILABLE and 2 == NOT AVAILABLE
    *
-   * @generated from field: string assignee = 7;
+   * @generated from field: int64 state = 8;
    */
-  assignee: string;
-
-  /**
-   * Ticket action status can be 1 == OPEN and 2 == CLOSE
-   *
-   * @generated from field: int64 status = 8;
-   */
-  status: bigint;
+  state: bigint;
 
   /**
    * Skills needed for the action to be completed
@@ -364,6 +446,11 @@ export declare class Sla extends Message<Sla> {
    * @generated from field: int64 sla_min = 3;
    */
   slaMin: bigint;
+
+  /**
+   * @generated from field: api.commons.Duration sla_duration = 4;
+   */
+  slaDuration?: Duration;
 
   constructor(data?: PartialMessage<Sla>);
 
@@ -629,6 +716,11 @@ export declare class TicketSla extends Message<TicketSla> {
    */
   isActive: bigint;
 
+  /**
+   * @generated from field: api.commons.Duration ticket_sla_duration = 6;
+   */
+  ticketSlaDuration?: Duration;
+
   constructor(data?: PartialMessage<TicketSla>);
 
   static readonly runtime: typeof proto3;
@@ -680,7 +772,7 @@ export declare class SlaConditions extends Message<SlaConditions> {
 }
 
 /**
- * SlaConditions - Condition Fields for sla on a ticket
+ * ReplyComment -
  *
  * @generated from message api.commons.ReplyComment
  */

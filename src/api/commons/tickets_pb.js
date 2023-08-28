@@ -6,6 +6,33 @@
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * @generated from enum api.commons.TimeScale
+ */
+export const TimeScale = proto3.makeEnum(
+  "api.commons.TimeScale",
+  [
+    {no: 0, name: "TIME_SCALE_MINUTE", localName: "MINUTE"},
+    {no: 1, name: "TIME_SCALE_HOUR", localName: "HOUR"},
+    {no: 2, name: "TIME_SCALE_DAY", localName: "DAY"},
+    {no: 3, name: "TIME_SCALE_WEEK", localName: "WEEK"},
+    {no: 4, name: "TIME_SCALE_MONTH", localName: "MONTH"},
+    {no: 5, name: "TIME_SCALE_YEAR", localName: "YEAR"},
+  ],
+);
+
+/**
+ * @generated from enum api.commons.TicketStatus
+ */
+export const TicketStatus = proto3.makeEnum(
+  "api.commons.TicketStatus",
+  [
+    {no: 0, name: "TICKET_STATUS_NEW", localName: "NEW"},
+    {no: 1, name: "TICKET_STATUS_OPEN", localName: "OPEN"},
+    {no: 2, name: "TICKET_STATUS_CLOSE", localName: "CLOSE"},
+  ],
+);
+
+/**
  * Ticket - Fields for Ticket creation, List tickets and view ticket
  *
  * @generated from message api.commons.Ticket
@@ -31,6 +58,18 @@ export const Ticket = proto3.makeMessageType(
     { no: 17, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
     { no: 18, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 19, name: "ticket_action", kind: "message", T: TicketAction, repeated: true },
+    { no: 20, name: "ticket_status", kind: "enum", T: proto3.getEnumType(TicketStatus) },
+  ],
+);
+
+/**
+ * @generated from message api.commons.Duration
+ */
+export const Duration = proto3.makeMessageType(
+  "api.commons.Duration",
+  () => [
+    { no: 1, name: "value", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "scale", kind: "enum", T: proto3.getEnumType(TimeScale) },
   ],
 );
 
@@ -46,10 +85,9 @@ export const TicketAction = proto3.makeMessageType(
     { no: 2, name: "action_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "callback_context", kind: "message", T: CallbackContext },
     { no: 4, name: "ticket_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 5, name: "start_date", kind: "message", T: Timestamp },
-    { no: 6, name: "expiry_date", kind: "message", T: Timestamp },
-    { no: 7, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "start_ts", kind: "message", T: Timestamp },
+    { no: 6, name: "expiry_ts", kind: "message", T: Timestamp },
+    { no: 8, name: "state", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "action_skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 10, name: "action_sla_id", kind: "message", T: Sla, repeated: true },
   ],
@@ -105,6 +143,7 @@ export const Sla = proto3.makeMessageType(
     { no: 1, name: "condition_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "sla_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "sla_min", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "sla_duration", kind: "message", T: Duration },
   ],
 );
 
@@ -183,6 +222,7 @@ export const TicketSla = proto3.makeMessageType(
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "interval", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "is_active", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "ticket_sla_duration", kind: "message", T: Duration },
   ],
 );
 
@@ -200,7 +240,7 @@ export const SlaConditions = proto3.makeMessageType(
 );
 
 /**
- * SlaConditions - Condition Fields for sla on a ticket
+ * ReplyComment -
  *
  * @generated from message api.commons.ReplyComment
  */
