@@ -170,11 +170,11 @@ export declare class TicketAction extends Message<TicketAction> {
   actionId: bigint;
 
   /**
-   * Description for the Action
+   * Attributes for a callback Action
    *
-   * @generated from field: string ticket_context = 3;
+   * @generated from field: api.commons.CallbackContext callback_context = 3;
    */
-  ticketContext: string;
+  callbackContext?: CallbackContext;
 
   /**
    * ticket id from ticket table
@@ -222,9 +222,9 @@ export declare class TicketAction extends Message<TicketAction> {
   /**
    * SLA Id for the ACTION
    *
-   * @generated from field: int64 action_sla_id = 10;
+   * @generated from field: repeated api.commons.Sla action_sla_id = 10;
    */
-  actionSlaId: bigint;
+  actionSlaId: Sla[];
 
   constructor(data?: PartialMessage<TicketAction>);
 
@@ -239,6 +239,45 @@ export declare class TicketAction extends Message<TicketAction> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketAction;
 
   static equals(a: TicketAction | PlainMessage<TicketAction> | undefined, b: TicketAction | PlainMessage<TicketAction> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.CallbackContext
+ */
+export declare class CallbackContext extends Message<CallbackContext> {
+  /**
+   * @generated from field: string caller_id = 1;
+   */
+  callerId: string;
+
+  /**
+   * @generated from field: string phone_no = 2;
+   */
+  phoneNo: string;
+
+  /**
+   * @generated from field: string country_code = 3;
+   */
+  countryCode: string;
+
+  /**
+   * @generated from field: string caller_name = 4;
+   */
+  callerName: string;
+
+  constructor(data?: PartialMessage<CallbackContext>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.CallbackContext";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CallbackContext;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CallbackContext;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CallbackContext;
+
+  static equals(a: CallbackContext | PlainMessage<CallbackContext> | undefined, b: CallbackContext | PlainMessage<CallbackContext> | undefined): boolean;
 }
 
 /**

@@ -44,14 +44,27 @@ export const TicketAction = proto3.makeMessageType(
   () => [
     { no: 1, name: "ticket_action_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "action_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "ticket_context", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "callback_context", kind: "message", T: CallbackContext },
     { no: 4, name: "ticket_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "start_date", kind: "message", T: Timestamp },
     { no: 6, name: "expiry_date", kind: "message", T: Timestamp },
     { no: 7, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "status", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "action_skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 10, name: "action_sla_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "action_sla_id", kind: "message", T: Sla, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.CallbackContext
+ */
+export const CallbackContext = proto3.makeMessageType(
+  "api.commons.CallbackContext",
+  () => [
+    { no: 1, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "phone_no", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "caller_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
