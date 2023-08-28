@@ -368,6 +368,7 @@ export const Room303Destination = proto3.makeMessageType(
   () => [
     { no: 1, name: "room", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

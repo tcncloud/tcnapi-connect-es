@@ -1068,11 +1068,19 @@ export declare class Room303Destination extends Message<Room303Destination> {
   room: string;
 
   /**
-   * username which sends the message.
+   * will lookup user_sid through org if not provided
+   * username of the intended user
    *
    * @generated from field: string username = 2;
    */
   username: string;
+
+  /**
+   * user_id of the intended user
+   *
+   * @generated from field: string user_id = 3;
+   */
+  userId: string;
 
   constructor(data?: PartialMessage<Room303Destination>);
 
