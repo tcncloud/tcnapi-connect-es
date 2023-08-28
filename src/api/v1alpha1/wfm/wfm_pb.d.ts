@@ -10140,6 +10140,105 @@ export declare class ListDraftSchedulesRes extends Message<ListDraftSchedulesRes
 }
 
 /**
+ * Request message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleReq
+ */
+export declare class ClearScheduleReq extends Message<ClearScheduleReq> {
+  /**
+   * The schedule to be cleared.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 1;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * If set, node the shifts to be delete will all be related to.
+   * Otherwise, deleted shifts will not be filtered based on the node they are related to.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 2;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * If set, acts as a range to clear all shifts from.
+   * Otherwise, all shifts belonging to @schedule_selector are considered within range to be cleared.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 3;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Set to delete all shifts starting before or ending after the given @datetime range.
+   * Otherwise shifts overlapping the @datetime_range will be deleted.
+   * Cannot be set to true if no datetime range is provided.
+   *
+   * @generated from field: bool invert_datetime_range = 4;
+   */
+  invertDatetimeRange: boolean;
+
+  /**
+   * If set to true, only checks the start datetime of shifts when checking the @datetime_range.
+   * Otherwise, any shifts that overlap the @datetime_range will be cleared.
+   * If @invert_datetime_range is true, any shifts that start before or start after the @datetime_range will be deleted.
+   * Cannot be set to true if no datetime range is provided.
+   *
+   * @generated from field: bool start_datetimes_only = 5;
+   */
+  startDatetimesOnly: boolean;
+
+  /**
+   * Set to true to delete locked and unlocked shifts in the range to be cleared.
+   * Otherwise, only shift instances with is_locked set to false will be deleted.
+   *
+   * @generated from field: bool delete_locked = 6;
+   */
+  deleteLocked: boolean;
+
+  constructor(data?: PartialMessage<ClearScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ClearScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClearScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClearScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClearScheduleReq;
+
+  static equals(a: ClearScheduleReq | PlainMessage<ClearScheduleReq> | undefined, b: ClearScheduleReq | PlainMessage<ClearScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleRes
+ */
+export declare class ClearScheduleRes extends Message<ClearScheduleRes> {
+  /**
+   * Set of diagnostic reports for the any issues encountered.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<ClearScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ClearScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClearScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClearScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClearScheduleRes;
+
+  static equals(a: ClearScheduleRes | PlainMessage<ClearScheduleRes> | undefined, b: ClearScheduleRes | PlainMessage<ClearScheduleRes> | undefined): boolean;
+}
+
+/**
  * Request message for the DeleteDraftSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.DeleteDraftScheduleReq
