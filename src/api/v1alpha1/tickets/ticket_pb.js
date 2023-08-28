@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketSla } from "../../commons/tickets_pb.js";
+import { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -40,6 +40,7 @@ export const CreateTicketReq = proto3.makeMessageType(
     { no: 12, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
     { no: 13, name: "assign_self", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 14, name: "assign_other", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "ticket_action", kind: "message", T: TicketAction, repeated: true },
   ],
 );
 
@@ -493,6 +494,89 @@ export const User = proto3.makeMessageType(
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketActionRequest
+ */
+export const CreateTicketActionRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CreateTicketActionRequest",
+  () => [
+    { no: 1, name: "ticket_action", kind: "message", T: TicketAction },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketActionResponse
+ */
+export const CreateTicketActionResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CreateTicketActionResponse",
+  () => [
+    { no: 1, name: "ticket_action", kind: "message", T: TicketAction },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.CloseTicketActionRequest
+ */
+export const CloseTicketActionRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CloseTicketActionRequest",
+  () => [
+    { no: 1, name: "ticket_action_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "ticket_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "comment", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.CloseTicketActionResponse
+ */
+export const CloseTicketActionResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CloseTicketActionResponse",
+  () => [
+    { no: 1, name: "is_closed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.AssignTicketActionRequest
+ */
+export const AssignTicketActionRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.AssignTicketActionRequest",
+  () => [
+    { no: 1, name: "ticket_action_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.AssignTicketActionResponse
+ */
+export const AssignTicketActionResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.AssignTicketActionResponse",
+  () => [
+    { no: 1, name: "is_assigned", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusRequest
+ */
+export const ChangeTicketStatusRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ChangeTicketStatusRequest",
+  () => [
+    { no: 1, name: "ticket_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "status_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusResponse
+ */
+export const ChangeTicketStatusResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ChangeTicketStatusResponse",
+  () => [
+    { no: 1, name: "is_status_edited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
