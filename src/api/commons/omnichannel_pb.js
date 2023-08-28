@@ -430,6 +430,7 @@ export const OmniCampaignModuleConfig = proto3.makeMessageType(
     { no: 17, name: "attachments", kind: "message", T: OmniAttachment, repeated: true },
     { no: 18, name: "compliance_rule_set_id", kind: "message", T: StringValue },
     { no: 19, name: "payment_portal_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 20, name: "flow_id", kind: "message", T: Int64Id },
   ],
 );
 
