@@ -4598,6 +4598,55 @@ export declare class UpdateNonSkillActivityRes extends Message<UpdateNonSkillAct
 }
 
 /**
+ * Request message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesReq
+ */
+export declare class ListNonSkillActivitiesReq extends Message<ListNonSkillActivitiesReq> {
+  constructor(data?: PartialMessage<ListNonSkillActivitiesReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListNonSkillActivitiesReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNonSkillActivitiesReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesReq;
+
+  static equals(a: ListNonSkillActivitiesReq | PlainMessage<ListNonSkillActivitiesReq> | undefined, b: ListNonSkillActivitiesReq | PlainMessage<ListNonSkillActivitiesReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesRes
+ */
+export declare class ListNonSkillActivitiesRes extends Message<ListNonSkillActivitiesRes> {
+  /**
+   * ID of the non skill activities found to belong to the org sending the request
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.NonSkillActivity non_skill_activities = 1;
+   */
+  nonSkillActivities: NonSkillActivity[];
+
+  constructor(data?: PartialMessage<ListNonSkillActivitiesRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListNonSkillActivitiesRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNonSkillActivitiesRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesRes;
+
+  static equals(a: ListNonSkillActivitiesRes | PlainMessage<ListNonSkillActivitiesRes> | undefined, b: ListNonSkillActivitiesRes | PlainMessage<ListNonSkillActivitiesRes> | undefined): boolean;
+}
+
+/**
  * Request message for the ListNonSkillActivityAssociations RPC
  *
  * @generated from message api.v1alpha1.wfm.ListNonSkillActivityAssociationsReq

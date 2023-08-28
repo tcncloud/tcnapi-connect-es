@@ -1581,6 +1581,28 @@ export const UpdateNonSkillActivityRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesReq
+ */
+export const ListNonSkillActivitiesReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListNonSkillActivitiesReq",
+  [],
+);
+
+/**
+ * Response message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesRes
+ */
+export const ListNonSkillActivitiesRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListNonSkillActivitiesRes",
+  () => [
+    { no: 1, name: "non_skill_activities", kind: "message", T: NonSkillActivity, repeated: true },
+  ],
+);
+
+/**
  * Request message for the ListNonSkillActivityAssociations RPC
  *
  * @generated from message api.v1alpha1.wfm.ListNonSkillActivityAssociationsReq
