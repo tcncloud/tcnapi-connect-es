@@ -112,9 +112,9 @@ export declare class Invoice extends Message<Invoice> {
   /**
    * the invoice identifier
    *
-   * @generated from field: string invoice_id = 2;
+   * @generated from field: int64 invoice_id = 2;
    */
-  invoiceId: string;
+  invoiceId: bigint;
 
   /**
    * the billing cycle
@@ -192,6 +192,13 @@ export declare class InvoiceItem extends Message<InvoiceItem> {
    * @generated from field: google.protobuf.Timestamp date_modified = 5;
    */
   dateModified?: Timestamp;
+
+  /**
+   * the invoice identifier
+   *
+   * @generated from field: int64 invoice_id = 6;
+   */
+  invoiceId: bigint;
 
   constructor(data?: PartialMessage<InvoiceItem>);
 

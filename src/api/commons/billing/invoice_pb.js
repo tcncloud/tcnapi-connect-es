@@ -51,7 +51,7 @@ export const Invoice = proto3.makeMessageType(
   "api.commons.billing.Invoice",
   () => [
     { no: 1, name: "items", kind: "message", T: InvoiceItem, repeated: true },
-    { no: 2, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "invoice_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "cretae_time", kind: "message", T: Timestamp },
     { no: 5, name: "update_time", kind: "message", T: Timestamp },
@@ -71,6 +71,7 @@ export const InvoiceItem = proto3.makeMessageType(
     { no: 3, name: "amount", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "date_created", kind: "message", T: Timestamp },
     { no: 5, name: "date_modified", kind: "message", T: Timestamp },
+    { no: 6, name: "invoice_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
