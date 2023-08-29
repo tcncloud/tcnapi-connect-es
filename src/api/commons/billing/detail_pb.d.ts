@@ -225,6 +225,41 @@ export declare enum DetailConfigType {
 }
 
 /**
+ * BillingPlan - a collection of billing plans
+ *
+ * @generated from message api.commons.billing.BillingPlan
+ */
+export declare class BillingPlan extends Message<BillingPlan> {
+  /**
+   * the organization identifier
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * the billing plans
+   *
+   * @generated from field: repeated api.commons.billing.Plan plans = 2;
+   */
+  plans: Plan[];
+
+  constructor(data?: PartialMessage<BillingPlan>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.billing.BillingPlan";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BillingPlan;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BillingPlan;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BillingPlan;
+
+  static equals(a: BillingPlan | PlainMessage<BillingPlan> | undefined, b: BillingPlan | PlainMessage<BillingPlan> | undefined): boolean;
+}
+
+/**
  * Plan - a collection of details belongind to a single organization.
  *
  * @generated from message api.commons.billing.Plan
