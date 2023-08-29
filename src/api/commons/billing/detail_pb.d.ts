@@ -225,24 +225,25 @@ export declare enum DetailConfigType {
 }
 
 /**
- * BillingPlan - a collection of billing plans
+ * Plan - a collection of details belongind to a single organization.
  *
- * @generated from message api.commons.billing.BillingPlan
+ * @generated from message api.commons.billing.Plan
  */
-export declare class BillingPlan extends Message<BillingPlan> {
+export declare class Plan extends Message<Plan> {
+  /**
+   * all the details that make up this billing plan, where each
+   * detail defines how to configure a particular rating module.
+   *
+   * @generated from field: repeated api.commons.billing.Detail details = 1;
+   */
+  details: Detail[];
+
   /**
    * the organization identifier
    *
-   * @generated from field: string org_id = 1;
+   * @generated from field: string org_id = 2;
    */
   orgId: string;
-
-  /**
-   * the billing plans
-   *
-   * @generated from field: repeated api.commons.billing.Plan plans = 2;
-   */
-  plans: Plan[];
 
   /**
    * billing plan identifier
@@ -278,35 +279,6 @@ export declare class BillingPlan extends Message<BillingPlan> {
    * @generated from field: google.protobuf.Timestamp end_time = 7;
    */
   endTime?: Timestamp;
-
-  constructor(data?: PartialMessage<BillingPlan>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.billing.BillingPlan";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BillingPlan;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BillingPlan;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BillingPlan;
-
-  static equals(a: BillingPlan | PlainMessage<BillingPlan> | undefined, b: BillingPlan | PlainMessage<BillingPlan> | undefined): boolean;
-}
-
-/**
- * Plan - a collection of details belongind to a single organization.
- *
- * @generated from message api.commons.billing.Plan
- */
-export declare class Plan extends Message<Plan> {
-  /**
-   * all the details that make up this billing plan, where each
-   * detail defines how to configure a particular rating module.
-   *
-   * @generated from field: repeated api.commons.billing.Detail details = 1;
-   */
-  details: Detail[];
 
   constructor(data?: PartialMessage<Plan>);
 

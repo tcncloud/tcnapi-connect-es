@@ -60,24 +60,6 @@ export const DetailConfigType = proto3.makeEnum(
 );
 
 /**
- * BillingPlan - a collection of billing plans
- *
- * @generated from message api.commons.billing.BillingPlan
- */
-export const BillingPlan = proto3.makeMessageType(
-  "api.commons.billing.BillingPlan",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "plans", kind: "message", T: Plan, repeated: true },
-    { no: 3, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "create_time", kind: "message", T: Timestamp },
-    { no: 5, name: "update_time", kind: "message", T: Timestamp },
-    { no: 6, name: "start_time", kind: "message", T: Timestamp },
-    { no: 7, name: "end_time", kind: "message", T: Timestamp },
-  ],
-);
-
-/**
  * Plan - a collection of details belongind to a single organization.
  *
  * @generated from message api.commons.billing.Plan
@@ -86,6 +68,12 @@ export const Plan = proto3.makeMessageType(
   "api.commons.billing.Plan",
   () => [
     { no: 1, name: "details", kind: "message", T: Detail, repeated: true },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "create_time", kind: "message", T: Timestamp },
+    { no: 5, name: "update_time", kind: "message", T: Timestamp },
+    { no: 6, name: "start_time", kind: "message", T: Timestamp },
+    { no: 7, name: "end_time", kind: "message", T: Timestamp },
   ],
 );
 
