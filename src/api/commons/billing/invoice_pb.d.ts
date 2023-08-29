@@ -126,9 +126,9 @@ export declare class Invoice extends Message<Invoice> {
   /**
    * time the invoice was created
    *
-   * @generated from field: google.protobuf.Timestamp cretae_time = 4;
+   * @generated from field: google.protobuf.Timestamp create_time = 4;
    */
-  cretaeTime?: Timestamp;
+  createTime?: Timestamp;
 
   /**
    * time the invoice was last updated
