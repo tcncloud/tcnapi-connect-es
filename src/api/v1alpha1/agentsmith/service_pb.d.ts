@@ -13,10 +13,6 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export declare enum AgentState {
   /**
-   * TBD - in the works
-   *
-   * TODO should we even have an unknown state? just use unavailable?
-   *
    * @generated from enum value: UNKNOWN = 0;
    */
   UNKNOWN = 0,
@@ -65,6 +61,171 @@ export declare enum AgentState {
    * @generated from enum value: PREPARING_AFTER_IDLE = 10;
    */
   PREPARING_AFTER_IDLE = 10,
+
+  /**
+   * @generated from enum value: PREPARING_AFTER_WRAPUP = 11;
+   */
+  PREPARING_AFTER_WRAPUP = 11,
+
+  /**
+   * @generated from enum value: PREPARING_AFTER_PAUSE = 12;
+   */
+  PREPARING_AFTER_PAUSE = 12,
+
+  /**
+   * @generated from enum value: PREPARING_AFTER_DIAL_CANCEL = 13;
+   */
+  PREPARING_AFTER_DIAL_CANCEL = 13,
+
+  /**
+   * @generated from enum value: PREPARING_AFTER_PBX_REJECT = 14;
+   */
+  PREPARING_AFTER_PBX_REJECT = 14,
+
+  /**
+   * @generated from enum value: PREPARING_AFTER_PBX_HANGUP = 15;
+   */
+  PREPARING_AFTER_PBX_HANGUP = 15,
+
+  /**
+   * @generated from enum value: PREPARING_AFTER_PBX_WAS_TAKEN = 16;
+   */
+  PREPARING_AFTER_PBX_WAS_TAKEN = 16,
+
+  /**
+   * @generated from enum value: PREPARING_AFTER_GUI_BUSY = 17;
+   */
+  PREPARING_AFTER_GUI_BUSY = 17,
+
+  /**
+   * @generated from enum value: MANUAL_DIAL_PREPARED = 18;
+   */
+  MANUAL_DIAL_PREPARED = 18,
+
+  /**
+   * @generated from enum value: PREVIEW_DIAL_PREPARED = 19;
+   */
+  PREVIEW_DIAL_PREPARED = 19,
+
+  /**
+   * @generated from enum value: MANUAL_DIAL_STARTED = 20;
+   */
+  MANUAL_DIAL_STARTED = 20,
+
+  /**
+   * @generated from enum value: PREVIEW_DIAL_STARTED = 21;
+   */
+  PREVIEW_DIAL_STARTED = 21,
+
+  /**
+   * @generated from enum value: OUTBOUND_LOCKED = 22;
+   */
+  OUTBOUND_LOCKED = 22,
+
+  /**
+   * @generated from enum value: WARM_AGENT_TRANSFER_STARTED_SOURCE = 23;
+   */
+  WARM_AGENT_TRANSFER_STARTED_SOURCE = 23,
+
+  /**
+   * @generated from enum value: WARM_AGENT_TRANSFER_STARTED_DESTINATION = 24;
+   */
+  WARM_AGENT_TRANSFER_STARTED_DESTINATION = 24,
+
+  /**
+   * @generated from enum value: WARM_OUTBOUND_TRANSFER_STARTED = 25;
+   */
+  WARM_OUTBOUND_TRANSFER_STARTED = 25,
+
+  /**
+   * @generated from enum value: WARM_OUTBOUND_TRANSFER_PEER_LOST = 26;
+   */
+  WARM_OUTBOUND_TRANSFER_PEER_LOST = 26,
+
+  /**
+   * @generated from enum value: PBX_POPUP_LOCKED = 27;
+   */
+  PBX_POPUP_LOCKED = 27,
+
+  /**
+   * @generated from enum value: PEERED_WITH_CALL_ON_HOLD = 28;
+   */
+  PEERED_WITH_CALL_ON_HOLD = 28,
+
+  /**
+   * @generated from enum value: CALLBACK_RESUMING = 29;
+   */
+  CALLBACK_RESUMING = 29,
+
+  /**
+   * @generated from enum value: GUI_BUSY = 30;
+   */
+  GUI_BUSY = 30,
+
+  /**
+   * @generated from enum value: INTERCOM = 31;
+   */
+  INTERCOM = 31,
+
+  /**
+   * @generated from enum value: INTERCOM_RINGING_SOURCE = 32;
+   */
+  INTERCOM_RINGING_SOURCE = 32,
+
+  /**
+   * @generated from enum value: INTERCOM_RINGING_DESTINATION = 33;
+   */
+  INTERCOM_RINGING_DESTINATION = 33,
+
+  /**
+   * @generated from enum value: WARM_OUTBOUND_TRANSFER_OUTBOUND_LOST = 34;
+   */
+  WARM_OUTBOUND_TRANSFER_OUTBOUND_LOST = 34,
+
+  /**
+   * @generated from enum value: PREPARED_TO_PEER = 35;
+   */
+  PREPARED_TO_PEER = 35,
+
+  /**
+   * @generated from enum value: WARM_SKILL_TRANSFER_SOURCE_PENDING = 36;
+   */
+  WARM_SKILL_TRANSFER_SOURCE_PENDING = 36,
+
+  /**
+   * when the transfer has started
+   *
+   * @generated from enum value: CALLER_TRANSFER_STARTED = 37;
+   */
+  CALLER_TRANSFER_STARTED = 37,
+
+  /**
+   * when the transfer is running and the peer hangs up
+   *
+   * @generated from enum value: CALLER_TRANSFER_LOST_PEER = 38;
+   */
+  CALLER_TRANSFER_LOST_PEER = 38,
+
+  /**
+   * when the transfer is running and the dest caller hangs up
+   *
+   * @generated from enum value: CALLER_TRANSFER_LOST_MERGED_CALLER = 39;
+   */
+  CALLER_TRANSFER_LOST_MERGED_CALLER = 39,
+
+  /**
+   * interim state for cold outbound transfer
+   *
+   * @generated from enum value: COLD_OUTBOUND_TRANSFER_STARTED = 40;
+   */
+  COLD_OUTBOUND_TRANSFER_STARTED = 40,
+
+  /**
+   * interim state for cold agent transfer
+   *
+   * @generated from enum value: COLD_AGENT_TRANSFER_STARTED = 41;
+   */
+  COLD_AGENT_TRANSFER_STARTED = 41,
 }
 
 /**
