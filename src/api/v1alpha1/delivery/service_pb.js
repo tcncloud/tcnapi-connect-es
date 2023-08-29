@@ -762,6 +762,7 @@ export const CreateDeliveryDefinitionRes = proto3.makeMessageType(
 export const Encryption = proto3.makeMessageType(
   "api.v1alpha1.delivery.Encryption",
   () => [
+    { no: 1, name: "encryption_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },

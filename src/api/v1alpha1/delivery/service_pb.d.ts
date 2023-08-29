@@ -2199,6 +2199,11 @@ export declare class CreateDeliveryDefinitionRes extends Message<CreateDeliveryD
  */
 export declare class Encryption extends Message<Encryption> {
   /**
+   * @generated from field: int64 encryption_sid = 1;
+   */
+  encryptionSid: bigint;
+
+  /**
    * @generated from field: string org_id = 2;
    */
   orgId: string;
