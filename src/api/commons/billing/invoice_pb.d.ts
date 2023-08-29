@@ -109,6 +109,34 @@ export declare class Invoice extends Message<Invoice> {
    */
   items: InvoiceItem[];
 
+  /**
+   * the invoice identifier
+   *
+   * @generated from field: string invoice_id = 2;
+   */
+  invoiceId: string;
+
+  /**
+   * the billing cycle
+   *
+   * @generated from field: string billing_cycle = 3;
+   */
+  billingCycle: string;
+
+  /**
+   * time the invoice was created
+   *
+   * @generated from field: google.protobuf.Timestamp date_created = 4;
+   */
+  dateCreated?: Timestamp;
+
+  /**
+   * time the invoice was last modified
+   *
+   * @generated from field: google.protobuf.Timestamp date_modified = 5;
+   */
+  dateModified?: Timestamp;
+
   constructor(data?: PartialMessage<Invoice>);
 
   static readonly runtime: typeof proto3;

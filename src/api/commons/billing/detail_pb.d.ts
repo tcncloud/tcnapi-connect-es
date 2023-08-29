@@ -244,6 +244,41 @@ export declare class BillingPlan extends Message<BillingPlan> {
    */
   plans: Plan[];
 
+  /**
+   * billing plan identifier
+   *
+   * @generated from field: string billing_plan_id = 3;
+   */
+  billingPlanId: string;
+
+  /**
+   * time the billing plan was created
+   *
+   * @generated from field: google.protobuf.Timestamp date_created = 4;
+   */
+  dateCreated?: Timestamp;
+
+  /**
+   * time the billing plan was updated
+   *
+   * @generated from field: google.protobuf.Timestamp date_modified = 5;
+   */
+  dateModified?: Timestamp;
+
+  /**
+   * the start time
+   *
+   * @generated from field: google.protobuf.Timestamp start_time = 6;
+   */
+  startTime?: Timestamp;
+
+  /**
+   * the time the billing plan ends
+   *
+   * @generated from field: google.protobuf.Timestamp end_time = 7;
+   */
+  endTime?: Timestamp;
+
   constructor(data?: PartialMessage<BillingPlan>);
 
   static readonly runtime: typeof proto3;
@@ -342,6 +377,13 @@ export declare class Detail extends Message<Detail> {
    * @generated from field: google.protobuf.Timestamp deleted_on = 7;
    */
   deletedOn?: Timestamp;
+
+  /**
+   * the billing plan identifier
+   *
+   * @generated from field: string billing_plan_id = 8;
+   */
+  billingPlanId: string;
 
   constructor(data?: PartialMessage<Detail>);
 
