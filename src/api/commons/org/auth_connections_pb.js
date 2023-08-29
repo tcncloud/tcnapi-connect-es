@@ -15,6 +15,7 @@ export const ConnectionType = proto3.makeEnum(
   [
     {no: 0, name: "CONNECTION_TYPE_NONE", localName: "NONE"},
     {no: 1, name: "CONNECTION_TYPE_OIDC", localName: "OIDC"},
+    {no: 2, name: "CONNECTION_TYPE_AZURE", localName: "AZURE"},
   ],
 );
 

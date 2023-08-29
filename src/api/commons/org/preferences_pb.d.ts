@@ -368,6 +368,20 @@ export declare class ContactFieldDescription extends Message<ContactFieldDescrip
    */
   fieldName: string;
 
+  /**
+   * Whether this field holds a phone number.
+   *
+   * @generated from field: bool is_phone = 3;
+   */
+  isPhone: boolean;
+
+  /**
+   * Special formatting.
+   *
+   * @generated from field: string display_format_string = 4;
+   */
+  displayFormatString: string;
+
   constructor(data?: PartialMessage<ContactFieldDescription>);
 
   static readonly runtime: typeof proto3;

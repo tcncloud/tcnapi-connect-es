@@ -21,6 +21,11 @@ export declare enum ConnectionType {
    * @generated from enum value: CONNECTION_TYPE_OIDC = 1;
    */
   OIDC = 1,
+
+  /**
+   * @generated from enum value: CONNECTION_TYPE_AZURE = 2;
+   */
+  AZURE = 2,
 }
 
 /**
