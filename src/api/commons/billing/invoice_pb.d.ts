@@ -126,16 +126,16 @@ export declare class Invoice extends Message<Invoice> {
   /**
    * time the invoice was created
    *
-   * @generated from field: google.protobuf.Timestamp date_created = 4;
+   * @generated from field: google.protobuf.Timestamp cretae_time = 4;
    */
-  dateCreated?: Timestamp;
+  cretaeTime?: Timestamp;
 
   /**
-   * time the invoice was last modified
+   * time the invoice was last updated
    *
-   * @generated from field: google.protobuf.Timestamp date_modified = 5;
+   * @generated from field: google.protobuf.Timestamp update_time = 5;
    */
-  dateModified?: Timestamp;
+  updateTime?: Timestamp;
 
   constructor(data?: PartialMessage<Invoice>);
 

@@ -254,16 +254,16 @@ export declare class BillingPlan extends Message<BillingPlan> {
   /**
    * time the billing plan was created
    *
-   * @generated from field: google.protobuf.Timestamp date_created = 4;
+   * @generated from field: google.protobuf.Timestamp create_time = 4;
    */
-  dateCreated?: Timestamp;
+  createTime?: Timestamp;
 
   /**
    * time the billing plan was updated
    *
-   * @generated from field: google.protobuf.Timestamp date_modified = 5;
+   * @generated from field: google.protobuf.Timestamp update_time = 5;
    */
-  dateModified?: Timestamp;
+  updateTime?: Timestamp;
 
   /**
    * the start time
