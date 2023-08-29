@@ -117,7 +117,7 @@ export declare class Invoice extends Message<Invoice> {
   invoiceId: bigint;
 
   /**
-   * the billing cycle
+   * the billing cycle this invoice was generated for
    *
    * @generated from field: string billing_cycle = 3;
    */

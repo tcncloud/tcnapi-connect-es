@@ -248,9 +248,9 @@ export declare class Plan extends Message<Plan> {
   /**
    * billing plan identifier
    *
-   * @generated from field: string billing_plan_id = 3;
+   * @generated from field: int64 billing_plan_id = 3;
    */
-  billingPlanId: string;
+  billingPlanId: bigint;
 
   /**
    * time the billing plan was created
@@ -267,14 +267,14 @@ export declare class Plan extends Message<Plan> {
   updateTime?: Timestamp;
 
   /**
-   * the start time
+   * the time from which this billing plan took effect
    *
    * @generated from field: google.protobuf.Timestamp start_time = 6;
    */
   startTime?: Timestamp;
 
   /**
-   * the time the billing plan ends
+   * the time (if applicable) this billing plan ended; can be null
    *
    * @generated from field: google.protobuf.Timestamp end_time = 7;
    */
@@ -353,9 +353,9 @@ export declare class Detail extends Message<Detail> {
   /**
    * the billing plan identifier
    *
-   * @generated from field: string billing_plan_id = 8;
+   * @generated from field: int64 billing_plan_id = 8;
    */
-  billingPlanId: string;
+  billingPlanId: bigint;
 
   constructor(data?: PartialMessage<Detail>);
 
