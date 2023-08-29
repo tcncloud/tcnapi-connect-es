@@ -242,6 +242,26 @@ export const GetHistoryRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionReq
+ */
+export const CreateDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.CreateDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "definition", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionRes
+ */
+export const CreateDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.CreateDeliveryDefinitionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
  * @generated from message api.v1alpha1.delivery.CreateEncryptionReq
  */
 export const CreateEncryptionReq = proto3.makeMessageType(
@@ -733,26 +753,6 @@ export const SSHKeyRef = proto3.makeMessageType(
   "api.v1alpha1.delivery.SSHKeyRef",
   () => [
     { no: 1, name: "ssh_key_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionReq
- */
-export const CreateDeliveryDefinitionReq = proto3.makeMessageType(
-  "api.v1alpha1.delivery.CreateDeliveryDefinitionReq",
-  () => [
-    { no: 1, name: "definition", kind: "message", T: DeliveryDefinition },
-  ],
-);
-
-/**
- * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionRes
- */
-export const CreateDeliveryDefinitionRes = proto3.makeMessageType(
-  "api.v1alpha1.delivery.CreateDeliveryDefinitionRes",
-  () => [
-    { no: 1, name: "entity", kind: "message", T: ID },
   ],
 );
 

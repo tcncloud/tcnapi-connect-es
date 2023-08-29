@@ -614,6 +614,54 @@ export declare class GetHistoryRes extends Message<GetHistoryRes> {
 }
 
 /**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionReq
+ */
+export declare class CreateDeliveryDefinitionReq extends Message<CreateDeliveryDefinitionReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition definition = 1;
+   */
+  definition?: DeliveryDefinition;
+
+  constructor(data?: PartialMessage<CreateDeliveryDefinitionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.CreateDeliveryDefinitionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDeliveryDefinitionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionReq;
+
+  static equals(a: CreateDeliveryDefinitionReq | PlainMessage<CreateDeliveryDefinitionReq> | undefined, b: CreateDeliveryDefinitionReq | PlainMessage<CreateDeliveryDefinitionReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionRes
+ */
+export declare class CreateDeliveryDefinitionRes extends Message<CreateDeliveryDefinitionRes> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.ID entity = 1;
+   */
+  entity?: ID;
+
+  constructor(data?: PartialMessage<CreateDeliveryDefinitionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.CreateDeliveryDefinitionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDeliveryDefinitionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionRes;
+
+  static equals(a: CreateDeliveryDefinitionRes | PlainMessage<CreateDeliveryDefinitionRes> | undefined, b: CreateDeliveryDefinitionRes | PlainMessage<CreateDeliveryDefinitionRes> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v1alpha1.delivery.CreateEncryptionReq
  */
 export declare class CreateEncryptionReq extends Message<CreateEncryptionReq> {
@@ -2144,54 +2192,6 @@ export declare class SSHKeyRef extends Message<SSHKeyRef> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SSHKeyRef;
 
   static equals(a: SSHKeyRef | PlainMessage<SSHKeyRef> | undefined, b: SSHKeyRef | PlainMessage<SSHKeyRef> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionReq
- */
-export declare class CreateDeliveryDefinitionReq extends Message<CreateDeliveryDefinitionReq> {
-  /**
-   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition definition = 1;
-   */
-  definition?: DeliveryDefinition;
-
-  constructor(data?: PartialMessage<CreateDeliveryDefinitionReq>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.delivery.CreateDeliveryDefinitionReq";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDeliveryDefinitionReq;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionReq;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionReq;
-
-  static equals(a: CreateDeliveryDefinitionReq | PlainMessage<CreateDeliveryDefinitionReq> | undefined, b: CreateDeliveryDefinitionReq | PlainMessage<CreateDeliveryDefinitionReq> | undefined): boolean;
-}
-
-/**
- * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionRes
- */
-export declare class CreateDeliveryDefinitionRes extends Message<CreateDeliveryDefinitionRes> {
-  /**
-   * @generated from field: api.v1alpha1.delivery.ID entity = 1;
-   */
-  entity?: ID;
-
-  constructor(data?: PartialMessage<CreateDeliveryDefinitionRes>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.delivery.CreateDeliveryDefinitionRes";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDeliveryDefinitionRes;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionRes;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionRes;
-
-  static equals(a: CreateDeliveryDefinitionRes | PlainMessage<CreateDeliveryDefinitionRes> | undefined, b: CreateDeliveryDefinitionRes | PlainMessage<CreateDeliveryDefinitionRes> | undefined): boolean;
 }
 
 /**
