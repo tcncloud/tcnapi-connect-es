@@ -13,6 +13,7 @@ import type { AsmActivateConversationEvent, AsmAgentLoginEvent, AsmAgentLogoutEv
 import type { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, ScorecardsCreateCategoryEvent, ScorecardsCreateEvaluationEvent, ScorecardsCreateEvaluationQuestionEvent, ScorecardsCreateQuestionEvent, ScorecardsCreateScorecardEvent, ScorecardsCreateScorecardQuestionEvent, ScorecardsCreateSectionEvent, ScorecardsDeleteCategoryEvent, ScorecardsDeleteEvaluationEvent, ScorecardsDeleteEvaluationQuestionEvent, ScorecardsDeleteQuestionEvent, ScorecardsDeleteScorecardEvent, ScorecardsDeleteScorecardQuestionEvent, ScorecardsDeleteSectionEvent, ScorecardsUpdateCategoryEvent, ScorecardsUpdateEvaluationEvent, ScorecardsUpdateEvaluationQuestionEvent, ScorecardsUpdateQuestionEvent, ScorecardsUpdateScorecardEvent, ScorecardsUpdateScorecardQuestionEvent, ScorecardsUpdateSectionEvent } from "./scorecards_events_pb.js";
 import type { TicketEvent } from "./tickets_events_pb.js";
 import type { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
+import type { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -742,6 +743,15 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: ComplianceRndQueryEvent;
     case: "complianceRndQueryCachedEvent";
+  } | {
+    /**
+     * Agent Training events class 800
+     * learning opportunity created event
+     *
+     * @generated from field: api.commons.audit.AgentTrainingCreateLearningOpportunityEvent agent_training_create_learning_opportunity_event = 800;
+     */
+    value: AgentTrainingCreateLearningOpportunityEvent;
+    case: "agentTrainingCreateLearningOpportunityEvent";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<AuditEvent>);

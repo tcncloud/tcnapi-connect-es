@@ -79,3 +79,28 @@ export const DeleteAutoEvaluationResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * StreamAutoEvaluationsRequest is the request to stream a list of auto evaluations.
+ *
+ * @generated from message api.v1alpha1.scorecards.StreamAutoEvaluationsRequest
+ */
+export const StreamAutoEvaluationsRequest = proto3.makeMessageType(
+  "api.v1alpha1.scorecards.StreamAutoEvaluationsRequest",
+  () => [
+    { no: 2, name: "scorecard_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "completed_at", kind: "message", T: TimeFilter },
+  ],
+);
+
+/**
+ * StreamAutoEvaluationsResponse is the response object streamed.
+ *
+ * @generated from message api.v1alpha1.scorecards.StreamAutoEvaluationsResponse
+ */
+export const StreamAutoEvaluationsResponse = proto3.makeMessageType(
+  "api.v1alpha1.scorecards.StreamAutoEvaluationsResponse",
+  () => [
+    { no: 1, name: "auto_evaluation", kind: "message", T: AutoEvaluation },
+  ],
+);
+

@@ -363,6 +363,13 @@ export declare class GeneralSettings extends Message<GeneralSettings> {
   requireManualApprovalNumberSms: boolean;
 
   /**
+   * Control whether the reject option is available to the approvers.
+   *
+   * @generated from field: bool disable_reject_option_for_approvers = 704;
+   */
+  disableRejectOptionForApprovers: boolean;
+
+  /**
    * Alphanumeric keypad properties. `Alphanumeric Keypad`
    *
    * @generated from field: api.commons.org.GeneralSettings.AlphanumericKeypad alphanumeric_keypad = 800;
@@ -392,6 +399,14 @@ export declare class GeneralSettings extends Message<GeneralSettings> {
    * @generated from field: bool enable_agent_intercom = 803;
    */
   enableAgentIntercom: boolean;
+
+  /**
+   * Enables the delivery of incoming calls to the agent
+   * depending on the dial status prior to them clicking "Dial".
+   *
+   * @generated from field: api.commons.org.GeneralSettings.PrepareStateCallDelivery prepare_state_call_delivery = 804;
+   */
+  prepareStateCallDelivery?: GeneralSettings_PrepareStateCallDelivery;
 
   constructor(data?: PartialMessage<GeneralSettings>);
 
@@ -784,6 +799,37 @@ export declare class GeneralSettings_InboundComplianceMetadata extends Message<G
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeneralSettings_InboundComplianceMetadata;
 
   static equals(a: GeneralSettings_InboundComplianceMetadata | PlainMessage<GeneralSettings_InboundComplianceMetadata> | undefined, b: GeneralSettings_InboundComplianceMetadata | PlainMessage<GeneralSettings_InboundComplianceMetadata> | undefined): boolean;
+}
+
+/**
+ * PrepareStateCallDelivery options (the dial modes).
+ *
+ * @generated from message api.commons.org.GeneralSettings.PrepareStateCallDelivery
+ */
+export declare class GeneralSettings_PrepareStateCallDelivery extends Message<GeneralSettings_PrepareStateCallDelivery> {
+  /**
+   * @generated from field: bool manual_dial = 1;
+   */
+  manualDial: boolean;
+
+  /**
+   * @generated from field: bool preview_dial = 2;
+   */
+  previewDial: boolean;
+
+  constructor(data?: PartialMessage<GeneralSettings_PrepareStateCallDelivery>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.GeneralSettings.PrepareStateCallDelivery";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GeneralSettings_PrepareStateCallDelivery;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GeneralSettings_PrepareStateCallDelivery;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeneralSettings_PrepareStateCallDelivery;
+
+  static equals(a: GeneralSettings_PrepareStateCallDelivery | PlainMessage<GeneralSettings_PrepareStateCallDelivery> | undefined, b: GeneralSettings_PrepareStateCallDelivery | PlainMessage<GeneralSettings_PrepareStateCallDelivery> | undefined): boolean;
 }
 
 /**
@@ -1524,8 +1570,10 @@ export declare class ManualDialSettings extends Message<ManualDialSettings> {
 
   /**
    * Control whether the reject option is available to the approvers.
+   * Please use disable_reject_option_for_approvers under GeneralSettings.
    *
-   * @generated from field: bool enable_reject_option_for_approvers = 29;
+   * @generated from field: bool enable_reject_option_for_approvers = 29 [deprecated = true];
+   * @deprecated
    */
   enableRejectOptionForApprovers: boolean;
 

@@ -4598,6 +4598,55 @@ export declare class UpdateNonSkillActivityRes extends Message<UpdateNonSkillAct
 }
 
 /**
+ * Request message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesReq
+ */
+export declare class ListNonSkillActivitiesReq extends Message<ListNonSkillActivitiesReq> {
+  constructor(data?: PartialMessage<ListNonSkillActivitiesReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListNonSkillActivitiesReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNonSkillActivitiesReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesReq;
+
+  static equals(a: ListNonSkillActivitiesReq | PlainMessage<ListNonSkillActivitiesReq> | undefined, b: ListNonSkillActivitiesReq | PlainMessage<ListNonSkillActivitiesReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesRes
+ */
+export declare class ListNonSkillActivitiesRes extends Message<ListNonSkillActivitiesRes> {
+  /**
+   * ID of the non skill activities found to belong to the org sending the request
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.NonSkillActivity non_skill_activities = 1;
+   */
+  nonSkillActivities: NonSkillActivity[];
+
+  constructor(data?: PartialMessage<ListNonSkillActivitiesRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListNonSkillActivitiesRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListNonSkillActivitiesRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListNonSkillActivitiesRes;
+
+  static equals(a: ListNonSkillActivitiesRes | PlainMessage<ListNonSkillActivitiesRes> | undefined, b: ListNonSkillActivitiesRes | PlainMessage<ListNonSkillActivitiesRes> | undefined): boolean;
+}
+
+/**
  * Request message for the ListNonSkillActivityAssociations RPC
  *
  * @generated from message api.v1alpha1.wfm.ListNonSkillActivityAssociationsReq
@@ -10091,6 +10140,105 @@ export declare class ListDraftSchedulesRes extends Message<ListDraftSchedulesRes
 }
 
 /**
+ * Request message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleReq
+ */
+export declare class ClearScheduleReq extends Message<ClearScheduleReq> {
+  /**
+   * The schedule to be cleared.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 1;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * If set, node the shifts to be delete will all be related to.
+   * Otherwise, deleted shifts will not be filtered based on the node they are related to.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 2;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * If set, acts as a range to clear all shifts from.
+   * Otherwise, all shifts belonging to @schedule_selector are considered within range to be cleared.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 3;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Set to delete all shifts starting before or ending after the given @datetime range.
+   * Otherwise shifts overlapping the @datetime_range will be deleted.
+   * Cannot be set to true if no datetime range is provided.
+   *
+   * @generated from field: bool invert_datetime_range = 4;
+   */
+  invertDatetimeRange: boolean;
+
+  /**
+   * If set to true, only checks the start datetime of shifts when checking the @datetime_range.
+   * Otherwise, any shifts that overlap the @datetime_range will be cleared.
+   * If @invert_datetime_range is true, any shifts that start before or start after the @datetime_range will be deleted.
+   * Cannot be set to true if no datetime range is provided.
+   *
+   * @generated from field: bool start_datetimes_only = 5;
+   */
+  startDatetimesOnly: boolean;
+
+  /**
+   * Set to true to delete locked and unlocked shifts in the range to be cleared.
+   * Otherwise, only shift instances with is_locked set to false will be deleted.
+   *
+   * @generated from field: bool delete_locked = 6;
+   */
+  deleteLocked: boolean;
+
+  constructor(data?: PartialMessage<ClearScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ClearScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClearScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClearScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClearScheduleReq;
+
+  static equals(a: ClearScheduleReq | PlainMessage<ClearScheduleReq> | undefined, b: ClearScheduleReq | PlainMessage<ClearScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleRes
+ */
+export declare class ClearScheduleRes extends Message<ClearScheduleRes> {
+  /**
+   * Set of diagnostic reports for the any issues encountered.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<ClearScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ClearScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClearScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClearScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClearScheduleRes;
+
+  static equals(a: ClearScheduleRes | PlainMessage<ClearScheduleRes> | undefined, b: ClearScheduleRes | PlainMessage<ClearScheduleRes> | undefined): boolean;
+}
+
+/**
  * Request message for the DeleteDraftSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.DeleteDraftScheduleReq
@@ -10137,6 +10285,93 @@ export declare class DeleteDraftScheduleRes extends Message<DeleteDraftScheduleR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDraftScheduleRes;
 
   static equals(a: DeleteDraftScheduleRes | PlainMessage<DeleteDraftScheduleRes> | undefined, b: DeleteDraftScheduleRes | PlainMessage<DeleteDraftScheduleRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListShiftInstancesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstancesBySidReq
+ */
+export declare class ListShiftInstancesBySidReq extends Message<ListShiftInstancesBySidReq> {
+  /**
+   * ID of the shift instances to list.
+   *
+   * @generated from field: repeated int64 shift_instance_sids = 1;
+   */
+  shiftInstanceSids: bigint[];
+
+  /**
+   * If true, the shift segments will be included in the returned shift instances.
+   * If false, the instances will be returned without any shift segments.
+   *
+   * @generated from field: bool include_shift_segments = 2;
+   */
+  includeShiftSegments: boolean;
+
+  /**
+   * Set to true to include shift template in the returned shift instance.
+   *
+   * @generated from field: bool include_shift_template = 3;
+   */
+  includeShiftTemplate: boolean;
+
+  /**
+   * Set to true to include scheduling activity in each of the returned shift segments.
+   * Only effective when include_shift_segments is also set to true.
+   *
+   * @generated from field: bool include_scheduling_activity = 4;
+   */
+  includeSchedulingActivity: boolean;
+
+  /**
+   * Set to true to include non skill activity in each of the returned scheduling activities.
+   * Only effective when include_scheduling_activity and include_shift_segments are also set to true.
+   *
+   * @generated from field: bool include_activity = 5;
+   */
+  includeActivity: boolean;
+
+  constructor(data?: PartialMessage<ListShiftInstancesBySidReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListShiftInstancesBySidReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShiftInstancesBySidReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShiftInstancesBySidReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShiftInstancesBySidReq;
+
+  static equals(a: ListShiftInstancesBySidReq | PlainMessage<ListShiftInstancesBySidReq> | undefined, b: ListShiftInstancesBySidReq | PlainMessage<ListShiftInstancesBySidReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListShiftInstancesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstancesBySidRes
+ */
+export declare class ListShiftInstancesBySidRes extends Message<ListShiftInstancesBySidRes> {
+  /**
+   * The shift instances that match the given @shift_instance_sids.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance shift_instances = 1;
+   */
+  shiftInstances: ShiftInstance[];
+
+  constructor(data?: PartialMessage<ListShiftInstancesBySidRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListShiftInstancesBySidRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListShiftInstancesBySidRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListShiftInstancesBySidRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListShiftInstancesBySidRes;
+
+  static equals(a: ListShiftInstancesBySidRes | PlainMessage<ListShiftInstancesBySidRes> | undefined, b: ListShiftInstancesBySidRes | PlainMessage<ListShiftInstancesBySidRes> | undefined): boolean;
 }
 
 /**

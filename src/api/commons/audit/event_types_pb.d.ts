@@ -639,5 +639,13 @@ export declare enum EventType {
    * @generated from enum value: COMPLIANCE_RND_QUERY_CACHED_EVENT = 701;
    */
   COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
+
+  /**
+   * Agent Training
+   * create learning opportunity event
+   *
+   * @generated from enum value: AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800;
+   */
+  AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
 }
 

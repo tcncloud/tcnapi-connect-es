@@ -114,6 +114,8 @@ export const ContactFieldDescription = proto3.makeMessageType(
   () => [
     { no: 1, name: "id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "field_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "is_phone", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "display_format_string", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

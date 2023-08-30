@@ -68,6 +68,12 @@ export const Plan = proto3.makeMessageType(
   "api.commons.billing.Plan",
   () => [
     { no: 1, name: "details", kind: "message", T: Detail, repeated: true },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "billing_plan_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "create_time", kind: "message", T: Timestamp },
+    { no: 5, name: "update_time", kind: "message", T: Timestamp },
+    { no: 6, name: "start_time", kind: "message", T: Timestamp },
+    { no: 7, name: "end_time", kind: "message", T: Timestamp },
   ],
 );
 
@@ -86,6 +92,7 @@ export const Detail = proto3.makeMessageType(
     { no: 5, name: "date_created", kind: "message", T: Timestamp },
     { no: 6, name: "date_modified", kind: "message", T: Timestamp },
     { no: 7, name: "deleted_on", kind: "message", T: Timestamp },
+    { no: 8, name: "billing_plan_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

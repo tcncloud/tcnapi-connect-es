@@ -1296,6 +1296,13 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    */
   paymentPortalIds: string[];
 
+  /**
+   * Flow Id
+   *
+   * @generated from field: api.commons.Int64Id flow_id = 20;
+   */
+  flowId?: Int64Id;
+
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
   static readonly runtime: typeof proto3;

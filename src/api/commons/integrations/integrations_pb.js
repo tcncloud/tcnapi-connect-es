@@ -248,6 +248,11 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3802, name: "REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY", localName: "NEWZWARE_ACCOUNT_INQUIRY"},
     {no: 3803, name: "REQUEST_METHOD_NEWZWARE_CC_PAYMENT", localName: "NEWZWARE_CC_PAYMENT"},
     {no: 3804, name: "REQUEST_METHOD_NEWZWARE_ACH_PAYMENT", localName: "NEWZWARE_ACH_PAYMENT"},
+    {no: 3805, name: "REQUEST_METHOD_NEWZWARE_COMPLAINT_HISTORY", localName: "NEWZWARE_COMPLAINT_HISTORY"},
+    {no: 3806, name: "REQUEST_METHOD_NEWZWARE_COMPLAINT_UPDATE", localName: "NEWZWARE_COMPLAINT_UPDATE"},
+    {no: 3807, name: "REQUEST_METHOD_NEWZWARE_VACATION_RESTART", localName: "NEWZWARE_VACATION_RESTART"},
+    {no: 3808, name: "REQUEST_METHOD_NEWZWARE_VACATION_UPDATE", localName: "NEWZWARE_VACATION_UPDATE"},
+    {no: 3809, name: "REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI", localName: "NEWZWARE_PHONE_LOOKUP_MULTI"},
   ],
 );
 
@@ -837,6 +842,11 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3802, name: "newzware_account_inquiry", kind: "message", T: ExecuteNewzwareAccountInquiry, oneof: "value" },
     { no: 3803, name: "newzware_cc_payment", kind: "message", T: ExecuteNewzwareCcPayment, oneof: "value" },
     { no: 3804, name: "newzware_ach_Payment", kind: "message", T: ExecuteNewzwareAchPayment, oneof: "value" },
+    { no: 3805, name: "newzware_complaint_history", kind: "message", T: ExecuteNewzwareComplaintHistory, oneof: "value" },
+    { no: 3806, name: "newzware_complaint_update", kind: "message", T: ExecuteNewzwareComplaintUpdate, oneof: "value" },
+    { no: 3807, name: "newzware_vacation_restart", kind: "message", T: ExecuteNewzwareVacationRestart, oneof: "value" },
+    { no: 3808, name: "newzware_vacation_update", kind: "message", T: ExecuteNewzwareVacationUpdate, oneof: "value" },
+    { no: 3809, name: "newzware_phone_lookup_multi", kind: "message", T: ExecuteNewzwarePhoneLookupMulti, oneof: "value" },
   ],
 );
 
@@ -2527,6 +2537,46 @@ export const ExecuteNewzwareCcPayment = proto3.makeMessageType(
  */
 export const ExecuteNewzwareAchPayment = proto3.makeMessageType(
   "api.commons.integrations.ExecuteNewzwareAchPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareComplaintHistory
+ */
+export const ExecuteNewzwareComplaintHistory = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareComplaintHistory",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareComplaintUpdate
+ */
+export const ExecuteNewzwareComplaintUpdate = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareComplaintUpdate",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareVacationRestart
+ */
+export const ExecuteNewzwareVacationRestart = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareVacationRestart",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareVacationUpdate
+ */
+export const ExecuteNewzwareVacationUpdate = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareVacationUpdate",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwarePhoneLookupMulti
+ */
+export const ExecuteNewzwarePhoneLookupMulti = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwarePhoneLookupMulti",
   [],
 );
 

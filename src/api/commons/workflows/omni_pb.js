@@ -17,6 +17,8 @@ export const OmniNodeScrublistAction = proto3.makeEnum(
 );
 
 /**
+ * OmniNodePrompt is the PoC all-in-one version to send a message (optionally displaying options) and store the user input
+ *
  * @generated from message api.commons.workflows.OmniNodePrompt
  */
 export const OmniNodePrompt = proto3.makeMessageType(
@@ -29,16 +31,59 @@ export const OmniNodePrompt = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeSendMessage will send a message, displaying options if provided
+ *
+ * @generated from message api.commons.workflows.OmniNodeSendMessage
+ */
+export const OmniNodeSendMessage = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeSendMessage",
+  () => [
+    { no: 1, name: "prompt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * OmniNodeUserInput will store the text value of an incoming message under a given key in the payload
+ *
+ * @generated from message api.commons.workflows.OmniNodeUserInput
+ */
+export const OmniNodeUserInput = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeUserInput",
+  () => [
+    { no: 1, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * OmniNodeBranching compares the input against a list of options
+ *
+ * @generated from message api.commons.workflows.OmniNodeBranching
+ */
+export const OmniNodeBranching = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeBranching",
+  () => [
+    { no: 1, name: "store_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "options", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * OmniNodeSetSkill adds the given string as a skill on the coversation
+ *
  * @generated from message api.commons.workflows.OmniNodeSetSkill
  */
 export const OmniNodeSetSkill = proto3.makeMessageType(
   "api.commons.workflows.OmniNodeSetSkill",
   () => [
     { no: 1, name: "skill", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
 /**
+ * OmniNodeToAgent removes the conversation from the flow (updates the status)
+ *
  * @generated from message api.commons.workflows.OmniNodeToAgent
  */
 export const OmniNodeToAgent = proto3.makeMessageType(
@@ -47,6 +92,18 @@ export const OmniNodeToAgent = proto3.makeMessageType(
 );
 
 /**
+ * OmniNodeToMatcher removes the conversation from the flow (updates the status)
+ *
+ * @generated from message api.commons.workflows.OmniNodeToMatcher
+ */
+export const OmniNodeToMatcher = proto3.makeMessageType(
+  "api.commons.workflows.OmniNodeToMatcher",
+  [],
+);
+
+/**
+ * OmniNodeError will send an error message to the user and log an error
+ *
  * @generated from message api.commons.workflows.OmniNodeError
  */
 export const OmniNodeError = proto3.makeMessageType(

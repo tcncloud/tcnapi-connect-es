@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketSla } from "../../commons/tickets_pb.js";
+import type { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -116,6 +116,11 @@ export declare class CreateTicketReq extends Message<CreateTicketReq> {
    * @generated from field: string assign_other = 14;
    */
   assignOther: string;
+
+  /**
+   * @generated from field: repeated api.commons.TicketAction ticket_action = 15;
+   */
+  ticketAction: TicketAction[];
 
   constructor(data?: PartialMessage<CreateTicketReq>);
 
@@ -441,15 +446,11 @@ export declare class AssignTicketReq extends Message<AssignTicketReq> {
   ticketSid: bigint;
 
   /**
-   * type:json - send 0 or null for un-assigning a ticket
-   *
    * @generated from field: string assignee_list = 2;
    */
   assigneeList: string;
 
   /**
-   * uuid
-   *
    * @generated from field: string assigned_id = 3;
    */
   assignedId: string;
@@ -486,8 +487,6 @@ export declare class AssignTicketRes extends Message<AssignTicketRes> {
   assigneeList: string;
 
   /**
-   * uuid
-   *
    * @generated from field: string assigned_id = 3;
    */
   assignedId: string;
@@ -1222,5 +1221,212 @@ export declare class User extends Message<User> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): User;
 
   static equals(a: User | PlainMessage<User> | undefined, b: User | PlainMessage<User> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketActionRequest
+ */
+export declare class CreateTicketActionRequest extends Message<CreateTicketActionRequest> {
+  /**
+   * @generated from field: api.commons.TicketAction ticket_action = 1;
+   */
+  ticketAction?: TicketAction;
+
+  constructor(data?: PartialMessage<CreateTicketActionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CreateTicketActionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTicketActionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTicketActionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTicketActionRequest;
+
+  static equals(a: CreateTicketActionRequest | PlainMessage<CreateTicketActionRequest> | undefined, b: CreateTicketActionRequest | PlainMessage<CreateTicketActionRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketActionResponse
+ */
+export declare class CreateTicketActionResponse extends Message<CreateTicketActionResponse> {
+  /**
+   * @generated from field: api.commons.TicketAction ticket_action = 1;
+   */
+  ticketAction?: TicketAction;
+
+  constructor(data?: PartialMessage<CreateTicketActionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CreateTicketActionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTicketActionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTicketActionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTicketActionResponse;
+
+  static equals(a: CreateTicketActionResponse | PlainMessage<CreateTicketActionResponse> | undefined, b: CreateTicketActionResponse | PlainMessage<CreateTicketActionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.CloseTicketActionRequest
+ */
+export declare class CloseTicketActionRequest extends Message<CloseTicketActionRequest> {
+  /**
+   * @generated from field: int64 ticket_action_id = 1;
+   */
+  ticketActionId: bigint;
+
+  /**
+   * @generated from field: int64 ticket_id = 2;
+   */
+  ticketId: bigint;
+
+  /**
+   * @generated from field: string comment = 3;
+   */
+  comment: string;
+
+  constructor(data?: PartialMessage<CloseTicketActionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CloseTicketActionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CloseTicketActionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CloseTicketActionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CloseTicketActionRequest;
+
+  static equals(a: CloseTicketActionRequest | PlainMessage<CloseTicketActionRequest> | undefined, b: CloseTicketActionRequest | PlainMessage<CloseTicketActionRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.CloseTicketActionResponse
+ */
+export declare class CloseTicketActionResponse extends Message<CloseTicketActionResponse> {
+  /**
+   * @generated from field: bool is_closed = 1;
+   */
+  isClosed: boolean;
+
+  constructor(data?: PartialMessage<CloseTicketActionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CloseTicketActionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CloseTicketActionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CloseTicketActionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CloseTicketActionResponse;
+
+  static equals(a: CloseTicketActionResponse | PlainMessage<CloseTicketActionResponse> | undefined, b: CloseTicketActionResponse | PlainMessage<CloseTicketActionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.AssignTicketActionRequest
+ */
+export declare class AssignTicketActionRequest extends Message<AssignTicketActionRequest> {
+  /**
+   * @generated from field: int64 ticket_action_id = 1;
+   */
+  ticketActionId: bigint;
+
+  constructor(data?: PartialMessage<AssignTicketActionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.AssignTicketActionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignTicketActionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignTicketActionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignTicketActionRequest;
+
+  static equals(a: AssignTicketActionRequest | PlainMessage<AssignTicketActionRequest> | undefined, b: AssignTicketActionRequest | PlainMessage<AssignTicketActionRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.AssignTicketActionResponse
+ */
+export declare class AssignTicketActionResponse extends Message<AssignTicketActionResponse> {
+  /**
+   * @generated from field: bool is_assigned = 1;
+   */
+  isAssigned: boolean;
+
+  constructor(data?: PartialMessage<AssignTicketActionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.AssignTicketActionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignTicketActionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignTicketActionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignTicketActionResponse;
+
+  static equals(a: AssignTicketActionResponse | PlainMessage<AssignTicketActionResponse> | undefined, b: AssignTicketActionResponse | PlainMessage<AssignTicketActionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusRequest
+ */
+export declare class ChangeTicketStatusRequest extends Message<ChangeTicketStatusRequest> {
+  /**
+   * @generated from field: int64 ticket_id = 1;
+   */
+  ticketId: bigint;
+
+  /**
+   * @generated from field: int64 status_id = 2;
+   */
+  statusId: bigint;
+
+  constructor(data?: PartialMessage<ChangeTicketStatusRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ChangeTicketStatusRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeTicketStatusRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeTicketStatusRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeTicketStatusRequest;
+
+  static equals(a: ChangeTicketStatusRequest | PlainMessage<ChangeTicketStatusRequest> | undefined, b: ChangeTicketStatusRequest | PlainMessage<ChangeTicketStatusRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ChangeTicketStatusResponse
+ */
+export declare class ChangeTicketStatusResponse extends Message<ChangeTicketStatusResponse> {
+  /**
+   * @generated from field: bool is_status_edited = 1;
+   */
+  isStatusEdited: boolean;
+
+  constructor(data?: PartialMessage<ChangeTicketStatusResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ChangeTicketStatusResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ChangeTicketStatusResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ChangeTicketStatusResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ChangeTicketStatusResponse;
+
+  static equals(a: ChangeTicketStatusResponse | PlainMessage<ChangeTicketStatusResponse> | undefined, b: ChangeTicketStatusResponse | PlainMessage<ChangeTicketStatusResponse> | undefined): boolean;
 }
 
