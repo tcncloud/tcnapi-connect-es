@@ -1891,6 +1891,30 @@ export const ListWFMAgentsAssociatedWithAgentGroupRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the GetWFMAgentSid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.GetWFMAgentSidReq
+ */
+export const GetWFMAgentSidReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetWFMAgentSidReq",
+  () => [
+    { no: 1, name: "tcn_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for the GetWFMAgentSid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.GetWFMAgentSidRes
+ */
+export const GetWFMAgentSidRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetWFMAgentSidRes",
+  () => [
+    { no: 1, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
  * Request message for the BuildAgentDiagnostics RPC
  *
  * @generated from message api.v1alpha1.wfm.BuildAgentDiagnosticsReq

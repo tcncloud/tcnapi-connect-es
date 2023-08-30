@@ -5442,6 +5442,62 @@ export declare class ListWFMAgentsAssociatedWithAgentGroupRes extends Message<Li
 }
 
 /**
+ * Request message for the GetWFMAgentSid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.GetWFMAgentSidReq
+ */
+export declare class GetWFMAgentSidReq extends Message<GetWFMAgentSidReq> {
+  /**
+   * ID of the agent to get the @wfm_agent_sid from.
+   *
+   * @generated from field: int64 tcn_agent_sid = 1;
+   */
+  tcnAgentSid: bigint;
+
+  constructor(data?: PartialMessage<GetWFMAgentSidReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetWFMAgentSidReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWFMAgentSidReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWFMAgentSidReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWFMAgentSidReq;
+
+  static equals(a: GetWFMAgentSidReq | PlainMessage<GetWFMAgentSidReq> | undefined, b: GetWFMAgentSidReq | PlainMessage<GetWFMAgentSidReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetWFMAgentSid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.GetWFMAgentSidRes
+ */
+export declare class GetWFMAgentSidRes extends Message<GetWFMAgentSidRes> {
+  /**
+   * ID of the wfm agent found to have the @tcn_agent_sid in the request.
+   *
+   * @generated from field: int64 wfm_agent_sid = 1;
+   */
+  wfmAgentSid: bigint;
+
+  constructor(data?: PartialMessage<GetWFMAgentSidRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetWFMAgentSidRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetWFMAgentSidRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetWFMAgentSidRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetWFMAgentSidRes;
+
+  static equals(a: GetWFMAgentSidRes | PlainMessage<GetWFMAgentSidRes> | undefined, b: GetWFMAgentSidRes | PlainMessage<GetWFMAgentSidRes> | undefined): boolean;
+}
+
+/**
  * Request message for the BuildAgentDiagnostics RPC
  *
  * @generated from message api.v1alpha1.wfm.BuildAgentDiagnosticsReq
