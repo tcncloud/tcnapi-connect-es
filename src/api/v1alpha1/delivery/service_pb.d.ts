@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { OperatorApplications } from "../../commons/org_pb.js";
-import type { Encryption, TransferStatus } from "../../commons/delivery_pb.js";
+import type { Encryption as Encryption$1, TransferStatus } from "../../commons/delivery_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -614,6 +614,102 @@ export declare class GetHistoryRes extends Message<GetHistoryRes> {
 }
 
 /**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionReq
+ */
+export declare class CreateDeliveryDefinitionReq extends Message<CreateDeliveryDefinitionReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition definition = 1;
+   */
+  definition?: DeliveryDefinition;
+
+  constructor(data?: PartialMessage<CreateDeliveryDefinitionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.CreateDeliveryDefinitionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDeliveryDefinitionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionReq;
+
+  static equals(a: CreateDeliveryDefinitionReq | PlainMessage<CreateDeliveryDefinitionReq> | undefined, b: CreateDeliveryDefinitionReq | PlainMessage<CreateDeliveryDefinitionReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionRes
+ */
+export declare class CreateDeliveryDefinitionRes extends Message<CreateDeliveryDefinitionRes> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.ID entity = 1;
+   */
+  entity?: ID;
+
+  constructor(data?: PartialMessage<CreateDeliveryDefinitionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.CreateDeliveryDefinitionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDeliveryDefinitionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDeliveryDefinitionRes;
+
+  static equals(a: CreateDeliveryDefinitionRes | PlainMessage<CreateDeliveryDefinitionRes> | undefined, b: CreateDeliveryDefinitionRes | PlainMessage<CreateDeliveryDefinitionRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateEncryptionReq
+ */
+export declare class CreateEncryptionReq extends Message<CreateEncryptionReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.Encryption encryption = 1;
+   */
+  encryption?: Encryption;
+
+  constructor(data?: PartialMessage<CreateEncryptionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.CreateEncryptionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEncryptionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEncryptionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEncryptionReq;
+
+  static equals(a: CreateEncryptionReq | PlainMessage<CreateEncryptionReq> | undefined, b: CreateEncryptionReq | PlainMessage<CreateEncryptionReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateEncryptionRes
+ */
+export declare class CreateEncryptionRes extends Message<CreateEncryptionRes> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.ID entity = 1;
+   */
+  entity?: ID;
+
+  constructor(data?: PartialMessage<CreateEncryptionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.CreateEncryptionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEncryptionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEncryptionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEncryptionRes;
+
+  static equals(a: CreateEncryptionRes | PlainMessage<CreateEncryptionRes> | undefined, b: CreateEncryptionRes | PlainMessage<CreateEncryptionRes> | undefined): boolean;
+}
+
+/**
  * entity types
  *
  * @generated from message api.v1alpha1.delivery.TransferConfig
@@ -973,7 +1069,7 @@ export declare class Destination extends Message<Destination> {
   /**
    * @generated from field: api.commons.Encryption encryption = 1;
    */
-  encryption?: Encryption;
+  encryption?: Encryption$1;
 
   /**
    * @generated from oneof api.v1alpha1.delivery.Destination.value
@@ -1366,7 +1462,7 @@ export declare class Source extends Message<Source> {
   /**
    * @generated from field: api.commons.Encryption encryption = 1;
    */
-  encryption?: Encryption;
+  encryption?: Encryption$1;
 
   /**
    * @generated from oneof api.v1alpha1.delivery.Source.value
@@ -1702,5 +1798,467 @@ export declare class Credentials extends Message<Credentials> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Credentials;
 
   static equals(a: Credentials | PlainMessage<Credentials> | undefined, b: Credentials | PlainMessage<Credentials> | undefined): boolean;
+}
+
+/**
+ * replaces TransferConfig
+ *
+ * @generated from message api.v1alpha1.delivery.DeliveryDefinition
+ */
+export declare class DeliveryDefinition extends Message<DeliveryDefinition> {
+  /**
+   * @generated from field: int64 delivery_definition_sid = 1;
+   */
+  deliveryDefinitionSid: bigint;
+
+  /**
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
+   * the name of the definition. Must be unique within the org
+   *
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * optional nofitifications to send out when this config is being used
+   * TODO:
+   * bool transfer_start_notification = 5;
+   * bool transfer_end_notification = 6;
+   *
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * how many hours the files should live in cloud storage for
+   * must always be > 0
+   *
+   * @generated from field: int32 ttl = 8;
+   */
+  ttl: number;
+
+  /**
+   * @generated from oneof api.v1alpha1.delivery.DeliveryDefinition.transport
+   */
+  transport: {
+    /**
+     * @generated from field: api.v1alpha1.delivery.SFTPTransport sftp = 9;
+     */
+    value: SFTPTransport;
+    case: "sftp";
+  } | {
+    /**
+     * @generated from field: api.v1alpha1.delivery.EmailTransport email = 10;
+     */
+    value: EmailTransport;
+    case: "email";
+  } | {
+    /**
+     * @generated from field: api.v1alpha1.delivery.Room303Transport room303 = 11;
+     */
+    value: Room303Transport;
+    case: "room303";
+  } | {
+    /**
+     * @generated from field: api.v1alpha1.delivery.SMSTransport sms = 12;
+     */
+    value: SMSTransport;
+    case: "sms";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from oneof api.v1alpha1.delivery.DeliveryDefinition.encryption
+   */
+  encryption: {
+    /**
+     * @generated from field: api.v1alpha1.delivery.AESEncryptionRef aes = 13;
+     */
+    value: AESEncryptionRef;
+    case: "aes";
+  } | {
+    /**
+     * @generated from field: api.v1alpha1.delivery.PGPEncryptionRef pgp = 14;
+     */
+    value: PGPEncryptionRef;
+    case: "pgp";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_on = 15;
+   */
+  createdOn?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_edited = 16;
+   */
+  lastEdited?: Timestamp;
+
+  constructor(data?: PartialMessage<DeliveryDefinition>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.DeliveryDefinition";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeliveryDefinition;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeliveryDefinition;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeliveryDefinition;
+
+  static equals(a: DeliveryDefinition | PlainMessage<DeliveryDefinition> | undefined, b: DeliveryDefinition | PlainMessage<DeliveryDefinition> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.SFTPTransport
+ */
+export declare class SFTPTransport extends Message<SFTPTransport> {
+  /**
+   * @generated from field: string host = 1;
+   */
+  host: string;
+
+  /**
+   * @generated from field: int32 port = 2;
+   */
+  port: number;
+
+  /**
+   * @generated from oneof api.v1alpha1.delivery.SFTPTransport.credentials
+   */
+  credentials: {
+    /**
+     * @generated from field: api.v1alpha1.delivery.PasswordRef password = 3;
+     */
+    value: PasswordRef;
+    case: "password";
+  } | {
+    /**
+     * @generated from field: api.v1alpha1.delivery.SSHKeyRef ssh_key = 4;
+     */
+    value: SSHKeyRef;
+    case: "sshKey";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from field: string username = 5;
+   */
+  username: string;
+
+  /**
+   * @generated from field: string base_dir = 6;
+   */
+  baseDir: string;
+
+  constructor(data?: PartialMessage<SFTPTransport>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.SFTPTransport";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SFTPTransport;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SFTPTransport;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SFTPTransport;
+
+  static equals(a: SFTPTransport | PlainMessage<SFTPTransport> | undefined, b: SFTPTransport | PlainMessage<SFTPTransport> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.EmailTransport
+ */
+export declare class EmailTransport extends Message<EmailTransport> {
+  /**
+   * @generated from field: string from_address = 1;
+   */
+  fromAddress: string;
+
+  /**
+   * @generated from field: string to_address = 2;
+   */
+  toAddress: string;
+
+  constructor(data?: PartialMessage<EmailTransport>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.EmailTransport";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EmailTransport;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EmailTransport;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EmailTransport;
+
+  static equals(a: EmailTransport | PlainMessage<EmailTransport> | undefined, b: EmailTransport | PlainMessage<EmailTransport> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.Room303Transport
+ */
+export declare class Room303Transport extends Message<Room303Transport> {
+  /**
+   * @generated from oneof api.v1alpha1.delivery.Room303Transport.transport
+   */
+  transport: {
+    /**
+     * this way we can use different types of room303 deliveries
+     * in the future, support different api calls,
+     * maybe support multiple groups etc
+     *
+     * @generated from field: api.v1alpha1.delivery.Room303SystemMessage system_message = 1;
+     */
+    value: Room303SystemMessage;
+    case: "systemMessage";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<Room303Transport>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.Room303Transport";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Room303Transport;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Room303Transport;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Room303Transport;
+
+  static equals(a: Room303Transport | PlainMessage<Room303Transport> | undefined, b: Room303Transport | PlainMessage<Room303Transport> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.Room303SystemMessage
+ */
+export declare class Room303SystemMessage extends Message<Room303SystemMessage> {
+  /**
+   * which room or user to sned the file to
+   *
+   * @generated from field: string room = 1;
+   */
+  room: string;
+
+  /**
+   * @generated from oneof api.v1alpha1.delivery.Room303SystemMessage.user
+   */
+  user: {
+    /**
+     * will lookup user_sid through org if not provided
+     * username of the intended user
+     *
+     * @generated from field: string username = 2;
+     */
+    value: string;
+    case: "username";
+  } | {
+    /**
+     * user_id of the intended user
+     *
+     * @generated from field: string user_id = 3;
+     */
+    value: string;
+    case: "userId";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<Room303SystemMessage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.Room303SystemMessage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Room303SystemMessage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Room303SystemMessage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Room303SystemMessage;
+
+  static equals(a: Room303SystemMessage | PlainMessage<Room303SystemMessage> | undefined, b: Room303SystemMessage | PlainMessage<Room303SystemMessage> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.SMSTransport
+ */
+export declare class SMSTransport extends Message<SMSTransport> {
+  constructor(data?: PartialMessage<SMSTransport>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.SMSTransport";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SMSTransport;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SMSTransport;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SMSTransport;
+
+  static equals(a: SMSTransport | PlainMessage<SMSTransport> | undefined, b: SMSTransport | PlainMessage<SMSTransport> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.AESEncryptionRef
+ */
+export declare class AESEncryptionRef extends Message<AESEncryptionRef> {
+  /**
+   * @generated from field: int64 aes_sid = 1;
+   */
+  aesSid: bigint;
+
+  constructor(data?: PartialMessage<AESEncryptionRef>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.AESEncryptionRef";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AESEncryptionRef;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AESEncryptionRef;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AESEncryptionRef;
+
+  static equals(a: AESEncryptionRef | PlainMessage<AESEncryptionRef> | undefined, b: AESEncryptionRef | PlainMessage<AESEncryptionRef> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.PGPEncryptionRef
+ */
+export declare class PGPEncryptionRef extends Message<PGPEncryptionRef> {
+  /**
+   * @generated from field: int64 pgp_sid = 1;
+   */
+  pgpSid: bigint;
+
+  constructor(data?: PartialMessage<PGPEncryptionRef>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.PGPEncryptionRef";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PGPEncryptionRef;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PGPEncryptionRef;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PGPEncryptionRef;
+
+  static equals(a: PGPEncryptionRef | PlainMessage<PGPEncryptionRef> | undefined, b: PGPEncryptionRef | PlainMessage<PGPEncryptionRef> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.PasswordRef
+ */
+export declare class PasswordRef extends Message<PasswordRef> {
+  /**
+   * @generated from field: int64 password_sid = 1;
+   */
+  passwordSid: bigint;
+
+  constructor(data?: PartialMessage<PasswordRef>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.PasswordRef";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PasswordRef;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PasswordRef;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PasswordRef;
+
+  static equals(a: PasswordRef | PlainMessage<PasswordRef> | undefined, b: PasswordRef | PlainMessage<PasswordRef> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.SSHKeyRef
+ */
+export declare class SSHKeyRef extends Message<SSHKeyRef> {
+  /**
+   * @generated from field: int64 ssh_key_sid = 1;
+   */
+  sshKeySid: bigint;
+
+  constructor(data?: PartialMessage<SSHKeyRef>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.SSHKeyRef";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SSHKeyRef;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SSHKeyRef;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SSHKeyRef;
+
+  static equals(a: SSHKeyRef | PlainMessage<SSHKeyRef> | undefined, b: SSHKeyRef | PlainMessage<SSHKeyRef> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.Encryption
+ */
+export declare class Encryption extends Message<Encryption> {
+  /**
+   * @generated from field: int64 encryption_sid = 1;
+   */
+  encryptionSid: bigint;
+
+  /**
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * stored as jsonb
+   *
+   * @generated from oneof api.v1alpha1.delivery.Encryption.encryption
+   */
+  encryption: {
+    /**
+     * @generated from field: api.v1alpha1.delivery.PGPKeyPair pgp_key_pair = 5;
+     */
+    value: PGPKeyPair;
+    case: "pgpKeyPair";
+  } | {
+    /**
+     * @generated from field: api.v1alpha1.delivery.AESPassword aes_password = 6;
+     */
+    value: AESPassword;
+    case: "aesPassword";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_on = 10;
+   */
+  createdOn?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp last_edited = 11;
+   */
+  lastEdited?: Timestamp;
+
+  constructor(data?: PartialMessage<Encryption>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.Encryption";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Encryption;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Encryption;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Encryption;
+
+  static equals(a: Encryption | PlainMessage<Encryption> | undefined, b: Encryption | PlainMessage<Encryption> | undefined): boolean;
 }
 
