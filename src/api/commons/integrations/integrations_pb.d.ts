@@ -206,6 +206,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_NEWZWARE = 3800;
    */
   NEWZWARE = 3800,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_PRIOCOMMERCE = 3900;
+   */
+  PRIOCOMMERCE = 3900,
 }
 
 /**
@@ -1159,6 +1164,16 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI = 3809;
    */
   NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT = 3901;
+   */
+  PRIOCOMMERCE_ACH_PAYMENT = 3901,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT = 3902;
+   */
+  PRIOCOMMERCE_CC_PAYMENT = 3902,
 }
 
 /**
@@ -2217,6 +2232,18 @@ export declare class PaymentFlow extends Message<PaymentFlow> {
      */
     value: PaymentNewzwareAch;
     case: "newzwareAch";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentPriocommerceCc priocommerce_cc = 13;
+     */
+    value: PaymentPriocommerceCc;
+    case: "priocommerceCc";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentPriocommerceAch priocommerce_ach = 14;
+     */
+    value: PaymentPriocommerceAch;
+    case: "priocommerceAch";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -3578,6 +3605,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteNewzwarePhoneLookupMulti;
     case: "newzwarePhoneLookupMulti";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePriocommerceAchPayment priocommerce_ach_payment = 3901;
+     */
+    value: ExecutePriocommerceAchPayment;
+    case: "priocommerceAchPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePriocommerceCcPayment priocommerce_cc_payment = 3902;
+     */
+    value: ExecutePriocommerceCcPayment;
+    case: "priocommerceCcPayment";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -4153,6 +4192,44 @@ export declare class PaymentNewzwareAch extends Message<PaymentNewzwareAch> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentNewzwareAch;
 
   static equals(a: PaymentNewzwareAch | PlainMessage<PaymentNewzwareAch> | undefined, b: PaymentNewzwareAch | PlainMessage<PaymentNewzwareAch> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentPriocommerceCc
+ */
+export declare class PaymentPriocommerceCc extends Message<PaymentPriocommerceCc> {
+  constructor(data?: PartialMessage<PaymentPriocommerceCc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentPriocommerceCc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentPriocommerceCc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentPriocommerceCc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPriocommerceCc;
+
+  static equals(a: PaymentPriocommerceCc | PlainMessage<PaymentPriocommerceCc> | undefined, b: PaymentPriocommerceCc | PlainMessage<PaymentPriocommerceCc> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentPriocommerceAch
+ */
+export declare class PaymentPriocommerceAch extends Message<PaymentPriocommerceAch> {
+  constructor(data?: PartialMessage<PaymentPriocommerceAch>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentPriocommerceAch";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentPriocommerceAch;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentPriocommerceAch;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPriocommerceAch;
+
+  static equals(a: PaymentPriocommerceAch | PlainMessage<PaymentPriocommerceAch> | undefined, b: PaymentPriocommerceAch | PlainMessage<PaymentPriocommerceAch> | undefined): boolean;
 }
 
 /**
@@ -7727,5 +7804,43 @@ export declare class ExecuteNewzwarePhoneLookupMulti extends Message<ExecuteNewz
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwarePhoneLookupMulti;
 
   static equals(a: ExecuteNewzwarePhoneLookupMulti | PlainMessage<ExecuteNewzwarePhoneLookupMulti> | undefined, b: ExecuteNewzwarePhoneLookupMulti | PlainMessage<ExecuteNewzwarePhoneLookupMulti> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePriocommerceAchPayment
+ */
+export declare class ExecutePriocommerceAchPayment extends Message<ExecutePriocommerceAchPayment> {
+  constructor(data?: PartialMessage<ExecutePriocommerceAchPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePriocommerceAchPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePriocommerceAchPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePriocommerceAchPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePriocommerceAchPayment;
+
+  static equals(a: ExecutePriocommerceAchPayment | PlainMessage<ExecutePriocommerceAchPayment> | undefined, b: ExecutePriocommerceAchPayment | PlainMessage<ExecutePriocommerceAchPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePriocommerceCcPayment
+ */
+export declare class ExecutePriocommerceCcPayment extends Message<ExecutePriocommerceCcPayment> {
+  constructor(data?: PartialMessage<ExecutePriocommerceCcPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePriocommerceCcPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePriocommerceCcPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePriocommerceCcPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePriocommerceCcPayment;
+
+  static equals(a: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined, b: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined): boolean;
 }
 

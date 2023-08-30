@@ -317,6 +317,25 @@ export declare class ProcessRes extends Message<ProcessRes> {
 }
 
 /**
+ * @generated from message api.v1alpha1.integrations.ListIntegrationsForOrgReq
+ */
+export declare class ListIntegrationsForOrgReq extends Message<ListIntegrationsForOrgReq> {
+  constructor(data?: PartialMessage<ListIntegrationsForOrgReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListIntegrationsForOrgReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListIntegrationsForOrgReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListIntegrationsForOrgReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListIntegrationsForOrgReq;
+
+  static equals(a: ListIntegrationsForOrgReq | PlainMessage<ListIntegrationsForOrgReq> | undefined, b: ListIntegrationsForOrgReq | PlainMessage<ListIntegrationsForOrgReq> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v1alpha1.integrations.IntegrationInfos
  */
 export declare class IntegrationInfos extends Message<IntegrationInfos> {
