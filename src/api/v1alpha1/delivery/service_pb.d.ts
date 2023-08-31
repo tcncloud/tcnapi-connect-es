@@ -710,6 +710,66 @@ export declare class CreateEncryptionRes extends Message<CreateEncryptionRes> {
 }
 
 /**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq
+ */
+export declare class GetDeliveryDefinitionByNameReq extends Message<GetDeliveryDefinitionByNameReq> {
+  /**
+   * obsolete dont use
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask mask = 2;
+   */
+  mask?: FieldMask;
+
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition entity = 3;
+   */
+  entity?: DeliveryDefinition;
+
+  constructor(data?: PartialMessage<GetDeliveryDefinitionByNameReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeliveryDefinitionByNameReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionByNameReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionByNameReq;
+
+  static equals(a: GetDeliveryDefinitionByNameReq | PlainMessage<GetDeliveryDefinitionByNameReq> | undefined, b: GetDeliveryDefinitionByNameReq | PlainMessage<GetDeliveryDefinitionByNameReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes
+ */
+export declare class GetDeliveryDefinitionByNameRes extends Message<GetDeliveryDefinitionByNameRes> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition entity = 1;
+   */
+  entity?: DeliveryDefinition;
+
+  constructor(data?: PartialMessage<GetDeliveryDefinitionByNameRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeliveryDefinitionByNameRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionByNameRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionByNameRes;
+
+  static equals(a: GetDeliveryDefinitionByNameRes | PlainMessage<GetDeliveryDefinitionByNameRes> | undefined, b: GetDeliveryDefinitionByNameRes | PlainMessage<GetDeliveryDefinitionByNameRes> | undefined): boolean;
+}
+
+/**
  * entity types
  *
  * @generated from message api.v1alpha1.delivery.TransferConfig

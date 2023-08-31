@@ -282,6 +282,28 @@ export const CreateEncryptionRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq
+ */
+export const GetDeliveryDefinitionByNameReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+    { no: 3, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes
+ */
+export const GetDeliveryDefinitionByNameRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
  * entity types
  *
  * @generated from message api.v1alpha1.delivery.TransferConfig
