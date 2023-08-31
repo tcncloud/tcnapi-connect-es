@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, Duration, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -245,18 +245,18 @@ export declare class VanaFlagSummaryEvent_FlagSummary extends Message<VanaFlagSu
  */
 export declare class VanaPhraseCorrectionEvent extends Message<VanaPhraseCorrectionEvent> {
   /**
-   * Required. Start time (in milliseconds) of the selected words in the transcript.
+   * Required. Start offset of the selected words in the transcript.
    *
-   * @generated from field: uint32 start_time = 1;
+   * @generated from field: google.protobuf.Duration start_offset = 1;
    */
-  startTime: number;
+  startOffset?: Duration;
 
   /**
-   * Required. End time (in milliseconds) of the selected words in the transcript.
+   * Required. End offset of the selected words in the transcript.
    *
-   * @generated from field: uint32 end_time = 2;
+   * @generated from field: google.protobuf.Duration end_offset = 2;
    */
-  endTime: number;
+  endOffset?: Duration;
 
   /**
    * Required. Original text that the transcript was translated to.
