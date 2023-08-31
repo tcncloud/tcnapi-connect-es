@@ -83,3 +83,21 @@ export const VanaFlagSummaryEvent_FlagSummary = proto3.makeMessageType(
   {localName: "VanaFlagSummaryEvent_FlagSummary"},
 );
 
+/**
+ * VanaPhraseCorrectionEvent is a user suggestion for what some words in a transcript
+ * should be changed to when the original translation is off.
+ *
+ * @generated from message api.commons.audit.VanaPhraseCorrectionEvent
+ */
+export const VanaPhraseCorrectionEvent = proto3.makeMessageType(
+  "api.commons.audit.VanaPhraseCorrectionEvent",
+  () => [
+    { no: 1, name: "start_time", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 2, name: "end_time", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "original_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "proposed_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "channel", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+);
+
