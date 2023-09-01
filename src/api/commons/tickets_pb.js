@@ -59,6 +59,7 @@ export const Ticket = proto3.makeMessageType(
     { no: 18, name: "assignee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 19, name: "ticket_action", kind: "message", T: TicketAction, repeated: true },
     { no: 20, name: "ticket_status", kind: "enum", T: proto3.getEnumType(TicketStatus) },
+    { no: 21, name: "ticket_assignee", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
