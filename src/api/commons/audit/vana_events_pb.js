@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Duration, proto3, Timestamp } from "@bufbuild/protobuf";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * VanaFlagEvent represents a flag occurrence in voice analytics.
@@ -81,23 +81,5 @@ export const VanaFlagSummaryEvent_FlagSummary = proto3.makeMessageType(
     { no: 2, name: "flag_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
   {localName: "VanaFlagSummaryEvent_FlagSummary"},
-);
-
-/**
- * VanaPhraseCorrectionEvent is a user suggestion for what some words in a transcript
- * should be changed to when the original translation is off.
- *
- * @generated from message api.commons.audit.VanaPhraseCorrectionEvent
- */
-export const VanaPhraseCorrectionEvent = proto3.makeMessageType(
-  "api.commons.audit.VanaPhraseCorrectionEvent",
-  () => [
-    { no: 1, name: "start_offset", kind: "message", T: Duration },
-    { no: 2, name: "end_offset", kind: "message", T: Duration },
-    { no: 3, name: "original_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "proposed_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "channel", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
-  ],
 );
 

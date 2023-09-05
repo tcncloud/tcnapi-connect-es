@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -770,8 +770,10 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 
   /**
    * ID of the skill profile that this interval belongs to.
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 2;
+   * @generated from field: int64 skill_profile_sid = 2 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
 
@@ -868,6 +870,13 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
    * @generated from field: int32 original_total_abandoned_calls = 15;
    */
   originalTotalAbandonedCalls: number;
+
+  /**
+   * Skill profile category that the interval belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 16;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<HistoricalDataInterval>);
 
