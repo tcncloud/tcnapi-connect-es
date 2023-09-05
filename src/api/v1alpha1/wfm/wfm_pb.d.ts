@@ -2279,7 +2279,6 @@ export declare class BuildRegressionForecastByIntervalReq extends Message<BuildR
 
   /**
    * IDs of the skill profiles to generate the forecasts,
-   * if no IDs are sent, it will forecast for all active skill profiles.
    *
    * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6;
    */
