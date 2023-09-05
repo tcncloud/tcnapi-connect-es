@@ -290,7 +290,6 @@ export const OmniConversationMetadataName = proto3.makeEnum(
     {no: 1, name: "CUSTOMER_WAIT_TIME"},
     {no: 2, name: "HANDLE_TIME"},
     {no: 3, name: "TRANSCRIPT_PATH"},
-    {no: 4, name: "OMNI_CONVERSATION_METADATA_NAME_FLOW_DATA"},
     {no: 10, name: "OMNI_CONVERSATION_METADATA_NAME_TIMER_WAIT"},
     {no: 100, name: "OMNI_CONVERSATION_METADATA_NAME_TIMER_TALK"},
     {no: 101, name: "OMNI_CONVERSATION_METADATA_NAME_TIMER_TALK_INITIAL_AGENT_RESPONSE"},
