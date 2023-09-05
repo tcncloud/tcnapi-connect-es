@@ -31,6 +31,7 @@ export const EventType = proto3.makeEnum(
     {no: 102, name: "VOICE_ANALYTICS_FLAG_NEEDS_REVIEW"},
     {no: 103, name: "VOICE_ANALYTICS_BILLING_REPORT"},
     {no: 104, name: "VOICE_ANALYTICS_FLAG_SUMMARY"},
+    {no: 105, name: "VOICE_ANALYTICS_PHRASE_CORRECTION"},
     {no: 300, name: "OMNICHANNEL"},
     {no: 301, name: "OMNICHANNEL_PROJECT"},
     {no: 302, name: "OMNICHANNEL_CAMPAIGN"},

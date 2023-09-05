@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, Duration, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
@@ -235,5 +235,69 @@ export declare class VanaFlagSummaryEvent_FlagSummary extends Message<VanaFlagSu
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VanaFlagSummaryEvent_FlagSummary;
 
   static equals(a: VanaFlagSummaryEvent_FlagSummary | PlainMessage<VanaFlagSummaryEvent_FlagSummary> | undefined, b: VanaFlagSummaryEvent_FlagSummary | PlainMessage<VanaFlagSummaryEvent_FlagSummary> | undefined): boolean;
+}
+
+/**
+ * VanaPhraseCorrectionEvent is a user suggestion for what some words in a transcript
+ * should be changed to when the original translation is off.
+ *
+ * @generated from message api.commons.audit.VanaPhraseCorrectionEvent
+ */
+export declare class VanaPhraseCorrectionEvent extends Message<VanaPhraseCorrectionEvent> {
+  /**
+   * Required. Start offset of the selected words in the transcript.
+   *
+   * @generated from field: google.protobuf.Duration start_offset = 1;
+   */
+  startOffset?: Duration;
+
+  /**
+   * Required. End offset of the selected words in the transcript.
+   *
+   * @generated from field: google.protobuf.Duration end_offset = 2;
+   */
+  endOffset?: Duration;
+
+  /**
+   * Required. Original text that the transcript was translated to.
+   *
+   * @generated from field: string original_text = 3;
+   */
+  originalText: string;
+
+  /**
+   * Required. Proposed text of what the transcript text should be.
+   *
+   * @generated from field: string proposed_text = 4;
+   */
+  proposedText: string;
+
+  /**
+   * Required. Url of the call recording for the transcript.
+   *
+   * @generated from field: string url = 5;
+   */
+  url: string;
+
+  /**
+   * Required. Channel that the words were spoken on.
+   *
+   * @generated from field: uint32 channel = 6;
+   */
+  channel: number;
+
+  constructor(data?: PartialMessage<VanaPhraseCorrectionEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.VanaPhraseCorrectionEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VanaPhraseCorrectionEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VanaPhraseCorrectionEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VanaPhraseCorrectionEvent;
+
+  static equals(a: VanaPhraseCorrectionEvent | PlainMessage<VanaPhraseCorrectionEvent> | undefined, b: VanaPhraseCorrectionEvent | PlainMessage<VanaPhraseCorrectionEvent> | undefined): boolean;
 }
 

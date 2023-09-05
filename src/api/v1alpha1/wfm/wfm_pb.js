@@ -316,6 +316,7 @@ export const ListHistoricalDataReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListHistoricalDataReq",
   () => [
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 

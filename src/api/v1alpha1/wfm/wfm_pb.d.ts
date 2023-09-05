@@ -901,10 +901,19 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 export declare class ListHistoricalDataReq extends Message<ListHistoricalDataReq> {
   /**
    * ID of the skill profile used to examine matching calls in the client's historical data.
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 1;
+   * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
+
+  /**
+   * Skill profile category that the desired calls will belong to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 2;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<ListHistoricalDataReq>);
 

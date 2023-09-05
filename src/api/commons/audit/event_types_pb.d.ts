@@ -64,6 +64,11 @@ export declare enum EventType {
   VOICE_ANALYTICS_FLAG_SUMMARY = 104,
 
   /**
+   * @generated from enum value: VOICE_ANALYTICS_PHRASE_CORRECTION = 105;
+   */
+  VOICE_ANALYTICS_PHRASE_CORRECTION = 105,
+
+  /**
    * Omnichannel Dashboard Application IDs
    *
    * @generated from enum value: OMNICHANNEL = 300;
