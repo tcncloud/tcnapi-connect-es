@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla } from "../../commons/tickets_pb.js";
+import { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -295,6 +295,7 @@ export const CreateSlaReq = proto3.makeMessageType(
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "interval", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "duration", kind: "message", T: Duration },
   ],
 );
 
