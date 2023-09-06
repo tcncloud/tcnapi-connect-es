@@ -3,6 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import { Message, proto3 } from "@bufbuild/protobuf";
+
 /**
  * MatchingRule represents a rule for matching an event to a
  * rate definition.
@@ -14,5 +17,29 @@ export declare enum MatchingRule {
    * @generated from enum value: MATCHING_RULE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
+}
+
+/**
+ * MatchingConfig represents the configuration for matching
+ * an event to a rate definition.
+ *
+ * oneof config
+ *
+ * @generated from message data.billing.v1alpha1.MatchingConfig
+ */
+export declare class MatchingConfig extends Message<MatchingConfig> {
+  constructor(data?: PartialMessage<MatchingConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "data.billing.v1alpha1.MatchingConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MatchingConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MatchingConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MatchingConfig;
+
+  static equals(a: MatchingConfig | PlainMessage<MatchingConfig> | undefined, b: MatchingConfig | PlainMessage<MatchingConfig> | undefined): boolean;
 }
 

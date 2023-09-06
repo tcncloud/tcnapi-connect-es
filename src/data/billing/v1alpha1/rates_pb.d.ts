@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { EventType } from "../../../api/commons/audit/event_types_pb.js";
-import type { MatchingRule } from "./matching_pb.js";
+import type { MatchingConfig, MatchingRule } from "./matching_pb.js";
 import type { BasicAmountConfig, BasicConfig } from "./modules_pb.js";
 
 /**
@@ -274,16 +274,23 @@ export declare class RateDefinition extends Message<RateDefinition> {
   config?: RateDefinitionConfig;
 
   /**
+   * the matching config for this definition
+   *
+   * @generated from field: data.billing.v1alpha1.MatchingConfig matching_config = 7;
+   */
+  matchingConfig?: MatchingConfig;
+
+  /**
    * the time the rate definition was created
    *
-   * @generated from field: google.protobuf.Timestamp create_time = 7;
+   * @generated from field: google.protobuf.Timestamp create_time = 8;
    */
   createTime?: Timestamp;
 
   /**
    * the time the rate definition was last updated
    *
-   * @generated from field: google.protobuf.Timestamp update_time = 8;
+   * @generated from field: google.protobuf.Timestamp update_time = 9;
    */
   updateTime?: Timestamp;
 

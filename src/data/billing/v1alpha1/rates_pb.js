@@ -5,7 +5,7 @@
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { EventType } from "../../../api/commons/audit/event_types_pb.js";
-import { MatchingRule } from "./matching_pb.js";
+import { MatchingConfig, MatchingRule } from "./matching_pb.js";
 import { BasicAmountConfig, BasicConfig } from "./modules_pb.js";
 
 /**
@@ -74,8 +74,9 @@ export const RateDefinition = proto3.makeMessageType(
     { no: 4, name: "config_type", kind: "enum", T: proto3.getEnumType(RateDefinitionConfigType) },
     { no: 5, name: "matching_rule", kind: "enum", T: proto3.getEnumType(MatchingRule) },
     { no: 6, name: "config", kind: "message", T: RateDefinitionConfig },
-    { no: 7, name: "create_time", kind: "message", T: Timestamp },
-    { no: 8, name: "update_time", kind: "message", T: Timestamp },
+    { no: 7, name: "matching_config", kind: "message", T: MatchingConfig },
+    { no: 8, name: "create_time", kind: "message", T: Timestamp },
+    { no: 9, name: "update_time", kind: "message", T: Timestamp },
   ],
 );
 

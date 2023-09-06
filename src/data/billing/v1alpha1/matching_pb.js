@@ -18,3 +18,16 @@ export const MatchingRule = proto3.makeEnum(
   ],
 );
 
+/**
+ * MatchingConfig represents the configuration for matching
+ * an event to a rate definition.
+ *
+ * oneof config
+ *
+ * @generated from message data.billing.v1alpha1.MatchingConfig
+ */
+export const MatchingConfig = proto3.makeMessageType(
+  "data.billing.v1alpha1.MatchingConfig",
+  [],
+);
+
