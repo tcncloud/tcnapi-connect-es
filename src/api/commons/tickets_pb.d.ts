@@ -194,6 +194,13 @@ export declare class Ticket extends Message<Ticket> {
    */
   ticketStatus: TicketStatus;
 
+  /**
+   * assignee list
+   *
+   * @generated from field: repeated string ticket_assignee = 21;
+   */
+  ticketAssignee: string[];
+
   constructor(data?: PartialMessage<Ticket>);
 
   static readonly runtime: typeof proto3;
