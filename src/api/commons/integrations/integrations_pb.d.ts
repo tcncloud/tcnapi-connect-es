@@ -3989,6 +3989,14 @@ export declare class VerificationNewzwareAccountInquiry extends Message<Verifica
  * @generated from message api.commons.integrations.PaymentExperianCC
  */
 export declare class PaymentExperianCC extends Message<PaymentExperianCC> {
+  /**
+   * if true instead of using the account number uploaded to textpay,
+   * we send the payment with the account number returned on the invoice
+   *
+   * @generated from field: bool use_invoice_account_number = 1;
+   */
+  useInvoiceAccountNumber: boolean;
+
   constructor(data?: PartialMessage<PaymentExperianCC>);
 
   static readonly runtime: typeof proto3;
@@ -4008,6 +4016,14 @@ export declare class PaymentExperianCC extends Message<PaymentExperianCC> {
  * @generated from message api.commons.integrations.PaymentExperianACH
  */
 export declare class PaymentExperianACH extends Message<PaymentExperianACH> {
+  /**
+   * if true instead of using the account number uploaded to textpay,
+   * we send the payment with the account number returned on the invoice
+   *
+   * @generated from field: bool use_invoice_account_number = 1;
+   */
+  useInvoiceAccountNumber: boolean;
+
   constructor(data?: PartialMessage<PaymentExperianACH>);
 
   static readonly runtime: typeof proto3;
