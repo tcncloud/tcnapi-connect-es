@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -303,6 +303,7 @@ export const HistoricalDataInterval = proto3.makeMessageType(
     { no: 13, name: "original_average_time_to_abort_in_seconds", kind: "message", T: FloatValue },
     { no: 14, name: "original_total_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 15, name: "original_total_abandoned_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 16, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -315,6 +316,7 @@ export const ListHistoricalDataReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListHistoricalDataReq",
   () => [
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 

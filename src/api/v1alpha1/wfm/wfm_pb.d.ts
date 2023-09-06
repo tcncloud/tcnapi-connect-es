@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -770,8 +770,10 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 
   /**
    * ID of the skill profile that this interval belongs to.
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 2;
+   * @generated from field: int64 skill_profile_sid = 2 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
 
@@ -869,6 +871,13 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
    */
   originalTotalAbandonedCalls: number;
 
+  /**
+   * Skill profile category that the interval belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 16;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
   constructor(data?: PartialMessage<HistoricalDataInterval>);
 
   static readonly runtime: typeof proto3;
@@ -892,10 +901,19 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 export declare class ListHistoricalDataReq extends Message<ListHistoricalDataReq> {
   /**
    * ID of the skill profile used to examine matching calls in the client's historical data.
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 1;
+   * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
+
+  /**
+   * Skill profile category that the desired calls will belong to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 2;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<ListHistoricalDataReq>);
 
@@ -2261,7 +2279,6 @@ export declare class BuildRegressionForecastByIntervalReq extends Message<BuildR
 
   /**
    * IDs of the skill profiles to generate the forecasts,
-   * if no IDs are sent, it will forecast for all active skill profiles.
    *
    * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6;
    */
@@ -2326,7 +2343,6 @@ export declare class BuildRegressionForecastByIntervalWithStatsReq extends Messa
 
   /**
    * IDs of the skill profiles to generate the forecasts,
-   * if no IDs are sent, it will forecast for all active skill profiles.
    *
    * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6;
    */
