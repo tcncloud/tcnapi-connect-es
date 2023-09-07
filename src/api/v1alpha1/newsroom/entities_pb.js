@@ -122,3 +122,114 @@ export const NewsArticleDetails = proto3.makeMessageType(
   ],
 );
 
+/**
+ * published news article details
+ *
+ * @generated from message api.v1alpha1.newsroom.PublishedNewsArticleDetails
+ */
+export const PublishedNewsArticleDetails = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.PublishedNewsArticleDetails",
+  () => [
+    { no: 1, name: "published_new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "news_article_details", kind: "message", T: NewsArticleDetails },
+    { no: 3, name: "date_published", kind: "message", T: Timestamp },
+    { no: 4, name: "display_to_user", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Request to create published news article
+ *
+ * @generated from message api.v1alpha1.newsroom.CreatePublishedNewsArticleRequest
+ */
+export const CreatePublishedNewsArticleRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.CreatePublishedNewsArticleRequest",
+  () => [
+    { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "display_to_user", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response to create published news article
+ *
+ * @generated from message api.v1alpha1.newsroom.CreatePublishedNewsArticleResponse
+ */
+export const CreatePublishedNewsArticleResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.CreatePublishedNewsArticleResponse",
+  () => [
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+  ],
+);
+
+/**
+ * Request to list of published news articles
+ *
+ * @generated from message api.v1alpha1.newsroom.ListPublishedNewsArticlesRequest
+ */
+export const ListPublishedNewsArticlesRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.ListPublishedNewsArticlesRequest",
+  [],
+);
+
+/**
+ * Response to list of published news articles
+ *
+ * @generated from message api.v1alpha1.newsroom.ListPublishedNewsArticlesResponse
+ */
+export const ListPublishedNewsArticlesResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.ListPublishedNewsArticlesResponse",
+  () => [
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails, repeated: true },
+  ],
+);
+
+/**
+ * Request to get published news article by id
+ *
+ * @generated from message api.v1alpha1.newsroom.GetPublishedNewsArticleByIdRequest
+ */
+export const GetPublishedNewsArticleByIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.GetPublishedNewsArticleByIdRequest",
+  () => [
+    { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response to get published news article
+ *
+ * @generated from message api.v1alpha1.newsroom.GetPublishedNewsArticleByIdResponse
+ */
+export const GetPublishedNewsArticleByIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.GetPublishedNewsArticleByIdResponse",
+  () => [
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+  ],
+);
+
+/**
+ * Request to update published news article
+ *
+ * @generated from message api.v1alpha1.newsroom.UpdatePublishedNewsArticleRequest
+ */
+export const UpdatePublishedNewsArticleRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.UpdatePublishedNewsArticleRequest",
+  () => [
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * Response to update published news article
+ *
+ * @generated from message api.v1alpha1.newsroom.UpdatePublishedNewsArticleResponse
+ */
+export const UpdatePublishedNewsArticleResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.UpdatePublishedNewsArticleResponse",
+  () => [
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+  ],
+);
+

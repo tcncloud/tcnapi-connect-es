@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateNewsArticleRequest, CreateNewsArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse } from "./entities_pb.js";
+import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedNewsArticleRequest, CreatePublishedNewsArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetPublishedNewsArticleByIdRequest, GetPublishedNewsArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedNewsArticlesRequest, ListPublishedNewsArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UpdatePublishedNewsArticleRequest, UpdatePublishedNewsArticleResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -58,6 +58,50 @@ export const NewsroomAPI = {
       name: "UpdateNewsArticle",
       I: UpdateNewsArticleRequest,
       O: UpdateNewsArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * create published news article
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.CreatePublishedNewsArticle
+     */
+    createPublishedNewsArticle: {
+      name: "CreatePublishedNewsArticle",
+      I: CreatePublishedNewsArticleRequest,
+      O: CreatePublishedNewsArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * list published news articles
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.ListPublishedNewsArticles
+     */
+    listPublishedNewsArticles: {
+      name: "ListPublishedNewsArticles",
+      I: ListPublishedNewsArticlesRequest,
+      O: ListPublishedNewsArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * get published news article details by the id
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.GetPublishedNewsArticleById
+     */
+    getPublishedNewsArticleById: {
+      name: "GetPublishedNewsArticleById",
+      I: GetPublishedNewsArticleByIdRequest,
+      O: GetPublishedNewsArticleByIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * update published news article
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.UpdatePublishedNewsArticle
+     */
+    updatePublishedNewsArticle: {
+      name: "UpdatePublishedNewsArticle",
+      I: UpdatePublishedNewsArticleRequest,
+      O: UpdatePublishedNewsArticleResponse,
       kind: MethodKind.Unary,
     },
   }
