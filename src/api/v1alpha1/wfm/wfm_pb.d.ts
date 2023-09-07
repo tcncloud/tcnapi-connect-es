@@ -1281,6 +1281,62 @@ export declare class BuildCallProfileTemplateForSkillProfileRes extends Message<
 }
 
 /**
+ * Request message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateReq
+ */
+export declare class BuildCallProfileTemplateReq extends Message<BuildCallProfileTemplateReq> {
+  /**
+   * Skill profile category of the training data used to generate the template.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 1;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<BuildCallProfileTemplateReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.BuildCallProfileTemplateReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuildCallProfileTemplateReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateReq;
+
+  static equals(a: BuildCallProfileTemplateReq | PlainMessage<BuildCallProfileTemplateReq> | undefined, b: BuildCallProfileTemplateReq | PlainMessage<BuildCallProfileTemplateReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateRes
+ */
+export declare class BuildCallProfileTemplateRes extends Message<BuildCallProfileTemplateRes> {
+  /**
+   * call profile template found in the training data set.
+   *
+   * @generated from field: api.v1alpha1.wfm.CallProfileTemplate call_profile_template = 1;
+   */
+  callProfileTemplate?: CallProfileTemplate;
+
+  constructor(data?: PartialMessage<BuildCallProfileTemplateRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.BuildCallProfileTemplateRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuildCallProfileTemplateRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateRes;
+
+  static equals(a: BuildCallProfileTemplateRes | PlainMessage<BuildCallProfileTemplateRes> | undefined, b: BuildCallProfileTemplateRes | PlainMessage<BuildCallProfileTemplateRes> | undefined): boolean;
+}
+
+/**
  * Request message for the CreateInactiveSkillProfileMapping RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingReq

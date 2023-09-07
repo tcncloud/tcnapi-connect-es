@@ -449,6 +449,30 @@ export const BuildCallProfileTemplateForSkillProfileRes = proto3.makeMessageType
 );
 
 /**
+ * Request message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateReq
+ */
+export const BuildCallProfileTemplateReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.BuildCallProfileTemplateReq",
+  () => [
+    { no: 1, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
+ * Response message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateRes
+ */
+export const BuildCallProfileTemplateRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.BuildCallProfileTemplateRes",
+  () => [
+    { no: 1, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
+  ],
+);
+
+/**
  * Request message for the CreateInactiveSkillProfileMapping RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingReq
