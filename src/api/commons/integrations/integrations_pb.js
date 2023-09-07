@@ -998,7 +998,9 @@ export const VerificationNewzwareAccountInquiry = proto3.makeMessageType(
  */
 export const PaymentExperianCC = proto3.makeMessageType(
   "api.commons.integrations.PaymentExperianCC",
-  [],
+  () => [
+    { no: 1, name: "use_invoice_account_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
 );
 
 /**
@@ -1006,7 +1008,9 @@ export const PaymentExperianCC = proto3.makeMessageType(
  */
 export const PaymentExperianACH = proto3.makeMessageType(
   "api.commons.integrations.PaymentExperianACH",
-  [],
+  () => [
+    { no: 1, name: "use_invoice_account_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
 );
 
 /**
