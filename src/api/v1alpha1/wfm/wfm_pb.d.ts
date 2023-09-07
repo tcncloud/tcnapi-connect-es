@@ -1676,10 +1676,19 @@ export declare class BuildProfileForecastByIntervalReq extends Message<BuildProf
 
   /**
    * ID of the skill profile that the forecast will belong to.
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 3;
+   * @generated from field: int64 skill_profile_sid = 3 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
+
+  /**
+   * Skill profile category that the forecast belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 16;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<BuildProfileForecastByIntervalReq>);
 
@@ -1711,8 +1720,10 @@ export declare class CallDataByInterval extends Message<CallDataByInterval> {
 
   /**
    * ID of the skill profile to forecast for (not set in profile forecasts).
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 2;
+   * @generated from field: int64 skill_profile_sid = 2 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
 
@@ -1779,6 +1790,13 @@ export declare class CallDataByInterval extends Message<CallDataByInterval> {
    * @generated from field: int32 interval_width_in_minutes = 11;
    */
   intervalWidthInMinutes: number;
+
+  /**
+   * Skill profile category that the interval belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 12;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<CallDataByInterval>);
 
