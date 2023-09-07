@@ -1789,6 +1789,7 @@ export const ListAllWFMAgentsReq = proto3.makeMessageType(
     { no: 1, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 2, name: "include_skill_proficiencies", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "include_agent_groups", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "agent_group_schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

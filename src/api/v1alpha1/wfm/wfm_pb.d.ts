@@ -5197,6 +5197,14 @@ export declare class ListAllWFMAgentsReq extends Message<ListAllWFMAgentsReq> {
    */
   includeAgentGroups: boolean;
 
+  /**
+   * Indicates the schedule scenario that returned @agent_groups belong to.
+   * Does not effect which @wfm_agents are returned.
+   *
+   * @generated from field: int64 agent_group_schedule_scenario_sid = 4;
+   */
+  agentGroupScheduleScenarioSid: bigint;
+
   constructor(data?: PartialMessage<ListAllWFMAgentsReq>);
 
   static readonly runtime: typeof proto3;
