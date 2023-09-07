@@ -208,28 +208,3 @@ export const GetPublishedArticleByIdResponse = proto3.makeMessageType(
   ],
 );
 
-/**
- * Request to update published article
- *
- * @generated from message api.v1alpha1.newsroom.UpdatePublishedArticleRequest
- */
-export const UpdatePublishedArticleRequest = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.UpdatePublishedArticleRequest",
-  () => [
-    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails },
-    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
-  ],
-);
-
-/**
- * Response to update published article
- *
- * @generated from message api.v1alpha1.newsroom.UpdatePublishedArticleResponse
- */
-export const UpdatePublishedArticleResponse = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.UpdatePublishedArticleResponse",
-  () => [
-    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails },
-  ],
-);
-

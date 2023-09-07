@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UpdatePublishedArticleRequest, UpdatePublishedArticleResponse } from "./entities_pb.js";
+import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -61,7 +61,7 @@ export declare const NewsroomAPI: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * create published news article
+     * create published article
      *
      * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.CreatePublishedArticle
      */
@@ -72,7 +72,7 @@ export declare const NewsroomAPI: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * list published news articles
+     * list published articles
      *
      * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.ListPublishedArticles
      */
@@ -83,7 +83,7 @@ export declare const NewsroomAPI: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * get published news article details by the id
+     * get published article details by the id
      *
      * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.GetPublishedArticleById
      */
@@ -91,17 +91,6 @@ export declare const NewsroomAPI: {
       readonly name: "GetPublishedArticleById",
       readonly I: typeof GetPublishedArticleByIdRequest,
       readonly O: typeof GetPublishedArticleByIdResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * update published news article
-     *
-     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.UpdatePublishedArticle
-     */
-    readonly updatePublishedArticle: {
-      readonly name: "UpdatePublishedArticle",
-      readonly I: typeof UpdatePublishedArticleRequest,
-      readonly O: typeof UpdatePublishedArticleResponse,
       readonly kind: MethodKind.Unary,
     },
   }
