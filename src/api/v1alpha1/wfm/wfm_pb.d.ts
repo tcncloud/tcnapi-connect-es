@@ -4089,6 +4089,62 @@ export declare class UpdateProgramNodeRes extends Message<UpdateProgramNodeRes> 
 }
 
 /**
+ * Request message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidReq
+ */
+export declare class ListProgramNodesBySidReq extends Message<ListProgramNodesBySidReq> {
+  /**
+   * IDs of the program nodes to list.
+   *
+   * @generated from field: repeated int64 program_node_sids = 1;
+   */
+  programNodeSids: bigint[];
+
+  constructor(data?: PartialMessage<ListProgramNodesBySidReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListProgramNodesBySidReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgramNodesBySidReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgramNodesBySidReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgramNodesBySidReq;
+
+  static equals(a: ListProgramNodesBySidReq | PlainMessage<ListProgramNodesBySidReq> | undefined, b: ListProgramNodesBySidReq | PlainMessage<ListProgramNodesBySidReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidRes
+ */
+export declare class ListProgramNodesBySidRes extends Message<ListProgramNodesBySidRes> {
+  /**
+   * The program nodes matching the given @program_node_sids.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ProgramNode program_node = 1;
+   */
+  programNode: ProgramNode[];
+
+  constructor(data?: PartialMessage<ListProgramNodesBySidRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListProgramNodesBySidRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgramNodesBySidRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgramNodesBySidRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgramNodesBySidRes;
+
+  static equals(a: ListProgramNodesBySidRes | PlainMessage<ListProgramNodesBySidRes> | undefined, b: ListProgramNodesBySidRes | PlainMessage<ListProgramNodesBySidRes> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v1alpha1.wfm.ParentEntity
  */
 export declare class ParentEntity extends Message<ParentEntity> {
