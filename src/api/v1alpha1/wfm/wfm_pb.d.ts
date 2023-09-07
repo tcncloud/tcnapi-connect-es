@@ -4125,9 +4125,9 @@ export declare class ListProgramNodesBySidRes extends Message<ListProgramNodesBy
   /**
    * The program nodes matching the given @program_node_sids.
    *
-   * @generated from field: repeated api.v1alpha1.wfm.ProgramNode program_node = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.ProgramNode program_nodes = 1;
    */
-  programNode: ProgramNode[];
+  programNodes: ProgramNode[];
 
   constructor(data?: PartialMessage<ListProgramNodesBySidRes>);
 

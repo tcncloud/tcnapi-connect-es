@@ -1430,7 +1430,7 @@ export const ListProgramNodesBySidReq = proto3.makeMessageType(
 export const ListProgramNodesBySidRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListProgramNodesBySidRes",
   () => [
-    { no: 1, name: "program_node", kind: "message", T: ProgramNode, repeated: true },
+    { no: 1, name: "program_nodes", kind: "message", T: ProgramNode, repeated: true },
   ],
 );
 
