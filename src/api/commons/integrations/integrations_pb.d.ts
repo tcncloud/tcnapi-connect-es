@@ -1174,6 +1174,11 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT = 3902;
    */
   PRIOCOMMERCE_CC_PAYMENT = 3902,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PRIOCOMMERCE_GET_CUSTOMER = 3903;
+   */
+  PRIOCOMMERCE_GET_CUSTOMER = 3903,
 }
 
 /**
@@ -2331,6 +2336,12 @@ export declare class VerificationFlow extends Message<VerificationFlow> {
      */
     value: VerificationNewzwareAccountInquiry;
     case: "newzwareAccountInquiry";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.VerificationPriocommerceGetCustomer pricommerce_get_customer = 15;
+     */
+    value: VerificationPriocommerceGetCustomer;
+    case: "pricommerceGetCustomer";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -3617,6 +3628,12 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecutePriocommerceCcPayment;
     case: "priocommerceCcPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePriocommerceAchGetCustomer priocommerce_get_customer = 3903;
+     */
+    value: ExecutePriocommerceAchGetCustomer;
+    case: "priocommerceGetCustomer";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -3981,6 +3998,25 @@ export declare class VerificationNewzwareAccountInquiry extends Message<Verifica
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerificationNewzwareAccountInquiry;
 
   static equals(a: VerificationNewzwareAccountInquiry | PlainMessage<VerificationNewzwareAccountInquiry> | undefined, b: VerificationNewzwareAccountInquiry | PlainMessage<VerificationNewzwareAccountInquiry> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.VerificationPriocommerceGetCustomer
+ */
+export declare class VerificationPriocommerceGetCustomer extends Message<VerificationPriocommerceGetCustomer> {
+  constructor(data?: PartialMessage<VerificationPriocommerceGetCustomer>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.VerificationPriocommerceGetCustomer";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VerificationPriocommerceGetCustomer;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VerificationPriocommerceGetCustomer;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VerificationPriocommerceGetCustomer;
+
+  static equals(a: VerificationPriocommerceGetCustomer | PlainMessage<VerificationPriocommerceGetCustomer> | undefined, b: VerificationPriocommerceGetCustomer | PlainMessage<VerificationPriocommerceGetCustomer> | undefined): boolean;
 }
 
 /**
@@ -7842,5 +7878,24 @@ export declare class ExecutePriocommerceCcPayment extends Message<ExecutePriocom
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePriocommerceCcPayment;
 
   static equals(a: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined, b: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePriocommerceAchGetCustomer
+ */
+export declare class ExecutePriocommerceAchGetCustomer extends Message<ExecutePriocommerceAchGetCustomer> {
+  constructor(data?: PartialMessage<ExecutePriocommerceAchGetCustomer>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePriocommerceAchGetCustomer";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePriocommerceAchGetCustomer;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePriocommerceAchGetCustomer;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePriocommerceAchGetCustomer;
+
+  static equals(a: ExecutePriocommerceAchGetCustomer | PlainMessage<ExecutePriocommerceAchGetCustomer> | undefined, b: ExecutePriocommerceAchGetCustomer | PlainMessage<ExecutePriocommerceAchGetCustomer> | undefined): boolean;
 }
 
