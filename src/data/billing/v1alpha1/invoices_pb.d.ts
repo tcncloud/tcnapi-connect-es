@@ -60,9 +60,9 @@ export declare class Invoice extends Message<Invoice> {
   /**
    * the url to download the invoice
    *
-   * @generated from field: string url = 7;
+   * @generated from field: google.protobuf.StringValue url = 7;
    */
-  url: string;
+  url?: string;
 
   constructor(data?: PartialMessage<Invoice>);
 

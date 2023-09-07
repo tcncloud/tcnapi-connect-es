@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { Product } from "./products_pb.js";
 
 /**
@@ -21,7 +21,7 @@ export const Invoice = proto3.makeMessageType(
     { no: 4, name: "create_time", kind: "message", T: Timestamp },
     { no: 5, name: "update_time", kind: "message", T: Timestamp },
     { no: 6, name: "items", kind: "message", T: InvoiceItem, repeated: true },
-    { no: 7, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "url", kind: "message", T: StringValue },
   ],
 );
 
