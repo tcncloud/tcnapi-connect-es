@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedNewsArticleRequest, CreatePublishedNewsArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetPublishedNewsArticleByIdRequest, GetPublishedNewsArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedNewsArticlesRequest, ListPublishedNewsArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UpdatePublishedNewsArticleRequest, UpdatePublishedNewsArticleResponse } from "./entities_pb.js";
+import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UpdatePublishedArticleRequest, UpdatePublishedArticleResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -63,45 +63,45 @@ export const NewsroomAPI = {
     /**
      * create published news article
      *
-     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.CreatePublishedNewsArticle
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.CreatePublishedArticle
      */
-    createPublishedNewsArticle: {
-      name: "CreatePublishedNewsArticle",
-      I: CreatePublishedNewsArticleRequest,
-      O: CreatePublishedNewsArticleResponse,
+    createPublishedArticle: {
+      name: "CreatePublishedArticle",
+      I: CreatePublishedArticleRequest,
+      O: CreatePublishedArticleResponse,
       kind: MethodKind.Unary,
     },
     /**
      * list published news articles
      *
-     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.ListPublishedNewsArticles
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.ListPublishedArticles
      */
-    listPublishedNewsArticles: {
-      name: "ListPublishedNewsArticles",
-      I: ListPublishedNewsArticlesRequest,
-      O: ListPublishedNewsArticlesResponse,
+    listPublishedArticles: {
+      name: "ListPublishedArticles",
+      I: ListPublishedArticlesRequest,
+      O: ListPublishedArticlesResponse,
       kind: MethodKind.Unary,
     },
     /**
      * get published news article details by the id
      *
-     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.GetPublishedNewsArticleById
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.GetPublishedArticleById
      */
-    getPublishedNewsArticleById: {
-      name: "GetPublishedNewsArticleById",
-      I: GetPublishedNewsArticleByIdRequest,
-      O: GetPublishedNewsArticleByIdResponse,
+    getPublishedArticleById: {
+      name: "GetPublishedArticleById",
+      I: GetPublishedArticleByIdRequest,
+      O: GetPublishedArticleByIdResponse,
       kind: MethodKind.Unary,
     },
     /**
      * update published news article
      *
-     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.UpdatePublishedNewsArticle
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.UpdatePublishedArticle
      */
-    updatePublishedNewsArticle: {
-      name: "UpdatePublishedNewsArticle",
-      I: UpdatePublishedNewsArticleRequest,
-      O: UpdatePublishedNewsArticleResponse,
+    updatePublishedArticle: {
+      name: "UpdatePublishedArticle",
+      I: UpdatePublishedArticleRequest,
+      O: UpdatePublishedArticleResponse,
       kind: MethodKind.Unary,
     },
   }

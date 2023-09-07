@@ -123,14 +123,14 @@ export const NewsArticleDetails = proto3.makeMessageType(
 );
 
 /**
- * published news article details
+ * published article details
  *
- * @generated from message api.v1alpha1.newsroom.PublishedNewsArticleDetails
+ * @generated from message api.v1alpha1.newsroom.PublishedArticleDetails
  */
-export const PublishedNewsArticleDetails = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.PublishedNewsArticleDetails",
+export const PublishedArticleDetails = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.PublishedArticleDetails",
   () => [
-    { no: 1, name: "published_new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "published_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "news_article_details", kind: "message", T: NewsArticleDetails },
     { no: 3, name: "date_published", kind: "message", T: Timestamp },
     { no: 4, name: "display_to_user", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -138,12 +138,12 @@ export const PublishedNewsArticleDetails = proto3.makeMessageType(
 );
 
 /**
- * Request to create published news article
+ * Request to create published article
  *
- * @generated from message api.v1alpha1.newsroom.CreatePublishedNewsArticleRequest
+ * @generated from message api.v1alpha1.newsroom.CreatePublishedArticleRequest
  */
-export const CreatePublishedNewsArticleRequest = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.CreatePublishedNewsArticleRequest",
+export const CreatePublishedArticleRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.CreatePublishedArticleRequest",
   () => [
     { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "display_to_user", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -151,85 +151,85 @@ export const CreatePublishedNewsArticleRequest = proto3.makeMessageType(
 );
 
 /**
- * Response to create published news article
+ * Response to create published article
  *
- * @generated from message api.v1alpha1.newsroom.CreatePublishedNewsArticleResponse
+ * @generated from message api.v1alpha1.newsroom.CreatePublishedArticleResponse
  */
-export const CreatePublishedNewsArticleResponse = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.CreatePublishedNewsArticleResponse",
+export const CreatePublishedArticleResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.CreatePublishedArticleResponse",
   () => [
-    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails },
   ],
 );
 
 /**
- * Request to list of published news articles
+ * Request to list of published articles
  *
- * @generated from message api.v1alpha1.newsroom.ListPublishedNewsArticlesRequest
+ * @generated from message api.v1alpha1.newsroom.ListPublishedArticlesRequest
  */
-export const ListPublishedNewsArticlesRequest = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.ListPublishedNewsArticlesRequest",
+export const ListPublishedArticlesRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.ListPublishedArticlesRequest",
   [],
 );
 
 /**
- * Response to list of published news articles
+ * Response to list of published articles
  *
- * @generated from message api.v1alpha1.newsroom.ListPublishedNewsArticlesResponse
+ * @generated from message api.v1alpha1.newsroom.ListPublishedArticlesResponse
  */
-export const ListPublishedNewsArticlesResponse = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.ListPublishedNewsArticlesResponse",
+export const ListPublishedArticlesResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.ListPublishedArticlesResponse",
   () => [
-    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails, repeated: true },
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails, repeated: true },
   ],
 );
 
 /**
- * Request to get published news article by id
+ * Request to get published article by id
  *
- * @generated from message api.v1alpha1.newsroom.GetPublishedNewsArticleByIdRequest
+ * @generated from message api.v1alpha1.newsroom.GetPublishedArticleByIdRequest
  */
-export const GetPublishedNewsArticleByIdRequest = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.GetPublishedNewsArticleByIdRequest",
+export const GetPublishedArticleByIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.GetPublishedArticleByIdRequest",
   () => [
     { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
 /**
- * Response to get published news article
+ * Response to get published article
  *
- * @generated from message api.v1alpha1.newsroom.GetPublishedNewsArticleByIdResponse
+ * @generated from message api.v1alpha1.newsroom.GetPublishedArticleByIdResponse
  */
-export const GetPublishedNewsArticleByIdResponse = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.GetPublishedNewsArticleByIdResponse",
+export const GetPublishedArticleByIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.GetPublishedArticleByIdResponse",
   () => [
-    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails },
   ],
 );
 
 /**
- * Request to update published news article
+ * Request to update published article
  *
- * @generated from message api.v1alpha1.newsroom.UpdatePublishedNewsArticleRequest
+ * @generated from message api.v1alpha1.newsroom.UpdatePublishedArticleRequest
  */
-export const UpdatePublishedNewsArticleRequest = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.UpdatePublishedNewsArticleRequest",
+export const UpdatePublishedArticleRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.UpdatePublishedArticleRequest",
   () => [
-    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails },
     { no: 100, name: "field_mask", kind: "message", T: FieldMask },
   ],
 );
 
 /**
- * Response to update published news article
+ * Response to update published article
  *
- * @generated from message api.v1alpha1.newsroom.UpdatePublishedNewsArticleResponse
+ * @generated from message api.v1alpha1.newsroom.UpdatePublishedArticleResponse
  */
-export const UpdatePublishedNewsArticleResponse = proto3.makeMessageType(
-  "api.v1alpha1.newsroom.UpdatePublishedNewsArticleResponse",
+export const UpdatePublishedArticleResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.UpdatePublishedArticleResponse",
   () => [
-    { no: 1, name: "published_article_details", kind: "message", T: PublishedNewsArticleDetails },
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails },
   ],
 );
 

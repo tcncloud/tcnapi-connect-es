@@ -316,17 +316,17 @@ export declare class NewsArticleDetails extends Message<NewsArticleDetails> {
 }
 
 /**
- * published news article details
+ * published article details
  *
- * @generated from message api.v1alpha1.newsroom.PublishedNewsArticleDetails
+ * @generated from message api.v1alpha1.newsroom.PublishedArticleDetails
  */
-export declare class PublishedNewsArticleDetails extends Message<PublishedNewsArticleDetails> {
+export declare class PublishedArticleDetails extends Message<PublishedArticleDetails> {
   /**
-   * the unique published news article identifier
+   * the unique published article identifier
    *
-   * @generated from field: int64 published_new_article_sid = 1;
+   * @generated from field: int64 published_article_sid = 1;
    */
-  publishedNewArticleSid: bigint;
+  publishedArticleSid: bigint;
 
   /**
    * news article details
@@ -349,27 +349,27 @@ export declare class PublishedNewsArticleDetails extends Message<PublishedNewsAr
    */
   displayToUser: boolean;
 
-  constructor(data?: PartialMessage<PublishedNewsArticleDetails>);
+  constructor(data?: PartialMessage<PublishedArticleDetails>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.PublishedNewsArticleDetails";
+  static readonly typeName = "api.v1alpha1.newsroom.PublishedArticleDetails";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishedNewsArticleDetails;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishedArticleDetails;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishedNewsArticleDetails;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishedArticleDetails;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishedNewsArticleDetails;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishedArticleDetails;
 
-  static equals(a: PublishedNewsArticleDetails | PlainMessage<PublishedNewsArticleDetails> | undefined, b: PublishedNewsArticleDetails | PlainMessage<PublishedNewsArticleDetails> | undefined): boolean;
+  static equals(a: PublishedArticleDetails | PlainMessage<PublishedArticleDetails> | undefined, b: PublishedArticleDetails | PlainMessage<PublishedArticleDetails> | undefined): boolean;
 }
 
 /**
- * Request to create published news article
+ * Request to create published article
  *
- * @generated from message api.v1alpha1.newsroom.CreatePublishedNewsArticleRequest
+ * @generated from message api.v1alpha1.newsroom.CreatePublishedArticleRequest
  */
-export declare class CreatePublishedNewsArticleRequest extends Message<CreatePublishedNewsArticleRequest> {
+export declare class CreatePublishedArticleRequest extends Message<CreatePublishedArticleRequest> {
   /**
    * news article identifier
    *
@@ -384,104 +384,104 @@ export declare class CreatePublishedNewsArticleRequest extends Message<CreatePub
    */
   displayToUser: boolean;
 
-  constructor(data?: PartialMessage<CreatePublishedNewsArticleRequest>);
+  constructor(data?: PartialMessage<CreatePublishedArticleRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.CreatePublishedNewsArticleRequest";
+  static readonly typeName = "api.v1alpha1.newsroom.CreatePublishedArticleRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePublishedNewsArticleRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePublishedArticleRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePublishedNewsArticleRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePublishedArticleRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePublishedNewsArticleRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePublishedArticleRequest;
 
-  static equals(a: CreatePublishedNewsArticleRequest | PlainMessage<CreatePublishedNewsArticleRequest> | undefined, b: CreatePublishedNewsArticleRequest | PlainMessage<CreatePublishedNewsArticleRequest> | undefined): boolean;
+  static equals(a: CreatePublishedArticleRequest | PlainMessage<CreatePublishedArticleRequest> | undefined, b: CreatePublishedArticleRequest | PlainMessage<CreatePublishedArticleRequest> | undefined): boolean;
 }
 
 /**
- * Response to create published news article
+ * Response to create published article
  *
- * @generated from message api.v1alpha1.newsroom.CreatePublishedNewsArticleResponse
+ * @generated from message api.v1alpha1.newsroom.CreatePublishedArticleResponse
  */
-export declare class CreatePublishedNewsArticleResponse extends Message<CreatePublishedNewsArticleResponse> {
+export declare class CreatePublishedArticleResponse extends Message<CreatePublishedArticleResponse> {
   /**
    * news article details
    *
-   * @generated from field: api.v1alpha1.newsroom.PublishedNewsArticleDetails published_article_details = 1;
+   * @generated from field: api.v1alpha1.newsroom.PublishedArticleDetails published_article_details = 1;
    */
-  publishedArticleDetails?: PublishedNewsArticleDetails;
+  publishedArticleDetails?: PublishedArticleDetails;
 
-  constructor(data?: PartialMessage<CreatePublishedNewsArticleResponse>);
+  constructor(data?: PartialMessage<CreatePublishedArticleResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.CreatePublishedNewsArticleResponse";
+  static readonly typeName = "api.v1alpha1.newsroom.CreatePublishedArticleResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePublishedNewsArticleResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePublishedArticleResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePublishedNewsArticleResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePublishedArticleResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePublishedNewsArticleResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePublishedArticleResponse;
 
-  static equals(a: CreatePublishedNewsArticleResponse | PlainMessage<CreatePublishedNewsArticleResponse> | undefined, b: CreatePublishedNewsArticleResponse | PlainMessage<CreatePublishedNewsArticleResponse> | undefined): boolean;
+  static equals(a: CreatePublishedArticleResponse | PlainMessage<CreatePublishedArticleResponse> | undefined, b: CreatePublishedArticleResponse | PlainMessage<CreatePublishedArticleResponse> | undefined): boolean;
 }
 
 /**
- * Request to list of published news articles
+ * Request to list of published articles
  *
- * @generated from message api.v1alpha1.newsroom.ListPublishedNewsArticlesRequest
+ * @generated from message api.v1alpha1.newsroom.ListPublishedArticlesRequest
  */
-export declare class ListPublishedNewsArticlesRequest extends Message<ListPublishedNewsArticlesRequest> {
-  constructor(data?: PartialMessage<ListPublishedNewsArticlesRequest>);
+export declare class ListPublishedArticlesRequest extends Message<ListPublishedArticlesRequest> {
+  constructor(data?: PartialMessage<ListPublishedArticlesRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.ListPublishedNewsArticlesRequest";
+  static readonly typeName = "api.v1alpha1.newsroom.ListPublishedArticlesRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublishedNewsArticlesRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublishedArticlesRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublishedNewsArticlesRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublishedArticlesRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublishedNewsArticlesRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublishedArticlesRequest;
 
-  static equals(a: ListPublishedNewsArticlesRequest | PlainMessage<ListPublishedNewsArticlesRequest> | undefined, b: ListPublishedNewsArticlesRequest | PlainMessage<ListPublishedNewsArticlesRequest> | undefined): boolean;
+  static equals(a: ListPublishedArticlesRequest | PlainMessage<ListPublishedArticlesRequest> | undefined, b: ListPublishedArticlesRequest | PlainMessage<ListPublishedArticlesRequest> | undefined): boolean;
 }
 
 /**
- * Response to list of published news articles
+ * Response to list of published articles
  *
- * @generated from message api.v1alpha1.newsroom.ListPublishedNewsArticlesResponse
+ * @generated from message api.v1alpha1.newsroom.ListPublishedArticlesResponse
  */
-export declare class ListPublishedNewsArticlesResponse extends Message<ListPublishedNewsArticlesResponse> {
+export declare class ListPublishedArticlesResponse extends Message<ListPublishedArticlesResponse> {
   /**
    * published article details
    *
-   * @generated from field: repeated api.v1alpha1.newsroom.PublishedNewsArticleDetails published_article_details = 1;
+   * @generated from field: repeated api.v1alpha1.newsroom.PublishedArticleDetails published_article_details = 1;
    */
-  publishedArticleDetails: PublishedNewsArticleDetails[];
+  publishedArticleDetails: PublishedArticleDetails[];
 
-  constructor(data?: PartialMessage<ListPublishedNewsArticlesResponse>);
+  constructor(data?: PartialMessage<ListPublishedArticlesResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.ListPublishedNewsArticlesResponse";
+  static readonly typeName = "api.v1alpha1.newsroom.ListPublishedArticlesResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublishedNewsArticlesResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublishedArticlesResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublishedNewsArticlesResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublishedArticlesResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublishedNewsArticlesResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublishedArticlesResponse;
 
-  static equals(a: ListPublishedNewsArticlesResponse | PlainMessage<ListPublishedNewsArticlesResponse> | undefined, b: ListPublishedNewsArticlesResponse | PlainMessage<ListPublishedNewsArticlesResponse> | undefined): boolean;
+  static equals(a: ListPublishedArticlesResponse | PlainMessage<ListPublishedArticlesResponse> | undefined, b: ListPublishedArticlesResponse | PlainMessage<ListPublishedArticlesResponse> | undefined): boolean;
 }
 
 /**
- * Request to get published news article by id
+ * Request to get published article by id
  *
- * @generated from message api.v1alpha1.newsroom.GetPublishedNewsArticleByIdRequest
+ * @generated from message api.v1alpha1.newsroom.GetPublishedArticleByIdRequest
  */
-export declare class GetPublishedNewsArticleByIdRequest extends Message<GetPublishedNewsArticleByIdRequest> {
+export declare class GetPublishedArticleByIdRequest extends Message<GetPublishedArticleByIdRequest> {
   /**
    * the unique news article identifier
    *
@@ -489,61 +489,61 @@ export declare class GetPublishedNewsArticleByIdRequest extends Message<GetPubli
    */
   newArticleSid: bigint;
 
-  constructor(data?: PartialMessage<GetPublishedNewsArticleByIdRequest>);
+  constructor(data?: PartialMessage<GetPublishedArticleByIdRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.GetPublishedNewsArticleByIdRequest";
+  static readonly typeName = "api.v1alpha1.newsroom.GetPublishedArticleByIdRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPublishedNewsArticleByIdRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPublishedArticleByIdRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPublishedNewsArticleByIdRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPublishedArticleByIdRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPublishedNewsArticleByIdRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPublishedArticleByIdRequest;
 
-  static equals(a: GetPublishedNewsArticleByIdRequest | PlainMessage<GetPublishedNewsArticleByIdRequest> | undefined, b: GetPublishedNewsArticleByIdRequest | PlainMessage<GetPublishedNewsArticleByIdRequest> | undefined): boolean;
+  static equals(a: GetPublishedArticleByIdRequest | PlainMessage<GetPublishedArticleByIdRequest> | undefined, b: GetPublishedArticleByIdRequest | PlainMessage<GetPublishedArticleByIdRequest> | undefined): boolean;
 }
 
 /**
- * Response to get published news article
+ * Response to get published article
  *
- * @generated from message api.v1alpha1.newsroom.GetPublishedNewsArticleByIdResponse
+ * @generated from message api.v1alpha1.newsroom.GetPublishedArticleByIdResponse
  */
-export declare class GetPublishedNewsArticleByIdResponse extends Message<GetPublishedNewsArticleByIdResponse> {
+export declare class GetPublishedArticleByIdResponse extends Message<GetPublishedArticleByIdResponse> {
   /**
-   * published news article details
+   * published article details
    *
-   * @generated from field: api.v1alpha1.newsroom.PublishedNewsArticleDetails published_article_details = 1;
+   * @generated from field: api.v1alpha1.newsroom.PublishedArticleDetails published_article_details = 1;
    */
-  publishedArticleDetails?: PublishedNewsArticleDetails;
+  publishedArticleDetails?: PublishedArticleDetails;
 
-  constructor(data?: PartialMessage<GetPublishedNewsArticleByIdResponse>);
+  constructor(data?: PartialMessage<GetPublishedArticleByIdResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.GetPublishedNewsArticleByIdResponse";
+  static readonly typeName = "api.v1alpha1.newsroom.GetPublishedArticleByIdResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPublishedNewsArticleByIdResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPublishedArticleByIdResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPublishedNewsArticleByIdResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPublishedArticleByIdResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPublishedNewsArticleByIdResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPublishedArticleByIdResponse;
 
-  static equals(a: GetPublishedNewsArticleByIdResponse | PlainMessage<GetPublishedNewsArticleByIdResponse> | undefined, b: GetPublishedNewsArticleByIdResponse | PlainMessage<GetPublishedNewsArticleByIdResponse> | undefined): boolean;
+  static equals(a: GetPublishedArticleByIdResponse | PlainMessage<GetPublishedArticleByIdResponse> | undefined, b: GetPublishedArticleByIdResponse | PlainMessage<GetPublishedArticleByIdResponse> | undefined): boolean;
 }
 
 /**
- * Request to update published news article
+ * Request to update published article
  *
- * @generated from message api.v1alpha1.newsroom.UpdatePublishedNewsArticleRequest
+ * @generated from message api.v1alpha1.newsroom.UpdatePublishedArticleRequest
  */
-export declare class UpdatePublishedNewsArticleRequest extends Message<UpdatePublishedNewsArticleRequest> {
+export declare class UpdatePublishedArticleRequest extends Message<UpdatePublishedArticleRequest> {
   /**
-   * the published news article fields specified to be updated
+   * the published article fields specified to be updated
    *
-   * @generated from field: api.v1alpha1.newsroom.PublishedNewsArticleDetails published_article_details = 1;
+   * @generated from field: api.v1alpha1.newsroom.PublishedArticleDetails published_article_details = 1;
    */
-  publishedArticleDetails?: PublishedNewsArticleDetails;
+  publishedArticleDetails?: PublishedArticleDetails;
 
   /**
    * list of fields Requested to be updated
@@ -552,46 +552,46 @@ export declare class UpdatePublishedNewsArticleRequest extends Message<UpdatePub
    */
   fieldMask?: FieldMask;
 
-  constructor(data?: PartialMessage<UpdatePublishedNewsArticleRequest>);
+  constructor(data?: PartialMessage<UpdatePublishedArticleRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.UpdatePublishedNewsArticleRequest";
+  static readonly typeName = "api.v1alpha1.newsroom.UpdatePublishedArticleRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePublishedNewsArticleRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePublishedArticleRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePublishedNewsArticleRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePublishedArticleRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePublishedNewsArticleRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePublishedArticleRequest;
 
-  static equals(a: UpdatePublishedNewsArticleRequest | PlainMessage<UpdatePublishedNewsArticleRequest> | undefined, b: UpdatePublishedNewsArticleRequest | PlainMessage<UpdatePublishedNewsArticleRequest> | undefined): boolean;
+  static equals(a: UpdatePublishedArticleRequest | PlainMessage<UpdatePublishedArticleRequest> | undefined, b: UpdatePublishedArticleRequest | PlainMessage<UpdatePublishedArticleRequest> | undefined): boolean;
 }
 
 /**
- * Response to update published news article
+ * Response to update published article
  *
- * @generated from message api.v1alpha1.newsroom.UpdatePublishedNewsArticleResponse
+ * @generated from message api.v1alpha1.newsroom.UpdatePublishedArticleResponse
  */
-export declare class UpdatePublishedNewsArticleResponse extends Message<UpdatePublishedNewsArticleResponse> {
+export declare class UpdatePublishedArticleResponse extends Message<UpdatePublishedArticleResponse> {
   /**
-   * latest published news article
+   * latest published article
    *
-   * @generated from field: api.v1alpha1.newsroom.PublishedNewsArticleDetails published_article_details = 1;
+   * @generated from field: api.v1alpha1.newsroom.PublishedArticleDetails published_article_details = 1;
    */
-  publishedArticleDetails?: PublishedNewsArticleDetails;
+  publishedArticleDetails?: PublishedArticleDetails;
 
-  constructor(data?: PartialMessage<UpdatePublishedNewsArticleResponse>);
+  constructor(data?: PartialMessage<UpdatePublishedArticleResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.newsroom.UpdatePublishedNewsArticleResponse";
+  static readonly typeName = "api.v1alpha1.newsroom.UpdatePublishedArticleResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePublishedNewsArticleResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdatePublishedArticleResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePublishedNewsArticleResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdatePublishedArticleResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePublishedNewsArticleResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdatePublishedArticleResponse;
 
-  static equals(a: UpdatePublishedNewsArticleResponse | PlainMessage<UpdatePublishedNewsArticleResponse> | undefined, b: UpdatePublishedNewsArticleResponse | PlainMessage<UpdatePublishedNewsArticleResponse> | undefined): boolean;
+  static equals(a: UpdatePublishedArticleResponse | PlainMessage<UpdatePublishedArticleResponse> | undefined, b: UpdatePublishedArticleResponse | PlainMessage<UpdatePublishedArticleResponse> | undefined): boolean;
 }
 
