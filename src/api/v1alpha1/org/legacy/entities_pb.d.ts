@@ -7314,13 +7314,6 @@ export declare class SchedulePreferences extends Message<SchedulePreferences> {
    */
   defaultCampaignLinkId: string;
 
-  /**
-   * Whether user canceled campaigns can be resent in the organization.
-   *
-   * @generated from field: bool resend_cancelled_campaigns = 11;
-   */
-  resendCancelledCampaigns: boolean;
-
   constructor(data?: PartialMessage<SchedulePreferences>);
 
   static readonly runtime: typeof proto3;
