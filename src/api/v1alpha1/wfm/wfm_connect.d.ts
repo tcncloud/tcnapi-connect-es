@@ -272,6 +272,7 @@ export declare const WFM: {
      *   - grpc.Internal: error occurs when building the call profile template.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildCallProfileTemplate
+     * @deprecated
      */
     readonly buildCallProfileTemplate: {
       readonly name: "BuildCallProfileTemplate",
