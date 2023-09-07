@@ -2338,10 +2338,10 @@ export declare class VerificationFlow extends Message<VerificationFlow> {
     case: "newzwareAccountInquiry";
   } | {
     /**
-     * @generated from field: api.commons.integrations.VerificationPriocommerceGetCustomer pricommerce_get_customer = 15;
+     * @generated from field: api.commons.integrations.VerificationPriocommerceGetCustomer priocommerce_get_customer = 15;
      */
     value: VerificationPriocommerceGetCustomer;
-    case: "pricommerceGetCustomer";
+    case: "priocommerceGetCustomer";
   } | { case: undefined; value?: undefined };
 
   /**

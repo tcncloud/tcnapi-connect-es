@@ -617,7 +617,7 @@ export const VerificationFlow = proto3.makeMessageType(
     { no: 12, name: "journey", kind: "message", T: VerificationJourney, oneof: "value" },
     { no: 13, name: "newzware_lookup_phone", kind: "message", T: VerificationNewzwareLookupPhone, oneof: "value" },
     { no: 14, name: "newzware_account_inquiry", kind: "message", T: VerificationNewzwareAccountInquiry, oneof: "value" },
-    { no: 15, name: "pricommerce_get_customer", kind: "message", T: VerificationPriocommerceGetCustomer, oneof: "value" },
+    { no: 15, name: "priocommerce_get_customer", kind: "message", T: VerificationPriocommerceGetCustomer, oneof: "value" },
     { no: 20, name: "verification_fields", kind: "message", T: FieldDefinition, repeated: true },
   ],
 );
