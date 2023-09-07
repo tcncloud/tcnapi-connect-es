@@ -209,9 +209,9 @@ export declare class ListInvoicesRequest extends Message<ListInvoicesRequest> {
  */
 export declare class ListInvoicesResponse extends Message<ListInvoicesResponse> {
   /**
-   * @generated from field: repeated data.billing.v1alpha1.Invoice invoices = 1;
+   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
    */
-  invoices: Invoice[];
+  invoice?: Invoice;
 
   constructor(data?: PartialMessage<ListInvoicesResponse>);
 

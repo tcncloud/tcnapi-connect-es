@@ -102,7 +102,7 @@ export const ListInvoicesRequest = proto3.makeMessageType(
 export const ListInvoicesResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.ListInvoicesResponse",
   () => [
-    { no: 1, name: "invoices", kind: "message", T: Invoice, repeated: true },
+    { no: 1, name: "invoice", kind: "message", T: Invoice },
   ],
 );
 
