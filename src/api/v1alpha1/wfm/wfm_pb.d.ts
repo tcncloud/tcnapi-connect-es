@@ -5402,6 +5402,62 @@ export declare class ListUngroupedWFMAgentsRes extends Message<ListUngroupedWFMA
 }
 
 /**
+ * Request message for teh ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsReq
+ */
+export declare class ListWFMAgentSidsReq extends Message<ListWFMAgentSidsReq> {
+  /**
+   * ID's of the agents to get the related wfm_agent_sid for.
+   *
+   * @generated from field: repeated int64 tcn_agent_sids = 1;
+   */
+  tcnAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<ListWFMAgentSidsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListWFMAgentSidsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWFMAgentSidsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWFMAgentSidsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWFMAgentSidsReq;
+
+  static equals(a: ListWFMAgentSidsReq | PlainMessage<ListWFMAgentSidsReq> | undefined, b: ListWFMAgentSidsReq | PlainMessage<ListWFMAgentSidsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsRes
+ */
+export declare class ListWFMAgentSidsRes extends Message<ListWFMAgentSidsRes> {
+  /**
+   * Key:Value pairings of a tcn_agent_sid and their wfm_agent_sid respectively.
+   *
+   * @generated from field: map<int64, int64> sids = 1;
+   */
+  sids: { [key: string]: bigint };
+
+  constructor(data?: PartialMessage<ListWFMAgentSidsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListWFMAgentSidsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWFMAgentSidsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWFMAgentSidsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWFMAgentSidsRes;
+
+  static equals(a: ListWFMAgentSidsRes | PlainMessage<ListWFMAgentSidsRes> | undefined, b: ListWFMAgentSidsRes | PlainMessage<ListWFMAgentSidsRes> | undefined): boolean;
+}
+
+/**
  * Request message for the ListWFMAgentsAssociatedWithAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentsAssociatedWithAgentGroupReq
