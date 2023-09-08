@@ -770,7 +770,7 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 
   /**
    * ID of the skill profile that this interval belongs to.
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 2 [deprecated = true];
    * @deprecated
@@ -901,7 +901,7 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 export declare class ListHistoricalDataReq extends Message<ListHistoricalDataReq> {
   /**
    * ID of the skill profile used to examine matching calls in the client's historical data.
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
    * @deprecated
@@ -1676,7 +1676,7 @@ export declare class BuildProfileForecastByIntervalReq extends Message<BuildProf
 
   /**
    * ID of the skill profile that the forecast will belong to.
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 3 [deprecated = true];
    * @deprecated
@@ -1720,7 +1720,7 @@ export declare class CallDataByInterval extends Message<CallDataByInterval> {
 
   /**
    * ID of the skill profile to forecast for (not set in profile forecasts).
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 2 [deprecated = true];
    * @deprecated
@@ -1837,7 +1837,7 @@ export declare class BuildProfileForecastByIntervalWithStatsReq extends Message<
 
   /**
    * ID of the skill profile that the forecast will belong to.
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 3 [deprecated = true];
    * @deprecated
@@ -1917,7 +1917,7 @@ export declare class BuildProfileForecastByIntervalWithStatsRes extends Message<
 export declare class UpsertProfileForecastReq extends Message<UpsertProfileForecastReq> {
   /**
    * ID of the skill profile that the forecast will belong to.
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
    * @deprecated
