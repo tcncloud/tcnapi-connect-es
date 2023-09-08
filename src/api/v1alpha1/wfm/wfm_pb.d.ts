@@ -1686,7 +1686,7 @@ export declare class BuildProfileForecastByIntervalReq extends Message<BuildProf
   /**
    * Skill profile category that the forecast belongs to.
    *
-   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 16;
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
    */
   skillProfileCategory?: SkillProfileCategory;
 
@@ -1836,11 +1836,20 @@ export declare class BuildProfileForecastByIntervalWithStatsReq extends Message<
   fixedAveragesForecast: boolean;
 
   /**
-   * ID of the skill profile to use the training data for stats.
+   * ID of the skill profile that the forecast will belong to.
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 3;
+   * @generated from field: int64 skill_profile_sid = 3 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
+
+  /**
+   * Skill profile category that the forecast belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<BuildProfileForecastByIntervalWithStatsReq>);
 
@@ -1908,8 +1917,10 @@ export declare class BuildProfileForecastByIntervalWithStatsRes extends Message<
 export declare class UpsertProfileForecastReq extends Message<UpsertProfileForecastReq> {
   /**
    * ID of the skill profile that the forecast will belong to.
+   * Deprecated: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 1;
+   * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
 
@@ -1928,6 +1939,13 @@ export declare class UpsertProfileForecastReq extends Message<UpsertProfileForec
    * @generated from field: bool fixed_averages_forecast = 3;
    */
   fixedAveragesForecast: boolean;
+
+  /**
+   * Skill profile category that the forecast belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<UpsertProfileForecastReq>);
 

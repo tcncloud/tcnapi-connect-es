@@ -619,7 +619,7 @@ export const BuildProfileForecastByIntervalReq = proto3.makeMessageType(
     { no: 1, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
     { no: 2, name: "fixed_averages_forecast", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 16, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -657,6 +657,7 @@ export const BuildProfileForecastByIntervalWithStatsReq = proto3.makeMessageType
     { no: 1, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
     { no: 2, name: "fixed_averages_forecast", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -684,6 +685,7 @@ export const UpsertProfileForecastReq = proto3.makeMessageType(
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
     { no: 3, name: "fixed_averages_forecast", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 

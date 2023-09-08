@@ -386,7 +386,7 @@ export declare const WFM: {
      * Builds a profile forecast using the provided @call_profile_template.
      * The forecaster will produce intervals from the following range using the client's saved forecasting parameters:
      * (@training_data_range_end_datetime - @forecast_test_range_in_weeks) to @forecast_range_end_datetime.
-     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplateForSkillProfile.
+     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplate.
      * The @fixed_averages_forecast field indicates whether or not to do a fixed averages forecast.
      * Required permissions:
      *   NONE
@@ -406,13 +406,13 @@ export declare const WFM: {
      * Builds a profile forecast using the provided @call_profile_template.
      * The forecaster will produce intervals from the following range using the client's saved forecasting parameters:
      * (@training_data_range_end_datetime - @forecast_test_range_in_weeks) to @forecast_range_end_datetime.
-     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplateForSkillProfile.
+     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplate.
      * The @fixed_averages_forecast field indicates whether or not to do a fixed averages forecast.
-     * It also returns the statistics of the produced forecast by using the test data of the given @skill_profile_sid.
+     * It also returns the statistics of the produced forecast by using the test data of the given @skill_profile_category.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @skill_profile_sid or @call_profile_template in the request is invalid.
+     *   - grpc.Invalid: the @skill_profile_category or @call_profile_template in the request is invalid.
      *   - grpc.Internal: error occurs during the building of the profile forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildProfileForecastByIntervalWithStats
