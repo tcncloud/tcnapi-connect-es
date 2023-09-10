@@ -5408,7 +5408,7 @@ export declare class ListUngroupedWFMAgentsRes extends Message<ListUngroupedWFMA
  */
 export declare class ListWFMAgentSidsReq extends Message<ListWFMAgentSidsReq> {
   /**
-   * ID's of the agents to get the related wfm_agent_sid for.
+   * IDs of the agents to get the related wfm_agent_sid for.
    *
    * @generated from field: repeated int64 tcn_agent_sids = 1;
    */
