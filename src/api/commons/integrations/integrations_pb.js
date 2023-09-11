@@ -238,6 +238,8 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3503, name: "REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS", localName: "POSCORP_UPDATE_PAYMENT_STATUS"},
     {no: 3601, name: "REQUEST_METHOD_PIANO_GET_USER", localName: "PIANO_GET_USER"},
     {no: 3602, name: "REQUEST_METHOD_PIANO_UPDATE_USER", localName: "PIANO_UPDATE_USER"},
+    {no: 3603, name: "REQUEST_METHOD_PIANO_UPDATE_SUBSCRIPTION", localName: "PIANO_UPDATE_SUBSCRIPTION"},
+    {no: 3604, name: "REQUEST_METHOD_PIANO_GET_PAYMENT", localName: "PIANO_GET_PAYMENT"},
     {no: 3701, name: "REQUEST_METHOD_EPIC_GET_TOKEN", localName: "EPIC_GET_TOKEN"},
     {no: 3702, name: "REQUEST_METHOD_EPIC_GET_PATIENT", localName: "EPIC_GET_PATIENT"},
     {no: 3703, name: "REQUEST_METHOD_EPIC_MATCH_PATIENT", localName: "EPIC_MATCH_PATIENT"},
@@ -836,6 +838,8 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3503, name: "poscorp_update_payment_status", kind: "message", T: ExecutePoscorpUpdatePaymentStatus, oneof: "value" },
     { no: 3601, name: "PIANO_GET_USER", kind: "message", T: ExecutePianoGetUser, oneof: "value" },
     { no: 3602, name: "PIANO_UPDATE_USER", kind: "message", T: ExecutePianoUpdateUser, oneof: "value" },
+    { no: 3603, name: "PIANO_UPDATE_SUBSCRIPTION", kind: "message", T: ExecutePianoUpdateSubscription, oneof: "value" },
+    { no: 3604, name: "PIANO_GET_PAYMENT", kind: "message", T: ExecutePianoGetPayment, oneof: "value" },
     { no: 3701, name: "epic_get_token", kind: "message", T: ExecuteEpicGetToken, oneof: "value" },
     { no: 3702, name: "epic_get_patient", kind: "message", T: ExecuteEpicGetPatient, oneof: "value" },
     { no: 3703, name: "epic_match_patient", kind: "message", T: ExecuteEpicMatchPatient, oneof: "value" },
@@ -998,7 +1002,9 @@ export const VerificationNewzwareAccountInquiry = proto3.makeMessageType(
  */
 export const PaymentExperianCC = proto3.makeMessageType(
   "api.commons.integrations.PaymentExperianCC",
-  [],
+  () => [
+    { no: 1, name: "use_invoice_account_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
 );
 
 /**
@@ -1006,7 +1012,9 @@ export const PaymentExperianCC = proto3.makeMessageType(
  */
 export const PaymentExperianACH = proto3.makeMessageType(
   "api.commons.integrations.PaymentExperianACH",
-  [],
+  () => [
+    { no: 1, name: "use_invoice_account_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
 );
 
 /**
@@ -2472,6 +2480,22 @@ export const ExecutePianoGetUser = proto3.makeMessageType(
  */
 export const ExecutePianoUpdateUser = proto3.makeMessageType(
   "api.commons.integrations.ExecutePianoUpdateUser",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateSubscription
+ */
+export const ExecutePianoUpdateSubscription = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoUpdateSubscription",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetPayment
+ */
+export const ExecutePianoGetPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoGetPayment",
   [],
 );
 
