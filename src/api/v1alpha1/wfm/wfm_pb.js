@@ -1439,6 +1439,30 @@ export const UpdateProgramNodeRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidReq
+ */
+export const ListProgramNodesBySidReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListProgramNodesBySidReq",
+  () => [
+    { no: 1, name: "program_node_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidRes
+ */
+export const ListProgramNodesBySidRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListProgramNodesBySidRes",
+  () => [
+    { no: 1, name: "program_nodes", kind: "message", T: ProgramNode, repeated: true },
+  ],
+);
+
+/**
  * @generated from message api.v1alpha1.wfm.ParentEntity
  */
 export const ParentEntity = proto3.makeMessageType(
