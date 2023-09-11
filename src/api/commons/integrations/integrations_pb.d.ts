@@ -1086,6 +1086,16 @@ export declare enum RequestMethod {
   PIANO_UPDATE_USER = 3602,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_UPDATE_SUBSCRIPTION = 3603;
+   */
+  PIANO_UPDATE_SUBSCRIPTION = 3603,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_GET_PAYMENT = 3604;
+   */
+  PIANO_GET_PAYMENT = 3604,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_EPIC_GET_TOKEN = 3701;
    */
   EPIC_GET_TOKEN = 3701,
@@ -3511,6 +3521,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
     case: "PIANOUPDATEUSER";
   } | {
     /**
+     * @generated from field: api.commons.integrations.ExecutePianoUpdateSubscription PIANO_UPDATE_SUBSCRIPTION = 3603;
+     */
+    value: ExecutePianoUpdateSubscription;
+    case: "PIANOUPDATESUBSCRIPTION";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoGetPayment PIANO_GET_PAYMENT = 3604;
+     */
+    value: ExecutePianoGetPayment;
+    case: "PIANOGETPAYMENT";
+  } | {
+    /**
      * @generated from field: api.commons.integrations.ExecuteEpicGetToken epic_get_token = 3701;
      */
     value: ExecuteEpicGetToken;
@@ -3989,6 +4011,14 @@ export declare class VerificationNewzwareAccountInquiry extends Message<Verifica
  * @generated from message api.commons.integrations.PaymentExperianCC
  */
 export declare class PaymentExperianCC extends Message<PaymentExperianCC> {
+  /**
+   * if true instead of using the account number uploaded to textpay,
+   * we send the payment with the account number returned on the invoice
+   *
+   * @generated from field: bool use_invoice_account_number = 1;
+   */
+  useInvoiceAccountNumber: boolean;
+
   constructor(data?: PartialMessage<PaymentExperianCC>);
 
   static readonly runtime: typeof proto3;
@@ -4008,6 +4038,14 @@ export declare class PaymentExperianCC extends Message<PaymentExperianCC> {
  * @generated from message api.commons.integrations.PaymentExperianACH
  */
 export declare class PaymentExperianACH extends Message<PaymentExperianACH> {
+  /**
+   * if true instead of using the account number uploaded to textpay,
+   * we send the payment with the account number returned on the invoice
+   *
+   * @generated from field: bool use_invoice_account_number = 1;
+   */
+  useInvoiceAccountNumber: boolean;
+
   constructor(data?: PartialMessage<PaymentExperianACH>);
 
   static readonly runtime: typeof proto3;
@@ -7500,6 +7538,44 @@ export declare class ExecutePianoUpdateUser extends Message<ExecutePianoUpdateUs
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoUpdateUser;
 
   static equals(a: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined, b: ExecutePianoUpdateUser | PlainMessage<ExecutePianoUpdateUser> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateSubscription
+ */
+export declare class ExecutePianoUpdateSubscription extends Message<ExecutePianoUpdateSubscription> {
+  constructor(data?: PartialMessage<ExecutePianoUpdateSubscription>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoUpdateSubscription";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoUpdateSubscription;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoUpdateSubscription;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoUpdateSubscription;
+
+  static equals(a: ExecutePianoUpdateSubscription | PlainMessage<ExecutePianoUpdateSubscription> | undefined, b: ExecutePianoUpdateSubscription | PlainMessage<ExecutePianoUpdateSubscription> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetPayment
+ */
+export declare class ExecutePianoGetPayment extends Message<ExecutePianoGetPayment> {
+  constructor(data?: PartialMessage<ExecutePianoGetPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoGetPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoGetPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoGetPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoGetPayment;
+
+  static equals(a: ExecutePianoGetPayment | PlainMessage<ExecutePianoGetPayment> | undefined, b: ExecutePianoGetPayment | PlainMessage<ExecutePianoGetPayment> | undefined): boolean;
 }
 
 /**
