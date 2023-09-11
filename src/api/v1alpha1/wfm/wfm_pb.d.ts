@@ -5436,7 +5436,8 @@ export declare class ListWFMAgentSidsReq extends Message<ListWFMAgentSidsReq> {
  */
 export declare class ListWFMAgentSidsRes extends Message<ListWFMAgentSidsRes> {
   /**
-   * Key:Value pairings of a tcn_agent_sid and their wfm_agent_sid respectively.
+   * Map of WFM agents found.
+   * Key: tcn_agent_sid - Value: wfm_agent_sid.
    *
    * @generated from field: map<int64, int64> sids = 1;
    */
