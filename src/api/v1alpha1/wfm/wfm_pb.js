@@ -1921,6 +1921,30 @@ export const ListUngroupedWFMAgentsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsReq
+ */
+export const ListWFMAgentSidsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListWFMAgentSidsReq",
+  () => [
+    { no: 1, name: "tcn_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsRes
+ */
+export const ListWFMAgentSidsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListWFMAgentSidsRes",
+  () => [
+    { no: 1, name: "sids", kind: "map", K: 3 /* ScalarType.INT64 */, V: {kind: "scalar", T: 3 /* ScalarType.INT64 */} },
+  ],
+);
+
+/**
  * Request message for the ListWFMAgentsAssociatedWithAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentsAssociatedWithAgentGroupReq
