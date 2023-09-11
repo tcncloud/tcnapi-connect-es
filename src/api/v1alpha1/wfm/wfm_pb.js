@@ -1869,7 +1869,7 @@ export const ListUngroupedWFMAgentsRes = proto3.makeMessageType(
 );
 
 /**
- * Request message for teh ListWFMAgentSids RPC
+ * Request message for the ListWFMAgentSids RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsReq
  */

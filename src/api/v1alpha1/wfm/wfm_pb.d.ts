@@ -5402,7 +5402,7 @@ export declare class ListUngroupedWFMAgentsRes extends Message<ListUngroupedWFMA
 }
 
 /**
- * Request message for teh ListWFMAgentSids RPC
+ * Request message for the ListWFMAgentSids RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsReq
  */
