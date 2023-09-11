@@ -770,7 +770,7 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 
   /**
    * ID of the skill profile that this interval belongs to.
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 2 [deprecated = true];
    * @deprecated
@@ -901,7 +901,7 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 export declare class ListHistoricalDataReq extends Message<ListHistoricalDataReq> {
   /**
    * ID of the skill profile used to examine matching calls in the client's historical data.
-   * Deprecated: use skill_profile_category instead.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
    * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
    * @deprecated
@@ -1281,6 +1281,62 @@ export declare class BuildCallProfileTemplateForSkillProfileRes extends Message<
 }
 
 /**
+ * Request message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateReq
+ */
+export declare class BuildCallProfileTemplateReq extends Message<BuildCallProfileTemplateReq> {
+  /**
+   * Skill profile category of the training data used to generate the template.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 1;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<BuildCallProfileTemplateReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.BuildCallProfileTemplateReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuildCallProfileTemplateReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateReq;
+
+  static equals(a: BuildCallProfileTemplateReq | PlainMessage<BuildCallProfileTemplateReq> | undefined, b: BuildCallProfileTemplateReq | PlainMessage<BuildCallProfileTemplateReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateRes
+ */
+export declare class BuildCallProfileTemplateRes extends Message<BuildCallProfileTemplateRes> {
+  /**
+   * call profile template found in the training data set.
+   *
+   * @generated from field: api.v1alpha1.wfm.CallProfileTemplate call_profile_template = 1;
+   */
+  callProfileTemplate?: CallProfileTemplate;
+
+  constructor(data?: PartialMessage<BuildCallProfileTemplateRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.BuildCallProfileTemplateRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuildCallProfileTemplateRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildCallProfileTemplateRes;
+
+  static equals(a: BuildCallProfileTemplateRes | PlainMessage<BuildCallProfileTemplateRes> | undefined, b: BuildCallProfileTemplateRes | PlainMessage<BuildCallProfileTemplateRes> | undefined): boolean;
+}
+
+/**
  * Request message for the CreateInactiveSkillProfileMapping RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingReq
@@ -1620,10 +1676,19 @@ export declare class BuildProfileForecastByIntervalReq extends Message<BuildProf
 
   /**
    * ID of the skill profile that the forecast will belong to.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 3;
+   * @generated from field: int64 skill_profile_sid = 3 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
+
+  /**
+   * Skill profile category that the forecast belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<BuildProfileForecastByIntervalReq>);
 
@@ -1655,8 +1720,10 @@ export declare class CallDataByInterval extends Message<CallDataByInterval> {
 
   /**
    * ID of the skill profile to forecast for (not set in profile forecasts).
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 2;
+   * @generated from field: int64 skill_profile_sid = 2 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
 
@@ -1724,6 +1791,13 @@ export declare class CallDataByInterval extends Message<CallDataByInterval> {
    */
   intervalWidthInMinutes: number;
 
+  /**
+   * Skill profile category that the interval belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 12;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
   constructor(data?: PartialMessage<CallDataByInterval>);
 
   static readonly runtime: typeof proto3;
@@ -1762,11 +1836,20 @@ export declare class BuildProfileForecastByIntervalWithStatsReq extends Message<
   fixedAveragesForecast: boolean;
 
   /**
-   * ID of the skill profile to use the training data for stats.
+   * ID of the skill profile that the forecast will belong to.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 3;
+   * @generated from field: int64 skill_profile_sid = 3 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
+
+  /**
+   * Skill profile category that the forecast belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<BuildProfileForecastByIntervalWithStatsReq>);
 
@@ -1834,8 +1917,10 @@ export declare class BuildProfileForecastByIntervalWithStatsRes extends Message<
 export declare class UpsertProfileForecastReq extends Message<UpsertProfileForecastReq> {
   /**
    * ID of the skill profile that the forecast will belong to.
+   * Deprecated as of Sep/8/2023: use skill_profile_category instead.
    *
-   * @generated from field: int64 skill_profile_sid = 1;
+   * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
+   * @deprecated
    */
   skillProfileSid: bigint;
 
@@ -1854,6 +1939,13 @@ export declare class UpsertProfileForecastReq extends Message<UpsertProfileForec
    * @generated from field: bool fixed_averages_forecast = 3;
    */
   fixedAveragesForecast: boolean;
+
+  /**
+   * Skill profile category that the forecast belongs to.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<UpsertProfileForecastReq>);
 
