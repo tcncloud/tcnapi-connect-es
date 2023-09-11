@@ -2751,6 +2751,7 @@ export const EpicEntrypoint = proto3.makeMessageType(
     { no: 8, name: "flush_page_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "flush_minute_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: "flush_during_check", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

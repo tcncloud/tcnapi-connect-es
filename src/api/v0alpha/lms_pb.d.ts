@@ -9032,6 +9032,13 @@ export declare class EpicEntrypoint extends Message<EpicEntrypoint> {
    */
   flushDuringCheck: boolean;
 
+  /**
+   * Specifies the timezone to be used by the cron
+   *
+   * @generated from field: string timezone = 11;
+   */
+  timezone: string;
+
   constructor(data?: PartialMessage<EpicEntrypoint>);
 
   static readonly runtime: typeof proto3;
