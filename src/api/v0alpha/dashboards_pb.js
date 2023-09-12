@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { DashboardPermissionType } from "../commons/dashboards_pb.js";
 import { TimeZone } from "../commons/org_pb.js";
 
 /**
@@ -241,6 +242,7 @@ export const Dashboard = proto3.makeMessageType(
     { no: 4, name: "layout", kind: "message", T: DashboardLayout },
     { no: 5, name: "view", kind: "message", T: DashboardView },
     { no: 6, name: "type", kind: "message", T: DashboardType },
+    { no: 7, name: "permission_type", kind: "enum", T: proto3.getEnumType(DashboardPermissionType) },
   ],
 );
 

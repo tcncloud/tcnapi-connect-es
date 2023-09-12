@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { DashboardPermissionType } from "../commons/dashboards_pb.js";
 import type { TimeZone } from "../commons/org_pb.js";
 
 /**
@@ -653,6 +654,13 @@ export declare class Dashboard extends Message<Dashboard> {
    * @generated from field: api.v0alpha.DashboardType type = 6;
    */
   type?: DashboardType;
+
+  /**
+   * permission type (TCN Standard, Custom, etc.)
+   *
+   * @generated from field: api.commons.DashboardPermissionType permission_type = 7;
+   */
+  permissionType: DashboardPermissionType;
 
   constructor(data?: PartialMessage<Dashboard>);
 
