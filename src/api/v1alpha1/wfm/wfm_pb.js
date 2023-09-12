@@ -1439,6 +1439,30 @@ export const UpdateProgramNodeRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidReq
+ */
+export const ListProgramNodesBySidReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListProgramNodesBySidReq",
+  () => [
+    { no: 1, name: "program_node_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidRes
+ */
+export const ListProgramNodesBySidRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListProgramNodesBySidRes",
+  () => [
+    { no: 1, name: "program_nodes", kind: "message", T: ProgramNode, repeated: true },
+  ],
+);
+
+/**
  * @generated from message api.v1alpha1.wfm.ParentEntity
  */
 export const ParentEntity = proto3.makeMessageType(
@@ -1817,6 +1841,7 @@ export const ListAllWFMAgentsReq = proto3.makeMessageType(
     { no: 1, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 2, name: "include_skill_proficiencies", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "include_agent_groups", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "agent_group_schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -1893,6 +1918,30 @@ export const ListUngroupedWFMAgentsRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListUngroupedWFMAgentsRes",
   () => [
     { no: 1, name: "wfm_agents", kind: "message", T: WFMAgent, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsReq
+ */
+export const ListWFMAgentSidsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListWFMAgentSidsReq",
+  () => [
+    { no: 1, name: "tcn_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsRes
+ */
+export const ListWFMAgentSidsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListWFMAgentSidsRes",
+  () => [
+    { no: 1, name: "sids", kind: "map", K: 3 /* ScalarType.INT64 */, V: {kind: "scalar", T: 3 /* ScalarType.INT64 */} },
   ],
 );
 

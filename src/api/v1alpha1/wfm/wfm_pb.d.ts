@@ -4181,6 +4181,62 @@ export declare class UpdateProgramNodeRes extends Message<UpdateProgramNodeRes> 
 }
 
 /**
+ * Request message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidReq
+ */
+export declare class ListProgramNodesBySidReq extends Message<ListProgramNodesBySidReq> {
+  /**
+   * IDs of the program nodes to list.
+   *
+   * @generated from field: repeated int64 program_node_sids = 1;
+   */
+  programNodeSids: bigint[];
+
+  constructor(data?: PartialMessage<ListProgramNodesBySidReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListProgramNodesBySidReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgramNodesBySidReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgramNodesBySidReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgramNodesBySidReq;
+
+  static equals(a: ListProgramNodesBySidReq | PlainMessage<ListProgramNodesBySidReq> | undefined, b: ListProgramNodesBySidReq | PlainMessage<ListProgramNodesBySidReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidRes
+ */
+export declare class ListProgramNodesBySidRes extends Message<ListProgramNodesBySidRes> {
+  /**
+   * The program nodes matching the given @program_node_sids.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ProgramNode program_nodes = 1;
+   */
+  programNodes: ProgramNode[];
+
+  constructor(data?: PartialMessage<ListProgramNodesBySidRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListProgramNodesBySidRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListProgramNodesBySidRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListProgramNodesBySidRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListProgramNodesBySidRes;
+
+  static equals(a: ListProgramNodesBySidRes | PlainMessage<ListProgramNodesBySidRes> | undefined, b: ListProgramNodesBySidRes | PlainMessage<ListProgramNodesBySidRes> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v1alpha1.wfm.ParentEntity
  */
 export declare class ParentEntity extends Message<ParentEntity> {
@@ -5289,6 +5345,15 @@ export declare class ListAllWFMAgentsReq extends Message<ListAllWFMAgentsReq> {
    */
   includeAgentGroups: boolean;
 
+  /**
+   * Indicates the schedule scenario that returned @agent_groups belong to.
+   * If set to zero, the agent groups will not be filtered by schedule scenario.
+   * Does not effect which @wfm_agents are returned.
+   *
+   * @generated from field: int64 agent_group_schedule_scenario_sid = 4;
+   */
+  agentGroupScheduleScenarioSid: bigint;
+
   constructor(data?: PartialMessage<ListAllWFMAgentsReq>);
 
   static readonly runtime: typeof proto3;
@@ -5491,6 +5556,63 @@ export declare class ListUngroupedWFMAgentsRes extends Message<ListUngroupedWFMA
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUngroupedWFMAgentsRes;
 
   static equals(a: ListUngroupedWFMAgentsRes | PlainMessage<ListUngroupedWFMAgentsRes> | undefined, b: ListUngroupedWFMAgentsRes | PlainMessage<ListUngroupedWFMAgentsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsReq
+ */
+export declare class ListWFMAgentSidsReq extends Message<ListWFMAgentSidsReq> {
+  /**
+   * IDs of the agents to get the related wfm_agent_sid for.
+   *
+   * @generated from field: repeated int64 tcn_agent_sids = 1;
+   */
+  tcnAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<ListWFMAgentSidsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListWFMAgentSidsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWFMAgentSidsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWFMAgentSidsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWFMAgentSidsReq;
+
+  static equals(a: ListWFMAgentSidsReq | PlainMessage<ListWFMAgentSidsReq> | undefined, b: ListWFMAgentSidsReq | PlainMessage<ListWFMAgentSidsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsRes
+ */
+export declare class ListWFMAgentSidsRes extends Message<ListWFMAgentSidsRes> {
+  /**
+   * Map of WFM agents found.
+   * Key: tcn_agent_sid - Value: wfm_agent_sid.
+   *
+   * @generated from field: map<int64, int64> sids = 1;
+   */
+  sids: { [key: string]: bigint };
+
+  constructor(data?: PartialMessage<ListWFMAgentSidsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListWFMAgentSidsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWFMAgentSidsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWFMAgentSidsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWFMAgentSidsRes;
+
+  static equals(a: ListWFMAgentSidsRes | PlainMessage<ListWFMAgentSidsRes> | undefined, b: ListWFMAgentSidsRes | PlainMessage<ListWFMAgentSidsRes> | undefined): boolean;
 }
 
 /**
