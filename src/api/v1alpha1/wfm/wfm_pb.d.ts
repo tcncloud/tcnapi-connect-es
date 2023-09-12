@@ -2371,10 +2371,19 @@ export declare class BuildRegressionForecastByIntervalReq extends Message<BuildR
 
   /**
    * IDs of the skill profiles to generate the forecasts,
+   * Deprecated as of Sep/12/2023: use skill_profile_category instead.
    *
-   * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6;
+   * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6 [deprecated = true];
+   * @deprecated
    */
   skillProfileSidsToForecast: bigint[];
+
+  /**
+   * Skill profile category to forecast for.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 7;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<BuildRegressionForecastByIntervalReq>);
 
@@ -2435,10 +2444,19 @@ export declare class BuildRegressionForecastByIntervalWithStatsReq extends Messa
 
   /**
    * IDs of the skill profiles to generate the forecasts,
+   * Deprecated as of Sep/12/2023: use skill_profile_category instead.
    *
-   * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6;
+   * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6 [deprecated = true];
+   * @deprecated
    */
   skillProfileSidsToForecast: bigint[];
+
+  /**
+   * Skill profile category to forecast for.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 7;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<BuildRegressionForecastByIntervalWithStatsReq>);
 
@@ -2717,10 +2735,19 @@ export declare class UpsertRegressionForecastReq extends Message<UpsertRegressio
 
   /**
    * IDs of the skill Profiles of which to save the generated forecast.
+   * Deprecated as of Sep/12/2023: use skill_profile_category instead.
    *
-   * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6;
+   * @generated from field: repeated int64 skill_profile_sids_to_forecast = 6 [deprecated = true];
+   * @deprecated
    */
   skillProfileSidsToForecast: bigint[];
+
+  /**
+   * Skill profile category to forecast for.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 7;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<UpsertRegressionForecastReq>);
 

@@ -542,13 +542,13 @@ export declare const WFM: {
     },
     /**
      * Generates a regression forecast using the provided @regression_template.
-     * It will generate forecast intervals for the skill profiles sids in @skill_profile_sids_to_forecast.
+     * It will generate forecast intervals for the @skill_profile_category given.
      * It will use the client's saved forecasting test range as the start datetime and the forecast range as the end datetime of the forecasted data.
      * It will use the client's saved interval width to divide the resulting forecast intervals.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: no @skill_profile_sids_to_forecast are given or the @regression_template in the request is invalid.
+     *   - grpc.Invalid: no @skill_profile_category is given or the @regression_template in the request is invalid.
      *   - grpc.Internal: error occurs during the building of the regression forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildRegressionForecastByInterval
@@ -561,13 +561,13 @@ export declare const WFM: {
     },
     /**
      * Generates a regression forecast and calculates forecast statistics using the provided @regression_template.
-     * It will generate forecast intervals for the skill profiles sids in @skill_profile_sids_to_forecast.
+     * It will generate forecast intervals for the @skill_profile_category given.
      * It will use the client's saved forecasting test range as the start datetime and the forecast range as the end datetime of the forecasted data.
      * It will use the client's saved interval width to divide the resulting forecast intervals.
      * The first message received will be the forecast statistics while all subsequent ones will be the forecast intervals.
      *
      * Errors:
-     *   - grpc.Invalid: no @skill_profile_sids_to_forecast are given or the @regression_template in the request is invalid.
+     *   - grpc.Invalid: no @skill_profile_category is given or the @regression_template in the request is invalid.
      *   - grpc.Internal: error occurs either during the when building the forecast or calculating the stats.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildRegressionForecastByIntervalWithStats
@@ -595,13 +595,13 @@ export declare const WFM: {
     },
     /**
      * Builds a regression forecast for the org using the given @regression_template and saves the resulting intervals in the db.
-     * It will generate forecast intervals for the skill profiles sids in @save_forecasts_for_skill_profile_sids,
+     * It will generate forecast intervals for the @skill_profile_category given.
      * if the list is empty or has no valid skill profile sids, it will generate and save forecasts for all active skill profiles.
      * If any intervals produced already exist in the db, they will be replaced with the ones produced.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @regression_template in the request is invalid.
+     *   - grpc.Invalid: no @skill_profile_category is given or the @regression_template in the request is invalid.
      *   - grpc.Internal: error occurs when upserting the regression forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.UpsertRegressionForecast

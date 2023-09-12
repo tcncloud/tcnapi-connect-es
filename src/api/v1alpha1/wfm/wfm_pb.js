@@ -845,6 +845,7 @@ export const BuildRegressionForecastByIntervalReq = proto3.makeMessageType(
     { no: 4, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 5, name: "regression_template", kind: "message", T: RegressionTemplate },
     { no: 6, name: "skill_profile_sids_to_forecast", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 7, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -862,6 +863,7 @@ export const BuildRegressionForecastByIntervalWithStatsReq = proto3.makeMessageT
     { no: 4, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 5, name: "regression_template", kind: "message", T: RegressionTemplate },
     { no: 6, name: "skill_profile_sids_to_forecast", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 7, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -948,6 +950,7 @@ export const UpsertRegressionForecastReq = proto3.makeMessageType(
     { no: 4, name: "average_after_call_work_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 5, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 6, name: "skill_profile_sids_to_forecast", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 7, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
