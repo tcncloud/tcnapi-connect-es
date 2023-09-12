@@ -205,50 +205,6 @@ export const ProcessElementReq = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.ProcessListRequest
- */
-export const ProcessListRequest = proto3.makeMessageType(
-  "api.v0alpha.ProcessListRequest",
-  () => [
-    { no: 3, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "list", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
-  ],
-);
-
-/**
- * empty for now
- *
- * @generated from message api.v0alpha.ProcessListResponse
- */
-export const ProcessListResponse = proto3.makeMessageType(
-  "api.v0alpha.ProcessListResponse",
-  [],
-);
-
-/**
- * @generated from message api.v0alpha.StreamListRequest
- */
-export const StreamListRequest = proto3.makeMessageType(
-  "api.v0alpha.StreamListRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "region_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "chunk", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
-  ],
-);
-
-/**
- * empty for now
- *
- * @generated from message api.v0alpha.StreamListResponse
- */
-export const StreamListResponse = proto3.makeMessageType(
-  "api.v0alpha.StreamListResponse",
-  [],
-);
-
-/**
  * @generated from message api.v0alpha.ListAvailableFieldsByElementIdReq
  */
 export const ListAvailableFieldsByElementIdReq = proto3.makeMessageType(
@@ -2795,7 +2751,6 @@ export const EpicEntrypoint = proto3.makeMessageType(
     { no: 8, name: "flush_page_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "flush_minute_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: "flush_during_check", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 11, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

@@ -253,6 +253,34 @@ export declare class DeleteDashboardRequest extends Message<DeleteDashboardReque
 }
 
 /**
+ * DeleteStandardDashboardRequest deletes a TCN standard dashboard
+ *
+ * @generated from message api.v0alpha.DeleteStandardDashboardRequest
+ */
+export declare class DeleteStandardDashboardRequest extends Message<DeleteStandardDashboardRequest> {
+  /**
+   * unique ID of dashboard to delete
+   *
+   * @generated from field: string dashboard_id = 1;
+   */
+  dashboardId: string;
+
+  constructor(data?: PartialMessage<DeleteStandardDashboardRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.DeleteStandardDashboardRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteStandardDashboardRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteStandardDashboardRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteStandardDashboardRequest;
+
+  static equals(a: DeleteStandardDashboardRequest | PlainMessage<DeleteStandardDashboardRequest> | undefined, b: DeleteStandardDashboardRequest | PlainMessage<DeleteStandardDashboardRequest> | undefined): boolean;
+}
+
+/**
  * GetDashboardRequest used in GetDashboard rpc
  *
  * @generated from message api.v0alpha.GetDashboardRequest
@@ -278,6 +306,90 @@ export declare class GetDashboardRequest extends Message<GetDashboardRequest> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDashboardRequest;
 
   static equals(a: GetDashboardRequest | PlainMessage<GetDashboardRequest> | undefined, b: GetDashboardRequest | PlainMessage<GetDashboardRequest> | undefined): boolean;
+}
+
+/**
+ * CreateStandardDashboardRequest is request to create a TCN standard dashboard
+ *
+ * @generated from message api.v0alpha.CreateStandardDashboardRequest
+ */
+export declare class CreateStandardDashboardRequest extends Message<CreateStandardDashboardRequest> {
+  /**
+   * required dashboard title
+   *
+   * @generated from field: string title = 1;
+   */
+  title: string;
+
+  /**
+   * optional dashboard description
+   *
+   * @generated from field: string description = 2;
+   */
+  description: string;
+
+  /**
+   * layout of associated dashboard panels
+   *
+   * @generated from field: api.v0alpha.DashboardLayout layout = 3;
+   */
+  layout?: DashboardLayout;
+
+  /**
+   * the dashboards viewing params
+   *
+   * @generated from field: api.v0alpha.DashboardView view = 4;
+   */
+  view?: DashboardView;
+
+  /**
+   * dashboard type, with type specific components
+   *
+   * @generated from field: api.v0alpha.DashboardType type = 5;
+   */
+  type?: DashboardType;
+
+  constructor(data?: PartialMessage<CreateStandardDashboardRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateStandardDashboardRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateStandardDashboardRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateStandardDashboardRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateStandardDashboardRequest;
+
+  static equals(a: CreateStandardDashboardRequest | PlainMessage<CreateStandardDashboardRequest> | undefined, b: CreateStandardDashboardRequest | PlainMessage<CreateStandardDashboardRequest> | undefined): boolean;
+}
+
+/**
+ * CreateStandardDashboardResponse contains unique_id of standard dashboard
+ *
+ * @generated from message api.v0alpha.CreateStandardDashboardResponse
+ */
+export declare class CreateStandardDashboardResponse extends Message<CreateStandardDashboardResponse> {
+  /**
+   * unique ID of the dashboard created
+   *
+   * @generated from field: string dashboard_id = 1;
+   */
+  dashboardId: string;
+
+  constructor(data?: PartialMessage<CreateStandardDashboardResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateStandardDashboardResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateStandardDashboardResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateStandardDashboardResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateStandardDashboardResponse;
+
+  static equals(a: CreateStandardDashboardResponse | PlainMessage<CreateStandardDashboardResponse> | undefined, b: CreateStandardDashboardResponse | PlainMessage<CreateStandardDashboardResponse> | undefined): boolean;
 }
 
 /**
@@ -728,6 +840,69 @@ export declare class UpdateDashboardRequest extends Message<UpdateDashboardReque
 }
 
 /**
+ * UpdateStandardDashboardRequest updates a TCN standard dashboard
+ *
+ * @generated from message api.v0alpha.UpdateStandardDashboardRequest
+ */
+export declare class UpdateStandardDashboardRequest extends Message<UpdateStandardDashboardRequest> {
+  /**
+   * unique ID for this dashboard
+   *
+   * @generated from field: string dashboard_id = 2;
+   */
+  dashboardId: string;
+
+  /**
+   * required dashboard title
+   *
+   * @generated from field: string title = 3;
+   */
+  title: string;
+
+  /**
+   * optional dashboard description
+   *
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * layout of associated panels
+   *
+   * @generated from field: api.v0alpha.DashboardLayout layout = 5;
+   */
+  layout?: DashboardLayout;
+
+  /**
+   * viewing params of dashboard
+   *
+   * @generated from field: api.v0alpha.DashboardView view = 6;
+   */
+  view?: DashboardView;
+
+  /**
+   * dashboard type, with type specific components
+   *
+   * @generated from field: api.v0alpha.DashboardType type = 7;
+   */
+  type?: DashboardType;
+
+  constructor(data?: PartialMessage<UpdateStandardDashboardRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateStandardDashboardRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateStandardDashboardRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateStandardDashboardRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateStandardDashboardRequest;
+
+  static equals(a: UpdateStandardDashboardRequest | PlainMessage<UpdateStandardDashboardRequest> | undefined, b: UpdateStandardDashboardRequest | PlainMessage<UpdateStandardDashboardRequest> | undefined): boolean;
+}
+
+/**
  * UpdateDashboardTitleAndDescriptionResponse used for the update RPC
  *
  * @generated from message api.v0alpha.UpdateDashboardTitleAndDescriptionRequest
@@ -770,6 +945,48 @@ export declare class UpdateDashboardTitleAndDescriptionRequest extends Message<U
 }
 
 /**
+ * UpdateDashboardTitleAndDescriptionResponse used to update standard dashboards
+ *
+ * @generated from message api.v0alpha.UpdateStandardDashboardTitleAndDescriptionRequest
+ */
+export declare class UpdateStandardDashboardTitleAndDescriptionRequest extends Message<UpdateStandardDashboardTitleAndDescriptionRequest> {
+  /**
+   * unique ID for dashboard to update
+   *
+   * @generated from field: string dashboard_id = 1;
+   */
+  dashboardId: string;
+
+  /**
+   * required new dashboard title
+   *
+   * @generated from field: string title = 2;
+   */
+  title: string;
+
+  /**
+   * optional new dashboard description
+   *
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  constructor(data?: PartialMessage<UpdateStandardDashboardTitleAndDescriptionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateStandardDashboardTitleAndDescriptionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateStandardDashboardTitleAndDescriptionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateStandardDashboardTitleAndDescriptionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateStandardDashboardTitleAndDescriptionRequest;
+
+  static equals(a: UpdateStandardDashboardTitleAndDescriptionRequest | PlainMessage<UpdateStandardDashboardTitleAndDescriptionRequest> | undefined, b: UpdateStandardDashboardTitleAndDescriptionRequest | PlainMessage<UpdateStandardDashboardTitleAndDescriptionRequest> | undefined): boolean;
+}
+
+/**
  * UpdateDashboardTitleAndDescriptionRequest used for the update RPC
  *
  * @generated from message api.v0alpha.UpdateDashboardLayoutRequest
@@ -805,7 +1022,42 @@ export declare class UpdateDashboardLayoutRequest extends Message<UpdateDashboar
 }
 
 /**
- * UpdateDashboardViewRequest  used in the update RPC
+ * UpdateDashboardTitleAndDescriptionRequest used to update a standard dashboard
+ *
+ * @generated from message api.v0alpha.UpdateStandardDashboardLayoutRequest
+ */
+export declare class UpdateStandardDashboardLayoutRequest extends Message<UpdateStandardDashboardLayoutRequest> {
+  /**
+   * unique ID for dashboard to update
+   *
+   * @generated from field: string dashboard_id = 1;
+   */
+  dashboardId: string;
+
+  /**
+   * layout of associated panels
+   *
+   * @generated from field: api.v0alpha.DashboardLayout layout = 2;
+   */
+  layout?: DashboardLayout;
+
+  constructor(data?: PartialMessage<UpdateStandardDashboardLayoutRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateStandardDashboardLayoutRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateStandardDashboardLayoutRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateStandardDashboardLayoutRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateStandardDashboardLayoutRequest;
+
+  static equals(a: UpdateStandardDashboardLayoutRequest | PlainMessage<UpdateStandardDashboardLayoutRequest> | undefined, b: UpdateStandardDashboardLayoutRequest | PlainMessage<UpdateStandardDashboardLayoutRequest> | undefined): boolean;
+}
+
+/**
+ * UpdateDashboardViewRequest used in the update RPC
  *
  * @generated from message api.v0alpha.UpdateDashboardViewRequest
  */
@@ -837,6 +1089,41 @@ export declare class UpdateDashboardViewRequest extends Message<UpdateDashboardV
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDashboardViewRequest;
 
   static equals(a: UpdateDashboardViewRequest | PlainMessage<UpdateDashboardViewRequest> | undefined, b: UpdateDashboardViewRequest | PlainMessage<UpdateDashboardViewRequest> | undefined): boolean;
+}
+
+/**
+ * UpdateDashboardViewRequest used to update a standard dashboard view
+ *
+ * @generated from message api.v0alpha.UpdateStandardDashboardViewRequest
+ */
+export declare class UpdateStandardDashboardViewRequest extends Message<UpdateStandardDashboardViewRequest> {
+  /**
+   * unique ID of dashboard to update
+   *
+   * @generated from field: string dashboard_id = 1;
+   */
+  dashboardId: string;
+
+  /**
+   * the dashboards viewing params
+   *
+   * @generated from field: api.v0alpha.DashboardView view = 2;
+   */
+  view?: DashboardView;
+
+  constructor(data?: PartialMessage<UpdateStandardDashboardViewRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateStandardDashboardViewRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateStandardDashboardViewRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateStandardDashboardViewRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateStandardDashboardViewRequest;
+
+  static equals(a: UpdateStandardDashboardViewRequest | PlainMessage<UpdateStandardDashboardViewRequest> | undefined, b: UpdateStandardDashboardViewRequest | PlainMessage<UpdateStandardDashboardViewRequest> | undefined): boolean;
 }
 
 /**
