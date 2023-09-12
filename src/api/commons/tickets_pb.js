@@ -104,6 +104,7 @@ export const CallbackContext = proto3.makeMessageType(
     { no: 2, name: "phone_no", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "caller_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "caller_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

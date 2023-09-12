@@ -354,6 +354,11 @@ export declare class CallbackContext extends Message<CallbackContext> {
    */
   callerName: string;
 
+  /**
+   * @generated from field: string caller_country_code = 5;
+   */
+  callerCountryCode: string;
+
   constructor(data?: PartialMessage<CallbackContext>);
 
   static readonly runtime: typeof proto3;
