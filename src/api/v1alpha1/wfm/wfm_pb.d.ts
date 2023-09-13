@@ -2794,7 +2794,7 @@ export declare class UpsertRegressionForecastRes extends Message<UpsertRegressio
 export declare class UpsertForecastDataDeltaReq extends Message<UpsertForecastDataDeltaReq> {
   /**
    * Delta to store
-   * The @start_datetime, @is_delta, and @skill_profile_sid fields DO NOT need to be set.
+   * The @start_datetime, @is_delta, and @skill_profile_category fields DO NOT need to be set.
    *
    * @generated from field: api.v1alpha1.wfm.CallDataByInterval delta = 1;
    */
@@ -2851,7 +2851,7 @@ export declare class UpsertForecastDataDeltaRes extends Message<UpsertForecastDa
 export declare class UpsertForecastDataDeltasReq extends Message<UpsertForecastDataDeltasReq> {
   /**
    * Deltas to store
-   * The @start_datetime, @is_delta, and @skill_profile_sid fields DO NOT need to be set.
+   * The @start_datetime, @is_delta, and @skill_profile_category fields DO NOT need to be set.
    *
    * @generated from field: repeated api.v1alpha1.wfm.CallDataByInterval deltas = 1;
    */
@@ -2905,8 +2905,10 @@ export declare class DeleteForecastIntervalsReq extends Message<DeleteForecastIn
   deleteParam: {
     /**
      * ID of the skill profile of which to delete the intervas/deltas.
+     * Deprecated as of Sep/13/2023: use skill_profile_category instead.
      *
-     * @generated from field: int64 skill_profile_sid = 1;
+     * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
+     * @deprecated
      */
     value: bigint;
     case: "skillProfileSid";
@@ -2918,6 +2920,14 @@ export declare class DeleteForecastIntervalsReq extends Message<DeleteForecastIn
      */
     value: DeleteForecastIntervalsReq_IntervalSids;
     case: "forecastIntervalSids";
+  } | {
+    /**
+     * Skill profile category of which to delete the intervals/deltas.
+     *
+     * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
+     */
+    value: SkillProfileCategory;
+    case: "skillProfileCategory";
   } | { case: undefined; value?: undefined };
 
   /**
