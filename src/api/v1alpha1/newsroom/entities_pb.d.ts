@@ -485,9 +485,9 @@ export declare class GetPublishedArticleByIdRequest extends Message<GetPublished
   /**
    * the unique news article identifier
    *
-   * @generated from field: int64 new_article_sid = 1;
+   * @generated from field: int64 published_article_sid = 1;
    */
-  newArticleSid: bigint;
+  publishedArticleSid: bigint;
 
   constructor(data?: PartialMessage<GetPublishedArticleByIdRequest>);
 

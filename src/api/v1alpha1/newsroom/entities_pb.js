@@ -192,7 +192,7 @@ export const ListPublishedArticlesResponse = proto3.makeMessageType(
 export const GetPublishedArticleByIdRequest = proto3.makeMessageType(
   "api.v1alpha1.newsroom.GetPublishedArticleByIdRequest",
   () => [
-    { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "published_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
