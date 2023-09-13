@@ -935,6 +935,18 @@ export const ListForecastIntervalsForSkillProfileReq = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListForecastIntervals RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListForecastIntervalsReq
+ */
+export const ListForecastIntervalsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListForecastIntervalsReq",
+  () => [
+    { no: 1, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
  * Request message for the UpsertRegressionForecast RPC
  *
  * @generated from message api.v1alpha1.wfm.UpsertRegressionForecastReq

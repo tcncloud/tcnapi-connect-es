@@ -2674,6 +2674,34 @@ export declare class ListForecastIntervalsForSkillProfileReq extends Message<Lis
 }
 
 /**
+ * Request message for the ListForecastIntervals RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListForecastIntervalsReq
+ */
+export declare class ListForecastIntervalsReq extends Message<ListForecastIntervalsReq> {
+  /**
+   * Category to get the forecast data intervals for.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 1;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<ListForecastIntervalsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListForecastIntervalsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListForecastIntervalsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListForecastIntervalsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListForecastIntervalsReq;
+
+  static equals(a: ListForecastIntervalsReq | PlainMessage<ListForecastIntervalsReq> | undefined, b: ListForecastIntervalsReq | PlainMessage<ListForecastIntervalsReq> | undefined): boolean;
+}
+
+/**
  * Request message for the UpsertRegressionForecast RPC
  *
  * @generated from message api.v1alpha1.wfm.UpsertRegressionForecastReq
