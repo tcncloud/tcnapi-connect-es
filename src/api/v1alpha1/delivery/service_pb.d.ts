@@ -343,7 +343,8 @@ export declare class GetTransferConfigByNameReq extends Message<GetTransferConfi
   /**
    * obsolete dont use
    *
-   * @generated from field: string name = 1;
+   * @generated from field: string name = 1 [deprecated = true];
+   * @deprecated
    */
   name: string;
 
@@ -716,7 +717,8 @@ export declare class GetDeliveryDefinitionByNameReq extends Message<GetDeliveryD
   /**
    * obsolete dont use
    *
-   * @generated from field: string name = 1;
+   * @generated from field: string name = 1 [deprecated = true];
+   * @deprecated
    */
   name: string;
 
