@@ -262,6 +262,111 @@ export const CreateDeliveryDefinitionRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.delivery.DeleteDeliveryDefinitionReq
+ */
+export const DeleteDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.DeleteDeliveryDefinitionRes
+ */
+export const DeleteDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteDeliveryDefinitionRes",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionReq
+ */
+export const GetDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionRes
+ */
+export const GetDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsReq
+ */
+export const ListDeliveryDefinitionsReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+    { no: 3, name: "list_req", kind: "message", T: ListReq },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsRes
+ */
+export const ListDeliveryDefinitionsRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsRes",
+  () => [
+    { no: 1, name: "entities", kind: "message", T: DeliveryDefinition, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq
+ */
+export const ListDeliveryDefinitionsByCredentialIDReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+    { no: 3, name: "credential_sid", kind: "message", T: ID },
+    { no: 4, name: "list_req", kind: "message", T: ListReq },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes
+ */
+export const ListDeliveryDefinitionsByCredentialIDRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes",
+  () => [
+    { no: 1, name: "entities", kind: "message", T: DeliveryDefinition, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateDeliveryDefinitionReq
+ */
+export const UpdateDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateDeliveryDefinitionRes
+ */
+export const UpdateDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateDeliveryDefinitionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
  * @generated from message api.v1alpha1.delivery.CreateEncryptionReq
  */
 export const CreateEncryptionReq = proto3.makeMessageType(

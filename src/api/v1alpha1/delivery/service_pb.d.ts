@@ -663,6 +663,276 @@ export declare class CreateDeliveryDefinitionRes extends Message<CreateDeliveryD
 }
 
 /**
+ * @generated from message api.v1alpha1.delivery.DeleteDeliveryDefinitionReq
+ */
+export declare class DeleteDeliveryDefinitionReq extends Message<DeleteDeliveryDefinitionReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.ID entity = 1;
+   */
+  entity?: ID;
+
+  constructor(data?: PartialMessage<DeleteDeliveryDefinitionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.DeleteDeliveryDefinitionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDeliveryDefinitionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDeliveryDefinitionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDeliveryDefinitionReq;
+
+  static equals(a: DeleteDeliveryDefinitionReq | PlainMessage<DeleteDeliveryDefinitionReq> | undefined, b: DeleteDeliveryDefinitionReq | PlainMessage<DeleteDeliveryDefinitionReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.DeleteDeliveryDefinitionRes
+ */
+export declare class DeleteDeliveryDefinitionRes extends Message<DeleteDeliveryDefinitionRes> {
+  constructor(data?: PartialMessage<DeleteDeliveryDefinitionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.DeleteDeliveryDefinitionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDeliveryDefinitionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDeliveryDefinitionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDeliveryDefinitionRes;
+
+  static equals(a: DeleteDeliveryDefinitionRes | PlainMessage<DeleteDeliveryDefinitionRes> | undefined, b: DeleteDeliveryDefinitionRes | PlainMessage<DeleteDeliveryDefinitionRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionReq
+ */
+export declare class GetDeliveryDefinitionReq extends Message<GetDeliveryDefinitionReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition entity = 1;
+   */
+  entity?: DeliveryDefinition;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask mask = 2;
+   */
+  mask?: FieldMask;
+
+  constructor(data?: PartialMessage<GetDeliveryDefinitionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.GetDeliveryDefinitionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeliveryDefinitionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionReq;
+
+  static equals(a: GetDeliveryDefinitionReq | PlainMessage<GetDeliveryDefinitionReq> | undefined, b: GetDeliveryDefinitionReq | PlainMessage<GetDeliveryDefinitionReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionRes
+ */
+export declare class GetDeliveryDefinitionRes extends Message<GetDeliveryDefinitionRes> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition entity = 1;
+   */
+  entity?: DeliveryDefinition;
+
+  constructor(data?: PartialMessage<GetDeliveryDefinitionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.GetDeliveryDefinitionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDeliveryDefinitionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDeliveryDefinitionRes;
+
+  static equals(a: GetDeliveryDefinitionRes | PlainMessage<GetDeliveryDefinitionRes> | undefined, b: GetDeliveryDefinitionRes | PlainMessage<GetDeliveryDefinitionRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsReq
+ */
+export declare class ListDeliveryDefinitionsReq extends Message<ListDeliveryDefinitionsReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition entity = 1;
+   */
+  entity?: DeliveryDefinition;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask mask = 2;
+   */
+  mask?: FieldMask;
+
+  /**
+   * @generated from field: api.v1alpha1.delivery.ListReq list_req = 3;
+   */
+  listReq?: ListReq;
+
+  constructor(data?: PartialMessage<ListDeliveryDefinitionsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.ListDeliveryDefinitionsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeliveryDefinitionsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsReq;
+
+  static equals(a: ListDeliveryDefinitionsReq | PlainMessage<ListDeliveryDefinitionsReq> | undefined, b: ListDeliveryDefinitionsReq | PlainMessage<ListDeliveryDefinitionsReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsRes
+ */
+export declare class ListDeliveryDefinitionsRes extends Message<ListDeliveryDefinitionsRes> {
+  /**
+   * @generated from field: repeated api.v1alpha1.delivery.DeliveryDefinition entities = 1;
+   */
+  entities: DeliveryDefinition[];
+
+  constructor(data?: PartialMessage<ListDeliveryDefinitionsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.ListDeliveryDefinitionsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeliveryDefinitionsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsRes;
+
+  static equals(a: ListDeliveryDefinitionsRes | PlainMessage<ListDeliveryDefinitionsRes> | undefined, b: ListDeliveryDefinitionsRes | PlainMessage<ListDeliveryDefinitionsRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq
+ */
+export declare class ListDeliveryDefinitionsByCredentialIDReq extends Message<ListDeliveryDefinitionsByCredentialIDReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition entity = 1;
+   */
+  entity?: DeliveryDefinition;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask mask = 2;
+   */
+  mask?: FieldMask;
+
+  /**
+   * @generated from field: api.v1alpha1.delivery.ID credential_sid = 3;
+   */
+  credentialSid?: ID;
+
+  /**
+   * @generated from field: api.v1alpha1.delivery.ListReq list_req = 4;
+   */
+  listReq?: ListReq;
+
+  constructor(data?: PartialMessage<ListDeliveryDefinitionsByCredentialIDReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeliveryDefinitionsByCredentialIDReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsByCredentialIDReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsByCredentialIDReq;
+
+  static equals(a: ListDeliveryDefinitionsByCredentialIDReq | PlainMessage<ListDeliveryDefinitionsByCredentialIDReq> | undefined, b: ListDeliveryDefinitionsByCredentialIDReq | PlainMessage<ListDeliveryDefinitionsByCredentialIDReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes
+ */
+export declare class ListDeliveryDefinitionsByCredentialIDRes extends Message<ListDeliveryDefinitionsByCredentialIDRes> {
+  /**
+   * @generated from field: repeated api.v1alpha1.delivery.DeliveryDefinition entities = 1;
+   */
+  entities: DeliveryDefinition[];
+
+  constructor(data?: PartialMessage<ListDeliveryDefinitionsByCredentialIDRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListDeliveryDefinitionsByCredentialIDRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsByCredentialIDRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListDeliveryDefinitionsByCredentialIDRes;
+
+  static equals(a: ListDeliveryDefinitionsByCredentialIDRes | PlainMessage<ListDeliveryDefinitionsByCredentialIDRes> | undefined, b: ListDeliveryDefinitionsByCredentialIDRes | PlainMessage<ListDeliveryDefinitionsByCredentialIDRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateDeliveryDefinitionReq
+ */
+export declare class UpdateDeliveryDefinitionReq extends Message<UpdateDeliveryDefinitionReq> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.DeliveryDefinition entity = 1;
+   */
+  entity?: DeliveryDefinition;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask mask = 2;
+   */
+  mask?: FieldMask;
+
+  constructor(data?: PartialMessage<UpdateDeliveryDefinitionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.UpdateDeliveryDefinitionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDeliveryDefinitionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDeliveryDefinitionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDeliveryDefinitionReq;
+
+  static equals(a: UpdateDeliveryDefinitionReq | PlainMessage<UpdateDeliveryDefinitionReq> | undefined, b: UpdateDeliveryDefinitionReq | PlainMessage<UpdateDeliveryDefinitionReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateDeliveryDefinitionRes
+ */
+export declare class UpdateDeliveryDefinitionRes extends Message<UpdateDeliveryDefinitionRes> {
+  /**
+   * @generated from field: api.v1alpha1.delivery.ID entity = 1;
+   */
+  entity?: ID;
+
+  constructor(data?: PartialMessage<UpdateDeliveryDefinitionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.UpdateDeliveryDefinitionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateDeliveryDefinitionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateDeliveryDefinitionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateDeliveryDefinitionRes;
+
+  static equals(a: UpdateDeliveryDefinitionRes | PlainMessage<UpdateDeliveryDefinitionRes> | undefined, b: UpdateDeliveryDefinitionRes | PlainMessage<UpdateDeliveryDefinitionRes> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v1alpha1.delivery.CreateEncryptionReq
  */
 export declare class CreateEncryptionReq extends Message<CreateEncryptionReq> {

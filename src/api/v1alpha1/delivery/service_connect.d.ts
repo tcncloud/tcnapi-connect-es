@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetDeliveryDefinitionByNameReq, GetDeliveryDefinitionByNameRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
+import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteDeliveryDefinitionReq, DeleteDeliveryDefinitionRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetDeliveryDefinitionByNameReq, GetDeliveryDefinitionByNameRes, GetDeliveryDefinitionReq, GetDeliveryDefinitionRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListDeliveryDefinitionsByCredentialIDReq, ListDeliveryDefinitionsByCredentialIDRes, ListDeliveryDefinitionsReq, ListDeliveryDefinitionsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateDeliveryDefinitionReq, UpdateDeliveryDefinitionRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -55,15 +55,6 @@ export declare const DeliveryApi: {
       readonly name: "DeleteTransferConfig",
       readonly I: typeof DeleteTransferConfigReq,
       readonly O: typeof DeleteTransferConfigRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetDeliveryDefinitionByName
-     */
-    readonly getDeliveryDefinitionByName: {
-      readonly name: "GetDeliveryDefinitionByName",
-      readonly I: typeof GetDeliveryDefinitionByNameReq,
-      readonly O: typeof GetDeliveryDefinitionByNameRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -154,6 +145,60 @@ export declare const DeliveryApi: {
       readonly name: "CreateDeliveryDefinition",
       readonly I: typeof CreateDeliveryDefinitionReq,
       readonly O: typeof CreateDeliveryDefinitionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.DeleteDeliveryDefinition
+     */
+    readonly deleteDeliveryDefinition: {
+      readonly name: "DeleteDeliveryDefinition",
+      readonly I: typeof DeleteDeliveryDefinitionReq,
+      readonly O: typeof DeleteDeliveryDefinitionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetDeliveryDefinition
+     */
+    readonly getDeliveryDefinition: {
+      readonly name: "GetDeliveryDefinition",
+      readonly I: typeof GetDeliveryDefinitionReq,
+      readonly O: typeof GetDeliveryDefinitionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetDeliveryDefinitionByName
+     */
+    readonly getDeliveryDefinitionByName: {
+      readonly name: "GetDeliveryDefinitionByName",
+      readonly I: typeof GetDeliveryDefinitionByNameReq,
+      readonly O: typeof GetDeliveryDefinitionByNameRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListDeliveryDefinitions
+     */
+    readonly listDeliveryDefinitions: {
+      readonly name: "ListDeliveryDefinitions",
+      readonly I: typeof ListDeliveryDefinitionsReq,
+      readonly O: typeof ListDeliveryDefinitionsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListDeliveryDefinitionsByCredentialID
+     */
+    readonly listDeliveryDefinitionsByCredentialID: {
+      readonly name: "ListDeliveryDefinitionsByCredentialID",
+      readonly I: typeof ListDeliveryDefinitionsByCredentialIDReq,
+      readonly O: typeof ListDeliveryDefinitionsByCredentialIDRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.UpdateDeliveryDefinition
+     */
+    readonly updateDeliveryDefinition: {
+      readonly name: "UpdateDeliveryDefinition",
+      readonly I: typeof UpdateDeliveryDefinitionReq,
+      readonly O: typeof UpdateDeliveryDefinitionRes,
       readonly kind: MethodKind.Unary,
     },
     /**
