@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteDeliveryDefinitionReq, DeleteDeliveryDefinitionRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetDeliveryDefinitionByNameReq, GetDeliveryDefinitionByNameRes, GetDeliveryDefinitionReq, GetDeliveryDefinitionRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListDeliveryDefinitionsByCredentialIDReq, ListDeliveryDefinitionsByCredentialIDRes, ListDeliveryDefinitionsReq, ListDeliveryDefinitionsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateDeliveryDefinitionReq, UpdateDeliveryDefinitionRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
+import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteDeliveryDefinitionReq, DeleteDeliveryDefinitionRes, DeleteEncryptionReq, DeleteEncryptionRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetDeliveryDefinitionByNameReq, GetDeliveryDefinitionByNameRes, GetDeliveryDefinitionReq, GetDeliveryDefinitionRes, GetEncryptionReq, GetEncryptionRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListDeliveryDefinitionsByCredentialIDReq, ListDeliveryDefinitionsByCredentialIDRes, ListDeliveryDefinitionsReq, ListDeliveryDefinitionsRes, ListEncryptionsReq, ListEncryptionsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateDeliveryDefinitionReq, UpdateDeliveryDefinitionRes, UpdateEncryptionReq, UpdateEncryptionRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -208,6 +208,42 @@ export declare const DeliveryApi: {
       readonly name: "CreateEncryption",
       readonly I: typeof CreateEncryptionReq,
       readonly O: typeof CreateEncryptionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.DeleteEncryption
+     */
+    readonly deleteEncryption: {
+      readonly name: "DeleteEncryption",
+      readonly I: typeof DeleteEncryptionReq,
+      readonly O: typeof DeleteEncryptionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetEncryption
+     */
+    readonly getEncryption: {
+      readonly name: "GetEncryption",
+      readonly I: typeof GetEncryptionReq,
+      readonly O: typeof GetEncryptionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListEncryptions
+     */
+    readonly listEncryptions: {
+      readonly name: "ListEncryptions",
+      readonly I: typeof ListEncryptionsReq,
+      readonly O: typeof ListEncryptionsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.UpdateEncryption
+     */
+    readonly updateEncryption: {
+      readonly name: "UpdateEncryption",
+      readonly I: typeof UpdateEncryptionReq,
+      readonly O: typeof UpdateEncryptionRes,
       readonly kind: MethodKind.Unary,
     },
   }

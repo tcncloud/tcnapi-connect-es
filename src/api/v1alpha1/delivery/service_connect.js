@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteDeliveryDefinitionReq, DeleteDeliveryDefinitionRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetDeliveryDefinitionByNameReq, GetDeliveryDefinitionByNameRes, GetDeliveryDefinitionReq, GetDeliveryDefinitionRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListDeliveryDefinitionsByCredentialIDReq, ListDeliveryDefinitionsByCredentialIDRes, ListDeliveryDefinitionsReq, ListDeliveryDefinitionsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateDeliveryDefinitionReq, UpdateDeliveryDefinitionRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
+import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteDeliveryDefinitionReq, DeleteDeliveryDefinitionRes, DeleteEncryptionReq, DeleteEncryptionRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetDeliveryDefinitionByNameReq, GetDeliveryDefinitionByNameRes, GetDeliveryDefinitionReq, GetDeliveryDefinitionRes, GetEncryptionReq, GetEncryptionRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListDeliveryDefinitionsByCredentialIDReq, ListDeliveryDefinitionsByCredentialIDRes, ListDeliveryDefinitionsReq, ListDeliveryDefinitionsRes, ListEncryptionsReq, ListEncryptionsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateDeliveryDefinitionReq, UpdateDeliveryDefinitionRes, UpdateEncryptionReq, UpdateEncryptionRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -208,6 +208,42 @@ export const DeliveryApi = {
       name: "CreateEncryption",
       I: CreateEncryptionReq,
       O: CreateEncryptionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.DeleteEncryption
+     */
+    deleteEncryption: {
+      name: "DeleteEncryption",
+      I: DeleteEncryptionReq,
+      O: DeleteEncryptionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetEncryption
+     */
+    getEncryption: {
+      name: "GetEncryption",
+      I: GetEncryptionReq,
+      O: GetEncryptionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListEncryptions
+     */
+    listEncryptions: {
+      name: "ListEncryptions",
+      I: ListEncryptionsReq,
+      O: ListEncryptionsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.UpdateEncryption
+     */
+    updateEncryption: {
+      name: "UpdateEncryption",
+      I: UpdateEncryptionReq,
+      O: UpdateEncryptionRes,
       kind: MethodKind.Unary,
     },
   }

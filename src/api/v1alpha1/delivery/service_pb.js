@@ -301,6 +301,28 @@ export const GetDeliveryDefinitionRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq
+ */
+export const GetDeliveryDefinitionByNameReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+    { no: 3, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes
+ */
+export const GetDeliveryDefinitionByNameRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
  * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsReq
  */
 export const ListDeliveryDefinitionsReq = proto3.makeMessageType(
@@ -387,24 +409,84 @@ export const CreateEncryptionRes = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq
+ * @generated from message api.v1alpha1.delivery.DeleteEncryptionReq
  */
-export const GetDeliveryDefinitionByNameReq = proto3.makeMessageType(
-  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq",
+export const DeleteEncryptionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteEncryptionReq",
   () => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "entity", kind: "message", T: ID },
     { no: 2, name: "mask", kind: "message", T: FieldMask },
-    { no: 3, name: "entity", kind: "message", T: DeliveryDefinition },
   ],
 );
 
 /**
- * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes
+ * @generated from message api.v1alpha1.delivery.DeleteEncryptionRes
  */
-export const GetDeliveryDefinitionByNameRes = proto3.makeMessageType(
-  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes",
+export const DeleteEncryptionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteEncryptionRes",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetEncryptionReq
+ */
+export const GetEncryptionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetEncryptionReq",
   () => [
-    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 1, name: "entity", kind: "message", T: Encryption },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetEncryptionRes
+ */
+export const GetEncryptionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetEncryptionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: Encryption },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListEncryptionsReq
+ */
+export const ListEncryptionsReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListEncryptionsReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ListReq },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListEncryptionsRes
+ */
+export const ListEncryptionsRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListEncryptionsRes",
+  () => [
+    { no: 1, name: "entities", kind: "message", T: Encryption, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateEncryptionReq
+ */
+export const UpdateEncryptionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateEncryptionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: Encryption },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateEncryptionRes
+ */
+export const UpdateEncryptionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateEncryptionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
   ],
 );
 
