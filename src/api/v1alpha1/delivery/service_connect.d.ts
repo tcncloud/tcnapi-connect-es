@@ -22,24 +22,6 @@ export declare const DeliveryApi: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateDeliveryDefinition
-     */
-    readonly createDeliveryDefinition: {
-      readonly name: "CreateDeliveryDefinition",
-      readonly I: typeof CreateDeliveryDefinitionReq,
-      readonly O: typeof CreateDeliveryDefinitionRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateEncryption
-     */
-    readonly createEncryption: {
-      readonly name: "CreateEncryption",
-      readonly I: typeof CreateEncryptionReq,
-      readonly O: typeof CreateEncryptionRes,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
      * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListTransferConfigs
      */
     readonly listTransferConfigs: {
@@ -163,6 +145,24 @@ export declare const DeliveryApi: {
       readonly name: "UpdateCredential",
       readonly I: typeof UpdateCredentialReq,
       readonly O: typeof UpdateCredentialRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateDeliveryDefinition
+     */
+    readonly createDeliveryDefinition: {
+      readonly name: "CreateDeliveryDefinition",
+      readonly I: typeof CreateDeliveryDefinitionReq,
+      readonly O: typeof CreateDeliveryDefinitionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateEncryption
+     */
+    readonly createEncryption: {
+      readonly name: "CreateEncryption",
+      readonly I: typeof CreateEncryptionReq,
+      readonly O: typeof CreateEncryptionRes,
       readonly kind: MethodKind.Unary,
     },
   }

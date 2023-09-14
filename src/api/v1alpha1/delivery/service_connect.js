@@ -22,24 +22,6 @@ export const DeliveryApi = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateDeliveryDefinition
-     */
-    createDeliveryDefinition: {
-      name: "CreateDeliveryDefinition",
-      I: CreateDeliveryDefinitionReq,
-      O: CreateDeliveryDefinitionRes,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateEncryption
-     */
-    createEncryption: {
-      name: "CreateEncryption",
-      I: CreateEncryptionReq,
-      O: CreateEncryptionRes,
-      kind: MethodKind.Unary,
-    },
-    /**
      * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListTransferConfigs
      */
     listTransferConfigs: {
@@ -163,6 +145,24 @@ export const DeliveryApi = {
       name: "UpdateCredential",
       I: UpdateCredentialReq,
       O: UpdateCredentialRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateDeliveryDefinition
+     */
+    createDeliveryDefinition: {
+      name: "CreateDeliveryDefinition",
+      I: CreateDeliveryDefinitionReq,
+      O: CreateDeliveryDefinitionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateEncryption
+     */
+    createEncryption: {
+      name: "CreateEncryption",
+      I: CreateEncryptionReq,
+      O: CreateEncryptionRes,
       kind: MethodKind.Unary,
     },
   }
