@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes } from "./wfm_pb.js";
+import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildCallProfileTemplateReq, BuildCallProfileTemplateRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListForecastIntervalsReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListProgramNodesBySidReq, ListProgramNodesBySidRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, ListWFMAgentSidsReq, ListWFMAgentSidsRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes } from "./wfm_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -163,17 +163,16 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * Gets the historical data for the org sending the request and the given @skill_profile_sid.
+     * Gets the historical data for the org sending the request and the given @skill_profile_category.
      * It will look through the client's call history and generate the historical data by using their configured forecasting parameters (historical data period and interval width).
      * The duration of each interval will be the interval width of the org's forecasting parameters.
-     * It also applies any deltas that the client has stored for the given @SkillProfileSid.
+     * It also applies any deltas that the client has stored for the given @skill_profile_category, if the category is a group it will use the deltas of the skill profiles part of that group.
      * If the client has no historical data, only the deltas will be applied to the returned intervals, all other intervals will have nil averages.
-     * If any inactive skill profiles are mapped to the given @skill_profile_sid, the call history and deltas of those skill profiles will be included for the historical data calculation.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @skill_profile_sid in the request is invalid.
-     *   - grpc.NotFound: the @skill_profile_sid given is not found for the org.
+     *   - grpc.Invalid: the @skill_profile_category in the request is invalid.
+     *   - grpc.NotFound: the @skill_profile_category given is not found for the org.
      *   - grpc.Internal: error occurs when getting the historical data.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListHistoricalData
@@ -242,6 +241,7 @@ export declare const WFM: {
      * The @total_calls in the returned template be summed from the (@training_data_start_datetime - @averages_calculation_range_in_months) to @training_data_end_datetime,
      * or from @training_data_start_datetime to @training_data_end_datetime if @averages_calculation_range_in_months is 0.
      * The fixed averages fields in the call profile template, will be set to the averages that the skill profile has.
+     * DEPRECATED as of Sep/7/2023 - Use BuildCallProfileTemplate instead.
      * Required permissions:
      *   NONE
      * Errors:
@@ -250,11 +250,34 @@ export declare const WFM: {
      *   - grpc.Internal: error occurs when building the call profile template.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildCallProfileTemplateForSkillProfile
+     * @deprecated
      */
     readonly buildCallProfileTemplateForSkillProfile: {
       readonly name: "BuildCallProfileTemplateForSkillProfile",
       readonly I: typeof BuildCallProfileTemplateForSkillProfileReq,
       readonly O: typeof BuildCallProfileTemplateForSkillProfileRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Builds and returns a call profile template for the org sending the request and the given @skill_profile_category.
+     * The template will be generated using the training data for said skill profile category using the @training_data_range and @averages_calculation_range_in_months
+     * from the client's saved forecasting parameters.
+     * The @total_calls in the returned template be summed from the (@training_data_start_datetime - @averages_calculation_range_in_months) to @training_data_end_datetime,
+     * or from @training_data_start_datetime to @training_data_end_datetime if @averages_calculation_range_in_months is 0.
+     * The fixed averages fields in the call profile template, will be set to the averages that the skill profile category has.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_category in the request is invalid.
+     *   - grpc.NotFound: the @skill_profile_category given is not found for the org.
+     *   - grpc.Internal: error occurs when building the call profile template.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.BuildCallProfileTemplate
+     */
+    readonly buildCallProfileTemplate: {
+      readonly name: "BuildCallProfileTemplate",
+      readonly I: typeof BuildCallProfileTemplateReq,
+      readonly O: typeof BuildCallProfileTemplateRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -363,12 +386,12 @@ export declare const WFM: {
      * Builds a profile forecast using the provided @call_profile_template.
      * The forecaster will produce intervals from the following range using the client's saved forecasting parameters:
      * (@training_data_range_end_datetime - @forecast_test_range_in_weeks) to @forecast_range_end_datetime.
-     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplateForSkillProfile.
+     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplate.
      * The @fixed_averages_forecast field indicates whether or not to do a fixed averages forecast.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @skill_profile_sid or @call_profile_template in the request is invalid.
+     *   - grpc.Invalid: the @skill_profile_category or @call_profile_template in the request is invalid.
      *   - grpc.Internal: error occurs during the building of the profile forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildProfileForecastByInterval
@@ -383,13 +406,13 @@ export declare const WFM: {
      * Builds a profile forecast using the provided @call_profile_template.
      * The forecaster will produce intervals from the following range using the client's saved forecasting parameters:
      * (@training_data_range_end_datetime - @forecast_test_range_in_weeks) to @forecast_range_end_datetime.
-     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplateForSkillProfile.
+     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplate.
      * The @fixed_averages_forecast field indicates whether or not to do a fixed averages forecast.
-     * It also returns the statistics of the produced forecast by using the test data of the given @skill_profile_sid.
+     * It also returns the statistics of the produced forecast by using the test data of the given @skill_profile_category.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @skill_profile_sid or @call_profile_template in the request is invalid.
+     *   - grpc.Invalid: the @skill_profile_category or @call_profile_template in the request is invalid.
      *   - grpc.Internal: error occurs during the building of the profile forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildProfileForecastByIntervalWithStats
@@ -503,6 +526,7 @@ export declare const WFM: {
     },
     /**
      * Gets the forecast data intervals for the given @skill_profile_sid.
+     * DEPRECATED as of Sep/13/2023 - Use ListForecastIntervals instead.
      * Required permissions:
      *   NONE
      * Errors:
@@ -510,6 +534,7 @@ export declare const WFM: {
      *   - grpc.Internal: error occurs when getting the forecast data intervals.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListForecastIntervalsForSkillProfile
+     * @deprecated
      */
     readonly listForecastIntervalsForSkillProfile: {
       readonly name: "ListForecastIntervalsForSkillProfile",
@@ -518,15 +543,30 @@ export declare const WFM: {
       readonly kind: MethodKind.ServerStreaming,
     },
     /**
+     * Gets the forecast data intervals for the given @skill_profile_category.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_category in the request is invalid.
+     *   - grpc.Internal: error occurs when getting the forecast data intervals.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListForecastIntervals
+     */
+    readonly listForecastIntervals: {
+      readonly name: "ListForecastIntervals",
+      readonly I: typeof ListForecastIntervalsReq,
+      readonly O: typeof CallDataByInterval,
+      readonly kind: MethodKind.ServerStreaming,
+    },
+    /**
      * Generates a regression forecast using the provided @regression_template.
-     * It will generate forecast intervals for the skill profiles sids in @skill_profile_sids_to_forecast,
-     * if the list is empty or has no valid skill profile sids, it will generate and save forecasts for all active skill profiles.
+     * It will generate forecast intervals for the skill profiles sids in @skill_profile_sids_to_forecast.
      * It will use the client's saved forecasting test range as the start datetime and the forecast range as the end datetime of the forecasted data.
      * It will use the client's saved interval width to divide the resulting forecast intervals.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @regression_template in the request is invalid.
+     *   - grpc.Invalid: no @skill_profile_sids_to_forecast are given or the @regression_template in the request is invalid.
      *   - grpc.Internal: error occurs during the building of the regression forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildRegressionForecastByInterval
@@ -539,14 +579,13 @@ export declare const WFM: {
     },
     /**
      * Generates a regression forecast and calculates forecast statistics using the provided @regression_template.
-     * It will generate forecast intervals for the skill profiles sids in @skill_profile_sids_to_forecast,
-     * if the list is empty or has no valid skill profile sids, it will generate and save forecasts for all active skill profiles.
+     * It will generate forecast intervals for the skill profiles sids in @skill_profile_sids_to_forecast.
      * It will use the client's saved forecasting test range as the start datetime and the forecast range as the end datetime of the forecasted data.
      * It will use the client's saved interval width to divide the resulting forecast intervals.
      * The first message received will be the forecast statistics while all subsequent ones will be the forecast intervals.
      *
      * Errors:
-     *   - grpc.Invalid: the @regression_template in the request is invalid.
+     *   - grpc.Invalid: no @skill_profile_sids_to_forecast are given or the @regression_template in the request is invalid.
      *   - grpc.Internal: error occurs either during the when building the forecast or calculating the stats.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildRegressionForecastByIntervalWithStats
@@ -627,7 +666,7 @@ export declare const WFM: {
     },
     /**
      * Deletes forecast data intervals/deltas based on the parameters provided.
-     * If @delete_param is type skill_profile_sid, then the intervals/deltas to be deleted will be
+     * If @delete_param is type skill_profile_category, then the intervals/deltas to be deleted will be
      * associated with that id. If @delete_param is type interval_sids, then the intervals/deltas to be
      * deleted will be contained in the list @interval_sids. The @delete_type field determines which
      * table(s) in the database the intervals/deltas will be deleted from.
@@ -867,6 +906,22 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Lists the program nodes with the given @program_node_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the given @program_node_sids are invalid.
+     *   - grpc.Internal: error occurs when listing the program nodes.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListProgramNodesBySid
+     */
+    readonly listProgramNodesBySid: {
+      readonly name: "ListProgramNodesBySid",
+      readonly I: typeof ListProgramNodesBySidReq,
+      readonly O: typeof ListProgramNodesBySidRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * Creates the given @constraint_rule for the org sending the request.
      * The @constraint_rule_sid and @skill_proficiency_sid (if one was created) of the new entities will be returned in the response.
      * The @schedule_scenario_sid must match the scenario of the @parent_entity.
@@ -1086,6 +1141,10 @@ export declare const WFM: {
      * if @include_inactive is true then inactive agents will also be included, otherwise only active agents will be returned.
      * if @include_skill_proficiencies is true then agents returned will include their skill proficiencies.
      * if @include_agent_groups is true then the @agent_groups_by_agent response field will be set with a list of agent groups correlating to each agents index in the @wfm_agents field.
+     * if @include_agent_groups is set to true, the @agent_group_schedule_scenario_sid field must be set, so that the agent groups for the correct scenario are returned.
+     * if @include_agent_groups is set to true, and @agent_group_schedule_scenario_sid is not set, the agent groups will not be filtered by schedule scenario.
+     * if @include_agent_groups is set to false, the @agent_group_schedule_scenario_sid will be ignored.
+     * @agent_group_schedule_scenario_sid does not effect which @wfm_agents are returned.
      * WFM agents with no associated agent_groups will have an empty slice in agent_groups_by_agent at their correlated index.
      * Required Permissions:
      *   NONE
@@ -1135,6 +1194,24 @@ export declare const WFM: {
       readonly name: "ListUngroupedWFMAgents",
       readonly I: typeof ListUngroupedWFMAgentsReq,
       readonly O: typeof ListUngroupedWFMAgentsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the wfm_agent_sids with the given @tcn_agent_sids for the org sending the request.
+     * Returns a map where Key: tcn_agent_sid - Value: wfm_agent_sid.
+     * If the wfm_agent_sid is not found for any @tcn_agent_sids, they will not have an entry in the returned @sids.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *  - grpc.Invalid: the @tcn_agent_sids are invalid.
+     *  - grpc.Internal: error occours while listing the wfm_agent_sids.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListWFMAgentSids
+     */
+    readonly listWFMAgentSids: {
+      readonly name: "ListWFMAgentSids",
+      readonly I: typeof ListWFMAgentSidsReq,
+      readonly O: typeof ListWFMAgentSidsRes,
       readonly kind: MethodKind.Unary,
     },
     /**

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateNewsArticleRequest, CreateNewsArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse } from "./entities_pb.js";
+import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetNewsForUserRequest, GetNewsForUserResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UserActivityRequest, UserActivityResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -58,6 +58,61 @@ export const NewsroomAPI = {
       name: "UpdateNewsArticle",
       I: UpdateNewsArticleRequest,
       O: UpdateNewsArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * create published article
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.CreatePublishedArticle
+     */
+    createPublishedArticle: {
+      name: "CreatePublishedArticle",
+      I: CreatePublishedArticleRequest,
+      O: CreatePublishedArticleResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * list published articles
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.ListPublishedArticles
+     */
+    listPublishedArticles: {
+      name: "ListPublishedArticles",
+      I: ListPublishedArticlesRequest,
+      O: ListPublishedArticlesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * get published article details by the id
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.GetPublishedArticleById
+     */
+    getPublishedArticleById: {
+      name: "GetPublishedArticleById",
+      I: GetPublishedArticleByIdRequest,
+      O: GetPublishedArticleByIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * user activity updates
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.UserActivity
+     */
+    userActivity: {
+      name: "UserActivity",
+      I: UserActivityRequest,
+      O: UserActivityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * fetch the unseen articles for the user
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.GetNewsForUser
+     */
+    getNewsForUser: {
+      name: "GetNewsForUser",
+      I: GetNewsForUserRequest,
+      O: GetNewsForUserResponse,
       kind: MethodKind.Unary,
     },
   }

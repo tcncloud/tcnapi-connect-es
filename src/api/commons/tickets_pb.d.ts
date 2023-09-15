@@ -194,6 +194,13 @@ export declare class Ticket extends Message<Ticket> {
    */
   ticketStatus: TicketStatus;
 
+  /**
+   * assignee list
+   *
+   * @generated from field: repeated string ticket_assignee = 21;
+   */
+  ticketAssignee: string[];
+
   constructor(data?: PartialMessage<Ticket>);
 
   static readonly runtime: typeof proto3;
@@ -346,6 +353,11 @@ export declare class CallbackContext extends Message<CallbackContext> {
    * @generated from field: string caller_name = 4;
    */
   callerName: string;
+
+  /**
+   * @generated from field: string caller_country_code = 5;
+   */
+  callerCountryCode: string;
 
   constructor(data?: PartialMessage<CallbackContext>);
 

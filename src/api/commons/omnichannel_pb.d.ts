@@ -770,6 +770,11 @@ export declare enum OmniConversationMetadataName {
   TRANSCRIPT_PATH = 3,
 
   /**
+   * @generated from enum value: OMNI_CONVERSATION_METADATA_NAME_FLOW_DATA = 4;
+   */
+  OMNI_CONVERSATION_METADATA_NAME_FLOW_DATA = 4,
+
+  /**
    * @generated from enum value: OMNI_CONVERSATION_METADATA_NAME_TIMER_WAIT = 10;
    */
   OMNI_CONVERSATION_METADATA_NAME_TIMER_WAIT = 10,

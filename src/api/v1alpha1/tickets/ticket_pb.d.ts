@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Comment, ConfirmReplyComment, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla } from "../../commons/tickets_pb.js";
+import type { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -121,6 +121,13 @@ export declare class CreateTicketReq extends Message<CreateTicketReq> {
    * @generated from field: repeated api.commons.TicketAction ticket_action = 15;
    */
   ticketAction: TicketAction[];
+
+  /**
+   * assignee list
+   *
+   * @generated from field: repeated string ticket_assignee = 16;
+   */
+  ticketAssignee: string[];
 
   constructor(data?: PartialMessage<CreateTicketReq>);
 
@@ -736,6 +743,11 @@ export declare class CreateSlaReq extends Message<CreateSlaReq> {
    * @generated from field: int64 interval = 4;
    */
   interval: bigint;
+
+  /**
+   * @generated from field: api.commons.Duration duration = 5;
+   */
+  duration?: Duration;
 
   constructor(data?: PartialMessage<CreateSlaReq>);
 
@@ -1390,6 +1402,11 @@ export declare class ChangeTicketStatusRequest extends Message<ChangeTicketStatu
    * @generated from field: int64 status_id = 2;
    */
   statusId: bigint;
+
+  /**
+   * @generated from field: api.commons.TicketStatus ticket_status = 3;
+   */
+  ticketStatus: TicketStatus;
 
   constructor(data?: PartialMessage<ChangeTicketStatusRequest>);
 
