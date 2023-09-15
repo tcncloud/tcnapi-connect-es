@@ -231,7 +231,7 @@ export declare class UpdateNewsArticleRequest extends Message<UpdateNewsArticleR
  */
 export declare class UpdateNewsArticleResponse extends Message<UpdateNewsArticleResponse> {
   /**
-   * latest news article
+   * updated news article
    *
    * @generated from field: api.v1alpha1.newsroom.NewsArticleDetails article_details = 1;
    */
