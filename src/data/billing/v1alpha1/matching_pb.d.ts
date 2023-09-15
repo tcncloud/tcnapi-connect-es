@@ -17,17 +17,31 @@ export declare enum MatchingRule {
    * @generated from enum value: MATCHING_RULE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MATCHING_RULE_AREA_CODE = 1;
+   */
+  AREA_CODE = 1,
 }
 
 /**
  * MatchingConfig represents the configuration for matching
  * an event to a rate definition.
  *
- * oneof config
- *
  * @generated from message data.billing.v1alpha1.MatchingConfig
  */
 export declare class MatchingConfig extends Message<MatchingConfig> {
+  /**
+   * @generated from oneof data.billing.v1alpha1.MatchingConfig.config
+   */
+  config: {
+    /**
+     * @generated from field: data.billing.v1alpha1.MatchingConfigAreaCode area_code = 1;
+     */
+    value: MatchingConfigAreaCode;
+    case: "areaCode";
+  } | { case: undefined; value?: undefined };
+
   constructor(data?: PartialMessage<MatchingConfig>);
 
   static readonly runtime: typeof proto3;
@@ -41,5 +55,42 @@ export declare class MatchingConfig extends Message<MatchingConfig> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MatchingConfig;
 
   static equals(a: MatchingConfig | PlainMessage<MatchingConfig> | undefined, b: MatchingConfig | PlainMessage<MatchingConfig> | undefined): boolean;
+}
+
+/**
+ * MatchingConfigAreaCode represents the configuration for
+ * matching an event to a rate definition based on the area
+ * code of the event.
+ *
+ * @generated from message data.billing.v1alpha1.MatchingConfigAreaCode
+ */
+export declare class MatchingConfigAreaCode extends Message<MatchingConfigAreaCode> {
+  /**
+   * The name of this matching configuration.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The area codes to match.
+   *
+   * @generated from field: repeated string area_codes = 2;
+   */
+  areaCodes: string[];
+
+  constructor(data?: PartialMessage<MatchingConfigAreaCode>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "data.billing.v1alpha1.MatchingConfigAreaCode";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MatchingConfigAreaCode;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MatchingConfigAreaCode;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MatchingConfigAreaCode;
+
+  static equals(a: MatchingConfigAreaCode | PlainMessage<MatchingConfigAreaCode> | undefined, b: MatchingConfigAreaCode | PlainMessage<MatchingConfigAreaCode> | undefined): boolean;
 }
 
