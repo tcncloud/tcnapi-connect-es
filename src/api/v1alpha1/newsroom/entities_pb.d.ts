@@ -645,6 +645,8 @@ export declare class UserActivityRequest extends Message<UserActivityRequest> {
  */
 export declare class UserActivityResponse extends Message<UserActivityResponse> {
   /**
+   * user activity details
+   *
    * @generated from field: api.v1alpha1.newsroom.UserActivity user_activity = 1;
    */
   userActivity?: UserActivity;
