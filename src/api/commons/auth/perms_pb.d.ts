@@ -428,6 +428,13 @@ export declare enum Permission {
   WFM = 1500,
 
   /**
+   * Enables access to the Agent Portal feature.
+   *
+   * @generated from enum value: PERMISSION_AGENT_PORTAL = 1501;
+   */
+  AGENT_PORTAL = 1501,
+
+  /**
    * Enables access to Scorecards app.
    *
    * @generated from enum value: PERMISSION_SCORECARDS = 1600;

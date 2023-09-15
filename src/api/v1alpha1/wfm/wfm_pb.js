@@ -935,6 +935,18 @@ export const ListForecastIntervalsForSkillProfileReq = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListForecastIntervals RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListForecastIntervalsReq
+ */
+export const ListForecastIntervalsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListForecastIntervalsReq",
+  () => [
+    { no: 1, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
  * Request message for the UpsertRegressionForecast RPC
  *
  * @generated from message api.v1alpha1.wfm.UpsertRegressionForecastReq
@@ -1017,6 +1029,7 @@ export const DeleteForecastIntervalsReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, oneof: "delete_param" },
     { no: 2, name: "forecast_interval_sids", kind: "message", T: DeleteForecastIntervalsReq_IntervalSids, oneof: "delete_param" },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory, oneof: "delete_param" },
     { no: 3, name: "forecast_interval_delete_type", kind: "enum", T: proto3.getEnumType(DeleteForecastIntervalsReq_ForecastIntervalDeleteType) },
   ],
 );

@@ -105,6 +105,7 @@ export const RecordType = proto3.makeEnum(
     {no: 21, name: "RECORD_TYPE_FULL_NAME", localName: "FULL_NAME"},
     {no: 22, name: "RECORD_TYPE_ACCOUNT_NUMBER", localName: "ACCOUNT_NUMBER"},
     {no: 23, name: "RECORD_TYPE_STRUCT_VALUE", localName: "STRUCT_VALUE"},
+    {no: 24, name: "RECORD_TYPE_EHR_DETAILS", localName: "EHR_DETAILS"},
   ],
 );
 
@@ -134,6 +135,7 @@ export const FieldType = proto3.makeEnum(
     {no: 18, name: "FIELD_TYPE_ACCOUNT_NUMBER", localName: "ACCOUNT_NUMBER"},
     {no: 19, name: "FIELD_TYPE_ERROR", localName: "ERROR"},
     {no: 20, name: "FIELD_TYPE_STRUCT_VALUE", localName: "STRUCT_VALUE"},
+    {no: 21, name: "FIELD_TYPE_EHR_DETAILS", localName: "EHR_DETAILS"},
   ],
 );
 

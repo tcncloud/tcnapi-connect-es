@@ -2674,6 +2674,34 @@ export declare class ListForecastIntervalsForSkillProfileReq extends Message<Lis
 }
 
 /**
+ * Request message for the ListForecastIntervals RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListForecastIntervalsReq
+ */
+export declare class ListForecastIntervalsReq extends Message<ListForecastIntervalsReq> {
+  /**
+   * Category to get the forecast data intervals for.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 1;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<ListForecastIntervalsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListForecastIntervalsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListForecastIntervalsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListForecastIntervalsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListForecastIntervalsReq;
+
+  static equals(a: ListForecastIntervalsReq | PlainMessage<ListForecastIntervalsReq> | undefined, b: ListForecastIntervalsReq | PlainMessage<ListForecastIntervalsReq> | undefined): boolean;
+}
+
+/**
  * Request message for the UpsertRegressionForecast RPC
  *
  * @generated from message api.v1alpha1.wfm.UpsertRegressionForecastReq
@@ -2766,7 +2794,7 @@ export declare class UpsertRegressionForecastRes extends Message<UpsertRegressio
 export declare class UpsertForecastDataDeltaReq extends Message<UpsertForecastDataDeltaReq> {
   /**
    * Delta to store
-   * The @start_datetime, @is_delta, and @skill_profile_sid fields DO NOT need to be set.
+   * The @start_datetime, @is_delta, and @skill_profile_category fields DO NOT need to be set.
    *
    * @generated from field: api.v1alpha1.wfm.CallDataByInterval delta = 1;
    */
@@ -2823,7 +2851,7 @@ export declare class UpsertForecastDataDeltaRes extends Message<UpsertForecastDa
 export declare class UpsertForecastDataDeltasReq extends Message<UpsertForecastDataDeltasReq> {
   /**
    * Deltas to store
-   * The @start_datetime, @is_delta, and @skill_profile_sid fields DO NOT need to be set.
+   * The @start_datetime, @is_delta, and @skill_profile_category fields DO NOT need to be set.
    *
    * @generated from field: repeated api.v1alpha1.wfm.CallDataByInterval deltas = 1;
    */
@@ -2877,8 +2905,10 @@ export declare class DeleteForecastIntervalsReq extends Message<DeleteForecastIn
   deleteParam: {
     /**
      * ID of the skill profile of which to delete the intervas/deltas.
+     * Deprecated as of Sep/13/2023: use skill_profile_category instead.
      *
-     * @generated from field: int64 skill_profile_sid = 1;
+     * @generated from field: int64 skill_profile_sid = 1 [deprecated = true];
+     * @deprecated
      */
     value: bigint;
     case: "skillProfileSid";
@@ -2890,6 +2920,14 @@ export declare class DeleteForecastIntervalsReq extends Message<DeleteForecastIn
      */
     value: DeleteForecastIntervalsReq_IntervalSids;
     case: "forecastIntervalSids";
+  } | {
+    /**
+     * Skill profile category of which to delete the intervals/deltas.
+     *
+     * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 4;
+     */
+    value: SkillProfileCategory;
+    case: "skillProfileCategory";
   } | { case: undefined; value?: undefined };
 
   /**
