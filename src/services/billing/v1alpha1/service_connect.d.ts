@@ -117,7 +117,8 @@ export declare const BillingService: {
       readonly kind: MethodKind.ServerStreaming,
     },
     /**
-     * UpdateBillingPlan updates the specified billing plan.
+     * UpdateBillingPlan updates the specified billing plan. This is expected to provide
+     * all the rate definitions for the billing plan if updating rates.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateBillingPlan
      */
@@ -128,7 +129,8 @@ export declare const BillingService: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * UpdateDefaultBillingPlan updates the default billing plan.
+     * UpdateDefaultBillingPlan updates the default billing plan. This is expected to provide
+     * all the rate definitions for the billing plan.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateDefaultBillingPlan
      */
