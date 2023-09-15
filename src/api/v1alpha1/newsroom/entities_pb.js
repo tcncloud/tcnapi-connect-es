@@ -260,3 +260,25 @@ export const UserActivityResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request to get unseen news articles for the user
+ *
+ * @generated from message api.v1alpha1.newsroom.GetNewsForUserRequest
+ */
+export const GetNewsForUserRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.GetNewsForUserRequest",
+  [],
+);
+
+/**
+ * Response to unseen news articles for the user
+ *
+ * @generated from message api.v1alpha1.newsroom.GetNewsForUserResponse
+ */
+export const GetNewsForUserResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.GetNewsForUserResponse",
+  () => [
+    { no: 1, name: "published_article_details", kind: "message", T: PublishedArticleDetails, repeated: true },
+  ],
+);
+

@@ -664,3 +664,52 @@ export declare class UserActivityResponse extends Message<UserActivityResponse> 
   static equals(a: UserActivityResponse | PlainMessage<UserActivityResponse> | undefined, b: UserActivityResponse | PlainMessage<UserActivityResponse> | undefined): boolean;
 }
 
+/**
+ * Request to get unseen news articles for the user
+ *
+ * @generated from message api.v1alpha1.newsroom.GetNewsForUserRequest
+ */
+export declare class GetNewsForUserRequest extends Message<GetNewsForUserRequest> {
+  constructor(data?: PartialMessage<GetNewsForUserRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.GetNewsForUserRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNewsForUserRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNewsForUserRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNewsForUserRequest;
+
+  static equals(a: GetNewsForUserRequest | PlainMessage<GetNewsForUserRequest> | undefined, b: GetNewsForUserRequest | PlainMessage<GetNewsForUserRequest> | undefined): boolean;
+}
+
+/**
+ * Response to unseen news articles for the user
+ *
+ * @generated from message api.v1alpha1.newsroom.GetNewsForUserResponse
+ */
+export declare class GetNewsForUserResponse extends Message<GetNewsForUserResponse> {
+  /**
+   * published article details
+   *
+   * @generated from field: repeated api.v1alpha1.newsroom.PublishedArticleDetails published_article_details = 1;
+   */
+  publishedArticleDetails: PublishedArticleDetails[];
+
+  constructor(data?: PartialMessage<GetNewsForUserResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.GetNewsForUserResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNewsForUserResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNewsForUserResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNewsForUserResponse;
+
+  static equals(a: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined, b: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined): boolean;
+}
+
