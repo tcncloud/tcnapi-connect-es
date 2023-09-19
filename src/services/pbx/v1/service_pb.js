@@ -182,7 +182,6 @@ export const CreateRingGroupRequest = proto3.makeMessageType(
     { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "ring_strategy", kind: "enum", T: proto3.getEnumType(RingStrategy) },
     { no: 4, name: "pbx_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 5, name: "extension", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
