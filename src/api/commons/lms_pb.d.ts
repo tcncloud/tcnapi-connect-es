@@ -239,6 +239,11 @@ export declare enum RecordType {
    * @generated from enum value: RECORD_TYPE_STRUCT_VALUE = 23;
    */
   STRUCT_VALUE = 23,
+
+  /**
+   * @generated from enum value: RECORD_TYPE_EHR_DETAILS = 24;
+   */
+  EHR_DETAILS = 24,
 }
 
 /**
@@ -344,6 +349,11 @@ export declare enum FieldType {
    * @generated from enum value: FIELD_TYPE_STRUCT_VALUE = 20;
    */
   STRUCT_VALUE = 20,
+
+  /**
+   * @generated from enum value: FIELD_TYPE_EHR_DETAILS = 21;
+   */
+  EHR_DETAILS = 21,
 }
 
 /**

@@ -466,6 +466,13 @@ export declare class CreateRingGroupRequest extends Message<CreateRingGroupReque
    */
   pbxUserIds: string[];
 
+  /**
+   * Optional: The extension for the ring group.
+   *
+   * @generated from field: int32 extension = 5;
+   */
+  extension: number;
+
   constructor(data?: PartialMessage<CreateRingGroupRequest>);
 
   static readonly runtime: typeof proto3;
