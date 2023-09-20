@@ -11779,6 +11779,112 @@ export declare class DeleteSchedulingTargetRes extends Message<DeleteSchedulingT
 }
 
 /**
+ * GetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetReq
+ */
+export declare class GetDefaultSchedulingTargetReq extends Message<GetDefaultSchedulingTargetReq> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  constructor(data?: PartialMessage<GetDefaultSchedulingTargetReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetDefaultSchedulingTargetReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDefaultSchedulingTargetReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetReq;
+
+  static equals(a: GetDefaultSchedulingTargetReq | PlainMessage<GetDefaultSchedulingTargetReq> | undefined, b: GetDefaultSchedulingTargetReq | PlainMessage<GetDefaultSchedulingTargetReq> | undefined): boolean;
+}
+
+/**
+ * GetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetRes
+ */
+export declare class GetDefaultSchedulingTargetRes extends Message<GetDefaultSchedulingTargetRes> {
+  /**
+   * @generated from field: api.v1alpha1.wfm.SchedulingTarget scheduling_target = 1;
+   */
+  schedulingTarget?: SchedulingTarget;
+
+  constructor(data?: PartialMessage<GetDefaultSchedulingTargetRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetDefaultSchedulingTargetRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDefaultSchedulingTargetRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetRes;
+
+  static equals(a: GetDefaultSchedulingTargetRes | PlainMessage<GetDefaultSchedulingTargetRes> | undefined, b: GetDefaultSchedulingTargetRes | PlainMessage<GetDefaultSchedulingTargetRes> | undefined): boolean;
+}
+
+/**
+ * SetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetReq
+ */
+export declare class SetDefaultSchedulingTargetReq extends Message<SetDefaultSchedulingTargetReq> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: api.v1alpha1.wfm.SchedulingTarget scheduling_target = 2;
+   */
+  schedulingTarget?: SchedulingTarget;
+
+  constructor(data?: PartialMessage<SetDefaultSchedulingTargetReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SetDefaultSchedulingTargetReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDefaultSchedulingTargetReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetReq;
+
+  static equals(a: SetDefaultSchedulingTargetReq | PlainMessage<SetDefaultSchedulingTargetReq> | undefined, b: SetDefaultSchedulingTargetReq | PlainMessage<SetDefaultSchedulingTargetReq> | undefined): boolean;
+}
+
+/**
+ * SetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * Empty.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetRes
+ */
+export declare class SetDefaultSchedulingTargetRes extends Message<SetDefaultSchedulingTargetRes> {
+  constructor(data?: PartialMessage<SetDefaultSchedulingTargetRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SetDefaultSchedulingTargetRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDefaultSchedulingTargetRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetRes;
+
+  static equals(a: SetDefaultSchedulingTargetRes | PlainMessage<SetDefaultSchedulingTargetRes> | undefined, b: SetDefaultSchedulingTargetRes | PlainMessage<SetDefaultSchedulingTargetRes> | undefined): boolean;
+}
+
+/**
  * Request message for the ListRequiredCallsIntervals RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListRequiredCallsIntervalsReq
