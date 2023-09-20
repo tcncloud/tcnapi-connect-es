@@ -1638,6 +1638,56 @@ export declare class CreateSkillProfileGroupRes extends Message<CreateSkillProfi
 }
 
 /**
+ * Request message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupReq
+ */
+export declare class UpdateSkillProfileGroupReq extends Message<UpdateSkillProfileGroupReq> {
+  /**
+   * Skill profile group to update.
+   * @skill_profile_group_sids will be ignored since associations cannot be updated by this method.
+   *
+   * @generated from field: api.v1alpha1.wfm.SkillProfileGroup skill_profile_group = 1;
+   */
+  skillProfileGroup?: SkillProfileGroup;
+
+  constructor(data?: PartialMessage<UpdateSkillProfileGroupReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateSkillProfileGroupReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSkillProfileGroupReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupReq;
+
+  static equals(a: UpdateSkillProfileGroupReq | PlainMessage<UpdateSkillProfileGroupReq> | undefined, b: UpdateSkillProfileGroupReq | PlainMessage<UpdateSkillProfileGroupReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupRes
+ */
+export declare class UpdateSkillProfileGroupRes extends Message<UpdateSkillProfileGroupRes> {
+  constructor(data?: PartialMessage<UpdateSkillProfileGroupRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateSkillProfileGroupRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSkillProfileGroupRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupRes;
+
+  static equals(a: UpdateSkillProfileGroupRes | PlainMessage<UpdateSkillProfileGroupRes> | undefined, b: UpdateSkillProfileGroupRes | PlainMessage<UpdateSkillProfileGroupRes> | undefined): boolean;
+}
+
+/**
  * Request message for the DeleteHistoricalDataDeltas RPC.
  *
  * @generated from message api.v1alpha1.wfm.DeleteHistoricalDataDeltasReq
