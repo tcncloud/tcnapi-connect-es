@@ -350,7 +350,7 @@ export declare const WFM: {
     },
     /**
      * Updates the given @skill_profile_group that has the @skill_profile_group_sid for the org sending the request.
-     * @skill_profile_group_sids will be ignored since associations cannot be created by this method.
+     * @skill_profile_group_sids will be ignored since associations cannot be updated by this method.
      * Required permissions:
      *   NONE
      * Errors:
