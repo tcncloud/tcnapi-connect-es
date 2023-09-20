@@ -11781,14 +11781,11 @@ export declare class DeleteSchedulingTargetRes extends Message<DeleteSchedulingT
 /**
  * GetDefaultSchedulingTargetReq is a request mesage.
  *
+ * Empty.
+ *
  * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetReq
  */
 export declare class GetDefaultSchedulingTargetReq extends Message<GetDefaultSchedulingTargetReq> {
-  /**
-   * @generated from field: string org_id = 1;
-   */
-  orgId: string;
-
   constructor(data?: PartialMessage<GetDefaultSchedulingTargetReq>);
 
   static readonly runtime: typeof proto3;
@@ -11836,11 +11833,6 @@ export declare class GetDefaultSchedulingTargetRes extends Message<GetDefaultSch
  * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetReq
  */
 export declare class SetDefaultSchedulingTargetReq extends Message<SetDefaultSchedulingTargetReq> {
-  /**
-   * @generated from field: string org_id = 1;
-   */
-  orgId: string;
-
   /**
    * @generated from field: api.v1alpha1.wfm.SchedulingTarget scheduling_target = 2;
    */

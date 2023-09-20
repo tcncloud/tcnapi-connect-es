@@ -4030,13 +4030,13 @@ export const DeleteSchedulingTargetRes = proto3.makeMessageType(
 /**
  * GetDefaultSchedulingTargetReq is a request mesage.
  *
+ * Empty.
+ *
  * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetReq
  */
 export const GetDefaultSchedulingTargetReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.GetDefaultSchedulingTargetReq",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
+  [],
 );
 
 /**
@@ -4059,7 +4059,6 @@ export const GetDefaultSchedulingTargetRes = proto3.makeMessageType(
 export const SetDefaultSchedulingTargetReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.SetDefaultSchedulingTargetReq",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "scheduling_target", kind: "message", T: SchedulingTarget },
   ],
 );
