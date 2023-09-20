@@ -7,6 +7,31 @@ import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { TimeZone } from "../commons/org_pb.js";
 
 /**
+ * PublishDashboardRequest used in PublishDashboard rpc
+ *
+ * @generated from message api.v0alpha.PublishDashboardRequest
+ */
+export const PublishDashboardRequest = proto3.makeMessageType(
+  "api.v0alpha.PublishDashboardRequest",
+  () => [
+    { no: 1, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "destination_resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * PublishDashboardResponse used in PublishDashboard rpc
+ *
+ * @generated from message api.v0alpha.PublishDashboardResponse
+ */
+export const PublishDashboardResponse = proto3.makeMessageType(
+  "api.v0alpha.PublishDashboardResponse",
+  () => [
+    { no: 1, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * ListDashboardsRequest --  filled in from auth. May include filters in future
  *
  * @generated from message api.v0alpha.ListDashboardsRequest
@@ -67,6 +92,8 @@ export const SetDefaultDashboardRequest = proto3.makeMessageType(
 );
 
 /**
+ * ListProductTypesRequest used in ListProductTypes rpc
+ *
  * @generated from message api.v0alpha.ListProductTypesRequest
  */
 export const ListProductTypesRequest = proto3.makeMessageType(

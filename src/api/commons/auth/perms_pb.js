@@ -79,6 +79,7 @@ export const Permission = proto3.makeEnum(
     {no: 1301, name: "PERMISSION_INTEGRATIONS_PAYMENT", localName: "INTEGRATIONS_PAYMENT"},
     {no: 1302, name: "PERMISSION_INTEGRATIONS_JOURNEY", localName: "INTEGRATIONS_JOURNEY"},
     {no: 1500, name: "PERMISSION_WFM", localName: "WFM"},
+    {no: 1501, name: "PERMISSION_AGENT_PORTAL", localName: "AGENT_PORTAL"},
     {no: 1600, name: "PERMISSION_SCORECARDS", localName: "SCORECARDS"},
     {no: 1601, name: "PERMISSION_SCORECARDS_MANAGE", localName: "SCORECARDS_MANAGE"},
     {no: 1602, name: "PERMISSION_SCORECARDS_EVALUATE", localName: "SCORECARDS_EVALUATE"},

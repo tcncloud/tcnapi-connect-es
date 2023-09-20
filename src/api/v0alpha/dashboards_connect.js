@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateDashboardRequest, CreateDashboardResponse, Dashboard, DeleteDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest } from "./dashboards_pb.js";
+import { CreateDashboardRequest, CreateDashboardResponse, Dashboard, DeleteDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, PublishDashboardRequest, PublishDashboardResponse, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest } from "./dashboards_pb.js";
 import { Empty, MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -127,6 +127,17 @@ export const Dashboards = {
       name: "UpdateDashboardLayout",
       I: UpdateDashboardLayoutRequest,
       O: Empty,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * PublishDashboard publishes a dashboard
+     *
+     * @generated from rpc api.v0alpha.Dashboards.PublishDashboard
+     */
+    publishDashboard: {
+      name: "PublishDashboard",
+      I: PublishDashboardRequest,
+      O: PublishDashboardResponse,
       kind: MethodKind.Unary,
     },
   }

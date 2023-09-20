@@ -231,7 +231,7 @@ export declare class UpdateNewsArticleRequest extends Message<UpdateNewsArticleR
  */
 export declare class UpdateNewsArticleResponse extends Message<UpdateNewsArticleResponse> {
   /**
-   * latest news article
+   * updated news article
    *
    * @generated from field: api.v1alpha1.newsroom.NewsArticleDetails article_details = 1;
    */
@@ -365,6 +365,76 @@ export declare class PublishedArticleDetails extends Message<PublishedArticleDet
 }
 
 /**
+ * user activity details
+ *
+ * @generated from message api.v1alpha1.newsroom.UserActivity
+ */
+export declare class UserActivity extends Message<UserActivity> {
+  /**
+   * the unique user activity log identifier
+   *
+   * @generated from field: int64 user_activity_log_sid = 1;
+   */
+  userActivityLogSid: bigint;
+
+  /**
+   * user activity created date
+   *
+   * @generated from field: google.protobuf.Timestamp date_created = 2;
+   */
+  dateCreated?: Timestamp;
+
+  /**
+   * user activity details
+   *
+   * @generated from field: api.v1alpha1.newsroom.UserActivity.UserActivityDetails user_activity_details = 3;
+   */
+  userActivityDetails?: UserActivity_UserActivityDetails;
+
+  constructor(data?: PartialMessage<UserActivity>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.UserActivity";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserActivity;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserActivity;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserActivity;
+
+  static equals(a: UserActivity | PlainMessage<UserActivity> | undefined, b: UserActivity | PlainMessage<UserActivity> | undefined): boolean;
+}
+
+/**
+ * user activity details
+ *
+ * @generated from message api.v1alpha1.newsroom.UserActivity.UserActivityDetails
+ */
+export declare class UserActivity_UserActivityDetails extends Message<UserActivity_UserActivityDetails> {
+  /**
+   * the unique published article identifier
+   *
+   * @generated from field: int64 published_article_sid = 1;
+   */
+  publishedArticleSid: bigint;
+
+  constructor(data?: PartialMessage<UserActivity_UserActivityDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.UserActivity.UserActivityDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserActivity_UserActivityDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserActivity_UserActivityDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserActivity_UserActivityDetails;
+
+  static equals(a: UserActivity_UserActivityDetails | PlainMessage<UserActivity_UserActivityDetails> | undefined, b: UserActivity_UserActivityDetails | PlainMessage<UserActivity_UserActivityDetails> | undefined): boolean;
+}
+
+/**
  * Request to create published article
  *
  * @generated from message api.v1alpha1.newsroom.CreatePublishedArticleRequest
@@ -483,11 +553,19 @@ export declare class ListPublishedArticlesResponse extends Message<ListPublished
  */
 export declare class GetPublishedArticleByIdRequest extends Message<GetPublishedArticleByIdRequest> {
   /**
-   * the unique news article identifier
+   * deprecated
    *
-   * @generated from field: int64 new_article_sid = 1;
+   * @generated from field: int64 new_article_sid = 1 [deprecated = true];
+   * @deprecated
    */
   newArticleSid: bigint;
+
+  /**
+   * the unique published article sid
+   *
+   * @generated from field: int64 published_article_sid = 2;
+   */
+  publishedArticleSid: bigint;
 
   constructor(data?: PartialMessage<GetPublishedArticleByIdRequest>);
 
@@ -530,5 +608,110 @@ export declare class GetPublishedArticleByIdResponse extends Message<GetPublishe
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPublishedArticleByIdResponse;
 
   static equals(a: GetPublishedArticleByIdResponse | PlainMessage<GetPublishedArticleByIdResponse> | undefined, b: GetPublishedArticleByIdResponse | PlainMessage<GetPublishedArticleByIdResponse> | undefined): boolean;
+}
+
+/**
+ * Request to update user activity
+ *
+ * @generated from message api.v1alpha1.newsroom.UserActivityRequest
+ */
+export declare class UserActivityRequest extends Message<UserActivityRequest> {
+  /**
+   * the unique published article identifier
+   *
+   * @generated from field: int64 published_article_sid = 1;
+   */
+  publishedArticleSid: bigint;
+
+  constructor(data?: PartialMessage<UserActivityRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.UserActivityRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserActivityRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserActivityRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserActivityRequest;
+
+  static equals(a: UserActivityRequest | PlainMessage<UserActivityRequest> | undefined, b: UserActivityRequest | PlainMessage<UserActivityRequest> | undefined): boolean;
+}
+
+/**
+ * Response to user activity updates
+ *
+ * @generated from message api.v1alpha1.newsroom.UserActivityResponse
+ */
+export declare class UserActivityResponse extends Message<UserActivityResponse> {
+  /**
+   * user activity details
+   *
+   * @generated from field: api.v1alpha1.newsroom.UserActivity user_activity = 1;
+   */
+  userActivity?: UserActivity;
+
+  constructor(data?: PartialMessage<UserActivityResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.UserActivityResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserActivityResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserActivityResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserActivityResponse;
+
+  static equals(a: UserActivityResponse | PlainMessage<UserActivityResponse> | undefined, b: UserActivityResponse | PlainMessage<UserActivityResponse> | undefined): boolean;
+}
+
+/**
+ * Request to get unseen news articles for the user
+ *
+ * @generated from message api.v1alpha1.newsroom.GetNewsForUserRequest
+ */
+export declare class GetNewsForUserRequest extends Message<GetNewsForUserRequest> {
+  constructor(data?: PartialMessage<GetNewsForUserRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.GetNewsForUserRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNewsForUserRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNewsForUserRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNewsForUserRequest;
+
+  static equals(a: GetNewsForUserRequest | PlainMessage<GetNewsForUserRequest> | undefined, b: GetNewsForUserRequest | PlainMessage<GetNewsForUserRequest> | undefined): boolean;
+}
+
+/**
+ * Response to unseen news articles for the user
+ *
+ * @generated from message api.v1alpha1.newsroom.GetNewsForUserResponse
+ */
+export declare class GetNewsForUserResponse extends Message<GetNewsForUserResponse> {
+  /**
+   * published article details
+   *
+   * @generated from field: repeated api.v1alpha1.newsroom.PublishedArticleDetails published_article_details = 1;
+   */
+  publishedArticleDetails: PublishedArticleDetails[];
+
+  constructor(data?: PartialMessage<GetNewsForUserResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.GetNewsForUserResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNewsForUserResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNewsForUserResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNewsForUserResponse;
+
+  static equals(a: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined, b: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined): boolean;
 }
 
