@@ -11834,7 +11834,7 @@ export declare class GetDefaultSchedulingTargetRes extends Message<GetDefaultSch
  */
 export declare class SetDefaultSchedulingTargetReq extends Message<SetDefaultSchedulingTargetReq> {
   /**
-   * @generated from field: api.v1alpha1.wfm.SchedulingTarget scheduling_target = 2;
+   * @generated from field: api.v1alpha1.wfm.SchedulingTarget scheduling_target = 1;
    */
   schedulingTarget?: SchedulingTarget;
 

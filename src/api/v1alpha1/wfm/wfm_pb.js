@@ -4059,7 +4059,7 @@ export const GetDefaultSchedulingTargetRes = proto3.makeMessageType(
 export const SetDefaultSchedulingTargetReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.SetDefaultSchedulingTargetReq",
   () => [
-    { no: 2, name: "scheduling_target", kind: "message", T: SchedulingTarget },
+    { no: 1, name: "scheduling_target", kind: "message", T: SchedulingTarget },
   ],
 );
 
