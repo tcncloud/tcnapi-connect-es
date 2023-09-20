@@ -4,7 +4,6 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
-import { DashboardPermissionType } from "../commons/dashboards_pb.js";
 import { TimeZone } from "../commons/org_pb.js";
 
 /**
@@ -41,6 +40,7 @@ export const DashboardSummary = proto3.makeMessageType(
     { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "panel_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -104,18 +104,7 @@ export const DeleteDashboardRequest = proto3.makeMessageType(
   "api.v0alpha.DeleteDashboardRequest",
   () => [
     { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * DeleteStandardDashboardRequest deletes a TCN standard dashboard
- *
- * @generated from message api.v0alpha.DeleteStandardDashboardRequest
- */
-export const DeleteStandardDashboardRequest = proto3.makeMessageType(
-  "api.v0alpha.DeleteStandardDashboardRequest",
-  () => [
-    { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -128,34 +117,7 @@ export const GetDashboardRequest = proto3.makeMessageType(
   "api.v0alpha.GetDashboardRequest",
   () => [
     { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * CreateStandardDashboardRequest is request to create a TCN standard dashboard
- *
- * @generated from message api.v0alpha.CreateStandardDashboardRequest
- */
-export const CreateStandardDashboardRequest = proto3.makeMessageType(
-  "api.v0alpha.CreateStandardDashboardRequest",
-  () => [
-    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "layout", kind: "message", T: DashboardLayout },
-    { no: 4, name: "view", kind: "message", T: DashboardView },
-    { no: 5, name: "type", kind: "message", T: DashboardType },
-  ],
-);
-
-/**
- * CreateStandardDashboardResponse contains unique_id of standard dashboard
- *
- * @generated from message api.v0alpha.CreateStandardDashboardResponse
- */
-export const CreateStandardDashboardResponse = proto3.makeMessageType(
-  "api.v0alpha.CreateStandardDashboardResponse",
-  () => [
-    { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -184,6 +146,7 @@ export const CreateDashboardResponse = proto3.makeMessageType(
   "api.v0alpha.CreateDashboardResponse",
   () => [
     { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -242,7 +205,7 @@ export const Dashboard = proto3.makeMessageType(
     { no: 4, name: "layout", kind: "message", T: DashboardLayout },
     { no: 5, name: "view", kind: "message", T: DashboardView },
     { no: 6, name: "type", kind: "message", T: DashboardType },
-    { no: 7, name: "permission_type", kind: "enum", T: proto3.getEnumType(DashboardPermissionType) },
+    { no: 7, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -298,23 +261,7 @@ export const UpdateDashboardRequest = proto3.makeMessageType(
     { no: 4, name: "layout", kind: "message", T: DashboardLayout },
     { no: 5, name: "view", kind: "message", T: DashboardView },
     { no: 6, name: "type", kind: "message", T: DashboardType },
-  ],
-);
-
-/**
- * UpdateStandardDashboardRequest updates a TCN standard dashboard
- *
- * @generated from message api.v0alpha.UpdateStandardDashboardRequest
- */
-export const UpdateStandardDashboardRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateStandardDashboardRequest",
-  () => [
-    { no: 2, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "layout", kind: "message", T: DashboardLayout },
-    { no: 6, name: "view", kind: "message", T: DashboardView },
-    { no: 7, name: "type", kind: "message", T: DashboardType },
+    { no: 7, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -329,20 +276,7 @@ export const UpdateDashboardTitleAndDescriptionRequest = proto3.makeMessageType(
     { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * UpdateDashboardTitleAndDescriptionResponse used to update standard dashboards
- *
- * @generated from message api.v0alpha.UpdateStandardDashboardTitleAndDescriptionRequest
- */
-export const UpdateStandardDashboardTitleAndDescriptionRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateStandardDashboardTitleAndDescriptionRequest",
-  () => [
-    { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -356,24 +290,12 @@ export const UpdateDashboardLayoutRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "layout", kind: "message", T: DashboardLayout },
+    { no: 3, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * UpdateDashboardTitleAndDescriptionRequest used to update a standard dashboard
- *
- * @generated from message api.v0alpha.UpdateStandardDashboardLayoutRequest
- */
-export const UpdateStandardDashboardLayoutRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateStandardDashboardLayoutRequest",
-  () => [
-    { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "layout", kind: "message", T: DashboardLayout },
-  ],
-);
-
-/**
- * UpdateDashboardViewRequest used in the update RPC
+ * UpdateDashboardViewRequest  used in the update RPC
  *
  * @generated from message api.v0alpha.UpdateDashboardViewRequest
  */
@@ -382,19 +304,7 @@ export const UpdateDashboardViewRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "view", kind: "message", T: DashboardView },
-  ],
-);
-
-/**
- * UpdateDashboardViewRequest used to update a standard dashboard view
- *
- * @generated from message api.v0alpha.UpdateStandardDashboardViewRequest
- */
-export const UpdateStandardDashboardViewRequest = proto3.makeMessageType(
-  "api.v0alpha.UpdateStandardDashboardViewRequest",
-  () => [
-    { no: 1, name: "dashboard_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "view", kind: "message", T: DashboardView },
+    { no: 3, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

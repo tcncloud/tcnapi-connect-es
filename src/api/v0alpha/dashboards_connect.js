@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateDashboardRequest, CreateDashboardResponse, CreateStandardDashboardRequest, CreateStandardDashboardResponse, Dashboard, DeleteDashboardRequest, DeleteStandardDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest, UpdateStandardDashboardLayoutRequest, UpdateStandardDashboardRequest, UpdateStandardDashboardTitleAndDescriptionRequest, UpdateStandardDashboardViewRequest } from "./dashboards_pb.js";
+import { CreateDashboardRequest, CreateDashboardResponse, Dashboard, DeleteDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest } from "./dashboards_pb.js";
 import { Empty, MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -126,72 +126,6 @@ export const Dashboards = {
     updateDashboardLayout: {
       name: "UpdateDashboardLayout",
       I: UpdateDashboardLayoutRequest,
-      O: Empty,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * CreateStandardDashboard creates a TCN standard dashboard
-     *
-     * @generated from rpc api.v0alpha.Dashboards.CreateStandardDashboard
-     */
-    createStandardDashboard: {
-      name: "CreateStandardDashboard",
-      I: CreateStandardDashboardRequest,
-      O: CreateStandardDashboardResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboard updates a TCN standard dashboard
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboard
-     */
-    updateStandardDashboard: {
-      name: "UpdateStandardDashboard",
-      I: UpdateStandardDashboardRequest,
-      O: Empty,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboardTitleAndDescription updates a TCN standard dashboard title and description
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboardTitleAndDescription
-     */
-    updateStandardDashboardTitleAndDescription: {
-      name: "UpdateStandardDashboardTitleAndDescription",
-      I: UpdateStandardDashboardTitleAndDescriptionRequest,
-      O: Empty,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboardView updates a TCN standard dashboard view
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboardView
-     */
-    updateStandardDashboardView: {
-      name: "UpdateStandardDashboardView",
-      I: UpdateStandardDashboardViewRequest,
-      O: Empty,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboardLayout updates a TCN standard dashboard layout
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboardLayout
-     */
-    updateStandardDashboardLayout: {
-      name: "UpdateStandardDashboardLayout",
-      I: UpdateStandardDashboardLayoutRequest,
-      O: Empty,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * DeleteStandardDashboard deletes a TCN standard dashboard
-     *
-     * @generated from rpc api.v0alpha.Dashboards.DeleteStandardDashboard
-     */
-    deleteStandardDashboard: {
-      name: "DeleteStandardDashboard",
-      I: DeleteStandardDashboardRequest,
       O: Empty,
       kind: MethodKind.Unary,
     },

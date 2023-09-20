@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateDashboardRequest, CreateDashboardResponse, CreateStandardDashboardRequest, CreateStandardDashboardResponse, Dashboard, DeleteDashboardRequest, DeleteStandardDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest, UpdateStandardDashboardLayoutRequest, UpdateStandardDashboardRequest, UpdateStandardDashboardTitleAndDescriptionRequest, UpdateStandardDashboardViewRequest } from "./dashboards_pb.js";
+import { CreateDashboardRequest, CreateDashboardResponse, Dashboard, DeleteDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest } from "./dashboards_pb.js";
 import { Empty, MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -126,72 +126,6 @@ export declare const Dashboards: {
     readonly updateDashboardLayout: {
       readonly name: "UpdateDashboardLayout",
       readonly I: typeof UpdateDashboardLayoutRequest,
-      readonly O: typeof Empty,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * CreateStandardDashboard creates a TCN standard dashboard
-     *
-     * @generated from rpc api.v0alpha.Dashboards.CreateStandardDashboard
-     */
-    readonly createStandardDashboard: {
-      readonly name: "CreateStandardDashboard",
-      readonly I: typeof CreateStandardDashboardRequest,
-      readonly O: typeof CreateStandardDashboardResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboard updates a TCN standard dashboard
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboard
-     */
-    readonly updateStandardDashboard: {
-      readonly name: "UpdateStandardDashboard",
-      readonly I: typeof UpdateStandardDashboardRequest,
-      readonly O: typeof Empty,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboardTitleAndDescription updates a TCN standard dashboard title and description
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboardTitleAndDescription
-     */
-    readonly updateStandardDashboardTitleAndDescription: {
-      readonly name: "UpdateStandardDashboardTitleAndDescription",
-      readonly I: typeof UpdateStandardDashboardTitleAndDescriptionRequest,
-      readonly O: typeof Empty,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboardView updates a TCN standard dashboard view
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboardView
-     */
-    readonly updateStandardDashboardView: {
-      readonly name: "UpdateStandardDashboardView",
-      readonly I: typeof UpdateStandardDashboardViewRequest,
-      readonly O: typeof Empty,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * UpdateStandardDashboardLayout updates a TCN standard dashboard layout
-     *
-     * @generated from rpc api.v0alpha.Dashboards.UpdateStandardDashboardLayout
-     */
-    readonly updateStandardDashboardLayout: {
-      readonly name: "UpdateStandardDashboardLayout",
-      readonly I: typeof UpdateStandardDashboardLayoutRequest,
-      readonly O: typeof Empty,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * DeleteStandardDashboard deletes a TCN standard dashboard
-     *
-     * @generated from rpc api.v0alpha.Dashboards.DeleteStandardDashboard
-     */
-    readonly deleteStandardDashboard: {
-      readonly name: "DeleteStandardDashboard",
-      readonly I: typeof DeleteStandardDashboardRequest,
       readonly O: typeof Empty,
       readonly kind: MethodKind.Unary,
     },
