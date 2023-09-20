@@ -65,6 +65,25 @@ export const SkillProfile = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.wfm.SkillProfileGroup
+ */
+export const SkillProfileGroup = proto3.makeMessageType(
+  "api.v1alpha1.wfm.SkillProfileGroup",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "create_time", kind: "message", T: Timestamp },
+    { no: 5, name: "average_speed_of_answer_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 6, name: "average_handle_time_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 7, name: "average_after_call_work_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 8, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 9, name: "are_averages_manual", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "skill_profile_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
  * Request message for the ListSkillProfiles RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListSkillProfilesReq
@@ -537,6 +556,30 @@ export const DisconnectInactiveSkillProfileMappingReq = proto3.makeMessageType(
 export const DisconnectInactiveSkillProfileMappingRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes",
   [],
+);
+
+/**
+ * Request message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupReq
+ */
+export const CreateSkillProfileGroupReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateSkillProfileGroupReq",
+  () => [
+    { no: 1, name: "skill_profile_group", kind: "message", T: SkillProfileGroup },
+  ],
+);
+
+/**
+ * Response message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupRes
+ */
+export const CreateSkillProfileGroupRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateSkillProfileGroupRes",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
 );
 
 /**

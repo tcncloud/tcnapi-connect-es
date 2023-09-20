@@ -207,6 +207,95 @@ export declare class SkillProfile extends Message<SkillProfile> {
 }
 
 /**
+ * @generated from message api.v1alpha1.wfm.SkillProfileGroup
+ */
+export declare class SkillProfileGroup extends Message<SkillProfileGroup> {
+  /**
+   * ID of the skill profile group.
+   *
+   * @generated from field: int64 skill_profile_group_sid = 1;
+   */
+  skillProfileGroupSid: bigint;
+
+  /**
+   * name of the skill profile group.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * description about the skill profile group.
+   *
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  /**
+   * date of creation of the skill profile group.
+   *
+   * @generated from field: google.protobuf.Timestamp create_time = 4;
+   */
+  createTime?: Timestamp;
+
+  /**
+   * average time that calls took to be answered.
+   *
+   * @generated from field: float average_speed_of_answer_in_seconds = 5;
+   */
+  averageSpeedOfAnswerInSeconds: number;
+
+  /**
+   * average duration of answered calls.
+   *
+   * @generated from field: float average_handle_time_in_seconds = 6;
+   */
+  averageHandleTimeInSeconds: number;
+
+  /**
+   * average time that agents spent in wrap up.
+   *
+   * @generated from field: float average_after_call_work_in_seconds = 7;
+   */
+  averageAfterCallWorkInSeconds: number;
+
+  /**
+   * average time that callers waited before hanging unanswered calls.
+   *
+   * @generated from field: float average_time_to_abort_in_seconds = 8;
+   */
+  averageTimeToAbortInSeconds: number;
+
+  /**
+   * indicates whether or not the averages were manually entered by the user (if false then the averages were automatically calculated from the historical data).
+   *
+   * @generated from field: bool are_averages_manual = 9;
+   */
+  areAveragesManual: boolean;
+
+  /**
+   * IDs of the skill profiles that belong to this group.
+   *
+   * @generated from field: repeated int64 skill_profile_sids = 10;
+   */
+  skillProfileSids: bigint[];
+
+  constructor(data?: PartialMessage<SkillProfileGroup>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SkillProfileGroup";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SkillProfileGroup;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SkillProfileGroup;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SkillProfileGroup;
+
+  static equals(a: SkillProfileGroup | PlainMessage<SkillProfileGroup> | undefined, b: SkillProfileGroup | PlainMessage<SkillProfileGroup> | undefined): boolean;
+}
+
+/**
  * Request message for the ListSkillProfiles RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListSkillProfilesReq
@@ -1488,6 +1577,64 @@ export declare class DisconnectInactiveSkillProfileMappingRes extends Message<Di
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DisconnectInactiveSkillProfileMappingRes;
 
   static equals(a: DisconnectInactiveSkillProfileMappingRes | PlainMessage<DisconnectInactiveSkillProfileMappingRes> | undefined, b: DisconnectInactiveSkillProfileMappingRes | PlainMessage<DisconnectInactiveSkillProfileMappingRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupReq
+ */
+export declare class CreateSkillProfileGroupReq extends Message<CreateSkillProfileGroupReq> {
+  /**
+   * Skill profile group to create.
+   * @skill_profile_group_sid will be ignored since that field is generated upon creation of the entity.
+   * @skill_profile_group_sids will be ignored since associations cannot be created by this method.
+   *
+   * @generated from field: api.v1alpha1.wfm.SkillProfileGroup skill_profile_group = 1;
+   */
+  skillProfileGroup?: SkillProfileGroup;
+
+  constructor(data?: PartialMessage<CreateSkillProfileGroupReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateSkillProfileGroupReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSkillProfileGroupReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupReq;
+
+  static equals(a: CreateSkillProfileGroupReq | PlainMessage<CreateSkillProfileGroupReq> | undefined, b: CreateSkillProfileGroupReq | PlainMessage<CreateSkillProfileGroupReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupRes
+ */
+export declare class CreateSkillProfileGroupRes extends Message<CreateSkillProfileGroupRes> {
+  /**
+   * ID of the skill profile group created.
+   *
+   * @generated from field: int64 skill_profile_group_sid = 1;
+   */
+  skillProfileGroupSid: bigint;
+
+  constructor(data?: PartialMessage<CreateSkillProfileGroupRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateSkillProfileGroupRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSkillProfileGroupRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupRes;
+
+  static equals(a: CreateSkillProfileGroupRes | PlainMessage<CreateSkillProfileGroupRes> | undefined, b: CreateSkillProfileGroupRes | PlainMessage<CreateSkillProfileGroupRes> | undefined): boolean;
 }
 
 /**
