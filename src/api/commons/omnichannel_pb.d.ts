@@ -3597,7 +3597,7 @@ export declare class OmniTask extends Message<OmniTask> {
   scheduledTime?: Timestamp;
 
   /**
-   * holds extra details about a task should be processed
+   * holds extra details about how a task should be processed
    *
    * @generated from field: api.commons.OmniTaskConfig task_config = 15;
    */
