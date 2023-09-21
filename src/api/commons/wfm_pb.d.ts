@@ -2027,9 +2027,9 @@ export declare class TourPattern extends Message<TourPattern> {
   /**
    * The tour agent collection associated with @tour_pattern_sid.
    *
-   * @generated from field: repeated api.commons.TourAgentCollection member_tour_agent_collection = 4;
+   * @generated from field: repeated api.commons.TourAgentCollection member_tour_agent_collections = 4;
    */
-  memberTourAgentCollection: TourAgentCollection[];
+  memberTourAgentCollections: TourAgentCollection[];
 
   constructor(data?: PartialMessage<TourPattern>);
 

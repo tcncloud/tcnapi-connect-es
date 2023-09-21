@@ -624,7 +624,7 @@ export const TourPattern = proto3.makeMessageType(
     { no: 1, name: "tour_pattern_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "member_tour_week_patterns", kind: "message", T: TourWeekPattern, repeated: true },
-    { no: 4, name: "member_tour_agent_collection", kind: "message", T: TourAgentCollection, repeated: true },
+    { no: 4, name: "member_tour_agent_collections", kind: "message", T: TourAgentCollection, repeated: true },
   ],
 );
 
