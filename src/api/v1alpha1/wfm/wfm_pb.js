@@ -605,6 +605,30 @@ export const UpdateSkillProfileGroupRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsReq
+ */
+export const ListSkillProfileGroupsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListSkillProfileGroupsReq",
+  () => [
+    { no: 1, name: "skill_profile_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsRes
+ */
+export const ListSkillProfileGroupsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListSkillProfileGroupsRes",
+  () => [
+    { no: 1, name: "skill_profile_groups", kind: "message", T: SkillProfileGroup, repeated: true },
+  ],
+);
+
+/**
  * Request message for the DeleteHistoricalDataDeltas RPC.
  *
  * @generated from message api.v1alpha1.wfm.DeleteHistoricalDataDeltasReq

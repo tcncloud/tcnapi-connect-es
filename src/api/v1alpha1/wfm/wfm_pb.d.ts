@@ -1688,6 +1688,63 @@ export declare class UpdateSkillProfileGroupRes extends Message<UpdateSkillProfi
 }
 
 /**
+ * Request message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsReq
+ */
+export declare class ListSkillProfileGroupsReq extends Message<ListSkillProfileGroupsReq> {
+  /**
+   * IDs of the skill profile groups to get.
+   * If left empty it will get all the skill profile groups for the org
+   *
+   * @generated from field: repeated int64 skill_profile_group_sids = 1;
+   */
+  skillProfileGroupSids: bigint[];
+
+  constructor(data?: PartialMessage<ListSkillProfileGroupsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListSkillProfileGroupsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillProfileGroupsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsReq;
+
+  static equals(a: ListSkillProfileGroupsReq | PlainMessage<ListSkillProfileGroupsReq> | undefined, b: ListSkillProfileGroupsReq | PlainMessage<ListSkillProfileGroupsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsRes
+ */
+export declare class ListSkillProfileGroupsRes extends Message<ListSkillProfileGroupsRes> {
+  /**
+   * Skill profile groups found.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.SkillProfileGroup skill_profile_groups = 1;
+   */
+  skillProfileGroups: SkillProfileGroup[];
+
+  constructor(data?: PartialMessage<ListSkillProfileGroupsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListSkillProfileGroupsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillProfileGroupsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsRes;
+
+  static equals(a: ListSkillProfileGroupsRes | PlainMessage<ListSkillProfileGroupsRes> | undefined, b: ListSkillProfileGroupsRes | PlainMessage<ListSkillProfileGroupsRes> | undefined): boolean;
+}
+
+/**
  * Request message for the DeleteHistoricalDataDeltas RPC.
  *
  * @generated from message api.v1alpha1.wfm.DeleteHistoricalDataDeltasReq
