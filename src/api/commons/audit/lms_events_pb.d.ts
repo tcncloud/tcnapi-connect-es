@@ -21,9 +21,9 @@ export declare class LMSPipelineFailureEvent extends Message<LMSPipelineFailureE
   elementName: string;
 
   /**
-   * @generated from field: repeated string file_names = 3;
+   * @generated from field: string file_name = 3;
    */
-  fileNames: string[];
+  fileName: string;
 
   /**
    * @generated from field: string failure_message = 4;
