@@ -116,6 +116,7 @@ export const EventType = proto3.makeEnum(
     {no: 700, name: "COMPLIANCE_RND_QUERY_EVENT"},
     {no: 701, name: "COMPLIANCE_RND_QUERY_CACHED_EVENT"},
     {no: 800, name: "AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT"},
+    {no: 900, name: "LMS_PIPELINE_FAILURE_EVENT"},
   ],
 );
 

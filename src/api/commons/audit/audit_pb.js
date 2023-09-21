@@ -13,6 +13,7 @@ import { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, Sco
 import { TicketEvent } from "./tickets_events_pb.js";
 import { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
+import { LMSPipelineFailureEvent } from "./lms_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -115,6 +116,7 @@ export const AuditEvent = proto3.makeMessageType(
     { no: 700, name: "compliance_rnd_query_event", kind: "message", T: ComplianceRndQueryEvent, oneof: "event" },
     { no: 701, name: "compliance_rnd_query_cached_event", kind: "message", T: ComplianceRndQueryEvent, oneof: "event" },
     { no: 800, name: "agent_training_create_learning_opportunity_event", kind: "message", T: AgentTrainingCreateLearningOpportunityEvent, oneof: "event" },
+    { no: 900, name: "lms_pipeline_failure_event", kind: "message", T: LMSPipelineFailureEvent, oneof: "event" },
   ],
 );
 

@@ -25,6 +25,11 @@ export declare class LMSPipelineFailureEvent extends Message<LMSPipelineFailureE
    */
   fileNames: string[];
 
+  /**
+   * @generated from field: string failure_message = 4;
+   */
+  failureMessage: string;
+
   constructor(data?: PartialMessage<LMSPipelineFailureEvent>);
 
   static readonly runtime: typeof proto3;

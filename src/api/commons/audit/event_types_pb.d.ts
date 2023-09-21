@@ -652,5 +652,12 @@ export declare enum EventType {
    * @generated from enum value: AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800;
    */
   AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
+
+  /**
+   * LMS Events
+   *
+   * @generated from enum value: LMS_PIPELINE_FAILURE_EVENT = 900;
+   */
+  LMS_PIPELINE_FAILURE_EVENT = 900,
 }
 

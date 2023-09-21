@@ -14,6 +14,7 @@ export const LMSPipelineFailureEvent = proto3.makeMessageType(
     { no: 1, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "element_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "file_names", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "failure_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
