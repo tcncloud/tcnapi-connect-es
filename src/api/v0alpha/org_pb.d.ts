@@ -17588,12 +17588,18 @@ export declare class UserSubscription extends Message<UserSubscription> {
    */
   deliverMethod: {
     /**
-     * TODO: add email, sms, etc.
-     *
      * @generated from field: api.v0alpha.UserSubscription.Room303 room303 = 100;
      */
     value: UserSubscription_Room303;
     case: "room303";
+  } | {
+    /**
+     * TODO: add email, sms, etc.
+     *
+     * @generated from field: api.v0alpha.UserSubscription.Delivery delivery = 200;
+     */
+    value: UserSubscription_Delivery;
+    case: "delivery";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -17655,6 +17661,33 @@ export declare class UserSubscription_Room303 extends Message<UserSubscription_R
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserSubscription_Room303;
 
   static equals(a: UserSubscription_Room303 | PlainMessage<UserSubscription_Room303> | undefined, b: UserSubscription_Room303 | PlainMessage<UserSubscription_Room303> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.UserSubscription.Delivery
+ */
+export declare class UserSubscription_Delivery extends Message<UserSubscription_Delivery> {
+  /**
+   * Required.
+   * Used to lookup how the notification is going to happen through Delivery.
+   *
+   * @generated from field: string transfer_config_name = 1;
+   */
+  transferConfigName: string;
+
+  constructor(data?: PartialMessage<UserSubscription_Delivery>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UserSubscription.Delivery";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserSubscription_Delivery;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserSubscription_Delivery;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserSubscription_Delivery;
+
+  static equals(a: UserSubscription_Delivery | PlainMessage<UserSubscription_Delivery> | undefined, b: UserSubscription_Delivery | PlainMessage<UserSubscription_Delivery> | undefined): boolean;
 }
 
 /**

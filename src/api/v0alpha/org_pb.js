@@ -6242,6 +6242,7 @@ export const UserSubscription = proto3.makeMessageType(
     { no: 2, name: "event_type", kind: "enum", T: proto3.getEnumType(EventType) },
     { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 100, name: "room303", kind: "message", T: UserSubscription_Room303, oneof: "deliver_method" },
+    { no: 200, name: "delivery", kind: "message", T: UserSubscription_Delivery, oneof: "deliver_method" },
     { no: 5, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 4, name: "filters", kind: "message", T: FieldValueFilter, repeated: true },
   ],
@@ -6258,6 +6259,17 @@ export const UserSubscription_Room303 = proto3.makeMessageType(
     { no: 1, name: "room_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "UserSubscription_Room303"},
+);
+
+/**
+ * @generated from message api.v0alpha.UserSubscription.Delivery
+ */
+export const UserSubscription_Delivery = proto3.makeMessageType(
+  "api.v0alpha.UserSubscription.Delivery",
+  () => [
+    { no: 1, name: "transfer_config_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "UserSubscription_Delivery"},
 );
 
 /**
