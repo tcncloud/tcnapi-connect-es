@@ -1764,3 +1764,285 @@ export declare enum SkillProfileCategory_CategoryType {
   SKILL_PROFILE_GROUP = 1,
 }
 
+/**
+ * Represents a TourShiftSegmentConfig
+ *
+ * @generated from message api.commons.TourShiftSegmentConfig
+ */
+export declare class TourShiftSegmentConfig extends Message<TourShiftSegmentConfig> {
+  /**
+   * The unique ID of the tour shift segment config.
+   *
+   * @generated from field: int64 tour_shift_segment_config_sid = 1;
+   */
+  tourShiftSegmentConfigSid: bigint;
+
+  /**
+   * The ID of the parent tour shift instance config
+   *
+   * @generated from field: int64 tour_shift_instance_config_sid = 2;
+   */
+  tourShiftInstanceConfigSid: bigint;
+
+  /**
+   * The minute within the shift instance config where the shift segment config starts.
+   *
+   * @generated from field: int32 start_minute_in_shift = 3;
+   */
+  startMinuteInShift: number;
+
+  /**
+   * The number of minutes wide that the segment covers.
+   *
+   * @generated from field: int32 width_in_minutes = 4;
+   */
+  widthInMinutes: number;
+
+  /**
+   * The ID of the scheduling activity that the segment will schedule.
+   *
+   * @generated from field: int64 scheduling_activity_sid = 5;
+   */
+  schedulingActivitySid: bigint;
+
+  constructor(data?: PartialMessage<TourShiftSegmentConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TourShiftSegmentConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourShiftSegmentConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourShiftSegmentConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourShiftSegmentConfig;
+
+  static equals(a: TourShiftSegmentConfig | PlainMessage<TourShiftSegmentConfig> | undefined, b: TourShiftSegmentConfig | PlainMessage<TourShiftSegmentConfig> | undefined): boolean;
+}
+
+/**
+ * Represents a TourShiftInstanceConfig
+ *
+ * @generated from message api.commons.TourShiftInstanceConfig
+ */
+export declare class TourShiftInstanceConfig extends Message<TourShiftInstanceConfig> {
+  /**
+   * The unique ID of the tour shift instance config.
+   *
+   * @generated from field: int64 tour_shift_instance_config_sid = 1;
+   */
+  tourShiftInstanceConfigSid: bigint;
+
+  /**
+   * The ID of the tour week pattern that the tour shift instance config belongs to.
+   *
+   * @generated from field: int64 tour_week_pattern_sid = 2;
+   */
+  tourWeekPatternSid: bigint;
+
+  /**
+   * The number of minutes after the start of week UTC for the shift instance config to start.
+   * May not be greater than 10080, as that would begin during the next week.
+   *
+   * @generated from field: int32 start_minute_in_week = 3;
+   */
+  startMinuteInWeek: number;
+
+  /**
+   * The number of minutes wide that the tour shift instance config covers.
+   *
+   * @generated from field: int32 width_in_minutes = 4;
+   */
+  widthInMinutes: number;
+
+  /**
+   * The tour shift segment configs that are associated with @tour_shift_instance_config_sid.
+   *
+   * @generated from field: repeated api.commons.TourShiftSegmentConfig member_tour_shift_segment_configs = 5;
+   */
+  memberTourShiftSegmentConfigs: TourShiftSegmentConfig[];
+
+  constructor(data?: PartialMessage<TourShiftInstanceConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TourShiftInstanceConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourShiftInstanceConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourShiftInstanceConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourShiftInstanceConfig;
+
+  static equals(a: TourShiftInstanceConfig | PlainMessage<TourShiftInstanceConfig> | undefined, b: TourShiftInstanceConfig | PlainMessage<TourShiftInstanceConfig> | undefined): boolean;
+}
+
+/**
+ * Represents a TourWeekPattern
+ *
+ * @generated from message api.commons.TourWeekPattern
+ */
+export declare class TourWeekPattern extends Message<TourWeekPattern> {
+  /**
+   * The unique ID of the tour week pattern.
+   *
+   * @generated from field: int64 tour_week_pattern_sid = 1;
+   */
+  tourWeekPatternSid: bigint;
+
+  /**
+   * The ID of the tour pattern that the tour week pattern belongs to.
+   *
+   * @generated from field: int64 tour_pattern_sid = 2;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The tour week patterns place within the sequence of tour week patterns that belong to @tour_pattern_sid.
+   *
+   * @generated from field: int32 week_pattern_number = 3;
+   */
+  weekPatternNumber: number;
+
+  /**
+   * The tour shift instance configs associated with @tour_week_pattern_sid.
+   *
+   * @generated from field: repeated api.commons.TourShiftInstanceConfig member_tour_shift_instance_configs = 4;
+   */
+  memberTourShiftInstanceConfigs: TourShiftInstanceConfig[];
+
+  constructor(data?: PartialMessage<TourWeekPattern>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TourWeekPattern";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourWeekPattern;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourWeekPattern;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourWeekPattern;
+
+  static equals(a: TourWeekPattern | PlainMessage<TourWeekPattern> | undefined, b: TourWeekPattern | PlainMessage<TourWeekPattern> | undefined): boolean;
+}
+
+/**
+ * Represents a TourAgentCollection
+ *
+ * @generated from message api.commons.TourAgentCollection
+ */
+export declare class TourAgentCollection extends Message<TourAgentCollection> {
+  /**
+   * The unique ID of this tour agent collection sid.
+   *
+   * @generated from field: int64 tour_agent_collection_sid = 1;
+   */
+  tourAgentCollectionSid: bigint;
+
+  /**
+   * The ID of the tour pattern that the tour agent collection is associated with.
+   *
+   * @generated from field: int64 tour_pattern_sid = 2;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The minimum number of agents that are required to be scheduled using this collection.
+   *
+   * @generated from field: int32 min_agents_to_schedule = 3;
+   */
+  minAgentsToSchedule: number;
+
+  /**
+   * The maximum number of agents that are allowed to be scheduled using this collection.
+   *
+   * @generated from field: int32 max_agents_to_schedule = 4;
+   */
+  maxAgentsToSchedule: number;
+
+  /**
+   * The week pattern number to start scheduling this collection with.
+   * Each week a the next week pattern number in sequence will be scheduled, starting with the @first_week_pattern_number.
+   *
+   * @generated from field: int32 first_week_pattern_number = 5;
+   */
+  firstWeekPatternNumber: number;
+
+  /**
+   * The name used to describe this tour agent collection to the user.
+   *
+   * @generated from field: string name = 6;
+   */
+  name: string;
+
+  /**
+   * The IDs of any wfm agents associated with @tour_collection_sid.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 7;
+   */
+  wfmAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<TourAgentCollection>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TourAgentCollection";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourAgentCollection;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourAgentCollection;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourAgentCollection;
+
+  static equals(a: TourAgentCollection | PlainMessage<TourAgentCollection> | undefined, b: TourAgentCollection | PlainMessage<TourAgentCollection> | undefined): boolean;
+}
+
+/**
+ * Represents a TourPattern
+ *
+ * @generated from message api.commons.TourPattern
+ */
+export declare class TourPattern extends Message<TourPattern> {
+  /**
+   * The unique ID of this tour pattern sid.
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The ID of the shift template that the tour pattern belongs to.
+   *
+   * @generated from field: int64 shift_template_sid = 2;
+   */
+  shiftTemplateSid: bigint;
+
+  /**
+   * The tour week patterns associated with @tour_pattern_sid.
+   *
+   * @generated from field: repeated api.commons.TourWeekPattern member_tour_week_patterns = 3;
+   */
+  memberTourWeekPatterns: TourWeekPattern[];
+
+  /**
+   * The tour agent collection associated with @tour_pattern_sid.
+   *
+   * @generated from field: repeated api.commons.TourAgentCollection member_tour_agent_collection = 4;
+   */
+  memberTourAgentCollection: TourAgentCollection[];
+
+  constructor(data?: PartialMessage<TourPattern>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TourPattern";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourPattern;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourPattern;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourPattern;
+
+  static equals(a: TourPattern | PlainMessage<TourPattern> | undefined, b: TourPattern | PlainMessage<TourPattern> | undefined): boolean;
+}
+

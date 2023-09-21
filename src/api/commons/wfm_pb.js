@@ -548,3 +548,83 @@ export const SkillProfileCategory_CategoryType = proto3.makeEnum(
   ],
 );
 
+/**
+ * Represents a TourShiftSegmentConfig
+ *
+ * @generated from message api.commons.TourShiftSegmentConfig
+ */
+export const TourShiftSegmentConfig = proto3.makeMessageType(
+  "api.commons.TourShiftSegmentConfig",
+  () => [
+    { no: 1, name: "tour_shift_segment_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "tour_shift_instance_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "start_minute_in_shift", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "scheduling_activity_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Represents a TourShiftInstanceConfig
+ *
+ * @generated from message api.commons.TourShiftInstanceConfig
+ */
+export const TourShiftInstanceConfig = proto3.makeMessageType(
+  "api.commons.TourShiftInstanceConfig",
+  () => [
+    { no: 1, name: "tour_shift_instance_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "tour_week_pattern_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "start_minute_in_week", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "member_tour_shift_segment_configs", kind: "message", T: TourShiftSegmentConfig, repeated: true },
+  ],
+);
+
+/**
+ * Represents a TourWeekPattern
+ *
+ * @generated from message api.commons.TourWeekPattern
+ */
+export const TourWeekPattern = proto3.makeMessageType(
+  "api.commons.TourWeekPattern",
+  () => [
+    { no: 1, name: "tour_week_pattern_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "tour_pattern_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "week_pattern_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "member_tour_shift_instance_configs", kind: "message", T: TourShiftInstanceConfig, repeated: true },
+  ],
+);
+
+/**
+ * Represents a TourAgentCollection
+ *
+ * @generated from message api.commons.TourAgentCollection
+ */
+export const TourAgentCollection = proto3.makeMessageType(
+  "api.commons.TourAgentCollection",
+  () => [
+    { no: 1, name: "tour_agent_collection_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "tour_pattern_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "min_agents_to_schedule", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "max_agents_to_schedule", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "first_week_pattern_number", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Represents a TourPattern
+ *
+ * @generated from message api.commons.TourPattern
+ */
+export const TourPattern = proto3.makeMessageType(
+  "api.commons.TourPattern",
+  () => [
+    { no: 1, name: "tour_pattern_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "member_tour_week_patterns", kind: "message", T: TourWeekPattern, repeated: true },
+    { no: 4, name: "member_tour_agent_collection", kind: "message", T: TourAgentCollection, repeated: true },
+  ],
+);
+
