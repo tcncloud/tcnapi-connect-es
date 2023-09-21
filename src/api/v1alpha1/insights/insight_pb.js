@@ -23,6 +23,32 @@ export const Insight = proto3.makeMessageType(
     { no: 6, name: "insight_version", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 7, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "insight_permission_type", kind: "enum", T: proto3.getEnumType(InsightPermissionType) },
+    { no: 9, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * PublishInsightRequest is the request to publish an insight.
+ *
+ * @generated from message api.v1alpha1.insights.PublishInsightRequest
+ */
+export const PublishInsightRequest = proto3.makeMessageType(
+  "api.v1alpha1.insights.PublishInsightRequest",
+  () => [
+    { no: 1, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "destination_resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * PublishInsightResponse contains the Insight that was published.
+ *
+ * @generated from message api.v1alpha1.insights.PublishInsightResponse
+ */
+export const PublishInsightResponse = proto3.makeMessageType(
+  "api.v1alpha1.insights.PublishInsightResponse",
+  () => [
+    { no: 1, name: "insight", kind: "message", T: Insight },
   ],
 );
 
@@ -108,6 +134,7 @@ export const DeleteInsightRequest = proto3.makeMessageType(
   "api.v1alpha1.insights.DeleteInsightRequest",
   () => [
     { no: 1, name: "insight_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -132,6 +159,7 @@ export const GetInsightRequest = proto3.makeMessageType(
   "api.v1alpha1.insights.GetInsightRequest",
   () => [
     { no: 1, name: "insight_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

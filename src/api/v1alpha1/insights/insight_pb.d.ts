@@ -64,6 +64,13 @@ export declare class Insight extends Message<Insight> {
    */
   insightPermissionType: InsightPermissionType;
 
+  /**
+   * unique resource id of the insight
+   *
+   * @generated from field: string resource_id = 9;
+   */
+  resourceId: string;
+
   constructor(data?: PartialMessage<Insight>);
 
   static readonly runtime: typeof proto3;
@@ -77,6 +84,70 @@ export declare class Insight extends Message<Insight> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Insight;
 
   static equals(a: Insight | PlainMessage<Insight> | undefined, b: Insight | PlainMessage<Insight> | undefined): boolean;
+}
+
+/**
+ * PublishInsightRequest is the request to publish an insight.
+ *
+ * @generated from message api.v1alpha1.insights.PublishInsightRequest
+ */
+export declare class PublishInsightRequest extends Message<PublishInsightRequest> {
+  /**
+   * Required - resource id of the insight to publish
+   *
+   * @generated from field: string resource_id = 1;
+   */
+  resourceId: string;
+
+  /**
+   * Optional - resource id of the destination to publish to
+   * If not provided, a new standard insight will be created
+   *
+   * @generated from field: string destination_resource_id = 2;
+   */
+  destinationResourceId: string;
+
+  constructor(data?: PartialMessage<PublishInsightRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.insights.PublishInsightRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishInsightRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishInsightRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishInsightRequest;
+
+  static equals(a: PublishInsightRequest | PlainMessage<PublishInsightRequest> | undefined, b: PublishInsightRequest | PlainMessage<PublishInsightRequest> | undefined): boolean;
+}
+
+/**
+ * PublishInsightResponse contains the Insight that was published.
+ *
+ * @generated from message api.v1alpha1.insights.PublishInsightResponse
+ */
+export declare class PublishInsightResponse extends Message<PublishInsightResponse> {
+  /**
+   * Published entity
+   *
+   * @generated from field: api.v1alpha1.insights.Insight insight = 1;
+   */
+  insight?: Insight;
+
+  constructor(data?: PartialMessage<PublishInsightResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.insights.PublishInsightResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishInsightResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishInsightResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishInsightResponse;
+
+  static equals(a: PublishInsightResponse | PlainMessage<PublishInsightResponse> | undefined, b: PublishInsightResponse | PlainMessage<PublishInsightResponse> | undefined): boolean;
 }
 
 /**
@@ -267,6 +338,13 @@ export declare class DeleteInsightRequest extends Message<DeleteInsightRequest> 
    */
   insightId: bigint;
 
+  /**
+   * resource id of the insight to delete
+   *
+   * @generated from field: string resource_id = 2;
+   */
+  resourceId: string;
+
   constructor(data?: PartialMessage<DeleteInsightRequest>);
 
   static readonly runtime: typeof proto3;
@@ -322,6 +400,13 @@ export declare class GetInsightRequest extends Message<GetInsightRequest> {
    * @generated from field: int64 insight_id = 1;
    */
   insightId: bigint;
+
+  /**
+   * resource id of insight to get
+   *
+   * @generated from field: string resource_id = 2;
+   */
+  resourceId: string;
 
   constructor(data?: PartialMessage<GetInsightRequest>);
 
