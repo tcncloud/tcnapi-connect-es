@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
+import { CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListAgentLearningOpportunitiesRequest, ListAgentLearningOpportunitiesResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -32,6 +32,17 @@ export const AgentTrainingService = {
       name: "ListLearningOpportunities",
       I: ListLearningOpportunitiesRequest,
       O: ListLearningOpportunitiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListAgentLearningOpportunities lists learning opportunities by agent.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.ListAgentLearningOpportunities
+     */
+    listAgentLearningOpportunities: {
+      name: "ListAgentLearningOpportunities",
+      I: ListAgentLearningOpportunitiesRequest,
+      O: ListAgentLearningOpportunitiesResponse,
       kind: MethodKind.Unary,
     },
     /**
