@@ -282,3 +282,41 @@ export const GetNewsForUserResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * request to upload url for images
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsroomImageRequest
+ */
+export const StoreNewsroomImageRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.StoreNewsroomImageRequest",
+  () => [
+    { no: 1, name: "image", kind: "message", T: NewsroomImage },
+  ],
+);
+
+/**
+ * request for NewsroomImage
+ *
+ * @generated from message api.v1alpha1.newsroom.NewsroomImage
+ */
+export const NewsroomImage = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.NewsroomImage",
+  () => [
+    { no: 1, name: "uuid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to upload url for images
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsroomImageResponse
+ */
+export const StoreNewsroomImageResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.StoreNewsroomImageResponse",
+  () => [
+    { no: 1, name: "image", kind: "message", T: NewsroomImage },
+  ],
+);
+

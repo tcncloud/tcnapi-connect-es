@@ -715,3 +715,101 @@ export declare class GetNewsForUserResponse extends Message<GetNewsForUserRespon
   static equals(a: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined, b: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined): boolean;
 }
 
+/**
+ * request to upload url for images
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsroomImageRequest
+ */
+export declare class StoreNewsroomImageRequest extends Message<StoreNewsroomImageRequest> {
+  /**
+   * NewsroomImage
+   *
+   * @generated from field: api.v1alpha1.newsroom.NewsroomImage image = 1;
+   */
+  image?: NewsroomImage;
+
+  constructor(data?: PartialMessage<StoreNewsroomImageRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.StoreNewsroomImageRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreNewsroomImageRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreNewsroomImageRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreNewsroomImageRequest;
+
+  static equals(a: StoreNewsroomImageRequest | PlainMessage<StoreNewsroomImageRequest> | undefined, b: StoreNewsroomImageRequest | PlainMessage<StoreNewsroomImageRequest> | undefined): boolean;
+}
+
+/**
+ * request for NewsroomImage
+ *
+ * @generated from message api.v1alpha1.newsroom.NewsroomImage
+ */
+export declare class NewsroomImage extends Message<NewsroomImage> {
+  /**
+   * unique name of the image
+   *
+   * @generated from field: string uuid = 1;
+   */
+  uuid: string;
+
+  /**
+   * image content
+   *
+   * @generated from field: string content = 2;
+   */
+  content: string;
+
+  /**
+   * download image url
+   *
+   * @generated from field: string download_url = 3;
+   */
+  downloadUrl: string;
+
+  constructor(data?: PartialMessage<NewsroomImage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.NewsroomImage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NewsroomImage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): NewsroomImage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): NewsroomImage;
+
+  static equals(a: NewsroomImage | PlainMessage<NewsroomImage> | undefined, b: NewsroomImage | PlainMessage<NewsroomImage> | undefined): boolean;
+}
+
+/**
+ * response to upload url for images
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsroomImageResponse
+ */
+export declare class StoreNewsroomImageResponse extends Message<StoreNewsroomImageResponse> {
+  /**
+   * updated NewsroomImage details
+   *
+   * @generated from field: api.v1alpha1.newsroom.NewsroomImage image = 1;
+   */
+  image?: NewsroomImage;
+
+  constructor(data?: PartialMessage<StoreNewsroomImageResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.StoreNewsroomImageResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreNewsroomImageResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreNewsroomImageResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreNewsroomImageResponse;
+
+  static equals(a: StoreNewsroomImageResponse | PlainMessage<StoreNewsroomImageResponse> | undefined, b: StoreNewsroomImageResponse | PlainMessage<StoreNewsroomImageResponse> | undefined): boolean;
+}
+

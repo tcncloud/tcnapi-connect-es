@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetNewsForUserRequest, GetNewsForUserResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UserActivityRequest, UserActivityResponse } from "./entities_pb.js";
+import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetNewsForUserRequest, GetNewsForUserResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, StoreNewsroomImageRequest, StoreNewsroomImageResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UserActivityRequest, UserActivityResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -113,6 +113,17 @@ export const NewsroomAPI = {
       name: "GetNewsForUser",
       I: GetNewsForUserRequest,
       O: GetNewsForUserResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * upload newsroom images
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.StoreNewsroomImage
+     */
+    storeNewsroomImage: {
+      name: "StoreNewsroomImage",
+      I: StoreNewsroomImageRequest,
+      O: StoreNewsroomImageResponse,
       kind: MethodKind.Unary,
     },
   }
