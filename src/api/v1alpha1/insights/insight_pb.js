@@ -24,6 +24,7 @@ export const Insight = proto3.makeMessageType(
     { no: 7, name: "body", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "insight_permission_type", kind: "enum", T: proto3.getEnumType(InsightPermissionType) },
     { no: 9, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "standard_insight", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

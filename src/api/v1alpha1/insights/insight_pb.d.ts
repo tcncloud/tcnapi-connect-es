@@ -71,6 +71,13 @@ export declare class Insight extends Message<Insight> {
    */
   resourceId: string;
 
+  /**
+   * whether the insight is a standard insight
+   *
+   * @generated from field: bool standard_insight = 10;
+   */
+  standardInsight: boolean;
+
   constructor(data?: PartialMessage<Insight>);
 
   static readonly runtime: typeof proto3;
