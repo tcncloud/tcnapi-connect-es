@@ -631,6 +631,26 @@ export declare enum EventType {
   TICKET_CLOSE_EVENT = 602,
 
   /**
+   * @generated from enum value: TICKET_ACTION_CREATE_EVENT = 603;
+   */
+  TICKET_ACTION_CREATE_EVENT = 603,
+
+  /**
+   * @generated from enum value: TICKET_ACTION_EDIT_EVENT = 604;
+   */
+  TICKET_ACTION_EDIT_EVENT = 604,
+
+  /**
+   * @generated from enum value: TICKET_ACTION_STATE_CHANGE_EVENT = 605;
+   */
+  TICKET_ACTION_STATE_CHANGE_EVENT = 605,
+
+  /**
+   * @generated from enum value: TICKET_PARTICIPANT_EVENT = 606;
+   */
+  TICKET_PARTICIPANT_EVENT = 606,
+
+  /**
    * Compliance Events
    * rnd query event
    *
@@ -652,5 +672,12 @@ export declare enum EventType {
    * @generated from enum value: AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800;
    */
   AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
+
+  /**
+   * LMS Events
+   *
+   * @generated from enum value: LMS_PIPELINE_FAILURE_EVENT = 900;
+   */
+  LMS_PIPELINE_FAILURE_EVENT = 900,
 }
 

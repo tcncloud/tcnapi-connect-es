@@ -12,8 +12,6 @@ import type { EditTicket } from "../tickets_pb.js";
  */
 export declare class TicketEvent extends Message<TicketEvent> {
   /**
-   * update ticket
-   *
    * @generated from field: api.commons.EditTicket editticket = 1;
    */
   editticket?: EditTicket;
