@@ -66,7 +66,6 @@ export const DashboardSummary = proto3.makeMessageType(
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "panel_count", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 5, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "standard_dashboard", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -234,7 +233,6 @@ export const Dashboard = proto3.makeMessageType(
     { no: 5, name: "view", kind: "message", T: DashboardView },
     { no: 6, name: "type", kind: "message", T: DashboardType },
     { no: 7, name: "resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "standard_dashboard", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
