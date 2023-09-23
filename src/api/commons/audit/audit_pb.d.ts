@@ -14,6 +14,7 @@ import type { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent
 import type { TicketEvent } from "./tickets_events_pb.js";
 import type { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import type { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
+import type { LMSPipelineFailureEvent } from "./lms_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -758,6 +759,14 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: AgentTrainingCreateLearningOpportunityEvent;
     case: "agentTrainingCreateLearningOpportunityEvent";
+  } | {
+    /**
+     * LMS Events class 900
+     *
+     * @generated from field: api.commons.audit.LMSPipelineFailureEvent lms_pipeline_failure_event = 900;
+     */
+    value: LMSPipelineFailureEvent;
+    case: "lmsPipelineFailureEvent";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<AuditEvent>);

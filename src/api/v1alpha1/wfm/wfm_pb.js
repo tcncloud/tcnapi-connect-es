@@ -65,6 +65,25 @@ export const SkillProfile = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.wfm.SkillProfileGroup
+ */
+export const SkillProfileGroup = proto3.makeMessageType(
+  "api.v1alpha1.wfm.SkillProfileGroup",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "create_time", kind: "message", T: Timestamp },
+    { no: 5, name: "average_speed_of_answer_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 6, name: "average_handle_time_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 7, name: "average_after_call_work_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 8, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 9, name: "are_averages_manual", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "skill_profile_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
  * Request message for the ListSkillProfiles RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListSkillProfilesReq
@@ -536,6 +555,100 @@ export const DisconnectInactiveSkillProfileMappingReq = proto3.makeMessageType(
  */
 export const DisconnectInactiveSkillProfileMappingRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes",
+  [],
+);
+
+/**
+ * Request message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupReq
+ */
+export const CreateSkillProfileGroupReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateSkillProfileGroupReq",
+  () => [
+    { no: 1, name: "skill_profile_group", kind: "message", T: SkillProfileGroup },
+  ],
+);
+
+/**
+ * Response message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupRes
+ */
+export const CreateSkillProfileGroupRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateSkillProfileGroupRes",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupReq
+ */
+export const UpdateSkillProfileGroupReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupReq",
+  () => [
+    { no: 1, name: "skill_profile_group", kind: "message", T: SkillProfileGroup },
+  ],
+);
+
+/**
+ * Response message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupRes
+ */
+export const UpdateSkillProfileGroupRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupRes",
+  [],
+);
+
+/**
+ * Request message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsReq
+ */
+export const ListSkillProfileGroupsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListSkillProfileGroupsReq",
+  () => [
+    { no: 1, name: "skill_profile_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsRes
+ */
+export const ListSkillProfileGroupsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListSkillProfileGroupsRes",
+  () => [
+    { no: 1, name: "skill_profile_groups", kind: "message", T: SkillProfileGroup, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the UpdateSkillProfileGroupAssociations RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq
+ */
+export const UpdateSkillProfileGroupAssociationsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "skill_profile_sids_to_associate", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "skill_profile_sids_to_disassociate", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the UpdateSkillProfileGroupAssociations RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes
+ */
+export const UpdateSkillProfileGroupAssociationsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes",
   [],
 );
 
@@ -4028,6 +4141,54 @@ export const DeleteSchedulingTargetRes = proto3.makeMessageType(
 );
 
 /**
+ * GetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * Empty.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetReq
+ */
+export const GetDefaultSchedulingTargetReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetDefaultSchedulingTargetReq",
+  [],
+);
+
+/**
+ * GetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetRes
+ */
+export const GetDefaultSchedulingTargetRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetDefaultSchedulingTargetRes",
+  () => [
+    { no: 1, name: "scheduling_target", kind: "message", T: SchedulingTarget },
+  ],
+);
+
+/**
+ * SetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetReq
+ */
+export const SetDefaultSchedulingTargetReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.SetDefaultSchedulingTargetReq",
+  () => [
+    { no: 1, name: "scheduling_target", kind: "message", T: SchedulingTarget },
+  ],
+);
+
+/**
+ * SetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * Empty.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetRes
+ */
+export const SetDefaultSchedulingTargetRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.SetDefaultSchedulingTargetRes",
+  [],
+);
+
+/**
  * Request message for the ListRequiredCallsIntervals RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListRequiredCallsIntervalsReq
@@ -4103,6 +4264,28 @@ export const GetTourPatternRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the DeleteTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourPatternReq
+ */
+export const DeleteTourPatternReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourPatternReq",
+  () => [
+    { no: 1, name: "tour_pattern_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for the DeleteTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourPatternRes
+ */
+export const DeleteTourPatternRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourPatternRes",
+  [],
+);
+
+/**
  * Request message for the CreateTourWeekPattern RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateTourWeekPatternReq
@@ -4151,6 +4334,28 @@ export const ListTourWeekPatternsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the DeleteTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourWeekPatternsReq
+ */
+export const DeleteTourWeekPatternsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourWeekPatternsReq",
+  () => [
+    { no: 1, name: "tour_week_pattern_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the DeleteTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourWeekPatternsRes
+ */
+export const DeleteTourWeekPatternsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourWeekPatternsRes",
+  [],
+);
+
+/**
  * Request message for the CreateTourShiftInstanceConfig RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateTourShiftInstanceConfigReq
@@ -4172,6 +4377,28 @@ export const CreateTourShiftInstanceConfigRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "tour_shift_instance_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
+);
+
+/**
+ * Request message for the UpdateTourShiftInstanceConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftInstanceConfigReq
+ */
+export const UpdateTourShiftInstanceConfigReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateTourShiftInstanceConfigReq",
+  () => [
+    { no: 1, name: "tour_shift_instance_config", kind: "message", T: TourShiftInstanceConfig },
+  ],
+);
+
+/**
+ * Response message for the UpdateTourShiftInstanceConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftInstanceConfigRes
+ */
+export const UpdateTourShiftInstanceConfigRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateTourShiftInstanceConfigRes",
+  [],
 );
 
 /**
@@ -4199,6 +4426,28 @@ export const ListTourShiftInstanceConfigsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the DeleteTourShiftInstanceConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq
+ */
+export const DeleteTourShiftInstanceConfigsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq",
+  () => [
+    { no: 1, name: "tour_shift_instance_config_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the DeleteTourShiftInstanceConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsRes
+ */
+export const DeleteTourShiftInstanceConfigsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsRes",
+  [],
+);
+
+/**
  * Request message for the CreateTourShiftSegmentConfig RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateTourShiftSegmentConfigReq
@@ -4220,6 +4469,28 @@ export const CreateTourShiftSegmentConfigRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "tour_shift_segment_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
+);
+
+/**
+ * Request message for the UpdateTourShiftSegmentConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftSegmentConfigReq
+ */
+export const UpdateTourShiftSegmentConfigReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateTourShiftSegmentConfigReq",
+  () => [
+    { no: 1, name: "tour_shift_segment_config", kind: "message", T: TourShiftSegmentConfig },
+  ],
+);
+
+/**
+ * Response message for the CreateTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftSegmentConfigRes
+ */
+export const UpdateTourShiftSegmentConfigRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateTourShiftSegmentConfigRes",
+  [],
 );
 
 /**
@@ -4247,6 +4518,28 @@ export const ListTourShiftSegmentConfigsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the DeleteTourShiftSegmentConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq
+ */
+export const DeleteTourShiftSegmentConfigsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq",
+  () => [
+    { no: 1, name: "tour_shift_segment_config_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the DeleteTourShiftSegmentConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsRes
+ */
+export const DeleteTourShiftSegmentConfigsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsRes",
+  [],
+);
+
+/**
  * Request message for the CreateTourAgentCollection RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateTourAgentCollectionReq
@@ -4271,6 +4564,28 @@ export const CreateTourAgentCollectionRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the UpdateTourAgentCollection RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourAgentCollectionReq
+ */
+export const UpdateTourAgentCollectionReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateTourAgentCollectionReq",
+  () => [
+    { no: 1, name: "tour_agent_collection", kind: "message", T: TourAgentCollection },
+  ],
+);
+
+/**
+ * Response message for the UpdateTourAgentCollection RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourAgentCollectionRes
+ */
+export const UpdateTourAgentCollectionRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateTourAgentCollectionRes",
+  [],
+);
+
+/**
  * Request message for the ListTourAgentCollections RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListTourAgentCollectionsReq
@@ -4292,6 +4607,28 @@ export const ListTourAgentCollectionsRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "tour_agent_collections", kind: "message", T: TourAgentCollection, repeated: true },
   ],
+);
+
+/**
+ * Request message for the DeleteTourAgentCollections RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionsReq
+ */
+export const DeleteTourAgentCollectionsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourAgentCollectionsReq",
+  () => [
+    { no: 1, name: "tour_agent_collection_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the DeleteTourAgentCollections RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionsRes
+ */
+export const DeleteTourAgentCollectionsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourAgentCollectionsRes",
+  [],
 );
 
 /**
@@ -4353,5 +4690,28 @@ export const ListTourAgentCollectionWFMAgentsRes_SidMapping = proto3.makeMessage
     { no: 2, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
   {localName: "ListTourAgentCollectionWFMAgentsRes_SidMapping"},
+);
+
+/**
+ * Request message for the DeleteTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq
+ */
+export const DeleteTourAgentCollectionWFMAgentsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq",
+  () => [
+    { no: 1, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "tour_agent_collection_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for the DeleteTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsRes
+ */
+export const DeleteTourAgentCollectionWFMAgentsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsRes",
+  [],
 );
 

@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildCallProfileTemplateReq, BuildCallProfileTemplateRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateTourAgentCollectionReq, CreateTourAgentCollectionRes, CreateTourAgentCollectionWFMAgentsReq, CreateTourAgentCollectionWFMAgentsRes, CreateTourPatternReq, CreateTourPatternRes, CreateTourShiftInstanceConfigReq, CreateTourShiftInstanceConfigRes, CreateTourShiftSegmentConfigReq, CreateTourShiftSegmentConfigRes, CreateTourWeekPatternReq, CreateTourWeekPatternRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, GetTourPatternReq, GetTourPatternRes, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListForecastIntervalsReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListProgramNodesBySidReq, ListProgramNodesBySidRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListTourAgentCollectionsReq, ListTourAgentCollectionsRes, ListTourAgentCollectionWFMAgentsReq, ListTourAgentCollectionWFMAgentsRes, ListTourShiftInstanceConfigsReq, ListTourShiftInstanceConfigsRes, ListTourShiftSegmentConfigsReq, ListTourShiftSegmentConfigsRes, ListTourWeekPatternsReq, ListTourWeekPatternsRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, ListWFMAgentSidsReq, ListWFMAgentSidsRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes } from "./wfm_pb.js";
+import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildCallProfileTemplateReq, BuildCallProfileTemplateRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateSkillProfileGroupReq, CreateSkillProfileGroupRes, CreateTourAgentCollectionReq, CreateTourAgentCollectionRes, CreateTourAgentCollectionWFMAgentsReq, CreateTourAgentCollectionWFMAgentsRes, CreateTourPatternReq, CreateTourPatternRes, CreateTourShiftInstanceConfigReq, CreateTourShiftInstanceConfigRes, CreateTourShiftSegmentConfigReq, CreateTourShiftSegmentConfigRes, CreateTourWeekPatternReq, CreateTourWeekPatternRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteTourAgentCollectionsReq, DeleteTourAgentCollectionsRes, DeleteTourAgentCollectionWFMAgentsReq, DeleteTourAgentCollectionWFMAgentsRes, DeleteTourPatternReq, DeleteTourPatternRes, DeleteTourShiftInstanceConfigsReq, DeleteTourShiftInstanceConfigsRes, DeleteTourShiftSegmentConfigsReq, DeleteTourShiftSegmentConfigsRes, DeleteTourWeekPatternsReq, DeleteTourWeekPatternsRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetDefaultSchedulingTargetReq, GetDefaultSchedulingTargetRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, GetTourPatternReq, GetTourPatternRes, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListForecastIntervalsReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListProgramNodesBySidReq, ListProgramNodesBySidRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfileGroupsReq, ListSkillProfileGroupsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListTourAgentCollectionsReq, ListTourAgentCollectionsRes, ListTourAgentCollectionWFMAgentsReq, ListTourAgentCollectionWFMAgentsRes, ListTourShiftInstanceConfigsReq, ListTourShiftInstanceConfigsRes, ListTourShiftSegmentConfigsReq, ListTourShiftSegmentConfigsRes, ListTourWeekPatternsReq, ListTourWeekPatternsRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, ListWFMAgentSidsReq, ListWFMAgentSidsRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetDefaultSchedulingTargetReq, SetDefaultSchedulingTargetRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileGroupAssociationsReq, UpdateSkillProfileGroupAssociationsRes, UpdateSkillProfileGroupReq, UpdateSkillProfileGroupRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateTourAgentCollectionReq, UpdateTourAgentCollectionRes, UpdateTourShiftInstanceConfigReq, UpdateTourShiftInstanceConfigRes, UpdateTourShiftSegmentConfigReq, UpdateTourShiftSegmentConfigRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes } from "./wfm_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -329,6 +329,76 @@ export const WFM = {
       name: "DisconnectInactiveSkillProfileMapping",
       I: DisconnectInactiveSkillProfileMappingReq,
       O: DisconnectInactiveSkillProfileMappingRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Creates the given @skill_profile_group.
+     * @skill_profile_group_sids will be ignored since associations cannot be created by this method.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group in the request is invalid.
+     *   - grpc.Internal: error occurs creating the skill profile group.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateSkillProfileGroup
+     */
+    createSkillProfileGroup: {
+      name: "CreateSkillProfileGroup",
+      I: CreateSkillProfileGroupReq,
+      O: CreateSkillProfileGroupRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Updates the given @skill_profile_group that has the @skill_profile_group_sid for the org sending the request.
+     * @skill_profile_group_sids will be ignored since associations cannot be updated by this method.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group in the request is invalid.
+     *   - grpc.NotFound: the skill profile group to update doesn't exist.
+     *   - grpc.Internal: error occurs updating the skill profile group.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateSkillProfileGroup
+     */
+    updateSkillProfileGroup: {
+      name: "UpdateSkillProfileGroup",
+      I: UpdateSkillProfileGroupReq,
+      O: UpdateSkillProfileGroupRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the skill profile groups that have the @skill_profile_group_sids for the org sending the request.
+     * If @skill_profile_group_sids is empty it will get all the skill profile groups for the org.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group_sids in the request is invalid.
+     *   - grpc.Internal: error occurs getting the skill profile groups.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListSkillProfileGroups
+     */
+    listSkillProfileGroups: {
+      name: "ListSkillProfileGroups",
+      I: ListSkillProfileGroupsReq,
+      O: ListSkillProfileGroupsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Updates associations of the given @skill_profile_group_sid for the org sending the request.
+     * It will create the associations with the @skill_profile_sids_to_associate, and remove the associations with the @skill_profile_sids_to_disassociate.
+     * Only one of the skill_profile_sids fields needs to be set, but both can be set on the same request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the values in the request are invalid.
+     *   - grpc.Internal: error occurs updating the skill profile group associations.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateSkillProfileGroupAssociations
+     */
+    updateSkillProfileGroupAssociations: {
+      name: "UpdateSkillProfileGroupAssociations",
+      I: UpdateSkillProfileGroupAssociationsReq,
+      O: UpdateSkillProfileGroupAssociationsRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -2290,6 +2360,33 @@ export const WFM = {
       kind: MethodKind.Unary,
     },
     /**
+     * Gets the scheduling-target values for the org making the request.
+     * Errors:
+     *   - grpc.Internal: error occours when getting the scheduling-target values.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GetDefaultSchedulingTarget
+     */
+    getDefaultSchedulingTarget: {
+      name: "GetDefaultSchedulingTarget",
+      I: GetDefaultSchedulingTargetReq,
+      O: GetDefaultSchedulingTargetRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Sets the scheduling-target values for the org making the request.
+     * Errors:
+     *   - grpc.Invalid: any of the given values are invalid.
+     *   - grpc.Internal: error occours when setting the scheduling-target values.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.SetDefaultSchedulingTarget
+     */
+    setDefaultSchedulingTarget: {
+      name: "SetDefaultSchedulingTarget",
+      I: SetDefaultSchedulingTargetReq,
+      O: SetDefaultSchedulingTargetRes,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Gets the performance metrics across @datetime_range for shift instances in @schedule_selector associated with @node_selector for the org making the request.
      * Performance metrics will be generated for each of the given @metric_params.
      * The @interval_width_in_minutes must be a multiple of 5.
@@ -2360,6 +2457,23 @@ export const WFM = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes the tour pattern belonging to @tour_pattern_sid and the org sending the request.
+     * Any member Tour Week Patterns or Agent Collections will be deleted as well.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when deleting the data or it's children.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourPattern
+     */
+    deleteTourPattern: {
+      name: "DeleteTourPattern",
+      I: DeleteTourPatternReq,
+      O: DeleteTourPatternRes,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Creates a tour week pattern for @tour_pattern_sid for the org sending the request, returning @tour_week_pattern_sid.
      * The newly created tour week pattern will be placed at the end of the existing sequence of tour week patterns for @tour_pattern_sid.
      * Required permissions:
@@ -2393,6 +2507,24 @@ export const WFM = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes the tour week patterns with the given @tour_week_pattern_sids for the org sending the request.
+     * Any Tour Week Instance or Segment Configs using @tour_week_pattern_sids will be deleted.
+     * Request will error if any @tour_week_pattern_sids are in use by a Tour Agent Collection.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid or a @tour_week_pattern_sid is in use by a Tour Agent Collection.
+     *   - grpc.Internal: error occurs when deleting the tour week patterns or configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourWeekPatterns
+     */
+    deleteTourWeekPatterns: {
+      name: "DeleteTourWeekPatterns",
+      I: DeleteTourWeekPatternsReq,
+      O: DeleteTourWeekPatternsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Creates the @tour_shift_instance_config for the org sending the request, returning @tour_shift_instance_config_sid.
      * The given @tour_shift_instance_config will not be created if it will overlap another tour shift instance config belonging to @tour_week_pattern_sid.
      * The @member_tour_shift_segment_configs field will be ignored, and will not be created if passed through this endpoint.
@@ -2408,6 +2540,24 @@ export const WFM = {
       name: "CreateTourShiftInstanceConfig",
       I: CreateTourShiftInstanceConfigReq,
       O: CreateTourShiftInstanceConfigRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Updates the @tour_shift_instance_config for the org sending the request, returning @tour_shift_instance_config_sid.
+     * The given @tour_shift_instance_config will not be created if it will overlap another tour shift instance config belonging to @tour_week_pattern_sid.
+     * The @member_tour_shift_segment_configs field will be ignored, and will not be updated if passed through this endpoint.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid or a preexisting tour shift instance config would overlap @tour_shift_instance_config.
+     *   - grpc.Internal: error occurs when updating the data.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateTourShiftInstanceConfig
+     */
+    updateTourShiftInstanceConfig: {
+      name: "UpdateTourShiftInstanceConfig",
+      I: UpdateTourShiftInstanceConfigReq,
+      O: UpdateTourShiftInstanceConfigRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -2427,6 +2577,22 @@ export const WFM = {
       kind: MethodKind.Unary,
     },
     /**
+     * Deletes the tour shift instance configs matching @tour_shift_instance_config_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the tour shift instance configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourShiftInstanceConfigs
+     */
+    deleteTourShiftInstanceConfigs: {
+      name: "DeleteTourShiftInstanceConfigs",
+      I: DeleteTourShiftInstanceConfigsReq,
+      O: DeleteTourShiftInstanceConfigsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Creates the given @tour_shift_segment_config for the org sending the request, returning @tour_shift_segment_config_sid.
      * Required permissions:
      *   NONE
@@ -2443,6 +2609,23 @@ export const WFM = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates the given @tour_shift_segment_config matching @tour_shift_segment_config_sid and the org sending the request.
+     * If the updated Tour Shify Segment Config overlaps another segment or does not fit within the parent Tour Shift Instance Config the update will fail.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid, the @tour_shift_instance_config_sid does not exist for the org sending the request, or the resulting update would result in a conflict.
+     *   - grpc.Internal: error occurs when updating the entity.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateTourShiftSegmentConfig
+     */
+    updateTourShiftSegmentConfig: {
+      name: "UpdateTourShiftSegmentConfig",
+      I: UpdateTourShiftSegmentConfigReq,
+      O: UpdateTourShiftSegmentConfigRes,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Lists the tour shift segment configs belonging to @tour_shift_instance_config_sids for the org sending the request.
      * Required permissions:
      *   NONE
@@ -2456,6 +2639,22 @@ export const WFM = {
       name: "ListTourShiftSegmentConfigs",
       I: ListTourShiftSegmentConfigsReq,
       O: ListTourShiftSegmentConfigsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes the tour shift segment configs associated with the given @tour_shift_segment_config_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when deleting the tour shift segment configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourShiftSegmentConfigs
+     */
+    deleteTourShiftSegmentConfigs: {
+      name: "DeleteTourShiftSegmentConfigs",
+      I: DeleteTourShiftSegmentConfigsReq,
+      O: DeleteTourShiftSegmentConfigsRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -2477,6 +2676,24 @@ export const WFM = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates the given @tour_agent_collection matching the @tour_agent_collection_sid for the org sending the request.
+     * The @wfm_agent_sids will be ignored and will not be updated through this endpoint.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid, the first_week_pattern_number for @tour_pattern_sid is already in use by another tour agent collection,
+     *                    or the given @tour_pattern_sid does not exist for the org sending the request.
+     *   - grpc.Internal: error occurs when updating the entity.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateTourAgentCollection
+     */
+    updateTourAgentCollection: {
+      name: "UpdateTourAgentCollection",
+      I: UpdateTourAgentCollectionReq,
+      O: UpdateTourAgentCollectionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Lists the tour agent collections belonging to @tour_pattern_sid for the org sending the request.
      * Required permissions:
      *   NONE
@@ -2490,6 +2707,23 @@ export const WFM = {
       name: "ListTourAgentCollections",
       I: ListTourAgentCollectionsReq,
       O: ListTourAgentCollectionsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes the tour agent collections belonging matching @tour_agent_collection_sids for the org sending the request.
+     * Any existing associations with WFM Agent Sids will be deleted as well.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when deleting the tour agent collections.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourAgentCollections
+     */
+    deleteTourAgentCollections: {
+      name: "DeleteTourAgentCollections",
+      I: DeleteTourAgentCollectionsReq,
+      O: DeleteTourAgentCollectionsRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -2525,6 +2759,23 @@ export const WFM = {
       name: "ListTourAgentCollectionWFMAgents",
       I: ListTourAgentCollectionWFMAgentsReq,
       O: ListTourAgentCollectionWFMAgentsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes association between the @wfm_agent_sids and @tour_agent_collection_sid for the org sending the request.
+     * If no @wfm_agent_sids are provided, all existing @wfm_agent_sids for the given @tour_agent_collection_sid will be deleted.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid or there are no wfm agent associations to delete for @tour_agent_collection_sid .
+     *   - grpc.Internal: error occurs when getting the tour agent collections.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourAgentCollectionWFMAgents
+     */
+    deleteTourAgentCollectionWFMAgents: {
+      name: "DeleteTourAgentCollectionWFMAgents",
+      I: DeleteTourAgentCollectionWFMAgentsReq,
+      O: DeleteTourAgentCollectionWFMAgentsRes,
       kind: MethodKind.Unary,
     },
   }
