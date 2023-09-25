@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildCallProfileTemplateReq, BuildCallProfileTemplateRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListForecastIntervalsReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListProgramNodesBySidReq, ListProgramNodesBySidRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, ListWFMAgentSidsReq, ListWFMAgentSidsRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes } from "./wfm_pb.js";
+import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildCallProfileTemplateReq, BuildCallProfileTemplateRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateSkillProfileGroupReq, CreateSkillProfileGroupRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetDefaultSchedulingTargetReq, GetDefaultSchedulingTargetRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListForecastIntervalsReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListProgramNodesBySidReq, ListProgramNodesBySidRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfileGroupsReq, ListSkillProfileGroupsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, ListWFMAgentSidsReq, ListWFMAgentSidsRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetDefaultSchedulingTargetReq, SetDefaultSchedulingTargetRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileGroupAssociationsReq, UpdateSkillProfileGroupAssociationsRes, UpdateSkillProfileGroupReq, UpdateSkillProfileGroupRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes } from "./wfm_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -329,6 +329,76 @@ export const WFM = {
       name: "DisconnectInactiveSkillProfileMapping",
       I: DisconnectInactiveSkillProfileMappingReq,
       O: DisconnectInactiveSkillProfileMappingRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Creates the given @skill_profile_group.
+     * @skill_profile_group_sids will be ignored since associations cannot be created by this method.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group in the request is invalid.
+     *   - grpc.Internal: error occurs creating the skill profile group.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateSkillProfileGroup
+     */
+    createSkillProfileGroup: {
+      name: "CreateSkillProfileGroup",
+      I: CreateSkillProfileGroupReq,
+      O: CreateSkillProfileGroupRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Updates the given @skill_profile_group that has the @skill_profile_group_sid for the org sending the request.
+     * @skill_profile_group_sids will be ignored since associations cannot be updated by this method.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group in the request is invalid.
+     *   - grpc.NotFound: the skill profile group to update doesn't exist.
+     *   - grpc.Internal: error occurs updating the skill profile group.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateSkillProfileGroup
+     */
+    updateSkillProfileGroup: {
+      name: "UpdateSkillProfileGroup",
+      I: UpdateSkillProfileGroupReq,
+      O: UpdateSkillProfileGroupRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the skill profile groups that have the @skill_profile_group_sids for the org sending the request.
+     * If @skill_profile_group_sids is empty it will get all the skill profile groups for the org.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group_sids in the request is invalid.
+     *   - grpc.Internal: error occurs getting the skill profile groups.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListSkillProfileGroups
+     */
+    listSkillProfileGroups: {
+      name: "ListSkillProfileGroups",
+      I: ListSkillProfileGroupsReq,
+      O: ListSkillProfileGroupsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Updates associations of the given @skill_profile_group_sid for the org sending the request.
+     * It will create the associations with the @skill_profile_sids_to_associate, and remove the associations with the @skill_profile_sids_to_disassociate.
+     * Only one of the skill_profile_sids fields needs to be set, but both can be set on the same request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the values in the request are invalid.
+     *   - grpc.Internal: error occurs updating the skill profile group associations.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateSkillProfileGroupAssociations
+     */
+    updateSkillProfileGroupAssociations: {
+      name: "UpdateSkillProfileGroupAssociations",
+      I: UpdateSkillProfileGroupAssociationsReq,
+      O: UpdateSkillProfileGroupAssociationsRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -2058,7 +2128,7 @@ export const WFM = {
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @org_id or @shift_instance_sids in the request are invalid.
+     *   - grpc.Invalid: the @shift_instance_sids in the request are invalid.
      *   - grpc.Internal: error occurs when listing the shift instances or their shift segments.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListShiftInstancesBySid
@@ -2287,6 +2357,33 @@ export const WFM = {
       name: "DeleteSchedulingTarget",
       I: DeleteSchedulingTargetReq,
       O: DeleteSchedulingTargetRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the scheduling-target values for the org making the request.
+     * Errors:
+     *   - grpc.Internal: error occours when getting the scheduling-target values.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GetDefaultSchedulingTarget
+     */
+    getDefaultSchedulingTarget: {
+      name: "GetDefaultSchedulingTarget",
+      I: GetDefaultSchedulingTargetReq,
+      O: GetDefaultSchedulingTargetRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Sets the scheduling-target values for the org making the request.
+     * Errors:
+     *   - grpc.Invalid: any of the given values are invalid.
+     *   - grpc.Internal: error occours when setting the scheduling-target values.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.SetDefaultSchedulingTarget
+     */
+    setDefaultSchedulingTarget: {
+      name: "SetDefaultSchedulingTarget",
+      I: SetDefaultSchedulingTargetReq,
+      O: SetDefaultSchedulingTargetRes,
       kind: MethodKind.Unary,
     },
     /**

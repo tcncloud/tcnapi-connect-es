@@ -207,6 +207,95 @@ export declare class SkillProfile extends Message<SkillProfile> {
 }
 
 /**
+ * @generated from message api.v1alpha1.wfm.SkillProfileGroup
+ */
+export declare class SkillProfileGroup extends Message<SkillProfileGroup> {
+  /**
+   * ID of the skill profile group.
+   *
+   * @generated from field: int64 skill_profile_group_sid = 1;
+   */
+  skillProfileGroupSid: bigint;
+
+  /**
+   * name of the skill profile group.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * description about the skill profile group.
+   *
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  /**
+   * date of creation of the skill profile group.
+   *
+   * @generated from field: google.protobuf.Timestamp create_time = 4;
+   */
+  createTime?: Timestamp;
+
+  /**
+   * average time that calls took to be answered.
+   *
+   * @generated from field: float average_speed_of_answer_in_seconds = 5;
+   */
+  averageSpeedOfAnswerInSeconds: number;
+
+  /**
+   * average duration of answered calls.
+   *
+   * @generated from field: float average_handle_time_in_seconds = 6;
+   */
+  averageHandleTimeInSeconds: number;
+
+  /**
+   * average time that agents spent in wrap up.
+   *
+   * @generated from field: float average_after_call_work_in_seconds = 7;
+   */
+  averageAfterCallWorkInSeconds: number;
+
+  /**
+   * average time that callers waited before hanging unanswered calls.
+   *
+   * @generated from field: float average_time_to_abort_in_seconds = 8;
+   */
+  averageTimeToAbortInSeconds: number;
+
+  /**
+   * indicates whether or not the averages were manually entered by the user (if false then the averages were automatically calculated from the historical data).
+   *
+   * @generated from field: bool are_averages_manual = 9;
+   */
+  areAveragesManual: boolean;
+
+  /**
+   * IDs of the skill profiles that belong to this group.
+   *
+   * @generated from field: repeated int64 skill_profile_sids = 10;
+   */
+  skillProfileSids: bigint[];
+
+  constructor(data?: PartialMessage<SkillProfileGroup>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SkillProfileGroup";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SkillProfileGroup;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SkillProfileGroup;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SkillProfileGroup;
+
+  static equals(a: SkillProfileGroup | PlainMessage<SkillProfileGroup> | undefined, b: SkillProfileGroup | PlainMessage<SkillProfileGroup> | undefined): boolean;
+}
+
+/**
  * Request message for the ListSkillProfiles RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListSkillProfilesReq
@@ -1488,6 +1577,234 @@ export declare class DisconnectInactiveSkillProfileMappingRes extends Message<Di
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DisconnectInactiveSkillProfileMappingRes;
 
   static equals(a: DisconnectInactiveSkillProfileMappingRes | PlainMessage<DisconnectInactiveSkillProfileMappingRes> | undefined, b: DisconnectInactiveSkillProfileMappingRes | PlainMessage<DisconnectInactiveSkillProfileMappingRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupReq
+ */
+export declare class CreateSkillProfileGroupReq extends Message<CreateSkillProfileGroupReq> {
+  /**
+   * Skill profile group to create.
+   * @skill_profile_group_sid will be ignored since that field is generated upon creation of the entity.
+   * @skill_profile_group_sids will be ignored since associations cannot be created by this method.
+   *
+   * @generated from field: api.v1alpha1.wfm.SkillProfileGroup skill_profile_group = 1;
+   */
+  skillProfileGroup?: SkillProfileGroup;
+
+  constructor(data?: PartialMessage<CreateSkillProfileGroupReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateSkillProfileGroupReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSkillProfileGroupReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupReq;
+
+  static equals(a: CreateSkillProfileGroupReq | PlainMessage<CreateSkillProfileGroupReq> | undefined, b: CreateSkillProfileGroupReq | PlainMessage<CreateSkillProfileGroupReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupRes
+ */
+export declare class CreateSkillProfileGroupRes extends Message<CreateSkillProfileGroupRes> {
+  /**
+   * ID of the skill profile group created.
+   *
+   * @generated from field: int64 skill_profile_group_sid = 1;
+   */
+  skillProfileGroupSid: bigint;
+
+  constructor(data?: PartialMessage<CreateSkillProfileGroupRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateSkillProfileGroupRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSkillProfileGroupRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSkillProfileGroupRes;
+
+  static equals(a: CreateSkillProfileGroupRes | PlainMessage<CreateSkillProfileGroupRes> | undefined, b: CreateSkillProfileGroupRes | PlainMessage<CreateSkillProfileGroupRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupReq
+ */
+export declare class UpdateSkillProfileGroupReq extends Message<UpdateSkillProfileGroupReq> {
+  /**
+   * Skill profile group to update.
+   * @skill_profile_group_sids will be ignored since associations cannot be updated by this method.
+   *
+   * @generated from field: api.v1alpha1.wfm.SkillProfileGroup skill_profile_group = 1;
+   */
+  skillProfileGroup?: SkillProfileGroup;
+
+  constructor(data?: PartialMessage<UpdateSkillProfileGroupReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateSkillProfileGroupReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSkillProfileGroupReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupReq;
+
+  static equals(a: UpdateSkillProfileGroupReq | PlainMessage<UpdateSkillProfileGroupReq> | undefined, b: UpdateSkillProfileGroupReq | PlainMessage<UpdateSkillProfileGroupReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupRes
+ */
+export declare class UpdateSkillProfileGroupRes extends Message<UpdateSkillProfileGroupRes> {
+  constructor(data?: PartialMessage<UpdateSkillProfileGroupRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateSkillProfileGroupRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSkillProfileGroupRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupRes;
+
+  static equals(a: UpdateSkillProfileGroupRes | PlainMessage<UpdateSkillProfileGroupRes> | undefined, b: UpdateSkillProfileGroupRes | PlainMessage<UpdateSkillProfileGroupRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsReq
+ */
+export declare class ListSkillProfileGroupsReq extends Message<ListSkillProfileGroupsReq> {
+  /**
+   * IDs of the skill profile groups to get.
+   * If left empty it will get all the skill profile groups for the org
+   *
+   * @generated from field: repeated int64 skill_profile_group_sids = 1;
+   */
+  skillProfileGroupSids: bigint[];
+
+  constructor(data?: PartialMessage<ListSkillProfileGroupsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListSkillProfileGroupsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillProfileGroupsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsReq;
+
+  static equals(a: ListSkillProfileGroupsReq | PlainMessage<ListSkillProfileGroupsReq> | undefined, b: ListSkillProfileGroupsReq | PlainMessage<ListSkillProfileGroupsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsRes
+ */
+export declare class ListSkillProfileGroupsRes extends Message<ListSkillProfileGroupsRes> {
+  /**
+   * Skill profile groups found.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.SkillProfileGroup skill_profile_groups = 1;
+   */
+  skillProfileGroups: SkillProfileGroup[];
+
+  constructor(data?: PartialMessage<ListSkillProfileGroupsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListSkillProfileGroupsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillProfileGroupsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillProfileGroupsRes;
+
+  static equals(a: ListSkillProfileGroupsRes | PlainMessage<ListSkillProfileGroupsRes> | undefined, b: ListSkillProfileGroupsRes | PlainMessage<ListSkillProfileGroupsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the UpdateSkillProfileGroupAssociations RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq
+ */
+export declare class UpdateSkillProfileGroupAssociationsReq extends Message<UpdateSkillProfileGroupAssociationsReq> {
+  /**
+   * IDs of the skill profile groups to update the associations of.
+   *
+   * @generated from field: int64 skill_profile_group_sid = 1;
+   */
+  skillProfileGroupSid: bigint;
+
+  /**
+   * IDs of the skill profiles to associate with this group.
+   *
+   * @generated from field: repeated int64 skill_profile_sids_to_associate = 2;
+   */
+  skillProfileSidsToAssociate: bigint[];
+
+  /**
+   * IDs of the skill profiles to disassociate with this group.
+   *
+   * @generated from field: repeated int64 skill_profile_sids_to_disassociate = 3;
+   */
+  skillProfileSidsToDisassociate: bigint[];
+
+  constructor(data?: PartialMessage<UpdateSkillProfileGroupAssociationsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSkillProfileGroupAssociationsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupAssociationsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupAssociationsReq;
+
+  static equals(a: UpdateSkillProfileGroupAssociationsReq | PlainMessage<UpdateSkillProfileGroupAssociationsReq> | undefined, b: UpdateSkillProfileGroupAssociationsReq | PlainMessage<UpdateSkillProfileGroupAssociationsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateSkillProfileGroupAssociations RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes
+ */
+export declare class UpdateSkillProfileGroupAssociationsRes extends Message<UpdateSkillProfileGroupAssociationsRes> {
+  constructor(data?: PartialMessage<UpdateSkillProfileGroupAssociationsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateSkillProfileGroupAssociationsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupAssociationsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateSkillProfileGroupAssociationsRes;
+
+  static equals(a: UpdateSkillProfileGroupAssociationsRes | PlainMessage<UpdateSkillProfileGroupAssociationsRes> | undefined, b: UpdateSkillProfileGroupAssociationsRes | PlainMessage<UpdateSkillProfileGroupAssociationsRes> | undefined): boolean;
 }
 
 /**
@@ -11776,6 +12093,104 @@ export declare class DeleteSchedulingTargetRes extends Message<DeleteSchedulingT
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteSchedulingTargetRes;
 
   static equals(a: DeleteSchedulingTargetRes | PlainMessage<DeleteSchedulingTargetRes> | undefined, b: DeleteSchedulingTargetRes | PlainMessage<DeleteSchedulingTargetRes> | undefined): boolean;
+}
+
+/**
+ * GetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * Empty.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetReq
+ */
+export declare class GetDefaultSchedulingTargetReq extends Message<GetDefaultSchedulingTargetReq> {
+  constructor(data?: PartialMessage<GetDefaultSchedulingTargetReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetDefaultSchedulingTargetReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDefaultSchedulingTargetReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetReq;
+
+  static equals(a: GetDefaultSchedulingTargetReq | PlainMessage<GetDefaultSchedulingTargetReq> | undefined, b: GetDefaultSchedulingTargetReq | PlainMessage<GetDefaultSchedulingTargetReq> | undefined): boolean;
+}
+
+/**
+ * GetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetRes
+ */
+export declare class GetDefaultSchedulingTargetRes extends Message<GetDefaultSchedulingTargetRes> {
+  /**
+   * @generated from field: api.v1alpha1.wfm.SchedulingTarget scheduling_target = 1;
+   */
+  schedulingTarget?: SchedulingTarget;
+
+  constructor(data?: PartialMessage<GetDefaultSchedulingTargetRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetDefaultSchedulingTargetRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetDefaultSchedulingTargetRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetDefaultSchedulingTargetRes;
+
+  static equals(a: GetDefaultSchedulingTargetRes | PlainMessage<GetDefaultSchedulingTargetRes> | undefined, b: GetDefaultSchedulingTargetRes | PlainMessage<GetDefaultSchedulingTargetRes> | undefined): boolean;
+}
+
+/**
+ * SetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetReq
+ */
+export declare class SetDefaultSchedulingTargetReq extends Message<SetDefaultSchedulingTargetReq> {
+  /**
+   * @generated from field: api.v1alpha1.wfm.SchedulingTarget scheduling_target = 1;
+   */
+  schedulingTarget?: SchedulingTarget;
+
+  constructor(data?: PartialMessage<SetDefaultSchedulingTargetReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SetDefaultSchedulingTargetReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDefaultSchedulingTargetReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetReq;
+
+  static equals(a: SetDefaultSchedulingTargetReq | PlainMessage<SetDefaultSchedulingTargetReq> | undefined, b: SetDefaultSchedulingTargetReq | PlainMessage<SetDefaultSchedulingTargetReq> | undefined): boolean;
+}
+
+/**
+ * SetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * Empty.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetRes
+ */
+export declare class SetDefaultSchedulingTargetRes extends Message<SetDefaultSchedulingTargetRes> {
+  constructor(data?: PartialMessage<SetDefaultSchedulingTargetRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SetDefaultSchedulingTargetRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetDefaultSchedulingTargetRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetDefaultSchedulingTargetRes;
+
+  static equals(a: SetDefaultSchedulingTargetRes | PlainMessage<SetDefaultSchedulingTargetRes> | undefined, b: SetDefaultSchedulingTargetRes | PlainMessage<SetDefaultSchedulingTargetRes> | undefined): boolean;
 }
 
 /**

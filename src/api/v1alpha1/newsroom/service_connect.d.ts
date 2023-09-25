@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetNewsForUserRequest, GetNewsForUserResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, StoreNewsroomImageRequest, StoreNewsroomImageResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UserActivityRequest, UserActivityResponse } from "./entities_pb.js";
+import { CreateNewsArticleRequest, CreateNewsArticleResponse, CreatePublishedArticleRequest, CreatePublishedArticleResponse, GetNewsArticleByIdRequest, GetNewsArticleByIdResponse, GetNewsForUserRequest, GetNewsForUserResponse, GetPublishedArticleByIdRequest, GetPublishedArticleByIdResponse, ListImagesForNewsArticleRequest, ListImagesForNewsArticleResponse, ListNewsArticlesRequest, ListNewsArticlesResponse, ListPublishedArticlesRequest, ListPublishedArticlesResponse, StoreNewsArticleImageRequest, StoreNewsArticleImageResponse, UpdateNewsArticleRequest, UpdateNewsArticleResponse, UserActivityRequest, UserActivityResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -116,14 +116,25 @@ export declare const NewsroomAPI: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * upload newsroom images
+     * upload newsroom image for the news article
      *
-     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.StoreNewsroomImage
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.StoreNewsArticleImage
      */
-    readonly storeNewsroomImage: {
-      readonly name: "StoreNewsroomImage",
-      readonly I: typeof StoreNewsroomImageRequest,
-      readonly O: typeof StoreNewsroomImageResponse,
+    readonly storeNewsArticleImage: {
+      readonly name: "StoreNewsArticleImage",
+      readonly I: typeof StoreNewsArticleImageRequest,
+      readonly O: typeof StoreNewsArticleImageResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * list newsroom images
+     *
+     * @generated from rpc api.v1alpha1.newsroom.NewsroomAPI.ListImagesForNewsArticle
+     */
+    readonly listImagesForNewsArticle: {
+      readonly name: "ListImagesForNewsArticle",
+      readonly I: typeof ListImagesForNewsArticleRequest,
+      readonly O: typeof ListImagesForNewsArticleResponse,
       readonly kind: MethodKind.Unary,
     },
   }
