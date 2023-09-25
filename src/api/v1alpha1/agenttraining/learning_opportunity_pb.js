@@ -65,7 +65,11 @@ export const ListLearningOpportunitiesResponse = proto3.makeMessageType(
  */
 export const ListAgentLearningOpportunitiesRequest = proto3.makeMessageType(
   "api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest",
-  [],
+  () => [
+    { no: 2, name: "call_identifiers", kind: "message", T: CallIdentifier, repeated: true },
+    { no: 3, name: "transcript_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "created_at", kind: "message", T: TimeFilter },
+  ],
 );
 
 /**

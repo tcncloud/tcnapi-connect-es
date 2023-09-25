@@ -141,6 +141,27 @@ export declare class ListLearningOpportunitiesResponse extends Message<ListLearn
  * @generated from message api.v1alpha1.agenttraining.ListAgentLearningOpportunitiesRequest
  */
 export declare class ListAgentLearningOpportunitiesRequest extends Message<ListAgentLearningOpportunitiesRequest> {
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated api.commons.CallIdentifier call_identifiers = 2;
+   */
+  callIdentifiers: CallIdentifier[];
+
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated int64 transcript_sids = 3;
+   */
+  transcriptSids: bigint[];
+
+  /**
+   * Optional.
+   *
+   * @generated from field: api.commons.TimeFilter created_at = 4;
+   */
+  createdAt?: TimeFilter;
+
   constructor(data?: PartialMessage<ListAgentLearningOpportunitiesRequest>);
 
   static readonly runtime: typeof proto3;
