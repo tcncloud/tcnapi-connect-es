@@ -5,7 +5,7 @@
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { OperatorApplications } from "../../commons/org_pb.js";
-import { Encryption, TransferStatus } from "../../commons/delivery_pb.js";
+import { Encryption as Encryption$1, TransferStatus } from "../../commons/delivery_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -242,6 +242,255 @@ export const GetHistoryRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionReq
+ */
+export const CreateDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.CreateDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "definition", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateDeliveryDefinitionRes
+ */
+export const CreateDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.CreateDeliveryDefinitionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.DeleteDeliveryDefinitionReq
+ */
+export const DeleteDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.DeleteDeliveryDefinitionRes
+ */
+export const DeleteDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteDeliveryDefinitionRes",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionReq
+ */
+export const GetDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionRes
+ */
+export const GetDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq
+ */
+export const GetDeliveryDefinitionByNameReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameReq",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+    { no: 3, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes
+ */
+export const GetDeliveryDefinitionByNameRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetDeliveryDefinitionByNameRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsReq
+ */
+export const ListDeliveryDefinitionsReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+    { no: 3, name: "list_req", kind: "message", T: ListReq },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsRes
+ */
+export const ListDeliveryDefinitionsRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsRes",
+  () => [
+    { no: 1, name: "entities", kind: "message", T: DeliveryDefinition, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq
+ */
+export const ListDeliveryDefinitionsByCredentialIDReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+    { no: 3, name: "credential_sid", kind: "message", T: ID },
+    { no: 4, name: "list_req", kind: "message", T: ListReq },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes
+ */
+export const ListDeliveryDefinitionsByCredentialIDRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListDeliveryDefinitionsByCredentialIDRes",
+  () => [
+    { no: 1, name: "entities", kind: "message", T: DeliveryDefinition, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateDeliveryDefinitionReq
+ */
+export const UpdateDeliveryDefinitionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateDeliveryDefinitionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: DeliveryDefinition },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateDeliveryDefinitionRes
+ */
+export const UpdateDeliveryDefinitionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateDeliveryDefinitionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateEncryptionReq
+ */
+export const CreateEncryptionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.CreateEncryptionReq",
+  () => [
+    { no: 1, name: "encryption", kind: "message", T: Encryption },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.CreateEncryptionRes
+ */
+export const CreateEncryptionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.CreateEncryptionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.DeleteEncryptionReq
+ */
+export const DeleteEncryptionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteEncryptionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.DeleteEncryptionRes
+ */
+export const DeleteEncryptionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeleteEncryptionRes",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetEncryptionReq
+ */
+export const GetEncryptionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetEncryptionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: Encryption },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.GetEncryptionRes
+ */
+export const GetEncryptionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.GetEncryptionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: Encryption },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListEncryptionsReq
+ */
+export const ListEncryptionsReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListEncryptionsReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ListReq },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListEncryptionsRes
+ */
+export const ListEncryptionsRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListEncryptionsRes",
+  () => [
+    { no: 1, name: "entities", kind: "message", T: Encryption, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateEncryptionReq
+ */
+export const UpdateEncryptionReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateEncryptionReq",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: Encryption },
+    { no: 2, name: "mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.UpdateEncryptionRes
+ */
+export const UpdateEncryptionRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.UpdateEncryptionRes",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ID },
+  ],
+);
+
+/**
  * entity types
  *
  * @generated from message api.v1alpha1.delivery.TransferConfig
@@ -340,7 +589,7 @@ export const Credential = proto3.makeMessageType(
 export const Destination = proto3.makeMessageType(
   "api.v1alpha1.delivery.Destination",
   () => [
-    { no: 1, name: "encryption", kind: "message", T: Encryption },
+    { no: 1, name: "encryption", kind: "message", T: Encryption$1 },
     { no: 2, name: "email", kind: "message", T: EmailDestination, oneof: "value" },
     { no: 3, name: "room303", kind: "message", T: Room303Destination, oneof: "value" },
     { no: 4, name: "sms", kind: "message", T: SmsDestination, oneof: "value" },
@@ -368,6 +617,7 @@ export const Room303Destination = proto3.makeMessageType(
   () => [
     { no: 1, name: "room", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -467,7 +717,7 @@ export const AESPassword = proto3.makeMessageType(
 export const Source = proto3.makeMessageType(
   "api.v1alpha1.delivery.Source",
   () => [
-    { no: 1, name: "encryption", kind: "message", T: Encryption },
+    { no: 1, name: "encryption", kind: "message", T: Encryption$1 },
     { no: 2, name: "sftp", kind: "message", T: SftpSource, oneof: "value" },
   ],
 );
@@ -592,6 +842,143 @@ export const Credentials = proto3.makeMessageType(
   "api.v1alpha1.delivery.Credentials",
   () => [
     { no: 1, name: "entities", kind: "message", T: Credential, repeated: true },
+  ],
+);
+
+/**
+ * replaces TransferConfig
+ *
+ * @generated from message api.v1alpha1.delivery.DeliveryDefinition
+ */
+export const DeliveryDefinition = proto3.makeMessageType(
+  "api.v1alpha1.delivery.DeliveryDefinition",
+  () => [
+    { no: 1, name: "delivery_definition_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "ttl", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "sftp", kind: "message", T: SFTPTransport, oneof: "transport" },
+    { no: 10, name: "email", kind: "message", T: EmailTransport, oneof: "transport" },
+    { no: 11, name: "room303", kind: "message", T: Room303Transport, oneof: "transport" },
+    { no: 12, name: "sms", kind: "message", T: SMSTransport, oneof: "transport" },
+    { no: 13, name: "aes", kind: "message", T: AESEncryptionRef, oneof: "encryption" },
+    { no: 14, name: "pgp", kind: "message", T: PGPEncryptionRef, oneof: "encryption" },
+    { no: 15, name: "created_on", kind: "message", T: Timestamp },
+    { no: 16, name: "last_edited", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.SFTPTransport
+ */
+export const SFTPTransport = proto3.makeMessageType(
+  "api.v1alpha1.delivery.SFTPTransport",
+  () => [
+    { no: 1, name: "host", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "port", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "password", kind: "message", T: PasswordRef, oneof: "credentials" },
+    { no: 4, name: "ssh_key", kind: "message", T: SSHKeyRef, oneof: "credentials" },
+    { no: 5, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "base_dir", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.EmailTransport
+ */
+export const EmailTransport = proto3.makeMessageType(
+  "api.v1alpha1.delivery.EmailTransport",
+  () => [
+    { no: 1, name: "from_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "to_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.Room303Transport
+ */
+export const Room303Transport = proto3.makeMessageType(
+  "api.v1alpha1.delivery.Room303Transport",
+  () => [
+    { no: 1, name: "system_message", kind: "message", T: Room303SystemMessage, oneof: "transport" },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.Room303SystemMessage
+ */
+export const Room303SystemMessage = proto3.makeMessageType(
+  "api.v1alpha1.delivery.Room303SystemMessage",
+  () => [
+    { no: 1, name: "room", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "user" },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "user" },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.SMSTransport
+ */
+export const SMSTransport = proto3.makeMessageType(
+  "api.v1alpha1.delivery.SMSTransport",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.AESEncryptionRef
+ */
+export const AESEncryptionRef = proto3.makeMessageType(
+  "api.v1alpha1.delivery.AESEncryptionRef",
+  () => [
+    { no: 1, name: "aes_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.PGPEncryptionRef
+ */
+export const PGPEncryptionRef = proto3.makeMessageType(
+  "api.v1alpha1.delivery.PGPEncryptionRef",
+  () => [
+    { no: 1, name: "pgp_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.PasswordRef
+ */
+export const PasswordRef = proto3.makeMessageType(
+  "api.v1alpha1.delivery.PasswordRef",
+  () => [
+    { no: 1, name: "password_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.SSHKeyRef
+ */
+export const SSHKeyRef = proto3.makeMessageType(
+  "api.v1alpha1.delivery.SSHKeyRef",
+  () => [
+    { no: 1, name: "ssh_key_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.Encryption
+ */
+export const Encryption = proto3.makeMessageType(
+  "api.v1alpha1.delivery.Encryption",
+  () => [
+    { no: 1, name: "encryption_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "pgp_key_pair", kind: "message", T: PGPKeyPair, oneof: "encryption" },
+    { no: 6, name: "aes_password", kind: "message", T: AESPassword, oneof: "encryption" },
+    { no: 10, name: "created_on", kind: "message", T: Timestamp },
+    { no: 11, name: "last_edited", kind: "message", T: Timestamp },
   ],
 );
 

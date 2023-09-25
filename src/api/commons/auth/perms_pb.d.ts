@@ -201,6 +201,20 @@ export declare enum Permission {
   TCN_BILLING = 240,
 
   /**
+   * Enables admin access to insights (TCN standard insights).
+   *
+   * @generated from enum value: PERMISSION_SUPPORT_TCN_INSIGHTS_ADMIN = 250;
+   */
+  SUPPORT_TCN_INSIGHTS_ADMIN = 250,
+
+  /**
+   * Enables admin access to dashboards (TCN standard dashboards).
+   *
+   * @generated from enum value: PERMISSION_SUPPORT_TCN_DASHBOARDS_ADMIN = 251;
+   */
+  SUPPORT_TCN_DASHBOARDS_ADMIN = 251,
+
+  /**
    * Enables access to agent.
    *
    * @generated from enum value: PERMISSION_AGENT = 300;
@@ -333,6 +347,7 @@ export declare enum Permission {
 
   /**
    * Enables writes for common library insights.
+   * deprecated
    *
    * @generated from enum value: PERMISSION_INSIGHTS_COMMON_LIBRARY_MANAGE = 603;
    */
@@ -340,10 +355,39 @@ export declare enum Permission {
 
   /**
    * Enables access to insights.
+   * deprecated
    *
    * @generated from enum value: PERMISSION_INSIGHTS_MANAGE = 604;
    */
   INSIGHTS_MANAGE = 604,
+
+  /**
+   * allows access to read insights
+   *
+   * @generated from enum value: PERMISSION_INSIGHTS_INSIGHT_VIEW = 605;
+   */
+  INSIGHTS_INSIGHT_VIEW = 605,
+
+  /**
+   * allows access to edit insights
+   *
+   * @generated from enum value: PERMISSION_INSIGHTS_INSIGHT_EDIT = 606;
+   */
+  INSIGHTS_INSIGHT_EDIT = 606,
+
+  /**
+   * allows user to read insights for dashboards
+   *
+   * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_VIEW = 607;
+   */
+  INSIGHTS_DASHBOARD_VIEW = 607,
+
+  /**
+   * allows user to edit insights for dashboards
+   *
+   * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_EDIT = 608;
+   */
+  INSIGHTS_DASHBOARD_EDIT = 608,
 
   /**
    * Enables access to room 303 chat.
@@ -426,6 +470,13 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_WFM = 1500;
    */
   WFM = 1500,
+
+  /**
+   * Enables access to the Agent Portal feature.
+   *
+   * @generated from enum value: PERMISSION_AGENT_PORTAL = 1501;
+   */
+  AGENT_PORTAL = 1501,
 
   /**
    * Enables access to Scorecards app.

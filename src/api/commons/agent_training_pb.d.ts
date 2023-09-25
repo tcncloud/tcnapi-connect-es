@@ -115,3 +115,38 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
   static equals(a: LearningOpportunity | PlainMessage<LearningOpportunity> | undefined, b: LearningOpportunity | PlainMessage<LearningOpportunity> | undefined): boolean;
 }
 
+/**
+ * CallIdentifier is used to completely identify calls.
+ *
+ * @generated from message api.commons.CallIdentifier
+ */
+export declare class CallIdentifier extends Message<CallIdentifier> {
+  /**
+   * call sid
+   *
+   * @generated from field: int64 sid = 1;
+   */
+  sid: bigint;
+
+  /**
+   * call type
+   *
+   * @generated from field: api.commons.CallType.Enum type = 2;
+   */
+  type: CallType_Enum;
+
+  constructor(data?: PartialMessage<CallIdentifier>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.CallIdentifier";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CallIdentifier;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CallIdentifier;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CallIdentifier;
+
+  static equals(a: CallIdentifier | PlainMessage<CallIdentifier> | undefined, b: CallIdentifier | PlainMessage<CallIdentifier> | undefined): boolean;
+}
+

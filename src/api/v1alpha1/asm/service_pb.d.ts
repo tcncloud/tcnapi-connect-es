@@ -1029,6 +1029,13 @@ export declare class SetConversationCollectedDataReq extends Message<SetConversa
    */
   collectedData: { [key: string]: string };
 
+  /**
+   * asm session sid
+   *
+   * @generated from field: int64 asm_session_sid = 4;
+   */
+  asmSessionSid: bigint;
+
   constructor(data?: PartialMessage<SetConversationCollectedDataReq>);
 
   static readonly runtime: typeof proto3;

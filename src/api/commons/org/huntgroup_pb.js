@@ -75,10 +75,12 @@ export const GeneralSettings = proto3.makeMessageType(
     { no: 701, name: "require_manual_approval_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 702, name: "enable_manual_approval_of_sms", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 703, name: "require_manual_approval_number_sms", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 704, name: "disable_reject_option_for_approvers", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 800, name: "alphanumeric_keypad", kind: "message", T: GeneralSettings_AlphanumericKeypad },
     { no: 801, name: "enable_call_desktop_notifications", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 802, name: "inbound_compliance_metadata", kind: "message", T: GeneralSettings_InboundComplianceMetadata },
     { no: 803, name: "enable_agent_intercom", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 804, name: "prepare_state_call_delivery", kind: "message", T: GeneralSettings_PrepareStateCallDelivery },
   ],
 );
 
@@ -223,6 +225,20 @@ export const GeneralSettings_InboundComplianceMetadata = proto3.makeMessageType(
     { no: 3, name: "required_data", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
   {localName: "GeneralSettings_InboundComplianceMetadata"},
+);
+
+/**
+ * PrepareStateCallDelivery options (the dial modes).
+ *
+ * @generated from message api.commons.org.GeneralSettings.PrepareStateCallDelivery
+ */
+export const GeneralSettings_PrepareStateCallDelivery = proto3.makeMessageType(
+  "api.commons.org.GeneralSettings.PrepareStateCallDelivery",
+  () => [
+    { no: 1, name: "manual_dial", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "preview_dial", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+  {localName: "GeneralSettings_PrepareStateCallDelivery"},
 );
 
 /**

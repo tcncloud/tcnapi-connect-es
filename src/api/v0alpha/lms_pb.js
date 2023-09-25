@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { Duration, Int64Value, proto3, StringValue, Timestamp as Timestamp$1 } from "@bufbuild/protobuf";
-import { AbsentPolicyType, ChainOperator, CompareOperator, ComplianceListType, ConsentActionType, ConstructedFilename, DateTimePrecision, DeDupActions, DedupKeyPolicy, DialOrderType, DuplicatePolicyType, EnrichmentType, ExportType, FieldType, FileFormat, FilePattern, HttpVerb, PaginationTerminator, PipelineElementStatusType, PrimarySource, RecordType, RunType, SortOrder } from "../commons/lms_pb.js";
+import { AbsentPolicyType, ChainOperator, CompareOperator, ComplianceListType, ConsentActionType, ConstructedFilename, DateTimePrecision, DeDupActions, DedupKeyPolicy, DialOrderType, DuplicatePolicyType, EnrichmentType, EventState, ExportType, FieldType, FileFormat, FilePattern, HttpVerb, PaginationTerminator, PipelineElementStatusType, PrimarySource, RecordType, RunType, SortOrder } from "../commons/lms_pb.js";
 import { CommType } from "../commons/communication_pb.js";
 import { Channel, ContentType } from "../commons/compliance_pb.js";
 import { StringArraySql } from "../commons/types_pb.js";
@@ -19,6 +19,23 @@ export const TimeUnit = proto3.makeEnum(
     {no: 1, name: "TIME_WEEKS"},
     {no: 2, name: "TIME_DAYS"},
     {no: 3, name: "TIME_HOURS"},
+  ],
+);
+
+/**
+ * The types of entities that can be returned from Epic's bulk data api.
+ *
+ * @generated from enum api.v0alpha.EpicEntityType
+ */
+export const EpicEntityType = proto3.makeEnum(
+  "api.v0alpha.EpicEntityType",
+  [
+    {no: 0, name: "EPIC_UNKNOWN_TYPE"},
+    {no: 1, name: "EPIC_ENTITY_TYPE_PATIENT"},
+    {no: 2, name: "EPIC_ENTITY_TYPE_APPOINTMENT"},
+    {no: 3, name: "EPIC_ENTITY_TYPE_MEDICATION"},
+    {no: 4, name: "EPIC_ENTITY_TYPE_MEDICATION_REQUEST"},
+    {no: 5, name: "EPIC_ENTITY_TYPE_ACCOUNT"},
   ],
 );
 
@@ -185,6 +202,50 @@ export const ProcessElementReq = proto3.makeMessageType(
     { no: 1, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "process_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
+);
+
+/**
+ * @generated from message api.v0alpha.ProcessListRequest
+ */
+export const ProcessListRequest = proto3.makeMessageType(
+  "api.v0alpha.ProcessListRequest",
+  () => [
+    { no: 3, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "list", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ],
+);
+
+/**
+ * empty for now
+ *
+ * @generated from message api.v0alpha.ProcessListResponse
+ */
+export const ProcessListResponse = proto3.makeMessageType(
+  "api.v0alpha.ProcessListResponse",
+  [],
+);
+
+/**
+ * @generated from message api.v0alpha.StreamListRequest
+ */
+export const StreamListRequest = proto3.makeMessageType(
+  "api.v0alpha.StreamListRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "region_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "chunk", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ],
+);
+
+/**
+ * empty for now
+ *
+ * @generated from message api.v0alpha.StreamListResponse
+ */
+export const StreamListResponse = proto3.makeMessageType(
+  "api.v0alpha.StreamListResponse",
+  [],
 );
 
 /**
@@ -698,6 +759,7 @@ export const Process = proto3.makeMessageType(
     { no: 73, name: "omni_exchange_process", kind: "message", T: OmniExchangeProcess, oneof: "proc" },
     { no: 74, name: "web_exchange_process", kind: "message", T: WebExchangeProcess, oneof: "proc" },
     { no: 75, name: "split", kind: "message", T: SplitCriteria, oneof: "proc" },
+    { no: 76, name: "epic_entry_point", kind: "message", T: EpicEntrypoint, oneof: "proc" },
   ],
 );
 
@@ -2713,6 +2775,63 @@ export const SplitByEqualParts = proto3.makeMessageType(
   "api.v0alpha.SplitByEqualParts",
   () => [
     { no: 1, name: "part_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * EHR EPIC
+ *
+ * @generated from message api.v0alpha.EpicEntrypoint
+ */
+export const EpicEntrypoint = proto3.makeMessageType(
+  "api.v0alpha.EpicEntrypoint",
+  () => [
+    { no: 2, name: "cron", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "max_wait_time", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "entity_types", kind: "enum", T: proto3.getEnumType(EpicEntityType), repeated: true },
+    { no: 5, name: "group_base_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "group_fhir_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "runtime_values", kind: "message", T: RuntimeValues },
+    { no: 8, name: "flush_page_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "flush_minute_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: "flush_during_check", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * These values are invisible to the user, and null in the lms_elements table.
+ * These will be used during the processing of the event.
+ *
+ * @generated from message api.v0alpha.RuntimeValues
+ */
+export const RuntimeValues = proto3.makeMessageType(
+  "api.v0alpha.RuntimeValues",
+  () => [
+    { no: 1, name: "state", kind: "enum", T: proto3.getEnumType(EventState) },
+    { no: 2, name: "access_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "check_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "data_urls", kind: "message", T: EntityURL, repeated: true },
+    { no: 5, name: "current_iteration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "total_seconds_spent", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "errors", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "total_not_ready_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "file_ids", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 3 /* ScalarType.INT64 */} },
+    { no: 10, name: "preliminary_vars", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 11, name: "parent_event_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 12, name: "no_more_pages", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "total_fts_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.EntityURL
+ */
+export const EntityURL = proto3.makeMessageType(
+  "api.v0alpha.EntityURL",
+  () => [
+    { no: 1, name: "entity_type", kind: "enum", T: proto3.getEnumType(EpicEntityType) },
+    { no: 2, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

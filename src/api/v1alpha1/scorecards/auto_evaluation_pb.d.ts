@@ -182,3 +182,66 @@ export declare class DeleteAutoEvaluationResponse extends Message<DeleteAutoEval
   static equals(a: DeleteAutoEvaluationResponse | PlainMessage<DeleteAutoEvaluationResponse> | undefined, b: DeleteAutoEvaluationResponse | PlainMessage<DeleteAutoEvaluationResponse> | undefined): boolean;
 }
 
+/**
+ * StreamAutoEvaluationsRequest is the request to stream a list of auto evaluations.
+ *
+ * @generated from message api.v1alpha1.scorecards.StreamAutoEvaluationsRequest
+ */
+export declare class StreamAutoEvaluationsRequest extends Message<StreamAutoEvaluationsRequest> {
+  /**
+   * Optional - filter by scorecard ids.
+   *
+   * @generated from field: repeated int64 scorecard_ids = 2;
+   */
+  scorecardIds: bigint[];
+
+  /**
+   * Optional - filter completed timestamp by a specific range
+   *
+   * @generated from field: api.commons.TimeFilter completed_at = 3;
+   */
+  completedAt?: TimeFilter;
+
+  constructor(data?: PartialMessage<StreamAutoEvaluationsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.StreamAutoEvaluationsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamAutoEvaluationsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamAutoEvaluationsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamAutoEvaluationsRequest;
+
+  static equals(a: StreamAutoEvaluationsRequest | PlainMessage<StreamAutoEvaluationsRequest> | undefined, b: StreamAutoEvaluationsRequest | PlainMessage<StreamAutoEvaluationsRequest> | undefined): boolean;
+}
+
+/**
+ * StreamAutoEvaluationsResponse is the response object streamed.
+ *
+ * @generated from message api.v1alpha1.scorecards.StreamAutoEvaluationsResponse
+ */
+export declare class StreamAutoEvaluationsResponse extends Message<StreamAutoEvaluationsResponse> {
+  /**
+   * single-stream object.
+   *
+   * @generated from field: api.commons.AutoEvaluation auto_evaluation = 1;
+   */
+  autoEvaluation?: AutoEvaluation;
+
+  constructor(data?: PartialMessage<StreamAutoEvaluationsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.StreamAutoEvaluationsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamAutoEvaluationsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamAutoEvaluationsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamAutoEvaluationsResponse;
+
+  static equals(a: StreamAutoEvaluationsResponse | PlainMessage<StreamAutoEvaluationsResponse> | undefined, b: StreamAutoEvaluationsResponse | PlainMessage<StreamAutoEvaluationsResponse> | undefined): boolean;
+}
+

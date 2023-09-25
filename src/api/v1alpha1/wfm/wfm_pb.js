@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -61,6 +61,25 @@ export const SkillProfile = proto3.makeMessageType(
     { no: 12, name: "average_after_call_work_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 13, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 14, name: "are_averages_manual", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.wfm.SkillProfileGroup
+ */
+export const SkillProfileGroup = proto3.makeMessageType(
+  "api.v1alpha1.wfm.SkillProfileGroup",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "create_time", kind: "message", T: Timestamp },
+    { no: 5, name: "average_speed_of_answer_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 6, name: "average_handle_time_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 7, name: "average_after_call_work_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 8, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 9, name: "are_averages_manual", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "skill_profile_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 
@@ -303,6 +322,7 @@ export const HistoricalDataInterval = proto3.makeMessageType(
     { no: 13, name: "original_average_time_to_abort_in_seconds", kind: "message", T: FloatValue },
     { no: 14, name: "original_total_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 15, name: "original_total_abandoned_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 16, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -315,6 +335,7 @@ export const ListHistoricalDataReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListHistoricalDataReq",
   () => [
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -447,6 +468,30 @@ export const BuildCallProfileTemplateForSkillProfileRes = proto3.makeMessageType
 );
 
 /**
+ * Request message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateReq
+ */
+export const BuildCallProfileTemplateReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.BuildCallProfileTemplateReq",
+  () => [
+    { no: 1, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
+ * Response message for the BuildCallProfileTemplate RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateRes
+ */
+export const BuildCallProfileTemplateRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.BuildCallProfileTemplateRes",
+  () => [
+    { no: 1, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
+  ],
+);
+
+/**
  * Request message for the CreateInactiveSkillProfileMapping RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingReq
@@ -510,6 +555,100 @@ export const DisconnectInactiveSkillProfileMappingReq = proto3.makeMessageType(
  */
 export const DisconnectInactiveSkillProfileMappingRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes",
+  [],
+);
+
+/**
+ * Request message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupReq
+ */
+export const CreateSkillProfileGroupReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateSkillProfileGroupReq",
+  () => [
+    { no: 1, name: "skill_profile_group", kind: "message", T: SkillProfileGroup },
+  ],
+);
+
+/**
+ * Response message for the CreateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateSkillProfileGroupRes
+ */
+export const CreateSkillProfileGroupRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateSkillProfileGroupRes",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupReq
+ */
+export const UpdateSkillProfileGroupReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupReq",
+  () => [
+    { no: 1, name: "skill_profile_group", kind: "message", T: SkillProfileGroup },
+  ],
+);
+
+/**
+ * Response message for the UpdateSkillProfileGroup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupRes
+ */
+export const UpdateSkillProfileGroupRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupRes",
+  [],
+);
+
+/**
+ * Request message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsReq
+ */
+export const ListSkillProfileGroupsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListSkillProfileGroupsReq",
+  () => [
+    { no: 1, name: "skill_profile_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListSkillProfileGroups RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListSkillProfileGroupsRes
+ */
+export const ListSkillProfileGroupsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListSkillProfileGroupsRes",
+  () => [
+    { no: 1, name: "skill_profile_groups", kind: "message", T: SkillProfileGroup, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the UpdateSkillProfileGroupAssociations RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq
+ */
+export const UpdateSkillProfileGroupAssociationsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsReq",
+  () => [
+    { no: 1, name: "skill_profile_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "skill_profile_sids_to_associate", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "skill_profile_sids_to_disassociate", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the UpdateSkillProfileGroupAssociations RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes
+ */
+export const UpdateSkillProfileGroupAssociationsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateSkillProfileGroupAssociationsRes",
   [],
 );
 
@@ -593,6 +732,7 @@ export const BuildProfileForecastByIntervalReq = proto3.makeMessageType(
     { no: 1, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
     { no: 2, name: "fixed_averages_forecast", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -615,6 +755,7 @@ export const CallDataByInterval = proto3.makeMessageType(
     { no: 9, name: "is_delta", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 10, name: "forecast_data_interval_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 11, name: "interval_width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 12, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -629,6 +770,7 @@ export const BuildProfileForecastByIntervalWithStatsReq = proto3.makeMessageType
     { no: 1, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
     { no: 2, name: "fixed_averages_forecast", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -656,6 +798,7 @@ export const UpsertProfileForecastReq = proto3.makeMessageType(
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "call_profile_template", kind: "message", T: CallProfileTemplate },
     { no: 3, name: "fixed_averages_forecast", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -905,6 +1048,18 @@ export const ListForecastIntervalsForSkillProfileReq = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListForecastIntervals RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListForecastIntervalsReq
+ */
+export const ListForecastIntervalsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListForecastIntervalsReq",
+  () => [
+    { no: 1, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
  * Request message for the UpsertRegressionForecast RPC
  *
  * @generated from message api.v1alpha1.wfm.UpsertRegressionForecastReq
@@ -987,6 +1142,7 @@ export const DeleteForecastIntervalsReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, oneof: "delete_param" },
     { no: 2, name: "forecast_interval_sids", kind: "message", T: DeleteForecastIntervalsReq_IntervalSids, oneof: "delete_param" },
+    { no: 4, name: "skill_profile_category", kind: "message", T: SkillProfileCategory, oneof: "delete_param" },
     { no: 3, name: "forecast_interval_delete_type", kind: "enum", T: proto3.getEnumType(DeleteForecastIntervalsReq_ForecastIntervalDeleteType) },
   ],
 );
@@ -1409,6 +1565,30 @@ export const UpdateProgramNodeRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidReq
+ */
+export const ListProgramNodesBySidReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListProgramNodesBySidReq",
+  () => [
+    { no: 1, name: "program_node_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListProgramNodesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListProgramNodesBySidRes
+ */
+export const ListProgramNodesBySidRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListProgramNodesBySidRes",
+  () => [
+    { no: 1, name: "program_nodes", kind: "message", T: ProgramNode, repeated: true },
+  ],
+);
+
+/**
  * @generated from message api.v1alpha1.wfm.ParentEntity
  */
 export const ParentEntity = proto3.makeMessageType(
@@ -1578,6 +1758,28 @@ export const UpdateNonSkillActivityReq = proto3.makeMessageType(
 export const UpdateNonSkillActivityRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.UpdateNonSkillActivityRes",
   [],
+);
+
+/**
+ * Request message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesReq
+ */
+export const ListNonSkillActivitiesReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListNonSkillActivitiesReq",
+  [],
+);
+
+/**
+ * Response message for the ListNonSkillActivities RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListNonSkillActivitiesRes
+ */
+export const ListNonSkillActivitiesRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListNonSkillActivitiesRes",
+  () => [
+    { no: 1, name: "non_skill_activities", kind: "message", T: NonSkillActivity, repeated: true },
+  ],
 );
 
 /**
@@ -1765,6 +1967,7 @@ export const ListAllWFMAgentsReq = proto3.makeMessageType(
     { no: 1, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 2, name: "include_skill_proficiencies", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "include_agent_groups", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "agent_group_schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -1841,6 +2044,30 @@ export const ListUngroupedWFMAgentsRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListUngroupedWFMAgentsRes",
   () => [
     { no: 1, name: "wfm_agents", kind: "message", T: WFMAgent, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsReq
+ */
+export const ListWFMAgentSidsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListWFMAgentSidsReq",
+  () => [
+    { no: 1, name: "tcn_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the ListWFMAgentSids RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListWFMAgentSidsRes
+ */
+export const ListWFMAgentSidsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListWFMAgentSidsRes",
+  () => [
+    { no: 1, name: "sids", kind: "map", K: 3 /* ScalarType.INT64 */, V: {kind: "scalar", T: 3 /* ScalarType.INT64 */} },
   ],
 );
 
@@ -3453,6 +3680,35 @@ export const ListDraftSchedulesRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleReq
+ */
+export const ClearScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ClearScheduleReq",
+  () => [
+    { no: 1, name: "schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 2, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 3, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 4, name: "invert_datetime_range", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "start_datetimes_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "delete_locked", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the ClearSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ClearScheduleRes
+ */
+export const ClearScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ClearScheduleRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the DeleteDraftSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.DeleteDraftScheduleReq
@@ -3472,6 +3728,34 @@ export const DeleteDraftScheduleReq = proto3.makeMessageType(
 export const DeleteDraftScheduleRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DeleteDraftScheduleRes",
   [],
+);
+
+/**
+ * Request message for the ListShiftInstancesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstancesBySidReq
+ */
+export const ListShiftInstancesBySidReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListShiftInstancesBySidReq",
+  () => [
+    { no: 1, name: "shift_instance_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "include_shift_segments", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "include_shift_template", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "include_scheduling_activity", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "include_activity", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the ListShiftInstancesBySid RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListShiftInstancesBySidRes
+ */
+export const ListShiftInstancesBySidRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListShiftInstancesBySidRes",
+  () => [
+    { no: 1, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
+  ],
 );
 
 /**
@@ -3853,6 +4137,54 @@ export const DeleteSchedulingTargetReq = proto3.makeMessageType(
  */
 export const DeleteSchedulingTargetRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DeleteSchedulingTargetRes",
+  [],
+);
+
+/**
+ * GetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * Empty.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetReq
+ */
+export const GetDefaultSchedulingTargetReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetDefaultSchedulingTargetReq",
+  [],
+);
+
+/**
+ * GetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.GetDefaultSchedulingTargetRes
+ */
+export const GetDefaultSchedulingTargetRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetDefaultSchedulingTargetRes",
+  () => [
+    { no: 1, name: "scheduling_target", kind: "message", T: SchedulingTarget },
+  ],
+);
+
+/**
+ * SetDefaultSchedulingTargetReq is a request mesage.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetReq
+ */
+export const SetDefaultSchedulingTargetReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.SetDefaultSchedulingTargetReq",
+  () => [
+    { no: 1, name: "scheduling_target", kind: "message", T: SchedulingTarget },
+  ],
+);
+
+/**
+ * SetDefaultSchedulingTargetRes is a response mesage.
+ *
+ * Empty.
+ *
+ * @generated from message api.v1alpha1.wfm.SetDefaultSchedulingTargetRes
+ */
+export const SetDefaultSchedulingTargetRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.SetDefaultSchedulingTargetRes",
   [],
 );
 

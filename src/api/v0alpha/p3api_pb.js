@@ -1257,6 +1257,7 @@ export const ManualApprovalSettings = proto3.makeMessageType(
     { no: 2, name: "confirm", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "sms_allowed", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 4, name: "sms_number_confirmation", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "disable_reject_option_for_approvers", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

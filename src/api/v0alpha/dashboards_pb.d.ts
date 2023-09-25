@@ -8,6 +8,70 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { TimeZone } from "../commons/org_pb.js";
 
 /**
+ * PublishDashboardRequest used in PublishDashboard rpc
+ *
+ * @generated from message api.v0alpha.PublishDashboardRequest
+ */
+export declare class PublishDashboardRequest extends Message<PublishDashboardRequest> {
+  /**
+   * resource id of the dashboard to be published
+   *
+   * @generated from field: string resource_id = 1;
+   */
+  resourceId: string;
+
+  /**
+   * destination resource id can be emtpy to create
+   * a new resource or can be used to update an existing
+   *
+   * @generated from field: string destination_resource_id = 2;
+   */
+  destinationResourceId: string;
+
+  constructor(data?: PartialMessage<PublishDashboardRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.PublishDashboardRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishDashboardRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishDashboardRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishDashboardRequest;
+
+  static equals(a: PublishDashboardRequest | PlainMessage<PublishDashboardRequest> | undefined, b: PublishDashboardRequest | PlainMessage<PublishDashboardRequest> | undefined): boolean;
+}
+
+/**
+ * PublishDashboardResponse used in PublishDashboard rpc
+ *
+ * @generated from message api.v0alpha.PublishDashboardResponse
+ */
+export declare class PublishDashboardResponse extends Message<PublishDashboardResponse> {
+  /**
+   * resource id of the published dashboard
+   *
+   * @generated from field: string resource_id = 1;
+   */
+  resourceId: string;
+
+  constructor(data?: PartialMessage<PublishDashboardResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.PublishDashboardResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishDashboardResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishDashboardResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishDashboardResponse;
+
+  static equals(a: PublishDashboardResponse | PlainMessage<PublishDashboardResponse> | undefined, b: PublishDashboardResponse | PlainMessage<PublishDashboardResponse> | undefined): boolean;
+}
+
+/**
  * ListDashboardsRequest --  filled in from auth. May include filters in future
  *
  * @generated from message api.v0alpha.ListDashboardsRequest
@@ -88,6 +152,20 @@ export declare class DashboardSummary extends Message<DashboardSummary> {
    */
   panelCount: number;
 
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 5;
+   */
+  resourceId: string;
+
+  /**
+   * standard dashboard flag
+   *
+   * @generated from field: bool standard_dashboard = 6;
+   */
+  standardDashboard: boolean;
+
   constructor(data?: PartialMessage<DashboardSummary>);
 
   static readonly runtime: typeof proto3;
@@ -137,6 +215,13 @@ export declare class SetDefaultDashboardRequest extends Message<SetDefaultDashbo
    */
   dashboardId: string;
 
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 2;
+   */
+  resourceId: string;
+
   constructor(data?: PartialMessage<SetDefaultDashboardRequest>);
 
   static readonly runtime: typeof proto3;
@@ -153,6 +238,8 @@ export declare class SetDefaultDashboardRequest extends Message<SetDefaultDashbo
 }
 
 /**
+ * ListProductTypesRequest used in ListProductTypes rpc
+ *
  * @generated from message api.v0alpha.ListProductTypesRequest
  */
 export declare class ListProductTypesRequest extends Message<ListProductTypesRequest> {
@@ -237,6 +324,13 @@ export declare class DeleteDashboardRequest extends Message<DeleteDashboardReque
    */
   dashboardId: string;
 
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 2;
+   */
+  resourceId: string;
+
   constructor(data?: PartialMessage<DeleteDashboardRequest>);
 
   static readonly runtime: typeof proto3;
@@ -264,6 +358,13 @@ export declare class GetDashboardRequest extends Message<GetDashboardRequest> {
    * @generated from field: string dashboard_id = 1;
    */
   dashboardId: string;
+
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 2;
+   */
+  resourceId: string;
 
   constructor(data?: PartialMessage<GetDashboardRequest>);
 
@@ -348,6 +449,13 @@ export declare class CreateDashboardResponse extends Message<CreateDashboardResp
    * @generated from field: string dashboard_id = 1;
    */
   dashboardId: string;
+
+  /**
+   * resource id of the dashboard created
+   *
+   * @generated from field: string resource_id = 2;
+   */
+  resourceId: string;
 
   constructor(data?: PartialMessage<CreateDashboardResponse>);
 
@@ -542,6 +650,20 @@ export declare class Dashboard extends Message<Dashboard> {
    */
   type?: DashboardType;
 
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 7;
+   */
+  resourceId: string;
+
+  /**
+   * standard dashboard flag
+   *
+   * @generated from field: bool standard_dashboard = 8;
+   */
+  standardDashboard: boolean;
+
   constructor(data?: PartialMessage<Dashboard>);
 
   static readonly runtime: typeof proto3;
@@ -712,6 +834,13 @@ export declare class UpdateDashboardRequest extends Message<UpdateDashboardReque
    */
   type?: DashboardType;
 
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 7;
+   */
+  resourceId: string;
+
   constructor(data?: PartialMessage<UpdateDashboardRequest>);
 
   static readonly runtime: typeof proto3;
@@ -754,6 +883,13 @@ export declare class UpdateDashboardTitleAndDescriptionRequest extends Message<U
    */
   description: string;
 
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 4;
+   */
+  resourceId: string;
+
   constructor(data?: PartialMessage<UpdateDashboardTitleAndDescriptionRequest>);
 
   static readonly runtime: typeof proto3;
@@ -789,6 +925,13 @@ export declare class UpdateDashboardLayoutRequest extends Message<UpdateDashboar
    */
   layout?: DashboardLayout;
 
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 3;
+   */
+  resourceId: string;
+
   constructor(data?: PartialMessage<UpdateDashboardLayoutRequest>);
 
   static readonly runtime: typeof proto3;
@@ -823,6 +966,13 @@ export declare class UpdateDashboardViewRequest extends Message<UpdateDashboardV
    * @generated from field: api.v0alpha.DashboardView view = 2;
    */
   view?: DashboardView;
+
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 3;
+   */
+  resourceId: string;
 
   constructor(data?: PartialMessage<UpdateDashboardViewRequest>);
 

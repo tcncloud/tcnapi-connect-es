@@ -64,6 +64,11 @@ export declare enum EventType {
   VOICE_ANALYTICS_FLAG_SUMMARY = 104,
 
   /**
+   * @generated from enum value: VOICE_ANALYTICS_PHRASE_CORRECTION = 105;
+   */
+  VOICE_ANALYTICS_PHRASE_CORRECTION = 105,
+
+  /**
    * Omnichannel Dashboard Application IDs
    *
    * @generated from enum value: OMNICHANNEL = 300;
@@ -626,6 +631,26 @@ export declare enum EventType {
   TICKET_CLOSE_EVENT = 602,
 
   /**
+   * @generated from enum value: TICKET_ACTION_CREATE_EVENT = 603;
+   */
+  TICKET_ACTION_CREATE_EVENT = 603,
+
+  /**
+   * @generated from enum value: TICKET_ACTION_EDIT_EVENT = 604;
+   */
+  TICKET_ACTION_EDIT_EVENT = 604,
+
+  /**
+   * @generated from enum value: TICKET_ACTION_STATE_CHANGE_EVENT = 605;
+   */
+  TICKET_ACTION_STATE_CHANGE_EVENT = 605,
+
+  /**
+   * @generated from enum value: TICKET_PARTICIPANT_EVENT = 606;
+   */
+  TICKET_PARTICIPANT_EVENT = 606,
+
+  /**
    * Compliance Events
    * rnd query event
    *
@@ -639,5 +664,20 @@ export declare enum EventType {
    * @generated from enum value: COMPLIANCE_RND_QUERY_CACHED_EVENT = 701;
    */
   COMPLIANCE_RND_QUERY_CACHED_EVENT = 701,
+
+  /**
+   * Agent Training
+   * create learning opportunity event
+   *
+   * @generated from enum value: AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800;
+   */
+  AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT = 800,
+
+  /**
+   * LMS Events
+   *
+   * @generated from enum value: LMS_PIPELINE_FAILURE_EVENT = 900;
+   */
+  LMS_PIPELINE_FAILURE_EVENT = 900,
 }
 

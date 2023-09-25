@@ -2834,8 +2834,10 @@ export declare class ManualDialSettings extends Message<ManualDialSettings> {
 
   /**
    * Control whether the reject option is available to the approvers.
+   * Please use disable_reject_option_for_approvers under GeneralSettings.
    *
-   * @generated from field: bool enable_reject_option_for_approvers = 29;
+   * @generated from field: bool enable_reject_option_for_approvers = 29 [deprecated = true];
+   * @deprecated
    */
   enableRejectOptionForApprovers: boolean;
 
@@ -3761,6 +3763,13 @@ export declare class ManualApprovalSettings extends Message<ManualApprovalSettin
    * @generated from field: bool sms_number_confirmation = 4;
    */
   smsNumberConfirmation: boolean;
+
+  /**
+   * Control whether the reject option is available to the approvers.
+   *
+   * @generated from field: bool disable_reject_option_for_approvers = 5;
+   */
+  disableRejectOptionForApprovers: boolean;
 
   constructor(data?: PartialMessage<ManualApprovalSettings>);
 

@@ -206,6 +206,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_NEWZWARE = 3800;
    */
   NEWZWARE = 3800,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_PRIOCOMMERCE = 3900;
+   */
+  PRIOCOMMERCE = 3900,
 }
 
 /**
@@ -1081,6 +1086,16 @@ export declare enum RequestMethod {
   PIANO_UPDATE_USER = 3602,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_UPDATE_SUBSCRIPTION = 3603;
+   */
+  PIANO_UPDATE_SUBSCRIPTION = 3603,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_GET_PAYMENT = 3604;
+   */
+  PIANO_GET_PAYMENT = 3604,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_EPIC_GET_TOKEN = 3701;
    */
   EPIC_GET_TOKEN = 3701,
@@ -1134,6 +1149,41 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_NEWZWARE_ACH_PAYMENT = 3804;
    */
   NEWZWARE_ACH_PAYMENT = 3804,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_COMPLAINT_HISTORY = 3805;
+   */
+  NEWZWARE_COMPLAINT_HISTORY = 3805,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_COMPLAINT_UPDATE = 3806;
+   */
+  NEWZWARE_COMPLAINT_UPDATE = 3806,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_VACATION_RESTART = 3807;
+   */
+  NEWZWARE_VACATION_RESTART = 3807,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_VACATION_UPDATE = 3808;
+   */
+  NEWZWARE_VACATION_UPDATE = 3808,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI = 3809;
+   */
+  NEWZWARE_PHONE_LOOKUP_MULTI = 3809,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT = 3901;
+   */
+  PRIOCOMMERCE_ACH_PAYMENT = 3901,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT = 3902;
+   */
+  PRIOCOMMERCE_CC_PAYMENT = 3902,
 }
 
 /**
@@ -2192,6 +2242,18 @@ export declare class PaymentFlow extends Message<PaymentFlow> {
      */
     value: PaymentNewzwareAch;
     case: "newzwareAch";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentPriocommerceCc priocommerce_cc = 13;
+     */
+    value: PaymentPriocommerceCc;
+    case: "priocommerceCc";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentPriocommerceAch priocommerce_ach = 14;
+     */
+    value: PaymentPriocommerceAch;
+    case: "priocommerceAch";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -3459,6 +3521,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
     case: "PIANOUPDATEUSER";
   } | {
     /**
+     * @generated from field: api.commons.integrations.ExecutePianoUpdateSubscription PIANO_UPDATE_SUBSCRIPTION = 3603;
+     */
+    value: ExecutePianoUpdateSubscription;
+    case: "PIANOUPDATESUBSCRIPTION";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoGetPayment PIANO_GET_PAYMENT = 3604;
+     */
+    value: ExecutePianoGetPayment;
+    case: "PIANOGETPAYMENT";
+  } | {
+    /**
      * @generated from field: api.commons.integrations.ExecuteEpicGetToken epic_get_token = 3701;
      */
     value: ExecuteEpicGetToken;
@@ -3523,6 +3597,48 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteNewzwareAchPayment;
     case: "newzwareAchPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwareComplaintHistory newzware_complaint_history = 3805;
+     */
+    value: ExecuteNewzwareComplaintHistory;
+    case: "newzwareComplaintHistory";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwareComplaintUpdate newzware_complaint_update = 3806;
+     */
+    value: ExecuteNewzwareComplaintUpdate;
+    case: "newzwareComplaintUpdate";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwareVacationRestart newzware_vacation_restart = 3807;
+     */
+    value: ExecuteNewzwareVacationRestart;
+    case: "newzwareVacationRestart";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwareVacationUpdate newzware_vacation_update = 3808;
+     */
+    value: ExecuteNewzwareVacationUpdate;
+    case: "newzwareVacationUpdate";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNewzwarePhoneLookupMulti newzware_phone_lookup_multi = 3809;
+     */
+    value: ExecuteNewzwarePhoneLookupMulti;
+    case: "newzwarePhoneLookupMulti";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePriocommerceAchPayment priocommerce_ach_payment = 3901;
+     */
+    value: ExecutePriocommerceAchPayment;
+    case: "priocommerceAchPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePriocommerceCcPayment priocommerce_cc_payment = 3902;
+     */
+    value: ExecutePriocommerceCcPayment;
+    case: "priocommerceCcPayment";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -3895,6 +4011,14 @@ export declare class VerificationNewzwareAccountInquiry extends Message<Verifica
  * @generated from message api.commons.integrations.PaymentExperianCC
  */
 export declare class PaymentExperianCC extends Message<PaymentExperianCC> {
+  /**
+   * if true instead of using the account number uploaded to textpay,
+   * we send the payment with the account number returned on the invoice
+   *
+   * @generated from field: bool use_invoice_account_number = 1;
+   */
+  useInvoiceAccountNumber: boolean;
+
   constructor(data?: PartialMessage<PaymentExperianCC>);
 
   static readonly runtime: typeof proto3;
@@ -3914,6 +4038,14 @@ export declare class PaymentExperianCC extends Message<PaymentExperianCC> {
  * @generated from message api.commons.integrations.PaymentExperianACH
  */
 export declare class PaymentExperianACH extends Message<PaymentExperianACH> {
+  /**
+   * if true instead of using the account number uploaded to textpay,
+   * we send the payment with the account number returned on the invoice
+   *
+   * @generated from field: bool use_invoice_account_number = 1;
+   */
+  useInvoiceAccountNumber: boolean;
+
   constructor(data?: PartialMessage<PaymentExperianACH>);
 
   static readonly runtime: typeof proto3;
@@ -4098,6 +4230,44 @@ export declare class PaymentNewzwareAch extends Message<PaymentNewzwareAch> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentNewzwareAch;
 
   static equals(a: PaymentNewzwareAch | PlainMessage<PaymentNewzwareAch> | undefined, b: PaymentNewzwareAch | PlainMessage<PaymentNewzwareAch> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentPriocommerceCc
+ */
+export declare class PaymentPriocommerceCc extends Message<PaymentPriocommerceCc> {
+  constructor(data?: PartialMessage<PaymentPriocommerceCc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentPriocommerceCc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentPriocommerceCc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentPriocommerceCc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPriocommerceCc;
+
+  static equals(a: PaymentPriocommerceCc | PlainMessage<PaymentPriocommerceCc> | undefined, b: PaymentPriocommerceCc | PlainMessage<PaymentPriocommerceCc> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentPriocommerceAch
+ */
+export declare class PaymentPriocommerceAch extends Message<PaymentPriocommerceAch> {
+  constructor(data?: PartialMessage<PaymentPriocommerceAch>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentPriocommerceAch";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentPriocommerceAch;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentPriocommerceAch;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPriocommerceAch;
+
+  static equals(a: PaymentPriocommerceAch | PlainMessage<PaymentPriocommerceAch> | undefined, b: PaymentPriocommerceAch | PlainMessage<PaymentPriocommerceAch> | undefined): boolean;
 }
 
 /**
@@ -7371,6 +7541,44 @@ export declare class ExecutePianoUpdateUser extends Message<ExecutePianoUpdateUs
 }
 
 /**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateSubscription
+ */
+export declare class ExecutePianoUpdateSubscription extends Message<ExecutePianoUpdateSubscription> {
+  constructor(data?: PartialMessage<ExecutePianoUpdateSubscription>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoUpdateSubscription";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoUpdateSubscription;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoUpdateSubscription;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoUpdateSubscription;
+
+  static equals(a: ExecutePianoUpdateSubscription | PlainMessage<ExecutePianoUpdateSubscription> | undefined, b: ExecutePianoUpdateSubscription | PlainMessage<ExecutePianoUpdateSubscription> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetPayment
+ */
+export declare class ExecutePianoGetPayment extends Message<ExecutePianoGetPayment> {
+  constructor(data?: PartialMessage<ExecutePianoGetPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoGetPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoGetPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoGetPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoGetPayment;
+
+  static equals(a: ExecutePianoGetPayment | PlainMessage<ExecutePianoGetPayment> | undefined, b: ExecutePianoGetPayment | PlainMessage<ExecutePianoGetPayment> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.integrations.ExecuteEpicGetToken
  */
 export declare class ExecuteEpicGetToken extends Message<ExecuteEpicGetToken> {
@@ -7577,5 +7785,138 @@ export declare class ExecuteNewzwareAchPayment extends Message<ExecuteNewzwareAc
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareAchPayment;
 
   static equals(a: ExecuteNewzwareAchPayment | PlainMessage<ExecuteNewzwareAchPayment> | undefined, b: ExecuteNewzwareAchPayment | PlainMessage<ExecuteNewzwareAchPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareComplaintHistory
+ */
+export declare class ExecuteNewzwareComplaintHistory extends Message<ExecuteNewzwareComplaintHistory> {
+  constructor(data?: PartialMessage<ExecuteNewzwareComplaintHistory>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwareComplaintHistory";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwareComplaintHistory;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwareComplaintHistory;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareComplaintHistory;
+
+  static equals(a: ExecuteNewzwareComplaintHistory | PlainMessage<ExecuteNewzwareComplaintHistory> | undefined, b: ExecuteNewzwareComplaintHistory | PlainMessage<ExecuteNewzwareComplaintHistory> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareComplaintUpdate
+ */
+export declare class ExecuteNewzwareComplaintUpdate extends Message<ExecuteNewzwareComplaintUpdate> {
+  constructor(data?: PartialMessage<ExecuteNewzwareComplaintUpdate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwareComplaintUpdate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwareComplaintUpdate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwareComplaintUpdate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareComplaintUpdate;
+
+  static equals(a: ExecuteNewzwareComplaintUpdate | PlainMessage<ExecuteNewzwareComplaintUpdate> | undefined, b: ExecuteNewzwareComplaintUpdate | PlainMessage<ExecuteNewzwareComplaintUpdate> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareVacationRestart
+ */
+export declare class ExecuteNewzwareVacationRestart extends Message<ExecuteNewzwareVacationRestart> {
+  constructor(data?: PartialMessage<ExecuteNewzwareVacationRestart>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwareVacationRestart";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwareVacationRestart;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwareVacationRestart;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareVacationRestart;
+
+  static equals(a: ExecuteNewzwareVacationRestart | PlainMessage<ExecuteNewzwareVacationRestart> | undefined, b: ExecuteNewzwareVacationRestart | PlainMessage<ExecuteNewzwareVacationRestart> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareVacationUpdate
+ */
+export declare class ExecuteNewzwareVacationUpdate extends Message<ExecuteNewzwareVacationUpdate> {
+  constructor(data?: PartialMessage<ExecuteNewzwareVacationUpdate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwareVacationUpdate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwareVacationUpdate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwareVacationUpdate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwareVacationUpdate;
+
+  static equals(a: ExecuteNewzwareVacationUpdate | PlainMessage<ExecuteNewzwareVacationUpdate> | undefined, b: ExecuteNewzwareVacationUpdate | PlainMessage<ExecuteNewzwareVacationUpdate> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwarePhoneLookupMulti
+ */
+export declare class ExecuteNewzwarePhoneLookupMulti extends Message<ExecuteNewzwarePhoneLookupMulti> {
+  constructor(data?: PartialMessage<ExecuteNewzwarePhoneLookupMulti>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNewzwarePhoneLookupMulti";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNewzwarePhoneLookupMulti;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNewzwarePhoneLookupMulti;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNewzwarePhoneLookupMulti;
+
+  static equals(a: ExecuteNewzwarePhoneLookupMulti | PlainMessage<ExecuteNewzwarePhoneLookupMulti> | undefined, b: ExecuteNewzwarePhoneLookupMulti | PlainMessage<ExecuteNewzwarePhoneLookupMulti> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePriocommerceAchPayment
+ */
+export declare class ExecutePriocommerceAchPayment extends Message<ExecutePriocommerceAchPayment> {
+  constructor(data?: PartialMessage<ExecutePriocommerceAchPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePriocommerceAchPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePriocommerceAchPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePriocommerceAchPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePriocommerceAchPayment;
+
+  static equals(a: ExecutePriocommerceAchPayment | PlainMessage<ExecutePriocommerceAchPayment> | undefined, b: ExecutePriocommerceAchPayment | PlainMessage<ExecutePriocommerceAchPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePriocommerceCcPayment
+ */
+export declare class ExecutePriocommerceCcPayment extends Message<ExecutePriocommerceCcPayment> {
+  constructor(data?: PartialMessage<ExecutePriocommerceCcPayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePriocommerceCcPayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePriocommerceCcPayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePriocommerceCcPayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePriocommerceCcPayment;
+
+  static equals(a: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined, b: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined): boolean;
 }
 

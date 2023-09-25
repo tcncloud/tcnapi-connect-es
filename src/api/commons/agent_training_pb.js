@@ -40,3 +40,16 @@ export const LearningOpportunity = proto3.makeMessageType(
   ],
 );
 
+/**
+ * CallIdentifier is used to completely identify calls.
+ *
+ * @generated from message api.commons.CallIdentifier
+ */
+export const CallIdentifier = proto3.makeMessageType(
+  "api.commons.CallIdentifier",
+  () => [
+    { no: 1, name: "sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
+  ],
+);
+

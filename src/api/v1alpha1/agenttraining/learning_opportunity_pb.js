@@ -4,7 +4,8 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { LearningOpportunity } from "../../commons/agent_training_pb.js";
+import { CallIdentifier, LearningOpportunity } from "../../commons/agent_training_pb.js";
+import { TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
  * CreateLearningOpportunityRequest represents a request to create a new learning opportunity.
@@ -37,7 +38,12 @@ export const CreateLearningOpportunityResponse = proto3.makeMessageType(
  */
 export const ListLearningOpportunitiesRequest = proto3.makeMessageType(
   "api.v1alpha1.agenttraining.ListLearningOpportunitiesRequest",
-  [],
+  () => [
+    { no: 2, name: "call_identifiers", kind: "message", T: CallIdentifier, repeated: true },
+    { no: 3, name: "transcript_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "agent_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "created_at", kind: "message", T: TimeFilter },
+  ],
 );
 
 /**

@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, Duration, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp as Timestamp$1 } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AbsentPolicyType, ChainOperator, CompareOperator, ComplianceListType, ConsentActionType, ConstructedFilename, DateTimePrecision, DeDupActions, DedupKeyPolicy, DialOrderType, DuplicatePolicyType, EnrichmentType, ExportType, FieldType, FileFormat, FilePattern, HttpVerb, PaginationTerminator, PipelineElementStatusType, PrimarySource, RecordType, RunType, SortOrder } from "../commons/lms_pb.js";
+import type { AbsentPolicyType, ChainOperator, CompareOperator, ComplianceListType, ConsentActionType, ConstructedFilename, DateTimePrecision, DeDupActions, DedupKeyPolicy, DialOrderType, DuplicatePolicyType, EnrichmentType, EventState, ExportType, FieldType, FileFormat, FilePattern, HttpVerb, PaginationTerminator, PipelineElementStatusType, PrimarySource, RecordType, RunType, SortOrder } from "../commons/lms_pb.js";
 import type { CommType } from "../commons/communication_pb.js";
 import type { Channel, ContentType } from "../commons/compliance_pb.js";
 import type { StringArraySql } from "../commons/types_pb.js";
@@ -35,6 +35,43 @@ export declare enum TimeUnit {
    * @generated from enum value: TIME_HOURS = 3;
    */
   TIME_HOURS = 3,
+}
+
+/**
+ * The types of entities that can be returned from Epic's bulk data api.
+ *
+ * @generated from enum api.v0alpha.EpicEntityType
+ */
+export declare enum EpicEntityType {
+  /**
+   * @generated from enum value: EPIC_UNKNOWN_TYPE = 0;
+   */
+  EPIC_UNKNOWN_TYPE = 0,
+
+  /**
+   * @generated from enum value: EPIC_ENTITY_TYPE_PATIENT = 1;
+   */
+  EPIC_ENTITY_TYPE_PATIENT = 1,
+
+  /**
+   * @generated from enum value: EPIC_ENTITY_TYPE_APPOINTMENT = 2;
+   */
+  EPIC_ENTITY_TYPE_APPOINTMENT = 2,
+
+  /**
+   * @generated from enum value: EPIC_ENTITY_TYPE_MEDICATION = 3;
+   */
+  EPIC_ENTITY_TYPE_MEDICATION = 3,
+
+  /**
+   * @generated from enum value: EPIC_ENTITY_TYPE_MEDICATION_REQUEST = 4;
+   */
+  EPIC_ENTITY_TYPE_MEDICATION_REQUEST = 4,
+
+  /**
+   * @generated from enum value: EPIC_ENTITY_TYPE_ACCOUNT = 5;
+   */
+  EPIC_ENTITY_TYPE_ACCOUNT = 5,
 }
 
 /**
@@ -453,6 +490,130 @@ export declare class ProcessElementReq extends Message<ProcessElementReq> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProcessElementReq;
 
   static equals(a: ProcessElementReq | PlainMessage<ProcessElementReq> | undefined, b: ProcessElementReq | PlainMessage<ProcessElementReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ProcessListRequest
+ */
+export declare class ProcessListRequest extends Message<ProcessListRequest> {
+  /**
+   * the element/node we want to upload the list to.
+   * must be an api_entrypoint type element.
+   *
+   * @generated from field: string element_id = 3;
+   */
+  elementId: string;
+
+  /**
+   * raw bytes of the list we are uploading.
+   * must be parsable by the file_template for element_id.
+   *
+   * @generated from field: bytes list = 4;
+   */
+  list: Uint8Array;
+
+  constructor(data?: PartialMessage<ProcessListRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ProcessListRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProcessListRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProcessListRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProcessListRequest;
+
+  static equals(a: ProcessListRequest | PlainMessage<ProcessListRequest> | undefined, b: ProcessListRequest | PlainMessage<ProcessListRequest> | undefined): boolean;
+}
+
+/**
+ * empty for now
+ *
+ * @generated from message api.v0alpha.ProcessListResponse
+ */
+export declare class ProcessListResponse extends Message<ProcessListResponse> {
+  constructor(data?: PartialMessage<ProcessListResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ProcessListResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProcessListResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProcessListResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProcessListResponse;
+
+  static equals(a: ProcessListResponse | PlainMessage<ProcessListResponse> | undefined, b: ProcessListResponse | PlainMessage<ProcessListResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.StreamListRequest
+ */
+export declare class StreamListRequest extends Message<StreamListRequest> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string region_id = 2;
+   */
+  regionId: string;
+
+  /**
+   * the element/node we want to upload the list to.
+   * must be an api_entrypoint type element.
+   * all chunks will be concat together in order for each element streamed.
+   * if this field is ever empty the whole call will error.
+   *
+   * @generated from field: string element_id = 3;
+   */
+  elementId: string;
+
+  /**
+   * up to 2mb of raw bytes of the list we are uploading.
+   * all chunks streamed are concat together and uploaded after streaming ends.
+   *
+   * @generated from field: bytes chunk = 4;
+   */
+  chunk: Uint8Array;
+
+  constructor(data?: PartialMessage<StreamListRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.StreamListRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamListRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamListRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamListRequest;
+
+  static equals(a: StreamListRequest | PlainMessage<StreamListRequest> | undefined, b: StreamListRequest | PlainMessage<StreamListRequest> | undefined): boolean;
+}
+
+/**
+ * empty for now
+ *
+ * @generated from message api.v0alpha.StreamListResponse
+ */
+export declare class StreamListResponse extends Message<StreamListResponse> {
+  constructor(data?: PartialMessage<StreamListResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.StreamListResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StreamListResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StreamListResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StreamListResponse;
+
+  static equals(a: StreamListResponse | PlainMessage<StreamListResponse> | undefined, b: StreamListResponse | PlainMessage<StreamListResponse> | undefined): boolean;
 }
 
 /**
@@ -2152,6 +2313,12 @@ export declare class Process extends Message<Process> {
      */
     value: SplitCriteria;
     case: "split";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.EpicEntrypoint epic_entry_point = 76;
+     */
+    value: EpicEntrypoint;
+    case: "epicEntryPoint";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Process>);
@@ -8895,5 +9062,266 @@ export declare class SplitByEqualParts extends Message<SplitByEqualParts> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitByEqualParts;
 
   static equals(a: SplitByEqualParts | PlainMessage<SplitByEqualParts> | undefined, b: SplitByEqualParts | PlainMessage<SplitByEqualParts> | undefined): boolean;
+}
+
+/**
+ * EHR EPIC
+ *
+ * @generated from message api.v0alpha.EpicEntrypoint
+ */
+export declare class EpicEntrypoint extends Message<EpicEntrypoint> {
+  /**
+   * how often this event needs to run.
+   * this cron string will be restricted differently depending
+   * on the specific operation being run. For example, Epic
+   * only allows calls once per 24 hours.
+   *
+   * @generated from field: string cron = 2;
+   */
+  cron: string;
+
+  /**
+   * how long in minutes we will wait with the entrypoint
+   * in the CHECK state. 0 is interpreted as wait indefinitely.
+   *
+   * the file template that will convert the raw data during the process state.
+   * do we need to specify a file template id? Or should we only push into journey?
+   * string file_template_id = 4;
+   *
+   * @generated from field: double max_wait_time = 3;
+   */
+  maxWaitTime: number;
+
+  /**
+   * the types of entities we want retrieved
+   *
+   * @generated from field: repeated api.v0alpha.EpicEntityType entity_types = 4;
+   */
+  entityTypes: EpicEntityType[];
+
+  /**
+   * the base url that points to the group of entites we are querying.
+   * Each group can be contacted once every 24 hours max.
+   * Example: https://apporchard.epic.com/interconnect-aocurprd-oauth/api/FHIR/R4
+   *
+   * @generated from field: string group_base_url = 5;
+   */
+  groupBaseUrl: string;
+
+  /**
+   * the id for the group we are matching.
+   * Example: eIscQb2HmqkT.aPxBKDR1mIj3721CpVk1suC7rlu3yX83
+   *
+   * @generated from field: string group_fhir_id = 6;
+   */
+  groupFhirId: string;
+
+  /**
+   * values during event processing.
+   * Not visible to user.
+   *
+   * @generated from field: api.v0alpha.RuntimeValues runtime_values = 7;
+   */
+  runtimeValues?: RuntimeValues;
+
+  /**
+   * how many pages we should save before aggregating the data and sending downstream
+   * default is 100. Max is 10000.
+   * If a termination state hasn't been reached, the event will be re-queued and continue
+   * where it left off.
+   *
+   * @generated from field: int64 flush_page_count = 8;
+   */
+  flushPageCount: bigint;
+
+  /**
+   * how much total elapsed time (in minutes) we want to wait before flushing records.
+   * if total time spent aggregating the data goes over this many minutes, we will flush
+   * the current records downstream.
+   * default is 20. Max is 120. Min is 1.
+   * If a termination state hasn't been reached, the event will be re-queued and continue
+   * where it left off.
+   *
+   * @generated from field: int64 flush_minute_count = 9;
+   */
+  flushMinuteCount: bigint;
+
+  /**
+   * if true, we will switch to processing mode when we have enough records to flush
+   * even if we haven't downloaded all the pages yet.
+   * after the current records are flushed, we switch back to downloading the remaining records.
+   * If false (default), we download all the pages before we start processing any records.
+   *
+   * @generated from field: bool flush_during_check = 10;
+   */
+  flushDuringCheck: boolean;
+
+  /**
+   * Specifies the timezone to be used by the cron
+   *
+   * @generated from field: string timezone = 11;
+   */
+  timezone: string;
+
+  constructor(data?: PartialMessage<EpicEntrypoint>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.EpicEntrypoint";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EpicEntrypoint;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EpicEntrypoint;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EpicEntrypoint;
+
+  static equals(a: EpicEntrypoint | PlainMessage<EpicEntrypoint> | undefined, b: EpicEntrypoint | PlainMessage<EpicEntrypoint> | undefined): boolean;
+}
+
+/**
+ * These values are invisible to the user, and null in the lms_elements table.
+ * These will be used during the processing of the event.
+ *
+ * @generated from message api.v0alpha.RuntimeValues
+ */
+export declare class RuntimeValues extends Message<RuntimeValues> {
+  /**
+   * current state of the entrypoint
+   * this is set to kickoff when the entrypoint is queued up
+   *
+   * @generated from field: api.commons.EventState state = 1;
+   */
+  state: EventState;
+
+  /**
+   * the token we are using for this session.
+   * This value is retrieved by sending a jwt to epic's auth endpoint.
+   *
+   * @generated from field: string access_token = 2;
+   */
+  accessToken: string;
+
+  /**
+   * the url returned from the kickoff's 'Content-Location' response header
+   * used during the CHECK state.
+   *
+   * @generated from field: string check_url = 3;
+   */
+  checkUrl: string;
+
+  /**
+   * the the location for all the data we are importing.
+   * Epic returns newline delimited json for each url endpoint
+   *
+   * @generated from field: repeated api.v0alpha.EntityURL data_urls = 4;
+   */
+  dataUrls: EntityURL[];
+
+  /**
+   * how many times we have ran the paginated request
+   *
+   * @generated from field: int64 current_iteration = 5;
+   */
+  currentIteration: bigint;
+
+  /**
+   * @generated from field: int64 total_seconds_spent = 6;
+   */
+  totalSecondsSpent: bigint;
+
+  /**
+   * any errors that happened during processing
+   *
+   * @generated from field: repeated string errors = 7;
+   */
+  errors: string[];
+
+  /**
+   * how many times the bulk entrypoint has been not ready total
+   *
+   * @generated from field: int64 total_not_ready_count = 8;
+   */
+  totalNotReadyCount: bigint;
+
+  /**
+   * as of writing, the unflushed input is stored in fts.
+   * the keys will be the fts_id the page, and the values the size of the request in bytes
+   *
+   * @generated from field: map<string, int64> file_ids = 9;
+   */
+  fileIds: { [key: string]: bigint };
+
+  /**
+   * the named variables saved from the preliminary requests
+   * these can be used in the paginated_request
+   *
+   * @generated from field: map<string, string> preliminary_vars = 10;
+   */
+  preliminaryVars: { [key: string]: string };
+
+  /**
+   * the events that happened before this one
+   *
+   * @generated from field: repeated int64 parent_event_ids = 11;
+   */
+  parentEventIds: bigint[];
+
+  /**
+   * if true we wont need to switch back from process state, to check state.
+   * if false, we need to continue in check state after flushing records
+   *
+   * @generated from field: bool no_more_pages = 12;
+   */
+  noMorePages: boolean;
+
+  /**
+   * tracks all fts files we have writen regardless of whether they have been processed yet
+   *
+   * @generated from field: repeated string total_fts_ids = 13;
+   */
+  totalFtsIds: string[];
+
+  constructor(data?: PartialMessage<RuntimeValues>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.RuntimeValues";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RuntimeValues;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RuntimeValues;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RuntimeValues;
+
+  static equals(a: RuntimeValues | PlainMessage<RuntimeValues> | undefined, b: RuntimeValues | PlainMessage<RuntimeValues> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.EntityURL
+ */
+export declare class EntityURL extends Message<EntityURL> {
+  /**
+   * @generated from field: api.v0alpha.EpicEntityType entity_type = 1;
+   */
+  entityType: EpicEntityType;
+
+  /**
+   * @generated from field: string url = 2;
+   */
+  url: string;
+
+  constructor(data?: PartialMessage<EntityURL>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.EntityURL";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EntityURL;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EntityURL;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EntityURL;
+
+  static equals(a: EntityURL | PlainMessage<EntityURL> | undefined, b: EntityURL | PlainMessage<EntityURL> | undefined): boolean;
 }
 

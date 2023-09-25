@@ -7,6 +7,61 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from enum api.commons.TimeScale
+ */
+export declare enum TimeScale {
+  /**
+   * @generated from enum value: TIME_SCALE_MINUTE = 0;
+   */
+  MINUTE = 0,
+
+  /**
+   * @generated from enum value: TIME_SCALE_HOUR = 1;
+   */
+  HOUR = 1,
+
+  /**
+   * @generated from enum value: TIME_SCALE_DAY = 2;
+   */
+  DAY = 2,
+
+  /**
+   * @generated from enum value: TIME_SCALE_WEEK = 3;
+   */
+  WEEK = 3,
+
+  /**
+   * @generated from enum value: TIME_SCALE_MONTH = 4;
+   */
+  MONTH = 4,
+
+  /**
+   * @generated from enum value: TIME_SCALE_YEAR = 5;
+   */
+  YEAR = 5,
+}
+
+/**
+ * @generated from enum api.commons.TicketStatus
+ */
+export declare enum TicketStatus {
+  /**
+   * @generated from enum value: TICKET_STATUS_NEW = 0;
+   */
+  NEW = 0,
+
+  /**
+   * @generated from enum value: TICKET_STATUS_OPEN = 1;
+   */
+  OPEN = 1,
+
+  /**
+   * @generated from enum value: TICKET_STATUS_CLOSE = 2;
+   */
+  CLOSE = 2,
+}
+
+/**
  * Ticket - Fields for Ticket creation, List tickets and view ticket
  *
  * @generated from message api.commons.Ticket
@@ -129,6 +184,23 @@ export declare class Ticket extends Message<Ticket> {
    */
   assignee: string;
 
+  /**
+   * @generated from field: repeated api.commons.TicketAction ticket_action = 19;
+   */
+  ticketAction: TicketAction[];
+
+  /**
+   * @generated from field: api.commons.TicketStatus ticket_status = 20;
+   */
+  ticketStatus: TicketStatus;
+
+  /**
+   * assignee list
+   *
+   * @generated from field: repeated string ticket_assignee = 21;
+   */
+  ticketAssignee: string[];
+
   constructor(data?: PartialMessage<Ticket>);
 
   static readonly runtime: typeof proto3;
@@ -142,6 +214,164 @@ export declare class Ticket extends Message<Ticket> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Ticket;
 
   static equals(a: Ticket | PlainMessage<Ticket> | undefined, b: Ticket | PlainMessage<Ticket> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.Duration
+ */
+export declare class Duration extends Message<Duration> {
+  /**
+   * @generated from field: int64 value = 1;
+   */
+  value: bigint;
+
+  /**
+   * @generated from field: api.commons.TimeScale scale = 2;
+   */
+  scale: TimeScale;
+
+  constructor(data?: PartialMessage<Duration>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.Duration";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Duration;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Duration;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Duration;
+
+  static equals(a: Duration | PlainMessage<Duration> | undefined, b: Duration | PlainMessage<Duration> | undefined): boolean;
+}
+
+/**
+ * TICKET_ACTION - New messgae have actions mapped to tickets
+ *
+ * @generated from message api.commons.TicketAction
+ */
+export declare class TicketAction extends Message<TicketAction> {
+  /**
+   * snowflake id
+   *
+   * @generated from field: int64 ticket_action_id = 1;
+   */
+  ticketActionId: bigint;
+
+  /**
+   * action id from ACTION_MASTER table, Only callback for now
+   *
+   * @generated from field: int64 action_id = 2;
+   */
+  actionId: bigint;
+
+  /**
+   * Attributes for a callback Action
+   *
+   * @generated from field: api.commons.CallbackContext callback_context = 3;
+   */
+  callbackContext?: CallbackContext;
+
+  /**
+   * ticket id from ticket table
+   *
+   * @generated from field: int64 ticket_id = 4;
+   */
+  ticketId: bigint;
+
+  /**
+   * Start Date of the ACTION
+   *
+   * @generated from field: google.protobuf.Timestamp start_ts = 5;
+   */
+  startTs?: Timestamp;
+
+  /**
+   * Expiry date of the ACTION
+   *
+   * @generated from field: google.protobuf.Timestamp expiry_ts = 6;
+   */
+  expiryTs?: Timestamp;
+
+  /**
+   * Ticket action status can be 1 == AVAILABLE and 2 == NOT AVAILABLE
+   *
+   * @generated from field: int64 state = 8;
+   */
+  state: bigint;
+
+  /**
+   * Skills needed for the action to be completed
+   * For action we need only skill id and not mandatory/optional
+   *
+   * @generated from field: repeated string action_skills = 9;
+   */
+  actionSkills: string[];
+
+  /**
+   * SLA Id for the ACTION
+   *
+   * @generated from field: repeated api.commons.Sla action_sla_id = 10;
+   */
+  actionSlaId: Sla[];
+
+  constructor(data?: PartialMessage<TicketAction>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TicketAction";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TicketAction;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TicketAction;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketAction;
+
+  static equals(a: TicketAction | PlainMessage<TicketAction> | undefined, b: TicketAction | PlainMessage<TicketAction> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.CallbackContext
+ */
+export declare class CallbackContext extends Message<CallbackContext> {
+  /**
+   * @generated from field: string caller_id = 1;
+   */
+  callerId: string;
+
+  /**
+   * @generated from field: string phone_no = 2;
+   */
+  phoneNo: string;
+
+  /**
+   * @generated from field: string country_code = 3;
+   */
+  countryCode: string;
+
+  /**
+   * @generated from field: string caller_name = 4;
+   */
+  callerName: string;
+
+  /**
+   * @generated from field: string caller_country_code = 5;
+   */
+  callerCountryCode: string;
+
+  constructor(data?: PartialMessage<CallbackContext>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.CallbackContext";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CallbackContext;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CallbackContext;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CallbackContext;
+
+  static equals(a: CallbackContext | PlainMessage<CallbackContext> | undefined, b: CallbackContext | PlainMessage<CallbackContext> | undefined): boolean;
 }
 
 /**
@@ -228,6 +458,11 @@ export declare class Sla extends Message<Sla> {
    * @generated from field: int64 sla_min = 3;
    */
   slaMin: bigint;
+
+  /**
+   * @generated from field: api.commons.Duration sla_duration = 4;
+   */
+  slaDuration?: Duration;
 
   constructor(data?: PartialMessage<Sla>);
 
@@ -493,6 +728,11 @@ export declare class TicketSla extends Message<TicketSla> {
    */
   isActive: bigint;
 
+  /**
+   * @generated from field: api.commons.Duration ticket_sla_duration = 6;
+   */
+  ticketSlaDuration?: Duration;
+
   constructor(data?: PartialMessage<TicketSla>);
 
   static readonly runtime: typeof proto3;
@@ -544,7 +784,7 @@ export declare class SlaConditions extends Message<SlaConditions> {
 }
 
 /**
- * SlaConditions - Condition Fields for sla on a ticket
+ * ReplyComment -
  *
  * @generated from message api.commons.ReplyComment
  */
@@ -733,14 +973,6 @@ export declare class EditTicket extends Message<EditTicket> {
 }
 
 /**
- *
- * Description = 1
- * Skills = 2
- * Status = 3
- * Due Date = 4
- * SLA = 5
- * All Values must come as String. BE to convert values to int64, JSON and DateTime
- *
  * @generated from message api.commons.EditAttribute
  */
 export declare class EditAttribute extends Message<EditAttribute> {
@@ -762,8 +994,6 @@ export declare class EditAttribute extends Message<EditAttribute> {
   toVal: string;
 
   /**
-   * EditColumnType edit_column_type = 5;
-   *
    * @generated from field: bool is_edited = 4;
    */
   isEdited: boolean;

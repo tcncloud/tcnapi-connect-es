@@ -52,6 +52,7 @@ export const IntegrationType = proto3.makeEnum(
     {no: 3600, name: "INTEGRATION_TYPE_PIANO", localName: "PIANO"},
     {no: 3700, name: "INTEGRATION_TYPE_EPIC", localName: "EPIC"},
     {no: 3800, name: "INTEGRATION_TYPE_NEWZWARE", localName: "NEWZWARE"},
+    {no: 3900, name: "INTEGRATION_TYPE_PRIOCOMMERCE", localName: "PRIOCOMMERCE"},
   ],
 );
 
@@ -237,6 +238,8 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3503, name: "REQUEST_METHOD_POSCORP_UPDATE_PAYMENT_STATUS", localName: "POSCORP_UPDATE_PAYMENT_STATUS"},
     {no: 3601, name: "REQUEST_METHOD_PIANO_GET_USER", localName: "PIANO_GET_USER"},
     {no: 3602, name: "REQUEST_METHOD_PIANO_UPDATE_USER", localName: "PIANO_UPDATE_USER"},
+    {no: 3603, name: "REQUEST_METHOD_PIANO_UPDATE_SUBSCRIPTION", localName: "PIANO_UPDATE_SUBSCRIPTION"},
+    {no: 3604, name: "REQUEST_METHOD_PIANO_GET_PAYMENT", localName: "PIANO_GET_PAYMENT"},
     {no: 3701, name: "REQUEST_METHOD_EPIC_GET_TOKEN", localName: "EPIC_GET_TOKEN"},
     {no: 3702, name: "REQUEST_METHOD_EPIC_GET_PATIENT", localName: "EPIC_GET_PATIENT"},
     {no: 3703, name: "REQUEST_METHOD_EPIC_MATCH_PATIENT", localName: "EPIC_MATCH_PATIENT"},
@@ -248,6 +251,13 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3802, name: "REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY", localName: "NEWZWARE_ACCOUNT_INQUIRY"},
     {no: 3803, name: "REQUEST_METHOD_NEWZWARE_CC_PAYMENT", localName: "NEWZWARE_CC_PAYMENT"},
     {no: 3804, name: "REQUEST_METHOD_NEWZWARE_ACH_PAYMENT", localName: "NEWZWARE_ACH_PAYMENT"},
+    {no: 3805, name: "REQUEST_METHOD_NEWZWARE_COMPLAINT_HISTORY", localName: "NEWZWARE_COMPLAINT_HISTORY"},
+    {no: 3806, name: "REQUEST_METHOD_NEWZWARE_COMPLAINT_UPDATE", localName: "NEWZWARE_COMPLAINT_UPDATE"},
+    {no: 3807, name: "REQUEST_METHOD_NEWZWARE_VACATION_RESTART", localName: "NEWZWARE_VACATION_RESTART"},
+    {no: 3808, name: "REQUEST_METHOD_NEWZWARE_VACATION_UPDATE", localName: "NEWZWARE_VACATION_UPDATE"},
+    {no: 3809, name: "REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI", localName: "NEWZWARE_PHONE_LOOKUP_MULTI"},
+    {no: 3901, name: "REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT", localName: "PRIOCOMMERCE_ACH_PAYMENT"},
+    {no: 3902, name: "REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT", localName: "PRIOCOMMERCE_CC_PAYMENT"},
   ],
 );
 
@@ -587,6 +597,8 @@ export const PaymentFlow = proto3.makeMessageType(
     { no: 10, name: "payway_submit_ach_alert_request", kind: "message", T: PaymentPaywaySubmitACHAlertRequest, oneof: "value" },
     { no: 11, name: "newzware_cc", kind: "message", T: PaymentNewzwareCc, oneof: "value" },
     { no: 12, name: "newzware_ach", kind: "message", T: PaymentNewzwareAch, oneof: "value" },
+    { no: 13, name: "priocommerce_cc", kind: "message", T: PaymentPriocommerceCc, oneof: "value" },
+    { no: 14, name: "priocommerce_ach", kind: "message", T: PaymentPriocommerceAch, oneof: "value" },
     { no: 20, name: "payment_fields", kind: "message", T: FieldDefinition, repeated: true },
   ],
 );
@@ -826,6 +838,8 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3503, name: "poscorp_update_payment_status", kind: "message", T: ExecutePoscorpUpdatePaymentStatus, oneof: "value" },
     { no: 3601, name: "PIANO_GET_USER", kind: "message", T: ExecutePianoGetUser, oneof: "value" },
     { no: 3602, name: "PIANO_UPDATE_USER", kind: "message", T: ExecutePianoUpdateUser, oneof: "value" },
+    { no: 3603, name: "PIANO_UPDATE_SUBSCRIPTION", kind: "message", T: ExecutePianoUpdateSubscription, oneof: "value" },
+    { no: 3604, name: "PIANO_GET_PAYMENT", kind: "message", T: ExecutePianoGetPayment, oneof: "value" },
     { no: 3701, name: "epic_get_token", kind: "message", T: ExecuteEpicGetToken, oneof: "value" },
     { no: 3702, name: "epic_get_patient", kind: "message", T: ExecuteEpicGetPatient, oneof: "value" },
     { no: 3703, name: "epic_match_patient", kind: "message", T: ExecuteEpicMatchPatient, oneof: "value" },
@@ -837,6 +851,13 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3802, name: "newzware_account_inquiry", kind: "message", T: ExecuteNewzwareAccountInquiry, oneof: "value" },
     { no: 3803, name: "newzware_cc_payment", kind: "message", T: ExecuteNewzwareCcPayment, oneof: "value" },
     { no: 3804, name: "newzware_ach_Payment", kind: "message", T: ExecuteNewzwareAchPayment, oneof: "value" },
+    { no: 3805, name: "newzware_complaint_history", kind: "message", T: ExecuteNewzwareComplaintHistory, oneof: "value" },
+    { no: 3806, name: "newzware_complaint_update", kind: "message", T: ExecuteNewzwareComplaintUpdate, oneof: "value" },
+    { no: 3807, name: "newzware_vacation_restart", kind: "message", T: ExecuteNewzwareVacationRestart, oneof: "value" },
+    { no: 3808, name: "newzware_vacation_update", kind: "message", T: ExecuteNewzwareVacationUpdate, oneof: "value" },
+    { no: 3809, name: "newzware_phone_lookup_multi", kind: "message", T: ExecuteNewzwarePhoneLookupMulti, oneof: "value" },
+    { no: 3901, name: "priocommerce_ach_payment", kind: "message", T: ExecutePriocommerceAchPayment, oneof: "value" },
+    { no: 3902, name: "priocommerce_cc_payment", kind: "message", T: ExecutePriocommerceCcPayment, oneof: "value" },
   ],
 );
 
@@ -981,7 +1002,9 @@ export const VerificationNewzwareAccountInquiry = proto3.makeMessageType(
  */
 export const PaymentExperianCC = proto3.makeMessageType(
   "api.commons.integrations.PaymentExperianCC",
-  [],
+  () => [
+    { no: 1, name: "use_invoice_account_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
 );
 
 /**
@@ -989,7 +1012,9 @@ export const PaymentExperianCC = proto3.makeMessageType(
  */
 export const PaymentExperianACH = proto3.makeMessageType(
   "api.commons.integrations.PaymentExperianACH",
-  [],
+  () => [
+    { no: 1, name: "use_invoice_account_number", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
 );
 
 /**
@@ -1061,6 +1086,22 @@ export const PaymentNewzwareCc = proto3.makeMessageType(
  */
 export const PaymentNewzwareAch = proto3.makeMessageType(
   "api.commons.integrations.PaymentNewzwareAch",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.PaymentPriocommerceCc
+ */
+export const PaymentPriocommerceCc = proto3.makeMessageType(
+  "api.commons.integrations.PaymentPriocommerceCc",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.PaymentPriocommerceAch
+ */
+export const PaymentPriocommerceAch = proto3.makeMessageType(
+  "api.commons.integrations.PaymentPriocommerceAch",
   [],
 );
 
@@ -2443,6 +2484,22 @@ export const ExecutePianoUpdateUser = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.integrations.ExecutePianoUpdateSubscription
+ */
+export const ExecutePianoUpdateSubscription = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoUpdateSubscription",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoGetPayment
+ */
+export const ExecutePianoGetPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePianoGetPayment",
+  [],
+);
+
+/**
  * @generated from message api.commons.integrations.ExecuteEpicGetToken
  */
 export const ExecuteEpicGetToken = proto3.makeMessageType(
@@ -2527,6 +2584,62 @@ export const ExecuteNewzwareCcPayment = proto3.makeMessageType(
  */
 export const ExecuteNewzwareAchPayment = proto3.makeMessageType(
   "api.commons.integrations.ExecuteNewzwareAchPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareComplaintHistory
+ */
+export const ExecuteNewzwareComplaintHistory = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareComplaintHistory",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareComplaintUpdate
+ */
+export const ExecuteNewzwareComplaintUpdate = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareComplaintUpdate",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareVacationRestart
+ */
+export const ExecuteNewzwareVacationRestart = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareVacationRestart",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwareVacationUpdate
+ */
+export const ExecuteNewzwareVacationUpdate = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwareVacationUpdate",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNewzwarePhoneLookupMulti
+ */
+export const ExecuteNewzwarePhoneLookupMulti = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNewzwarePhoneLookupMulti",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePriocommerceAchPayment
+ */
+export const ExecutePriocommerceAchPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePriocommerceAchPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecutePriocommerceCcPayment
+ */
+export const ExecutePriocommerceCcPayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecutePriocommerceCcPayment",
   [],
 );
 

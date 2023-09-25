@@ -31,6 +31,7 @@ export const EventType = proto3.makeEnum(
     {no: 102, name: "VOICE_ANALYTICS_FLAG_NEEDS_REVIEW"},
     {no: 103, name: "VOICE_ANALYTICS_BILLING_REPORT"},
     {no: 104, name: "VOICE_ANALYTICS_FLAG_SUMMARY"},
+    {no: 105, name: "VOICE_ANALYTICS_PHRASE_CORRECTION"},
     {no: 300, name: "OMNICHANNEL"},
     {no: 301, name: "OMNICHANNEL_PROJECT"},
     {no: 302, name: "OMNICHANNEL_CAMPAIGN"},
@@ -112,8 +113,14 @@ export const EventType = proto3.makeEnum(
     {no: 600, name: "TICKET_CREATE_EVENT"},
     {no: 601, name: "TICKET_EDIT_EVENT"},
     {no: 602, name: "TICKET_CLOSE_EVENT"},
+    {no: 603, name: "TICKET_ACTION_CREATE_EVENT"},
+    {no: 604, name: "TICKET_ACTION_EDIT_EVENT"},
+    {no: 605, name: "TICKET_ACTION_STATE_CHANGE_EVENT"},
+    {no: 606, name: "TICKET_PARTICIPANT_EVENT"},
     {no: 700, name: "COMPLIANCE_RND_QUERY_EVENT"},
     {no: 701, name: "COMPLIANCE_RND_QUERY_CACHED_EVENT"},
+    {no: 800, name: "AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT"},
+    {no: 900, name: "LMS_PIPELINE_FAILURE_EVENT"},
   ],
 );
 

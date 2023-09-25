@@ -339,6 +339,7 @@ export const SetConversationCollectedDataReq = proto3.makeMessageType(
     { no: 1, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "channel_type", kind: "enum", T: proto3.getEnumType(ChannelType) },
     { no: 3, name: "collected_data", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 4, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

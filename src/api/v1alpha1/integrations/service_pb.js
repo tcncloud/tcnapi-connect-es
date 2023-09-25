@@ -101,6 +101,14 @@ export const ProcessRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.integrations.ListIntegrationsForOrgReq
+ */
+export const ListIntegrationsForOrgReq = proto3.makeMessageType(
+  "api.v1alpha1.integrations.ListIntegrationsForOrgReq",
+  [],
+);
+
+/**
  * @generated from message api.v1alpha1.integrations.IntegrationInfos
  */
 export const IntegrationInfos = proto3.makeMessageType(

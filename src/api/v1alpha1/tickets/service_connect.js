@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignTicketReq, AssignTicketRes, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -50,6 +50,7 @@ export const Tickets = {
     },
     /**
      * Public method to assign ticket
+     * Would be deprecated
      *
      * @generated from rpc api.v1alpha1.tickets.Tickets.AssignTicket
      */
@@ -61,6 +62,7 @@ export const Tickets = {
     },
     /**
      * Public Method to Close a ticket
+     * Any agent can close the ticket. No BE validation required
      *
      * @generated from rpc api.v1alpha1.tickets.Tickets.CloseTicket
      */
@@ -244,6 +246,50 @@ export const Tickets = {
       name: "ListUsers",
       I: ListUsersRequest,
       O: ListUsersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Any agent can close the ticket. No BE validation required
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.CloseTicketAction
+     */
+    closeTicketAction: {
+      name: "CloseTicketAction",
+      I: CloseTicketActionRequest,
+      O: CloseTicketActionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to assign a ticket action
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.AssignTicketAction
+     */
+    assignTicketAction: {
+      name: "AssignTicketAction",
+      I: AssignTicketActionRequest,
+      O: AssignTicketActionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to assign a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.CreateTicketAction
+     */
+    createTicketAction: {
+      name: "CreateTicketAction",
+      I: CreateTicketActionRequest,
+      O: CreateTicketActionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to change the Status of a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ChangeTicketStatus
+     */
+    changeTicketStatus: {
+      name: "ChangeTicketStatus",
+      I: ChangeTicketStatusRequest,
+      O: ChangeTicketStatusResponse,
       kind: MethodKind.Unary,
     },
   }

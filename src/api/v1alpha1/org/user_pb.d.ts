@@ -1149,9 +1149,13 @@ export declare class ListAgentsResponse_AgentDetails extends Message<ListAgentsR
   huntGroup?: ListAgentsResponse_AgentDetails_HuntGroup;
 
   /**
-   * Reserving a space for labels
-   * reserved "labels";
-   * reserved 9;
+   * A list of the labels associated with the agent
+   *
+   * @generated from field: repeated api.commons.org.Label labels = 9;
+   */
+  labels: Label[];
+
+  /**
    * Whether the agent is delegated (sso related)
    *
    * @generated from field: bool delegated = 10;
@@ -1432,9 +1436,13 @@ export declare class ListUsersResponse_UserDetails extends Message<ListUsersResp
   permissionGroupIds: string[];
 
   /**
-   * Reserving a space for labels
-   * reserved "labels";
-   * reserved 10;
+   * A list of the labels associated with the user
+   *
+   * @generated from field: repeated api.commons.org.Label labels = 10;
+   */
+  labels: Label[];
+
+  /**
    * Whether the user is an account owner
    *
    * @generated from field: bool account_owner = 11;
@@ -1596,9 +1604,13 @@ export declare class ListUsersByOrgIdResponse_UserDetails extends Message<ListUs
   permissionGroupIds: string[];
 
   /**
-   * Reserving a space for labels
-   * reserved "labels";
-   * reserved 9;
+   * A list of the labels associated with the user
+   *
+   * @generated from field: repeated api.commons.org.Label labels = 9;
+   */
+  labels: Label[];
+
+  /**
    * Whether the user is an account owner
    *
    * @generated from field: bool account_owner = 10;
@@ -1760,9 +1772,13 @@ export declare class ListUsersByRegionResponse_UserDetails extends Message<ListU
   permissionGroupIds: string[];
 
   /**
-   * Reserving a space for labels
-   * reserved "labels";
-   * reserved 10;
+   * A list of the labels associated with the user
+   *
+   * @generated from field: repeated api.commons.org.Label labels = 10;
+   */
+  labels: Label[];
+
+  /**
    * Whether the user is an account owner
    *
    * @generated from field: bool account_owner = 11;

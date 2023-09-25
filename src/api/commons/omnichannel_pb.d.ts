@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, Duration, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { TimeZoneWrapper } from "./org_pb.js";
 import type { ChatColorProperties, ChatHeader } from "./chat_pb.js";
@@ -107,6 +107,13 @@ export declare enum OmniCampaignModuleType {
    * @generated from enum value: MODULE_TYPE_OUTBOUND = 1;
    */
   MODULE_TYPE_OUTBOUND = 1,
+
+  /**
+   * manual approve module
+   *
+   * @generated from enum value: MODULE_TYPE_MANUAL_APPROVAL = 2;
+   */
+  MODULE_TYPE_MANUAL_APPROVAL = 2,
 }
 
 /**
@@ -614,6 +621,20 @@ export declare enum OmniTaskStatus {
   OMNI_TASK_WAITING = 0,
 
   /**
+   * task is waiting to be queue
+   *
+   * @generated from enum value: OMNI_TASK_WAITING_FOR_QUEUE = 1;
+   */
+  OMNI_TASK_WAITING_FOR_QUEUE = 1,
+
+  /**
+   * task is waiting for approval
+   *
+   * @generated from enum value: OMNI_TASK_WAITING_FOR_APPROVAL = 2;
+   */
+  OMNI_TASK_WAITING_FOR_APPROVAL = 2,
+
+  /**
    * the task is currently being sent
    *
    * @generated from enum value: OMNI_TASK_SENDING = 100;
@@ -770,6 +791,11 @@ export declare enum OmniConversationMetadataName {
   TRANSCRIPT_PATH = 3,
 
   /**
+   * @generated from enum value: OMNI_CONVERSATION_METADATA_NAME_FLOW_DATA = 4;
+   */
+  OMNI_CONVERSATION_METADATA_NAME_FLOW_DATA = 4,
+
+  /**
    * @generated from enum value: OMNI_CONVERSATION_METADATA_NAME_TIMER_WAIT = 10;
    */
   OMNI_CONVERSATION_METADATA_NAME_TIMER_WAIT = 10,
@@ -914,7 +940,8 @@ export declare class OmniCampaign extends Message<OmniCampaign> {
   /**
    * skills associated with the campaign
    *
-   * @generated from field: api.commons.OmniConversationSkills skills = 4;
+   * @generated from field: api.commons.OmniConversationSkills skills = 4 [deprecated = true];
+   * @deprecated
    */
   skills?: OmniConversationSkills;
 
@@ -1295,6 +1322,20 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    * @generated from field: repeated string payment_portal_ids = 19;
    */
   paymentPortalIds: string[];
+
+  /**
+   * Flow Id
+   *
+   * @generated from field: api.commons.Int64Id flow_id = 20;
+   */
+  flowId?: Int64Id;
+
+  /**
+   * skills
+   *
+   * @generated from field: api.commons.OmniConversationSkills skills = 21;
+   */
+  skills?: OmniConversationSkills;
 
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
@@ -3555,6 +3596,13 @@ export declare class OmniTask extends Message<OmniTask> {
    */
   scheduledTime?: Timestamp;
 
+  /**
+   * holds extra details about how a task should be processed
+   *
+   * @generated from field: api.commons.OmniTaskConfig task_config = 15;
+   */
+  taskConfig?: OmniTaskConfig;
+
   constructor(data?: PartialMessage<OmniTask>);
 
   static readonly runtime: typeof proto3;
@@ -3594,6 +3642,42 @@ export declare class OmniTask_Details extends Message<OmniTask_Details> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniTask_Details;
 
   static equals(a: OmniTask_Details | PlainMessage<OmniTask_Details> | undefined, b: OmniTask_Details | PlainMessage<OmniTask_Details> | undefined): boolean;
+}
+
+/**
+ * TaskConfig -
+ *
+ * @generated from message api.commons.OmniTaskConfig
+ */
+export declare class OmniTaskConfig extends Message<OmniTaskConfig> {
+  /**
+   * @generated from field: api.commons.OmniConversationSkills skills = 1;
+   */
+  skills?: OmniConversationSkills;
+
+  /**
+   * @generated from field: google.protobuf.Duration absolute_timeout_duration = 2;
+   */
+  absoluteTimeoutDuration?: Duration;
+
+  /**
+   * @generated from field: google.protobuf.Duration agent_timeout_duration = 3;
+   */
+  agentTimeoutDuration?: Duration;
+
+  constructor(data?: PartialMessage<OmniTaskConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.OmniTaskConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniTaskConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniTaskConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniTaskConfig;
+
+  static equals(a: OmniTaskConfig | PlainMessage<OmniTaskConfig> | undefined, b: OmniTaskConfig | PlainMessage<OmniTaskConfig> | undefined): boolean;
 }
 
 /**

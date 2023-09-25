@@ -5,7 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { LearningOpportunity } from "../../commons/agent_training_pb.js";
+import type { CallIdentifier, LearningOpportunity } from "../../commons/agent_training_pb.js";
+import type { TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
  * CreateLearningOpportunityRequest represents a request to create a new learning opportunity.
@@ -65,6 +66,34 @@ export declare class CreateLearningOpportunityResponse extends Message<CreateLea
  * @generated from message api.v1alpha1.agenttraining.ListLearningOpportunitiesRequest
  */
 export declare class ListLearningOpportunitiesRequest extends Message<ListLearningOpportunitiesRequest> {
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated api.commons.CallIdentifier call_identifiers = 2;
+   */
+  callIdentifiers: CallIdentifier[];
+
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated int64 transcript_sids = 3;
+   */
+  transcriptSids: bigint[];
+
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated string agent_user_ids = 4;
+   */
+  agentUserIds: string[];
+
+  /**
+   * Optional.
+   *
+   * @generated from field: api.commons.TimeFilter created_at = 5;
+   */
+  createdAt?: TimeFilter;
+
   constructor(data?: PartialMessage<ListLearningOpportunitiesRequest>);
 
   static readonly runtime: typeof proto3;

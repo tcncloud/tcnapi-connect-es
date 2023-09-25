@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BoolValue, Int64Value, proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
+import { BoolValue, Duration, Int64Value, proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { TimeZoneWrapper } from "./org_pb.js";
 import { ChatColorProperties, ChatHeader } from "./chat_pb.js";
 import { Int64Id } from "./types_pb.js";
@@ -51,6 +51,7 @@ export const OmniCampaignModuleType = proto3.makeEnum(
   [
     {no: 0, name: "MODULE_TYPE_INBOUND"},
     {no: 1, name: "MODULE_TYPE_OUTBOUND"},
+    {no: 2, name: "MODULE_TYPE_MANUAL_APPROVAL"},
   ],
 );
 
@@ -224,6 +225,8 @@ export const OmniTaskStatus = proto3.makeEnum(
   "api.commons.OmniTaskStatus",
   [
     {no: 0, name: "OMNI_TASK_WAITING"},
+    {no: 1, name: "OMNI_TASK_WAITING_FOR_QUEUE"},
+    {no: 2, name: "OMNI_TASK_WAITING_FOR_APPROVAL"},
     {no: 100, name: "OMNI_TASK_SENDING"},
     {no: 110, name: "OMNI_TASK_SENDING_FAILED"},
     {no: 111, name: "OMNI_TASK_SENDING_INCOMPLETE"},
@@ -290,6 +293,7 @@ export const OmniConversationMetadataName = proto3.makeEnum(
     {no: 1, name: "CUSTOMER_WAIT_TIME"},
     {no: 2, name: "HANDLE_TIME"},
     {no: 3, name: "TRANSCRIPT_PATH"},
+    {no: 4, name: "OMNI_CONVERSATION_METADATA_NAME_FLOW_DATA"},
     {no: 10, name: "OMNI_CONVERSATION_METADATA_NAME_TIMER_WAIT"},
     {no: 100, name: "OMNI_CONVERSATION_METADATA_NAME_TIMER_TALK"},
     {no: 101, name: "OMNI_CONVERSATION_METADATA_NAME_TIMER_TALK_INITIAL_AGENT_RESPONSE"},
@@ -430,6 +434,8 @@ export const OmniCampaignModuleConfig = proto3.makeMessageType(
     { no: 17, name: "attachments", kind: "message", T: OmniAttachment, repeated: true },
     { no: 18, name: "compliance_rule_set_id", kind: "message", T: StringValue },
     { no: 19, name: "payment_portal_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 20, name: "flow_id", kind: "message", T: Int64Id },
+    { no: 21, name: "skills", kind: "message", T: OmniConversationSkills },
   ],
 );
 
@@ -1065,6 +1071,7 @@ export const OmniTask = proto3.makeMessageType(
     { no: 11, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "status_message", kind: "message", T: StringValue },
     { no: 13, name: "scheduled_time", kind: "message", T: Timestamp },
+    { no: 15, name: "task_config", kind: "message", T: OmniTaskConfig },
   ],
 );
 
@@ -1077,6 +1084,20 @@ export const OmniTask_Details = proto3.makeMessageType(
     { no: 1, name: "contact_list_name", kind: "message", T: StringValue },
   ],
   {localName: "OmniTask_Details"},
+);
+
+/**
+ * TaskConfig -
+ *
+ * @generated from message api.commons.OmniTaskConfig
+ */
+export const OmniTaskConfig = proto3.makeMessageType(
+  "api.commons.OmniTaskConfig",
+  () => [
+    { no: 1, name: "skills", kind: "message", T: OmniConversationSkills },
+    { no: 2, name: "absolute_timeout_duration", kind: "message", T: Duration },
+    { no: 3, name: "agent_timeout_duration", kind: "message", T: Duration },
+  ],
 );
 
 /**
