@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "./acd_pb.js";
 
@@ -91,16 +91,23 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
   description: string;
 
   /**
+   * Time the learning opportunity was created at.
+   *
+   * @generated from field: google.protobuf.Timestamp created_at = 10;
+   */
+  createdAt?: Timestamp;
+
+  /**
    * Title of the learning opportunity.
    *
-   * @generated from field: string title = 10;
+   * @generated from field: string title = 12;
    */
   title: string;
 
   /**
    * Current status (ex: OPEN, COMPLETED).
    *
-   * @generated from field: api.commons.LearningOpportunityStatus status = 11;
+   * @generated from field: api.commons.LearningOpportunityStatus status = 13;
    */
   status: LearningOpportunityStatus;
 

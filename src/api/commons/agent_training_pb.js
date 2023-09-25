@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { CallType_Enum } from "./acd_pb.js";
 
 /**
@@ -35,8 +35,9 @@ export const LearningOpportunity = proto3.makeMessageType(
     { no: 7, name: "start_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 8, name: "end_offset", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 9, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 11, name: "status", kind: "enum", T: proto3.getEnumType(LearningOpportunityStatus) },
+    { no: 10, name: "created_at", kind: "message", T: Timestamp },
+    { no: 12, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(LearningOpportunityStatus) },
   ],
 );
 
