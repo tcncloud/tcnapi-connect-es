@@ -159,6 +159,13 @@ export declare class DashboardSummary extends Message<DashboardSummary> {
    */
   resourceId: string;
 
+  /**
+   * standard dashboard flag
+   *
+   * @generated from field: bool standard_dashboard = 6;
+   */
+  standardDashboard: boolean;
+
   constructor(data?: PartialMessage<DashboardSummary>);
 
   static readonly runtime: typeof proto3;
@@ -207,6 +214,13 @@ export declare class SetDefaultDashboardRequest extends Message<SetDefaultDashbo
    * @generated from field: string dashboard_id = 1;
    */
   dashboardId: string;
+
+  /**
+   * resource id of the dashboard
+   *
+   * @generated from field: string resource_id = 2;
+   */
+  resourceId: string;
 
   constructor(data?: PartialMessage<SetDefaultDashboardRequest>);
 
@@ -642,6 +656,13 @@ export declare class Dashboard extends Message<Dashboard> {
    * @generated from field: string resource_id = 7;
    */
   resourceId: string;
+
+  /**
+   * standard dashboard flag
+   *
+   * @generated from field: bool standard_dashboard = 8;
+   */
+  standardDashboard: boolean;
 
   constructor(data?: PartialMessage<Dashboard>);
 
