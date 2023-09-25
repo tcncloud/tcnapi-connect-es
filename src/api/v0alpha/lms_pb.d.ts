@@ -9163,13 +9163,6 @@ export declare class EpicEntrypoint extends Message<EpicEntrypoint> {
    */
   timezone: string;
 
-  /**
-   * If process is enabled
-   *
-   * @generated from field: bool enabled = 12;
-   */
-  enabled: boolean;
-
   constructor(data?: PartialMessage<EpicEntrypoint>);
 
   static readonly runtime: typeof proto3;
