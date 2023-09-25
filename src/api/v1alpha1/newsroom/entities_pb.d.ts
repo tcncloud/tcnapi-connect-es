@@ -744,7 +744,7 @@ export declare class StoreNewsArticleImageRequest extends Message<StoreNewsArtic
 }
 
 /**
- * image for the news article
+ * image for the news article details
  *
  * @generated from message api.v1alpha1.newsroom.NewsArticleImage
  */
@@ -759,9 +759,9 @@ export declare class NewsArticleImage extends Message<NewsArticleImage> {
   /**
    * image for the new article
    *
-   * @generated from field: string new_article_sid = 2;
+   * @generated from field: int64 new_article_sid = 2;
    */
-  newArticleSid: string;
+  newArticleSid: bigint;
 
   /**
    * image content
@@ -829,9 +829,9 @@ export declare class ListImagesForNewsArticleRequest extends Message<ListImagesF
   /**
    * images for the new article sid
    *
-   * @generated from field: string new_article_sid = 1;
+   * @generated from field: int64 new_article_sid = 1;
    */
-  newArticleSid: string;
+  newArticleSid: bigint;
 
   constructor(data?: PartialMessage<ListImagesForNewsArticleRequest>);
 

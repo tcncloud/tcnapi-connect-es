@@ -295,7 +295,7 @@ export const StoreNewsArticleImageRequest = proto3.makeMessageType(
 );
 
 /**
- * image for the news article
+ * image for the news article details
  *
  * @generated from message api.v1alpha1.newsroom.NewsArticleImage
  */
@@ -303,7 +303,7 @@ export const NewsArticleImage = proto3.makeMessageType(
   "api.v1alpha1.newsroom.NewsArticleImage",
   () => [
     { no: 1, name: "uuid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "new_article_sid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
@@ -329,7 +329,7 @@ export const StoreNewsArticleImageResponse = proto3.makeMessageType(
 export const ListImagesForNewsArticleRequest = proto3.makeMessageType(
   "api.v1alpha1.newsroom.ListImagesForNewsArticleRequest",
   () => [
-    { no: 1, name: "new_article_sid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
