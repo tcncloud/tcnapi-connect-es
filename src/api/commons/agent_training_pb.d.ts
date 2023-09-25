@@ -14,11 +14,15 @@ import type { CallType_Enum } from "./acd_pb.js";
  */
 export declare enum LearningOpportunityStatus {
   /**
+   * Default status - Ready to be completed by the agent.
+   *
    * @generated from enum value: STATUS_OPEN = 0;
    */
   STATUS_OPEN = 0,
 
   /**
+   * Agent has completed the learning opportunity.
+   *
    * @generated from enum value: STATUS_COMPLETED = 1;
    */
   STATUS_COMPLETED = 1,
