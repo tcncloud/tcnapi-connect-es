@@ -1962,7 +1962,7 @@ export declare class TourAgentCollection extends Message<TourAgentCollection> {
 
   /**
    * The week pattern number to start scheduling this collection with.
-   * Each week a the next week pattern number in sequence will be scheduled, starting with the @first_week_pattern_number.
+   * Each the next week pattern number in sequence will be scheduled, starting with the @first_week_pattern_number.
    *
    * @generated from field: int32 first_week_pattern_number = 5;
    */

@@ -12278,7 +12278,7 @@ export declare class ListRequiredCallsIntervalsRes extends Message<ListRequiredC
  */
 export declare class CreateTourPatternReq extends Message<CreateTourPatternReq> {
   /**
-   * ID of the shift template to create the tour pattern for.
+   * ID of the Shift Template to create the Tour Pattern for.
    *
    * @generated from field: int64 shift_template_sid = 1;
    */
@@ -12306,6 +12306,8 @@ export declare class CreateTourPatternReq extends Message<CreateTourPatternReq> 
  */
 export declare class CreateTourPatternRes extends Message<CreateTourPatternRes> {
   /**
+   * ID of the newly created Tour Pattern
+   *
    * @generated from field: int64 tour_pattern_sid = 1;
    */
   tourPatternSid: bigint;
@@ -12332,7 +12334,7 @@ export declare class CreateTourPatternRes extends Message<CreateTourPatternRes> 
  */
 export declare class GetTourPatternReq extends Message<GetTourPatternReq> {
   /**
-   * ID of the shift template to get the tour pattern for.
+   * ID of the Shift Template to get the Tour Pattern for.
    *
    * @generated from field: int64 shift_template_sid = 1;
    */
@@ -12360,7 +12362,7 @@ export declare class GetTourPatternReq extends Message<GetTourPatternReq> {
  */
 export declare class GetTourPatternRes extends Message<GetTourPatternRes> {
   /**
-   * The requested tour pattern
+   * The requested Tour Pattern
    *
    * @generated from field: api.commons.TourPattern tour_pattern = 1;
    */
@@ -12438,7 +12440,7 @@ export declare class DeleteTourPatternRes extends Message<DeleteTourPatternRes> 
  */
 export declare class CreateTourWeekPatternReq extends Message<CreateTourWeekPatternReq> {
   /**
-   * ID of the tour pattern to create the tour week pattern for.
+   * ID of the Tour Pattern to create the tour week pattern for.
    *
    * @generated from field: int64 tour_pattern_sid = 1;
    */
@@ -12466,7 +12468,7 @@ export declare class CreateTourWeekPatternReq extends Message<CreateTourWeekPatt
  */
 export declare class CreateTourWeekPatternRes extends Message<CreateTourWeekPatternRes> {
   /**
-   * ID of the newly created tour pattern.
+   * ID of the newly created Tour Pattern.
    *
    * @generated from field: int64 tour_week_pattern_sid = 1;
    */
@@ -12522,6 +12524,8 @@ export declare class ListTourWeekPatternsReq extends Message<ListTourWeekPattern
  */
 export declare class ListTourWeekPatternsRes extends Message<ListTourWeekPatternsRes> {
   /**
+   * The requested Tour Week Patterns.
+   *
    * @generated from field: repeated api.commons.TourWeekPattern tour_week_patterns = 1;
    */
   tourWeekPatterns: TourWeekPattern[];
@@ -12627,7 +12631,7 @@ export declare class CreateTourShiftInstanceConfigReq extends Message<CreateTour
  */
 export declare class CreateTourShiftInstanceConfigRes extends Message<CreateTourShiftInstanceConfigRes> {
   /**
-   * ID of the newly created tour shift instance config.
+   * ID of the newly created Tour Shift Instance Config.
    *
    * @generated from field: int64 tour_shift_instance_config_sid = 1;
    */
@@ -12704,7 +12708,7 @@ export declare class UpdateTourShiftInstanceConfigRes extends Message<UpdateTour
  */
 export declare class ListTourShiftInstanceConfigsReq extends Message<ListTourShiftInstanceConfigsReq> {
   /**
-   * IDs of the tour week patterns to get the child tour shift instance configs for.
+   * IDs of the tour week patterns to get the child Tour Shift Instance Configs for.
    *
    * @generated from field: repeated int64 tour_week_pattern_sids = 1;
    */
@@ -12732,7 +12736,7 @@ export declare class ListTourShiftInstanceConfigsReq extends Message<ListTourShi
  */
 export declare class ListTourShiftInstanceConfigsRes extends Message<ListTourShiftInstanceConfigsRes> {
   /**
-   * Requested tour shift instance configs.
+   * Requested Tour Shift Instance Configs.
    *
    * @generated from field: repeated api.commons.TourShiftInstanceConfig tour_shift_instance_configs = 1;
    */
@@ -12760,7 +12764,7 @@ export declare class ListTourShiftInstanceConfigsRes extends Message<ListTourShi
  */
 export declare class DeleteTourShiftInstanceConfigsReq extends Message<DeleteTourShiftInstanceConfigsReq> {
   /**
-   * IDs of the tour shift instance configs to be deleted.
+   * IDs of the Tour Shift Instance Configs to be deleted.
    *
    * @generated from field: repeated int64 tour_shift_instance_config_sids = 1;
    */
@@ -12809,7 +12813,7 @@ export declare class DeleteTourShiftInstanceConfigsRes extends Message<DeleteTou
  */
 export declare class CreateTourShiftSegmentConfigReq extends Message<CreateTourShiftSegmentConfigReq> {
   /**
-   * The tour shift segment config to create.
+   * The tour Shift Segment Config to Create.
    *
    * @generated from field: api.commons.TourShiftSegmentConfig tour_shift_segment_config = 1;
    */
@@ -12837,7 +12841,7 @@ export declare class CreateTourShiftSegmentConfigReq extends Message<CreateTourS
  */
 export declare class CreateTourShiftSegmentConfigRes extends Message<CreateTourShiftSegmentConfigRes> {
   /**
-   * ID of the newly created tour shift segment config.
+   * ID of the newly created Tour shift Segment Config.
    *
    * @generated from field: int64 tour_shift_segment_config_sid = 1;
    */
@@ -12865,7 +12869,7 @@ export declare class CreateTourShiftSegmentConfigRes extends Message<CreateTourS
  */
 export declare class UpdateTourShiftSegmentConfigReq extends Message<UpdateTourShiftSegmentConfigReq> {
   /**
-   * The tour shift segment config to update.
+   * The Tour Shift Segment Config to update.
    *
    * @generated from field: api.commons.TourShiftSegmentConfig tour_shift_segment_config = 1;
    */
@@ -12914,7 +12918,7 @@ export declare class UpdateTourShiftSegmentConfigRes extends Message<UpdateTourS
  */
 export declare class ListTourShiftSegmentConfigsReq extends Message<ListTourShiftSegmentConfigsReq> {
   /**
-   * IDs of the tour shift instance configs to get the child tour shift segment configs for.
+   * IDs of the Tour Shift Instance Configs to get the child Tour Shift Segment Configs for.
    *
    * @generated from field: repeated int64 tour_shift_instance_config_sids = 1;
    */
@@ -12942,7 +12946,7 @@ export declare class ListTourShiftSegmentConfigsReq extends Message<ListTourShif
  */
 export declare class ListTourShiftSegmentConfigsRes extends Message<ListTourShiftSegmentConfigsRes> {
   /**
-   * Requested tour shift segment configs.
+   * Requested Tour Shift Segment Configs.
    *
    * @generated from field: repeated api.commons.TourShiftSegmentConfig tour_shift_segment_configs = 1;
    */
@@ -12970,7 +12974,7 @@ export declare class ListTourShiftSegmentConfigsRes extends Message<ListTourShif
  */
 export declare class DeleteTourShiftSegmentConfigsReq extends Message<DeleteTourShiftSegmentConfigsReq> {
   /**
-   * IDs of the tour shift segment configs to delete.
+   * IDs of the Tour Shift Segment Configs to delete.
    *
    * @generated from field: repeated int64 tour_shift_segment_config_sids = 1;
    */
@@ -13019,7 +13023,7 @@ export declare class DeleteTourShiftSegmentConfigsRes extends Message<DeleteTour
  */
 export declare class CreateTourAgentCollectionReq extends Message<CreateTourAgentCollectionReq> {
   /**
-   * The tour agent collection to create.
+   * The Tour Agent Collection to create.
    *
    * @generated from field: api.commons.TourAgentCollection tour_agent_collection = 1;
    */
@@ -13047,7 +13051,7 @@ export declare class CreateTourAgentCollectionReq extends Message<CreateTourAgen
  */
 export declare class CreateTourAgentCollectionRes extends Message<CreateTourAgentCollectionRes> {
   /**
-   * ID of the newly created tour agent collection.
+   * ID of the newly created Tour Agent Collection.
    *
    * @generated from field: int64 tour_agent_collection_sid = 1;
    */
@@ -13075,7 +13079,7 @@ export declare class CreateTourAgentCollectionRes extends Message<CreateTourAgen
  */
 export declare class UpdateTourAgentCollectionReq extends Message<UpdateTourAgentCollectionReq> {
   /**
-   * The tour agent collection to update.
+   * The Tour Agent Collection to update.
    *
    * @generated from field: api.commons.TourAgentCollection tour_agent_collection = 1;
    */
@@ -13124,7 +13128,7 @@ export declare class UpdateTourAgentCollectionRes extends Message<UpdateTourAgen
  */
 export declare class ListTourAgentCollectionsReq extends Message<ListTourAgentCollectionsReq> {
   /**
-   * ID of the tour pattern to get the child tour agent collections for.
+   * ID of the tour pattern to get the child Tour Agent Collections for.
    *
    * @generated from field: int64 tour_pattern_sid = 1;
    */
@@ -13152,7 +13156,7 @@ export declare class ListTourAgentCollectionsReq extends Message<ListTourAgentCo
  */
 export declare class ListTourAgentCollectionsRes extends Message<ListTourAgentCollectionsRes> {
   /**
-   * Requested tour agent collections.
+   * Requested Tour Agent Collections.
    *
    * @generated from field: repeated api.commons.TourAgentCollection tour_agent_collections = 1;
    */
@@ -13180,7 +13184,7 @@ export declare class ListTourAgentCollectionsRes extends Message<ListTourAgentCo
  */
 export declare class DeleteTourAgentCollectionsReq extends Message<DeleteTourAgentCollectionsReq> {
   /**
-   * IDs of the tour agent collections to be deleted.
+   * IDs of the Tour Agent Collections to be deleted.
    * Any associations with WFM Agent SIDS for these Collections will also be deleted.
    *
    * @generated from field: repeated int64 tour_agent_collection_sids = 1;
@@ -13237,7 +13241,7 @@ export declare class CreateTourAgentCollectionWFMAgentsReq extends Message<Creat
   wfmAgentSids: bigint[];
 
   /**
-   * ID of the tour agent collection that the @wfm_agent_sids will belong to.
+   * ID of the Tour Agent Collection that the @wfm_agent_sids will belong to.
    *
    * @generated from field: int64 tour_agent_collection_sid = 2;
    */
@@ -13377,7 +13381,7 @@ export declare class ListTourAgentCollectionWFMAgentsRes_SidMapping extends Mess
  */
 export declare class DeleteTourAgentCollectionWFMAgentsReq extends Message<DeleteTourAgentCollectionWFMAgentsReq> {
   /**
-   * ID of the wfm agents to delete from @tour_agent_collection_sid.
+   * ID of the WFM Agents to delete from @tour_agent_collection_sid.
    * If no wfm_angent_sids are provided, all will be removed for @tour_agent_collection_sid.
    *
    * @generated from field: repeated int64 wfm_agent_sids = 1;
