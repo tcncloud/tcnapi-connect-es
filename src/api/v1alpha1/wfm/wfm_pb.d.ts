@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillProfileCategory, SkillType_Enum, TourAgentCollection, TourPattern, TourShiftInstanceConfig, TourShiftSegmentConfig, TourWeekPattern } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -12272,6 +12272,288 @@ export declare class ListRequiredCallsIntervalsRes extends Message<ListRequiredC
 }
 
 /**
+ * Represents a TourShiftSegmentConfig
+ *
+ * @generated from message api.v1alpha1.wfm.TourShiftSegmentConfig
+ */
+export declare class TourShiftSegmentConfig extends Message<TourShiftSegmentConfig> {
+  /**
+   * The unique ID of the tour shift segment config.
+   *
+   * @generated from field: int64 tour_shift_segment_config_sid = 1;
+   */
+  tourShiftSegmentConfigSid: bigint;
+
+  /**
+   * The ID of the parent tour shift instance config
+   *
+   * @generated from field: int64 tour_shift_instance_config_sid = 2;
+   */
+  tourShiftInstanceConfigSid: bigint;
+
+  /**
+   * The minute within the shift instance config where the shift segment config starts.
+   *
+   * @generated from field: int32 start_minute_in_shift = 3;
+   */
+  startMinuteInShift: number;
+
+  /**
+   * The number of minutes wide that the segment covers.
+   *
+   * @generated from field: int32 width_in_minutes = 4;
+   */
+  widthInMinutes: number;
+
+  /**
+   * The ID of the scheduling activity that the segment will schedule.
+   *
+   * @generated from field: int64 scheduling_activity_sid = 5;
+   */
+  schedulingActivitySid: bigint;
+
+  constructor(data?: PartialMessage<TourShiftSegmentConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourShiftSegmentConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourShiftSegmentConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourShiftSegmentConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourShiftSegmentConfig;
+
+  static equals(a: TourShiftSegmentConfig | PlainMessage<TourShiftSegmentConfig> | undefined, b: TourShiftSegmentConfig | PlainMessage<TourShiftSegmentConfig> | undefined): boolean;
+}
+
+/**
+ * Represents a TourShiftInstanceConfig
+ *
+ * @generated from message api.v1alpha1.wfm.TourShiftInstanceConfig
+ */
+export declare class TourShiftInstanceConfig extends Message<TourShiftInstanceConfig> {
+  /**
+   * The unique ID of the tour shift instance config.
+   *
+   * @generated from field: int64 tour_shift_instance_config_sid = 1;
+   */
+  tourShiftInstanceConfigSid: bigint;
+
+  /**
+   * The ID of the tour week pattern that the tour shift instance config belongs to.
+   *
+   * @generated from field: int64 tour_week_pattern_sid = 2;
+   */
+  tourWeekPatternSid: bigint;
+
+  /**
+   * The number of minutes after the start of week UTC for the shift instance config to start.
+   * May not be greater than 10080, as that would begin during the next week.
+   *
+   * @generated from field: int32 start_minute_in_week = 3;
+   */
+  startMinuteInWeek: number;
+
+  /**
+   * The number of minutes wide that the tour shift instance config covers.
+   *
+   * @generated from field: int32 width_in_minutes = 4;
+   */
+  widthInMinutes: number;
+
+  /**
+   * The tour shift segment configs that are associated with @tour_shift_instance_config_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftSegmentConfig member_tour_shift_segment_configs = 5;
+   */
+  memberTourShiftSegmentConfigs: TourShiftSegmentConfig[];
+
+  constructor(data?: PartialMessage<TourShiftInstanceConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourShiftInstanceConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourShiftInstanceConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourShiftInstanceConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourShiftInstanceConfig;
+
+  static equals(a: TourShiftInstanceConfig | PlainMessage<TourShiftInstanceConfig> | undefined, b: TourShiftInstanceConfig | PlainMessage<TourShiftInstanceConfig> | undefined): boolean;
+}
+
+/**
+ * Represents a TourWeekPattern
+ *
+ * @generated from message api.v1alpha1.wfm.TourWeekPattern
+ */
+export declare class TourWeekPattern extends Message<TourWeekPattern> {
+  /**
+   * The unique ID of the tour week pattern.
+   *
+   * @generated from field: int64 tour_week_pattern_sid = 1;
+   */
+  tourWeekPatternSid: bigint;
+
+  /**
+   * The ID of the tour pattern that the tour week pattern belongs to.
+   *
+   * @generated from field: int64 tour_pattern_sid = 2;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The tour week patterns place within the sequence of tour week patterns that belong to @tour_pattern_sid.
+   *
+   * @generated from field: int32 week_pattern_number = 3;
+   */
+  weekPatternNumber: number;
+
+  /**
+   * The tour shift instance configs associated with @tour_week_pattern_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftInstanceConfig member_tour_shift_instance_configs = 4;
+   */
+  memberTourShiftInstanceConfigs: TourShiftInstanceConfig[];
+
+  constructor(data?: PartialMessage<TourWeekPattern>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourWeekPattern";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourWeekPattern;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourWeekPattern;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourWeekPattern;
+
+  static equals(a: TourWeekPattern | PlainMessage<TourWeekPattern> | undefined, b: TourWeekPattern | PlainMessage<TourWeekPattern> | undefined): boolean;
+}
+
+/**
+ * Represents a TourAgentCollection
+ *
+ * @generated from message api.v1alpha1.wfm.TourAgentCollection
+ */
+export declare class TourAgentCollection extends Message<TourAgentCollection> {
+  /**
+   * The unique ID of this tour agent collection sid.
+   *
+   * @generated from field: int64 tour_agent_collection_sid = 1;
+   */
+  tourAgentCollectionSid: bigint;
+
+  /**
+   * The ID of the tour pattern that the tour agent collection is associated with.
+   *
+   * @generated from field: int64 tour_pattern_sid = 2;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The minimum number of agents that are required to be scheduled using this collection.
+   *
+   * @generated from field: int32 min_agents_to_schedule = 3;
+   */
+  minAgentsToSchedule: number;
+
+  /**
+   * The maximum number of agents that are allowed to be scheduled using this collection.
+   *
+   * @generated from field: int32 max_agents_to_schedule = 4;
+   */
+  maxAgentsToSchedule: number;
+
+  /**
+   * The week pattern number to start scheduling this collection with.
+   * Each the next week pattern number in sequence will be scheduled, starting with the @first_week_pattern_number.
+   *
+   * @generated from field: int32 first_week_pattern_number = 5;
+   */
+  firstWeekPatternNumber: number;
+
+  /**
+   * The name used to describe this tour agent collection to the user.
+   *
+   * @generated from field: string name = 6;
+   */
+  name: string;
+
+  /**
+   * The IDs of any wfm agents associated with @tour_collection_sid.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 7;
+   */
+  wfmAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<TourAgentCollection>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourAgentCollection";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourAgentCollection;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourAgentCollection;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourAgentCollection;
+
+  static equals(a: TourAgentCollection | PlainMessage<TourAgentCollection> | undefined, b: TourAgentCollection | PlainMessage<TourAgentCollection> | undefined): boolean;
+}
+
+/**
+ * Represents a TourPattern
+ *
+ * @generated from message api.v1alpha1.wfm.TourPattern
+ */
+export declare class TourPattern extends Message<TourPattern> {
+  /**
+   * The unique ID of this tour pattern sid.
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The ID of the shift template that the tour pattern belongs to.
+   *
+   * @generated from field: int64 shift_template_sid = 2;
+   */
+  shiftTemplateSid: bigint;
+
+  /**
+   * The tour week patterns associated with @tour_pattern_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourWeekPattern member_tour_week_patterns = 3;
+   */
+  memberTourWeekPatterns: TourWeekPattern[];
+
+  /**
+   * The tour agent collection associated with @tour_pattern_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourAgentCollection member_tour_agent_collections = 4;
+   */
+  memberTourAgentCollections: TourAgentCollection[];
+
+  constructor(data?: PartialMessage<TourPattern>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourPattern";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourPattern;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourPattern;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourPattern;
+
+  static equals(a: TourPattern | PlainMessage<TourPattern> | undefined, b: TourPattern | PlainMessage<TourPattern> | undefined): boolean;
+}
+
+/**
  * Request message for the CreateTourPattern RPC.
  *
  * @generated from message api.v1alpha1.wfm.CreateTourPatternReq
@@ -12364,7 +12646,7 @@ export declare class GetTourPatternRes extends Message<GetTourPatternRes> {
   /**
    * The requested Tour Pattern
    *
-   * @generated from field: api.commons.TourPattern tour_pattern = 1;
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
    */
   tourPattern?: TourPattern;
 
@@ -12526,7 +12808,7 @@ export declare class ListTourWeekPatternsRes extends Message<ListTourWeekPattern
   /**
    * The requested Tour Week Patterns.
    *
-   * @generated from field: repeated api.commons.TourWeekPattern tour_week_patterns = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.TourWeekPattern tour_week_patterns = 1;
    */
   tourWeekPatterns: TourWeekPattern[];
 
@@ -12605,7 +12887,7 @@ export declare class CreateTourShiftInstanceConfigReq extends Message<CreateTour
   /**
    * The Tour Shift Instance Config to create.
    *
-   * @generated from field: api.commons.TourShiftInstanceConfig tour_shift_instance_config = 1;
+   * @generated from field: api.v1alpha1.wfm.TourShiftInstanceConfig tour_shift_instance_config = 1;
    */
   tourShiftInstanceConfig?: TourShiftInstanceConfig;
 
@@ -12661,7 +12943,7 @@ export declare class UpdateTourShiftInstanceConfigReq extends Message<UpdateTour
   /**
    * The Tour Shift Instance Config to update.
    *
-   * @generated from field: api.commons.TourShiftInstanceConfig tour_shift_instance_config = 1;
+   * @generated from field: api.v1alpha1.wfm.TourShiftInstanceConfig tour_shift_instance_config = 1;
    */
   tourShiftInstanceConfig?: TourShiftInstanceConfig;
 
@@ -12738,7 +13020,7 @@ export declare class ListTourShiftInstanceConfigsRes extends Message<ListTourShi
   /**
    * Requested Tour Shift Instance Configs.
    *
-   * @generated from field: repeated api.commons.TourShiftInstanceConfig tour_shift_instance_configs = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftInstanceConfig tour_shift_instance_configs = 1;
    */
   tourShiftInstanceConfigs: TourShiftInstanceConfig[];
 
@@ -12815,7 +13097,7 @@ export declare class CreateTourShiftSegmentConfigReq extends Message<CreateTourS
   /**
    * The tour Shift Segment Config to Create.
    *
-   * @generated from field: api.commons.TourShiftSegmentConfig tour_shift_segment_config = 1;
+   * @generated from field: api.v1alpha1.wfm.TourShiftSegmentConfig tour_shift_segment_config = 1;
    */
   tourShiftSegmentConfig?: TourShiftSegmentConfig;
 
@@ -12871,7 +13153,7 @@ export declare class UpdateTourShiftSegmentConfigReq extends Message<UpdateTourS
   /**
    * The Tour Shift Segment Config to update.
    *
-   * @generated from field: api.commons.TourShiftSegmentConfig tour_shift_segment_config = 1;
+   * @generated from field: api.v1alpha1.wfm.TourShiftSegmentConfig tour_shift_segment_config = 1;
    */
   tourShiftSegmentConfig?: TourShiftSegmentConfig;
 
@@ -12948,7 +13230,7 @@ export declare class ListTourShiftSegmentConfigsRes extends Message<ListTourShif
   /**
    * Requested Tour Shift Segment Configs.
    *
-   * @generated from field: repeated api.commons.TourShiftSegmentConfig tour_shift_segment_configs = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftSegmentConfig tour_shift_segment_configs = 1;
    */
   tourShiftSegmentConfigs: TourShiftSegmentConfig[];
 
@@ -13025,7 +13307,7 @@ export declare class CreateTourAgentCollectionReq extends Message<CreateTourAgen
   /**
    * The Tour Agent Collection to create.
    *
-   * @generated from field: api.commons.TourAgentCollection tour_agent_collection = 1;
+   * @generated from field: api.v1alpha1.wfm.TourAgentCollection tour_agent_collection = 1;
    */
   tourAgentCollection?: TourAgentCollection;
 
@@ -13081,7 +13363,7 @@ export declare class UpdateTourAgentCollectionReq extends Message<UpdateTourAgen
   /**
    * The Tour Agent Collection to update.
    *
-   * @generated from field: api.commons.TourAgentCollection tour_agent_collection = 1;
+   * @generated from field: api.v1alpha1.wfm.TourAgentCollection tour_agent_collection = 1;
    */
   tourAgentCollection?: TourAgentCollection;
 
@@ -13158,7 +13440,7 @@ export declare class ListTourAgentCollectionsRes extends Message<ListTourAgentCo
   /**
    * Requested Tour Agent Collections.
    *
-   * @generated from field: repeated api.commons.TourAgentCollection tour_agent_collections = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.TourAgentCollection tour_agent_collections = 1;
    */
   tourAgentCollections: TourAgentCollection[];
 
