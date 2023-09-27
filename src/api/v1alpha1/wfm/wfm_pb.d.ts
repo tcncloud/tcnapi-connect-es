@@ -13820,11 +13820,11 @@ export declare class GenerateTourWeekPatternsReq extends Message<GenerateTourWee
  */
 export declare class GenerateTourWeekPatternsRes extends Message<GenerateTourWeekPatternsRes> {
   /**
-   * A tour pattern containing the newly generated tour pattern weeks in the member field.
+   * A list of tour week patterns containing the newly generated tour pattern weeks in the member field.
    *
-   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   * @generated from field: repeated api.v1alpha1.wfm.TourWeekPattern tour_week_patterns = 1;
    */
-  tourPattern?: TourPattern;
+  tourWeekPatterns: TourWeekPattern[];
 
   /**
    * Reports any errors preventing @tour_pattern from being generated.

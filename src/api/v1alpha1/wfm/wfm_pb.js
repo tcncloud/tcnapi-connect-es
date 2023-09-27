@@ -4841,7 +4841,7 @@ export const GenerateTourWeekPatternsReq = proto3.makeMessageType(
 export const GenerateTourWeekPatternsRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.GenerateTourWeekPatternsRes",
   () => [
-    { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+    { no: 1, name: "tour_week_patterns", kind: "message", T: TourWeekPattern, repeated: true },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );
