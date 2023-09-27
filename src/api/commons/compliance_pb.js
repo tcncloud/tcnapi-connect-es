@@ -135,7 +135,7 @@ export const Rule = proto3.makeMessageType(
     { no: 3, name: "sub_entity", kind: "enum", T: proto3.getEnumType(SubEntity) },
     { no: 4, name: "selectors", kind: "message", T: Selector, repeated: true },
     { no: 6, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "predicates", kind: "message", T: Predicate },
+    { no: 7, name: "predicate", kind: "message", T: Predicate },
   ],
 );
 
@@ -217,31 +217,31 @@ export const FrequencyExp = proto3.makeMessageType(
     { no: 4, name: "dispositions", kind: "message", T: DispositionMod },
     { no: 5, name: "field_names", kind: "message", T: FieldNamesMod },
     { no: 6, name: "checking_entities", kind: "message", T: EntityExp, repeated: true },
-    { no: 7, name: "predicate", kind: "message", T: ModPredicate },
+    { no: 7, name: "matching", kind: "message", T: MatchingMod },
   ],
 );
 
 /**
- * @generated from message api.commons.Mod
+ * @generated from message api.commons.MatchingMod
  */
-export const Mod = proto3.makeMessageType(
-  "api.commons.Mod",
+export const MatchingMod = proto3.makeMessageType(
+  "api.commons.MatchingMod",
+  () => [
+    { no: 1, name: "and", kind: "message", T: MatchingMod, repeated: true },
+    { no: 2, name: "or", kind: "message", T: MatchingMod, repeated: true },
+    { no: 3, name: "not", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "mod", kind: "message", T: MatchingEntity },
+  ],
+);
+
+/**
+ * @generated from message api.commons.MatchingEntity
+ */
+export const MatchingEntity = proto3.makeMessageType(
+  "api.commons.MatchingEntity",
   () => [
     { no: 1, name: "results", kind: "message", T: ResultsMod },
     { no: 2, name: "dispositions", kind: "message", T: DispositionMod },
-  ],
-);
-
-/**
- * @generated from message api.commons.ModPredicate
- */
-export const ModPredicate = proto3.makeMessageType(
-  "api.commons.ModPredicate",
-  () => [
-    { no: 1, name: "and", kind: "message", T: ModPredicate, repeated: true },
-    { no: 2, name: "or", kind: "message", T: ModPredicate, repeated: true },
-    { no: 3, name: "not", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 4, name: "mod", kind: "message", T: Mod },
   ],
 );
 

@@ -263,9 +263,9 @@ export declare class Rule extends Message<Rule> {
   ruleText: string;
 
   /**
-   * @generated from field: api.commons.Predicate predicates = 7;
+   * @generated from field: api.commons.Predicate predicate = 7;
    */
-  predicates?: Predicate;
+  predicate?: Predicate;
 
   constructor(data?: PartialMessage<Rule>);
 
@@ -537,9 +537,9 @@ export declare class FrequencyExp extends Message<FrequencyExp> {
   checkingEntities: EntityExp[];
 
   /**
-   * @generated from field: api.commons.ModPredicate predicate = 7;
+   * @generated from field: api.commons.MatchingMod matching = 7;
    */
-  predicate?: ModPredicate;
+  matching?: MatchingMod;
 
   constructor(data?: PartialMessage<FrequencyExp>);
 
@@ -557,9 +557,48 @@ export declare class FrequencyExp extends Message<FrequencyExp> {
 }
 
 /**
- * @generated from message api.commons.Mod
+ * @generated from message api.commons.MatchingMod
  */
-export declare class Mod extends Message<Mod> {
+export declare class MatchingMod extends Message<MatchingMod> {
+  /**
+   * @generated from field: repeated api.commons.MatchingMod and = 1;
+   */
+  and: MatchingMod[];
+
+  /**
+   * @generated from field: repeated api.commons.MatchingMod or = 2;
+   */
+  or: MatchingMod[];
+
+  /**
+   * @generated from field: bool not = 3;
+   */
+  not: boolean;
+
+  /**
+   * @generated from field: api.commons.MatchingEntity mod = 4;
+   */
+  mod?: MatchingEntity;
+
+  constructor(data?: PartialMessage<MatchingMod>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.MatchingMod";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MatchingMod;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MatchingMod;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MatchingMod;
+
+  static equals(a: MatchingMod | PlainMessage<MatchingMod> | undefined, b: MatchingMod | PlainMessage<MatchingMod> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.MatchingEntity
+ */
+export declare class MatchingEntity extends Message<MatchingEntity> {
   /**
    * @generated from field: api.commons.ResultsMod results = 1;
    */
@@ -570,58 +609,19 @@ export declare class Mod extends Message<Mod> {
    */
   dispositions?: DispositionMod;
 
-  constructor(data?: PartialMessage<Mod>);
+  constructor(data?: PartialMessage<MatchingEntity>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.Mod";
+  static readonly typeName = "api.commons.MatchingEntity";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Mod;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MatchingEntity;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Mod;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MatchingEntity;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Mod;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MatchingEntity;
 
-  static equals(a: Mod | PlainMessage<Mod> | undefined, b: Mod | PlainMessage<Mod> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.ModPredicate
- */
-export declare class ModPredicate extends Message<ModPredicate> {
-  /**
-   * @generated from field: repeated api.commons.ModPredicate and = 1;
-   */
-  and: ModPredicate[];
-
-  /**
-   * @generated from field: repeated api.commons.ModPredicate or = 2;
-   */
-  or: ModPredicate[];
-
-  /**
-   * @generated from field: bool not = 3;
-   */
-  not: boolean;
-
-  /**
-   * @generated from field: api.commons.Mod mod = 4;
-   */
-  mod?: Mod;
-
-  constructor(data?: PartialMessage<ModPredicate>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.ModPredicate";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ModPredicate;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ModPredicate;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ModPredicate;
-
-  static equals(a: ModPredicate | PlainMessage<ModPredicate> | undefined, b: ModPredicate | PlainMessage<ModPredicate> | undefined): boolean;
+  static equals(a: MatchingEntity | PlainMessage<MatchingEntity> | undefined, b: MatchingEntity | PlainMessage<MatchingEntity> | undefined): boolean;
 }
 
 /**
