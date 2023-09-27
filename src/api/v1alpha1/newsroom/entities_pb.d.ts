@@ -715,3 +715,164 @@ export declare class GetNewsForUserResponse extends Message<GetNewsForUserRespon
   static equals(a: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined, b: GetNewsForUserResponse | PlainMessage<GetNewsForUserResponse> | undefined): boolean;
 }
 
+/**
+ * request to upload image for the news article
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsArticleImageRequest
+ */
+export declare class StoreNewsArticleImageRequest extends Message<StoreNewsArticleImageRequest> {
+  /**
+   * NewsArticleImage
+   *
+   * @generated from field: api.v1alpha1.newsroom.NewsArticleImage image = 1;
+   */
+  image?: NewsArticleImage;
+
+  constructor(data?: PartialMessage<StoreNewsArticleImageRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.StoreNewsArticleImageRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreNewsArticleImageRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreNewsArticleImageRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreNewsArticleImageRequest;
+
+  static equals(a: StoreNewsArticleImageRequest | PlainMessage<StoreNewsArticleImageRequest> | undefined, b: StoreNewsArticleImageRequest | PlainMessage<StoreNewsArticleImageRequest> | undefined): boolean;
+}
+
+/**
+ * image for the news article details
+ *
+ * @generated from message api.v1alpha1.newsroom.NewsArticleImage
+ */
+export declare class NewsArticleImage extends Message<NewsArticleImage> {
+  /**
+   * unique name of the image
+   *
+   * @generated from field: string uuid = 1;
+   */
+  uuid: string;
+
+  /**
+   * image for the new article
+   *
+   * @generated from field: int64 new_article_sid = 2;
+   */
+  newArticleSid: bigint;
+
+  /**
+   * image content
+   *
+   * @generated from field: string content = 3;
+   */
+  content: string;
+
+  /**
+   * download image url
+   *
+   * @generated from field: string download_url = 4;
+   */
+  downloadUrl: string;
+
+  constructor(data?: PartialMessage<NewsArticleImage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.NewsArticleImage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): NewsArticleImage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): NewsArticleImage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): NewsArticleImage;
+
+  static equals(a: NewsArticleImage | PlainMessage<NewsArticleImage> | undefined, b: NewsArticleImage | PlainMessage<NewsArticleImage> | undefined): boolean;
+}
+
+/**
+ * response to uploaded image
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsArticleImageResponse
+ */
+export declare class StoreNewsArticleImageResponse extends Message<StoreNewsArticleImageResponse> {
+  /**
+   * stored image details
+   *
+   * @generated from field: api.v1alpha1.newsroom.NewsArticleImage image = 1;
+   */
+  image?: NewsArticleImage;
+
+  constructor(data?: PartialMessage<StoreNewsArticleImageResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.StoreNewsArticleImageResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StoreNewsArticleImageResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StoreNewsArticleImageResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StoreNewsArticleImageResponse;
+
+  static equals(a: StoreNewsArticleImageResponse | PlainMessage<StoreNewsArticleImageResponse> | undefined, b: StoreNewsArticleImageResponse | PlainMessage<StoreNewsArticleImageResponse> | undefined): boolean;
+}
+
+/**
+ * request to list all images news article
+ *
+ * @generated from message api.v1alpha1.newsroom.ListImagesForNewsArticleRequest
+ */
+export declare class ListImagesForNewsArticleRequest extends Message<ListImagesForNewsArticleRequest> {
+  /**
+   * images for the new article sid
+   *
+   * @generated from field: int64 new_article_sid = 1;
+   */
+  newArticleSid: bigint;
+
+  constructor(data?: PartialMessage<ListImagesForNewsArticleRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.ListImagesForNewsArticleRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListImagesForNewsArticleRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListImagesForNewsArticleRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListImagesForNewsArticleRequest;
+
+  static equals(a: ListImagesForNewsArticleRequest | PlainMessage<ListImagesForNewsArticleRequest> | undefined, b: ListImagesForNewsArticleRequest | PlainMessage<ListImagesForNewsArticleRequest> | undefined): boolean;
+}
+
+/**
+ * response to list all images for the news article
+ *
+ * @generated from message api.v1alpha1.newsroom.ListImagesForNewsArticleResponse
+ */
+export declare class ListImagesForNewsArticleResponse extends Message<ListImagesForNewsArticleResponse> {
+  /**
+   * images for the news article
+   *
+   * @generated from field: repeated api.v1alpha1.newsroom.NewsArticleImage news_article_images = 1;
+   */
+  newsArticleImages: NewsArticleImage[];
+
+  constructor(data?: PartialMessage<ListImagesForNewsArticleResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.newsroom.ListImagesForNewsArticleResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListImagesForNewsArticleResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListImagesForNewsArticleResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListImagesForNewsArticleResponse;
+
+  static equals(a: ListImagesForNewsArticleResponse | PlainMessage<ListImagesForNewsArticleResponse> | undefined, b: ListImagesForNewsArticleResponse | PlainMessage<ListImagesForNewsArticleResponse> | undefined): boolean;
+}
+

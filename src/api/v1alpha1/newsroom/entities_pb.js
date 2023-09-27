@@ -282,3 +282,66 @@ export const GetNewsForUserResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * request to upload image for the news article
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsArticleImageRequest
+ */
+export const StoreNewsArticleImageRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.StoreNewsArticleImageRequest",
+  () => [
+    { no: 1, name: "image", kind: "message", T: NewsArticleImage },
+  ],
+);
+
+/**
+ * image for the news article details
+ *
+ * @generated from message api.v1alpha1.newsroom.NewsArticleImage
+ */
+export const NewsArticleImage = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.NewsArticleImage",
+  () => [
+    { no: 1, name: "uuid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to uploaded image
+ *
+ * @generated from message api.v1alpha1.newsroom.StoreNewsArticleImageResponse
+ */
+export const StoreNewsArticleImageResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.StoreNewsArticleImageResponse",
+  () => [
+    { no: 1, name: "image", kind: "message", T: NewsArticleImage },
+  ],
+);
+
+/**
+ * request to list all images news article
+ *
+ * @generated from message api.v1alpha1.newsroom.ListImagesForNewsArticleRequest
+ */
+export const ListImagesForNewsArticleRequest = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.ListImagesForNewsArticleRequest",
+  () => [
+    { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * response to list all images for the news article
+ *
+ * @generated from message api.v1alpha1.newsroom.ListImagesForNewsArticleResponse
+ */
+export const ListImagesForNewsArticleResponse = proto3.makeMessageType(
+  "api.v1alpha1.newsroom.ListImagesForNewsArticleResponse",
+  () => [
+    { no: 1, name: "news_article_images", kind: "message", T: NewsArticleImage, repeated: true },
+  ],
+);
+
