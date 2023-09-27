@@ -12610,6 +12610,64 @@ export declare class CreateTourPatternRes extends Message<CreateTourPatternRes> 
 }
 
 /**
+ * Request message for the UpsertTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpsertTourPatternWithMembersReq
+ */
+export declare class UpsertTourPatternWithMembersReq extends Message<UpsertTourPatternWithMembersReq> {
+  /**
+   * The tour pattern to upsert, including any members.
+   * Must include at least one Tour Week Pattern and one Tour Agent Collection.
+   * Will replace the existing Tour Pattern and all members in database for @tour_pattern.shift_template_sid.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   */
+  tourPattern?: TourPattern;
+
+  constructor(data?: PartialMessage<UpsertTourPatternWithMembersReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpsertTourPatternWithMembersReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertTourPatternWithMembersReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertTourPatternWithMembersReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertTourPatternWithMembersReq;
+
+  static equals(a: UpsertTourPatternWithMembersReq | PlainMessage<UpsertTourPatternWithMembersReq> | undefined, b: UpsertTourPatternWithMembersReq | PlainMessage<UpsertTourPatternWithMembersReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpsertTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpsertTourPatternWithMembersRes
+ */
+export declare class UpsertTourPatternWithMembersRes extends Message<UpsertTourPatternWithMembersRes> {
+  /**
+   * The newly created tour pattern, returned with new SIDs and week pattern numbers.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   */
+  tourPattern?: TourPattern;
+
+  constructor(data?: PartialMessage<UpsertTourPatternWithMembersRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpsertTourPatternWithMembersRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpsertTourPatternWithMembersRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpsertTourPatternWithMembersRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpsertTourPatternWithMembersRes;
+
+  static equals(a: UpsertTourPatternWithMembersRes | PlainMessage<UpsertTourPatternWithMembersRes> | undefined, b: UpsertTourPatternWithMembersRes | PlainMessage<UpsertTourPatternWithMembersRes> | undefined): boolean;
+}
+
+/**
  * Request message for the GetTourPattern RPC.
  *
  * @generated from message api.v1alpha1.wfm.GetTourPatternReq
@@ -13711,5 +13769,82 @@ export declare class DeleteTourAgentCollectionWFMAgentsRes extends Message<Delet
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionWFMAgentsRes;
 
   static equals(a: DeleteTourAgentCollectionWFMAgentsRes | PlainMessage<DeleteTourAgentCollectionWFMAgentsRes> | undefined, b: DeleteTourAgentCollectionWFMAgentsRes | PlainMessage<DeleteTourAgentCollectionWFMAgentsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the GenerateTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GenerateTourWeekPatternsReq
+ */
+export declare class GenerateTourWeekPatternsReq extends Message<GenerateTourWeekPatternsReq> {
+  /**
+   * ID of the shift template to create the tour week patterns for.
+   *
+   * @generated from field: int64 target_shift_template_sid = 1;
+   */
+  targetShiftTemplateSid: bigint;
+
+  /**
+   * The number of week patterns to be generated.
+   *
+   * @generated from field: int32 num_weeks_in_tour = 2;
+   */
+  numWeeksInTour: number;
+
+  /**
+   * ID of the schedule scenario that @target_shift_template_sid belong to.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 3;
+   */
+  scheduleScenarioSid: bigint;
+
+  constructor(data?: PartialMessage<GenerateTourWeekPatternsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GenerateTourWeekPatternsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateTourWeekPatternsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateTourWeekPatternsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateTourWeekPatternsReq;
+
+  static equals(a: GenerateTourWeekPatternsReq | PlainMessage<GenerateTourWeekPatternsReq> | undefined, b: GenerateTourWeekPatternsReq | PlainMessage<GenerateTourWeekPatternsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the GenerateTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GenerateTourWeekPatternsRes
+ */
+export declare class GenerateTourWeekPatternsRes extends Message<GenerateTourWeekPatternsRes> {
+  /**
+   * A tour pattern containing the newly generated tour pattern weeks in the member field.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   */
+  tourPattern?: TourPattern;
+
+  /**
+   * Reports any errors preventing @tour_pattern from being generated.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<GenerateTourWeekPatternsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GenerateTourWeekPatternsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateTourWeekPatternsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateTourWeekPatternsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateTourWeekPatternsRes;
+
+  static equals(a: GenerateTourWeekPatternsRes | PlainMessage<GenerateTourWeekPatternsRes> | undefined, b: GenerateTourWeekPatternsRes | PlainMessage<GenerateTourWeekPatternsRes> | undefined): boolean;
 }
 
