@@ -262,6 +262,11 @@ export declare class Rule extends Message<Rule> {
    */
   ruleText: string;
 
+  /**
+   * @generated from field: api.commons.Predicate predicates = 7;
+   */
+  predicates?: Predicate;
+
   constructor(data?: PartialMessage<Rule>);
 
   static readonly runtime: typeof proto3;
@@ -275,6 +280,45 @@ export declare class Rule extends Message<Rule> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Rule;
 
   static equals(a: Rule | PlainMessage<Rule> | undefined, b: Rule | PlainMessage<Rule> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.Predicate
+ */
+export declare class Predicate extends Message<Predicate> {
+  /**
+   * @generated from field: repeated api.commons.Predicate and = 1;
+   */
+  and: Predicate[];
+
+  /**
+   * @generated from field: repeated api.commons.Predicate or = 2;
+   */
+  or: Predicate[];
+
+  /**
+   * @generated from field: bool not = 3;
+   */
+  not: boolean;
+
+  /**
+   * @generated from field: api.commons.Selector selector = 4;
+   */
+  selector?: Selector;
+
+  constructor(data?: PartialMessage<Predicate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.Predicate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Predicate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Predicate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Predicate;
+
+  static equals(a: Predicate | PlainMessage<Predicate> | undefined, b: Predicate | PlainMessage<Predicate> | undefined): boolean;
 }
 
 /**
@@ -492,6 +536,11 @@ export declare class FrequencyExp extends Message<FrequencyExp> {
    */
   checkingEntities: EntityExp[];
 
+  /**
+   * @generated from field: api.commons.ModPredicate predicate = 7;
+   */
+  predicate?: ModPredicate;
+
   constructor(data?: PartialMessage<FrequencyExp>);
 
   static readonly runtime: typeof proto3;
@@ -505,6 +554,74 @@ export declare class FrequencyExp extends Message<FrequencyExp> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FrequencyExp;
 
   static equals(a: FrequencyExp | PlainMessage<FrequencyExp> | undefined, b: FrequencyExp | PlainMessage<FrequencyExp> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.Mod
+ */
+export declare class Mod extends Message<Mod> {
+  /**
+   * @generated from field: api.commons.ResultsMod results = 1;
+   */
+  results?: ResultsMod;
+
+  /**
+   * @generated from field: api.commons.DispositionMod dispositions = 2;
+   */
+  dispositions?: DispositionMod;
+
+  constructor(data?: PartialMessage<Mod>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.Mod";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Mod;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Mod;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Mod;
+
+  static equals(a: Mod | PlainMessage<Mod> | undefined, b: Mod | PlainMessage<Mod> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ModPredicate
+ */
+export declare class ModPredicate extends Message<ModPredicate> {
+  /**
+   * @generated from field: repeated api.commons.ModPredicate and = 1;
+   */
+  and: ModPredicate[];
+
+  /**
+   * @generated from field: repeated api.commons.ModPredicate or = 2;
+   */
+  or: ModPredicate[];
+
+  /**
+   * @generated from field: bool not = 3;
+   */
+  not: boolean;
+
+  /**
+   * @generated from field: api.commons.Mod mod = 4;
+   */
+  mod?: Mod;
+
+  constructor(data?: PartialMessage<ModPredicate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ModPredicate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ModPredicate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ModPredicate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ModPredicate;
+
+  static equals(a: ModPredicate | PlainMessage<ModPredicate> | undefined, b: ModPredicate | PlainMessage<ModPredicate> | undefined): boolean;
 }
 
 /**
