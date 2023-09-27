@@ -12271,3 +12271,1445 @@ export declare class ListRequiredCallsIntervalsRes extends Message<ListRequiredC
   static equals(a: ListRequiredCallsIntervalsRes | PlainMessage<ListRequiredCallsIntervalsRes> | undefined, b: ListRequiredCallsIntervalsRes | PlainMessage<ListRequiredCallsIntervalsRes> | undefined): boolean;
 }
 
+/**
+ * Represents a TourShiftSegmentConfig
+ *
+ * @generated from message api.v1alpha1.wfm.TourShiftSegmentConfig
+ */
+export declare class TourShiftSegmentConfig extends Message<TourShiftSegmentConfig> {
+  /**
+   * The unique ID of the tour shift segment config.
+   *
+   * @generated from field: int64 tour_shift_segment_config_sid = 1;
+   */
+  tourShiftSegmentConfigSid: bigint;
+
+  /**
+   * The ID of the parent tour shift instance config
+   *
+   * @generated from field: int64 tour_shift_instance_config_sid = 2;
+   */
+  tourShiftInstanceConfigSid: bigint;
+
+  /**
+   * The minute within the shift instance config where the shift segment config starts.
+   *
+   * @generated from field: int32 start_minute_in_shift = 3;
+   */
+  startMinuteInShift: number;
+
+  /**
+   * The number of minutes wide that the segment covers.
+   *
+   * @generated from field: int32 width_in_minutes = 4;
+   */
+  widthInMinutes: number;
+
+  /**
+   * The ID of the scheduling activity that the segment will schedule.
+   *
+   * @generated from field: int64 scheduling_activity_sid = 5;
+   */
+  schedulingActivitySid: bigint;
+
+  constructor(data?: PartialMessage<TourShiftSegmentConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourShiftSegmentConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourShiftSegmentConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourShiftSegmentConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourShiftSegmentConfig;
+
+  static equals(a: TourShiftSegmentConfig | PlainMessage<TourShiftSegmentConfig> | undefined, b: TourShiftSegmentConfig | PlainMessage<TourShiftSegmentConfig> | undefined): boolean;
+}
+
+/**
+ * Represents a TourShiftInstanceConfig
+ *
+ * @generated from message api.v1alpha1.wfm.TourShiftInstanceConfig
+ */
+export declare class TourShiftInstanceConfig extends Message<TourShiftInstanceConfig> {
+  /**
+   * The unique ID of the tour shift instance config.
+   *
+   * @generated from field: int64 tour_shift_instance_config_sid = 1;
+   */
+  tourShiftInstanceConfigSid: bigint;
+
+  /**
+   * The ID of the tour week pattern that the tour shift instance config belongs to.
+   *
+   * @generated from field: int64 tour_week_pattern_sid = 2;
+   */
+  tourWeekPatternSid: bigint;
+
+  /**
+   * The number of minutes after the start of week UTC for the shift instance config to start.
+   * May not be greater than 10080, as that would begin during the next week.
+   *
+   * @generated from field: int32 start_minute_in_week = 3;
+   */
+  startMinuteInWeek: number;
+
+  /**
+   * The number of minutes wide that the tour shift instance config covers.
+   *
+   * @generated from field: int32 width_in_minutes = 4;
+   */
+  widthInMinutes: number;
+
+  /**
+   * The tour shift segment configs that are associated with @tour_shift_instance_config_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftSegmentConfig member_tour_shift_segment_configs = 5;
+   */
+  memberTourShiftSegmentConfigs: TourShiftSegmentConfig[];
+
+  constructor(data?: PartialMessage<TourShiftInstanceConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourShiftInstanceConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourShiftInstanceConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourShiftInstanceConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourShiftInstanceConfig;
+
+  static equals(a: TourShiftInstanceConfig | PlainMessage<TourShiftInstanceConfig> | undefined, b: TourShiftInstanceConfig | PlainMessage<TourShiftInstanceConfig> | undefined): boolean;
+}
+
+/**
+ * Represents a TourWeekPattern
+ *
+ * @generated from message api.v1alpha1.wfm.TourWeekPattern
+ */
+export declare class TourWeekPattern extends Message<TourWeekPattern> {
+  /**
+   * The unique ID of the tour week pattern.
+   *
+   * @generated from field: int64 tour_week_pattern_sid = 1;
+   */
+  tourWeekPatternSid: bigint;
+
+  /**
+   * The ID of the tour pattern that the tour week pattern belongs to.
+   *
+   * @generated from field: int64 tour_pattern_sid = 2;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The tour week patterns place within the sequence of tour week patterns that belong to @tour_pattern_sid.
+   *
+   * @generated from field: int32 week_pattern_number = 3;
+   */
+  weekPatternNumber: number;
+
+  /**
+   * The tour shift instance configs associated with @tour_week_pattern_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftInstanceConfig member_tour_shift_instance_configs = 4;
+   */
+  memberTourShiftInstanceConfigs: TourShiftInstanceConfig[];
+
+  constructor(data?: PartialMessage<TourWeekPattern>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourWeekPattern";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourWeekPattern;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourWeekPattern;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourWeekPattern;
+
+  static equals(a: TourWeekPattern | PlainMessage<TourWeekPattern> | undefined, b: TourWeekPattern | PlainMessage<TourWeekPattern> | undefined): boolean;
+}
+
+/**
+ * Represents a TourAgentCollection
+ *
+ * @generated from message api.v1alpha1.wfm.TourAgentCollection
+ */
+export declare class TourAgentCollection extends Message<TourAgentCollection> {
+  /**
+   * The unique ID of this tour agent collection sid.
+   *
+   * @generated from field: int64 tour_agent_collection_sid = 1;
+   */
+  tourAgentCollectionSid: bigint;
+
+  /**
+   * The ID of the tour pattern that the tour agent collection is associated with.
+   *
+   * @generated from field: int64 tour_pattern_sid = 2;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The minimum number of agents that are required to be scheduled using this collection.
+   *
+   * @generated from field: int32 min_agents_to_schedule = 3;
+   */
+  minAgentsToSchedule: number;
+
+  /**
+   * The maximum number of agents that are allowed to be scheduled using this collection.
+   *
+   * @generated from field: int32 max_agents_to_schedule = 4;
+   */
+  maxAgentsToSchedule: number;
+
+  /**
+   * The week pattern number to start scheduling this collection with.
+   * Each the next week pattern number in sequence will be scheduled, starting with the @first_week_pattern_number.
+   *
+   * @generated from field: int32 first_week_pattern_number = 5;
+   */
+  firstWeekPatternNumber: number;
+
+  /**
+   * The name used to describe this tour agent collection to the user.
+   *
+   * @generated from field: string name = 6;
+   */
+  name: string;
+
+  /**
+   * The IDs of any wfm agents associated with @tour_collection_sid.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 7;
+   */
+  wfmAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<TourAgentCollection>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourAgentCollection";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourAgentCollection;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourAgentCollection;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourAgentCollection;
+
+  static equals(a: TourAgentCollection | PlainMessage<TourAgentCollection> | undefined, b: TourAgentCollection | PlainMessage<TourAgentCollection> | undefined): boolean;
+}
+
+/**
+ * Represents a TourPattern
+ *
+ * @generated from message api.v1alpha1.wfm.TourPattern
+ */
+export declare class TourPattern extends Message<TourPattern> {
+  /**
+   * The unique ID of this tour pattern sid.
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  /**
+   * The ID of the shift template that the tour pattern belongs to.
+   *
+   * @generated from field: int64 shift_template_sid = 2;
+   */
+  shiftTemplateSid: bigint;
+
+  /**
+   * The tour week patterns associated with @tour_pattern_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourWeekPattern member_tour_week_patterns = 3;
+   */
+  memberTourWeekPatterns: TourWeekPattern[];
+
+  /**
+   * The tour agent collection associated with @tour_pattern_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourAgentCollection member_tour_agent_collections = 4;
+   */
+  memberTourAgentCollections: TourAgentCollection[];
+
+  constructor(data?: PartialMessage<TourPattern>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.TourPattern";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TourPattern;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TourPattern;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TourPattern;
+
+  static equals(a: TourPattern | PlainMessage<TourPattern> | undefined, b: TourPattern | PlainMessage<TourPattern> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourPatternReq
+ */
+export declare class CreateTourPatternReq extends Message<CreateTourPatternReq> {
+  /**
+   * ID of the Shift Template to create the Tour Pattern for.
+   *
+   * @generated from field: int64 shift_template_sid = 1;
+   */
+  shiftTemplateSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourPatternReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourPatternReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourPatternReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourPatternReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourPatternReq;
+
+  static equals(a: CreateTourPatternReq | PlainMessage<CreateTourPatternReq> | undefined, b: CreateTourPatternReq | PlainMessage<CreateTourPatternReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourPatternRes
+ */
+export declare class CreateTourPatternRes extends Message<CreateTourPatternRes> {
+  /**
+   * ID of the newly created Tour Pattern
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourPatternRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourPatternRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourPatternRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourPatternRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourPatternRes;
+
+  static equals(a: CreateTourPatternRes | PlainMessage<CreateTourPatternRes> | undefined, b: CreateTourPatternRes | PlainMessage<CreateTourPatternRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternReq
+ */
+export declare class GetTourPatternReq extends Message<GetTourPatternReq> {
+  /**
+   * ID of the Shift Template to get the Tour Pattern for.
+   *
+   * @generated from field: int64 shift_template_sid = 1;
+   */
+  shiftTemplateSid: bigint;
+
+  constructor(data?: PartialMessage<GetTourPatternReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternReq;
+
+  static equals(a: GetTourPatternReq | PlainMessage<GetTourPatternReq> | undefined, b: GetTourPatternReq | PlainMessage<GetTourPatternReq> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternRes
+ */
+export declare class GetTourPatternRes extends Message<GetTourPatternRes> {
+  /**
+   * The requested Tour Pattern
+   *
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   */
+  tourPattern?: TourPattern;
+
+  constructor(data?: PartialMessage<GetTourPatternRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternRes;
+
+  static equals(a: GetTourPatternRes | PlainMessage<GetTourPatternRes> | undefined, b: GetTourPatternRes | PlainMessage<GetTourPatternRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the DeleteTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourPatternReq
+ */
+export declare class DeleteTourPatternReq extends Message<DeleteTourPatternReq> {
+  /**
+   * ID of the tour pattern to delete.
+   * If any entities belong to @tour_pattern_sid they will be deleted too.
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  constructor(data?: PartialMessage<DeleteTourPatternReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourPatternReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourPatternReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourPatternReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourPatternReq;
+
+  static equals(a: DeleteTourPatternReq | PlainMessage<DeleteTourPatternReq> | undefined, b: DeleteTourPatternReq | PlainMessage<DeleteTourPatternReq> | undefined): boolean;
+}
+
+/**
+ * Request message for the DeleteTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourPatternRes
+ */
+export declare class DeleteTourPatternRes extends Message<DeleteTourPatternRes> {
+  constructor(data?: PartialMessage<DeleteTourPatternRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourPatternRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourPatternRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourPatternRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourPatternRes;
+
+  static equals(a: DeleteTourPatternRes | PlainMessage<DeleteTourPatternRes> | undefined, b: DeleteTourPatternRes | PlainMessage<DeleteTourPatternRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateTourWeekPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourWeekPatternReq
+ */
+export declare class CreateTourWeekPatternReq extends Message<CreateTourWeekPatternReq> {
+  /**
+   * ID of the Tour Pattern to create the tour week pattern for.
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourWeekPatternReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourWeekPatternReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourWeekPatternReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourWeekPatternReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourWeekPatternReq;
+
+  static equals(a: CreateTourWeekPatternReq | PlainMessage<CreateTourWeekPatternReq> | undefined, b: CreateTourWeekPatternReq | PlainMessage<CreateTourWeekPatternReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateTourWeekPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourWeekPatternRes
+ */
+export declare class CreateTourWeekPatternRes extends Message<CreateTourWeekPatternRes> {
+  /**
+   * ID of the newly created Tour Pattern.
+   *
+   * @generated from field: int64 tour_week_pattern_sid = 1;
+   */
+  tourWeekPatternSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourWeekPatternRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourWeekPatternRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourWeekPatternRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourWeekPatternRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourWeekPatternRes;
+
+  static equals(a: CreateTourWeekPatternRes | PlainMessage<CreateTourWeekPatternRes> | undefined, b: CreateTourWeekPatternRes | PlainMessage<CreateTourWeekPatternRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourWeekPatternsReq
+ */
+export declare class ListTourWeekPatternsReq extends Message<ListTourWeekPatternsReq> {
+  /**
+   * ID of the tour pattern that the @tour_week_patterns to retrieve belong to.
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  constructor(data?: PartialMessage<ListTourWeekPatternsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourWeekPatternsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourWeekPatternsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourWeekPatternsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourWeekPatternsReq;
+
+  static equals(a: ListTourWeekPatternsReq | PlainMessage<ListTourWeekPatternsReq> | undefined, b: ListTourWeekPatternsReq | PlainMessage<ListTourWeekPatternsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourWeekPatternsRes
+ */
+export declare class ListTourWeekPatternsRes extends Message<ListTourWeekPatternsRes> {
+  /**
+   * The requested Tour Week Patterns.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourWeekPattern tour_week_patterns = 1;
+   */
+  tourWeekPatterns: TourWeekPattern[];
+
+  constructor(data?: PartialMessage<ListTourWeekPatternsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourWeekPatternsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourWeekPatternsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourWeekPatternsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourWeekPatternsRes;
+
+  static equals(a: ListTourWeekPatternsRes | PlainMessage<ListTourWeekPatternsRes> | undefined, b: ListTourWeekPatternsRes | PlainMessage<ListTourWeekPatternsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the DeleteTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourWeekPatternsReq
+ */
+export declare class DeleteTourWeekPatternsReq extends Message<DeleteTourWeekPatternsReq> {
+  /**
+   * IDs of the tour week patterns to be deleted.
+   * Any member Configs will be deletes as well.
+   * If any Tour Agent Collections are using the @tour_week_pattern_sids, they must be deleted first.
+   *
+   * @generated from field: repeated int64 tour_week_pattern_sids = 1;
+   */
+  tourWeekPatternSids: bigint[];
+
+  constructor(data?: PartialMessage<DeleteTourWeekPatternsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourWeekPatternsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourWeekPatternsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourWeekPatternsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourWeekPatternsReq;
+
+  static equals(a: DeleteTourWeekPatternsReq | PlainMessage<DeleteTourWeekPatternsReq> | undefined, b: DeleteTourWeekPatternsReq | PlainMessage<DeleteTourWeekPatternsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the DeleteTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourWeekPatternsRes
+ */
+export declare class DeleteTourWeekPatternsRes extends Message<DeleteTourWeekPatternsRes> {
+  constructor(data?: PartialMessage<DeleteTourWeekPatternsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourWeekPatternsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourWeekPatternsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourWeekPatternsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourWeekPatternsRes;
+
+  static equals(a: DeleteTourWeekPatternsRes | PlainMessage<DeleteTourWeekPatternsRes> | undefined, b: DeleteTourWeekPatternsRes | PlainMessage<DeleteTourWeekPatternsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateTourShiftInstanceConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourShiftInstanceConfigReq
+ */
+export declare class CreateTourShiftInstanceConfigReq extends Message<CreateTourShiftInstanceConfigReq> {
+  /**
+   * The Tour Shift Instance Config to create.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourShiftInstanceConfig tour_shift_instance_config = 1;
+   */
+  tourShiftInstanceConfig?: TourShiftInstanceConfig;
+
+  constructor(data?: PartialMessage<CreateTourShiftInstanceConfigReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourShiftInstanceConfigReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourShiftInstanceConfigReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourShiftInstanceConfigReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourShiftInstanceConfigReq;
+
+  static equals(a: CreateTourShiftInstanceConfigReq | PlainMessage<CreateTourShiftInstanceConfigReq> | undefined, b: CreateTourShiftInstanceConfigReq | PlainMessage<CreateTourShiftInstanceConfigReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateTourShiftInstanceConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes
+ */
+export declare class CreateTourShiftInstanceConfigRes extends Message<CreateTourShiftInstanceConfigRes> {
+  /**
+   * ID of the newly created Tour Shift Instance Config.
+   *
+   * @generated from field: int64 tour_shift_instance_config_sid = 1;
+   */
+  tourShiftInstanceConfigSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourShiftInstanceConfigRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourShiftInstanceConfigRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourShiftInstanceConfigRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourShiftInstanceConfigRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourShiftInstanceConfigRes;
+
+  static equals(a: CreateTourShiftInstanceConfigRes | PlainMessage<CreateTourShiftInstanceConfigRes> | undefined, b: CreateTourShiftInstanceConfigRes | PlainMessage<CreateTourShiftInstanceConfigRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the UpdateTourShiftInstanceConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftInstanceConfigReq
+ */
+export declare class UpdateTourShiftInstanceConfigReq extends Message<UpdateTourShiftInstanceConfigReq> {
+  /**
+   * The Tour Shift Instance Config to update.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourShiftInstanceConfig tour_shift_instance_config = 1;
+   */
+  tourShiftInstanceConfig?: TourShiftInstanceConfig;
+
+  constructor(data?: PartialMessage<UpdateTourShiftInstanceConfigReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateTourShiftInstanceConfigReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTourShiftInstanceConfigReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTourShiftInstanceConfigReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTourShiftInstanceConfigReq;
+
+  static equals(a: UpdateTourShiftInstanceConfigReq | PlainMessage<UpdateTourShiftInstanceConfigReq> | undefined, b: UpdateTourShiftInstanceConfigReq | PlainMessage<UpdateTourShiftInstanceConfigReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateTourShiftInstanceConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftInstanceConfigRes
+ */
+export declare class UpdateTourShiftInstanceConfigRes extends Message<UpdateTourShiftInstanceConfigRes> {
+  constructor(data?: PartialMessage<UpdateTourShiftInstanceConfigRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateTourShiftInstanceConfigRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTourShiftInstanceConfigRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTourShiftInstanceConfigRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTourShiftInstanceConfigRes;
+
+  static equals(a: UpdateTourShiftInstanceConfigRes | PlainMessage<UpdateTourShiftInstanceConfigRes> | undefined, b: UpdateTourShiftInstanceConfigRes | PlainMessage<UpdateTourShiftInstanceConfigRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListTourShiftInstanceConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq
+ */
+export declare class ListTourShiftInstanceConfigsReq extends Message<ListTourShiftInstanceConfigsReq> {
+  /**
+   * IDs of the tour week patterns to get the child Tour Shift Instance Configs for.
+   *
+   * @generated from field: repeated int64 tour_week_pattern_sids = 1;
+   */
+  tourWeekPatternSids: bigint[];
+
+  constructor(data?: PartialMessage<ListTourShiftInstanceConfigsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourShiftInstanceConfigsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourShiftInstanceConfigsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourShiftInstanceConfigsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourShiftInstanceConfigsReq;
+
+  static equals(a: ListTourShiftInstanceConfigsReq | PlainMessage<ListTourShiftInstanceConfigsReq> | undefined, b: ListTourShiftInstanceConfigsReq | PlainMessage<ListTourShiftInstanceConfigsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListTourShiftInstanceConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourShiftInstanceConfigsRes
+ */
+export declare class ListTourShiftInstanceConfigsRes extends Message<ListTourShiftInstanceConfigsRes> {
+  /**
+   * Requested Tour Shift Instance Configs.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftInstanceConfig tour_shift_instance_configs = 1;
+   */
+  tourShiftInstanceConfigs: TourShiftInstanceConfig[];
+
+  constructor(data?: PartialMessage<ListTourShiftInstanceConfigsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourShiftInstanceConfigsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourShiftInstanceConfigsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourShiftInstanceConfigsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourShiftInstanceConfigsRes;
+
+  static equals(a: ListTourShiftInstanceConfigsRes | PlainMessage<ListTourShiftInstanceConfigsRes> | undefined, b: ListTourShiftInstanceConfigsRes | PlainMessage<ListTourShiftInstanceConfigsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the DeleteTourShiftInstanceConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq
+ */
+export declare class DeleteTourShiftInstanceConfigsReq extends Message<DeleteTourShiftInstanceConfigsReq> {
+  /**
+   * IDs of the Tour Shift Instance Configs to be deleted.
+   *
+   * @generated from field: repeated int64 tour_shift_instance_config_sids = 1;
+   */
+  tourShiftInstanceConfigSids: bigint[];
+
+  constructor(data?: PartialMessage<DeleteTourShiftInstanceConfigsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourShiftInstanceConfigsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourShiftInstanceConfigsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourShiftInstanceConfigsReq;
+
+  static equals(a: DeleteTourShiftInstanceConfigsReq | PlainMessage<DeleteTourShiftInstanceConfigsReq> | undefined, b: DeleteTourShiftInstanceConfigsReq | PlainMessage<DeleteTourShiftInstanceConfigsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the DeleteTourShiftInstanceConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsRes
+ */
+export declare class DeleteTourShiftInstanceConfigsRes extends Message<DeleteTourShiftInstanceConfigsRes> {
+  constructor(data?: PartialMessage<DeleteTourShiftInstanceConfigsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourShiftInstanceConfigsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourShiftInstanceConfigsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourShiftInstanceConfigsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourShiftInstanceConfigsRes;
+
+  static equals(a: DeleteTourShiftInstanceConfigsRes | PlainMessage<DeleteTourShiftInstanceConfigsRes> | undefined, b: DeleteTourShiftInstanceConfigsRes | PlainMessage<DeleteTourShiftInstanceConfigsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateTourShiftSegmentConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourShiftSegmentConfigReq
+ */
+export declare class CreateTourShiftSegmentConfigReq extends Message<CreateTourShiftSegmentConfigReq> {
+  /**
+   * The tour Shift Segment Config to Create.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourShiftSegmentConfig tour_shift_segment_config = 1;
+   */
+  tourShiftSegmentConfig?: TourShiftSegmentConfig;
+
+  constructor(data?: PartialMessage<CreateTourShiftSegmentConfigReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourShiftSegmentConfigReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourShiftSegmentConfigReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourShiftSegmentConfigReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourShiftSegmentConfigReq;
+
+  static equals(a: CreateTourShiftSegmentConfigReq | PlainMessage<CreateTourShiftSegmentConfigReq> | undefined, b: CreateTourShiftSegmentConfigReq | PlainMessage<CreateTourShiftSegmentConfigReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes
+ */
+export declare class CreateTourShiftSegmentConfigRes extends Message<CreateTourShiftSegmentConfigRes> {
+  /**
+   * ID of the newly created Tour shift Segment Config.
+   *
+   * @generated from field: int64 tour_shift_segment_config_sid = 1;
+   */
+  tourShiftSegmentConfigSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourShiftSegmentConfigRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourShiftSegmentConfigRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourShiftSegmentConfigRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourShiftSegmentConfigRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourShiftSegmentConfigRes;
+
+  static equals(a: CreateTourShiftSegmentConfigRes | PlainMessage<CreateTourShiftSegmentConfigRes> | undefined, b: CreateTourShiftSegmentConfigRes | PlainMessage<CreateTourShiftSegmentConfigRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the UpdateTourShiftSegmentConfig RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftSegmentConfigReq
+ */
+export declare class UpdateTourShiftSegmentConfigReq extends Message<UpdateTourShiftSegmentConfigReq> {
+  /**
+   * The Tour Shift Segment Config to update.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourShiftSegmentConfig tour_shift_segment_config = 1;
+   */
+  tourShiftSegmentConfig?: TourShiftSegmentConfig;
+
+  constructor(data?: PartialMessage<UpdateTourShiftSegmentConfigReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateTourShiftSegmentConfigReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTourShiftSegmentConfigReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTourShiftSegmentConfigReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTourShiftSegmentConfigReq;
+
+  static equals(a: UpdateTourShiftSegmentConfigReq | PlainMessage<UpdateTourShiftSegmentConfigReq> | undefined, b: UpdateTourShiftSegmentConfigReq | PlainMessage<UpdateTourShiftSegmentConfigReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateTourPattern RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourShiftSegmentConfigRes
+ */
+export declare class UpdateTourShiftSegmentConfigRes extends Message<UpdateTourShiftSegmentConfigRes> {
+  constructor(data?: PartialMessage<UpdateTourShiftSegmentConfigRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateTourShiftSegmentConfigRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTourShiftSegmentConfigRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTourShiftSegmentConfigRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTourShiftSegmentConfigRes;
+
+  static equals(a: UpdateTourShiftSegmentConfigRes | PlainMessage<UpdateTourShiftSegmentConfigRes> | undefined, b: UpdateTourShiftSegmentConfigRes | PlainMessage<UpdateTourShiftSegmentConfigRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListTourShiftSegmentConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq
+ */
+export declare class ListTourShiftSegmentConfigsReq extends Message<ListTourShiftSegmentConfigsReq> {
+  /**
+   * IDs of the Tour Shift Instance Configs to get the child Tour Shift Segment Configs for.
+   *
+   * @generated from field: repeated int64 tour_shift_instance_config_sids = 1;
+   */
+  tourShiftInstanceConfigSids: bigint[];
+
+  constructor(data?: PartialMessage<ListTourShiftSegmentConfigsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourShiftSegmentConfigsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourShiftSegmentConfigsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourShiftSegmentConfigsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourShiftSegmentConfigsReq;
+
+  static equals(a: ListTourShiftSegmentConfigsReq | PlainMessage<ListTourShiftSegmentConfigsReq> | undefined, b: ListTourShiftSegmentConfigsReq | PlainMessage<ListTourShiftSegmentConfigsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListTourShiftSegmentConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourShiftSegmentConfigsRes
+ */
+export declare class ListTourShiftSegmentConfigsRes extends Message<ListTourShiftSegmentConfigsRes> {
+  /**
+   * Requested Tour Shift Segment Configs.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourShiftSegmentConfig tour_shift_segment_configs = 1;
+   */
+  tourShiftSegmentConfigs: TourShiftSegmentConfig[];
+
+  constructor(data?: PartialMessage<ListTourShiftSegmentConfigsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourShiftSegmentConfigsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourShiftSegmentConfigsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourShiftSegmentConfigsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourShiftSegmentConfigsRes;
+
+  static equals(a: ListTourShiftSegmentConfigsRes | PlainMessage<ListTourShiftSegmentConfigsRes> | undefined, b: ListTourShiftSegmentConfigsRes | PlainMessage<ListTourShiftSegmentConfigsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the DeleteTourShiftSegmentConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq
+ */
+export declare class DeleteTourShiftSegmentConfigsReq extends Message<DeleteTourShiftSegmentConfigsReq> {
+  /**
+   * IDs of the Tour Shift Segment Configs to delete.
+   *
+   * @generated from field: repeated int64 tour_shift_segment_config_sids = 1;
+   */
+  tourShiftSegmentConfigSids: bigint[];
+
+  constructor(data?: PartialMessage<DeleteTourShiftSegmentConfigsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourShiftSegmentConfigsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourShiftSegmentConfigsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourShiftSegmentConfigsReq;
+
+  static equals(a: DeleteTourShiftSegmentConfigsReq | PlainMessage<DeleteTourShiftSegmentConfigsReq> | undefined, b: DeleteTourShiftSegmentConfigsReq | PlainMessage<DeleteTourShiftSegmentConfigsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the DeleteTourShiftSegmentConfigs RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsRes
+ */
+export declare class DeleteTourShiftSegmentConfigsRes extends Message<DeleteTourShiftSegmentConfigsRes> {
+  constructor(data?: PartialMessage<DeleteTourShiftSegmentConfigsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourShiftSegmentConfigsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourShiftSegmentConfigsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourShiftSegmentConfigsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourShiftSegmentConfigsRes;
+
+  static equals(a: DeleteTourShiftSegmentConfigsRes | PlainMessage<DeleteTourShiftSegmentConfigsRes> | undefined, b: DeleteTourShiftSegmentConfigsRes | PlainMessage<DeleteTourShiftSegmentConfigsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateTourAgentCollection RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourAgentCollectionReq
+ */
+export declare class CreateTourAgentCollectionReq extends Message<CreateTourAgentCollectionReq> {
+  /**
+   * The Tour Agent Collection to create.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourAgentCollection tour_agent_collection = 1;
+   */
+  tourAgentCollection?: TourAgentCollection;
+
+  constructor(data?: PartialMessage<CreateTourAgentCollectionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourAgentCollectionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourAgentCollectionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionReq;
+
+  static equals(a: CreateTourAgentCollectionReq | PlainMessage<CreateTourAgentCollectionReq> | undefined, b: CreateTourAgentCollectionReq | PlainMessage<CreateTourAgentCollectionReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateTourAgentCollection RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourAgentCollectionRes
+ */
+export declare class CreateTourAgentCollectionRes extends Message<CreateTourAgentCollectionRes> {
+  /**
+   * ID of the newly created Tour Agent Collection.
+   *
+   * @generated from field: int64 tour_agent_collection_sid = 1;
+   */
+  tourAgentCollectionSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourAgentCollectionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourAgentCollectionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourAgentCollectionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionRes;
+
+  static equals(a: CreateTourAgentCollectionRes | PlainMessage<CreateTourAgentCollectionRes> | undefined, b: CreateTourAgentCollectionRes | PlainMessage<CreateTourAgentCollectionRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the UpdateTourAgentCollection RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourAgentCollectionReq
+ */
+export declare class UpdateTourAgentCollectionReq extends Message<UpdateTourAgentCollectionReq> {
+  /**
+   * The Tour Agent Collection to update.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourAgentCollection tour_agent_collection = 1;
+   */
+  tourAgentCollection?: TourAgentCollection;
+
+  constructor(data?: PartialMessage<UpdateTourAgentCollectionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateTourAgentCollectionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTourAgentCollectionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTourAgentCollectionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTourAgentCollectionReq;
+
+  static equals(a: UpdateTourAgentCollectionReq | PlainMessage<UpdateTourAgentCollectionReq> | undefined, b: UpdateTourAgentCollectionReq | PlainMessage<UpdateTourAgentCollectionReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateTourAgentCollection RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateTourAgentCollectionRes
+ */
+export declare class UpdateTourAgentCollectionRes extends Message<UpdateTourAgentCollectionRes> {
+  constructor(data?: PartialMessage<UpdateTourAgentCollectionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateTourAgentCollectionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTourAgentCollectionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTourAgentCollectionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTourAgentCollectionRes;
+
+  static equals(a: UpdateTourAgentCollectionRes | PlainMessage<UpdateTourAgentCollectionRes> | undefined, b: UpdateTourAgentCollectionRes | PlainMessage<UpdateTourAgentCollectionRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListTourAgentCollections RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourAgentCollectionsReq
+ */
+export declare class ListTourAgentCollectionsReq extends Message<ListTourAgentCollectionsReq> {
+  /**
+   * ID of the tour pattern to get the child Tour Agent Collections for.
+   *
+   * @generated from field: int64 tour_pattern_sid = 1;
+   */
+  tourPatternSid: bigint;
+
+  constructor(data?: PartialMessage<ListTourAgentCollectionsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourAgentCollectionsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourAgentCollectionsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourAgentCollectionsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourAgentCollectionsReq;
+
+  static equals(a: ListTourAgentCollectionsReq | PlainMessage<ListTourAgentCollectionsReq> | undefined, b: ListTourAgentCollectionsReq | PlainMessage<ListTourAgentCollectionsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListTourAgentCollections RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourAgentCollectionsRes
+ */
+export declare class ListTourAgentCollectionsRes extends Message<ListTourAgentCollectionsRes> {
+  /**
+   * Requested Tour Agent Collections.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.TourAgentCollection tour_agent_collections = 1;
+   */
+  tourAgentCollections: TourAgentCollection[];
+
+  constructor(data?: PartialMessage<ListTourAgentCollectionsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourAgentCollectionsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourAgentCollectionsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourAgentCollectionsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourAgentCollectionsRes;
+
+  static equals(a: ListTourAgentCollectionsRes | PlainMessage<ListTourAgentCollectionsRes> | undefined, b: ListTourAgentCollectionsRes | PlainMessage<ListTourAgentCollectionsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the DeleteTourAgentCollections RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionsReq
+ */
+export declare class DeleteTourAgentCollectionsReq extends Message<DeleteTourAgentCollectionsReq> {
+  /**
+   * IDs of the Tour Agent Collections to be deleted.
+   * Any associations with WFM Agent SIDS for these Collections will also be deleted.
+   *
+   * @generated from field: repeated int64 tour_agent_collection_sids = 1;
+   */
+  tourAgentCollectionSids: bigint[];
+
+  constructor(data?: PartialMessage<DeleteTourAgentCollectionsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourAgentCollectionsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourAgentCollectionsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionsReq;
+
+  static equals(a: DeleteTourAgentCollectionsReq | PlainMessage<DeleteTourAgentCollectionsReq> | undefined, b: DeleteTourAgentCollectionsReq | PlainMessage<DeleteTourAgentCollectionsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the DeleteTourAgentCollections RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionsRes
+ */
+export declare class DeleteTourAgentCollectionsRes extends Message<DeleteTourAgentCollectionsRes> {
+  constructor(data?: PartialMessage<DeleteTourAgentCollectionsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourAgentCollectionsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourAgentCollectionsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionsRes;
+
+  static equals(a: DeleteTourAgentCollectionsRes | PlainMessage<DeleteTourAgentCollectionsRes> | undefined, b: DeleteTourAgentCollectionsRes | PlainMessage<DeleteTourAgentCollectionsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the CreateTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq
+ */
+export declare class CreateTourAgentCollectionWFMAgentsReq extends Message<CreateTourAgentCollectionWFMAgentsReq> {
+  /**
+   * ID of the wfm agents to add to @tour_agent_collection_sid.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 1;
+   */
+  wfmAgentSids: bigint[];
+
+  /**
+   * ID of the Tour Agent Collection that the @wfm_agent_sids will belong to.
+   *
+   * @generated from field: int64 tour_agent_collection_sid = 2;
+   */
+  tourAgentCollectionSid: bigint;
+
+  constructor(data?: PartialMessage<CreateTourAgentCollectionWFMAgentsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourAgentCollectionWFMAgentsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionWFMAgentsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionWFMAgentsReq;
+
+  static equals(a: CreateTourAgentCollectionWFMAgentsReq | PlainMessage<CreateTourAgentCollectionWFMAgentsReq> | undefined, b: CreateTourAgentCollectionWFMAgentsReq | PlainMessage<CreateTourAgentCollectionWFMAgentsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreateTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsRes
+ */
+export declare class CreateTourAgentCollectionWFMAgentsRes extends Message<CreateTourAgentCollectionWFMAgentsRes> {
+  constructor(data?: PartialMessage<CreateTourAgentCollectionWFMAgentsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateTourAgentCollectionWFMAgentsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTourAgentCollectionWFMAgentsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionWFMAgentsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTourAgentCollectionWFMAgentsRes;
+
+  static equals(a: CreateTourAgentCollectionWFMAgentsRes | PlainMessage<CreateTourAgentCollectionWFMAgentsRes> | undefined, b: CreateTourAgentCollectionWFMAgentsRes | PlainMessage<CreateTourAgentCollectionWFMAgentsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq
+ */
+export declare class ListTourAgentCollectionWFMAgentsReq extends Message<ListTourAgentCollectionWFMAgentsReq> {
+  /**
+   * ID of the Tour Agent Collections to get the @wfm_agent_pairings for.
+   *
+   * @generated from field: repeated int64 tour_agent_collection_sids = 1;
+   */
+  tourAgentCollectionSids: bigint[];
+
+  constructor(data?: PartialMessage<ListTourAgentCollectionWFMAgentsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourAgentCollectionWFMAgentsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourAgentCollectionWFMAgentsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourAgentCollectionWFMAgentsReq;
+
+  static equals(a: ListTourAgentCollectionWFMAgentsReq | PlainMessage<ListTourAgentCollectionWFMAgentsReq> | undefined, b: ListTourAgentCollectionWFMAgentsReq | PlainMessage<ListTourAgentCollectionWFMAgentsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes
+ */
+export declare class ListTourAgentCollectionWFMAgentsRes extends Message<ListTourAgentCollectionWFMAgentsRes> {
+  /**
+   * Requested WFM Agent SIDs.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping wfm_agent_pairings = 1;
+   */
+  wfmAgentPairings: ListTourAgentCollectionWFMAgentsRes_SidMapping[];
+
+  constructor(data?: PartialMessage<ListTourAgentCollectionWFMAgentsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourAgentCollectionWFMAgentsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourAgentCollectionWFMAgentsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourAgentCollectionWFMAgentsRes;
+
+  static equals(a: ListTourAgentCollectionWFMAgentsRes | PlainMessage<ListTourAgentCollectionWFMAgentsRes> | undefined, b: ListTourAgentCollectionWFMAgentsRes | PlainMessage<ListTourAgentCollectionWFMAgentsRes> | undefined): boolean;
+}
+
+/**
+ * Pair of IDs, to relate a Tour Agent Collection and a WFM Agent.
+ *
+ * @generated from message api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping
+ */
+export declare class ListTourAgentCollectionWFMAgentsRes_SidMapping extends Message<ListTourAgentCollectionWFMAgentsRes_SidMapping> {
+  /**
+   * ID of the Tour Agent Collection that the @wfm_agent_sid is associated with.
+   *
+   * @generated from field: int64 agent_collection_sid = 1;
+   */
+  agentCollectionSid: bigint;
+
+  /**
+   * ID of the WFM Agent that the agent_collection_sid is associated with.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 2;
+   */
+  wfmAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<ListTourAgentCollectionWFMAgentsRes_SidMapping>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListTourAgentCollectionWFMAgentsRes.SidMapping";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTourAgentCollectionWFMAgentsRes_SidMapping;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTourAgentCollectionWFMAgentsRes_SidMapping;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTourAgentCollectionWFMAgentsRes_SidMapping;
+
+  static equals(a: ListTourAgentCollectionWFMAgentsRes_SidMapping | PlainMessage<ListTourAgentCollectionWFMAgentsRes_SidMapping> | undefined, b: ListTourAgentCollectionWFMAgentsRes_SidMapping | PlainMessage<ListTourAgentCollectionWFMAgentsRes_SidMapping> | undefined): boolean;
+}
+
+/**
+ * Request message for the DeleteTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq
+ */
+export declare class DeleteTourAgentCollectionWFMAgentsReq extends Message<DeleteTourAgentCollectionWFMAgentsReq> {
+  /**
+   * ID of the WFM Agents to delete from @tour_agent_collection_sid.
+   * If no wfm_angent_sids are provided, all will be removed for @tour_agent_collection_sid.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 1;
+   */
+  wfmAgentSids: bigint[];
+
+  /**
+   * ID of the tour agent collection that the @wfm_agent_sids will be deleted from.
+   *
+   * @generated from field: int64 tour_agent_collection_sid = 2;
+   */
+  tourAgentCollectionSid: bigint;
+
+  constructor(data?: PartialMessage<DeleteTourAgentCollectionWFMAgentsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourAgentCollectionWFMAgentsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionWFMAgentsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionWFMAgentsReq;
+
+  static equals(a: DeleteTourAgentCollectionWFMAgentsReq | PlainMessage<DeleteTourAgentCollectionWFMAgentsReq> | undefined, b: DeleteTourAgentCollectionWFMAgentsReq | PlainMessage<DeleteTourAgentCollectionWFMAgentsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the DeleteTourAgentCollectionWFMAgents RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsRes
+ */
+export declare class DeleteTourAgentCollectionWFMAgentsRes extends Message<DeleteTourAgentCollectionWFMAgentsRes> {
+  constructor(data?: PartialMessage<DeleteTourAgentCollectionWFMAgentsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteTourAgentCollectionWFMAgentsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionWFMAgentsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteTourAgentCollectionWFMAgentsRes;
+
+  static equals(a: DeleteTourAgentCollectionWFMAgentsRes | PlainMessage<DeleteTourAgentCollectionWFMAgentsRes> | undefined, b: DeleteTourAgentCollectionWFMAgentsRes | PlainMessage<DeleteTourAgentCollectionWFMAgentsRes> | undefined): boolean;
+}
+
