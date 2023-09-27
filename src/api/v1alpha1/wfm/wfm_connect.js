@@ -291,6 +291,7 @@ export const WFM = {
      *   - grpc.Internal: error occurs when creating the inactive skill profile mapping.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.CreateInactiveSkillProfileMapping
+     * @deprecated
      */
     createInactiveSkillProfileMapping: {
       name: "CreateInactiveSkillProfileMapping",
@@ -324,6 +325,7 @@ export const WFM = {
      * 				            the given @inactive_skill_profile_sid is of an active skill profile.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.DisconnectInactiveSkillProfileMapping
+     * @deprecated
      */
     disconnectInactiveSkillProfileMapping: {
       name: "DisconnectInactiveSkillProfileMapping",
