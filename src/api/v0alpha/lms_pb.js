@@ -602,6 +602,7 @@ export const RecordFieldProto = proto3.makeMessageType(
     { no: 15, name: "err", kind: "message", T: Error, oneof: "payload" },
     { no: 16, name: "enriched_phone", kind: "message", T: EnrichedPhone, oneof: "payload" },
     { no: 17, name: "enriched_zip", kind: "message", T: EnrichedZip, oneof: "payload" },
+    { no: 18, name: "ehr_details", kind: "message", T: EHRDetails, oneof: "payload" },
   ],
 );
 
@@ -1731,6 +1732,23 @@ export const EnrichedZip = proto3.makeMessageType(
     { no: 25, name: "state_fips", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 26, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 27, name: "utc", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
+/**
+ * EHRDetails will be used to sort the flattened json data from EHR Bulk Data response into separate buckets
+ *
+ * @generated from message api.v0alpha.EHRDetails
+ */
+export const EHRDetails = proto3.makeMessageType(
+  "api.v0alpha.EHRDetails",
+  () => [
+    { no: 1, name: "display_collection", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "display_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "strings", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 4, name: "numbers", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 2 /* ScalarType.FLOAT */} },
+    { no: 5, name: "dates", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: DateTime} },
+    { no: 6, name: "bools", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 8 /* ScalarType.BOOL */} },
   ],
 );
 
