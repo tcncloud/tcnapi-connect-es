@@ -13,6 +13,7 @@ import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse, SearchFlagTr
 import { CreateFlagFilterRequest, DeleteFlagFilterRequest, DeleteFlagFilterResponse, FlagFilter, ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
 import { ListFlagSnapshotsRequest, ListFlagSnapshotsResponse } from "./flag_snapshot_pb.js";
 import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
+import { CreateCorrectionRequest, CreateCorrectionResponse } from "./correction_pb.js";
 
 /**
  * @generated from service api.v1alpha1.vanalytics.Vanalytics
@@ -331,6 +332,17 @@ export declare const Vanalytics: {
       readonly name: "ListFlagTranscriptFilters",
       readonly I: typeof ListFlagTranscriptFiltersRequest,
       readonly O: typeof ListFlagTranscriptFiltersResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateCorrection creates a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.CreateCorrection
+     */
+    readonly createCorrection: {
+      readonly name: "CreateCorrection",
+      readonly I: typeof CreateCorrectionRequest,
+      readonly O: typeof CreateCorrectionResponse,
       readonly kind: MethodKind.Unary,
     },
   }
