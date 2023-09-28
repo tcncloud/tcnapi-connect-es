@@ -60,6 +60,7 @@ export const Ticket = proto3.makeMessageType(
     { no: 19, name: "ticket_action", kind: "message", T: TicketAction, repeated: true },
     { no: 20, name: "ticket_status", kind: "enum", T: proto3.getEnumType(TicketStatus) },
     { no: 21, name: "ticket_assignee", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 22, name: "ticket_participant", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
@@ -91,6 +92,7 @@ export const TicketAction = proto3.makeMessageType(
     { no: 8, name: "state", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "action_skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 10, name: "action_sla_id", kind: "message", T: Sla, repeated: true },
+    { no: 11, name: "work_done_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

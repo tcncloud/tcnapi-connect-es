@@ -201,6 +201,13 @@ export declare class Ticket extends Message<Ticket> {
    */
   ticketAssignee: string[];
 
+  /**
+   * participant list
+   *
+   * @generated from field: repeated string ticket_participant = 22;
+   */
+  ticketParticipant: string[];
+
   constructor(data?: PartialMessage<Ticket>);
 
   static readonly runtime: typeof proto3;
@@ -314,6 +321,13 @@ export declare class TicketAction extends Message<TicketAction> {
    * @generated from field: repeated api.commons.Sla action_sla_id = 10;
    */
   actionSlaId: Sla[];
+
+  /**
+   * work done by
+   *
+   * @generated from field: string work_done_by = 11;
+   */
+  workDoneBy: string;
 
   constructor(data?: PartialMessage<TicketAction>);
 
