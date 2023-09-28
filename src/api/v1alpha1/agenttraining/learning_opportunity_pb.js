@@ -110,6 +110,31 @@ export const UpdateLearningOpportunityResponse = proto3.makeMessageType(
 );
 
 /**
+ * CompleteAgentLearningOpportunityRequest represents an agent
+ * request to complete a learning opportunity assigned to that agent.
+ *
+ * @generated from message api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityRequest
+ */
+export const CompleteAgentLearningOpportunityRequest = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityRequest",
+  () => [
+    { no: 3, name: "learning_opportunity_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * CompleteAgentLearningOpportunityResponse represents the completed learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityResponse
+ */
+export const CompleteAgentLearningOpportunityResponse = proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityResponse",
+  () => [
+    { no: 1, name: "learning_opportunity", kind: "message", T: LearningOpportunity },
+  ],
+);
+
+/**
  * DeleteLearningOpportunityRequest represents a request to delete a learning opportunity.
  *
  * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest
