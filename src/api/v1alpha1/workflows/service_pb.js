@@ -47,7 +47,7 @@ export const PersistedFlowDefinition = proto3.makeMessageType(
 export const CreateFlowDefinitionRequest = proto3.makeMessageType(
   "api.v1alpha1.workflows.CreateFlowDefinitionRequest",
   () => [
-    { no: 1, name: "definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
   ],
 );
 
@@ -59,7 +59,7 @@ export const CreateFlowDefinitionRequest = proto3.makeMessageType(
 export const CreateFlowDefinitionResponse = proto3.makeMessageType(
   "api.v1alpha1.workflows.CreateFlowDefinitionResponse",
   () => [
-    { no: 1, name: "flow_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
   ],
 );
 
@@ -83,7 +83,7 @@ export const GetFlowDefinitionRequest = proto3.makeMessageType(
 export const GetFlowDefinitionResponse = proto3.makeMessageType(
   "api.v1alpha1.workflows.GetFlowDefinitionResponse",
   () => [
-    { no: 1, name: "definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
   ],
 );
 

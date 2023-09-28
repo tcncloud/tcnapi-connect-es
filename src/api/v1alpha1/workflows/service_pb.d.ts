@@ -115,11 +115,11 @@ export declare class PersistedFlowDefinition extends Message<PersistedFlowDefini
  */
 export declare class CreateFlowDefinitionRequest extends Message<CreateFlowDefinitionRequest> {
   /**
-   * definition is the flow definition object
+   * flow definition is the flow definition object
    *
-   * @generated from field: api.v1alpha1.workflows.PersistedFlowDefinition definition = 1;
+   * @generated from field: api.v1alpha1.workflows.PersistedFlowDefinition flow_definition = 1;
    */
-  definition?: PersistedFlowDefinition;
+  flowDefinition?: PersistedFlowDefinition;
 
   constructor(data?: PartialMessage<CreateFlowDefinitionRequest>);
 
@@ -143,11 +143,11 @@ export declare class CreateFlowDefinitionRequest extends Message<CreateFlowDefin
  */
 export declare class CreateFlowDefinitionResponse extends Message<CreateFlowDefinitionResponse> {
   /**
-   * flow_definition_id is the assigned identifier for the flow definition after creation
+   * flow_definition is the persisted flow definition object (with the flow_definition_id set)
    *
-   * @generated from field: string flow_definition_id = 1;
+   * @generated from field: api.v1alpha1.workflows.PersistedFlowDefinition flow_definition = 1;
    */
-  flowDefinitionId: string;
+  flowDefinition?: PersistedFlowDefinition;
 
   constructor(data?: PartialMessage<CreateFlowDefinitionResponse>);
 
@@ -199,11 +199,11 @@ export declare class GetFlowDefinitionRequest extends Message<GetFlowDefinitionR
  */
 export declare class GetFlowDefinitionResponse extends Message<GetFlowDefinitionResponse> {
   /**
-   * definition is the flow definition object
+   * flow_1definition is the flow definition object
    *
-   * @generated from field: api.v1alpha1.workflows.PersistedFlowDefinition definition = 1;
+   * @generated from field: api.v1alpha1.workflows.PersistedFlowDefinition flow_definition = 1;
    */
-  definition?: PersistedFlowDefinition;
+  flowDefinition?: PersistedFlowDefinition;
 
   constructor(data?: PartialMessage<GetFlowDefinitionResponse>);
 
