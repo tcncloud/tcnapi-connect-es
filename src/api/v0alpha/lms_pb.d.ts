@@ -1756,12 +1756,6 @@ export declare class RecordFieldProto extends Message<RecordFieldProto> {
      */
     value: EnrichedZip;
     case: "enrichedZip";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.EHRDetails ehr_details = 18;
-     */
-    value: EHRDetails;
-    case: "ehrDetails";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<RecordFieldProto>);
@@ -6019,61 +6013,6 @@ export declare class EnrichedZip extends Message<EnrichedZip> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnrichedZip;
 
   static equals(a: EnrichedZip | PlainMessage<EnrichedZip> | undefined, b: EnrichedZip | PlainMessage<EnrichedZip> | undefined): boolean;
-}
-
-/**
- * EHRDetails will be used to sort the flattened json data from EHR Bulk Data response into separate buckets
- *
- * @generated from message api.v0alpha.EHRDetails
- */
-export declare class EHRDetails extends Message<EHRDetails> {
-  /**
-   * Which collection the display value is located (i.e strings)
-   *
-   * @generated from field: string display_collection = 1;
-   */
-  displayCollection: string;
-
-  /**
-   * The flattened path / the key for the display value
-   *
-   * @generated from field: string display_key = 2;
-   */
-  displayKey: string;
-
-  /**
-   * @generated from field: map<string, string> strings = 3;
-   */
-  strings: { [key: string]: string };
-
-  /**
-   * @generated from field: map<string, float> numbers = 4;
-   */
-  numbers: { [key: string]: number };
-
-  /**
-   * @generated from field: map<string, api.v0alpha.DateTime> dates = 5;
-   */
-  dates: { [key: string]: DateTime };
-
-  /**
-   * @generated from field: map<string, bool> bools = 6;
-   */
-  bools: { [key: string]: boolean };
-
-  constructor(data?: PartialMessage<EHRDetails>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.EHRDetails";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EHRDetails;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EHRDetails;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EHRDetails;
-
-  static equals(a: EHRDetails | PlainMessage<EHRDetails> | undefined, b: EHRDetails | PlainMessage<EHRDetails> | undefined): boolean;
 }
 
 /**
