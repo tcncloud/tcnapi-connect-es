@@ -135,20 +135,6 @@ export const Rule = proto3.makeMessageType(
     { no: 3, name: "sub_entity", kind: "enum", T: proto3.getEnumType(SubEntity) },
     { no: 4, name: "selectors", kind: "message", T: Selector, repeated: true },
     { no: 6, name: "rule_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "predicate", kind: "message", T: Predicate },
-  ],
-);
-
-/**
- * @generated from message api.commons.Predicate
- */
-export const Predicate = proto3.makeMessageType(
-  "api.commons.Predicate",
-  () => [
-    { no: 1, name: "and", kind: "message", T: Predicate, repeated: true },
-    { no: 2, name: "or", kind: "message", T: Predicate, repeated: true },
-    { no: 3, name: "not", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 4, name: "selector", kind: "message", T: Selector },
   ],
 );
 

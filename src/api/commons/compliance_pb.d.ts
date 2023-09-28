@@ -262,11 +262,6 @@ export declare class Rule extends Message<Rule> {
    */
   ruleText: string;
 
-  /**
-   * @generated from field: api.commons.Predicate predicate = 7;
-   */
-  predicate?: Predicate;
-
   constructor(data?: PartialMessage<Rule>);
 
   static readonly runtime: typeof proto3;
@@ -280,45 +275,6 @@ export declare class Rule extends Message<Rule> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Rule;
 
   static equals(a: Rule | PlainMessage<Rule> | undefined, b: Rule | PlainMessage<Rule> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.Predicate
- */
-export declare class Predicate extends Message<Predicate> {
-  /**
-   * @generated from field: repeated api.commons.Predicate and = 1;
-   */
-  and: Predicate[];
-
-  /**
-   * @generated from field: repeated api.commons.Predicate or = 2;
-   */
-  or: Predicate[];
-
-  /**
-   * @generated from field: bool not = 3;
-   */
-  not: boolean;
-
-  /**
-   * @generated from field: api.commons.Selector selector = 4;
-   */
-  selector?: Selector;
-
-  constructor(data?: PartialMessage<Predicate>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.Predicate";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Predicate;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Predicate;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Predicate;
-
-  static equals(a: Predicate | PlainMessage<Predicate> | undefined, b: Predicate | PlainMessage<Predicate> | undefined): boolean;
 }
 
 /**
