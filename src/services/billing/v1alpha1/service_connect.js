@@ -183,7 +183,7 @@ export const BillingService = {
       name: "ListBillingPlans",
       I: ListBillingPlansRequest,
       O: ListBillingPlansResponse,
-      kind: MethodKind.ServerStreaming,
+      kind: MethodKind.Unary,
     },
     /**
      * Lists the invoices for the ORG.
@@ -201,7 +201,7 @@ export const BillingService = {
       name: "ListInvoices",
       I: ListInvoicesRequest,
       O: ListInvoicesResponse,
-      kind: MethodKind.ServerStreaming,
+      kind: MethodKind.Unary,
     },
     /**
      * Updates an inactive billing plan. A billing plan is inactive if it hasn't started.

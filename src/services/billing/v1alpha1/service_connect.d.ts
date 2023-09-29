@@ -183,7 +183,7 @@ export declare const BillingService: {
       readonly name: "ListBillingPlans",
       readonly I: typeof ListBillingPlansRequest,
       readonly O: typeof ListBillingPlansResponse,
-      readonly kind: MethodKind.ServerStreaming,
+      readonly kind: MethodKind.Unary,
     },
     /**
      * Lists the invoices for the ORG.
@@ -201,7 +201,7 @@ export declare const BillingService: {
       readonly name: "ListInvoices",
       readonly I: typeof ListInvoicesRequest,
       readonly O: typeof ListInvoicesResponse,
-      readonly kind: MethodKind.ServerStreaming,
+      readonly kind: MethodKind.Unary,
     },
     /**
      * Updates an inactive billing plan. A billing plan is inactive if it hasn't started.
