@@ -5,18 +5,20 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { BillingPlan } from "../../../data/billing/v1alpha1/plans_pb.js";
-import type { OrderBy, TimeSelector } from "./core_pb.js";
+import type { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
+import type { Page, Sort } from "./core_pb.js";
 
 /**
- * CreateBillingPlanRequest is a request to create a new billing
- * plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.CreateBillingPlanRequest
  */
 export declare class CreateBillingPlanRequest extends Message<CreateBillingPlanRequest> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
    */
   billingPlan?: BillingPlan;
 
@@ -36,16 +38,13 @@ export declare class CreateBillingPlanRequest extends Message<CreateBillingPlanR
 }
 
 /**
- * CreateBillingPlanResponse is a response to a request to create
- * a new billing plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.CreateBillingPlanResponse
  */
 export declare class CreateBillingPlanResponse extends Message<CreateBillingPlanResponse> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: string billing_plan_id = 1;
    */
-  billingPlan?: BillingPlan;
+  billingPlanId: string;
 
   constructor(data?: PartialMessage<CreateBillingPlanResponse>);
 
@@ -63,9 +62,6 @@ export declare class CreateBillingPlanResponse extends Message<CreateBillingPlan
 }
 
 /**
- * DeleteBillingPlanRequest is a request to delete a billing plan
- * for an organization.
- *
  * @generated from message services.billing.v1alpha1.DeleteBillingPlanRequest
  */
 export declare class DeleteBillingPlanRequest extends Message<DeleteBillingPlanRequest> {
@@ -90,9 +86,6 @@ export declare class DeleteBillingPlanRequest extends Message<DeleteBillingPlanR
 }
 
 /**
- * DeleteBillingPlanResponse is a response to a request to delete
- * a billing plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.DeleteBillingPlanResponse
  */
 export declare class DeleteBillingPlanResponse extends Message<DeleteBillingPlanResponse> {
@@ -112,16 +105,61 @@ export declare class DeleteBillingPlanResponse extends Message<DeleteBillingPlan
 }
 
 /**
- * GetBillingPlanRequest is a request to get the active billing plan
- * for an organization.
- *
- * @generated from message services.billing.v1alpha1.GetBillingPlanRequest
+ * @generated from message services.billing.v1alpha1.GetActiveBillingPlanRequest
  */
-export declare class GetBillingPlanRequest extends Message<GetBillingPlanRequest> {
+export declare class GetActiveBillingPlanRequest extends Message<GetActiveBillingPlanRequest> {
   /**
    * @generated from field: string org_id = 1;
    */
   orgId: string;
+
+  constructor(data?: PartialMessage<GetActiveBillingPlanRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.GetActiveBillingPlanRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetActiveBillingPlanRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetActiveBillingPlanRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetActiveBillingPlanRequest;
+
+  static equals(a: GetActiveBillingPlanRequest | PlainMessage<GetActiveBillingPlanRequest> | undefined, b: GetActiveBillingPlanRequest | PlainMessage<GetActiveBillingPlanRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.GetActiveBillingPlanResponse
+ */
+export declare class GetActiveBillingPlanResponse extends Message<GetActiveBillingPlanResponse> {
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
+   */
+  billingPlan?: BillingPlan;
+
+  constructor(data?: PartialMessage<GetActiveBillingPlanResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.GetActiveBillingPlanResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetActiveBillingPlanResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetActiveBillingPlanResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetActiveBillingPlanResponse;
+
+  static equals(a: GetActiveBillingPlanResponse | PlainMessage<GetActiveBillingPlanResponse> | undefined, b: GetActiveBillingPlanResponse | PlainMessage<GetActiveBillingPlanResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.GetBillingPlanRequest
+ */
+export declare class GetBillingPlanRequest extends Message<GetBillingPlanRequest> {
+  /**
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
 
   constructor(data?: PartialMessage<GetBillingPlanRequest>);
 
@@ -139,14 +177,11 @@ export declare class GetBillingPlanRequest extends Message<GetBillingPlanRequest
 }
 
 /**
- * GetBillingPlanResponse is a response to a request to get the active
- * billing plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.GetBillingPlanResponse
  */
 export declare class GetBillingPlanResponse extends Message<GetBillingPlanResponse> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
    */
   billingPlan?: BillingPlan;
 
@@ -166,9 +201,6 @@ export declare class GetBillingPlanResponse extends Message<GetBillingPlanRespon
 }
 
 /**
- * GetDefaultBillingPlanRequest is a request to get the default billing
- * plan for a region.
- *
  * @generated from message services.billing.v1alpha1.GetDefaultBillingPlanRequest
  */
 export declare class GetDefaultBillingPlanRequest extends Message<GetDefaultBillingPlanRequest> {
@@ -188,14 +220,11 @@ export declare class GetDefaultBillingPlanRequest extends Message<GetDefaultBill
 }
 
 /**
- * GetDefaultBillingPlanResponse is a response to a request to get the
- * default billing plan for a region.
- *
  * @generated from message services.billing.v1alpha1.GetDefaultBillingPlanResponse
  */
 export declare class GetDefaultBillingPlanResponse extends Message<GetDefaultBillingPlanResponse> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
    */
   billingPlan?: BillingPlan;
 
@@ -215,36 +244,46 @@ export declare class GetDefaultBillingPlanResponse extends Message<GetDefaultBil
 }
 
 /**
- * ListBillingPlansRequest is a request to list all billing plans for
- * an organization.
- *
  * @generated from message services.billing.v1alpha1.ListBillingPlansRequest
  */
 export declare class ListBillingPlansRequest extends Message<ListBillingPlansRequest> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
    */
   billingPlan?: BillingPlan;
 
   /**
-   * @generated from field: google.protobuf.FieldMask selector_fields = 2;
-   */
-  selectorFields?: FieldMask;
-
-  /**
+   * Optional: defaults to all fields.
+   *
    * @generated from field: google.protobuf.FieldMask return_fields = 3;
    */
   returnFields?: FieldMask;
 
   /**
-   * @generated from field: services.billing.v1alpha1.OrderBy order_by = 4;
+   * Optional: defaults to no filter.
+   *
+   * @generated from field: string filter = 4;
    */
-  orderBy?: OrderBy;
+  filter: string;
 
   /**
-   * @generated from field: repeated services.billing.v1alpha1.TimeSelector time_selectors = 5;
+   * Optional: defaults to no sort.
+   *
+   * @generated from field: services.billing.v1alpha1.Sort sort = 5;
    */
-  timeSelectors: TimeSelector[];
+  sort?: Sort;
+
+  /**
+   * Optional: defaults to no paging.
+   *
+   * @generated from field: services.billing.v1alpha1.Page page = 6;
+   */
+  page?: Page;
 
   constructor(data?: PartialMessage<ListBillingPlansRequest>);
 
@@ -262,16 +301,20 @@ export declare class ListBillingPlansRequest extends Message<ListBillingPlansReq
 }
 
 /**
- * ListBillingPlansResponse is a response to a request to list all billing
- * plans for an organization.
- *
  * @generated from message services.billing.v1alpha1.ListBillingPlansResponse
  */
 export declare class ListBillingPlansResponse extends Message<ListBillingPlansResponse> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: repeated services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
    */
-  billingPlan?: BillingPlan;
+  billingPlan: BillingPlan[];
+
+  /**
+   * Optional: only present if paginating.
+   *
+   * @generated from field: string token = 2;
+   */
+  token: string;
 
   constructor(data?: PartialMessage<ListBillingPlansResponse>);
 
@@ -289,19 +332,21 @@ export declare class ListBillingPlansResponse extends Message<ListBillingPlansRe
 }
 
 /**
- * UpdateBillingPlanRequest is a request to update a billing plan for an
- * organization.
- *
  * @generated from message services.billing.v1alpha1.UpdateBillingPlanRequest
  */
 export declare class UpdateBillingPlanRequest extends Message<UpdateBillingPlanRequest> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
    */
   billingPlan?: BillingPlan;
 
   /**
-   * @generated from field: google.protobuf.FieldMask update_fields = 2;
+   * @generated from field: google.protobuf.FieldMask update_fields = 3;
    */
   updateFields?: FieldMask;
 
@@ -321,17 +366,9 @@ export declare class UpdateBillingPlanRequest extends Message<UpdateBillingPlanR
 }
 
 /**
- * UpdateBillingPlanResponse is a response to a request to update a billing
- * plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.UpdateBillingPlanResponse
  */
 export declare class UpdateBillingPlanResponse extends Message<UpdateBillingPlanResponse> {
-  /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
-   */
-  billingPlan?: BillingPlan;
-
   constructor(data?: PartialMessage<UpdateBillingPlanResponse>);
 
   static readonly runtime: typeof proto3;
@@ -348,14 +385,11 @@ export declare class UpdateBillingPlanResponse extends Message<UpdateBillingPlan
 }
 
 /**
- * UpdateDefaultBillingPlanRequest is a request to update the default billing
- * plan for a region.
- *
  * @generated from message services.billing.v1alpha1.UpdateDefaultBillingPlanRequest
  */
 export declare class UpdateDefaultBillingPlanRequest extends Message<UpdateDefaultBillingPlanRequest> {
   /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
    */
   billingPlan?: BillingPlan;
 
@@ -380,17 +414,9 @@ export declare class UpdateDefaultBillingPlanRequest extends Message<UpdateDefau
 }
 
 /**
- * UpdateDefaultBillingPlanResponse is a response to a request to update the
- * default billing plan for a region.
- *
  * @generated from message services.billing.v1alpha1.UpdateDefaultBillingPlanResponse
  */
 export declare class UpdateDefaultBillingPlanResponse extends Message<UpdateDefaultBillingPlanResponse> {
-  /**
-   * @generated from field: data.billing.v1alpha1.BillingPlan billing_plan = 1;
-   */
-  billingPlan?: BillingPlan;
-
   constructor(data?: PartialMessage<UpdateDefaultBillingPlanResponse>);
 
   static readonly runtime: typeof proto3;

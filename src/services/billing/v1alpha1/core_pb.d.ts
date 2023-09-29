@@ -3,124 +3,89 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * @generated from enum services.billing.v1alpha1.OrderByDirection
+ * @generated from enum services.billing.v1alpha1.SortDirection
  */
-export declare enum OrderByDirection {
+export declare enum SortDirection {
   /**
-   * @generated from enum value: ORDER_BY_DIRECTION_UNSPECIFIED = 0;
+   * If unspecified, sorts ascending
+   *
+   * @generated from enum value: SORT_DIRECTION_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: ORDER_BY_DIRECTION_ASC = 1;
+   * @generated from enum value: SORT_DIRECTION_DESC = 1;
    */
-  ASC = 1,
-
-  /**
-   * @generated from enum value: ORDER_BY_DIRECTION_DESC = 2;
-   */
-  DESC = 2,
+  DESC = 1,
 }
 
 /**
- * @generated from enum services.billing.v1alpha1.TimeSelectorOp
+ * @generated from message services.billing.v1alpha1.Page
  */
-export declare enum TimeSelectorOp {
+export declare class Page extends Message<Page> {
   /**
-   * @generated from enum value: TIME_SELECTOR_OP_UNSPECIFIED = 0;
+   * Optional: if not specified, will not paginate
+   *
+   * @generated from field: int64 limit = 1;
    */
-  UNSPECIFIED = 0,
+  limit: bigint;
 
   /**
-   * @generated from enum value: TIME_SELECTOR_OP_EQ = 1;
+   * Optional: if not specified, will start from the beginning
+   *
+   * @generated from field: string token = 2;
    */
-  EQ = 1,
+  token: string;
 
-  /**
-   * @generated from enum value: TIME_SELECTOR_OP_GT = 2;
-   */
-  GT = 2,
-
-  /**
-   * @generated from enum value: TIME_SELECTOR_OP_GE = 3;
-   */
-  GE = 3,
-
-  /**
-   * @generated from enum value: TIME_SELECTOR_OP_LT = 4;
-   */
-  LT = 4,
-
-  /**
-   * @generated from enum value: TIME_SELECTOR_OP_LE = 5;
-   */
-  LE = 5,
-}
-
-/**
- * @generated from message services.billing.v1alpha1.OrderBy
- */
-export declare class OrderBy extends Message<OrderBy> {
-  /**
-   * @generated from field: repeated string fields = 1;
-   */
-  fields: string[];
-
-  /**
-   * @generated from field: services.billing.v1alpha1.OrderByDirection direction = 2;
-   */
-  direction: OrderByDirection;
-
-  constructor(data?: PartialMessage<OrderBy>);
+  constructor(data?: PartialMessage<Page>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.billing.v1alpha1.OrderBy";
+  static readonly typeName = "services.billing.v1alpha1.Page";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OrderBy;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Page;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OrderBy;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Page;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrderBy;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Page;
 
-  static equals(a: OrderBy | PlainMessage<OrderBy> | undefined, b: OrderBy | PlainMessage<OrderBy> | undefined): boolean;
+  static equals(a: Page | PlainMessage<Page> | undefined, b: Page | PlainMessage<Page> | undefined): boolean;
 }
 
 /**
- * @generated from message services.billing.v1alpha1.TimeSelector
+ * @generated from message services.billing.v1alpha1.Sort
  */
-export declare class TimeSelector extends Message<TimeSelector> {
+export declare class Sort extends Message<Sort> {
   /**
-   * @generated from field: string field_name = 1;
+   * Required: field to sort by
+   *
+   * @generated from field: string field = 1;
    */
-  fieldName: string;
+  field: string;
 
   /**
-   * @generated from field: services.billing.v1alpha1.TimeSelectorOp op = 2;
+   * Required: direction to sort by
+   *
+   * @generated from field: services.billing.v1alpha1.SortDirection direction = 2;
    */
-  op: TimeSelectorOp;
+  direction: SortDirection;
 
-  /**
-   * @generated from field: google.protobuf.Timestamp value = 3;
-   */
-  value?: Timestamp;
-
-  constructor(data?: PartialMessage<TimeSelector>);
+  constructor(data?: PartialMessage<Sort>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.billing.v1alpha1.TimeSelector";
+  static readonly typeName = "services.billing.v1alpha1.Sort";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TimeSelector;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Sort;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TimeSelector;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Sort;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TimeSelector;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Sort;
 
-  static equals(a: TimeSelector | PlainMessage<TimeSelector> | undefined, b: TimeSelector | PlainMessage<TimeSelector> | undefined): boolean;
+  static equals(a: Sort | PlainMessage<Sort> | undefined, b: Sort | PlainMessage<Sort> | undefined): boolean;
 }
 

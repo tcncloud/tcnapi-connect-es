@@ -4,39 +4,31 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { BillingPlan } from "../../../data/billing/v1alpha1/plans_pb.js";
-import { OrderBy, TimeSelector } from "./core_pb.js";
+import { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
+import { Page, Sort } from "./core_pb.js";
 
 /**
- * CreateBillingPlanRequest is a request to create a new billing
- * plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.CreateBillingPlanRequest
  */
 export const CreateBillingPlanRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.CreateBillingPlanRequest",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "billing_plan", kind: "message", T: BillingPlan },
   ],
 );
 
 /**
- * CreateBillingPlanResponse is a response to a request to create
- * a new billing plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.CreateBillingPlanResponse
  */
 export const CreateBillingPlanResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.CreateBillingPlanResponse",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * DeleteBillingPlanRequest is a request to delete a billing plan
- * for an organization.
- *
  * @generated from message services.billing.v1alpha1.DeleteBillingPlanRequest
  */
 export const DeleteBillingPlanRequest = proto3.makeMessageType(
@@ -47,9 +39,6 @@ export const DeleteBillingPlanRequest = proto3.makeMessageType(
 );
 
 /**
- * DeleteBillingPlanResponse is a response to a request to delete
- * a billing plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.DeleteBillingPlanResponse
  */
 export const DeleteBillingPlanResponse = proto3.makeMessageType(
@@ -58,22 +47,36 @@ export const DeleteBillingPlanResponse = proto3.makeMessageType(
 );
 
 /**
- * GetBillingPlanRequest is a request to get the active billing plan
- * for an organization.
- *
- * @generated from message services.billing.v1alpha1.GetBillingPlanRequest
+ * @generated from message services.billing.v1alpha1.GetActiveBillingPlanRequest
  */
-export const GetBillingPlanRequest = proto3.makeMessageType(
-  "services.billing.v1alpha1.GetBillingPlanRequest",
+export const GetActiveBillingPlanRequest = proto3.makeMessageType(
+  "services.billing.v1alpha1.GetActiveBillingPlanRequest",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * GetBillingPlanResponse is a response to a request to get the active
- * billing plan for an organization.
- *
+ * @generated from message services.billing.v1alpha1.GetActiveBillingPlanResponse
+ */
+export const GetActiveBillingPlanResponse = proto3.makeMessageType(
+  "services.billing.v1alpha1.GetActiveBillingPlanResponse",
+  () => [
+    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.GetBillingPlanRequest
+ */
+export const GetBillingPlanRequest = proto3.makeMessageType(
+  "services.billing.v1alpha1.GetBillingPlanRequest",
+  () => [
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message services.billing.v1alpha1.GetBillingPlanResponse
  */
 export const GetBillingPlanResponse = proto3.makeMessageType(
@@ -84,9 +87,6 @@ export const GetBillingPlanResponse = proto3.makeMessageType(
 );
 
 /**
- * GetDefaultBillingPlanRequest is a request to get the default billing
- * plan for a region.
- *
  * @generated from message services.billing.v1alpha1.GetDefaultBillingPlanRequest
  */
 export const GetDefaultBillingPlanRequest = proto3.makeMessageType(
@@ -95,9 +95,6 @@ export const GetDefaultBillingPlanRequest = proto3.makeMessageType(
 );
 
 /**
- * GetDefaultBillingPlanResponse is a response to a request to get the
- * default billing plan for a region.
- *
  * @generated from message services.billing.v1alpha1.GetDefaultBillingPlanResponse
  */
 export const GetDefaultBillingPlanResponse = proto3.makeMessageType(
@@ -108,66 +105,52 @@ export const GetDefaultBillingPlanResponse = proto3.makeMessageType(
 );
 
 /**
- * ListBillingPlansRequest is a request to list all billing plans for
- * an organization.
- *
  * @generated from message services.billing.v1alpha1.ListBillingPlansRequest
  */
 export const ListBillingPlansRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.ListBillingPlansRequest",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
-    { no: 2, name: "selector_fields", kind: "message", T: FieldMask },
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "billing_plan", kind: "message", T: BillingPlan },
     { no: 3, name: "return_fields", kind: "message", T: FieldMask },
-    { no: 4, name: "order_by", kind: "message", T: OrderBy },
-    { no: 5, name: "time_selectors", kind: "message", T: TimeSelector, repeated: true },
+    { no: 4, name: "filter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "sort", kind: "message", T: Sort },
+    { no: 6, name: "page", kind: "message", T: Page },
   ],
 );
 
 /**
- * ListBillingPlansResponse is a response to a request to list all billing
- * plans for an organization.
- *
  * @generated from message services.billing.v1alpha1.ListBillingPlansResponse
  */
 export const ListBillingPlansResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.ListBillingPlansResponse",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan, repeated: true },
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * UpdateBillingPlanRequest is a request to update a billing plan for an
- * organization.
- *
  * @generated from message services.billing.v1alpha1.UpdateBillingPlanRequest
  */
 export const UpdateBillingPlanRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.UpdateBillingPlanRequest",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
-    { no: 2, name: "update_fields", kind: "message", T: FieldMask },
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "billing_plan", kind: "message", T: BillingPlan },
+    { no: 3, name: "update_fields", kind: "message", T: FieldMask },
   ],
 );
 
 /**
- * UpdateBillingPlanResponse is a response to a request to update a billing
- * plan for an organization.
- *
  * @generated from message services.billing.v1alpha1.UpdateBillingPlanResponse
  */
 export const UpdateBillingPlanResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.UpdateBillingPlanResponse",
-  () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
-  ],
+  [],
 );
 
 /**
- * UpdateDefaultBillingPlanRequest is a request to update the default billing
- * plan for a region.
- *
  * @generated from message services.billing.v1alpha1.UpdateDefaultBillingPlanRequest
  */
 export const UpdateDefaultBillingPlanRequest = proto3.makeMessageType(
@@ -179,15 +162,10 @@ export const UpdateDefaultBillingPlanRequest = proto3.makeMessageType(
 );
 
 /**
- * UpdateDefaultBillingPlanResponse is a response to a request to update the
- * default billing plan for a region.
- *
  * @generated from message services.billing.v1alpha1.UpdateDefaultBillingPlanResponse
  */
 export const UpdateDefaultBillingPlanResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.UpdateDefaultBillingPlanResponse",
-  () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
-  ],
+  [],
 );
 

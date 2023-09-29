@@ -4,38 +4,31 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { Invoice } from "../../../data/billing/v1alpha1/invoices_pb.js";
-import { OrderBy } from "./core_pb.js";
+import { Invoice } from "../entities/v1alpha1/invoice_pb.js";
+import { Page, Sort } from "./core_pb.js";
 
 /**
- * CreateInvoiceRequest is a request to create a new invoice for
- * an organization in the specified billing cycle. Only the
- * billing cycle is required, all other fields are ignored.
- *
  * @generated from message services.billing.v1alpha1.CreateInvoiceRequest
  */
 export const CreateInvoiceRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.CreateInvoiceRequest",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "invoice", kind: "message", T: Invoice },
   ],
 );
 
 /**
- * CreateInvoiceResponse is a response to creating a new invoice.
- *
  * @generated from message services.billing.v1alpha1.CreateInvoiceResponse
  */
 export const CreateInvoiceResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.CreateInvoiceResponse",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * DeleteInvoiceRequest is a request to delete an invoice.
- *
  * @generated from message services.billing.v1alpha1.DeleteInvoiceRequest
  */
 export const DeleteInvoiceRequest = proto3.makeMessageType(
@@ -46,8 +39,6 @@ export const DeleteInvoiceRequest = proto3.makeMessageType(
 );
 
 /**
- * DeleteInvoiceResponse is a response to deleting an invoice.
- *
  * @generated from message services.billing.v1alpha1.DeleteInvoiceResponse
  */
 export const DeleteInvoiceResponse = proto3.makeMessageType(
@@ -56,8 +47,6 @@ export const DeleteInvoiceResponse = proto3.makeMessageType(
 );
 
 /**
- * GetInvoiceRequest is a request to get an invoice.
- *
  * @generated from message services.billing.v1alpha1.GetInvoiceRequest
  */
 export const GetInvoiceRequest = proto3.makeMessageType(
@@ -68,8 +57,6 @@ export const GetInvoiceRequest = proto3.makeMessageType(
 );
 
 /**
- * GetInvoiceResponse is a response to getting an invoice.
- *
  * @generated from message services.billing.v1alpha1.GetInvoiceResponse
  */
 export const GetInvoiceResponse = proto3.makeMessageType(
@@ -80,54 +67,48 @@ export const GetInvoiceResponse = proto3.makeMessageType(
 );
 
 /**
- * ListInvoicesRequest is a request to list invoices.
- *
  * @generated from message services.billing.v1alpha1.ListInvoicesRequest
  */
 export const ListInvoicesRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.ListInvoicesRequest",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
-    { no: 2, name: "selector_fields", kind: "message", T: FieldMask },
+    { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "invoice", kind: "message", T: Invoice },
     { no: 3, name: "return_fields", kind: "message", T: FieldMask },
-    { no: 4, name: "order_by", kind: "message", T: OrderBy },
+    { no: 4, name: "filter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "sort", kind: "message", T: Sort },
+    { no: 6, name: "page", kind: "message", T: Page },
   ],
 );
 
 /**
- * ListInvoicesResponse is a response to listing invoices.
- *
  * @generated from message services.billing.v1alpha1.ListInvoicesResponse
  */
 export const ListInvoicesResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.ListInvoicesResponse",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 1, name: "invoices", kind: "message", T: Invoice, repeated: true },
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * UpdateInvoiceRequest is a request to update an invoice.
- *
  * @generated from message services.billing.v1alpha1.UpdateInvoiceRequest
  */
 export const UpdateInvoiceRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.UpdateInvoiceRequest",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
-    { no: 2, name: "update_fields", kind: "message", T: FieldMask },
+    { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "invoice", kind: "message", T: Invoice },
+    { no: 3, name: "update_fields", kind: "message", T: FieldMask },
   ],
 );
 
 /**
- * UpdateInvoiceResponse is a response to updating an invoice.
- *
  * @generated from message services.billing.v1alpha1.UpdateInvoiceResponse
  */
 export const UpdateInvoiceResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.UpdateInvoiceResponse",
-  () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
-  ],
+  [],
 );
 

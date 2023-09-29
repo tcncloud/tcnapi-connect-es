@@ -5,19 +5,20 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Invoice } from "../../../data/billing/v1alpha1/invoices_pb.js";
-import type { OrderBy } from "./core_pb.js";
+import type { Invoice } from "../entities/v1alpha1/invoice_pb.js";
+import type { Page, Sort } from "./core_pb.js";
 
 /**
- * CreateInvoiceRequest is a request to create a new invoice for
- * an organization in the specified billing cycle. Only the
- * billing cycle is required, all other fields are ignored.
- *
  * @generated from message services.billing.v1alpha1.CreateInvoiceRequest
  */
 export declare class CreateInvoiceRequest extends Message<CreateInvoiceRequest> {
   /**
-   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
+   * @generated from field: string invoice_id = 1;
+   */
+  invoiceId: string;
+
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 2;
    */
   invoice?: Invoice;
 
@@ -37,15 +38,13 @@ export declare class CreateInvoiceRequest extends Message<CreateInvoiceRequest> 
 }
 
 /**
- * CreateInvoiceResponse is a response to creating a new invoice.
- *
  * @generated from message services.billing.v1alpha1.CreateInvoiceResponse
  */
 export declare class CreateInvoiceResponse extends Message<CreateInvoiceResponse> {
   /**
-   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
+   * @generated from field: string invoice_id = 1;
    */
-  invoice?: Invoice;
+  invoiceId: string;
 
   constructor(data?: PartialMessage<CreateInvoiceResponse>);
 
@@ -63,8 +62,6 @@ export declare class CreateInvoiceResponse extends Message<CreateInvoiceResponse
 }
 
 /**
- * DeleteInvoiceRequest is a request to delete an invoice.
- *
  * @generated from message services.billing.v1alpha1.DeleteInvoiceRequest
  */
 export declare class DeleteInvoiceRequest extends Message<DeleteInvoiceRequest> {
@@ -89,8 +86,6 @@ export declare class DeleteInvoiceRequest extends Message<DeleteInvoiceRequest> 
 }
 
 /**
- * DeleteInvoiceResponse is a response to deleting an invoice.
- *
  * @generated from message services.billing.v1alpha1.DeleteInvoiceResponse
  */
 export declare class DeleteInvoiceResponse extends Message<DeleteInvoiceResponse> {
@@ -110,8 +105,6 @@ export declare class DeleteInvoiceResponse extends Message<DeleteInvoiceResponse
 }
 
 /**
- * GetInvoiceRequest is a request to get an invoice.
- *
  * @generated from message services.billing.v1alpha1.GetInvoiceRequest
  */
 export declare class GetInvoiceRequest extends Message<GetInvoiceRequest> {
@@ -136,13 +129,11 @@ export declare class GetInvoiceRequest extends Message<GetInvoiceRequest> {
 }
 
 /**
- * GetInvoiceResponse is a response to getting an invoice.
- *
  * @generated from message services.billing.v1alpha1.GetInvoiceResponse
  */
 export declare class GetInvoiceResponse extends Message<GetInvoiceResponse> {
   /**
-   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
+   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 1;
    */
   invoice?: Invoice;
 
@@ -162,30 +153,46 @@ export declare class GetInvoiceResponse extends Message<GetInvoiceResponse> {
 }
 
 /**
- * ListInvoicesRequest is a request to list invoices.
- *
  * @generated from message services.billing.v1alpha1.ListInvoicesRequest
  */
 export declare class ListInvoicesRequest extends Message<ListInvoicesRequest> {
   /**
-   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
+   * @generated from field: string invoice_id = 1;
+   */
+  invoiceId: string;
+
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 2;
    */
   invoice?: Invoice;
 
   /**
-   * @generated from field: google.protobuf.FieldMask selector_fields = 2;
-   */
-  selectorFields?: FieldMask;
-
-  /**
+   * Optional: defaults to all fields.
+   *
    * @generated from field: google.protobuf.FieldMask return_fields = 3;
    */
   returnFields?: FieldMask;
 
   /**
-   * @generated from field: services.billing.v1alpha1.OrderBy order_by = 4;
+   * Optional: defaults to no filter.
+   *
+   * @generated from field: string filter = 4;
    */
-  orderBy?: OrderBy;
+  filter: string;
+
+  /**
+   * Optional: defaults to no sort.
+   *
+   * @generated from field: services.billing.v1alpha1.Sort sort = 5;
+   */
+  sort?: Sort;
+
+  /**
+   * Optional: defaults to no paging.
+   *
+   * @generated from field: services.billing.v1alpha1.Page page = 6;
+   */
+  page?: Page;
 
   constructor(data?: PartialMessage<ListInvoicesRequest>);
 
@@ -203,15 +210,20 @@ export declare class ListInvoicesRequest extends Message<ListInvoicesRequest> {
 }
 
 /**
- * ListInvoicesResponse is a response to listing invoices.
- *
  * @generated from message services.billing.v1alpha1.ListInvoicesResponse
  */
 export declare class ListInvoicesResponse extends Message<ListInvoicesResponse> {
   /**
-   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
+   * @generated from field: repeated services.billing.entities.v1alpha1.Invoice invoices = 1;
    */
-  invoice?: Invoice;
+  invoices: Invoice[];
+
+  /**
+   * Optional: only present if paginating.
+   *
+   * @generated from field: string token = 2;
+   */
+  token: string;
 
   constructor(data?: PartialMessage<ListInvoicesResponse>);
 
@@ -229,18 +241,21 @@ export declare class ListInvoicesResponse extends Message<ListInvoicesResponse> 
 }
 
 /**
- * UpdateInvoiceRequest is a request to update an invoice.
- *
  * @generated from message services.billing.v1alpha1.UpdateInvoiceRequest
  */
 export declare class UpdateInvoiceRequest extends Message<UpdateInvoiceRequest> {
   /**
-   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
+   * @generated from field: string invoice_id = 1;
+   */
+  invoiceId: string;
+
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 2;
    */
   invoice?: Invoice;
 
   /**
-   * @generated from field: google.protobuf.FieldMask update_fields = 2;
+   * @generated from field: google.protobuf.FieldMask update_fields = 3;
    */
   updateFields?: FieldMask;
 
@@ -260,16 +275,9 @@ export declare class UpdateInvoiceRequest extends Message<UpdateInvoiceRequest> 
 }
 
 /**
- * UpdateInvoiceResponse is a response to updating an invoice.
- *
  * @generated from message services.billing.v1alpha1.UpdateInvoiceResponse
  */
 export declare class UpdateInvoiceResponse extends Message<UpdateInvoiceResponse> {
-  /**
-   * @generated from field: data.billing.v1alpha1.Invoice invoice = 1;
-   */
-  invoice?: Invoice;
-
   constructor(data?: PartialMessage<UpdateInvoiceResponse>);
 
   static readonly runtime: typeof proto3;

@@ -3,55 +3,38 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { proto3 } from "@bufbuild/protobuf";
 
 /**
- * @generated from enum services.billing.v1alpha1.OrderByDirection
+ * @generated from enum services.billing.v1alpha1.SortDirection
  */
-export const OrderByDirection = proto3.makeEnum(
-  "services.billing.v1alpha1.OrderByDirection",
+export const SortDirection = proto3.makeEnum(
+  "services.billing.v1alpha1.SortDirection",
   [
-    {no: 0, name: "ORDER_BY_DIRECTION_UNSPECIFIED", localName: "UNSPECIFIED"},
-    {no: 1, name: "ORDER_BY_DIRECTION_ASC", localName: "ASC"},
-    {no: 2, name: "ORDER_BY_DIRECTION_DESC", localName: "DESC"},
+    {no: 0, name: "SORT_DIRECTION_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "SORT_DIRECTION_DESC", localName: "DESC"},
   ],
 );
 
 /**
- * @generated from enum services.billing.v1alpha1.TimeSelectorOp
+ * @generated from message services.billing.v1alpha1.Page
  */
-export const TimeSelectorOp = proto3.makeEnum(
-  "services.billing.v1alpha1.TimeSelectorOp",
-  [
-    {no: 0, name: "TIME_SELECTOR_OP_UNSPECIFIED", localName: "UNSPECIFIED"},
-    {no: 1, name: "TIME_SELECTOR_OP_EQ", localName: "EQ"},
-    {no: 2, name: "TIME_SELECTOR_OP_GT", localName: "GT"},
-    {no: 3, name: "TIME_SELECTOR_OP_GE", localName: "GE"},
-    {no: 4, name: "TIME_SELECTOR_OP_LT", localName: "LT"},
-    {no: 5, name: "TIME_SELECTOR_OP_LE", localName: "LE"},
-  ],
-);
-
-/**
- * @generated from message services.billing.v1alpha1.OrderBy
- */
-export const OrderBy = proto3.makeMessageType(
-  "services.billing.v1alpha1.OrderBy",
+export const Page = proto3.makeMessageType(
+  "services.billing.v1alpha1.Page",
   () => [
-    { no: 1, name: "fields", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(OrderByDirection) },
+    { no: 1, name: "limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * @generated from message services.billing.v1alpha1.TimeSelector
+ * @generated from message services.billing.v1alpha1.Sort
  */
-export const TimeSelector = proto3.makeMessageType(
-  "services.billing.v1alpha1.TimeSelector",
+export const Sort = proto3.makeMessageType(
+  "services.billing.v1alpha1.Sort",
   () => [
-    { no: 1, name: "field_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "op", kind: "enum", T: proto3.getEnumType(TimeSelectorOp) },
-    { no: 3, name: "value", kind: "message", T: Timestamp },
+    { no: 1, name: "field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(SortDirection) },
   ],
 );
 

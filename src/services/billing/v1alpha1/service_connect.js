@@ -3,20 +3,25 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBillingPlanRequest, CreateBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, GetDefaultBillingPlanRequest, GetDefaultBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
+import { CreateBillingPlanRequest, CreateBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, GetDefaultBillingPlanRequest, GetDefaultBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
 
 /**
- * BillingService handles billing requests.
- *
  * @generated from service services.billing.v1alpha1.BillingService
  */
 export const BillingService = {
   typeName: "services.billing.v1alpha1.BillingService",
   methods: {
     /**
-     * CreateBillingPlan creates a new billing plan for an organization.
+     * Creates a billing plan for the ORG.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateBillingPlan
      */
@@ -27,8 +32,16 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * CreateInvoice creates a new invoice for an organization for the specified
-     * billing cycle. If one already exists, the old one will be deleted first.
+     * Creates an invoice for the ORG for the specified billing cycle.
+     *   - If an invoice already exists for the ORG for the specified billing cycle,
+     *     the old one will be deleted first.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateInvoice
      */
@@ -39,8 +52,15 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * DeleteBillingPlan deletes the specified inactive billing plan. This will fail
-     * if the billing plan is in use, or already deleted.
+     * Deletes an inactive billing plan. A billing plan is inactive if it hasn't started.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteBillingPlan
      */
@@ -51,7 +71,15 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * DeleteInvoice deletes the specified invoice.
+     * Deletes an invoice.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified invoice doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteInvoice
      */
@@ -62,7 +90,37 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * GetBillingPlan returns the active billing plan for the organization.
+     * Returns the active billing plan for the ORG. The active billing plan is a billing plan whose
+     * start_time has passed and end_time has not passed. If multiple satisfy that requirement, the
+     * newest one is considered active. If no plan is active, it indicates the org is currently using
+     * only the system defaults.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The org does not have an active billing plan.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.GetActiveBillingPlan
+     */
+    getActiveBillingPlan: {
+      name: "GetActiveBillingPlan",
+      I: GetActiveBillingPlanRequest,
+      O: GetActiveBillingPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns the specified billing plan.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetBillingPlan
      */
@@ -73,7 +131,13 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * GetDefaultBillingPlan returns the default billing plan for the region.
+     * Returns the default billing plan for the REGION.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetDefaultBillingPlan
      */
@@ -84,7 +148,15 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * GetInvoice returns the specified invoice.
+     * Returns the specified invoice.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified invoice doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetInvoice
      */
@@ -95,7 +167,15 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * ListBillingPlans returns the specified list of billing plans.
+     * Lists the billing plans for the ORG. This includes both active and inactive plans, but does not
+     * include deleted plans.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.ListBillingPlans
      */
@@ -106,7 +186,14 @@ export const BillingService = {
       kind: MethodKind.ServerStreaming,
     },
     /**
-     * ListInvoices returns the specified list of invoices.
+     * Lists the invoices for the ORG.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.ListInvoices
      */
@@ -117,8 +204,15 @@ export const BillingService = {
       kind: MethodKind.ServerStreaming,
     },
     /**
-     * UpdateBillingPlan updates the specified billing plan. This is expected to provide
-     * all the rate definitions for the billing plan if updating rates.
+     * Updates an inactive billing plan. A billing plan is inactive if it hasn't started.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateBillingPlan
      */
@@ -129,8 +223,14 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateDefaultBillingPlan updates the default billing plan. This is expected to provide
-     * all the rate definitions for the billing plan.
+     * Updates the default billing plan for the REGION.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateDefaultBillingPlan
      */
@@ -141,7 +241,15 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateInvoice updates the specified invoice.
+     * Updates the specified invoice.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified invoice doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateInvoice
      */
