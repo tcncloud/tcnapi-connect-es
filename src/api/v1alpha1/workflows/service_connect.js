@@ -21,7 +21,7 @@ import { CreateWorkflowDefinitionRequest, CreateWorkflowDefinitionResponse, GetW
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * WorkflowDefinitionPersistService is the service that provides CRUD operations for FlowDefinitions.
+ * WorkflowDefinitionPersistService is the service that provides CRUD operations for workflow definitions.
  * PERMISSION_WORKFLOWS is required for all operations
  *
  * @generated from service api.v1alpha1.workflows.WorkflowDefinitionPersistService
@@ -30,7 +30,7 @@ export const WorkflowDefinitionPersistService = {
   typeName: "api.v1alpha1.workflows.WorkflowDefinitionPersistService",
   methods: {
     /**
-     * CreateFlowDefinition creates a new flow definition in the database
+     * CreateWorkflowDefinition creates a new flow definition in the database
      *
      * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.CreateWorkflowDefinition
      */

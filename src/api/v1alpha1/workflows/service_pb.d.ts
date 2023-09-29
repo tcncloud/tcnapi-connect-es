@@ -137,7 +137,7 @@ export declare class CreateWorkflowDefinitionRequest extends Message<CreateWorkf
 }
 
 /**
- * CreateFlowDefinitionResponse is the response object for creating a flow definition
+ * CreateWorkflowDefinitionResponse is the response object for creating a flow definition
  *
  * @generated from message api.v1alpha1.workflows.CreateWorkflowDefinitionResponse
  */
@@ -256,7 +256,7 @@ export declare class ListWorkflowDefinitionsRequest extends Message<ListWorkflow
 }
 
 /**
- * ListFlowDefinitionsResponse is the response object for listing flow definitions
+ * ListWorkflowDefinitionsResponse is the response object for listing flow definitions
  *
  * @generated from message api.v1alpha1.workflows.ListWorkflowDefinitionsResponse
  */
