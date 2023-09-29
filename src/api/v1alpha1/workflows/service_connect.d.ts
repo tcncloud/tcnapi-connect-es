@@ -17,72 +17,72 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateFlowDefinitionRequest, CreateFlowDefinitionResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, UpdateFlowDefinitionRequest, UpdateFlowDefinitionResponse, ValidateFlowDefinitionRequest, ValidateFlowDefinitionResponse } from "./service_pb.js";
+import { CreateWorkflowDefinitionRequest, CreateWorkflowDefinitionResponse, GetWorkflowDefinitionRequest, GetWorkflowDefinitionResponse, ListWorkflowDefinitionsRequest, ListWorkflowDefinitionsResponse, UpdateWorkflowDefinitionRequest, UpdateWorkflowDefinitionResponse, ValidateWorkflowDefinitionRequest, ValidateWorkflowDefinitionResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * FlowDefinitionPersistService is the service that provides CRUD operations for FlowDefinitions.
+ * WorkflowDefinitionPersistService is the service that provides CRUD operations for FlowDefinitions.
  * PERMISSION_WORKFLOWS is required for all operations
  *
- * @generated from service api.v1alpha1.workflows.FlowDefinitionPersistService
+ * @generated from service api.v1alpha1.workflows.WorkflowDefinitionPersistService
  */
-export declare const FlowDefinitionPersistService: {
-  readonly typeName: "api.v1alpha1.workflows.FlowDefinitionPersistService",
+export declare const WorkflowDefinitionPersistService: {
+  readonly typeName: "api.v1alpha1.workflows.WorkflowDefinitionPersistService",
   readonly methods: {
     /**
      * CreateFlowDefinition creates a new flow definition in the database
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.CreateFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.CreateWorkflowDefinition
      */
-    readonly createFlowDefinition: {
-      readonly name: "CreateFlowDefinition",
-      readonly I: typeof CreateFlowDefinitionRequest,
-      readonly O: typeof CreateFlowDefinitionResponse,
+    readonly createWorkflowDefinition: {
+      readonly name: "CreateWorkflowDefinition",
+      readonly I: typeof CreateWorkflowDefinitionRequest,
+      readonly O: typeof CreateWorkflowDefinitionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
-     * GetFlowDefinition retrieves a flow definition from the database
+     * GetWorkflowDefinition retrieves a flow definition from the database
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.GetFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.GetWorkflowDefinition
      */
-    readonly getFlowDefinition: {
-      readonly name: "GetFlowDefinition",
-      readonly I: typeof GetFlowDefinitionRequest,
-      readonly O: typeof GetFlowDefinitionResponse,
+    readonly getWorkflowDefinition: {
+      readonly name: "GetWorkflowDefinition",
+      readonly I: typeof GetWorkflowDefinitionRequest,
+      readonly O: typeof GetWorkflowDefinitionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
-     * ListFlowDefinitions retrieves a list of flow definitions from the database optionally filtered by the owning application
+     * ListWorkflowDefinitions retrieves a list of flow definitions from the database optionally filtered by the owning application
      * if application is not specified, all flow definitions for the org are returned
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.ListFlowDefinitions
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.ListWorkflowDefinitions
      */
-    readonly listFlowDefinitions: {
-      readonly name: "ListFlowDefinitions",
-      readonly I: typeof ListFlowDefinitionsRequest,
-      readonly O: typeof ListFlowDefinitionsResponse,
+    readonly listWorkflowDefinitions: {
+      readonly name: "ListWorkflowDefinitions",
+      readonly I: typeof ListWorkflowDefinitionsRequest,
+      readonly O: typeof ListWorkflowDefinitionsResponse,
       readonly kind: MethodKind.ServerStreaming,
     },
     /**
-     * UpdateFlowDefinition updates a flow definition in the database. Only the name, description and definition graph itself are updated
+     * UpdateWorkflowDefinition updates a flow definition in the database. Only the name, description and definition graph itself are updated
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.UpdateFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.UpdateWorkflowDefinition
      */
-    readonly updateFlowDefinition: {
-      readonly name: "UpdateFlowDefinition",
-      readonly I: typeof UpdateFlowDefinitionRequest,
-      readonly O: typeof UpdateFlowDefinitionResponse,
+    readonly updateWorkflowDefinition: {
+      readonly name: "UpdateWorkflowDefinition",
+      readonly I: typeof UpdateWorkflowDefinitionRequest,
+      readonly O: typeof UpdateWorkflowDefinitionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
-     * ValidateFlowDefinition validates a flow definition in the database. Only the name, description and definition graph itself are updated
+     * ValidateWorkflowDefinition validates a flow definition in the database. Only the name, description and definition graph itself are updated
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.ValidateFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.ValidateWorkflowDefinition
      */
-    readonly validateFlowDefinition: {
-      readonly name: "ValidateFlowDefinition",
-      readonly I: typeof ValidateFlowDefinitionRequest,
-      readonly O: typeof ValidateFlowDefinitionResponse,
+    readonly validateWorkflowDefinition: {
+      readonly name: "ValidateWorkflowDefinition",
+      readonly I: typeof ValidateWorkflowDefinitionRequest,
+      readonly O: typeof ValidateWorkflowDefinitionResponse,
       readonly kind: MethodKind.Unary,
     },
   }

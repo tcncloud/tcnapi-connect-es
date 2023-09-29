@@ -20,12 +20,12 @@
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
- * PersistedFlowDefinition is the flow definition object
+ * PersistedWorkflowDefinition is the flow definition object
  *
- * @generated from message api.v1alpha1.workflows.PersistedFlowDefinition
+ * @generated from message api.v1alpha1.workflows.PersistedWorkflowDefinition
  */
-export const PersistedFlowDefinition = proto3.makeMessageType(
-  "api.v1alpha1.workflows.PersistedFlowDefinition",
+export const PersistedWorkflowDefinition = proto3.makeMessageType(
+  "api.v1alpha1.workflows.PersistedWorkflowDefinition",
   () => [
     { no: 1, name: "flow_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -40,60 +40,60 @@ export const PersistedFlowDefinition = proto3.makeMessageType(
 );
 
 /**
- * CreateFlowDefinitionRequest is the request object for creating a flow definition
+ * CreateWorkflowDefinitionRequest is the request object for creating a flow definition
  *
- * @generated from message api.v1alpha1.workflows.CreateFlowDefinitionRequest
+ * @generated from message api.v1alpha1.workflows.CreateWorkflowDefinitionRequest
  */
-export const CreateFlowDefinitionRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.CreateFlowDefinitionRequest",
+export const CreateWorkflowDefinitionRequest = proto3.makeMessageType(
+  "api.v1alpha1.workflows.CreateWorkflowDefinitionRequest",
   () => [
-    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],
 );
 
 /**
  * CreateFlowDefinitionResponse is the response object for creating a flow definition
  *
- * @generated from message api.v1alpha1.workflows.CreateFlowDefinitionResponse
+ * @generated from message api.v1alpha1.workflows.CreateWorkflowDefinitionResponse
  */
-export const CreateFlowDefinitionResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.CreateFlowDefinitionResponse",
+export const CreateWorkflowDefinitionResponse = proto3.makeMessageType(
+  "api.v1alpha1.workflows.CreateWorkflowDefinitionResponse",
   () => [
-    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],
 );
 
 /**
- * GetFlowDefinitionRequest is the request object for retrieving a flow definition
+ * GetWorkflowDefinitionRequest is the request object for retrieving a flow definition
  *
- * @generated from message api.v1alpha1.workflows.GetFlowDefinitionRequest
+ * @generated from message api.v1alpha1.workflows.GetWorkflowDefinitionRequest
  */
-export const GetFlowDefinitionRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.GetFlowDefinitionRequest",
+export const GetWorkflowDefinitionRequest = proto3.makeMessageType(
+  "api.v1alpha1.workflows.GetWorkflowDefinitionRequest",
   () => [
-    { no: 1, name: "flow_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "workflow_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * GetFlowDefinitionResponse is the response object for retrieving a flow definition
+ * GetWorkflowDefinitionResponse is the response object for retrieving a flow definition
  *
- * @generated from message api.v1alpha1.workflows.GetFlowDefinitionResponse
+ * @generated from message api.v1alpha1.workflows.GetWorkflowDefinitionResponse
  */
-export const GetFlowDefinitionResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.GetFlowDefinitionResponse",
+export const GetWorkflowDefinitionResponse = proto3.makeMessageType(
+  "api.v1alpha1.workflows.GetWorkflowDefinitionResponse",
   () => [
-    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],
 );
 
 /**
- * ListFlowDefinitionsRequest is the request object for listing flow definitions
+ * ListWorkflowDefinitionsRequest is the request object for listing flow definitions
  *
- * @generated from message api.v1alpha1.workflows.ListFlowDefinitionsRequest
+ * @generated from message api.v1alpha1.workflows.ListWorkflowDefinitionsRequest
  */
-export const ListFlowDefinitionsRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.ListFlowDefinitionsRequest",
+export const ListWorkflowDefinitionsRequest = proto3.makeMessageType(
+  "api.v1alpha1.workflows.ListWorkflowDefinitionsRequest",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "application", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -103,58 +103,58 @@ export const ListFlowDefinitionsRequest = proto3.makeMessageType(
 /**
  * ListFlowDefinitionsResponse is the response object for listing flow definitions
  *
- * @generated from message api.v1alpha1.workflows.ListFlowDefinitionsResponse
+ * @generated from message api.v1alpha1.workflows.ListWorkflowDefinitionsResponse
  */
-export const ListFlowDefinitionsResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.ListFlowDefinitionsResponse",
+export const ListWorkflowDefinitionsResponse = proto3.makeMessageType(
+  "api.v1alpha1.workflows.ListWorkflowDefinitionsResponse",
   () => [
-    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],
 );
 
 /**
- * UpdateFlowDefinitionRequest is the request object for updating a flow definition
+ * UpdateWorkflowDefinitionRequest is the request object for updating a flow definition
  *
- * @generated from message api.v1alpha1.workflows.UpdateFlowDefinitionRequest
+ * @generated from message api.v1alpha1.workflows.UpdateWorkflowDefinitionRequest
  */
-export const UpdateFlowDefinitionRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.UpdateFlowDefinitionRequest",
+export const UpdateWorkflowDefinitionRequest = proto3.makeMessageType(
+  "api.v1alpha1.workflows.UpdateWorkflowDefinitionRequest",
   () => [
-    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],
 );
 
 /**
- * UpdateFlowDefinitionResponse is the response object for updating a flow definition
+ * UpdateWorkflowDefinitionResponse is the response object for updating a flow definition
  *
- * @generated from message api.v1alpha1.workflows.UpdateFlowDefinitionResponse
+ * @generated from message api.v1alpha1.workflows.UpdateWorkflowDefinitionResponse
  */
-export const UpdateFlowDefinitionResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.UpdateFlowDefinitionResponse",
+export const UpdateWorkflowDefinitionResponse = proto3.makeMessageType(
+  "api.v1alpha1.workflows.UpdateWorkflowDefinitionResponse",
   () => [
-    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],
 );
 
 /**
- * ValidateFlowDefinitionRequest is the request object for validating a flow definition
+ * ValidateWorkflowDefinitionRequest is the request object for validating a flow definition
  *
- * @generated from message api.v1alpha1.workflows.ValidateFlowDefinitionRequest
+ * @generated from message api.v1alpha1.workflows.ValidateWorkflowDefinitionRequest
  */
-export const ValidateFlowDefinitionRequest = proto3.makeMessageType(
-  "api.v1alpha1.workflows.ValidateFlowDefinitionRequest",
+export const ValidateWorkflowDefinitionRequest = proto3.makeMessageType(
+  "api.v1alpha1.workflows.ValidateWorkflowDefinitionRequest",
   () => [
-    { no: 1, name: "flow_definition", kind: "message", T: PersistedFlowDefinition },
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],
 );
 
 /**
- * ValidateFlowDefinitionResponse is the response object for validating a flow definition
+ * ValidateWorkflowDefinitionResponse is the response object for validating a flow definition
  *
- * @generated from message api.v1alpha1.workflows.ValidateFlowDefinitionResponse
+ * @generated from message api.v1alpha1.workflows.ValidateWorkflowDefinitionResponse
  */
-export const ValidateFlowDefinitionResponse = proto3.makeMessageType(
-  "api.v1alpha1.workflows.ValidateFlowDefinitionResponse",
+export const ValidateWorkflowDefinitionResponse = proto3.makeMessageType(
+  "api.v1alpha1.workflows.ValidateWorkflowDefinitionResponse",
   () => [
     { no: 1, name: "valid", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 2, name: "error", kind: "scalar", T: 9 /* ScalarType.STRING */ },

@@ -17,72 +17,72 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateFlowDefinitionRequest, CreateFlowDefinitionResponse, GetFlowDefinitionRequest, GetFlowDefinitionResponse, ListFlowDefinitionsRequest, ListFlowDefinitionsResponse, UpdateFlowDefinitionRequest, UpdateFlowDefinitionResponse, ValidateFlowDefinitionRequest, ValidateFlowDefinitionResponse } from "./service_pb.js";
+import { CreateWorkflowDefinitionRequest, CreateWorkflowDefinitionResponse, GetWorkflowDefinitionRequest, GetWorkflowDefinitionResponse, ListWorkflowDefinitionsRequest, ListWorkflowDefinitionsResponse, UpdateWorkflowDefinitionRequest, UpdateWorkflowDefinitionResponse, ValidateWorkflowDefinitionRequest, ValidateWorkflowDefinitionResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
- * FlowDefinitionPersistService is the service that provides CRUD operations for FlowDefinitions.
+ * WorkflowDefinitionPersistService is the service that provides CRUD operations for FlowDefinitions.
  * PERMISSION_WORKFLOWS is required for all operations
  *
- * @generated from service api.v1alpha1.workflows.FlowDefinitionPersistService
+ * @generated from service api.v1alpha1.workflows.WorkflowDefinitionPersistService
  */
-export const FlowDefinitionPersistService = {
-  typeName: "api.v1alpha1.workflows.FlowDefinitionPersistService",
+export const WorkflowDefinitionPersistService = {
+  typeName: "api.v1alpha1.workflows.WorkflowDefinitionPersistService",
   methods: {
     /**
      * CreateFlowDefinition creates a new flow definition in the database
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.CreateFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.CreateWorkflowDefinition
      */
-    createFlowDefinition: {
-      name: "CreateFlowDefinition",
-      I: CreateFlowDefinitionRequest,
-      O: CreateFlowDefinitionResponse,
+    createWorkflowDefinition: {
+      name: "CreateWorkflowDefinition",
+      I: CreateWorkflowDefinitionRequest,
+      O: CreateWorkflowDefinitionResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * GetFlowDefinition retrieves a flow definition from the database
+     * GetWorkflowDefinition retrieves a flow definition from the database
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.GetFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.GetWorkflowDefinition
      */
-    getFlowDefinition: {
-      name: "GetFlowDefinition",
-      I: GetFlowDefinitionRequest,
-      O: GetFlowDefinitionResponse,
+    getWorkflowDefinition: {
+      name: "GetWorkflowDefinition",
+      I: GetWorkflowDefinitionRequest,
+      O: GetWorkflowDefinitionResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * ListFlowDefinitions retrieves a list of flow definitions from the database optionally filtered by the owning application
+     * ListWorkflowDefinitions retrieves a list of flow definitions from the database optionally filtered by the owning application
      * if application is not specified, all flow definitions for the org are returned
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.ListFlowDefinitions
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.ListWorkflowDefinitions
      */
-    listFlowDefinitions: {
-      name: "ListFlowDefinitions",
-      I: ListFlowDefinitionsRequest,
-      O: ListFlowDefinitionsResponse,
+    listWorkflowDefinitions: {
+      name: "ListWorkflowDefinitions",
+      I: ListWorkflowDefinitionsRequest,
+      O: ListWorkflowDefinitionsResponse,
       kind: MethodKind.ServerStreaming,
     },
     /**
-     * UpdateFlowDefinition updates a flow definition in the database. Only the name, description and definition graph itself are updated
+     * UpdateWorkflowDefinition updates a flow definition in the database. Only the name, description and definition graph itself are updated
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.UpdateFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.UpdateWorkflowDefinition
      */
-    updateFlowDefinition: {
-      name: "UpdateFlowDefinition",
-      I: UpdateFlowDefinitionRequest,
-      O: UpdateFlowDefinitionResponse,
+    updateWorkflowDefinition: {
+      name: "UpdateWorkflowDefinition",
+      I: UpdateWorkflowDefinitionRequest,
+      O: UpdateWorkflowDefinitionResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * ValidateFlowDefinition validates a flow definition in the database. Only the name, description and definition graph itself are updated
+     * ValidateWorkflowDefinition validates a flow definition in the database. Only the name, description and definition graph itself are updated
      *
-     * @generated from rpc api.v1alpha1.workflows.FlowDefinitionPersistService.ValidateFlowDefinition
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.ValidateWorkflowDefinition
      */
-    validateFlowDefinition: {
-      name: "ValidateFlowDefinition",
-      I: ValidateFlowDefinitionRequest,
-      O: ValidateFlowDefinitionResponse,
+    validateWorkflowDefinition: {
+      name: "ValidateWorkflowDefinition",
+      I: ValidateWorkflowDefinitionRequest,
+      O: ValidateWorkflowDefinitionResponse,
       kind: MethodKind.Unary,
     },
   }
