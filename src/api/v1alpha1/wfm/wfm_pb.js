@@ -1270,6 +1270,7 @@ export const UpdateSkillProfileAveragesUsingHistoricalDataReq = proto3.makeMessa
     { no: 1, name: "skill_profile_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
     { no: 2, name: "datetime_range", kind: "message", T: DatetimeRange },
     { no: 3, name: "exclude_skill_profiles_with_manual_averages", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "skill_profile_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 

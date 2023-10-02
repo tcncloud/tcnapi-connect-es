@@ -3562,6 +3562,13 @@ export declare class UpdateSkillProfileAveragesUsingHistoricalDataReq extends Me
    */
   excludeSkillProfilesWithManualAverages: boolean;
 
+  /**
+   * IDs of the skill profile groups to calculate the averages of, if none are sent it calculates it for all skill profile groups that the org has.
+   *
+   * @generated from field: repeated int64 skill_profile_group_sids = 4;
+   */
+  skillProfileGroupSids: bigint[];
+
   constructor(data?: PartialMessage<UpdateSkillProfileAveragesUsingHistoricalDataReq>);
 
   static readonly runtime: typeof proto3;
