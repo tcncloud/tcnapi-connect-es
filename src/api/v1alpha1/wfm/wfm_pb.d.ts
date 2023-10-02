@@ -4422,6 +4422,13 @@ export declare class ProgramNode extends Message<ProgramNode> {
    */
   originSid?: bigint;
 
+  /**
+   * The predicted calls of this skill profile category will be used when scheduling.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 17;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
   constructor(data?: PartialMessage<ProgramNode>);
 
   static readonly runtime: typeof proto3;

@@ -1516,6 +1516,7 @@ export const ProgramNode = proto3.makeMessageType(
     { no: 14, name: "member_agent_groups", kind: "message", T: AgentGroup, repeated: true },
     { no: 15, name: "member_skill_proficiencies", kind: "message", T: SkillProficiency, repeated: true },
     { no: 16, name: "origin_sid", kind: "message", T: Int64Value },
+    { no: 17, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
