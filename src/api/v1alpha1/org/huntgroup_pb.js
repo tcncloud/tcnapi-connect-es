@@ -209,57 +209,6 @@ export const DeleteDataDipTemplateResponse = proto3.makeMessageType(
 );
 
 /**
- * Request message for CopyDataDipTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.CopyDataDipTemplateRequest
- */
-export const CopyDataDipTemplateRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.CopyDataDipTemplateRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "xml_client_property_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "config_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * Response message for CopyDataDipTemplate RPC method
- *
- * @generated from message api.v1alpha1.org.CopyDataDipTemplateResponse
- */
-export const CopyDataDipTemplateResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.CopyDataDipTemplateResponse",
-  () => [
-    { no: 1, name: "xml_client_property_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * Request message for CopyDataDipTemplateToOrganization RPC method.
- *
- * @generated from message api.v1alpha1.org.CopyDataDipTemplateToOrganizationRequest
- */
-export const CopyDataDipTemplateToOrganizationRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.CopyDataDipTemplateToOrganizationRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "xml_client_property_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "config_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "destination_org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * Response message for CopyDataDipTemplateToOrganization RPC method
- *
- * @generated from message api.v1alpha1.org.CopyDataDipTemplateToOrganizationResponse
- */
-export const CopyDataDipTemplateToOrganizationResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.CopyDataDipTemplateToOrganizationResponse",
-  [],
-);
-
-/**
  * Request message for the ListAgentResponseAutoRules RPC method.
  *
  * @generated from message api.v1alpha1.org.ListAgentResponseAutoRulesRequest

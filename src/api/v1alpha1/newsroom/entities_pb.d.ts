@@ -454,13 +454,6 @@ export declare class CreatePublishedArticleRequest extends Message<CreatePublish
    */
   displayToUser: boolean;
 
-  /**
-   * link to the published article
-   *
-   * @generated from field: string article_link = 3;
-   */
-  articleLink: string;
-
   constructor(data?: PartialMessage<CreatePublishedArticleRequest>);
 
   static readonly runtime: typeof proto3;
