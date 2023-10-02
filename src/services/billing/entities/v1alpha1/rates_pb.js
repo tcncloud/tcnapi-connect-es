@@ -70,13 +70,14 @@ export const RateDefinition = proto3.makeMessageType(
   () => [
     { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "event_type", kind: "enum", T: proto3.getEnumType(EventType) },
-    { no: 4, name: "config_type", kind: "enum", T: proto3.getEnumType(RateDefinitionConfigType) },
-    { no: 5, name: "matching_rule", kind: "enum", T: proto3.getEnumType(MatchingRule) },
-    { no: 6, name: "config", kind: "message", T: RateDefinitionConfig },
-    { no: 7, name: "matching_config", kind: "message", T: MatchingConfig },
-    { no: 8, name: "create_time", kind: "message", T: Timestamp },
-    { no: 9, name: "update_time", kind: "message", T: Timestamp },
+    { no: 3, name: "rate_definition_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "event_type", kind: "enum", T: proto3.getEnumType(EventType) },
+    { no: 5, name: "config_type", kind: "enum", T: proto3.getEnumType(RateDefinitionConfigType) },
+    { no: 6, name: "matching_rule", kind: "enum", T: proto3.getEnumType(MatchingRule) },
+    { no: 7, name: "config", kind: "message", T: RateDefinitionConfig },
+    { no: 8, name: "matching_config", kind: "message", T: MatchingConfig },
+    { no: 9, name: "create_time", kind: "message", T: Timestamp },
+    { no: 10, name: "update_time", kind: "message", T: Timestamp },
   ],
 );
 

@@ -246,51 +246,60 @@ export declare class RateDefinition extends Message<RateDefinition> {
   billingPlanId: string;
 
   /**
+   * the rate definition group this rate definition is a part of;
+   * should always be set unless adding a rate definition to the
+   * default billing plan.
+   *
+   * @generated from field: string rate_definition_group_id = 3;
+   */
+  rateDefinitionGroupId: string;
+
+  /**
    * the event this configures a rate for
    *
-   * @generated from field: api.commons.audit.EventType event_type = 3;
+   * @generated from field: api.commons.audit.EventType event_type = 4;
    */
   eventType: EventType;
 
   /**
    * the type of configuration for this definition
    *
-   * @generated from field: services.billing.entities.v1alpha1.RateDefinitionConfigType config_type = 4;
+   * @generated from field: services.billing.entities.v1alpha1.RateDefinitionConfigType config_type = 5;
    */
   configType: RateDefinitionConfigType;
 
   /**
    * the matching rule for this definition
    *
-   * @generated from field: services.billing.entities.v1alpha1.MatchingRule matching_rule = 5;
+   * @generated from field: services.billing.entities.v1alpha1.MatchingRule matching_rule = 6;
    */
   matchingRule: MatchingRule;
 
   /**
    * the configuration for this definition
    *
-   * @generated from field: services.billing.entities.v1alpha1.RateDefinitionConfig config = 6;
+   * @generated from field: services.billing.entities.v1alpha1.RateDefinitionConfig config = 7;
    */
   config?: RateDefinitionConfig;
 
   /**
    * the matching config for this definition
    *
-   * @generated from field: services.billing.entities.v1alpha1.MatchingConfig matching_config = 7;
+   * @generated from field: services.billing.entities.v1alpha1.MatchingConfig matching_config = 8;
    */
   matchingConfig?: MatchingConfig;
 
   /**
    * the time the rate definition was created
    *
-   * @generated from field: google.protobuf.Timestamp create_time = 8;
+   * @generated from field: google.protobuf.Timestamp create_time = 9;
    */
   createTime?: Timestamp;
 
   /**
    * the time the rate definition was last updated
    *
-   * @generated from field: google.protobuf.Timestamp update_time = 9;
+   * @generated from field: google.protobuf.Timestamp update_time = 10;
    */
   updateTime?: Timestamp;
 
