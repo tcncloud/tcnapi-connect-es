@@ -10,6 +10,7 @@ import type { Invoice, InvoiceFormat as InvoiceFormat$1 } from "../../commons/bi
 
 /**
  * @generated from enum api.v1alpha1.billing.InvoiceFormat
+ * @deprecated
  */
 export declare enum InvoiceFormat {
   /**
@@ -29,15 +30,13 @@ export declare enum InvoiceFormat {
 }
 
 /**
- * GetBillingPlanReq - request to get an organization's billing plan
- *
  * @generated from message api.v1alpha1.billing.GetBillingPlanReq
+ * @deprecated
  */
 export declare class GetBillingPlanReq extends Message<GetBillingPlanReq> {
   /**
-   * Required. the identifier of the organization to get the plan for
-   *
-   * @generated from field: string org_id = 1;
+   * @generated from field: string org_id = 1 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -57,15 +56,13 @@ export declare class GetBillingPlanReq extends Message<GetBillingPlanReq> {
 }
 
 /**
- * GetBillingPlanRes - result of retrieving an organization's billing plan
- *
  * @generated from message api.v1alpha1.billing.GetBillingPlanRes
+ * @deprecated
  */
 export declare class GetBillingPlanRes extends Message<GetBillingPlanRes> {
   /**
-   * the billing plan
-   *
-   * @generated from field: api.commons.billing.Plan billing_plan = 1;
+   * @generated from field: api.commons.billing.Plan billing_plan = 1 [deprecated = true];
+   * @deprecated
    */
   billingPlan?: Plan;
 
@@ -85,22 +82,19 @@ export declare class GetBillingPlanRes extends Message<GetBillingPlanRes> {
 }
 
 /**
- * UpdateBillingPlanReq - request to update a billing plan.
- *
  * @generated from message api.v1alpha1.billing.UpdateBillingPlanReq
+ * @deprecated
  */
 export declare class UpdateBillingPlanReq extends Message<UpdateBillingPlanReq> {
   /**
-   * Required. the billing details to update
-   *
-   * @generated from field: repeated api.commons.billing.Detail billing_details = 1;
+   * @generated from field: repeated api.commons.billing.Detail billing_details = 1 [deprecated = true];
+   * @deprecated
    */
   billingDetails: Detail[];
 
   /**
-   * Required. the identifier of the organization to update the plan for
-   *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
@@ -120,16 +114,13 @@ export declare class UpdateBillingPlanReq extends Message<UpdateBillingPlanReq> 
 }
 
 /**
- * UpdateBillingPlanRes - result of updating a billing plan; contains
- * only the details that were provided in the request
- *
  * @generated from message api.v1alpha1.billing.UpdateBillingPlanRes
+ * @deprecated
  */
 export declare class UpdateBillingPlanRes extends Message<UpdateBillingPlanRes> {
   /**
-   * the updated billing plan
-   *
-   * @generated from field: api.commons.billing.Plan billing_plan = 1;
+   * @generated from field: api.commons.billing.Plan billing_plan = 1 [deprecated = true];
+   * @deprecated
    */
   billingPlan?: Plan;
 
@@ -149,41 +140,31 @@ export declare class UpdateBillingPlanRes extends Message<UpdateBillingPlanRes> 
 }
 
 /**
- * GetInvoiceReq - request to get an invoice
- *
  * @generated from message api.v1alpha1.billing.GetInvoiceReq
+ * @deprecated
  */
 export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
   /**
-   * Optional. the date of the invoice to retrieve. If not specified,
-   * will return the invoice associated with the current billing cycle.
-   * Otherwise, it will return the invoice associated with the billing
-   * cycle that contains the specified date.
-   *
-   * @generated from field: google.protobuf.Timestamp invoice_date = 1;
+   * @generated from field: google.protobuf.Timestamp invoice_date = 1 [deprecated = true];
+   * @deprecated
    */
   invoiceDate?: Timestamp;
 
   /**
-   * Required. the identifier of the organization to update the plan for
-   *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
   /**
-   * deprecated
-   *
    * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
    * @deprecated
    */
   format: InvoiceFormat;
 
   /**
-   * Optional. the format the invoice is returned using. If not specified,
-   * will use the proto format as the default
-   *
-   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4;
+   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4 [deprecated = true];
+   * @deprecated
    */
   invoiceFormat: InvoiceFormat$1;
 
@@ -203,22 +184,17 @@ export declare class GetInvoiceReq extends Message<GetInvoiceReq> {
 }
 
 /**
- * GetInvoiceRes - result of retrieving an invoice
- *
  * @generated from message api.v1alpha1.billing.GetInvoiceRes
+ * @deprecated
  */
 export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   /**
-   * deprecated
-   *
    * @generated from field: api.commons.billing.Invoice invoice = 1 [deprecated = true];
    * @deprecated
    */
   invoice?: Invoice;
 
   /**
-   * deprecated
-   *
    * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.format
    */
   format: {
@@ -238,28 +214,27 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
   } | { case: undefined; value?: undefined };
 
   /**
-   * the invoice in the format requested
-   *
    * @generated from oneof api.v1alpha1.billing.GetInvoiceRes.invoice_data
    */
   invoiceData: {
     /**
-     * @generated from field: api.commons.billing.Invoice invoice_proto = 100;
+     * @generated from field: api.commons.billing.Invoice invoice_proto = 100 [deprecated = true];
+     * @deprecated
      */
     value: Invoice;
     case: "invoiceProto";
   } | {
     /**
-     * @generated from field: string invoice_csv_url = 101;
+     * @generated from field: string invoice_csv_url = 101 [deprecated = true];
+     * @deprecated
      */
     value: string;
     case: "invoiceCsvUrl";
   } | { case: undefined; value?: undefined };
 
   /**
-   * the billing cycle of the invoice requested
-   *
-   * @generated from field: string billing_cycle = 4;
+   * @generated from field: string billing_cycle = 4 [deprecated = true];
+   * @deprecated
    */
   billingCycle: string;
 
@@ -279,41 +254,31 @@ export declare class GetInvoiceRes extends Message<GetInvoiceRes> {
 }
 
 /**
- * ExportGenerateInvoicesReq - request to export a generated invoice
- *
  * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceReq
+ * @deprecated
  */
 export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedInvoiceReq> {
   /**
-   * Optional. the date of the invoice to retrieve. If not specified,
-   * will return the invoice associated with the current billing cycle.
-   * Otherwise, it will return the invoice associated with the billing
-   * cycle that contains the specified date.
-   *
-   * @generated from field: google.protobuf.Timestamp invoice_date = 1;
+   * @generated from field: google.protobuf.Timestamp invoice_date = 1 [deprecated = true];
+   * @deprecated
    */
   invoiceDate?: Timestamp;
 
   /**
-   * Required. the identifier of the organization to get the plan for
-   *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
   /**
-   * deprecated
-   *
    * @generated from field: api.v1alpha1.billing.InvoiceFormat format = 3 [deprecated = true];
    * @deprecated
    */
   format: InvoiceFormat;
 
   /**
-   * Optional. the invoice for the organization. If not specified,
-   * will use the proto format as the default
-   *
-   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4;
+   * @generated from field: api.commons.billing.InvoiceFormat invoice_format = 4 [deprecated = true];
+   * @deprecated
    */
   invoiceFormat: InvoiceFormat$1;
 
@@ -333,14 +298,11 @@ export declare class ExportGeneratedInvoiceReq extends Message<ExportGeneratedIn
 }
 
 /**
- * ExportGeneratedInvoicesRes - result of exporting a generated invoice
- *
  * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceRes
+ * @deprecated
  */
 export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedInvoiceRes> {
   /**
-   * deprecated
-   *
    * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.format
    */
   format: {
@@ -360,28 +322,27 @@ export declare class ExportGeneratedInvoiceRes extends Message<ExportGeneratedIn
   } | { case: undefined; value?: undefined };
 
   /**
-   * the invoice in the format requested
-   *
    * @generated from oneof api.v1alpha1.billing.ExportGeneratedInvoiceRes.invoice_data
    */
   invoiceData: {
     /**
-     * @generated from field: api.commons.billing.Invoice invoice_proto = 100;
+     * @generated from field: api.commons.billing.Invoice invoice_proto = 100 [deprecated = true];
+     * @deprecated
      */
     value: Invoice;
     case: "invoiceProto";
   } | {
     /**
-     * @generated from field: string invoice_csv_url = 101;
+     * @generated from field: string invoice_csv_url = 101 [deprecated = true];
+     * @deprecated
      */
     value: string;
     case: "invoiceCsvUrl";
   } | { case: undefined; value?: undefined };
 
   /**
-   * the billing cycle of the invoice requested
-   *
-   * @generated from field: string billing_cycle = 4;
+   * @generated from field: string billing_cycle = 4 [deprecated = true];
+   * @deprecated
    */
   billingCycle: string;
 

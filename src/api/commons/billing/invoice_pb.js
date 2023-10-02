@@ -6,10 +6,8 @@
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
- * Product - represents a billed product. A product should show up only
- * once in a monthly invoice.
- *
  * @generated from enum api.commons.billing.Product
+ * @deprecated
  */
 export const Product = proto3.makeEnum(
   "api.commons.billing.Product",
@@ -31,6 +29,7 @@ export const Product = proto3.makeEnum(
 
 /**
  * @generated from enum api.commons.billing.InvoiceFormat
+ * @deprecated
  */
 export const InvoiceFormat = proto3.makeEnum(
   "api.commons.billing.InvoiceFormat",
@@ -42,10 +41,8 @@ export const InvoiceFormat = proto3.makeEnum(
 );
 
 /**
- * Invoice - a collection of products with their total rated amount for
- * a selected month or month-to-date.
- *
  * @generated from message api.commons.billing.Invoice
+ * @deprecated
  */
 export const Invoice = proto3.makeMessageType(
   "api.commons.billing.Invoice",
@@ -59,9 +56,8 @@ export const Invoice = proto3.makeMessageType(
 );
 
 /**
- * InvoiceItem -
- *
  * @generated from message api.commons.billing.InvoiceItem
+ * @deprecated
  */
 export const InvoiceItem = proto3.makeMessageType(
   "api.commons.billing.InvoiceItem",

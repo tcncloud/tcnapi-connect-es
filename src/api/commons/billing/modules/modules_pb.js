@@ -6,10 +6,8 @@
 import { Int64Value, proto3 } from "@bufbuild/protobuf";
 
 /**
- * BasicConfig - basic config for a rating module when there is no
- * other data needed
- *
  * @generated from message api.commons.billing.modules.BasicConfig
+ * @deprecated
  */
 export const BasicConfig = proto3.makeMessageType(
   "api.commons.billing.modules.BasicConfig",
@@ -19,10 +17,8 @@ export const BasicConfig = proto3.makeMessageType(
 );
 
 /**
- * BasicSizeConfig - basic config for a rating module that rates based
- * on event size
- *
  * @generated from message api.commons.billing.modules.BasicAmountConfig
+ * @deprecated
  */
 export const BasicAmountConfig = proto3.makeMessageType(
   "api.commons.billing.modules.BasicAmountConfig",
