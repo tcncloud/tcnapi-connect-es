@@ -8350,6 +8350,14 @@ export declare class CreateScheduleScenarioWithNodesReq extends Message<CreateSc
    */
   timeZoneVal: TimeZone;
 
+  /**
+   * Skill Profile Category to associate with the program node to create.
+   * The predicted calls of this skill profile category will be used when scheduling.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 11;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
   constructor(data?: PartialMessage<CreateScheduleScenarioWithNodesReq>);
 
   static readonly runtime: typeof proto3;

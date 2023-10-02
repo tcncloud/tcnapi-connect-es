@@ -2906,6 +2906,7 @@ export const CreateScheduleScenarioWithNodesReq = proto3.makeMessageType(
     { no: 8, name: "program_node_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "program_node_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "time_zone_val", kind: "enum", T: proto3.getEnumType(TimeZone) },
+    { no: 11, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
   ],
 );
 
