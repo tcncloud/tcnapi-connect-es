@@ -61,18 +61,11 @@ export declare class Page extends Message<Page> {
  */
 export declare class Sort extends Message<Sort> {
   /**
-   * Required: field to sort by
+   * Required: fields to sort by
    *
-   * @generated from field: string field = 1;
+   * @generated from field: repeated services.billing.v1alpha1.SortField fields = 1;
    */
-  field: string;
-
-  /**
-   * Required: direction to sort by
-   *
-   * @generated from field: services.billing.v1alpha1.SortDirection direction = 2;
-   */
-  direction: SortDirection;
+  fields: SortField[];
 
   constructor(data?: PartialMessage<Sort>);
 
@@ -87,5 +80,38 @@ export declare class Sort extends Message<Sort> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Sort;
 
   static equals(a: Sort | PlainMessage<Sort> | undefined, b: Sort | PlainMessage<Sort> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.SortField
+ */
+export declare class SortField extends Message<SortField> {
+  /**
+   * Required: field to sort by
+   *
+   * @generated from field: string field = 1;
+   */
+  field: string;
+
+  /**
+   * Required: direction to sort by
+   *
+   * @generated from field: services.billing.v1alpha1.SortDirection direction = 2;
+   */
+  direction: SortDirection;
+
+  constructor(data?: PartialMessage<SortField>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.SortField";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SortField;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SortField;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SortField;
+
+  static equals(a: SortField | PlainMessage<SortField> | undefined, b: SortField | PlainMessage<SortField> | undefined): boolean;
 }
 
