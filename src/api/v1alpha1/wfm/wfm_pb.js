@@ -4320,6 +4320,30 @@ export const CreateTourPatternRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the UpsertTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpsertTourPatternWithMembersReq
+ */
+export const UpsertTourPatternWithMembersReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpsertTourPatternWithMembersReq",
+  () => [
+    { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+  ],
+);
+
+/**
+ * Response message for the UpsertTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpsertTourPatternWithMembersRes
+ */
+export const UpsertTourPatternWithMembersRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpsertTourPatternWithMembersRes",
+  () => [
+    { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+  ],
+);
+
+/**
  * Request message for the GetTourPattern RPC.
  *
  * @generated from message api.v1alpha1.wfm.GetTourPatternReq
@@ -4793,5 +4817,32 @@ export const DeleteTourAgentCollectionWFMAgentsReq = proto3.makeMessageType(
 export const DeleteTourAgentCollectionWFMAgentsRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DeleteTourAgentCollectionWFMAgentsRes",
   [],
+);
+
+/**
+ * Request message for the GenerateTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GenerateTourWeekPatternsReq
+ */
+export const GenerateTourWeekPatternsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GenerateTourWeekPatternsReq",
+  () => [
+    { no: 1, name: "target_shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "num_weeks_in_tour", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for the GenerateTourWeekPatterns RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GenerateTourWeekPatternsRes
+ */
+export const GenerateTourWeekPatternsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GenerateTourWeekPatternsRes",
+  () => [
+    { no: 1, name: "tour_week_patterns", kind: "message", T: TourWeekPattern, repeated: true },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
 );
 
