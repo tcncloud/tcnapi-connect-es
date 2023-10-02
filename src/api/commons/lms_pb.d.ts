@@ -801,6 +801,13 @@ export declare enum EventState {
    * @generated from enum value: EVENT_STATE_CLEANUP = 4;
    */
   CLEANUP = 4,
+
+  /**
+   * event is finished executing and cleaning up and can exit out of it's process
+   *
+   * @generated from enum value: EVENT_STATE_FINISHED = 5;
+   */
+  FINISHED = 5,
 }
 
 /**

@@ -381,6 +381,7 @@ export const EventState = proto3.makeEnum(
     {no: 2, name: "EVENT_STATE_CHECK", localName: "CHECK"},
     {no: 3, name: "EVENT_STATE_PROCESS", localName: "PROCESS"},
     {no: 4, name: "EVENT_STATE_CLEANUP", localName: "CLEANUP"},
+    {no: 5, name: "EVENT_STATE_FINISHED", localName: "FINISHED"},
   ],
 );
 
