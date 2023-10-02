@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListAgentLearningOpportunitiesRequest, ListAgentLearningOpportunitiesResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
+import { CompleteAgentLearningOpportunityRequest, CompleteAgentLearningOpportunityResponse, CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListAgentLearningOpportunitiesRequest, ListAgentLearningOpportunitiesResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -43,6 +43,17 @@ export declare const AgentTrainingService: {
       readonly name: "ListAgentLearningOpportunities",
       readonly I: typeof ListAgentLearningOpportunitiesRequest,
       readonly O: typeof ListAgentLearningOpportunitiesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CompleteAgentLearningOpportunity completes an agent's learning opportunity.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.CompleteAgentLearningOpportunity
+     */
+    readonly completeAgentLearningOpportunity: {
+      readonly name: "CompleteAgentLearningOpportunity",
+      readonly I: typeof CompleteAgentLearningOpportunityRequest,
+      readonly O: typeof CompleteAgentLearningOpportunityResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
