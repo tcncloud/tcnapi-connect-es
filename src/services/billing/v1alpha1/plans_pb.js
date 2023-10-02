@@ -125,7 +125,7 @@ export const ListBillingPlansRequest = proto3.makeMessageType(
 export const ListBillingPlansResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.ListBillingPlansResponse",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan, repeated: true },
+    { no: 1, name: "billing_plans", kind: "message", T: BillingPlan, repeated: true },
     { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );

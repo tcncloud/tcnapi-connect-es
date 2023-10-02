@@ -305,9 +305,9 @@ export declare class ListBillingPlansRequest extends Message<ListBillingPlansReq
  */
 export declare class ListBillingPlansResponse extends Message<ListBillingPlansResponse> {
   /**
-   * @generated from field: repeated services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: repeated services.billing.entities.v1alpha1.BillingPlan billing_plans = 1;
    */
-  billingPlan: BillingPlan[];
+  billingPlans: BillingPlan[];
 
   /**
    * Optional: only present if paginating.
