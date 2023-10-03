@@ -225,8 +225,8 @@ export const MatchingMod = proto3.makeMessageType(
 export const MatchingEntity = proto3.makeMessageType(
   "api.commons.MatchingEntity",
   () => [
-    { no: 1, name: "results", kind: "message", T: ResultsMod },
-    { no: 2, name: "dispositions", kind: "message", T: DispositionMod },
+    { no: 1, name: "results", kind: "message", T: ResultsMod, oneof: "entity" },
+    { no: 2, name: "dispositions", kind: "message", T: DispositionMod, oneof: "entity" },
   ],
 );
 

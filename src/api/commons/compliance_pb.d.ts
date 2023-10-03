@@ -551,14 +551,21 @@ export declare class MatchingMod extends Message<MatchingMod> {
  */
 export declare class MatchingEntity extends Message<MatchingEntity> {
   /**
-   * @generated from field: api.commons.ResultsMod results = 1;
+   * @generated from oneof api.commons.MatchingEntity.entity
    */
-  results?: ResultsMod;
-
-  /**
-   * @generated from field: api.commons.DispositionMod dispositions = 2;
-   */
-  dispositions?: DispositionMod;
+  entity: {
+    /**
+     * @generated from field: api.commons.ResultsMod results = 1;
+     */
+    value: ResultsMod;
+    case: "results";
+  } | {
+    /**
+     * @generated from field: api.commons.DispositionMod dispositions = 2;
+     */
+    value: DispositionMod;
+    case: "dispositions";
+  } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<MatchingEntity>);
 
