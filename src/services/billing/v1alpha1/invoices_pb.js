@@ -73,11 +73,10 @@ export const ListInvoicesRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.ListInvoicesRequest",
   () => [
     { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "invoice", kind: "message", T: Invoice },
-    { no: 3, name: "return_fields", kind: "message", T: FieldMask },
-    { no: 4, name: "filter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "sort", kind: "message", T: Sort },
-    { no: 6, name: "page", kind: "message", T: Page },
+    { no: 2, name: "filter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "fields", kind: "message", T: FieldMask },
+    { no: 4, name: "sort", kind: "message", T: Sort, repeated: true },
+    { no: 5, name: "page", kind: "message", T: Page },
   ],
 );
 

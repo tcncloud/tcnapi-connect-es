@@ -6,13 +6,13 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
- * @generated from enum services.billing.v1alpha1.SortDirection
+ * @generated from enum services.billing.v1alpha1.Order
  */
-export const SortDirection = proto3.makeEnum(
-  "services.billing.v1alpha1.SortDirection",
+export const Order = proto3.makeEnum(
+  "services.billing.v1alpha1.Order",
   [
-    {no: 0, name: "SORT_DIRECTION_UNSPECIFIED", localName: "UNSPECIFIED"},
-    {no: 1, name: "SORT_DIRECTION_DESC", localName: "DESC"},
+    {no: 0, name: "ORDER_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "ORDER_DESC", localName: "DESC"},
   ],
 );
 
@@ -33,18 +33,8 @@ export const Page = proto3.makeMessageType(
 export const Sort = proto3.makeMessageType(
   "services.billing.v1alpha1.Sort",
   () => [
-    { no: 1, name: "fields", kind: "message", T: SortField, repeated: true },
-  ],
-);
-
-/**
- * @generated from message services.billing.v1alpha1.SortField
- */
-export const SortField = proto3.makeMessageType(
-  "services.billing.v1alpha1.SortField",
-  () => [
-    { no: 1, name: "field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(SortDirection) },
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "direction", kind: "enum", T: proto3.getEnumType(Order) },
   ],
 );
 

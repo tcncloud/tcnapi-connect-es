@@ -162,35 +162,30 @@ export declare class ListInvoicesRequest extends Message<ListInvoicesRequest> {
   invoiceId: string;
 
   /**
-   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 2;
-   */
-  invoice?: Invoice;
-
-  /**
-   * Optional: defaults to all fields.
-   *
-   * @generated from field: google.protobuf.FieldMask return_fields = 3;
-   */
-  returnFields?: FieldMask;
-
-  /**
    * Optional: defaults to no filter.
    *
-   * @generated from field: string filter = 4;
+   * @generated from field: string filter = 2;
    */
   filter: string;
 
   /**
+   * Optional: defaults to all fields.
+   *
+   * @generated from field: google.protobuf.FieldMask fields = 3;
+   */
+  fields?: FieldMask;
+
+  /**
    * Optional: defaults to no sort.
    *
-   * @generated from field: services.billing.v1alpha1.Sort sort = 5;
+   * @generated from field: repeated services.billing.v1alpha1.Sort sort = 4;
    */
-  sort?: Sort;
+  sort: Sort[];
 
   /**
    * Optional: defaults to no paging.
    *
-   * @generated from field: services.billing.v1alpha1.Page page = 6;
+   * @generated from field: services.billing.v1alpha1.Page page = 5;
    */
   page?: Page;
 
