@@ -527,12 +527,7 @@ export declare class MatchingMod extends Message<MatchingMod> {
   or: MatchingMod[];
 
   /**
-   * @generated from field: bool not = 3;
-   */
-  not: boolean;
-
-  /**
-   * @generated from field: api.commons.MatchingEntity mod = 4;
+   * @generated from field: api.commons.MatchingEntity mod = 3;
    */
   mod?: MatchingEntity;
 

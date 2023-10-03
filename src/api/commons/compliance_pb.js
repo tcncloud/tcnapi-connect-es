@@ -215,8 +215,7 @@ export const MatchingMod = proto3.makeMessageType(
   () => [
     { no: 1, name: "and", kind: "message", T: MatchingMod, repeated: true },
     { no: 2, name: "or", kind: "message", T: MatchingMod, repeated: true },
-    { no: 3, name: "not", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 4, name: "mod", kind: "message", T: MatchingEntity },
+    { no: 3, name: "mod", kind: "message", T: MatchingEntity },
   ],
 );
 

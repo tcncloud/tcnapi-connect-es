@@ -174,6 +174,7 @@ export const CreatePublishedArticleRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "display_to_user", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "article_link", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

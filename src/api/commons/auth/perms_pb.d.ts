@@ -262,7 +262,17 @@ export declare enum Permission {
   VOICEMAIL_DOWNLOAD = 1401,
 
   /**
+   * Enables agents to view manual approve tasks
+   *
+   * @generated from enum value: PERMISSION_MANUAL_APPROVE = 341;
+   */
+  MANUAL_APPROVE = 341,
+
+  /**
    * Enables Agents to view portals.
+   *
+   *
+   * Voice Analytics
    *
    * @generated from enum value: PERMISSION_AGENT_PORTALS_VIEW = 340;
    */

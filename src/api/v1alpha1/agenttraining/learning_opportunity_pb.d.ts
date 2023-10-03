@@ -261,6 +261,59 @@ export declare class UpdateLearningOpportunityResponse extends Message<UpdateLea
 }
 
 /**
+ * CompleteAgentLearningOpportunityRequest represents an agent
+ * request to complete a learning opportunity assigned to that agent.
+ *
+ * @generated from message api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityRequest
+ */
+export declare class CompleteAgentLearningOpportunityRequest extends Message<CompleteAgentLearningOpportunityRequest> {
+  /**
+   * @generated from field: int64 learning_opportunity_id = 3;
+   */
+  learningOpportunityId: bigint;
+
+  constructor(data?: PartialMessage<CompleteAgentLearningOpportunityRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteAgentLearningOpportunityRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteAgentLearningOpportunityRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteAgentLearningOpportunityRequest;
+
+  static equals(a: CompleteAgentLearningOpportunityRequest | PlainMessage<CompleteAgentLearningOpportunityRequest> | undefined, b: CompleteAgentLearningOpportunityRequest | PlainMessage<CompleteAgentLearningOpportunityRequest> | undefined): boolean;
+}
+
+/**
+ * CompleteAgentLearningOpportunityResponse represents the completed learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityResponse
+ */
+export declare class CompleteAgentLearningOpportunityResponse extends Message<CompleteAgentLearningOpportunityResponse> {
+  /**
+   * @generated from field: api.commons.LearningOpportunity learning_opportunity = 1;
+   */
+  learningOpportunity?: LearningOpportunity;
+
+  constructor(data?: PartialMessage<CompleteAgentLearningOpportunityResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.CompleteAgentLearningOpportunityResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CompleteAgentLearningOpportunityResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CompleteAgentLearningOpportunityResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CompleteAgentLearningOpportunityResponse;
+
+  static equals(a: CompleteAgentLearningOpportunityResponse | PlainMessage<CompleteAgentLearningOpportunityResponse> | undefined, b: CompleteAgentLearningOpportunityResponse | PlainMessage<CompleteAgentLearningOpportunityResponse> | undefined): boolean;
+}
+
+/**
  * DeleteLearningOpportunityRequest represents a request to delete a learning opportunity.
  *
  * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityRequest
