@@ -376,6 +376,34 @@ export declare enum EventType {
   OMNICHANNEL_PAYMENT_LINK_SENT = 357,
 
   /**
+   * accepted manual approve task
+   *
+   * @generated from enum value: OMNICHANNEL_MANUAL_APPROVE_TASK_ACCEPTED = 358;
+   */
+  OMNICHANNEL_MANUAL_APPROVE_TASK_ACCEPTED = 358,
+
+  /**
+   * rejected manual approve task
+   *
+   * @generated from enum value: OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED = 359;
+   */
+  OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED = 359,
+
+  /**
+   * timeout of manual approve task
+   *
+   * @generated from enum value: OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT = 360;
+   */
+  OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT = 360,
+
+  /**
+   * requeue of manual approve task
+   *
+   * @generated from enum value: OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE = 361;
+   */
+  OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE = 361,
+
+  /**
    * ASM
    * agent logs into asm
    *

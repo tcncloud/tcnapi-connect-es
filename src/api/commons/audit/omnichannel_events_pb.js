@@ -659,3 +659,59 @@ export const OmnichannelPaymentLinkSentEvent = proto3.makeMessageType(
   ],
 );
 
+/**
+ * OmnichannelManualApproveTaskAcceptedEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent
+ */
+export const OmnichannelManualApproveTaskAcceptedEvent = proto3.makeMessageType(
+  "api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent",
+  () => [
+    { no: 1, name: "task", kind: "message", T: OmniTask },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * OmnichannelManualApproveTaskRejectedEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskRejectedEvent
+ */
+export const OmnichannelManualApproveTaskRejectedEvent = proto3.makeMessageType(
+  "api.commons.audit.OmnichannelManualApproveTaskRejectedEvent",
+  () => [
+    { no: 1, name: "task", kind: "message", T: OmniTask },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * OmnichannelManualApproveTaskTimeoutEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent
+ */
+export const OmnichannelManualApproveTaskTimeoutEvent = proto3.makeMessageType(
+  "api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent",
+  () => [
+    { no: 1, name: "task", kind: "message", T: OmniTask },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * OmnichannelManualApproveTaskRequeueEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskRequeueEvent
+ */
+export const OmnichannelManualApproveTaskRequeueEvent = proto3.makeMessageType(
+  "api.commons.audit.OmnichannelManualApproveTaskRequeueEvent",
+  () => [
+    { no: 1, name: "task", kind: "message", T: OmniTask },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+

@@ -2104,3 +2104,171 @@ export declare class OmnichannelPaymentLinkSentEvent extends Message<Omnichannel
   static equals(a: OmnichannelPaymentLinkSentEvent | PlainMessage<OmnichannelPaymentLinkSentEvent> | undefined, b: OmnichannelPaymentLinkSentEvent | PlainMessage<OmnichannelPaymentLinkSentEvent> | undefined): boolean;
 }
 
+/**
+ * OmnichannelManualApproveTaskAcceptedEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent
+ */
+export declare class OmnichannelManualApproveTaskAcceptedEvent extends Message<OmnichannelManualApproveTaskAcceptedEvent> {
+  /**
+   * the task that sent the message
+   *
+   * @generated from field: api.commons.OmniTask task = 1;
+   */
+  task?: OmniTask;
+
+  /**
+   * the id of the agent
+   *
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  /**
+   * asm session sid
+   *
+   * @generated from field: int64 asm_session_sid = 3;
+   */
+  asmSessionSid: bigint;
+
+  constructor(data?: PartialMessage<OmnichannelManualApproveTaskAcceptedEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmnichannelManualApproveTaskAcceptedEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskAcceptedEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskAcceptedEvent;
+
+  static equals(a: OmnichannelManualApproveTaskAcceptedEvent | PlainMessage<OmnichannelManualApproveTaskAcceptedEvent> | undefined, b: OmnichannelManualApproveTaskAcceptedEvent | PlainMessage<OmnichannelManualApproveTaskAcceptedEvent> | undefined): boolean;
+}
+
+/**
+ * OmnichannelManualApproveTaskRejectedEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskRejectedEvent
+ */
+export declare class OmnichannelManualApproveTaskRejectedEvent extends Message<OmnichannelManualApproveTaskRejectedEvent> {
+  /**
+   * the task that sent the message
+   *
+   * @generated from field: api.commons.OmniTask task = 1;
+   */
+  task?: OmniTask;
+
+  /**
+   * the id of the agent
+   *
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  /**
+   * asm session sid
+   *
+   * @generated from field: int64 asm_session_sid = 3;
+   */
+  asmSessionSid: bigint;
+
+  constructor(data?: PartialMessage<OmnichannelManualApproveTaskRejectedEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.OmnichannelManualApproveTaskRejectedEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmnichannelManualApproveTaskRejectedEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskRejectedEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskRejectedEvent;
+
+  static equals(a: OmnichannelManualApproveTaskRejectedEvent | PlainMessage<OmnichannelManualApproveTaskRejectedEvent> | undefined, b: OmnichannelManualApproveTaskRejectedEvent | PlainMessage<OmnichannelManualApproveTaskRejectedEvent> | undefined): boolean;
+}
+
+/**
+ * OmnichannelManualApproveTaskTimeoutEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent
+ */
+export declare class OmnichannelManualApproveTaskTimeoutEvent extends Message<OmnichannelManualApproveTaskTimeoutEvent> {
+  /**
+   * the task that sent the message
+   *
+   * @generated from field: api.commons.OmniTask task = 1;
+   */
+  task?: OmniTask;
+
+  /**
+   * the id of the agent
+   *
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  /**
+   * asm session sid
+   *
+   * @generated from field: int64 asm_session_sid = 3;
+   */
+  asmSessionSid: bigint;
+
+  constructor(data?: PartialMessage<OmnichannelManualApproveTaskTimeoutEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmnichannelManualApproveTaskTimeoutEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskTimeoutEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskTimeoutEvent;
+
+  static equals(a: OmnichannelManualApproveTaskTimeoutEvent | PlainMessage<OmnichannelManualApproveTaskTimeoutEvent> | undefined, b: OmnichannelManualApproveTaskTimeoutEvent | PlainMessage<OmnichannelManualApproveTaskTimeoutEvent> | undefined): boolean;
+}
+
+/**
+ * OmnichannelManualApproveTaskRequeueEvent -
+ *
+ * @generated from message api.commons.audit.OmnichannelManualApproveTaskRequeueEvent
+ */
+export declare class OmnichannelManualApproveTaskRequeueEvent extends Message<OmnichannelManualApproveTaskRequeueEvent> {
+  /**
+   * the task that sent the message
+   *
+   * @generated from field: api.commons.OmniTask task = 1;
+   */
+  task?: OmniTask;
+
+  /**
+   * the id of the agent
+   *
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  /**
+   * asm session sid
+   *
+   * @generated from field: int64 asm_session_sid = 3;
+   */
+  asmSessionSid: bigint;
+
+  constructor(data?: PartialMessage<OmnichannelManualApproveTaskRequeueEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.OmnichannelManualApproveTaskRequeueEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmnichannelManualApproveTaskRequeueEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskRequeueEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmnichannelManualApproveTaskRequeueEvent;
+
+  static equals(a: OmnichannelManualApproveTaskRequeueEvent | PlainMessage<OmnichannelManualApproveTaskRequeueEvent> | undefined, b: OmnichannelManualApproveTaskRequeueEvent | PlainMessage<OmnichannelManualApproveTaskRequeueEvent> | undefined): boolean;
+}
+
