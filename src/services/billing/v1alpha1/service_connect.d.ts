@@ -5,7 +5,7 @@
 
 import { CreateBillingPlanRequest, CreateBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, GetDefaultBillingPlanRequest, GetDefaultBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
+import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
 
 /**
  * @generated from service services.billing.v1alpha1.BillingService
@@ -89,6 +89,25 @@ export declare const BillingService: {
       readonly name: "DeleteInvoice",
       readonly I: typeof DeleteInvoiceRequest,
       readonly O: typeof DeleteInvoiceResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Exports an invoice.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified invoice doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.ExportInvoice
+     */
+    readonly exportInvoice: {
+      readonly name: "ExportInvoice",
+      readonly I: typeof ExportInvoiceRequest,
+      readonly O: typeof ExportInvoiceResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

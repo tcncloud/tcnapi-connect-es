@@ -9,6 +9,21 @@ import type { Invoice } from "../entities/v1alpha1/invoice_pb.js";
 import type { Page, Sort } from "./core_pb.js";
 
 /**
+ * @generated from enum services.billing.v1alpha1.InvoiceFormat
+ */
+export declare enum InvoiceFormat {
+  /**
+   * @generated from enum value: INVOICE_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: INVOICE_FORMAT_CSV = 1;
+   */
+  CSV = 1,
+}
+
+/**
  * @generated from message services.billing.v1alpha1.CreateInvoiceRequest
  */
 export declare class CreateInvoiceRequest extends Message<CreateInvoiceRequest> {
@@ -102,6 +117,59 @@ export declare class DeleteInvoiceResponse extends Message<DeleteInvoiceResponse
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteInvoiceResponse;
 
   static equals(a: DeleteInvoiceResponse | PlainMessage<DeleteInvoiceResponse> | undefined, b: DeleteInvoiceResponse | PlainMessage<DeleteInvoiceResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.ExportInvoiceRequest
+ */
+export declare class ExportInvoiceRequest extends Message<ExportInvoiceRequest> {
+  /**
+   * @generated from field: string invoice_id = 1;
+   */
+  invoiceId: string;
+
+  /**
+   * @generated from field: services.billing.v1alpha1.InvoiceFormat format = 2;
+   */
+  format: InvoiceFormat;
+
+  constructor(data?: PartialMessage<ExportInvoiceRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.ExportInvoiceRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportInvoiceRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportInvoiceRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportInvoiceRequest;
+
+  static equals(a: ExportInvoiceRequest | PlainMessage<ExportInvoiceRequest> | undefined, b: ExportInvoiceRequest | PlainMessage<ExportInvoiceRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.ExportInvoiceResponse
+ */
+export declare class ExportInvoiceResponse extends Message<ExportInvoiceResponse> {
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 1;
+   */
+  invoice?: Invoice;
+
+  constructor(data?: PartialMessage<ExportInvoiceResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.ExportInvoiceResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportInvoiceResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportInvoiceResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportInvoiceResponse;
+
+  static equals(a: ExportInvoiceResponse | PlainMessage<ExportInvoiceResponse> | undefined, b: ExportInvoiceResponse | PlainMessage<ExportInvoiceResponse> | undefined): boolean;
 }
 
 /**

@@ -8,6 +8,17 @@ import { Invoice } from "../entities/v1alpha1/invoice_pb.js";
 import { Page, Sort } from "./core_pb.js";
 
 /**
+ * @generated from enum services.billing.v1alpha1.InvoiceFormat
+ */
+export const InvoiceFormat = proto3.makeEnum(
+  "services.billing.v1alpha1.InvoiceFormat",
+  [
+    {no: 0, name: "INVOICE_FORMAT_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "INVOICE_FORMAT_CSV", localName: "CSV"},
+  ],
+);
+
+/**
  * @generated from message services.billing.v1alpha1.CreateInvoiceRequest
  */
 export const CreateInvoiceRequest = proto3.makeMessageType(
@@ -44,6 +55,27 @@ export const DeleteInvoiceRequest = proto3.makeMessageType(
 export const DeleteInvoiceResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.DeleteInvoiceResponse",
   [],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.ExportInvoiceRequest
+ */
+export const ExportInvoiceRequest = proto3.makeMessageType(
+  "services.billing.v1alpha1.ExportInvoiceRequest",
+  () => [
+    { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.ExportInvoiceResponse
+ */
+export const ExportInvoiceResponse = proto3.makeMessageType(
+  "services.billing.v1alpha1.ExportInvoiceResponse",
+  () => [
+    { no: 1, name: "invoice", kind: "message", T: Invoice },
+  ],
 );
 
 /**
