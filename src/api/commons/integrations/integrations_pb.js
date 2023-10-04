@@ -53,6 +53,7 @@ export const IntegrationType = proto3.makeEnum(
     {no: 3700, name: "INTEGRATION_TYPE_EPIC", localName: "EPIC"},
     {no: 3800, name: "INTEGRATION_TYPE_NEWZWARE", localName: "NEWZWARE"},
     {no: 3900, name: "INTEGRATION_TYPE_PRIOCOMMERCE", localName: "PRIOCOMMERCE"},
+    {no: 4000, name: "INTEGRATION_TYPE_NAVIGA", localName: "NAVIGA"},
   ],
 );
 
@@ -258,6 +259,7 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3809, name: "REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP_MULTI", localName: "NEWZWARE_PHONE_LOOKUP_MULTI"},
     {no: 3901, name: "REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT", localName: "PRIOCOMMERCE_ACH_PAYMENT"},
     {no: 3902, name: "REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT", localName: "PRIOCOMMERCE_CC_PAYMENT"},
+    {no: 4001, name: "REQUEST_METHOD_NAVIGA_CREATE_PAYMENT", localName: "NAVIGA_CREATE_PAYMENT"},
   ],
 );
 
@@ -858,6 +860,7 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3809, name: "newzware_phone_lookup_multi", kind: "message", T: ExecuteNewzwarePhoneLookupMulti, oneof: "value" },
     { no: 3901, name: "priocommerce_ach_payment", kind: "message", T: ExecutePriocommerceAchPayment, oneof: "value" },
     { no: 3902, name: "priocommerce_cc_payment", kind: "message", T: ExecutePriocommerceCcPayment, oneof: "value" },
+    { no: 4001, name: "naviga_create_payment", kind: "message", T: ExecuteNavigaCreatePayment, oneof: "value" },
   ],
 );
 
@@ -2640,6 +2643,14 @@ export const ExecutePriocommerceAchPayment = proto3.makeMessageType(
  */
 export const ExecutePriocommerceCcPayment = proto3.makeMessageType(
   "api.commons.integrations.ExecutePriocommerceCcPayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNavigaCreatePayment
+ */
+export const ExecuteNavigaCreatePayment = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNavigaCreatePayment",
   [],
 );
 
