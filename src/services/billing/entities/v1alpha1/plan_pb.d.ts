@@ -21,44 +21,37 @@ export declare class BillingPlan extends Message<BillingPlan> {
   billingPlanId: string;
 
   /**
-   * the organization identifier
-   *
-   * @generated from field: string org_id = 2;
-   */
-  orgId: string;
-
-  /**
    * time the billing plan was created
    *
-   * @generated from field: google.protobuf.Timestamp create_time = 3;
+   * @generated from field: google.protobuf.Timestamp create_time = 2;
    */
   createTime?: Timestamp;
 
   /**
    * time the billing plan was last updated
    *
-   * @generated from field: google.protobuf.Timestamp update_time = 4;
+   * @generated from field: google.protobuf.Timestamp update_time = 3;
    */
   updateTime?: Timestamp;
 
   /**
    * the time from which this billing plan will take effect
    *
-   * @generated from field: google.protobuf.Timestamp start_time = 5;
+   * @generated from field: google.protobuf.Timestamp start_time = 4;
    */
   startTime?: Timestamp;
 
   /**
    * the time (if applicable) this billing plan ended; can be null
    *
-   * @generated from field: google.protobuf.Timestamp end_time = 6;
+   * @generated from field: google.protobuf.Timestamp end_time = 5;
    */
   endTime?: Timestamp;
 
   /**
    * the billing plan rate definitions
    *
-   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinition rate_definitions = 7;
+   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinition rate_definitions = 6;
    */
   rateDefinitions: RateDefinition[];
 

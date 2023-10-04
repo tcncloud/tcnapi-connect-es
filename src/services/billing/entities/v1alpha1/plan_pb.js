@@ -15,12 +15,11 @@ export const BillingPlan = proto3.makeMessageType(
   "services.billing.entities.v1alpha1.BillingPlan",
   () => [
     { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "create_time", kind: "message", T: Timestamp },
-    { no: 4, name: "update_time", kind: "message", T: Timestamp },
-    { no: 5, name: "start_time", kind: "message", T: Timestamp },
-    { no: 6, name: "end_time", kind: "message", T: Timestamp },
-    { no: 7, name: "rate_definitions", kind: "message", T: RateDefinition, repeated: true },
+    { no: 2, name: "create_time", kind: "message", T: Timestamp },
+    { no: 3, name: "update_time", kind: "message", T: Timestamp },
+    { no: 4, name: "start_time", kind: "message", T: Timestamp },
+    { no: 5, name: "end_time", kind: "message", T: Timestamp },
+    { no: 6, name: "rate_definitions", kind: "message", T: RateDefinition, repeated: true },
   ],
 );
 

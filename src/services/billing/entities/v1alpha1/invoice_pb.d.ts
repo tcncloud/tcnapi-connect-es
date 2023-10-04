@@ -22,37 +22,30 @@ export declare class Invoice extends Message<Invoice> {
   invoiceId: string;
 
   /**
-   * the org identifier
-   *
-   * @generated from field: string org_id = 2;
-   */
-  orgId: string;
-
-  /**
    * the billing cycle this invoice was created for
    *
-   * @generated from field: string billing_cycle = 3;
+   * @generated from field: string billing_cycle = 2;
    */
   billingCycle: string;
 
   /**
    * the time this invoice was created
    *
-   * @generated from field: google.protobuf.Timestamp create_time = 4;
+   * @generated from field: google.protobuf.Timestamp create_time = 3;
    */
   createTime?: Timestamp;
 
   /**
    * the time this invoice was last updated
    *
-   * @generated from field: google.protobuf.Timestamp update_time = 5;
+   * @generated from field: google.protobuf.Timestamp update_time = 4;
    */
   updateTime?: Timestamp;
 
   /**
    * the time this invoice was deleted (if applicable)
    *
-   * @generated from field: google.protobuf.Timestamp delete_time = 6;
+   * @generated from field: google.protobuf.Timestamp delete_time = 5;
    */
   deleteTime?: Timestamp;
 
@@ -60,14 +53,14 @@ export declare class Invoice extends Message<Invoice> {
    * the invoice items, where each product is
    * a separate item.
    *
-   * @generated from field: repeated services.billing.entities.v1alpha1.InvoiceItem items = 7;
+   * @generated from field: repeated services.billing.entities.v1alpha1.InvoiceItem items = 6;
    */
   items: InvoiceItem[];
 
   /**
    * the url to download the invoice
    *
-   * @generated from field: google.protobuf.StringValue url = 8;
+   * @generated from field: google.protobuf.StringValue url = 7;
    */
   url?: string;
 
@@ -100,37 +93,30 @@ export declare class InvoiceItem extends Message<InvoiceItem> {
   invoiceItemId: string;
 
   /**
-   * the invoice identifier
-   *
-   * @generated from field: string invoice_id = 2;
-   */
-  invoiceId: string;
-
-  /**
    * the product this item represents
    *
-   * @generated from field: services.billing.entities.v1alpha1.Product product = 3;
+   * @generated from field: services.billing.entities.v1alpha1.Product product = 2;
    */
   product: Product;
 
   /**
    * the price for this product
    *
-   * @generated from field: double price = 4;
+   * @generated from field: double price = 3;
    */
   price: number;
 
   /**
    * the time this invoice item was created
    *
-   * @generated from field: google.protobuf.Timestamp create_time = 5;
+   * @generated from field: google.protobuf.Timestamp create_time = 4;
    */
   createTime?: Timestamp;
 
   /**
    * the time this invoice item was last updated
    *
-   * @generated from field: google.protobuf.Timestamp update_time = 6;
+   * @generated from field: google.protobuf.Timestamp update_time = 5;
    */
   updateTime?: Timestamp;
 

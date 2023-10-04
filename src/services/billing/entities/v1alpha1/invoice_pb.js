@@ -16,13 +16,12 @@ export const Invoice = proto3.makeMessageType(
   "services.billing.entities.v1alpha1.Invoice",
   () => [
     { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "create_time", kind: "message", T: Timestamp },
-    { no: 5, name: "update_time", kind: "message", T: Timestamp },
-    { no: 6, name: "delete_time", kind: "message", T: Timestamp },
-    { no: 7, name: "items", kind: "message", T: InvoiceItem, repeated: true },
-    { no: 8, name: "url", kind: "message", T: StringValue },
+    { no: 2, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "create_time", kind: "message", T: Timestamp },
+    { no: 4, name: "update_time", kind: "message", T: Timestamp },
+    { no: 5, name: "delete_time", kind: "message", T: Timestamp },
+    { no: 6, name: "items", kind: "message", T: InvoiceItem, repeated: true },
+    { no: 7, name: "url", kind: "message", T: StringValue },
   ],
 );
 
@@ -35,11 +34,10 @@ export const InvoiceItem = proto3.makeMessageType(
   "services.billing.entities.v1alpha1.InvoiceItem",
   () => [
     { no: 1, name: "invoice_item_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "product", kind: "enum", T: proto3.getEnumType(Product) },
-    { no: 4, name: "price", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
-    { no: 5, name: "create_time", kind: "message", T: Timestamp },
-    { no: 6, name: "update_time", kind: "message", T: Timestamp },
+    { no: 2, name: "product", kind: "enum", T: proto3.getEnumType(Product) },
+    { no: 3, name: "price", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
+    { no: 4, name: "create_time", kind: "message", T: Timestamp },
+    { no: 5, name: "update_time", kind: "message", T: Timestamp },
   ],
 );
 
