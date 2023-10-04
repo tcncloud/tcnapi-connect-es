@@ -50,17 +50,24 @@ export declare class Invoice extends Message<Invoice> {
   updateTime?: Timestamp;
 
   /**
+   * the time this invoice was deleted (if applicable)
+   *
+   * @generated from field: google.protobuf.Timestamp delete_time = 6;
+   */
+  deleteTime?: Timestamp;
+
+  /**
    * the invoice items, where each product is
    * a separate item.
    *
-   * @generated from field: repeated services.billing.entities.v1alpha1.InvoiceItem items = 6;
+   * @generated from field: repeated services.billing.entities.v1alpha1.InvoiceItem items = 7;
    */
   items: InvoiceItem[];
 
   /**
    * the url to download the invoice
    *
-   * @generated from field: google.protobuf.StringValue url = 7;
+   * @generated from field: google.protobuf.StringValue url = 8;
    */
   url?: string;
 

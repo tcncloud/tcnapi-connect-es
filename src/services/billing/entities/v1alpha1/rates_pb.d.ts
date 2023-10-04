@@ -303,6 +303,13 @@ export declare class RateDefinition extends Message<RateDefinition> {
    */
   updateTime?: Timestamp;
 
+  /**
+   * the time this rate definition was deleted (if applicable)
+   *
+   * @generated from field: google.protobuf.Timestamp delete_time = 11;
+   */
+  deleteTime?: Timestamp;
+
   constructor(data?: PartialMessage<RateDefinition>);
 
   static readonly runtime: typeof proto3;

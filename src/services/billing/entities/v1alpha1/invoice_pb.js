@@ -20,8 +20,9 @@ export const Invoice = proto3.makeMessageType(
     { no: 3, name: "billing_cycle", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "create_time", kind: "message", T: Timestamp },
     { no: 5, name: "update_time", kind: "message", T: Timestamp },
-    { no: 6, name: "items", kind: "message", T: InvoiceItem, repeated: true },
-    { no: 7, name: "url", kind: "message", T: StringValue },
+    { no: 6, name: "delete_time", kind: "message", T: Timestamp },
+    { no: 7, name: "items", kind: "message", T: InvoiceItem, repeated: true },
+    { no: 8, name: "url", kind: "message", T: StringValue },
   ],
 );
 
