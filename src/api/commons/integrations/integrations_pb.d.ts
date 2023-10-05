@@ -1096,6 +1096,16 @@ export declare enum RequestMethod {
   PIANO_GET_PAYMENT = 3604,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_LIST_SUBSCRIPTION = 3605;
+   */
+  PIANO_LIST_SUBSCRIPTION = 3605,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PIANO_LASTACCESS_CONVERSION = 3606;
+   */
+  PIANO_LASTACCESS_CONVERSION = 3606,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_EPIC_GET_TOKEN = 3701;
    */
   EPIC_GET_TOKEN = 3701,
@@ -3531,6 +3541,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecutePianoGetPayment;
     case: "PIANOGETPAYMENT";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoListSubscription PIANO_LIST_SUBSCRIPTION = 3605;
+     */
+    value: ExecutePianoListSubscription;
+    case: "PIANOLISTSUBSCRIPTION";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePianoLastAccessConversion PIANO_LASTACCESS_CONVERSION = 3606;
+     */
+    value: ExecutePianoLastAccessConversion;
+    case: "PIANOLASTACCESSCONVERSION";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteEpicGetToken epic_get_token = 3701;
@@ -7576,6 +7598,44 @@ export declare class ExecutePianoGetPayment extends Message<ExecutePianoGetPayme
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoGetPayment;
 
   static equals(a: ExecutePianoGetPayment | PlainMessage<ExecutePianoGetPayment> | undefined, b: ExecutePianoGetPayment | PlainMessage<ExecutePianoGetPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoListSubscription
+ */
+export declare class ExecutePianoListSubscription extends Message<ExecutePianoListSubscription> {
+  constructor(data?: PartialMessage<ExecutePianoListSubscription>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoListSubscription";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoListSubscription;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoListSubscription;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoListSubscription;
+
+  static equals(a: ExecutePianoListSubscription | PlainMessage<ExecutePianoListSubscription> | undefined, b: ExecutePianoListSubscription | PlainMessage<ExecutePianoListSubscription> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePianoLastAccessConversion
+ */
+export declare class ExecutePianoLastAccessConversion extends Message<ExecutePianoLastAccessConversion> {
+  constructor(data?: PartialMessage<ExecutePianoLastAccessConversion>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePianoLastAccessConversion";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePianoLastAccessConversion;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePianoLastAccessConversion;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePianoLastAccessConversion;
+
+  static equals(a: ExecutePianoLastAccessConversion | PlainMessage<ExecutePianoLastAccessConversion> | undefined, b: ExecutePianoLastAccessConversion | PlainMessage<ExecutePianoLastAccessConversion> | undefined): boolean;
 }
 
 /**
