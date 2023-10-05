@@ -27,6 +27,13 @@ export declare class CreateNewsArticleRequest extends Message<CreateNewsArticleR
    */
   content: string;
 
+  /**
+   * image reference id
+   *
+   * @generated from field: string image_reference_id = 3;
+   */
+  imageReferenceId: string;
+
   constructor(data?: PartialMessage<CreateNewsArticleRequest>);
 
   static readonly runtime: typeof proto3;
@@ -299,6 +306,13 @@ export declare class NewsArticleDetails extends Message<NewsArticleDetails> {
    * @generated from field: google.protobuf.Timestamp last_edited = 6;
    */
   lastEdited?: Timestamp;
+
+  /**
+   * image reference id
+   *
+   * @generated from field: string image_reference_id = 7;
+   */
+  imageReferenceId: string;
 
   constructor(data?: PartialMessage<NewsArticleDetails>);
 
@@ -783,6 +797,13 @@ export declare class NewsArticleImage extends Message<NewsArticleImage> {
    * @generated from field: string download_url = 4;
    */
   downloadUrl: string;
+
+  /**
+   * image reference id
+   *
+   * @generated from field: string image_reference_id = 5;
+   */
+  imageReferenceId: string;
 
   constructor(data?: PartialMessage<NewsArticleImage>);
 

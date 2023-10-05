@@ -16,6 +16,7 @@ export const CreateNewsArticleRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "image_reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -119,6 +120,7 @@ export const NewsArticleDetails = proto3.makeMessageType(
     { no: 4, name: "status", kind: "enum", T: proto3.getEnumType(ArticleStatus) },
     { no: 5, name: "date_created", kind: "message", T: Timestamp },
     { no: 6, name: "last_edited", kind: "message", T: Timestamp },
+    { no: 7, name: "image_reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -307,6 +309,7 @@ export const NewsArticleImage = proto3.makeMessageType(
     { no: 2, name: "new_article_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "image_reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
