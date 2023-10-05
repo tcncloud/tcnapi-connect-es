@@ -35,6 +35,7 @@ export const Permission = proto3.makeEnum(
     {no: 1700, name: "PERMISSION_SOUNDBOARD_VIEW", localName: "SOUNDBOARD_VIEW"},
     {no: 1701, name: "PERMISSION_SOUNDBOARD_EDIT", localName: "SOUNDBOARD_EDIT"},
     {no: 140, name: "PERMISSION_SUBSCRIPTION_MANAGEMENT", localName: "SUBSCRIPTION_MANAGEMENT"},
+    {no: 170, name: "PERMISSION_COPY_TO_ORGANIZATION", localName: "COPY_TO_ORGANIZATION"},
     {no: 200, name: "PERMISSION_CUSTOMER_SUPPORT", localName: "CUSTOMER_SUPPORT"},
     {no: 210, name: "PERMISSION_IMITATION", localName: "IMITATION"},
     {no: 220, name: "PERMISSION_BILLING_EDIT", localName: "BILLING_EDIT"},
