@@ -3,9 +3,11 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBillingPlanRequest, CreateBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, GetDefaultBillingPlanRequest, GetDefaultBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
+import { BulkDeleteRateDefinitionsRequest, BulkDeleteRateDefinitionsResponse, BulkUpdateRateDefinitionsRequest, BulkUpdateRateDefinitionsResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { CreateBillingPlanRequest, CreateBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, GetDefaultBillingPlanRequest, GetDefaultBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
+import { CreateRateDefinitionGroupRequest, CreateRateDefinitionGroupResponse, DeleteRateDefinitionGroupRequest, DeleteRateDefinitionGroupResponse, GetRateDefinitionGroupRequest, GetRateDefinitionGroupResponse, ListRateDefinitionGroupsRequest, ListRateDefinitionGroupsResponse, UpdateRateDefinitionGroupRequest, UpdateRateDefinitionGroupResponse } from "./groups_pb.js";
 
 /**
  * @generated from service services.billing.v1alpha1.BillingService
@@ -14,9 +16,47 @@ export const BillingService = {
   typeName: "services.billing.v1alpha1.BillingService",
   methods: {
     /**
+     * Bulk deletes rate definitions.
+     *   - The billing plan(s) must be inactive.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.FailedPrecondition: The billing plan(s) are active.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.BulkDeleteRateDefinitions
+     */
+    bulkDeleteRateDefinitions: {
+      name: "BulkDeleteRateDefinitions",
+      I: BulkDeleteRateDefinitionsRequest,
+      O: BulkDeleteRateDefinitionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Bulk updates rate definitions.
+     *   - The billing plan(s) must be inactive.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.FailedPrecondition: The billing plan(s) are active.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.BulkUpdateRateDefinitions
+     */
+    bulkUpdateRateDefinitions: {
+      name: "BulkUpdateRateDefinitions",
+      I: BulkUpdateRateDefinitionsRequest,
+      O: BulkUpdateRateDefinitionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Creates a billing plan for the ORG.
-     *   - The rate definitions must have the rate definition group id populated and it
-     *     must be a valid reference to a rate definition group on the default billing plan.
      * Required permissions:
      *   CUSTOMER_SUPPORT
      * Errors:
@@ -50,6 +90,46 @@ export const BillingService = {
       name: "CreateInvoice",
       I: CreateInvoiceRequest,
       O: CreateInvoiceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Creates a rate definition for a Billing Plan in an ORG.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.AlreadyExists: A rate definition with the same group id already exists.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan or rate definition group doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.CreateRateDefinition
+     */
+    createRateDefinition: {
+      name: "CreateRateDefinition",
+      I: CreateRateDefinitionRequest,
+      O: CreateRateDefinitionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Creates a rate definition group.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
+     * Errors:
+     *   - grpc.AlreadyExists: A rate definition group with the same data already exists.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.CreateRateDefinitionGroup
+     */
+    createRateDefinitionGroup: {
+      name: "CreateRateDefinitionGroup",
+      I: CreateRateDefinitionGroupRequest,
+      O: CreateRateDefinitionGroupResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -88,6 +168,48 @@ export const BillingService = {
       name: "DeleteInvoice",
       I: DeleteInvoiceRequest,
       O: DeleteInvoiceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes a rate definition from a Billing Plan in an ORG.
+     *   - The billing plan must be inactive.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.FailedPrecondition: The billing plan is active.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan or rate definition group doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.DeleteRateDefinition
+     */
+    deleteRateDefinition: {
+      name: "DeleteRateDefinition",
+      I: DeleteRateDefinitionRequest,
+      O: DeleteRateDefinitionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes a rate definition group.
+     *   - This will stop any rate definitions in the group from generating charges.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified rate definition group doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.DeleteRateDefinitionGroup
+     */
+    deleteRateDefinitionGroup: {
+      name: "DeleteRateDefinitionGroup",
+      I: DeleteRateDefinitionGroupRequest,
+      O: DeleteRateDefinitionGroupResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -187,8 +309,45 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * Lists the billing plans for the ORG. This includes both active and inactive plans, but does not
-     * include deleted plans.
+     * Returns the specified rate definition.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified rate definition doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.GetRateDefinition
+     */
+    getRateDefinition: {
+      name: "GetRateDefinition",
+      I: GetRateDefinitionRequest,
+      O: GetRateDefinitionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns the specified rate definition group.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified rate definition group doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.GetRateDefinitionGroup
+     */
+    getRateDefinitionGroup: {
+      name: "GetRateDefinitionGroup",
+      I: GetRateDefinitionGroupRequest,
+      O: GetRateDefinitionGroupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lists billing plans.
      * Required permissions:
      *   CUSTOMER_SUPPORT
      * Errors:
@@ -206,7 +365,7 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
-     * Lists the invoices for the ORG.
+     * Lists invoices.
      * Required permissions:
      *   CUSTOMER_SUPPORT
      * Errors:
@@ -221,6 +380,42 @@ export const BillingService = {
       name: "ListInvoices",
       I: ListInvoicesRequest,
       O: ListInvoicesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lists rate definitions.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.ListRateDefinitions
+     */
+    listRateDefinitions: {
+      name: "ListRateDefinitions",
+      I: ListRateDefinitionsRequest,
+      O: ListRateDefinitionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Lists rate definition groups.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.ListRateDefinitionGroups
+     */
+    listRateDefinitionGroups: {
+      name: "ListRateDefinitionGroups",
+      I: ListRateDefinitionGroupsRequest,
+      O: ListRateDefinitionGroupsResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -246,6 +441,7 @@ export const BillingService = {
      * Updates the default billing plan for the REGION.
      * Required permissions:
      *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
      * Errors:
      *   - grpc.Internal: An internal error occurred.
      *   - grpc.InvalidArgument: The request is invalid.
@@ -277,6 +473,48 @@ export const BillingService = {
       name: "UpdateInvoice",
       I: UpdateInvoiceRequest,
       O: UpdateInvoiceResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Updates a rate definition.
+     *   - The billing plan must be inactive.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.FailedPrecondition: The billing plan is active.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified rate definition doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.UpdateRateDefinition
+     */
+    updateRateDefinition: {
+      name: "UpdateRateDefinition",
+      I: UpdateRateDefinitionRequest,
+      O: UpdateRateDefinitionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Updates a rate definition group.
+     *   - Any rate definitions using this group will use the new data.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified rate definition group doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.UpdateRateDefinitionGroup
+     */
+    updateRateDefinitionGroup: {
+      name: "UpdateRateDefinitionGroup",
+      I: UpdateRateDefinitionGroupRequest,
+      O: UpdateRateDefinitionGroupResponse,
       kind: MethodKind.Unary,
     },
   }

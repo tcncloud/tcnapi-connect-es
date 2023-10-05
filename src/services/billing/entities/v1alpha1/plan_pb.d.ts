@@ -5,7 +5,6 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { RateDefinition } from "./rates_pb.js";
 
 /**
  * BillingPlan represents a collection of rate definitions
@@ -51,9 +50,9 @@ export declare class BillingPlan extends Message<BillingPlan> {
   /**
    * the billing plan rate definitions
    *
-   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinition rate_definitions = 6;
+   * @generated from field: repeated string rate_definition_ids = 6;
    */
-  rateDefinitions: RateDefinition[];
+  rateDefinitionIds: string[];
 
   constructor(data?: PartialMessage<BillingPlan>);
 

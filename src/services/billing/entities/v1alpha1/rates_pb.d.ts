@@ -5,225 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { EventType } from "../../../../api/commons/audit/event_types_pb.js";
-import type { MatchingConfig, MatchingRule } from "./matching_pb.js";
 import type { BasicAmountConfig, BasicConfig } from "./modules_pb.js";
-
-/**
- * RateDefinitionConfigType defines the type of configuration for a rate definition.
- *
- * @generated from enum services.billing.entities.v1alpha1.RateDefinitionConfigType
- */
-export declare enum RateDefinitionConfigType {
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_UNSPECIFIED = 0;
-   */
-  UNSPECIFIED = 0,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_NOOP = 1;
-   */
-  NOOP = 1,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_SEATS = 2;
-   */
-  AGENT_SEATS = 2,
-
-  /**
-   * omni config types
-   *
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_CHAT = 100;
-   */
-  AGENT_TEXT_MESSAGE_CHAT = 100,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_EMAIL_MESSAGE = 101;
-   */
-  AGENT_TEXT_MESSAGE_EMAIL_MESSAGE = 101,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_EMAIL_SIZE = 102;
-   */
-  AGENT_TEXT_MESSAGE_EMAIL_SIZE = 102,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_SMS = 103;
-   */
-  AGENT_TEXT_MESSAGE_SMS = 103,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_EMAIL_MESSAGE = 104;
-   */
-  TASK_MESSAGE_SENT_EMAIL_MESSAGE = 104,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_EMAIL_SIZE = 105;
-   */
-  TASK_MESSAGE_SENT_EMAIL_SIZE = 105,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_SMS = 106;
-   */
-  TASK_MESSAGE_SENT_SMS = 106,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CONNECTED_INBOX_POLL = 107;
-   */
-  CONNECTED_INBOX_POLL = 107,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_CHAT = 108;
-   */
-  MANAGER_TEXT_MESSAGE_CHAT = 108,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_EMAIL_MESSAGE = 109;
-   */
-  MANAGER_TEXT_MESSAGE_EMAIL_MESSAGE = 109,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_EMAIL_SIZE = 110;
-   */
-  MANAGER_TEXT_MESSAGE_EMAIL_SIZE = 110,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_SMS = 111;
-   */
-  MANAGER_TEXT_MESSAGE_SMS = 111,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_CHAT = 112;
-   */
-  CUSTOMER_TEXT_MESSAGE_CHAT = 112,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_EMAIL_MESSAGE = 113;
-   */
-  CUSTOMER_TEXT_MESSAGE_EMAIL_MESSAGE = 113,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_EMAIL_SIZE = 114;
-   */
-  CUSTOMER_TEXT_MESSAGE_EMAIL_SIZE = 114,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_SMS = 115;
-   */
-  CUSTOMER_TEXT_MESSAGE_SMS = 115,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_CHAT_SIZE = 116;
-   */
-  AGENT_TEXT_MESSAGE_CHAT_SIZE = 116,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_CHAT_SIZE = 117;
-   */
-  MANAGER_TEXT_MESSAGE_CHAT_SIZE = 117,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_CHAT_SIZE = 118;
-   */
-  CUSTOMER_TEXT_MESSAGE_CHAT_SIZE = 118,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CONNECTED_INBOX_CREATED = 119;
-   */
-  CONNECTED_INBOX_CREATED = 119,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_TEXT_MESSAGE_SMS_SIZE = 120;
-   */
-  AGENT_TEXT_MESSAGE_SMS_SIZE = 120,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_TEXT_MESSAGE_SMS_SIZE = 121;
-   */
-  MANAGER_TEXT_MESSAGE_SMS_SIZE = 121,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_TEXT_MESSAGE_SMS_SIZE = 122;
-   */
-  CUSTOMER_TEXT_MESSAGE_SMS_SIZE = 122,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_TASK_MESSAGE_SENT_SMS_SIZE = 123;
-   */
-  TASK_MESSAGE_SENT_SMS_SIZE = 123,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_CHAT_MESSAGE_UNITS = 124;
-   */
-  AGENT_CHAT_MESSAGE_UNITS = 124,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_EMAIL_MESSAGE_UNITS = 125;
-   */
-  AGENT_EMAIL_MESSAGE_UNITS = 125,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_AGENT_SMS_MESSAGE_UNITS = 126;
-   */
-  AGENT_SMS_MESSAGE_UNITS = 126,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_CHAT_MESSAGE_UNITS = 127;
-   */
-  MANAGER_CHAT_MESSAGE_UNITS = 127,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_EMAIL_MESSAGE_UNITS = 128;
-   */
-  MANAGER_EMAIL_MESSAGE_UNITS = 128,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_MANAGER_SMS_MESSAGE_UNITS = 129;
-   */
-  MANAGER_SMS_MESSAGE_UNITS = 129,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_CHAT_MESSAGE_UNITS = 130;
-   */
-  CUSTOMER_CHAT_MESSAGE_UNITS = 130,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_EMAIL_MESSAGE_UNITS = 131;
-   */
-  CUSTOMER_EMAIL_MESSAGE_UNITS = 131,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_CUSTOMER_SMS_MESSAGE_UNITS = 132;
-   */
-  CUSTOMER_SMS_MESSAGE_UNITS = 132,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_SYSTEM_CHAT_MESSAGE_UNITS = 133;
-   */
-  SYSTEM_CHAT_MESSAGE_UNITS = 133,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_SYSTEM_EMAIL_MESSAGE_UNITS = 134;
-   */
-  SYSTEM_EMAIL_MESSAGE_UNITS = 134,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_SYSTEM_SMS_MESSAGE_UNITS = 135;
-   */
-  SYSTEM_SMS_MESSAGE_UNITS = 135,
-
-  /**
-   * compliance config types
-   *
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_COMPLIANCE_RND_QUERY = 200;
-   */
-  COMPLIANCE_RND_QUERY = 200,
-
-  /**
-   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_COMPLIANCE_RND_QUERY_CACHED = 201;
-   */
-  COMPLIANCE_RND_QUERY_CACHED = 201,
-}
 
 /**
  * RateDefinition defines a rating configuration.
@@ -248,58 +30,30 @@ export declare class RateDefinition extends Message<RateDefinition> {
   rateDefinitionGroupId: string;
 
   /**
-   * the event this configures a rate for
-   *
-   * @generated from field: api.commons.audit.EventType event_type = 3;
-   */
-  eventType: EventType;
-
-  /**
-   * the type of configuration for this definition
-   *
-   * @generated from field: services.billing.entities.v1alpha1.RateDefinitionConfigType config_type = 4;
-   */
-  configType: RateDefinitionConfigType;
-
-  /**
-   * the matching rule for this definition
-   *
-   * @generated from field: services.billing.entities.v1alpha1.MatchingRule matching_rule = 5;
-   */
-  matchingRule: MatchingRule;
-
-  /**
    * the configuration for this definition
    *
-   * @generated from field: services.billing.entities.v1alpha1.RateDefinitionConfig config = 6;
+   * @generated from field: services.billing.entities.v1alpha1.RateDefinitionConfig config = 3;
    */
   config?: RateDefinitionConfig;
 
   /**
-   * the matching config for this definition
-   *
-   * @generated from field: services.billing.entities.v1alpha1.MatchingConfig matching_config = 7;
-   */
-  matchingConfig?: MatchingConfig;
-
-  /**
    * the time the rate definition was created
    *
-   * @generated from field: google.protobuf.Timestamp create_time = 8;
+   * @generated from field: google.protobuf.Timestamp create_time = 4;
    */
   createTime?: Timestamp;
 
   /**
    * the time the rate definition was last updated
    *
-   * @generated from field: google.protobuf.Timestamp update_time = 9;
+   * @generated from field: google.protobuf.Timestamp update_time = 5;
    */
   updateTime?: Timestamp;
 
   /**
    * the time this rate definition was deleted (if applicable)
    *
-   * @generated from field: google.protobuf.Timestamp delete_time = 10;
+   * @generated from field: google.protobuf.Timestamp delete_time = 6;
    */
   deleteTime?: Timestamp;
 

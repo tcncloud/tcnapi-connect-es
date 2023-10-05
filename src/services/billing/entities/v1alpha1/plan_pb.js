@@ -4,7 +4,6 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
-import { RateDefinition } from "./rates_pb.js";
 
 /**
  * BillingPlan represents a collection of rate definitions
@@ -19,7 +18,7 @@ export const BillingPlan = proto3.makeMessageType(
     { no: 3, name: "update_time", kind: "message", T: Timestamp },
     { no: 4, name: "start_time", kind: "message", T: Timestamp },
     { no: 5, name: "end_time", kind: "message", T: Timestamp },
-    { no: 6, name: "rate_definitions", kind: "message", T: RateDefinition, repeated: true },
+    { no: 6, name: "rate_definition_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
