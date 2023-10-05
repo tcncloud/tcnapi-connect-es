@@ -517,6 +517,13 @@ export declare enum Permission {
   SCORECARDS_FLAG_EVAL = 1603,
 
   /**
+   * Enables access to manage learning opportunities.
+   *
+   * @generated from enum value: PERMISSION_SCORECARDS_LEARNING_OPPORTUNITIES = 1604;
+   */
+  SCORECARDS_LEARNING_OPPORTUNITIES = 1604,
+
+  /**
    * Enables access to Dev Tools app.
    *
    * @generated from enum value: PERMISSION_DEV_TOOLS = 1800;
