@@ -950,6 +950,7 @@ export declare const WFM: {
      * Errors:
      *   - grpc.Invalid: one or more fields in the @node have invalid values.
      *   - grpc.NotFound: parent location node doesn't exist or belongs to a different scenario than the one given.
+     *                    the @skill_profile_category does not exist.
      *   - grpc.Internal: error occurs when creating the program node.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.CreateProgramNode
@@ -971,6 +972,7 @@ export declare const WFM: {
      *   - grpc.Invalid: one or more fields in the @program_node have invalid values.
      *   - grpc.Internal: error occurs when updating the program node.
      *   - grpc.NotFound: entry to be updated doesn't exist, or the given parent @location_node_sid belongs to a different scenario than the program node to update.
+     *                    the @skill_profile_category does not exist.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.UpdateProgramNode
      */
