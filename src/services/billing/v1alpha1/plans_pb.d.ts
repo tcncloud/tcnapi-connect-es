@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
 import type { Page, Sort } from "./core_pb.js";
@@ -136,6 +136,13 @@ export declare class GetActiveBillingPlanResponse extends Message<GetActiveBilli
    * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
    */
   billingPlan?: BillingPlan;
+
+  /**
+   * Optional: if not set, will use current time
+   *
+   * @generated from field: google.protobuf.Timestamp effective_time = 2;
+   */
+  effectiveTime?: Timestamp;
 
   constructor(data?: PartialMessage<GetActiveBillingPlanResponse>);
 

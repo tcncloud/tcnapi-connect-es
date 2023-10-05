@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, proto3 } from "@bufbuild/protobuf";
+import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
 import { Page, Sort } from "./core_pb.js";
 
@@ -63,6 +63,7 @@ export const GetActiveBillingPlanResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.GetActiveBillingPlanResponse",
   () => [
     { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+    { no: 2, name: "effective_time", kind: "message", T: Timestamp },
   ],
 );
 
