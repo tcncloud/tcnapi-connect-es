@@ -28,9 +28,16 @@ export declare class CreateNewsArticleRequest extends Message<CreateNewsArticleR
   content: string;
 
   /**
+   * article author
+   *
+   * @generated from field: string author = 3;
+   */
+  author: string;
+
+  /**
    * image reference id
    *
-   * @generated from field: string image_reference_id = 3;
+   * @generated from field: string image_reference_id = 4;
    */
   imageReferenceId: string;
 
@@ -308,9 +315,16 @@ export declare class NewsArticleDetails extends Message<NewsArticleDetails> {
   lastEdited?: Timestamp;
 
   /**
+   * article author
+   *
+   * @generated from field: string author = 7;
+   */
+  author: string;
+
+  /**
    * image reference id
    *
-   * @generated from field: string image_reference_id = 7;
+   * @generated from field: string image_reference_id = 8;
    */
   imageReferenceId: string;
 
