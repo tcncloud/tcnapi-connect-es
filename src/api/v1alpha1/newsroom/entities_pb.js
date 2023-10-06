@@ -310,6 +310,7 @@ export const NewsArticleImage = proto3.makeMessageType(
     { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "image_reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "image_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

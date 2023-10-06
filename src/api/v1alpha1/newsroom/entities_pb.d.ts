@@ -805,6 +805,13 @@ export declare class NewsArticleImage extends Message<NewsArticleImage> {
    */
   imageReferenceId: string;
 
+  /**
+   * image type
+   *
+   * @generated from field: string image_type = 6;
+   */
+  imageType: string;
+
   constructor(data?: PartialMessage<NewsArticleImage>);
 
   static readonly runtime: typeof proto3;
