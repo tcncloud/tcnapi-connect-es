@@ -878,6 +878,114 @@ export declare enum DiagnosticCode {
    * @generated from enum value: CONSTRAINT_CANNOT_HAVE_CONSECUTIVE_TIME_PER_MULTIPLE_SHIFTS = 49;
    */
   CONSTRAINT_CANNOT_HAVE_CONSECUTIVE_TIME_PER_MULTIPLE_SHIFTS = 49,
+
+  /**
+   * DiagnosticCodeCannotGenerateTourPatternsForNonTourShiftTemplate integer value for a diagnostic coded as
+   * 'Cannot generate Tour Patterns for non Tour Shift Template' type.
+   * The diagnostic is reporting that the shift template to generate a tour pattern for is not a tour shift template.
+   *
+   * @generated from enum value: CANNOT_GENERATE_TOUR_PATTERNS_FOR_NON_TOUR_SHIFT_TEMPLATE = 50;
+   */
+  CANNOT_GENERATE_TOUR_PATTERNS_FOR_NON_TOUR_SHIFT_TEMPLATE = 50,
+
+  /**
+   * DiagnosticCodeInvalidTourPattern integer value for a diagnostic coded as
+   * 'Invalid Tour Pattern' type.
+   * The diagnostic is reporting the Tour Pattern entity is set with invalid values.
+   *
+   * @generated from enum value: INVALID_TOUR_PATTERN = 51;
+   */
+  INVALID_TOUR_PATTERN = 51,
+
+  /**
+   * DiagnosticCodeInvalidTourAgentCollection integer value for a diagnostic coded as
+   * 'Invalid Tour Agent Collection' type.
+   * The diagnostic is reporting the Tour Agent Collection entity is set with invalid values.
+   *
+   * @generated from enum value: INVALID_TOUR_AGENT_COLLECTION = 52;
+   */
+  INVALID_TOUR_AGENT_COLLECTION = 52,
+
+  /**
+   * DiagnosticCodeInvalidTourShiftInstanceConfig integer value for a diagnostic coded as
+   * 'Invalid Tour Shift Instance Config' type.
+   * The diagnostic is reporting the Tour Shift Instance Config entity is set with invalid values.
+   *
+   * @generated from enum value: INVALID_TOUR_SHIFT_INSTANCE_CONFIG = 53;
+   */
+  INVALID_TOUR_SHIFT_INSTANCE_CONFIG = 53,
+
+  /**
+   * DiagnosticCodeInvalidTourShiftSegmentConfig integer value for a diagnostic coded as
+   * 'Invalid Tour Shift Segment Config' type.
+   * The diagnostic is reporting the Tour Shift Segment Config entity is set with invalid values.
+   *
+   * @generated from enum value: INVALID_TOUR_SHIFT_SEGMENT_CONFIG = 55;
+   */
+  INVALID_TOUR_SHIFT_SEGMENT_CONFIG = 55,
+
+  /**
+   * DiagnosticCodeTourShiftSegmentConfigOverlap integer value for a diagnostic coded as
+   * 'Tour Shift Segment Config overlap' type.
+   * The diagnostic is reporting an overlap between tour shift segment configs.
+   *
+   * @generated from enum value: TOUR_SHIFT_SEGMENT_CONFIG_OVERLAP = 56;
+   */
+  TOUR_SHIFT_SEGMENT_CONFIG_OVERLAP = 56,
+
+  /**
+   * DiagnosticCodeTourShiftSegmentConfigDoesNotFit integer value for a diagnostic coded as
+   * 'Tour Shift Segment Config does not fit' type.
+   * The diagnostic is reporting that a tour shift segment config does not fit in the parent instance.
+   *
+   * @generated from enum value: TOUR_SHIFT_SEGMENT_CONFIG_DOES_NOT_FIT = 57;
+   */
+  TOUR_SHIFT_SEGMENT_CONFIG_DOES_NOT_FIT = 57,
+
+  /**
+   * DiagnosticCodeTourShiftInstanceConfigOverlap integer value for a diagnostic coded as
+   * 'Invalid Tour Shift Instance Config overlap' type.
+   * The diagnostic is reporting an overlap between tour shift instance configs in a tour week pattern.
+   *
+   * @generated from enum value: TOUR_SHIFT_INSTANCE_CONFIG_OVERLAP = 58;
+   */
+  TOUR_SHIFT_INSTANCE_CONFIG_OVERLAP = 58,
+
+  /**
+   * DiagnosticCodeWeekPatternNumbersNotUniqueInTourWeekPatterns integer value for a diagnostic coded as
+   * 'Week Pattern Numbers bot unique in Tour Week Patterns' type.
+   * The diagnostic is reporting a Week Pattern Number being shared between multiple Tour Week Patterns
+   *
+   * @generated from enum value: WEEK_PATTERN_NUMBERS_NOT_UNIQUE_IN_TOUR_WEEK_PATTERNS = 59;
+   */
+  WEEK_PATTERN_NUMBERS_NOT_UNIQUE_IN_TOUR_WEEK_PATTERNS = 59,
+
+  /**
+   * DiagnosticCodeWfmAgentSidsNotUniqueInTourAgentCollections integer value for a diagnostic coded as
+   * 'WFM Agent SIDs not unique in Tour Agent Collections' type.
+   * The diagnostic is reporting a WFM Agent SID being shared between multiple Tour Agent Collections.
+   *
+   * @generated from enum value: WFM_AGENT_SIDS_NOT_UNIQUE_IN_TOUR_AGENT_COLLECTIONS = 60;
+   */
+  WFM_AGENT_SIDS_NOT_UNIQUE_IN_TOUR_AGENT_COLLECTIONS = 60,
+
+  /**
+   * DiagnosticCodeInvalidFirstWeekPatternNumbersNotUniqueInTourAgentCollections integer value for a diagnostic coded as
+   * 'First Week Pattern Numbers not unique in Tour Agent Collections' type.
+   * The diagnostic is reporting a First Week Pattern Number being shared between multiple Tour Agent Collections.
+   *
+   * @generated from enum value: FIST_WEEK_PATTERN_NUMBERS_NOT_UNIQUE_IN_TOUR_AGENT_COLLECTIONS = 61;
+   */
+  FIST_WEEK_PATTERN_NUMBERS_NOT_UNIQUE_IN_TOUR_AGENT_COLLECTIONS = 61,
+
+  /**
+   * DiagnosticCodeFirstWeekPatternNumbersNotFoundInTourWeekPatterns integer value for a diagnostic coded as
+   * 'First Week Patterns not found in Tour Week Patterns' type.
+   * The diagnostic is reporting a First Week Pattern Number used be a Tour Agent Collection which is not found in the given Tour Week Patterns.
+   *
+   * @generated from enum value: FIRST_WEEK_PATTERN_NUMBERS_NOT_FOUND_IN_TOUR_WEEK_PATTERNS = 62;
+   */
+  FIRST_WEEK_PATTERN_NUMBERS_NOT_FOUND_IN_TOUR_WEEK_PATTERNS = 62,
 }
 
 /**
