@@ -889,7 +889,7 @@ export declare enum DiagnosticCode {
   CANNOT_GENERATE_TOUR_PATTERNS_FOR_NON_TOUR_SHIFT_TEMPLATE = 50,
 
   /**
-   * DiagnosticTourPatternsNeededToScheduleTour integer value for a diagnostic coded as
+   * DiagnosticCodeTourPatternsNeededToScheduleTour integer value for a diagnostic coded as
    * 'Cannot generate shifts for Tour Shift Template that has no Tour Patterns' type.
    * The diagnostic is reporting a tour shift template which does not have a tour pattern.
    *
@@ -898,7 +898,7 @@ export declare enum DiagnosticCode {
   TOUR_PATTERNS_NEEDED_TO_SCHEDULE_TOUR = 51,
 
   /**
-   * DiagnosticShiftTemplateActivityPlacementMinMaxMustBeMultipleOf5Minutes integer value for a diagnostic coded as
+   * DiagnosticCodeShiftTemplateActivityPlacementMinMaxMustBeMultipleOf5Minutes integer value for a diagnostic coded as
    * 'Shift Template Activity Placement Min Max Must Be Multiple Of 5 Minutes' type.
    * The diagnostic is reporting the shift template activity placement min max must be a multiple of 5 minutes.
    *
