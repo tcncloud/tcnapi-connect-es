@@ -80,6 +80,7 @@ export const SkillProfileGroup = proto3.makeMessageType(
     { no: 8, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 9, name: "are_averages_manual", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 10, name: "skill_profile_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 11, name: "datetime_set_to_inactive", kind: "message", T: Timestamp },
   ],
 );
 

@@ -280,6 +280,13 @@ export declare class SkillProfileGroup extends Message<SkillProfileGroup> {
    */
   skillProfileSids: bigint[];
 
+  /**
+   * Datetime that the group was set to inactive, if not set then the group is currently active.
+   *
+   * @generated from field: google.protobuf.Timestamp datetime_set_to_inactive = 11;
+   */
+  datetimeSetToInactive?: Timestamp;
+
   constructor(data?: PartialMessage<SkillProfileGroup>);
 
   static readonly runtime: typeof proto3;
