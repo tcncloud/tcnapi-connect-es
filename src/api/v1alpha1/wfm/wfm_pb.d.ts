@@ -1708,6 +1708,13 @@ export declare class ListSkillProfileGroupsReq extends Message<ListSkillProfileG
    */
   skillProfileGroupSids: bigint[];
 
+  /**
+   * Indicates whether inactive profile groups will be included in the result.
+   *
+   * @generated from field: bool include_inactive = 2;
+   */
+  includeInactive: boolean;
+
   constructor(data?: PartialMessage<ListSkillProfileGroupsReq>);
 
   static readonly runtime: typeof proto3;

@@ -614,6 +614,7 @@ export const ListSkillProfileGroupsReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListSkillProfileGroupsReq",
   () => [
     { no: 1, name: "skill_profile_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

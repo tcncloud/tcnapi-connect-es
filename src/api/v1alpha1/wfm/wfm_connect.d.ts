@@ -372,6 +372,7 @@ export declare const WFM: {
     },
     /**
      * Gets the skill profile groups that have the @skill_profile_group_sids for the org sending the request.
+     * if @include_inactive is true then inactive groups will also be included, otherwise only active groups will be returned.
      * If @skill_profile_group_sids is empty it will get all the skill profile groups for the org.
      * Required permissions:
      *   NONE
