@@ -19,13 +19,13 @@ export const BasicConfig = proto3.makeMessageType(
 );
 
 /**
- * BasicSizeConfig represents basic config for a rating module that
+ * BasicUnitConfig represents basic config for a rating module that
  * rates based on event units
  *
- * @generated from message services.billing.entities.v1alpha1.BasicAmountConfig
+ * @generated from message services.billing.entities.v1alpha1.BasicUnitConfig
  */
-export const BasicAmountConfig = proto3.makeMessageType(
-  "services.billing.entities.v1alpha1.BasicAmountConfig",
+export const BasicUnitConfig = proto3.makeMessageType(
+  "services.billing.entities.v1alpha1.BasicUnitConfig",
   () => [
     { no: 1, name: "unit_size", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },

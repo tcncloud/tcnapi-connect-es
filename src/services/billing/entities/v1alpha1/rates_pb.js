@@ -6,7 +6,7 @@
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { EventType } from "../../../../api/commons/audit/event_types_pb.js";
 import { MatchingConfig, MatchingRule } from "./matching_pb.js";
-import { BasicAmountConfig, BasicConfig } from "./modules_pb.js";
+import { BasicConfig, BasicUnitConfig } from "./modules_pb.js";
 
 /**
  * RateDefinitionConfigType defines the type of configuration for a rate definition.
@@ -93,28 +93,28 @@ export const RateDefinitionConfig = proto3.makeMessageType(
     { no: 2, name: "agent_seats_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 100, name: "agent_text_message_chat_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 101, name: "agent_text_message_email_message_config", kind: "message", T: BasicConfig, oneof: "config" },
-    { no: 102, name: "agent_text_message_email_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
+    { no: 102, name: "agent_text_message_email_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
     { no: 103, name: "agent_text_message_sms_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 104, name: "task_message_sent_email_message_config", kind: "message", T: BasicConfig, oneof: "config" },
-    { no: 105, name: "task_message_sent_email_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
+    { no: 105, name: "task_message_sent_email_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
     { no: 106, name: "task_message_sent_sms_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 107, name: "connected_inbox_poll_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 108, name: "manager_text_message_chat_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 109, name: "manager_text_message_email_message_config", kind: "message", T: BasicConfig, oneof: "config" },
-    { no: 110, name: "manager_text_message_email_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
+    { no: 110, name: "manager_text_message_email_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
     { no: 111, name: "manager_text_message_sms_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 112, name: "customer_text_message_chat_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 113, name: "customer_text_message_email_message_config", kind: "message", T: BasicConfig, oneof: "config" },
-    { no: 114, name: "customer_text_message_email_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
+    { no: 114, name: "customer_text_message_email_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
     { no: 115, name: "customer_text_message_sms_config", kind: "message", T: BasicConfig, oneof: "config" },
-    { no: 116, name: "agent_text_message_chat_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
-    { no: 117, name: "manager_text_message_chat_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
-    { no: 118, name: "customer_text_message_chat_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
+    { no: 116, name: "agent_text_message_chat_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
+    { no: 117, name: "manager_text_message_chat_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
+    { no: 118, name: "customer_text_message_chat_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
     { no: 119, name: "connected_inbox_created_config", kind: "message", T: BasicConfig, oneof: "config" },
-    { no: 120, name: "agent_text_message_sms_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
-    { no: 121, name: "manager_text_message_sms_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
-    { no: 122, name: "customer_text_message_sms_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
-    { no: 123, name: "task_message_sent_sms_size_config", kind: "message", T: BasicAmountConfig, oneof: "config" },
+    { no: 120, name: "agent_text_message_sms_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
+    { no: 121, name: "manager_text_message_sms_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
+    { no: 122, name: "customer_text_message_sms_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
+    { no: 123, name: "task_message_sent_sms_size_config", kind: "message", T: BasicUnitConfig, oneof: "config" },
     { no: 124, name: "agent_chat_message_units_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 125, name: "agent_email_message_units_config", kind: "message", T: BasicConfig, oneof: "config" },
     { no: 126, name: "agent_sms_message_units_config", kind: "message", T: BasicConfig, oneof: "config" },

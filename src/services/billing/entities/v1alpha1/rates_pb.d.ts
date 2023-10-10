@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { EventType } from "../../../../api/commons/audit/event_types_pb.js";
 import type { MatchingConfig, MatchingRule } from "./matching_pb.js";
-import type { BasicAmountConfig, BasicConfig } from "./modules_pb.js";
+import type { BasicConfig, BasicUnitConfig } from "./modules_pb.js";
 
 /**
  * RateDefinitionConfigType defines the type of configuration for a rate definition.
@@ -358,9 +358,9 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "agentTextMessageEmailMessageConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig agent_text_message_email_size_config = 102;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig agent_text_message_email_size_config = 102;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "agentTextMessageEmailSizeConfig";
   } | {
     /**
@@ -376,9 +376,9 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "taskMessageSentEmailMessageConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig task_message_sent_email_size_config = 105;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig task_message_sent_email_size_config = 105;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "taskMessageSentEmailSizeConfig";
   } | {
     /**
@@ -406,9 +406,9 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "managerTextMessageEmailMessageConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig manager_text_message_email_size_config = 110;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig manager_text_message_email_size_config = 110;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "managerTextMessageEmailSizeConfig";
   } | {
     /**
@@ -430,9 +430,9 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "customerTextMessageEmailMessageConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig customer_text_message_email_size_config = 114;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig customer_text_message_email_size_config = 114;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "customerTextMessageEmailSizeConfig";
   } | {
     /**
@@ -442,21 +442,21 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "customerTextMessageSmsConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig agent_text_message_chat_size_config = 116;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig agent_text_message_chat_size_config = 116;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "agentTextMessageChatSizeConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig manager_text_message_chat_size_config = 117;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig manager_text_message_chat_size_config = 117;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "managerTextMessageChatSizeConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig customer_text_message_chat_size_config = 118;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig customer_text_message_chat_size_config = 118;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "customerTextMessageChatSizeConfig";
   } | {
     /**
@@ -466,27 +466,27 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "connectedInboxCreatedConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig agent_text_message_sms_size_config = 120;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig agent_text_message_sms_size_config = 120;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "agentTextMessageSmsSizeConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig manager_text_message_sms_size_config = 121;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig manager_text_message_sms_size_config = 121;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "managerTextMessageSmsSizeConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig customer_text_message_sms_size_config = 122;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig customer_text_message_sms_size_config = 122;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "customerTextMessageSmsSizeConfig";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.BasicAmountConfig task_message_sent_sms_size_config = 123;
+     * @generated from field: services.billing.entities.v1alpha1.BasicUnitConfig task_message_sent_sms_size_config = 123;
      */
-    value: BasicAmountConfig;
+    value: BasicUnitConfig;
     case: "taskMessageSentSmsSizeConfig";
   } | {
     /**

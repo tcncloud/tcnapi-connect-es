@@ -36,12 +36,12 @@ export declare class BasicConfig extends Message<BasicConfig> {
 }
 
 /**
- * BasicSizeConfig represents basic config for a rating module that
+ * BasicUnitConfig represents basic config for a rating module that
  * rates based on event units
  *
- * @generated from message services.billing.entities.v1alpha1.BasicAmountConfig
+ * @generated from message services.billing.entities.v1alpha1.BasicUnitConfig
  */
-export declare class BasicAmountConfig extends Message<BasicAmountConfig> {
+export declare class BasicUnitConfig extends Message<BasicUnitConfig> {
   /**
    * Required. the size of an individual unit. For example, a unit
    * size of 300 (with bytes as a unit of measurement) and an event
@@ -78,18 +78,18 @@ export declare class BasicAmountConfig extends Message<BasicAmountConfig> {
    */
   maxUnits?: bigint;
 
-  constructor(data?: PartialMessage<BasicAmountConfig>);
+  constructor(data?: PartialMessage<BasicUnitConfig>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.billing.entities.v1alpha1.BasicAmountConfig";
+  static readonly typeName = "services.billing.entities.v1alpha1.BasicUnitConfig";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BasicAmountConfig;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BasicUnitConfig;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BasicAmountConfig;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BasicUnitConfig;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BasicAmountConfig;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BasicUnitConfig;
 
-  static equals(a: BasicAmountConfig | PlainMessage<BasicAmountConfig> | undefined, b: BasicAmountConfig | PlainMessage<BasicAmountConfig> | undefined): boolean;
+  static equals(a: BasicUnitConfig | PlainMessage<BasicUnitConfig> | undefined, b: BasicUnitConfig | PlainMessage<BasicUnitConfig> | undefined): boolean;
 }
 
