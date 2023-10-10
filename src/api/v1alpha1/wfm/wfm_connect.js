@@ -2600,7 +2600,7 @@ export const WFM = {
     /**
      * Updates the @tour_shift_instance_config for the org sending the request, returning @tour_shift_instance_config_sid.
      * The given @tour_shift_instance_config will not be created if it will overlap another tour shift instance config belonging to @tour_week_pattern_sid.
-     * The @member_tour_shift_segment_configs field will be ignored, and will not be updated if passed through this endpoint.
+     * The @member_tour_shift_segment_configs field will be ignored and will not be updated if passed through this endpoint.
      * Required permissions:
      *   NONE
      * Errors:
