@@ -80,6 +80,7 @@ export const SkillProfileGroup = proto3.makeMessageType(
     { no: 8, name: "average_time_to_abort_in_seconds", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 9, name: "are_averages_manual", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 10, name: "skill_profile_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 11, name: "datetime_set_to_inactive", kind: "message", T: Timestamp },
   ],
 );
 
@@ -613,6 +614,7 @@ export const ListSkillProfileGroupsReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListSkillProfileGroupsReq",
   () => [
     { no: 1, name: "skill_profile_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "include_inactive", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -4321,6 +4323,30 @@ export const CreateTourPatternRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the GetTourPatternDiagnostics RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternDiagnosticsReq
+ */
+export const GetTourPatternDiagnosticsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternDiagnosticsReq",
+  () => [
+    { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+  ],
+);
+
+/**
+ * Response message for the GetTourPatternDiagnostics RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternDiagnosticsRes
+ */
+export const GetTourPatternDiagnosticsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternDiagnosticsRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the UpsertTourPatternWithMembers RPC.
  *
  * @generated from message api.v1alpha1.wfm.UpsertTourPatternWithMembersReq
@@ -4341,6 +4367,7 @@ export const UpsertTourPatternWithMembersRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.UpsertTourPatternWithMembersRes",
   () => [
     { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );
 
