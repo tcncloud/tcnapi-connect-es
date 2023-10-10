@@ -4436,6 +4436,13 @@ export declare class ProgramNode extends Message<ProgramNode> {
    */
   originSid?: bigint;
 
+  /**
+   * The predicted calls of this skill profile category will be used when scheduling.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 17;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
   constructor(data?: PartialMessage<ProgramNode>);
 
   static readonly runtime: typeof proto3;
@@ -8356,6 +8363,14 @@ export declare class CreateScheduleScenarioWithNodesReq extends Message<CreateSc
    * @generated from field: api.commons.TimeZone time_zone_val = 10;
    */
   timeZoneVal: TimeZone;
+
+  /**
+   * Skill Profile Category to associate with the program node to create.
+   * The predicted calls of this skill profile category will be used when scheduling.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 11;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<CreateScheduleScenarioWithNodesReq>);
 
