@@ -211,6 +211,16 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_PRIOCOMMERCE = 3900;
    */
   PRIOCOMMERCE = 3900,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_NAVIGA = 4000;
+   */
+  NAVIGA = 4000,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_PAYNSECONDS = 4100;
+   */
+  PAYNSECONDS = 4100,
 }
 
 /**
@@ -1204,6 +1214,16 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT = 3902;
    */
   PRIOCOMMERCE_CC_PAYMENT = 3902,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_NAVIGA_CREATE_PAYMENT = 4001;
+   */
+  NAVIGA_CREATE_PAYMENT = 4001,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD = 4101;
+   */
+  PAYNSECONDS_TOKENIZE_CARD = 4101,
 }
 
 /**
@@ -3683,6 +3703,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecutePriocommerceCcPayment;
     case: "priocommerceCcPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNavigaCreatePayment naviga_create_payment = 4001;
+     */
+    value: ExecuteNavigaCreatePayment;
+    case: "navigaCreatePayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecutePaynsecondsTokenizeCard paynseconds_tokenize_card = 4101;
+     */
+    value: ExecutePaynsecondsTokenizeCard;
+    case: "paynsecondsTokenizeCard";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -8038,5 +8070,43 @@ export declare class ExecutePriocommerceCcPayment extends Message<ExecutePriocom
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePriocommerceCcPayment;
 
   static equals(a: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined, b: ExecutePriocommerceCcPayment | PlainMessage<ExecutePriocommerceCcPayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNavigaCreatePayment
+ */
+export declare class ExecuteNavigaCreatePayment extends Message<ExecuteNavigaCreatePayment> {
+  constructor(data?: PartialMessage<ExecuteNavigaCreatePayment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNavigaCreatePayment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNavigaCreatePayment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNavigaCreatePayment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNavigaCreatePayment;
+
+  static equals(a: ExecuteNavigaCreatePayment | PlainMessage<ExecuteNavigaCreatePayment> | undefined, b: ExecuteNavigaCreatePayment | PlainMessage<ExecuteNavigaCreatePayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecutePaynsecondsTokenizeCard
+ */
+export declare class ExecutePaynsecondsTokenizeCard extends Message<ExecutePaynsecondsTokenizeCard> {
+  constructor(data?: PartialMessage<ExecutePaynsecondsTokenizeCard>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecutePaynsecondsTokenizeCard";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecutePaynsecondsTokenizeCard;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecutePaynsecondsTokenizeCard;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePaynsecondsTokenizeCard;
+
+  static equals(a: ExecutePaynsecondsTokenizeCard | PlainMessage<ExecutePaynsecondsTokenizeCard> | undefined, b: ExecutePaynsecondsTokenizeCard | PlainMessage<ExecutePaynsecondsTokenizeCard> | undefined): boolean;
 }
 
