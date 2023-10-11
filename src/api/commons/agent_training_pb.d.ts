@@ -29,6 +29,56 @@ export declare enum LearningOpportunityStatus {
 }
 
 /**
+ * LearningOpportunityOrigin describes the possible origins
+ * that a learning opportunity can be created from.
+ *
+ * @generated from enum api.commons.LearningOpportunityOrigin
+ */
+export declare enum LearningOpportunityOrigin {
+  /**
+   * Default value - Undefined origin.
+   *
+   * @generated from enum value: UNDEFINED = 0;
+   */
+  UNDEFINED = 0,
+
+  /**
+   * Created from Quality Evaluation.
+   *
+   * @generated from enum value: QUALITY_EVALUATION = 1;
+   */
+  QUALITY_EVALUATION = 1,
+
+  /**
+   * Created from Auto Evaluation.
+   *
+   * @generated from enum value: AUTO_EVALUATION = 2;
+   */
+  AUTO_EVALUATION = 2,
+
+  /**
+   * Created from Flag Evaluation.
+   *
+   * @generated from enum value: FLAG_EVALUATION = 3;
+   */
+  FLAG_EVALUATION = 3,
+
+  /**
+   * Created from Conversation (voice analytics recordings).
+   *
+   * @generated from enum value: CONVERSATION = 4;
+   */
+  CONVERSATION = 4,
+
+  /**
+   * Created from Flagged Conversation (voice analytics flagged recordings).
+   *
+   * @generated from enum value: FLAGGED_CONVERSATION = 5;
+   */
+  FLAGGED_CONVERSATION = 5,
+}
+
+/**
  * LearningOpportunity represents a single learning opportunity entity.
  *
  * @generated from message api.commons.LearningOpportunity
@@ -110,6 +160,13 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
    * @generated from field: api.commons.LearningOpportunityStatus status = 13;
    */
   status: LearningOpportunityStatus;
+
+  /**
+   * Origin (ie. opportunity created from).
+   *
+   * @generated from field: api.commons.LearningOpportunityOrigin origin = 14;
+   */
+  origin: LearningOpportunityOrigin;
 
   constructor(data?: PartialMessage<LearningOpportunity>);
 

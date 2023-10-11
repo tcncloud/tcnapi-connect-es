@@ -20,6 +20,24 @@ export const LearningOpportunityStatus = proto3.makeEnum(
 );
 
 /**
+ * LearningOpportunityOrigin describes the possible origins
+ * that a learning opportunity can be created from.
+ *
+ * @generated from enum api.commons.LearningOpportunityOrigin
+ */
+export const LearningOpportunityOrigin = proto3.makeEnum(
+  "api.commons.LearningOpportunityOrigin",
+  [
+    {no: 0, name: "UNDEFINED"},
+    {no: 1, name: "QUALITY_EVALUATION"},
+    {no: 2, name: "AUTO_EVALUATION"},
+    {no: 3, name: "FLAG_EVALUATION"},
+    {no: 4, name: "CONVERSATION"},
+    {no: 5, name: "FLAGGED_CONVERSATION"},
+  ],
+);
+
+/**
  * LearningOpportunity represents a single learning opportunity entity.
  *
  * @generated from message api.commons.LearningOpportunity
@@ -38,6 +56,7 @@ export const LearningOpportunity = proto3.makeMessageType(
     { no: 10, name: "created_at", kind: "message", T: Timestamp },
     { no: 12, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(LearningOpportunityStatus) },
+    { no: 14, name: "origin", kind: "enum", T: proto3.getEnumType(LearningOpportunityOrigin) },
   ],
 );
 
