@@ -3782,9 +3782,15 @@ export declare class PluginInstance extends Message<PluginInstance> {
   lastEdited?: Timestamp;
 
   /**
-   * @generated from field: api.commons.integrations.RequestMethod method_id = 12;
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 12 [deprecated = true];
+   * @deprecated
    */
   methodId: RequestMethod$1;
+
+  /**
+   * @generated from field: repeated api.commons.integrations.RequestMethod display_methods = 13;
+   */
+  displayMethods: RequestMethod$1[];
 
   constructor(data?: PartialMessage<PluginInstance>);
 

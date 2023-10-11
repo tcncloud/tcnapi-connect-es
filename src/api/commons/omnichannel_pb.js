@@ -1240,3 +1240,46 @@ export const Signature = proto3.makeMessageType(
   ],
 );
 
+/**
+ * OmniProjectComplianceSettings - compliance settings for omni projects
+ *
+ * @generated from message api.commons.OmniProjectComplianceSettings
+ */
+export const OmniProjectComplianceSettings = proto3.makeMessageType(
+  "api.commons.OmniProjectComplianceSettings",
+  () => [
+    { no: 1, name: "email", kind: "message", T: OmniComplianceSettings },
+    { no: 2, name: "sms", kind: "message", T: OmniComplianceSettings },
+  ],
+);
+
+/**
+ * OmniComplianceConfig - configuration for omni compliance
+ *
+ * @generated from message api.commons.OmniComplianceConfig
+ */
+export const OmniComplianceConfig = proto3.makeMessageType(
+  "api.commons.OmniComplianceConfig",
+  () => [
+    { no: 1, name: "keywords", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "confirmation_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * OmniComplianceSettings -
+ *
+ * @generated from message api.commons.OmniComplianceSettings
+ */
+export const OmniComplianceSettings = proto3.makeMessageType(
+  "api.commons.OmniComplianceSettings",
+  () => [
+    { no: 1, name: "opt_in", kind: "message", T: OmniComplianceConfig },
+    { no: 2, name: "opt_out", kind: "message", T: OmniComplianceConfig },
+    { no: 3, name: "help", kind: "message", T: OmniComplianceConfig },
+    { no: 4, name: "information", kind: "message", T: OmniComplianceConfig },
+    { no: 5, name: "scrub_list_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "rule_set_id", kind: "message", T: StringValue },
+  ],
+);
+
