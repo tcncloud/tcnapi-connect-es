@@ -166,6 +166,13 @@ export declare enum Permission {
   SUBSCRIPTION_MANAGEMENT = 140,
 
   /**
+   * Enables copying resources from one organization to another.  eg. Data Dip templates.
+   *
+   * @generated from enum value: PERMISSION_COPY_TO_ORGANIZATION = 170;
+   */
+  COPY_TO_ORGANIZATION = 170,
+
+  /**
    * Enables the customer support tools.
    *
    * @generated from enum value: PERMISSION_CUSTOMER_SUPPORT = 200;
@@ -573,7 +580,15 @@ export declare enum Permission {
   PBX_MANAGER_EDIT = 4101,
 
   /**
-   * No view permissions required for Newsroom home
+   * Enables access to viewing the main newsroom app and showing the popup
+   * This permission will be give to orgs automatically, but can be removed
+   * manually to opt out of newsroom notifications
+   *
+   * @generated from enum value: PERMISSION_NEWSROOM_VIEW = 4199;
+   */
+  NEWSROOM_VIEW = 4199,
+
+  /**
    * Enables access to create, update, and archive in Newsroom manager
    *
    * @generated from enum value: PERMISSION_NEWSROOM_EDIT = 4200;

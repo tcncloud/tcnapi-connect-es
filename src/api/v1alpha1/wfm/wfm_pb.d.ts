@@ -4436,6 +4436,13 @@ export declare class ProgramNode extends Message<ProgramNode> {
    */
   originSid?: bigint;
 
+  /**
+   * The predicted calls of this skill profile category will be used when scheduling.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 17;
+   */
+  skillProfileCategory?: SkillProfileCategory;
+
   constructor(data?: PartialMessage<ProgramNode>);
 
   static readonly runtime: typeof proto3;
@@ -8356,6 +8363,14 @@ export declare class CreateScheduleScenarioWithNodesReq extends Message<CreateSc
    * @generated from field: api.commons.TimeZone time_zone_val = 10;
    */
   timeZoneVal: TimeZone;
+
+  /**
+   * Skill Profile Category to associate with the program node to create.
+   * The predicted calls of this skill profile category will be used when scheduling.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 11;
+   */
+  skillProfileCategory?: SkillProfileCategory;
 
   constructor(data?: PartialMessage<CreateScheduleScenarioWithNodesReq>);
 
@@ -12631,6 +12646,62 @@ export declare class CreateTourPatternRes extends Message<CreateTourPatternRes> 
 }
 
 /**
+ * Request message for the GetTourPatternDiagnostics RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternDiagnosticsReq
+ */
+export declare class GetTourPatternDiagnosticsReq extends Message<GetTourPatternDiagnosticsReq> {
+  /**
+   * The tour pattern and members to validate.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   */
+  tourPattern?: TourPattern;
+
+  constructor(data?: PartialMessage<GetTourPatternDiagnosticsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternDiagnosticsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternDiagnosticsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternDiagnosticsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternDiagnosticsReq;
+
+  static equals(a: GetTourPatternDiagnosticsReq | PlainMessage<GetTourPatternDiagnosticsReq> | undefined, b: GetTourPatternDiagnosticsReq | PlainMessage<GetTourPatternDiagnosticsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetTourPatternDiagnostics RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternDiagnosticsRes
+ */
+export declare class GetTourPatternDiagnosticsRes extends Message<GetTourPatternDiagnosticsRes> {
+  /**
+   * Diagnostics for any issues encountered with the fields on the given @tour_pattern, or an OK diagnostic if there are no issues.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 1;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<GetTourPatternDiagnosticsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternDiagnosticsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternDiagnosticsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternDiagnosticsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternDiagnosticsRes;
+
+  static equals(a: GetTourPatternDiagnosticsRes | PlainMessage<GetTourPatternDiagnosticsRes> | undefined, b: GetTourPatternDiagnosticsRes | PlainMessage<GetTourPatternDiagnosticsRes> | undefined): boolean;
+}
+
+/**
  * Request message for the UpsertTourPatternWithMembers RPC.
  *
  * @generated from message api.v1alpha1.wfm.UpsertTourPatternWithMembersReq
@@ -12672,6 +12743,13 @@ export declare class UpsertTourPatternWithMembersRes extends Message<UpsertTourP
    * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
    */
   tourPattern?: TourPattern;
+
+  /**
+   * Diagnostics for any issues encountered with the fields on the given @tour_pattern.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
 
   constructor(data?: PartialMessage<UpsertTourPatternWithMembersRes>);
 

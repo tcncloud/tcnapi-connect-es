@@ -431,6 +431,21 @@ export declare class AuthenticationPreferences extends Message<AuthenticationPre
    */
   agentApiKey: string;
 
+  /**
+   * Whether or not two factor authentication is enabled.
+   *
+   * @generated from field: bool enable_2fa = 13;
+   */
+  enable2fa: boolean;
+
+  /**
+   * Whether or not to block login from users without a verified email.
+   * This option is only used if two factor authentication is enabled.
+   *
+   * @generated from field: bool block_unverified_users = 14;
+   */
+  blockUnverifiedUsers: boolean;
+
   constructor(data?: PartialMessage<AuthenticationPreferences>);
 
   static readonly runtime: typeof proto3;

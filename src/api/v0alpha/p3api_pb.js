@@ -2600,6 +2600,27 @@ export const CreateContactFieldDescriptionRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v0alpha.UpdateContactFieldDescriptionReq
+ */
+export const UpdateContactFieldDescriptionReq = proto3.makeMessageType(
+  "api.v0alpha.UpdateContactFieldDescriptionReq",
+  () => [
+    { no: 1, name: "contact_field_description_sid", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "field_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "is_phone", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "display_format_string", kind: "message", T: StringValue },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.UpdateContactFieldDescriptionRes
+ */
+export const UpdateContactFieldDescriptionRes = proto3.makeMessageType(
+  "api.v0alpha.UpdateContactFieldDescriptionRes",
+  [],
+);
+
+/**
  * @generated from message api.v0alpha.DeleteContactFieldDescriptionReq
  */
 export const DeleteContactFieldDescriptionReq = proto3.makeMessageType(
