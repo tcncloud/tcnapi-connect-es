@@ -8,7 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { EventType } from "./event_types_pb.js";
 import type { DummyEvent } from "./events_pb.js";
 import type { VanaBillingReportEvent, VanaFlagEvent, VanaFlagReviewEvent, VanaFlagSummaryEvent, VanaPhraseCorrectionEvent } from "./vana_events_pb.js";
-import type { OmnichannelAgentAssignConversationEvent, OmnichannelAgentMessageUnitsEvent, OmnichannelAgentReassignConversationEvent, OmnichannelAgentSuspendEvent, OmnichannelAgentTextMessageEvent, OmnichannelAgentUnassignConversationEvent, OmnichannelArchiveCampaignEvent, OmnichannelArchiveModuleEvent, OmnichannelBeginWrapUpEvent, OmnichannelCloseConversationEvent, OmnichannelCompleteCampaignEvent, OmnichannelCompleteModuleEvent, OmnichannelConnectedInboxCreatedEvent, OmnichannelConnectedInboxPollEvent, OmnichannelCreateCampaignEvent, OmnichannelCreateConversationEvent, OmnichannelCreateProjectEvent, OmnichannelCustomerMessageUnitsEvent, OmnichannelCustomerTextMessageEvent, OmnichannelDailyConversationReportEvent, OmnichannelDailyProjectReportEvent, OmnichannelErrorModuleEvent, OmnichannelFailModuleEvent, OmnichannelFinishWrapUpEvent, OmnichannelManagerMessageUnitsEvent, OmnichannelManagerTextMessageEvent, OmnichannelModuleInitialReplyEvent, OmnichannelPauseCampaignEvent, OmnichannelPauseModuleEvent, OmnichannelPaymentLinkSentEvent, OmnichannelResumeCampaignEvent, OmnichannelResumeModuleEvent, OmnichannelScheduleModuleEvent, OmnichannelSetConversationCollectedDataEvent, OmnichannelSmsMessageSentModuleEvent, OmnichannelStartCampaignEvent, OmnichannelStartModuleEvent, OmnichannelSuccessModuleEvent, OmnichannelSystemMessageUnitsEvent, OmnichannelT10Event, OmnichannelT11Event, OmnichannelTaskMessageSentEvent, OmnichannelUpdateCampaignEvent, OmnichannelUpdateModuleEvent } from "./omnichannel_events_pb.js";
+import type { OmnichannelAgentAssignConversationEvent, OmnichannelAgentMessageUnitsEvent, OmnichannelAgentReassignConversationEvent, OmnichannelAgentSuspendEvent, OmnichannelAgentTextMessageEvent, OmnichannelAgentUnassignConversationEvent, OmnichannelArchiveCampaignEvent, OmnichannelArchiveModuleEvent, OmnichannelBeginWrapUpEvent, OmnichannelCloseConversationEvent, OmnichannelCompleteCampaignEvent, OmnichannelCompleteModuleEvent, OmnichannelConnectedInboxCreatedEvent, OmnichannelConnectedInboxPollEvent, OmnichannelCreateCampaignEvent, OmnichannelCreateConversationEvent, OmnichannelCreateProjectEvent, OmnichannelCustomerMessageUnitsEvent, OmnichannelCustomerTextMessageEvent, OmnichannelDailyConversationReportEvent, OmnichannelDailyProjectReportEvent, OmnichannelErrorModuleEvent, OmnichannelFailModuleEvent, OmnichannelFinishWrapUpEvent, OmnichannelManagerMessageUnitsEvent, OmnichannelManagerTextMessageEvent, OmnichannelManualApproveTaskAcceptedEvent, OmnichannelManualApproveTaskRejectedEvent, OmnichannelManualApproveTaskRequeueEvent, OmnichannelManualApproveTaskTimeoutEvent, OmnichannelModuleInitialReplyEvent, OmnichannelPauseCampaignEvent, OmnichannelPauseModuleEvent, OmnichannelPaymentLinkSentEvent, OmnichannelResumeCampaignEvent, OmnichannelResumeModuleEvent, OmnichannelScheduleModuleEvent, OmnichannelSetConversationCollectedDataEvent, OmnichannelSmsMessageSentModuleEvent, OmnichannelStartCampaignEvent, OmnichannelStartModuleEvent, OmnichannelSuccessModuleEvent, OmnichannelSystemMessageUnitsEvent, OmnichannelT10Event, OmnichannelT11Event, OmnichannelTaskMessageSentEvent, OmnichannelUpdateCampaignEvent, OmnichannelUpdateModuleEvent } from "./omnichannel_events_pb.js";
 import type { AsmActivateConversationEvent, AsmAgentLoginEvent, AsmAgentLogoutEvent, AsmAgentStateChangedEvent, AsmConversationPulledEvent, AsmDeactivateConversationEvent, AsmOpenOmniAgentEvent, AsmOpenVoiceEvent, AsmPauseEvent, AsmResumeEvent } from "./asm_events_pb.js";
 import type { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, ScorecardsCreateCategoryEvent, ScorecardsCreateEvaluationEvent, ScorecardsCreateEvaluationQuestionEvent, ScorecardsCreateQuestionEvent, ScorecardsCreateScorecardEvent, ScorecardsCreateScorecardQuestionEvent, ScorecardsCreateSectionEvent, ScorecardsDeleteCategoryEvent, ScorecardsDeleteEvaluationEvent, ScorecardsDeleteEvaluationQuestionEvent, ScorecardsDeleteQuestionEvent, ScorecardsDeleteScorecardEvent, ScorecardsDeleteScorecardQuestionEvent, ScorecardsDeleteSectionEvent, ScorecardsUpdateCategoryEvent, ScorecardsUpdateEvaluationEvent, ScorecardsUpdateEvaluationQuestionEvent, ScorecardsUpdateQuestionEvent, ScorecardsUpdateScorecardEvent, ScorecardsUpdateScorecardQuestionEvent, ScorecardsUpdateSectionEvent } from "./scorecards_events_pb.js";
 import type { TicketEvent } from "./tickets_events_pb.js";
@@ -458,6 +458,38 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: OmnichannelPaymentLinkSentEvent;
     case: "omnichannelPaymentLinkSentEvent";
+  } | {
+    /**
+     * accepted manual approve task
+     *
+     * @generated from field: api.commons.audit.OmnichannelManualApproveTaskAcceptedEvent omnichannel_manual_approve_task_accepted_event = 358;
+     */
+    value: OmnichannelManualApproveTaskAcceptedEvent;
+    case: "omnichannelManualApproveTaskAcceptedEvent";
+  } | {
+    /**
+     * rejected manual approve task
+     *
+     * @generated from field: api.commons.audit.OmnichannelManualApproveTaskRejectedEvent omnichannel_manual_approve_task_rejected_event = 359;
+     */
+    value: OmnichannelManualApproveTaskRejectedEvent;
+    case: "omnichannelManualApproveTaskRejectedEvent";
+  } | {
+    /**
+     * timeout of manual approve task
+     *
+     * @generated from field: api.commons.audit.OmnichannelManualApproveTaskTimeoutEvent omnichannel_manual_approve_task_timeout_event = 360;
+     */
+    value: OmnichannelManualApproveTaskTimeoutEvent;
+    case: "omnichannelManualApproveTaskTimeoutEvent";
+  } | {
+    /**
+     * requeue of manual approve task
+     *
+     * @generated from field: api.commons.audit.OmnichannelManualApproveTaskRequeueEvent omnichannel_manual_approve_task_requeue_event = 361;
+     */
+    value: OmnichannelManualApproveTaskRequeueEvent;
+    case: "omnichannelManualApproveTaskRequeueEvent";
   } | {
     /**
      * / Asm events 400
