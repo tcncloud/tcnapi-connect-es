@@ -580,7 +580,15 @@ export declare enum Permission {
   PBX_MANAGER_EDIT = 4101,
 
   /**
-   * No view permissions required for Newsroom home
+   * Enables access to viewing the main newsroom app and showing the popup
+   * This permission will be give to orgs automatically, but can be removed
+   * manually to opt out of newsroom notifications
+   *
+   * @generated from enum value: PERMISSION_NEWSROOM_VIEW = 4199;
+   */
+  NEWSROOM_VIEW = 4199,
+
+  /**
    * Enables access to create, update, and archive in Newsroom manager
    *
    * @generated from enum value: PERMISSION_NEWSROOM_EDIT = 4200;
