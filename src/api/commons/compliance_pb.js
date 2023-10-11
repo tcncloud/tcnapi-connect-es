@@ -203,6 +203,30 @@ export const FrequencyExp = proto3.makeMessageType(
     { no: 4, name: "dispositions", kind: "message", T: DispositionMod },
     { no: 5, name: "field_names", kind: "message", T: FieldNamesMod },
     { no: 6, name: "checking_entities", kind: "message", T: EntityExp, repeated: true },
+    { no: 7, name: "matching", kind: "message", T: MatchingMod },
+  ],
+);
+
+/**
+ * @generated from message api.commons.MatchingMod
+ */
+export const MatchingMod = proto3.makeMessageType(
+  "api.commons.MatchingMod",
+  () => [
+    { no: 1, name: "and", kind: "message", T: MatchingMod, repeated: true },
+    { no: 2, name: "or", kind: "message", T: MatchingMod, repeated: true },
+    { no: 3, name: "mod", kind: "message", T: MatchingEntity },
+  ],
+);
+
+/**
+ * @generated from message api.commons.MatchingEntity
+ */
+export const MatchingEntity = proto3.makeMessageType(
+  "api.commons.MatchingEntity",
+  () => [
+    { no: 1, name: "results", kind: "message", T: ResultsMod, oneof: "entity" },
+    { no: 2, name: "dispositions", kind: "message", T: DispositionMod, oneof: "entity" },
   ],
 );
 
