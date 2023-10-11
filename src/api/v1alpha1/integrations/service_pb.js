@@ -1212,6 +1212,7 @@ export const PluginInstance = proto3.makeMessageType(
     { no: 10, name: "metadata", kind: "message", T: Values },
     { no: 9, name: "last_edited", kind: "message", T: Timestamp },
     { no: 12, name: "method_id", kind: "enum", T: proto3.getEnumType(RequestMethod$1) },
+    { no: 13, name: "display_methods", kind: "enum", T: proto3.getEnumType(RequestMethod$1), repeated: true },
   ],
 );
 

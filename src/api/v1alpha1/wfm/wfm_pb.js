@@ -4323,6 +4323,30 @@ export const CreateTourPatternRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the GetTourPatternDiagnostics RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternDiagnosticsReq
+ */
+export const GetTourPatternDiagnosticsReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternDiagnosticsReq",
+  () => [
+    { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+  ],
+);
+
+/**
+ * Response message for the GetTourPatternDiagnostics RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternDiagnosticsRes
+ */
+export const GetTourPatternDiagnosticsRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternDiagnosticsRes",
+  () => [
+    { no: 1, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the UpsertTourPatternWithMembers RPC.
  *
  * @generated from message api.v1alpha1.wfm.UpsertTourPatternWithMembersReq
@@ -4343,6 +4367,7 @@ export const UpsertTourPatternWithMembersRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.UpsertTourPatternWithMembersRes",
   () => [
     { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
   ],
 );
 
