@@ -280,6 +280,13 @@ export declare class SkillProfileGroup extends Message<SkillProfileGroup> {
    */
   skillProfileSids: bigint[];
 
+  /**
+   * Datetime that the group was set to inactive, if not set then the group is currently active.
+   *
+   * @generated from field: google.protobuf.Timestamp datetime_set_to_inactive = 11;
+   */
+  datetimeSetToInactive?: Timestamp;
+
   constructor(data?: PartialMessage<SkillProfileGroup>);
 
   static readonly runtime: typeof proto3;
@@ -1700,6 +1707,13 @@ export declare class ListSkillProfileGroupsReq extends Message<ListSkillProfileG
    * @generated from field: repeated int64 skill_profile_group_sids = 1;
    */
   skillProfileGroupSids: bigint[];
+
+  /**
+   * Indicates whether inactive profile groups will be included in the result.
+   *
+   * @generated from field: bool include_inactive = 2;
+   */
+  includeInactive: boolean;
 
   constructor(data?: PartialMessage<ListSkillProfileGroupsReq>);
 
