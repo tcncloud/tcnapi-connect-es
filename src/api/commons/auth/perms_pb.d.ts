@@ -166,6 +166,13 @@ export declare enum Permission {
   SUBSCRIPTION_MANAGEMENT = 140,
 
   /**
+   * Enables copying resources from one organization to another.  eg. Data Dip templates.
+   *
+   * @generated from enum value: PERMISSION_COPY_TO_ORGANIZATION = 170;
+   */
+  COPY_TO_ORGANIZATION = 170,
+
+  /**
    * Enables the customer support tools.
    *
    * @generated from enum value: PERMISSION_CUSTOMER_SUPPORT = 200;
