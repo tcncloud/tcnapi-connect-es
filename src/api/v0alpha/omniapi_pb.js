@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
+import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
 import { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -1275,6 +1275,7 @@ export const Project = proto3.makeMessageType(
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "status", kind: "enum", T: proto3.getEnumType(ProjectStatus) },
     { no: 5, name: "date_created", kind: "message", T: Timestamp },
+    { no: 6, name: "compliance_config", kind: "message", T: OmniProjectComplianceConfig },
   ],
 );
 

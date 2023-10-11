@@ -1008,6 +1008,13 @@ export declare class OmniCampaign extends Message<OmniCampaign> {
    */
   shortenUrl: boolean;
 
+  /**
+   * compliance configuration
+   *
+   * @generated from field: api.commons.OmniComplianceConfig compliance_config = 14;
+   */
+  complianceConfig?: OmniComplianceConfig;
+
   constructor(data?: PartialMessage<OmniCampaign>);
 
   static readonly runtime: typeof proto3;
@@ -4220,46 +4227,46 @@ export declare class Signature extends Message<Signature> {
 }
 
 /**
- * OmniProjectComplianceSettings - compliance settings for omni projects
+ * OmniProjectComplianceConfig - compliance config for omni projects
  *
- * @generated from message api.commons.OmniProjectComplianceSettings
+ * @generated from message api.commons.OmniProjectComplianceConfig
  */
-export declare class OmniProjectComplianceSettings extends Message<OmniProjectComplianceSettings> {
+export declare class OmniProjectComplianceConfig extends Message<OmniProjectComplianceConfig> {
   /**
-   * compliance settings for an email
+   * compliance configuration for an email
    *
-   * @generated from field: api.commons.OmniComplianceSettings email = 1;
+   * @generated from field: api.commons.OmniComplianceConfig email = 1;
    */
-  email?: OmniComplianceSettings;
+  email?: OmniComplianceConfig;
 
   /**
-   * compliance settings for sms
+   * compliance configuration for sms
    *
-   * @generated from field: api.commons.OmniComplianceSettings sms = 2;
+   * @generated from field: api.commons.OmniComplianceConfig sms = 2;
    */
-  sms?: OmniComplianceSettings;
+  sms?: OmniComplianceConfig;
 
-  constructor(data?: PartialMessage<OmniProjectComplianceSettings>);
+  constructor(data?: PartialMessage<OmniProjectComplianceConfig>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.OmniProjectComplianceSettings";
+  static readonly typeName = "api.commons.OmniProjectComplianceConfig";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniProjectComplianceSettings;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniProjectComplianceConfig;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniProjectComplianceSettings;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniProjectComplianceConfig;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniProjectComplianceSettings;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniProjectComplianceConfig;
 
-  static equals(a: OmniProjectComplianceSettings | PlainMessage<OmniProjectComplianceSettings> | undefined, b: OmniProjectComplianceSettings | PlainMessage<OmniProjectComplianceSettings> | undefined): boolean;
+  static equals(a: OmniProjectComplianceConfig | PlainMessage<OmniProjectComplianceConfig> | undefined, b: OmniProjectComplianceConfig | PlainMessage<OmniProjectComplianceConfig> | undefined): boolean;
 }
 
 /**
- * OmniComplianceConfig - configuration for omni compliance
+ * OmniComplianceAction - configuration action for omni compliance
  *
- * @generated from message api.commons.OmniComplianceConfig
+ * @generated from message api.commons.OmniComplianceAction
  */
-export declare class OmniComplianceConfig extends Message<OmniComplianceConfig> {
+export declare class OmniComplianceAction extends Message<OmniComplianceAction> {
   /**
    * a list of config keywords
    *
@@ -4274,54 +4281,54 @@ export declare class OmniComplianceConfig extends Message<OmniComplianceConfig> 
    */
   confirmationMessage: string;
 
-  constructor(data?: PartialMessage<OmniComplianceConfig>);
+  constructor(data?: PartialMessage<OmniComplianceAction>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.OmniComplianceConfig";
+  static readonly typeName = "api.commons.OmniComplianceAction";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniComplianceConfig;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniComplianceAction;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniComplianceConfig;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniComplianceAction;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniComplianceConfig;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniComplianceAction;
 
-  static equals(a: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined, b: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined): boolean;
+  static equals(a: OmniComplianceAction | PlainMessage<OmniComplianceAction> | undefined, b: OmniComplianceAction | PlainMessage<OmniComplianceAction> | undefined): boolean;
 }
 
 /**
- * OmniComplianceSettings -
+ * OmniComplianceConfig -
  *
- * @generated from message api.commons.OmniComplianceSettings
+ * @generated from message api.commons.OmniComplianceConfig
  */
-export declare class OmniComplianceSettings extends Message<OmniComplianceSettings> {
+export declare class OmniComplianceConfig extends Message<OmniComplianceConfig> {
   /**
    * opting in to different compliance settings
    *
-   * @generated from field: api.commons.OmniComplianceConfig opt_in = 1;
+   * @generated from field: api.commons.OmniComplianceAction opt_in = 1;
    */
-  optIn?: OmniComplianceConfig;
+  optIn?: OmniComplianceAction;
 
   /**
    * opting out of different compliance settings
    *
-   * @generated from field: api.commons.OmniComplianceConfig opt_out = 2;
+   * @generated from field: api.commons.OmniComplianceAction opt_out = 2;
    */
-  optOut?: OmniComplianceConfig;
+  optOut?: OmniComplianceAction;
 
   /**
    * help regarding compliance settings
    *
-   * @generated from field: api.commons.OmniComplianceConfig help = 3;
+   * @generated from field: api.commons.OmniComplianceAction help = 3;
    */
-  help?: OmniComplianceConfig;
+  help?: OmniComplianceAction;
 
   /**
    * information regarding compliance settings
    *
-   * @generated from field: api.commons.OmniComplianceConfig information = 4;
+   * @generated from field: api.commons.OmniComplianceAction information = 4;
    */
-  information?: OmniComplianceConfig;
+  information?: OmniComplianceAction;
 
   /**
    * scrub list identifier
@@ -4337,18 +4344,18 @@ export declare class OmniComplianceSettings extends Message<OmniComplianceSettin
    */
   ruleSetId?: string;
 
-  constructor(data?: PartialMessage<OmniComplianceSettings>);
+  constructor(data?: PartialMessage<OmniComplianceConfig>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.OmniComplianceSettings";
+  static readonly typeName = "api.commons.OmniComplianceConfig";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniComplianceSettings;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniComplianceConfig;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniComplianceSettings;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniComplianceConfig;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniComplianceSettings;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniComplianceConfig;
 
-  static equals(a: OmniComplianceSettings | PlainMessage<OmniComplianceSettings> | undefined, b: OmniComplianceSettings | PlainMessage<OmniComplianceSettings> | undefined): boolean;
+  static equals(a: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined, b: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined): boolean;
 }
 
