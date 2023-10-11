@@ -7692,6 +7692,64 @@ export declare class CreateContactFieldDescriptionRes extends Message<CreateCont
 }
 
 /**
+ * @generated from message api.v0alpha.UpdateContactFieldDescriptionReq
+ */
+export declare class UpdateContactFieldDescriptionReq extends Message<UpdateContactFieldDescriptionReq> {
+  /**
+   * @generated from field: int32 contact_field_description_sid = 1;
+   */
+  contactFieldDescriptionSid: number;
+
+  /**
+   * @generated from field: string field_name = 2;
+   */
+  fieldName: string;
+
+  /**
+   * @generated from field: bool is_phone = 3;
+   */
+  isPhone: boolean;
+
+  /**
+   * @generated from field: google.protobuf.StringValue display_format_string = 4;
+   */
+  displayFormatString?: string;
+
+  constructor(data?: PartialMessage<UpdateContactFieldDescriptionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateContactFieldDescriptionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateContactFieldDescriptionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateContactFieldDescriptionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateContactFieldDescriptionReq;
+
+  static equals(a: UpdateContactFieldDescriptionReq | PlainMessage<UpdateContactFieldDescriptionReq> | undefined, b: UpdateContactFieldDescriptionReq | PlainMessage<UpdateContactFieldDescriptionReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.UpdateContactFieldDescriptionRes
+ */
+export declare class UpdateContactFieldDescriptionRes extends Message<UpdateContactFieldDescriptionRes> {
+  constructor(data?: PartialMessage<UpdateContactFieldDescriptionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateContactFieldDescriptionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateContactFieldDescriptionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateContactFieldDescriptionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateContactFieldDescriptionRes;
+
+  static equals(a: UpdateContactFieldDescriptionRes | PlainMessage<UpdateContactFieldDescriptionRes> | undefined, b: UpdateContactFieldDescriptionRes | PlainMessage<UpdateContactFieldDescriptionRes> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v0alpha.DeleteContactFieldDescriptionReq
  */
 export declare class DeleteContactFieldDescriptionReq extends Message<DeleteContactFieldDescriptionReq> {
