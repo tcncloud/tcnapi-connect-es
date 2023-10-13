@@ -75,6 +75,12 @@ export const ConfigEntityType = proto3.makeEnum(
     {no: 12, name: "SCHEDULING_ACTIVITY"},
     {no: 13, name: "SKILL_PROFICIENCY"},
     {no: 14, name: "SCHEDULE_SCENARIO"},
+    {no: 15, name: "SKILL"},
+    {no: 16, name: "TOUR_PATTERN"},
+    {no: 17, name: "TOUR_WEEK_PATTERN"},
+    {no: 18, name: "TOUR_SHIFT_INSTANCE_CONFIG"},
+    {no: 19, name: "TOUR_SHIFT_SEGMENT_CONFIG"},
+    {no: 20, name: "TOUR_AGENT_COLLECTION"},
   ],
 );
 

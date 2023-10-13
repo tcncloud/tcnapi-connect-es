@@ -229,6 +229,48 @@ export declare enum ConfigEntityType {
    * @generated from enum value: SCHEDULE_SCENARIO = 14;
    */
   SCHEDULE_SCENARIO = 14,
+
+  /**
+   * entity is a skill.
+   *
+   * @generated from enum value: SKILL = 15;
+   */
+  SKILL = 15,
+
+  /**
+   * entity is a tour pattern.
+   *
+   * @generated from enum value: TOUR_PATTERN = 16;
+   */
+  TOUR_PATTERN = 16,
+
+  /**
+   * entity is a tour week pattern.
+   *
+   * @generated from enum value: TOUR_WEEK_PATTERN = 17;
+   */
+  TOUR_WEEK_PATTERN = 17,
+
+  /**
+   * entity is a tour shift instance config.
+   *
+   * @generated from enum value: TOUR_SHIFT_INSTANCE_CONFIG = 18;
+   */
+  TOUR_SHIFT_INSTANCE_CONFIG = 18,
+
+  /**
+   * entity is a tour shift segment config.
+   *
+   * @generated from enum value: TOUR_SHIFT_SEGMENT_CONFIG = 19;
+   */
+  TOUR_SHIFT_SEGMENT_CONFIG = 19,
+
+  /**
+   * entity is a tour agent collection.
+   *
+   * @generated from enum value: TOUR_AGENT_COLLECTION = 20;
+   */
+  TOUR_AGENT_COLLECTION = 20,
 }
 
 /**
