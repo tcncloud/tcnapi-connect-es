@@ -10382,7 +10382,7 @@ export declare class BuildDraftScheduleRes extends Message<BuildDraftScheduleRes
   diagnostics: Diagnostic[];
 
   /**
-   * The scheduling resulting metric for the built schedule range..
+   * The scheduling resulting metric for the built schedule range.
    *
    * @generated from field: api.commons.SchedulingResultMetric scheduling_resulting_metric = 3;
    */
