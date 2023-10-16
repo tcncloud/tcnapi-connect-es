@@ -3567,7 +3567,7 @@ export const BuildDraftScheduleRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "draft_schedule", kind: "message", T: DraftSchedule },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
-    { no: 3, name: "scheduling_resulting_metric", kind: "message", T: SchedulingResultMetric },
+    { no: 3, name: "scheduling_result_metric", kind: "message", T: SchedulingResultMetric },
   ],
 );
 

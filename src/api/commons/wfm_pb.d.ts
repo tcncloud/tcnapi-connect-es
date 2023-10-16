@@ -1957,9 +1957,9 @@ export declare class SchedulingResultMetric extends Message<SchedulingResultMetr
   /**
    * The total number of minute-width intervals that had enough scheduled ftes to meet the predicted call FTEs.
    *
-   * @generated from field: int32 total_interval_intervals_with_fte_required = 2;
+   * @generated from field: int32 total_intervals_with_fte_required = 2;
    */
-  totalIntervalIntervalsWithFteRequired: number;
+  totalIntervalsWithFteRequired: number;
 
   /**
    * The total number of intervals that have unmet predicted call FTEs (not enough scheduled FTEs).

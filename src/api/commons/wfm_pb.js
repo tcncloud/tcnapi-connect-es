@@ -578,7 +578,7 @@ export const SchedulingResultMetric = proto3.makeMessageType(
   "api.commons.SchedulingResultMetric",
   () => [
     { no: 1, name: "total_internal_intervals", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "total_interval_intervals_with_fte_required", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "total_intervals_with_fte_required", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "total_intervals_with_ftes_remaining", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "coverage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 5, name: "root_mean_square", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
