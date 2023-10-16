@@ -1221,6 +1221,11 @@ export declare enum RequestMethod {
   NAVIGA_CREATE_PAYMENT = 4001,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_NAVIGA_CHANGE_BILLING = 4002;
+   */
+  NAVIGA_CHANGE_BILLING = 4002,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD = 4101;
    */
   PAYNSECONDS_TOKENIZE_CARD = 4101,
@@ -3709,6 +3714,12 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteNavigaCreatePayment;
     case: "navigaCreatePayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteNavigaChangeBilling naviga_change_billing = 4002;
+     */
+    value: ExecuteNavigaChangeBilling;
+    case: "navigaChangeBilling";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecutePaynsecondsTokenizeCard paynseconds_tokenize_card = 4101;
@@ -8089,6 +8100,25 @@ export declare class ExecuteNavigaCreatePayment extends Message<ExecuteNavigaCre
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNavigaCreatePayment;
 
   static equals(a: ExecuteNavigaCreatePayment | PlainMessage<ExecuteNavigaCreatePayment> | undefined, b: ExecuteNavigaCreatePayment | PlainMessage<ExecuteNavigaCreatePayment> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNavigaChangeBilling
+ */
+export declare class ExecuteNavigaChangeBilling extends Message<ExecuteNavigaChangeBilling> {
+  constructor(data?: PartialMessage<ExecuteNavigaChangeBilling>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteNavigaChangeBilling";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteNavigaChangeBilling;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteNavigaChangeBilling;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteNavigaChangeBilling;
+
+  static equals(a: ExecuteNavigaChangeBilling | PlainMessage<ExecuteNavigaChangeBilling> | undefined, b: ExecuteNavigaChangeBilling | PlainMessage<ExecuteNavigaChangeBilling> | undefined): boolean;
 }
 
 /**

@@ -364,6 +364,7 @@ export const OmniCampaign = proto3.makeMessageType(
     { no: 11, name: "modules", kind: "message", T: OmniCampaignModule, repeated: true },
     { no: 12, name: "time_zone", kind: "message", T: TimeZoneWrapper },
     { no: 13, name: "shorten_url", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "compliance_config", kind: "message", T: OmniComplianceConfig },
   ],
 );
 
@@ -1237,6 +1238,49 @@ export const Signature = proto3.makeMessageType(
     { no: 5, name: "deleted_on", kind: "message", T: Timestamp },
     { no: 6, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * OmniProjectComplianceConfig - compliance config for omni projects
+ *
+ * @generated from message api.commons.OmniProjectComplianceConfig
+ */
+export const OmniProjectComplianceConfig = proto3.makeMessageType(
+  "api.commons.OmniProjectComplianceConfig",
+  () => [
+    { no: 1, name: "email", kind: "message", T: OmniComplianceConfig },
+    { no: 2, name: "sms", kind: "message", T: OmniComplianceConfig },
+  ],
+);
+
+/**
+ * OmniComplianceAction - configuration action for omni compliance
+ *
+ * @generated from message api.commons.OmniComplianceAction
+ */
+export const OmniComplianceAction = proto3.makeMessageType(
+  "api.commons.OmniComplianceAction",
+  () => [
+    { no: 1, name: "keywords", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "confirmation_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * OmniComplianceConfig -
+ *
+ * @generated from message api.commons.OmniComplianceConfig
+ */
+export const OmniComplianceConfig = proto3.makeMessageType(
+  "api.commons.OmniComplianceConfig",
+  () => [
+    { no: 1, name: "opt_in", kind: "message", T: OmniComplianceAction },
+    { no: 2, name: "opt_out", kind: "message", T: OmniComplianceAction },
+    { no: 3, name: "help", kind: "message", T: OmniComplianceAction },
+    { no: 4, name: "information", kind: "message", T: OmniComplianceAction },
+    { no: 5, name: "scrub_list_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "rule_set_id", kind: "message", T: StringValue },
   ],
 );
 

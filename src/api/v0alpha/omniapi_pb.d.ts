@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
+import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
 import type { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -3357,6 +3357,13 @@ export declare class Project extends Message<Project> {
    * @generated from field: google.protobuf.Timestamp date_created = 5;
    */
   dateCreated?: Timestamp;
+
+  /**
+   * compliance configuration
+   *
+   * @generated from field: api.commons.OmniProjectComplianceConfig compliance_config = 6;
+   */
+  complianceConfig?: OmniProjectComplianceConfig;
 
   constructor(data?: PartialMessage<Project>);
 

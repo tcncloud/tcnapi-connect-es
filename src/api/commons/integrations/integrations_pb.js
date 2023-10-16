@@ -265,6 +265,7 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3901, name: "REQUEST_METHOD_PRIOCOMMERCE_ACH_PAYMENT", localName: "PRIOCOMMERCE_ACH_PAYMENT"},
     {no: 3902, name: "REQUEST_METHOD_PRIOCOMMERCE_CC_PAYMENT", localName: "PRIOCOMMERCE_CC_PAYMENT"},
     {no: 4001, name: "REQUEST_METHOD_NAVIGA_CREATE_PAYMENT", localName: "NAVIGA_CREATE_PAYMENT"},
+    {no: 4002, name: "REQUEST_METHOD_NAVIGA_CHANGE_BILLING", localName: "NAVIGA_CHANGE_BILLING"},
     {no: 4101, name: "REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD", localName: "PAYNSECONDS_TOKENIZE_CARD"},
   ],
 );
@@ -871,6 +872,7 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3901, name: "priocommerce_ach_payment", kind: "message", T: ExecutePriocommerceAchPayment, oneof: "value" },
     { no: 3902, name: "priocommerce_cc_payment", kind: "message", T: ExecutePriocommerceCcPayment, oneof: "value" },
     { no: 4001, name: "naviga_create_payment", kind: "message", T: ExecuteNavigaCreatePayment, oneof: "value" },
+    { no: 4002, name: "naviga_change_billing", kind: "message", T: ExecuteNavigaChangeBilling, oneof: "value" },
     { no: 4101, name: "paynseconds_tokenize_card", kind: "message", T: ExecutePaynsecondsTokenizeCard, oneof: "value" },
   ],
 );
@@ -2694,6 +2696,14 @@ export const ExecutePriocommerceCcPayment = proto3.makeMessageType(
  */
 export const ExecuteNavigaCreatePayment = proto3.makeMessageType(
   "api.commons.integrations.ExecuteNavigaCreatePayment",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteNavigaChangeBilling
+ */
+export const ExecuteNavigaChangeBilling = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteNavigaChangeBilling",
   [],
 );
 
