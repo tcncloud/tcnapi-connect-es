@@ -229,6 +229,48 @@ export declare enum ConfigEntityType {
    * @generated from enum value: SCHEDULE_SCENARIO = 14;
    */
   SCHEDULE_SCENARIO = 14,
+
+  /**
+   * entity is a skill.
+   *
+   * @generated from enum value: SKILL = 15;
+   */
+  SKILL = 15,
+
+  /**
+   * entity is a tour pattern.
+   *
+   * @generated from enum value: TOUR_PATTERN = 16;
+   */
+  TOUR_PATTERN = 16,
+
+  /**
+   * entity is a tour week pattern.
+   *
+   * @generated from enum value: TOUR_WEEK_PATTERN = 17;
+   */
+  TOUR_WEEK_PATTERN = 17,
+
+  /**
+   * entity is a tour shift instance config.
+   *
+   * @generated from enum value: TOUR_SHIFT_INSTANCE_CONFIG = 18;
+   */
+  TOUR_SHIFT_INSTANCE_CONFIG = 18,
+
+  /**
+   * entity is a tour shift segment config.
+   *
+   * @generated from enum value: TOUR_SHIFT_SEGMENT_CONFIG = 19;
+   */
+  TOUR_SHIFT_SEGMENT_CONFIG = 19,
+
+  /**
+   * entity is a tour agent collection.
+   *
+   * @generated from enum value: TOUR_AGENT_COLLECTION = 20;
+   */
+  TOUR_AGENT_COLLECTION = 20,
 }
 
 /**
@@ -1897,5 +1939,69 @@ export declare enum SkillProfileCategory_CategoryType {
    * @generated from enum value: SKILL_PROFILE_GROUP = 1;
    */
   SKILL_PROFILE_GROUP = 1,
+}
+
+/**
+ * Defines a Scheduling Result Metric from the Scheduler.
+ *
+ * @generated from message api.commons.SchedulingResultMetric
+ */
+export declare class SchedulingResultMetric extends Message<SchedulingResultMetric> {
+  /**
+   * The total number of minute-width intervals that were scheduled and measured.
+   *
+   * @generated from field: int32 total_internal_intervals = 1;
+   */
+  totalInternalIntervals: number;
+
+  /**
+   * The total number of minute-width intervals that had enough scheduled ftes to meet the predicted call FTEs.
+   *
+   * @generated from field: int32 total_intervals_with_fte_required = 2;
+   */
+  totalIntervalsWithFteRequired: number;
+
+  /**
+   * The total number of intervals that have unmet predicted call FTEs (not enough scheduled FTEs).
+   *
+   * @generated from field: int32 total_intervals_with_ftes_remaining = 3;
+   */
+  totalIntervalsWithFtesRemaining: number;
+
+  /**
+   * The average ratio of interval metrics (min(1,  scheduled/predicted)). A value of 1 means every interval
+   *    with predicted call FTEs has enough scheduled FTEs to meet requirements.
+   *
+   * @generated from field: float coverage = 4;
+   */
+  coverage: number;
+
+  /**
+   * Root Mean Square metric for predicted - scheduled FTEs.
+   *
+   * @generated from field: float root_mean_square = 5;
+   */
+  rootMeanSquare: number;
+
+  /**
+   * Set to TRUE if this object contains valid metrics.
+   *
+   * @generated from field: bool has_result = 6;
+   */
+  hasResult: boolean;
+
+  constructor(data?: PartialMessage<SchedulingResultMetric>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.SchedulingResultMetric";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SchedulingResultMetric;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SchedulingResultMetric;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SchedulingResultMetric;
+
+  static equals(a: SchedulingResultMetric | PlainMessage<SchedulingResultMetric> | undefined, b: SchedulingResultMetric | PlainMessage<SchedulingResultMetric> | undefined): boolean;
 }
 

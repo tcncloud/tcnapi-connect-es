@@ -75,6 +75,12 @@ export const ConfigEntityType = proto3.makeEnum(
     {no: 12, name: "SCHEDULING_ACTIVITY"},
     {no: 13, name: "SKILL_PROFICIENCY"},
     {no: 14, name: "SCHEDULE_SCENARIO"},
+    {no: 15, name: "SKILL"},
+    {no: 16, name: "TOUR_PATTERN"},
+    {no: 17, name: "TOUR_WEEK_PATTERN"},
+    {no: 18, name: "TOUR_SHIFT_INSTANCE_CONFIG"},
+    {no: 19, name: "TOUR_SHIFT_SEGMENT_CONFIG"},
+    {no: 20, name: "TOUR_AGENT_COLLECTION"},
   ],
 );
 
@@ -560,6 +566,23 @@ export const SkillProfileCategory_CategoryType = proto3.makeEnum(
   [
     {no: 0, name: "SINGLE_SKILL_PROFILE"},
     {no: 1, name: "SKILL_PROFILE_GROUP"},
+  ],
+);
+
+/**
+ * Defines a Scheduling Result Metric from the Scheduler.
+ *
+ * @generated from message api.commons.SchedulingResultMetric
+ */
+export const SchedulingResultMetric = proto3.makeMessageType(
+  "api.commons.SchedulingResultMetric",
+  () => [
+    { no: 1, name: "total_internal_intervals", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "total_intervals_with_fte_required", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "total_intervals_with_ftes_remaining", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "coverage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 5, name: "root_mean_square", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 6, name: "has_result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
