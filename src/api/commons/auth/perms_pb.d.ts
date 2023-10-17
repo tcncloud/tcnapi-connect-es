@@ -208,13 +208,6 @@ export declare enum Permission {
   TCN_BILLING = 240,
 
   /**
-   * Enables sensitive and specific billing tools for TCN employees only.
-   *
-   * @generated from enum value: PERMISSION_TCN_BILLING_ADMIN = 241;
-   */
-  TCN_BILLING_ADMIN = 241,
-
-  /**
    * Enables admin access to insights (TCN standard insights).
    *
    * @generated from enum value: PERMISSION_SUPPORT_TCN_INSIGHTS_ADMIN = 250;
