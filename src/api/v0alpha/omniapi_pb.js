@@ -1246,6 +1246,7 @@ export const CreateProjectReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "compliance_config", kind: "message", T: OmniProjectComplianceConfig },
   ],
 );
 

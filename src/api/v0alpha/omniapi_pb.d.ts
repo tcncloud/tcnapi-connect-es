@@ -3267,6 +3267,13 @@ export declare class CreateProjectReq extends Message<CreateProjectReq> {
    */
   description: string;
 
+  /**
+   * compliance configuration
+   *
+   * @generated from field: api.commons.OmniProjectComplianceConfig compliance_config = 3;
+   */
+  complianceConfig?: OmniProjectComplianceConfig;
+
   constructor(data?: PartialMessage<CreateProjectReq>);
 
   static readonly runtime: typeof proto3;
