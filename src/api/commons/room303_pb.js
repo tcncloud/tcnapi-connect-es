@@ -83,6 +83,7 @@ export const Room = proto3.makeMessageType(
     { no: 7, name: "status", kind: "enum", T: proto3.getEnumType(RoomStatus) },
     { no: 8, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "config", kind: "message", T: RoomConfig },
   ],
 );
 
@@ -113,6 +114,23 @@ export const MessageStat = proto3.makeMessageType(
   () => [
     { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "unread_messages", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * room confirmation options
+ *
+ * @generated from message api.commons.RoomConfig
+ */
+export const RoomConfig = proto3.makeMessageType(
+  "api.commons.RoomConfig",
+  () => [
+    { no: 1, name: "read_messages", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "send_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "add_member", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "remove_member", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "promote_to_admin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "archive", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

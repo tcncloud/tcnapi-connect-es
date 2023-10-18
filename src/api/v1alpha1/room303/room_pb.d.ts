@@ -3,9 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Room, RoomType } from "../../commons/room303_pb.js";
+import type { Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
 
 /**
@@ -26,6 +26,13 @@ export declare class CreateRoomRequest extends Message<CreateRoomRequest> {
    * @generated from field: repeated string members = 3;
    */
   members: string[];
+
+  /**
+   * room configuration details
+   *
+   * @generated from field: api.commons.RoomConfig config = 4;
+   */
+  config?: RoomConfig;
 
   constructor(data?: PartialMessage<CreateRoomRequest>);
 
@@ -269,5 +276,47 @@ export declare class UserDetails extends Message<UserDetails> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserDetails;
 
   static equals(a: UserDetails | PlainMessage<UserDetails> | undefined, b: UserDetails | PlainMessage<UserDetails> | undefined): boolean;
+}
+
+/**
+ * request to update room configuration
+ *
+ * @generated from message api.v1alpha1.room303.UpdateRoomConfigRequest
+ */
+export declare class UpdateRoomConfigRequest extends Message<UpdateRoomConfigRequest> {
+  /**
+   * room id
+   *
+   * @generated from field: string room_id = 1;
+   */
+  roomId: string;
+
+  /**
+   * room configuration details
+   *
+   * @generated from field: api.commons.RoomConfig config = 2;
+   */
+  config?: RoomConfig;
+
+  /**
+   * list of config options to be updated
+   *
+   * @generated from field: google.protobuf.FieldMask field_mask = 100;
+   */
+  fieldMask?: FieldMask;
+
+  constructor(data?: PartialMessage<UpdateRoomConfigRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.UpdateRoomConfigRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateRoomConfigRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateRoomConfigRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateRoomConfigRequest;
+
+  static equals(a: UpdateRoomConfigRequest | PlainMessage<UpdateRoomConfigRequest> | undefined, b: UpdateRoomConfigRequest | PlainMessage<UpdateRoomConfigRequest> | undefined): boolean;
 }
 

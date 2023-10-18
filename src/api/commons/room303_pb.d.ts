@@ -230,6 +230,13 @@ export declare class Room extends Message$1<Room> {
    */
   displayName: string;
 
+  /**
+   * room configuration details
+   *
+   * @generated from field: api.commons.RoomConfig config = 10;
+   */
+  config?: RoomConfig;
+
   constructor(data?: PartialMessage<Room>);
 
   static readonly runtime: typeof proto3;
@@ -344,5 +351,56 @@ export declare class MessageStat extends Message$1<MessageStat> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MessageStat;
 
   static equals(a: MessageStat | PlainMessage<MessageStat> | undefined, b: MessageStat | PlainMessage<MessageStat> | undefined): boolean;
+}
+
+/**
+ * room confirmation options
+ *
+ * @generated from message api.commons.RoomConfig
+ */
+export declare class RoomConfig extends Message$1<RoomConfig> {
+  /**
+   * @generated from field: string read_messages = 1;
+   */
+  readMessages: string;
+
+  /**
+   * @generated from field: string send_message = 2;
+   */
+  sendMessage: string;
+
+  /**
+   * @generated from field: string add_member = 3;
+   */
+  addMember: string;
+
+  /**
+   * @generated from field: string remove_member = 4;
+   */
+  removeMember: string;
+
+  /**
+   * @generated from field: string promote_to_admin = 5;
+   */
+  promoteToAdmin: string;
+
+  /**
+   * @generated from field: string archive = 6;
+   */
+  archive: string;
+
+  constructor(data?: PartialMessage<RoomConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.RoomConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RoomConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RoomConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RoomConfig;
+
+  static equals(a: RoomConfig | PlainMessage<RoomConfig> | undefined, b: RoomConfig | PlainMessage<RoomConfig> | undefined): boolean;
 }
 
