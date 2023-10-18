@@ -2836,3 +2836,13 @@ export const EntityURL = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v0alpha.TestingBytes
+ */
+export const TestingBytes = proto3.makeMessageType(
+  "api.v0alpha.TestingBytes",
+  () => [
+    { no: 1, name: "test", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ],
+);
+

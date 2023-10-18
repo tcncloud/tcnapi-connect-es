@@ -9332,3 +9332,27 @@ export declare class EntityURL extends Message<EntityURL> {
   static equals(a: EntityURL | PlainMessage<EntityURL> | undefined, b: EntityURL | PlainMessage<EntityURL> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v0alpha.TestingBytes
+ */
+export declare class TestingBytes extends Message<TestingBytes> {
+  /**
+   * @generated from field: bytes test = 1;
+   */
+  test: Uint8Array;
+
+  constructor(data?: PartialMessage<TestingBytes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.TestingBytes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TestingBytes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TestingBytes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TestingBytes;
+
+  static equals(a: TestingBytes | PlainMessage<TestingBytes> | undefined, b: TestingBytes | PlainMessage<TestingBytes> | undefined): boolean;
+}
+
