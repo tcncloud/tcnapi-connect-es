@@ -83,7 +83,6 @@ export const Room = proto3.makeMessageType(
     { no: 7, name: "status", kind: "enum", T: proto3.getEnumType(RoomStatus) },
     { no: 8, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: "config", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
