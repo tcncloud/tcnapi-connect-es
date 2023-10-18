@@ -1081,6 +1081,11 @@ export declare enum RequestMethod {
   SHIFT4_CCPAYMENTS = 3401,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_SHIFT4_ACCESSTOKEN = 3402;
+   */
+  SHIFT4_ACCESSTOKEN = 3402,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_POSCORP_ACCESSTOKEN = 3501;
    */
   POSCORP_ACCESSTOKEN = 3501,
@@ -3546,6 +3551,12 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteShift4CcPayments;
     case: "shift4CcPayment";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteShift4CcPayments shift4_access_token = 3402;
+     */
+    value: ExecuteShift4CcPayments;
+    case: "shift4AccessToken";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecutePoscorpAccesstoken poscorp_accesstoken = 3501;
@@ -7568,6 +7579,25 @@ export declare class ExecuteShift4CcPayments extends Message<ExecuteShift4CcPaym
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteShift4CcPayments;
 
   static equals(a: ExecuteShift4CcPayments | PlainMessage<ExecuteShift4CcPayments> | undefined, b: ExecuteShift4CcPayments | PlainMessage<ExecuteShift4CcPayments> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteShift4AccessToken
+ */
+export declare class ExecuteShift4AccessToken extends Message<ExecuteShift4AccessToken> {
+  constructor(data?: PartialMessage<ExecuteShift4AccessToken>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteShift4AccessToken";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteShift4AccessToken;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteShift4AccessToken;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteShift4AccessToken;
+
+  static equals(a: ExecuteShift4AccessToken | PlainMessage<ExecuteShift4AccessToken> | undefined, b: ExecuteShift4AccessToken | PlainMessage<ExecuteShift4AccessToken> | undefined): boolean;
 }
 
 /**
