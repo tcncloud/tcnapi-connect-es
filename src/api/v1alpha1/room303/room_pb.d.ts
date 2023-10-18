@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
+import type { GlobalConfig, Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
 
 /**
@@ -26,13 +26,6 @@ export declare class CreateRoomRequest extends Message<CreateRoomRequest> {
    * @generated from field: repeated string members = 3;
    */
   members: string[];
-
-  /**
-   * room configuration details
-   *
-   * @generated from field: api.commons.RoomConfig config = 4;
-   */
-  config?: RoomConfig;
 
   constructor(data?: PartialMessage<CreateRoomRequest>);
 
@@ -318,5 +311,124 @@ export declare class UpdateRoomConfigRequest extends Message<UpdateRoomConfigReq
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateRoomConfigRequest;
 
   static equals(a: UpdateRoomConfigRequest | PlainMessage<UpdateRoomConfigRequest> | undefined, b: UpdateRoomConfigRequest | PlainMessage<UpdateRoomConfigRequest> | undefined): boolean;
+}
+
+/**
+ * request to update global configuration
+ *
+ * @generated from message api.v1alpha1.room303.UpdateGlobalConfigRequest
+ */
+export declare class UpdateGlobalConfigRequest extends Message<UpdateGlobalConfigRequest> {
+  /**
+   * global configuration details
+   *
+   * @generated from field: api.commons.GlobalConfig config = 1;
+   */
+  config?: GlobalConfig;
+
+  /**
+   * list of global config options to be updated
+   *
+   * @generated from field: google.protobuf.FieldMask field_mask = 100;
+   */
+  fieldMask?: FieldMask;
+
+  constructor(data?: PartialMessage<UpdateGlobalConfigRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.UpdateGlobalConfigRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateGlobalConfigRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateGlobalConfigRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateGlobalConfigRequest;
+
+  static equals(a: UpdateGlobalConfigRequest | PlainMessage<UpdateGlobalConfigRequest> | undefined, b: UpdateGlobalConfigRequest | PlainMessage<UpdateGlobalConfigRequest> | undefined): boolean;
+}
+
+/**
+ * response to update global configuration
+ *
+ * @generated from message api.v1alpha1.room303.UpdateGlobalConfigResponse
+ */
+export declare class UpdateGlobalConfigResponse extends Message<UpdateGlobalConfigResponse> {
+  /**
+   * global configuration details
+   *
+   * @generated from field: api.commons.GlobalConfig config = 1;
+   */
+  config?: GlobalConfig;
+
+  constructor(data?: PartialMessage<UpdateGlobalConfigResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.UpdateGlobalConfigResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateGlobalConfigResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateGlobalConfigResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateGlobalConfigResponse;
+
+  static equals(a: UpdateGlobalConfigResponse | PlainMessage<UpdateGlobalConfigResponse> | undefined, b: UpdateGlobalConfigResponse | PlainMessage<UpdateGlobalConfigResponse> | undefined): boolean;
+}
+
+/**
+ * request to get global configuration
+ *
+ * @generated from message api.v1alpha1.room303.GetGlobalConfigRequest
+ */
+export declare class GetGlobalConfigRequest extends Message<GetGlobalConfigRequest> {
+  /**
+   * global configuration details
+   *
+   * @generated from field: api.commons.GlobalConfig config = 1;
+   */
+  config?: GlobalConfig;
+
+  constructor(data?: PartialMessage<GetGlobalConfigRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.GetGlobalConfigRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGlobalConfigRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGlobalConfigRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGlobalConfigRequest;
+
+  static equals(a: GetGlobalConfigRequest | PlainMessage<GetGlobalConfigRequest> | undefined, b: GetGlobalConfigRequest | PlainMessage<GetGlobalConfigRequest> | undefined): boolean;
+}
+
+/**
+ * response to get global configuration
+ *
+ * @generated from message api.v1alpha1.room303.GetGlobalConfigResponse
+ */
+export declare class GetGlobalConfigResponse extends Message<GetGlobalConfigResponse> {
+  /**
+   * global configuration details
+   *
+   * @generated from field: api.commons.GlobalConfig config = 1;
+   */
+  config?: GlobalConfig;
+
+  constructor(data?: PartialMessage<GetGlobalConfigResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.GetGlobalConfigResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGlobalConfigResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGlobalConfigResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGlobalConfigResponse;
+
+  static equals(a: GetGlobalConfigResponse | PlainMessage<GetGlobalConfigResponse> | undefined, b: GetGlobalConfigResponse | PlainMessage<GetGlobalConfigResponse> | undefined): boolean;
 }
 

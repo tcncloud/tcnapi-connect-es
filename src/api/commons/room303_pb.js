@@ -42,6 +42,20 @@ export const RoomStatus = proto3.makeEnum(
 );
 
 /**
+ * ConfigPermissionOptions -
+ *
+ * @generated from enum api.commons.ConfigPermissionOptions
+ */
+export const ConfigPermissionOptions = proto3.makeEnum(
+  "api.commons.ConfigPermissionOptions",
+  [
+    {no: 0, name: "LIMITED"},
+    {no: 1, name: "ROOM303_MEMBER"},
+    {no: 2, name: "ROOM303_SUPERVISOR"},
+  ],
+);
+
+/**
  * @generated from message api.commons.UserSid
  */
 export const UserSid = proto3.makeMessageType(
@@ -131,6 +145,21 @@ export const RoomConfig = proto3.makeMessageType(
     { no: 4, name: "remove_member", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "promote_to_admin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "archive", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * global configuration settings
+ *
+ * @generated from message api.commons.GlobalConfig
+ */
+export const GlobalConfig = proto3.makeMessageType(
+  "api.commons.GlobalConfig",
+  () => [
+    { no: 1, name: "create_room", kind: "enum", T: proto3.getEnumType(ConfigPermissionOptions) },
+    { no: 2, name: "join_existing_rooms", kind: "enum", T: proto3.getEnumType(ConfigPermissionOptions) },
+    { no: 3, name: "send_message_to_supervisors", kind: "enum", T: proto3.getEnumType(ConfigPermissionOptions) },
+    { no: 4, name: "send_message_to_non_supervisors", kind: "enum", T: proto3.getEnumType(ConfigPermissionOptions) },
   ],
 );
 

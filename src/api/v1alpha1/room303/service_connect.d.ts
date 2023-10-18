@@ -7,7 +7,7 @@ import { AddRoomMemberRequest, GetRoomMemberRequest, JoinRoomRequest, ListRoomMe
 import { Member, Room } from "../../commons/room303_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { BulkMarkMessageReadRequest, BulkMarkMessageReadResponse, CreateMessageRequest, CreateMessageResponse, DeleteMessageRequest, DeleteMessageResponse, EditMessageRequest, EditMessageResponse, GetMessagesRequest, GetMessagesResponse, GetUnreadStatsRequest, GetUnreadStatsResponse, MarkAllMessagesReadRequest, MarkAllMessagesReadResponse, MarkMessageReadRequest, MarkMessageReadResponse, StreamMessageUpdatesRequest, StreamMessageUpdatesResponse } from "./message_pb.js";
-import { ArchiveRoomRequest, CreateRoomRequest, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersNamesRequest, ListUsersNamesResponse, UpdateRoomConfigRequest } from "./room_pb.js";
+import { ArchiveRoomRequest, CreateRoomRequest, GetGlobalConfigRequest, GetGlobalConfigResponse, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersNamesRequest, ListUsersNamesResponse, UpdateGlobalConfigRequest, UpdateGlobalConfigResponse, UpdateRoomConfigRequest } from "./room_pb.js";
 
 /**
  * @generated from service api.v1alpha1.room303.Room303API
@@ -238,6 +238,28 @@ export declare const Room303API: {
       readonly name: "UpdateRoomConfig",
       readonly I: typeof UpdateRoomConfigRequest,
       readonly O: typeof Room,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * update global configuration
+     *
+     * @generated from rpc api.v1alpha1.room303.Room303API.UpdateGlobalConfig
+     */
+    readonly updateGlobalConfig: {
+      readonly name: "UpdateGlobalConfig",
+      readonly I: typeof UpdateGlobalConfigRequest,
+      readonly O: typeof UpdateGlobalConfigResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * get global configuration
+     *
+     * @generated from rpc api.v1alpha1.room303.Room303API.GetGlobalConfig
+     */
+    readonly getGlobalConfig: {
+      readonly name: "GetGlobalConfig",
+      readonly I: typeof GetGlobalConfigRequest,
+      readonly O: typeof GetGlobalConfigResponse,
       readonly kind: MethodKind.Unary,
     },
   }

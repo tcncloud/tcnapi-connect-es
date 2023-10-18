@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
+import { GlobalConfig, Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
 
 /**
@@ -16,7 +16,6 @@ export const CreateRoomRequest = proto3.makeMessageType(
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(RoomType) },
     { no: 3, name: "members", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 4, name: "config", kind: "message", T: RoomConfig },
   ],
 );
 
@@ -118,6 +117,55 @@ export const UpdateRoomConfigRequest = proto3.makeMessageType(
     { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "config", kind: "message", T: RoomConfig },
     { no: 100, name: "field_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * request to update global configuration
+ *
+ * @generated from message api.v1alpha1.room303.UpdateGlobalConfigRequest
+ */
+export const UpdateGlobalConfigRequest = proto3.makeMessageType(
+  "api.v1alpha1.room303.UpdateGlobalConfigRequest",
+  () => [
+    { no: 1, name: "config", kind: "message", T: GlobalConfig },
+    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * response to update global configuration
+ *
+ * @generated from message api.v1alpha1.room303.UpdateGlobalConfigResponse
+ */
+export const UpdateGlobalConfigResponse = proto3.makeMessageType(
+  "api.v1alpha1.room303.UpdateGlobalConfigResponse",
+  () => [
+    { no: 1, name: "config", kind: "message", T: GlobalConfig },
+  ],
+);
+
+/**
+ * request to get global configuration
+ *
+ * @generated from message api.v1alpha1.room303.GetGlobalConfigRequest
+ */
+export const GetGlobalConfigRequest = proto3.makeMessageType(
+  "api.v1alpha1.room303.GetGlobalConfigRequest",
+  () => [
+    { no: 1, name: "config", kind: "message", T: GlobalConfig },
+  ],
+);
+
+/**
+ * response to get global configuration
+ *
+ * @generated from message api.v1alpha1.room303.GetGlobalConfigResponse
+ */
+export const GetGlobalConfigResponse = proto3.makeMessageType(
+  "api.v1alpha1.room303.GetGlobalConfigResponse",
+  () => [
+    { no: 1, name: "config", kind: "message", T: GlobalConfig },
   ],
 );
 

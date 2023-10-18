@@ -73,6 +73,28 @@ export declare enum RoomStatus {
 }
 
 /**
+ * ConfigPermissionOptions -
+ *
+ * @generated from enum api.commons.ConfigPermissionOptions
+ */
+export declare enum ConfigPermissionOptions {
+  /**
+   * @generated from enum value: LIMITED = 0;
+   */
+  LIMITED = 0,
+
+  /**
+   * @generated from enum value: ROOM303_MEMBER = 1;
+   */
+  ROOM303_MEMBER = 1,
+
+  /**
+   * @generated from enum value: ROOM303_SUPERVISOR = 2;
+   */
+  ROOM303_SUPERVISOR = 2,
+}
+
+/**
  * @generated from message api.commons.UserSid
  */
 export declare class UserSid extends Message$1<UserSid> {
@@ -402,5 +424,46 @@ export declare class RoomConfig extends Message$1<RoomConfig> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RoomConfig;
 
   static equals(a: RoomConfig | PlainMessage<RoomConfig> | undefined, b: RoomConfig | PlainMessage<RoomConfig> | undefined): boolean;
+}
+
+/**
+ * global configuration settings
+ *
+ * @generated from message api.commons.GlobalConfig
+ */
+export declare class GlobalConfig extends Message$1<GlobalConfig> {
+  /**
+   * @generated from field: api.commons.ConfigPermissionOptions create_room = 1;
+   */
+  createRoom: ConfigPermissionOptions;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionOptions join_existing_rooms = 2;
+   */
+  joinExistingRooms: ConfigPermissionOptions;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionOptions send_message_to_supervisors = 3;
+   */
+  sendMessageToSupervisors: ConfigPermissionOptions;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionOptions send_message_to_non_supervisors = 4;
+   */
+  sendMessageToNonSupervisors: ConfigPermissionOptions;
+
+  constructor(data?: PartialMessage<GlobalConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.GlobalConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GlobalConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GlobalConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GlobalConfig;
+
+  static equals(a: GlobalConfig | PlainMessage<GlobalConfig> | undefined, b: GlobalConfig | PlainMessage<GlobalConfig> | undefined): boolean;
 }
 
