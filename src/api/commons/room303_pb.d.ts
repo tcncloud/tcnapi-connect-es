@@ -230,6 +230,13 @@ export declare class Room extends Message$1<Room> {
    */
   displayName: string;
 
+  /**
+   * room configuration details
+   *
+   * @generated from field: string config = 10;
+   */
+  config: string;
+
   constructor(data?: PartialMessage<Room>);
 
   static readonly runtime: typeof proto3;

@@ -16,6 +16,7 @@ export const CreateRoomRequest = proto3.makeMessageType(
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(RoomType) },
     { no: 3, name: "members", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "config", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -103,6 +104,19 @@ export const UserDetails = proto3.makeMessageType(
     { no: 2, name: "user_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * request to edit room configuration
+ *
+ * @generated from message api.v1alpha1.room303.EditRoomConfigRequest
+ */
+export const EditRoomConfigRequest = proto3.makeMessageType(
+  "api.v1alpha1.room303.EditRoomConfigRequest",
+  () => [
+    { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "config", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

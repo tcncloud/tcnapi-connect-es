@@ -27,6 +27,13 @@ export declare class CreateRoomRequest extends Message<CreateRoomRequest> {
    */
   members: string[];
 
+  /**
+   * room configuration details
+   *
+   * @generated from field: string config = 4;
+   */
+  config: string;
+
   constructor(data?: PartialMessage<CreateRoomRequest>);
 
   static readonly runtime: typeof proto3;
@@ -269,5 +276,40 @@ export declare class UserDetails extends Message<UserDetails> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserDetails;
 
   static equals(a: UserDetails | PlainMessage<UserDetails> | undefined, b: UserDetails | PlainMessage<UserDetails> | undefined): boolean;
+}
+
+/**
+ * request to edit room configuration
+ *
+ * @generated from message api.v1alpha1.room303.EditRoomConfigRequest
+ */
+export declare class EditRoomConfigRequest extends Message<EditRoomConfigRequest> {
+  /**
+   * room id
+   *
+   * @generated from field: string room_id = 1;
+   */
+  roomId: string;
+
+  /**
+   * room configuration details
+   *
+   * @generated from field: string config = 2;
+   */
+  config: string;
+
+  constructor(data?: PartialMessage<EditRoomConfigRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.EditRoomConfigRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditRoomConfigRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditRoomConfigRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditRoomConfigRequest;
+
+  static equals(a: EditRoomConfigRequest | PlainMessage<EditRoomConfigRequest> | undefined, b: EditRoomConfigRequest | PlainMessage<EditRoomConfigRequest> | undefined): boolean;
 }
 
