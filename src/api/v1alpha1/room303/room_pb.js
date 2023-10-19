@@ -152,9 +152,7 @@ export const UpdateGlobalConfigResponse = proto3.makeMessageType(
  */
 export const GetGlobalConfigRequest = proto3.makeMessageType(
   "api.v1alpha1.room303.GetGlobalConfigRequest",
-  () => [
-    { no: 1, name: "config", kind: "message", T: GlobalConfig },
-  ],
+  [],
 );
 
 /**

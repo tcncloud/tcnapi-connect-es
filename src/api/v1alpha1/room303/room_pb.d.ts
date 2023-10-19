@@ -382,13 +382,6 @@ export declare class UpdateGlobalConfigResponse extends Message<UpdateGlobalConf
  * @generated from message api.v1alpha1.room303.GetGlobalConfigRequest
  */
 export declare class GetGlobalConfigRequest extends Message<GetGlobalConfigRequest> {
-  /**
-   * global configuration details
-   *
-   * @generated from field: api.commons.GlobalConfig config = 1;
-   */
-  config?: GlobalConfig;
-
   constructor(data?: PartialMessage<GetGlobalConfigRequest>);
 
   static readonly runtime: typeof proto3;
