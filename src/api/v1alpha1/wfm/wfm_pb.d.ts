@@ -6692,11 +6692,11 @@ export declare class BuildShiftTemplateDiagnosticsReq extends Message<BuildShift
   scheduleScenarioSid: bigint;
 
   /**
-   * Program Node to be passed to the endpoint.
+   * ID of the Program Node to be passed to the endpoint.
    *
-   * @generated from field: api.v1alpha1.wfm.ProgramNode parent_program_node = 3;
+   * @generated from field: int64 parent_program_node_sid = 3;
    */
-  parentProgramNode?: ProgramNode;
+  parentProgramNodeSid: bigint;
 
   constructor(data?: PartialMessage<BuildShiftTemplateDiagnosticsReq>);
 
