@@ -9337,9 +9337,9 @@ export declare class EntityURL extends Message<EntityURL> {
  */
 export declare class TestingBytes extends Message<TestingBytes> {
   /**
-   * @generated from field: bytes test = 1;
+   * @generated from field: string test = 1;
    */
-  test: Uint8Array;
+  test: string;
 
   constructor(data?: PartialMessage<TestingBytes>);
 
