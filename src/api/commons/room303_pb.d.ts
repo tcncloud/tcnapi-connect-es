@@ -73,11 +73,11 @@ export declare enum RoomStatus {
 }
 
 /**
- * ConfigPermissionOptions -
+ * ConfigPermissionEnum -
  *
- * @generated from enum api.commons.ConfigPermissionOptions
+ * @generated from enum api.commons.ConfigPermissionEnum
  */
-export declare enum ConfigPermissionOptions {
+export declare enum ConfigPermissionEnum {
   /**
    * @generated from enum value: LIMITED = 0;
    */
@@ -376,81 +376,30 @@ export declare class MessageStat extends Message$1<MessageStat> {
 }
 
 /**
- * room confirmation options
- *
- * @generated from message api.commons.RoomConfig
- */
-export declare class RoomConfig extends Message$1<RoomConfig> {
-  /**
-   * @generated from field: string read_messages = 1;
-   */
-  readMessages: string;
-
-  /**
-   * @generated from field: string send_message = 2;
-   */
-  sendMessage: string;
-
-  /**
-   * @generated from field: string add_member = 3;
-   */
-  addMember: string;
-
-  /**
-   * @generated from field: string remove_member = 4;
-   */
-  removeMember: string;
-
-  /**
-   * @generated from field: string promote_to_admin = 5;
-   */
-  promoteToAdmin: string;
-
-  /**
-   * @generated from field: string archive = 6;
-   */
-  archive: string;
-
-  constructor(data?: PartialMessage<RoomConfig>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.RoomConfig";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RoomConfig;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RoomConfig;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RoomConfig;
-
-  static equals(a: RoomConfig | PlainMessage<RoomConfig> | undefined, b: RoomConfig | PlainMessage<RoomConfig> | undefined): boolean;
-}
-
-/**
  * global configuration settings
  *
  * @generated from message api.commons.GlobalConfig
  */
 export declare class GlobalConfig extends Message$1<GlobalConfig> {
   /**
-   * @generated from field: api.commons.ConfigPermissionOptions create_room = 1;
+   * @generated from field: api.commons.ConfigPermissionEnum create_room = 1;
    */
-  createRoom: ConfigPermissionOptions;
+  createRoom: ConfigPermissionEnum;
 
   /**
-   * @generated from field: api.commons.ConfigPermissionOptions join_existing_rooms = 2;
+   * @generated from field: api.commons.ConfigPermissionEnum join_existing_room = 2;
    */
-  joinExistingRooms: ConfigPermissionOptions;
+  joinExistingRoom: ConfigPermissionEnum;
 
   /**
-   * @generated from field: api.commons.ConfigPermissionOptions send_message_to_supervisors = 3;
+   * @generated from field: api.commons.ConfigPermissionEnum send_message_to_supervisor = 3;
    */
-  sendMessageToSupervisors: ConfigPermissionOptions;
+  sendMessageToSupervisor: ConfigPermissionEnum;
 
   /**
-   * @generated from field: api.commons.ConfigPermissionOptions send_message_to_non_supervisors = 4;
+   * @generated from field: api.commons.ConfigPermissionEnum send_message_to_non_supervisor = 4;
    */
-  sendMessageToNonSupervisors: ConfigPermissionOptions;
+  sendMessageToNonSupervisor: ConfigPermissionEnum;
 
   constructor(data?: PartialMessage<GlobalConfig>);
 
@@ -465,5 +414,56 @@ export declare class GlobalConfig extends Message$1<GlobalConfig> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GlobalConfig;
 
   static equals(a: GlobalConfig | PlainMessage<GlobalConfig> | undefined, b: GlobalConfig | PlainMessage<GlobalConfig> | undefined): boolean;
+}
+
+/**
+ * room confirmation settings
+ *
+ * @generated from message api.commons.RoomConfig
+ */
+export declare class RoomConfig extends Message$1<RoomConfig> {
+  /**
+   * @generated from field: api.commons.ConfigPermissionEnum add_user = 1;
+   */
+  addUser: ConfigPermissionEnum;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionEnum remove_user = 2;
+   */
+  removeUser: ConfigPermissionEnum;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionEnum promote_to_admin = 3;
+   */
+  promoteToAdmin: ConfigPermissionEnum;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionEnum read_messages = 4;
+   */
+  readMessages: ConfigPermissionEnum;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionEnum send_message = 5;
+   */
+  sendMessage: ConfigPermissionEnum;
+
+  /**
+   * @generated from field: api.commons.ConfigPermissionEnum archive_room = 6;
+   */
+  archiveRoom: ConfigPermissionEnum;
+
+  constructor(data?: PartialMessage<RoomConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.RoomConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RoomConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RoomConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RoomConfig;
+
+  static equals(a: RoomConfig | PlainMessage<RoomConfig> | undefined, b: RoomConfig | PlainMessage<RoomConfig> | undefined): boolean;
 }
 
