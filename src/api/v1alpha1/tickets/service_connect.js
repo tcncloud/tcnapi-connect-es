@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, CreateTicketTemplateRequest, CreateTicketTemplateResponse, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, EditTicketTemplateRequest, EditTicketTemplateResponse, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignProjectTemplateRequest, AssignProjectTemplateResponse, AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, CreateTicketTemplateRequest, CreateTicketTemplateResponse, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, EditTicketTemplateRequest, EditTicketTemplateResponse, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListTicketTemplateRequest, ListTicketTemplateResponse, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -312,6 +312,28 @@ export const Tickets = {
       name: "EditTicketTemplate",
       I: EditTicketTemplateRequest,
       O: EditTicketTemplateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to change the Status of a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListTicketTemplate
+     */
+    listTicketTemplate: {
+      name: "ListTicketTemplate",
+      I: ListTicketTemplateRequest,
+      O: ListTicketTemplateResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to change the Status of a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.AssignTicketTemplate
+     */
+    assignTicketTemplate: {
+      name: "AssignTicketTemplate",
+      I: AssignProjectTemplateRequest,
+      O: AssignProjectTemplateResponse,
       kind: MethodKind.Unary,
     },
   }

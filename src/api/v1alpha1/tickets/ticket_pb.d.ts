@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import type { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -248,6 +248,99 @@ export declare class EditTicketTemplateResponse extends Message<EditTicketTempla
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditTicketTemplateResponse;
 
   static equals(a: EditTicketTemplateResponse | PlainMessage<EditTicketTemplateResponse> | undefined, b: EditTicketTemplateResponse | PlainMessage<EditTicketTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketTemplateRequest
+ */
+export declare class ListTicketTemplateRequest extends Message<ListTicketTemplateRequest> {
+  constructor(data?: PartialMessage<ListTicketTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListTicketTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTicketTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTicketTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTicketTemplateRequest;
+
+  static equals(a: ListTicketTemplateRequest | PlainMessage<ListTicketTemplateRequest> | undefined, b: ListTicketTemplateRequest | PlainMessage<ListTicketTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketTemplateResponse
+ */
+export declare class ListTicketTemplateResponse extends Message<ListTicketTemplateResponse> {
+  /**
+   * @generated from field: api.commons.ListTemplate enabled_templates = 1;
+   */
+  enabledTemplates?: ListTemplate;
+
+  constructor(data?: PartialMessage<ListTicketTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListTicketTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTicketTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTicketTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTicketTemplateResponse;
+
+  static equals(a: ListTicketTemplateResponse | PlainMessage<ListTicketTemplateResponse> | undefined, b: ListTicketTemplateResponse | PlainMessage<ListTicketTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * AssignProjectTemplate
+ *
+ * @generated from message api.v1alpha1.tickets.AssignProjectTemplateRequest
+ */
+export declare class AssignProjectTemplateRequest extends Message<AssignProjectTemplateRequest> {
+  /**
+   * @generated from field: api.commons.AssignProjectTemplate project_template = 1;
+   */
+  projectTemplate?: AssignProjectTemplate;
+
+  constructor(data?: PartialMessage<AssignProjectTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.AssignProjectTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignProjectTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignProjectTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignProjectTemplateRequest;
+
+  static equals(a: AssignProjectTemplateRequest | PlainMessage<AssignProjectTemplateRequest> | undefined, b: AssignProjectTemplateRequest | PlainMessage<AssignProjectTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.AssignProjectTemplateResponse
+ */
+export declare class AssignProjectTemplateResponse extends Message<AssignProjectTemplateResponse> {
+  /**
+   * @generated from field: bool is_assigned = 1;
+   */
+  isAssigned: boolean;
+
+  constructor(data?: PartialMessage<AssignProjectTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.AssignProjectTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignProjectTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignProjectTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignProjectTemplateResponse;
+
+  static equals(a: AssignProjectTemplateResponse | PlainMessage<AssignProjectTemplateResponse> | undefined, b: AssignProjectTemplateResponse | PlainMessage<AssignProjectTemplateResponse> | undefined): boolean;
 }
 
 /**

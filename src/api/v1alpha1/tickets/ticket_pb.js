@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -84,6 +84,46 @@ export const EditTicketTemplateResponse = proto3.makeMessageType(
   "api.v1alpha1.tickets.EditTicketTemplateResponse",
   () => [
     { no: 1, name: "is_edited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketTemplateRequest
+ */
+export const ListTicketTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListTicketTemplateRequest",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketTemplateResponse
+ */
+export const ListTicketTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListTicketTemplateResponse",
+  () => [
+    { no: 1, name: "enabled_templates", kind: "message", T: ListTemplate },
+  ],
+);
+
+/**
+ * AssignProjectTemplate
+ *
+ * @generated from message api.v1alpha1.tickets.AssignProjectTemplateRequest
+ */
+export const AssignProjectTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.AssignProjectTemplateRequest",
+  () => [
+    { no: 1, name: "project_template", kind: "message", T: AssignProjectTemplate },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.AssignProjectTemplateResponse
+ */
+export const AssignProjectTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.AssignProjectTemplateResponse",
+  () => [
+    { no: 1, name: "is_assigned", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

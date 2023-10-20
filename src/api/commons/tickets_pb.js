@@ -123,6 +123,37 @@ export const TicketCallbackTemplate = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.ListTemplate
+ */
+export const ListTemplate = proto3.makeMessageType(
+  "api.commons.ListTemplate",
+  () => [
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "project_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "action_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "is_valid", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "created_date", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message api.commons.AssignProjectTemplate
+ */
+export const AssignProjectTemplate = proto3.makeMessageType(
+  "api.commons.AssignProjectTemplate",
+  () => [
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "project_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "action_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message api.commons.Duration
  */
 export const Duration = proto3.makeMessageType(

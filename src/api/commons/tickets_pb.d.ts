@@ -440,6 +440,109 @@ export declare class TicketCallbackTemplate extends Message<TicketCallbackTempla
 }
 
 /**
+ * @generated from message api.commons.ListTemplate
+ */
+export declare class ListTemplate extends Message<ListTemplate> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1;
+   */
+  ticketTemplateId: bigint;
+
+  /**
+   * @generated from field: string template_name = 2;
+   */
+  templateName: string;
+
+  /**
+   * @generated from field: int64 project_sid = 3;
+   */
+  projectSid: bigint;
+
+  /**
+   * @generated from field: string project_code = 4;
+   */
+  projectCode: string;
+
+  /**
+   * @generated from field: string action_type = 5;
+   */
+  actionType: string;
+
+  /**
+   * @generated from field: bool is_valid = 6;
+   */
+  isValid: boolean;
+
+  /**
+   * @generated from field: string created_by_id = 7;
+   */
+  createdById: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_date = 8;
+   */
+  createdDate?: Timestamp;
+
+  constructor(data?: PartialMessage<ListTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ListTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTemplate;
+
+  static equals(a: ListTemplate | PlainMessage<ListTemplate> | undefined, b: ListTemplate | PlainMessage<ListTemplate> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.AssignProjectTemplate
+ */
+export declare class AssignProjectTemplate extends Message<AssignProjectTemplate> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1;
+   */
+  ticketTemplateId: bigint;
+
+  /**
+   * @generated from field: string template_name = 2;
+   */
+  templateName: string;
+
+  /**
+   * @generated from field: int64 project_sid = 3;
+   */
+  projectSid: bigint;
+
+  /**
+   * @generated from field: string project_code = 4;
+   */
+  projectCode: string;
+
+  /**
+   * @generated from field: string action_type = 5;
+   */
+  actionType: string;
+
+  constructor(data?: PartialMessage<AssignProjectTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.AssignProjectTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignProjectTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignProjectTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignProjectTemplate;
+
+  static equals(a: AssignProjectTemplate | PlainMessage<AssignProjectTemplate> | undefined, b: AssignProjectTemplate | PlainMessage<AssignProjectTemplate> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.Duration
  */
 export declare class Duration extends Message<Duration> {
