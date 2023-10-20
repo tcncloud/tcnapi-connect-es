@@ -9,6 +9,7 @@ import type { AbsentPolicyType, ChainOperator, CompareOperator, ComplianceListTy
 import type { CommType } from "../commons/communication_pb.js";
 import type { Channel, ContentType } from "../commons/compliance_pb.js";
 import type { StringArraySql } from "../commons/types_pb.js";
+import type { HttpBody } from "../../google/api/httpbody_pb.js";
 
 /**
  * @generated from enum api.v0alpha.TimeUnit
@@ -9330,5 +9331,29 @@ export declare class EntityURL extends Message<EntityURL> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EntityURL;
 
   static equals(a: EntityURL | PlainMessage<EntityURL> | undefined, b: EntityURL | PlainMessage<EntityURL> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.SampleRequest
+ */
+export declare class SampleRequest extends Message<SampleRequest> {
+  /**
+   * @generated from field: google.api.HttpBody http_body = 2;
+   */
+  httpBody?: HttpBody;
+
+  constructor(data?: PartialMessage<SampleRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SampleRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SampleRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SampleRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SampleRequest;
+
+  static equals(a: SampleRequest | PlainMessage<SampleRequest> | undefined, b: SampleRequest | PlainMessage<SampleRequest> | undefined): boolean;
 }
 
