@@ -101,6 +101,47 @@ export const ProcessRes = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.integrations.SearchPastTransactionsRequest
+ */
+export const SearchPastTransactionsRequest = proto3.makeMessageType(
+  "api.v1alpha1.integrations.SearchPastTransactionsRequest",
+  () => [
+    { no: 1, name: "plugin_instance_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "int_id", kind: "enum", T: proto3.getEnumType(IntegrationType$1) },
+    { no: 3, name: "method_id", kind: "enum", T: proto3.getEnumType(RequestMethod$1) },
+    { no: 4, name: "match_fields", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 5, name: "limit", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 6, name: "search_before", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.SearchPastTransactionsResponse
+ */
+export const SearchPastTransactionsResponse = proto3.makeMessageType(
+  "api.v1alpha1.integrations.SearchPastTransactionsResponse",
+  () => [
+    { no: 1, name: "values", kind: "message", T: PastTxEntity, repeated: true },
+  ],
+);
+
+/**
+ * simplified view of a IntegrationTransaction
+ * all values converted to string.
+ * only shows the request/resposne data, and timestamp it was created on
+ *
+ * @generated from message api.v1alpha1.integrations.PastTxEntity
+ */
+export const PastTxEntity = proto3.makeMessageType(
+  "api.v1alpha1.integrations.PastTxEntity",
+  () => [
+    { no: 1, name: "req", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 2, name: "res", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 3, name: "created_on", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
  * @generated from message api.v1alpha1.integrations.ListIntegrationsForOrgReq
  */
 export const ListIntegrationsForOrgReq = proto3.makeMessageType(
