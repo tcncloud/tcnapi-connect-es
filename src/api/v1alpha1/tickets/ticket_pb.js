@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus } from "../../commons/tickets_pb.js";
+import { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -42,6 +42,48 @@ export const CreateTicketReq = proto3.makeMessageType(
     { no: 14, name: "assign_other", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "ticket_action", kind: "message", T: TicketAction, repeated: true },
     { no: 16, name: "ticket_assignee", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketTemplateRequest
+ */
+export const CreateTicketTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CreateTicketTemplateRequest",
+  () => [
+    { no: 1, name: "ticket_template", kind: "message", T: TicketTemplate },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketTemplateResponse
+ */
+export const CreateTicketTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.CreateTicketTemplateResponse",
+  () => [
+    { no: 1, name: "ticket_template", kind: "message", T: TicketTemplate },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.EditTicketTemplateRequest
+ */
+export const EditTicketTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.EditTicketTemplateRequest",
+  () => [
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "edit_value", kind: "message", T: TicketTemplate },
+    { no: 3, name: "edited_fields_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.EditTicketTemplateResponse
+ */
+export const EditTicketTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.EditTicketTemplateResponse",
+  () => [
+    { no: 1, name: "is_edited", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

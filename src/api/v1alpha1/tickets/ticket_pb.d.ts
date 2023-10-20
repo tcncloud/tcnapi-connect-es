@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus } from "../../commons/tickets_pb.js";
+import type { Comment, ConfirmReplyComment, Duration, EditAttribute, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -142,6 +142,112 @@ export declare class CreateTicketReq extends Message<CreateTicketReq> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTicketReq;
 
   static equals(a: CreateTicketReq | PlainMessage<CreateTicketReq> | undefined, b: CreateTicketReq | PlainMessage<CreateTicketReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketTemplateRequest
+ */
+export declare class CreateTicketTemplateRequest extends Message<CreateTicketTemplateRequest> {
+  /**
+   * @generated from field: api.commons.TicketTemplate ticket_template = 1;
+   */
+  ticketTemplate?: TicketTemplate;
+
+  constructor(data?: PartialMessage<CreateTicketTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CreateTicketTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTicketTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTicketTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTicketTemplateRequest;
+
+  static equals(a: CreateTicketTemplateRequest | PlainMessage<CreateTicketTemplateRequest> | undefined, b: CreateTicketTemplateRequest | PlainMessage<CreateTicketTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.CreateTicketTemplateResponse
+ */
+export declare class CreateTicketTemplateResponse extends Message<CreateTicketTemplateResponse> {
+  /**
+   * @generated from field: api.commons.TicketTemplate ticket_template = 1;
+   */
+  ticketTemplate?: TicketTemplate;
+
+  constructor(data?: PartialMessage<CreateTicketTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.CreateTicketTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTicketTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTicketTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTicketTemplateResponse;
+
+  static equals(a: CreateTicketTemplateResponse | PlainMessage<CreateTicketTemplateResponse> | undefined, b: CreateTicketTemplateResponse | PlainMessage<CreateTicketTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.EditTicketTemplateRequest
+ */
+export declare class EditTicketTemplateRequest extends Message<EditTicketTemplateRequest> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1;
+   */
+  ticketTemplateId: bigint;
+
+  /**
+   * @generated from field: api.commons.TicketTemplate edit_value = 2;
+   */
+  editValue?: TicketTemplate;
+
+  /**
+   * @generated from field: google.protobuf.FieldMask edited_fields_mask = 3;
+   */
+  editedFieldsMask?: FieldMask;
+
+  constructor(data?: PartialMessage<EditTicketTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.EditTicketTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditTicketTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditTicketTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditTicketTemplateRequest;
+
+  static equals(a: EditTicketTemplateRequest | PlainMessage<EditTicketTemplateRequest> | undefined, b: EditTicketTemplateRequest | PlainMessage<EditTicketTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.EditTicketTemplateResponse
+ */
+export declare class EditTicketTemplateResponse extends Message<EditTicketTemplateResponse> {
+  /**
+   * @generated from field: bool is_edited = 1;
+   */
+  isEdited: boolean;
+
+  constructor(data?: PartialMessage<EditTicketTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.EditTicketTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EditTicketTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EditTicketTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EditTicketTemplateResponse;
+
+  static equals(a: EditTicketTemplateResponse | PlainMessage<EditTicketTemplateResponse> | undefined, b: EditTicketTemplateResponse | PlainMessage<EditTicketTemplateResponse> | undefined): boolean;
 }
 
 /**
