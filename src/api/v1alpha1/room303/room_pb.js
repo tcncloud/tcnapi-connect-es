@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, proto3 } from "@bufbuild/protobuf";
+import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { GlobalConfig, Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
 
@@ -142,6 +142,8 @@ export const UpdateGlobalConfigResponse = proto3.makeMessageType(
   "api.v1alpha1.room303.UpdateGlobalConfigResponse",
   () => [
     { no: 1, name: "config", kind: "message", T: GlobalConfig },
+    { no: 2, name: "edited_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_edited", kind: "message", T: Timestamp },
   ],
 );
 
@@ -164,6 +166,8 @@ export const GetGlobalConfigResponse = proto3.makeMessageType(
   "api.v1alpha1.room303.GetGlobalConfigResponse",
   () => [
     { no: 1, name: "config", kind: "message", T: GlobalConfig },
+    { no: 2, name: "edited_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_edited", kind: "message", T: Timestamp },
   ],
 );
 

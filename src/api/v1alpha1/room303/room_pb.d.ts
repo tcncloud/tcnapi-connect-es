@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { GlobalConfig, Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
@@ -361,6 +361,20 @@ export declare class UpdateGlobalConfigResponse extends Message<UpdateGlobalConf
    */
   config?: GlobalConfig;
 
+  /**
+   * last edited_by user
+   *
+   * @generated from field: string edited_by = 2;
+   */
+  editedBy: string;
+
+  /**
+   * last edited on
+   *
+   * @generated from field: google.protobuf.Timestamp last_edited = 3;
+   */
+  lastEdited?: Timestamp;
+
   constructor(data?: PartialMessage<UpdateGlobalConfigResponse>);
 
   static readonly runtime: typeof proto3;
@@ -409,6 +423,20 @@ export declare class GetGlobalConfigResponse extends Message<GetGlobalConfigResp
    * @generated from field: api.commons.GlobalConfig config = 1;
    */
   config?: GlobalConfig;
+
+  /**
+   * last edited_by user
+   *
+   * @generated from field: string edited_by = 2;
+   */
+  editedBy: string;
+
+  /**
+   * last edited on
+   *
+   * @generated from field: google.protobuf.Timestamp last_edited = 3;
+   */
+  lastEdited?: Timestamp;
 
   constructor(data?: PartialMessage<GetGlobalConfigResponse>);
 
