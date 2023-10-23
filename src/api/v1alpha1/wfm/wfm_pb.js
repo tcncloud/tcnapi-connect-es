@@ -2320,7 +2320,6 @@ export const BuildShiftTemplateDiagnosticsReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "parent_program_node_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
