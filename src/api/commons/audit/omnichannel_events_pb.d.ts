@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { CampaignDirection, ChannelType, ConnectedInbox, ConversationCollectedData, OmniCampaign, OmniConversation, OmniMessage, OmniProjectComplianceConfig, OmniTask } from "../omnichannel_pb.js";
+import type { CampaignDirection, ChannelType, ConnectedInbox, ConversationCollectedData, OmniCampaign, OmniConversation, OmniMessage, OmniTask } from "../omnichannel_pb.js";
 
 /**
  * OmnichannelCreateProjectEvent - whenever a project is created
@@ -27,11 +27,6 @@ export declare class OmnichannelCreateProjectEvent extends Message<OmnichannelCr
    * @generated from field: string description = 3;
    */
   description: string;
-
-  /**
-   * @generated from field: api.commons.OmniProjectComplianceConfig compliance_config = 4;
-   */
-  complianceConfig?: OmniProjectComplianceConfig;
 
   constructor(data?: PartialMessage<OmnichannelCreateProjectEvent>);
 
