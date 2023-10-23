@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
+import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
 import { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -733,6 +733,44 @@ export const HeaderGroup = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v0alpha.ApproveTaskRequest
+ */
+export const ApproveTaskRequest = proto3.makeMessageType(
+  "api.v0alpha.ApproveTaskRequest",
+  () => [
+    { no: 1, name: "task_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.ApproveTaskResponse
+ */
+export const ApproveTaskResponse = proto3.makeMessageType(
+  "api.v0alpha.ApproveTaskResponse",
+  [],
+);
+
+/**
+ * @generated from message api.v0alpha.GetNextQueuedTaskRequest
+ */
+export const GetNextQueuedTaskRequest = proto3.makeMessageType(
+  "api.v0alpha.GetNextQueuedTaskRequest",
+  () => [
+    { no: 1, name: "skills", kind: "message", T: OmniConversationSkills },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.GetNextQueuedTaskResponse
+ */
+export const GetNextQueuedTaskResponse = proto3.makeMessageType(
+  "api.v0alpha.GetNextQueuedTaskResponse",
+  () => [
+    { no: 1, name: "task", kind: "message", T: OmniTask },
+  ],
+);
+
+/**
  * GetTaskReq - request to retrieve a task
  *
  * @generated from message api.v0alpha.GetTaskReq
@@ -797,6 +835,42 @@ export const ListTasksRes = proto3.makeMessageType(
     { no: 1, name: "next_page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "tasks", kind: "message", T: OmniTask, repeated: true },
   ],
+);
+
+/**
+ * @generated from message api.v0alpha.RejectTaskRequest
+ */
+export const RejectTaskRequest = proto3.makeMessageType(
+  "api.v0alpha.RejectTaskRequest",
+  () => [
+    { no: 1, name: "task_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.RejectTaskResponse
+ */
+export const RejectTaskResponse = proto3.makeMessageType(
+  "api.v0alpha.RejectTaskResponse",
+  [],
+);
+
+/**
+ * @generated from message api.v0alpha.RequeueTaskRequest
+ */
+export const RequeueTaskRequest = proto3.makeMessageType(
+  "api.v0alpha.RequeueTaskRequest",
+  () => [
+    { no: 1, name: "task_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.RequeueTaskResponse
+ */
+export const RequeueTaskResponse = proto3.makeMessageType(
+  "api.v0alpha.RequeueTaskResponse",
+  [],
 );
 
 /**

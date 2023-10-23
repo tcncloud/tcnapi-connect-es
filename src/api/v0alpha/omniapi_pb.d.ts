@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
+import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
 import type { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -1976,6 +1976,97 @@ export declare class HeaderGroup extends Message<HeaderGroup> {
 }
 
 /**
+ * @generated from message api.v0alpha.ApproveTaskRequest
+ */
+export declare class ApproveTaskRequest extends Message<ApproveTaskRequest> {
+  /**
+   * @generated from field: int64 task_sid = 1;
+   */
+  taskSid: bigint;
+
+  constructor(data?: PartialMessage<ApproveTaskRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ApproveTaskRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveTaskRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveTaskRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveTaskRequest;
+
+  static equals(a: ApproveTaskRequest | PlainMessage<ApproveTaskRequest> | undefined, b: ApproveTaskRequest | PlainMessage<ApproveTaskRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ApproveTaskResponse
+ */
+export declare class ApproveTaskResponse extends Message<ApproveTaskResponse> {
+  constructor(data?: PartialMessage<ApproveTaskResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ApproveTaskResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ApproveTaskResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ApproveTaskResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ApproveTaskResponse;
+
+  static equals(a: ApproveTaskResponse | PlainMessage<ApproveTaskResponse> | undefined, b: ApproveTaskResponse | PlainMessage<ApproveTaskResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.GetNextQueuedTaskRequest
+ */
+export declare class GetNextQueuedTaskRequest extends Message<GetNextQueuedTaskRequest> {
+  /**
+   * @generated from field: api.commons.OmniConversationSkills skills = 1;
+   */
+  skills?: OmniConversationSkills;
+
+  constructor(data?: PartialMessage<GetNextQueuedTaskRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.GetNextQueuedTaskRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNextQueuedTaskRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNextQueuedTaskRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNextQueuedTaskRequest;
+
+  static equals(a: GetNextQueuedTaskRequest | PlainMessage<GetNextQueuedTaskRequest> | undefined, b: GetNextQueuedTaskRequest | PlainMessage<GetNextQueuedTaskRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.GetNextQueuedTaskResponse
+ */
+export declare class GetNextQueuedTaskResponse extends Message<GetNextQueuedTaskResponse> {
+  /**
+   * @generated from field: api.commons.OmniTask task = 1;
+   */
+  task?: OmniTask;
+
+  constructor(data?: PartialMessage<GetNextQueuedTaskResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.GetNextQueuedTaskResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetNextQueuedTaskResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetNextQueuedTaskResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetNextQueuedTaskResponse;
+
+  static equals(a: GetNextQueuedTaskResponse | PlainMessage<GetNextQueuedTaskResponse> | undefined, b: GetNextQueuedTaskResponse | PlainMessage<GetNextQueuedTaskResponse> | undefined): boolean;
+}
+
+/**
  * GetTaskReq - request to retrieve a task
  *
  * @generated from message api.v0alpha.GetTaskReq
@@ -2163,6 +2254,92 @@ export declare class ListTasksRes extends Message<ListTasksRes> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTasksRes;
 
   static equals(a: ListTasksRes | PlainMessage<ListTasksRes> | undefined, b: ListTasksRes | PlainMessage<ListTasksRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.RejectTaskRequest
+ */
+export declare class RejectTaskRequest extends Message<RejectTaskRequest> {
+  /**
+   * @generated from field: int64 task_sid = 1;
+   */
+  taskSid: bigint;
+
+  constructor(data?: PartialMessage<RejectTaskRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.RejectTaskRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RejectTaskRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RejectTaskRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RejectTaskRequest;
+
+  static equals(a: RejectTaskRequest | PlainMessage<RejectTaskRequest> | undefined, b: RejectTaskRequest | PlainMessage<RejectTaskRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.RejectTaskResponse
+ */
+export declare class RejectTaskResponse extends Message<RejectTaskResponse> {
+  constructor(data?: PartialMessage<RejectTaskResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.RejectTaskResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RejectTaskResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RejectTaskResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RejectTaskResponse;
+
+  static equals(a: RejectTaskResponse | PlainMessage<RejectTaskResponse> | undefined, b: RejectTaskResponse | PlainMessage<RejectTaskResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.RequeueTaskRequest
+ */
+export declare class RequeueTaskRequest extends Message<RequeueTaskRequest> {
+  /**
+   * @generated from field: int64 task_sid = 1;
+   */
+  taskSid: bigint;
+
+  constructor(data?: PartialMessage<RequeueTaskRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.RequeueTaskRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequeueTaskRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequeueTaskRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequeueTaskRequest;
+
+  static equals(a: RequeueTaskRequest | PlainMessage<RequeueTaskRequest> | undefined, b: RequeueTaskRequest | PlainMessage<RequeueTaskRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.RequeueTaskResponse
+ */
+export declare class RequeueTaskResponse extends Message<RequeueTaskResponse> {
+  constructor(data?: PartialMessage<RequeueTaskResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.RequeueTaskResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RequeueTaskResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RequeueTaskResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RequeueTaskResponse;
+
+  static equals(a: RequeueTaskResponse | PlainMessage<RequeueTaskResponse> | undefined, b: RequeueTaskResponse | PlainMessage<RequeueTaskResponse> | undefined): boolean;
 }
 
 /**
