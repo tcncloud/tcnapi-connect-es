@@ -168,6 +168,13 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
    */
   origin: LearningOpportunityOrigin;
 
+  /**
+   * User id of the reviewer (creator of learning opportunity).
+   *
+   * @generated from field: string reviewer_user_id = 15;
+   */
+  reviewerUserId: string;
+
   constructor(data?: PartialMessage<LearningOpportunity>);
 
   static readonly runtime: typeof proto3;
