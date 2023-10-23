@@ -57,7 +57,7 @@ export const LearningOpportunity = proto3.makeMessageType(
     { no: 12, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(LearningOpportunityStatus) },
     { no: 14, name: "origin", kind: "enum", T: proto3.getEnumType(LearningOpportunityOrigin) },
-    { no: 15, name: "reviewer_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "creator_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

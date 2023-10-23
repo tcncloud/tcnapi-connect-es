@@ -169,11 +169,11 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
   origin: LearningOpportunityOrigin;
 
   /**
-   * User id of the reviewer (creator of learning opportunity).
+   * User id for the creator of the learning opportunity.
    *
-   * @generated from field: string reviewer_user_id = 15;
+   * @generated from field: string creator_user_id = 15;
    */
-  reviewerUserId: string;
+  creatorUserId: string;
 
   constructor(data?: PartialMessage<LearningOpportunity>);
 
