@@ -71,6 +71,8 @@ export const Permission = proto3.makeEnum(
     {no: 607, name: "PERMISSION_INSIGHTS_DASHBOARD_VIEW", localName: "INSIGHTS_DASHBOARD_VIEW"},
     {no: 608, name: "PERMISSION_INSIGHTS_DASHBOARD_EDIT", localName: "INSIGHTS_DASHBOARD_EDIT"},
     {no: 700, name: "PERMISSION_ROOM303", localName: "ROOM303"},
+    {no: 701, name: "PERMISSION_ROOM303_MEMBER", localName: "ROOM303_MEMBER"},
+    {no: 702, name: "PERMISSION_ROOM303_SUPERVISOR", localName: "ROOM303_SUPERVISOR"},
     {no: 800, name: "PERMISSION_AGENT_CALL_SCRIPTS", localName: "AGENT_CALL_SCRIPTS"},
     {no: 900, name: "PERMISSION_COMPLIANCE", localName: "COMPLIANCE"},
     {no: 910, name: "PERMISSION_COMPLIANCE_CONSENT", localName: "COMPLIANCE_CONSENT"},

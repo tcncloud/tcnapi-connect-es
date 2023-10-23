@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreatePaymentPortalLinksReq, CreatePaymentPortalLinksRes, DeleteIntegrationConfigReq, DeletePortalConfigReq, Empty, GetAggregatedMetadataReq, GetAggregatedMetadataRes, GetIntegrationConfigReq, GetIntegrationTransactionReportDataReq, GetIntegrationTransactionReportDataRes, GetIntegrationTransactionReportReq, GetIntegrationTransactionReportRes, GetIntegrationTransactionReq, GetPortalConfigReq, GetPortalLinksByDateRangeReq, GetPortalLinksByDateRangeRes, GetPortalLogoReq, IntegrationConfig, IntegrationConfigs, IntegrationInfos, IntegrationTransaction, ListIntegrationConfigNamesReq, ListIntegrationConfigNamesRes, ListIntegrationsForOrgReq, ListIntegrationTemplatesByConfigReq, ListIntegrationTemplatesByConfigRes, ListJourneyConfigsReq, ListNonJourneyConfigsReq, ListPortalConfigsReq, Logo, PortalConfig, PortalConfigs, ProcessReq, ProcessRes, SummaryReq, SummaryRes, UpdateIntegrationConfigReq, UpdatePortalLogoReq } from "./service_pb.js";
+import { CreatePaymentPortalLinksReq, CreatePaymentPortalLinksRes, DeleteIntegrationConfigReq, DeletePortalConfigReq, Empty, GetAggregatedMetadataReq, GetAggregatedMetadataRes, GetIntegrationConfigReq, GetIntegrationTransactionReportDataReq, GetIntegrationTransactionReportDataRes, GetIntegrationTransactionReportReq, GetIntegrationTransactionReportRes, GetIntegrationTransactionReq, GetPortalConfigReq, GetPortalLinksByDateRangeReq, GetPortalLinksByDateRangeRes, GetPortalLogoReq, IntegrationConfig, IntegrationConfigs, IntegrationInfos, IntegrationTransaction, ListIntegrationConfigNamesReq, ListIntegrationConfigNamesRes, ListIntegrationsForOrgReq, ListIntegrationTemplatesByConfigReq, ListIntegrationTemplatesByConfigRes, ListJourneyConfigsReq, ListNonJourneyConfigsReq, ListPortalConfigsReq, Logo, PortalConfig, PortalConfigs, ProcessReq, ProcessRes, SearchPastTransactionsRequest, SearchPastTransactionsResponse, SummaryReq, SummaryRes, UpdateIntegrationConfigReq, UpdatePortalLogoReq } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -50,6 +50,15 @@ export declare const Integrations: {
       readonly name: "GetIntegrationTransactionReportData",
       readonly I: typeof GetIntegrationTransactionReportDataReq,
       readonly O: typeof GetIntegrationTransactionReportDataRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.integrations.Integrations.SearchPastTransactions
+     */
+    readonly searchPastTransactions: {
+      readonly name: "SearchPastTransactions",
+      readonly I: typeof SearchPastTransactionsRequest,
+      readonly O: typeof SearchPastTransactionsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
