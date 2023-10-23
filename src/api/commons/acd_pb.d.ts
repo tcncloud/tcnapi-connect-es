@@ -360,13 +360,6 @@ export declare class CallerSid extends Message<CallerSid> {
    */
   tenantSid: bigint;
 
-  /**
-   * org id of the caller
-   *
-   * @generated from field: string org_id = 4;
-   */
-  orgId: string;
-
   constructor(data?: PartialMessage<CallerSid>);
 
   static readonly runtime: typeof proto3;

@@ -133,7 +133,6 @@ export const CallerSid = proto3.makeMessageType(
     { no: 1, name: "caller_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
     { no: 3, name: "tenant_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
