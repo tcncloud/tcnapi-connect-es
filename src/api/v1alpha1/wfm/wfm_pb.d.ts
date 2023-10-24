@@ -11297,6 +11297,76 @@ export declare class CreateShiftInstanceV2Res extends Message<CreateShiftInstanc
 }
 
 /**
+ * Request message for the SplitShiftInstance RPC
+ *
+ * @generated from message api.v1alpha1.wfm.SplitShiftInstanceReq
+ */
+export declare class SplitShiftInstanceReq extends Message<SplitShiftInstanceReq> {
+  /**
+   * ID of the shift instance to split.
+   *
+   * @generated from field: int64 shift_instance_sid = 1;
+   */
+  shiftInstanceSid: bigint;
+
+  /**
+   * The datetime at which to split the @shift_instance_sid.
+   *
+   * @generated from field: google.protobuf.Timestamp time_to_split = 2;
+   */
+  timeToSplit?: Timestamp;
+
+  constructor(data?: PartialMessage<SplitShiftInstanceReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SplitShiftInstanceReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitShiftInstanceReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitShiftInstanceReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitShiftInstanceReq;
+
+  static equals(a: SplitShiftInstanceReq | PlainMessage<SplitShiftInstanceReq> | undefined, b: SplitShiftInstanceReq | PlainMessage<SplitShiftInstanceReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the SplitShiftInstance RPC
+ *
+ * @generated from message api.v1alpha1.wfm.SplitShiftInstanceRes
+ */
+export declare class SplitShiftInstanceRes extends Message<SplitShiftInstanceRes> {
+  /**
+   * The newly split shift instances and their shift segments.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance shift_instances = 1;
+   */
+  shiftInstances: ShiftInstance[];
+
+  /**
+   * Diagnostics to report if shift templates specify a larger minimum shift length than resulting shifts have.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<SplitShiftInstanceRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.SplitShiftInstanceRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SplitShiftInstanceRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SplitShiftInstanceRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SplitShiftInstanceRes;
+
+  static equals(a: SplitShiftInstanceRes | PlainMessage<SplitShiftInstanceRes> | undefined, b: SplitShiftInstanceRes | PlainMessage<SplitShiftInstanceRes> | undefined): boolean;
+}
+
+/**
  * Request message for the SwapShiftInstances RPC
  *
  * @generated from message api.v1alpha1.wfm.SwapShiftInstancesReq
