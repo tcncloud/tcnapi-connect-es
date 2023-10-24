@@ -3,7 +3,32 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Duration, proto3 } from "@bufbuild/protobuf";
+import { Duration, FieldMask, proto3 } from "@bufbuild/protobuf";
+
+/**
+ * UpdateCorrectionRequest is a request for updating a correction.
+ *
+ * @generated from message api.v1alpha1.vanalytics.UpdateCorrectionRequest
+ */
+export const UpdateCorrectionRequest = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.UpdateCorrectionRequest",
+  () => [
+    { no: 1, name: "correction", kind: "message", T: Correction },
+    { no: 2, name: "update_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * UpdateCorrectionResponse is a response for updating a correction.
+ *
+ * @generated from message api.v1alpha1.vanalytics.UpdateCorrectionResponse
+ */
+export const UpdateCorrectionResponse = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.UpdateCorrectionResponse",
+  () => [
+    { no: 1, name: "correction", kind: "message", T: Correction },
+  ],
+);
 
 /**
  * CreateCorrectionRequest is a request for creating a correction.
@@ -24,6 +49,61 @@ export const CreateCorrectionRequest = proto3.makeMessageType(
  */
 export const CreateCorrectionResponse = proto3.makeMessageType(
   "api.v1alpha1.vanalytics.CreateCorrectionResponse",
+  () => [
+    { no: 1, name: "correction", kind: "message", T: Correction },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.vanalytics.GetCorrectionRequest
+ */
+export const GetCorrectionRequest = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.GetCorrectionRequest",
+  () => [
+    { no: 2, name: "correction_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * ListCorrectionsRequest is a request for listing corrections.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListCorrectionsRequest
+ */
+export const ListCorrectionsRequest = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.ListCorrectionsRequest",
+  () => [
+    { no: 2, name: "transcript_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * ListCorrectionsResponse is a response for listing corrections.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListCorrectionsResponse
+ */
+export const ListCorrectionsResponse = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.ListCorrectionsResponse",
+  () => [
+    { no: 1, name: "corrections", kind: "message", T: Correction, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.vanalytics.DeleteCorrectionRequest
+ */
+export const DeleteCorrectionRequest = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.DeleteCorrectionRequest",
+  () => [
+    { no: 1, name: "correction_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "return", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.vanalytics.DeleteCorrectionResponse
+ */
+export const DeleteCorrectionResponse = proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.DeleteCorrectionResponse",
   () => [
     { no: 1, name: "correction", kind: "message", T: Correction },
   ],
