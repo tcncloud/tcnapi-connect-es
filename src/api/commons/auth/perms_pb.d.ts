@@ -414,11 +414,28 @@ export declare enum Permission {
   INSIGHTS_DASHBOARD_EDIT = 608,
 
   /**
-   * Enables access to room 303 chat.
+   * Enables access to room 303 chat at a base level
+   * Lowest tier permissions for unconfigured rooms and direct messaging
    *
    * @generated from enum value: PERMISSION_ROOM303 = 700;
    */
   ROOM303 = 700,
+
+  /**
+   * Provides middle level permissions for unconfigured
+   * rooms and direct messaging in room303
+   *
+   * @generated from enum value: PERMISSION_ROOM303_MEMBER = 701;
+   */
+  ROOM303_MEMBER = 701,
+
+  /**
+   * Provides top level permissions rooms and direct
+   * messaging for all users in room303
+   *
+   * @generated from enum value: PERMISSION_ROOM303_SUPERVISOR = 702;
+   */
+  ROOM303_SUPERVISOR = 702,
 
   /**
    * Enables access to the call scripts builder app.

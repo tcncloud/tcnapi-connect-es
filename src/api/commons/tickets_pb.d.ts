@@ -267,14 +267,14 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
   templateName: string;
 
   /**
-   * @generated from field: google.protobuf.Timestamp teplate_start_date = 3;
+   * @generated from field: google.protobuf.Timestamp template_start_date = 3;
    */
-  teplateStartDate?: Timestamp;
+  templateStartDate?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp teplate_end_date = 4;
+   * @generated from field: google.protobuf.Timestamp template_end_date = 4;
    */
-  teplateEndDate?: Timestamp;
+  templateEndDate?: Timestamp;
 
   /**
    * @generated from field: string ticket_title = 5;
@@ -312,11 +312,6 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
   ticketSla: Sla[];
 
   /**
-   * @generated from field: api.commons.TemplateCondition ticket_sla_condition = 12;
-   */
-  ticketSlaCondition?: TemplateCondition;
-
-  /**
    * Action
    *
    * @generated from field: string action_type = 13;
@@ -334,16 +329,6 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
   actionSkillsCondition?: TemplateCondition;
 
   /**
-   * @generated from field: google.protobuf.Timestamp action_start_date = 16;
-   */
-  actionStartDate?: Timestamp;
-
-  /**
-   * @generated from field: api.commons.TemplateCondition action_start_date_condition = 17;
-   */
-  actionStartDateCondition?: TemplateCondition;
-
-  /**
    * @generated from field: google.protobuf.Timestamp action_expiry_date = 18;
    */
   actionExpiryDate?: Timestamp;
@@ -357,11 +342,6 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
    * @generated from field: repeated api.commons.Sla action_sla = 20;
    */
   actionSla: Sla[];
-
-  /**
-   * @generated from field: api.commons.TemplateCondition action_sla_condition = 21;
-   */
-  actionSlaCondition?: TemplateCondition;
 
   /**
    * @generated from field: bool is_valid = 22;
@@ -384,6 +364,11 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
    * @generated from field: google.protobuf.Timestamp created_date = 25;
    */
   createdDate?: Timestamp;
+
+  /**
+   * @generated from field: api.commons.TemplateCondition ticket_callback_template_condition = 26;
+   */
+  ticketCallbackTemplateCondition?: TemplateCondition;
 
   constructor(data?: PartialMessage<TicketTemplate>);
 
@@ -410,19 +395,9 @@ export declare class TicketCallbackTemplate extends Message<TicketCallbackTempla
   callerId: string;
 
   /**
-   * @generated from field: api.commons.TemplateCondition caller_id_condition = 2;
-   */
-  callerIdCondition?: TemplateCondition;
-
-  /**
-   * @generated from field: string country_code = 3;
+   * @generated from field: string country_code = 2;
    */
   countryCode: string;
-
-  /**
-   * @generated from field: api.commons.TemplateCondition country_code_condition = 4;
-   */
-  countryCodeCondition?: TemplateCondition;
 
   constructor(data?: PartialMessage<TicketCallbackTemplate>);
 
@@ -483,6 +458,11 @@ export declare class ListTemplate extends Message<ListTemplate> {
    */
   createdDate?: Timestamp;
 
+  /**
+   * @generated from field: string project_title = 9;
+   */
+  projectTitle: string;
+
   constructor(data?: PartialMessage<ListTemplate>);
 
   static readonly runtime: typeof proto3;
@@ -526,6 +506,11 @@ export declare class AssignProjectTemplate extends Message<AssignProjectTemplate
    * @generated from field: string action_type = 5;
    */
   actionType: string;
+
+  /**
+   * @generated from field: string project_title = 6;
+   */
+  projectTitle: string;
 
   constructor(data?: PartialMessage<AssignProjectTemplate>);
 

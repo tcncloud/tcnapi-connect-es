@@ -274,9 +274,9 @@ export declare class ListTicketTemplateRequest extends Message<ListTicketTemplat
  */
 export declare class ListTicketTemplateResponse extends Message<ListTicketTemplateResponse> {
   /**
-   * @generated from field: api.commons.ListTemplate enabled_templates = 1;
+   * @generated from field: repeated api.commons.ListTemplate enabled_templates = 1;
    */
-  enabledTemplates?: ListTemplate;
+  enabledTemplates: ListTemplate[];
 
   constructor(data?: PartialMessage<ListTicketTemplateResponse>);
 
@@ -300,9 +300,9 @@ export declare class ListTicketTemplateResponse extends Message<ListTicketTempla
  */
 export declare class AssignProjectTemplateRequest extends Message<AssignProjectTemplateRequest> {
   /**
-   * @generated from field: api.commons.AssignProjectTemplate project_template = 1;
+   * @generated from field: repeated api.commons.AssignProjectTemplate project_template = 1;
    */
-  projectTemplate?: AssignProjectTemplate;
+  projectTemplate: AssignProjectTemplate[];
 
   constructor(data?: PartialMessage<AssignProjectTemplateRequest>);
 

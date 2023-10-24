@@ -101,7 +101,7 @@ export const ListTicketTemplateRequest = proto3.makeMessageType(
 export const ListTicketTemplateResponse = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListTicketTemplateResponse",
   () => [
-    { no: 1, name: "enabled_templates", kind: "message", T: ListTemplate },
+    { no: 1, name: "enabled_templates", kind: "message", T: ListTemplate, repeated: true },
   ],
 );
 
@@ -113,7 +113,7 @@ export const ListTicketTemplateResponse = proto3.makeMessageType(
 export const AssignProjectTemplateRequest = proto3.makeMessageType(
   "api.v1alpha1.tickets.AssignProjectTemplateRequest",
   () => [
-    { no: 1, name: "project_template", kind: "message", T: AssignProjectTemplate },
+    { no: 1, name: "project_template", kind: "message", T: AssignProjectTemplate, repeated: true },
   ],
 );
 

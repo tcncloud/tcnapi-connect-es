@@ -83,8 +83,8 @@ export const TicketTemplate = proto3.makeMessageType(
   () => [
     { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "teplate_start_date", kind: "message", T: Timestamp },
-    { no: 4, name: "teplate_end_date", kind: "message", T: Timestamp },
+    { no: 3, name: "template_start_date", kind: "message", T: Timestamp },
+    { no: 4, name: "template_end_date", kind: "message", T: Timestamp },
     { no: 5, name: "ticket_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "ticket_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "title_condition", kind: "message", T: TemplateCondition },
@@ -92,20 +92,17 @@ export const TicketTemplate = proto3.makeMessageType(
     { no: 9, name: "ticket_assignee", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 10, name: "assignee_condition", kind: "message", T: TemplateCondition },
     { no: 11, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
-    { no: 12, name: "ticket_sla_condition", kind: "message", T: TemplateCondition },
     { no: 13, name: "action_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 14, name: "action_skills", kind: "message", T: Skills, repeated: true },
     { no: 15, name: "action_skills_condition", kind: "message", T: TemplateCondition },
-    { no: 16, name: "action_start_date", kind: "message", T: Timestamp },
-    { no: 17, name: "action_start_date_condition", kind: "message", T: TemplateCondition },
     { no: 18, name: "action_expiry_date", kind: "message", T: Timestamp },
     { no: 19, name: "action_expiry_date_condition", kind: "message", T: TemplateCondition },
     { no: 20, name: "action_sla", kind: "message", T: Sla, repeated: true },
-    { no: 21, name: "action_sla_condition", kind: "message", T: TemplateCondition },
     { no: 22, name: "is_valid", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 23, name: "callback_default", kind: "message", T: TicketCallbackTemplate },
     { no: 24, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 25, name: "created_date", kind: "message", T: Timestamp },
+    { no: 26, name: "ticket_callback_template_condition", kind: "message", T: TemplateCondition },
   ],
 );
 
@@ -116,9 +113,7 @@ export const TicketCallbackTemplate = proto3.makeMessageType(
   "api.commons.TicketCallbackTemplate",
   () => [
     { no: 1, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "caller_id_condition", kind: "message", T: TemplateCondition },
-    { no: 3, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "country_code_condition", kind: "message", T: TemplateCondition },
+    { no: 2, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -136,6 +131,7 @@ export const ListTemplate = proto3.makeMessageType(
     { no: 6, name: "is_valid", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 7, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "created_date", kind: "message", T: Timestamp },
+    { no: 9, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -150,6 +146,7 @@ export const AssignProjectTemplate = proto3.makeMessageType(
     { no: 3, name: "project_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 4, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "action_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
