@@ -355,23 +355,30 @@ export declare class UpdateGlobalConfigRequest extends Message<UpdateGlobalConfi
  */
 export declare class UpdateGlobalConfigResponse extends Message<UpdateGlobalConfigResponse> {
   /**
-   * global configuration details
-   *
-   * @generated from field: api.commons.GlobalConfig config = 1;
-   */
-  config?: GlobalConfig;
-
-  /**
    * last edited_by user
    *
-   * @generated from field: string edited_by = 2;
+   * @generated from field: string edited_by = 1;
    */
   editedBy: string;
 
   /**
+   * global configuration details
+   *
+   * @generated from field: api.commons.GlobalConfig config = 2;
+   */
+  config?: GlobalConfig;
+
+  /**
+   * date created
+   *
+   * @generated from field: google.protobuf.Timestamp date_created = 3;
+   */
+  dateCreated?: Timestamp;
+
+  /**
    * last edited on
    *
-   * @generated from field: google.protobuf.Timestamp last_edited = 3;
+   * @generated from field: google.protobuf.Timestamp last_edited = 4;
    */
   lastEdited?: Timestamp;
 
@@ -418,23 +425,30 @@ export declare class GetGlobalConfigRequest extends Message<GetGlobalConfigReque
  */
 export declare class GetGlobalConfigResponse extends Message<GetGlobalConfigResponse> {
   /**
-   * global configuration details
-   *
-   * @generated from field: api.commons.GlobalConfig config = 1;
-   */
-  config?: GlobalConfig;
-
-  /**
    * last edited_by user
    *
-   * @generated from field: string edited_by = 2;
+   * @generated from field: string edited_by = 1;
    */
   editedBy: string;
 
   /**
+   * global configuration details
+   *
+   * @generated from field: api.commons.GlobalConfig config = 2;
+   */
+  config?: GlobalConfig;
+
+  /**
+   * date created
+   *
+   * @generated from field: google.protobuf.Timestamp date_created = 3;
+   */
+  dateCreated?: Timestamp;
+
+  /**
    * last edited on
    *
-   * @generated from field: google.protobuf.Timestamp last_edited = 3;
+   * @generated from field: google.protobuf.Timestamp last_edited = 4;
    */
   lastEdited?: Timestamp;
 

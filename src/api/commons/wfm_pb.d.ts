@@ -1055,6 +1055,24 @@ export declare enum DiagnosticCode {
    * @generated from enum value: FIRST_WEEK_PATTERN_NUMBERS_NOT_FOUND_IN_TOUR_WEEK_PATTERNS = 64;
    */
   FIRST_WEEK_PATTERN_NUMBERS_NOT_FOUND_IN_TOUR_WEEK_PATTERNS = 64,
+
+  /**
+   * DiagnosticCodeShiftTemplateHasNotAssociatedSchedulingAgentGroups integer value for a diagnostic coded as
+   * 'Shift Template Has No Associated Scheduling Agent Groups' type.
+   * The diagnostic is reporting a Shift Template with no associated Schedulable Agent Groups.
+   *
+   * @generated from enum value: SHIFT_TEMPLATE_HAS_NO_ASSOCIATED_SCHEDULING_AGENT_GROUPS = 65;
+   */
+  SHIFT_TEMPLATE_HAS_NO_ASSOCIATED_SCHEDULING_AGENT_GROUPS = 65,
+
+  /**
+   * DiagnosticCodeAttemptToBuildSchedulesForInvalidParentNode integer value for a diagnostic coded as
+   * 'Attempt To Build Schedules For Invalid Parent Node' type.
+   * The diagnostic is reporting an attemplt to build a schedule for an invalid Parent Node.
+   *
+   * @generated from enum value: ATTEMPT_TO_BUILD_SCHEDULES_FOR_INVALID_PARENT_NODE = 66;
+   */
+  ATTEMPT_TO_BUILD_SCHEDULES_FOR_INVALID_PARENT_NODE = 66,
 }
 
 /**

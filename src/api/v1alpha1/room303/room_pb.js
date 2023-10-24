@@ -141,9 +141,10 @@ export const UpdateGlobalConfigRequest = proto3.makeMessageType(
 export const UpdateGlobalConfigResponse = proto3.makeMessageType(
   "api.v1alpha1.room303.UpdateGlobalConfigResponse",
   () => [
-    { no: 1, name: "config", kind: "message", T: GlobalConfig },
-    { no: 2, name: "edited_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "last_edited", kind: "message", T: Timestamp },
+    { no: 1, name: "edited_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "config", kind: "message", T: GlobalConfig },
+    { no: 3, name: "date_created", kind: "message", T: Timestamp },
+    { no: 4, name: "last_edited", kind: "message", T: Timestamp },
   ],
 );
 
@@ -165,9 +166,10 @@ export const GetGlobalConfigRequest = proto3.makeMessageType(
 export const GetGlobalConfigResponse = proto3.makeMessageType(
   "api.v1alpha1.room303.GetGlobalConfigResponse",
   () => [
-    { no: 1, name: "config", kind: "message", T: GlobalConfig },
-    { no: 2, name: "edited_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "last_edited", kind: "message", T: Timestamp },
+    { no: 1, name: "edited_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "config", kind: "message", T: GlobalConfig },
+    { no: 3, name: "date_created", kind: "message", T: Timestamp },
+    { no: 4, name: "last_edited", kind: "message", T: Timestamp },
   ],
 );
 

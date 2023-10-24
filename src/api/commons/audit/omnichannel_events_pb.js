@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { Int64Value, proto3 } from "@bufbuild/protobuf";
-import { CampaignDirection, ChannelType, ConnectedInbox, ConversationCollectedData, OmniCampaign, OmniConversation, OmniMessage, OmniTask } from "../omnichannel_pb.js";
+import { CampaignDirection, ChannelType, ConnectedInbox, ConversationCollectedData, OmniCampaign, OmniConversation, OmniMessage, OmniProjectComplianceConfig, OmniTask } from "../omnichannel_pb.js";
 
 /**
  * OmnichannelCreateProjectEvent - whenever a project is created
@@ -17,6 +17,7 @@ export const OmnichannelCreateProjectEvent = proto3.makeMessageType(
     { no: 1, name: "client_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "compliance_config", kind: "message", T: OmniProjectComplianceConfig },
   ],
 );
 

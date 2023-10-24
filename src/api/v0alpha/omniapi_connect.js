@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ArchiveCampaignReq, ArchiveCampaignRes, CannedMessage, CannedMessageGroup, CannedMessageWithGroup, CloseProjectByIdReq, CloseProjectByIdRes, CreateCampaignReq, CreateCannedMessageGroupReq, CreateCannedMessageReq, CreateConnectedInboxRes, CreateCustomUnsubscribeLinkRes, CreateDispositionReq, CreateDispositionRes, CreateProjectReq, CreateProjectRes, CreateSignatureReq, CreateSignatureRes, CreateTasksReq, CreateTasksRes, CreateVerifiedEmailRes, DeleteCannedMessageByIdReq, DeleteCannedMessageByIdRes, DeleteCannedMessageGroupReq, DeleteCannedMessageGroupRes, DeleteConnectedInboxBySidReq, DeleteCustomUnsubscribeLinkReq, DeleteDispositionReq, DeleteSignatureReq, DeleteSignatureRes, DeleteVerifiedEmailReq, EditProjectByIdReq, EditProjectByIdRes, GetAvailableHeadersReq, GetAvailableHeadersRes, GetCampaignByIdReq, GetCannedMessageByIdReq, GetCannedMessageGroupByIdReq, GetConnectedInboxBySidReq, GetOmniAttachmentReq, GetPendingGoogleXOAuth2DataReq, GetPendingGoogleXOAuth2DataRes, GetProjectByIdReq, GetTaskReq, GetVerifiedEmailBySidReq, ListCampaignsReq, ListCampaignsRes, ListCannedMessageGroupsReq, ListCannedMessageGroupsRes, ListCannedMessagesByGroupIdReq, ListCannedMessagesByGroupIdRes, ListCannedMessagesReq, ListCannedMessagesRes, ListConnectedInboxesReq, ListConnectedInboxesRes, ListContactListsReq, ListContactListsRes, ListConversationsReq, ListConversationsRes, ListCustomUnsubscribeLinksRes, ListDispositionsReq, ListDispositionsRes, ListMessagesReq, ListProjectsReq, ListProjectsRes, ListSignaturesReq, ListSignaturesRes, ListTasksReq, ListTasksRes, ListUserSkillsReq, ListUserSkillsRes, ListVerifiedEmailsReq, ListVerifiedEmailsRes, ManagerListMessagesReq, PauseCampaignReq, PauseCampaignRes, Project, ResendVerifiedEmailReq, ResendVerifiedEmailRes, ResumeCampaignReq, ResumeCampaignRes, SendEmailNotificationReq, SendEmailNotificationRes, SendFeedbackEmailReq, SendFeedbackEmailRes, SendgridAccountByClientReq, SendgridAccountByClientRes, SendOmniMessageReq, SuggestResponseReq, SuggestResponseRes, TestConnectedInboxRes, UpdateCampaignPacingSpeedReq, UpdateCampaignPacingSpeedRes, UpdateCampaignReq, UpdateCampaignRes, UpdateCannedMessageGroupReq, UpdateCannedMessageGroupRes, UpdateCannedMessageReq, UpdateConnectedInboxReq, UpdateCustomUnsubscribeLinkReq, UpdateCustomUnsubscribeLinkRes, UpdateDispositionReq, UpdateSignatureReq, UpdateSignatureRes, UpdateVerifiedEmailReq } from "./omniapi_pb.js";
+import { ApproveTaskRequest, ApproveTaskResponse, ArchiveCampaignReq, ArchiveCampaignRes, CannedMessage, CannedMessageGroup, CannedMessageWithGroup, CloseProjectByIdReq, CloseProjectByIdRes, CreateCampaignReq, CreateCannedMessageGroupReq, CreateCannedMessageReq, CreateConnectedInboxRes, CreateCustomUnsubscribeLinkRes, CreateDispositionReq, CreateDispositionRes, CreateProjectReq, CreateProjectRes, CreateSignatureReq, CreateSignatureRes, CreateTasksReq, CreateTasksRes, CreateVerifiedEmailRes, DeleteCannedMessageByIdReq, DeleteCannedMessageByIdRes, DeleteCannedMessageGroupReq, DeleteCannedMessageGroupRes, DeleteConnectedInboxBySidReq, DeleteCustomUnsubscribeLinkReq, DeleteDispositionReq, DeleteSignatureReq, DeleteSignatureRes, DeleteVerifiedEmailReq, EditProjectByIdReq, EditProjectByIdRes, GetAvailableHeadersReq, GetAvailableHeadersRes, GetCampaignByIdReq, GetCannedMessageByIdReq, GetCannedMessageGroupByIdReq, GetConnectedInboxBySidReq, GetNextQueuedTaskRequest, GetNextQueuedTaskResponse, GetOmniAttachmentReq, GetPendingGoogleXOAuth2DataReq, GetPendingGoogleXOAuth2DataRes, GetProjectByIdReq, GetTaskReq, GetVerifiedEmailBySidReq, ListCampaignsReq, ListCampaignsRes, ListCannedMessageGroupsReq, ListCannedMessageGroupsRes, ListCannedMessagesByGroupIdReq, ListCannedMessagesByGroupIdRes, ListCannedMessagesReq, ListCannedMessagesRes, ListConnectedInboxesReq, ListConnectedInboxesRes, ListContactListsReq, ListContactListsRes, ListConversationsReq, ListConversationsRes, ListCustomUnsubscribeLinksRes, ListDispositionsReq, ListDispositionsRes, ListMessagesReq, ListProjectsReq, ListProjectsRes, ListSignaturesReq, ListSignaturesRes, ListTasksReq, ListTasksRes, ListUserSkillsReq, ListUserSkillsRes, ListVerifiedEmailsReq, ListVerifiedEmailsRes, ManagerListMessagesReq, PauseCampaignReq, PauseCampaignRes, Project, RejectTaskRequest, RejectTaskResponse, RequeueTaskRequest, RequeueTaskResponse, ResendVerifiedEmailReq, ResendVerifiedEmailRes, ResumeCampaignReq, ResumeCampaignRes, SendEmailNotificationReq, SendEmailNotificationRes, SendFeedbackEmailReq, SendFeedbackEmailRes, SendgridAccountByClientReq, SendgridAccountByClientRes, SendOmniMessageReq, SuggestResponseReq, SuggestResponseRes, TestConnectedInboxRes, UpdateCampaignPacingSpeedReq, UpdateCampaignPacingSpeedRes, UpdateCampaignReq, UpdateCampaignRes, UpdateCannedMessageGroupReq, UpdateCannedMessageGroupRes, UpdateCannedMessageReq, UpdateConnectedInboxReq, UpdateCustomUnsubscribeLinkReq, UpdateCustomUnsubscribeLinkRes, UpdateDispositionReq, UpdateSignatureReq, UpdateSignatureRes, UpdateVerifiedEmailReq } from "./omniapi_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { ConnectedInbox, OmniAttachment, OmniCampaign, OmniCustomUnsubscribeLink, OmniMessage, OmniTask, VerifiedEmail } from "../commons/omnichannel_pb.js";
 import { Empty } from "../commons/types_pb.js";
@@ -286,6 +286,28 @@ export const OmniApi = {
       kind: MethodKind.Unary,
     },
     /**
+     * ApproveTask approves a task.
+     *
+     * @generated from rpc api.v0alpha.OmniApi.ApproveTask
+     */
+    approveTask: {
+      name: "ApproveTask",
+      I: ApproveTaskRequest,
+      O: ApproveTaskResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetNextQueuedTask retrieves the next queued task for the agent.
+     *
+     * @generated from rpc api.v0alpha.OmniApi.GetNextQueuedTask
+     */
+    getNextQueuedTask: {
+      name: "GetNextQueuedTask",
+      I: GetNextQueuedTaskRequest,
+      O: GetNextQueuedTaskResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * GetTask - retrieves a task using the provided criteria
      * Required permissions:
      *    OMNI_AGENT
@@ -309,6 +331,28 @@ export const OmniApi = {
       name: "ListTasks",
       I: ListTasksReq,
       O: ListTasksRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RejectTask rejects a task.
+     *
+     * @generated from rpc api.v0alpha.OmniApi.RejectTask
+     */
+    rejectTask: {
+      name: "RejectTask",
+      I: RejectTaskRequest,
+      O: RejectTaskResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RequeueTask requeues a task.
+     *
+     * @generated from rpc api.v0alpha.OmniApi.RequeueTask
+     */
+    requeueTask: {
+      name: "RequeueTask",
+      I: RequeueTaskRequest,
+      O: RequeueTaskResponse,
       kind: MethodKind.Unary,
     },
     /**
