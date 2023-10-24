@@ -42,6 +42,20 @@ export const RoomStatus = proto3.makeEnum(
 );
 
 /**
+ * ConfigPermissionEnum -
+ *
+ * @generated from enum api.commons.ConfigPermissionEnum
+ */
+export const ConfigPermissionEnum = proto3.makeEnum(
+  "api.commons.ConfigPermissionEnum",
+  [
+    {no: 0, name: "LIMITED"},
+    {no: 1, name: "ROOM303_MEMBER"},
+    {no: 2, name: "ROOM303_SUPERVISOR"},
+  ],
+);
+
+/**
  * @generated from message api.commons.UserSid
  */
 export const UserSid = proto3.makeMessageType(
@@ -83,6 +97,7 @@ export const Room = proto3.makeMessageType(
     { no: 7, name: "status", kind: "enum", T: proto3.getEnumType(RoomStatus) },
     { no: 8, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "config", kind: "message", T: RoomConfig },
   ],
 );
 
@@ -113,6 +128,38 @@ export const MessageStat = proto3.makeMessageType(
   () => [
     { no: 1, name: "room_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "unread_messages", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * global configuration settings
+ *
+ * @generated from message api.commons.GlobalConfig
+ */
+export const GlobalConfig = proto3.makeMessageType(
+  "api.commons.GlobalConfig",
+  () => [
+    { no: 1, name: "create_room", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 2, name: "join_existing_room", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 3, name: "send_message_to_supervisor", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 4, name: "send_message_to_non_supervisor", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+  ],
+);
+
+/**
+ * room confirmation settings
+ *
+ * @generated from message api.commons.RoomConfig
+ */
+export const RoomConfig = proto3.makeMessageType(
+  "api.commons.RoomConfig",
+  () => [
+    { no: 1, name: "add_user", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 2, name: "remove_user", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 3, name: "promote_to_admin", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 4, name: "read_messages", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 5, name: "send_message", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
+    { no: 6, name: "archive_room", kind: "enum", T: proto3.getEnumType(ConfigPermissionEnum) },
   ],
 );
 

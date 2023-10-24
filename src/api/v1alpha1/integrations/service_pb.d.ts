@@ -317,6 +317,132 @@ export declare class ProcessRes extends Message<ProcessRes> {
 }
 
 /**
+ * @generated from message api.v1alpha1.integrations.SearchPastTransactionsRequest
+ */
+export declare class SearchPastTransactionsRequest extends Message<SearchPastTransactionsRequest> {
+  /**
+   * which plugin instance made this call.
+   * optional. If empty string, we use the int_id
+   *
+   * @generated from field: string plugin_instance_id = 1;
+   */
+  pluginInstanceId: string;
+
+  /**
+   * @generated from field: api.commons.integrations.IntegrationType int_id = 2;
+   */
+  intId: IntegrationType$1;
+
+  /**
+   * which method to look up
+   *
+   * @generated from field: api.commons.integrations.RequestMethod method_id = 3;
+   */
+  methodId: RequestMethod$1;
+
+  /**
+   * what keys were given to IntegrationsApi during the ivr processing call
+   * and the string representation of the values
+   *
+   * @generated from field: map<string, string> match_fields = 4;
+   */
+  matchFields: { [key: string]: string };
+
+  /**
+   * max records we will be looking for in the response.
+   * no more than 10.
+   * if left 0, default of 3 is used.
+   *
+   * @generated from field: uint32 limit = 5;
+   */
+  limit: number;
+
+  /**
+   * if provided, we will start the search at any transactions older than this timestamp.
+   * if left empty, we will start at the current time.
+   *
+   * @generated from field: google.protobuf.Timestamp search_before = 6;
+   */
+  searchBefore?: Timestamp;
+
+  constructor(data?: PartialMessage<SearchPastTransactionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.SearchPastTransactionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchPastTransactionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchPastTransactionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchPastTransactionsRequest;
+
+  static equals(a: SearchPastTransactionsRequest | PlainMessage<SearchPastTransactionsRequest> | undefined, b: SearchPastTransactionsRequest | PlainMessage<SearchPastTransactionsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.SearchPastTransactionsResponse
+ */
+export declare class SearchPastTransactionsResponse extends Message<SearchPastTransactionsResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.PastTxEntity values = 1;
+   */
+  values: PastTxEntity[];
+
+  constructor(data?: PartialMessage<SearchPastTransactionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.SearchPastTransactionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchPastTransactionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchPastTransactionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchPastTransactionsResponse;
+
+  static equals(a: SearchPastTransactionsResponse | PlainMessage<SearchPastTransactionsResponse> | undefined, b: SearchPastTransactionsResponse | PlainMessage<SearchPastTransactionsResponse> | undefined): boolean;
+}
+
+/**
+ * simplified view of a IntegrationTransaction
+ * all values converted to string.
+ * only shows the request/resposne data, and timestamp it was created on
+ *
+ * @generated from message api.v1alpha1.integrations.PastTxEntity
+ */
+export declare class PastTxEntity extends Message<PastTxEntity> {
+  /**
+   * @generated from field: map<string, string> req = 1;
+   */
+  req: { [key: string]: string };
+
+  /**
+   * @generated from field: map<string, string> res = 2;
+   */
+  res: { [key: string]: string };
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_on = 3;
+   */
+  createdOn?: Timestamp;
+
+  constructor(data?: PartialMessage<PastTxEntity>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.PastTxEntity";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PastTxEntity;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PastTxEntity;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PastTxEntity;
+
+  static equals(a: PastTxEntity | PlainMessage<PastTxEntity> | undefined, b: PastTxEntity | PlainMessage<PastTxEntity> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v1alpha1.integrations.ListIntegrationsForOrgReq
  */
 export declare class ListIntegrationsForOrgReq extends Message<ListIntegrationsForOrgReq> {
