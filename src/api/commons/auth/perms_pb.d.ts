@@ -611,6 +611,13 @@ export declare enum Permission {
   PBX_MANAGER_EDIT = 4101,
 
   /**
+   * Enables access to the PBX Softphone Widget in the GlobalTopBar.
+   *
+   * @generated from enum value: PERMISSION_PBX_SOFTPHONE_WIDGET = 4110;
+   */
+  PBX_SOFTPHONE_WIDGET = 4110,
+
+  /**
    * Enables access to viewing the main newsroom app and showing the popup
    * This permission will be give to orgs automatically, but can be removed
    * manually to opt out of newsroom notifications

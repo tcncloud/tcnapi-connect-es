@@ -98,6 +98,7 @@ export const Permission = proto3.makeEnum(
     {no: 4000, name: "PERMISSION_WORKFLOWS", localName: "WORKFLOWS"},
     {no: 4100, name: "PERMISSION_PBX_MANAGER_VIEW", localName: "PBX_MANAGER_VIEW"},
     {no: 4101, name: "PERMISSION_PBX_MANAGER_EDIT", localName: "PBX_MANAGER_EDIT"},
+    {no: 4110, name: "PERMISSION_PBX_SOFTPHONE_WIDGET", localName: "PBX_SOFTPHONE_WIDGET"},
     {no: 4199, name: "PERMISSION_NEWSROOM_VIEW", localName: "NEWSROOM_VIEW"},
     {no: 4200, name: "PERMISSION_NEWSROOM_EDIT", localName: "NEWSROOM_EDIT"},
     {no: 4201, name: "PERMISSION_NEWSROOM_PUBLISH", localName: "NEWSROOM_PUBLISH"},
