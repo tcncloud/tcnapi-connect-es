@@ -283,6 +283,13 @@ export declare enum Permission {
   MANUAL_APPROVE = 341,
 
   /**
+   * Enables Agents to view plugins.
+   *
+   * @generated from enum value: PERMISSION_AGENT_PLUGINS_VIEW = 342;
+   */
+  AGENT_PLUGINS_VIEW = 342,
+
+  /**
    * Enables Agents to view portals.
    *
    *

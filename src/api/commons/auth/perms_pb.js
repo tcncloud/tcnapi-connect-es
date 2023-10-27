@@ -52,6 +52,7 @@ export const Permission = proto3.makeEnum(
     {no: 1400, name: "PERMISSION_EXTENSION_EDIT", localName: "EXTENSION_EDIT"},
     {no: 1401, name: "PERMISSION_VOICEMAIL_DOWNLOAD", localName: "VOICEMAIL_DOWNLOAD"},
     {no: 341, name: "PERMISSION_MANUAL_APPROVE", localName: "MANUAL_APPROVE"},
+    {no: 342, name: "PERMISSION_AGENT_PLUGINS_VIEW", localName: "AGENT_PLUGINS_VIEW"},
     {no: 340, name: "PERMISSION_AGENT_PORTALS_VIEW", localName: "AGENT_PORTALS_VIEW"},
     {no: 500, name: "PERMISSION_VOICE_ANALYTICS", localName: "VOICE_ANALYTICS"},
     {no: 501, name: "PERMISSION_VOICE_ANALYTICS_FLAG", localName: "VOICE_ANALYTICS_FLAG"},
