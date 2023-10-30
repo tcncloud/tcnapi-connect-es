@@ -2023,9 +2023,15 @@ export declare class ApproveTaskResponse extends Message<ApproveTaskResponse> {
  */
 export declare class GetNextQueuedTaskRequest extends Message<GetNextQueuedTaskRequest> {
   /**
-   * @generated from field: api.commons.OmniConversationSkills skills = 1;
+   * @generated from field: api.commons.OmniConversationSkills skills = 1 [deprecated = true];
+   * @deprecated
    */
   skills?: OmniConversationSkills;
+
+  /**
+   * @generated from field: map<string, int64> agent_skills = 2;
+   */
+  agentSkills: { [key: string]: bigint };
 
   constructor(data?: PartialMessage<GetNextQueuedTaskRequest>);
 
