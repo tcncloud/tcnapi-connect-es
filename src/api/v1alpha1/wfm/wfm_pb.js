@@ -3855,32 +3855,6 @@ export const CreateShiftInstanceV2Res = proto3.makeMessageType(
 );
 
 /**
- * Request message for the SplitShiftInstance RPC
- *
- * @generated from message api.v1alpha1.wfm.SplitShiftInstanceReq
- */
-export const SplitShiftInstanceReq = proto3.makeMessageType(
-  "api.v1alpha1.wfm.SplitShiftInstanceReq",
-  () => [
-    { no: 1, name: "shift_instance_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "time_to_split", kind: "message", T: Timestamp },
-  ],
-);
-
-/**
- * Response message for the SplitShiftInstance RPC
- *
- * @generated from message api.v1alpha1.wfm.SplitShiftInstanceRes
- */
-export const SplitShiftInstanceRes = proto3.makeMessageType(
-  "api.v1alpha1.wfm.SplitShiftInstanceRes",
-  () => [
-    { no: 1, name: "shift_instances", kind: "message", T: ShiftInstance, repeated: true },
-    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
-  ],
-);
-
-/**
  * Request message for the SwapShiftInstances RPC
  *
  * @generated from message api.v1alpha1.wfm.SwapShiftInstancesReq
