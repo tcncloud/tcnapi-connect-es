@@ -86,6 +86,13 @@ export declare enum SmsNumberProvider {
    * @generated from enum value: AUSBURST_SMS_PROVIDER = 5;
    */
   AUSBURST_SMS_PROVIDER = 5,
+
+  /**
+   * MediaSat sms provider
+   *
+   * @generated from enum value: MEDIASAT_SMS_PROVIDER = 6;
+   */
+  MEDIASAT_SMS_PROVIDER = 6,
 }
 
 /**
