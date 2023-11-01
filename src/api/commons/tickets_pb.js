@@ -65,53 +65,21 @@ export const Ticket = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.commons.TemplateCondition
- */
-export const TemplateCondition = proto3.makeMessageType(
-  "api.commons.TemplateCondition",
-  () => [
-    { no: 1, name: "is_mandatory", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "is_editable", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
  * @generated from message api.commons.TicketTemplate
  */
 export const TicketTemplate = proto3.makeMessageType(
   "api.commons.TicketTemplate",
   () => [
-    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
-    { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "ticket_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "ticket_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "title_condition", kind: "message", T: TemplateCondition },
-    { no: 8, name: "description_condition", kind: "message", T: TemplateCondition },
-    { no: 9, name: "ticket_assignee", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 10, name: "assignee_condition", kind: "message", T: TemplateCondition },
-    { no: 11, name: "ticket_sla", kind: "message", T: Sla, repeated: true },
-    { no: 13, name: "action_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 14, name: "action_skills", kind: "message", T: Skills, repeated: true },
-    { no: 15, name: "action_skills_condition", kind: "message", T: TemplateCondition },
-    { no: 18, name: "action_expiry_date", kind: "message", T: Timestamp },
-    { no: 19, name: "action_expiry_date_condition", kind: "message", T: TemplateCondition },
-    { no: 20, name: "action_sla", kind: "message", T: Sla, repeated: true },
-    { no: 22, name: "is_valid", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 23, name: "callback_default", kind: "message", T: TicketCallbackTemplate },
-    { no: 24, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 25, name: "created_date", kind: "message", T: Timestamp },
-    { no: 26, name: "ticket_callback_template_condition", kind: "message", T: TemplateCondition },
-  ],
-);
-
-/**
- * @generated from message api.commons.TicketCallbackTemplate
- */
-export const TicketCallbackTemplate = proto3.makeMessageType(
-  "api.commons.TicketCallbackTemplate",
-  () => [
-    { no: 1, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "template", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "template_entity_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "modified_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "created_date", kind: "message", T: Timestamp },
+    { no: 10, name: "modified_date", kind: "message", T: Timestamp },
+    { no: 11, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

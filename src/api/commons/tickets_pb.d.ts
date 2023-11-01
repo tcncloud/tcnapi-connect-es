@@ -224,141 +224,58 @@ export declare class Ticket extends Message<Ticket> {
 }
 
 /**
- * @generated from message api.commons.TemplateCondition
- */
-export declare class TemplateCondition extends Message<TemplateCondition> {
-  /**
-   * @generated from field: bool is_mandatory = 1;
-   */
-  isMandatory: boolean;
-
-  /**
-   * @generated from field: bool is_editable = 2;
-   */
-  isEditable: boolean;
-
-  constructor(data?: PartialMessage<TemplateCondition>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.TemplateCondition";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TemplateCondition;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TemplateCondition;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TemplateCondition;
-
-  static equals(a: TemplateCondition | PlainMessage<TemplateCondition> | undefined, b: TemplateCondition | PlainMessage<TemplateCondition> | undefined): boolean;
-}
-
-/**
  * @generated from message api.commons.TicketTemplate
  */
 export declare class TicketTemplate extends Message<TicketTemplate> {
   /**
-   * @generated from field: int64 ticket_template_id = 1 [jstype = JS_STRING];
+   * @generated from field: int64 ticket_template_id = 1;
    */
-  ticketTemplateId: string;
+  ticketTemplateId: bigint;
 
   /**
-   * @generated from field: string template_name = 2;
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string template = 3;
+   */
+  template: string;
+
+  /**
+   * @generated from field: string template_entity_version = 4;
+   */
+  templateEntityVersion: string;
+
+  /**
+   * @generated from field: string template_name = 5;
    */
   templateName: string;
 
   /**
-   * @generated from field: string ticket_title = 5;
-   */
-  ticketTitle: string;
-
-  /**
-   * @generated from field: string ticket_description = 6;
-   */
-  ticketDescription: string;
-
-  /**
-   * @generated from field: api.commons.TemplateCondition title_condition = 7;
-   */
-  titleCondition?: TemplateCondition;
-
-  /**
-   * @generated from field: api.commons.TemplateCondition description_condition = 8;
-   */
-  descriptionCondition?: TemplateCondition;
-
-  /**
-   * @generated from field: repeated string ticket_assignee = 9;
-   */
-  ticketAssignee: string[];
-
-  /**
-   * @generated from field: api.commons.TemplateCondition assignee_condition = 10;
-   */
-  assigneeCondition?: TemplateCondition;
-
-  /**
-   * @generated from field: repeated api.commons.Sla ticket_sla = 11;
-   */
-  ticketSla: Sla[];
-
-  /**
-   * Action
-   *
-   * @generated from field: string action_type = 13;
-   */
-  actionType: string;
-
-  /**
-   * @generated from field: repeated api.commons.Skills action_skills = 14;
-   */
-  actionSkills: Skills[];
-
-  /**
-   * @generated from field: api.commons.TemplateCondition action_skills_condition = 15;
-   */
-  actionSkillsCondition?: TemplateCondition;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp action_expiry_date = 18;
-   */
-  actionExpiryDate?: Timestamp;
-
-  /**
-   * @generated from field: api.commons.TemplateCondition action_expiry_date_condition = 19;
-   */
-  actionExpiryDateCondition?: TemplateCondition;
-
-  /**
-   * @generated from field: repeated api.commons.Sla action_sla = 20;
-   */
-  actionSla: Sla[];
-
-  /**
-   * @generated from field: bool is_valid = 22;
-   */
-  isValid: boolean;
-
-  /**
-   * Action Types
-   *
-   * @generated from field: api.commons.TicketCallbackTemplate callback_default = 23;
-   */
-  callbackDefault?: TicketCallbackTemplate;
-
-  /**
-   * @generated from field: string created_by_id = 24;
+   * @generated from field: string created_by_id = 7;
    */
   createdById: string;
 
   /**
-   * @generated from field: google.protobuf.Timestamp created_date = 25;
+   * @generated from field: string modified_by = 8;
+   */
+  modifiedBy: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_date = 9;
    */
   createdDate?: Timestamp;
 
   /**
-   * @generated from field: api.commons.TemplateCondition ticket_callback_template_condition = 26;
+   * @generated from field: google.protobuf.Timestamp modified_date = 10;
    */
-  ticketCallbackTemplateCondition?: TemplateCondition;
+  modifiedDate?: Timestamp;
+
+  /**
+   * @generated from field: bool is_active = 11;
+   */
+  isActive: boolean;
 
   constructor(data?: PartialMessage<TicketTemplate>);
 
@@ -373,35 +290,6 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketTemplate;
 
   static equals(a: TicketTemplate | PlainMessage<TicketTemplate> | undefined, b: TicketTemplate | PlainMessage<TicketTemplate> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.TicketCallbackTemplate
- */
-export declare class TicketCallbackTemplate extends Message<TicketCallbackTemplate> {
-  /**
-   * @generated from field: string caller_id = 1;
-   */
-  callerId: string;
-
-  /**
-   * @generated from field: string country_code = 2;
-   */
-  countryCode: string;
-
-  constructor(data?: PartialMessage<TicketCallbackTemplate>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.TicketCallbackTemplate";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TicketCallbackTemplate;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TicketCallbackTemplate;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketCallbackTemplate;
-
-  static equals(a: TicketCallbackTemplate | PlainMessage<TicketCallbackTemplate> | undefined, b: TicketCallbackTemplate | PlainMessage<TicketCallbackTemplate> | undefined): boolean;
 }
 
 /**
