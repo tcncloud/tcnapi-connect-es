@@ -38,7 +38,6 @@ export const SmsNumberProvider = proto3.makeEnum(
     {no: 3, name: "PLIVO_PROVIDER"},
     {no: 4, name: "APEIRON_PROVIDER"},
     {no: 5, name: "AUSBURST_SMS_PROVIDER"},
-    {no: 6, name: "MEDIASAT_SMS_PROVIDER"},
   ],
 );
 
