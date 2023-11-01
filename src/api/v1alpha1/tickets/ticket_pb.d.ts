@@ -254,6 +254,23 @@ export declare class EditTicketTemplateResponse extends Message<EditTicketTempla
  * @generated from message api.v1alpha1.tickets.ListTicketTemplateRequest
  */
 export declare class ListTicketTemplateRequest extends Message<ListTicketTemplateRequest> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1;
+   */
+  ticketTemplateId: bigint;
+
+  /**
+   * @generated from field: int64 project_id = 2;
+   */
+  projectId: bigint;
+
+  /**
+   * List values based on TemplateId OR ProjectId. If no mask is sent, return all template's based on ORG Id
+   *
+   * @generated from field: google.protobuf.FieldMask request_mask = 3;
+   */
+  requestMask?: FieldMask;
+
   constructor(data?: PartialMessage<ListTicketTemplateRequest>);
 
   static readonly runtime: typeof proto3;
