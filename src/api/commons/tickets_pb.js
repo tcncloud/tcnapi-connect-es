@@ -91,10 +91,9 @@ export const ListTemplate = proto3.makeMessageType(
   () => [
     { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "project_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 3, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 4, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "action_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "is_valid", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 7, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "created_date", kind: "message", T: Timestamp },
     { no: 9, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },

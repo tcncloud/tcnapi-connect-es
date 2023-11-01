@@ -307,9 +307,9 @@ export declare class ListTemplate extends Message<ListTemplate> {
   templateName: string;
 
   /**
-   * @generated from field: int64 project_sid = 3 [jstype = JS_STRING];
+   * @generated from field: int64 project_id = 3 [jstype = JS_STRING];
    */
-  projectSid: string;
+  projectId: string;
 
   /**
    * @generated from field: string project_code = 4;
@@ -317,14 +317,9 @@ export declare class ListTemplate extends Message<ListTemplate> {
   projectCode: string;
 
   /**
-   * @generated from field: string action_type = 5;
+   * @generated from field: bool is_active = 6;
    */
-  actionType: string;
-
-  /**
-   * @generated from field: bool is_valid = 6;
-   */
-  isValid: boolean;
+  isActive: boolean;
 
   /**
    * @generated from field: string created_by_id = 7;
