@@ -2642,9 +2642,9 @@ export declare class SMSTransport extends Message<SMSTransport> {
  */
 export declare class AESEncryptionRef extends Message<AESEncryptionRef> {
   /**
-   * @generated from field: int64 aes_sid = 1;
+   * @generated from field: int64 aes_sid = 1 [jstype = JS_STRING];
    */
-  aesSid: bigint;
+  aesSid: string;
 
   constructor(data?: PartialMessage<AESEncryptionRef>);
 
@@ -2666,9 +2666,9 @@ export declare class AESEncryptionRef extends Message<AESEncryptionRef> {
  */
 export declare class PGPEncryptionRef extends Message<PGPEncryptionRef> {
   /**
-   * @generated from field: int64 pgp_sid = 1;
+   * @generated from field: int64 pgp_sid = 1 [jstype = JS_STRING];
    */
-  pgpSid: bigint;
+  pgpSid: string;
 
   constructor(data?: PartialMessage<PGPEncryptionRef>);
 
@@ -2690,9 +2690,9 @@ export declare class PGPEncryptionRef extends Message<PGPEncryptionRef> {
  */
 export declare class PasswordRef extends Message<PasswordRef> {
   /**
-   * @generated from field: int64 password_sid = 1;
+   * @generated from field: int64 password_sid = 1 [jstype = JS_STRING];
    */
-  passwordSid: bigint;
+  passwordSid: string;
 
   constructor(data?: PartialMessage<PasswordRef>);
 
@@ -2714,9 +2714,9 @@ export declare class PasswordRef extends Message<PasswordRef> {
  */
 export declare class SSHKeyRef extends Message<SSHKeyRef> {
   /**
-   * @generated from field: int64 ssh_key_sid = 1;
+   * @generated from field: int64 ssh_key_sid = 1 [jstype = JS_STRING];
    */
-  sshKeySid: bigint;
+  sshKeySid: string;
 
   constructor(data?: PartialMessage<SSHKeyRef>);
 

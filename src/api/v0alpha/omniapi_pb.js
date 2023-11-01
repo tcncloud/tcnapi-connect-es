@@ -757,6 +757,7 @@ export const GetNextQueuedTaskRequest = proto3.makeMessageType(
   "api.v0alpha.GetNextQueuedTaskRequest",
   () => [
     { no: 1, name: "skills", kind: "message", T: OmniConversationSkills },
+    { no: 2, name: "agent_skills", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 3 /* ScalarType.INT64 */} },
   ],
 );
 
