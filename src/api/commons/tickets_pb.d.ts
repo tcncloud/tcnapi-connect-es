@@ -253,27 +253,27 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
   templateName: string;
 
   /**
-   * @generated from field: string created_by_id = 7;
+   * @generated from field: string created_by_id = 6;
    */
   createdById: string;
 
   /**
-   * @generated from field: string modified_by = 8;
+   * @generated from field: string modified_by = 7;
    */
   modifiedBy: string;
 
   /**
-   * @generated from field: google.protobuf.Timestamp created_date = 9;
+   * @generated from field: google.protobuf.Timestamp created_date = 8;
    */
   createdDate?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp modified_date = 10;
+   * @generated from field: google.protobuf.Timestamp modified_date = 9;
    */
   modifiedDate?: Timestamp;
 
   /**
-   * @generated from field: bool is_active = 11;
+   * @generated from field: bool is_active = 10;
    */
   isActive: boolean;
 
@@ -312,9 +312,14 @@ export declare class ListTemplate extends Message<ListTemplate> {
   projectId: string;
 
   /**
-   * @generated from field: string project_code = 4;
+   * @generated from field: string template = 4;
    */
-  projectCode: string;
+  template: string;
+
+  /**
+   * @generated from field: string template_entity_version = 5;
+   */
+  templateEntityVersion: string;
 
   /**
    * @generated from field: bool is_active = 6;
@@ -356,34 +361,14 @@ export declare class ListTemplate extends Message<ListTemplate> {
  */
 export declare class AssignProjectTemplate extends Message<AssignProjectTemplate> {
   /**
-   * @generated from field: int64 ticket_template_id = 1 [jstype = JS_STRING];
+   * @generated from field: repeated int64 ticket_template_id = 1 [jstype = JS_STRING];
    */
-  ticketTemplateId: string;
+  ticketTemplateId: string[];
 
   /**
-   * @generated from field: string template_name = 2;
+   * @generated from field: int64 project_id = 2 [jstype = JS_STRING];
    */
-  templateName: string;
-
-  /**
-   * @generated from field: int64 project_sid = 3 [jstype = JS_STRING];
-   */
-  projectSid: string;
-
-  /**
-   * @generated from field: string project_code = 4;
-   */
-  projectCode: string;
-
-  /**
-   * @generated from field: string action_type = 5;
-   */
-  actionType: string;
-
-  /**
-   * @generated from field: string project_title = 6;
-   */
-  projectTitle: string;
+  projectId: string;
 
   constructor(data?: PartialMessage<AssignProjectTemplate>);
 
@@ -863,6 +848,13 @@ export declare class TicketProject extends Message<TicketProject> {
    */
   isActive: boolean;
 
+  /**
+   * Added ticket template ID & add in DB too
+   *
+   * @generated from field: repeated api.commons.TemplateDescription template_desc = 7;
+   */
+  templateDesc: TemplateDescription[];
+
   constructor(data?: PartialMessage<TicketProject>);
 
   static readonly runtime: typeof proto3;
@@ -876,6 +868,35 @@ export declare class TicketProject extends Message<TicketProject> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketProject;
 
   static equals(a: TicketProject | PlainMessage<TicketProject> | undefined, b: TicketProject | PlainMessage<TicketProject> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.TemplateDescription
+ */
+export declare class TemplateDescription extends Message<TemplateDescription> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1;
+   */
+  ticketTemplateId: bigint;
+
+  /**
+   * @generated from field: string template_name = 2;
+   */
+  templateName: string;
+
+  constructor(data?: PartialMessage<TemplateDescription>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TemplateDescription";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TemplateDescription;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TemplateDescription;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TemplateDescription;
+
+  static equals(a: TemplateDescription | PlainMessage<TemplateDescription> | undefined, b: TemplateDescription | PlainMessage<TemplateDescription> | undefined): boolean;
 }
 
 /**

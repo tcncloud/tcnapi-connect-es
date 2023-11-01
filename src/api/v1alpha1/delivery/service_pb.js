@@ -931,7 +931,7 @@ export const SMSTransport = proto3.makeMessageType(
 export const AESEncryptionRef = proto3.makeMessageType(
   "api.v1alpha1.delivery.AESEncryptionRef",
   () => [
-    { no: 1, name: "aes_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "aes_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
@@ -941,7 +941,7 @@ export const AESEncryptionRef = proto3.makeMessageType(
 export const PGPEncryptionRef = proto3.makeMessageType(
   "api.v1alpha1.delivery.PGPEncryptionRef",
   () => [
-    { no: 1, name: "pgp_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "pgp_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
@@ -951,7 +951,7 @@ export const PGPEncryptionRef = proto3.makeMessageType(
 export const PasswordRef = proto3.makeMessageType(
   "api.v1alpha1.delivery.PasswordRef",
   () => [
-    { no: 1, name: "password_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "password_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
@@ -961,7 +961,7 @@ export const PasswordRef = proto3.makeMessageType(
 export const SSHKeyRef = proto3.makeMessageType(
   "api.v1alpha1.delivery.SSHKeyRef",
   () => [
-    { no: 1, name: "ssh_key_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "ssh_key_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 

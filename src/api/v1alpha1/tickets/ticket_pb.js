@@ -117,7 +117,7 @@ export const ListTicketTemplateResponse = proto3.makeMessageType(
 export const AssignProjectTemplateRequest = proto3.makeMessageType(
   "api.v1alpha1.tickets.AssignProjectTemplateRequest",
   () => [
-    { no: 1, name: "project_template", kind: "message", T: AssignProjectTemplate, repeated: true },
+    { no: 1, name: "project_template", kind: "message", T: AssignProjectTemplate },
   ],
 );
 

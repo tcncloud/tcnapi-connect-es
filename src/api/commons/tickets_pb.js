@@ -75,11 +75,11 @@ export const TicketTemplate = proto3.makeMessageType(
     { no: 3, name: "template", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "template_entity_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "modified_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "created_date", kind: "message", T: Timestamp },
-    { no: 10, name: "modified_date", kind: "message", T: Timestamp },
-    { no: 11, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "modified_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "created_date", kind: "message", T: Timestamp },
+    { no: 9, name: "modified_date", kind: "message", T: Timestamp },
+    { no: 10, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -92,7 +92,8 @@ export const ListTemplate = proto3.makeMessageType(
     { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
-    { no: 4, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "template", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "template_entity_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 7, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "created_date", kind: "message", T: Timestamp },
@@ -106,12 +107,8 @@ export const ListTemplate = proto3.makeMessageType(
 export const AssignProjectTemplate = proto3.makeMessageType(
   "api.commons.AssignProjectTemplate",
   () => [
-    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
-    { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "project_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
-    { no: 4, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "action_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */, repeated: true },
+    { no: 2, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
@@ -261,6 +258,18 @@ export const TicketProject = proto3.makeMessageType(
     { no: 4, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "template_desc", kind: "message", T: TemplateDescription, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.TemplateDescription
+ */
+export const TemplateDescription = proto3.makeMessageType(
+  "api.commons.TemplateDescription",
+  () => [
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
