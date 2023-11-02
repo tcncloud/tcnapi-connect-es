@@ -268,7 +268,7 @@ export const TicketProject = proto3.makeMessageType(
 export const TemplateDescription = proto3.makeMessageType(
   "api.commons.TemplateDescription",
   () => [
-    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "template_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );

@@ -875,9 +875,9 @@ export declare class TicketProject extends Message<TicketProject> {
  */
 export declare class TemplateDescription extends Message<TemplateDescription> {
   /**
-   * @generated from field: int64 ticket_template_id = 1;
+   * @generated from field: int64 ticket_template_id = 1 [jstype = JS_STRING];
    */
-  ticketTemplateId: bigint;
+  ticketTemplateId: string;
 
   /**
    * @generated from field: string template_name = 2;
