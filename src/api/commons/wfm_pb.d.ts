@@ -2059,9 +2059,9 @@ export declare class SchedulingResultMetric extends Message<SchedulingResultMetr
 }
 
 /**
- * @generated from message api.commons.ClientHistoryCache
+ * @generated from message api.commons.ClientHistoryCacheInfo
  */
-export declare class ClientHistoryCache extends Message<ClientHistoryCache> {
+export declare class ClientHistoryCacheInfo extends Message<ClientHistoryCacheInfo> {
   /**
    * Current state that a client's cache is at.
    *
@@ -2076,18 +2076,18 @@ export declare class ClientHistoryCache extends Message<ClientHistoryCache> {
    */
   progressPercentage: number;
 
-  constructor(data?: PartialMessage<ClientHistoryCache>);
+  constructor(data?: PartialMessage<ClientHistoryCacheInfo>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.ClientHistoryCache";
+  static readonly typeName = "api.commons.ClientHistoryCacheInfo";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientHistoryCache;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientHistoryCacheInfo;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientHistoryCache;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientHistoryCacheInfo;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientHistoryCache;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientHistoryCacheInfo;
 
-  static equals(a: ClientHistoryCache | PlainMessage<ClientHistoryCache> | undefined, b: ClientHistoryCache | PlainMessage<ClientHistoryCache> | undefined): boolean;
+  static equals(a: ClientHistoryCacheInfo | PlainMessage<ClientHistoryCacheInfo> | undefined, b: ClientHistoryCacheInfo | PlainMessage<ClientHistoryCacheInfo> | undefined): boolean;
 }
 

@@ -604,10 +604,10 @@ export const SchedulingResultMetric = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.commons.ClientHistoryCache
+ * @generated from message api.commons.ClientHistoryCacheInfo
  */
-export const ClientHistoryCache = proto3.makeMessageType(
-  "api.commons.ClientHistoryCache",
+export const ClientHistoryCacheInfo = proto3.makeMessageType(
+  "api.commons.ClientHistoryCacheInfo",
   () => [
     { no: 1, name: "state", kind: "enum", T: proto3.getEnumType(HistoryCacheState) },
     { no: 2, name: "progress_percentage", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
