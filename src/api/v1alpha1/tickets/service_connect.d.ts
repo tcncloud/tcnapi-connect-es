@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignProjectTemplateRequest, AssignProjectTemplateResponse, AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, CreateTicketTemplateRequest, CreateTicketTemplateResponse, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, EditTicketTemplateRequest, EditTicketTemplateResponse, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListTicketTemplateRequest, ListTicketTemplateResponse, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -290,6 +290,50 @@ export declare const Tickets: {
       readonly name: "ChangeTicketStatus",
       readonly I: typeof ChangeTicketStatusRequest,
       readonly O: typeof ChangeTicketStatusResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to change the Status of a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.CreateTicketTemplate
+     */
+    readonly createTicketTemplate: {
+      readonly name: "CreateTicketTemplate",
+      readonly I: typeof CreateTicketTemplateRequest,
+      readonly O: typeof CreateTicketTemplateResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to change the Status of a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.EditTicketTemplate
+     */
+    readonly editTicketTemplate: {
+      readonly name: "EditTicketTemplate",
+      readonly I: typeof EditTicketTemplateRequest,
+      readonly O: typeof EditTicketTemplateResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to change the Status of a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.ListTicketTemplate
+     */
+    readonly listTicketTemplate: {
+      readonly name: "ListTicketTemplate",
+      readonly I: typeof ListTicketTemplateRequest,
+      readonly O: typeof ListTicketTemplateResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Public method to change the Status of a ticket
+     *
+     * @generated from rpc api.v1alpha1.tickets.Tickets.AssignTicketTemplate
+     */
+    readonly assignTicketTemplate: {
+      readonly name: "AssignTicketTemplate",
+      readonly I: typeof AssignProjectTemplateRequest,
+      readonly O: typeof AssignProjectTemplateResponse,
       readonly kind: MethodKind.Unary,
     },
   }

@@ -224,6 +224,168 @@ export declare class Ticket extends Message<Ticket> {
 }
 
 /**
+ * @generated from message api.commons.TicketTemplate
+ */
+export declare class TicketTemplate extends Message<TicketTemplate> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1;
+   */
+  ticketTemplateId: bigint;
+
+  /**
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string template = 3;
+   */
+  template: string;
+
+  /**
+   * @generated from field: string template_entity_version = 4;
+   */
+  templateEntityVersion: string;
+
+  /**
+   * @generated from field: string template_name = 5;
+   */
+  templateName: string;
+
+  /**
+   * @generated from field: string created_by_id = 6;
+   */
+  createdById: string;
+
+  /**
+   * @generated from field: string modified_by = 7;
+   */
+  modifiedBy: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_date = 8;
+   */
+  createdDate?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp modified_date = 9;
+   */
+  modifiedDate?: Timestamp;
+
+  /**
+   * @generated from field: bool is_active = 10;
+   */
+  isActive: boolean;
+
+  constructor(data?: PartialMessage<TicketTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TicketTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TicketTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TicketTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketTemplate;
+
+  static equals(a: TicketTemplate | PlainMessage<TicketTemplate> | undefined, b: TicketTemplate | PlainMessage<TicketTemplate> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ListTemplate
+ */
+export declare class ListTemplate extends Message<ListTemplate> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1 [jstype = JS_STRING];
+   */
+  ticketTemplateId: string;
+
+  /**
+   * @generated from field: string template_name = 2;
+   */
+  templateName: string;
+
+  /**
+   * @generated from field: int64 project_id = 3 [jstype = JS_STRING];
+   */
+  projectId: string;
+
+  /**
+   * @generated from field: string template = 4;
+   */
+  template: string;
+
+  /**
+   * @generated from field: string template_entity_version = 5;
+   */
+  templateEntityVersion: string;
+
+  /**
+   * @generated from field: bool is_active = 6;
+   */
+  isActive: boolean;
+
+  /**
+   * @generated from field: string created_by_id = 7;
+   */
+  createdById: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp created_date = 8;
+   */
+  createdDate?: Timestamp;
+
+  /**
+   * @generated from field: string project_title = 9;
+   */
+  projectTitle: string;
+
+  constructor(data?: PartialMessage<ListTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ListTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTemplate;
+
+  static equals(a: ListTemplate | PlainMessage<ListTemplate> | undefined, b: ListTemplate | PlainMessage<ListTemplate> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.AssignProjectTemplate
+ */
+export declare class AssignProjectTemplate extends Message<AssignProjectTemplate> {
+  /**
+   * @generated from field: repeated int64 ticket_template_id = 1 [jstype = JS_STRING];
+   */
+  ticketTemplateId: string[];
+
+  /**
+   * @generated from field: int64 project_id = 2 [jstype = JS_STRING];
+   */
+  projectId: string;
+
+  constructor(data?: PartialMessage<AssignProjectTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.AssignProjectTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignProjectTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignProjectTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignProjectTemplate;
+
+  static equals(a: AssignProjectTemplate | PlainMessage<AssignProjectTemplate> | undefined, b: AssignProjectTemplate | PlainMessage<AssignProjectTemplate> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.Duration
  */
 export declare class Duration extends Message<Duration> {
@@ -686,6 +848,13 @@ export declare class TicketProject extends Message<TicketProject> {
    */
   isActive: boolean;
 
+  /**
+   * Added ticket template ID & add in DB too
+   *
+   * @generated from field: repeated api.commons.TemplateDescription template_desc = 7;
+   */
+  templateDesc: TemplateDescription[];
+
   constructor(data?: PartialMessage<TicketProject>);
 
   static readonly runtime: typeof proto3;
@@ -699,6 +868,35 @@ export declare class TicketProject extends Message<TicketProject> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketProject;
 
   static equals(a: TicketProject | PlainMessage<TicketProject> | undefined, b: TicketProject | PlainMessage<TicketProject> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.TemplateDescription
+ */
+export declare class TemplateDescription extends Message<TemplateDescription> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1 [jstype = JS_STRING];
+   */
+  ticketTemplateId: string;
+
+  /**
+   * @generated from field: string template_name = 2;
+   */
+  templateName: string;
+
+  constructor(data?: PartialMessage<TemplateDescription>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TemplateDescription";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TemplateDescription;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TemplateDescription;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TemplateDescription;
+
+  static equals(a: TemplateDescription | PlainMessage<TemplateDescription> | undefined, b: TemplateDescription | PlainMessage<TemplateDescription> | undefined): boolean;
 }
 
 /**
