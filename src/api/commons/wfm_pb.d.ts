@@ -1221,6 +1221,41 @@ export declare enum BitmapType {
 }
 
 /**
+ * Enum representing the state of the history cache.
+ *
+ * @generated from enum api.commons.HistoryCacheState
+ */
+export declare enum HistoryCacheState {
+  /**
+   * Cache is not loaded and no loading attempts have been made.
+   *
+   * @generated from enum value: NOT_LOADED = 0;
+   */
+  NOT_LOADED = 0,
+
+  /**
+   * Cache is currently being loaded.
+   *
+   * @generated from enum value: LOADING = 1;
+   */
+  LOADING = 1,
+
+  /**
+   * Cache has been successfully loaded.
+   *
+   * @generated from enum value: LOADING_COMPLETE = 2;
+   */
+  LOADING_COMPLETE = 2,
+
+  /**
+   * Cache was attempted to be loaded but failed, and no new attempts have been made.
+   *
+   * @generated from enum value: LOADING_FAILED = 3;
+   */
+  LOADING_FAILED = 3,
+}
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
@@ -2021,5 +2056,38 @@ export declare class SchedulingResultMetric extends Message<SchedulingResultMetr
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SchedulingResultMetric;
 
   static equals(a: SchedulingResultMetric | PlainMessage<SchedulingResultMetric> | undefined, b: SchedulingResultMetric | PlainMessage<SchedulingResultMetric> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ClientHistoryCacheInfo
+ */
+export declare class ClientHistoryCacheInfo extends Message<ClientHistoryCacheInfo> {
+  /**
+   * Current state that a client's cache is at.
+   *
+   * @generated from field: api.commons.HistoryCacheState state = 1;
+   */
+  state: HistoryCacheState;
+
+  /**
+   * Percentage estimate of how much of the cache has been loaded.
+   *
+   * @generated from field: int32 progress_percentage = 2;
+   */
+  progressPercentage: number;
+
+  constructor(data?: PartialMessage<ClientHistoryCacheInfo>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ClientHistoryCacheInfo";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientHistoryCacheInfo;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientHistoryCacheInfo;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientHistoryCacheInfo;
+
+  static equals(a: ClientHistoryCacheInfo | PlainMessage<ClientHistoryCacheInfo> | undefined, b: ClientHistoryCacheInfo | PlainMessage<ClientHistoryCacheInfo> | undefined): boolean;
 }
 

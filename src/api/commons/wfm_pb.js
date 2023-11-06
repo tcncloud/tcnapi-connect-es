@@ -341,6 +341,21 @@ export const BitmapType = proto3.makeEnum(
 );
 
 /**
+ * Enum representing the state of the history cache.
+ *
+ * @generated from enum api.commons.HistoryCacheState
+ */
+export const HistoryCacheState = proto3.makeEnum(
+  "api.commons.HistoryCacheState",
+  [
+    {no: 0, name: "NOT_LOADED"},
+    {no: 1, name: "LOADING"},
+    {no: 2, name: "LOADING_COMPLETE"},
+    {no: 3, name: "LOADING_FAILED"},
+  ],
+);
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
@@ -585,6 +600,17 @@ export const SchedulingResultMetric = proto3.makeMessageType(
     { no: 4, name: "coverage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 5, name: "root_mean_square", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 6, name: "has_result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.ClientHistoryCacheInfo
+ */
+export const ClientHistoryCacheInfo = proto3.makeMessageType(
+  "api.commons.ClientHistoryCacheInfo",
+  () => [
+    { no: 1, name: "state", kind: "enum", T: proto3.getEnumType(HistoryCacheState) },
+    { no: 2, name: "progress_percentage", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
