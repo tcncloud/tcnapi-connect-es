@@ -12900,6 +12900,62 @@ export declare class GetTourPatternRes extends Message<GetTourPatternRes> {
 }
 
 /**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersReq
+ */
+export declare class GetTourPatternWithMembersReq extends Message<GetTourPatternWithMembersReq> {
+  /**
+   * ID of the Shift Template to get the Tour Pattern for.
+   *
+   * @generated from field: int64 shift_template_sid = 1;
+   */
+  shiftTemplateSid: bigint;
+
+  constructor(data?: PartialMessage<GetTourPatternWithMembersReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternWithMembersReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternWithMembersReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersReq;
+
+  static equals(a: GetTourPatternWithMembersReq | PlainMessage<GetTourPatternWithMembersReq> | undefined, b: GetTourPatternWithMembersReq | PlainMessage<GetTourPatternWithMembersReq> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersRes
+ */
+export declare class GetTourPatternWithMembersRes extends Message<GetTourPatternWithMembersRes> {
+  /**
+   * The requested Tour Pattern
+   *
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   */
+  tourPattern?: TourPattern;
+
+  constructor(data?: PartialMessage<GetTourPatternWithMembersRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternWithMembersRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternWithMembersRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersRes;
+
+  static equals(a: GetTourPatternWithMembersRes | PlainMessage<GetTourPatternWithMembersRes> | undefined, b: GetTourPatternWithMembersRes | PlainMessage<GetTourPatternWithMembersRes> | undefined): boolean;
+}
+
+/**
  * Request message for the DeleteTourPattern RPC.
  *
  * @generated from message api.v1alpha1.wfm.DeleteTourPatternReq

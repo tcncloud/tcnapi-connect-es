@@ -4425,6 +4425,30 @@ export const GetTourPatternRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersReq
+ */
+export const GetTourPatternWithMembersReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternWithMembersReq",
+  () => [
+    { no: 1, name: "shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersRes
+ */
+export const GetTourPatternWithMembersRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternWithMembersRes",
+  () => [
+    { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+  ],
+);
+
+/**
  * Request message for the DeleteTourPattern RPC.
  *
  * @generated from message api.v1alpha1.wfm.DeleteTourPatternReq
