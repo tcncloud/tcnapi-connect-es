@@ -12934,7 +12934,7 @@ export declare class GetTourPatternWithMembersReq extends Message<GetTourPattern
  */
 export declare class GetTourPatternWithMembersRes extends Message<GetTourPatternWithMembersRes> {
   /**
-   * The requested Tour Pattern
+   * The requested Tour Pattern with all member entities.
    *
    * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
    */
