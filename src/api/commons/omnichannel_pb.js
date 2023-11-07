@@ -1113,6 +1113,7 @@ export const OmniTaskState = proto3.makeMessageType(
     { no: 1, name: "destinations", kind: "message", T: OmniTaskState_Entry, repeated: true },
     { no: 2, name: "sources", kind: "message", T: OmniTaskState_Entry, repeated: true },
     { no: 3, name: "rule_set", kind: "message", T: ComplianceRuleSet },
+    { no: 4, name: "scrub_list_id", kind: "message", T: StringValue },
   ],
 );
 

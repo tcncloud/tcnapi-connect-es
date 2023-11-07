@@ -3722,6 +3722,13 @@ export declare class OmniTaskState extends Message<OmniTaskState> {
    */
   ruleSet?: ComplianceRuleSet;
 
+  /**
+   * scrub list id the task uses
+   *
+   * @generated from field: google.protobuf.StringValue scrub_list_id = 4;
+   */
+  scrubListId?: string;
+
   constructor(data?: PartialMessage<OmniTaskState>);
 
   static readonly runtime: typeof proto3;
