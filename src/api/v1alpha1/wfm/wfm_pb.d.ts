@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -987,55 +987,6 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HistoricalDataInterval;
 
   static equals(a: HistoricalDataInterval | PlainMessage<HistoricalDataInterval> | undefined, b: HistoricalDataInterval | PlainMessage<HistoricalDataInterval> | undefined): boolean;
-}
-
-/**
- * Request message for the GetClientHistoryCacheInfo RPC.
- *
- * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoReq
- */
-export declare class GetClientHistoryCacheInfoReq extends Message<GetClientHistoryCacheInfoReq> {
-  constructor(data?: PartialMessage<GetClientHistoryCacheInfoReq>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.GetClientHistoryCacheInfoReq";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetClientHistoryCacheInfoReq;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoReq;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoReq;
-
-  static equals(a: GetClientHistoryCacheInfoReq | PlainMessage<GetClientHistoryCacheInfoReq> | undefined, b: GetClientHistoryCacheInfoReq | PlainMessage<GetClientHistoryCacheInfoReq> | undefined): boolean;
-}
-
-/**
- * Response message for the GetClientHistoryCacheInfo RPC.
- *
- * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoRes
- */
-export declare class GetClientHistoryCacheInfoRes extends Message<GetClientHistoryCacheInfoRes> {
-  /**
-   * Cache info for the requested client.
-   *
-   * @generated from field: api.commons.ClientHistoryCacheInfo cache_info = 1;
-   */
-  cacheInfo?: ClientHistoryCacheInfo;
-
-  constructor(data?: PartialMessage<GetClientHistoryCacheInfoRes>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.GetClientHistoryCacheInfoRes";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetClientHistoryCacheInfoRes;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoRes;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoRes;
-
-  static equals(a: GetClientHistoryCacheInfoRes | PlainMessage<GetClientHistoryCacheInfoRes> | undefined, b: GetClientHistoryCacheInfoRes | PlainMessage<GetClientHistoryCacheInfoRes> | undefined): boolean;
 }
 
 /**
