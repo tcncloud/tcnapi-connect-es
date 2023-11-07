@@ -5517,6 +5517,60 @@ export declare class CreateAgentGroupRes extends Message<CreateAgentGroupRes> {
 }
 
 /**
+ * Request message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsRequest
+ */
+export declare class ListAgentScheduleGroupsRequest extends Message<ListAgentScheduleGroupsRequest> {
+  /**
+   * Any Node or ShiftTemplate.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity entity = 1;
+   */
+  entity?: ParentEntity;
+
+  constructor(data?: PartialMessage<ListAgentScheduleGroupsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListAgentScheduleGroupsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentScheduleGroupsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsRequest;
+
+  static equals(a: ListAgentScheduleGroupsRequest | PlainMessage<ListAgentScheduleGroupsRequest> | undefined, b: ListAgentScheduleGroupsRequest | PlainMessage<ListAgentScheduleGroupsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsResponse
+ */
+export declare class ListAgentScheduleGroupsResponse extends Message<ListAgentScheduleGroupsResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.wfm.AgentGroup agent_groups = 1;
+   */
+  agentGroups: AgentGroup[];
+
+  constructor(data?: PartialMessage<ListAgentScheduleGroupsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListAgentScheduleGroupsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentScheduleGroupsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsResponse;
+
+  static equals(a: ListAgentScheduleGroupsResponse | PlainMessage<ListAgentScheduleGroupsResponse> | undefined, b: ListAgentScheduleGroupsResponse | PlainMessage<ListAgentScheduleGroupsResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the UpdateAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.UpdateAgentGroupReq
