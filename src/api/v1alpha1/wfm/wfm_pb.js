@@ -1919,6 +1919,30 @@ export const CreateAgentGroupRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsRequest
+ */
+export const ListAgentScheduleGroupsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListAgentScheduleGroupsRequest",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ParentEntity },
+  ],
+);
+
+/**
+ * Response message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsResponse
+ */
+export const ListAgentScheduleGroupsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListAgentScheduleGroupsResponse",
+  () => [
+    { no: 1, name: "agent_groups", kind: "message", T: AgentGroup, repeated: true },
+  ],
+);
+
+/**
  * Request message for the UpdateAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.UpdateAgentGroupReq

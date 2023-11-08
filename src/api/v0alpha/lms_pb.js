@@ -2798,6 +2798,8 @@ export const EpicEntrypoint = proto3.makeMessageType(
     { no: 10, name: "flush_during_check", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "timezone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 13, name: "fields", kind: "message", T: Field, repeated: true },
+    { no: 14, name: "raw_json", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -2844,6 +2846,16 @@ export const SampleRequest = proto3.makeMessageType(
   "api.v0alpha.SampleRequest",
   () => [
     { no: 2, name: "http_body", kind: "message", T: HttpBody },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.EHREntityType
+ */
+export const EHREntityType = proto3.makeMessageType(
+  "api.v0alpha.EHREntityType",
+  () => [
+    { no: 1, name: "epic_entity", kind: "enum", T: proto3.getEnumType(EpicEntityType) },
   ],
 );
 

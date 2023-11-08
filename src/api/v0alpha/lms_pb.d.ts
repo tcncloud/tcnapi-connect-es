@@ -9171,6 +9171,20 @@ export declare class EpicEntrypoint extends Message<EpicEntrypoint> {
    */
   enabled: boolean;
 
+  /**
+   * The fields the user wants retrieved from the raw json response
+   *
+   * @generated from field: repeated api.v0alpha.Field fields = 13;
+   */
+  fields: Field[];
+
+  /**
+   * If we should return one column as raw json and not any specified fields for file template
+   *
+   * @generated from field: bool raw_json = 14;
+   */
+  rawJson: boolean;
+
   constructor(data?: PartialMessage<EpicEntrypoint>);
 
   static readonly runtime: typeof proto3;
@@ -9355,5 +9369,29 @@ export declare class SampleRequest extends Message<SampleRequest> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SampleRequest;
 
   static equals(a: SampleRequest | PlainMessage<SampleRequest> | undefined, b: SampleRequest | PlainMessage<SampleRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.EHREntityType
+ */
+export declare class EHREntityType extends Message<EHREntityType> {
+  /**
+   * @generated from field: api.v0alpha.EpicEntityType epic_entity = 1;
+   */
+  epicEntity: EpicEntityType;
+
+  constructor(data?: PartialMessage<EHREntityType>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.EHREntityType";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EHREntityType;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EHREntityType;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EHREntityType;
+
+  static equals(a: EHREntityType | PlainMessage<EHREntityType> | undefined, b: EHREntityType | PlainMessage<EHREntityType> | undefined): boolean;
 }
 
