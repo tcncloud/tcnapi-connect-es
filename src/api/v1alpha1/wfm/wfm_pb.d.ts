@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -987,6 +987,55 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HistoricalDataInterval;
 
   static equals(a: HistoricalDataInterval | PlainMessage<HistoricalDataInterval> | undefined, b: HistoricalDataInterval | PlainMessage<HistoricalDataInterval> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetClientHistoryCacheInfo RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoReq
+ */
+export declare class GetClientHistoryCacheInfoReq extends Message<GetClientHistoryCacheInfoReq> {
+  constructor(data?: PartialMessage<GetClientHistoryCacheInfoReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetClientHistoryCacheInfoReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetClientHistoryCacheInfoReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoReq;
+
+  static equals(a: GetClientHistoryCacheInfoReq | PlainMessage<GetClientHistoryCacheInfoReq> | undefined, b: GetClientHistoryCacheInfoReq | PlainMessage<GetClientHistoryCacheInfoReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetClientHistoryCacheInfo RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoRes
+ */
+export declare class GetClientHistoryCacheInfoRes extends Message<GetClientHistoryCacheInfoRes> {
+  /**
+   * Cache info for the requested client.
+   *
+   * @generated from field: api.commons.ClientHistoryCacheInfo cache_info = 1;
+   */
+  cacheInfo?: ClientHistoryCacheInfo;
+
+  constructor(data?: PartialMessage<GetClientHistoryCacheInfoRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetClientHistoryCacheInfoRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetClientHistoryCacheInfoRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetClientHistoryCacheInfoRes;
+
+  static equals(a: GetClientHistoryCacheInfoRes | PlainMessage<GetClientHistoryCacheInfoRes> | undefined, b: GetClientHistoryCacheInfoRes | PlainMessage<GetClientHistoryCacheInfoRes> | undefined): boolean;
 }
 
 /**
@@ -5514,6 +5563,60 @@ export declare class CreateAgentGroupRes extends Message<CreateAgentGroupRes> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateAgentGroupRes;
 
   static equals(a: CreateAgentGroupRes | PlainMessage<CreateAgentGroupRes> | undefined, b: CreateAgentGroupRes | PlainMessage<CreateAgentGroupRes> | undefined): boolean;
+}
+
+/**
+ * Request message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsRequest
+ */
+export declare class ListAgentScheduleGroupsRequest extends Message<ListAgentScheduleGroupsRequest> {
+  /**
+   * Any Node or ShiftTemplate.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity entity = 1;
+   */
+  entity?: ParentEntity;
+
+  constructor(data?: PartialMessage<ListAgentScheduleGroupsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListAgentScheduleGroupsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentScheduleGroupsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsRequest;
+
+  static equals(a: ListAgentScheduleGroupsRequest | PlainMessage<ListAgentScheduleGroupsRequest> | undefined, b: ListAgentScheduleGroupsRequest | PlainMessage<ListAgentScheduleGroupsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsResponse
+ */
+export declare class ListAgentScheduleGroupsResponse extends Message<ListAgentScheduleGroupsResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.wfm.AgentGroup agent_groups = 1;
+   */
+  agentGroups: AgentGroup[];
+
+  constructor(data?: PartialMessage<ListAgentScheduleGroupsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListAgentScheduleGroupsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentScheduleGroupsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentScheduleGroupsResponse;
+
+  static equals(a: ListAgentScheduleGroupsResponse | PlainMessage<ListAgentScheduleGroupsResponse> | undefined, b: ListAgentScheduleGroupsResponse | PlainMessage<ListAgentScheduleGroupsResponse> | undefined): boolean;
 }
 
 /**
@@ -12897,6 +13000,62 @@ export declare class GetTourPatternRes extends Message<GetTourPatternRes> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternRes;
 
   static equals(a: GetTourPatternRes | PlainMessage<GetTourPatternRes> | undefined, b: GetTourPatternRes | PlainMessage<GetTourPatternRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersReq
+ */
+export declare class GetTourPatternWithMembersReq extends Message<GetTourPatternWithMembersReq> {
+  /**
+   * ID of the Shift Template to get the Tour Pattern for.
+   *
+   * @generated from field: int64 shift_template_sid = 1;
+   */
+  shiftTemplateSid: bigint;
+
+  constructor(data?: PartialMessage<GetTourPatternWithMembersReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternWithMembersReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternWithMembersReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersReq;
+
+  static equals(a: GetTourPatternWithMembersReq | PlainMessage<GetTourPatternWithMembersReq> | undefined, b: GetTourPatternWithMembersReq | PlainMessage<GetTourPatternWithMembersReq> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersRes
+ */
+export declare class GetTourPatternWithMembersRes extends Message<GetTourPatternWithMembersRes> {
+  /**
+   * The requested Tour Pattern with all member entities.
+   *
+   * @generated from field: api.v1alpha1.wfm.TourPattern tour_pattern = 1;
+   */
+  tourPattern?: TourPattern;
+
+  constructor(data?: PartialMessage<GetTourPatternWithMembersRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.GetTourPatternWithMembersRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetTourPatternWithMembersRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetTourPatternWithMembersRes;
+
+  static equals(a: GetTourPatternWithMembersRes | PlainMessage<GetTourPatternWithMembersRes> | undefined, b: GetTourPatternWithMembersRes | PlainMessage<GetTourPatternWithMembersRes> | undefined): boolean;
 }
 
 /**

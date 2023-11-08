@@ -1436,6 +1436,11 @@ export declare class User extends Message<User> {
    */
   lastName: string;
 
+  /**
+   * @generated from field: bool is_active = 4;
+   */
+  isActive: boolean;
+
   constructor(data?: PartialMessage<User>);
 
   static readonly runtime: typeof proto3;

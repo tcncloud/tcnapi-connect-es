@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -324,6 +324,28 @@ export const HistoricalDataInterval = proto3.makeMessageType(
     { no: 14, name: "original_total_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 15, name: "original_total_abandoned_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 16, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
+ * Request message for the GetClientHistoryCacheInfo RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoReq
+ */
+export const GetClientHistoryCacheInfoReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetClientHistoryCacheInfoReq",
+  [],
+);
+
+/**
+ * Response message for the GetClientHistoryCacheInfo RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoRes
+ */
+export const GetClientHistoryCacheInfoRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetClientHistoryCacheInfoRes",
+  () => [
+    { no: 1, name: "cache_info", kind: "message", T: ClientHistoryCacheInfo },
   ],
 );
 
@@ -1893,6 +1915,30 @@ export const CreateAgentGroupRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.CreateAgentGroupRes",
   () => [
     { no: 1, name: "agent_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsRequest
+ */
+export const ListAgentScheduleGroupsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListAgentScheduleGroupsRequest",
+  () => [
+    { no: 1, name: "entity", kind: "message", T: ParentEntity },
+  ],
+);
+
+/**
+ * Response message for ListAgentScheduleGroups.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentScheduleGroupsResponse
+ */
+export const ListAgentScheduleGroupsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListAgentScheduleGroupsResponse",
+  () => [
+    { no: 1, name: "agent_groups", kind: "message", T: AgentGroup, repeated: true },
   ],
 );
 
@@ -4419,6 +4465,30 @@ export const GetTourPatternReq = proto3.makeMessageType(
  */
 export const GetTourPatternRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.GetTourPatternRes",
+  () => [
+    { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
+  ],
+);
+
+/**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersReq
+ */
+export const GetTourPatternWithMembersReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternWithMembersReq",
+  () => [
+    { no: 1, name: "shift_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for the GetTourPatternWithMembers RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.GetTourPatternWithMembersRes
+ */
+export const GetTourPatternWithMembersRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.GetTourPatternWithMembersRes",
   () => [
     { no: 1, name: "tour_pattern", kind: "message", T: TourPattern },
   ],
