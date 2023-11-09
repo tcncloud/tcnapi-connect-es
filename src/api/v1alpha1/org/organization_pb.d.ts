@@ -973,6 +973,21 @@ export declare class ListArchivedOrganizationsResponse_OrganizationDetails exten
    */
   lastScheduledDate?: Timestamp;
 
+  /**
+   * First enabled region's clientSid; will be deprecated for
+   * enabled_regions map.
+   *
+   * @generated from field: int64 client_sid = 6;
+   */
+  clientSid: bigint;
+
+  /**
+   * Default region org was first enbabled for.
+   *
+   * @generated from field: string region_id = 7;
+   */
+  regionId: string;
+
   constructor(data?: PartialMessage<ListArchivedOrganizationsResponse_OrganizationDetails>);
 
   static readonly runtime: typeof proto3;
