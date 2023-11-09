@@ -8,7 +8,6 @@ import { AbsentPolicyType, ChainOperator, CompareOperator, ComplianceListType, C
 import { CommType } from "../commons/communication_pb.js";
 import { Channel, ContentType } from "../commons/compliance_pb.js";
 import { StringArraySql } from "../commons/types_pb.js";
-import { HttpBody } from "../../google/api/httpbody_pb.js";
 
 /**
  * @generated from enum api.v0alpha.TimeUnit
@@ -2844,9 +2843,7 @@ export const EntityURL = proto3.makeMessageType(
  */
 export const SampleRequest = proto3.makeMessageType(
   "api.v0alpha.SampleRequest",
-  () => [
-    { no: 2, name: "http_body", kind: "message", T: HttpBody },
-  ],
+  [],
 );
 
 /**

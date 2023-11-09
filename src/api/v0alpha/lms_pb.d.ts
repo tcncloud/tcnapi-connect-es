@@ -9,7 +9,6 @@ import type { AbsentPolicyType, ChainOperator, CompareOperator, ComplianceListTy
 import type { CommType } from "../commons/communication_pb.js";
 import type { Channel, ContentType } from "../commons/compliance_pb.js";
 import type { StringArraySql } from "../commons/types_pb.js";
-import type { HttpBody } from "../../google/api/httpbody_pb.js";
 
 /**
  * @generated from enum api.v0alpha.TimeUnit
@@ -9351,11 +9350,6 @@ export declare class EntityURL extends Message<EntityURL> {
  * @generated from message api.v0alpha.SampleRequest
  */
 export declare class SampleRequest extends Message<SampleRequest> {
-  /**
-   * @generated from field: google.api.HttpBody http_body = 2;
-   */
-  httpBody?: HttpBody;
-
   constructor(data?: PartialMessage<SampleRequest>);
 
   static readonly runtime: typeof proto3;
