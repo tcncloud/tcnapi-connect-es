@@ -1166,6 +1166,16 @@ export declare enum RequestMethod {
   EPIC_GET_ACCOUNT = 3707,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_2 = 3708;
+   */
+  EPIC_RECEIVE_COMMUNICATION_2 = 3708,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC__RECEIVE_COMMUNICATION_3 = 3709;
+   */
+  EPIC__RECEIVE_COMMUNICATION_3 = 3709,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP = 3801;
    */
   NEWZWARE_PHONE_LOOKUP = 3801,
