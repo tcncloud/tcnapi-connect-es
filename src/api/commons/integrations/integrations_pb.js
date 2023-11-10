@@ -255,7 +255,7 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3706, name: "REQUEST_METHOD_EPIC_BOOK_APPOINTMENT", localName: "EPIC_BOOK_APPOINTMENT"},
     {no: 3707, name: "REQUEST_METHOD_EPIC_GET_ACCOUNT", localName: "EPIC_GET_ACCOUNT"},
     {no: 3708, name: "REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_2", localName: "EPIC_RECEIVE_COMMUNICATION_2"},
-    {no: 3709, name: "REQUEST_METHOD_EPIC__RECEIVE_COMMUNICATION_3", localName: "EPIC__RECEIVE_COMMUNICATION_3"},
+    {no: 3709, name: "REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_3", localName: "EPIC_RECEIVE_COMMUNICATION_3"},
     {no: 3801, name: "REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP", localName: "NEWZWARE_PHONE_LOOKUP"},
     {no: 3802, name: "REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY", localName: "NEWZWARE_ACCOUNT_INQUIRY"},
     {no: 3803, name: "REQUEST_METHOD_NEWZWARE_CC_PAYMENT", localName: "NEWZWARE_CC_PAYMENT"},
@@ -864,6 +864,8 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3705, name: "epic_find_appointment", kind: "message", T: ExecuteEpicFindAppointment, oneof: "value" },
     { no: 3706, name: "epic_book_appointment", kind: "message", T: ExecuteEpicBookAppointment, oneof: "value" },
     { no: 3707, name: "epic_get_account", kind: "message", T: ExecuteEpicGetAccount, oneof: "value" },
+    { no: 3708, name: "epic_receive_communication_2", kind: "message", T: ExecuteEpicReceiveCommunication2, oneof: "value" },
+    { no: 3709, name: "epic_receive_communication_3", kind: "message", T: ExecuteEpicReceiveCommunication3, oneof: "value" },
     { no: 3801, name: "newzware_phone_lookup", kind: "message", T: ExecuteNewzwarePhoneLookup, oneof: "value" },
     { no: 3802, name: "newzware_account_inquiry", kind: "message", T: ExecuteNewzwareAccountInquiry, oneof: "value" },
     { no: 3803, name: "newzware_cc_payment", kind: "message", T: ExecuteNewzwareCcPayment, oneof: "value" },
@@ -2612,6 +2614,22 @@ export const ExecuteEpicBookAppointment = proto3.makeMessageType(
  */
 export const ExecuteEpicGetAccount = proto3.makeMessageType(
   "api.commons.integrations.ExecuteEpicGetAccount",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicReceiveCommunication2
+ */
+export const ExecuteEpicReceiveCommunication2 = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicReceiveCommunication2",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicReceiveCommunication3
+ */
+export const ExecuteEpicReceiveCommunication3 = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicReceiveCommunication3",
   [],
 );
 

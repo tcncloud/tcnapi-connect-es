@@ -1171,9 +1171,9 @@ export declare enum RequestMethod {
   EPIC_RECEIVE_COMMUNICATION_2 = 3708,
 
   /**
-   * @generated from enum value: REQUEST_METHOD_EPIC__RECEIVE_COMMUNICATION_3 = 3709;
+   * @generated from enum value: REQUEST_METHOD_EPIC_RECEIVE_COMMUNICATION_3 = 3709;
    */
-  EPIC__RECEIVE_COMMUNICATION_3 = 3709,
+  EPIC_RECEIVE_COMMUNICATION_3 = 3709,
 
   /**
    * @generated from enum value: REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP = 3801;
@@ -3663,6 +3663,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteEpicGetAccount;
     case: "epicGetAccount";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicReceiveCommunication2 epic_receive_communication_2 = 3708;
+     */
+    value: ExecuteEpicReceiveCommunication2;
+    case: "epicReceiveCommunication2";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicReceiveCommunication3 epic_receive_communication_3 = 3709;
+     */
+    value: ExecuteEpicReceiveCommunication3;
+    case: "epicReceiveCommunication3";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteNewzwarePhoneLookup newzware_phone_lookup = 3801;
@@ -7912,6 +7924,44 @@ export declare class ExecuteEpicGetAccount extends Message<ExecuteEpicGetAccount
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicGetAccount;
 
   static equals(a: ExecuteEpicGetAccount | PlainMessage<ExecuteEpicGetAccount> | undefined, b: ExecuteEpicGetAccount | PlainMessage<ExecuteEpicGetAccount> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicReceiveCommunication2
+ */
+export declare class ExecuteEpicReceiveCommunication2 extends Message<ExecuteEpicReceiveCommunication2> {
+  constructor(data?: PartialMessage<ExecuteEpicReceiveCommunication2>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicReceiveCommunication2";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicReceiveCommunication2;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicReceiveCommunication2;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicReceiveCommunication2;
+
+  static equals(a: ExecuteEpicReceiveCommunication2 | PlainMessage<ExecuteEpicReceiveCommunication2> | undefined, b: ExecuteEpicReceiveCommunication2 | PlainMessage<ExecuteEpicReceiveCommunication2> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicReceiveCommunication3
+ */
+export declare class ExecuteEpicReceiveCommunication3 extends Message<ExecuteEpicReceiveCommunication3> {
+  constructor(data?: PartialMessage<ExecuteEpicReceiveCommunication3>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicReceiveCommunication3";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicReceiveCommunication3;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicReceiveCommunication3;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicReceiveCommunication3;
+
+  static equals(a: ExecuteEpicReceiveCommunication3 | PlainMessage<ExecuteEpicReceiveCommunication3> | undefined, b: ExecuteEpicReceiveCommunication3 | PlainMessage<ExecuteEpicReceiveCommunication3> | undefined): boolean;
 }
 
 /**
