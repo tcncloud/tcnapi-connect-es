@@ -30,6 +30,13 @@ export declare enum RoomType {
    * @generated from enum value: ROOM_TYPE_SYSTEM = 2;
    */
   SYSTEM = 2,
+
+  /**
+   * Newsroom channel - used to publish news articles
+   *
+   * @generated from enum value: ROOM_TYPE_NEWS = 3;
+   */
+  NEWS = 3,
 }
 
 /**

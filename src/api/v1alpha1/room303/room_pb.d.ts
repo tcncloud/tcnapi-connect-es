@@ -467,3 +467,24 @@ export declare class GetGlobalConfigResponse extends Message<GetGlobalConfigResp
   static equals(a: GetGlobalConfigResponse | PlainMessage<GetGlobalConfigResponse> | undefined, b: GetGlobalConfigResponse | PlainMessage<GetGlobalConfigResponse> | undefined): boolean;
 }
 
+/**
+ * request to create news room
+ *
+ * @generated from message api.v1alpha1.room303.CreateNewsRoomRequest
+ */
+export declare class CreateNewsRoomRequest extends Message<CreateNewsRoomRequest> {
+  constructor(data?: PartialMessage<CreateNewsRoomRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.room303.CreateNewsRoomRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateNewsRoomRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateNewsRoomRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateNewsRoomRequest;
+
+  static equals(a: CreateNewsRoomRequest | PlainMessage<CreateNewsRoomRequest> | undefined, b: CreateNewsRoomRequest | PlainMessage<CreateNewsRoomRequest> | undefined): boolean;
+}
+
