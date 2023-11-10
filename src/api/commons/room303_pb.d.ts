@@ -32,11 +32,11 @@ export declare enum RoomType {
   SYSTEM = 2,
 
   /**
-   * Newsroom channel - used to publish news articles
+   * Global system channel - used for global messages
    *
-   * @generated from enum value: ROOM_TYPE_NEWS = 3;
+   * @generated from enum value: ROOM_TYPE_GLOBAL_SYSTEM = 3;
    */
-  NEWS = 3,
+  GLOBAL_SYSTEM = 3,
 }
 
 /**

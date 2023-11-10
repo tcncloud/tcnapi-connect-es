@@ -7,7 +7,7 @@ import { AddRoomMemberRequest, GetRoomMemberRequest, JoinRoomRequest, ListRoomMe
 import { Member, Room } from "../../commons/room303_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { BulkMarkMessageReadRequest, BulkMarkMessageReadResponse, CreateMessageRequest, CreateMessageResponse, DeleteMessageRequest, DeleteMessageResponse, EditMessageRequest, EditMessageResponse, GetMessagesRequest, GetMessagesResponse, GetUnreadStatsRequest, GetUnreadStatsResponse, MarkAllMessagesReadRequest, MarkAllMessagesReadResponse, MarkMessageReadRequest, MarkMessageReadResponse, StreamMessageUpdatesRequest, StreamMessageUpdatesResponse } from "./message_pb.js";
-import { ArchiveRoomRequest, CreateNewsRoomRequest, CreateRoomRequest, GetGlobalConfigRequest, GetGlobalConfigResponse, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersNamesRequest, ListUsersNamesResponse, UpdateGlobalConfigRequest, UpdateGlobalConfigResponse, UpdateRoomConfigRequest } from "./room_pb.js";
+import { ArchiveRoomRequest, CreateRoomRequest, GetGlobalConfigRequest, GetGlobalConfigResponse, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersNamesRequest, ListUsersNamesResponse, UpdateGlobalConfigRequest, UpdateGlobalConfigResponse, UpdateRoomConfigRequest } from "./room_pb.js";
 
 /**
  * @generated from service api.v1alpha1.room303.Room303API
@@ -260,19 +260,6 @@ export const Room303API = {
       name: "GetGlobalConfig",
       I: GetGlobalConfigRequest,
       O: GetGlobalConfigResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     *
-     * CreateNewsRoom
-     *
-     *
-     * @generated from rpc api.v1alpha1.room303.Room303API.CreateNewsRoom
-     */
-    createNewsRoom: {
-      name: "CreateNewsRoom",
-      I: CreateNewsRoomRequest,
-      O: Room,
       kind: MethodKind.Unary,
     },
   }

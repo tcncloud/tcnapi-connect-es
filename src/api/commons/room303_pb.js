@@ -14,7 +14,7 @@ export const RoomType = proto3.makeEnum(
     {no: 0, name: "ROOM_TYPE_DIRECT", localName: "DIRECT"},
     {no: 1, name: "ROOM_TYPE_MULTI", localName: "MULTI"},
     {no: 2, name: "ROOM_TYPE_SYSTEM", localName: "SYSTEM"},
-    {no: 3, name: "ROOM_TYPE_NEWS", localName: "NEWS"},
+    {no: 3, name: "ROOM_TYPE_GLOBAL_SYSTEM", localName: "GLOBAL_SYSTEM"},
   ],
 );
 

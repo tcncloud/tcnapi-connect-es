@@ -173,13 +173,3 @@ export const GetGlobalConfigResponse = proto3.makeMessageType(
   ],
 );
 
-/**
- * request to create news room
- *
- * @generated from message api.v1alpha1.room303.CreateNewsRoomRequest
- */
-export const CreateNewsRoomRequest = proto3.makeMessageType(
-  "api.v1alpha1.room303.CreateNewsRoomRequest",
-  [],
-);
-
