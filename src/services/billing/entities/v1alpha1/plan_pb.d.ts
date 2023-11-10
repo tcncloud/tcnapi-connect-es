@@ -7,6 +7,35 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * BillingPlanStatus represents the status of a billing plan
+ *
+ * @generated from enum services.billing.entities.v1alpha1.BillingPlanStatus
+ */
+export declare enum BillingPlanStatus {
+  /**
+   * @generated from enum value: BILLING_PLAN_STATUS_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * A billing plan is initially created in "creating" status
+   * and is transitioned to "created" explicitly by committing
+   * the billing plan changes.
+   *
+   * @generated from enum value: BILLING_PLAN_STATUS_CREATING = 100;
+   */
+  CREATING = 100,
+
+  /**
+   * A billing plan is in "created" status when it is ready to
+   * be used.
+   *
+   * @generated from enum value: BILLING_PLAN_STATUS_CREATED = 200;
+   */
+  CREATED = 200,
+}
+
+/**
  * BillingPlan represents a collection of rate definitions
  *
  * @generated from message services.billing.entities.v1alpha1.BillingPlan
@@ -60,6 +89,13 @@ export declare class BillingPlan extends Message<BillingPlan> {
    * @generated from field: repeated string rate_definition_ids = 7;
    */
   rateDefinitionIds: string[];
+
+  /**
+   * the billing plan status
+   *
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlanStatus status = 8;
+   */
+  status: BillingPlanStatus;
 
   constructor(data?: PartialMessage<BillingPlan>);
 

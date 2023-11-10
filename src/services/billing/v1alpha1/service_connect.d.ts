@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
+import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
@@ -14,6 +14,49 @@ import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, Dele
 export declare const BillingService: {
   readonly typeName: "services.billing.v1alpha1.BillingService",
   readonly methods: {
+    /**
+     * Commits a billing plan for the ORG, finalizing it's creation and allowing it
+     * to become active.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.FailedPrecondition: The billing plan is already committed.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.CommitBillingPlan
+     */
+    readonly commitBillingPlan: {
+      readonly name: "CommitBillingPlan",
+      readonly I: typeof CommitBillingPlanRequest,
+      readonly O: typeof CommitBillingPlanResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Commits a default billing plan for the REGION, finalizing it's creation and allowing it
+     * to become active.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
+     * Errors:
+     *   - grpc.FailedPrecondition: The default billing plan is already committed.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified default billing plan doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.CommitDefaultBillingPlan
+     */
+    readonly commitDefaultBillingPlan: {
+      readonly name: "CommitDefaultBillingPlan",
+      readonly I: typeof CommitDefaultBillingPlanRequest,
+      readonly O: typeof CommitDefaultBillingPlanResponse,
+      readonly kind: MethodKind.Unary,
+    },
     /**
      * Creates a billing plan for the ORG.
      * Required permissions:

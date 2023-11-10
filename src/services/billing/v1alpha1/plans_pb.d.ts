@@ -9,6 +9,92 @@ import type { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
 import type { Page, Sort } from "./core_pb.js";
 
 /**
+ * @generated from message services.billing.v1alpha1.CommitBillingPlanRequest
+ */
+export declare class CommitBillingPlanRequest extends Message<CommitBillingPlanRequest> {
+  /**
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  constructor(data?: PartialMessage<CommitBillingPlanRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.CommitBillingPlanRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CommitBillingPlanRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CommitBillingPlanRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CommitBillingPlanRequest;
+
+  static equals(a: CommitBillingPlanRequest | PlainMessage<CommitBillingPlanRequest> | undefined, b: CommitBillingPlanRequest | PlainMessage<CommitBillingPlanRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.CommitBillingPlanResponse
+ */
+export declare class CommitBillingPlanResponse extends Message<CommitBillingPlanResponse> {
+  constructor(data?: PartialMessage<CommitBillingPlanResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.CommitBillingPlanResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CommitBillingPlanResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CommitBillingPlanResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CommitBillingPlanResponse;
+
+  static equals(a: CommitBillingPlanResponse | PlainMessage<CommitBillingPlanResponse> | undefined, b: CommitBillingPlanResponse | PlainMessage<CommitBillingPlanResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.CommitDefaultBillingPlanRequest
+ */
+export declare class CommitDefaultBillingPlanRequest extends Message<CommitDefaultBillingPlanRequest> {
+  /**
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  constructor(data?: PartialMessage<CommitDefaultBillingPlanRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.CommitDefaultBillingPlanRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CommitDefaultBillingPlanRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CommitDefaultBillingPlanRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CommitDefaultBillingPlanRequest;
+
+  static equals(a: CommitDefaultBillingPlanRequest | PlainMessage<CommitDefaultBillingPlanRequest> | undefined, b: CommitDefaultBillingPlanRequest | PlainMessage<CommitDefaultBillingPlanRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.CommitDefaultBillingPlanResponse
+ */
+export declare class CommitDefaultBillingPlanResponse extends Message<CommitDefaultBillingPlanResponse> {
+  constructor(data?: PartialMessage<CommitDefaultBillingPlanResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.CommitDefaultBillingPlanResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CommitDefaultBillingPlanResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CommitDefaultBillingPlanResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CommitDefaultBillingPlanResponse;
+
+  static equals(a: CommitDefaultBillingPlanResponse | PlainMessage<CommitDefaultBillingPlanResponse> | undefined, b: CommitDefaultBillingPlanResponse | PlainMessage<CommitDefaultBillingPlanResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message services.billing.v1alpha1.CreateBillingPlanRequest
  */
 export declare class CreateBillingPlanRequest extends Message<CreateBillingPlanRequest> {

@@ -8,6 +8,42 @@ import { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
 import { Page, Sort } from "./core_pb.js";
 
 /**
+ * @generated from message services.billing.v1alpha1.CommitBillingPlanRequest
+ */
+export const CommitBillingPlanRequest = proto3.makeMessageType(
+  "services.billing.v1alpha1.CommitBillingPlanRequest",
+  () => [
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.CommitBillingPlanResponse
+ */
+export const CommitBillingPlanResponse = proto3.makeMessageType(
+  "services.billing.v1alpha1.CommitBillingPlanResponse",
+  [],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.CommitDefaultBillingPlanRequest
+ */
+export const CommitDefaultBillingPlanRequest = proto3.makeMessageType(
+  "services.billing.v1alpha1.CommitDefaultBillingPlanRequest",
+  () => [
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.CommitDefaultBillingPlanResponse
+ */
+export const CommitDefaultBillingPlanResponse = proto3.makeMessageType(
+  "services.billing.v1alpha1.CommitDefaultBillingPlanResponse",
+  [],
+);
+
+/**
  * @generated from message services.billing.v1alpha1.CreateBillingPlanRequest
  */
 export const CreateBillingPlanRequest = proto3.makeMessageType(

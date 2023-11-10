@@ -6,6 +6,20 @@
 import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * BillingPlanStatus represents the status of a billing plan
+ *
+ * @generated from enum services.billing.entities.v1alpha1.BillingPlanStatus
+ */
+export const BillingPlanStatus = proto3.makeEnum(
+  "services.billing.entities.v1alpha1.BillingPlanStatus",
+  [
+    {no: 0, name: "BILLING_PLAN_STATUS_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 100, name: "BILLING_PLAN_STATUS_CREATING", localName: "CREATING"},
+    {no: 200, name: "BILLING_PLAN_STATUS_CREATED", localName: "CREATED"},
+  ],
+);
+
+/**
  * BillingPlan represents a collection of rate definitions
  *
  * @generated from message services.billing.entities.v1alpha1.BillingPlan
@@ -20,6 +34,7 @@ export const BillingPlan = proto3.makeMessageType(
     { no: 5, name: "end_time", kind: "message", T: Timestamp },
     { no: 6, name: "delete_time", kind: "message", T: Timestamp },
     { no: 7, name: "rate_definition_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "status", kind: "enum", T: proto3.getEnumType(BillingPlanStatus) },
   ],
 );
 
