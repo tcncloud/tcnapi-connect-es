@@ -30,6 +30,13 @@ export declare enum RoomType {
    * @generated from enum value: ROOM_TYPE_SYSTEM = 2;
    */
   SYSTEM = 2,
+
+  /**
+   * Global system channel - used for global messages
+   *
+   * @generated from enum value: ROOM_TYPE_GLOBAL_SYSTEM = 3;
+   */
+  GLOBAL_SYSTEM = 3,
 }
 
 /**
