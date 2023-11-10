@@ -719,5 +719,57 @@ export declare enum EventType {
    * @generated from enum value: LMS_PIPELINE_FAILURE_EVENT = 900;
    */
   LMS_PIPELINE_FAILURE_EVENT = 900,
+
+  /**
+   * Billing Events
+   *
+   * @generated from enum value: EVENT_TYPE_BILLING_CREATE_BILLING_PLAN = 1000;
+   */
+  EVENT_TYPE_BILLING_CREATE_BILLING_PLAN = 1000,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_CREATE_INVOICE = 1001;
+   */
+  EVENT_TYPE_BILLING_CREATE_INVOICE = 1001,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_CREATE_RATE_DEFINITION = 1002;
+   */
+  EVENT_TYPE_BILLING_CREATE_RATE_DEFINITION = 1002,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_DELETE_BILLING_PLAN = 1003;
+   */
+  EVENT_TYPE_BILLING_DELETE_BILLING_PLAN = 1003,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_DELETE_INVOICE = 1004;
+   */
+  EVENT_TYPE_BILLING_DELETE_INVOICE = 1004,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_DELETE_RATE_DEFINITION = 1005;
+   */
+  EVENT_TYPE_BILLING_DELETE_RATE_DEFINITION = 1005,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_EXPORT_INVOICE = 1006;
+   */
+  EVENT_TYPE_BILLING_EXPORT_INVOICE = 1006,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_UPDATE_BILLING_PLAN = 1007;
+   */
+  EVENT_TYPE_BILLING_UPDATE_BILLING_PLAN = 1007,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_UPDATE_INVOICE = 1008;
+   */
+  EVENT_TYPE_BILLING_UPDATE_INVOICE = 1008,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION = 1009;
+   */
+  EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION = 1009,
 }
 
