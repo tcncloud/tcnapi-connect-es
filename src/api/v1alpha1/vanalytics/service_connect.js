@@ -13,6 +13,7 @@ import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse, SearchFlagTr
 import { CreateFlagFilterRequest, DeleteFlagFilterRequest, DeleteFlagFilterResponse, FlagFilter, ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
 import { ListFlagSnapshotsRequest, ListFlagSnapshotsResponse } from "./flag_snapshot_pb.js";
 import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
+import { Correction, CreateCorrectionRequest, CreateCorrectionResponse, DeleteCorrectionRequest, DeleteCorrectionResponse, GetCorrectionRequest, ListCorrectionsRequest, ListCorrectionsResponse, UpdateCorrectionRequest, UpdateCorrectionResponse } from "./correction_pb.js";
 
 /**
  * @generated from service api.v1alpha1.vanalytics.Vanalytics
@@ -331,6 +332,61 @@ export const Vanalytics = {
       name: "ListFlagTranscriptFilters",
       I: ListFlagTranscriptFiltersRequest,
       O: ListFlagTranscriptFiltersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * CreateCorrection creates a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.CreateCorrection
+     */
+    createCorrection: {
+      name: "CreateCorrection",
+      I: CreateCorrectionRequest,
+      O: CreateCorrectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetCorrection gets a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.GetCorrection
+     */
+    getCorrection: {
+      name: "GetCorrection",
+      I: GetCorrectionRequest,
+      O: Correction,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteCorrection deletes a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.DeleteCorrection
+     */
+    deleteCorrection: {
+      name: "DeleteCorrection",
+      I: DeleteCorrectionRequest,
+      O: DeleteCorrectionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListCorrections lists corrections.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.ListCorrections
+     */
+    listCorrections: {
+      name: "ListCorrections",
+      I: ListCorrectionsRequest,
+      O: ListCorrectionsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateCorrection updates a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.UpdateCorrection
+     */
+    updateCorrection: {
+      name: "UpdateCorrection",
+      I: UpdateCorrectionRequest,
+      O: UpdateCorrectionResponse,
       kind: MethodKind.Unary,
     },
   }

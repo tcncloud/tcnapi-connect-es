@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes } from "./wfm_pb.js";
+import { BuildAgentDiagnosticsReq, BuildAgentDiagnosticsRes, BuildCallProfileTemplateForSkillProfileReq, BuildCallProfileTemplateForSkillProfileRes, BuildCallProfileTemplateReq, BuildCallProfileTemplateRes, BuildDOWAndMOYProfilesReq, BuildDOWAndMOYProfilesRes, BuildDraftScheduleReq, BuildDraftScheduleRes, BuildGlobalDiagnosticsReq, BuildGlobalDiagnosticsRes, BuildNodeDiagnosticsReq, BuildNodeDiagnosticsRes, BuildProfileForecastByIntervalReq, BuildProfileForecastByIntervalWithStatsReq, BuildProfileForecastByIntervalWithStatsRes, BuildRegressionForecastByIntervalReq, BuildRegressionForecastByIntervalWithStatsReq, BuildRegressionForecastByIntervalWithStatsRes, BuildShiftTemplateDiagnosticsReq, BuildShiftTemplateDiagnosticsRes, CalculateTrainingDataAveragesForSkillProfileReq, CalculateTrainingDataAveragesForSkillProfileRes, CallDataByInterval, ClearScheduleReq, ClearScheduleRes, CopyScenarioReq, CopyScenarioRes, CopyScheduleToScheduleReq, CopyScheduleToScheduleRes, CopyShiftInstancesToScheduleReq, CopyShiftInstancesToScheduleRes, CreateAgentAvailabilityPatternReq, CreateAgentAvailabilityPatternRes, CreateAgentGroupReq, CreateAgentGroupRes, CreateCallProfileTemplateReq, CreateCallProfileTemplateRes, CreateClientNodeReq, CreateClientNodeRes, CreateConstraintRuleReq, CreateConstraintRuleRes, CreateDraftScheduleReq, CreateDraftScheduleRes, CreateInactiveSkillProfileMappingReq, CreateInactiveSkillProfileMappingRes, CreateLocationNodeReq, CreateLocationNodeRes, CreateNonSkillActivityReq, CreateNonSkillActivityRes, CreateOpenTimesPatternReq, CreateOpenTimesPatternRes, CreatePlacementRuleReq, CreatePlacementRuleRes, CreateProgramNodeReq, CreateProgramNodeRes, CreateRegressionTemplateReq, CreateRegressionTemplateRes, CreateScheduleScenarioWithNodesReq, CreateScheduleScenarioWithNodesRes, CreateShiftInstanceReq, CreateShiftInstanceRes, CreateShiftInstanceV2Req, CreateShiftInstanceV2Res, CreateShiftTemplateReq, CreateShiftTemplateRes, CreateSkillProficienciesReq, CreateSkillProficienciesRes, CreateSkillProfileGroupReq, CreateSkillProfileGroupRes, CreateTourAgentCollectionReq, CreateTourAgentCollectionRes, CreateTourAgentCollectionWFMAgentsReq, CreateTourAgentCollectionWFMAgentsRes, CreateTourPatternReq, CreateTourPatternRes, CreateTourShiftInstanceConfigReq, CreateTourShiftInstanceConfigRes, CreateTourShiftSegmentConfigReq, CreateTourShiftSegmentConfigRes, CreateTourWeekPatternReq, CreateTourWeekPatternRes, CreateWFMAgentMembershipsReq, CreateWFMAgentMembershipsRes, DeleteAgentAvailabilityPatternReq, DeleteAgentAvailabilityPatternRes, DeleteCallProfileTemplateReq, DeleteCallProfileTemplateRes, DeleteConstraintRuleReq, DeleteConstraintRuleRes, DeleteDraftScheduleReq, DeleteDraftScheduleRes, DeleteForecastIntervalsReq, DeleteForecastIntervalsRes, DeleteHistoricalDataDeltasReq, DeleteHistoricalDataDeltasRes, DeleteOpenTimesPatternReq, DeleteOpenTimesPatternRes, DeletePlacementRuleReq, DeletePlacementRuleRes, DeleteRegressionTemplateReq, DeleteRegressionTemplateRes, DeleteSchedulingTargetReq, DeleteSchedulingTargetRes, DeleteShiftInstancesReq, DeleteShiftInstancesRes, DeleteSkillProficiencyReq, DeleteSkillProficiencyRes, DeleteTourAgentCollectionsReq, DeleteTourAgentCollectionsRes, DeleteTourAgentCollectionWFMAgentsReq, DeleteTourAgentCollectionWFMAgentsRes, DeleteTourPatternReq, DeleteTourPatternRes, DeleteTourShiftInstanceConfigsReq, DeleteTourShiftInstanceConfigsRes, DeleteTourShiftSegmentConfigsReq, DeleteTourShiftSegmentConfigsRes, DeleteTourWeekPatternsReq, DeleteTourWeekPatternsRes, DeleteWFMAgentMembershipsReq, DeleteWFMAgentMembershipsRes, DeleteWFMAgentsMembershipsReq, DeleteWFMAgentsMembershipsRes, DisconnectInactiveSkillProfileMappingReq, DisconnectInactiveSkillProfileMappingRes, GenerateTourWeekPatternsReq, GenerateTourWeekPatternsRes, GetAvailabilityBitmapsReq, GetAvailabilityBitmapsRes, GetAvailableRegressionForecasterModelTypesReq, GetAvailableRegressionForecasterModelTypesRes, GetClientHistoryCacheInfoReq, GetClientHistoryCacheInfoRes, GetDefaultSchedulingTargetReq, GetDefaultSchedulingTargetRes, GetDraftScheduleReq, GetDraftScheduleRequiredCallsReq, GetDraftScheduleRequiredCallsRes, GetDraftScheduleRes, GetForecastingParametersReq, GetForecastingParametersRes, GetLastSkillProfileResyncDateReq, GetLastSkillProfileResyncDateRes, GetOpenTimesBitmapsReq, GetOpenTimesBitmapsRes, GetPerformanceMetricsReq, GetPerformanceMetricsRes, GetPublishedScheduleReq, GetPublishedScheduleRequiredCallsReq, GetPublishedScheduleRequiredCallsRes, GetPublishedScheduleRes, GetSchedulingTargetReq, GetSchedulingTargetRes, GetSkillProfileReq, GetSkillProfileRes, GetSkillProfilesCountReq, GetSkillProfilesCountRes, GetTourPatternDiagnosticsReq, GetTourPatternDiagnosticsRes, GetTourPatternReq, GetTourPatternRes, GetTourPatternWithMembersReq, GetTourPatternWithMembersRes, ListAgentScheduleGroupsRequest, ListAgentScheduleGroupsResponse, ListAllWFMAgentsReq, ListAllWFMAgentsRes, ListCallProfileTemplatesReq, ListCallProfileTemplatesRes, ListCandidateSchedulingActivitiesReq, ListCandidateSchedulingActivitiesRes, ListCandidateWFMAgentsReq, ListCandidateWFMAgentsRes, ListConfigEntitiesReq, ListConfigEntitiesRes, ListDraftSchedulesReq, ListDraftSchedulesRes, ListForecastIntervalsForSkillProfileReq, ListForecastIntervalsReq, ListHistoricalDataForAllSkillProfilesReq, ListHistoricalDataForAllSkillProfilesRes, ListHistoricalDataReq, ListHistoricalDataRes, ListNonSkillActivitiesReq, ListNonSkillActivitiesRes, ListNonSkillActivityAssociationsReq, ListNonSkillActivityAssociationsRes, ListProgramNodesBySidReq, ListProgramNodesBySidRes, ListRegressionTemplatesReq, ListRegressionTemplatesRes, ListRequiredCallsIntervalsReq, ListRequiredCallsIntervalsRes, ListShiftInstancesBySidReq, ListShiftInstancesBySidRes, ListShiftInstanceSidsForAgentReq, ListShiftInstanceSidsForAgentRes, ListShiftSegmentsByShiftInstanceSidsReq, ListShiftSegmentsByShiftInstanceSidsRes, ListShiftTemplatesBySidsReq, ListShiftTemplatesBySidsRes, ListSkillProfileGroupsReq, ListSkillProfileGroupsRes, ListSkillProfilesReq, ListSkillProfilesRes, ListSkillsReq, ListSkillsRes, ListTopSkillProfilesReq, ListTopSkillProfilesRes, ListTourAgentCollectionsReq, ListTourAgentCollectionsRes, ListTourAgentCollectionWFMAgentsReq, ListTourAgentCollectionWFMAgentsRes, ListTourShiftInstanceConfigsReq, ListTourShiftInstanceConfigsRes, ListTourShiftSegmentConfigsReq, ListTourShiftSegmentConfigsRes, ListTourWeekPatternsReq, ListTourWeekPatternsRes, ListUngroupedWFMAgentsReq, ListUngroupedWFMAgentsRes, ListWFMAgentsAssociatedWithAgentGroupReq, ListWFMAgentsAssociatedWithAgentGroupRes, ListWFMAgentSidsReq, ListWFMAgentSidsRes, PublishDraftScheduleReq, PublishDraftScheduleRes, ResetDraftScheduleReq, ResetDraftScheduleRes, ResyncSkillProfilesReq, ResyncSkillProfilesRes, SetDefaultSchedulingTargetReq, SetDefaultSchedulingTargetRes, SetSchedulingTargetReq, SetSchedulingTargetRes, SplitShiftInstanceReq, SplitShiftInstanceRes, SwapShiftInstancesReq, SwapShiftInstancesRes, UpdateAgentAvailabilityPatternReq, UpdateAgentAvailabilityPatternRes, UpdateAgentGroupReq, UpdateAgentGroupRes, UpdateCallCenterNodeReq, UpdateCallCenterNodeRes, UpdateClientNodeReq, UpdateClientNodeRes, UpdateConstraintRuleReq, UpdateConstraintRuleRes, UpdateDraftScheduleReq, UpdateDraftScheduleRes, UpdateLocationNodeReq, UpdateLocationNodeRes, UpdateNonSkillActivityReq, UpdateNonSkillActivityRes, UpdateOpenTimesPatternReq, UpdateOpenTimesPatternRes, UpdatePlacementRuleReq, UpdatePlacementRuleRes, UpdateProgramNodeReq, UpdateProgramNodeRes, UpdateScheduleScenarioReq, UpdateScheduleScenarioRes, UpdateShiftInstanceReq, UpdateShiftInstanceRes, UpdateShiftInstanceV2Req, UpdateShiftInstanceV2Res, UpdateShiftTemplateReq, UpdateShiftTemplateRes, UpdateSkillProficienciesReq, UpdateSkillProficienciesRes, UpdateSkillProfileAveragesUsingHistoricalDataReq, UpdateSkillProfileAveragesUsingHistoricalDataRes, UpdateSkillProfileGroupAssociationsReq, UpdateSkillProfileGroupAssociationsRes, UpdateSkillProfileGroupReq, UpdateSkillProfileGroupRes, UpdateSkillProfileProficienciesReq, UpdateSkillProfileProficienciesRes, UpdateSkillProfileReq, UpdateSkillProfileRes, UpdateTourAgentCollectionReq, UpdateTourAgentCollectionRes, UpdateTourShiftInstanceConfigReq, UpdateTourShiftInstanceConfigRes, UpdateTourShiftSegmentConfigReq, UpdateTourShiftSegmentConfigRes, UpdateWFMAgentReq, UpdateWFMAgentRes, UpsertForecastDataDeltaReq, UpsertForecastDataDeltaRes, UpsertForecastDataDeltasReq, UpsertForecastDataDeltasRes, UpsertForecastingParametersReq, UpsertForecastingParametersRes, UpsertHistoricalDataDeltaReq, UpsertHistoricalDataDeltaRes, UpsertHistoricalDataDeltasReq, UpsertHistoricalDataDeltasRes, UpsertNonSkillActivityAssociationReq, UpsertNonSkillActivityAssociationRes, UpsertProfileForecastReq, UpsertProfileForecastRes, UpsertRegressionForecastReq, UpsertRegressionForecastRes, UpsertTourPatternWithMembersReq, UpsertTourPatternWithMembersRes } from "./wfm_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -163,17 +163,32 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * Gets the historical data for the org sending the request and the given @skill_profile_sid.
+     * Gets the state of the cache for the given @org_id, and if the cache's state is not_loaded, or loading_failed,
+     * it will start the loading task before returning the current state.
+     * Required permissions:
+     *  NONE
+     * Errors:
+     *  -grpc.Internal: error occurs when getting the cache info.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GetClientHistoryCacheInfo
+     */
+    readonly getClientHistoryCacheInfo: {
+      readonly name: "GetClientHistoryCacheInfo",
+      readonly I: typeof GetClientHistoryCacheInfoReq,
+      readonly O: typeof GetClientHistoryCacheInfoRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the historical data for the org sending the request and the given @skill_profile_category.
      * It will look through the client's call history and generate the historical data by using their configured forecasting parameters (historical data period and interval width).
      * The duration of each interval will be the interval width of the org's forecasting parameters.
-     * It also applies any deltas that the client has stored for the given @SkillProfileSid.
+     * It also applies any deltas that the client has stored for the given @skill_profile_category, if the category is a group it will use the deltas of the skill profiles part of that group.
      * If the client has no historical data, only the deltas will be applied to the returned intervals, all other intervals will have nil averages.
-     * If any inactive skill profiles are mapped to the given @skill_profile_sid, the call history and deltas of those skill profiles will be included for the historical data calculation.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @skill_profile_sid in the request is invalid.
-     *   - grpc.NotFound: the @skill_profile_sid given is not found for the org.
+     *   - grpc.Invalid: the @skill_profile_category in the request is invalid.
+     *   - grpc.NotFound: the @skill_profile_category given is not found for the org.
      *   - grpc.Internal: error occurs when getting the historical data.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListHistoricalData
@@ -242,6 +257,7 @@ export declare const WFM: {
      * The @total_calls in the returned template be summed from the (@training_data_start_datetime - @averages_calculation_range_in_months) to @training_data_end_datetime,
      * or from @training_data_start_datetime to @training_data_end_datetime if @averages_calculation_range_in_months is 0.
      * The fixed averages fields in the call profile template, will be set to the averages that the skill profile has.
+     * DEPRECATED as of Sep/7/2023 - Use BuildCallProfileTemplate instead.
      * Required permissions:
      *   NONE
      * Errors:
@@ -250,6 +266,7 @@ export declare const WFM: {
      *   - grpc.Internal: error occurs when building the call profile template.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildCallProfileTemplateForSkillProfile
+     * @deprecated
      */
     readonly buildCallProfileTemplateForSkillProfile: {
       readonly name: "BuildCallProfileTemplateForSkillProfile",
@@ -258,7 +275,30 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Builds and returns a call profile template for the org sending the request and the given @skill_profile_category.
+     * The template will be generated using the training data for said skill profile category using the @training_data_range and @averages_calculation_range_in_months
+     * from the client's saved forecasting parameters.
+     * The @total_calls in the returned template be summed from the (@training_data_start_datetime - @averages_calculation_range_in_months) to @training_data_end_datetime,
+     * or from @training_data_start_datetime to @training_data_end_datetime if @averages_calculation_range_in_months is 0.
+     * The fixed averages fields in the call profile template, will be set to the averages that the skill profile category has.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_category in the request is invalid.
+     *   - grpc.NotFound: the @skill_profile_category given is not found for the org.
+     *   - grpc.Internal: error occurs when building the call profile template.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.BuildCallProfileTemplate
+     */
+    readonly buildCallProfileTemplate: {
+      readonly name: "BuildCallProfileTemplate",
+      readonly I: typeof BuildCallProfileTemplateReq,
+      readonly O: typeof BuildCallProfileTemplateRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * Creates a mapping entry for the @inactive_skill_profile_sid to the @active_skill_profile_sid for the org sending the request.
+     * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
      * Required permissions:
      *   NONE
      * Errors:
@@ -268,6 +308,7 @@ export declare const WFM: {
      *   - grpc.Internal: error occurs when creating the inactive skill profile mapping.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.CreateInactiveSkillProfileMapping
+     * @deprecated
      */
     readonly createInactiveSkillProfileMapping: {
       readonly name: "CreateInactiveSkillProfileMapping",
@@ -292,6 +333,7 @@ export declare const WFM: {
     },
     /**
      * Changes the current mapping for the given @inactive_skill_profile_sid to be disconnected.
+     * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
      * Required permissions:
      *   NONE
      * Errors:
@@ -301,11 +343,83 @@ export declare const WFM: {
      * 				            the given @inactive_skill_profile_sid is of an active skill profile.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.DisconnectInactiveSkillProfileMapping
+     * @deprecated
      */
     readonly disconnectInactiveSkillProfileMapping: {
       readonly name: "DisconnectInactiveSkillProfileMapping",
       readonly I: typeof DisconnectInactiveSkillProfileMappingReq,
       readonly O: typeof DisconnectInactiveSkillProfileMappingRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates the given @skill_profile_group.
+     * @skill_profile_group_sids will be ignored since associations cannot be created by this method.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group in the request is invalid.
+     *   - grpc.Internal: error occurs creating the skill profile group.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateSkillProfileGroup
+     */
+    readonly createSkillProfileGroup: {
+      readonly name: "CreateSkillProfileGroup",
+      readonly I: typeof CreateSkillProfileGroupReq,
+      readonly O: typeof CreateSkillProfileGroupRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Updates the given @skill_profile_group that has the @skill_profile_group_sid for the org sending the request.
+     * @skill_profile_group_sids will be ignored since associations cannot be updated by this method.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group in the request is invalid.
+     *   - grpc.NotFound: the skill profile group to update doesn't exist.
+     *   - grpc.Internal: error occurs updating the skill profile group.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateSkillProfileGroup
+     */
+    readonly updateSkillProfileGroup: {
+      readonly name: "UpdateSkillProfileGroup",
+      readonly I: typeof UpdateSkillProfileGroupReq,
+      readonly O: typeof UpdateSkillProfileGroupRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the skill profile groups that have the @skill_profile_group_sids for the org sending the request.
+     * if @include_inactive is true then inactive groups will also be included, otherwise only active groups will be returned.
+     * If @skill_profile_group_sids is empty it will get all the skill profile groups for the org.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_group_sids in the request is invalid.
+     *   - grpc.Internal: error occurs getting the skill profile groups.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListSkillProfileGroups
+     */
+    readonly listSkillProfileGroups: {
+      readonly name: "ListSkillProfileGroups",
+      readonly I: typeof ListSkillProfileGroupsReq,
+      readonly O: typeof ListSkillProfileGroupsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Updates associations of the given @skill_profile_group_sid for the org sending the request.
+     * It will create the associations with the @skill_profile_sids_to_associate, and remove the associations with the @skill_profile_sids_to_disassociate.
+     * Only one of the skill_profile_sids fields needs to be set, but both can be set on the same request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the values in the request are invalid.
+     *   - grpc.Internal: error occurs updating the skill profile group associations.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateSkillProfileGroupAssociations
+     */
+    readonly updateSkillProfileGroupAssociations: {
+      readonly name: "UpdateSkillProfileGroupAssociations",
+      readonly I: typeof UpdateSkillProfileGroupAssociationsReq,
+      readonly O: typeof UpdateSkillProfileGroupAssociationsRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -363,12 +477,12 @@ export declare const WFM: {
      * Builds a profile forecast using the provided @call_profile_template.
      * The forecaster will produce intervals from the following range using the client's saved forecasting parameters:
      * (@training_data_range_end_datetime - @forecast_test_range_in_weeks) to @forecast_range_end_datetime.
-     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplateForSkillProfile.
+     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplate.
      * The @fixed_averages_forecast field indicates whether or not to do a fixed averages forecast.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @skill_profile_sid or @call_profile_template in the request is invalid.
+     *   - grpc.Invalid: the @skill_profile_category or @call_profile_template in the request is invalid.
      *   - grpc.Internal: error occurs during the building of the profile forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildProfileForecastByInterval
@@ -383,13 +497,13 @@ export declare const WFM: {
      * Builds a profile forecast using the provided @call_profile_template.
      * The forecaster will produce intervals from the following range using the client's saved forecasting parameters:
      * (@training_data_range_end_datetime - @forecast_test_range_in_weeks) to @forecast_range_end_datetime.
-     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplateForSkillProfile.
+     * The @total_calls in the @call_profile_template will be scaled using the same ranges as BuildCallProfileTemplate.
      * The @fixed_averages_forecast field indicates whether or not to do a fixed averages forecast.
-     * It also returns the statistics of the produced forecast by using the test data of the given @skill_profile_sid.
+     * It also returns the statistics of the produced forecast by using the test data of the given @skill_profile_category.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @skill_profile_sid or @call_profile_template in the request is invalid.
+     *   - grpc.Invalid: the @skill_profile_category or @call_profile_template in the request is invalid.
      *   - grpc.Internal: error occurs during the building of the profile forecast.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.BuildProfileForecastByIntervalWithStats
@@ -503,6 +617,7 @@ export declare const WFM: {
     },
     /**
      * Gets the forecast data intervals for the given @skill_profile_sid.
+     * DEPRECATED as of Sep/13/2023 - Use ListForecastIntervals instead.
      * Required permissions:
      *   NONE
      * Errors:
@@ -510,10 +625,27 @@ export declare const WFM: {
      *   - grpc.Internal: error occurs when getting the forecast data intervals.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListForecastIntervalsForSkillProfile
+     * @deprecated
      */
     readonly listForecastIntervalsForSkillProfile: {
       readonly name: "ListForecastIntervalsForSkillProfile",
       readonly I: typeof ListForecastIntervalsForSkillProfileReq,
+      readonly O: typeof CallDataByInterval,
+      readonly kind: MethodKind.ServerStreaming,
+    },
+    /**
+     * Gets the forecast data intervals for the given @skill_profile_category.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the @skill_profile_category in the request is invalid.
+     *   - grpc.Internal: error occurs when getting the forecast data intervals.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListForecastIntervals
+     */
+    readonly listForecastIntervals: {
+      readonly name: "ListForecastIntervals",
+      readonly I: typeof ListForecastIntervalsReq,
       readonly O: typeof CallDataByInterval,
       readonly kind: MethodKind.ServerStreaming,
     },
@@ -625,7 +757,7 @@ export declare const WFM: {
     },
     /**
      * Deletes forecast data intervals/deltas based on the parameters provided.
-     * If @delete_param is type skill_profile_sid, then the intervals/deltas to be deleted will be
+     * If @delete_param is type skill_profile_category, then the intervals/deltas to be deleted will be
      * associated with that id. If @delete_param is type interval_sids, then the intervals/deltas to be
      * deleted will be contained in the list @interval_sids. The @delete_type field determines which
      * table(s) in the database the intervals/deltas will be deleted from.
@@ -699,16 +831,17 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * Calculates the averages for call characteristics using the historical data of the given @skill_profile_sids and org sending the request.
+     * Calculates the averages for call characteristics using the historical data of the given @skill_profile_sids, @skill_profile_group_sids and org sending the request.
      * If no @skill_profile_sids are given, it will calculate the averages for all skill profiles for the org sending the request.
+     * If no @skill_profile_group_sids are given, it will calculate the averages for all skill profile groups for the org sending the request.
      * Averages will be weighted by the number of calls that each historical data interval has.
      * Once the averages are calculated, they will be updated in the db for those skill profiles.
      *
      * If a nil @datetime_range is given then the range used will be @training_data_range_end_datetime - @averages_calculation_range_in_months to the @training_data_range_end_datetime from the forecasting parameters.
      * If @averages_calculation_range_in_months is 0, it will use the @training_data_range_start_datetime as the start datetime of the range.
      *
-     * If @exclude_skill_profiles_with_manual_averages is true, it will exclude skill profiles that have manual averages from the calculation
-     * even if those skill profiles are in @skill_profile_sids.
+     * If @exclude_skill_profiles_with_manual_averages is true, it will exclude skill profiles and groups that have manual averages from the calculation
+     * even if those skill profiles and groups are in @skill_profile_sids or @skill_profile_group_sids respectively.
      *
      * Errors:
      *   - grpc.Internal: error occurs when calculating the averages from the historical data.
@@ -834,6 +967,7 @@ export declare const WFM: {
      * Errors:
      *   - grpc.Invalid: one or more fields in the @node have invalid values.
      *   - grpc.NotFound: parent location node doesn't exist or belongs to a different scenario than the one given.
+     *                    the @skill_profile_category does not exist.
      *   - grpc.Internal: error occurs when creating the program node.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.CreateProgramNode
@@ -855,6 +989,7 @@ export declare const WFM: {
      *   - grpc.Invalid: one or more fields in the @program_node have invalid values.
      *   - grpc.Internal: error occurs when updating the program node.
      *   - grpc.NotFound: entry to be updated doesn't exist, or the given parent @location_node_sid belongs to a different scenario than the program node to update.
+     *                    the @skill_profile_category does not exist.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.UpdateProgramNode
      */
@@ -862,6 +997,22 @@ export declare const WFM: {
       readonly name: "UpdateProgramNode",
       readonly I: typeof UpdateProgramNodeReq,
       readonly O: typeof UpdateProgramNodeRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists the program nodes with the given @program_node_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the given @program_node_sids are invalid.
+     *   - grpc.Internal: error occurs when listing the program nodes.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListProgramNodesBySid
+     */
+    readonly listProgramNodesBySid: {
+      readonly name: "ListProgramNodesBySid",
+      readonly I: typeof ListProgramNodesBySidReq,
+      readonly O: typeof ListProgramNodesBySidRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -1039,6 +1190,17 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Lists all schedulable AgentGroups on or under the given Node or ShiftTemplate.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListAgentScheduleGroups
+     */
+    readonly listAgentScheduleGroups: {
+      readonly name: "ListAgentScheduleGroups",
+      readonly I: typeof ListAgentScheduleGroupsRequest,
+      readonly O: typeof ListAgentScheduleGroupsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * Updates the agent group corresponding to the @agent_group_sid, @name, and @parent_entity.
      * All of the entity's parameters that are not desired to be updated must be filled with their current values.
      * The @schedule_scenario_sid must be the original for this agent group since it cannot be changed.
@@ -1084,6 +1246,10 @@ export declare const WFM: {
      * if @include_inactive is true then inactive agents will also be included, otherwise only active agents will be returned.
      * if @include_skill_proficiencies is true then agents returned will include their skill proficiencies.
      * if @include_agent_groups is true then the @agent_groups_by_agent response field will be set with a list of agent groups correlating to each agents index in the @wfm_agents field.
+     * if @include_agent_groups is set to true, the @agent_group_schedule_scenario_sid field must be set, so that the agent groups for the correct scenario are returned.
+     * if @include_agent_groups is set to true, and @agent_group_schedule_scenario_sid is not set, the agent groups will not be filtered by schedule scenario.
+     * if @include_agent_groups is set to false, the @agent_group_schedule_scenario_sid will be ignored.
+     * @agent_group_schedule_scenario_sid does not effect which @wfm_agents are returned.
      * WFM agents with no associated agent_groups will have an empty slice in agent_groups_by_agent at their correlated index.
      * Required Permissions:
      *   NONE
@@ -1133,6 +1299,24 @@ export declare const WFM: {
       readonly name: "ListUngroupedWFMAgents",
       readonly I: typeof ListUngroupedWFMAgentsReq,
       readonly O: typeof ListUngroupedWFMAgentsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the wfm_agent_sids with the given @tcn_agent_sids for the org sending the request.
+     * Returns a map where Key: tcn_agent_sid - Value: wfm_agent_sid.
+     * If the wfm_agent_sid is not found for any @tcn_agent_sids, they will not have an entry in the returned @sids.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *  - grpc.Invalid: the @tcn_agent_sids are invalid.
+     *  - grpc.Internal: error occours while listing the wfm_agent_sids.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListWFMAgentSids
+     */
+    readonly listWFMAgentSids: {
+      readonly name: "ListWFMAgentSids",
+      readonly I: typeof ListWFMAgentSidsReq,
+      readonly O: typeof ListWFMAgentSidsRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -1624,10 +1808,12 @@ export declare const WFM: {
      * The @node_description fields may optionally be left blank.
      * The @copied_from_scenario_sid field will be ignored, as it will be set to nil in the newly created scenario.
      * The @creation_datetime and @is_default fields will also be ignored and set as the current time and false respectively.
+     * The @skill_profile_category will be associated with the created program node.
      * Required permissions:
      *   NONE
      * Errors:
      *   - grpc.Invalid: parameters in the @req are invalid for the org making the request.
+     *   - grpc.NotFound: the @skill_profile_category does not exist.
      *   - grpc.Internal: error occurs when creating the new scenario, or any of the node entities.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.CreateScheduleScenarioWithNodes
@@ -1979,7 +2165,7 @@ export declare const WFM: {
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @org_id or @shift_instance_sids in the request are invalid.
+     *   - grpc.Invalid: @shift_instance_sids in the request are invalid.
      *   - grpc.Internal: error occurs when listing the shift instances or their shift segments.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListShiftInstancesBySid
@@ -2047,6 +2233,26 @@ export declare const WFM: {
       readonly name: "CreateShiftInstanceV2",
       readonly I: typeof CreateShiftInstanceV2Req,
       readonly O: typeof CreateShiftInstanceV2Res,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Splits the @shift_instance_sid into two, at the given @time_to_split, returning the updated and new @shift_instances.
+     * Any shift segments will be split between the two shift instances at @time_to_split.
+     * If the @time_to_split creates instances shorter then the minimum length specified by the shift template,
+     *   warning diagnostics will be returned and the instance will still be split.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   -grpc.Invalid: one or more fields in the request have invalid values, or @time_to_split is not at least 5 minutes from the start or end of @shift_instance_sid.
+     *   -grpc.NotFound: the @shift_instance_sid does't exist for the org sending the request.
+     *   -grpc.Internal: error occurs when creating or updating the shift instances.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.SplitShiftInstance
+     */
+    readonly splitShiftInstance: {
+      readonly name: "SplitShiftInstance",
+      readonly I: typeof SplitShiftInstanceReq,
+      readonly O: typeof SplitShiftInstanceRes,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -2211,6 +2417,33 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Gets the scheduling-target values for the org making the request.
+     * Errors:
+     *   - grpc.Internal: error occours when getting the scheduling-target values.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GetDefaultSchedulingTarget
+     */
+    readonly getDefaultSchedulingTarget: {
+      readonly name: "GetDefaultSchedulingTarget",
+      readonly I: typeof GetDefaultSchedulingTargetReq,
+      readonly O: typeof GetDefaultSchedulingTargetRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Sets the scheduling-target values for the org making the request.
+     * Errors:
+     *   - grpc.Invalid: any of the given values are invalid.
+     *   - grpc.Internal: error occours when setting the scheduling-target values.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.SetDefaultSchedulingTarget
+     */
+    readonly setDefaultSchedulingTarget: {
+      readonly name: "SetDefaultSchedulingTarget",
+      readonly I: typeof SetDefaultSchedulingTargetReq,
+      readonly O: typeof SetDefaultSchedulingTargetRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * Gets the performance metrics across @datetime_range for shift instances in @schedule_selector associated with @node_selector for the org making the request.
      * Performance metrics will be generated for each of the given @metric_params.
      * The @interval_width_in_minutes must be a multiple of 5.
@@ -2244,6 +2477,453 @@ export declare const WFM: {
       readonly name: "ListRequiredCallsIntervals",
       readonly I: typeof ListRequiredCallsIntervalsReq,
       readonly O: typeof ListRequiredCallsIntervalsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates a Tour Pattern for @shift_template_sid and the org sending the request, returning @tour_pattern_sid.
+     * If there is already a Tour Pattern for @shift_template_sid then the method call will fail to create a new Tour Pattern.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.AlreadyExists: A Tour Pattern already exists for @shift_template_sid.
+     *   - grpc.Internal: error occurs when creating the Tour Pattern.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateTourPattern
+     */
+    readonly createTourPattern: {
+      readonly name: "CreateTourPattern",
+      readonly I: typeof CreateTourPatternReq,
+      readonly O: typeof CreateTourPatternRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Returns a list of diagnostics describing any issues with the given @tour_pattern.
+     * Checks the internal consistency between the pattern and all members, as well as making sure required fields are set with valid values.
+     * Ignores sid fields, except for @shift_template_sid and @scheduling_activity_sid.
+     * Does not query the database to check that foreign keys exist.
+     * Returns a single diagnostic with an OK code if the given @tour_pattern has no issues.
+     * The @member_tour_week_patterns and @member_tour_agent_collections fields must be set on @tour_pattern.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Internal: error occurs when validating the tour pattern or members.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GetTourPatternDiagnostics
+     */
+    readonly getTourPatternDiagnostics: {
+      readonly name: "GetTourPatternDiagnostics",
+      readonly I: typeof GetTourPatternDiagnosticsReq,
+      readonly O: typeof GetTourPatternDiagnosticsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Replaces the existing Tour Pattern and members with @tour_pattern for the @tour_pattern.shift_template_sid and the org sending the request.
+     * Returns the newly created Tour Pattern and members with their updated SIDs and Week Pattern Numbers.
+     * Any existing Tour Week Patterns, Tour Shift Instance and Segment Configs, Tour Agent Collections and their WFM Agent SIDs
+     *   belonging to @tour_pattern.shift_template_sid will be replaced with the members on the provided @tour_pattern.
+     * At least one Tour Agent Collection and one Tour Week Pattern must be provided in the member fields.
+     * If the tour pattern data or members have issues that prevent them from being persisted, a list of diagnostics will be returned describing the issues that must be resolved.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.NotFound: the @tour_pattern.shift_template_sid does not exist.
+     *   - grpc.Internal: error occurs when upserting the tour pattern or members.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpsertTourPatternWithMembers
+     */
+    readonly upsertTourPatternWithMembers: {
+      readonly name: "UpsertTourPatternWithMembers",
+      readonly I: typeof UpsertTourPatternWithMembersReq,
+      readonly O: typeof UpsertTourPatternWithMembersRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the Tour Pattern belonging to @shift_template_sid and the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.NotFound: the requested Tour Pattern does not exist.
+     *   - grpc.Internal: error occurs when getting the data.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GetTourPattern
+     */
+    readonly getTourPattern: {
+      readonly name: "GetTourPattern",
+      readonly I: typeof GetTourPatternReq,
+      readonly O: typeof GetTourPatternRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the Tour Pattern belonging to @shift_template_sid and the org sending the request.
+     * The @tour_pattern will be returned with all member entities.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.NotFound: the requested Tour Pattern does not exist.
+     *   - grpc.Internal: error occurs when getting the data.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GetTourPatternWithMembers
+     */
+    readonly getTourPatternWithMembers: {
+      readonly name: "GetTourPatternWithMembers",
+      readonly I: typeof GetTourPatternWithMembersReq,
+      readonly O: typeof GetTourPatternWithMembersRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes the Tour Pattern belonging to @tour_pattern_sid and the org sending the request.
+     * Any member Tour Week Patterns or Agent Collections will be deleted as well.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when deleting the data or it's children.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourPattern
+     */
+    readonly deleteTourPattern: {
+      readonly name: "DeleteTourPattern",
+      readonly I: typeof DeleteTourPatternReq,
+      readonly O: typeof DeleteTourPatternRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates a Tour Week Pattern for @tour_pattern_sid for the org sending the request, returning @tour_week_pattern_sid.
+     * The newly created Tour Week Pattern will be placed at the end of the existing sequence of tour week patterns for @tour_pattern_sid.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.NotFound: the given @tour_pattern_sid does not exist for the org sending the request.
+     *   - grpc.Internal: error occurs when creating the Tour Week Pattern.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateTourWeekPattern
+     */
+    readonly createTourWeekPattern: {
+      readonly name: "CreateTourWeekPattern",
+      readonly I: typeof CreateTourWeekPatternReq,
+      readonly O: typeof CreateTourWeekPatternRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists the Tour Week Patterns with @tour_pattern_sid for the org sending the request
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the Tour Week Patterns.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListTourWeekPatterns
+     */
+    readonly listTourWeekPatterns: {
+      readonly name: "ListTourWeekPatterns",
+      readonly I: typeof ListTourWeekPatternsReq,
+      readonly O: typeof ListTourWeekPatternsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes the Tour Week Patterns with the given @tour_week_pattern_sids for the org sending the request.
+     * Any Tour Week Instance or Segment Configs using @tour_week_pattern_sids will be deleted.
+     * Request will error if any @tour_week_pattern_sids are in use by a Tour Agent Collection, as those must be removed first.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.FailedPrecondition: a @tour_week_pattern_sid is in use by a Tour Agent Collection.
+     *   - grpc.Internal: error occurs when deleting the tour week patterns or configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourWeekPatterns
+     */
+    readonly deleteTourWeekPatterns: {
+      readonly name: "DeleteTourWeekPatterns",
+      readonly I: typeof DeleteTourWeekPatternsReq,
+      readonly O: typeof DeleteTourWeekPatternsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates the @tour_shift_instance_config for the org sending the request, returning @tour_shift_instance_config_sid.
+     * The given @tour_shift_instance_config will not be created if it will overlap another tour shift instance config belonging to @tour_week_pattern_sid.
+     * The @member_tour_shift_segment_configs field will be ignored, and will not be created if passed through this endpoint.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid or a preexisting tour shift instance config would overlap @tour_shift_instance_config.
+     *   - grpc.Internal: error occurs when creating the data.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateTourShiftInstanceConfig
+     */
+    readonly createTourShiftInstanceConfig: {
+      readonly name: "CreateTourShiftInstanceConfig",
+      readonly I: typeof CreateTourShiftInstanceConfigReq,
+      readonly O: typeof CreateTourShiftInstanceConfigRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Updates the @tour_shift_instance_config for the org sending the request, returning @tour_shift_instance_config_sid.
+     * The given @tour_shift_instance_config will not be created if it will overlap another tour shift instance config belonging to @tour_week_pattern_sid.
+     * The @member_tour_shift_segment_configs field will be ignored, and will not be updated if passed through this endpoint.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid or a preexisting Tour Shift Instance Config would overlap @tour_shift_instance_config.
+     *   - grpc.Internal: error occurs when updating the data.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateTourShiftInstanceConfig
+     */
+    readonly updateTourShiftInstanceConfig: {
+      readonly name: "UpdateTourShiftInstanceConfig",
+      readonly I: typeof UpdateTourShiftInstanceConfigReq,
+      readonly O: typeof UpdateTourShiftInstanceConfigRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists the Tour Shift Instance Configs belonging to @tour_week_pattern_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the Tour Shift Instance Configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListTourShiftInstanceConfigs
+     */
+    readonly listTourShiftInstanceConfigs: {
+      readonly name: "ListTourShiftInstanceConfigs",
+      readonly I: typeof ListTourShiftInstanceConfigsReq,
+      readonly O: typeof ListTourShiftInstanceConfigsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes the Tour Shift Instance Configs matching @tour_shift_instance_config_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the Tour Shift Instance Configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourShiftInstanceConfigs
+     */
+    readonly deleteTourShiftInstanceConfigs: {
+      readonly name: "DeleteTourShiftInstanceConfigs",
+      readonly I: typeof DeleteTourShiftInstanceConfigsReq,
+      readonly O: typeof DeleteTourShiftInstanceConfigsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates the given @tour_shift_segment_config for the org sending the request, returning @tour_shift_segment_config_sid.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.NotFound: the @tour_shift_instance_config_sid does not exist for the org sending the request.
+     *   - grpc.Internal: error occurs when creating the entity.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateTourShiftSegmentConfig
+     */
+    readonly createTourShiftSegmentConfig: {
+      readonly name: "CreateTourShiftSegmentConfig",
+      readonly I: typeof CreateTourShiftSegmentConfigReq,
+      readonly O: typeof CreateTourShiftSegmentConfigRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Updates the given @tour_shift_segment_config matching @tour_shift_segment_config_sid for the org sending the request.
+     * If the updated Tour Shift Segment Config overlaps another segment or does not fit within the parent Tour Shift Instance Config the update will fail.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid or the resulting update would result in a conflict.
+     *   - grpc.NotFound: the @tour_shift_instance_config_sid does not exist for the org sending the request.
+     *   - grpc.Internal: error occurs when updating the entity.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateTourShiftSegmentConfig
+     */
+    readonly updateTourShiftSegmentConfig: {
+      readonly name: "UpdateTourShiftSegmentConfig",
+      readonly I: typeof UpdateTourShiftSegmentConfigReq,
+      readonly O: typeof UpdateTourShiftSegmentConfigRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists the Tour Shift Segment Configs belonging to @tour_shift_instance_config_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the Tour Shift Segment Configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListTourShiftSegmentConfigs
+     */
+    readonly listTourShiftSegmentConfigs: {
+      readonly name: "ListTourShiftSegmentConfigs",
+      readonly I: typeof ListTourShiftSegmentConfigsReq,
+      readonly O: typeof ListTourShiftSegmentConfigsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes the Tour Shift Segment Configs associated with the given @tour_shift_segment_config_sids for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when deleting the Tour Shift Segment Configs.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourShiftSegmentConfigs
+     */
+    readonly deleteTourShiftSegmentConfigs: {
+      readonly name: "DeleteTourShiftSegmentConfigs",
+      readonly I: typeof DeleteTourShiftSegmentConfigsReq,
+      readonly O: typeof DeleteTourShiftSegmentConfigsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates the given @tour_agent_collection for the org sending the request and return the @tour_agent_collection_sid.
+     * The @wfm_agent_sids will be ignored and will not be created through this endpoint.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.AlreadyExists: the first_week_pattern_number for @tour_pattern_sid is already in use by another tour agent collection.
+     *   - grpc.NotFound: the given @tour_pattern_sid does not exist for the org sending the request.
+     *   - grpc.Internal: error occurs when creating the entity.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateTourAgentCollection
+     */
+    readonly createTourAgentCollection: {
+      readonly name: "CreateTourAgentCollection",
+      readonly I: typeof CreateTourAgentCollectionReq,
+      readonly O: typeof CreateTourAgentCollectionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Updates the given @tour_agent_collection matching the @tour_agent_collection_sid for the org sending the request.
+     * The @wfm_agent_sids will be ignored and will not be updated through this endpoint.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.AlreadyExists: the first_week_pattern_number for @tour_pattern_sid is already in use by another tour agent collection.
+     *   - grpc.NotFound: the given @tour_pattern_sid does not exist for the org sending the request.
+     *   - grpc.Internal: error occurs when updating the entity.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.UpdateTourAgentCollection
+     */
+    readonly updateTourAgentCollection: {
+      readonly name: "UpdateTourAgentCollection",
+      readonly I: typeof UpdateTourAgentCollectionReq,
+      readonly O: typeof UpdateTourAgentCollectionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists the Tour Agent Collections belonging to @tour_pattern_sid for the org sending the request.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the tour agent collections.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListTourAgentCollections
+     */
+    readonly listTourAgentCollections: {
+      readonly name: "ListTourAgentCollections",
+      readonly I: typeof ListTourAgentCollectionsReq,
+      readonly O: typeof ListTourAgentCollectionsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes the Tour Agent collections matching @tour_agent_collection_sids for the org sending the request.
+     * Any existing associations with WFM Agent Sids will be deleted as well.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when deleting the tour agent collections.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourAgentCollections
+     */
+    readonly deleteTourAgentCollections: {
+      readonly name: "DeleteTourAgentCollections",
+      readonly I: typeof DeleteTourAgentCollectionsReq,
+      readonly O: typeof DeleteTourAgentCollectionsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates an assocation between the @tour_agent_collection_sid and the @wfm_agent_sids for the org sending the request.
+     * If there is already an association between any of the @wfm_agent_sids and the Tour Pattern that @tour_agent_collection_sid belongs to, the method will fail and no associations will be created.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid
+     *   - grpc.AlreadyExists: an association already exists for at least one SID in @wfm_agent_sids.
+     *   - grpc.Internal: error occurs when creating the association.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.CreateTourAgentCollectionWFMAgents
+     */
+    readonly createTourAgentCollectionWFMAgents: {
+      readonly name: "CreateTourAgentCollectionWFMAgents",
+      readonly I: typeof CreateTourAgentCollectionWFMAgentsReq,
+      readonly O: typeof CreateTourAgentCollectionWFMAgentsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists the WFM Agent SIDs belonging to @tour_agent_collection_sids for the org sending the request.
+     * The resulting sids will be returned in @wfm_agent_pairings each containing an @agent_collection_sid and @wfm_agent_sids.
+     * If no agents are found for a sid in the given @tour_agent_collection_sids, that @agent_collection_sid will have an empty slice in @wfm_agent_sids.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the tour agent collections.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.ListTourAgentCollectionWFMAgents
+     */
+    readonly listTourAgentCollectionWFMAgents: {
+      readonly name: "ListTourAgentCollectionWFMAgents",
+      readonly I: typeof ListTourAgentCollectionWFMAgentsReq,
+      readonly O: typeof ListTourAgentCollectionWFMAgentsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes association between the @wfm_agent_sids and @tour_agent_collection_sid for the org sending the request.
+     * If no @wfm_agent_sids are provided, all existing @wfm_agent_sids for the given @tour_agent_collection_sid will be deleted.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.NotFound: there are no WFM Agent associations to delete for @tour_agent_collection_sid.
+     *   - grpc.Internal: error occurs when getting the tour agent collections.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.DeleteTourAgentCollectionWFMAgents
+     */
+    readonly deleteTourAgentCollectionWFMAgents: {
+      readonly name: "DeleteTourAgentCollectionWFMAgents",
+      readonly I: typeof DeleteTourAgentCollectionWFMAgentsReq,
+      readonly O: typeof DeleteTourAgentCollectionWFMAgentsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Generates a list of tour week patterns for @target_shift_template_sid and the org sending the request.
+     * Sets the member_tour_week_patterns with a tour week pattern for each of the @num_weeks_in_tour.
+     * Each of the tour week patterns will be set with tour shift instances and segment configs based on
+     *   the forecasted call data over the next @num_weeks_in_tour, starting on the next Monday.
+     * The returned data will not be persisted. This method will not effect any existing tour week patterns in the database.
+     * The @tour_week_patterns returned by this method are intended to replace, not append, all currenly existing tour week patterns for @target_shift_template_sid, once persisted.
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.NotFound: there is no call center node or @shift_template_sid associated with @schedule_scenario_sid.
+     *   - grpc.Internal: error occurs when generating the tour week patterns.
+     *
+     * @generated from rpc api.v1alpha1.wfm.WFM.GenerateTourWeekPatterns
+     */
+    readonly generateTourWeekPatterns: {
+      readonly name: "GenerateTourWeekPatterns",
+      readonly I: typeof GenerateTourWeekPatternsReq,
+      readonly O: typeof GenerateTourWeekPatternsRes,
       readonly kind: MethodKind.Unary,
     },
   }

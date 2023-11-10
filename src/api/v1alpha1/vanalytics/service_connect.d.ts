@@ -13,6 +13,7 @@ import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse, SearchFlagTr
 import { CreateFlagFilterRequest, DeleteFlagFilterRequest, DeleteFlagFilterResponse, FlagFilter, ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
 import { ListFlagSnapshotsRequest, ListFlagSnapshotsResponse } from "./flag_snapshot_pb.js";
 import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
+import { Correction, CreateCorrectionRequest, CreateCorrectionResponse, DeleteCorrectionRequest, DeleteCorrectionResponse, GetCorrectionRequest, ListCorrectionsRequest, ListCorrectionsResponse, UpdateCorrectionRequest, UpdateCorrectionResponse } from "./correction_pb.js";
 
 /**
  * @generated from service api.v1alpha1.vanalytics.Vanalytics
@@ -331,6 +332,61 @@ export declare const Vanalytics: {
       readonly name: "ListFlagTranscriptFilters",
       readonly I: typeof ListFlagTranscriptFiltersRequest,
       readonly O: typeof ListFlagTranscriptFiltersResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateCorrection creates a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.CreateCorrection
+     */
+    readonly createCorrection: {
+      readonly name: "CreateCorrection",
+      readonly I: typeof CreateCorrectionRequest,
+      readonly O: typeof CreateCorrectionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetCorrection gets a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.GetCorrection
+     */
+    readonly getCorrection: {
+      readonly name: "GetCorrection",
+      readonly I: typeof GetCorrectionRequest,
+      readonly O: typeof Correction,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteCorrection deletes a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.DeleteCorrection
+     */
+    readonly deleteCorrection: {
+      readonly name: "DeleteCorrection",
+      readonly I: typeof DeleteCorrectionRequest,
+      readonly O: typeof DeleteCorrectionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListCorrections lists corrections.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.ListCorrections
+     */
+    readonly listCorrections: {
+      readonly name: "ListCorrections",
+      readonly I: typeof ListCorrectionsRequest,
+      readonly O: typeof ListCorrectionsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateCorrection updates a correction.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.UpdateCorrection
+     */
+    readonly updateCorrection: {
+      readonly name: "UpdateCorrection",
+      readonly I: typeof UpdateCorrectionRequest,
+      readonly O: typeof UpdateCorrectionResponse,
       readonly kind: MethodKind.Unary,
     },
   }

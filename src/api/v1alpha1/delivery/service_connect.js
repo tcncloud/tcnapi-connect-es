@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
+import { CreateCredentialReq, CreateCredentialRes, CreateDeliveryDefinitionReq, CreateDeliveryDefinitionRes, CreateEncryptionReq, CreateEncryptionRes, CreateTransferConfigReq, CreateTransferConfigRes, DeleteCredentialReq, DeleteCredentialRes, DeleteDeliveryDefinitionReq, DeleteDeliveryDefinitionRes, DeleteEncryptionReq, DeleteEncryptionRes, DeleteTransferConfigReq, DeleteTransferConfigRes, GetCredentialReq, GetCredentialRes, GetDeliveryDefinitionByNameReq, GetDeliveryDefinitionByNameRes, GetDeliveryDefinitionReq, GetDeliveryDefinitionRes, GetEncryptionReq, GetEncryptionRes, GetTransferConfigByNameReq, GetTransferConfigByNameRes, GetTransferConfigReq, GetTransferConfigRes, ListCredentialsReq, ListCredentialsRes, ListDeliveryDefinitionsByCredentialIDReq, ListDeliveryDefinitionsByCredentialIDRes, ListDeliveryDefinitionsReq, ListDeliveryDefinitionsRes, ListEncryptionsReq, ListEncryptionsRes, ListHistoryByTransferConfigReq, ListHistoryByTransferConfigRes, ListHistoryReq, ListHistoryRes, ListTransferConfigsByCredentialIDReq, ListTransferConfigsByCredentialIDRes, ListTransferConfigsReq, ListTransferConfigsRes, UpdateCredentialReq, UpdateCredentialRes, UpdateDeliveryDefinitionReq, UpdateDeliveryDefinitionRes, UpdateEncryptionReq, UpdateEncryptionRes, UpdateTransferConfigReq, UpdateTransferConfigRes } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,24 +19,6 @@ export const DeliveryApi = {
       name: "CreateTransferConfig",
       I: CreateTransferConfigReq,
       O: CreateTransferConfigRes,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateDeliveryDefinition
-     */
-    createDeliveryDefinition: {
-      name: "CreateDeliveryDefinition",
-      I: CreateDeliveryDefinitionReq,
-      O: CreateDeliveryDefinitionRes,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateEncryption
-     */
-    createEncryption: {
-      name: "CreateEncryption",
-      I: CreateEncryptionReq,
-      O: CreateEncryptionRes,
       kind: MethodKind.Unary,
     },
     /**
@@ -154,6 +136,114 @@ export const DeliveryApi = {
       name: "UpdateCredential",
       I: UpdateCredentialReq,
       O: UpdateCredentialRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateDeliveryDefinition
+     */
+    createDeliveryDefinition: {
+      name: "CreateDeliveryDefinition",
+      I: CreateDeliveryDefinitionReq,
+      O: CreateDeliveryDefinitionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.DeleteDeliveryDefinition
+     */
+    deleteDeliveryDefinition: {
+      name: "DeleteDeliveryDefinition",
+      I: DeleteDeliveryDefinitionReq,
+      O: DeleteDeliveryDefinitionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetDeliveryDefinition
+     */
+    getDeliveryDefinition: {
+      name: "GetDeliveryDefinition",
+      I: GetDeliveryDefinitionReq,
+      O: GetDeliveryDefinitionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetDeliveryDefinitionByName
+     */
+    getDeliveryDefinitionByName: {
+      name: "GetDeliveryDefinitionByName",
+      I: GetDeliveryDefinitionByNameReq,
+      O: GetDeliveryDefinitionByNameRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListDeliveryDefinitions
+     */
+    listDeliveryDefinitions: {
+      name: "ListDeliveryDefinitions",
+      I: ListDeliveryDefinitionsReq,
+      O: ListDeliveryDefinitionsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListDeliveryDefinitionsByCredentialID
+     */
+    listDeliveryDefinitionsByCredentialID: {
+      name: "ListDeliveryDefinitionsByCredentialID",
+      I: ListDeliveryDefinitionsByCredentialIDReq,
+      O: ListDeliveryDefinitionsByCredentialIDRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.UpdateDeliveryDefinition
+     */
+    updateDeliveryDefinition: {
+      name: "UpdateDeliveryDefinition",
+      I: UpdateDeliveryDefinitionReq,
+      O: UpdateDeliveryDefinitionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.CreateEncryption
+     */
+    createEncryption: {
+      name: "CreateEncryption",
+      I: CreateEncryptionReq,
+      O: CreateEncryptionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.DeleteEncryption
+     */
+    deleteEncryption: {
+      name: "DeleteEncryption",
+      I: DeleteEncryptionReq,
+      O: DeleteEncryptionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.GetEncryption
+     */
+    getEncryption: {
+      name: "GetEncryption",
+      I: GetEncryptionReq,
+      O: GetEncryptionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.ListEncryptions
+     */
+    listEncryptions: {
+      name: "ListEncryptions",
+      I: ListEncryptionsReq,
+      O: ListEncryptionsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.delivery.DeliveryApi.UpdateEncryption
+     */
+    updateEncryption: {
+      name: "UpdateEncryption",
+      I: UpdateEncryptionReq,
+      O: UpdateEncryptionRes,
       kind: MethodKind.Unary,
     },
   }

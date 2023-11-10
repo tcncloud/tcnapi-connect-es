@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateDashboardRequest, CreateDashboardResponse, Dashboard, DeleteDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest } from "./dashboards_pb.js";
+import { CreateDashboardRequest, CreateDashboardResponse, Dashboard, DeleteDashboardRequest, GetDashboardRequest, GetDefaultDashboardRequest, ListDashboardsRequest, ListDashboardsResponse, ListProductTypesRequest, ListProductTypesResult, PublishDashboardRequest, PublishDashboardResponse, SetDefaultDashboardRequest, UpdateDashboardLayoutRequest, UpdateDashboardRequest, UpdateDashboardTitleAndDescriptionRequest, UpdateDashboardViewRequest } from "./dashboards_pb.js";
 import { Empty, MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -127,6 +127,17 @@ export declare const Dashboards: {
       readonly name: "UpdateDashboardLayout",
       readonly I: typeof UpdateDashboardLayoutRequest,
       readonly O: typeof Empty,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * PublishDashboard publishes a dashboard
+     *
+     * @generated from rpc api.v0alpha.Dashboards.PublishDashboard
+     */
+    readonly publishDashboard: {
+      readonly name: "PublishDashboard",
+      readonly I: typeof PublishDashboardRequest,
+      readonly O: typeof PublishDashboardResponse,
       readonly kind: MethodKind.Unary,
     },
   }

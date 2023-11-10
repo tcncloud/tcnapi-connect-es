@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CjsSearchDefinition, CjsSecureSearchCriteria, CollectionEntry, CollectionMetadata, DeleteCjsSearchDefinitionReq, DeleteCollectionEntryReq, DeleteCollectionReq, Element, ElementPK, Events, ExecuteCjsSearchDefinitionReq, ExecuteCjsSearchDefinitionRes, Field, Fields, FileTemplate, FindFieldUsagesReq, FindFieldUsagesRes, FindInvalidElementsReq, FindInvalidElementsRes, GetCjsSearchDefinitionReq, GetCjsSecureSearchCriteriaReq, GetCollectionEntriesReq, GetCollectionEntriesRes, GetCollectionReq, GetComplianceScrubListsReq, GetComplianceScrubListsRes, GetFileTemplatesReq, GetHistoryReq, GetHistoryRes, GetPublicKeyReq, ListAutocompleteFieldsReq, ListAutocompleteFieldsRes, ListAvailableFieldsByElementIdReq, ListCampaignLinksRes, ListCjsSearchDefinitionsReq, ListCjsSearchDefinitionsRes, ListCollectionsReq, ListCollectionsRes, ListElementsReq, ListFieldsForElementReq, ListFieldsForElementRes, ListFieldsReq, PaginatedSearchRes, ParseReq, ParseRes, PeekListReq, PeekListRes, ProcessElementReq, ProcessFields, PublicKey, ResetCollectionReq, SearchCollectionsPaginatedReq, StreamCollectionReq, UpdateFieldReq, ViewQueueReq } from "./lms_pb.js";
+import { CjsSearchDefinition, CjsSecureSearchCriteria, CollectionEntry, CollectionMetadata, DeleteCjsSearchDefinitionReq, DeleteCollectionEntryReq, DeleteCollectionReq, EHREntityType, Element, ElementPK, Events, ExecuteCjsSearchDefinitionReq, ExecuteCjsSearchDefinitionRes, Field, Fields, FileTemplate, FindFieldUsagesReq, FindFieldUsagesRes, FindInvalidElementsReq, FindInvalidElementsRes, GetCjsSearchDefinitionReq, GetCjsSecureSearchCriteriaReq, GetCollectionEntriesReq, GetCollectionEntriesRes, GetCollectionReq, GetComplianceScrubListsReq, GetComplianceScrubListsRes, GetFileTemplatesReq, GetHistoryReq, GetHistoryRes, GetPublicKeyReq, ListAutocompleteFieldsReq, ListAutocompleteFieldsRes, ListAvailableFieldsByElementIdReq, ListCampaignLinksRes, ListCjsSearchDefinitionsReq, ListCjsSearchDefinitionsRes, ListCollectionsReq, ListCollectionsRes, ListElementsReq, ListFieldsForElementReq, ListFieldsForElementRes, ListFieldsReq, PaginatedSearchRes, ParseReq, ParseRes, PeekListReq, PeekListRes, ProcessElementReq, ProcessFields, ProcessListRequest, ProcessListResponse, PublicKey, ResetCollectionReq, SampleRequest, SearchCollectionsPaginatedReq, StreamCollectionReq, StreamListRequest, StreamListResponse, UpdateFieldReq, ViewQueueReq } from "./lms_pb.js";
 import { Empty, MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -242,6 +242,24 @@ export const LMS = {
       I: ProcessElementReq,
       O: Empty,
       kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v0alpha.LMS.ProcessList
+     */
+    processList: {
+      name: "ProcessList",
+      I: ProcessListRequest,
+      O: ProcessListResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v0alpha.LMS.StreamList
+     */
+    streamList: {
+      name: "StreamList",
+      I: StreamListRequest,
+      O: StreamListResponse,
+      kind: MethodKind.ClientStreaming,
     },
     /**
      * @generated from rpc api.v0alpha.LMS.GetAvailableFields
@@ -524,6 +542,28 @@ export const LMS = {
       name: "UpdateCjsSecureSearchCriteria",
       I: CjsSecureSearchCriteria,
       O: Empty,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SampleEndpoint is to test that values come through to the api appropriately
+     *
+     * @generated from rpc api.v0alpha.LMS.SampleEndpoint
+     */
+    sampleEndpoint: {
+      name: "SampleEndpoint",
+      I: SampleRequest,
+      O: Empty,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * returns all fields possible that an ehr entity type could return (that we know of)
+     *
+     * @generated from rpc api.v0alpha.LMS.GetAvailableEHRFields
+     */
+    getAvailableEHRFields: {
+      name: "GetAvailableEHRFields",
+      I: EHREntityType,
+      O: Fields,
       kind: MethodKind.Unary,
     },
     /**

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateInsightRequest, CreateInsightResponse, DeleteInsightRequest, DeleteInsightResponse, GetInsightRequest, GetInsightResponse, GetVfsSchemaRequest, GetVfsSchemaResponse, ListInsightsRequest, ListInsightsResponse, ListVfsesRequest, ListVfsesResponse, UpdateInsightRequest, UpdateInsightResponse } from "./insight_pb.js";
+import { CreateInsightRequest, CreateInsightResponse, DeleteInsightRequest, DeleteInsightResponse, GetInsightRequest, GetInsightResponse, GetVfsSchemaRequest, GetVfsSchemaResponse, ListInsightsRequest, ListInsightsResponse, ListVfsesRequest, ListVfsesResponse, PublishInsightRequest, PublishInsightResponse, UpdateInsightRequest, UpdateInsightResponse } from "./insight_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -68,7 +68,7 @@ export const Insights = {
       kind: MethodKind.Unary,
     },
     /**
-     * CreateCommonsInsight creates a common library insight
+     * CreateCommonsInsight is deprecated.
      *
      * @generated from rpc api.v1alpha1.insights.Insights.CreateCommonsInsight
      */
@@ -79,7 +79,7 @@ export const Insights = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateCommonsInsight updates a common library insight
+     * UpdateCommonsInsight is deprecated.
      *
      * @generated from rpc api.v1alpha1.insights.Insights.UpdateCommonsInsight
      */
@@ -90,7 +90,7 @@ export const Insights = {
       kind: MethodKind.Unary,
     },
     /**
-     * DeleteCommonsInsight deletes a common library insight
+     * DeleteCommonsInsight is deprecated.
      *
      * @generated from rpc api.v1alpha1.insights.Insights.DeleteCommonsInsight
      */
@@ -120,6 +120,17 @@ export const Insights = {
       name: "ListVfses",
       I: ListVfsesRequest,
       O: ListVfsesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * PublishInsight publishes an insight
+     *
+     * @generated from rpc api.v1alpha1.insights.Insights.PublishInsight
+     */
+    publishInsight: {
+      name: "PublishInsight",
+      I: PublishInsightRequest,
+      O: PublishInsightResponse,
       kind: MethodKind.Unary,
     },
   }
