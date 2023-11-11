@@ -7,7 +7,6 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { BillingPlan } from "../../../services/billing/entities/v1alpha1/plan_pb.js";
 import type { Invoice } from "../../../services/billing/entities/v1alpha1/invoice_pb.js";
-import type { RateDefinition } from "../../../services/billing/entities/v1alpha1/rates_pb.js";
 
 /**
  * BillingCreateBillingPlanEvent is fired when a billing plan is created
@@ -78,9 +77,9 @@ export declare class BillingCreateInvoiceEvent extends Message<BillingCreateInvo
  */
 export declare class BillingCreateRateDefinitionEvent extends Message<BillingCreateRateDefinitionEvent> {
   /**
-   * @generated from field: services.billing.entities.v1alpha1.RateDefinition rate_definition = 1;
+   * @generated from field: string rate_definition_id = 1;
    */
-  rateDefinition?: RateDefinition;
+  rateDefinitionId: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -171,9 +170,9 @@ export declare class BillingDeleteInvoiceEvent extends Message<BillingDeleteInvo
  */
 export declare class BillingDeleteRateDefinitionEvent extends Message<BillingDeleteRateDefinitionEvent> {
   /**
-   * @generated from field: google.protobuf.StringValue rate_definition_id = 1;
+   * @generated from field: string rate_definition_id = 1;
    */
-  rateDefinitionId?: string;
+  rateDefinitionId: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -295,9 +294,9 @@ export declare class BillingUpdateInvoiceEvent extends Message<BillingUpdateInvo
  */
 export declare class BillingUpdateRateDefinitionEvent extends Message<BillingUpdateRateDefinitionEvent> {
   /**
-   * @generated from field: services.billing.entities.v1alpha1.RateDefinition rate_definition = 1;
+   * @generated from field: string rate_definition_id = 1;
    */
-  rateDefinition?: RateDefinition;
+  rateDefinitionId: string;
 
   /**
    * @generated from field: string user_id = 2;
