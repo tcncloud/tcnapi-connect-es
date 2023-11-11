@@ -3,9 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3, StringValue } from "@bufbuild/protobuf";
-import { BillingPlan } from "../../../services/billing/entities/v1alpha1/plan_pb.js";
-import { Invoice } from "../../../services/billing/entities/v1alpha1/invoice_pb.js";
+import { proto3 } from "@bufbuild/protobuf";
 
 /**
  * BillingCreateBillingPlanEvent is fired when a billing plan is created
@@ -15,7 +13,7 @@ import { Invoice } from "../../../services/billing/entities/v1alpha1/invoice_pb.
 export const BillingCreateBillingPlanEvent = proto3.makeMessageType(
   "api.commons.audit.BillingCreateBillingPlanEvent",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+    { no: 1, name: "billing_plan", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -28,7 +26,7 @@ export const BillingCreateBillingPlanEvent = proto3.makeMessageType(
 export const BillingCreateInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingCreateInvoiceEvent",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 1, name: "invoice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -41,7 +39,7 @@ export const BillingCreateInvoiceEvent = proto3.makeMessageType(
 export const BillingCreateRateDefinitionEvent = proto3.makeMessageType(
   "api.commons.audit.BillingCreateRateDefinitionEvent",
   () => [
-    { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "rate_definition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -54,7 +52,7 @@ export const BillingCreateRateDefinitionEvent = proto3.makeMessageType(
 export const BillingDeleteBillingPlanEvent = proto3.makeMessageType(
   "api.commons.audit.BillingDeleteBillingPlanEvent",
   () => [
-    { no: 1, name: "billing_plan_id", kind: "message", T: StringValue },
+    { no: 1, name: "billing_plan", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -67,7 +65,7 @@ export const BillingDeleteBillingPlanEvent = proto3.makeMessageType(
 export const BillingDeleteInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingDeleteInvoiceEvent",
   () => [
-    { no: 1, name: "invoice_id", kind: "message", T: StringValue },
+    { no: 1, name: "invoice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -80,7 +78,7 @@ export const BillingDeleteInvoiceEvent = proto3.makeMessageType(
 export const BillingDeleteRateDefinitionEvent = proto3.makeMessageType(
   "api.commons.audit.BillingDeleteRateDefinitionEvent",
   () => [
-    { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "rate_definition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -93,7 +91,7 @@ export const BillingDeleteRateDefinitionEvent = proto3.makeMessageType(
 export const BillingExportInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingExportInvoiceEvent",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 1, name: "invoice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -106,7 +104,7 @@ export const BillingExportInvoiceEvent = proto3.makeMessageType(
 export const BillingUpdateBillingPlanEvent = proto3.makeMessageType(
   "api.commons.audit.BillingUpdateBillingPlanEvent",
   () => [
-    { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+    { no: 1, name: "billing_plan", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -119,7 +117,7 @@ export const BillingUpdateBillingPlanEvent = proto3.makeMessageType(
 export const BillingUpdateInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingUpdateInvoiceEvent",
   () => [
-    { no: 1, name: "invoice", kind: "message", T: Invoice },
+    { no: 1, name: "invoice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -132,7 +130,7 @@ export const BillingUpdateInvoiceEvent = proto3.makeMessageType(
 export const BillingUpdateRateDefinitionEvent = proto3.makeMessageType(
   "api.commons.audit.BillingUpdateRateDefinitionEvent",
   () => [
-    { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "rate_definition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );

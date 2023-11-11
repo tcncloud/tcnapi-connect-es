@@ -5,8 +5,6 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { BillingPlan } from "../../../services/billing/entities/v1alpha1/plan_pb.js";
-import type { Invoice } from "../../../services/billing/entities/v1alpha1/invoice_pb.js";
 
 /**
  * BillingCreateBillingPlanEvent is fired when a billing plan is created
@@ -15,9 +13,9 @@ import type { Invoice } from "../../../services/billing/entities/v1alpha1/invoic
  */
 export declare class BillingCreateBillingPlanEvent extends Message<BillingCreateBillingPlanEvent> {
   /**
-   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: string billing_plan = 1;
    */
-  billingPlan?: BillingPlan;
+  billingPlan: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -46,9 +44,9 @@ export declare class BillingCreateBillingPlanEvent extends Message<BillingCreate
  */
 export declare class BillingCreateInvoiceEvent extends Message<BillingCreateInvoiceEvent> {
   /**
-   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 1;
+   * @generated from field: string invoice = 1;
    */
-  invoice?: Invoice;
+  invoice: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -77,9 +75,9 @@ export declare class BillingCreateInvoiceEvent extends Message<BillingCreateInvo
  */
 export declare class BillingCreateRateDefinitionEvent extends Message<BillingCreateRateDefinitionEvent> {
   /**
-   * @generated from field: string rate_definition_id = 1;
+   * @generated from field: string rate_definition = 1;
    */
-  rateDefinitionId: string;
+  rateDefinition: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -108,9 +106,9 @@ export declare class BillingCreateRateDefinitionEvent extends Message<BillingCre
  */
 export declare class BillingDeleteBillingPlanEvent extends Message<BillingDeleteBillingPlanEvent> {
   /**
-   * @generated from field: google.protobuf.StringValue billing_plan_id = 1;
+   * @generated from field: string billing_plan = 1;
    */
-  billingPlanId?: string;
+  billingPlan: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -139,9 +137,9 @@ export declare class BillingDeleteBillingPlanEvent extends Message<BillingDelete
  */
 export declare class BillingDeleteInvoiceEvent extends Message<BillingDeleteInvoiceEvent> {
   /**
-   * @generated from field: google.protobuf.StringValue invoice_id = 1;
+   * @generated from field: string invoice = 1;
    */
-  invoiceId?: string;
+  invoice: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -170,9 +168,9 @@ export declare class BillingDeleteInvoiceEvent extends Message<BillingDeleteInvo
  */
 export declare class BillingDeleteRateDefinitionEvent extends Message<BillingDeleteRateDefinitionEvent> {
   /**
-   * @generated from field: string rate_definition_id = 1;
+   * @generated from field: string rate_definition = 1;
    */
-  rateDefinitionId: string;
+  rateDefinition: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -201,9 +199,9 @@ export declare class BillingDeleteRateDefinitionEvent extends Message<BillingDel
  */
 export declare class BillingExportInvoiceEvent extends Message<BillingExportInvoiceEvent> {
   /**
-   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 1;
+   * @generated from field: string invoice = 1;
    */
-  invoice?: Invoice;
+  invoice: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -232,9 +230,9 @@ export declare class BillingExportInvoiceEvent extends Message<BillingExportInvo
  */
 export declare class BillingUpdateBillingPlanEvent extends Message<BillingUpdateBillingPlanEvent> {
   /**
-   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 1;
+   * @generated from field: string billing_plan = 1;
    */
-  billingPlan?: BillingPlan;
+  billingPlan: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -263,9 +261,9 @@ export declare class BillingUpdateBillingPlanEvent extends Message<BillingUpdate
  */
 export declare class BillingUpdateInvoiceEvent extends Message<BillingUpdateInvoiceEvent> {
   /**
-   * @generated from field: services.billing.entities.v1alpha1.Invoice invoice = 1;
+   * @generated from field: string invoice = 1;
    */
-  invoice?: Invoice;
+  invoice: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -294,9 +292,9 @@ export declare class BillingUpdateInvoiceEvent extends Message<BillingUpdateInvo
  */
 export declare class BillingUpdateRateDefinitionEvent extends Message<BillingUpdateRateDefinitionEvent> {
   /**
-   * @generated from field: string rate_definition_id = 1;
+   * @generated from field: string rate_definition = 1;
    */
-  rateDefinitionId: string;
+  rateDefinition: string;
 
   /**
    * @generated from field: string user_id = 2;
