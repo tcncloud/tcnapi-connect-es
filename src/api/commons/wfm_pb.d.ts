@@ -1947,9 +1947,9 @@ export declare class SkillProfileCategory extends Message<SkillProfileCategory> 
   /**
    * ID of either a skill profile or a skill profile group determined by @skill_profile_category_type.
    *
-   * @generated from field: int64 skill_profile_category_sid = 1 [jstype = JS_STRING];
+   * @generated from field: int64 skill_profile_category_sid = 1;
    */
-  skillProfileCategorySid: string;
+  skillProfileCategorySid: bigint;
 
   /**
    * Category type for @skill_profile_category_sid.
