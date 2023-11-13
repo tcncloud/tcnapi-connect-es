@@ -568,7 +568,7 @@ export const ScheduleSelector = proto3.makeMessageType(
 export const SkillProfileCategory = proto3.makeMessageType(
   "api.commons.SkillProfileCategory",
   () => [
-    { no: 1, name: "skill_profile_category_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "skill_profile_category_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "skill_profile_category_type", kind: "enum", T: proto3.getEnumType(SkillProfileCategory_CategoryType) },
   ],
 );
