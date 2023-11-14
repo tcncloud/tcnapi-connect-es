@@ -6,6 +6,19 @@
 import { proto3 } from "@bufbuild/protobuf";
 
 /**
+ * BillingCommitBillingPlanEvent is fired when a billing plan is committed
+ *
+ * @generated from message api.commons.audit.BillingCommitBillingPlanEvent
+ */
+export const BillingCommitBillingPlanEvent = proto3.makeMessageType(
+  "api.commons.audit.BillingCommitBillingPlanEvent",
+  () => [
+    { no: 1, name: "billing_plan", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * BillingCreateBillingPlanEvent is fired when a billing plan is created
  *
  * @generated from message api.commons.audit.BillingCreateBillingPlanEvent

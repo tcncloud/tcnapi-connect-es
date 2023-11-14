@@ -7,6 +7,37 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * BillingCommitBillingPlanEvent is fired when a billing plan is committed
+ *
+ * @generated from message api.commons.audit.BillingCommitBillingPlanEvent
+ */
+export declare class BillingCommitBillingPlanEvent extends Message<BillingCommitBillingPlanEvent> {
+  /**
+   * @generated from field: string billing_plan = 1;
+   */
+  billingPlan: string;
+
+  /**
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  constructor(data?: PartialMessage<BillingCommitBillingPlanEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.BillingCommitBillingPlanEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BillingCommitBillingPlanEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BillingCommitBillingPlanEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BillingCommitBillingPlanEvent;
+
+  static equals(a: BillingCommitBillingPlanEvent | PlainMessage<BillingCommitBillingPlanEvent> | undefined, b: BillingCommitBillingPlanEvent | PlainMessage<BillingCommitBillingPlanEvent> | undefined): boolean;
+}
+
+/**
  * BillingCreateBillingPlanEvent is fired when a billing plan is created
  *
  * @generated from message api.commons.audit.BillingCreateBillingPlanEvent

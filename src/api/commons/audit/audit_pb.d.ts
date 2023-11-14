@@ -15,7 +15,7 @@ import type { TicketEvent } from "./tickets_events_pb.js";
 import type { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import type { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
 import type { LMSPipelineFailureEvent } from "./lms_events_pb.js";
-import type { BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
+import type { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -804,61 +804,67 @@ export declare class AuditEvent extends Message<AuditEvent> {
     /**
      * Billing Events class 1000
      *
-     * @generated from field: api.commons.audit.BillingCreateBillingPlanEvent billing_create_billing_plan_event = 1000;
+     * @generated from field: api.commons.audit.BillingCommitBillingPlanEvent billing_commit_billing_plan_event = 1000;
+     */
+    value: BillingCommitBillingPlanEvent;
+    case: "billingCommitBillingPlanEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.audit.BillingCreateBillingPlanEvent billing_create_billing_plan_event = 1001;
      */
     value: BillingCreateBillingPlanEvent;
     case: "billingCreateBillingPlanEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingCreateInvoiceEvent billing_create_invoice_event = 1001;
+     * @generated from field: api.commons.audit.BillingCreateInvoiceEvent billing_create_invoice_event = 1002;
      */
     value: BillingCreateInvoiceEvent;
     case: "billingCreateInvoiceEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingCreateRateDefinitionEvent billing_create_rate_definition_event = 1002;
+     * @generated from field: api.commons.audit.BillingCreateRateDefinitionEvent billing_create_rate_definition_event = 1003;
      */
     value: BillingCreateRateDefinitionEvent;
     case: "billingCreateRateDefinitionEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingDeleteBillingPlanEvent billing_delete_billing_plan_event = 1003;
+     * @generated from field: api.commons.audit.BillingDeleteBillingPlanEvent billing_delete_billing_plan_event = 1004;
      */
     value: BillingDeleteBillingPlanEvent;
     case: "billingDeleteBillingPlanEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingDeleteInvoiceEvent billing_delete_invoice_event = 1004;
+     * @generated from field: api.commons.audit.BillingDeleteInvoiceEvent billing_delete_invoice_event = 1005;
      */
     value: BillingDeleteInvoiceEvent;
     case: "billingDeleteInvoiceEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingDeleteRateDefinitionEvent billing_delete_rate_definition_event = 1005;
+     * @generated from field: api.commons.audit.BillingDeleteRateDefinitionEvent billing_delete_rate_definition_event = 1006;
      */
     value: BillingDeleteRateDefinitionEvent;
     case: "billingDeleteRateDefinitionEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingExportInvoiceEvent billing_export_invoice_event = 1006;
+     * @generated from field: api.commons.audit.BillingExportInvoiceEvent billing_export_invoice_event = 1007;
      */
     value: BillingExportInvoiceEvent;
     case: "billingExportInvoiceEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingUpdateBillingPlanEvent billing_update_billing_plan_event = 1007;
+     * @generated from field: api.commons.audit.BillingUpdateBillingPlanEvent billing_update_billing_plan_event = 1008;
      */
     value: BillingUpdateBillingPlanEvent;
     case: "billingUpdateBillingPlanEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingUpdateInvoiceEvent billing_update_invoice_event = 1008;
+     * @generated from field: api.commons.audit.BillingUpdateInvoiceEvent billing_update_invoice_event = 1009;
      */
     value: BillingUpdateInvoiceEvent;
     case: "billingUpdateInvoiceEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingUpdateRateDefinitionEvent billing_update_rate_definition_event = 1009;
+     * @generated from field: api.commons.audit.BillingUpdateRateDefinitionEvent billing_update_rate_definition_event = 1010;
      */
     value: BillingUpdateRateDefinitionEvent;
     case: "billingUpdateRateDefinitionEvent";
