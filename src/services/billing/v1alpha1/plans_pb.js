@@ -122,6 +122,46 @@ export const DeleteDefaultBillingPlanResponse = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message services.billing.v1alpha1.DuplicateBillingPlanRequest
+ */
+export const DuplicateBillingPlanRequest = proto3.makeMessageType(
+  "services.billing.v1alpha1.DuplicateBillingPlanRequest",
+  () => [
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.DuplicateBillingPlanResponse
+ */
+export const DuplicateBillingPlanResponse = proto3.makeMessageType(
+  "services.billing.v1alpha1.DuplicateBillingPlanResponse",
+  () => [
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest
+ */
+export const DuplicateDefaultBillingPlanRequest = proto3.makeMessageType(
+  "services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest",
+  () => [
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.DuplicateDefaultBillingPlanResponse
+ */
+export const DuplicateDefaultBillingPlanResponse = proto3.makeMessageType(
+  "services.billing.v1alpha1.DuplicateDefaultBillingPlanResponse",
+  () => [
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message services.billing.v1alpha1.GetActiveBillingPlanRequest
  */
 export const GetActiveBillingPlanRequest = proto3.makeMessageType(

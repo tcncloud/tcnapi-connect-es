@@ -287,6 +287,102 @@ export declare class DeleteDefaultBillingPlanResponse extends Message<DeleteDefa
 }
 
 /**
+ * @generated from message services.billing.v1alpha1.DuplicateBillingPlanRequest
+ */
+export declare class DuplicateBillingPlanRequest extends Message<DuplicateBillingPlanRequest> {
+  /**
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  constructor(data?: PartialMessage<DuplicateBillingPlanRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.DuplicateBillingPlanRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DuplicateBillingPlanRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DuplicateBillingPlanRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DuplicateBillingPlanRequest;
+
+  static equals(a: DuplicateBillingPlanRequest | PlainMessage<DuplicateBillingPlanRequest> | undefined, b: DuplicateBillingPlanRequest | PlainMessage<DuplicateBillingPlanRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.DuplicateBillingPlanResponse
+ */
+export declare class DuplicateBillingPlanResponse extends Message<DuplicateBillingPlanResponse> {
+  /**
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  constructor(data?: PartialMessage<DuplicateBillingPlanResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.DuplicateBillingPlanResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DuplicateBillingPlanResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DuplicateBillingPlanResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DuplicateBillingPlanResponse;
+
+  static equals(a: DuplicateBillingPlanResponse | PlainMessage<DuplicateBillingPlanResponse> | undefined, b: DuplicateBillingPlanResponse | PlainMessage<DuplicateBillingPlanResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest
+ */
+export declare class DuplicateDefaultBillingPlanRequest extends Message<DuplicateDefaultBillingPlanRequest> {
+  /**
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  constructor(data?: PartialMessage<DuplicateDefaultBillingPlanRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DuplicateDefaultBillingPlanRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DuplicateDefaultBillingPlanRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DuplicateDefaultBillingPlanRequest;
+
+  static equals(a: DuplicateDefaultBillingPlanRequest | PlainMessage<DuplicateDefaultBillingPlanRequest> | undefined, b: DuplicateDefaultBillingPlanRequest | PlainMessage<DuplicateDefaultBillingPlanRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.DuplicateDefaultBillingPlanResponse
+ */
+export declare class DuplicateDefaultBillingPlanResponse extends Message<DuplicateDefaultBillingPlanResponse> {
+  /**
+   * @generated from field: string billing_plan_id = 1;
+   */
+  billingPlanId: string;
+
+  constructor(data?: PartialMessage<DuplicateDefaultBillingPlanResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.DuplicateDefaultBillingPlanResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DuplicateDefaultBillingPlanResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DuplicateDefaultBillingPlanResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DuplicateDefaultBillingPlanResponse;
+
+  static equals(a: DuplicateDefaultBillingPlanResponse | PlainMessage<DuplicateDefaultBillingPlanResponse> | undefined, b: DuplicateDefaultBillingPlanResponse | PlainMessage<DuplicateDefaultBillingPlanResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message services.billing.v1alpha1.GetActiveBillingPlanRequest
  */
 export declare class GetActiveBillingPlanRequest extends Message<GetActiveBillingPlanRequest> {

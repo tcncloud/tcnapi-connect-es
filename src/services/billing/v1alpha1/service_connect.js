@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
+import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, DuplicateBillingPlanRequest, DuplicateBillingPlanResponse, DuplicateDefaultBillingPlanRequest, DuplicateDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
@@ -256,6 +256,46 @@ export const BillingService = {
       name: "DeleteRateDefinition",
       I: DeleteRateDefinitionRequest,
       O: DeleteRateDefinitionResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Duplicates a billing plan. This copies the billing plan and all of its rate definitions.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.DuplicateBillingPlan
+     */
+    duplicateBillingPlan: {
+      name: "DuplicateBillingPlan",
+      I: DuplicateBillingPlanRequest,
+      O: DuplicateBillingPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Duplicates a default billing plan. This copies the billing plan, all of its rate definitions,
+     * and all of its rate definition groups and features.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified billing plan doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.DuplicateDefaultBillingPlan
+     */
+    duplicateDefaultBillingPlan: {
+      name: "DuplicateDefaultBillingPlan",
+      I: DuplicateDefaultBillingPlanRequest,
+      O: DuplicateDefaultBillingPlanResponse,
       kind: MethodKind.Unary,
     },
     /**
