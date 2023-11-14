@@ -345,6 +345,26 @@ export const CampaignDirection = proto3.makeEnum(
 );
 
 /**
+ * WhatsApp message types
+ *
+ * @generated from enum api.commons.WhatsAppType
+ */
+export const WhatsAppType = proto3.makeEnum(
+  "api.commons.WhatsAppType",
+  [
+    {no: 0, name: "WHATSAPP_AUDIO_TYPE"},
+    {no: 1, name: "WHATSAPP_CONTACT_TYPE"},
+    {no: 2, name: "WHATSAPP_DOCUMENT_TYPE"},
+    {no: 3, name: "WHATSAPP_IMAGE_TYPE"},
+    {no: 4, name: "WHATSAPP_INTERACTIVE_TYPE"},
+    {no: 5, name: "WHATSAPP_LOCATION_TYPE"},
+    {no: 6, name: "WHATSAPP_STICKER_TYPE"},
+    {no: 7, name: "WHATSAPP_TEMPLATE_TYPE"},
+    {no: 8, name: "WHATSAPP_TEXT_TYPE"},
+  ],
+);
+
+/**
  * OmniCampaign -
  *
  * @generated from message api.commons.OmniCampaign
@@ -1283,6 +1303,72 @@ export const OmniComplianceConfig = proto3.makeMessageType(
     { no: 4, name: "information", kind: "message", T: OmniComplianceAction },
     { no: 5, name: "scrub_list_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "rule_set_id", kind: "message", T: StringValue },
+  ],
+);
+
+/**
+ * WhatsAppMessage
+ *
+ * @generated from message api.commons.WhatsAppMessage
+ */
+export const WhatsAppMessage = proto3.makeMessageType(
+  "api.commons.WhatsAppMessage",
+  () => [
+    { no: 1, name: "message_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "user_id", kind: "message", T: StringValue },
+    { no: 3, name: "type", kind: "enum", T: proto3.getEnumType(WhatsAppType) },
+    { no: 4, name: "messaging_product", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "preview_url", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "text_message", kind: "message", T: WhatsAppTextMessage },
+    { no: 7, name: "sent_from", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "sent_to", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "channel_type", kind: "enum", T: proto3.getEnumType(ChannelType) },
+    { no: 10, name: "reference_id", kind: "message", T: StringValue },
+    { no: 11, name: "ui_reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "conversation_sid", kind: "message", T: Int64Id },
+    { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(OmniMessageStatus) },
+    { no: 14, name: "date_created", kind: "message", T: Timestamp },
+    { no: 15, name: "date_modified", kind: "message", T: Timestamp },
+    { no: 16, name: "campaign_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 17, name: "sender_type", kind: "enum", T: proto3.getEnumType(OmniSenderType) },
+    { no: 18, name: "status_message", kind: "message", T: StringValue },
+  ],
+);
+
+/**
+ * WhatsAppTextMessage
+ *
+ * @generated from message api.commons.WhatsAppTextMessage
+ */
+export const WhatsAppTextMessage = proto3.makeMessageType(
+  "api.commons.WhatsAppTextMessage",
+  () => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "attachments", kind: "message", T: WhatsAppAttachment, repeated: true },
+    { no: 3, name: "primary_asm_session_sid", kind: "message", T: Int64Value },
+  ],
+);
+
+/**
+ * WhatsAppAttachment details
+ *
+ * @generated from message api.commons.WhatsAppAttachment
+ */
+export const WhatsAppAttachment = proto3.makeMessageType(
+  "api.commons.WhatsAppAttachment",
+  () => [
+    { no: 1, name: "whatsapp_attachment_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "file_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "file_size", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "temp_id", kind: "message", T: StringValue },
+    { no: 7, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "date_created", kind: "message", T: Timestamp },
+    { no: 9, name: "date_modified", kind: "message", T: Timestamp },
+    { no: 10, name: "content_id", kind: "message", T: StringValue },
+    { no: 11, name: "width", kind: "message", T: StringValue },
+    { no: 12, name: "height", kind: "message", T: StringValue },
   ],
 );
 
