@@ -128,6 +128,7 @@ export const DuplicateBillingPlanRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.DuplicateBillingPlanRequest",
   () => [
     { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "billing_plan", kind: "message", T: BillingPlan },
   ],
 );
 
@@ -148,6 +149,7 @@ export const DuplicateDefaultBillingPlanRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.DuplicateDefaultBillingPlanRequest",
   () => [
     { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "billing_plan", kind: "message", T: BillingPlan },
   ],
 );
 

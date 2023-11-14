@@ -295,6 +295,11 @@ export declare class DuplicateBillingPlanRequest extends Message<DuplicateBillin
    */
   billingPlanId: string;
 
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
+   */
+  billingPlan?: BillingPlan;
+
   constructor(data?: PartialMessage<DuplicateBillingPlanRequest>);
 
   static readonly runtime: typeof proto3;
@@ -342,6 +347,11 @@ export declare class DuplicateDefaultBillingPlanRequest extends Message<Duplicat
    * @generated from field: string billing_plan_id = 1;
    */
   billingPlanId: string;
+
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.BillingPlan billing_plan = 2;
+   */
+  billingPlan?: BillingPlan;
 
   constructor(data?: PartialMessage<DuplicateDefaultBillingPlanRequest>);
 
