@@ -13,9 +13,9 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export declare class BillingCommitBillingPlanEvent extends Message<BillingCommitBillingPlanEvent> {
   /**
-   * @generated from field: string billing_plan = 1;
+   * @generated from field: string billing_plan_id = 1;
    */
-  billingPlan: string;
+  billingPlanId: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -137,9 +137,9 @@ export declare class BillingCreateRateDefinitionEvent extends Message<BillingCre
  */
 export declare class BillingDeleteBillingPlanEvent extends Message<BillingDeleteBillingPlanEvent> {
   /**
-   * @generated from field: string billing_plan = 1;
+   * @generated from field: string billing_plan_id = 1;
    */
-  billingPlan: string;
+  billingPlanId: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -168,9 +168,9 @@ export declare class BillingDeleteBillingPlanEvent extends Message<BillingDelete
  */
 export declare class BillingDeleteInvoiceEvent extends Message<BillingDeleteInvoiceEvent> {
   /**
-   * @generated from field: string invoice = 1;
+   * @generated from field: string invoice_id = 1;
    */
-  invoice: string;
+  invoiceId: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -199,9 +199,9 @@ export declare class BillingDeleteInvoiceEvent extends Message<BillingDeleteInvo
  */
 export declare class BillingDeleteRateDefinitionEvent extends Message<BillingDeleteRateDefinitionEvent> {
   /**
-   * @generated from field: string rate_definition = 1;
+   * @generated from field: string rate_definition_id = 1;
    */
-  rateDefinition: string;
+  rateDefinitionId: string;
 
   /**
    * @generated from field: string user_id = 2;
@@ -230,9 +230,9 @@ export declare class BillingDeleteRateDefinitionEvent extends Message<BillingDel
  */
 export declare class BillingExportInvoiceEvent extends Message<BillingExportInvoiceEvent> {
   /**
-   * @generated from field: string invoice = 1;
+   * @generated from field: string invoice_id = 1;
    */
-  invoice: string;
+  invoiceId: string;
 
   /**
    * @generated from field: string user_id = 2;

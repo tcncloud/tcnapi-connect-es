@@ -13,7 +13,7 @@ import { proto3 } from "@bufbuild/protobuf";
 export const BillingCommitBillingPlanEvent = proto3.makeMessageType(
   "api.commons.audit.BillingCommitBillingPlanEvent",
   () => [
-    { no: 1, name: "billing_plan", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -65,7 +65,7 @@ export const BillingCreateRateDefinitionEvent = proto3.makeMessageType(
 export const BillingDeleteBillingPlanEvent = proto3.makeMessageType(
   "api.commons.audit.BillingDeleteBillingPlanEvent",
   () => [
-    { no: 1, name: "billing_plan", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "billing_plan_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -78,7 +78,7 @@ export const BillingDeleteBillingPlanEvent = proto3.makeMessageType(
 export const BillingDeleteInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingDeleteInvoiceEvent",
   () => [
-    { no: 1, name: "invoice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -91,7 +91,7 @@ export const BillingDeleteInvoiceEvent = proto3.makeMessageType(
 export const BillingDeleteRateDefinitionEvent = proto3.makeMessageType(
   "api.commons.audit.BillingDeleteRateDefinitionEvent",
   () => [
-    { no: 1, name: "rate_definition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -104,7 +104,7 @@ export const BillingDeleteRateDefinitionEvent = proto3.makeMessageType(
 export const BillingExportInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingExportInvoiceEvent",
   () => [
-    { no: 1, name: "invoice", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
