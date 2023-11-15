@@ -9,9 +9,8 @@ import type { EventType } from "../audit/event_types_pb.js";
 import type { BasicAmountConfig, BasicConfig } from "./modules/modules_pb.js";
 
 /**
- * DetailConfigType - the types of billing detail configurations available
- *
  * @generated from enum api.commons.billing.DetailConfigType
+ * @deprecated
  */
 export declare enum DetailConfigType {
   /**
@@ -225,58 +224,49 @@ export declare enum DetailConfigType {
 }
 
 /**
- * Plan - a collection of details belongind to a single organization.
- *
  * @generated from message api.commons.billing.Plan
+ * @deprecated
  */
 export declare class Plan extends Message<Plan> {
   /**
-   * all the details that make up this billing plan, where each
-   * detail defines how to configure a particular rating module.
-   *
-   * @generated from field: repeated api.commons.billing.Detail details = 1;
+   * @generated from field: repeated api.commons.billing.Detail details = 1 [deprecated = true];
+   * @deprecated
    */
   details: Detail[];
 
   /**
-   * the organization identifier
-   *
-   * @generated from field: string org_id = 2;
+   * @generated from field: string org_id = 2 [deprecated = true];
+   * @deprecated
    */
   orgId: string;
 
   /**
-   * billing plan identifier
-   *
-   * @generated from field: int64 billing_plan_id = 3 [jstype = JS_STRING];
+   * @generated from field: int64 billing_plan_id = 3 [jstype = JS_STRING, deprecated = true];
+   * @deprecated
    */
   billingPlanId: string;
 
   /**
-   * time the billing plan was created
-   *
-   * @generated from field: google.protobuf.Timestamp create_time = 4;
+   * @generated from field: google.protobuf.Timestamp create_time = 4 [deprecated = true];
+   * @deprecated
    */
   createTime?: Timestamp;
 
   /**
-   * time the billing plan was updated
-   *
-   * @generated from field: google.protobuf.Timestamp update_time = 5;
+   * @generated from field: google.protobuf.Timestamp update_time = 5 [deprecated = true];
+   * @deprecated
    */
   updateTime?: Timestamp;
 
   /**
-   * the time from which this billing plan took effect
-   *
-   * @generated from field: google.protobuf.Timestamp start_time = 6;
+   * @generated from field: google.protobuf.Timestamp start_time = 6 [deprecated = true];
+   * @deprecated
    */
   startTime?: Timestamp;
 
   /**
-   * the time (if applicable) this billing plan ended; can be null
-   *
-   * @generated from field: google.protobuf.Timestamp end_time = 7;
+   * @generated from field: google.protobuf.Timestamp end_time = 7 [deprecated = true];
+   * @deprecated
    */
   endTime?: Timestamp;
 
@@ -296,64 +286,55 @@ export declare class Plan extends Message<Plan> {
 }
 
 /**
- * Detail - all the data required to configure a rating module
- *
  * @generated from message api.commons.billing.Detail
+ * @deprecated
  */
 export declare class Detail extends Message<Detail> {
   /**
-   * billing detail identifier
-   *
-   * @generated from field: int64 billing_detail_sid = 1;
+   * @generated from field: int64 billing_detail_sid = 1 [deprecated = true];
+   * @deprecated
    */
   billingDetailSid: bigint;
 
   /**
-   * event type this billing detail is associated with
-   *
-   * @generated from field: api.commons.audit.EventType event_type = 2;
+   * @generated from field: api.commons.audit.EventType event_type = 2 [deprecated = true];
+   * @deprecated
    */
   eventType: EventType;
 
   /**
-   * the type of configuration for this detail
-   *
-   * @generated from field: api.commons.billing.DetailConfigType config_type = 3;
+   * @generated from field: api.commons.billing.DetailConfigType config_type = 3 [deprecated = true];
+   * @deprecated
    */
   configType: DetailConfigType;
 
   /**
-   * the configuration details for this detail
-   *
-   * @generated from field: api.commons.billing.DetailConfig config = 4;
+   * @generated from field: api.commons.billing.DetailConfig config = 4 [deprecated = true];
+   * @deprecated
    */
   config?: DetailConfig;
 
   /**
-   * the time the detail was created
-   *
-   * @generated from field: google.protobuf.Timestamp date_created = 5;
+   * @generated from field: google.protobuf.Timestamp date_created = 5 [deprecated = true];
+   * @deprecated
    */
   dateCreated?: Timestamp;
 
   /**
-   * the time the detail was last modified
-   *
-   * @generated from field: google.protobuf.Timestamp date_modified = 6;
+   * @generated from field: google.protobuf.Timestamp date_modified = 6 [deprecated = true];
+   * @deprecated
    */
   dateModified?: Timestamp;
 
   /**
-   * the time the detail was deleted (if applicable)
-   *
-   * @generated from field: google.protobuf.Timestamp deleted_on = 7;
+   * @generated from field: google.protobuf.Timestamp deleted_on = 7 [deprecated = true];
+   * @deprecated
    */
   deletedOn?: Timestamp;
 
   /**
-   * the billing plan identifier
-   *
-   * @generated from field: int64 billing_plan_id = 8 [jstype = JS_STRING];
+   * @generated from field: int64 billing_plan_id = 8 [jstype = JS_STRING, deprecated = true];
+   * @deprecated
    */
   billingPlanId: string;
 
@@ -373,10 +354,8 @@ export declare class Detail extends Message<Detail> {
 }
 
 /**
- * DetailConfig - contains the data specific to the rating module,
- * so that it may rate events correctly
- *
  * @generated from message api.commons.billing.DetailConfig
+ * @deprecated
  */
 export declare class DetailConfig extends Message<DetailConfig> {
   /**
@@ -384,7 +363,8 @@ export declare class DetailConfig extends Message<DetailConfig> {
    */
   config: {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig agent_seats_config = 2;
+     * @generated from field: api.commons.billing.modules.BasicConfig agent_seats_config = 2 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "agentSeatsConfig";
@@ -392,217 +372,253 @@ export declare class DetailConfig extends Message<DetailConfig> {
     /**
      * omni configs
      *
-     * @generated from field: api.commons.billing.modules.BasicConfig agent_text_message_chat_config = 100;
+     * @generated from field: api.commons.billing.modules.BasicConfig agent_text_message_chat_config = 100 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "agentTextMessageChatConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig agent_text_message_email_message_config = 101;
+     * @generated from field: api.commons.billing.modules.BasicConfig agent_text_message_email_message_config = 101 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "agentTextMessageEmailMessageConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig agent_text_message_email_size_config = 102;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig agent_text_message_email_size_config = 102 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "agentTextMessageEmailSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig agent_text_message_sms_config = 103;
+     * @generated from field: api.commons.billing.modules.BasicConfig agent_text_message_sms_config = 103 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "agentTextMessageSmsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig task_message_sent_email_message_config = 104;
+     * @generated from field: api.commons.billing.modules.BasicConfig task_message_sent_email_message_config = 104 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "taskMessageSentEmailMessageConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig task_message_sent_email_size_config = 105;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig task_message_sent_email_size_config = 105 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "taskMessageSentEmailSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig task_message_sent_sms_config = 106;
+     * @generated from field: api.commons.billing.modules.BasicConfig task_message_sent_sms_config = 106 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "taskMessageSentSmsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig connected_inbox_poll_config = 107;
+     * @generated from field: api.commons.billing.modules.BasicConfig connected_inbox_poll_config = 107 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "connectedInboxPollConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig manager_text_message_chat_config = 108;
+     * @generated from field: api.commons.billing.modules.BasicConfig manager_text_message_chat_config = 108 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "managerTextMessageChatConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig manager_text_message_email_message_config = 109;
+     * @generated from field: api.commons.billing.modules.BasicConfig manager_text_message_email_message_config = 109 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "managerTextMessageEmailMessageConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig manager_text_message_email_size_config = 110;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig manager_text_message_email_size_config = 110 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "managerTextMessageEmailSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig manager_text_message_sms_config = 111;
+     * @generated from field: api.commons.billing.modules.BasicConfig manager_text_message_sms_config = 111 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "managerTextMessageSmsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig customer_text_message_chat_config = 112;
+     * @generated from field: api.commons.billing.modules.BasicConfig customer_text_message_chat_config = 112 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "customerTextMessageChatConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig customer_text_message_email_message_config = 113;
+     * @generated from field: api.commons.billing.modules.BasicConfig customer_text_message_email_message_config = 113 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "customerTextMessageEmailMessageConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig customer_text_message_email_size_config = 114;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig customer_text_message_email_size_config = 114 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "customerTextMessageEmailSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig customer_text_message_sms_config = 115;
+     * @generated from field: api.commons.billing.modules.BasicConfig customer_text_message_sms_config = 115 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "customerTextMessageSmsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig agent_text_message_chat_size_config = 116;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig agent_text_message_chat_size_config = 116 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "agentTextMessageChatSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig manager_text_message_chat_size_config = 117;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig manager_text_message_chat_size_config = 117 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "managerTextMessageChatSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig customer_text_message_chat_size_config = 118;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig customer_text_message_chat_size_config = 118 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "customerTextMessageChatSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig connected_inbox_created_config = 119;
+     * @generated from field: api.commons.billing.modules.BasicConfig connected_inbox_created_config = 119 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "connectedInboxCreatedConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig agent_text_message_sms_size_config = 120;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig agent_text_message_sms_size_config = 120 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "agentTextMessageSmsSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig manager_text_message_sms_size_config = 121;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig manager_text_message_sms_size_config = 121 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "managerTextMessageSmsSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig customer_text_message_sms_size_config = 122;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig customer_text_message_sms_size_config = 122 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "customerTextMessageSmsSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicAmountConfig task_message_sent_sms_size_config = 123;
+     * @generated from field: api.commons.billing.modules.BasicAmountConfig task_message_sent_sms_size_config = 123 [deprecated = true];
+     * @deprecated
      */
     value: BasicAmountConfig;
     case: "taskMessageSentSmsSizeConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig agent_chat_message_units_config = 124;
+     * @generated from field: api.commons.billing.modules.BasicConfig agent_chat_message_units_config = 124 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "agentChatMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig agent_email_message_units_config = 125;
+     * @generated from field: api.commons.billing.modules.BasicConfig agent_email_message_units_config = 125 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "agentEmailMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig agent_sms_message_units_config = 126;
+     * @generated from field: api.commons.billing.modules.BasicConfig agent_sms_message_units_config = 126 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "agentSmsMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig manager_chat_message_units_config = 127;
+     * @generated from field: api.commons.billing.modules.BasicConfig manager_chat_message_units_config = 127 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "managerChatMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig manager_email_message_units_config = 128;
+     * @generated from field: api.commons.billing.modules.BasicConfig manager_email_message_units_config = 128 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "managerEmailMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig manager_sms_message_units_config = 129;
+     * @generated from field: api.commons.billing.modules.BasicConfig manager_sms_message_units_config = 129 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "managerSmsMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig customer_chat_message_units_config = 130;
+     * @generated from field: api.commons.billing.modules.BasicConfig customer_chat_message_units_config = 130 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "customerChatMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig customer_email_message_units_config = 131;
+     * @generated from field: api.commons.billing.modules.BasicConfig customer_email_message_units_config = 131 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "customerEmailMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig customer_sms_message_units_config = 132;
+     * @generated from field: api.commons.billing.modules.BasicConfig customer_sms_message_units_config = 132 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "customerSmsMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig system_chat_message_units_config = 133;
+     * @generated from field: api.commons.billing.modules.BasicConfig system_chat_message_units_config = 133 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "systemChatMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig system_email_message_units_config = 134;
+     * @generated from field: api.commons.billing.modules.BasicConfig system_email_message_units_config = 134 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "systemEmailMessageUnitsConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig system_sms_message_units_config = 135;
+     * @generated from field: api.commons.billing.modules.BasicConfig system_sms_message_units_config = 135 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "systemSmsMessageUnitsConfig";
@@ -610,13 +626,15 @@ export declare class DetailConfig extends Message<DetailConfig> {
     /**
      * compliance configs
      *
-     * @generated from field: api.commons.billing.modules.BasicConfig compliance_rnd_query_config = 200;
+     * @generated from field: api.commons.billing.modules.BasicConfig compliance_rnd_query_config = 200 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "complianceRndQueryConfig";
   } | {
     /**
-     * @generated from field: api.commons.billing.modules.BasicConfig compliance_rnd_query_cached_config = 201;
+     * @generated from field: api.commons.billing.modules.BasicConfig compliance_rnd_query_cached_config = 201 [deprecated = true];
+     * @deprecated
      */
     value: BasicConfig;
     case: "complianceRndQueryCachedConfig";

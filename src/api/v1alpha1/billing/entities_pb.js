@@ -9,6 +9,7 @@ import { Invoice, InvoiceFormat as InvoiceFormat$1 } from "../../commons/billing
 
 /**
  * @generated from enum api.v1alpha1.billing.InvoiceFormat
+ * @deprecated
  */
 export const InvoiceFormat = proto3.makeEnum(
   "api.v1alpha1.billing.InvoiceFormat",
@@ -20,9 +21,8 @@ export const InvoiceFormat = proto3.makeEnum(
 );
 
 /**
- * GetBillingPlanReq - request to get an organization's billing plan
- *
  * @generated from message api.v1alpha1.billing.GetBillingPlanReq
+ * @deprecated
  */
 export const GetBillingPlanReq = proto3.makeMessageType(
   "api.v1alpha1.billing.GetBillingPlanReq",
@@ -32,9 +32,8 @@ export const GetBillingPlanReq = proto3.makeMessageType(
 );
 
 /**
- * GetBillingPlanRes - result of retrieving an organization's billing plan
- *
  * @generated from message api.v1alpha1.billing.GetBillingPlanRes
+ * @deprecated
  */
 export const GetBillingPlanRes = proto3.makeMessageType(
   "api.v1alpha1.billing.GetBillingPlanRes",
@@ -44,9 +43,8 @@ export const GetBillingPlanRes = proto3.makeMessageType(
 );
 
 /**
- * UpdateBillingPlanReq - request to update a billing plan.
- *
  * @generated from message api.v1alpha1.billing.UpdateBillingPlanReq
+ * @deprecated
  */
 export const UpdateBillingPlanReq = proto3.makeMessageType(
   "api.v1alpha1.billing.UpdateBillingPlanReq",
@@ -57,10 +55,8 @@ export const UpdateBillingPlanReq = proto3.makeMessageType(
 );
 
 /**
- * UpdateBillingPlanRes - result of updating a billing plan; contains
- * only the details that were provided in the request
- *
  * @generated from message api.v1alpha1.billing.UpdateBillingPlanRes
+ * @deprecated
  */
 export const UpdateBillingPlanRes = proto3.makeMessageType(
   "api.v1alpha1.billing.UpdateBillingPlanRes",
@@ -70,9 +66,8 @@ export const UpdateBillingPlanRes = proto3.makeMessageType(
 );
 
 /**
- * GetInvoiceReq - request to get an invoice
- *
  * @generated from message api.v1alpha1.billing.GetInvoiceReq
+ * @deprecated
  */
 export const GetInvoiceReq = proto3.makeMessageType(
   "api.v1alpha1.billing.GetInvoiceReq",
@@ -85,9 +80,8 @@ export const GetInvoiceReq = proto3.makeMessageType(
 );
 
 /**
- * GetInvoiceRes - result of retrieving an invoice
- *
  * @generated from message api.v1alpha1.billing.GetInvoiceRes
+ * @deprecated
  */
 export const GetInvoiceRes = proto3.makeMessageType(
   "api.v1alpha1.billing.GetInvoiceRes",
@@ -102,9 +96,8 @@ export const GetInvoiceRes = proto3.makeMessageType(
 );
 
 /**
- * ExportGenerateInvoicesReq - request to export a generated invoice
- *
  * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceReq
+ * @deprecated
  */
 export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
   "api.v1alpha1.billing.ExportGeneratedInvoiceReq",
@@ -117,9 +110,8 @@ export const ExportGeneratedInvoiceReq = proto3.makeMessageType(
 );
 
 /**
- * ExportGeneratedInvoicesRes - result of exporting a generated invoice
- *
  * @generated from message api.v1alpha1.billing.ExportGeneratedInvoiceRes
+ * @deprecated
  */
 export const ExportGeneratedInvoiceRes = proto3.makeMessageType(
   "api.v1alpha1.billing.ExportGeneratedInvoiceRes",
