@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignSkillGroupRequest, AssignSkillGroupResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupRequest, RevokeSkillGroupResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse } from "./entities_pb.js";
+import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -68,25 +68,25 @@ export declare const SkillsService: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * AssignSkillGroup assigns a user to a skill group.
+     * AssignSkillGroups assigns a user to the given skill groups.
      *
-     * @generated from rpc api.v1alpha1.org.skills.SkillsService.AssignSkillGroup
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.AssignSkillGroups
      */
-    readonly assignSkillGroup: {
-      readonly name: "AssignSkillGroup",
-      readonly I: typeof AssignSkillGroupRequest,
-      readonly O: typeof AssignSkillGroupResponse,
+    readonly assignSkillGroups: {
+      readonly name: "AssignSkillGroups",
+      readonly I: typeof AssignSkillGroupsRequest,
+      readonly O: typeof AssignSkillGroupsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
-     * RevokeSkillGroup revokes a skill group from a user.
+     * RevokeSkillGroups revokes the given skill groups from a user.
      *
-     * @generated from rpc api.v1alpha1.org.skills.SkillsService.RevokeSkillGroup
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.RevokeSkillGroups
      */
-    readonly revokeSkillGroup: {
-      readonly name: "RevokeSkillGroup",
-      readonly I: typeof RevokeSkillGroupRequest,
-      readonly O: typeof RevokeSkillGroupResponse,
+    readonly revokeSkillGroups: {
+      readonly name: "RevokeSkillGroups",
+      readonly I: typeof RevokeSkillGroupsRequest,
+      readonly O: typeof RevokeSkillGroupsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

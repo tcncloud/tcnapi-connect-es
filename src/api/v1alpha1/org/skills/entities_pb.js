@@ -125,48 +125,48 @@ export const DeleteSkillGroupResponse = proto3.makeMessageType(
 );
 
 /**
- * Request message for the AssignSkillGroup rpc.
+ * Request message for the AssignSkillGroups rpc.
  *
- * @generated from message api.v1alpha1.org.skills.AssignSkillGroupRequest
+ * @generated from message api.v1alpha1.org.skills.AssignSkillGroupsRequest
  */
-export const AssignSkillGroupRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.skills.AssignSkillGroupRequest",
+export const AssignSkillGroupsRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.AssignSkillGroupsRequest",
   () => [
-    { no: 1, name: "skill_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "skill_group_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * Response message for the AssignSkillGroup rpc.
+ * Response message for the AssignSkillGroups rpc.
  *
- * @generated from message api.v1alpha1.org.skills.AssignSkillGroupResponse
+ * @generated from message api.v1alpha1.org.skills.AssignSkillGroupsResponse
  */
-export const AssignSkillGroupResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.skills.AssignSkillGroupResponse",
+export const AssignSkillGroupsResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.AssignSkillGroupsResponse",
   [],
 );
 
 /**
- * Request message for the RevokeSkillGroup rpc.
+ * Request message for the RevokeSkillGroups rpc.
  *
- * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupRequest
+ * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupsRequest
  */
-export const RevokeSkillGroupRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.skills.RevokeSkillGroupRequest",
+export const RevokeSkillGroupsRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.RevokeSkillGroupsRequest",
   () => [
-    { no: 1, name: "skill_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "skill_group_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * Response message for the RevokeSkillGroup rpc.
+ * Response message for the RevokeSkillGroups rpc.
  *
- * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupResponse
+ * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupsResponse
  */
-export const RevokeSkillGroupResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.skills.RevokeSkillGroupResponse",
+export const RevokeSkillGroupsResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.RevokeSkillGroupsResponse",
   [],
 );
 

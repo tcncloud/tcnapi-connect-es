@@ -288,73 +288,17 @@ export declare class DeleteSkillGroupResponse extends Message<DeleteSkillGroupRe
 }
 
 /**
- * Request message for the AssignSkillGroup rpc.
+ * Request message for the AssignSkillGroups rpc.
  *
- * @generated from message api.v1alpha1.org.skills.AssignSkillGroupRequest
+ * @generated from message api.v1alpha1.org.skills.AssignSkillGroupsRequest
  */
-export declare class AssignSkillGroupRequest extends Message<AssignSkillGroupRequest> {
+export declare class AssignSkillGroupsRequest extends Message<AssignSkillGroupsRequest> {
   /**
-   * The skill group id of the skill group.
+   * The ids of the skill groups to be assigned.
    *
-   * @generated from field: string skill_group_id = 1;
+   * @generated from field: repeated string skill_group_ids = 1;
    */
-  skillGroupId: string;
-
-  /**
-   * The user id of the user.
-   *
-   * @generated from field: string user_id = 2;
-   */
-  userId: string;
-
-  constructor(data?: PartialMessage<AssignSkillGroupRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.skills.AssignSkillGroupRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignSkillGroupRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignSkillGroupRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignSkillGroupRequest;
-
-  static equals(a: AssignSkillGroupRequest | PlainMessage<AssignSkillGroupRequest> | undefined, b: AssignSkillGroupRequest | PlainMessage<AssignSkillGroupRequest> | undefined): boolean;
-}
-
-/**
- * Response message for the AssignSkillGroup rpc.
- *
- * @generated from message api.v1alpha1.org.skills.AssignSkillGroupResponse
- */
-export declare class AssignSkillGroupResponse extends Message<AssignSkillGroupResponse> {
-  constructor(data?: PartialMessage<AssignSkillGroupResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.skills.AssignSkillGroupResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignSkillGroupResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignSkillGroupResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignSkillGroupResponse;
-
-  static equals(a: AssignSkillGroupResponse | PlainMessage<AssignSkillGroupResponse> | undefined, b: AssignSkillGroupResponse | PlainMessage<AssignSkillGroupResponse> | undefined): boolean;
-}
-
-/**
- * Request message for the RevokeSkillGroup rpc.
- *
- * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupRequest
- */
-export declare class RevokeSkillGroupRequest extends Message<RevokeSkillGroupRequest> {
-  /**
-   * The skill group id of the skill group.
-   *
-   * @generated from field: string skill_group_id = 1;
-   */
-  skillGroupId: string;
+  skillGroupIds: string[];
 
   /**
    * The user id of the user.
@@ -363,40 +307,96 @@ export declare class RevokeSkillGroupRequest extends Message<RevokeSkillGroupReq
    */
   userId: string;
 
-  constructor(data?: PartialMessage<RevokeSkillGroupRequest>);
+  constructor(data?: PartialMessage<AssignSkillGroupsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.skills.RevokeSkillGroupRequest";
+  static readonly typeName = "api.v1alpha1.org.skills.AssignSkillGroupsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeSkillGroupRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignSkillGroupsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeSkillGroupRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignSkillGroupsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeSkillGroupRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignSkillGroupsRequest;
 
-  static equals(a: RevokeSkillGroupRequest | PlainMessage<RevokeSkillGroupRequest> | undefined, b: RevokeSkillGroupRequest | PlainMessage<RevokeSkillGroupRequest> | undefined): boolean;
+  static equals(a: AssignSkillGroupsRequest | PlainMessage<AssignSkillGroupsRequest> | undefined, b: AssignSkillGroupsRequest | PlainMessage<AssignSkillGroupsRequest> | undefined): boolean;
 }
 
 /**
- * Response message for the RevokeSkillGroup rpc.
+ * Response message for the AssignSkillGroups rpc.
  *
- * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupResponse
+ * @generated from message api.v1alpha1.org.skills.AssignSkillGroupsResponse
  */
-export declare class RevokeSkillGroupResponse extends Message<RevokeSkillGroupResponse> {
-  constructor(data?: PartialMessage<RevokeSkillGroupResponse>);
+export declare class AssignSkillGroupsResponse extends Message<AssignSkillGroupsResponse> {
+  constructor(data?: PartialMessage<AssignSkillGroupsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.skills.RevokeSkillGroupResponse";
+  static readonly typeName = "api.v1alpha1.org.skills.AssignSkillGroupsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeSkillGroupResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignSkillGroupsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeSkillGroupResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignSkillGroupsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeSkillGroupResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignSkillGroupsResponse;
 
-  static equals(a: RevokeSkillGroupResponse | PlainMessage<RevokeSkillGroupResponse> | undefined, b: RevokeSkillGroupResponse | PlainMessage<RevokeSkillGroupResponse> | undefined): boolean;
+  static equals(a: AssignSkillGroupsResponse | PlainMessage<AssignSkillGroupsResponse> | undefined, b: AssignSkillGroupsResponse | PlainMessage<AssignSkillGroupsResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the RevokeSkillGroups rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupsRequest
+ */
+export declare class RevokeSkillGroupsRequest extends Message<RevokeSkillGroupsRequest> {
+  /**
+   * The ids of the skill groups to be revoked.
+   *
+   * @generated from field: repeated string skill_group_ids = 1;
+   */
+  skillGroupIds: string[];
+
+  /**
+   * The user id of the user.
+   *
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
+  constructor(data?: PartialMessage<RevokeSkillGroupsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.RevokeSkillGroupsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeSkillGroupsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeSkillGroupsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeSkillGroupsRequest;
+
+  static equals(a: RevokeSkillGroupsRequest | PlainMessage<RevokeSkillGroupsRequest> | undefined, b: RevokeSkillGroupsRequest | PlainMessage<RevokeSkillGroupsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the RevokeSkillGroups rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.RevokeSkillGroupsResponse
+ */
+export declare class RevokeSkillGroupsResponse extends Message<RevokeSkillGroupsResponse> {
+  constructor(data?: PartialMessage<RevokeSkillGroupsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.RevokeSkillGroupsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeSkillGroupsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeSkillGroupsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeSkillGroupsResponse;
+
+  static equals(a: RevokeSkillGroupsResponse | PlainMessage<RevokeSkillGroupsResponse> | undefined, b: RevokeSkillGroupsResponse | PlainMessage<RevokeSkillGroupsResponse> | undefined): boolean;
 }
 
 /**
