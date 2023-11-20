@@ -245,16 +245,9 @@ export declare class GetSkillGroupResponse extends Message<GetSkillGroupResponse
  */
 export declare class DeleteSkillGroupRequest extends Message<DeleteSkillGroupRequest> {
   /**
-   * The org id of the skill group to delete.
-   *
-   * @generated from field: string org_id = 1;
-   */
-  orgId: string;
-
-  /**
    * The skill group id of the skill group to delete.
    *
-   * @generated from field: string skill_group_id = 2;
+   * @generated from field: string skill_group_id = 1;
    */
   skillGroupId: string;
 

@@ -110,8 +110,7 @@ export const GetSkillGroupResponse = proto3.makeMessageType(
 export const DeleteSkillGroupRequest = proto3.makeMessageType(
   "api.v1alpha1.org.skills.DeleteSkillGroupRequest",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "skill_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "skill_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
