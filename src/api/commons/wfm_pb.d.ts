@@ -2091,3 +2091,31 @@ export declare class ClientHistoryCacheInfo extends Message<ClientHistoryCacheIn
   static equals(a: ClientHistoryCacheInfo | PlainMessage<ClientHistoryCacheInfo> | undefined, b: ClientHistoryCacheInfo | PlainMessage<ClientHistoryCacheInfo> | undefined): boolean;
 }
 
+/**
+ * Defines an ErrorTrace to relate the error to associated log entries.
+ *
+ * @generated from message api.commons.ErrorTrace
+ */
+export declare class ErrorTrace extends Message<ErrorTrace> {
+  /**
+   * unique identifier to find any logs related to the error.
+   *
+   * @generated from field: string grpc_trace_bin = 1;
+   */
+  grpcTraceBin: string;
+
+  constructor(data?: PartialMessage<ErrorTrace>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ErrorTrace";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ErrorTrace;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ErrorTrace;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ErrorTrace;
+
+  static equals(a: ErrorTrace | PlainMessage<ErrorTrace> | undefined, b: ErrorTrace | PlainMessage<ErrorTrace> | undefined): boolean;
+}
+
