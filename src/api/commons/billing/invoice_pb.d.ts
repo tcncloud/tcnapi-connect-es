@@ -7,10 +7,8 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * Product - represents a billed product. A product should show up only
- * once in a monthly invoice.
- *
  * @generated from enum api.commons.billing.Product
+ * @deprecated
  */
 export declare enum Product {
   /**
@@ -76,6 +74,7 @@ export declare enum Product {
 
 /**
  * @generated from enum api.commons.billing.InvoiceFormat
+ * @deprecated
  */
 export declare enum InvoiceFormat {
   /**
@@ -95,45 +94,37 @@ export declare enum InvoiceFormat {
 }
 
 /**
- * Invoice - a collection of products with their total rated amount for
- * a selected month or month-to-date.
- *
  * @generated from message api.commons.billing.Invoice
+ * @deprecated
  */
 export declare class Invoice extends Message<Invoice> {
   /**
-   * The items forming the invoice, where a product type
-   * should show up only once in this list.
-   *
-   * @generated from field: repeated api.commons.billing.InvoiceItem items = 1;
+   * @generated from field: repeated api.commons.billing.InvoiceItem items = 1 [deprecated = true];
+   * @deprecated
    */
   items: InvoiceItem[];
 
   /**
-   * the invoice identifier
-   *
-   * @generated from field: int64 invoice_id = 2 [jstype = JS_STRING];
+   * @generated from field: int64 invoice_id = 2 [jstype = JS_STRING, deprecated = true];
+   * @deprecated
    */
   invoiceId: string;
 
   /**
-   * the billing cycle this invoice was generated for
-   *
-   * @generated from field: string billing_cycle = 3;
+   * @generated from field: string billing_cycle = 3 [deprecated = true];
+   * @deprecated
    */
   billingCycle: string;
 
   /**
-   * time the invoice was created
-   *
-   * @generated from field: google.protobuf.Timestamp create_time = 4;
+   * @generated from field: google.protobuf.Timestamp create_time = 4 [deprecated = true];
+   * @deprecated
    */
   createTime?: Timestamp;
 
   /**
-   * time the invoice was last updated
-   *
-   * @generated from field: google.protobuf.Timestamp update_time = 5;
+   * @generated from field: google.protobuf.Timestamp update_time = 5 [deprecated = true];
+   * @deprecated
    */
   updateTime?: Timestamp;
 
@@ -153,50 +144,43 @@ export declare class Invoice extends Message<Invoice> {
 }
 
 /**
- * InvoiceItem -
- *
  * @generated from message api.commons.billing.InvoiceItem
+ * @deprecated
  */
 export declare class InvoiceItem extends Message<InvoiceItem> {
   /**
-   * The unique identifier for this invoice item
-   *
-   * @generated from field: int64 invoice_item_sid = 1;
+   * @generated from field: int64 invoice_item_sid = 1 [deprecated = true];
+   * @deprecated
    */
   invoiceItemSid: bigint;
 
   /**
-   * The product this item contains the total for
-   *
-   * @generated from field: api.commons.billing.Product product = 2;
+   * @generated from field: api.commons.billing.Product product = 2 [deprecated = true];
+   * @deprecated
    */
   product: Product;
 
   /**
-   * The total amount billed for the product
-   *
-   * @generated from field: double amount = 3;
+   * @generated from field: double amount = 3 [deprecated = true];
+   * @deprecated
    */
   amount: number;
 
   /**
-   * time the invoice item was created
-   *
-   * @generated from field: google.protobuf.Timestamp date_created = 4;
+   * @generated from field: google.protobuf.Timestamp date_created = 4 [deprecated = true];
+   * @deprecated
    */
   dateCreated?: Timestamp;
 
   /**
-   * time the invoice item was last modified
-   *
-   * @generated from field: google.protobuf.Timestamp date_modified = 5;
+   * @generated from field: google.protobuf.Timestamp date_modified = 5 [deprecated = true];
+   * @deprecated
    */
   dateModified?: Timestamp;
 
   /**
-   * the invoice identifier
-   *
-   * @generated from field: int64 invoice_id = 6 [jstype = JS_STRING];
+   * @generated from field: int64 invoice_id = 6 [jstype = JS_STRING, deprecated = true];
+   * @deprecated
    */
   invoiceId: string;
 

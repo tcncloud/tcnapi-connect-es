@@ -8,9 +8,8 @@ import { EventType } from "../audit/event_types_pb.js";
 import { BasicAmountConfig, BasicConfig } from "./modules/modules_pb.js";
 
 /**
- * DetailConfigType - the types of billing detail configurations available
- *
  * @generated from enum api.commons.billing.DetailConfigType
+ * @deprecated
  */
 export const DetailConfigType = proto3.makeEnum(
   "api.commons.billing.DetailConfigType",
@@ -60,9 +59,8 @@ export const DetailConfigType = proto3.makeEnum(
 );
 
 /**
- * Plan - a collection of details belongind to a single organization.
- *
  * @generated from message api.commons.billing.Plan
+ * @deprecated
  */
 export const Plan = proto3.makeMessageType(
   "api.commons.billing.Plan",
@@ -78,9 +76,8 @@ export const Plan = proto3.makeMessageType(
 );
 
 /**
- * Detail - all the data required to configure a rating module
- *
  * @generated from message api.commons.billing.Detail
+ * @deprecated
  */
 export const Detail = proto3.makeMessageType(
   "api.commons.billing.Detail",
@@ -97,10 +94,8 @@ export const Detail = proto3.makeMessageType(
 );
 
 /**
- * DetailConfig - contains the data specific to the rating module,
- * so that it may rate events correctly
- *
  * @generated from message api.commons.billing.DetailConfig
+ * @deprecated
  */
 export const DetailConfig = proto3.makeMessageType(
   "api.commons.billing.DetailConfig",

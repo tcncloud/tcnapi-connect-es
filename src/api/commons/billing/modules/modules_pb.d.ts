@@ -7,16 +7,13 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
- * BasicConfig - basic config for a rating module when there is no
- * other data needed
- *
  * @generated from message api.commons.billing.modules.BasicConfig
+ * @deprecated
  */
 export declare class BasicConfig extends Message<BasicConfig> {
   /**
-   * Required. the amount to rate a single event
-   *
-   * @generated from field: double rate = 1;
+   * @generated from field: double rate = 1 [deprecated = true];
+   * @deprecated
    */
   rate: number;
 
@@ -36,46 +33,31 @@ export declare class BasicConfig extends Message<BasicConfig> {
 }
 
 /**
- * BasicSizeConfig - basic config for a rating module that rates based
- * on event size
- *
  * @generated from message api.commons.billing.modules.BasicAmountConfig
+ * @deprecated
  */
 export declare class BasicAmountConfig extends Message<BasicAmountConfig> {
   /**
-   * Required. the amount of a unit to apply the rate to. This is the
-   * increment amount; for example, an amount of 300 (with bytes as a
-   * unit of measurement) and a message of size 400 bytes will get
-   * billed as if it were a size of 600 bytes.
-   *
-   * @generated from field: int64 amount = 1;
+   * @generated from field: int64 amount = 1 [deprecated = true];
+   * @deprecated
    */
   amount: bigint;
 
   /**
-   * Required. the amount to rate each size increment
-   *
-   * @generated from field: double rate = 2;
+   * @generated from field: double rate = 2 [deprecated = true];
+   * @deprecated
    */
   rate: number;
 
   /**
-   * Optional. the minimum number of increments to rate; for example,
-   * an amount of 5 seconds and a min_increment of 2 would mean that
-   * any event less than 10 seconds would be billed as if it were 10
-   * seconds.
-   *
-   * @generated from field: google.protobuf.Int64Value min_increment = 3;
+   * @generated from field: google.protobuf.Int64Value min_increment = 3 [deprecated = true];
+   * @deprecated
    */
   minIncrement?: bigint;
 
   /**
-   * Optional. the maximum number of increments to rate; for example,
-   * an amount of 5 seconds and a max_increment of 2 would mean that
-   * any event more than 10 seconds would be billed as if it were 10
-   * seconds.
-   *
-   * @generated from field: google.protobuf.Int64Value max_increment = 4;
+   * @generated from field: google.protobuf.Int64Value max_increment = 4 [deprecated = true];
+   * @deprecated
    */
   maxIncrement?: bigint;
 

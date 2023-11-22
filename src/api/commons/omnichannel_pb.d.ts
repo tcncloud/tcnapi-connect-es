@@ -146,6 +146,11 @@ export declare enum ChannelType {
    * @generated from enum value: CHANNEL_TYPE_VOICE = 3;
    */
   VOICE = 3,
+
+  /**
+   * @generated from enum value: CHANNEL_TYPE_WHATSAPP = 4;
+   */
+  WHATSAPP = 4,
 }
 
 /**
@@ -920,9 +925,9 @@ export declare enum CampaignDirection {
 /**
  * WhatsApp message types
  *
- * @generated from enum api.commons.WhatsAppType
+ * @generated from enum api.commons.WhatsAppMsgType
  */
-export declare enum WhatsAppType {
+export declare enum WhatsAppMsgType {
   /**
    * audio messages
    *
@@ -2107,6 +2112,21 @@ export declare class OmniTextMessage extends Message<OmniTextMessage> {
    * @generated from field: google.protobuf.Int64Value primary_asm_session_sid = 3;
    */
   primaryAsmSessionSid?: bigint;
+
+  /**
+   * whatsapp message types
+   *
+   * @generated from field: api.commons.WhatsAppMsgType type = 4;
+   */
+  type: WhatsAppMsgType;
+
+  /**
+   * whatsapp preview url allows for URL previews in text messages
+   * required if type=text
+   *
+   * @generated from field: bool preview_url = 5;
+   */
+  previewUrl: boolean;
 
   constructor(data?: PartialMessage<OmniTextMessage>);
 
@@ -4441,301 +4461,5 @@ export declare class OmniComplianceConfig extends Message<OmniComplianceConfig> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniComplianceConfig;
 
   static equals(a: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined, b: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined): boolean;
-}
-
-/**
- * WhatsAppMessage
- *
- * @generated from message api.commons.WhatsAppMessage
- */
-export declare class WhatsAppMessage extends Message<WhatsAppMessage> {
-  /**
-   * this is the primary key or internal tcn identifier for the message
-   *
-   * @generated from field: int64 message_sid = 1 [jstype = JS_STRING];
-   */
-  messageSid: string;
-
-  /**
-   * this is the user id that sent the message - this can be not set which would
-   * be the case if it's not an agent message
-   *
-   * @generated from field: google.protobuf.StringValue user_id = 2;
-   */
-  userId?: string;
-
-  /**
-   * whatsapp message types
-   *
-   * @generated from field: api.commons.WhatsAppType type = 3;
-   */
-  type: WhatsAppType;
-
-  /**
-   * whatsapp product
-   *
-   * @generated from field: string messaging_product = 4;
-   */
-  messagingProduct: string;
-
-  /**
-   * required if type=text, allows for URL previews in text messages
-   *
-   * @generated from field: bool preview_url = 5;
-   */
-  previewUrl: boolean;
-
-  /**
-   * required for type text
-   *
-   * @generated from field: api.commons.WhatsAppTextMessage text_message = 6;
-   */
-  textMessage?: WhatsAppTextMessage;
-
-  /**
-   * whatsapp ID or phone number of the contact you receive a message from
-   *
-   * @generated from field: string sent_from = 7;
-   */
-  sentFrom: string;
-
-  /**
-   * whatsapp ID or phone number of the contact you want to send a message to
-   *
-   * @generated from field: string sent_to = 8;
-   */
-  sentTo: string;
-
-  /**
-   * the message channel type
-   *
-   * @generated from field: api.commons.ChannelType channel_type = 9;
-   */
-  channelType: ChannelType;
-
-  /**
-   * this is how the message is referenced by the outside world
-   *
-   * @generated from field: google.protobuf.StringValue reference_id = 10;
-   */
-  referenceId?: string;
-
-  /**
-   * this is an id that the UI generates so it's able to identify it when it sees it again
-   *
-   * @generated from field: string ui_reference_id = 11;
-   */
-  uiReferenceId: string;
-
-  /**
-   * the id of the conversation. This is not required to be set because the message could
-   * belong to a outbound campaign only
-   *
-   * @generated from field: api.commons.Int64Id conversation_sid = 12;
-   */
-  conversationSid?: Int64Id;
-
-  /**
-   * the current status of the message.
-   *
-   * @generated from field: api.commons.OmniMessageStatus status = 13;
-   */
-  status: OmniMessageStatus;
-
-  /**
-   * the time the message was created
-   *
-   * @generated from field: google.protobuf.Timestamp date_created = 14;
-   */
-  dateCreated?: Timestamp;
-
-  /**
-   * the time the message was last modified
-   *
-   * @generated from field: google.protobuf.Timestamp date_modified = 15;
-   */
-  dateModified?: Timestamp;
-
-  /**
-   * identifier of the campaign the message belongs to
-   *
-   * @generated from field: int64 campaign_sid = 16 [jstype = JS_STRING];
-   */
-  campaignSid: string;
-
-  /**
-   * if this message is coming from omni boss is a manager message
-   *
-   * @generated from field: api.commons.OmniSenderType sender_type = 17;
-   */
-  senderType: OmniSenderType;
-
-  /**
-   * status message
-   *
-   * @generated from field: google.protobuf.StringValue status_message = 18;
-   */
-  statusMessage?: string;
-
-  constructor(data?: PartialMessage<WhatsAppMessage>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.WhatsAppMessage";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WhatsAppMessage;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WhatsAppMessage;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WhatsAppMessage;
-
-  static equals(a: WhatsAppMessage | PlainMessage<WhatsAppMessage> | undefined, b: WhatsAppMessage | PlainMessage<WhatsAppMessage> | undefined): boolean;
-}
-
-/**
- * WhatsAppTextMessage
- *
- * @generated from message api.commons.WhatsAppTextMessage
- */
-export declare class WhatsAppTextMessage extends Message<WhatsAppTextMessage> {
-  /**
-   * message containing Urls
-   *
-   * @generated from field: string message = 1;
-   */
-  message: string;
-
-  /**
-   * attachments
-   *
-   * @generated from field: repeated api.commons.WhatsAppAttachment attachments = 2;
-   */
-  attachments: WhatsAppAttachment[];
-
-  /**
-   * primary asm session identifier
-   *
-   * @generated from field: google.protobuf.Int64Value primary_asm_session_sid = 3;
-   */
-  primaryAsmSessionSid?: bigint;
-
-  constructor(data?: PartialMessage<WhatsAppTextMessage>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.WhatsAppTextMessage";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WhatsAppTextMessage;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WhatsAppTextMessage;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WhatsAppTextMessage;
-
-  static equals(a: WhatsAppTextMessage | PlainMessage<WhatsAppTextMessage> | undefined, b: WhatsAppTextMessage | PlainMessage<WhatsAppTextMessage> | undefined): boolean;
-}
-
-/**
- * WhatsAppAttachment details
- *
- * @generated from message api.commons.WhatsAppAttachment
- */
-export declare class WhatsAppAttachment extends Message<WhatsAppAttachment> {
-  /**
-   * primary key or internal identifier for attachment
-   *
-   * @generated from field: int64 whatsapp_attachment_sid = 1 [jstype = JS_STRING];
-   */
-  whatsappAttachmentSid: string;
-
-  /**
-   * attachment file name
-   *
-   * @generated from field: string name = 2;
-   */
-  name: string;
-
-  /**
-   * attachment file type
-   *
-   * @generated from field: string file_type = 3;
-   */
-  fileType: string;
-
-  /**
-   * attachment file size
-   *
-   * @generated from field: int64 file_size = 4;
-   */
-  fileSize: bigint;
-
-  /**
-   * attachment file path
-   *
-   * @generated from field: string path = 5;
-   */
-  path: string;
-
-  /**
-   * temp id
-   *
-   * @generated from field: google.protobuf.StringValue temp_id = 6;
-   */
-  tempId?: string;
-
-  /**
-   * download attachment file url
-   *
-   * @generated from field: string download_url = 7;
-   */
-  downloadUrl: string;
-
-  /**
-   * time when the attachment was created
-   *
-   * @generated from field: google.protobuf.Timestamp date_created = 8;
-   */
-  dateCreated?: Timestamp;
-
-  /**
-   * time when the attachment was last modified
-   *
-   * @generated from field: google.protobuf.Timestamp date_modified = 9;
-   */
-  dateModified?: Timestamp;
-
-  /**
-   * Optional. the id of the attachment in text if inline
-   *
-   * @generated from field: google.protobuf.StringValue content_id = 10;
-   */
-  contentId?: string;
-
-  /**
-   * Optional. the width of the inline attachment
-   *
-   * @generated from field: google.protobuf.StringValue width = 11;
-   */
-  width?: string;
-
-  /**
-   * Optional. the height of the inline attachment
-   *
-   * @generated from field: google.protobuf.StringValue height = 12;
-   */
-  height?: string;
-
-  constructor(data?: PartialMessage<WhatsAppAttachment>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.WhatsAppAttachment";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WhatsAppAttachment;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WhatsAppAttachment;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WhatsAppAttachment;
-
-  static equals(a: WhatsAppAttachment | PlainMessage<WhatsAppAttachment> | undefined, b: WhatsAppAttachment | PlainMessage<WhatsAppAttachment> | undefined): boolean;
 }
 

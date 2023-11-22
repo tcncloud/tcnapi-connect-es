@@ -14,6 +14,7 @@ import { TicketEvent } from "./tickets_events_pb.js";
 import { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
 import { LMSPipelineFailureEvent } from "./lms_events_pb.js";
+import { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -121,6 +122,17 @@ export const AuditEvent = proto3.makeMessageType(
     { no: 701, name: "compliance_rnd_query_cached_event", kind: "message", T: ComplianceRndQueryEvent, oneof: "event" },
     { no: 800, name: "agent_training_create_learning_opportunity_event", kind: "message", T: AgentTrainingCreateLearningOpportunityEvent, oneof: "event" },
     { no: 900, name: "lms_pipeline_failure_event", kind: "message", T: LMSPipelineFailureEvent, oneof: "event" },
+    { no: 1000, name: "billing_commit_billing_plan_event", kind: "message", T: BillingCommitBillingPlanEvent, oneof: "event" },
+    { no: 1001, name: "billing_create_billing_plan_event", kind: "message", T: BillingCreateBillingPlanEvent, oneof: "event" },
+    { no: 1002, name: "billing_create_invoice_event", kind: "message", T: BillingCreateInvoiceEvent, oneof: "event" },
+    { no: 1003, name: "billing_create_rate_definition_event", kind: "message", T: BillingCreateRateDefinitionEvent, oneof: "event" },
+    { no: 1004, name: "billing_delete_billing_plan_event", kind: "message", T: BillingDeleteBillingPlanEvent, oneof: "event" },
+    { no: 1005, name: "billing_delete_invoice_event", kind: "message", T: BillingDeleteInvoiceEvent, oneof: "event" },
+    { no: 1006, name: "billing_delete_rate_definition_event", kind: "message", T: BillingDeleteRateDefinitionEvent, oneof: "event" },
+    { no: 1007, name: "billing_export_invoice_event", kind: "message", T: BillingExportInvoiceEvent, oneof: "event" },
+    { no: 1008, name: "billing_update_billing_plan_event", kind: "message", T: BillingUpdateBillingPlanEvent, oneof: "event" },
+    { no: 1009, name: "billing_update_invoice_event", kind: "message", T: BillingUpdateInvoiceEvent, oneof: "event" },
+    { no: 1010, name: "billing_update_rate_definition_event", kind: "message", T: BillingUpdateRateDefinitionEvent, oneof: "event" },
   ],
 );
 
