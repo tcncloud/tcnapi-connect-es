@@ -98,6 +98,7 @@ export const ListTemplate = proto3.makeMessageType(
     { no: 7, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "created_date", kind: "message", T: Timestamp },
     { no: 9, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "assigned_project", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 

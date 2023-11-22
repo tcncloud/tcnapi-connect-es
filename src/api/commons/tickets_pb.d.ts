@@ -341,6 +341,11 @@ export declare class ListTemplate extends Message<ListTemplate> {
    */
   projectTitle: string;
 
+  /**
+   * @generated from field: repeated int64 assigned_project = 10;
+   */
+  assignedProject: bigint[];
+
   constructor(data?: PartialMessage<ListTemplate>);
 
   static readonly runtime: typeof proto3;
