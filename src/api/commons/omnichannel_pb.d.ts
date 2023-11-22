@@ -923,76 +923,6 @@ export declare enum CampaignDirection {
 }
 
 /**
- * WhatsApp message types
- *
- * @generated from enum api.commons.WhatsAppMsgType
- */
-export declare enum WhatsAppMsgType {
-  /**
-   * audio messages
-   *
-   * @generated from enum value: WHATSAPP_AUDIO_TYPE = 0;
-   */
-  WHATSAPP_AUDIO_TYPE = 0,
-
-  /**
-   * contact messages
-   *
-   * @generated from enum value: WHATSAPP_CONTACT_TYPE = 1;
-   */
-  WHATSAPP_CONTACT_TYPE = 1,
-
-  /**
-   * document messages
-   *
-   * @generated from enum value: WHATSAPP_DOCUMENT_TYPE = 2;
-   */
-  WHATSAPP_DOCUMENT_TYPE = 2,
-
-  /**
-   * image messages
-   *
-   * @generated from enum value: WHATSAPP_IMAGE_TYPE = 3;
-   */
-  WHATSAPP_IMAGE_TYPE = 3,
-
-  /**
-   * interactive messages for list and reply
-   *
-   * @generated from enum value: WHATSAPP_INTERACTIVE_TYPE = 4;
-   */
-  WHATSAPP_INTERACTIVE_TYPE = 4,
-
-  /**
-   * location messages
-   *
-   * @generated from enum value: WHATSAPP_LOCATION_TYPE = 5;
-   */
-  WHATSAPP_LOCATION_TYPE = 5,
-
-  /**
-   * sticker messages
-   *
-   * @generated from enum value: WHATSAPP_STICKER_TYPE = 6;
-   */
-  WHATSAPP_STICKER_TYPE = 6,
-
-  /**
-   * template messages for Text and media (images and documents)
-   *
-   * @generated from enum value: WHATSAPP_TEMPLATE_TYPE = 7;
-   */
-  WHATSAPP_TEMPLATE_TYPE = 7,
-
-  /**
-   * text messages
-   *
-   * @generated from enum value: WHATSAPP_TEXT_TYPE = 8;
-   */
-  WHATSAPP_TEXT_TYPE = 8,
-}
-
-/**
  * OmniCampaign -
  *
  * @generated from message api.commons.OmniCampaign
@@ -2112,21 +2042,6 @@ export declare class OmniTextMessage extends Message<OmniTextMessage> {
    * @generated from field: google.protobuf.Int64Value primary_asm_session_sid = 3;
    */
   primaryAsmSessionSid?: bigint;
-
-  /**
-   * whatsapp message types
-   *
-   * @generated from field: api.commons.WhatsAppMsgType type = 4;
-   */
-  type: WhatsAppMsgType;
-
-  /**
-   * whatsapp preview url allows for URL previews in text messages
-   * required if type=text
-   *
-   * @generated from field: bool preview_url = 5;
-   */
-  previewUrl: boolean;
 
   constructor(data?: PartialMessage<OmniTextMessage>);
 

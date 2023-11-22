@@ -1489,6 +1489,20 @@ export declare enum AgentCallLogActionKey_Enum {
    * @generated from enum value: WARM_CALLER_TRANSFER_END = 42;
    */
   WARM_CALLER_TRANSFER_END = 42,
+
+  /**
+   * when a manager starts a barge in
+   *
+   * @generated from enum value: BARGE_IN_START = 43;
+   */
+  BARGE_IN_START = 43,
+
+  /**
+   * when a manager stops a barge in
+   *
+   * @generated from enum value: BARGE_IN_STOP = 44;
+   */
+  BARGE_IN_STOP = 44,
 }
 
 /**

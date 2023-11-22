@@ -346,26 +346,6 @@ export const CampaignDirection = proto3.makeEnum(
 );
 
 /**
- * WhatsApp message types
- *
- * @generated from enum api.commons.WhatsAppMsgType
- */
-export const WhatsAppMsgType = proto3.makeEnum(
-  "api.commons.WhatsAppMsgType",
-  [
-    {no: 0, name: "WHATSAPP_AUDIO_TYPE"},
-    {no: 1, name: "WHATSAPP_CONTACT_TYPE"},
-    {no: 2, name: "WHATSAPP_DOCUMENT_TYPE"},
-    {no: 3, name: "WHATSAPP_IMAGE_TYPE"},
-    {no: 4, name: "WHATSAPP_INTERACTIVE_TYPE"},
-    {no: 5, name: "WHATSAPP_LOCATION_TYPE"},
-    {no: 6, name: "WHATSAPP_STICKER_TYPE"},
-    {no: 7, name: "WHATSAPP_TEMPLATE_TYPE"},
-    {no: 8, name: "WHATSAPP_TEXT_TYPE"},
-  ],
-);
-
-/**
  * OmniCampaign -
  *
  * @generated from message api.commons.OmniCampaign
@@ -621,8 +601,6 @@ export const OmniTextMessage = proto3.makeMessageType(
     { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "attachments", kind: "message", T: OmniAttachment, repeated: true },
     { no: 3, name: "primary_asm_session_sid", kind: "message", T: Int64Value },
-    { no: 4, name: "type", kind: "enum", T: proto3.getEnumType(WhatsAppMsgType) },
-    { no: 5, name: "preview_url", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
