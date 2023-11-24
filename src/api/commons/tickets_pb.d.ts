@@ -342,6 +342,8 @@ export declare class ListTemplate extends Message<ListTemplate> {
   projectTitle: string;
 
   /**
+   * Need to change
+   *
    * @generated from field: repeated int64 assigned_project = 10;
    */
   assignedProject: bigint[];
@@ -375,6 +377,11 @@ export declare class AssignProjectTemplate extends Message<AssignProjectTemplate
    */
   projectId: string;
 
+  /**
+   * @generated from field: repeated api.commons.TemplateDetail template_details = 3;
+   */
+  templateDetails: TemplateDetail[];
+
   constructor(data?: PartialMessage<AssignProjectTemplate>);
 
   static readonly runtime: typeof proto3;
@@ -388,6 +395,35 @@ export declare class AssignProjectTemplate extends Message<AssignProjectTemplate
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignProjectTemplate;
 
   static equals(a: AssignProjectTemplate | PlainMessage<AssignProjectTemplate> | undefined, b: AssignProjectTemplate | PlainMessage<AssignProjectTemplate> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.TemplateDetail
+ */
+export declare class TemplateDetail extends Message<TemplateDetail> {
+  /**
+   * @generated from field: int64 ticket_template_id = 1 [jstype = JS_STRING];
+   */
+  ticketTemplateId: string;
+
+  /**
+   * @generated from field: string ticket_template_title = 2;
+   */
+  ticketTemplateTitle: string;
+
+  constructor(data?: PartialMessage<TemplateDetail>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TemplateDetail";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TemplateDetail;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TemplateDetail;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TemplateDetail;
+
+  static equals(a: TemplateDetail | PlainMessage<TemplateDetail> | undefined, b: TemplateDetail | PlainMessage<TemplateDetail> | undefined): boolean;
 }
 
 /**
@@ -553,6 +589,84 @@ export declare class CallbackContext extends Message<CallbackContext> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CallbackContext;
 
   static equals(a: CallbackContext | PlainMessage<CallbackContext> | undefined, b: CallbackContext | PlainMessage<CallbackContext> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.SmsbackContext
+ */
+export declare class SmsbackContext extends Message<SmsbackContext> {
+  /**
+   * @generated from field: string contact_name = 1;
+   */
+  contactName: string;
+
+  /**
+   * @generated from field: string to_sms = 2;
+   */
+  toSms: string;
+
+  /**
+   * @generated from field: string from_sms = 3;
+   */
+  fromSms: string;
+
+  /**
+   * @generated from field: string to_country_code = 4;
+   */
+  toCountryCode: string;
+
+  /**
+   * @generated from field: string from_country_code = 5;
+   */
+  fromCountryCode: string;
+
+  constructor(data?: PartialMessage<SmsbackContext>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.SmsbackContext";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SmsbackContext;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SmsbackContext;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SmsbackContext;
+
+  static equals(a: SmsbackContext | PlainMessage<SmsbackContext> | undefined, b: SmsbackContext | PlainMessage<SmsbackContext> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.EmailbackContext
+ */
+export declare class EmailbackContext extends Message<EmailbackContext> {
+  /**
+   * @generated from field: string contact_name = 1;
+   */
+  contactName: string;
+
+  /**
+   * @generated from field: string to_email = 2;
+   */
+  toEmail: string;
+
+  /**
+   * @generated from field: string from_email = 3;
+   */
+  fromEmail: string;
+
+  constructor(data?: PartialMessage<EmailbackContext>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.EmailbackContext";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EmailbackContext;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EmailbackContext;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EmailbackContext;
+
+  static equals(a: EmailbackContext | PlainMessage<EmailbackContext> | undefined, b: EmailbackContext | PlainMessage<EmailbackContext> | undefined): boolean;
 }
 
 /**

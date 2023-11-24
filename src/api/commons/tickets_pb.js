@@ -110,6 +110,18 @@ export const AssignProjectTemplate = proto3.makeMessageType(
   () => [
     { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */, repeated: true },
     { no: 2, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 3, name: "template_details", kind: "message", T: TemplateDetail, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.TemplateDetail
+ */
+export const TemplateDetail = proto3.makeMessageType(
+  "api.commons.TemplateDetail",
+  () => [
+    { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "ticket_template_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -156,6 +168,32 @@ export const CallbackContext = proto3.makeMessageType(
     { no: 3, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "caller_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "caller_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.SmsbackContext
+ */
+export const SmsbackContext = proto3.makeMessageType(
+  "api.commons.SmsbackContext",
+  () => [
+    { no: 1, name: "contact_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "to_sms", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "from_sms", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "to_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "from_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.EmailbackContext
+ */
+export const EmailbackContext = proto3.makeMessageType(
+  "api.commons.EmailbackContext",
+  () => [
+    { no: 1, name: "contact_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "to_email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "from_email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
