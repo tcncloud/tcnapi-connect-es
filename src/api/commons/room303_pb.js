@@ -52,6 +52,7 @@ export const ConfigPermissionEnum = proto3.makeEnum(
     {no: 0, name: "LIMITED"},
     {no: 1, name: "ROOM303_MEMBER"},
     {no: 2, name: "ROOM303_SUPERVISOR"},
+    {no: 3, name: "ROOM303_LIMITED"},
   ],
 );
 

@@ -92,6 +92,11 @@ export declare enum ConfigPermissionEnum {
    * @generated from enum value: ROOM303_SUPERVISOR = 2;
    */
   ROOM303_SUPERVISOR = 2,
+
+  /**
+   * @generated from enum value: ROOM303_LIMITED = 3;
+   */
+  ROOM303_LIMITED = 3,
 }
 
 /**
