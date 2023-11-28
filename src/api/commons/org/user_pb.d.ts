@@ -246,6 +246,13 @@ export declare class User extends Message<User> {
    */
   accountOwner: boolean;
 
+  /**
+   * Whether or not the user's email is verified.
+   *
+   * @generated from field: bool email_verified = 401;
+   */
+  emailVerified: boolean;
+
   constructor(data?: PartialMessage<User>);
 
   static readonly runtime: typeof proto3;
