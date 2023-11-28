@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateInsightRequest, CreateInsightResponse, DeleteInsightRequest, DeleteInsightResponse, GetInsightRequest, GetInsightResponse, GetVfsSchemaRequest, GetVfsSchemaResponse, ListInsightsRequest, ListInsightsResponse, ListVfsesRequest, ListVfsesResponse, PublishInsightRequest, PublishInsightResponse, UpdateInsightRequest, UpdateInsightResponse } from "./insight_pb.js";
+import { CreateInsightRequest, CreateInsightResponse, DeleteInsightRequest, DeleteInsightResponse, GetInsightRequest, GetInsightResponse, GetVfsSchemaRequest, GetVfsSchemaResponse, ListInsightsRequest, ListInsightsResponse, ListVfsesRequest, ListVfsesResponse, ListVfsSchemasRequest, ListVfsSchemasResponse, PublishInsightRequest, PublishInsightResponse, UpdateInsightRequest, UpdateInsightResponse } from "./insight_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -120,6 +120,17 @@ export declare const Insights: {
       readonly name: "ListVfses",
       readonly I: typeof ListVfsesRequest,
       readonly O: typeof ListVfsesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListVfses lists exported vfs aliases
+     *
+     * @generated from rpc api.v1alpha1.insights.Insights.ListVfsSchemas
+     */
+    readonly listVfsSchemas: {
+      readonly name: "ListVfsSchemas",
+      readonly I: typeof ListVfsSchemasRequest,
+      readonly O: typeof ListVfsSchemasResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

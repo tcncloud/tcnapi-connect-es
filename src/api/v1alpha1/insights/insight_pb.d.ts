@@ -506,6 +506,13 @@ export declare class GetVfsSchemaResponse extends Message<GetVfsSchemaResponse> 
    */
   vfsDescription: string;
 
+  /**
+   * alias name of the vfs
+   *
+   * @generated from field: string alias_name = 3;
+   */
+  aliasName: string;
+
   constructor(data?: PartialMessage<GetVfsSchemaResponse>);
 
   static readonly runtime: typeof proto3;
@@ -610,5 +617,54 @@ export declare class ListVfsesResponse extends Message<ListVfsesResponse> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListVfsesResponse;
 
   static equals(a: ListVfsesResponse | PlainMessage<ListVfsesResponse> | undefined, b: ListVfsesResponse | PlainMessage<ListVfsesResponse> | undefined): boolean;
+}
+
+/**
+ * ListVfsSchemasRequest is request to list vfs schemas
+ *
+ * @generated from message api.v1alpha1.insights.ListVfsSchemasRequest
+ */
+export declare class ListVfsSchemasRequest extends Message<ListVfsSchemasRequest> {
+  constructor(data?: PartialMessage<ListVfsSchemasRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.insights.ListVfsSchemasRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListVfsSchemasRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListVfsSchemasRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListVfsSchemasRequest;
+
+  static equals(a: ListVfsSchemasRequest | PlainMessage<ListVfsSchemasRequest> | undefined, b: ListVfsSchemasRequest | PlainMessage<ListVfsSchemasRequest> | undefined): boolean;
+}
+
+/**
+ * ListVfsSchemasResponse is response with vfs schemas
+ *
+ * @generated from message api.v1alpha1.insights.ListVfsSchemasResponse
+ */
+export declare class ListVfsSchemasResponse extends Message<ListVfsSchemasResponse> {
+  /**
+   * Array of vfs schemas
+   *
+   * @generated from field: repeated api.v1alpha1.insights.GetVfsSchemaResponse vfs_schemas = 1;
+   */
+  vfsSchemas: GetVfsSchemaResponse[];
+
+  constructor(data?: PartialMessage<ListVfsSchemasResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.insights.ListVfsSchemasResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListVfsSchemasResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListVfsSchemasResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListVfsSchemasResponse;
+
+  static equals(a: ListVfsSchemasResponse | PlainMessage<ListVfsSchemasResponse> | undefined, b: ListVfsSchemasResponse | PlainMessage<ListVfsSchemasResponse> | undefined): boolean;
 }
 

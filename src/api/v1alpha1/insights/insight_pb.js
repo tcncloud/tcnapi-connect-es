@@ -198,6 +198,7 @@ export const GetVfsSchemaResponse = proto3.makeMessageType(
   () => [
     { no: 1, name: "fields", kind: "message", T: GetVfsSchemaResponse_Field, repeated: true },
     { no: 2, name: "vfs_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "alias_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -235,6 +236,28 @@ export const ListVfsesResponse = proto3.makeMessageType(
   "api.v1alpha1.insights.ListVfsesResponse",
   () => [
     { no: 1, name: "aliases", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * ListVfsSchemasRequest is request to list vfs schemas
+ *
+ * @generated from message api.v1alpha1.insights.ListVfsSchemasRequest
+ */
+export const ListVfsSchemasRequest = proto3.makeMessageType(
+  "api.v1alpha1.insights.ListVfsSchemasRequest",
+  [],
+);
+
+/**
+ * ListVfsSchemasResponse is response with vfs schemas
+ *
+ * @generated from message api.v1alpha1.insights.ListVfsSchemasResponse
+ */
+export const ListVfsSchemasResponse = proto3.makeMessageType(
+  "api.v1alpha1.insights.ListVfsSchemasResponse",
+  () => [
+    { no: 1, name: "vfs_schemas", kind: "message", T: GetVfsSchemaResponse, repeated: true },
   ],
 );
 
