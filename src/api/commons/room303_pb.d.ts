@@ -79,21 +79,29 @@ export declare enum RoomStatus {
  */
 export declare enum ConfigPermissionEnum {
   /**
+   * default
+   *
    * @generated from enum value: LIMITED = 0;
    */
   LIMITED = 0,
 
   /**
+   * member permissions
+   *
    * @generated from enum value: ROOM303_MEMBER = 1;
    */
   ROOM303_MEMBER = 1,
 
   /**
+   * supervisor permissions
+   *
    * @generated from enum value: ROOM303_SUPERVISOR = 2;
    */
   ROOM303_SUPERVISOR = 2,
 
   /**
+   * limited permissions
+   *
    * @generated from enum value: ROOM303_LIMITED = 3;
    */
   ROOM303_LIMITED = 3,
