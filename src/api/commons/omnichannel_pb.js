@@ -66,6 +66,7 @@ export const ChannelType = proto3.makeEnum(
     {no: 1, name: "CHANNEL_TYPE_SMS", localName: "SMS"},
     {no: 2, name: "CHANNEL_TYPE_CHAT", localName: "CHAT"},
     {no: 3, name: "CHANNEL_TYPE_VOICE", localName: "VOICE"},
+    {no: 4, name: "CHANNEL_TYPE_WHATSAPP", localName: "WHATSAPP"},
   ],
 );
 

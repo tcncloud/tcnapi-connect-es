@@ -146,6 +146,11 @@ export declare enum ChannelType {
    * @generated from enum value: CHANNEL_TYPE_VOICE = 3;
    */
   VOICE = 3,
+
+  /**
+   * @generated from enum value: CHANNEL_TYPE_WHATSAPP = 4;
+   */
+  WHATSAPP = 4,
 }
 
 /**
