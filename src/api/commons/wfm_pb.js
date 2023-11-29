@@ -614,3 +614,15 @@ export const ClientHistoryCacheInfo = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Defines an ErrorTrace to relate the error to associated log entries.
+ *
+ * @generated from message api.commons.ErrorTrace
+ */
+export const ErrorTrace = proto3.makeMessageType(
+  "api.commons.ErrorTrace",
+  () => [
+    { no: 1, name: "grpc_trace_bin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

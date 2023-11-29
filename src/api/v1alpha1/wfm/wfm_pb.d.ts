@@ -5572,7 +5572,7 @@ export declare class CreateAgentGroupRes extends Message<CreateAgentGroupRes> {
  */
 export declare class ListAgentScheduleGroupsRequest extends Message<ListAgentScheduleGroupsRequest> {
   /**
-   * Any Node or ShiftTemplate.
+   * Any node or shift template that the agent groups belong to.
    *
    * @generated from field: api.v1alpha1.wfm.ParentEntity entity = 1;
    */
@@ -5600,6 +5600,8 @@ export declare class ListAgentScheduleGroupsRequest extends Message<ListAgentSch
  */
 export declare class ListAgentScheduleGroupsResponse extends Message<ListAgentScheduleGroupsResponse> {
   /**
+   * The agent_groups found. They will be filled with member_wfm_agents only.
+   *
    * @generated from field: repeated api.v1alpha1.wfm.AgentGroup agent_groups = 1;
    */
   agentGroups: AgentGroup[];

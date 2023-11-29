@@ -116,10 +116,11 @@ export const WFM = {
     /**
      * Gets the last date of a skill profile resync for the org seding the request.
      * If the org has never done a skill profile resync @resync_date will not be set.
+     * It will also start loading the client's history cache if its not loaded already.
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Internal: error occurs when getting the resync date.
+     *   - grpc.Internal: error occurs when getting the resync date or starting the client's history cache.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.GetLastSkillProfileResyncDate
      */
@@ -1190,7 +1191,14 @@ export const WFM = {
       kind: MethodKind.Unary,
     },
     /**
-     * Lists all schedulable AgentGroups on or under the given Node or ShiftTemplate.
+     * ListAgentScheduleGroups lists all schedulable agent groups for the given @entity and @org_id, filled with @member_wfm_agents.
+     * The given @entity must be either a Node or a ShiftTemplate.
+     *
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the request data is invalid.
+     *   - grpc.Internal: error occurs when getting the agent groups.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListAgentScheduleGroups
      */
