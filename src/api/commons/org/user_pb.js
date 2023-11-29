@@ -47,6 +47,7 @@ export const User = proto3.makeMessageType(
     { no: 208, name: "skills", kind: "message", T: Skill, repeated: true },
     { no: 300, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 400, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 401, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
