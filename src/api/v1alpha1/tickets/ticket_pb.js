@@ -96,6 +96,8 @@ export const ListTicketTemplateRequest = proto3.makeMessageType(
     { no: 1, name: "ticket_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "request_mask", kind: "message", T: FieldMask },
+    { no: 4, name: "template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 5, name: "template_project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 

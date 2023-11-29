@@ -65,6 +65,8 @@ export const Ticket = proto3.makeMessageType(
 );
 
 /**
+ * Ticket Template
+ *
  * @generated from message api.commons.TicketTemplate
  */
 export const TicketTemplate = proto3.makeMessageType(
@@ -85,6 +87,10 @@ export const TicketTemplate = proto3.makeMessageType(
 );
 
 /**
+ * Mapping of Template to a Project
+ * Each Ticket Template Can be mapped to Multiple Projects - In ListTicketTemplateRequest we need all Template To
+ * Project Mapping
+ *
  * @generated from message api.commons.TicketProjectTemplate
  */
 export const TicketProjectTemplate = proto3.makeMessageType(
@@ -96,14 +102,15 @@ export const TicketProjectTemplate = proto3.makeMessageType(
 );
 
 /**
+ * Project Description
+ *
  * @generated from message api.commons.ProjectDescription
  */
 export const ProjectDescription = proto3.makeMessageType(
   "api.commons.ProjectDescription",
   () => [
     { no: 1, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
-    { no: 2, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

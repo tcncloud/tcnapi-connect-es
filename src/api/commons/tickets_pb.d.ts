@@ -224,61 +224,85 @@ export declare class Ticket extends Message<Ticket> {
 }
 
 /**
+ * Ticket Template
+ *
  * @generated from message api.commons.TicketTemplate
  */
 export declare class TicketTemplate extends Message<TicketTemplate> {
   /**
+   * Deprecated
+   *
    * @generated from field: int64 ticket_template_id = 1 [deprecated = true];
    * @deprecated
    */
   ticketTemplateId: bigint;
 
   /**
+   * Organization ID
+   *
    * @generated from field: string org_id = 2;
    */
   orgId: string;
 
   /**
+   * A formatted string which the FE uses to retrieve all template related information
+   *
    * @generated from field: string template = 3;
    */
   template: string;
 
   /**
+   * Version of the Template
+   *
    * @generated from field: string template_entity_version = 4;
    */
   templateEntityVersion: string;
 
   /**
+   * Name of the Template
+   *
    * @generated from field: string template_name = 5;
    */
   templateName: string;
 
   /**
+   * Template created by user
+   *
    * @generated from field: string created_by_id = 6;
    */
   createdById: string;
 
   /**
+   * Template modified by user
+   *
    * @generated from field: string modified_by = 7;
    */
   modifiedBy: string;
 
   /**
+   * Template create date
+   *
    * @generated from field: google.protobuf.Timestamp created_date = 8;
    */
   createdDate?: Timestamp;
 
   /**
+   * Template modified date
+   *
    * @generated from field: google.protobuf.Timestamp modified_date = 9;
    */
   modifiedDate?: Timestamp;
 
   /**
+   * True/False Identifies if a template is active or inactive
+   *
    * @generated from field: bool is_active = 10;
    */
   isActive: boolean;
 
   /**
+   * Snowflake Id of Ticket Template
+   *
    * @generated from field: int64 template_id = 11 [jstype = JS_STRING];
    */
   templateId: string;
@@ -299,6 +323,10 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
 }
 
 /**
+ * Mapping of Template to a Project
+ * Each Ticket Template Can be mapped to Multiple Projects - In ListTicketTemplateRequest we need all Template To
+ * Project Mapping
+ *
  * @generated from message api.commons.TicketProjectTemplate
  */
 export declare class TicketProjectTemplate extends Message<TicketProjectTemplate> {
@@ -328,21 +356,22 @@ export declare class TicketProjectTemplate extends Message<TicketProjectTemplate
 }
 
 /**
+ * Project Description
+ *
  * @generated from message api.commons.ProjectDescription
  */
 export declare class ProjectDescription extends Message<ProjectDescription> {
   /**
+   * Project Id from Omni
+   *
    * @generated from field: int64 project_id = 1 [jstype = JS_STRING];
    */
   projectId: string;
 
   /**
-   * @generated from field: string project_code = 2;
-   */
-  projectCode: string;
-
-  /**
-   * @generated from field: string project_title = 3;
+   * Project Title From Omni
+   *
+   * @generated from field: string project_title = 2;
    */
   projectTitle: string;
 

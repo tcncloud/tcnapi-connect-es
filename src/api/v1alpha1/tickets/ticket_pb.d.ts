@@ -255,12 +255,14 @@ export declare class EditTicketTemplateResponse extends Message<EditTicketTempla
  */
 export declare class ListTicketTemplateRequest extends Message<ListTicketTemplateRequest> {
   /**
-   * @generated from field: int64 ticket_template_id = 1;
+   * @generated from field: int64 ticket_template_id = 1 [deprecated = true];
+   * @deprecated
    */
   ticketTemplateId: bigint;
 
   /**
-   * @generated from field: int64 project_id = 2;
+   * @generated from field: int64 project_id = 2 [deprecated = true];
+   * @deprecated
    */
   projectId: bigint;
 
@@ -270,6 +272,16 @@ export declare class ListTicketTemplateRequest extends Message<ListTicketTemplat
    * @generated from field: google.protobuf.FieldMask request_mask = 3;
    */
   requestMask?: FieldMask;
+
+  /**
+   * @generated from field: int64 template_id = 4 [jstype = JS_STRING];
+   */
+  templateId: string;
+
+  /**
+   * @generated from field: int64 template_project_id = 5 [jstype = JS_STRING];
+   */
+  templateProjectId: string;
 
   constructor(data?: PartialMessage<ListTicketTemplateRequest>);
 
