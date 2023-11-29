@@ -2512,14 +2512,25 @@ export declare class SFTPTransport extends Message<SFTPTransport> {
  */
 export declare class EmailTransport extends Message<EmailTransport> {
   /**
+   * which email we want to show up as as from
+   *
    * @generated from field: string from_address = 1;
    */
   fromAddress: string;
 
   /**
+   * which email we are sending to
+   *
    * @generated from field: string to_address = 2;
    */
   toAddress: string;
+
+  /**
+   * additional emails we are sending to
+   *
+   * @generated from field: repeated string cc_addresses = 3;
+   */
+  ccAddresses: string[];
 
   constructor(data?: PartialMessage<EmailTransport>);
 
@@ -2622,6 +2633,20 @@ export declare class Room303SystemMessage extends Message<Room303SystemMessage> 
  * @generated from message api.v1alpha1.delivery.SMSTransport
  */
 export declare class SMSTransport extends Message<SMSTransport> {
+  /**
+   * must include country code and area code
+   *
+   * @generated from field: string destination_phone = 1;
+   */
+  destinationPhone: string;
+
+  /**
+   * the phone number we want this message to come from
+   *
+   * @generated from field: string source_phone = 2;
+   */
+  sourcePhone: string;
+
   constructor(data?: PartialMessage<SMSTransport>);
 
   static readonly runtime: typeof proto3;

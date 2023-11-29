@@ -892,6 +892,7 @@ export const EmailTransport = proto3.makeMessageType(
   () => [
     { no: 1, name: "from_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "to_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "cc_addresses", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
@@ -922,7 +923,10 @@ export const Room303SystemMessage = proto3.makeMessageType(
  */
 export const SMSTransport = proto3.makeMessageType(
   "api.v1alpha1.delivery.SMSTransport",
-  [],
+  () => [
+    { no: 1, name: "destination_phone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "source_phone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**
