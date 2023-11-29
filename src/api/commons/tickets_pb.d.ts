@@ -224,58 +224,88 @@ export declare class Ticket extends Message<Ticket> {
 }
 
 /**
+ * Ticket Template
+ *
  * @generated from message api.commons.TicketTemplate
  */
 export declare class TicketTemplate extends Message<TicketTemplate> {
   /**
-   * @generated from field: int64 ticket_template_id = 1;
+   * Deprecated
+   *
+   * @generated from field: int64 ticket_template_id = 1 [deprecated = true];
+   * @deprecated
    */
   ticketTemplateId: bigint;
 
   /**
+   * Organization ID
+   *
    * @generated from field: string org_id = 2;
    */
   orgId: string;
 
   /**
+   * A formatted string which the FE uses to retrieve all template related information
+   *
    * @generated from field: string template = 3;
    */
   template: string;
 
   /**
+   * Version of the Template
+   *
    * @generated from field: string template_entity_version = 4;
    */
   templateEntityVersion: string;
 
   /**
+   * Name of the Template
+   *
    * @generated from field: string template_name = 5;
    */
   templateName: string;
 
   /**
+   * Template created by user
+   *
    * @generated from field: string created_by_id = 6;
    */
   createdById: string;
 
   /**
+   * Template modified by user
+   *
    * @generated from field: string modified_by = 7;
    */
   modifiedBy: string;
 
   /**
+   * Template create date
+   *
    * @generated from field: google.protobuf.Timestamp created_date = 8;
    */
   createdDate?: Timestamp;
 
   /**
+   * Template modified date
+   *
    * @generated from field: google.protobuf.Timestamp modified_date = 9;
    */
   modifiedDate?: Timestamp;
 
   /**
+   * True/False Identifies if a template is active or inactive
+   *
    * @generated from field: bool is_active = 10;
    */
   isActive: boolean;
+
+  /**
+   * Snowflake Id of Ticket Template
+   *
+   * @generated from field: int64 template_id = 11 [jstype = JS_STRING];
+   */
+  templateId: string;
 
   constructor(data?: PartialMessage<TicketTemplate>);
 
@@ -293,7 +323,78 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
 }
 
 /**
+ * Mapping of Template to a Project
+ * Each Ticket Template Can be mapped to Multiple Projects - In ListTicketTemplateRequest we need all Template To
+ * Project Mapping
+ *
+ * @generated from message api.commons.TicketProjectTemplate
+ */
+export declare class TicketProjectTemplate extends Message<TicketProjectTemplate> {
+  /**
+   * @generated from field: api.commons.TicketTemplate ticket_template = 1;
+   */
+  ticketTemplate?: TicketTemplate;
+
+  /**
+   * @generated from field: repeated api.commons.ProjectDescription project_description = 2;
+   */
+  projectDescription: ProjectDescription[];
+
+  constructor(data?: PartialMessage<TicketProjectTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TicketProjectTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TicketProjectTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TicketProjectTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketProjectTemplate;
+
+  static equals(a: TicketProjectTemplate | PlainMessage<TicketProjectTemplate> | undefined, b: TicketProjectTemplate | PlainMessage<TicketProjectTemplate> | undefined): boolean;
+}
+
+/**
+ * Project Description
+ *
+ * @generated from message api.commons.ProjectDescription
+ */
+export declare class ProjectDescription extends Message<ProjectDescription> {
+  /**
+   * Project Id from Omni
+   *
+   * @generated from field: int64 project_id = 1 [jstype = JS_STRING];
+   */
+  projectId: string;
+
+  /**
+   * Project Title From Omni
+   *
+   * @generated from field: string project_title = 2;
+   */
+  projectTitle: string;
+
+  constructor(data?: PartialMessage<ProjectDescription>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ProjectDescription";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProjectDescription;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProjectDescription;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProjectDescription;
+
+  static equals(a: ProjectDescription | PlainMessage<ProjectDescription> | undefined, b: ProjectDescription | PlainMessage<ProjectDescription> | undefined): boolean;
+}
+
+/**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.ListTemplate
+ * @deprecated
  */
 export declare class ListTemplate extends Message<ListTemplate> {
   /**
@@ -362,7 +463,10 @@ export declare class ListTemplate extends Message<ListTemplate> {
 }
 
 /**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.AssignProjectTemplate
+ * @deprecated
  */
 export declare class AssignProjectTemplate extends Message<AssignProjectTemplate> {
   /**

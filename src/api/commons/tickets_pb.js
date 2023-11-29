@@ -65,6 +65,8 @@ export const Ticket = proto3.makeMessageType(
 );
 
 /**
+ * Ticket Template
+ *
  * @generated from message api.commons.TicketTemplate
  */
 export const TicketTemplate = proto3.makeMessageType(
@@ -80,11 +82,43 @@ export const TicketTemplate = proto3.makeMessageType(
     { no: 8, name: "created_date", kind: "message", T: Timestamp },
     { no: 9, name: "modified_date", kind: "message", T: Timestamp },
     { no: 10, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
 /**
+ * Mapping of Template to a Project
+ * Each Ticket Template Can be mapped to Multiple Projects - In ListTicketTemplateRequest we need all Template To
+ * Project Mapping
+ *
+ * @generated from message api.commons.TicketProjectTemplate
+ */
+export const TicketProjectTemplate = proto3.makeMessageType(
+  "api.commons.TicketProjectTemplate",
+  () => [
+    { no: 1, name: "ticket_template", kind: "message", T: TicketTemplate },
+    { no: 2, name: "project_description", kind: "message", T: ProjectDescription, repeated: true },
+  ],
+);
+
+/**
+ * Project Description
+ *
+ * @generated from message api.commons.ProjectDescription
+ */
+export const ProjectDescription = proto3.makeMessageType(
+  "api.commons.ProjectDescription",
+  () => [
+    { no: 1, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.ListTemplate
+ * @deprecated
  */
 export const ListTemplate = proto3.makeMessageType(
   "api.commons.ListTemplate",
@@ -103,7 +137,10 @@ export const ListTemplate = proto3.makeMessageType(
 );
 
 /**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.AssignProjectTemplate
+ * @deprecated
  */
 export const AssignProjectTemplate = proto3.makeMessageType(
   "api.commons.AssignProjectTemplate",
