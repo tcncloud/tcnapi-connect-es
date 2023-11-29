@@ -9,6 +9,7 @@ import { AcceptLinkbackRecordingTermsRequest, AcceptLinkbackRecordingTermsRespon
 import { CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreateUserRequest, CreateUserResponse, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetMyUserRequest, GetMyUserResponse, GetUserByOrgIdRequest, GetUserByOrgIdResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserLoginInfoRequest, GetUserLoginInfoResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserRequest, GetUserResponse, GetUserSessionDataRequest, GetUserSessionDataResponse, ListAgentsRequest, ListAgentsResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse, ListUsersByRegionRequest, ListUsersByRegionResponse, ListUsersRequest, ListUsersResponse, SendUserEmailVerificationByOrgIdRequest, SendUserEmailVerificationByOrgIdResponse, SendUserEmailVerificationRequest, SendUserEmailVerificationResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserLabelsRequest, UpdateUserLabelsResponse, UpdateUserRequest, UpdateUserResponse } from "./user_pb.js";
 import { AssignAgentProfileGroupsRequest, AssignAgentProfileGroupsResponse, CreateAgentProfileGroupRequest, CreateAgentProfileGroupResponse, DeleteAgentProfileGroupRequest, DeleteAgentProfileGroupResponse, GetAgentProfileGroupRequest, GetAgentProfileGroupResponse, ListAgentProfileGroupsRequest, ListAgentProfileGroupsResponse, UpdateAgentProfileGroupRequest, UpdateAgentProfileGroupResponse } from "./agent_profile_group_pb.js";
 import { AddUserSubscriptionByUserIdRequest, AddUserSubscriptionByUserIdResponse, AddUserSubscriptionRequest, AddUserSubscriptionResponse, GetUserSubscriptionByUserIdRequest, GetUserSubscriptionByUserIdResponse, GetUserSubscriptionRequest, GetUserSubscriptionResponse, ListOrgSubscriptionsRequest, ListOrgSubscriptionsResponse, ListUserSubscriptionsByUserIdRequest, ListUserSubscriptionsByUserIdResponse, ListUserSubscriptionsRequest, ListUserSubscriptionsResponse, RemoveUserSubscriptionByUserIdRequest, RemoveUserSubscriptionByUserIdResponse, RemoveUserSubscriptionRequest, RemoveUserSubscriptionResponse, UpdateUserSubscriptionByUserIdRequest, UpdateUserSubscriptionByUserIdResponse, UpdateUserSubscriptionRequest, UpdateUserSubscriptionResponse } from "./notifications_pb.js";
+import { CreateAuthTokenByUserIdRequest, CreateAuthTokenByUserIdResponse, CreateAuthTokenRequest, CreateAuthTokenResponse, DeleteAuthTokenByUserIdRequest, DeleteAuthTokenByUserIdResponse, DeleteAuthTokenRequest, DeleteAuthTokenResponse, ListAuthTokensByUserIdRequest, ListAuthTokensByUserIdResponse, ListAuthTokensRequest, ListAuthTokensResponse, SetAuthTokenExpirationByUserIdRequest, SetAuthTokenExpirationByUserIdResponse, SetAuthTokenExpirationRequest, SetAuthTokenExpirationResponse } from "./auth_token_pb.js";
 import { CopyDataDipTemplateRequest, CopyDataDipTemplateResponse, CopyDataDipTemplateToOrganizationRequest, CopyDataDipTemplateToOrganizationResponse, CreateAgentResponseAutoRulesRequest, CreateAgentResponseAutoRulesResponse, CreateDataDipTemplateRequest, CreateDataDipTemplateResponse, DeleteAgentResponseAutoRulesRequest, DeleteAgentResponseAutoRulesResponse, DeleteDataDipTemplateRequest, DeleteDataDipTemplateResponse, GetDataDipTemplateRequest, GetDataDipTemplateResponse, GetHuntGroupSettingsRequest, GetHuntGroupSettingsResponse, ListAgentResponseAutoRulesRequest, ListAgentResponseAutoRulesResponse, ListCallerIdBucketsRequest, ListCallerIdBucketsResponse, ListDataDipTemplatesRequest, ListDataDipTemplatesResponse, UpdateAgentResponseAutoRulesRequest, UpdateAgentResponseAutoRulesResponse, UpdateDataDipTemplateRequest, UpdateDataDipTemplateResponse, UpdateHuntGroupSettingsRequest, UpdateHuntGroupSettingsResponse } from "./huntgroup_pb.js";
 import { AcceptTrustRequest, AcceptTrustResponse, AssignTrustRequest, AssignTrustResponse, CreateTrustRequest, CreateTrustResponse, DeleteTrustRequest, DeleteTrustResponse, GetTrustRequest, GetTrustResponse, ListAssignableTrustsRequest, ListAssignableTrustsResponse, ListGivenTrustsRequest, ListGivenTrustsResponse, ListIncomingTrustsRequest, ListIncomingTrustsResponse, RejectTrustRequest, RejectTrustResponse, UnassignTrustRequest, UnassignTrustResponse } from "./trusts_pb.js";
 import { AssignLabelRequest, AssignLabelResponse, CreateLabelRequest, CreateLabelResponse, DeleteLabelRequest, DeleteLabelResponse, GetAssignableLabelsRequest, GetAssignableLabelsResponse, GetAssignmentCountsRequest, GetAssignmentCountsResponse, GetLabelRequest, GetLabelResponse, ListLabelsRequest, ListLabelsResponse, UnassignLabelRequest, UnassignLabelResponse, UpdateLabelRequest, UpdateLabelResponse } from "./labels_pb.js";
@@ -1092,6 +1093,95 @@ export declare const Org: {
       readonly name: "ListOrgSubscriptions",
       readonly I: typeof ListOrgSubscriptionsRequest,
       readonly O: typeof ListOrgSubscriptionsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * AUTH TOKEN
+     * CreateAuthToken creates an auth token for the current user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.CreateAuthToken
+     */
+    readonly createAuthToken: {
+      readonly name: "CreateAuthToken",
+      readonly I: typeof CreateAuthTokenRequest,
+      readonly O: typeof CreateAuthTokenResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateAuthTokenByUserId creates an auth token for the given user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.CreateAuthTokenByUserId
+     */
+    readonly createAuthTokenByUserId: {
+      readonly name: "CreateAuthTokenByUserId",
+      readonly I: typeof CreateAuthTokenByUserIdRequest,
+      readonly O: typeof CreateAuthTokenByUserIdResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListAuthTokens list tokens of current user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ListAuthTokens
+     */
+    readonly listAuthTokens: {
+      readonly name: "ListAuthTokens",
+      readonly I: typeof ListAuthTokensRequest,
+      readonly O: typeof ListAuthTokensResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListAuthTokensByUserId list tokens of given user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ListAuthTokensByUserId
+     */
+    readonly listAuthTokensByUserId: {
+      readonly name: "ListAuthTokensByUserId",
+      readonly I: typeof ListAuthTokensByUserIdRequest,
+      readonly O: typeof ListAuthTokensByUserIdResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * SetAuthTokenExpiration sets expiration back one year for current user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.SetAuthTokenExpiration
+     */
+    readonly setAuthTokenExpiration: {
+      readonly name: "SetAuthTokenExpiration",
+      readonly I: typeof SetAuthTokenExpirationRequest,
+      readonly O: typeof SetAuthTokenExpirationResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * SetAuthTokenExpirationByUserId sets expiration back one year for given user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.SetAuthTokenExpirationByUserId
+     */
+    readonly setAuthTokenExpirationByUserId: {
+      readonly name: "SetAuthTokenExpirationByUserId",
+      readonly I: typeof SetAuthTokenExpirationByUserIdRequest,
+      readonly O: typeof SetAuthTokenExpirationByUserIdResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteAuthToken deletes a given auth token for the current user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.DeleteAuthToken
+     */
+    readonly deleteAuthToken: {
+      readonly name: "DeleteAuthToken",
+      readonly I: typeof DeleteAuthTokenRequest,
+      readonly O: typeof DeleteAuthTokenResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteAuthTokenByUserId deletes a given auth token for the given user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.DeleteAuthTokenByUserId
+     */
+    readonly deleteAuthTokenByUserId: {
+      readonly name: "DeleteAuthTokenByUserId",
+      readonly I: typeof DeleteAuthTokenByUserIdRequest,
+      readonly O: typeof DeleteAuthTokenByUserIdResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
