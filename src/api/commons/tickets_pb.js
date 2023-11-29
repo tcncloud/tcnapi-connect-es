@@ -115,6 +115,8 @@ export const ProjectDescription = proto3.makeMessageType(
 );
 
 /**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.ListTemplate
  * @deprecated
  */
@@ -135,6 +137,8 @@ export const ListTemplate = proto3.makeMessageType(
 );
 
 /**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.AssignProjectTemplate
  * @deprecated
  */

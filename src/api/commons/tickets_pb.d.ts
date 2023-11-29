@@ -391,6 +391,8 @@ export declare class ProjectDescription extends Message<ProjectDescription> {
 }
 
 /**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.ListTemplate
  * @deprecated
  */
@@ -461,6 +463,8 @@ export declare class ListTemplate extends Message<ListTemplate> {
 }
 
 /**
+ * Deprecated and will not be used
+ *
  * @generated from message api.commons.AssignProjectTemplate
  * @deprecated
  */
