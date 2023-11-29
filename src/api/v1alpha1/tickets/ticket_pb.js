@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -106,6 +106,7 @@ export const ListTicketTemplateResponse = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListTicketTemplateResponse",
   () => [
     { no: 1, name: "enabled_templates", kind: "message", T: ListTemplate, repeated: true },
+    { no: 2, name: "ticket_project_template", kind: "message", T: TicketProjectTemplate, repeated: true },
   ],
 );
 
@@ -118,6 +119,8 @@ export const AssignProjectTemplateRequest = proto3.makeMessageType(
   "api.v1alpha1.tickets.AssignProjectTemplateRequest",
   () => [
     { no: 1, name: "project_template", kind: "message", T: AssignProjectTemplate },
+    { no: 2, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 3, name: "template_description", kind: "message", T: TemplateDescription, repeated: true },
   ],
 );
 

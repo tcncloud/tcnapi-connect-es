@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, Ticket, TicketAction, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import type { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -291,9 +291,15 @@ export declare class ListTicketTemplateRequest extends Message<ListTicketTemplat
  */
 export declare class ListTicketTemplateResponse extends Message<ListTicketTemplateResponse> {
   /**
-   * @generated from field: repeated api.commons.ListTemplate enabled_templates = 1;
+   * @generated from field: repeated api.commons.ListTemplate enabled_templates = 1 [deprecated = true];
+   * @deprecated
    */
   enabledTemplates: ListTemplate[];
+
+  /**
+   * @generated from field: repeated api.commons.TicketProjectTemplate ticket_project_template = 2;
+   */
+  ticketProjectTemplate: TicketProjectTemplate[];
 
   constructor(data?: PartialMessage<ListTicketTemplateResponse>);
 
@@ -317,9 +323,20 @@ export declare class ListTicketTemplateResponse extends Message<ListTicketTempla
  */
 export declare class AssignProjectTemplateRequest extends Message<AssignProjectTemplateRequest> {
   /**
-   * @generated from field: api.commons.AssignProjectTemplate project_template = 1;
+   * @generated from field: api.commons.AssignProjectTemplate project_template = 1 [deprecated = true];
+   * @deprecated
    */
   projectTemplate?: AssignProjectTemplate;
+
+  /**
+   * @generated from field: int64 project_id = 2 [jstype = JS_STRING];
+   */
+  projectId: string;
+
+  /**
+   * @generated from field: repeated api.commons.TemplateDescription template_description = 3;
+   */
+  templateDescription: TemplateDescription[];
 
   constructor(data?: PartialMessage<AssignProjectTemplateRequest>);
 

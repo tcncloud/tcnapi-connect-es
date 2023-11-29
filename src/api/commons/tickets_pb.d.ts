@@ -228,7 +228,8 @@ export declare class Ticket extends Message<Ticket> {
  */
 export declare class TicketTemplate extends Message<TicketTemplate> {
   /**
-   * @generated from field: int64 ticket_template_id = 1;
+   * @generated from field: int64 ticket_template_id = 1 [deprecated = true];
+   * @deprecated
    */
   ticketTemplateId: bigint;
 
@@ -277,6 +278,11 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
    */
   isActive: boolean;
 
+  /**
+   * @generated from field: int64 template_id = 11 [jstype = JS_STRING];
+   */
+  templateId: string;
+
   constructor(data?: PartialMessage<TicketTemplate>);
 
   static readonly runtime: typeof proto3;
@@ -293,7 +299,71 @@ export declare class TicketTemplate extends Message<TicketTemplate> {
 }
 
 /**
+ * @generated from message api.commons.TicketProjectTemplate
+ */
+export declare class TicketProjectTemplate extends Message<TicketProjectTemplate> {
+  /**
+   * @generated from field: api.commons.TicketTemplate ticket_template = 1;
+   */
+  ticketTemplate?: TicketTemplate;
+
+  /**
+   * @generated from field: repeated api.commons.ProjectDescription project_description = 2;
+   */
+  projectDescription: ProjectDescription[];
+
+  constructor(data?: PartialMessage<TicketProjectTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TicketProjectTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TicketProjectTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TicketProjectTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TicketProjectTemplate;
+
+  static equals(a: TicketProjectTemplate | PlainMessage<TicketProjectTemplate> | undefined, b: TicketProjectTemplate | PlainMessage<TicketProjectTemplate> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ProjectDescription
+ */
+export declare class ProjectDescription extends Message<ProjectDescription> {
+  /**
+   * @generated from field: int64 project_id = 1 [jstype = JS_STRING];
+   */
+  projectId: string;
+
+  /**
+   * @generated from field: string project_code = 2;
+   */
+  projectCode: string;
+
+  /**
+   * @generated from field: string project_title = 3;
+   */
+  projectTitle: string;
+
+  constructor(data?: PartialMessage<ProjectDescription>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ProjectDescription";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProjectDescription;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProjectDescription;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProjectDescription;
+
+  static equals(a: ProjectDescription | PlainMessage<ProjectDescription> | undefined, b: ProjectDescription | PlainMessage<ProjectDescription> | undefined): boolean;
+}
+
+/**
  * @generated from message api.commons.ListTemplate
+ * @deprecated
  */
 export declare class ListTemplate extends Message<ListTemplate> {
   /**
@@ -363,6 +433,7 @@ export declare class ListTemplate extends Message<ListTemplate> {
 
 /**
  * @generated from message api.commons.AssignProjectTemplate
+ * @deprecated
  */
 export declare class AssignProjectTemplate extends Message<AssignProjectTemplate> {
   /**

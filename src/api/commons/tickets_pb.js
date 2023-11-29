@@ -80,11 +80,36 @@ export const TicketTemplate = proto3.makeMessageType(
     { no: 8, name: "created_date", kind: "message", T: Timestamp },
     { no: 9, name: "modified_date", kind: "message", T: Timestamp },
     { no: 10, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 11, name: "template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.TicketProjectTemplate
+ */
+export const TicketProjectTemplate = proto3.makeMessageType(
+  "api.commons.TicketProjectTemplate",
+  () => [
+    { no: 1, name: "ticket_template", kind: "message", T: TicketTemplate },
+    { no: 2, name: "project_description", kind: "message", T: ProjectDescription, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.ProjectDescription
+ */
+export const ProjectDescription = proto3.makeMessageType(
+  "api.commons.ProjectDescription",
+  () => [
+    { no: 1, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "project_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "project_title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
  * @generated from message api.commons.ListTemplate
+ * @deprecated
  */
 export const ListTemplate = proto3.makeMessageType(
   "api.commons.ListTemplate",
@@ -104,6 +129,7 @@ export const ListTemplate = proto3.makeMessageType(
 
 /**
  * @generated from message api.commons.AssignProjectTemplate
+ * @deprecated
  */
 export const AssignProjectTemplate = proto3.makeMessageType(
   "api.commons.AssignProjectTemplate",
