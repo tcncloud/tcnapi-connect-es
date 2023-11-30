@@ -631,30 +631,6 @@ export const UpdateBusinessPreferencesResponse = proto3.makeMessageType(
 );
 
 /**
- * Request for the UpdateAdminBusinessPreferences RPC.
- *
- * @generated from message api.v1alpha1.org.UpdateAdminBusinessPreferencesRequest
- */
-export const UpdateAdminBusinessPreferencesRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.UpdateAdminBusinessPreferencesRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "business_preferences", kind: "message", T: BusinessPreferences },
-    { no: 10, name: "field_mask", kind: "message", T: FieldMask },
-  ],
-);
-
-/**
- * Response for the UpdateAdminBusinessPreferences RPC.
- *
- * @generated from message api.v1alpha1.org.UpdateAdminBusinessPreferencesResponse
- */
-export const UpdateAdminBusinessPreferencesResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.UpdateAdminBusinessPreferencesResponse",
-  [],
-);
-
-/**
  * Request for GetScorecardsPreferences
  *
  * @generated from message api.v1alpha1.org.GetScorecardsPreferencesRequest
