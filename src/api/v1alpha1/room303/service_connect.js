@@ -6,7 +6,7 @@
 import { AddRoomMemberRequest, GetRoomMemberRequest, JoinRoomRequest, ListRoomMembersRequest, ListRoomMembersResponse, RemoveRoomMemberRequest, RemoveRoomMemberResponse, SetAdminForRoomMemberRequest, SetAdminForRoomMemberResponse } from "./member_pb.js";
 import { Member, Room } from "../../commons/room303_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { BulkMarkMessageReadRequest, BulkMarkMessageReadResponse, CreateMessageRequest, CreateMessageResponse, DeleteMessageRequest, DeleteMessageResponse, EditMessageRequest, EditMessageResponse, GetMessagesRequest, GetMessagesResponse, GetUnreadStatsRequest, GetUnreadStatsResponse, MarkAllMessagesReadRequest, MarkAllMessagesReadResponse, MarkMessageReadRequest, MarkMessageReadResponse, StreamMessageUpdatesRequest, StreamMessageUpdatesResponse } from "./message_pb.js";
+import { BulkMarkMessageReadRequest, BulkMarkMessageReadResponse, CreateMessageRequest, CreateMessageResponse, DeleteMessageRequest, DeleteMessageResponse, EditMessageRequest, EditMessageResponse, GetMessagesRequest, GetMessagesResponse, GetUnreadStatsRequest, GetUnreadStatsResponse, ListNewsRoomGlobalMessagesRequest, ListNewsRoomGlobalMessagesResponse, MarkAllMessagesReadRequest, MarkAllMessagesReadResponse, MarkMessageReadRequest, MarkMessageReadResponse, SendNewsRoomGlobalMessageRequest, SendNewsRoomGlobalMessageResponse, StreamMessageUpdatesRequest, StreamMessageUpdatesResponse } from "./message_pb.js";
 import { ArchiveRoomRequest, CreateRoomRequest, GetGlobalConfigRequest, GetGlobalConfigResponse, GetRoomRequest, ListAllRoomsRequest, ListRoomsForMemberRequest, ListRoomsResponse, ListUsersNamesRequest, ListUsersNamesResponse, UpdateGlobalConfigRequest, UpdateGlobalConfigResponse, UpdateRoomConfigRequest } from "./room_pb.js";
 
 /**
@@ -260,6 +260,28 @@ export const Room303API = {
       name: "GetGlobalConfig",
       I: GetGlobalConfigRequest,
       O: GetGlobalConfigResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListNewsRoomGlobalMessages returns a list of global messages for newsroom
+     *
+     * @generated from rpc api.v1alpha1.room303.Room303API.ListNewsRoomGlobalMessages
+     */
+    listNewsRoomGlobalMessages: {
+      name: "ListNewsRoomGlobalMessages",
+      I: ListNewsRoomGlobalMessagesRequest,
+      O: ListNewsRoomGlobalMessagesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SendNewsRoomGlobalMessage - send global message for newsroom to be added
+     *
+     * @generated from rpc api.v1alpha1.room303.Room303API.SendNewsRoomGlobalMessage
+     */
+    sendNewsRoomGlobalMessage: {
+      name: "SendNewsRoomGlobalMessage",
+      I: SendNewsRoomGlobalMessageRequest,
+      O: SendNewsRoomGlobalMessageResponse,
       kind: MethodKind.Unary,
     },
   }
