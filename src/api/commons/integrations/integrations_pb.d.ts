@@ -2314,6 +2314,18 @@ export declare class PaymentFlow extends Message<PaymentFlow> {
      */
     value: PaymentPriocommerceAch;
     case: "priocommerceAch";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentVisionCC paymentvision_cc = 15;
+     */
+    value: PaymentVisionCC;
+    case: "paymentvisionCc";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.PaymentVisionACH paymentvision_ach = 16;
+     */
+    value: PaymentVisionACH;
+    case: "paymentvisionAch";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -4388,6 +4400,44 @@ export declare class PaymentPriocommerceAch extends Message<PaymentPriocommerceA
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentPriocommerceAch;
 
   static equals(a: PaymentPriocommerceAch | PlainMessage<PaymentPriocommerceAch> | undefined, b: PaymentPriocommerceAch | PlainMessage<PaymentPriocommerceAch> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentVisionCC
+ */
+export declare class PaymentVisionCC extends Message<PaymentVisionCC> {
+  constructor(data?: PartialMessage<PaymentVisionCC>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentVisionCC";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentVisionCC;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentVisionCC;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentVisionCC;
+
+  static equals(a: PaymentVisionCC | PlainMessage<PaymentVisionCC> | undefined, b: PaymentVisionCC | PlainMessage<PaymentVisionCC> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.PaymentVisionACH
+ */
+export declare class PaymentVisionACH extends Message<PaymentVisionACH> {
+  constructor(data?: PartialMessage<PaymentVisionACH>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.PaymentVisionACH";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PaymentVisionACH;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PaymentVisionACH;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PaymentVisionACH;
+
+  static equals(a: PaymentVisionACH | PlainMessage<PaymentVisionACH> | undefined, b: PaymentVisionACH | PlainMessage<PaymentVisionACH> | undefined): boolean;
 }
 
 /**
