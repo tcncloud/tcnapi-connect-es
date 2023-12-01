@@ -61,6 +61,11 @@ export declare enum Entity {
    * @generated from enum value: E_SMS = 3;
    */
   E_SMS = 3,
+
+  /**
+   * @generated from enum value: E_WHATSAPP = 4;
+   */
+  E_WHATSAPP = 4,
 }
 
 /**
@@ -151,6 +156,11 @@ export declare enum ContentType {
    * @generated from enum value: CT_ACCOUNT_NUMBER = 4;
    */
   CT_ACCOUNT_NUMBER = 4,
+
+  /**
+   * @generated from enum value: CT_WHATSAPP = 5;
+   */
+  CT_WHATSAPP = 5,
 }
 
 /**
@@ -171,6 +181,11 @@ export declare enum Channel {
    * @generated from enum value: CHANNEL_SMS = 2;
    */
   SMS = 2,
+
+  /**
+   * @generated from enum value: CHANNEL_WHATSAPP = 3;
+   */
+  WHATSAPP = 3,
 }
 
 /**

@@ -34,6 +34,12 @@ export declare class CommType extends Message<CommType> {
      */
     value: SmsType_Enum;
     case: "smsType";
+  } | {
+    /**
+     * @generated from field: api.commons.WhatsAppType.Enum whatsapp_type = 4;
+     */
+    value: WhatsAppType_Enum;
+    case: "whatsappType";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<CommType>);
@@ -103,6 +109,35 @@ export declare class SmsType extends Message<SmsType> {
  * @generated from enum api.commons.SmsType.Enum
  */
 export declare enum SmsType_Enum {
+  /**
+   * @generated from enum value: OUTBOUND = 0;
+   */
+  OUTBOUND = 0,
+}
+
+/**
+ * @generated from message api.commons.WhatsAppType
+ */
+export declare class WhatsAppType extends Message<WhatsAppType> {
+  constructor(data?: PartialMessage<WhatsAppType>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.WhatsAppType";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WhatsAppType;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WhatsAppType;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WhatsAppType;
+
+  static equals(a: WhatsAppType | PlainMessage<WhatsAppType> | undefined, b: WhatsAppType | PlainMessage<WhatsAppType> | undefined): boolean;
+}
+
+/**
+ * @generated from enum api.commons.WhatsAppType.Enum
+ */
+export declare enum WhatsAppType_Enum {
   /**
    * @generated from enum value: OUTBOUND = 0;
    */

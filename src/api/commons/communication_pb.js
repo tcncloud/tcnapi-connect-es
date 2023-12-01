@@ -17,6 +17,7 @@ export const CommType = proto3.makeMessageType(
     { no: 1, name: "call_type", kind: "enum", T: proto3.getEnumType(CallType_Enum), oneof: "type" },
     { no: 2, name: "email_type", kind: "enum", T: proto3.getEnumType(EmailType_Enum), oneof: "type" },
     { no: 3, name: "sms_type", kind: "enum", T: proto3.getEnumType(SmsType_Enum), oneof: "type" },
+    { no: 4, name: "whatsapp_type", kind: "enum", T: proto3.getEnumType(WhatsAppType_Enum), oneof: "type" },
   ],
 );
 
@@ -51,6 +52,24 @@ export const SmsType = proto3.makeMessageType(
  */
 export const SmsType_Enum = proto3.makeEnum(
   "api.commons.SmsType.Enum",
+  [
+    {no: 0, name: "OUTBOUND"},
+  ],
+);
+
+/**
+ * @generated from message api.commons.WhatsAppType
+ */
+export const WhatsAppType = proto3.makeMessageType(
+  "api.commons.WhatsAppType",
+  [],
+);
+
+/**
+ * @generated from enum api.commons.WhatsAppType.Enum
+ */
+export const WhatsAppType_Enum = proto3.makeEnum(
+  "api.commons.WhatsAppType.Enum",
   [
     {no: 0, name: "OUTBOUND"},
   ],
