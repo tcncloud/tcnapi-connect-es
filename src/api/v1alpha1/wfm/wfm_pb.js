@@ -463,6 +463,7 @@ export const CallProfileTemplate = proto3.makeMessageType(
     { no: 11, name: "fixed_average_after_call_work", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 12, name: "fixed_average_time_to_abort", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 13, name: "default_to_fixed_averages_forecast", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

@@ -1354,6 +1354,13 @@ export declare class CallProfileTemplate extends Message<CallProfileTemplate> {
    */
   defaultToFixedAveragesForecast: boolean;
 
+  /**
+   * Time zone in IANA format that the call profile template is in.
+   *
+   * @generated from field: string time_zone = 14;
+   */
+  timeZone: string;
+
   constructor(data?: PartialMessage<CallProfileTemplate>);
 
   static readonly runtime: typeof proto3;
