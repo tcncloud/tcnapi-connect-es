@@ -366,6 +366,10 @@ export const AgentSessionLogActionKey_Enum = proto3.makeEnum(
     {no: 53, name: "WARM_CALLER_TRANSFER_INVITE_CALLER_INITIAL"},
     {no: 54, name: "WARM_CALLER_TRANSFER_INVITE_CALLER"},
     {no: 55, name: "WARM_CALLER_TRANSFER_END"},
+    {no: 56, name: "BARGE_IN_START"},
+    {no: 57, name: "BARGE_IN_STOP"},
+    {no: 58, name: "BargeInCallJoined"},
+    {no: 59, name: "BargeInCallLeft"},
   ],
 );
 
