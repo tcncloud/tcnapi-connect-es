@@ -1205,6 +1205,22 @@ export const ConnectedInbox = proto3.makeMessageType(
     { no: 19, name: "google_xoauth2_access_token", kind: "message", T: StringValue },
     { no: 20, name: "google_xoauth2_access_token_expiration", kind: "message", T: Timestamp },
     { no: 21, name: "authentication_type", kind: "enum", T: proto3.getEnumType(ConnectedInboxAuthenticationType) },
+    { no: 22, name: "oauth_reference_id", kind: "message", T: ConnectedInboxOAuthConfig },
+  ],
+);
+
+/**
+ * ConnectedInboxOAuthConfig -
+ *
+ * @generated from message api.commons.ConnectedInboxOAuthConfig
+ */
+export const ConnectedInboxOAuthConfig = proto3.makeMessageType(
+  "api.commons.ConnectedInboxOAuthConfig",
+  () => [
+    { no: 1, name: "access_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "refresh_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "expires_at", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

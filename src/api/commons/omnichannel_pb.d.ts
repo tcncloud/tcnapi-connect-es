@@ -4065,21 +4065,24 @@ export declare class ConnectedInbox extends Message<ConnectedInbox> {
   /**
    * google xoauth2 refresh token (if using google xoauth2)
    *
-   * @generated from field: google.protobuf.StringValue google_xoauth2_refresh_token = 18;
+   * @generated from field: google.protobuf.StringValue google_xoauth2_refresh_token = 18 [deprecated = true];
+   * @deprecated
    */
   googleXoauth2RefreshToken?: string;
 
   /**
    * google xoauth2 access token (if using google xoauth2)
    *
-   * @generated from field: google.protobuf.StringValue google_xoauth2_access_token = 19;
+   * @generated from field: google.protobuf.StringValue google_xoauth2_access_token = 19 [deprecated = true];
+   * @deprecated
    */
   googleXoauth2AccessToken?: string;
 
   /**
    * time the google xoauth2 access token expires (if using google xoauth2)
    *
-   * @generated from field: google.protobuf.Timestamp google_xoauth2_access_token_expiration = 20;
+   * @generated from field: google.protobuf.Timestamp google_xoauth2_access_token_expiration = 20 [deprecated = true];
+   * @deprecated
    */
   googleXoauth2AccessTokenExpiration?: Timestamp;
 
@@ -4089,6 +4092,13 @@ export declare class ConnectedInbox extends Message<ConnectedInbox> {
    * @generated from field: api.commons.ConnectedInboxAuthenticationType authentication_type = 21;
    */
   authenticationType: ConnectedInboxAuthenticationType;
+
+  /**
+   * config for the oauth provider
+   *
+   * @generated from field: api.commons.ConnectedInboxOAuthConfig oauth_reference_id = 22;
+   */
+  oauthReferenceId?: ConnectedInboxOAuthConfig;
 
   constructor(data?: PartialMessage<ConnectedInbox>);
 
@@ -4103,6 +4113,47 @@ export declare class ConnectedInbox extends Message<ConnectedInbox> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConnectedInbox;
 
   static equals(a: ConnectedInbox | PlainMessage<ConnectedInbox> | undefined, b: ConnectedInbox | PlainMessage<ConnectedInbox> | undefined): boolean;
+}
+
+/**
+ * ConnectedInboxOAuthConfig -
+ *
+ * @generated from message api.commons.ConnectedInboxOAuthConfig
+ */
+export declare class ConnectedInboxOAuthConfig extends Message<ConnectedInboxOAuthConfig> {
+  /**
+   * @generated from field: string access_token = 1;
+   */
+  accessToken: string;
+
+  /**
+   * @generated from field: string refresh_token = 2;
+   */
+  refreshToken: string;
+
+  /**
+   * @generated from field: int64 expires_at = 3;
+   */
+  expiresAt: bigint;
+
+  /**
+   * @generated from field: string reference_id = 4;
+   */
+  referenceId: string;
+
+  constructor(data?: PartialMessage<ConnectedInboxOAuthConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ConnectedInboxOAuthConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConnectedInboxOAuthConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConnectedInboxOAuthConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConnectedInboxOAuthConfig;
+
+  static equals(a: ConnectedInboxOAuthConfig | PlainMessage<ConnectedInboxOAuthConfig> | undefined, b: ConnectedInboxOAuthConfig | PlainMessage<ConnectedInboxOAuthConfig> | undefined): boolean;
 }
 
 /**
