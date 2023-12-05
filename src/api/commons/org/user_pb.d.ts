@@ -352,7 +352,7 @@ export declare class Skill extends Message<Skill> {
 }
 
 /**
- * PasswordResetLink
+ * PasswordResetLink defines a link for the given user to reset their password.
  *
  * @generated from message api.commons.org.PasswordResetLink
  */

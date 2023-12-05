@@ -82,7 +82,7 @@ export const Skill = proto3.makeMessageType(
 );
 
 /**
- * PasswordResetLink
+ * PasswordResetLink defines a link for the given user to reset their password.
  *
  * @generated from message api.commons.org.PasswordResetLink
  */
