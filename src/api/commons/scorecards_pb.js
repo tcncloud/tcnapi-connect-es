@@ -264,31 +264,7 @@ export const AutoEvaluation = proto3.makeMessageType(
     { no: 11, name: "expression_matched", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 12, name: "risk_level", kind: "enum", T: proto3.getEnumType(RiskLevel) },
     { no: 16, name: "call_length", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 17, name: "scorecard_info", kind: "message", T: AutoEvaluation_ScorecardInfo },
-    { no: 18, name: "category_info", kind: "message", T: AutoEvaluation_CategoryInfo },
   ],
-);
-
-/**
- * @generated from message api.commons.AutoEvaluation.ScorecardInfo
- */
-export const AutoEvaluation_ScorecardInfo = proto3.makeMessageType(
-  "api.commons.AutoEvaluation.ScorecardInfo",
-  () => [
-    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-  {localName: "AutoEvaluation_ScorecardInfo"},
-);
-
-/**
- * @generated from message api.commons.AutoEvaluation.CategoryInfo
- */
-export const AutoEvaluation_CategoryInfo = proto3.makeMessageType(
-  "api.commons.AutoEvaluation.CategoryInfo",
-  () => [
-    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-  {localName: "AutoEvaluation_CategoryInfo"},
 );
 
 /**
