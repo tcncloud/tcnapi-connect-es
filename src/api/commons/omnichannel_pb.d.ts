@@ -923,34 +923,6 @@ export declare enum CampaignDirection {
 }
 
 /**
- * WhatsAppNumbertype
- *
- * @generated from enum api.commons.WhatsAppNumberType
- */
-export declare enum WhatsAppNumberType {
-  /**
-   * WhatsAppNumberType
-   *
-   * @generated from enum value: WHATSAPP_NUMBER_TYPE = 0;
-   */
-  WHATSAPP_NUMBER_TYPE = 0,
-
-  /**
-   * WhatsAppAlphanumericType
-   *
-   * @generated from enum value: WHATSAPP_ALPHANUMERIC_TYPE = 1;
-   */
-  WHATSAPP_ALPHANUMERIC_TYPE = 1,
-
-  /**
-   * WhatsAppShortCodeType
-   *
-   * @generated from enum value: WHATSAPP_SHORT_CODE_TYPE = 2;
-   */
-  WHATSAPP_SHORT_CODE_TYPE = 2,
-}
-
-/**
  * WhatsAppNumberProvider
  *
  * @generated from enum api.commons.WhatsAppNumberProvider
@@ -969,13 +941,6 @@ export declare enum WhatsAppNumberProvider {
    * @generated from enum value: WHATSAPP_SMS_PROVIDER = 1;
    */
   WHATSAPP_SMS_PROVIDER = 1,
-
-  /**
-   * WhatsAppVoiceProvder
-   *
-   * @generated from enum value: WHATSAPP_VOICE_PROVIDER = 2;
-   */
-  WHATSAPP_VOICE_PROVIDER = 2,
 }
 
 /**
@@ -4466,23 +4431,16 @@ export declare class WhatsAppNumber extends Message<WhatsAppNumber> {
   number: string;
 
   /**
-   * the type of whatsapp number (Alphanumeric|Short Code|Number)
+   * associated provider (whatsappsms)
    *
-   * @generated from field: api.commons.WhatsAppNumberType type = 2;
-   */
-  type: WhatsAppNumberType;
-
-  /**
-   * associated provider (whatsappvoice | whatsappsms)
-   *
-   * @generated from field: api.commons.WhatsAppNumberProvider provider = 3;
+   * @generated from field: api.commons.WhatsAppNumberProvider provider = 2;
    */
   provider: WhatsAppNumberProvider;
 
   /**
    * country code the whatsapp number belongs to
    *
-   * @generated from field: int32 country_code = 4;
+   * @generated from field: int32 country_code = 3;
    */
   countryCode: number;
 

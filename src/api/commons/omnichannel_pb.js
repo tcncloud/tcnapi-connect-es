@@ -346,20 +346,6 @@ export const CampaignDirection = proto3.makeEnum(
 );
 
 /**
- * WhatsAppNumbertype
- *
- * @generated from enum api.commons.WhatsAppNumberType
- */
-export const WhatsAppNumberType = proto3.makeEnum(
-  "api.commons.WhatsAppNumberType",
-  [
-    {no: 0, name: "WHATSAPP_NUMBER_TYPE"},
-    {no: 1, name: "WHATSAPP_ALPHANUMERIC_TYPE"},
-    {no: 2, name: "WHATSAPP_SHORT_CODE_TYPE"},
-  ],
-);
-
-/**
  * WhatsAppNumberProvider
  *
  * @generated from enum api.commons.WhatsAppNumberProvider
@@ -369,7 +355,6 @@ export const WhatsAppNumberProvider = proto3.makeEnum(
   [
     {no: 0, name: "UNKNOWN_WHATSAPP_PROVIDER"},
     {no: 1, name: "WHATSAPP_SMS_PROVIDER"},
-    {no: 2, name: "WHATSAPP_VOICE_PROVIDER"},
   ],
 );
 
@@ -1326,9 +1311,8 @@ export const WhatsAppNumber = proto3.makeMessageType(
   "api.commons.WhatsAppNumber",
   () => [
     { no: 1, name: "number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(WhatsAppNumberType) },
-    { no: 3, name: "provider", kind: "enum", T: proto3.getEnumType(WhatsAppNumberProvider) },
-    { no: 4, name: "country_code", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "provider", kind: "enum", T: proto3.getEnumType(WhatsAppNumberProvider) },
+    { no: 3, name: "country_code", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
