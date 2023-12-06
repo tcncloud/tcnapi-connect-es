@@ -346,6 +346,34 @@ export const CampaignDirection = proto3.makeEnum(
 );
 
 /**
+ * WhatsAppNumbertype
+ *
+ * @generated from enum api.commons.WhatsAppNumberType
+ */
+export const WhatsAppNumberType = proto3.makeEnum(
+  "api.commons.WhatsAppNumberType",
+  [
+    {no: 0, name: "WHATSAPP_NUMBER_TYPE"},
+    {no: 1, name: "WHATSAPP_ALPHANUMERIC_TYPE"},
+    {no: 2, name: "WHATSAPP_SHORT_CODE_TYPE"},
+  ],
+);
+
+/**
+ * WhatsAppNumberProvider
+ *
+ * @generated from enum api.commons.WhatsAppNumberProvider
+ */
+export const WhatsAppNumberProvider = proto3.makeEnum(
+  "api.commons.WhatsAppNumberProvider",
+  [
+    {no: 0, name: "UNKNOWN_WHATSAPP_PROVIDER"},
+    {no: 1, name: "WHATSAPP_SMS_PROVIDER"},
+    {no: 2, name: "WHATSAPP_VOICE_PROVIDER"},
+  ],
+);
+
+/**
  * OmniCampaign -
  *
  * @generated from message api.commons.OmniCampaign
@@ -439,6 +467,7 @@ export const OmniCampaignModuleConfig = proto3.makeMessageType(
     { no: 19, name: "payment_portal_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 20, name: "flow_id", kind: "message", T: Int64Id },
     { no: 21, name: "skills", kind: "message", T: OmniConversationSkills },
+    { no: 22, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
   ],
 );
 
@@ -1254,6 +1283,7 @@ export const OmniProjectComplianceConfig = proto3.makeMessageType(
   () => [
     { no: 1, name: "email", kind: "message", T: OmniComplianceConfig },
     { no: 2, name: "sms", kind: "message", T: OmniComplianceConfig },
+    { no: 3, name: "whatsapp", kind: "message", T: OmniComplianceConfig },
   ],
 );
 
@@ -1284,6 +1314,21 @@ export const OmniComplianceConfig = proto3.makeMessageType(
     { no: 4, name: "information", kind: "message", T: OmniComplianceAction },
     { no: 5, name: "scrub_list_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "rule_set_id", kind: "message", T: StringValue },
+  ],
+);
+
+/**
+ * WhatsAppNumber
+ *
+ * @generated from message api.commons.WhatsAppNumber
+ */
+export const WhatsAppNumber = proto3.makeMessageType(
+  "api.commons.WhatsAppNumber",
+  () => [
+    { no: 1, name: "number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(WhatsAppNumberType) },
+    { no: 3, name: "provider", kind: "enum", T: proto3.getEnumType(WhatsAppNumberProvider) },
+    { no: 4, name: "country_code", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 

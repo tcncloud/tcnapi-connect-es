@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail } from "../commons/omnichannel_pb.js";
+import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail, WhatsAppNumber } from "../commons/omnichannel_pb.js";
 import type { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -257,6 +257,12 @@ export declare class ListCampaignsReq extends Message<ListCampaignsReq> {
      */
     value: ListCampaignsReq_BySmsNumber;
     case: "bySmsNumber";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.ListCampaignsReq.ByWhatsAppNumber by_whatsapp_number = 107;
+     */
+    value: ListCampaignsReq_ByWhatsAppNumber;
+    case: "byWhatsappNumber";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ListCampaignsReq>);
@@ -475,6 +481,34 @@ export declare class ListCampaignsReq_BySmsNumber extends Message<ListCampaignsR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCampaignsReq_BySmsNumber;
 
   static equals(a: ListCampaignsReq_BySmsNumber | PlainMessage<ListCampaignsReq_BySmsNumber> | undefined, b: ListCampaignsReq_BySmsNumber | PlainMessage<ListCampaignsReq_BySmsNumber> | undefined): boolean;
+}
+
+/**
+ * ByWhatsAppNumber - filter the list of campaigns by the Whatsapp Number
+ *
+ * @generated from message api.v0alpha.ListCampaignsReq.ByWhatsAppNumber
+ */
+export declare class ListCampaignsReq_ByWhatsAppNumber extends Message<ListCampaignsReq_ByWhatsAppNumber> {
+  /**
+   * whatsapp number
+   *
+   * @generated from field: string number = 1;
+   */
+  number: string;
+
+  constructor(data?: PartialMessage<ListCampaignsReq_ByWhatsAppNumber>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListCampaignsReq.ByWhatsAppNumber";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCampaignsReq_ByWhatsAppNumber;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCampaignsReq_ByWhatsAppNumber;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCampaignsReq_ByWhatsAppNumber;
+
+  static equals(a: ListCampaignsReq_ByWhatsAppNumber | PlainMessage<ListCampaignsReq_ByWhatsAppNumber> | undefined, b: ListCampaignsReq_ByWhatsAppNumber | PlainMessage<ListCampaignsReq_ByWhatsAppNumber> | undefined): boolean;
 }
 
 /**
@@ -4672,5 +4706,54 @@ export declare class OmniSkill extends Message<OmniSkill> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniSkill;
 
   static equals(a: OmniSkill | PlainMessage<OmniSkill> | undefined, b: OmniSkill | PlainMessage<OmniSkill> | undefined): boolean;
+}
+
+/**
+ * Request message for listing whatsapp numbers
+ *
+ * @generated from message api.v0alpha.ListWhatsAppNumbersReq
+ */
+export declare class ListWhatsAppNumbersReq extends Message<ListWhatsAppNumbersReq> {
+  constructor(data?: PartialMessage<ListWhatsAppNumbersReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListWhatsAppNumbersReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWhatsAppNumbersReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWhatsAppNumbersReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWhatsAppNumbersReq;
+
+  static equals(a: ListWhatsAppNumbersReq | PlainMessage<ListWhatsAppNumbersReq> | undefined, b: ListWhatsAppNumbersReq | PlainMessage<ListWhatsAppNumbersReq> | undefined): boolean;
+}
+
+/**
+ * Response message for listing whatsapp numbers
+ *
+ * @generated from message api.v0alpha.ListWhatsAppNumbersRes
+ */
+export declare class ListWhatsAppNumbersRes extends Message<ListWhatsAppNumbersRes> {
+  /**
+   * list of whatsapp numbers
+   *
+   * @generated from field: repeated api.commons.WhatsAppNumber whatsapp_numbers = 1;
+   */
+  whatsappNumbers: WhatsAppNumber[];
+
+  constructor(data?: PartialMessage<ListWhatsAppNumbersRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ListWhatsAppNumbersRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListWhatsAppNumbersRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListWhatsAppNumbersRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListWhatsAppNumbersRes;
+
+  static equals(a: ListWhatsAppNumbersRes | PlainMessage<ListWhatsAppNumbersRes> | undefined, b: ListWhatsAppNumbersRes | PlainMessage<ListWhatsAppNumbersRes> | undefined): boolean;
 }
 

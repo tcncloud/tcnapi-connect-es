@@ -923,6 +923,62 @@ export declare enum CampaignDirection {
 }
 
 /**
+ * WhatsAppNumbertype
+ *
+ * @generated from enum api.commons.WhatsAppNumberType
+ */
+export declare enum WhatsAppNumberType {
+  /**
+   * WhatsAppNumberType
+   *
+   * @generated from enum value: WHATSAPP_NUMBER_TYPE = 0;
+   */
+  WHATSAPP_NUMBER_TYPE = 0,
+
+  /**
+   * WhatsAppAlphanumericType
+   *
+   * @generated from enum value: WHATSAPP_ALPHANUMERIC_TYPE = 1;
+   */
+  WHATSAPP_ALPHANUMERIC_TYPE = 1,
+
+  /**
+   * WhatsAppShortCodeType
+   *
+   * @generated from enum value: WHATSAPP_SHORT_CODE_TYPE = 2;
+   */
+  WHATSAPP_SHORT_CODE_TYPE = 2,
+}
+
+/**
+ * WhatsAppNumberProvider
+ *
+ * @generated from enum api.commons.WhatsAppNumberProvider
+ */
+export declare enum WhatsAppNumberProvider {
+  /**
+   * Unknown provider
+   *
+   * @generated from enum value: UNKNOWN_WHATSAPP_PROVIDER = 0;
+   */
+  UNKNOWN_WHATSAPP_PROVIDER = 0,
+
+  /**
+   * WhatsAppSmsProvder
+   *
+   * @generated from enum value: WHATSAPP_SMS_PROVIDER = 1;
+   */
+  WHATSAPP_SMS_PROVIDER = 1,
+
+  /**
+   * WhatsAppVoiceProvder
+   *
+   * @generated from enum value: WHATSAPP_VOICE_PROVIDER = 2;
+   */
+  WHATSAPP_VOICE_PROVIDER = 2,
+}
+
+/**
  * OmniCampaign -
  *
  * @generated from message api.commons.OmniCampaign
@@ -972,7 +1028,7 @@ export declare class OmniCampaign extends Message<OmniCampaign> {
   status: OmniCampaignStatus;
 
   /**
-   * campaign channel type (chat|email|sms|etc.)
+   * campaign channel type (chat|email|sms|whatsapp|etc.)
    *
    * @generated from field: api.commons.ChannelType channel_type = 7;
    */
@@ -1356,6 +1412,13 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    */
   skills?: OmniConversationSkills;
 
+  /**
+   * whatsapp number
+   *
+   * @generated from field: api.commons.WhatsAppNumber whatsapp_number = 22;
+   */
+  whatsappNumber?: WhatsAppNumber;
+
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
   static readonly runtime: typeof proto3;
@@ -1630,6 +1693,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = if agent then user_id, if customer then name
    * email = email address
    * sms = phone number
+   * whatsapp = phone number
    *
    * @generated from field: string sent_from = 5;
    */
@@ -1640,6 +1704,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = if customer then name, otherwise leave as an empty string
    * email = email address
    * sms = phone number
+   * whatsapp = phone number
    *
    * @generated from field: string sent_to = 6;
    */
@@ -1657,6 +1722,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = not set
    * email = email message header
    * sms = not set
+   * whatsapp = not set
    *
    * @generated from field: google.protobuf.StringValue reference_id = 8;
    */
@@ -1717,6 +1783,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = not set
    * email = the email subject line
    * sms = not set
+   * whatsapp = not set
    *
    * @generated from field: google.protobuf.StringValue subject = 19;
    */
@@ -2700,7 +2767,7 @@ export declare class OmniConversation extends Message<OmniConversation> {
   conversationSid: string;
 
   /**
-   * the conversation's channel type i.e. chat|email|sms|etc.
+   * the conversation's channel type i.e. chat|email|sms|whatsapp|etc.
    *
    * @generated from field: api.commons.ChannelType channel_type = 2;
    */
@@ -4265,6 +4332,13 @@ export declare class OmniProjectComplianceConfig extends Message<OmniProjectComp
    */
   sms?: OmniComplianceConfig;
 
+  /**
+   * compliance configuration for whatsapp
+   *
+   * @generated from field: api.commons.OmniComplianceConfig whatsapp = 3;
+   */
+  whatsapp?: OmniComplianceConfig;
+
   constructor(data?: PartialMessage<OmniProjectComplianceConfig>);
 
   static readonly runtime: typeof proto3;
@@ -4376,5 +4450,54 @@ export declare class OmniComplianceConfig extends Message<OmniComplianceConfig> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniComplianceConfig;
 
   static equals(a: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined, b: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined): boolean;
+}
+
+/**
+ * WhatsAppNumber
+ *
+ * @generated from message api.commons.WhatsAppNumber
+ */
+export declare class WhatsAppNumber extends Message<WhatsAppNumber> {
+  /**
+   * string representation of the whatsapp number
+   *
+   * @generated from field: string number = 1;
+   */
+  number: string;
+
+  /**
+   * the type of whatsapp number (Alphanumeric|Short Code|Number)
+   *
+   * @generated from field: api.commons.WhatsAppNumberType type = 2;
+   */
+  type: WhatsAppNumberType;
+
+  /**
+   * associated provider (whatsappvoice | whatsappsms)
+   *
+   * @generated from field: api.commons.WhatsAppNumberProvider provider = 3;
+   */
+  provider: WhatsAppNumberProvider;
+
+  /**
+   * country code the whatsapp number belongs to
+   *
+   * @generated from field: int32 country_code = 4;
+   */
+  countryCode: number;
+
+  constructor(data?: PartialMessage<WhatsAppNumber>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.WhatsAppNumber";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WhatsAppNumber;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WhatsAppNumber;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WhatsAppNumber;
+
+  static equals(a: WhatsAppNumber | PlainMessage<WhatsAppNumber> | undefined, b: WhatsAppNumber | PlainMessage<WhatsAppNumber> | undefined): boolean;
 }
 
