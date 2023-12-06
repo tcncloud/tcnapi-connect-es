@@ -923,6 +923,27 @@ export declare enum CampaignDirection {
 }
 
 /**
+ * WhatsAppNumberProvider
+ *
+ * @generated from enum api.commons.WhatsAppNumberProvider
+ */
+export declare enum WhatsAppNumberProvider {
+  /**
+   * Unknown provider
+   *
+   * @generated from enum value: UNKNOWN_WHATSAPP_PROVIDER = 0;
+   */
+  UNKNOWN_WHATSAPP_PROVIDER = 0,
+
+  /**
+   * WhatsAppSmsProvder
+   *
+   * @generated from enum value: WHATSAPP_SMS_PROVIDER = 1;
+   */
+  WHATSAPP_SMS_PROVIDER = 1,
+}
+
+/**
  * OmniCampaign -
  *
  * @generated from message api.commons.OmniCampaign
@@ -972,7 +993,7 @@ export declare class OmniCampaign extends Message<OmniCampaign> {
   status: OmniCampaignStatus;
 
   /**
-   * campaign channel type (chat|email|sms|etc.)
+   * campaign channel type (chat|email|sms|whatsapp|etc.)
    *
    * @generated from field: api.commons.ChannelType channel_type = 7;
    */
@@ -1356,6 +1377,13 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    */
   skills?: OmniConversationSkills;
 
+  /**
+   * whatsapp number
+   *
+   * @generated from field: api.commons.WhatsAppNumber whatsapp_number = 22;
+   */
+  whatsappNumber?: WhatsAppNumber;
+
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
   static readonly runtime: typeof proto3;
@@ -1630,6 +1658,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = if agent then user_id, if customer then name
    * email = email address
    * sms = phone number
+   * whatsapp = phone number
    *
    * @generated from field: string sent_from = 5;
    */
@@ -1640,6 +1669,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = if customer then name, otherwise leave as an empty string
    * email = email address
    * sms = phone number
+   * whatsapp = phone number
    *
    * @generated from field: string sent_to = 6;
    */
@@ -1657,6 +1687,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = not set
    * email = email message header
    * sms = not set
+   * whatsapp = not set
    *
    * @generated from field: google.protobuf.StringValue reference_id = 8;
    */
@@ -1717,6 +1748,7 @@ export declare class OmniMessage extends Message<OmniMessage> {
    * chat = not set
    * email = the email subject line
    * sms = not set
+   * whatsapp = not set
    *
    * @generated from field: google.protobuf.StringValue subject = 19;
    */
@@ -2700,7 +2732,7 @@ export declare class OmniConversation extends Message<OmniConversation> {
   conversationSid: string;
 
   /**
-   * the conversation's channel type i.e. chat|email|sms|etc.
+   * the conversation's channel type i.e. chat|email|sms|whatsapp|etc.
    *
    * @generated from field: api.commons.ChannelType channel_type = 2;
    */
@@ -4065,21 +4097,24 @@ export declare class ConnectedInbox extends Message<ConnectedInbox> {
   /**
    * google xoauth2 refresh token (if using google xoauth2)
    *
-   * @generated from field: google.protobuf.StringValue google_xoauth2_refresh_token = 18;
+   * @generated from field: google.protobuf.StringValue google_xoauth2_refresh_token = 18 [deprecated = true];
+   * @deprecated
    */
   googleXoauth2RefreshToken?: string;
 
   /**
    * google xoauth2 access token (if using google xoauth2)
    *
-   * @generated from field: google.protobuf.StringValue google_xoauth2_access_token = 19;
+   * @generated from field: google.protobuf.StringValue google_xoauth2_access_token = 19 [deprecated = true];
+   * @deprecated
    */
   googleXoauth2AccessToken?: string;
 
   /**
    * time the google xoauth2 access token expires (if using google xoauth2)
    *
-   * @generated from field: google.protobuf.Timestamp google_xoauth2_access_token_expiration = 20;
+   * @generated from field: google.protobuf.Timestamp google_xoauth2_access_token_expiration = 20 [deprecated = true];
+   * @deprecated
    */
   googleXoauth2AccessTokenExpiration?: Timestamp;
 
@@ -4089,6 +4124,13 @@ export declare class ConnectedInbox extends Message<ConnectedInbox> {
    * @generated from field: api.commons.ConnectedInboxAuthenticationType authentication_type = 21;
    */
   authenticationType: ConnectedInboxAuthenticationType;
+
+  /**
+   * config for the oauth provider
+   *
+   * @generated from field: api.commons.ConnectedInboxOAuthConfig oauth_reference_id = 22;
+   */
+  oauthReferenceId?: ConnectedInboxOAuthConfig;
 
   constructor(data?: PartialMessage<ConnectedInbox>);
 
@@ -4103,6 +4145,47 @@ export declare class ConnectedInbox extends Message<ConnectedInbox> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConnectedInbox;
 
   static equals(a: ConnectedInbox | PlainMessage<ConnectedInbox> | undefined, b: ConnectedInbox | PlainMessage<ConnectedInbox> | undefined): boolean;
+}
+
+/**
+ * ConnectedInboxOAuthConfig -
+ *
+ * @generated from message api.commons.ConnectedInboxOAuthConfig
+ */
+export declare class ConnectedInboxOAuthConfig extends Message<ConnectedInboxOAuthConfig> {
+  /**
+   * @generated from field: string access_token = 1;
+   */
+  accessToken: string;
+
+  /**
+   * @generated from field: string refresh_token = 2;
+   */
+  refreshToken: string;
+
+  /**
+   * @generated from field: int64 expires_at = 3;
+   */
+  expiresAt: bigint;
+
+  /**
+   * @generated from field: string reference_id = 4;
+   */
+  referenceId: string;
+
+  constructor(data?: PartialMessage<ConnectedInboxOAuthConfig>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ConnectedInboxOAuthConfig";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ConnectedInboxOAuthConfig;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ConnectedInboxOAuthConfig;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ConnectedInboxOAuthConfig;
+
+  static equals(a: ConnectedInboxOAuthConfig | PlainMessage<ConnectedInboxOAuthConfig> | undefined, b: ConnectedInboxOAuthConfig | PlainMessage<ConnectedInboxOAuthConfig> | undefined): boolean;
 }
 
 /**
@@ -4265,6 +4348,13 @@ export declare class OmniProjectComplianceConfig extends Message<OmniProjectComp
    */
   sms?: OmniComplianceConfig;
 
+  /**
+   * compliance configuration for whatsapp
+   *
+   * @generated from field: api.commons.OmniComplianceConfig whatsapp = 3;
+   */
+  whatsapp?: OmniComplianceConfig;
+
   constructor(data?: PartialMessage<OmniProjectComplianceConfig>);
 
   static readonly runtime: typeof proto3;
@@ -4376,5 +4466,47 @@ export declare class OmniComplianceConfig extends Message<OmniComplianceConfig> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniComplianceConfig;
 
   static equals(a: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined, b: OmniComplianceConfig | PlainMessage<OmniComplianceConfig> | undefined): boolean;
+}
+
+/**
+ * WhatsAppNumber
+ *
+ * @generated from message api.commons.WhatsAppNumber
+ */
+export declare class WhatsAppNumber extends Message<WhatsAppNumber> {
+  /**
+   * string representation of the whatsapp number
+   *
+   * @generated from field: string number = 1;
+   */
+  number: string;
+
+  /**
+   * associated provider (whatsappsms)
+   *
+   * @generated from field: api.commons.WhatsAppNumberProvider provider = 2;
+   */
+  provider: WhatsAppNumberProvider;
+
+  /**
+   * country code the whatsapp number belongs to
+   *
+   * @generated from field: int32 country_code = 3;
+   */
+  countryCode: number;
+
+  constructor(data?: PartialMessage<WhatsAppNumber>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.WhatsAppNumber";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WhatsAppNumber;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WhatsAppNumber;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WhatsAppNumber;
+
+  static equals(a: WhatsAppNumber | PlainMessage<WhatsAppNumber> | undefined, b: WhatsAppNumber | PlainMessage<WhatsAppNumber> | undefined): boolean;
 }
 
