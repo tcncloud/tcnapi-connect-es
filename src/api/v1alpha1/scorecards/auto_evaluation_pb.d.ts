@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AutoEvaluation, TimeFilter } from "../../commons/scorecards_pb.js";
+import type { AutoEvaluation, RiskLevel, TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
  * GetAutoEvaluationRequest is the request to get an auto evaluation
@@ -83,6 +83,56 @@ export declare class ListAutoEvaluationsRequest extends Message<ListAutoEvaluati
    */
   completedAt?: TimeFilter;
 
+  /**
+   * Optional - filter by category ids.
+   *
+   * @generated from field: repeated int64 category_ids = 5;
+   */
+  categoryIds: bigint[];
+
+  /**
+   * Optional - filter by call sid.
+   *
+   * @generated from field: api.v1alpha1.scorecards.ListAutoEvaluationsRequest.CallSidFilter call_sid = 6;
+   */
+  callSid?: ListAutoEvaluationsRequest_CallSidFilter;
+
+  /**
+   * Optional - filter by agent user ids.
+   *
+   * @generated from field: repeated string agent_user_ids = 7;
+   */
+  agentUserIds: string[];
+
+  /**
+   * Optional - number of auto evaluations included in response.
+   *
+   * @generated from field: int32 page_size = 8;
+   */
+  pageSize: number;
+
+  /**
+   * Optional. The order by which auto evaluations will be listed. Follows sql order by
+   * syntax. When not provided the order defaults to "completed_at DESC".
+   *
+   * @generated from field: string order_by = 9;
+   */
+  orderBy: string;
+
+  /**
+   * Optional. The next_page_token returned from a previous List request, if any.
+   *
+   * @generated from field: string page_token = 10;
+   */
+  pageToken: string;
+
+  /**
+   * Optional - filter by risk level.
+   *
+   * @generated from field: repeated api.commons.RiskLevel risk_levels = 11;
+   */
+  riskLevels: RiskLevel[];
+
   constructor(data?: PartialMessage<ListAutoEvaluationsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -99,6 +149,69 @@ export declare class ListAutoEvaluationsRequest extends Message<ListAutoEvaluati
 }
 
 /**
+ * @generated from message api.v1alpha1.scorecards.ListAutoEvaluationsRequest.CallSidFilter
+ */
+export declare class ListAutoEvaluationsRequest_CallSidFilter extends Message<ListAutoEvaluationsRequest_CallSidFilter> {
+  /**
+   * Optional - filter by any of the provided sids.
+   *
+   * @generated from field: repeated int64 any_of = 1;
+   */
+  anyOf: bigint[];
+
+  /**
+   * filter values must be non-zero to be applied
+   *
+   * Optional - filter by equal to.
+   *
+   * @generated from field: int64 eq = 2;
+   */
+  eq: bigint;
+
+  /**
+   * Optional - filter by greater than or equal to.
+   *
+   * @generated from field: int64 gte = 3;
+   */
+  gte: bigint;
+
+  /**
+   * Optional - filter by less than or equal to.
+   *
+   * @generated from field: int64 lte = 4;
+   */
+  lte: bigint;
+
+  /**
+   * Optional - filter by greater than.
+   *
+   * @generated from field: int64 gt = 5;
+   */
+  gt: bigint;
+
+  /**
+   * Optional - filter by less than.
+   *
+   * @generated from field: int64 lt = 6;
+   */
+  lt: bigint;
+
+  constructor(data?: PartialMessage<ListAutoEvaluationsRequest_CallSidFilter>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.ListAutoEvaluationsRequest.CallSidFilter";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAutoEvaluationsRequest_CallSidFilter;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAutoEvaluationsRequest_CallSidFilter;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAutoEvaluationsRequest_CallSidFilter;
+
+  static equals(a: ListAutoEvaluationsRequest_CallSidFilter | PlainMessage<ListAutoEvaluationsRequest_CallSidFilter> | undefined, b: ListAutoEvaluationsRequest_CallSidFilter | PlainMessage<ListAutoEvaluationsRequest_CallSidFilter> | undefined): boolean;
+}
+
+/**
  * ListAutoEvaluationsResponse returns a list of evaluations.
  *
  * @generated from message api.v1alpha1.scorecards.ListAutoEvaluationsResponse
@@ -110,6 +223,14 @@ export declare class ListAutoEvaluationsResponse extends Message<ListAutoEvaluat
    * @generated from field: repeated api.commons.AutoEvaluation auto_evaluations = 1;
    */
   autoEvaluations: AutoEvaluation[];
+
+  /**
+   * Token to retrieve the next page of auto evaluations, or empty if there are no
+   * more entries in the list.
+   *
+   * @generated from field: string next_page_token = 2;
+   */
+  nextPageToken: string;
 
   constructor(data?: PartialMessage<ListAutoEvaluationsResponse>);
 

@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { AutoEvaluation, TimeFilter } from "../../commons/scorecards_pb.js";
+import { AutoEvaluation, RiskLevel, TimeFilter } from "../../commons/scorecards_pb.js";
 
 /**
  * GetAutoEvaluationRequest is the request to get an auto evaluation
@@ -40,7 +40,30 @@ export const ListAutoEvaluationsRequest = proto3.makeMessageType(
   () => [
     { no: 2, name: "scorecard_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
     { no: 3, name: "completed_at", kind: "message", T: TimeFilter },
+    { no: 5, name: "category_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 6, name: "call_sid", kind: "message", T: ListAutoEvaluationsRequest_CallSidFilter },
+    { no: 7, name: "agent_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "page_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "order_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "risk_levels", kind: "enum", T: proto3.getEnumType(RiskLevel), repeated: true },
   ],
+);
+
+/**
+ * @generated from message api.v1alpha1.scorecards.ListAutoEvaluationsRequest.CallSidFilter
+ */
+export const ListAutoEvaluationsRequest_CallSidFilter = proto3.makeMessageType(
+  "api.v1alpha1.scorecards.ListAutoEvaluationsRequest.CallSidFilter",
+  () => [
+    { no: 1, name: "any_of", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "eq", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "gte", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "lte", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "gt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "lt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+  {localName: "ListAutoEvaluationsRequest_CallSidFilter"},
 );
 
 /**
@@ -52,6 +75,7 @@ export const ListAutoEvaluationsResponse = proto3.makeMessageType(
   "api.v1alpha1.scorecards.ListAutoEvaluationsResponse",
   () => [
     { no: 1, name: "auto_evaluations", kind: "message", T: AutoEvaluation, repeated: true },
+    { no: 2, name: "next_page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
