@@ -749,6 +749,31 @@ export const GetUserPasswordResetLinkByOrgIdResponse = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the CreatePasswordResetLink rpc.
+ *
+ * @generated from message api.v1alpha1.org.CreatePasswordResetLinkRequest
+ */
+export const CreatePasswordResetLinkRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CreatePasswordResetLinkRequest",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "expiration", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * Response message for the CreatePasswordResetLink rpc.
+ *
+ * @generated from message api.v1alpha1.org.CreatePasswordResetLinkResponse
+ */
+export const CreatePasswordResetLinkResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CreatePasswordResetLinkResponse",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * This rpc used to be called GetUserBlocked
  * Request message for the GetUserLoginInfo rpc.
  *

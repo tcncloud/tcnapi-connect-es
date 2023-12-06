@@ -2466,6 +2466,63 @@ export declare class GetUserPasswordResetLinkByOrgIdResponse extends Message<Get
 }
 
 /**
+ * Request message for the CreatePasswordResetLink rpc.
+ *
+ * @generated from message api.v1alpha1.org.CreatePasswordResetLinkRequest
+ */
+export declare class CreatePasswordResetLinkRequest extends Message<CreatePasswordResetLinkRequest> {
+  /**
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp expiration = 2;
+   */
+  expiration?: Timestamp;
+
+  constructor(data?: PartialMessage<CreatePasswordResetLinkRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreatePasswordResetLinkRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePasswordResetLinkRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePasswordResetLinkRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePasswordResetLinkRequest;
+
+  static equals(a: CreatePasswordResetLinkRequest | PlainMessage<CreatePasswordResetLinkRequest> | undefined, b: CreatePasswordResetLinkRequest | PlainMessage<CreatePasswordResetLinkRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the CreatePasswordResetLink rpc.
+ *
+ * @generated from message api.v1alpha1.org.CreatePasswordResetLinkResponse
+ */
+export declare class CreatePasswordResetLinkResponse extends Message<CreatePasswordResetLinkResponse> {
+  /**
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  constructor(data?: PartialMessage<CreatePasswordResetLinkResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreatePasswordResetLinkResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreatePasswordResetLinkResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreatePasswordResetLinkResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreatePasswordResetLinkResponse;
+
+  static equals(a: CreatePasswordResetLinkResponse | PlainMessage<CreatePasswordResetLinkResponse> | undefined, b: CreatePasswordResetLinkResponse | PlainMessage<CreatePasswordResetLinkResponse> | undefined): boolean;
+}
+
+/**
  * This rpc used to be called GetUserBlocked
  * Request message for the GetUserLoginInfo rpc.
  *
