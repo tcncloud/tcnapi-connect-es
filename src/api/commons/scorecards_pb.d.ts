@@ -824,6 +824,20 @@ export declare class AutoEvaluation extends Message<AutoEvaluation> {
    */
   callLength: number;
 
+  /**
+   * read-only info provided from the parent scorecard
+   *
+   * @generated from field: api.commons.AutoEvaluation.ScorecardInfo scorecard_info = 17;
+   */
+  scorecardInfo?: AutoEvaluation_ScorecardInfo;
+
+  /**
+   * read-only info provided from the parent category
+   *
+   * @generated from field: api.commons.AutoEvaluation.CategoryInfo category_info = 18;
+   */
+  categoryInfo?: AutoEvaluation_CategoryInfo;
+
   constructor(data?: PartialMessage<AutoEvaluation>);
 
   static readonly runtime: typeof proto3;
@@ -837,6 +851,58 @@ export declare class AutoEvaluation extends Message<AutoEvaluation> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AutoEvaluation;
 
   static equals(a: AutoEvaluation | PlainMessage<AutoEvaluation> | undefined, b: AutoEvaluation | PlainMessage<AutoEvaluation> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.AutoEvaluation.ScorecardInfo
+ */
+export declare class AutoEvaluation_ScorecardInfo extends Message<AutoEvaluation_ScorecardInfo> {
+  /**
+   * title of the scorecard.
+   *
+   * @generated from field: string title = 1;
+   */
+  title: string;
+
+  constructor(data?: PartialMessage<AutoEvaluation_ScorecardInfo>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.AutoEvaluation.ScorecardInfo";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AutoEvaluation_ScorecardInfo;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AutoEvaluation_ScorecardInfo;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AutoEvaluation_ScorecardInfo;
+
+  static equals(a: AutoEvaluation_ScorecardInfo | PlainMessage<AutoEvaluation_ScorecardInfo> | undefined, b: AutoEvaluation_ScorecardInfo | PlainMessage<AutoEvaluation_ScorecardInfo> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.AutoEvaluation.CategoryInfo
+ */
+export declare class AutoEvaluation_CategoryInfo extends Message<AutoEvaluation_CategoryInfo> {
+  /**
+   * title of the category.
+   *
+   * @generated from field: string title = 1;
+   */
+  title: string;
+
+  constructor(data?: PartialMessage<AutoEvaluation_CategoryInfo>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.AutoEvaluation.CategoryInfo";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AutoEvaluation_CategoryInfo;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AutoEvaluation_CategoryInfo;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AutoEvaluation_CategoryInfo;
+
+  static equals(a: AutoEvaluation_CategoryInfo | PlainMessage<AutoEvaluation_CategoryInfo> | undefined, b: AutoEvaluation_CategoryInfo | PlainMessage<AutoEvaluation_CategoryInfo> | undefined): boolean;
 }
 
 /**
