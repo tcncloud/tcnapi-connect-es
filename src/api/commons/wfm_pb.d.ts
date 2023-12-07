@@ -1256,6 +1256,41 @@ export declare enum HistoryCacheState {
 }
 
 /**
+ * Enum representing the state of a client's initial setup to use WFM.
+ *
+ * @generated from enum api.commons.InitialSetupState
+ */
+export declare enum InitialSetupState {
+  /**
+   * Not setup and no set up attempts have been made.
+   *
+   * @generated from enum value: NOT_SETUP = 0;
+   */
+  NOT_SETUP = 0,
+
+  /**
+   * Currently doing setup tasks.
+   *
+   * @generated from enum value: SETTING_UP = 1;
+   */
+  SETTING_UP = 1,
+
+  /**
+   * Set up for client is complete.
+   *
+   * @generated from enum value: SETUP_COMPLETE = 2;
+   */
+  SETUP_COMPLETE = 2,
+
+  /**
+   * Setup was attempted but failed and no new setup attempts have been made.
+   *
+   * @generated from enum value: FAILURE = 3;
+   */
+  FAILURE = 3,
+}
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
@@ -2117,5 +2152,47 @@ export declare class ErrorTrace extends Message<ErrorTrace> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ErrorTrace;
 
   static equals(a: ErrorTrace | PlainMessage<ErrorTrace> | undefined, b: ErrorTrace | PlainMessage<ErrorTrace> | undefined): boolean;
+}
+
+/**
+ * Represents the status of a client's initial setup and progress to use WFM.
+ *
+ * @generated from message api.commons.InitialSetupStatus
+ */
+export declare class InitialSetupStatus extends Message<InitialSetupStatus> {
+  /**
+   * Current state that a client is at.
+   *
+   * @generated from field: api.commons.InitialSetupState state = 1;
+   */
+  state: InitialSetupState;
+
+  /**
+   * Progress percentage estimate of the setup process.
+   *
+   * @generated from field: int32 progress_percentage = 2;
+   */
+  progressPercentage: number;
+
+  /**
+   * Any message that a service has in regards to their current state.
+   *
+   * @generated from field: string message = 3;
+   */
+  message: string;
+
+  constructor(data?: PartialMessage<InitialSetupStatus>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.InitialSetupStatus";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InitialSetupStatus;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InitialSetupStatus;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InitialSetupStatus;
+
+  static equals(a: InitialSetupStatus | PlainMessage<InitialSetupStatus> | undefined, b: InitialSetupStatus | PlainMessage<InitialSetupStatus> | undefined): boolean;
 }
 
