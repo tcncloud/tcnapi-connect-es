@@ -1389,6 +1389,13 @@ export declare class BuildCallProfileTemplateForSkillProfileReq extends Message<
    */
   skillProfileSid: bigint;
 
+  /**
+   * Time zone in IANA format that the call profile template will built will be in.
+   *
+   * @generated from field: string time_zone = 2;
+   */
+  timeZone: string;
+
   constructor(data?: PartialMessage<BuildCallProfileTemplateForSkillProfileReq>);
 
   static readonly runtime: typeof proto3;
@@ -1444,6 +1451,13 @@ export declare class BuildCallProfileTemplateReq extends Message<BuildCallProfil
    * @generated from field: api.commons.SkillProfileCategory skill_profile_category = 1;
    */
   skillProfileCategory?: SkillProfileCategory;
+
+  /**
+   * Time zone in IANA format that the call profile template will built will be in.
+   *
+   * @generated from field: string time_zone = 2;
+   */
+  timeZone: string;
 
   constructor(data?: PartialMessage<BuildCallProfileTemplateReq>);
 
