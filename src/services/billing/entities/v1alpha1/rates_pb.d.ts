@@ -312,6 +312,13 @@ export declare class RateDefinition extends Message<RateDefinition> {
    */
   deleteTime?: Timestamp;
 
+  /**
+   * the matching sha for this definition
+   *
+   * @generated from field: string MatchingSha = 12;
+   */
+  MatchingSha: string;
+
   constructor(data?: PartialMessage<RateDefinition>);
 
   static readonly runtime: typeof proto3;

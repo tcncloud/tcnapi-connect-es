@@ -79,6 +79,7 @@ export const RateDefinition = proto3.makeMessageType(
     { no: 9, name: "create_time", kind: "message", T: Timestamp },
     { no: 10, name: "update_time", kind: "message", T: Timestamp },
     { no: 11, name: "delete_time", kind: "message", T: Timestamp },
+    { no: 12, name: "MatchingSha", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
