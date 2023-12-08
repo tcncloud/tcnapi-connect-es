@@ -1390,7 +1390,7 @@ export declare class BuildCallProfileTemplateForSkillProfileReq extends Message<
   skillProfileSid: bigint;
 
   /**
-   * Time zone in IANA format that the call profile template will built will be in.
+   * Time zone in IANA format that the call profile template built will be in.
    *
    * @generated from field: string time_zone = 2;
    */
@@ -1453,7 +1453,7 @@ export declare class BuildCallProfileTemplateReq extends Message<BuildCallProfil
   skillProfileCategory?: SkillProfileCategory;
 
   /**
-   * Time zone in IANA format that the call profile template will built will be in.
+   * Time zone in IANA format that the call profile template built will be in.
    *
    * @generated from field: string time_zone = 2;
    */
