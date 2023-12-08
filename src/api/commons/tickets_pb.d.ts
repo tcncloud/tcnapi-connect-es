@@ -553,6 +553,7 @@ export declare class TicketAction extends Message<TicketAction> {
 
   /**
    * Attributes for a callback Action
+   * To be Deprecated Later
    *
    * @generated from field: api.commons.CallbackContext callback_context = 3;
    */
@@ -609,24 +610,30 @@ export declare class TicketAction extends Message<TicketAction> {
   workDoneBy: string;
 
   /**
-   * Context Object Sent from FE - Only one object to be sent
+   * Context Object For Voice,SMS,Email - Only one object to be in Request
    *
    * @generated from oneof api.commons.TicketAction.context
    */
   context: {
     /**
+     * Voice Callback Context
+     *
      * @generated from field: api.commons.CallbackContext voice_context = 12;
      */
     value: CallbackContext;
     case: "voiceContext";
   } | {
     /**
+     * SMS Callback Context
+     *
      * @generated from field: api.commons.SmsbackContext sms_context = 13;
      */
     value: SmsbackContext;
     case: "smsContext";
   } | {
     /**
+     * Email Callback Context
+     *
      * @generated from field: api.commons.EmailbackContext email_context = 14;
      */
     value: EmailbackContext;
