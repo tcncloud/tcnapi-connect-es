@@ -46,16 +46,22 @@ export declare enum TimeScale {
  */
 export declare enum TicketStatus {
   /**
+   * NEW
+   *
    * @generated from enum value: TICKET_STATUS_NEW = 0;
    */
   NEW = 0,
 
   /**
+   * OPEN
+   *
    * @generated from enum value: TICKET_STATUS_OPEN = 1;
    */
   OPEN = 1,
 
   /**
+   * CLOSE
+   *
    * @generated from enum value: TICKET_STATUS_CLOSE = 2;
    */
   CLOSE = 2,
@@ -507,11 +513,15 @@ export declare class AssignProjectTemplate extends Message<AssignProjectTemplate
  */
 export declare class Duration extends Message<Duration> {
   /**
+   * Value of of the Scale
+   *
    * @generated from field: int64 value = 1 [jstype = JS_STRING];
    */
   value: string;
 
   /**
+   * Scale - In minutes,hour,day,week,month,year
+   *
    * @generated from field: api.commons.TimeScale scale = 2;
    */
   scale: TimeScale;

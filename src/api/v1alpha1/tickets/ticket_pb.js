@@ -174,6 +174,7 @@ export const GetActionTypeResponse = proto3.makeMessageType(
  * EditTicketReq - Request for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketReq
+ * @deprecated
  */
 export const EditTicketReq = proto3.makeMessageType(
   "api.v1alpha1.tickets.EditTicketReq",

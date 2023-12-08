@@ -468,6 +468,7 @@ export declare class GetActionTypeResponse extends Message<GetActionTypeResponse
  * EditTicketReq - Request for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketReq
+ * @deprecated
  */
 export declare class EditTicketReq extends Message<EditTicketReq> {
   /**
@@ -505,16 +506,22 @@ export declare class EditTicketReq extends Message<EditTicketReq> {
  */
 export declare class EditMaskTicketReq extends Message<EditMaskTicketReq> {
   /**
+   * Ticket Id
+   *
    * @generated from field: int64 ticket_sid = 1 [jstype = JS_STRING];
    */
   ticketSid: string;
 
   /**
+   * Ticket Object
+   *
    * @generated from field: api.commons.Ticket edit_value = 2;
    */
   editValue?: Ticket;
 
   /**
+   * Field to be edited in DB
+   *
    * @generated from field: repeated google.protobuf.FieldMask edited_fields_mask = 3;
    */
   editedFieldsMask: FieldMask[];
