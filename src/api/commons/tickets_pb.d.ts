@@ -640,6 +640,13 @@ export declare class TicketAction extends Message<TicketAction> {
     case: "emailContext";
   } | { case: undefined; value?: undefined };
 
+  /**
+   * Action Type
+   *
+   * @generated from field: api.commons.ActionType action_type = 15;
+   */
+  actionType?: ActionType;
+
   constructor(data?: PartialMessage<TicketAction>);
 
   static readonly runtime: typeof proto3;
@@ -745,6 +752,35 @@ export declare class SmsbackContext extends Message<SmsbackContext> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SmsbackContext;
 
   static equals(a: SmsbackContext | PlainMessage<SmsbackContext> | undefined, b: SmsbackContext | PlainMessage<SmsbackContext> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ActionType
+ */
+export declare class ActionType extends Message<ActionType> {
+  /**
+   * @generated from field: int64 action_type_id = 1 [jstype = JS_STRING];
+   */
+  actionTypeId: string;
+
+  /**
+   * @generated from field: string action_name = 2;
+   */
+  actionName: string;
+
+  constructor(data?: PartialMessage<ActionType>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ActionType";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ActionType;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ActionType;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ActionType;
+
+  static equals(a: ActionType | PlainMessage<ActionType> | undefined, b: ActionType | PlainMessage<ActionType> | undefined): boolean;
 }
 
 /**

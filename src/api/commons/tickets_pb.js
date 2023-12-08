@@ -182,6 +182,7 @@ export const TicketAction = proto3.makeMessageType(
     { no: 12, name: "voice_context", kind: "message", T: CallbackContext, oneof: "context" },
     { no: 13, name: "sms_context", kind: "message", T: SmsbackContext, oneof: "context" },
     { no: 14, name: "email_context", kind: "message", T: EmailbackContext, oneof: "context" },
+    { no: 15, name: "action_type", kind: "message", T: ActionType },
   ],
 );
 
@@ -214,6 +215,17 @@ export const SmsbackContext = proto3.makeMessageType(
     { no: 3, name: "from_sms", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "to_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "from_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.ActionType
+ */
+export const ActionType = proto3.makeMessageType(
+  "api.commons.ActionType",
+  () => [
+    { no: 1, name: "action_type_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "action_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
