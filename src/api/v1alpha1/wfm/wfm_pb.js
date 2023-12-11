@@ -476,6 +476,7 @@ export const BuildCallProfileTemplateForSkillProfileReq = proto3.makeMessageType
   "api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq",
   () => [
     { no: 1, name: "skill_profile_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -500,6 +501,7 @@ export const BuildCallProfileTemplateReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.BuildCallProfileTemplateReq",
   () => [
     { no: 1, name: "skill_profile_category", kind: "message", T: SkillProfileCategory },
+    { no: 2, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
