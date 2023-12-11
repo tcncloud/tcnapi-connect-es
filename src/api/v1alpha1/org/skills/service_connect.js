@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse } from "./entities_pb.js";
+import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -120,6 +120,17 @@ export const SkillsService = {
       name: "GetSkillGroupMembers",
       I: GetSkillGroupMembersRequest,
       O: GetSkillGroupMembersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListSkillGroupsMembers gets the members of a skill group for each skill group in an Org.
+     *
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.ListSkillGroupsMembers
+     */
+    listSkillGroupsMembers: {
+      name: "ListSkillGroupsMembers",
+      I: ListSkillGroupsMembersRequest,
+      O: ListSkillGroupsMembersResponse,
       kind: MethodKind.Unary,
     },
   }
