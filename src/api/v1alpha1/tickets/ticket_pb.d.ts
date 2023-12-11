@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import type { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -418,9 +418,57 @@ export declare class CreateTicketRes extends Message<CreateTicketRes> {
 }
 
 /**
+ * Request all the Action Types
+ *
+ * @generated from message api.v1alpha1.tickets.GetActionTypeRequest
+ */
+export declare class GetActionTypeRequest extends Message<GetActionTypeRequest> {
+  constructor(data?: PartialMessage<GetActionTypeRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.GetActionTypeRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetActionTypeRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetActionTypeRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetActionTypeRequest;
+
+  static equals(a: GetActionTypeRequest | PlainMessage<GetActionTypeRequest> | undefined, b: GetActionTypeRequest | PlainMessage<GetActionTypeRequest> | undefined): boolean;
+}
+
+/**
+ * Returns all the Action Types
+ *
+ * @generated from message api.v1alpha1.tickets.GetActionTypeResponse
+ */
+export declare class GetActionTypeResponse extends Message<GetActionTypeResponse> {
+  /**
+   * @generated from field: repeated api.commons.ActionType action_type = 1;
+   */
+  actionType: ActionType[];
+
+  constructor(data?: PartialMessage<GetActionTypeResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.GetActionTypeResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetActionTypeResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetActionTypeResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetActionTypeResponse;
+
+  static equals(a: GetActionTypeResponse | PlainMessage<GetActionTypeResponse> | undefined, b: GetActionTypeResponse | PlainMessage<GetActionTypeResponse> | undefined): boolean;
+}
+
+/**
  * EditTicketReq - Request for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketReq
+ * @deprecated
  */
 export declare class EditTicketReq extends Message<EditTicketReq> {
   /**
@@ -458,16 +506,22 @@ export declare class EditTicketReq extends Message<EditTicketReq> {
  */
 export declare class EditMaskTicketReq extends Message<EditMaskTicketReq> {
   /**
+   * Ticket Id
+   *
    * @generated from field: int64 ticket_sid = 1 [jstype = JS_STRING];
    */
   ticketSid: string;
 
   /**
+   * Ticket Object
+   *
    * @generated from field: api.commons.Ticket edit_value = 2;
    */
   editValue?: Ticket;
 
   /**
+   * Field to be edited in DB
+   *
    * @generated from field: repeated google.protobuf.FieldMask edited_fields_mask = 3;
    */
   editedFieldsMask: FieldMask[];
@@ -990,6 +1044,8 @@ export declare class CreateSlaReq extends Message<CreateSlaReq> {
   interval: bigint;
 
   /**
+   * SLA Duration
+   *
    * @generated from field: api.commons.Duration duration = 5;
    */
   duration?: Duration;

@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -149,9 +149,32 @@ export const CreateTicketRes = proto3.makeMessageType(
 );
 
 /**
+ * Request all the Action Types
+ *
+ * @generated from message api.v1alpha1.tickets.GetActionTypeRequest
+ */
+export const GetActionTypeRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.GetActionTypeRequest",
+  [],
+);
+
+/**
+ * Returns all the Action Types
+ *
+ * @generated from message api.v1alpha1.tickets.GetActionTypeResponse
+ */
+export const GetActionTypeResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.GetActionTypeResponse",
+  () => [
+    { no: 1, name: "action_type", kind: "message", T: ActionType, repeated: true },
+  ],
+);
+
+/**
  * EditTicketReq - Request for EditTicketReq
  *
  * @generated from message api.v1alpha1.tickets.EditTicketReq
+ * @deprecated
  */
 export const EditTicketReq = proto3.makeMessageType(
   "api.v1alpha1.tickets.EditTicketReq",

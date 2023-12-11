@@ -179,10 +179,16 @@ export const TicketAction = proto3.makeMessageType(
     { no: 9, name: "action_skills", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 10, name: "action_sla_id", kind: "message", T: Sla, repeated: true },
     { no: 11, name: "work_done_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "voice_context", kind: "message", T: CallbackContext, oneof: "context" },
+    { no: 13, name: "sms_context", kind: "message", T: SmsbackContext, oneof: "context" },
+    { no: 14, name: "email_context", kind: "message", T: EmailbackContext, oneof: "context" },
+    { no: 15, name: "action_type", kind: "message", T: ActionType },
   ],
 );
 
 /**
+ * Message for Voice Callback Context
+ *
  * @generated from message api.commons.CallbackContext
  */
 export const CallbackContext = proto3.makeMessageType(
@@ -193,6 +199,47 @@ export const CallbackContext = proto3.makeMessageType(
     { no: 3, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "caller_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "caller_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Message for SMS Callback Context
+ *
+ * @generated from message api.commons.SmsbackContext
+ */
+export const SmsbackContext = proto3.makeMessageType(
+  "api.commons.SmsbackContext",
+  () => [
+    { no: 1, name: "contact_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "to_sms", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "from_sms", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "to_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "from_country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.ActionType
+ */
+export const ActionType = proto3.makeMessageType(
+  "api.commons.ActionType",
+  () => [
+    { no: 1, name: "action_type_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "action_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Message for EMAIL Callback Context
+ *
+ * @generated from message api.commons.EmailbackContext
+ */
+export const EmailbackContext = proto3.makeMessageType(
+  "api.commons.EmailbackContext",
+  () => [
+    { no: 1, name: "contact_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "to_email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "from_email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

@@ -46,16 +46,22 @@ export declare enum TimeScale {
  */
 export declare enum TicketStatus {
   /**
+   * NEW
+   *
    * @generated from enum value: TICKET_STATUS_NEW = 0;
    */
   NEW = 0,
 
   /**
+   * OPEN
+   *
    * @generated from enum value: TICKET_STATUS_OPEN = 1;
    */
   OPEN = 1,
 
   /**
+   * CLOSE
+   *
    * @generated from enum value: TICKET_STATUS_CLOSE = 2;
    */
   CLOSE = 2,
@@ -131,6 +137,8 @@ export declare class Ticket extends Message<Ticket> {
   createdByName: string;
 
   /**
+   * The created Date of the Ticket Object
+   *
    * @generated from field: google.protobuf.Timestamp created_by_date = 10;
    */
   createdByDate?: Timestamp;
@@ -143,7 +151,7 @@ export declare class Ticket extends Message<Ticket> {
   dueDate?: Timestamp;
 
   /**
-   * A list of hunt groups, skills or users assigned to this ticket.
+   * A list of users assigned to this ticket.
    *
    * note: bound to re-factor later.
    *
@@ -152,7 +160,7 @@ export declare class Ticket extends Message<Ticket> {
   assigneeList: string;
 
   /**
-   * A list of conversation context meatadatgit stata
+   * A list of conversation context meatadata
    *
    * @generated from field: repeated api.commons.Metadata metadata = 14;
    */
@@ -180,16 +188,22 @@ export declare class Ticket extends Message<Ticket> {
   ticketSla: Sla[];
 
   /**
+   * To be deprecated
+   *
    * @generated from field: string assignee = 18;
    */
   assignee: string;
 
   /**
+   * A set of Action associated with a Project
+   *
    * @generated from field: repeated api.commons.TicketAction ticket_action = 19;
    */
   ticketAction: TicketAction[];
 
   /**
+   * Status of the ticket - NEW,OPEN,CLOSED
+   *
    * @generated from field: api.commons.TicketStatus ticket_status = 20;
    */
   ticketStatus: TicketStatus;
@@ -202,7 +216,7 @@ export declare class Ticket extends Message<Ticket> {
   ticketAssignee: string[];
 
   /**
-   * participant list
+   * participant list - Any user who participates in the ticket life cycle
    *
    * @generated from field: repeated string ticket_participant = 22;
    */
@@ -499,11 +513,15 @@ export declare class AssignProjectTemplate extends Message<AssignProjectTemplate
  */
 export declare class Duration extends Message<Duration> {
   /**
+   * Value of of the Scale
+   *
    * @generated from field: int64 value = 1 [jstype = JS_STRING];
    */
   value: string;
 
   /**
+   * Scale - In minutes,hour,day,week,month,year
+   *
    * @generated from field: api.commons.TimeScale scale = 2;
    */
   scale: TimeScale;
@@ -545,6 +563,7 @@ export declare class TicketAction extends Message<TicketAction> {
 
   /**
    * Attributes for a callback Action
+   * To be Deprecated Later
    *
    * @generated from field: api.commons.CallbackContext callback_context = 3;
    */
@@ -600,6 +619,44 @@ export declare class TicketAction extends Message<TicketAction> {
    */
   workDoneBy: string;
 
+  /**
+   * Context Object For Voice,SMS,Email - Only one object to be in Request
+   *
+   * @generated from oneof api.commons.TicketAction.context
+   */
+  context: {
+    /**
+     * Voice Callback Context
+     *
+     * @generated from field: api.commons.CallbackContext voice_context = 12;
+     */
+    value: CallbackContext;
+    case: "voiceContext";
+  } | {
+    /**
+     * SMS Callback Context
+     *
+     * @generated from field: api.commons.SmsbackContext sms_context = 13;
+     */
+    value: SmsbackContext;
+    case: "smsContext";
+  } | {
+    /**
+     * Email Callback Context
+     *
+     * @generated from field: api.commons.EmailbackContext email_context = 14;
+     */
+    value: EmailbackContext;
+    case: "emailContext";
+  } | { case: undefined; value?: undefined };
+
+  /**
+   * Action Type
+   *
+   * @generated from field: api.commons.ActionType action_type = 15;
+   */
+  actionType?: ActionType;
+
   constructor(data?: PartialMessage<TicketAction>);
 
   static readonly runtime: typeof proto3;
@@ -616,6 +673,8 @@ export declare class TicketAction extends Message<TicketAction> {
 }
 
 /**
+ * Message for Voice Callback Context
+ *
  * @generated from message api.commons.CallbackContext
  */
 export declare class CallbackContext extends Message<CallbackContext> {
@@ -657,6 +716,117 @@ export declare class CallbackContext extends Message<CallbackContext> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CallbackContext;
 
   static equals(a: CallbackContext | PlainMessage<CallbackContext> | undefined, b: CallbackContext | PlainMessage<CallbackContext> | undefined): boolean;
+}
+
+/**
+ * Message for SMS Callback Context
+ *
+ * @generated from message api.commons.SmsbackContext
+ */
+export declare class SmsbackContext extends Message<SmsbackContext> {
+  /**
+   * @generated from field: string contact_name = 1;
+   */
+  contactName: string;
+
+  /**
+   * @generated from field: string to_sms = 2;
+   */
+  toSms: string;
+
+  /**
+   * @generated from field: string from_sms = 3;
+   */
+  fromSms: string;
+
+  /**
+   * @generated from field: string to_country_code = 4;
+   */
+  toCountryCode: string;
+
+  /**
+   * @generated from field: string from_country_code = 5;
+   */
+  fromCountryCode: string;
+
+  constructor(data?: PartialMessage<SmsbackContext>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.SmsbackContext";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SmsbackContext;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SmsbackContext;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SmsbackContext;
+
+  static equals(a: SmsbackContext | PlainMessage<SmsbackContext> | undefined, b: SmsbackContext | PlainMessage<SmsbackContext> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.ActionType
+ */
+export declare class ActionType extends Message<ActionType> {
+  /**
+   * @generated from field: int64 action_type_id = 1 [jstype = JS_STRING];
+   */
+  actionTypeId: string;
+
+  /**
+   * @generated from field: string action_name = 2;
+   */
+  actionName: string;
+
+  constructor(data?: PartialMessage<ActionType>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ActionType";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ActionType;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ActionType;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ActionType;
+
+  static equals(a: ActionType | PlainMessage<ActionType> | undefined, b: ActionType | PlainMessage<ActionType> | undefined): boolean;
+}
+
+/**
+ * Message for EMAIL Callback Context
+ *
+ * @generated from message api.commons.EmailbackContext
+ */
+export declare class EmailbackContext extends Message<EmailbackContext> {
+  /**
+   * @generated from field: string contact_name = 1;
+   */
+  contactName: string;
+
+  /**
+   * @generated from field: string to_email = 2;
+   */
+  toEmail: string;
+
+  /**
+   * @generated from field: string from_email = 3;
+   */
+  fromEmail: string;
+
+  constructor(data?: PartialMessage<EmailbackContext>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.EmailbackContext";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EmailbackContext;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EmailbackContext;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EmailbackContext;
+
+  static equals(a: EmailbackContext | PlainMessage<EmailbackContext> | undefined, b: EmailbackContext | PlainMessage<EmailbackContext> | undefined): boolean;
 }
 
 /**
