@@ -158,3 +158,25 @@ export const UpdateAuthConnectionGroupsResponse = proto3.makeMessageType(
   [],
 );
 
+/**
+ * Request message for the ListAuthConnectionIds rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.ListAuthConnectionIdsRequest
+ */
+export const ListAuthConnectionIdsRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.ListAuthConnectionIdsRequest",
+  [],
+);
+
+/**
+ * Response message for the ListAuthConnectionIds rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse
+ */
+export const ListAuthConnectionIdsResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse",
+  () => [
+    { no: 1, name: "auth_connetion_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+

@@ -373,3 +373,50 @@ export declare class UpdateAuthConnectionGroupsResponse extends Message<UpdateAu
   static equals(a: UpdateAuthConnectionGroupsResponse | PlainMessage<UpdateAuthConnectionGroupsResponse> | undefined, b: UpdateAuthConnectionGroupsResponse | PlainMessage<UpdateAuthConnectionGroupsResponse> | undefined): boolean;
 }
 
+/**
+ * Request message for the ListAuthConnectionIds rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.ListAuthConnectionIdsRequest
+ */
+export declare class ListAuthConnectionIdsRequest extends Message<ListAuthConnectionIdsRequest> {
+  constructor(data?: PartialMessage<ListAuthConnectionIdsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.authconnection.ListAuthConnectionIdsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAuthConnectionIdsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAuthConnectionIdsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAuthConnectionIdsRequest;
+
+  static equals(a: ListAuthConnectionIdsRequest | PlainMessage<ListAuthConnectionIdsRequest> | undefined, b: ListAuthConnectionIdsRequest | PlainMessage<ListAuthConnectionIdsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListAuthConnectionIds rpc.
+ *
+ * @generated from message api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse
+ */
+export declare class ListAuthConnectionIdsResponse extends Message<ListAuthConnectionIdsResponse> {
+  /**
+   * @generated from field: repeated string auth_connetion_ids = 1;
+   */
+  authConnetionIds: string[];
+
+  constructor(data?: PartialMessage<ListAuthConnectionIdsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAuthConnectionIdsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAuthConnectionIdsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAuthConnectionIdsResponse;
+
+  static equals(a: ListAuthConnectionIdsResponse | PlainMessage<ListAuthConnectionIdsResponse> | undefined, b: ListAuthConnectionIdsResponse | PlainMessage<ListAuthConnectionIdsResponse> | undefined): boolean;
+}
+
