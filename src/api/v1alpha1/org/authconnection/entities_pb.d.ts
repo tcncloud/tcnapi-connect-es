@@ -401,9 +401,9 @@ export declare class ListAuthConnectionIdsRequest extends Message<ListAuthConnec
  */
 export declare class ListAuthConnectionIdsResponse extends Message<ListAuthConnectionIdsResponse> {
   /**
-   * @generated from field: repeated string auth_connetion_ids = 1;
+   * @generated from field: repeated api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection connections = 1;
    */
-  authConnetionIds: string[];
+  connections: ListAuthConnectionIdsResponse_Connection[];
 
   constructor(data?: PartialMessage<ListAuthConnectionIdsResponse>);
 
@@ -418,5 +418,34 @@ export declare class ListAuthConnectionIdsResponse extends Message<ListAuthConne
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAuthConnectionIdsResponse;
 
   static equals(a: ListAuthConnectionIdsResponse | PlainMessage<ListAuthConnectionIdsResponse> | undefined, b: ListAuthConnectionIdsResponse | PlainMessage<ListAuthConnectionIdsResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection
+ */
+export declare class ListAuthConnectionIdsResponse_Connection extends Message<ListAuthConnectionIdsResponse_Connection> {
+  /**
+   * @generated from field: string auth_connection_id = 1;
+   */
+  authConnectionId: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  constructor(data?: PartialMessage<ListAuthConnectionIdsResponse_Connection>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAuthConnectionIdsResponse_Connection;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAuthConnectionIdsResponse_Connection;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAuthConnectionIdsResponse_Connection;
+
+  static equals(a: ListAuthConnectionIdsResponse_Connection | PlainMessage<ListAuthConnectionIdsResponse_Connection> | undefined, b: ListAuthConnectionIdsResponse_Connection | PlainMessage<ListAuthConnectionIdsResponse_Connection> | undefined): boolean;
 }
 

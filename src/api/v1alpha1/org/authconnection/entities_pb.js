@@ -176,7 +176,19 @@ export const ListAuthConnectionIdsRequest = proto3.makeMessageType(
 export const ListAuthConnectionIdsResponse = proto3.makeMessageType(
   "api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse",
   () => [
-    { no: 1, name: "auth_connetion_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "connections", kind: "message", T: ListAuthConnectionIdsResponse_Connection, repeated: true },
   ],
+);
+
+/**
+ * @generated from message api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection
+ */
+export const ListAuthConnectionIdsResponse_Connection = proto3.makeMessageType(
+  "api.v1alpha1.org.authconnection.ListAuthConnectionIdsResponse.Connection",
+  () => [
+    { no: 1, name: "auth_connection_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "ListAuthConnectionIdsResponse_Connection"},
 );
 
