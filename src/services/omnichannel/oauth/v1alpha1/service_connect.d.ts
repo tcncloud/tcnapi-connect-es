@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetConnectedInboxOAuthSpecificationsRequest, GetConnectedInboxOAuthSpecificationsResponse } from "../entities/v1alpha1/entities_pb.js";
+import { GetConnectedInboxOAuthSpecificationsRequest, GetConnectedInboxOAuthSpecificationsResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
