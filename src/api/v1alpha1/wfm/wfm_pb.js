@@ -18,8 +18,30 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
+
+/**
+ * Request message for the PerformInitialClientSetup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformInitialClientSetupRequest
+ */
+export const PerformInitialClientSetupRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.PerformInitialClientSetupRequest",
+  [],
+);
+
+/**
+ * Response message for the PerformInitialClientSetup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformInitialClientSetupResponse
+ */
+export const PerformInitialClientSetupResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.PerformInitialClientSetupResponse",
+  () => [
+    { no: 1, name: "setup_status", kind: "message", T: InitialSetupStatus },
+  ],
+);
 
 /**
  * Message type specifying information regarding the skill that will associated with
@@ -329,8 +351,10 @@ export const HistoricalDataInterval = proto3.makeMessageType(
 
 /**
  * Request message for the GetClientHistoryCacheInfo RPC.
+ * DEPRECATED as of Dec/13/2023 - Use PerformInitialClientSetup instead.
  *
  * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoReq
+ * @deprecated
  */
 export const GetClientHistoryCacheInfoReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.GetClientHistoryCacheInfoReq",
@@ -339,8 +363,10 @@ export const GetClientHistoryCacheInfoReq = proto3.makeMessageType(
 
 /**
  * Response message for the GetClientHistoryCacheInfo RPC.
+ * DEPRECATED as of Dec/13/2023 - Use PerformInitialClientSetup instead.
  *
  * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoRes
+ * @deprecated
  */
 export const GetClientHistoryCacheInfoRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.GetClientHistoryCacheInfoRes",
@@ -469,8 +495,10 @@ export const CallProfileTemplate = proto3.makeMessageType(
 
 /**
  * Request message for the BuildCallProfileTemplateForSkillProfile RPC.
+ * DEPRECATED as of Sep/7/2023 - Use BuildCallProfileTemplate instead.
  *
  * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq
+ * @deprecated
  */
 export const BuildCallProfileTemplateForSkillProfileReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq",
@@ -482,8 +510,10 @@ export const BuildCallProfileTemplateForSkillProfileReq = proto3.makeMessageType
 
 /**
  * Response message for the BuildCallProfileTemplateForSkillProfile RPC.
+ * DEPRECATED as of Sep/7/2023 - Use BuildCallProfileTemplate instead.
  *
  * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileRes
+ * @deprecated
  */
 export const BuildCallProfileTemplateForSkillProfileRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileRes",
@@ -519,8 +549,10 @@ export const BuildCallProfileTemplateRes = proto3.makeMessageType(
 
 /**
  * Request message for the CreateInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingReq
+ * @deprecated
  */
 export const CreateInactiveSkillProfileMappingReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.CreateInactiveSkillProfileMappingReq",
@@ -532,8 +564,10 @@ export const CreateInactiveSkillProfileMappingReq = proto3.makeMessageType(
 
 /**
  * Response message for the CreateInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingRes
+ * @deprecated
  */
 export const CreateInactiveSkillProfileMappingRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.CreateInactiveSkillProfileMappingRes",
@@ -564,8 +598,10 @@ export const GetAvailableRegressionForecasterModelTypesRes = proto3.makeMessageT
 
 /**
  * Request message for the DisconnectInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingReq
+ * @deprecated
  */
 export const DisconnectInactiveSkillProfileMappingReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingReq",
@@ -576,8 +612,10 @@ export const DisconnectInactiveSkillProfileMappingReq = proto3.makeMessageType(
 
 /**
  * Response message for the DisconnectInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes
+ * @deprecated
  */
 export const DisconnectInactiveSkillProfileMappingRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes",
@@ -1064,8 +1102,10 @@ export const ListCallProfileTemplatesRes = proto3.makeMessageType(
 
 /**
  * Request message for the ListForecastIntervalsForSkillProfile RPC
+ * DEPRECATED as of Sep/13/2023 - Use ListForecastIntervals instead.
  *
  * @generated from message api.v1alpha1.wfm.ListForecastIntervalsForSkillProfileReq
+ * @deprecated
  */
 export const ListForecastIntervalsForSkillProfileReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListForecastIntervalsForSkillProfileReq",
@@ -1076,8 +1116,10 @@ export const ListForecastIntervalsForSkillProfileReq = proto3.makeMessageType(
 
 /**
  * Request message for the ListForecastIntervals RPC
+ * DEPRECATED as of Sep/13/2023 - Use ListForecastIntervals instead.
  *
  * @generated from message api.v1alpha1.wfm.ListForecastIntervalsReq
+ * @deprecated
  */
 export const ListForecastIntervalsReq = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListForecastIntervalsReq",
