@@ -727,6 +727,11 @@ export declare enum ConnectedInboxAuthenticationType {
    * @generated from enum value: CONNECTED_INBOX_AUTHENTICATION_TYPE_GOOGLE_XOAUTH2 = 1;
    */
   GOOGLE_XOAUTH2 = 1,
+
+  /**
+   * @generated from enum value: CONNECTED_INBOX_AUTHENTICATION_TYPE_MICROSOFT_365 = 2;
+   */
+  MICROSOFT_365 = 2,
 }
 
 /**

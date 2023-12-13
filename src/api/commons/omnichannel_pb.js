@@ -261,6 +261,7 @@ export const ConnectedInboxAuthenticationType = proto3.makeEnum(
   [
     {no: 0, name: "CONNECTED_INBOX_AUTHENTICATION_TYPE_PASSWORD", localName: "PASSWORD"},
     {no: 1, name: "CONNECTED_INBOX_AUTHENTICATION_TYPE_GOOGLE_XOAUTH2", localName: "GOOGLE_XOAUTH2"},
+    {no: 2, name: "CONNECTED_INBOX_AUTHENTICATION_TYPE_MICROSOFT_365", localName: "MICROSOFT_365"},
   ],
 );
 
