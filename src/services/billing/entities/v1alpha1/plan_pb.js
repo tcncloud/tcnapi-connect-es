@@ -35,6 +35,7 @@ export const BillingPlan = proto3.makeMessageType(
     { no: 6, name: "delete_time", kind: "message", T: Timestamp },
     { no: 7, name: "rate_definition_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 8, name: "status", kind: "enum", T: proto3.getEnumType(BillingPlanStatus) },
+    { no: 9, name: "actual_start_time", kind: "message", T: Timestamp },
   ],
 );
 
