@@ -8,6 +8,95 @@ import { AgentCallHistoryScope, AgentRouting, AlphanumericKeypadDelimiter, Commu
 import { Country } from "../country_pb.js";
 
 /**
+ * ParameterSourceType defines the type of parameter source.
+ *
+ * @generated from enum api.commons.org.ParameterSourceType
+ */
+export const ParameterSourceType = proto3.makeEnum(
+  "api.commons.org.ParameterSourceType",
+  [
+    {no: 0, name: "PARAMETER_SOURCE_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "PARAMETER_SOURCE_TYPE_STATIC_TEXT", localName: "STATIC_TEXT"},
+    {no: 100, name: "PARAMETER_SOURCE_TYPE_CFD_ID", localName: "CFD_ID"},
+    {no: 200, name: "PARAMETER_SOURCE_TYPE_AGENT_ID", localName: "AGENT_ID"},
+    {no: 201, name: "PARAMETER_SOURCE_TYPE_AGENT_FIRST_NAME", localName: "AGENT_FIRST_NAME"},
+    {no: 202, name: "PARAMETER_SOURCE_TYPE_AGENT_LAST_NAME", localName: "AGENT_LAST_NAME"},
+    {no: 203, name: "PARAMETER_SOURCE_TYPE_AGENT_USERNAME", localName: "AGENT_USERNAME"},
+    {no: 204, name: "PARAMETER_SOURCE_TYPE_PARTNER_AGENT_ID", localName: "PARTNER_AGENT_ID"},
+    {no: 205, name: "PARAMETER_SOURCE_TYPE_HG_ID", localName: "HG_ID"},
+    {no: 206, name: "PARAMETER_SOURCE_TYPE_HG_NAME", localName: "HG_NAME"},
+    {no: 207, name: "PARAMETER_SOURCE_TYPE_HG_TYPE", localName: "HG_TYPE"},
+    {no: 208, name: "PARAMETER_SOURCE_TYPE_CONSUMER_PHONE", localName: "CONSUMER_PHONE"},
+    {no: 209, name: "PARAMETER_SOURCE_TYPE_CALLER_ID", localName: "CALLER_ID"},
+    {no: 210, name: "PARAMETER_SOURCE_TYPE_CALL_ID", localName: "CALL_ID"},
+    {no: 211, name: "PARAMETER_SOURCE_TYPE_GROUP_ID", localName: "GROUP_ID"},
+    {no: 212, name: "PARAMETER_SOURCE_TYPE_AGENT_SESSION_ID", localName: "AGENT_SESSION_ID"},
+    {no: 300, name: "PARAMETER_SOURCE_TYPE_DATA_DIP", localName: "DATA_DIP"},
+    {no: 400, name: "PARAMETER_SOURCE_TYPE_IVR_DATA", localName: "IVR_DATA"},
+    {no: 500, name: "PARAMETER_SOURCE_TYPE_DATA_COLLECT", localName: "DATA_COLLECT"},
+    {no: 600, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_AREA_CODE", localName: "PHONE_METADATA_AREA_CODE"},
+    {no: 601, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_CARRIER", localName: "PHONE_METADATA_CARRIER"},
+    {no: 602, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_CENTRAL_OFFICE_CODE", localName: "PHONE_METADATA_CENTRAL_OFFICE_CODE"},
+    {no: 603, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_CITY", localName: "PHONE_METADATA_CITY"},
+    {no: 604, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_COUNTRY_CODE", localName: "PHONE_METADATA_COUNTRY_CODE"},
+    {no: 605, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_SUBSCRIBER_NUMBER", localName: "PHONE_METADATA_SUBSCRIBER_NUMBER"},
+    {no: 606, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_ISO_CODE", localName: "PHONE_METADATA_ISO_CODE"},
+    {no: 607, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_INTERNATIONAL_PREFIX", localName: "PHONE_METADATA_INTERNATIONAL_PREFIX"},
+    {no: 608, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_LANGUAGE", localName: "PHONE_METADATA_LANGUAGE"},
+    {no: 609, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_LATITUDE", localName: "PHONE_METADATA_LATITUDE"},
+    {no: 610, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_LONGITUDE", localName: "PHONE_METADATA_LONGITUDE"},
+    {no: 611, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_MAXIMUM_BLOCK_NUMBER", localName: "PHONE_METADATA_MAXIMUM_BLOCK_NUMBER"},
+    {no: 612, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_MINIMUM_BLOCK_NUMBER", localName: "PHONE_METADATA_MINIMUM_BLOCK_NUMBER"},
+    {no: 613, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_NATIONAL_DESTINATION", localName: "PHONE_METADATA_NATIONAL_DESTINATION"},
+    {no: 614, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_NATIONAL_PREFIX", localName: "PHONE_METADATA_NATIONAL_PREFIX"},
+    {no: 615, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_NUMBER_BLOCK_ID", localName: "PHONE_METADATA_NUMBER_BLOCK_ID"},
+    {no: 616, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_NUMBER_TYPE", localName: "PHONE_METADATA_NUMBER_TYPE"},
+    {no: 617, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_USES_NDC", localName: "PHONE_METADATA_USES_NDC"},
+    {no: 618, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_DAYLIGHT_SAVINGS", localName: "PHONE_METADATA_DAYLIGHT_SAVINGS"},
+    {no: 619, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_PREFIX", localName: "PHONE_METADATA_PREFIX"},
+    {no: 620, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_REGION_CODE", localName: "PHONE_METADATA_REGION_CODE"},
+    {no: 621, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_REGION_NAME", localName: "PHONE_METADATA_REGION_NAME"},
+    {no: 622, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_1", localName: "PHONE_METADATA_SPECIAL_SERVICE_CODE_1"},
+    {no: 623, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_2", localName: "PHONE_METADATA_SPECIAL_SERVICE_CODE_2"},
+    {no: 624, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_3", localName: "PHONE_METADATA_SPECIAL_SERVICE_CODE_3"},
+    {no: 625, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_SPECIAL_SERVICE_CODE_4", localName: "PHONE_METADATA_SPECIAL_SERVICE_CODE_4"},
+    {no: 626, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_TIME_ZONE", localName: "PHONE_METADATA_TIME_ZONE"},
+    {no: 627, name: "PARAMETER_SOURCE_TYPE_PHONE_METADATA_UTC_OFFSET", localName: "PHONE_METADATA_UTC_OFFSET"},
+    {no: 700, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_CODE_1", localName: "ZIP_METADATA_ADMIN_CODE_1"},
+    {no: 701, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_CODE_2", localName: "ZIP_METADATA_ADMIN_CODE_2"},
+    {no: 702, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_CODE_3", localName: "ZIP_METADATA_ADMIN_CODE_3"},
+    {no: 703, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_NAME_1", localName: "ZIP_METADATA_ADMIN_NAME_1"},
+    {no: 704, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_NAME_2", localName: "ZIP_METADATA_ADMIN_NAME_2"},
+    {no: 705, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_ADMIN_NAME_3", localName: "ZIP_METADATA_ADMIN_NAME_3"},
+    {no: 706, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_AREA_CODE", localName: "ZIP_METADATA_AREA_CODE"},
+    {no: 707, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_CITY_NAME", localName: "ZIP_METADATA_CITY_NAME"},
+    {no: 708, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_CITY_TYPE", localName: "ZIP_METADATA_CITY_TYPE"},
+    {no: 709, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_COUNTRY_CODE", localName: "ZIP_METADATA_COUNTRY_CODE"},
+    {no: 710, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_ISO_CODE", localName: "ZIP_METADATA_ISO_CODE"},
+    {no: 711, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_COUNTRY_NAME", localName: "ZIP_METADATA_COUNTRY_NAME"},
+    {no: 712, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_COUNTRY_FPS_CODE", localName: "ZIP_METADATA_COUNTRY_FPS_CODE"},
+    {no: 713, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_LATITUDE", localName: "ZIP_METADATA_LATITUDE"},
+    {no: 714, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSITION_ACCURACY", localName: "ZIP_METADATA_POSITION_ACCURACY"},
+    {no: 715, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_LONGITUDE", localName: "ZIP_METADATA_LONGITUDE"},
+    {no: 716, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_METROPOLITAN_AREA", localName: "ZIP_METADATA_METROPOLITAN_AREA"},
+    {no: 717, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_DAYLIGHT_SAVINGS", localName: "ZIP_METADATA_DAYLIGHT_SAVINGS"},
+    {no: 718, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_PLACE_NAME", localName: "ZIP_METADATA_PLACE_NAME"},
+    {no: 719, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSTAL_CODE", localName: "ZIP_METADATA_POSTAL_CODE"},
+    {no: 720, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSTAL_CODE_KEY", localName: "ZIP_METADATA_POSTAL_CODE_KEY"},
+    {no: 721, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_POSTAL_TYPE", localName: "ZIP_METADATA_POSTAL_TYPE"},
+    {no: 722, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_PROVICE_ABBREVIATION", localName: "ZIP_METADATA_PROVICE_ABBREVIATION"},
+    {no: 723, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_PROVINCE_NAME", localName: "ZIP_METADATA_PROVINCE_NAME"},
+    {no: 724, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_STATE_FPS_CODE", localName: "ZIP_METADATA_STATE_FPS_CODE"},
+    {no: 725, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_TIME_ZONE", localName: "ZIP_METADATA_TIME_ZONE"},
+    {no: 726, name: "PARAMETER_SOURCE_TYPE_ZIP_METADATA_UTC_OFFSET", localName: "ZIP_METADATA_UTC_OFFSET"},
+    {no: 800, name: "PARAMETER_SOURCE_TYPE_CUSTOM_ACCOUNT_DATA", localName: "CUSTOM_ACCOUNT_DATA"},
+    {no: 900, name: "PARAMETER_SOURCE_TYPE_SIP_HEADER_DATA", localName: "SIP_HEADER_DATA"},
+    {no: 1000, name: "PARAMETER_SOURCE_TYPE_INTEGRATION_DATA", localName: "INTEGRATION_DATA"},
+    {no: 1100, name: "PARAMETER_SOURCE_TYPE_JOURNEY_DATA", localName: "JOURNEY_DATA"},
+  ],
+);
+
+/**
  * HuntGroupSettings contains all of the hunt group settings.
  *
  * @generated from message api.commons.org.HuntGroupSettings
@@ -778,5 +867,63 @@ export const DataDipConfig_Header = proto3.makeMessageType(
     { no: 4, name: "param_type_value_tuples", kind: "message", T: DataDipConfig_ParamTypeValueTuple, repeated: true },
   ],
   {localName: "DataDipConfig_Header"},
+);
+
+/**
+ * IntegrationLink defines a link between a hunt group and an integration.
+ *
+ * @generated from message api.commons.org.IntegrationLink
+ */
+export const IntegrationLink = proto3.makeMessageType(
+  "api.commons.org.IntegrationLink",
+  () => [
+    { no: 1, name: "integration_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "parameter_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "method_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "order", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "parameters", kind: "message", T: IntegrationLinkParameter, repeated: true },
+  ],
+);
+
+/**
+ * IntegrationLinkParameter defines a parameter for an integration link.
+ *
+ * @generated from message api.commons.org.IntegrationLinkParameter
+ */
+export const IntegrationLinkParameter = proto3.makeMessageType(
+  "api.commons.org.IntegrationLinkParameter",
+  () => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "sub_parameters", kind: "message", T: IntegrationLinkSubParameter, repeated: true },
+  ],
+);
+
+/**
+ * IntegrationLinkSubParameter defines a sub parameter for an integration link.
+ *
+ * @generated from message api.commons.org.IntegrationLinkSubParameter
+ */
+export const IntegrationLinkSubParameter = proto3.makeMessageType(
+  "api.commons.org.IntegrationLinkSubParameter",
+  () => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "parts", kind: "message", T: IntegrationLinkSubParameterPart, repeated: true },
+  ],
+);
+
+/**
+ * IntegrationLinkSubParameterPart defines a part of a sub parameter for an integration link.
+ *
+ * @generated from message api.commons.org.IntegrationLinkSubParameterPart
+ */
+export const IntegrationLinkSubParameterPart = proto3.makeMessageType(
+  "api.commons.org.IntegrationLinkSubParameterPart",
+  () => [
+    { no: 1, name: "contact_field_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "helper_value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "parameter_source_type", kind: "enum", T: proto3.getEnumType(ParameterSourceType) },
+  ],
 );
 
