@@ -5235,6 +5235,16 @@ export declare class ManualDialStartReq extends Message<ManualDialStartReq> {
    */
   agentSessionSid: bigint;
 
+  /**
+   * @generated from field: int64 bucketId = 8;
+   */
+  bucketId: bigint;
+
+  /**
+   * @generated from field: string bucketRegionData = 9;
+   */
+  bucketRegionData: string;
+
   constructor(data?: PartialMessage<ManualDialStartReq>);
 
   static readonly runtime: typeof proto3;
