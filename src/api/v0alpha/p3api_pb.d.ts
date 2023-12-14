@@ -5236,12 +5236,12 @@ export declare class ManualDialStartReq extends Message<ManualDialStartReq> {
   agentSessionSid: bigint;
 
   /**
-   * @generated from field: int64 bucketId = 8;
+   * @generated from field: int64 bucket_id = 8;
    */
   bucketId: bigint;
 
   /**
-   * @generated from field: string bucketRegionData = 9;
+   * @generated from field: string bucket_region_data = 9;
    */
   bucketRegionData: string;
 
