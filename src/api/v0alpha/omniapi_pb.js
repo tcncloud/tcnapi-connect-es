@@ -96,6 +96,7 @@ export const ListCampaignsReq = proto3.makeMessageType(
     { no: 105, name: "by_verified_email", kind: "message", T: ListCampaignsReq_ByVerifiedEmail, oneof: "filter" },
     { no: 106, name: "by_sms_number", kind: "message", T: ListCampaignsReq_BySmsNumber, oneof: "filter" },
     { no: 107, name: "by_whatsapp_number", kind: "message", T: ListCampaignsReq_ByWhatsAppNumber, oneof: "filter" },
+    { no: 108, name: "by_whats_app", kind: "message", T: ListCampaignsReq_ByWhatsApp, oneof: "filter" },
   ],
 );
 
@@ -202,6 +203,19 @@ export const ListCampaignsReq_ByWhatsAppNumber = proto3.makeMessageType(
     { no: 1, name: "number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "ListCampaignsReq_ByWhatsAppNumber"},
+);
+
+/**
+ * ByWhatsApp - filter the list of campaigns by the Whatsapp
+ *
+ * @generated from message api.v0alpha.ListCampaignsReq.ByWhatsApp
+ */
+export const ListCampaignsReq_ByWhatsApp = proto3.makeMessageType(
+  "api.v0alpha.ListCampaignsReq.ByWhatsApp",
+  () => [
+    { no: 1, name: "number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "ListCampaignsReq_ByWhatsApp"},
 );
 
 /**
