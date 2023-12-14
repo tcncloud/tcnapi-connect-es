@@ -2636,6 +2636,55 @@ export declare class GetUserLoginInfoResponse extends Message<GetUserLoginInfoRe
 }
 
 /**
+ * Request message for the SendUserEmailPasswordReset rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendUserEmailPasswordResetRequest
+ */
+export declare class SendUserEmailPasswordResetRequest extends Message<SendUserEmailPasswordResetRequest> {
+  /**
+   * The email address of the user's password to be reset.
+   *
+   * @generated from field: string email = 1;
+   */
+  email: string;
+
+  constructor(data?: PartialMessage<SendUserEmailPasswordResetRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SendUserEmailPasswordResetRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendUserEmailPasswordResetRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendUserEmailPasswordResetRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendUserEmailPasswordResetRequest;
+
+  static equals(a: SendUserEmailPasswordResetRequest | PlainMessage<SendUserEmailPasswordResetRequest> | undefined, b: SendUserEmailPasswordResetRequest | PlainMessage<SendUserEmailPasswordResetRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the SendUserEmailPasswordReset rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendUserEmailPasswordResetResponse
+ */
+export declare class SendUserEmailPasswordResetResponse extends Message<SendUserEmailPasswordResetResponse> {
+  constructor(data?: PartialMessage<SendUserEmailPasswordResetResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SendUserEmailPasswordResetResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SendUserEmailPasswordResetResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SendUserEmailPasswordResetResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SendUserEmailPasswordResetResponse;
+
+  static equals(a: SendUserEmailPasswordResetResponse | PlainMessage<SendUserEmailPasswordResetResponse> | undefined, b: SendUserEmailPasswordResetResponse | PlainMessage<SendUserEmailPasswordResetResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the GetUserEmailVerified rpc.
  *
  * @generated from message api.v1alpha1.org.GetUserEmailVerifiedRequest

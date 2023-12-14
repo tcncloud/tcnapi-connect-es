@@ -807,6 +807,28 @@ export const GetUserLoginInfoResponse = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the SendUserEmailPasswordReset rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendUserEmailPasswordResetRequest
+ */
+export const SendUserEmailPasswordResetRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.SendUserEmailPasswordResetRequest",
+  () => [
+    { no: 1, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the SendUserEmailPasswordReset rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendUserEmailPasswordResetResponse
+ */
+export const SendUserEmailPasswordResetResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.SendUserEmailPasswordResetResponse",
+  [],
+);
+
+/**
  * Request message for the GetUserEmailVerified rpc.
  *
  * @generated from message api.v1alpha1.org.GetUserEmailVerifiedRequest
