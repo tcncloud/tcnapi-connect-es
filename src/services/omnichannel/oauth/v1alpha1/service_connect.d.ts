@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetConnectedInboxOAuthSpecificationsRequest, GetConnectedInboxOAuthSpecificationsResponse } from "./entities_pb.js";
+import { GetConnectedInboxOAuthURLRequest, GetConnectedInboxOAuthURLResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -13,12 +13,12 @@ export declare const OauthService: {
   readonly typeName: "services.omnichannel.oauth.v1alpha1.OauthService",
   readonly methods: {
     /**
-     * @generated from rpc services.omnichannel.oauth.v1alpha1.OauthService.GetConnectedInboxOAuthSpecifications
+     * @generated from rpc services.omnichannel.oauth.v1alpha1.OauthService.GetConnectedInboxOAuthURL
      */
-    readonly getConnectedInboxOAuthSpecifications: {
-      readonly name: "GetConnectedInboxOAuthSpecifications",
-      readonly I: typeof GetConnectedInboxOAuthSpecificationsRequest,
-      readonly O: typeof GetConnectedInboxOAuthSpecificationsResponse,
+    readonly getConnectedInboxOAuthURL: {
+      readonly name: "GetConnectedInboxOAuthURL",
+      readonly I: typeof GetConnectedInboxOAuthURLRequest,
+      readonly O: typeof GetConnectedInboxOAuthURLResponse,
       readonly kind: MethodKind.Unary,
     },
   }

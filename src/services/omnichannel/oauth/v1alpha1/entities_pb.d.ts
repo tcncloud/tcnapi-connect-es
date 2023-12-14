@@ -8,9 +8,9 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { ConnectedInboxAuthenticationType } from "../../../../api/commons/omnichannel_pb.js";
 
 /**
- * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsRequest
+ * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLRequest
  */
-export declare class GetConnectedInboxOAuthSpecificationsRequest extends Message<GetConnectedInboxOAuthSpecificationsRequest> {
+export declare class GetConnectedInboxOAuthURLRequest extends Message<GetConnectedInboxOAuthURLRequest> {
   /**
    * @generated from field: api.commons.ConnectedInboxAuthenticationType authentication_type = 1;
    */
@@ -21,42 +21,42 @@ export declare class GetConnectedInboxOAuthSpecificationsRequest extends Message
    */
   returningRedirectUri: string;
 
-  constructor(data?: PartialMessage<GetConnectedInboxOAuthSpecificationsRequest>);
+  constructor(data?: PartialMessage<GetConnectedInboxOAuthURLRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsRequest";
+  static readonly typeName = "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConnectedInboxOAuthSpecificationsRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConnectedInboxOAuthURLRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthSpecificationsRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthURLRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthSpecificationsRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthURLRequest;
 
-  static equals(a: GetConnectedInboxOAuthSpecificationsRequest | PlainMessage<GetConnectedInboxOAuthSpecificationsRequest> | undefined, b: GetConnectedInboxOAuthSpecificationsRequest | PlainMessage<GetConnectedInboxOAuthSpecificationsRequest> | undefined): boolean;
+  static equals(a: GetConnectedInboxOAuthURLRequest | PlainMessage<GetConnectedInboxOAuthURLRequest> | undefined, b: GetConnectedInboxOAuthURLRequest | PlainMessage<GetConnectedInboxOAuthURLRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsResponse
+ * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLResponse
  */
-export declare class GetConnectedInboxOAuthSpecificationsResponse extends Message<GetConnectedInboxOAuthSpecificationsResponse> {
+export declare class GetConnectedInboxOAuthURLResponse extends Message<GetConnectedInboxOAuthURLResponse> {
   /**
-   * @generated from field: string redirect_uri = 1;
+   * @generated from field: string oauth_url = 1;
    */
-  redirectUri: string;
+  oauthUrl: string;
 
-  constructor(data?: PartialMessage<GetConnectedInboxOAuthSpecificationsResponse>);
+  constructor(data?: PartialMessage<GetConnectedInboxOAuthURLResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsResponse";
+  static readonly typeName = "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConnectedInboxOAuthSpecificationsResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetConnectedInboxOAuthURLResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthSpecificationsResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthURLResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthSpecificationsResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetConnectedInboxOAuthURLResponse;
 
-  static equals(a: GetConnectedInboxOAuthSpecificationsResponse | PlainMessage<GetConnectedInboxOAuthSpecificationsResponse> | undefined, b: GetConnectedInboxOAuthSpecificationsResponse | PlainMessage<GetConnectedInboxOAuthSpecificationsResponse> | undefined): boolean;
+  static equals(a: GetConnectedInboxOAuthURLResponse | PlainMessage<GetConnectedInboxOAuthURLResponse> | undefined, b: GetConnectedInboxOAuthURLResponse | PlainMessage<GetConnectedInboxOAuthURLResponse> | undefined): boolean;
 }
 

@@ -7,10 +7,10 @@ import { proto3 } from "@bufbuild/protobuf";
 import { ConnectedInboxAuthenticationType } from "../../../../api/commons/omnichannel_pb.js";
 
 /**
- * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsRequest
+ * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLRequest
  */
-export const GetConnectedInboxOAuthSpecificationsRequest = proto3.makeMessageType(
-  "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsRequest",
+export const GetConnectedInboxOAuthURLRequest = proto3.makeMessageType(
+  "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLRequest",
   () => [
     { no: 1, name: "authentication_type", kind: "enum", T: proto3.getEnumType(ConnectedInboxAuthenticationType) },
     { no: 2, name: "returning_redirect_uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -18,12 +18,12 @@ export const GetConnectedInboxOAuthSpecificationsRequest = proto3.makeMessageTyp
 );
 
 /**
- * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsResponse
+ * @generated from message services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLResponse
  */
-export const GetConnectedInboxOAuthSpecificationsResponse = proto3.makeMessageType(
-  "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthSpecificationsResponse",
+export const GetConnectedInboxOAuthURLResponse = proto3.makeMessageType(
+  "services.omnichannel.oauth.v1alpha1.GetConnectedInboxOAuthURLResponse",
   () => [
-    { no: 1, name: "redirect_uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "oauth_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
