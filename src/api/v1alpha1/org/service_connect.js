@@ -6,7 +6,7 @@
 import { ArchiveOrganizationRequest, ArchiveOrganizationResponse, ConvertOrgToManualRequest, ConvertOrgToManualResponse, CreateOrganizationRequest, CreateOrganizationResponse, GetOrganizationByIdRequest, GetOrganizationByIdResponse, GetOrganizationRequest, GetOrganizationResponse, ListAllOrganizationsGloballyRequest, ListAllOrganizationsGloballyResponse, ListArchivedOrganizationsRequest, ListArchivedOrganizationsResponse, ListOrganizationsByRegionRequest, ListOrganizationsByRegionResponse, ListOwnedOrgsRequest, ListOwnedOrgsResponse, UnArchiveOrganizationRequest, UnArchiveOrganizationResponse, UpdateOrganizationRequest, UpdateOrganizationResponse } from "./organization_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { AcceptLinkbackRecordingTermsRequest, AcceptLinkbackRecordingTermsResponse, ClearEmailUnsubscribeAcknowledgementRequest, ClearEmailUnsubscribeAcknowledgementResponse, GetAdminClientPreferencesRequest, GetAdminClientPreferencesResponse, GetAgentPreferencesRequest, GetAgentPreferencesResponse, GetAuthenticationPreferencesRequest, GetAuthenticationPreferencesResponse, GetBroadcastPreferencesRequest, GetBroadcastPreferencesResponse, GetBusinessPreferencesRequest, GetBusinessPreferencesResponse, GetCompliancePreferencesRequest, GetCompliancePreferencesResponse, GetContactPreferencesRequest, GetContactPreferencesResponse, GetDashboardGeneralPreferencesRequest, GetDashboardGeneralPreferencesResponse, GetDashboardQueuePreferencesRequest, GetDashboardQueuePreferencesResponse, GetEmailSmsPreferencesRequest, GetEmailSmsPreferencesResponse, GetEndOfDayPreferencesRequest, GetEndOfDayPreferencesResponse, GetFilterPreferencesRequest, GetFilterPreferencesResponse, GetOrganizationPreferencesRequest, GetOrganizationPreferencesResponse, GetPhonePreferencesRequest, GetPhonePreferencesResponse, GetRecordingPreferencesRequest, GetRecordingPreferencesResponse, GetSchedulePreferencesRequest, GetSchedulePreferencesResponse, GetScorecardsPreferencesRequest, GetScorecardsPreferencesResponse, GetVoiceAnalyticsPreferencesRequest, GetVoiceAnalyticsPreferencesResponse, GetWebhookPreferencesRequest, GetWebhookPreferencesResponse, LinkbackUpdateBroadcastTemplatesRequest, LinkbackUpdateBroadcastTemplatesResponse, ListVoiceAnalyticsPreferencesRequest, ListVoiceAnalyticsPreferencesResponse, RecordEmailUnsubscribeAcknowledgementRequest, RecordEmailUnsubscribeAcknowledgementResponse, UpdateAdminBusinessPreferencesRequest, UpdateAdminBusinessPreferencesResponse, UpdateAdminClientPreferencesRequest, UpdateAdminClientPreferencesResponse, UpdateAgentPreferencesRequest, UpdateAgentPreferencesResponse, UpdateAuthenticationPreferencesRequest, UpdateAuthenticationPreferencesResponse, UpdateBroadcastPreferencesRequest, UpdateBroadcastPreferencesResponse, UpdateBusinessPreferencesRequest, UpdateBusinessPreferencesResponse, UpdateCompliancePreferencesRequest, UpdateCompliancePreferencesResponse, UpdateContactPreferencesRequest, UpdateContactPreferencesResponse, UpdateDashboardGeneralPreferencesRequest, UpdateDashboardGeneralPreferencesResponse, UpdateDashboardQueuePreferencesRequest, UpdateDashboardQueuePreferencesResponse, UpdateEmailSmsPreferencesRequest, UpdateEmailSmsPreferencesResponse, UpdateEndOfDayPreferencesRequest, UpdateEndOfDayPreferencesResponse, UpdateFilterPreferencesRequest, UpdateFilterPreferencesResponse, UpdateOrganizationPreferencesRequest, UpdateOrganizationPreferencesResponse, UpdatePhonePreferencesRequest, UpdatePhonePreferencesResponse, UpdateRecordingPreferencesRequest, UpdateRecordingPreferencesResponse, UpdateSchedulePreferencesRequest, UpdateSchedulePreferencesResponse, UpdateScorecardsPreferencesRequest, UpdateScorecardsPreferencesResponse, UpdateVoiceAnalyticsPreferencesRequest, UpdateVoiceAnalyticsPreferencesResponse, UpdateWebhookPreferencesRequest, UpdateWebhookPreferencesResponse } from "./preferences_pb.js";
-import { CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreatePasswordResetLinkRequest, CreatePasswordResetLinkResponse, CreateUserRequest, CreateUserResponse, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetMyUserRequest, GetMyUserResponse, GetUserByOrgIdRequest, GetUserByOrgIdResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserLoginInfoRequest, GetUserLoginInfoResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserRequest, GetUserResponse, GetUserSessionDataRequest, GetUserSessionDataResponse, ListAgentsRequest, ListAgentsResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse, ListUsersByRegionRequest, ListUsersByRegionResponse, ListUsersRequest, ListUsersResponse, SendUserEmailPasswordResetRequest, SendUserEmailPasswordResetResponse, SendUserEmailVerificationByOrgIdRequest, SendUserEmailVerificationByOrgIdResponse, SendUserEmailVerificationRequest, SendUserEmailVerificationResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserLabelsRequest, UpdateUserLabelsResponse, UpdateUserRequest, UpdateUserResponse } from "./user_pb.js";
+import { CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreatePasswordResetLinkByOrgIdRequest, CreatePasswordResetLinkByOrgIdResponse, CreatePasswordResetLinkRequest, CreatePasswordResetLinkResponse, CreateUserRequest, CreateUserResponse, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetMyUserRequest, GetMyUserResponse, GetUserByOrgIdRequest, GetUserByOrgIdResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserLoginInfoRequest, GetUserLoginInfoResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserRequest, GetUserResponse, GetUserSessionDataRequest, GetUserSessionDataResponse, ListAgentsRequest, ListAgentsResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse, ListUsersByRegionRequest, ListUsersByRegionResponse, ListUsersRequest, ListUsersResponse, ResetMyPasswordRequest, ResetMyPasswordResponse, ResetUserPasswordByOrgIdRequest, ResetUserPasswordByOrgIdResponse, ResetUserPasswordRequest, ResetUserPasswordResponse, SendPasswordResetByOrgIdRequest, SendPasswordResetByOrgIdResponse, SendPasswordResetRequest, SendPasswordResetResponse, SendUserEmailVerificationByOrgIdRequest, SendUserEmailVerificationByOrgIdResponse, SendUserEmailVerificationRequest, SendUserEmailVerificationResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserLabelsRequest, UpdateUserLabelsResponse, UpdateUserRequest, UpdateUserResponse } from "./user_pb.js";
 import { AssignAgentProfileGroupsRequest, AssignAgentProfileGroupsResponse, CreateAgentProfileGroupRequest, CreateAgentProfileGroupResponse, DeleteAgentProfileGroupRequest, DeleteAgentProfileGroupResponse, GetAgentProfileGroupRequest, GetAgentProfileGroupResponse, ListAgentProfileGroupsRequest, ListAgentProfileGroupsResponse, UpdateAgentProfileGroupRequest, UpdateAgentProfileGroupResponse } from "./agent_profile_group_pb.js";
 import { AddUserSubscriptionByUserIdRequest, AddUserSubscriptionByUserIdResponse, AddUserSubscriptionRequest, AddUserSubscriptionResponse, GetUserSubscriptionByUserIdRequest, GetUserSubscriptionByUserIdResponse, GetUserSubscriptionRequest, GetUserSubscriptionResponse, ListOrgSubscriptionsRequest, ListOrgSubscriptionsResponse, ListUserSubscriptionsByUserIdRequest, ListUserSubscriptionsByUserIdResponse, ListUserSubscriptionsRequest, ListUserSubscriptionsResponse, RemoveUserSubscriptionByUserIdRequest, RemoveUserSubscriptionByUserIdResponse, RemoveUserSubscriptionRequest, RemoveUserSubscriptionResponse, UpdateUserSubscriptionByUserIdRequest, UpdateUserSubscriptionByUserIdResponse, UpdateUserSubscriptionRequest, UpdateUserSubscriptionResponse } from "./notifications_pb.js";
 import { CreateAuthTokenByUserIdRequest, CreateAuthTokenByUserIdResponse, CreateAuthTokenRequest, CreateAuthTokenResponse, DeleteAuthTokenByUserIdRequest, DeleteAuthTokenByUserIdResponse, DeleteAuthTokenRequest, DeleteAuthTokenResponse, ListAuthTokensByUserIdRequest, ListAuthTokensByUserIdResponse, ListAuthTokensRequest, ListAuthTokensResponse, SetAuthTokenExpirationByUserIdRequest, SetAuthTokenExpirationByUserIdResponse, SetAuthTokenExpirationRequest, SetAuthTokenExpirationResponse } from "./auth_token_pb.js";
@@ -864,6 +864,17 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * CreatePasswordResetLinkByOrgId creates a password reset link for the given user id.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.CreatePasswordResetLinkByOrgId
+     */
+    createPasswordResetLinkByOrgId: {
+      name: "CreatePasswordResetLinkByOrgId",
+      I: CreatePasswordResetLinkByOrgIdRequest,
+      O: CreatePasswordResetLinkByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Used to be called GetUserBlocked
      * GetUserLoginInfo gets information about a user's login.
      *
@@ -898,6 +909,39 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * ResetMyPassword resets the user's password.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ResetMyPassword
+     */
+    resetMyPassword: {
+      name: "ResetMyPassword",
+      I: ResetMyPasswordRequest,
+      O: ResetMyPasswordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ResetUserPassword resets the user's password.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ResetUserPassword
+     */
+    resetUserPassword: {
+      name: "ResetUserPassword",
+      I: ResetUserPasswordRequest,
+      O: ResetUserPasswordResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ResetUserPasswordByOrgId resets the user's password.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ResetUserPasswordByOrgId
+     */
+    resetUserPasswordByOrgId: {
+      name: "ResetUserPasswordByOrgId",
+      I: ResetUserPasswordByOrgIdRequest,
+      O: ResetUserPasswordByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * SendUserEmailVerification sends a verification email to the user.
      *
      * @generated from rpc api.v1alpha1.org.Org.SendUserEmailVerification
@@ -909,17 +953,6 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * SendUserEmailPasswordReset sends a verification email to the user.
-     *
-     * @generated from rpc api.v1alpha1.org.Org.SendUserEmailPasswordReset
-     */
-    sendUserEmailPasswordReset: {
-      name: "SendUserEmailPasswordReset",
-      I: SendUserEmailPasswordResetRequest,
-      O: SendUserEmailPasswordResetResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
      * SendUserEmailVerificationByOrgId sends a verification email to the user.
      *
      * @generated from rpc api.v1alpha1.org.Org.SendUserEmailVerificationByOrgId
@@ -928,6 +961,28 @@ export const Org = {
       name: "SendUserEmailVerificationByOrgId",
       I: SendUserEmailVerificationByOrgIdRequest,
       O: SendUserEmailVerificationByOrgIdResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SendPasswordReset sends a password reset email to the user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.SendPasswordReset
+     */
+    sendPasswordReset: {
+      name: "SendPasswordReset",
+      I: SendPasswordResetRequest,
+      O: SendPasswordResetResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SendPasswordResetByOrgId sends a password reset email to the user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.SendPasswordResetByOrgId
+     */
+    sendPasswordResetByOrgId: {
+      name: "SendPasswordResetByOrgId",
+      I: SendPasswordResetByOrgIdRequest,
+      O: SendPasswordResetByOrgIdResponse,
       kind: MethodKind.Unary,
     },
     /**
