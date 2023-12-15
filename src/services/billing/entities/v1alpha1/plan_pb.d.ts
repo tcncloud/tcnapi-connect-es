@@ -97,6 +97,13 @@ export declare class BillingPlan extends Message<BillingPlan> {
    */
   status: BillingPlanStatus;
 
+  /**
+   * the time the billing will actually take effect
+   *
+   * @generated from field: google.protobuf.Timestamp actual_start_time = 9;
+   */
+  actualStartTime?: Timestamp;
+
   constructor(data?: PartialMessage<BillingPlan>);
 
   static readonly runtime: typeof proto3;
