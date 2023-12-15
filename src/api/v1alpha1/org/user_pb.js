@@ -774,6 +774,31 @@ export const CreatePasswordResetLinkResponse = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the CreatePasswordResetLinkByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.CreatePasswordResetLinkByOrgIdRequest
+ */
+export const CreatePasswordResetLinkByOrgIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CreatePasswordResetLinkByOrgIdRequest",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the CreatePasswordResetLinkByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.CreatePasswordResetLinkByOrgIdResponse
+ */
+export const CreatePasswordResetLinkByOrgIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CreatePasswordResetLinkByOrgIdResponse",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * This rpc used to be called GetUserBlocked
  * Request message for the GetUserLoginInfo rpc.
  *
@@ -804,6 +829,120 @@ export const GetUserLoginInfoResponse = proto3.makeMessageType(
     { no: 7, name: "updated_at", kind: "message", T: Timestamp },
     { no: 8, name: "has_blocked_ips", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
+);
+
+/**
+ * Request message for the SendPasswordReset rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendPasswordResetRequest
+ */
+export const SendPasswordResetRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.SendPasswordResetRequest",
+  () => [
+    { no: 1, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the SendPasswordReset rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendPasswordResetResponse
+ */
+export const SendPasswordResetResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.SendPasswordResetResponse",
+  [],
+);
+
+/**
+ * Request message for the SendPasswordResetByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendPasswordResetByOrgIdRequest
+ */
+export const SendPasswordResetByOrgIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.SendPasswordResetByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the SendPasswordResetByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.SendPasswordResetByOrgIdResponse
+ */
+export const SendPasswordResetByOrgIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.SendPasswordResetByOrgIdResponse",
+  [],
+);
+
+/**
+ * Request message for the ResetMyPassword rpc.
+ *
+ * @generated from message api.v1alpha1.org.ResetMyPasswordRequest
+ */
+export const ResetMyPasswordRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.ResetMyPasswordRequest",
+  () => [
+    { no: 1, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the ResetMyPassword rpc.
+ *
+ * @generated from message api.v1alpha1.org.ResetMyPasswordResponse
+ */
+export const ResetMyPasswordResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.ResetMyPasswordResponse",
+  [],
+);
+
+/**
+ * Request message for the ResetUserPassword rpc.
+ *
+ * @generated from message api.v1alpha1.org.ResetUserPasswordRequest
+ */
+export const ResetUserPasswordRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.ResetUserPasswordRequest",
+  () => [
+    { no: 1, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the ResetUserPassword rpc.
+ *
+ * @generated from message api.v1alpha1.org.ResetUserPasswordResponse
+ */
+export const ResetUserPasswordResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.ResetUserPasswordResponse",
+  [],
+);
+
+/**
+ * Request message for the ResetUserPasswordByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.ResetUserPasswordByOrgIdRequest
+ */
+export const ResetUserPasswordByOrgIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.ResetUserPasswordByOrgIdRequest",
+  () => [
+    { no: 1, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the ResetUserPasswordByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.ResetUserPasswordByOrgIdResponse
+ */
+export const ResetUserPasswordByOrgIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.ResetUserPasswordByOrgIdResponse",
+  [],
 );
 
 /**
