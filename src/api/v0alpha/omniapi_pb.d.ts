@@ -259,17 +259,10 @@ export declare class ListCampaignsReq extends Message<ListCampaignsReq> {
     case: "bySmsNumber";
   } | {
     /**
-     * @generated from field: api.v0alpha.ListCampaignsReq.ByWhatsAppNumber by_whatsapp_number = 107 [deprecated = true];
-     * @deprecated
+     * @generated from field: api.v0alpha.ListCampaignsReq.ByWhatsAppNumber by_whatsapp_number = 107;
      */
     value: ListCampaignsReq_ByWhatsAppNumber;
     case: "byWhatsappNumber";
-  } | {
-    /**
-     * @generated from field: api.v0alpha.ListCampaignsReq.ByWhatsApp by_whats_app = 108;
-     */
-    value: ListCampaignsReq_ByWhatsApp;
-    case: "byWhatsApp";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ListCampaignsReq>);
@@ -516,34 +509,6 @@ export declare class ListCampaignsReq_ByWhatsAppNumber extends Message<ListCampa
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCampaignsReq_ByWhatsAppNumber;
 
   static equals(a: ListCampaignsReq_ByWhatsAppNumber | PlainMessage<ListCampaignsReq_ByWhatsAppNumber> | undefined, b: ListCampaignsReq_ByWhatsAppNumber | PlainMessage<ListCampaignsReq_ByWhatsAppNumber> | undefined): boolean;
-}
-
-/**
- * ByWhatsApp - filter the list of campaigns by the Whatsapp
- *
- * @generated from message api.v0alpha.ListCampaignsReq.ByWhatsApp
- */
-export declare class ListCampaignsReq_ByWhatsApp extends Message<ListCampaignsReq_ByWhatsApp> {
-  /**
-   * whatsapp number
-   *
-   * @generated from field: string number = 1;
-   */
-  number: string;
-
-  constructor(data?: PartialMessage<ListCampaignsReq_ByWhatsApp>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.ListCampaignsReq.ByWhatsApp";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCampaignsReq_ByWhatsApp;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCampaignsReq_ByWhatsApp;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCampaignsReq_ByWhatsApp;
-
-  static equals(a: ListCampaignsReq_ByWhatsApp | PlainMessage<ListCampaignsReq_ByWhatsApp> | undefined, b: ListCampaignsReq_ByWhatsApp | PlainMessage<ListCampaignsReq_ByWhatsApp> | undefined): boolean;
 }
 
 /**

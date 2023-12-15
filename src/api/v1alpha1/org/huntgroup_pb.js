@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, CommunicationSettings, DataDipConfig, GeneralSettings, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -346,30 +346,5 @@ export const DeleteAgentResponseAutoRulesRequest = proto3.makeMessageType(
 export const DeleteAgentResponseAutoRulesResponse = proto3.makeMessageType(
   "api.v1alpha1.org.DeleteAgentResponseAutoRulesResponse",
   [],
-);
-
-/**
- * ListHuntGroupIntegrationLinksRequest is the request message for the ListHuntGroupIntegrationLinks RPC method.
- *
- * @generated from message api.v1alpha1.org.ListHuntGroupIntegrationLinksRequest
- */
-export const ListHuntGroupIntegrationLinksRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.ListHuntGroupIntegrationLinksRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
-);
-
-/**
- * ListHuntGroupIntegrationLinksResponse is the response message for the ListHuntGroupIntegrationLinks RPC method.
- *
- * @generated from message api.v1alpha1.org.ListHuntGroupIntegrationLinksResponse
- */
-export const ListHuntGroupIntegrationLinksResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.ListHuntGroupIntegrationLinksResponse",
-  () => [
-    { no: 1, name: "links", kind: "message", T: IntegrationLink, repeated: true },
-  ],
 );
 
