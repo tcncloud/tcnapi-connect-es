@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, GetAuthConnectionRequest, GetAuthConnectionResponse, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, UpdateAuthConnectionGroupsRequest, UpdateAuthConnectionGroupsResponse, UpdateAuthConnectionSecretRequest, UpdateAuthConnectionSecretResponse } from "./entities_pb.js";
+import { CreateAuthConnectionRequest, CreateAuthConnectionResponse, DeleteAuthConnectionRequest, DeleteAuthConnectionResponse, GetAuthConnectionRequest, GetAuthConnectionResponse, GetAuthConnectionSettingsRequest, GetAuthConnectionSettingsResponse, ListAuthConnectionIdsRequest, ListAuthConnectionIdsResponse, UpdateAuthConnectionGroupsRequest, UpdateAuthConnectionGroupsResponse, UpdateAuthConnectionSecretRequest, UpdateAuthConnectionSecretResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -21,6 +21,17 @@ export declare const AuthConnectionService: {
       readonly name: "CreateAuthConnection",
       readonly I: typeof CreateAuthConnectionRequest,
       readonly O: typeof CreateAuthConnectionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListAuthConnectionIds returns the IDs of all authconnections belonging to the current org.
+     *
+     * @generated from rpc api.v1alpha1.org.authconnection.AuthConnectionService.ListAuthConnectionIds
+     */
+    readonly listAuthConnectionIds: {
+      readonly name: "ListAuthConnectionIds",
+      readonly I: typeof ListAuthConnectionIdsRequest,
+      readonly O: typeof ListAuthConnectionIdsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
