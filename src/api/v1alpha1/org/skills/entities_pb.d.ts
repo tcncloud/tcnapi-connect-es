@@ -567,3 +567,81 @@ export declare class GetSkillGroupMembersResponse extends Message<GetSkillGroupM
   static equals(a: GetSkillGroupMembersResponse | PlainMessage<GetSkillGroupMembersResponse> | undefined, b: GetSkillGroupMembersResponse | PlainMessage<GetSkillGroupMembersResponse> | undefined): boolean;
 }
 
+/**
+ * Request message for the ListSkillGroupsMembers rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.ListSkillGroupsMembersRequest
+ */
+export declare class ListSkillGroupsMembersRequest extends Message<ListSkillGroupsMembersRequest> {
+  constructor(data?: PartialMessage<ListSkillGroupsMembersRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.ListSkillGroupsMembersRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillGroupsMembersRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillGroupsMembersRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillGroupsMembersRequest;
+
+  static equals(a: ListSkillGroupsMembersRequest | PlainMessage<ListSkillGroupsMembersRequest> | undefined, b: ListSkillGroupsMembersRequest | PlainMessage<ListSkillGroupsMembersRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListSkillGroupsMembers rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.ListSkillGroupsMembersResponse
+ */
+export declare class ListSkillGroupsMembersResponse extends Message<ListSkillGroupsMembersResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.org.skills.SkillGroupMembers skill_group_members = 1;
+   */
+  skillGroupMembers: SkillGroupMembers[];
+
+  constructor(data?: PartialMessage<ListSkillGroupsMembersResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.ListSkillGroupsMembersResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSkillGroupsMembersResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSkillGroupsMembersResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSkillGroupsMembersResponse;
+
+  static equals(a: ListSkillGroupsMembersResponse | PlainMessage<ListSkillGroupsMembersResponse> | undefined, b: ListSkillGroupsMembersResponse | PlainMessage<ListSkillGroupsMembersResponse> | undefined): boolean;
+}
+
+/**
+ * Submessage for ListSkillGroupsMembersResponse.
+ *
+ * @generated from message api.v1alpha1.org.skills.SkillGroupMembers
+ */
+export declare class SkillGroupMembers extends Message<SkillGroupMembers> {
+  /**
+   * @generated from field: string skill_group_id = 1;
+   */
+  skillGroupId: string;
+
+  /**
+   * @generated from field: repeated string user_ids = 2;
+   */
+  userIds: string[];
+
+  constructor(data?: PartialMessage<SkillGroupMembers>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.SkillGroupMembers";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SkillGroupMembers;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SkillGroupMembers;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SkillGroupMembers;
+
+  static equals(a: SkillGroupMembers | PlainMessage<SkillGroupMembers> | undefined, b: SkillGroupMembers | PlainMessage<SkillGroupMembers> | undefined): boolean;
+}
+

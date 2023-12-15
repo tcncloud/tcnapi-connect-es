@@ -242,3 +242,38 @@ export const GetSkillGroupMembersResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for the ListSkillGroupsMembers rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.ListSkillGroupsMembersRequest
+ */
+export const ListSkillGroupsMembersRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.ListSkillGroupsMembersRequest",
+  [],
+);
+
+/**
+ * Response message for the ListSkillGroupsMembers rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.ListSkillGroupsMembersResponse
+ */
+export const ListSkillGroupsMembersResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.ListSkillGroupsMembersResponse",
+  () => [
+    { no: 1, name: "skill_group_members", kind: "message", T: SkillGroupMembers, repeated: true },
+  ],
+);
+
+/**
+ * Submessage for ListSkillGroupsMembersResponse.
+ *
+ * @generated from message api.v1alpha1.org.skills.SkillGroupMembers
+ */
+export const SkillGroupMembers = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.SkillGroupMembers",
+  () => [
+    { no: 1, name: "skill_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
