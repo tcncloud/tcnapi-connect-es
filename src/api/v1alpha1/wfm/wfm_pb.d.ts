@@ -19,8 +19,57 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
+
+/**
+ * Request message for the PerformInitialClientSetup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformInitialClientSetupRequest
+ */
+export declare class PerformInitialClientSetupRequest extends Message<PerformInitialClientSetupRequest> {
+  constructor(data?: PartialMessage<PerformInitialClientSetupRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.PerformInitialClientSetupRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformInitialClientSetupRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformInitialClientSetupRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformInitialClientSetupRequest;
+
+  static equals(a: PerformInitialClientSetupRequest | PlainMessage<PerformInitialClientSetupRequest> | undefined, b: PerformInitialClientSetupRequest | PlainMessage<PerformInitialClientSetupRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the PerformInitialClientSetup RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformInitialClientSetupResponse
+ */
+export declare class PerformInitialClientSetupResponse extends Message<PerformInitialClientSetupResponse> {
+  /**
+   * Setup status for the requested client.
+   *
+   * @generated from field: api.commons.InitialSetupStatus setup_status = 1;
+   */
+  setupStatus?: InitialSetupStatus;
+
+  constructor(data?: PartialMessage<PerformInitialClientSetupResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.PerformInitialClientSetupResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformInitialClientSetupResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformInitialClientSetupResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformInitialClientSetupResponse;
+
+  static equals(a: PerformInitialClientSetupResponse | PlainMessage<PerformInitialClientSetupResponse> | undefined, b: PerformInitialClientSetupResponse | PlainMessage<PerformInitialClientSetupResponse> | undefined): boolean;
+}
 
 /**
  * Message type specifying information regarding the skill that will associated with
@@ -991,8 +1040,10 @@ export declare class HistoricalDataInterval extends Message<HistoricalDataInterv
 
 /**
  * Request message for the GetClientHistoryCacheInfo RPC.
+ * DEPRECATED as of Dec/13/2023 - Use PerformInitialClientSetup instead.
  *
  * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoReq
+ * @deprecated
  */
 export declare class GetClientHistoryCacheInfoReq extends Message<GetClientHistoryCacheInfoReq> {
   constructor(data?: PartialMessage<GetClientHistoryCacheInfoReq>);
@@ -1012,8 +1063,10 @@ export declare class GetClientHistoryCacheInfoReq extends Message<GetClientHisto
 
 /**
  * Response message for the GetClientHistoryCacheInfo RPC.
+ * DEPRECATED as of Dec/13/2023 - Use PerformInitialClientSetup instead.
  *
  * @generated from message api.v1alpha1.wfm.GetClientHistoryCacheInfoRes
+ * @deprecated
  */
 export declare class GetClientHistoryCacheInfoRes extends Message<GetClientHistoryCacheInfoRes> {
   /**
@@ -1378,8 +1431,10 @@ export declare class CallProfileTemplate extends Message<CallProfileTemplate> {
 
 /**
  * Request message for the BuildCallProfileTemplateForSkillProfile RPC.
+ * DEPRECATED as of Sep/7/2023 - Use BuildCallProfileTemplate instead.
  *
  * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileReq
+ * @deprecated
  */
 export declare class BuildCallProfileTemplateForSkillProfileReq extends Message<BuildCallProfileTemplateForSkillProfileReq> {
   /**
@@ -1413,8 +1468,10 @@ export declare class BuildCallProfileTemplateForSkillProfileReq extends Message<
 
 /**
  * Response message for the BuildCallProfileTemplateForSkillProfile RPC.
+ * DEPRECATED as of Sep/7/2023 - Use BuildCallProfileTemplate instead.
  *
  * @generated from message api.v1alpha1.wfm.BuildCallProfileTemplateForSkillProfileRes
+ * @deprecated
  */
 export declare class BuildCallProfileTemplateForSkillProfileRes extends Message<BuildCallProfileTemplateForSkillProfileRes> {
   /**
@@ -1504,8 +1561,10 @@ export declare class BuildCallProfileTemplateRes extends Message<BuildCallProfil
 
 /**
  * Request message for the CreateInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingReq
+ * @deprecated
  */
 export declare class CreateInactiveSkillProfileMappingReq extends Message<CreateInactiveSkillProfileMappingReq> {
   /**
@@ -1539,8 +1598,10 @@ export declare class CreateInactiveSkillProfileMappingReq extends Message<Create
 
 /**
  * Response message for the CreateInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.CreateInactiveSkillProfileMappingRes
+ * @deprecated
  */
 export declare class CreateInactiveSkillProfileMappingRes extends Message<CreateInactiveSkillProfileMappingRes> {
   constructor(data?: PartialMessage<CreateInactiveSkillProfileMappingRes>);
@@ -1609,8 +1670,10 @@ export declare class GetAvailableRegressionForecasterModelTypesRes extends Messa
 
 /**
  * Request message for the DisconnectInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingReq
+ * @deprecated
  */
 export declare class DisconnectInactiveSkillProfileMappingReq extends Message<DisconnectInactiveSkillProfileMappingReq> {
   /**
@@ -1637,8 +1700,10 @@ export declare class DisconnectInactiveSkillProfileMappingReq extends Message<Di
 
 /**
  * Response message for the DisconnectInactiveSkillProfileMapping RPC.
+ * DEPRECATED as of Sep/27/2023 - Use skill profile groups instead.
  *
  * @generated from message api.v1alpha1.wfm.DisconnectInactiveSkillProfileMappingRes
+ * @deprecated
  */
 export declare class DisconnectInactiveSkillProfileMappingRes extends Message<DisconnectInactiveSkillProfileMappingRes> {
   constructor(data?: PartialMessage<DisconnectInactiveSkillProfileMappingRes>);
@@ -3048,8 +3113,10 @@ export declare class ListCallProfileTemplatesRes extends Message<ListCallProfile
 
 /**
  * Request message for the ListForecastIntervalsForSkillProfile RPC
+ * DEPRECATED as of Sep/13/2023 - Use ListForecastIntervals instead.
  *
  * @generated from message api.v1alpha1.wfm.ListForecastIntervalsForSkillProfileReq
+ * @deprecated
  */
 export declare class ListForecastIntervalsForSkillProfileReq extends Message<ListForecastIntervalsForSkillProfileReq> {
   /**
@@ -3076,8 +3143,10 @@ export declare class ListForecastIntervalsForSkillProfileReq extends Message<Lis
 
 /**
  * Request message for the ListForecastIntervals RPC
+ * DEPRECATED as of Sep/13/2023 - Use ListForecastIntervals instead.
  *
  * @generated from message api.v1alpha1.wfm.ListForecastIntervalsReq
+ * @deprecated
  */
 export declare class ListForecastIntervalsReq extends Message<ListForecastIntervalsReq> {
   /**

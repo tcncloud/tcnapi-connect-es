@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, CommunicationSettings, DataDipConfig, GeneralSettings, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
+import type { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -888,5 +888,62 @@ export declare class DeleteAgentResponseAutoRulesResponse extends Message<Delete
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAgentResponseAutoRulesResponse;
 
   static equals(a: DeleteAgentResponseAutoRulesResponse | PlainMessage<DeleteAgentResponseAutoRulesResponse> | undefined, b: DeleteAgentResponseAutoRulesResponse | PlainMessage<DeleteAgentResponseAutoRulesResponse> | undefined): boolean;
+}
+
+/**
+ * ListHuntGroupIntegrationLinksRequest is the request message for the ListHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupIntegrationLinksRequest
+ */
+export declare class ListHuntGroupIntegrationLinksRequest extends Message<ListHuntGroupIntegrationLinksRequest> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: int64 hunt_group_sid = 2;
+   */
+  huntGroupSid: bigint;
+
+  constructor(data?: PartialMessage<ListHuntGroupIntegrationLinksRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListHuntGroupIntegrationLinksRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHuntGroupIntegrationLinksRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHuntGroupIntegrationLinksRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupIntegrationLinksRequest;
+
+  static equals(a: ListHuntGroupIntegrationLinksRequest | PlainMessage<ListHuntGroupIntegrationLinksRequest> | undefined, b: ListHuntGroupIntegrationLinksRequest | PlainMessage<ListHuntGroupIntegrationLinksRequest> | undefined): boolean;
+}
+
+/**
+ * ListHuntGroupIntegrationLinksResponse is the response message for the ListHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupIntegrationLinksResponse
+ */
+export declare class ListHuntGroupIntegrationLinksResponse extends Message<ListHuntGroupIntegrationLinksResponse> {
+  /**
+   * @generated from field: repeated api.commons.org.IntegrationLink links = 1;
+   */
+  links: IntegrationLink[];
+
+  constructor(data?: PartialMessage<ListHuntGroupIntegrationLinksResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListHuntGroupIntegrationLinksResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHuntGroupIntegrationLinksResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHuntGroupIntegrationLinksResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupIntegrationLinksResponse;
+
+  static equals(a: ListHuntGroupIntegrationLinksResponse | PlainMessage<ListHuntGroupIntegrationLinksResponse> | undefined, b: ListHuntGroupIntegrationLinksResponse | PlainMessage<ListHuntGroupIntegrationLinksResponse> | undefined): boolean;
 }
 
