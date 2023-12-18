@@ -8,6 +8,20 @@ import { AgentCallHistoryScope, AgentRouting, AlphanumericKeypadDelimiter, Commu
 import { Country } from "../country_pb.js";
 
 /**
+ * Tempate category differentiates between template types
+ *
+ * @generated from enum api.commons.org.TemplateCategory
+ */
+export const TemplateCategory = proto3.makeEnum(
+  "api.commons.org.TemplateCategory",
+  [
+    {no: 0, name: "TEMPLATE_CATEGORY_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "TEMPLATE_CATEGORY_HUNT_GROUP", localName: "HUNT_GROUP"},
+    {no: 2, name: "TEMPLATE_CATEGORY_CAMPAIGN", localName: "CAMPAIGN"},
+  ],
+);
+
+/**
  * ParameterSourceType defines the type of parameter source.
  *
  * @generated from enum api.commons.org.ParameterSourceType
@@ -794,6 +808,65 @@ export const AgentResponseComparitors = proto3.makeMessageType(
   () => [
     { no: 1, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "expiration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * A template used to describe a client info display
+ *
+ * @generated from message api.commons.org.ClientInfoDisplayTemplate
+ */
+export const ClientInfoDisplayTemplate = proto3.makeMessageType(
+  "api.commons.org.ClientInfoDisplayTemplate",
+  () => [
+    { no: 1, name: "template_sid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "display_all_fields", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 5, name: "dialed_number_field_style", kind: "message", T: DialedNumberFieldStyle },
+    { no: 6, name: "contact_field_styles", kind: "message", T: ContactFieldStyle, repeated: true },
+    { no: 7, name: "template_category", kind: "enum", T: proto3.getEnumType(TemplateCategory) },
+  ],
+);
+
+/**
+ * FieldStyle describes a particular field within a client info display
+ *
+ * @generated from message api.commons.org.FieldStyle
+ */
+export const FieldStyle = proto3.makeMessageType(
+  "api.commons.org.FieldStyle",
+  () => [
+    { no: 1, name: "text_color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "background_color", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "allow_agent_copy", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * The ContactFieldStyle contains the description id
+ * and the field style for a particular contact field
+ *
+ * @generated from message api.commons.org.ContactFieldStyle
+ */
+export const ContactFieldStyle = proto3.makeMessageType(
+  "api.commons.org.ContactFieldStyle",
+  () => [
+    { no: 1, name: "description_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "field_style", kind: "message", T: FieldStyle },
+  ],
+);
+
+/**
+ * The DialedNumberFieldStyle contains the field style for Dialed Number Field
+ *
+ * @generated from message api.commons.org.DialedNumberFieldStyle
+ */
+export const DialedNumberFieldStyle = proto3.makeMessageType(
+  "api.commons.org.DialedNumberFieldStyle",
+  () => [
+    { no: 1, name: "field_style", kind: "message", T: FieldStyle },
+    { no: 2, name: "display_to_agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

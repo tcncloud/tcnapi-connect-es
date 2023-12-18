@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
+import type { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -888,6 +888,219 @@ export declare class DeleteAgentResponseAutoRulesResponse extends Message<Delete
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAgentResponseAutoRulesResponse;
 
   static equals(a: DeleteAgentResponseAutoRulesResponse | PlainMessage<DeleteAgentResponseAutoRulesResponse> | undefined, b: DeleteAgentResponseAutoRulesResponse | PlainMessage<DeleteAgentResponseAutoRulesResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for GetHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateRequest
+ */
+export declare class GetHuntGroupClientInfoDisplayTemplateRequest extends Message<GetHuntGroupClientInfoDisplayTemplateRequest> {
+  /**
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  constructor(data?: PartialMessage<GetHuntGroupClientInfoDisplayTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHuntGroupClientInfoDisplayTemplateRequest;
+
+  static equals(a: GetHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<GetHuntGroupClientInfoDisplayTemplateRequest> | undefined, b: GetHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<GetHuntGroupClientInfoDisplayTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for GetHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateResponse
+ */
+export declare class GetHuntGroupClientInfoDisplayTemplateResponse extends Message<GetHuntGroupClientInfoDisplayTemplateResponse> {
+  /**
+   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 1;
+   */
+  template?: ClientInfoDisplayTemplate;
+
+  constructor(data?: PartialMessage<GetHuntGroupClientInfoDisplayTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHuntGroupClientInfoDisplayTemplateResponse;
+
+  static equals(a: GetHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<GetHuntGroupClientInfoDisplayTemplateResponse> | undefined, b: GetHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<GetHuntGroupClientInfoDisplayTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for CreateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateRequest
+ */
+export declare class CreateHuntGroupClientInfoDisplayTemplateRequest extends Message<CreateHuntGroupClientInfoDisplayTemplateRequest> {
+  /**
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 2;
+   */
+  template?: ClientInfoDisplayTemplate;
+
+  constructor(data?: PartialMessage<CreateHuntGroupClientInfoDisplayTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateHuntGroupClientInfoDisplayTemplateRequest;
+
+  static equals(a: CreateHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<CreateHuntGroupClientInfoDisplayTemplateRequest> | undefined, b: CreateHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<CreateHuntGroupClientInfoDisplayTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for CreateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateResponse
+ */
+export declare class CreateHuntGroupClientInfoDisplayTemplateResponse extends Message<CreateHuntGroupClientInfoDisplayTemplateResponse> {
+  /**
+   * @generated from field: int64 template_sid = 1;
+   */
+  templateSid: bigint;
+
+  constructor(data?: PartialMessage<CreateHuntGroupClientInfoDisplayTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateHuntGroupClientInfoDisplayTemplateResponse;
+
+  static equals(a: CreateHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<CreateHuntGroupClientInfoDisplayTemplateResponse> | undefined, b: CreateHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<CreateHuntGroupClientInfoDisplayTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for UpdateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateRequest
+ */
+export declare class UpdateHuntGroupClientInfoDisplayTemplateRequest extends Message<UpdateHuntGroupClientInfoDisplayTemplateRequest> {
+  /**
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 2;
+   */
+  template?: ClientInfoDisplayTemplate;
+
+  constructor(data?: PartialMessage<UpdateHuntGroupClientInfoDisplayTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupClientInfoDisplayTemplateRequest;
+
+  static equals(a: UpdateHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<UpdateHuntGroupClientInfoDisplayTemplateRequest> | undefined, b: UpdateHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<UpdateHuntGroupClientInfoDisplayTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for UpdateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateResponse
+ */
+export declare class UpdateHuntGroupClientInfoDisplayTemplateResponse extends Message<UpdateHuntGroupClientInfoDisplayTemplateResponse> {
+  constructor(data?: PartialMessage<UpdateHuntGroupClientInfoDisplayTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupClientInfoDisplayTemplateResponse;
+
+  static equals(a: UpdateHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<UpdateHuntGroupClientInfoDisplayTemplateResponse> | undefined, b: UpdateHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<UpdateHuntGroupClientInfoDisplayTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for DeleteHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateRequest
+ */
+export declare class DeleteHuntGroupClientInfoDisplayTemplateRequest extends Message<DeleteHuntGroupClientInfoDisplayTemplateRequest> {
+  /**
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * @generated from field: int64 template_sid = 2;
+   */
+  templateSid: bigint;
+
+  constructor(data?: PartialMessage<DeleteHuntGroupClientInfoDisplayTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteHuntGroupClientInfoDisplayTemplateRequest;
+
+  static equals(a: DeleteHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<DeleteHuntGroupClientInfoDisplayTemplateRequest> | undefined, b: DeleteHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<DeleteHuntGroupClientInfoDisplayTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for DeleteHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateResponse
+ */
+export declare class DeleteHuntGroupClientInfoDisplayTemplateResponse extends Message<DeleteHuntGroupClientInfoDisplayTemplateResponse> {
+  constructor(data?: PartialMessage<DeleteHuntGroupClientInfoDisplayTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteHuntGroupClientInfoDisplayTemplateResponse;
+
+  static equals(a: DeleteHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<DeleteHuntGroupClientInfoDisplayTemplateResponse> | undefined, b: DeleteHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<DeleteHuntGroupClientInfoDisplayTemplateResponse> | undefined): boolean;
 }
 
 /**
