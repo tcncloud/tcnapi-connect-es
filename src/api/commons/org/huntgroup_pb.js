@@ -884,7 +884,6 @@ export const IntegrationLink = proto3.makeMessageType(
     { no: 5, name: "method_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 6, name: "order", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 7, name: "parameters", kind: "message", T: IntegrationLinkParameter, repeated: true },
-    { no: 8, name: "configuration_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

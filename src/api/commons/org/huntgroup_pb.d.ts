@@ -3065,11 +3065,6 @@ export declare class IntegrationLink extends Message<IntegrationLink> {
    */
   parameters: IntegrationLinkParameter[];
 
-  /**
-   * @generated from field: string configuration_name = 8;
-   */
-  configurationName: string;
-
   constructor(data?: PartialMessage<IntegrationLink>);
 
   static readonly runtime: typeof proto3;
