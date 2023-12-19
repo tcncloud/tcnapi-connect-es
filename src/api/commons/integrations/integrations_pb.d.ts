@@ -1176,16 +1176,6 @@ export declare enum RequestMethod {
   EPIC_RECEIVE_COMMUNICATION_3 = 3709,
 
   /**
-   * @generated from enum value: REQUEST_METHOD_EPIC_POST_PATIENT_MADE_PAYMENT = 3710;
-   */
-  EPIC_POST_PATIENT_MADE_PAYMENT = 3710,
-
-  /**
-   * @generated from enum value: REQUEST_METHOD_EPIC_GET_PATIENT_BILLING_DETAILS = 3711;
-   */
-  EPIC_GET_PATIENT_BILLING_DETAILS = 3711,
-
-  /**
    * @generated from enum value: REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP = 3801;
    */
   NEWZWARE_PHONE_LOOKUP = 3801,
@@ -3697,18 +3687,6 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteEpicReceiveCommunication3;
     case: "epicReceiveCommunication3";
-  } | {
-    /**
-     * @generated from field: api.commons.integrations.ExecuteEpicPostPatientMadePayment epic_post_patient_made_payment = 3710;
-     */
-    value: ExecuteEpicPostPatientMadePayment;
-    case: "epicPostPatientMadePayment";
-  } | {
-    /**
-     * @generated from field: api.commons.integrations.ExecuteEpicGetPatientBillingDetails epic_get_patient_billing_details = 3711;
-     */
-    value: ExecuteEpicGetPatientBillingDetails;
-    case: "epicGetPatientBillingDetails";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteNewzwarePhoneLookup newzware_phone_lookup = 3801;
@@ -8034,44 +8012,6 @@ export declare class ExecuteEpicReceiveCommunication3 extends Message<ExecuteEpi
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicReceiveCommunication3;
 
   static equals(a: ExecuteEpicReceiveCommunication3 | PlainMessage<ExecuteEpicReceiveCommunication3> | undefined, b: ExecuteEpicReceiveCommunication3 | PlainMessage<ExecuteEpicReceiveCommunication3> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.integrations.ExecuteEpicPostPatientMadePayment
- */
-export declare class ExecuteEpicPostPatientMadePayment extends Message<ExecuteEpicPostPatientMadePayment> {
-  constructor(data?: PartialMessage<ExecuteEpicPostPatientMadePayment>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.integrations.ExecuteEpicPostPatientMadePayment";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicPostPatientMadePayment;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicPostPatientMadePayment;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicPostPatientMadePayment;
-
-  static equals(a: ExecuteEpicPostPatientMadePayment | PlainMessage<ExecuteEpicPostPatientMadePayment> | undefined, b: ExecuteEpicPostPatientMadePayment | PlainMessage<ExecuteEpicPostPatientMadePayment> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.integrations.ExecuteEpicGetPatientBillingDetails
- */
-export declare class ExecuteEpicGetPatientBillingDetails extends Message<ExecuteEpicGetPatientBillingDetails> {
-  constructor(data?: PartialMessage<ExecuteEpicGetPatientBillingDetails>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.integrations.ExecuteEpicGetPatientBillingDetails";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicGetPatientBillingDetails;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicGetPatientBillingDetails;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicGetPatientBillingDetails;
-
-  static equals(a: ExecuteEpicGetPatientBillingDetails | PlainMessage<ExecuteEpicGetPatientBillingDetails> | undefined, b: ExecuteEpicGetPatientBillingDetails | PlainMessage<ExecuteEpicGetPatientBillingDetails> | undefined): boolean;
 }
 
 /**
