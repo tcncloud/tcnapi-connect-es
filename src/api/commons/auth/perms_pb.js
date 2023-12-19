@@ -44,6 +44,7 @@ export const Permission = proto3.makeEnum(
     {no: 241, name: "PERMISSION_TCN_BILLING_ADMIN", localName: "TCN_BILLING_ADMIN"},
     {no: 250, name: "PERMISSION_SUPPORT_TCN_INSIGHTS_ADMIN", localName: "SUPPORT_TCN_INSIGHTS_ADMIN"},
     {no: 251, name: "PERMISSION_SUPPORT_TCN_DASHBOARDS_ADMIN", localName: "SUPPORT_TCN_DASHBOARDS_ADMIN"},
+    {no: 252, name: "PERMISSION_DEV_SUPPORT", localName: "DEV_SUPPORT"},
     {no: 300, name: "PERMISSION_AGENT", localName: "AGENT"},
     {no: 310, name: "PERMISSION_ACCEPT_QUEUED_CALLS", localName: "ACCEPT_QUEUED_CALLS"},
     {no: 320, name: "PERMISSION_VIEW_CAMPAIGN_COMPLETION", localName: "VIEW_CAMPAIGN_COMPLETION"},

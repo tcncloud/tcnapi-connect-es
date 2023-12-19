@@ -229,6 +229,16 @@ export declare enum Permission {
   SUPPORT_TCN_DASHBOARDS_ADMIN = 251,
 
   /**
+   * Enables devs access to the version-ui app in the Customer Support.
+   *
+   *
+   * Agent
+   *
+   * @generated from enum value: PERMISSION_DEV_SUPPORT = 252;
+   */
+  DEV_SUPPORT = 252,
+
+  /**
    * Enables access to agent.
    *
    * @generated from enum value: PERMISSION_AGENT = 300;
