@@ -31,7 +31,6 @@ export const Application = proto3.makeEnum(
     {no: 15, name: "APPLICATION_WORK_FORCE_MANAGEMENT", localName: "WORK_FORCE_MANAGEMENT"},
     {no: 16, name: "APPLICATION_WORKFLOWS", localName: "WORKFLOWS"},
     {no: 17, name: "APPLICATION_NEWSROOM", localName: "NEWSROOM"},
-    {no: 18, name: "APPLICATION_CUSTOMER_SUPPORT", localName: "CUSTOMER_SUPPORT"},
   ],
 );
 

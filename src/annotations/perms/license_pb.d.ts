@@ -99,11 +99,6 @@ export declare enum Application {
    * @generated from enum value: APPLICATION_NEWSROOM = 17;
    */
   NEWSROOM = 17,
-
-  /**
-   * @generated from enum value: APPLICATION_CUSTOMER_SUPPORT = 18;
-   */
-  CUSTOMER_SUPPORT = 18,
 }
 
 /**
