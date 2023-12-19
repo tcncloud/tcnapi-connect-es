@@ -3031,39 +3031,60 @@ export declare class DataDipConfig_Header extends Message<DataDipConfig_Header> 
  */
 export declare class IntegrationLink extends Message<IntegrationLink> {
   /**
+   * The ID of the integration.
+   *
    * @generated from field: int64 integration_id = 1;
    */
   integrationId: bigint;
 
   /**
+   * The sid or the unique ID of the integration link stored in the database.
+   *
    * @generated from field: int64 parameter_sid = 2;
    */
   parameterSid: bigint;
 
   /**
+   * The display name of the integration link.
+   *
    * @generated from field: string name = 3;
    */
   name: string;
 
   /**
+   * The description of the integration link.
+   *
    * @generated from field: string description = 4;
    */
   description: string;
 
   /**
+   * The ID of the method to use for the integration link.
+   *
    * @generated from field: int64 method_id = 5;
    */
   methodId: bigint;
 
   /**
+   * The order of the integration link, used for sorting.
+   *
    * @generated from field: int64 order = 6;
    */
   order: bigint;
 
   /**
+   * The parameters used for the integration link.
+   *
    * @generated from field: repeated api.commons.org.IntegrationLinkParameter parameters = 7;
    */
   parameters: IntegrationLinkParameter[];
+
+  /**
+   * The configuration name of the integration link.
+   *
+   * @generated from field: string configuration_name = 8;
+   */
+  configurationName: string;
 
   constructor(data?: PartialMessage<IntegrationLink>);
 
@@ -3087,11 +3108,15 @@ export declare class IntegrationLink extends Message<IntegrationLink> {
  */
 export declare class IntegrationLinkParameter extends Message<IntegrationLinkParameter> {
   /**
+   * The parameter key.
+   *
    * @generated from field: string key = 1;
    */
   key: string;
 
   /**
+   * The sub parameters of the parameter.
+   *
    * @generated from field: repeated api.commons.org.IntegrationLinkSubParameter sub_parameters = 2;
    */
   subParameters: IntegrationLinkSubParameter[];
@@ -3118,11 +3143,15 @@ export declare class IntegrationLinkParameter extends Message<IntegrationLinkPar
  */
 export declare class IntegrationLinkSubParameter extends Message<IntegrationLinkSubParameter> {
   /**
+   * The sub parameter key is the field name of the integration link.
+   *
    * @generated from field: string key = 1;
    */
   key: string;
 
   /**
+   * The parts of the sub parameter.
+   *
    * @generated from field: repeated api.commons.org.IntegrationLinkSubParameterPart parts = 2;
    */
   parts: IntegrationLinkSubParameterPart[];
@@ -3149,16 +3178,22 @@ export declare class IntegrationLinkSubParameter extends Message<IntegrationLink
  */
 export declare class IntegrationLinkSubParameterPart extends Message<IntegrationLinkSubParameterPart> {
   /**
+   * The ID for the contact field.
+   *
    * @generated from field: int64 contact_field_sid = 1;
    */
   contactFieldSid: bigint;
 
   /**
+   * The value of the sub parameter part.
+   *
    * @generated from field: string helper_value = 2;
    */
   helperValue: string;
 
   /**
+   * The source type of the sub parameter part.
+   *
    * @generated from field: api.commons.org.ParameterSourceType parameter_source_type = 3;
    */
   parameterSourceType: ParameterSourceType;

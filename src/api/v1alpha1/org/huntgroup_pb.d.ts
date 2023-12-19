@@ -897,11 +897,15 @@ export declare class DeleteAgentResponseAutoRulesResponse extends Message<Delete
  */
 export declare class ListHuntGroupIntegrationLinksRequest extends Message<ListHuntGroupIntegrationLinksRequest> {
   /**
+   * The ID of the organization which the hunt group belongs to.
+   *
    * @generated from field: string org_id = 1;
    */
   orgId: string;
 
   /**
+   * The ID of the hunt group to list integration links for.
+   *
    * @generated from field: int64 hunt_group_sid = 2;
    */
   huntGroupSid: bigint;
@@ -928,6 +932,8 @@ export declare class ListHuntGroupIntegrationLinksRequest extends Message<ListHu
  */
 export declare class ListHuntGroupIntegrationLinksResponse extends Message<ListHuntGroupIntegrationLinksResponse> {
   /**
+   * The list of integration links for the hunt group.
+   *
    * @generated from field: repeated api.commons.org.IntegrationLink links = 1;
    */
   links: IntegrationLink[];
