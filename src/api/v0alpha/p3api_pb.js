@@ -1749,6 +1749,8 @@ export const ManualDialStartReq = proto3.makeMessageType(
     { no: 1, name: "simple_call_data", kind: "message", T: SimpleCallData },
     { no: 6, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 7, name: "agent_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "bucket_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "bucket_region_data", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
