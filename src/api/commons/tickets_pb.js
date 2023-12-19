@@ -33,6 +33,18 @@ export const TicketStatus = proto3.makeEnum(
 );
 
 /**
+ * @generated from enum api.commons.PhoneNumberType
+ */
+export const PhoneNumberType = proto3.makeEnum(
+  "api.commons.PhoneNumberType",
+  [
+    {no: 0, name: "MOBILE"},
+    {no: 1, name: "OTHER"},
+    {no: 2, name: "INVALID_ERROR"},
+  ],
+);
+
+/**
  * Ticket - Fields for Ticket creation, List tickets and view ticket
  *
  * @generated from message api.commons.Ticket

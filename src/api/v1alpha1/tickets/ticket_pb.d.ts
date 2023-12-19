@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import type { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -462,6 +462,56 @@ export declare class GetActionTypeResponse extends Message<GetActionTypeResponse
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetActionTypeResponse;
 
   static equals(a: GetActionTypeResponse | PlainMessage<GetActionTypeResponse> | undefined, b: GetActionTypeResponse | PlainMessage<GetActionTypeResponse> | undefined): boolean;
+}
+
+/**
+ * Reqiest For Phone Number Validation - Mobile/Other/Invalid
+ *
+ * @generated from message api.v1alpha1.tickets.GetPhoneNumberTypeRequest
+ */
+export declare class GetPhoneNumberTypeRequest extends Message<GetPhoneNumberTypeRequest> {
+  /**
+   * @generated from field: string phone_number = 1;
+   */
+  phoneNumber: string;
+
+  constructor(data?: PartialMessage<GetPhoneNumberTypeRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.GetPhoneNumberTypeRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPhoneNumberTypeRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPhoneNumberTypeRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPhoneNumberTypeRequest;
+
+  static equals(a: GetPhoneNumberTypeRequest | PlainMessage<GetPhoneNumberTypeRequest> | undefined, b: GetPhoneNumberTypeRequest | PlainMessage<GetPhoneNumberTypeRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.GetPhoneNumberTypeResponse
+ */
+export declare class GetPhoneNumberTypeResponse extends Message<GetPhoneNumberTypeResponse> {
+  /**
+   * @generated from field: api.commons.PhoneNumberType phone_type = 1;
+   */
+  phoneType: PhoneNumberType;
+
+  constructor(data?: PartialMessage<GetPhoneNumberTypeResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.GetPhoneNumberTypeResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetPhoneNumberTypeResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetPhoneNumberTypeResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetPhoneNumberTypeResponse;
+
+  static equals(a: GetPhoneNumberTypeResponse | PlainMessage<GetPhoneNumberTypeResponse> | undefined, b: GetPhoneNumberTypeResponse | PlainMessage<GetPhoneNumberTypeResponse> | undefined): boolean;
 }
 
 /**

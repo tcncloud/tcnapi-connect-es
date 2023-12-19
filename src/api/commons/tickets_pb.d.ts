@@ -68,6 +68,32 @@ export declare enum TicketStatus {
 }
 
 /**
+ * @generated from enum api.commons.PhoneNumberType
+ */
+export declare enum PhoneNumberType {
+  /**
+   * Mobile Phone NUmber
+   *
+   * @generated from enum value: MOBILE = 0;
+   */
+  MOBILE = 0,
+
+  /**
+   * Geographic OR Other Number
+   *
+   * @generated from enum value: OTHER = 1;
+   */
+  OTHER = 1,
+
+  /**
+   * No Response/Invalid/ERROR
+   *
+   * @generated from enum value: INVALID_ERROR = 2;
+   */
+  INVALID_ERROR = 2,
+}
+
+/**
  * Ticket - Fields for Ticket creation, List tickets and view ticket
  *
  * @generated from message api.commons.Ticket

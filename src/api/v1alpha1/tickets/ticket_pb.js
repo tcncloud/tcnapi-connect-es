@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -167,6 +167,28 @@ export const GetActionTypeResponse = proto3.makeMessageType(
   "api.v1alpha1.tickets.GetActionTypeResponse",
   () => [
     { no: 1, name: "action_type", kind: "message", T: ActionType, repeated: true },
+  ],
+);
+
+/**
+ * Reqiest For Phone Number Validation - Mobile/Other/Invalid
+ *
+ * @generated from message api.v1alpha1.tickets.GetPhoneNumberTypeRequest
+ */
+export const GetPhoneNumberTypeRequest = proto3.makeMessageType(
+  "api.v1alpha1.tickets.GetPhoneNumberTypeRequest",
+  () => [
+    { no: 1, name: "phone_number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.GetPhoneNumberTypeResponse
+ */
+export const GetPhoneNumberTypeResponse = proto3.makeMessageType(
+  "api.v1alpha1.tickets.GetPhoneNumberTypeResponse",
+  () => [
+    { no: 1, name: "phone_type", kind: "enum", T: proto3.getEnumType(PhoneNumberType) },
   ],
 );
 
