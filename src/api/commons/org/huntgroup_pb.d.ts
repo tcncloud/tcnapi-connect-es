@@ -22,11 +22,15 @@ export declare enum TemplateCategory {
   UNSPECIFIED = 0,
 
   /**
+   * 1 means a hunt group client info display template
+   *
    * @generated from enum value: TEMPLATE_CATEGORY_HUNT_GROUP = 1;
    */
   HUNT_GROUP = 1,
 
   /**
+   * 2 means a campaign client info display template
+   *
    * @generated from enum value: TEMPLATE_CATEGORY_CAMPAIGN = 2;
    */
   CAMPAIGN = 2,
@@ -2853,36 +2857,50 @@ export declare class AgentResponseComparitors extends Message<AgentResponseCompa
  */
 export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplayTemplate> {
   /**
+   * The template sid of the client info display template
+   *
    * @generated from field: string template_sid = 1;
    */
   templateSid: string;
 
   /**
+   * The name of the client info display template
+   *
    * @generated from field: string name = 2;
    */
   name: string;
 
   /**
+   * The description of the client info display template
+   *
    * @generated from field: string description = 3;
    */
   description: string;
 
   /**
+   * Bool used to determine whether to show all fields in a client info display template
+   *
    * @generated from field: bool display_all_fields = 4;
    */
   displayAllFields: boolean;
 
   /**
+   * The dialed number field style of a client info display template
+   *
    * @generated from field: api.commons.org.DialedNumberFieldStyle dialed_number_field_style = 5;
    */
   dialedNumberFieldStyle?: DialedNumberFieldStyle;
 
   /**
+   * A list of Contact Field Styles for a client info display template
+   *
    * @generated from field: repeated api.commons.org.ContactFieldStyle contact_field_styles = 6;
    */
   contactFieldStyles: ContactFieldStyle[];
 
   /**
+   * The template type
+   *
    * @generated from field: api.commons.org.TemplateCategory template_category = 7;
    */
   templateCategory: TemplateCategory;
@@ -2909,16 +2927,22 @@ export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplay
  */
 export declare class FieldStyle extends Message<FieldStyle> {
   /**
+   * Text color of a field style
+   *
    * @generated from field: string text_color = 1;
    */
   textColor: string;
 
   /**
+   * Background color of a field style
+   *
    * @generated from field: string background_color = 2;
    */
   backgroundColor: string;
 
   /**
+   * Allow the agent to copy this field style
+   *
    * @generated from field: bool allow_agent_copy = 3;
    */
   allowAgentCopy: boolean;
@@ -2946,11 +2970,15 @@ export declare class FieldStyle extends Message<FieldStyle> {
  */
 export declare class ContactFieldStyle extends Message<ContactFieldStyle> {
   /**
+   * The description id of the contact field style
+   *
    * @generated from field: int64 description_id = 1;
    */
   descriptionId: bigint;
 
   /**
+   * The field style of the contact field
+   *
    * @generated from field: api.commons.org.FieldStyle field_style = 2;
    */
   fieldStyle?: FieldStyle;
@@ -2977,11 +3005,15 @@ export declare class ContactFieldStyle extends Message<ContactFieldStyle> {
  */
 export declare class DialedNumberFieldStyle extends Message<DialedNumberFieldStyle> {
   /**
+   * The field style of the dialed number field
+   *
    * @generated from field: api.commons.org.FieldStyle field_style = 1;
    */
   fieldStyle?: FieldStyle;
 
   /**
+   * Display the dialed number field to the agent
+   *
    * @generated from field: bool display_to_agent = 2;
    */
   displayToAgent: boolean;

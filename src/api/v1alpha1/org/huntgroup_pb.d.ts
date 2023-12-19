@@ -897,6 +897,8 @@ export declare class DeleteAgentResponseAutoRulesResponse extends Message<Delete
  */
 export declare class GetHuntGroupClientInfoDisplayTemplateRequest extends Message<GetHuntGroupClientInfoDisplayTemplateRequest> {
   /**
+   * The hunt group sid of the desired client info display template
+   *
    * @generated from field: int64 hunt_group_sid = 1;
    */
   huntGroupSid: bigint;
@@ -923,6 +925,8 @@ export declare class GetHuntGroupClientInfoDisplayTemplateRequest extends Messag
  */
 export declare class GetHuntGroupClientInfoDisplayTemplateResponse extends Message<GetHuntGroupClientInfoDisplayTemplateResponse> {
   /**
+   * The template info of the client info display template
+   *
    * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 1;
    */
   template?: ClientInfoDisplayTemplate;
@@ -949,11 +953,15 @@ export declare class GetHuntGroupClientInfoDisplayTemplateResponse extends Messa
  */
 export declare class CreateHuntGroupClientInfoDisplayTemplateRequest extends Message<CreateHuntGroupClientInfoDisplayTemplateRequest> {
   /**
+   * The hunt group sid of the desired client info display template
+   *
    * @generated from field: int64 hunt_group_sid = 1;
    */
   huntGroupSid: bigint;
 
   /**
+   * The template info of the client info display template
+   *
    * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 2;
    */
   template?: ClientInfoDisplayTemplate;
@@ -980,6 +988,8 @@ export declare class CreateHuntGroupClientInfoDisplayTemplateRequest extends Mes
  */
 export declare class CreateHuntGroupClientInfoDisplayTemplateResponse extends Message<CreateHuntGroupClientInfoDisplayTemplateResponse> {
   /**
+   * The template sid of the created client info display template
+   *
    * @generated from field: int64 template_sid = 1;
    */
   templateSid: bigint;
@@ -1006,11 +1016,15 @@ export declare class CreateHuntGroupClientInfoDisplayTemplateResponse extends Me
  */
 export declare class UpdateHuntGroupClientInfoDisplayTemplateRequest extends Message<UpdateHuntGroupClientInfoDisplayTemplateRequest> {
   /**
+   * The hunt group sid of the desired client info display template to update
+   *
    * @generated from field: int64 hunt_group_sid = 1;
    */
   huntGroupSid: bigint;
 
   /**
+   * The template info of the updated client info display template
+   *
    * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 2;
    */
   template?: ClientInfoDisplayTemplate;
@@ -1058,11 +1072,15 @@ export declare class UpdateHuntGroupClientInfoDisplayTemplateResponse extends Me
  */
 export declare class DeleteHuntGroupClientInfoDisplayTemplateRequest extends Message<DeleteHuntGroupClientInfoDisplayTemplateRequest> {
   /**
+   * The hunt group sid of the desired client info display template to delete
+   *
    * @generated from field: int64 hunt_group_sid = 1;
    */
   huntGroupSid: bigint;
 
   /**
+   * The template sid of the client info display template to delete
+   *
    * @generated from field: int64 template_sid = 2;
    */
   templateSid: bigint;
