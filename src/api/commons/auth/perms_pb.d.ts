@@ -231,9 +231,6 @@ export declare enum Permission {
   /**
    * Enables devs access to the version-ui app in the Customer Support.
    *
-   *
-   * Agent
-   *
    * @generated from enum value: PERMISSION_DEV_SUPPORT = 252;
    */
   DEV_SUPPORT = 252,
