@@ -1506,7 +1506,8 @@ export declare enum OperatorApplications {
   /**
    * Dev Tools
    *
-   * @generated from enum value: DEV_TOOLS_APP = 20;
+   * @generated from enum value: DEV_TOOLS_APP = 20 [deprecated = true];
+   * @deprecated
    */
   DEV_TOOLS_APP = 20,
 

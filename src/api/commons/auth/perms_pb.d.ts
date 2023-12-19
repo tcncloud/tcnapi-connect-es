@@ -229,7 +229,7 @@ export declare enum Permission {
   SUPPORT_TCN_DASHBOARDS_ADMIN = 251,
 
   /**
-   * Enables devs access to the version-ui app in the Customer Support.
+   * Enables devs access to the version tools in the Customer Support.
    *
    * @generated from enum value: PERMISSION_DEV_SUPPORT = 252;
    */
@@ -569,9 +569,11 @@ export declare enum Permission {
   SCORECARDS_LEARNING_OPPORTUNITIES = 1604,
 
   /**
+   * Deprecated
    * Enables access to Dev Tools app.
    *
-   * @generated from enum value: PERMISSION_DEV_TOOLS = 1800;
+   * @generated from enum value: PERMISSION_DEV_TOOLS = 1800 [deprecated = true];
+   * @deprecated
    */
   DEV_TOOLS = 1800,
 

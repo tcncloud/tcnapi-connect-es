@@ -30,7 +30,8 @@ export declare enum Application {
   DELIVERY_SERVICE = 3,
 
   /**
-   * @generated from enum value: APPLICATION_DEV_TOOLS = 4;
+   * @generated from enum value: APPLICATION_DEV_TOOLS = 4 [deprecated = true];
+   * @deprecated
    */
   DEV_TOOLS = 4,
 
@@ -98,6 +99,11 @@ export declare enum Application {
    * @generated from enum value: APPLICATION_NEWSROOM = 17;
    */
   NEWSROOM = 17,
+
+  /**
+   * @generated from enum value: APPLICATION_CUSTOMER_SUPPORT = 18;
+   */
+  CUSTOMER_SUPPORT = 18,
 }
 
 /**
