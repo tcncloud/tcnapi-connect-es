@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -345,6 +345,101 @@ export const DeleteAgentResponseAutoRulesRequest = proto3.makeMessageType(
  */
 export const DeleteAgentResponseAutoRulesResponse = proto3.makeMessageType(
   "api.v1alpha1.org.DeleteAgentResponseAutoRulesResponse",
+  [],
+);
+
+/**
+ * Request message for GetHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateRequest
+ */
+export const GetHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for GetHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateResponse
+ */
+export const GetHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.GetHuntGroupClientInfoDisplayTemplateResponse",
+  () => [
+    { no: 1, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * Request message for CreateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateRequest
+ */
+export const CreateHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * Response message for CreateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateResponse
+ */
+export const CreateHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateHuntGroupClientInfoDisplayTemplateResponse",
+  () => [
+    { no: 1, name: "template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for UpdateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateRequest
+ */
+export const UpdateHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * Response message for UpdateHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateResponse
+ */
+export const UpdateHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupClientInfoDisplayTemplateResponse",
+  [],
+);
+
+/**
+ * Request message for DeleteHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateRequest
+ */
+export const DeleteHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for DeleteHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateResponse
+ */
+export const DeleteHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateResponse",
   [],
 );
 

@@ -9,6 +9,34 @@ import type { AgentCallHistoryScope, AgentRouting, AlphanumericKeypadDelimiter, 
 import type { Country } from "../country_pb.js";
 
 /**
+ * Tempate category differentiates between template types
+ *
+ * @generated from enum api.commons.org.TemplateCategory
+ */
+export declare enum TemplateCategory {
+  /**
+   * 0 explicitly means unspecified or invalid.
+   *
+   * @generated from enum value: TEMPLATE_CATEGORY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * 1 means a hunt group client info display template
+   *
+   * @generated from enum value: TEMPLATE_CATEGORY_HUNT_GROUP = 1;
+   */
+  HUNT_GROUP = 1,
+
+  /**
+   * 2 means a campaign client info display template
+   *
+   * @generated from enum value: TEMPLATE_CATEGORY_CAMPAIGN = 2;
+   */
+  CAMPAIGN = 2,
+}
+
+/**
  * ParameterSourceType defines the type of parameter source.
  *
  * @generated from enum api.commons.org.ParameterSourceType
@@ -2820,6 +2848,189 @@ export declare class AgentResponseComparitors extends Message<AgentResponseCompa
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AgentResponseComparitors;
 
   static equals(a: AgentResponseComparitors | PlainMessage<AgentResponseComparitors> | undefined, b: AgentResponseComparitors | PlainMessage<AgentResponseComparitors> | undefined): boolean;
+}
+
+/**
+ * A template used to describe a client info display
+ *
+ * @generated from message api.commons.org.ClientInfoDisplayTemplate
+ */
+export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplayTemplate> {
+  /**
+   * The template sid of the client info display template
+   *
+   * @generated from field: string template_sid = 1;
+   */
+  templateSid: string;
+
+  /**
+   * The name of the client info display template
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * The description of the client info display template
+   *
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  /**
+   * Bool used to determine whether to show all fields in a client info display template
+   *
+   * @generated from field: bool display_all_fields = 4;
+   */
+  displayAllFields: boolean;
+
+  /**
+   * The dialed number field style of a client info display template
+   *
+   * @generated from field: api.commons.org.DialedNumberFieldStyle dialed_number_field_style = 5;
+   */
+  dialedNumberFieldStyle?: DialedNumberFieldStyle;
+
+  /**
+   * A list of Contact Field Styles for a client info display template
+   *
+   * @generated from field: repeated api.commons.org.ContactFieldStyle contact_field_styles = 6;
+   */
+  contactFieldStyles: ContactFieldStyle[];
+
+  /**
+   * The template type
+   *
+   * @generated from field: api.commons.org.TemplateCategory template_category = 7;
+   */
+  templateCategory: TemplateCategory;
+
+  constructor(data?: PartialMessage<ClientInfoDisplayTemplate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.ClientInfoDisplayTemplate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ClientInfoDisplayTemplate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ClientInfoDisplayTemplate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ClientInfoDisplayTemplate;
+
+  static equals(a: ClientInfoDisplayTemplate | PlainMessage<ClientInfoDisplayTemplate> | undefined, b: ClientInfoDisplayTemplate | PlainMessage<ClientInfoDisplayTemplate> | undefined): boolean;
+}
+
+/**
+ * FieldStyle describes a particular field within a client info display
+ *
+ * @generated from message api.commons.org.FieldStyle
+ */
+export declare class FieldStyle extends Message<FieldStyle> {
+  /**
+   * Text color of a field style
+   *
+   * @generated from field: string text_color = 1;
+   */
+  textColor: string;
+
+  /**
+   * Background color of a field style
+   *
+   * @generated from field: string background_color = 2;
+   */
+  backgroundColor: string;
+
+  /**
+   * Allow the agent to copy this field style
+   *
+   * @generated from field: bool allow_agent_copy = 3;
+   */
+  allowAgentCopy: boolean;
+
+  constructor(data?: PartialMessage<FieldStyle>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.FieldStyle";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FieldStyle;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FieldStyle;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FieldStyle;
+
+  static equals(a: FieldStyle | PlainMessage<FieldStyle> | undefined, b: FieldStyle | PlainMessage<FieldStyle> | undefined): boolean;
+}
+
+/**
+ * The ContactFieldStyle contains the description id
+ * and the field style for a particular contact field
+ *
+ * @generated from message api.commons.org.ContactFieldStyle
+ */
+export declare class ContactFieldStyle extends Message<ContactFieldStyle> {
+  /**
+   * The description id of the contact field style
+   *
+   * @generated from field: int64 description_id = 1;
+   */
+  descriptionId: bigint;
+
+  /**
+   * The field style of the contact field
+   *
+   * @generated from field: api.commons.org.FieldStyle field_style = 2;
+   */
+  fieldStyle?: FieldStyle;
+
+  constructor(data?: PartialMessage<ContactFieldStyle>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.ContactFieldStyle";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContactFieldStyle;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContactFieldStyle;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContactFieldStyle;
+
+  static equals(a: ContactFieldStyle | PlainMessage<ContactFieldStyle> | undefined, b: ContactFieldStyle | PlainMessage<ContactFieldStyle> | undefined): boolean;
+}
+
+/**
+ * The DialedNumberFieldStyle contains the field style for Dialed Number Field
+ *
+ * @generated from message api.commons.org.DialedNumberFieldStyle
+ */
+export declare class DialedNumberFieldStyle extends Message<DialedNumberFieldStyle> {
+  /**
+   * The field style of the dialed number field
+   *
+   * @generated from field: api.commons.org.FieldStyle field_style = 1;
+   */
+  fieldStyle?: FieldStyle;
+
+  /**
+   * Display the dialed number field to the agent
+   *
+   * @generated from field: bool display_to_agent = 2;
+   */
+  displayToAgent: boolean;
+
+  constructor(data?: PartialMessage<DialedNumberFieldStyle>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.DialedNumberFieldStyle";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DialedNumberFieldStyle;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DialedNumberFieldStyle;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DialedNumberFieldStyle;
+
+  static equals(a: DialedNumberFieldStyle | PlainMessage<DialedNumberFieldStyle> | undefined, b: DialedNumberFieldStyle | PlainMessage<DialedNumberFieldStyle> | undefined): boolean;
 }
 
 /**
