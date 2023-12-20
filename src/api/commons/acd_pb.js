@@ -370,6 +370,7 @@ export const AgentSessionLogActionKey_Enum = proto3.makeEnum(
     {no: 57, name: "BARGE_IN_STOP"},
     {no: 58, name: "BargeInCallJoined"},
     {no: 59, name: "BargeInCallLeft"},
+    {no: 60, name: "EXECUTED_AGENT_INTEGRATIONLINK"},
   ],
 );
 

@@ -1246,6 +1246,13 @@ export declare enum AgentSessionLogActionKey_Enum {
    * @generated from enum value: BargeInCallLeft = 59;
    */
   BargeInCallLeft = 59,
+
+  /**
+   * Integration
+   *
+   * @generated from enum value: EXECUTED_AGENT_INTEGRATIONLINK = 60;
+   */
+  EXECUTED_AGENT_INTEGRATIONLINK = 60,
 }
 
 /**
