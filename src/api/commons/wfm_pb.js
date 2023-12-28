@@ -602,7 +602,10 @@ export const SkillProfileCategory_CategoryType = proto3.makeEnum(
 );
 
 /**
+ * Deprecated.
  * Defines a Scheduling Result Metric from the Scheduler.
+ * This is version 1. Use version 2, which is api.v1alpha1.wfm.SchedulingResultMetric.
+ * This message only exists for backwards compatibility.
  *
  * @generated from message api.commons.SchedulingResultMetric
  */
