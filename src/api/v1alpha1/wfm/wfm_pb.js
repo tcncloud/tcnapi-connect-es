@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric as SchedulingResultMetric$1, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -3790,12 +3790,28 @@ export const BuildDraftScheduleReq = proto3.makeMessageType(
 );
 
 /**
+ * Deprecated.
  * Response message for the BuildDraftSchedule RPC
+ * This was replaced by BuildDraftScheduleV2Res.
  *
  * @generated from message api.v1alpha1.wfm.BuildDraftScheduleRes
  */
 export const BuildDraftScheduleRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.BuildDraftScheduleRes",
+  () => [
+    { no: 1, name: "draft_schedule", kind: "message", T: DraftSchedule },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+    { no: 3, name: "scheduling_result_metric", kind: "message", T: SchedulingResultMetric$1 },
+  ],
+);
+
+/**
+ * Response message for the BuildDraftSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.BuildDraftScheduleV2Res
+ */
+export const BuildDraftScheduleV2Res = proto3.makeMessageType(
+  "api.v1alpha1.wfm.BuildDraftScheduleV2Res",
   () => [
     { no: 1, name: "draft_schedule", kind: "message", T: DraftSchedule },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },

@@ -11022,7 +11022,9 @@ export declare class BuildDraftScheduleReq extends Message<BuildDraftScheduleReq
 }
 
 /**
+ * Deprecated.
  * Response message for the BuildDraftSchedule RPC
+ * This was replaced by BuildDraftScheduleV2Res.
  *
  * @generated from message api.v1alpha1.wfm.BuildDraftScheduleRes
  */
@@ -11061,6 +11063,48 @@ export declare class BuildDraftScheduleRes extends Message<BuildDraftScheduleRes
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildDraftScheduleRes;
 
   static equals(a: BuildDraftScheduleRes | PlainMessage<BuildDraftScheduleRes> | undefined, b: BuildDraftScheduleRes | PlainMessage<BuildDraftScheduleRes> | undefined): boolean;
+}
+
+/**
+ * Response message for the BuildDraftSchedule RPC
+ *
+ * @generated from message api.v1alpha1.wfm.BuildDraftScheduleV2Res
+ */
+export declare class BuildDraftScheduleV2Res extends Message<BuildDraftScheduleV2Res> {
+  /**
+   * The built draft schedule.
+   *
+   * @generated from field: api.v1alpha1.wfm.DraftSchedule draft_schedule = 1;
+   */
+  draftSchedule?: DraftSchedule;
+
+  /**
+   * Set of diagnostic reports for the given @draft_schedule_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
+
+  /**
+   * The scheduling result metric for the built schedule range.
+   *
+   * @generated from field: api.v1alpha1.wfm.SchedulingResultMetric scheduling_result_metric = 3;
+   */
+  schedulingResultMetric?: SchedulingResultMetric;
+
+  constructor(data?: PartialMessage<BuildDraftScheduleV2Res>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.BuildDraftScheduleV2Res";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuildDraftScheduleV2Res;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuildDraftScheduleV2Res;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildDraftScheduleV2Res;
+
+  static equals(a: BuildDraftScheduleV2Res | PlainMessage<BuildDraftScheduleV2Res> | undefined, b: BuildDraftScheduleV2Res | PlainMessage<BuildDraftScheduleV2Res> | undefined): boolean;
 }
 
 /**
