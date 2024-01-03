@@ -277,3 +277,26 @@ export const SkillGroupMembers = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for the AssignUsers rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.AssignUsersRequest
+ */
+export const AssignUsersRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.AssignUsersRequest",
+  () => [
+    { no: 1, name: "skill_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the AssignUsers rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.AssignUsersResponse
+ */
+export const AssignUsersResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.AssignUsersResponse",
+  [],
+);
+
