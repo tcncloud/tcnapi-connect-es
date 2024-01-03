@@ -602,10 +602,31 @@ export const SkillProfileCategory_CategoryType = proto3.makeEnum(
 );
 
 /**
- * Deprecated.
+ * Defines the per-skill metrics for SchedulingResultMetric from the Scheduler.
+ * Wanted to define this in api.v1alpha1.wfm, but had a backwards compatibility error trying to move SchedulingResultMetric.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of SchedulingResultMetric only.
+ *
+ * @generated from message api.commons.SchedulingResultMetricForSkillCollection
+ */
+export const SchedulingResultMetricForSkillCollection = proto3.makeMessageType(
+  "api.commons.SchedulingResultMetricForSkillCollection",
+  () => [
+    { no: 1, name: "total_internal_intervals", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "total_intervals_with_fte_required", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "total_intervals_with_ftes_remaining", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "coverage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 5, name: "root_mean_square", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 6, name: "has_result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "skill_collection", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
  * Defines a Scheduling Result Metric from the Scheduler.
- * This is version 1. Use version 2, which is api.v1alpha1.wfm.SchedulingResultMetric.
- * This message only exists for backwards compatibility.
+ * Wanted to define this in api.v1alpha1.wfm, but had a backwards compatibility error trying to move it there.
  *
  * @generated from message api.commons.SchedulingResultMetric
  */
@@ -618,6 +639,7 @@ export const SchedulingResultMetric = proto3.makeMessageType(
     { no: 4, name: "coverage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 5, name: "root_mean_square", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 6, name: "has_result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "metrics_by_skill_collection", kind: "message", T: SchedulingResultMetricForSkillCollection, repeated: true },
   ],
 );
 

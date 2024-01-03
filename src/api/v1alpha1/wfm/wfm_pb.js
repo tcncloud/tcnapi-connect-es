@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric as SchedulingResultMetric$1, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -3782,28 +3782,12 @@ export const BuildDraftScheduleReq = proto3.makeMessageType(
 );
 
 /**
- * Deprecated.
  * Response message for the BuildDraftSchedule RPC
- * This was replaced by BuildDraftScheduleV2Res.
  *
  * @generated from message api.v1alpha1.wfm.BuildDraftScheduleRes
  */
 export const BuildDraftScheduleRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.BuildDraftScheduleRes",
-  () => [
-    { no: 1, name: "draft_schedule", kind: "message", T: DraftSchedule },
-    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
-    { no: 3, name: "scheduling_result_metric", kind: "message", T: SchedulingResultMetric$1 },
-  ],
-);
-
-/**
- * Response message for the BuildDraftSchedule RPC
- *
- * @generated from message api.v1alpha1.wfm.BuildDraftScheduleV2Res
- */
-export const BuildDraftScheduleV2Res = proto3.makeMessageType(
-  "api.v1alpha1.wfm.BuildDraftScheduleV2Res",
   () => [
     { no: 1, name: "draft_schedule", kind: "message", T: DraftSchedule },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
@@ -5164,50 +5148,6 @@ export const GenerateTourWeekPatternsRes = proto3.makeMessageType(
   () => [
     { no: 1, name: "tour_week_patterns", kind: "message", T: TourWeekPattern, repeated: true },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
-  ],
-);
-
-/**
- * Defines the attributes of a Scheduling Result Metric from the Scheduler.
- *
- * @generated from message api.v1alpha1.wfm.BasicSchedulingResultMetric
- */
-export const BasicSchedulingResultMetric = proto3.makeMessageType(
-  "api.v1alpha1.wfm.BasicSchedulingResultMetric",
-  () => [
-    { no: 1, name: "total_internal_intervals", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: "total_intervals_with_fte_required", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: "total_intervals_with_ftes_remaining", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "coverage", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-    { no: 5, name: "root_mean_square", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-    { no: 6, name: "has_result", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
-);
-
-/**
- * SchedulingResultMetricKeyValue implements a map with a complex key.
- *
- * @generated from message api.v1alpha1.wfm.SchedulingResultMetricKeyValue
- */
-export const SchedulingResultMetricKeyValue = proto3.makeMessageType(
-  "api.v1alpha1.wfm.SchedulingResultMetricKeyValue",
-  () => [
-    { no: 1, name: "key", kind: "message", T: SkillProfileCategory },
-    { no: 2, name: "value", kind: "message", T: BasicSchedulingResultMetric },
-  ],
-);
-
-/**
- * Defines a Scheduling Result Metric from the Scheduler.
- * This replaces api.commons.SchedulingResultMetric.
- *
- * @generated from message api.v1alpha1.wfm.SchedulingResultMetric
- */
-export const SchedulingResultMetric = proto3.makeMessageType(
-  "api.v1alpha1.wfm.SchedulingResultMetric",
-  () => [
-    { no: 1, name: "metrics_all_skills", kind: "message", T: BasicSchedulingResultMetric },
-    { no: 2, name: "metrics_by_skill_collection", kind: "message", T: SchedulingResultMetricKeyValue, repeated: true },
   ],
 );
 

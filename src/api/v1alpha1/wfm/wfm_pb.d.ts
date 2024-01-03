@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric as SchedulingResultMetric$1, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -10998,9 +10998,7 @@ export declare class BuildDraftScheduleReq extends Message<BuildDraftScheduleReq
 }
 
 /**
- * Deprecated.
  * Response message for the BuildDraftSchedule RPC
- * This was replaced by BuildDraftScheduleV2Res.
  *
  * @generated from message api.v1alpha1.wfm.BuildDraftScheduleRes
  */
@@ -11024,7 +11022,7 @@ export declare class BuildDraftScheduleRes extends Message<BuildDraftScheduleRes
    *
    * @generated from field: api.commons.SchedulingResultMetric scheduling_result_metric = 3;
    */
-  schedulingResultMetric?: SchedulingResultMetric$1;
+  schedulingResultMetric?: SchedulingResultMetric;
 
   constructor(data?: PartialMessage<BuildDraftScheduleRes>);
 
@@ -11039,48 +11037,6 @@ export declare class BuildDraftScheduleRes extends Message<BuildDraftScheduleRes
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildDraftScheduleRes;
 
   static equals(a: BuildDraftScheduleRes | PlainMessage<BuildDraftScheduleRes> | undefined, b: BuildDraftScheduleRes | PlainMessage<BuildDraftScheduleRes> | undefined): boolean;
-}
-
-/**
- * Response message for the BuildDraftSchedule RPC
- *
- * @generated from message api.v1alpha1.wfm.BuildDraftScheduleV2Res
- */
-export declare class BuildDraftScheduleV2Res extends Message<BuildDraftScheduleV2Res> {
-  /**
-   * The built draft schedule.
-   *
-   * @generated from field: api.v1alpha1.wfm.DraftSchedule draft_schedule = 1;
-   */
-  draftSchedule?: DraftSchedule;
-
-  /**
-   * Set of diagnostic reports for the given @draft_schedule_sid.
-   *
-   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
-   */
-  diagnostics: Diagnostic[];
-
-  /**
-   * The scheduling result metric for the built schedule range.
-   *
-   * @generated from field: api.v1alpha1.wfm.SchedulingResultMetric scheduling_result_metric = 3;
-   */
-  schedulingResultMetric?: SchedulingResultMetric;
-
-  constructor(data?: PartialMessage<BuildDraftScheduleV2Res>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.BuildDraftScheduleV2Res";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BuildDraftScheduleV2Res;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BuildDraftScheduleV2Res;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BuildDraftScheduleV2Res;
-
-  static equals(a: BuildDraftScheduleV2Res | PlainMessage<BuildDraftScheduleV2Res> | undefined, b: BuildDraftScheduleV2Res | PlainMessage<BuildDraftScheduleV2Res> | undefined): boolean;
 }
 
 /**
@@ -14758,141 +14714,5 @@ export declare class GenerateTourWeekPatternsRes extends Message<GenerateTourWee
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateTourWeekPatternsRes;
 
   static equals(a: GenerateTourWeekPatternsRes | PlainMessage<GenerateTourWeekPatternsRes> | undefined, b: GenerateTourWeekPatternsRes | PlainMessage<GenerateTourWeekPatternsRes> | undefined): boolean;
-}
-
-/**
- * Defines the attributes of a Scheduling Result Metric from the Scheduler.
- *
- * @generated from message api.v1alpha1.wfm.BasicSchedulingResultMetric
- */
-export declare class BasicSchedulingResultMetric extends Message<BasicSchedulingResultMetric> {
-  /**
-   * The total number of minute-width intervals that were scheduled and measured.
-   *
-   * @generated from field: int32 total_internal_intervals = 1;
-   */
-  totalInternalIntervals: number;
-
-  /**
-   * The total number of minute-width intervals that had enough scheduled ftes to meet the predicted call FTEs.
-   *
-   * @generated from field: int32 total_intervals_with_fte_required = 2;
-   */
-  totalIntervalsWithFteRequired: number;
-
-  /**
-   * The total number of intervals that have unmet predicted call FTEs (not enough scheduled FTEs).
-   *
-   * @generated from field: int32 total_intervals_with_ftes_remaining = 3;
-   */
-  totalIntervalsWithFtesRemaining: number;
-
-  /**
-   * The average ratio of interval metrics (min(1,  scheduled/predicted)). A value of 1 means every interval
-   *    with predicted call FTEs has enough scheduled FTEs to meet requirements.
-   *
-   * @generated from field: float coverage = 4;
-   */
-  coverage: number;
-
-  /**
-   * Root Mean Square metric for predicted - scheduled FTEs.
-   *
-   * @generated from field: float root_mean_square = 5;
-   */
-  rootMeanSquare: number;
-
-  /**
-   * Set to TRUE if this object contains valid metrics.
-   *
-   * @generated from field: bool has_result = 6;
-   */
-  hasResult: boolean;
-
-  constructor(data?: PartialMessage<BasicSchedulingResultMetric>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.BasicSchedulingResultMetric";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BasicSchedulingResultMetric;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BasicSchedulingResultMetric;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BasicSchedulingResultMetric;
-
-  static equals(a: BasicSchedulingResultMetric | PlainMessage<BasicSchedulingResultMetric> | undefined, b: BasicSchedulingResultMetric | PlainMessage<BasicSchedulingResultMetric> | undefined): boolean;
-}
-
-/**
- * SchedulingResultMetricKeyValue implements a map with a complex key.
- *
- * @generated from message api.v1alpha1.wfm.SchedulingResultMetricKeyValue
- */
-export declare class SchedulingResultMetricKeyValue extends Message<SchedulingResultMetricKeyValue> {
-  /**
-   * Key.
-   *
-   * @generated from field: api.commons.SkillProfileCategory key = 1;
-   */
-  key?: SkillProfileCategory;
-
-  /**
-   * Value.
-   *
-   * @generated from field: api.v1alpha1.wfm.BasicSchedulingResultMetric value = 2;
-   */
-  value?: BasicSchedulingResultMetric;
-
-  constructor(data?: PartialMessage<SchedulingResultMetricKeyValue>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.SchedulingResultMetricKeyValue";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SchedulingResultMetricKeyValue;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SchedulingResultMetricKeyValue;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SchedulingResultMetricKeyValue;
-
-  static equals(a: SchedulingResultMetricKeyValue | PlainMessage<SchedulingResultMetricKeyValue> | undefined, b: SchedulingResultMetricKeyValue | PlainMessage<SchedulingResultMetricKeyValue> | undefined): boolean;
-}
-
-/**
- * Defines a Scheduling Result Metric from the Scheduler.
- * This replaces api.commons.SchedulingResultMetric.
- *
- * @generated from message api.v1alpha1.wfm.SchedulingResultMetric
- */
-export declare class SchedulingResultMetric extends Message<SchedulingResultMetric> {
-  /**
-   * Metric for all skills.
-   *
-   * @generated from field: api.v1alpha1.wfm.BasicSchedulingResultMetric metrics_all_skills = 1;
-   */
-  metricsAllSkills?: BasicSchedulingResultMetric;
-
-  /**
-   * Per-skill metrics.
-   * A map of BasicSchedulingResultMetric by SkillProfileCategory.
-   *
-   * @generated from field: repeated api.v1alpha1.wfm.SchedulingResultMetricKeyValue metrics_by_skill_collection = 2;
-   */
-  metricsBySkillCollection: SchedulingResultMetricKeyValue[];
-
-  constructor(data?: PartialMessage<SchedulingResultMetric>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.SchedulingResultMetric";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SchedulingResultMetric;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SchedulingResultMetric;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SchedulingResultMetric;
-
-  static equals(a: SchedulingResultMetric | PlainMessage<SchedulingResultMetric> | undefined, b: SchedulingResultMetric | PlainMessage<SchedulingResultMetric> | undefined): boolean;
 }
 
