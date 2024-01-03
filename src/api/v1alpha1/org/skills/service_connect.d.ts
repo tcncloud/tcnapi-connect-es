@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, AssignUsersRequest, AssignUsersResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse } from "./entities_pb.js";
+import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -76,17 +76,6 @@ export declare const SkillsService: {
       readonly name: "AssignSkillGroups",
       readonly I: typeof AssignSkillGroupsRequest,
       readonly O: typeof AssignSkillGroupsResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * AssignUsers assigns users to the given skill group.
-     *
-     * @generated from rpc api.v1alpha1.org.skills.SkillsService.AssignUsers
-     */
-    readonly assignUsers: {
-      readonly name: "AssignUsers",
-      readonly I: typeof AssignUsersRequest,
-      readonly O: typeof AssignUsersResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
