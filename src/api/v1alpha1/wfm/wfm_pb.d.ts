@@ -9649,10 +9649,126 @@ export declare class DraftSchedule extends Message<DraftSchedule> {
 }
 
 /**
- * Deprecated.
+ * PerformanceMetricForSkillCollection.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of PerformanceMetric only.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformanceMetricForSkillCollection
+ */
+export declare class PerformanceMetricForSkillCollection extends Message<PerformanceMetricForSkillCollection> {
+  /**
+   * Datetime range over which the metrics were determined.
+   *
+   * @generated from field: api.commons.DatetimeRange date_range = 1;
+   */
+  dateRange?: DatetimeRange;
+
+  /**
+   * The total calls required over the @date_range, as determined by the forecast.
+   *
+   * @generated from field: int32 total_calls_required = 2;
+   */
+  totalCallsRequired: number;
+
+  /**
+   * The total calls the the schedule is likely to address with the current shift instances.
+   *
+   * @generated from field: int32 total_ftes_achieved = 3;
+   */
+  totalFtesAchieved: number;
+
+  /**
+   * The number of intervals with required calls.
+   *
+   * @generated from field: int32 num_intervals_with_required_calls = 4;
+   */
+  numIntervalsWithRequiredCalls: number;
+
+  /**
+   * The number of intervals with FTE's but no schedules.
+   *
+   * @generated from field: int32 num_intervals_with_ftes_but_no_schedules = 5;
+   */
+  numIntervalsWithFtesButNoSchedules: number;
+
+  /**
+   * the number of intervals with FTE's but no forecasted calls.
+   *
+   * @generated from field: int32 num_intervals_with_ftes_but_no_forecasted_calls = 6;
+   */
+  numIntervalsWithFtesButNoForecastedCalls: number;
+
+  /**
+   * The total calls forecsted where there are no FTE's scheduled.
+   *
+   * @generated from field: int32 total_unscheduled_calls = 7;
+   */
+  totalUnscheduledCalls: number;
+
+  /**
+   * The total number of FTE's scheduled where there were no forecasted calls.
+   *
+   * @generated from field: int32 total_unnecessary_ftes = 8;
+   */
+  totalUnnecessaryFtes: number;
+
+  /**
+   * Width of each interval in minutes.
+   *
+   * @generated from field: int32 interval_width_in_minutes = 9;
+   */
+  intervalWidthInMinutes: number;
+
+  /**
+   * The type of metric being reported.
+   *
+   * @generated from field: api.commons.PerformanceMetricType metric_type = 10;
+   */
+  metricType: PerformanceMetricType;
+
+  /**
+   * One value will be set between @fte_intervals and @service_level_intervals, depending on @metric_type.
+   * If @metric_type is FTE_REQUIRED_VS_ACHIEVED_SIMPLE then the intervals will be stored in @fte_intervals
+   * If @metric_type is SERVICE_LEVEL_ANALYSIS then the intervals will be stored in @service_level_intervals
+   * Interval set comparing the number of FTE required to the number achieved.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.FTERequiredVsAchievedInterval fte_intervals = 11;
+   */
+  fteIntervals: FTERequiredVsAchievedInterval[];
+
+  /**
+   * Interval set checking the service level achieved as a percentage.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ServiceLevelInterval service_level_intervals = 12;
+   */
+  serviceLevelIntervals: ServiceLevelInterval[];
+
+  /**
+   * Pointer to skill collection.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_collection = 13;
+   */
+  skillCollection?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<PerformanceMetricForSkillCollection>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricForSkillCollection";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricForSkillCollection;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollection;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollection;
+
+  static equals(a: PerformanceMetricForSkillCollection | PlainMessage<PerformanceMetricForSkillCollection> | undefined, b: PerformanceMetricForSkillCollection | PlainMessage<PerformanceMetricForSkillCollection> | undefined): boolean;
+}
+
+/**
  * Represents a performance metric
- * This was replaced with both PerformanceMetricV1 and PerformanceMetricV2.
- * Fields copied into BasicPerformanceMetricV1.
  *
  * @generated from message api.v1alpha1.wfm.PerformanceMetric
  */
@@ -9744,6 +9860,13 @@ export declare class PerformanceMetric extends Message<PerformanceMetric> {
    */
   serviceLevelIntervals: ServiceLevelInterval[];
 
+  /**
+   * Per-skill metrics.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.PerformanceMetricForSkillCollection metrics_by_skill_collection = 13;
+   */
+  metricsBySkillCollection: PerformanceMetricForSkillCollection[];
+
   constructor(data?: PartialMessage<PerformanceMetric>);
 
   static readonly runtime: typeof proto3;
@@ -9760,190 +9883,15 @@ export declare class PerformanceMetric extends Message<PerformanceMetric> {
 }
 
 /**
- * BasicPerformanceMetricV1.
+ * PerformanceMetricForSkillCollectionV2.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of PerformanceMetricV2 only.
  *
- * @generated from message api.v1alpha1.wfm.BasicPerformanceMetricV1
+ * @generated from message api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2
  */
-export declare class BasicPerformanceMetricV1 extends Message<BasicPerformanceMetricV1> {
-  /**
-   * Datetime range over which the metrics were determined.
-   *
-   * @generated from field: api.commons.DatetimeRange date_range = 1;
-   */
-  dateRange?: DatetimeRange;
-
-  /**
-   * The total calls required over the @date_range, as determined by the forecast.
-   *
-   * @generated from field: int32 total_calls_required = 2;
-   */
-  totalCallsRequired: number;
-
-  /**
-   * The total calls the the schedule is likely to address with the current shift instances.
-   *
-   * @generated from field: int32 total_ftes_achieved = 3;
-   */
-  totalFtesAchieved: number;
-
-  /**
-   * The number of intervals with required calls.
-   *
-   * @generated from field: int32 num_intervals_with_required_calls = 4;
-   */
-  numIntervalsWithRequiredCalls: number;
-
-  /**
-   * The number of intervals with FTE's but no schedules.
-   *
-   * @generated from field: int32 num_intervals_with_ftes_but_no_schedules = 5;
-   */
-  numIntervalsWithFtesButNoSchedules: number;
-
-  /**
-   * the number of intervals with FTE's but no forecasted calls.
-   *
-   * @generated from field: int32 num_intervals_with_ftes_but_no_forecasted_calls = 6;
-   */
-  numIntervalsWithFtesButNoForecastedCalls: number;
-
-  /**
-   * The total calls forecsted where there are no FTE's scheduled.
-   *
-   * @generated from field: int32 total_unscheduled_calls = 7;
-   */
-  totalUnscheduledCalls: number;
-
-  /**
-   * The total number of FTE's scheduled where there were no forecasted calls.
-   *
-   * @generated from field: int32 total_unnecessary_ftes = 8;
-   */
-  totalUnnecessaryFtes: number;
-
-  /**
-   * Width of each interval in minutes.
-   *
-   * @generated from field: int32 interval_width_in_minutes = 9;
-   */
-  intervalWidthInMinutes: number;
-
-  /**
-   * The type of metric being reported.
-   *
-   * @generated from field: api.commons.PerformanceMetricType metric_type = 10;
-   */
-  metricType: PerformanceMetricType;
-
-  /**
-   * One value will be set between @fte_intervals and @service_level_intervals, depending on @metric_type.
-   * If @metric_type is FTE_REQUIRED_VS_ACHIEVED_SIMPLE then the intervals will be stored in @fte_intervals
-   * If @metric_type is SERVICE_LEVEL_ANALYSIS then the intervals will be stored in @service_level_intervals
-   * Interval set comparing the number of FTE required to the number achieved.
-   *
-   * @generated from field: repeated api.v1alpha1.wfm.FTERequiredVsAchievedInterval fte_intervals = 11;
-   */
-  fteIntervals: FTERequiredVsAchievedInterval[];
-
-  /**
-   * Interval set checking the service level achieved as a percentage.
-   *
-   * @generated from field: repeated api.v1alpha1.wfm.ServiceLevelInterval service_level_intervals = 12;
-   */
-  serviceLevelIntervals: ServiceLevelInterval[];
-
-  constructor(data?: PartialMessage<BasicPerformanceMetricV1>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.BasicPerformanceMetricV1";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BasicPerformanceMetricV1;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BasicPerformanceMetricV1;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BasicPerformanceMetricV1;
-
-  static equals(a: BasicPerformanceMetricV1 | PlainMessage<BasicPerformanceMetricV1> | undefined, b: BasicPerformanceMetricV1 | PlainMessage<BasicPerformanceMetricV1> | undefined): boolean;
-}
-
-/**
- * PerformanceMetricV1KeyValue implements a map with a complex key..
- *
- * @generated from message api.v1alpha1.wfm.PerformanceMetricV1KeyValue
- */
-export declare class PerformanceMetricV1KeyValue extends Message<PerformanceMetricV1KeyValue> {
-  /**
-   * Key.
-   *
-   * @generated from field: api.commons.SkillProfileCategory key = 1;
-   */
-  key?: SkillProfileCategory;
-
-  /**
-   * Value.
-   *
-   * @generated from field: api.v1alpha1.wfm.BasicPerformanceMetricV1 value = 2;
-   */
-  value?: BasicPerformanceMetricV1;
-
-  constructor(data?: PartialMessage<PerformanceMetricV1KeyValue>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricV1KeyValue";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricV1KeyValue;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricV1KeyValue;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricV1KeyValue;
-
-  static equals(a: PerformanceMetricV1KeyValue | PlainMessage<PerformanceMetricV1KeyValue> | undefined, b: PerformanceMetricV1KeyValue | PlainMessage<PerformanceMetricV1KeyValue> | undefined): boolean;
-}
-
-/**
- * PerformanceMetricV1.
- *
- * @generated from message api.v1alpha1.wfm.PerformanceMetricV1
- */
-export declare class PerformanceMetricV1 extends Message<PerformanceMetricV1> {
-  /**
-   * Metric for all skills.
-   *
-   * @generated from field: api.v1alpha1.wfm.BasicPerformanceMetricV1 metrics_all_skills = 1;
-   */
-  metricsAllSkills?: BasicPerformanceMetricV1;
-
-  /**
-   * Per-skill metrics.
-   * A map of BasicPerformanceMetricV1 by SkillProfileCategory.
-   *
-   * @generated from field: repeated api.v1alpha1.wfm.PerformanceMetricV1KeyValue metrics_by_skill_collection = 2;
-   */
-  metricsBySkillCollection: PerformanceMetricV1KeyValue[];
-
-  constructor(data?: PartialMessage<PerformanceMetricV1>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricV1";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricV1;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricV1;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricV1;
-
-  static equals(a: PerformanceMetricV1 | PlainMessage<PerformanceMetricV1> | undefined, b: PerformanceMetricV1 | PlainMessage<PerformanceMetricV1> | undefined): boolean;
-}
-
-/**
- * BasicPerformanceMetricV2.
- *
- * @generated from message api.v1alpha1.wfm.BasicPerformanceMetricV2
- */
-export declare class BasicPerformanceMetricV2 extends Message<BasicPerformanceMetricV2> {
+export declare class PerformanceMetricForSkillCollectionV2 extends Message<PerformanceMetricForSkillCollectionV2> {
   /**
    * Datetime range over which the metrics were determined.
    *
@@ -10022,54 +9970,26 @@ export declare class BasicPerformanceMetricV2 extends Message<BasicPerformanceMe
    */
   serviceLevelIntervals: ServiceLevelInterval[];
 
-  constructor(data?: PartialMessage<BasicPerformanceMetricV2>);
+  /**
+   * Pointer to skill collection.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_collection = 14;
+   */
+  skillCollection?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<PerformanceMetricForSkillCollectionV2>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.BasicPerformanceMetricV2";
+  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BasicPerformanceMetricV2;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricForSkillCollectionV2;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BasicPerformanceMetricV2;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollectionV2;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BasicPerformanceMetricV2;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollectionV2;
 
-  static equals(a: BasicPerformanceMetricV2 | PlainMessage<BasicPerformanceMetricV2> | undefined, b: BasicPerformanceMetricV2 | PlainMessage<BasicPerformanceMetricV2> | undefined): boolean;
-}
-
-/**
- * PerformanceMetricV2KeyValue implements a map with a complex key..
- *
- * @generated from message api.v1alpha1.wfm.PerformanceMetricV2KeyValue
- */
-export declare class PerformanceMetricV2KeyValue extends Message<PerformanceMetricV2KeyValue> {
-  /**
-   * Key.
-   *
-   * @generated from field: api.commons.SkillProfileCategory key = 1;
-   */
-  key?: SkillProfileCategory;
-
-  /**
-   * Value.
-   *
-   * @generated from field: api.v1alpha1.wfm.BasicPerformanceMetricV2 value = 2;
-   */
-  value?: BasicPerformanceMetricV2;
-
-  constructor(data?: PartialMessage<PerformanceMetricV2KeyValue>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricV2KeyValue";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricV2KeyValue;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricV2KeyValue;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricV2KeyValue;
-
-  static equals(a: PerformanceMetricV2KeyValue | PlainMessage<PerformanceMetricV2KeyValue> | undefined, b: PerformanceMetricV2KeyValue | PlainMessage<PerformanceMetricV2KeyValue> | undefined): boolean;
+  static equals(a: PerformanceMetricForSkillCollectionV2 | PlainMessage<PerformanceMetricForSkillCollectionV2> | undefined, b: PerformanceMetricForSkillCollectionV2 | PlainMessage<PerformanceMetricForSkillCollectionV2> | undefined): boolean;
 }
 
 /**
@@ -10079,19 +9999,89 @@ export declare class PerformanceMetricV2KeyValue extends Message<PerformanceMetr
  */
 export declare class PerformanceMetricV2 extends Message<PerformanceMetricV2> {
   /**
-   * Metric for all skills.
+   * Datetime range over which the metrics were determined.
    *
-   * @generated from field: api.v1alpha1.wfm.BasicPerformanceMetricV2 metrics_all_skills = 1;
+   * @generated from field: api.commons.DatetimeRange date_range = 1;
    */
-  metricsAllSkills?: BasicPerformanceMetricV2;
+  dateRange?: DatetimeRange;
+
+  /**
+   * @generated from field: float total_fte_intervals_required = 2;
+   */
+  totalFteIntervalsRequired: number;
+
+  /**
+   * @generated from field: float total_fte_intervals_achieved = 3;
+   */
+  totalFteIntervalsAchieved: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_call_ftes = 4;
+   */
+  numIntervalsWithCallFtes: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_shift_ftes = 5;
+   */
+  numIntervalsWithShiftFtes: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_call_ftes_but_no_shifts = 6;
+   */
+  numIntervalsWithCallFtesButNoShifts: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_shifts_but_no_call_ftes = 7;
+   */
+  numIntervalsWithShiftsButNoCallFtes: number;
+
+  /**
+   * @generated from field: float total_underscheduled_call_ftes = 8;
+   */
+  totalUnderscheduledCallFtes: number;
+
+  /**
+   * @generated from field: float total_overscheduled_call_ftes = 9;
+   */
+  totalOverscheduledCallFtes: number;
+
+  /**
+   * Width of each interval in minutes.
+   *
+   * @generated from field: int32 interval_width_in_minutes = 10;
+   */
+  intervalWidthInMinutes: number;
+
+  /**
+   * The type of metric being reported.
+   *
+   * @generated from field: api.commons.PerformanceMetricType metric_type = 11;
+   */
+  metricType: PerformanceMetricType;
+
+  /**
+   * One value will be set between @fte_occupancy_intervals and @service_level_intervals, depending on @metric_type.
+   * If @metric_type is FTE_REQUIRED_VS_ACHIEVED_SIMPLE then the intervals will be stored in @fte_occupancy_intervals
+   * If @metric_type is SERVICE_LEVEL_ANALYSIS then the intervals will be stored in @service_level_intervals
+   * Interval set comparing the number of FTE required to the number achieved.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval fte_occupancy_intervals = 12;
+   */
+  fteOccupancyIntervals: FTERequiredVsAchievedOccupancyInterval[];
+
+  /**
+   * Interval set checking the service level achieved as a percentage.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ServiceLevelInterval service_level_intervals = 13;
+   */
+  serviceLevelIntervals: ServiceLevelInterval[];
 
   /**
    * Per-skill metrics.
-   * A map of BasicPerformanceMetricV2 by SkillProfileCategory.
    *
-   * @generated from field: repeated api.v1alpha1.wfm.PerformanceMetricV2KeyValue metrics_by_skill_collection = 2;
+   * @generated from field: repeated api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2 metrics_by_skill_collection = 14;
    */
-  metricsBySkillCollection: PerformanceMetricV2KeyValue[];
+  metricsBySkillCollection: PerformanceMetricForSkillCollectionV2[];
 
   constructor(data?: PartialMessage<PerformanceMetricV2>);
 

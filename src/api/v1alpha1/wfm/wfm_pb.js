@@ -3385,10 +3385,35 @@ export const DraftSchedule = proto3.makeMessageType(
 );
 
 /**
- * Deprecated.
+ * PerformanceMetricForSkillCollection.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of PerformanceMetric only.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformanceMetricForSkillCollection
+ */
+export const PerformanceMetricForSkillCollection = proto3.makeMessageType(
+  "api.v1alpha1.wfm.PerformanceMetricForSkillCollection",
+  () => [
+    { no: 1, name: "date_range", kind: "message", T: DatetimeRange },
+    { no: 2, name: "total_calls_required", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "total_ftes_achieved", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "num_intervals_with_required_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "num_intervals_with_ftes_but_no_schedules", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "num_intervals_with_ftes_but_no_forecasted_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "total_unscheduled_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "total_unnecessary_ftes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "interval_width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 10, name: "metric_type", kind: "enum", T: proto3.getEnumType(PerformanceMetricType) },
+    { no: 11, name: "fte_intervals", kind: "message", T: FTERequiredVsAchievedInterval, repeated: true },
+    { no: 12, name: "service_level_intervals", kind: "message", T: ServiceLevelInterval, repeated: true },
+    { no: 13, name: "skill_collection", kind: "message", T: SkillProfileCategory },
+  ],
+);
+
+/**
  * Represents a performance metric
- * This was replaced with both PerformanceMetricV1 and PerformanceMetricV2.
- * Fields copied into BasicPerformanceMetricV1.
  *
  * @generated from message api.v1alpha1.wfm.PerformanceMetric
  */
@@ -3407,65 +3432,21 @@ export const PerformanceMetric = proto3.makeMessageType(
     { no: 10, name: "metric_type", kind: "enum", T: proto3.getEnumType(PerformanceMetricType) },
     { no: 11, name: "fte_intervals", kind: "message", T: FTERequiredVsAchievedInterval, repeated: true },
     { no: 12, name: "service_level_intervals", kind: "message", T: ServiceLevelInterval, repeated: true },
+    { no: 13, name: "metrics_by_skill_collection", kind: "message", T: PerformanceMetricForSkillCollection, repeated: true },
   ],
 );
 
 /**
- * BasicPerformanceMetricV1.
+ * PerformanceMetricForSkillCollectionV2.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of PerformanceMetricV2 only.
  *
- * @generated from message api.v1alpha1.wfm.BasicPerformanceMetricV1
+ * @generated from message api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2
  */
-export const BasicPerformanceMetricV1 = proto3.makeMessageType(
-  "api.v1alpha1.wfm.BasicPerformanceMetricV1",
-  () => [
-    { no: 1, name: "date_range", kind: "message", T: DatetimeRange },
-    { no: 2, name: "total_calls_required", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: "total_ftes_achieved", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 4, name: "num_intervals_with_required_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 5, name: "num_intervals_with_ftes_but_no_schedules", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 6, name: "num_intervals_with_ftes_but_no_forecasted_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 7, name: "total_unscheduled_calls", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 8, name: "total_unnecessary_ftes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 9, name: "interval_width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
-    { no: 10, name: "metric_type", kind: "enum", T: proto3.getEnumType(PerformanceMetricType) },
-    { no: 11, name: "fte_intervals", kind: "message", T: FTERequiredVsAchievedInterval, repeated: true },
-    { no: 12, name: "service_level_intervals", kind: "message", T: ServiceLevelInterval, repeated: true },
-  ],
-);
-
-/**
- * PerformanceMetricV1KeyValue implements a map with a complex key..
- *
- * @generated from message api.v1alpha1.wfm.PerformanceMetricV1KeyValue
- */
-export const PerformanceMetricV1KeyValue = proto3.makeMessageType(
-  "api.v1alpha1.wfm.PerformanceMetricV1KeyValue",
-  () => [
-    { no: 1, name: "key", kind: "message", T: SkillProfileCategory },
-    { no: 2, name: "value", kind: "message", T: BasicPerformanceMetricV1 },
-  ],
-);
-
-/**
- * PerformanceMetricV1.
- *
- * @generated from message api.v1alpha1.wfm.PerformanceMetricV1
- */
-export const PerformanceMetricV1 = proto3.makeMessageType(
-  "api.v1alpha1.wfm.PerformanceMetricV1",
-  () => [
-    { no: 1, name: "metrics_all_skills", kind: "message", T: BasicPerformanceMetricV1 },
-    { no: 2, name: "metrics_by_skill_collection", kind: "message", T: PerformanceMetricV1KeyValue, repeated: true },
-  ],
-);
-
-/**
- * BasicPerformanceMetricV2.
- *
- * @generated from message api.v1alpha1.wfm.BasicPerformanceMetricV2
- */
-export const BasicPerformanceMetricV2 = proto3.makeMessageType(
-  "api.v1alpha1.wfm.BasicPerformanceMetricV2",
+export const PerformanceMetricForSkillCollectionV2 = proto3.makeMessageType(
+  "api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2",
   () => [
     { no: 1, name: "date_range", kind: "message", T: DatetimeRange },
     { no: 2, name: "total_fte_intervals_required", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
@@ -3480,19 +3461,7 @@ export const BasicPerformanceMetricV2 = proto3.makeMessageType(
     { no: 11, name: "metric_type", kind: "enum", T: proto3.getEnumType(PerformanceMetricType) },
     { no: 12, name: "fte_occupancy_intervals", kind: "message", T: FTERequiredVsAchievedOccupancyInterval, repeated: true },
     { no: 13, name: "service_level_intervals", kind: "message", T: ServiceLevelInterval, repeated: true },
-  ],
-);
-
-/**
- * PerformanceMetricV2KeyValue implements a map with a complex key..
- *
- * @generated from message api.v1alpha1.wfm.PerformanceMetricV2KeyValue
- */
-export const PerformanceMetricV2KeyValue = proto3.makeMessageType(
-  "api.v1alpha1.wfm.PerformanceMetricV2KeyValue",
-  () => [
-    { no: 1, name: "key", kind: "message", T: SkillProfileCategory },
-    { no: 2, name: "value", kind: "message", T: BasicPerformanceMetricV2 },
+    { no: 14, name: "skill_collection", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -3504,8 +3473,20 @@ export const PerformanceMetricV2KeyValue = proto3.makeMessageType(
 export const PerformanceMetricV2 = proto3.makeMessageType(
   "api.v1alpha1.wfm.PerformanceMetricV2",
   () => [
-    { no: 1, name: "metrics_all_skills", kind: "message", T: BasicPerformanceMetricV2 },
-    { no: 2, name: "metrics_by_skill_collection", kind: "message", T: PerformanceMetricV2KeyValue, repeated: true },
+    { no: 1, name: "date_range", kind: "message", T: DatetimeRange },
+    { no: 2, name: "total_fte_intervals_required", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 3, name: "total_fte_intervals_achieved", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 4, name: "num_intervals_with_call_ftes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "num_intervals_with_shift_ftes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "num_intervals_with_call_ftes_but_no_shifts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 7, name: "num_intervals_with_shifts_but_no_call_ftes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 8, name: "total_underscheduled_call_ftes", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 9, name: "total_overscheduled_call_ftes", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 10, name: "interval_width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 11, name: "metric_type", kind: "enum", T: proto3.getEnumType(PerformanceMetricType) },
+    { no: 12, name: "fte_occupancy_intervals", kind: "message", T: FTERequiredVsAchievedOccupancyInterval, repeated: true },
+    { no: 13, name: "service_level_intervals", kind: "message", T: ServiceLevelInterval, repeated: true },
+    { no: 14, name: "metrics_by_skill_collection", kind: "message", T: PerformanceMetricForSkillCollectionV2, repeated: true },
   ],
 );
 
