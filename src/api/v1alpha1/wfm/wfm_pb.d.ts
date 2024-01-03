@@ -14275,3 +14275,214 @@ export declare class GenerateTourWeekPatternsRes extends Message<GenerateTourWee
   static equals(a: GenerateTourWeekPatternsRes | PlainMessage<GenerateTourWeekPatternsRes> | undefined, b: GenerateTourWeekPatternsRes | PlainMessage<GenerateTourWeekPatternsRes> | undefined): boolean;
 }
 
+/**
+ * Request message for the ListValidAgentsForReplacement RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementReq
+ */
+export declare class ListValidAgentsForReplacementReq extends Message<ListValidAgentsForReplacementReq> {
+  /**
+   * ID of the schedule scenario to check for WFM agents.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 1;
+   */
+  scheduleScenarioSid: bigint;
+
+  /**
+   * An optional field used to limit the datetime range of the shifts being checked.
+   * If left blank, the full schedule range will be updated.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 2;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Indicates the schedule to be updated.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 3;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * An optional field indicating the node to get shifts from.
+   * Otherwise shifts will be checked for all nodes on the @schedule_selector.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 4;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * ID of the WFM Agent to be replaced.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_replace = 5;
+   */
+  wfmAgentSidToReplace: bigint;
+
+  /**
+   * Indicates whether the step to sort agents by skill proficiency should be skipped.
+   * If left as False, the @wfm_agent_sids will be returned in descending order from most qualified to least qualified.
+   *
+   * @generated from field: bool skip_skill_proficiency_sort = 6;
+   */
+  skipSkillProficiencySort: boolean;
+
+  /**
+   * Indicated whether agent sids should still be returned, even if they do not have a skill proficiency for all of the required skills.
+   * If left as False, only agents with a skill proficiency for all the updted shifts will be returned.
+   * Under no conditions are constraint rule requirements enforced by this endpoint.
+   *
+   * @generated from field: bool include_skill_mismatches = 7;
+   */
+  includeSkillMismatches: boolean;
+
+  /**
+   * Indicated whether to skip the check for must be members of all of the same agent groups as @
+   *
+   * @generated from field: bool skip_force_same_agent_groups = 8;
+   */
+  skipForceSameAgentGroups: boolean;
+
+  constructor(data?: PartialMessage<ListValidAgentsForReplacementReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListValidAgentsForReplacementReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListValidAgentsForReplacementReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementReq;
+
+  static equals(a: ListValidAgentsForReplacementReq | PlainMessage<ListValidAgentsForReplacementReq> | undefined, b: ListValidAgentsForReplacementReq | PlainMessage<ListValidAgentsForReplacementReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListValidAgentsForReplacement RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementRes
+ */
+export declare class ListValidAgentsForReplacementRes extends Message<ListValidAgentsForReplacementRes> {
+  /**
+   * A list of valid WFM agent sids. In order of highest related skill proficiency to lowest, if not @skip_skill_proficiency_sort.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 1;
+   */
+  wfmAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<ListValidAgentsForReplacementRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListValidAgentsForReplacementRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListValidAgentsForReplacementRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementRes;
+
+  static equals(a: ListValidAgentsForReplacementRes | PlainMessage<ListValidAgentsForReplacementRes> | undefined, b: ListValidAgentsForReplacementRes | PlainMessage<ListValidAgentsForReplacementRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ReplaceAgentOnSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ReplaceAgentOnScheduleReq
+ */
+export declare class ReplaceAgentOnScheduleReq extends Message<ReplaceAgentOnScheduleReq> {
+  /**
+   * An optional field used to limit the datetime range of the shifts being updated.
+   * If left blank, the full schedule range will be updated.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 1;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Indicates the schedule to be updated.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 2;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * An optional field indicating the node to get shifts from.
+   * Otherwise shifts will be updated for all nodes on the @schedule_selector.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 3;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * ID of the WFM agent to remove from the schedule.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_remove = 4;
+   */
+  wfmAgentSidToRemove: bigint;
+
+  /**
+   * ID of the WFM agent to add to the schedule, in place of @wfm_agent_sid_to_remove.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_add = 5;
+   */
+  wfmAgentSidToAdd: bigint;
+
+  /**
+   * If set to true, any overlapping shift conflicts will be skipped.
+   * Otherwise, any overlap conflicts will raise a diagnostic and prevent any shifts from being updated.
+   *
+   * @generated from field: bool skip_overlapping_shifts = 6;
+   */
+  skipOverlappingShifts: boolean;
+
+  constructor(data?: PartialMessage<ReplaceAgentOnScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ReplaceAgentOnScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReplaceAgentOnScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleReq;
+
+  static equals(a: ReplaceAgentOnScheduleReq | PlainMessage<ReplaceAgentOnScheduleReq> | undefined, b: ReplaceAgentOnScheduleReq | PlainMessage<ReplaceAgentOnScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ReplaceAgentOnSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ReplaceAgentOnScheduleRes
+ */
+export declare class ReplaceAgentOnScheduleRes extends Message<ReplaceAgentOnScheduleRes> {
+  /**
+   * The updated shift instances which were transfered to @wfm_agent_sid_to_add.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance updated_shift_instances = 1;
+   */
+  updatedShiftInstances: ShiftInstance[];
+
+  /**
+   * Any diagnostics raised due to overlap conflicts.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<ReplaceAgentOnScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ReplaceAgentOnScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReplaceAgentOnScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleRes;
+
+  static equals(a: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined, b: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined): boolean;
+}
+
