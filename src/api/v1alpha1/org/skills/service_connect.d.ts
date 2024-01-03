@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse } from "./entities_pb.js";
+import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse, UpdateUsersOnSkillGroupRequest, UpdateUsersOnSkillGroupResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -76,6 +76,17 @@ export declare const SkillsService: {
       readonly name: "AssignSkillGroups",
       readonly I: typeof AssignSkillGroupsRequest,
       readonly O: typeof AssignSkillGroupsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateUsersOnSkillGroup updates a skill groups assigned users.
+     *
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.UpdateUsersOnSkillGroup
+     */
+    readonly updateUsersOnSkillGroup: {
+      readonly name: "UpdateUsersOnSkillGroup",
+      readonly I: typeof UpdateUsersOnSkillGroupRequest,
+      readonly O: typeof UpdateUsersOnSkillGroupResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

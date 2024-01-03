@@ -645,3 +645,59 @@ export declare class SkillGroupMembers extends Message<SkillGroupMembers> {
   static equals(a: SkillGroupMembers | PlainMessage<SkillGroupMembers> | undefined, b: SkillGroupMembers | PlainMessage<SkillGroupMembers> | undefined): boolean;
 }
 
+/**
+ * Request message for the UpdateUsersOnSkillGroup rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest
+ */
+export declare class UpdateUsersOnSkillGroupRequest extends Message<UpdateUsersOnSkillGroupRequest> {
+  /**
+   * ID of the skill group the users are being assigned to.
+   *
+   * @generated from field: string skill_group_id = 1;
+   */
+  skillGroupId: string;
+
+  /**
+   * IDs of the users being assigned to the skill group.
+   *
+   * @generated from field: repeated string user_ids = 2;
+   */
+  userIds: string[];
+
+  constructor(data?: PartialMessage<UpdateUsersOnSkillGroupRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUsersOnSkillGroupRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUsersOnSkillGroupRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUsersOnSkillGroupRequest;
+
+  static equals(a: UpdateUsersOnSkillGroupRequest | PlainMessage<UpdateUsersOnSkillGroupRequest> | undefined, b: UpdateUsersOnSkillGroupRequest | PlainMessage<UpdateUsersOnSkillGroupRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateUsersOnSkillGroup rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.UpdateUsersOnSkillGroupResponse
+ */
+export declare class UpdateUsersOnSkillGroupResponse extends Message<UpdateUsersOnSkillGroupResponse> {
+  constructor(data?: PartialMessage<UpdateUsersOnSkillGroupResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.UpdateUsersOnSkillGroupResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUsersOnSkillGroupResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUsersOnSkillGroupResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUsersOnSkillGroupResponse;
+
+  static equals(a: UpdateUsersOnSkillGroupResponse | PlainMessage<UpdateUsersOnSkillGroupResponse> | undefined, b: UpdateUsersOnSkillGroupResponse | PlainMessage<UpdateUsersOnSkillGroupResponse> | undefined): boolean;
+}
+
