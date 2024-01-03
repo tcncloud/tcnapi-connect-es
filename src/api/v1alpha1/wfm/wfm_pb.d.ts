@@ -10451,7 +10451,7 @@ export declare class ShiftSegment extends Message<ShiftSegment> {
   schedulingActivity?: SchedulingActivity;
 
   /**
-   * A map of ShiftSegmentCallStats by SkillProfileCategory.
+   * Per-skill call stats.
    *
    * @generated from field: repeated api.v1alpha1.wfm.ShiftSegmentCallStat call_stats_by_skill_collection = 9;
    */
