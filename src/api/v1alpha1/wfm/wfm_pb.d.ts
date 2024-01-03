@@ -10358,6 +10358,10 @@ export declare class ShiftInstance extends Message<ShiftInstance> {
 
 /**
  * ShiftSegmentCallStat.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of ShiftSegment only.
  *
  * @generated from message api.v1alpha1.wfm.ShiftSegmentCallStat
  */
@@ -10378,6 +10382,13 @@ export declare class ShiftSegmentCallStat extends Message<ShiftSegmentCallStat> 
    */
   percentFit: number;
 
+  /**
+   * Pointer to skill_collection.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_collection = 3;
+   */
+  skillCollection?: SkillProfileCategory;
+
   constructor(data?: PartialMessage<ShiftSegmentCallStat>);
 
   static readonly runtime: typeof proto3;
@@ -10391,41 +10402,6 @@ export declare class ShiftSegmentCallStat extends Message<ShiftSegmentCallStat> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShiftSegmentCallStat;
 
   static equals(a: ShiftSegmentCallStat | PlainMessage<ShiftSegmentCallStat> | undefined, b: ShiftSegmentCallStat | PlainMessage<ShiftSegmentCallStat> | undefined): boolean;
-}
-
-/**
- * ShiftSegmentCallStatKeyValue implements a map with a complex key.
- *
- * @generated from message api.v1alpha1.wfm.ShiftSegmentCallStatKeyValue
- */
-export declare class ShiftSegmentCallStatKeyValue extends Message<ShiftSegmentCallStatKeyValue> {
-  /**
-   * Key.
-   *
-   * @generated from field: api.commons.SkillProfileCategory key = 1;
-   */
-  key?: SkillProfileCategory;
-
-  /**
-   * Value.
-   *
-   * @generated from field: api.v1alpha1.wfm.ShiftSegmentCallStat value = 2;
-   */
-  value?: ShiftSegmentCallStat;
-
-  constructor(data?: PartialMessage<ShiftSegmentCallStatKeyValue>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.ShiftSegmentCallStatKeyValue";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShiftSegmentCallStatKeyValue;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShiftSegmentCallStatKeyValue;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShiftSegmentCallStatKeyValue;
-
-  static equals(a: ShiftSegmentCallStatKeyValue | PlainMessage<ShiftSegmentCallStatKeyValue> | undefined, b: ShiftSegmentCallStatKeyValue | PlainMessage<ShiftSegmentCallStatKeyValue> | undefined): boolean;
 }
 
 /**
@@ -10487,9 +10463,9 @@ export declare class ShiftSegment extends Message<ShiftSegment> {
   /**
    * A map of ShiftSegmentCallStats by SkillProfileCategory.
    *
-   * @generated from field: repeated api.v1alpha1.wfm.ShiftSegmentCallStatKeyValue call_stats = 9;
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftSegmentCallStat call_stats_by_skill_collection = 9;
    */
-  callStats: ShiftSegmentCallStatKeyValue[];
+  callStatsBySkillCollection: ShiftSegmentCallStat[];
 
   constructor(data?: PartialMessage<ShiftSegment>);
 

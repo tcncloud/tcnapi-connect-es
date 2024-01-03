@@ -3586,6 +3586,10 @@ export const ShiftInstance = proto3.makeMessageType(
 
 /**
  * ShiftSegmentCallStat.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of ShiftSegment only.
  *
  * @generated from message api.v1alpha1.wfm.ShiftSegmentCallStat
  */
@@ -3594,19 +3598,7 @@ export const ShiftSegmentCallStat = proto3.makeMessageType(
   () => [
     { no: 1, name: "num_calls", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 2, name: "percent_fit", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
-  ],
-);
-
-/**
- * ShiftSegmentCallStatKeyValue implements a map with a complex key.
- *
- * @generated from message api.v1alpha1.wfm.ShiftSegmentCallStatKeyValue
- */
-export const ShiftSegmentCallStatKeyValue = proto3.makeMessageType(
-  "api.v1alpha1.wfm.ShiftSegmentCallStatKeyValue",
-  () => [
-    { no: 1, name: "key", kind: "message", T: SkillProfileCategory },
-    { no: 2, name: "value", kind: "message", T: ShiftSegmentCallStat },
+    { no: 3, name: "skill_collection", kind: "message", T: SkillProfileCategory },
   ],
 );
 
@@ -3625,7 +3617,7 @@ export const ShiftSegment = proto3.makeMessageType(
     { no: 5, name: "start_minute_in_shift", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 7, name: "scheduling_activity_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 8, name: "scheduling_activity", kind: "message", T: SchedulingActivity },
-    { no: 9, name: "call_stats", kind: "message", T: ShiftSegmentCallStatKeyValue, repeated: true },
+    { no: 9, name: "call_stats_by_skill_collection", kind: "message", T: ShiftSegmentCallStat, repeated: true },
   ],
 );
 
