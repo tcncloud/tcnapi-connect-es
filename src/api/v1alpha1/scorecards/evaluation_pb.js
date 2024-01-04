@@ -136,6 +136,7 @@ export const ListEvaluationsRequest = proto3.makeMessageType(
     { no: 4, name: "category_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
     { no: 5, name: "agent_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 6, name: "scorecard_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 10, name: "return_fields", kind: "message", T: FieldMask },
   ],
 );
 
