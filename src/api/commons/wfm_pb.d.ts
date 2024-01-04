@@ -2030,84 +2030,7 @@ export declare enum SkillProfileCategory_CategoryType {
 }
 
 /**
- * Defines the per-skill metrics for SchedulingResultMetric from the Scheduler.
- * Wanted to define this in api.v1alpha1.wfm, but had a backwards compatibility error trying to move SchedulingResultMetric.
- * Not a top-level entity:
- * * No primary-key field.
- * * No org_id field.
- * * No rpc endpoints, part of SchedulingResultMetric only.
- *
- * @generated from message api.commons.SchedulingResultMetricForSkillCollection
- */
-export declare class SchedulingResultMetricForSkillCollection extends Message<SchedulingResultMetricForSkillCollection> {
-  /**
-   * The total number of minute-width intervals that were scheduled and measured.
-   *
-   * @generated from field: int32 total_internal_intervals = 1;
-   */
-  totalInternalIntervals: number;
-
-  /**
-   * The total number of minute-width intervals that had enough scheduled ftes to meet the predicted call FTEs.
-   *
-   * @generated from field: int32 total_intervals_with_fte_required = 2;
-   */
-  totalIntervalsWithFteRequired: number;
-
-  /**
-   * The total number of intervals that have unmet predicted call FTEs (not enough scheduled FTEs).
-   *
-   * @generated from field: int32 total_intervals_with_ftes_remaining = 3;
-   */
-  totalIntervalsWithFtesRemaining: number;
-
-  /**
-   * The average ratio of interval metrics (min(1,  scheduled/predicted)). A value of 1 means every interval
-   *    with predicted call FTEs has enough scheduled FTEs to meet requirements.
-   *
-   * @generated from field: float coverage = 4;
-   */
-  coverage: number;
-
-  /**
-   * Root Mean Square metric for predicted - scheduled FTEs.
-   *
-   * @generated from field: float root_mean_square = 5;
-   */
-  rootMeanSquare: number;
-
-  /**
-   * Set to TRUE if this object contains valid metrics.
-   *
-   * @generated from field: bool has_result = 6;
-   */
-  hasResult: boolean;
-
-  /**
-   * Pointer to skill collection.
-   *
-   * @generated from field: api.commons.SkillProfileCategory skill_collection = 7;
-   */
-  skillCollection?: SkillProfileCategory;
-
-  constructor(data?: PartialMessage<SchedulingResultMetricForSkillCollection>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.SchedulingResultMetricForSkillCollection";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SchedulingResultMetricForSkillCollection;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SchedulingResultMetricForSkillCollection;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SchedulingResultMetricForSkillCollection;
-
-  static equals(a: SchedulingResultMetricForSkillCollection | PlainMessage<SchedulingResultMetricForSkillCollection> | undefined, b: SchedulingResultMetricForSkillCollection | PlainMessage<SchedulingResultMetricForSkillCollection> | undefined): boolean;
-}
-
-/**
  * Defines a Scheduling Result Metric from the Scheduler.
- * Wanted to define this in api.v1alpha1.wfm, but had a backwards compatibility error trying to move it there.
  *
  * @generated from message api.commons.SchedulingResultMetric
  */
@@ -2154,13 +2077,6 @@ export declare class SchedulingResultMetric extends Message<SchedulingResultMetr
    * @generated from field: bool has_result = 6;
    */
   hasResult: boolean;
-
-  /**
-   * Per-skill metrics.
-   *
-   * @generated from field: repeated api.commons.SchedulingResultMetricForSkillCollection metrics_by_skill_collection = 7;
-   */
-  metricsBySkillCollection: SchedulingResultMetricForSkillCollection[];
 
   constructor(data?: PartialMessage<SchedulingResultMetric>);
 
