@@ -9649,6 +9649,125 @@ export declare class DraftSchedule extends Message<DraftSchedule> {
 }
 
 /**
+ * PerformanceMetricForSkillCollection.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of PerformanceMetric only.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformanceMetricForSkillCollection
+ */
+export declare class PerformanceMetricForSkillCollection extends Message<PerformanceMetricForSkillCollection> {
+  /**
+   * Datetime range over which the metrics were determined.
+   *
+   * @generated from field: api.commons.DatetimeRange date_range = 1;
+   */
+  dateRange?: DatetimeRange;
+
+  /**
+   * The total calls required over the @date_range, as determined by the forecast.
+   *
+   * @generated from field: int32 total_calls_required = 2;
+   */
+  totalCallsRequired: number;
+
+  /**
+   * The total calls the the schedule is likely to address with the current shift instances.
+   *
+   * @generated from field: int32 total_ftes_achieved = 3;
+   */
+  totalFtesAchieved: number;
+
+  /**
+   * The number of intervals with required calls.
+   *
+   * @generated from field: int32 num_intervals_with_required_calls = 4;
+   */
+  numIntervalsWithRequiredCalls: number;
+
+  /**
+   * The number of intervals with FTE's but no schedules.
+   *
+   * @generated from field: int32 num_intervals_with_ftes_but_no_schedules = 5;
+   */
+  numIntervalsWithFtesButNoSchedules: number;
+
+  /**
+   * the number of intervals with FTE's but no forecasted calls.
+   *
+   * @generated from field: int32 num_intervals_with_ftes_but_no_forecasted_calls = 6;
+   */
+  numIntervalsWithFtesButNoForecastedCalls: number;
+
+  /**
+   * The total calls forecsted where there are no FTE's scheduled.
+   *
+   * @generated from field: int32 total_unscheduled_calls = 7;
+   */
+  totalUnscheduledCalls: number;
+
+  /**
+   * The total number of FTE's scheduled where there were no forecasted calls.
+   *
+   * @generated from field: int32 total_unnecessary_ftes = 8;
+   */
+  totalUnnecessaryFtes: number;
+
+  /**
+   * Width of each interval in minutes.
+   *
+   * @generated from field: int32 interval_width_in_minutes = 9;
+   */
+  intervalWidthInMinutes: number;
+
+  /**
+   * The type of metric being reported.
+   *
+   * @generated from field: api.commons.PerformanceMetricType metric_type = 10;
+   */
+  metricType: PerformanceMetricType;
+
+  /**
+   * One value will be set between @fte_intervals and @service_level_intervals, depending on @metric_type.
+   * If @metric_type is FTE_REQUIRED_VS_ACHIEVED_SIMPLE then the intervals will be stored in @fte_intervals
+   * If @metric_type is SERVICE_LEVEL_ANALYSIS then the intervals will be stored in @service_level_intervals
+   * Interval set comparing the number of FTE required to the number achieved.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.FTERequiredVsAchievedInterval fte_intervals = 11;
+   */
+  fteIntervals: FTERequiredVsAchievedInterval[];
+
+  /**
+   * Interval set checking the service level achieved as a percentage.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ServiceLevelInterval service_level_intervals = 12;
+   */
+  serviceLevelIntervals: ServiceLevelInterval[];
+
+  /**
+   * Pointer to skill collection.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_collection = 13;
+   */
+  skillCollection?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<PerformanceMetricForSkillCollection>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricForSkillCollection";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricForSkillCollection;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollection;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollection;
+
+  static equals(a: PerformanceMetricForSkillCollection | PlainMessage<PerformanceMetricForSkillCollection> | undefined, b: PerformanceMetricForSkillCollection | PlainMessage<PerformanceMetricForSkillCollection> | undefined): boolean;
+}
+
+/**
  * Represents a performance metric
  *
  * @generated from message api.v1alpha1.wfm.PerformanceMetric
@@ -9741,6 +9860,13 @@ export declare class PerformanceMetric extends Message<PerformanceMetric> {
    */
   serviceLevelIntervals: ServiceLevelInterval[];
 
+  /**
+   * Per-skill metrics.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.PerformanceMetricForSkillCollection metrics_by_skill_collection = 13;
+   */
+  metricsBySkillCollection: PerformanceMetricForSkillCollection[];
+
   constructor(data?: PartialMessage<PerformanceMetric>);
 
   static readonly runtime: typeof proto3;
@@ -9754,6 +9880,222 @@ export declare class PerformanceMetric extends Message<PerformanceMetric> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetric;
 
   static equals(a: PerformanceMetric | PlainMessage<PerformanceMetric> | undefined, b: PerformanceMetric | PlainMessage<PerformanceMetric> | undefined): boolean;
+}
+
+/**
+ * PerformanceMetricForSkillCollectionV2.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of PerformanceMetricV2 only.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2
+ */
+export declare class PerformanceMetricForSkillCollectionV2 extends Message<PerformanceMetricForSkillCollectionV2> {
+  /**
+   * Datetime range over which the metrics were determined.
+   *
+   * @generated from field: api.commons.DatetimeRange date_range = 1;
+   */
+  dateRange?: DatetimeRange;
+
+  /**
+   * @generated from field: float total_fte_intervals_required = 2;
+   */
+  totalFteIntervalsRequired: number;
+
+  /**
+   * @generated from field: float total_fte_intervals_achieved = 3;
+   */
+  totalFteIntervalsAchieved: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_call_ftes = 4;
+   */
+  numIntervalsWithCallFtes: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_shift_ftes = 5;
+   */
+  numIntervalsWithShiftFtes: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_call_ftes_but_no_shifts = 6;
+   */
+  numIntervalsWithCallFtesButNoShifts: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_shifts_but_no_call_ftes = 7;
+   */
+  numIntervalsWithShiftsButNoCallFtes: number;
+
+  /**
+   * @generated from field: float total_underscheduled_call_ftes = 8;
+   */
+  totalUnderscheduledCallFtes: number;
+
+  /**
+   * @generated from field: float total_overscheduled_call_ftes = 9;
+   */
+  totalOverscheduledCallFtes: number;
+
+  /**
+   * Width of each interval in minutes.
+   *
+   * @generated from field: int32 interval_width_in_minutes = 10;
+   */
+  intervalWidthInMinutes: number;
+
+  /**
+   * The type of metric being reported.
+   *
+   * @generated from field: api.commons.PerformanceMetricType metric_type = 11;
+   */
+  metricType: PerformanceMetricType;
+
+  /**
+   * One value will be set between @fte_occupancy_intervals and @service_level_intervals, depending on @metric_type.
+   * If @metric_type is FTE_REQUIRED_VS_ACHIEVED_SIMPLE then the intervals will be stored in @fte_occupancy_intervals
+   * If @metric_type is SERVICE_LEVEL_ANALYSIS then the intervals will be stored in @service_level_intervals
+   * Interval set comparing the number of FTE required to the number achieved.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval fte_occupancy_intervals = 12;
+   */
+  fteOccupancyIntervals: FTERequiredVsAchievedOccupancyInterval[];
+
+  /**
+   * Interval set checking the service level achieved as a percentage.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ServiceLevelInterval service_level_intervals = 13;
+   */
+  serviceLevelIntervals: ServiceLevelInterval[];
+
+  /**
+   * Pointer to skill collection.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_collection = 14;
+   */
+  skillCollection?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<PerformanceMetricForSkillCollectionV2>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricForSkillCollectionV2;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollectionV2;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricForSkillCollectionV2;
+
+  static equals(a: PerformanceMetricForSkillCollectionV2 | PlainMessage<PerformanceMetricForSkillCollectionV2> | undefined, b: PerformanceMetricForSkillCollectionV2 | PlainMessage<PerformanceMetricForSkillCollectionV2> | undefined): boolean;
+}
+
+/**
+ * PerformanceMetricV2.
+ *
+ * @generated from message api.v1alpha1.wfm.PerformanceMetricV2
+ */
+export declare class PerformanceMetricV2 extends Message<PerformanceMetricV2> {
+  /**
+   * Datetime range over which the metrics were determined.
+   *
+   * @generated from field: api.commons.DatetimeRange date_range = 1;
+   */
+  dateRange?: DatetimeRange;
+
+  /**
+   * @generated from field: float total_fte_intervals_required = 2;
+   */
+  totalFteIntervalsRequired: number;
+
+  /**
+   * @generated from field: float total_fte_intervals_achieved = 3;
+   */
+  totalFteIntervalsAchieved: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_call_ftes = 4;
+   */
+  numIntervalsWithCallFtes: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_shift_ftes = 5;
+   */
+  numIntervalsWithShiftFtes: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_call_ftes_but_no_shifts = 6;
+   */
+  numIntervalsWithCallFtesButNoShifts: number;
+
+  /**
+   * @generated from field: int32 num_intervals_with_shifts_but_no_call_ftes = 7;
+   */
+  numIntervalsWithShiftsButNoCallFtes: number;
+
+  /**
+   * @generated from field: float total_underscheduled_call_ftes = 8;
+   */
+  totalUnderscheduledCallFtes: number;
+
+  /**
+   * @generated from field: float total_overscheduled_call_ftes = 9;
+   */
+  totalOverscheduledCallFtes: number;
+
+  /**
+   * Width of each interval in minutes.
+   *
+   * @generated from field: int32 interval_width_in_minutes = 10;
+   */
+  intervalWidthInMinutes: number;
+
+  /**
+   * The type of metric being reported.
+   *
+   * @generated from field: api.commons.PerformanceMetricType metric_type = 11;
+   */
+  metricType: PerformanceMetricType;
+
+  /**
+   * One value will be set between @fte_occupancy_intervals and @service_level_intervals, depending on @metric_type.
+   * If @metric_type is FTE_REQUIRED_VS_ACHIEVED_SIMPLE then the intervals will be stored in @fte_occupancy_intervals
+   * If @metric_type is SERVICE_LEVEL_ANALYSIS then the intervals will be stored in @service_level_intervals
+   * Interval set comparing the number of FTE required to the number achieved.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval fte_occupancy_intervals = 12;
+   */
+  fteOccupancyIntervals: FTERequiredVsAchievedOccupancyInterval[];
+
+  /**
+   * Interval set checking the service level achieved as a percentage.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ServiceLevelInterval service_level_intervals = 13;
+   */
+  serviceLevelIntervals: ServiceLevelInterval[];
+
+  /**
+   * Per-skill metrics.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.PerformanceMetricForSkillCollectionV2 metrics_by_skill_collection = 14;
+   */
+  metricsBySkillCollection: PerformanceMetricForSkillCollectionV2[];
+
+  constructor(data?: PartialMessage<PerformanceMetricV2>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.PerformanceMetricV2";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerformanceMetricV2;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PerformanceMetricV2;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PerformanceMetricV2;
+
+  static equals(a: PerformanceMetricV2 | PlainMessage<PerformanceMetricV2> | undefined, b: PerformanceMetricV2 | PlainMessage<PerformanceMetricV2> | undefined): boolean;
 }
 
 /**
@@ -9831,6 +10173,40 @@ export declare class FTERequiredVsAchievedInterval extends Message<FTERequiredVs
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FTERequiredVsAchievedInterval;
 
   static equals(a: FTERequiredVsAchievedInterval | PlainMessage<FTERequiredVsAchievedInterval> | undefined, b: FTERequiredVsAchievedInterval | PlainMessage<FTERequiredVsAchievedInterval> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval
+ */
+export declare class FTERequiredVsAchievedOccupancyInterval extends Message<FTERequiredVsAchievedOccupancyInterval> {
+  /**
+   * @generated from field: google.protobuf.Timestamp start_datetime = 1;
+   */
+  startDatetime?: Timestamp;
+
+  /**
+   * @generated from field: float required_fte_occupancy = 2;
+   */
+  requiredFteOccupancy: number;
+
+  /**
+   * @generated from field: float achieved_fte_occupancy = 3;
+   */
+  achievedFteOccupancy: number;
+
+  constructor(data?: PartialMessage<FTERequiredVsAchievedOccupancyInterval>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.FTERequiredVsAchievedOccupancyInterval";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FTERequiredVsAchievedOccupancyInterval;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FTERequiredVsAchievedOccupancyInterval;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FTERequiredVsAchievedOccupancyInterval;
+
+  static equals(a: FTERequiredVsAchievedOccupancyInterval | PlainMessage<FTERequiredVsAchievedOccupancyInterval> | undefined, b: FTERequiredVsAchievedOccupancyInterval | PlainMessage<FTERequiredVsAchievedOccupancyInterval> | undefined): boolean;
 }
 
 /**
@@ -9971,6 +10347,54 @@ export declare class ShiftInstance extends Message<ShiftInstance> {
 }
 
 /**
+ * ShiftSegmentCallStat.
+ * Not a top-level entity:
+ * * No primary-key field.
+ * * No org_id field.
+ * * No rpc endpoints, part of ShiftSegment only.
+ *
+ * @generated from message api.v1alpha1.wfm.ShiftSegmentCallStat
+ */
+export declare class ShiftSegmentCallStat extends Message<ShiftSegmentCallStat> {
+  /**
+   * Number of predicted calls.
+   * A float to account for predicted calls that would extend past end of shift_segment.
+   *
+   * @generated from field: float num_calls = 1;
+   */
+  numCalls: number;
+
+  /**
+   * The percentage fit
+   * 0.0 through 1.0, for 0% through 100%.
+   *
+   * @generated from field: float percent_fit = 2;
+   */
+  percentFit: number;
+
+  /**
+   * Pointer to skill_collection.
+   *
+   * @generated from field: api.commons.SkillProfileCategory skill_collection = 3;
+   */
+  skillCollection?: SkillProfileCategory;
+
+  constructor(data?: PartialMessage<ShiftSegmentCallStat>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ShiftSegmentCallStat";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ShiftSegmentCallStat;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ShiftSegmentCallStat;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ShiftSegmentCallStat;
+
+  static equals(a: ShiftSegmentCallStat | PlainMessage<ShiftSegmentCallStat> | undefined, b: ShiftSegmentCallStat | PlainMessage<ShiftSegmentCallStat> | undefined): boolean;
+}
+
+/**
  * Represents a shift segment
  *
  * @generated from message api.v1alpha1.wfm.ShiftSegment
@@ -10025,6 +10449,13 @@ export declare class ShiftSegment extends Message<ShiftSegment> {
    * @generated from field: api.v1alpha1.wfm.SchedulingActivity scheduling_activity = 8;
    */
   schedulingActivity?: SchedulingActivity;
+
+  /**
+   * Per-skill call stats.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftSegmentCallStat call_stats_by_skill_collection = 9;
+   */
+  callStatsBySkillCollection: ShiftSegmentCallStat[];
 
   constructor(data?: PartialMessage<ShiftSegment>);
 
@@ -14365,5 +14796,216 @@ export declare class RemoveAgentFromScheduleResponse extends Message<RemoveAgent
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromScheduleResponse;
 
   static equals(a: RemoveAgentFromScheduleResponse | PlainMessage<RemoveAgentFromScheduleResponse> | undefined, b: RemoveAgentFromScheduleResponse | PlainMessage<RemoveAgentFromScheduleResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListValidAgentsForReplacement RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementReq
+ */
+export declare class ListValidAgentsForReplacementReq extends Message<ListValidAgentsForReplacementReq> {
+  /**
+   * ID of the schedule scenario to check for WFM agents.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 1;
+   */
+  scheduleScenarioSid: bigint;
+
+  /**
+   * An optional field used to limit the datetime range of the shifts being checked.
+   * If left blank, the full schedule range will be updated.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 2;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Indicates the schedule to be updated.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 3;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * An optional field indicating the node to get shifts from.
+   * Otherwise shifts will be checked for all nodes on the @schedule_selector.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 4;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * ID of the WFM Agent to be replaced.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_replace = 5;
+   */
+  wfmAgentSidToReplace: bigint;
+
+  /**
+   * Indicates whether the step to sort agents by skill proficiency should be skipped.
+   * If left as False, the @wfm_agent_sids will be returned in descending order from most qualified to least qualified.
+   *
+   * @generated from field: bool skip_skill_proficiency_sort = 6;
+   */
+  skipSkillProficiencySort: boolean;
+
+  /**
+   * Indicated whether agent sids should still be returned, even if they do not have a skill proficiency for all of the required skills.
+   * If left as False, only agents with a skill proficiency for all the updted shifts will be returned.
+   * Under no conditions are constraint rule requirements enforced by this endpoint.
+   *
+   * @generated from field: bool include_skill_mismatches = 7;
+   */
+  includeSkillMismatches: boolean;
+
+  /**
+   * Indicated whether to skip the check for must be members of all of the same agent groups as @
+   *
+   * @generated from field: bool skip_force_same_agent_groups = 8;
+   */
+  skipForceSameAgentGroups: boolean;
+
+  constructor(data?: PartialMessage<ListValidAgentsForReplacementReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListValidAgentsForReplacementReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListValidAgentsForReplacementReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementReq;
+
+  static equals(a: ListValidAgentsForReplacementReq | PlainMessage<ListValidAgentsForReplacementReq> | undefined, b: ListValidAgentsForReplacementReq | PlainMessage<ListValidAgentsForReplacementReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListValidAgentsForReplacement RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementRes
+ */
+export declare class ListValidAgentsForReplacementRes extends Message<ListValidAgentsForReplacementRes> {
+  /**
+   * A list of valid WFM agent sids. In order of highest related skill proficiency to lowest, if not @skip_skill_proficiency_sort.
+   *
+   * @generated from field: repeated int64 wfm_agent_sids = 1;
+   */
+  wfmAgentSids: bigint[];
+
+  constructor(data?: PartialMessage<ListValidAgentsForReplacementRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListValidAgentsForReplacementRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListValidAgentsForReplacementRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListValidAgentsForReplacementRes;
+
+  static equals(a: ListValidAgentsForReplacementRes | PlainMessage<ListValidAgentsForReplacementRes> | undefined, b: ListValidAgentsForReplacementRes | PlainMessage<ListValidAgentsForReplacementRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the ReplaceAgentOnSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ReplaceAgentOnScheduleReq
+ */
+export declare class ReplaceAgentOnScheduleReq extends Message<ReplaceAgentOnScheduleReq> {
+  /**
+   * An optional field used to limit the datetime range of the shifts being updated.
+   * If left blank, the full schedule range will be updated.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 1;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * Indicates the schedule to be updated.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 2;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * An optional field indicating the node to get shifts from.
+   * Otherwise shifts will be updated for all nodes on the @schedule_selector.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 3;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * ID of the WFM agent to remove from the schedule.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_remove = 4;
+   */
+  wfmAgentSidToRemove: bigint;
+
+  /**
+   * ID of the WFM agent to add to the schedule, in place of @wfm_agent_sid_to_remove.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_add = 5;
+   */
+  wfmAgentSidToAdd: bigint;
+
+  /**
+   * If set to true, any overlapping shift conflicts will be skipped.
+   * Otherwise, any overlap conflicts will raise a diagnostic and prevent any shifts from being updated.
+   *
+   * @generated from field: bool skip_overlapping_shifts = 6;
+   */
+  skipOverlappingShifts: boolean;
+
+  constructor(data?: PartialMessage<ReplaceAgentOnScheduleReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ReplaceAgentOnScheduleReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReplaceAgentOnScheduleReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleReq;
+
+  static equals(a: ReplaceAgentOnScheduleReq | PlainMessage<ReplaceAgentOnScheduleReq> | undefined, b: ReplaceAgentOnScheduleReq | PlainMessage<ReplaceAgentOnScheduleReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ReplaceAgentOnSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ReplaceAgentOnScheduleRes
+ */
+export declare class ReplaceAgentOnScheduleRes extends Message<ReplaceAgentOnScheduleRes> {
+  /**
+   * The updated shift instances which were transfered to @wfm_agent_sid_to_add.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance updated_shift_instances = 1;
+   */
+  updatedShiftInstances: ShiftInstance[];
+
+  /**
+   * Any diagnostics raised due to overlap conflicts.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<ReplaceAgentOnScheduleRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ReplaceAgentOnScheduleRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReplaceAgentOnScheduleRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReplaceAgentOnScheduleRes;
+
+  static equals(a: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined, b: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined): boolean;
 }
 

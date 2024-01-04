@@ -325,6 +325,22 @@ export declare class ListEvaluationsRequest extends Message<ListEvaluationsReque
    */
   scorecardIds: bigint[];
 
+  /**
+   * Optional. Fields to return. Defaults to all evaluation fields (no sub entities).
+   *
+   * Example selecting score, section points, and question answers:
+   * {
+   *   paths: [
+   *     "score",
+   *     "evaluation_section.points",
+   *     "evaluation_section.evaluation_question.answers"
+   *   ]
+   * }
+   *
+   * @generated from field: google.protobuf.FieldMask return_fields = 10;
+   */
+  returnFields?: FieldMask;
+
   constructor(data?: PartialMessage<ListEvaluationsRequest>);
 
   static readonly runtime: typeof proto3;
