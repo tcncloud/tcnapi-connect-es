@@ -375,6 +375,8 @@ export const ListAgentsResponse_AgentDetails_AgentProfileGroup = proto3.makeMess
 );
 
 /**
+ * Request message for ListPublicUsers rpc.
+ *
  * @generated from message api.v1alpha1.org.ListPublicUsersRequest
  */
 export const ListPublicUsersRequest = proto3.makeMessageType(
@@ -383,15 +385,16 @@ export const ListPublicUsersRequest = proto3.makeMessageType(
 );
 
 /**
+ * Response message for ListPublicUsers rpc.
+ *
  * @generated from message api.v1alpha1.org.ListPublicUsersResponse
  */
 export const ListPublicUsersResponse = proto3.makeMessageType(
   "api.v1alpha1.org.ListPublicUsersResponse",
   () => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

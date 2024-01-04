@@ -1332,6 +1332,8 @@ export declare class ListAgentsResponse_AgentDetails_AgentProfileGroup extends M
 }
 
 /**
+ * Request message for ListPublicUsers rpc.
+ *
  * @generated from message api.v1alpha1.org.ListPublicUsersRequest
  */
 export declare class ListPublicUsersRequest extends Message<ListPublicUsersRequest> {
@@ -1351,6 +1353,8 @@ export declare class ListPublicUsersRequest extends Message<ListPublicUsersReque
 }
 
 /**
+ * Response message for ListPublicUsers rpc.
+ *
  * @generated from message api.v1alpha1.org.ListPublicUsersResponse
  */
 export declare class ListPublicUsersResponse extends Message<ListPublicUsersResponse> {
@@ -1362,23 +1366,16 @@ export declare class ListPublicUsersResponse extends Message<ListPublicUsersResp
   userId: string;
 
   /**
-   * The ID of the user's organization
-   *
-   * @generated from field: string org_id = 2;
-   */
-  orgId: string;
-
-  /**
    * The user's first name
    *
-   * @generated from field: string first_name = 3;
+   * @generated from field: string first_name = 2;
    */
   firstName: string;
 
   /**
    * The user's last name
    *
-   * @generated from field: string last_name = 4;
+   * @generated from field: string last_name = 3;
    */
   lastName: string;
 
