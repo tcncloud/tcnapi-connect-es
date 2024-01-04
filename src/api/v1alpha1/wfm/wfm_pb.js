@@ -5018,3 +5018,64 @@ export const GenerateTourWeekPatternsRes = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for the ListValidAgentsForReplacement RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementReq
+ */
+export const ListValidAgentsForReplacementReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListValidAgentsForReplacementReq",
+  () => [
+    { no: 1, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 3, name: "schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 4, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 5, name: "wfm_agent_sid_to_replace", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "skip_skill_proficiency_sort", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "include_skill_mismatches", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 8, name: "skip_force_same_agent_groups", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the ListValidAgentsForReplacement RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementRes
+ */
+export const ListValidAgentsForReplacementRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListValidAgentsForReplacementRes",
+  () => [
+    { no: 1, name: "wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the ReplaceAgentOnSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ReplaceAgentOnScheduleReq
+ */
+export const ReplaceAgentOnScheduleReq = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ReplaceAgentOnScheduleReq",
+  () => [
+    { no: 1, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 2, name: "schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 3, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 4, name: "wfm_agent_sid_to_remove", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "wfm_agent_sid_to_add", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "skip_overlapping_shifts", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the ReplaceAgentOnSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ReplaceAgentOnScheduleRes
+ */
+export const ReplaceAgentOnScheduleRes = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ReplaceAgentOnScheduleRes",
+  () => [
+    { no: 1, name: "updated_shift_instances", kind: "message", T: ShiftInstance, repeated: true },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
