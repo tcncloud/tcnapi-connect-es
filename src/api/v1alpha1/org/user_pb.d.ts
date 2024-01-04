@@ -1337,6 +1337,20 @@ export declare class ListAgentsResponse_AgentDetails_AgentProfileGroup extends M
  * @generated from message api.v1alpha1.org.ListPublicUsersRequest
  */
 export declare class ListPublicUsersRequest extends Message<ListPublicUsersRequest> {
+  /**
+   * Return a list of only user agents. When this is false all users are returned.
+   *
+   * @generated from field: bool agent_filter = 1;
+   */
+  agentFilter: boolean;
+
+  /**
+   * Filter by the user's archived status.
+   *
+   * @generated from field: api.commons.UserArchivedStateFilter archived_filter = 2;
+   */
+  archivedFilter: UserArchivedStateFilter;
+
   constructor(data?: PartialMessage<ListPublicUsersRequest>);
 
   static readonly runtime: typeof proto3;
@@ -1378,6 +1392,13 @@ export declare class ListPublicUsersResponse extends Message<ListPublicUsersResp
    * @generated from field: string last_name = 3;
    */
   lastName: string;
+
+  /**
+   * The user's username
+   *
+   * @generated from field: string username = 4;
+   */
+  username: string;
 
   constructor(data?: PartialMessage<ListPublicUsersResponse>);
 
