@@ -260,6 +260,24 @@ export declare enum CallResult {
   FAILED_INTERNAL_ERROR = 8330,
 
   /**
+   * the case of a crash and
+   * the restart of a task was
+   * not a clean one ....
+   *
+   * "CALL_RESULT_FAILED_REFUSED_RETRIES_EXHAUSTED", "Failed Refused Retries Exhausted", "FRR", "Call failed, retries exhausted"
+   *
+   * @generated from enum value: CALL_RESULT_FAILED_REFUSED_RETRIES_EXHAUSTED = 8340;
+   */
+  FAILED_REFUSED_RETRIES_EXHAUSTED = 8340,
+
+  /**
+   * "CALL_RESULT_FAILED_REFUSED_BLOCK", "Failed Refused Block", "FRB", "Call blocked"
+   *
+   * @generated from enum value: CALL_RESULT_FAILED_REFUSED_BLOCK = 8350;
+   */
+  FAILED_REFUSED_BLOCK = 8350,
+
+  /**
    * "CALL_CANCELED", "Canceled", "CAN", "Call canceled, reason unknown"),
    *
    * @generated from enum value: CALL_RESULT_CANCELED = 9000;
