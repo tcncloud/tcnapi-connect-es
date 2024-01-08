@@ -10,7 +10,7 @@ import { CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreatePassword
 import { AssignAgentProfileGroupsRequest, AssignAgentProfileGroupsResponse, CreateAgentProfileGroupRequest, CreateAgentProfileGroupResponse, DeleteAgentProfileGroupRequest, DeleteAgentProfileGroupResponse, GetAgentProfileGroupRequest, GetAgentProfileGroupResponse, ListAgentProfileGroupsRequest, ListAgentProfileGroupsResponse, UpdateAgentProfileGroupRequest, UpdateAgentProfileGroupResponse } from "./agent_profile_group_pb.js";
 import { AddUserSubscriptionByUserIdRequest, AddUserSubscriptionByUserIdResponse, AddUserSubscriptionRequest, AddUserSubscriptionResponse, GetUserSubscriptionByUserIdRequest, GetUserSubscriptionByUserIdResponse, GetUserSubscriptionRequest, GetUserSubscriptionResponse, ListOrgSubscriptionsRequest, ListOrgSubscriptionsResponse, ListUserSubscriptionsByUserIdRequest, ListUserSubscriptionsByUserIdResponse, ListUserSubscriptionsRequest, ListUserSubscriptionsResponse, RemoveUserSubscriptionByUserIdRequest, RemoveUserSubscriptionByUserIdResponse, RemoveUserSubscriptionRequest, RemoveUserSubscriptionResponse, UpdateUserSubscriptionByUserIdRequest, UpdateUserSubscriptionByUserIdResponse, UpdateUserSubscriptionRequest, UpdateUserSubscriptionResponse } from "./notifications_pb.js";
 import { CreateAuthTokenByUserIdRequest, CreateAuthTokenByUserIdResponse, CreateAuthTokenRequest, CreateAuthTokenResponse, DeleteAuthTokenByUserIdRequest, DeleteAuthTokenByUserIdResponse, DeleteAuthTokenRequest, DeleteAuthTokenResponse, ListAuthTokensByUserIdRequest, ListAuthTokensByUserIdResponse, ListAuthTokensRequest, ListAuthTokensResponse, SetAuthTokenExpirationByUserIdRequest, SetAuthTokenExpirationByUserIdResponse, SetAuthTokenExpirationRequest, SetAuthTokenExpirationResponse } from "./auth_token_pb.js";
-import { CopyDataDipTemplateRequest, CopyDataDipTemplateResponse, CopyDataDipTemplateToOrganizationRequest, CopyDataDipTemplateToOrganizationResponse, CreateAgentResponseAutoRulesRequest, CreateAgentResponseAutoRulesResponse, CreateDataDipTemplateRequest, CreateDataDipTemplateResponse, DeleteAgentResponseAutoRulesRequest, DeleteAgentResponseAutoRulesResponse, DeleteDataDipTemplateRequest, DeleteDataDipTemplateResponse, GetDataDipTemplateRequest, GetDataDipTemplateResponse, GetHuntGroupSettingsRequest, GetHuntGroupSettingsResponse, ListAgentResponseAutoRulesRequest, ListAgentResponseAutoRulesResponse, ListCallerIdBucketsRequest, ListCallerIdBucketsResponse, ListDataDipTemplatesRequest, ListDataDipTemplatesResponse, ListHuntGroupIntegrationLinksRequest, ListHuntGroupIntegrationLinksResponse, UpdateAgentResponseAutoRulesRequest, UpdateAgentResponseAutoRulesResponse, UpdateDataDipTemplateRequest, UpdateDataDipTemplateResponse, UpdateHuntGroupSettingsRequest, UpdateHuntGroupSettingsResponse } from "./huntgroup_pb.js";
+import { CopyDataDipTemplateRequest, CopyDataDipTemplateResponse, CopyDataDipTemplateToOrganizationRequest, CopyDataDipTemplateToOrganizationResponse, CreateAgentResponseAutoRulesRequest, CreateAgentResponseAutoRulesResponse, CreateDataDipTemplateRequest, CreateDataDipTemplateResponse, CreateHuntGroupClientInfoDisplayTemplateRequest, CreateHuntGroupClientInfoDisplayTemplateResponse, DeleteAgentResponseAutoRulesRequest, DeleteAgentResponseAutoRulesResponse, DeleteDataDipTemplateRequest, DeleteDataDipTemplateResponse, DeleteHuntGroupClientInfoDisplayTemplateRequest, DeleteHuntGroupClientInfoDisplayTemplateResponse, GetDataDipTemplateRequest, GetDataDipTemplateResponse, GetHuntGroupClientInfoDisplayTemplateRequest, GetHuntGroupClientInfoDisplayTemplateResponse, GetHuntGroupSettingsRequest, GetHuntGroupSettingsResponse, ListAgentResponseAutoRulesRequest, ListAgentResponseAutoRulesResponse, ListCallerIdBucketsRequest, ListCallerIdBucketsResponse, ListDataDipTemplatesRequest, ListDataDipTemplatesResponse, ListHuntGroupIntegrationLinksRequest, ListHuntGroupIntegrationLinksResponse, UpdateAgentResponseAutoRulesRequest, UpdateAgentResponseAutoRulesResponse, UpdateDataDipTemplateRequest, UpdateDataDipTemplateResponse, UpdateHuntGroupClientInfoDisplayTemplateRequest, UpdateHuntGroupClientInfoDisplayTemplateResponse, UpdateHuntGroupSettingsRequest, UpdateHuntGroupSettingsResponse } from "./huntgroup_pb.js";
 import { AcceptTrustRequest, AcceptTrustResponse, AssignTrustRequest, AssignTrustResponse, CreateTrustRequest, CreateTrustResponse, DeleteTrustRequest, DeleteTrustResponse, GetTrustRequest, GetTrustResponse, ListAssignableTrustsRequest, ListAssignableTrustsResponse, ListGivenTrustsRequest, ListGivenTrustsResponse, ListIncomingTrustsRequest, ListIncomingTrustsResponse, RejectTrustRequest, RejectTrustResponse, UnassignTrustRequest, UnassignTrustResponse } from "./trusts_pb.js";
 import { AssignLabelRequest, AssignLabelResponse, CreateLabelRequest, CreateLabelResponse, DeleteLabelRequest, DeleteLabelResponse, GetAssignableLabelsRequest, GetAssignableLabelsResponse, GetAssignmentCountsRequest, GetAssignmentCountsResponse, GetLabelRequest, GetLabelResponse, ListLabelsRequest, ListLabelsResponse, UnassignLabelRequest, UnassignLabelResponse, UpdateLabelRequest, UpdateLabelResponse } from "./labels_pb.js";
 import { AssignAccountOwnerPermissionToUserRequest, AssignAccountOwnerPermissionToUserResponse, AssignUsersPermissionGroupRequest, AssignUsersPermissionGroupResponse, CreatePermissionGroupRequest, CreatePermissionGroupResponse, DeletePermissionGroupRequest, DeletePermissionGroupResponse, GetAccountOwnerGroupRequest, GetAccountOwnerGroupResponse, GetLicensesRequest, GetLicensesResponse, GetOrgLicensesRequest, GetOrgLicensesResponse, GetPermissionsRequest, GetPermissionsResponse, GetUserPermissionsRequest, GetUserPermissionsResponse, InitDefaultPermissionGroupsRequest, InitDefaultPermissionGroupsResponse, ListPermissionGroupsByOrgIdRequest, ListPermissionGroupsByOrgIdResponse, ListPermissionGroupsRequest, ListPermissionGroupsResponse, RemovePermissionFromAllPermissionGroupsRequest, RemovePermissionFromAllPermissionGroupsResponse, RevokeAccountOwnerPermissionFromUserRequest, RevokeAccountOwnerPermissionFromUserResponse, RevokeUsersPermissionGroupRequest, RevokeUsersPermissionGroupResponse, UpdateLicensesRequest, UpdateLicensesResponse, UpdatePermissionGroupRequest, UpdatePermissionGroupResponse } from "./permissions_pb.js";
@@ -1438,6 +1438,42 @@ export declare const Org: {
       readonly name: "ListHuntGroupIntegrationLinks",
       readonly I: typeof ListHuntGroupIntegrationLinksRequest,
       readonly O: typeof ListHuntGroupIntegrationLinksResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.org.Org.GetHuntGroupClientInfoDisplayTemplate
+     */
+    readonly getHuntGroupClientInfoDisplayTemplate: {
+      readonly name: "GetHuntGroupClientInfoDisplayTemplate",
+      readonly I: typeof GetHuntGroupClientInfoDisplayTemplateRequest,
+      readonly O: typeof GetHuntGroupClientInfoDisplayTemplateResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.org.Org.CreateHuntGroupClientInfoDisplayTemplate
+     */
+    readonly createHuntGroupClientInfoDisplayTemplate: {
+      readonly name: "CreateHuntGroupClientInfoDisplayTemplate",
+      readonly I: typeof CreateHuntGroupClientInfoDisplayTemplateRequest,
+      readonly O: typeof CreateHuntGroupClientInfoDisplayTemplateResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.org.Org.UpdateHuntGroupClientInfoDisplayTemplate
+     */
+    readonly updateHuntGroupClientInfoDisplayTemplate: {
+      readonly name: "UpdateHuntGroupClientInfoDisplayTemplate",
+      readonly I: typeof UpdateHuntGroupClientInfoDisplayTemplateRequest,
+      readonly O: typeof UpdateHuntGroupClientInfoDisplayTemplateResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.org.Org.DeleteHuntGroupClientInfoDisplayTemplate
+     */
+    readonly deleteHuntGroupClientInfoDisplayTemplate: {
+      readonly name: "DeleteHuntGroupClientInfoDisplayTemplate",
+      readonly I: typeof DeleteHuntGroupClientInfoDisplayTemplateRequest,
+      readonly O: typeof DeleteHuntGroupClientInfoDisplayTemplateResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
