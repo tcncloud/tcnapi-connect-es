@@ -1800,10 +1800,10 @@ export const ListWhatsAppNumbersRes = proto3.makeMessageType(
 /**
  * Request message for create whatsapp number
  *
- * @generated from message api.v0alpha.CreateWhatsAppNumberReq
+ * @generated from message api.v0alpha.CreateWhatsAppNumberRequest
  */
-export const CreateWhatsAppNumberReq = proto3.makeMessageType(
-  "api.v0alpha.CreateWhatsAppNumberReq",
+export const CreateWhatsAppNumberRequest = proto3.makeMessageType(
+  "api.v0alpha.CreateWhatsAppNumberRequest",
   () => [
     { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
   ],
@@ -1812,10 +1812,10 @@ export const CreateWhatsAppNumberReq = proto3.makeMessageType(
 /**
  * Response message for listing whatsapp number
  *
- * @generated from message api.v0alpha.CreateWhatsAppNumberRes
+ * @generated from message api.v0alpha.CreateWhatsAppNumberResponse
  */
-export const CreateWhatsAppNumberRes = proto3.makeMessageType(
-  "api.v0alpha.CreateWhatsAppNumberRes",
+export const CreateWhatsAppNumberResponse = proto3.makeMessageType(
+  "api.v0alpha.CreateWhatsAppNumberResponse",
   () => [
     { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
   ],
@@ -1824,23 +1824,23 @@ export const CreateWhatsAppNumberRes = proto3.makeMessageType(
 /**
  * Request message for update whatsapp number
  *
- * @generated from message api.v0alpha.UpdateWhatsAppNumberReq
+ * @generated from message api.v0alpha.UpdateWhatsAppNumberRequest
  */
-export const UpdateWhatsAppNumberReq = proto3.makeMessageType(
-  "api.v0alpha.UpdateWhatsAppNumberReq",
+export const UpdateWhatsAppNumberRequest = proto3.makeMessageType(
+  "api.v0alpha.UpdateWhatsAppNumberRequest",
   () => [
     { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
-    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
+    { no: 2, name: "field_mask", kind: "message", T: FieldMask },
   ],
 );
 
 /**
  * Response message for update whatsapp number
  *
- * @generated from message api.v0alpha.UpdateWhatsAppNumberRes
+ * @generated from message api.v0alpha.UpdateWhatsAppNumberResponse
  */
-export const UpdateWhatsAppNumberRes = proto3.makeMessageType(
-  "api.v0alpha.UpdateWhatsAppNumberRes",
+export const UpdateWhatsAppNumberResponse = proto3.makeMessageType(
+  "api.v0alpha.UpdateWhatsAppNumberResponse",
   () => [
     { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
   ],
