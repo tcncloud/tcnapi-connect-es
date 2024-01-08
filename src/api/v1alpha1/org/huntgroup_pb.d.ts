@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
+import type { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -1119,6 +1119,167 @@ export declare class DeleteHuntGroupClientInfoDisplayTemplateResponse extends Me
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteHuntGroupClientInfoDisplayTemplateResponse;
 
   static equals(a: DeleteHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<DeleteHuntGroupClientInfoDisplayTemplateResponse> | undefined, b: DeleteHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<DeleteHuntGroupClientInfoDisplayTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for ListHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupWebLinksRequest
+ */
+export declare class ListHuntGroupWebLinksRequest extends Message<ListHuntGroupWebLinksRequest> {
+  /**
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  constructor(data?: PartialMessage<ListHuntGroupWebLinksRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListHuntGroupWebLinksRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHuntGroupWebLinksRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHuntGroupWebLinksRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupWebLinksRequest;
+
+  static equals(a: ListHuntGroupWebLinksRequest | PlainMessage<ListHuntGroupWebLinksRequest> | undefined, b: ListHuntGroupWebLinksRequest | PlainMessage<ListHuntGroupWebLinksRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for ListHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupWebLinksResponse
+ */
+export declare class ListHuntGroupWebLinksResponse extends Message<ListHuntGroupWebLinksResponse> {
+  /**
+   * @generated from field: repeated api.commons.org.WebLink web_links = 1;
+   */
+  webLinks: WebLink[];
+
+  constructor(data?: PartialMessage<ListHuntGroupWebLinksResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListHuntGroupWebLinksResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHuntGroupWebLinksResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHuntGroupWebLinksResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupWebLinksResponse;
+
+  static equals(a: ListHuntGroupWebLinksResponse | PlainMessage<ListHuntGroupWebLinksResponse> | undefined, b: ListHuntGroupWebLinksResponse | PlainMessage<ListHuntGroupWebLinksResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for CopyHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkRequest
+ */
+export declare class CopyHuntGroupWebLinkRequest extends Message<CopyHuntGroupWebLinkRequest> {
+  /**
+   * @generated from field: int64 from_hunt_group_sid = 1;
+   */
+  fromHuntGroupSid: bigint;
+
+  /**
+   * @generated from field: int64 to_hunt_group_sid = 2;
+   */
+  toHuntGroupSid: bigint;
+
+  /**
+   * @generated from field: api.commons.org.WebLink web_link = 3;
+   */
+  webLink?: WebLink;
+
+  constructor(data?: PartialMessage<CopyHuntGroupWebLinkRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupWebLinkRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupWebLinkRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkRequest;
+
+  static equals(a: CopyHuntGroupWebLinkRequest | PlainMessage<CopyHuntGroupWebLinkRequest> | undefined, b: CopyHuntGroupWebLinkRequest | PlainMessage<CopyHuntGroupWebLinkRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for CopyHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkResponse
+ */
+export declare class CopyHuntGroupWebLinkResponse extends Message<CopyHuntGroupWebLinkResponse> {
+  constructor(data?: PartialMessage<CopyHuntGroupWebLinkResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupWebLinkResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupWebLinkResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkResponse;
+
+  static equals(a: CopyHuntGroupWebLinkResponse | PlainMessage<CopyHuntGroupWebLinkResponse> | undefined, b: CopyHuntGroupWebLinkResponse | PlainMessage<CopyHuntGroupWebLinkResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for UpdateHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupWebLinksRequest
+ */
+export declare class UpdateHuntGroupWebLinksRequest extends Message<UpdateHuntGroupWebLinksRequest> {
+  /**
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * @generated from field: repeated api.commons.org.WebLink web_links = 2;
+   */
+  webLinks: WebLink[];
+
+  constructor(data?: PartialMessage<UpdateHuntGroupWebLinksRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupWebLinksRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupWebLinksRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupWebLinksRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupWebLinksRequest;
+
+  static equals(a: UpdateHuntGroupWebLinksRequest | PlainMessage<UpdateHuntGroupWebLinksRequest> | undefined, b: UpdateHuntGroupWebLinksRequest | PlainMessage<UpdateHuntGroupWebLinksRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for UpdateHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupWebLinksResponse
+ */
+export declare class UpdateHuntGroupWebLinksResponse extends Message<UpdateHuntGroupWebLinksResponse> {
+  constructor(data?: PartialMessage<UpdateHuntGroupWebLinksResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupWebLinksResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupWebLinksResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupWebLinksResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupWebLinksResponse;
+
+  static equals(a: UpdateHuntGroupWebLinksResponse | PlainMessage<UpdateHuntGroupWebLinksResponse> | undefined, b: UpdateHuntGroupWebLinksResponse | PlainMessage<UpdateHuntGroupWebLinksResponse> | undefined): boolean;
 }
 
 /**
