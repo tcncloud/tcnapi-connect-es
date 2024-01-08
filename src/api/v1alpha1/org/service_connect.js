@@ -1430,6 +1430,8 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * Lists all web links for a given hunt group
+     *
      * @generated from rpc api.v1alpha1.org.Org.ListHuntGroupWebLinks
      */
     listHuntGroupWebLinks: {
@@ -1439,6 +1441,8 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * Copies a web link from one hunt group to another
+     *
      * @generated from rpc api.v1alpha1.org.Org.CopyHuntGroupWebLink
      */
     copyHuntGroupWebLink: {
@@ -1448,6 +1452,8 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * Updates the list of web links in a hunt group to be the given list
+     *
      * @generated from rpc api.v1alpha1.org.Org.UpdateHuntGroupWebLinks
      */
     updateHuntGroupWebLinks: {
