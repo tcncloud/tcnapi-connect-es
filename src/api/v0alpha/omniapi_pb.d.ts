@@ -4792,3 +4792,122 @@ export declare class ListWhatsAppNumbersRes extends Message<ListWhatsAppNumbersR
   static equals(a: ListWhatsAppNumbersRes | PlainMessage<ListWhatsAppNumbersRes> | undefined, b: ListWhatsAppNumbersRes | PlainMessage<ListWhatsAppNumbersRes> | undefined): boolean;
 }
 
+/**
+ * Request message for create whatsapp number
+ *
+ * @generated from message api.v0alpha.CreateWhatsAppNumberReq
+ */
+export declare class CreateWhatsAppNumberReq extends Message<CreateWhatsAppNumberReq> {
+  /**
+   * whatsapp number details
+   *
+   * @generated from field: api.commons.WhatsAppNumber whatsapp_number = 1;
+   */
+  whatsappNumber?: WhatsAppNumber;
+
+  constructor(data?: PartialMessage<CreateWhatsAppNumberReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateWhatsAppNumberReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateWhatsAppNumberReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateWhatsAppNumberReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateWhatsAppNumberReq;
+
+  static equals(a: CreateWhatsAppNumberReq | PlainMessage<CreateWhatsAppNumberReq> | undefined, b: CreateWhatsAppNumberReq | PlainMessage<CreateWhatsAppNumberReq> | undefined): boolean;
+}
+
+/**
+ * Response message for listing whatsapp number
+ *
+ * @generated from message api.v0alpha.CreateWhatsAppNumberRes
+ */
+export declare class CreateWhatsAppNumberRes extends Message<CreateWhatsAppNumberRes> {
+  /**
+   * whatsapp number details
+   *
+   * @generated from field: api.commons.WhatsAppNumber whatsapp_number = 1;
+   */
+  whatsappNumber?: WhatsAppNumber;
+
+  constructor(data?: PartialMessage<CreateWhatsAppNumberRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateWhatsAppNumberRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateWhatsAppNumberRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateWhatsAppNumberRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateWhatsAppNumberRes;
+
+  static equals(a: CreateWhatsAppNumberRes | PlainMessage<CreateWhatsAppNumberRes> | undefined, b: CreateWhatsAppNumberRes | PlainMessage<CreateWhatsAppNumberRes> | undefined): boolean;
+}
+
+/**
+ * Request message for update whatsapp number
+ *
+ * @generated from message api.v0alpha.UpdateWhatsAppNumberReq
+ */
+export declare class UpdateWhatsAppNumberReq extends Message<UpdateWhatsAppNumberReq> {
+  /**
+   * whatsapp number details
+   *
+   * @generated from field: api.commons.WhatsAppNumber whatsapp_number = 1;
+   */
+  whatsappNumber?: WhatsAppNumber;
+
+  /**
+   * list of all fields being updated
+   *
+   * @generated from field: google.protobuf.FieldMask field_mask = 100;
+   */
+  fieldMask?: FieldMask;
+
+  constructor(data?: PartialMessage<UpdateWhatsAppNumberReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateWhatsAppNumberReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateWhatsAppNumberReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateWhatsAppNumberReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateWhatsAppNumberReq;
+
+  static equals(a: UpdateWhatsAppNumberReq | PlainMessage<UpdateWhatsAppNumberReq> | undefined, b: UpdateWhatsAppNumberReq | PlainMessage<UpdateWhatsAppNumberReq> | undefined): boolean;
+}
+
+/**
+ * Response message for update whatsapp number
+ *
+ * @generated from message api.v0alpha.UpdateWhatsAppNumberRes
+ */
+export declare class UpdateWhatsAppNumberRes extends Message<UpdateWhatsAppNumberRes> {
+  /**
+   * whatsapp number details
+   *
+   * @generated from field: api.commons.WhatsAppNumber whatsapp_number = 1;
+   */
+  whatsappNumber?: WhatsAppNumber;
+
+  constructor(data?: PartialMessage<UpdateWhatsAppNumberRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateWhatsAppNumberRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateWhatsAppNumberRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateWhatsAppNumberRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateWhatsAppNumberRes;
+
+  static equals(a: UpdateWhatsAppNumberRes | PlainMessage<UpdateWhatsAppNumberRes> | undefined, b: UpdateWhatsAppNumberRes | PlainMessage<UpdateWhatsAppNumberRes> | undefined): boolean;
+}
+
