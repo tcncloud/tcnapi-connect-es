@@ -1772,7 +1772,8 @@ export declare class EmailDestination extends Message<EmailDestination> {
   /**
    * which email we are sending to
    *
-   * @generated from field: string to_addr = 1;
+   * @generated from field: string to_addr = 1 [deprecated = true];
+   * @deprecated
    */
   toAddr: string;
 
@@ -1789,6 +1790,11 @@ export declare class EmailDestination extends Message<EmailDestination> {
    * @generated from field: string from_addr = 3;
    */
   fromAddr: string;
+
+  /**
+   * @generated from field: string to_addrs = 4;
+   */
+  toAddrs: string;
 
   constructor(data?: PartialMessage<EmailDestination>);
 
