@@ -468,12 +468,12 @@ export const ListHuntGroupWebLinksResponse = proto3.makeMessageType(
 );
 
 /**
- * Request message for CopyHuntGroupWebLinks
+ * Request message for AssignHuntGroupWebLinks
  *
- * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkRequest
+ * @generated from message api.v1alpha1.org.AssignHuntGroupWebLinkRequest
  */
-export const CopyHuntGroupWebLinkRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.CopyHuntGroupWebLinkRequest",
+export const AssignHuntGroupWebLinkRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.AssignHuntGroupWebLinkRequest",
   () => [
     { no: 1, name: "from_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "to_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
@@ -482,12 +482,12 @@ export const CopyHuntGroupWebLinkRequest = proto3.makeMessageType(
 );
 
 /**
- * Response message for CopyHuntGroupWebLinks
+ * Response message for AssignHuntGroupWebLinks
  *
- * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkResponse
+ * @generated from message api.v1alpha1.org.AssignHuntGroupWebLinkResponse
  */
-export const CopyHuntGroupWebLinkResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.CopyHuntGroupWebLinkResponse",
+export const AssignHuntGroupWebLinkResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.AssignHuntGroupWebLinkResponse",
   [],
 );
 

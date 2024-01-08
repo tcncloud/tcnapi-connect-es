@@ -1174,11 +1174,11 @@ export declare class ListHuntGroupWebLinksResponse extends Message<ListHuntGroup
 }
 
 /**
- * Request message for CopyHuntGroupWebLinks
+ * Request message for AssignHuntGroupWebLinks
  *
- * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkRequest
+ * @generated from message api.v1alpha1.org.AssignHuntGroupWebLinkRequest
  */
-export declare class CopyHuntGroupWebLinkRequest extends Message<CopyHuntGroupWebLinkRequest> {
+export declare class AssignHuntGroupWebLinkRequest extends Message<AssignHuntGroupWebLinkRequest> {
   /**
    * @generated from field: int64 from_hunt_group_sid = 1;
    */
@@ -1194,40 +1194,40 @@ export declare class CopyHuntGroupWebLinkRequest extends Message<CopyHuntGroupWe
    */
   webLink?: WebLink;
 
-  constructor(data?: PartialMessage<CopyHuntGroupWebLinkRequest>);
+  constructor(data?: PartialMessage<AssignHuntGroupWebLinkRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupWebLinkRequest";
+  static readonly typeName = "api.v1alpha1.org.AssignHuntGroupWebLinkRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupWebLinkRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignHuntGroupWebLinkRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignHuntGroupWebLinkRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignHuntGroupWebLinkRequest;
 
-  static equals(a: CopyHuntGroupWebLinkRequest | PlainMessage<CopyHuntGroupWebLinkRequest> | undefined, b: CopyHuntGroupWebLinkRequest | PlainMessage<CopyHuntGroupWebLinkRequest> | undefined): boolean;
+  static equals(a: AssignHuntGroupWebLinkRequest | PlainMessage<AssignHuntGroupWebLinkRequest> | undefined, b: AssignHuntGroupWebLinkRequest | PlainMessage<AssignHuntGroupWebLinkRequest> | undefined): boolean;
 }
 
 /**
- * Response message for CopyHuntGroupWebLinks
+ * Response message for AssignHuntGroupWebLinks
  *
- * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkResponse
+ * @generated from message api.v1alpha1.org.AssignHuntGroupWebLinkResponse
  */
-export declare class CopyHuntGroupWebLinkResponse extends Message<CopyHuntGroupWebLinkResponse> {
-  constructor(data?: PartialMessage<CopyHuntGroupWebLinkResponse>);
+export declare class AssignHuntGroupWebLinkResponse extends Message<AssignHuntGroupWebLinkResponse> {
+  constructor(data?: PartialMessage<AssignHuntGroupWebLinkResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupWebLinkResponse";
+  static readonly typeName = "api.v1alpha1.org.AssignHuntGroupWebLinkResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupWebLinkResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignHuntGroupWebLinkResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignHuntGroupWebLinkResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupWebLinkResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignHuntGroupWebLinkResponse;
 
-  static equals(a: CopyHuntGroupWebLinkResponse | PlainMessage<CopyHuntGroupWebLinkResponse> | undefined, b: CopyHuntGroupWebLinkResponse | PlainMessage<CopyHuntGroupWebLinkResponse> | undefined): boolean;
+  static equals(a: AssignHuntGroupWebLinkResponse | PlainMessage<AssignHuntGroupWebLinkResponse> | undefined, b: AssignHuntGroupWebLinkResponse | PlainMessage<AssignHuntGroupWebLinkResponse> | undefined): boolean;
 }
 
 /**
