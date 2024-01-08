@@ -1128,6 +1128,8 @@ export declare class DeleteHuntGroupClientInfoDisplayTemplateResponse extends Me
  */
 export declare class ListHuntGroupWebLinksRequest extends Message<ListHuntGroupWebLinksRequest> {
   /**
+   * The hunt group sid of the desired web links
+   *
    * @generated from field: int64 hunt_group_sid = 1;
    */
   huntGroupSid: bigint;
@@ -1154,6 +1156,8 @@ export declare class ListHuntGroupWebLinksRequest extends Message<ListHuntGroupW
  */
 export declare class ListHuntGroupWebLinksResponse extends Message<ListHuntGroupWebLinksResponse> {
   /**
+   * The web links list from a givne hunt group
+   *
    * @generated from field: repeated api.commons.org.WebLink web_links = 1;
    */
   webLinks: WebLink[];
@@ -1180,16 +1184,22 @@ export declare class ListHuntGroupWebLinksResponse extends Message<ListHuntGroup
  */
 export declare class AssignHuntGroupWebLinkRequest extends Message<AssignHuntGroupWebLinkRequest> {
   /**
+   * The hunt group sid of the residng web link
+   *
    * @generated from field: int64 from_hunt_group_sid = 1;
    */
   fromHuntGroupSid: bigint;
 
   /**
+   * The hunt group sid of where the web link will be assigned
+   *
    * @generated from field: int64 to_hunt_group_sid = 2;
    */
   toHuntGroupSid: bigint;
 
   /**
+   * The web link to be assigned
+   *
    * @generated from field: api.commons.org.WebLink web_link = 3;
    */
   webLink?: WebLink;
@@ -1237,11 +1247,15 @@ export declare class AssignHuntGroupWebLinkResponse extends Message<AssignHuntGr
  */
 export declare class UpdateHuntGroupWebLinksRequest extends Message<UpdateHuntGroupWebLinksRequest> {
   /**
+   * The hunt group sid of the web links to be updated
+   *
    * @generated from field: int64 hunt_group_sid = 1;
    */
   huntGroupSid: bigint;
 
   /**
+   * The list of web links to be updated
+   *
    * @generated from field: repeated api.commons.org.WebLink web_links = 2;
    */
   webLinks: WebLink[];
