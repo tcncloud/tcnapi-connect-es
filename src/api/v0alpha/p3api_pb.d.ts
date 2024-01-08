@@ -2403,16 +2403,6 @@ export declare class HuntGroupAgentSettings extends Message<HuntGroupAgentSettin
    */
   interruptPeering: InterruptedPeeringStatus[];
 
-  /**
-   * @generated from field: bool display_integration_data_map = 34;
-   */
-  displayIntegrationDataMap: boolean;
-
-  /**
-   * @generated from field: repeated string limit_integration_data_map = 35;
-   */
-  limitIntegrationDataMap: string[];
-
   constructor(data?: PartialMessage<HuntGroupAgentSettings>);
 
   static readonly runtime: typeof proto3;
