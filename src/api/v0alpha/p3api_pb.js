@@ -799,6 +799,8 @@ export const HuntGroupAgentSettings = proto3.makeMessageType(
     { no: 31, name: "display_web_links", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 32, name: "display_skills", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 33, name: "interrupt_peering", kind: "enum", T: proto3.getEnumType(InterruptedPeeringStatus), repeated: true },
+    { no: 34, name: "display_integration_data_map", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 35, name: "limit_integration_data_map", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
