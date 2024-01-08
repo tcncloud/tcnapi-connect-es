@@ -1441,6 +1441,8 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * GetHuntGroupClientInfoDisplayTemplate returns the client info display template for a given hunt group.
+     *
      * @generated from rpc api.v1alpha1.org.Org.GetHuntGroupClientInfoDisplayTemplate
      */
     readonly getHuntGroupClientInfoDisplayTemplate: {
@@ -1450,6 +1452,8 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * CreateHuntGroupClientInfoDisplayTemplate creates a new client info display template for a givne hunt group.
+     *
      * @generated from rpc api.v1alpha1.org.Org.CreateHuntGroupClientInfoDisplayTemplate
      */
     readonly createHuntGroupClientInfoDisplayTemplate: {
@@ -1459,6 +1463,8 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * UpdateHuntGroupClientInfoDisplayTemplate updates a client info display template for a given hunt group.
+     *
      * @generated from rpc api.v1alpha1.org.Org.UpdateHuntGroupClientInfoDisplayTemplate
      */
     readonly updateHuntGroupClientInfoDisplayTemplate: {
@@ -1468,6 +1474,8 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * DeleteHuntGroupClientInfoDisplayTemplate deletes a client info display template for a given hunt group.
+     *
      * @generated from rpc api.v1alpha1.org.Org.DeleteHuntGroupClientInfoDisplayTemplate
      */
     readonly deleteHuntGroupClientInfoDisplayTemplate: {
