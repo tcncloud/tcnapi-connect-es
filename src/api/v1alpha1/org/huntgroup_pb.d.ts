@@ -1198,7 +1198,7 @@ export declare class CopyHuntGroupWebLinkRequest extends Message<CopyHuntGroupWe
   toHuntGroupSid: bigint;
 
   /**
-   * The web link to be assigned
+   * The web link to be copied
    *
    * @generated from field: api.commons.org.WebLink web_link = 3;
    */
