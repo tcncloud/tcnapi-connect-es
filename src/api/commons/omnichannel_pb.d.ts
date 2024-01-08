@@ -121,6 +121,13 @@ export declare enum OmniCampaignModuleType {
    * @generated from enum value: MODULE_TYPE_MANUAL_APPROVAL = 2;
    */
   MODULE_TYPE_MANUAL_APPROVAL = 2,
+
+  /**
+   * manual module
+   *
+   * @generated from enum value: MODULE_TYPE_MANUAL = 3;
+   */
+  MODULE_TYPE_MANUAL = 3,
 }
 
 /**

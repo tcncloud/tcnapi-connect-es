@@ -53,6 +53,7 @@ export const OmniCampaignModuleType = proto3.makeEnum(
     {no: 0, name: "MODULE_TYPE_INBOUND"},
     {no: 1, name: "MODULE_TYPE_OUTBOUND"},
     {no: 2, name: "MODULE_TYPE_MANUAL_APPROVAL"},
+    {no: 3, name: "MODULE_TYPE_MANUAL"},
   ],
 );
 
