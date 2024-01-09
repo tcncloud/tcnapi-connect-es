@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -440,6 +440,77 @@ export const DeleteHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessag
  */
 export const DeleteHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
   "api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateResponse",
+  [],
+);
+
+/**
+ * Request message for ListHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupWebLinksRequest
+ */
+export const ListHuntGroupWebLinksRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.ListHuntGroupWebLinksRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for ListHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupWebLinksResponse
+ */
+export const ListHuntGroupWebLinksResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.ListHuntGroupWebLinksResponse",
+  () => [
+    { no: 1, name: "web_links", kind: "message", T: WebLink, repeated: true },
+  ],
+);
+
+/**
+ * Request message for CopyHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkRequest
+ */
+export const CopyHuntGroupWebLinkRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupWebLinkRequest",
+  () => [
+    { no: 1, name: "from_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "to_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "web_link", kind: "message", T: WebLink },
+  ],
+);
+
+/**
+ * Response message for CopyHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupWebLinkResponse
+ */
+export const CopyHuntGroupWebLinkResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupWebLinkResponse",
+  [],
+);
+
+/**
+ * Request message for UpdateHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupWebLinksRequest
+ */
+export const UpdateHuntGroupWebLinksRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupWebLinksRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "web_links", kind: "message", T: WebLink, repeated: true },
+  ],
+);
+
+/**
+ * Response message for UpdateHuntGroupWebLinks
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupWebLinksResponse
+ */
+export const UpdateHuntGroupWebLinksResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupWebLinksResponse",
   [],
 );
 
