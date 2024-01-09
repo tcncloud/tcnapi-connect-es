@@ -2985,7 +2985,8 @@ export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplay
   /**
    * The template sid of the client info display template
    *
-   * @generated from field: string template_sid = 1;
+   * @generated from field: string template_sid = 1 [deprecated = true];
+   * @deprecated
    */
   templateSid: string;
 
@@ -3030,6 +3031,13 @@ export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplay
    * @generated from field: api.commons.org.TemplateCategory template_category = 7;
    */
   templateCategory: TemplateCategory;
+
+  /**
+   * The sid of the client info display template
+   *
+   * @generated from field: int64 client_info_display_template_sid = 8;
+   */
+  clientInfoDisplayTemplateSid: bigint;
 
   constructor(data?: PartialMessage<ClientInfoDisplayTemplate>);
 
