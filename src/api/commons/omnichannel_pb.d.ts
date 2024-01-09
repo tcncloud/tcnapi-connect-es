@@ -121,6 +121,13 @@ export declare enum OmniCampaignModuleType {
    * @generated from enum value: MODULE_TYPE_MANUAL_APPROVAL = 2;
    */
   MODULE_TYPE_MANUAL_APPROVAL = 2,
+
+  /**
+   * manual module
+   *
+   * @generated from enum value: MODULE_TYPE_MANUAL = 3;
+   */
+  MODULE_TYPE_MANUAL = 3,
 }
 
 /**
@@ -4499,6 +4506,34 @@ export declare class WhatsAppNumber extends Message<WhatsAppNumber> {
    * @generated from field: int32 country_code = 3;
    */
   countryCode: number;
+
+  /**
+   * the whatsapp number identifier
+   *
+   * @generated from field: int64 whatsapp_number_sid = 4 [jstype = JS_STRING];
+   */
+  whatsappNumberSid: string;
+
+  /**
+   * the display name
+   *
+   * @generated from field: string display_name = 5;
+   */
+  displayName: string;
+
+  /**
+   * the time the whatsapp_number was created
+   *
+   * @generated from field: google.protobuf.Timestamp date_created = 6;
+   */
+  dateCreated?: Timestamp;
+
+  /**
+   * the time the whatsapp_number was last modified
+   *
+   * @generated from field: google.protobuf.Timestamp date_modified = 7;
+   */
+  dateModified?: Timestamp;
 
   constructor(data?: PartialMessage<WhatsAppNumber>);
 

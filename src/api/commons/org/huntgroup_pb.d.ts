@@ -37,6 +37,132 @@ export declare enum TemplateCategory {
 }
 
 /**
+ * WebLinkType describes the type of a particular web link
+ *
+ * @generated from enum api.commons.org.WebLinkType
+ */
+export declare enum WebLinkType {
+  /**
+   * 0 explicitly means unspecified or invalid.
+   *
+   * @generated from enum value: WEB_LINK_TYPE_UNSPECIFIED = 0;
+   */
+  WEB_LINK_TYPE_UNSPECIFIED = 0,
+
+  /**
+   * Standard web link type
+   *
+   * @generated from enum value: WEB_LINK_STANDARD = 1;
+   */
+  WEB_LINK_STANDARD = 1,
+
+  /**
+   * Javascript web link type
+   *
+   * @generated from enum value: WEB_LINK_JAVASCRIPT = 2;
+   */
+  WEB_LINK_JAVASCRIPT = 2,
+}
+
+/**
+ * Enums to represent the WebLinkComponentKeyType
+ *
+ * @generated from enum api.commons.org.WebLinkComponentKeyType
+ */
+export declare enum WebLinkComponentKeyType {
+  /**
+   * 0 explicitly means unspecified or invalid
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Static or plaintext type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_STATIC_TEXT = 1;
+   */
+  STATIC_TEXT = 1,
+
+  /**
+   * TTS Field type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_TTS_FIELD = 2;
+   */
+  TTS_FIELD = 2,
+
+  /**
+   * Agent Info type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_AGENT_INFO = 3;
+   */
+  AGENT_INFO = 3,
+
+  /**
+   * Data Dip type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_DATA_DIP = 4;
+   */
+  DATA_DIP = 4,
+
+  /**
+   * IVR Data type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_IVR_DATA = 5;
+   */
+  IVR_DATA = 5,
+
+  /**
+   * Data Collect type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_DATA_COLLECT = 6;
+   */
+  DATA_COLLECT = 6,
+
+  /**
+   * Phone Metadata type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_PHONE_METADATA = 7;
+   */
+  PHONE_METADATA = 7,
+
+  /**
+   * Zip Postal Metadata type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_ZIP_POSTAL_METADATA = 8;
+   */
+  ZIP_POSTAL_METADATA = 8,
+
+  /**
+   * Custom Account Data key type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_CUSTOM_ACCOUNT_DATA_KEY = 9;
+   */
+  CUSTOM_ACCOUNT_DATA_KEY = 9,
+
+  /**
+   * Sip Header Data type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_SIP_HEADER_DATA = 10;
+   */
+  SIP_HEADER_DATA = 10,
+
+  /**
+   * Integration Data type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_INTEGRATION_DATA = 11;
+   */
+  INTEGRATION_DATA = 11,
+
+  /**
+   * Journey Data type
+   *
+   * @generated from enum value: WEB_LINK_COMPONENT_KEY_TYPE_JOURNEY_DATA = 12;
+   */
+  JOURNEY_DATA = 12,
+}
+
+/**
  * ParameterSourceType defines the type of parameter source.
  *
  * @generated from enum api.commons.org.ParameterSourceType
@@ -2859,7 +2985,8 @@ export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplay
   /**
    * The template sid of the client info display template
    *
-   * @generated from field: string template_sid = 1;
+   * @generated from field: string template_sid = 1 [deprecated = true];
+   * @deprecated
    */
   templateSid: string;
 
@@ -2904,6 +3031,13 @@ export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplay
    * @generated from field: api.commons.org.TemplateCategory template_category = 7;
    */
   templateCategory: TemplateCategory;
+
+  /**
+   * The sid of the client info display template
+   *
+   * @generated from field: int64 client_info_display_template_sid = 8;
+   */
+  clientInfoDisplayTemplateSid: bigint;
 
   constructor(data?: PartialMessage<ClientInfoDisplayTemplate>);
 
@@ -3031,6 +3165,146 @@ export declare class DialedNumberFieldStyle extends Message<DialedNumberFieldSty
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DialedNumberFieldStyle;
 
   static equals(a: DialedNumberFieldStyle | PlainMessage<DialedNumberFieldStyle> | undefined, b: DialedNumberFieldStyle | PlainMessage<DialedNumberFieldStyle> | undefined): boolean;
+}
+
+/**
+ * A structure used for representing a web link
+ *
+ * @generated from message api.commons.org.WebLink
+ */
+export declare class WebLink extends Message<WebLink> {
+  /**
+   * The unique sid of a web link
+   *
+   * @generated from field: int64 web_link_sid = 1;
+   */
+  webLinkSid: bigint;
+
+  /**
+   * The name of the web link
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * The description of the web link
+   *
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  /**
+   * The link type
+   *
+   * @generated from field: api.commons.org.WebLinkType link_type = 4;
+   */
+  linkType: WebLinkType;
+
+  /**
+   * The order position of the web link
+   *
+   * @generated from field: int64 order = 5;
+   */
+  order: bigint;
+
+  /**
+   * The base url components of the web link
+   *
+   * @generated from field: repeated api.commons.org.WebLinkComponent base_url = 6;
+   */
+  baseUrl: WebLinkComponent[];
+
+  /**
+   * The web link parameters
+   *
+   * @generated from field: repeated api.commons.org.WebLinkParameter parameters = 7;
+   */
+  parameters: WebLinkParameter[];
+
+  constructor(data?: PartialMessage<WebLink>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.WebLink";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WebLink;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WebLink;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WebLink;
+
+  static equals(a: WebLink | PlainMessage<WebLink> | undefined, b: WebLink | PlainMessage<WebLink> | undefined): boolean;
+}
+
+/**
+ * WebLinkComponent contains the key type and string of a web link
+ *
+ * @generated from message api.commons.org.WebLinkComponent
+ */
+export declare class WebLinkComponent extends Message<WebLinkComponent> {
+  /**
+   * The component key type of the web link component
+   *
+   * @generated from field: api.commons.org.WebLinkComponentKeyType key_type = 1;
+   */
+  keyType: WebLinkComponentKeyType;
+
+  /**
+   * The value of the web link component
+   *
+   * @generated from field: string value = 2;
+   */
+  value: string;
+
+  constructor(data?: PartialMessage<WebLinkComponent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.WebLinkComponent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WebLinkComponent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WebLinkComponent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WebLinkComponent;
+
+  static equals(a: WebLinkComponent | PlainMessage<WebLinkComponent> | undefined, b: WebLinkComponent | PlainMessage<WebLinkComponent> | undefined): boolean;
+}
+
+/**
+ * WebLinkParameter contains a key and web link component
+ *
+ * @generated from message api.commons.org.WebLinkParameter
+ */
+export declare class WebLinkParameter extends Message<WebLinkParameter> {
+  /**
+   * The key for a web link parameter
+   *
+   * @generated from field: string key = 1;
+   */
+  key: string;
+
+  /**
+   * The web link components for a web link parameter
+   *
+   * @generated from field: repeated api.commons.org.WebLinkComponent components = 2;
+   */
+  components: WebLinkComponent[];
+
+  constructor(data?: PartialMessage<WebLinkParameter>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.WebLinkParameter";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WebLinkParameter;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WebLinkParameter;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WebLinkParameter;
+
+  static equals(a: WebLinkParameter | PlainMessage<WebLinkParameter> | undefined, b: WebLinkParameter | PlainMessage<WebLinkParameter> | undefined): boolean;
 }
 
 /**

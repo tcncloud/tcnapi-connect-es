@@ -22,6 +22,44 @@ export const TemplateCategory = proto3.makeEnum(
 );
 
 /**
+ * WebLinkType describes the type of a particular web link
+ *
+ * @generated from enum api.commons.org.WebLinkType
+ */
+export const WebLinkType = proto3.makeEnum(
+  "api.commons.org.WebLinkType",
+  [
+    {no: 0, name: "WEB_LINK_TYPE_UNSPECIFIED"},
+    {no: 1, name: "WEB_LINK_STANDARD"},
+    {no: 2, name: "WEB_LINK_JAVASCRIPT"},
+  ],
+);
+
+/**
+ * Enums to represent the WebLinkComponentKeyType
+ *
+ * @generated from enum api.commons.org.WebLinkComponentKeyType
+ */
+export const WebLinkComponentKeyType = proto3.makeEnum(
+  "api.commons.org.WebLinkComponentKeyType",
+  [
+    {no: 0, name: "WEB_LINK_COMPONENT_KEY_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "WEB_LINK_COMPONENT_KEY_TYPE_STATIC_TEXT", localName: "STATIC_TEXT"},
+    {no: 2, name: "WEB_LINK_COMPONENT_KEY_TYPE_TTS_FIELD", localName: "TTS_FIELD"},
+    {no: 3, name: "WEB_LINK_COMPONENT_KEY_TYPE_AGENT_INFO", localName: "AGENT_INFO"},
+    {no: 4, name: "WEB_LINK_COMPONENT_KEY_TYPE_DATA_DIP", localName: "DATA_DIP"},
+    {no: 5, name: "WEB_LINK_COMPONENT_KEY_TYPE_IVR_DATA", localName: "IVR_DATA"},
+    {no: 6, name: "WEB_LINK_COMPONENT_KEY_TYPE_DATA_COLLECT", localName: "DATA_COLLECT"},
+    {no: 7, name: "WEB_LINK_COMPONENT_KEY_TYPE_PHONE_METADATA", localName: "PHONE_METADATA"},
+    {no: 8, name: "WEB_LINK_COMPONENT_KEY_TYPE_ZIP_POSTAL_METADATA", localName: "ZIP_POSTAL_METADATA"},
+    {no: 9, name: "WEB_LINK_COMPONENT_KEY_TYPE_CUSTOM_ACCOUNT_DATA_KEY", localName: "CUSTOM_ACCOUNT_DATA_KEY"},
+    {no: 10, name: "WEB_LINK_COMPONENT_KEY_TYPE_SIP_HEADER_DATA", localName: "SIP_HEADER_DATA"},
+    {no: 11, name: "WEB_LINK_COMPONENT_KEY_TYPE_INTEGRATION_DATA", localName: "INTEGRATION_DATA"},
+    {no: 12, name: "WEB_LINK_COMPONENT_KEY_TYPE_JOURNEY_DATA", localName: "JOURNEY_DATA"},
+  ],
+);
+
+/**
  * ParameterSourceType defines the type of parameter source.
  *
  * @generated from enum api.commons.org.ParameterSourceType
@@ -826,6 +864,7 @@ export const ClientInfoDisplayTemplate = proto3.makeMessageType(
     { no: 5, name: "dialed_number_field_style", kind: "message", T: DialedNumberFieldStyle },
     { no: 6, name: "contact_field_styles", kind: "message", T: ContactFieldStyle, repeated: true },
     { no: 7, name: "template_category", kind: "enum", T: proto3.getEnumType(TemplateCategory) },
+    { no: 8, name: "client_info_display_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -867,6 +906,50 @@ export const DialedNumberFieldStyle = proto3.makeMessageType(
   () => [
     { no: 1, name: "field_style", kind: "message", T: FieldStyle },
     { no: 2, name: "display_to_agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * A structure used for representing a web link
+ *
+ * @generated from message api.commons.org.WebLink
+ */
+export const WebLink = proto3.makeMessageType(
+  "api.commons.org.WebLink",
+  () => [
+    { no: 1, name: "web_link_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "link_type", kind: "enum", T: proto3.getEnumType(WebLinkType) },
+    { no: 5, name: "order", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "base_url", kind: "message", T: WebLinkComponent, repeated: true },
+    { no: 7, name: "parameters", kind: "message", T: WebLinkParameter, repeated: true },
+  ],
+);
+
+/**
+ * WebLinkComponent contains the key type and string of a web link
+ *
+ * @generated from message api.commons.org.WebLinkComponent
+ */
+export const WebLinkComponent = proto3.makeMessageType(
+  "api.commons.org.WebLinkComponent",
+  () => [
+    { no: 1, name: "key_type", kind: "enum", T: proto3.getEnumType(WebLinkComponentKeyType) },
+    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * WebLinkParameter contains a key and web link component
+ *
+ * @generated from message api.commons.org.WebLinkParameter
+ */
+export const WebLinkParameter = proto3.makeMessageType(
+  "api.commons.org.WebLinkParameter",
+  () => [
+    { no: 1, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "components", kind: "message", T: WebLinkComponent, repeated: true },
   ],
 );
 

@@ -5133,6 +5133,35 @@ export const GenerateTourWeekPatternsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the RemoveAgentFromSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromScheduleRequest
+ */
+export const RemoveAgentFromScheduleRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.RemoveAgentFromScheduleRequest",
+  () => [
+    { no: 1, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 2, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "schedule_selector", kind: "message", T: ScheduleSelector },
+    { no: 4, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 5, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for the RemoveAgentFromSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromScheduleResponse
+ */
+export const RemoveAgentFromScheduleResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.RemoveAgentFromScheduleResponse",
+  () => [
+    { no: 1, name: "unassigned_wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "updated_shifts", kind: "message", T: ShiftInstance, repeated: true },
+  ],
+);
+
+/**
  * Request message for the ListValidAgentsForReplacement RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementReq

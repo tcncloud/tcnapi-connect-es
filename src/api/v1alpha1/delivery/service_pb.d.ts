@@ -1792,9 +1792,9 @@ export declare class EmailDestination extends Message<EmailDestination> {
   fromAddr: string;
 
   /**
-   * @generated from field: string to_addrs = 4;
+   * @generated from field: repeated string to_addrs = 4;
    */
-  toAddrs: string;
+  toAddrs: string[];
 
   constructor(data?: PartialMessage<EmailDestination>);
 

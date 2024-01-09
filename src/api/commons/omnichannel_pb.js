@@ -53,6 +53,7 @@ export const OmniCampaignModuleType = proto3.makeEnum(
     {no: 0, name: "MODULE_TYPE_INBOUND"},
     {no: 1, name: "MODULE_TYPE_OUTBOUND"},
     {no: 2, name: "MODULE_TYPE_MANUAL_APPROVAL"},
+    {no: 3, name: "MODULE_TYPE_MANUAL"},
   ],
 );
 
@@ -1330,6 +1331,10 @@ export const WhatsAppNumber = proto3.makeMessageType(
     { no: 1, name: "number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "provider", kind: "enum", T: proto3.getEnumType(WhatsAppNumberProvider) },
     { no: 3, name: "country_code", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "whatsapp_number_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 5, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "date_created", kind: "message", T: Timestamp },
+    { no: 7, name: "date_modified", kind: "message", T: Timestamp },
   ],
 );
 
