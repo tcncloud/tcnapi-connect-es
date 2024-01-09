@@ -641,6 +641,7 @@ export const EmailDestination = proto3.makeMessageType(
     { no: 1, name: "to_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "cc_addrs", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 3, name: "from_addr", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "to_addrs", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
