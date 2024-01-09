@@ -2538,6 +2538,11 @@ export declare class EmailTransport extends Message<EmailTransport> {
    */
   ccAddresses: string[];
 
+  /**
+   * @generated from field: repeated string to_addresses = 4;
+   */
+  toAddresses: string[];
+
   constructor(data?: PartialMessage<EmailTransport>);
 
   static readonly runtime: typeof proto3;
