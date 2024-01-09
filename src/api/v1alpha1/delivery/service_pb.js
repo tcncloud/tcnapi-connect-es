@@ -894,7 +894,6 @@ export const EmailTransport = proto3.makeMessageType(
     { no: 1, name: "from_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "to_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "cc_addresses", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 4, name: "to_addresses", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
