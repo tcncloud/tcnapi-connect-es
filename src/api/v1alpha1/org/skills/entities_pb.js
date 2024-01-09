@@ -277,3 +277,26 @@ export const SkillGroupMembers = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for the UpdateUsersOnSkillGroup rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest
+ */
+export const UpdateUsersOnSkillGroupRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.UpdateUsersOnSkillGroupRequest",
+  () => [
+    { no: 1, name: "skill_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the UpdateUsersOnSkillGroup rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.UpdateUsersOnSkillGroupResponse
+ */
+export const UpdateUsersOnSkillGroupResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.UpdateUsersOnSkillGroupResponse",
+  [],
+);
+
