@@ -1332,6 +1332,90 @@ export declare class ListAgentsResponse_AgentDetails_AgentProfileGroup extends M
 }
 
 /**
+ * Request message for ListPublicUsers rpc.
+ *
+ * @generated from message api.v1alpha1.org.ListPublicUsersRequest
+ */
+export declare class ListPublicUsersRequest extends Message<ListPublicUsersRequest> {
+  /**
+   * Return a list of only user agents. When this is false all users are returned.
+   *
+   * @generated from field: bool agent_filter = 1;
+   */
+  agentFilter: boolean;
+
+  /**
+   * Filter by the user's archived status.
+   *
+   * @generated from field: api.commons.UserArchivedStateFilter archived_filter = 2;
+   */
+  archivedFilter: UserArchivedStateFilter;
+
+  constructor(data?: PartialMessage<ListPublicUsersRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListPublicUsersRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublicUsersRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublicUsersRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublicUsersRequest;
+
+  static equals(a: ListPublicUsersRequest | PlainMessage<ListPublicUsersRequest> | undefined, b: ListPublicUsersRequest | PlainMessage<ListPublicUsersRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for ListPublicUsers rpc.
+ *
+ * @generated from message api.v1alpha1.org.ListPublicUsersResponse
+ */
+export declare class ListPublicUsersResponse extends Message<ListPublicUsersResponse> {
+  /**
+   * The user ID of the user
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * The user's first name
+   *
+   * @generated from field: string first_name = 2;
+   */
+  firstName: string;
+
+  /**
+   * The user's last name
+   *
+   * @generated from field: string last_name = 3;
+   */
+  lastName: string;
+
+  /**
+   * The user's username
+   *
+   * @generated from field: string username = 4;
+   */
+  username: string;
+
+  constructor(data?: PartialMessage<ListPublicUsersResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListPublicUsersResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublicUsersResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublicUsersResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublicUsersResponse;
+
+  static equals(a: ListPublicUsersResponse | PlainMessage<ListPublicUsersResponse> | undefined, b: ListPublicUsersResponse | PlainMessage<ListPublicUsersResponse> | undefined): boolean;
+}
+
+/**
  * Request message for listUsers rpc.
  *
  * @generated from message api.v1alpha1.org.ListUsersRequest
