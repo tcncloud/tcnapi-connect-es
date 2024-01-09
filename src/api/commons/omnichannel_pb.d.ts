@@ -4500,6 +4500,34 @@ export declare class WhatsAppNumber extends Message<WhatsAppNumber> {
    */
   countryCode: number;
 
+  /**
+   * the whatsapp number identifier
+   *
+   * @generated from field: int64 whatsapp_number_sid = 4 [jstype = JS_STRING];
+   */
+  whatsappNumberSid: string;
+
+  /**
+   * the display name
+   *
+   * @generated from field: string display_name = 5;
+   */
+  displayName: string;
+
+  /**
+   * the time the whatsapp_number was created
+   *
+   * @generated from field: google.protobuf.Timestamp date_created = 6;
+   */
+  dateCreated?: Timestamp;
+
+  /**
+   * the time the whatsapp_number was last modified
+   *
+   * @generated from field: google.protobuf.Timestamp date_modified = 7;
+   */
+  dateModified?: Timestamp;
+
   constructor(data?: PartialMessage<WhatsAppNumber>);
 
   static readonly runtime: typeof proto3;

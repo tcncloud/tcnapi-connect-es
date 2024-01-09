@@ -1797,3 +1797,52 @@ export const ListWhatsAppNumbersRes = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for create whatsapp number
+ *
+ * @generated from message api.v0alpha.CreateWhatsAppNumberRequest
+ */
+export const CreateWhatsAppNumberRequest = proto3.makeMessageType(
+  "api.v0alpha.CreateWhatsAppNumberRequest",
+  () => [
+    { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
+  ],
+);
+
+/**
+ * Response message for listing whatsapp number
+ *
+ * @generated from message api.v0alpha.CreateWhatsAppNumberResponse
+ */
+export const CreateWhatsAppNumberResponse = proto3.makeMessageType(
+  "api.v0alpha.CreateWhatsAppNumberResponse",
+  () => [
+    { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
+  ],
+);
+
+/**
+ * Request message for update whatsapp number
+ *
+ * @generated from message api.v0alpha.UpdateWhatsAppNumberRequest
+ */
+export const UpdateWhatsAppNumberRequest = proto3.makeMessageType(
+  "api.v0alpha.UpdateWhatsAppNumberRequest",
+  () => [
+    { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
+    { no: 2, name: "field_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * Response message for update whatsapp number
+ *
+ * @generated from message api.v0alpha.UpdateWhatsAppNumberResponse
+ */
+export const UpdateWhatsAppNumberResponse = proto3.makeMessageType(
+  "api.v0alpha.UpdateWhatsAppNumberResponse",
+  () => [
+    { no: 1, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
+  ],
+);
+
