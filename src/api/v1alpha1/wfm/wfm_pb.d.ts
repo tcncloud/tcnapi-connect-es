@@ -14707,6 +14707,98 @@ export declare class GenerateTourWeekPatternsRes extends Message<GenerateTourWee
 }
 
 /**
+ * Request message for the RemoveAgentFromSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromScheduleRequest
+ */
+export declare class RemoveAgentFromScheduleRequest extends Message<RemoveAgentFromScheduleRequest> {
+  /**
+   * Datetime range over which the agent should be removed.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 1;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * ID of the agent to be removed.
+   *
+   * @generated from field: int64 wfm_agent_sid = 2;
+   */
+  wfmAgentSid: bigint;
+
+  /**
+   * The schedule containing shifts for @wfm_agent_sid to be removed from.
+   *
+   * @generated from field: api.commons.ScheduleSelector schedule_selector = 3;
+   */
+  scheduleSelector?: ScheduleSelector;
+
+  /**
+   * The node that the shifts to be removed are associated with.
+   * If left blank, the agent may be removed from shifts associated with the entire scenario.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 4;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * The schedule_scenario_sid that @node_selector and @wfm_agent_sid is associated with.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 5;
+   */
+  scheduleScenarioSid: bigint;
+
+  constructor(data?: PartialMessage<RemoveAgentFromScheduleRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromScheduleRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromScheduleRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromScheduleRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromScheduleRequest;
+
+  static equals(a: RemoveAgentFromScheduleRequest | PlainMessage<RemoveAgentFromScheduleRequest> | undefined, b: RemoveAgentFromScheduleRequest | PlainMessage<RemoveAgentFromScheduleRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the RemoveAgentFromSchedule RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromScheduleResponse
+ */
+export declare class RemoveAgentFromScheduleResponse extends Message<RemoveAgentFromScheduleResponse> {
+  /**
+   * ID of the newly created unassigned WFM agent.
+   *
+   * @generated from field: int64 unassigned_wfm_agent_sid = 1;
+   */
+  unassignedWfmAgentSid: bigint;
+
+  /**
+   * All shifts updated by the method, now assigned to @unassigned_wfm_agent_sid.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.ShiftInstance updated_shifts = 2;
+   */
+  updatedShifts: ShiftInstance[];
+
+  constructor(data?: PartialMessage<RemoveAgentFromScheduleResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromScheduleResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromScheduleResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromScheduleResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromScheduleResponse;
+
+  static equals(a: RemoveAgentFromScheduleResponse | PlainMessage<RemoveAgentFromScheduleResponse> | undefined, b: RemoveAgentFromScheduleResponse | PlainMessage<RemoveAgentFromScheduleResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the ListValidAgentsForReplacement RPC.
  *
  * @generated from message api.v1alpha1.wfm.ListValidAgentsForReplacementReq
