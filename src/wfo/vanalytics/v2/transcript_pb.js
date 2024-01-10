@@ -37,7 +37,7 @@ export const ReviewStatus = proto3.makeEnum(
 );
 
 /**
- * Transcript is the textualized interaction between two or more parties.
+ * A Transcript is the textualized interaction between two or more parties.
  *
  * @generated from message wfo.vanalytics.v2.Transcript
  */
@@ -46,7 +46,6 @@ export const Transcript = proto3.makeMessageType(
   () => [
     { no: 1, name: "call", kind: "message", T: Call, oneof: "metadata" },
     { no: 2, name: "sms", kind: "message", T: Sms, oneof: "metadata" },
-    { no: 11, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 12, name: "channel", kind: "enum", T: proto3.getEnumType(Channel) },
     { no: 13, name: "start_time", kind: "message", T: Timestamp },
     { no: 14, name: "create_time", kind: "message", T: Timestamp },
@@ -143,7 +142,7 @@ export const FlagSummary_Review = proto3.makeMessageType(
 );
 
 /**
- * Sms defines channel specific transcript metadata.
+ * A resource defining sms specific transcript metadata.
  *
  * @generated from message wfo.vanalytics.v2.Sms
  */
@@ -170,6 +169,8 @@ export const Sms_Thread = proto3.makeMessageType(
 );
 
 /**
+ * The text of a segment of a thread of a conversation.
+ *
  * @generated from message wfo.vanalytics.v2.Sms.Segment
  */
 export const Sms_Segment = proto3.makeMessageType(
@@ -196,6 +197,8 @@ export const Call = proto3.makeMessageType(
 );
 
 /**
+ * The text of the call.
+ *
  * @generated from message wfo.vanalytics.v2.Call.Thread
  */
 export const Call_Thread = proto3.makeMessageType(
@@ -208,6 +211,8 @@ export const Call_Thread = proto3.makeMessageType(
 );
 
 /**
+ * The text of a segment of a thread of a call.
+ *
  * @generated from message wfo.vanalytics.v2.Call.Segment
  */
 export const Call_Segment = proto3.makeMessageType(
@@ -244,6 +249,8 @@ export const SearchTranscriptsResponse = proto3.makeMessageType(
 );
 
 /**
+ * A matching result.
+ *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsResponse.Hit
  */
 export const SearchTranscriptsResponse_Hit = proto3.makeMessageType(
@@ -257,6 +264,8 @@ export const SearchTranscriptsResponse_Hit = proto3.makeMessageType(
 );
 
 /**
+ * A query used to filter the transcripts.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptBoolQuery
  */
 export const TranscriptBoolQuery = proto3.makeMessageType(
@@ -280,6 +289,8 @@ export const TranscriptQuery = proto3.makeMessageType(
 );
 
 /**
+ * Represents a list of transcripts
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.TranscriptSid
  */
 export const TranscriptQuery_TranscriptSid = proto3.makeMessageType(
@@ -291,6 +302,8 @@ export const TranscriptQuery_TranscriptSid = proto3.makeMessageType(
 );
 
 /**
+ * Represents a list of channels
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Channel
  */
 export const TranscriptQuery_Channel = proto3.makeMessageType(
@@ -302,6 +315,8 @@ export const TranscriptQuery_Channel = proto3.makeMessageType(
 );
 
 /**
+ * Queries on channel specific data.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Metadata
  */
 export const TranscriptQuery_Metadata = proto3.makeMessageType(

@@ -50,12 +50,17 @@ export declare enum ReviewStatus {
 }
 
 /**
- * Transcript is the textualized interaction between two or more parties.
+ * A Transcript is the textualized interaction between two or more parties.
  *
  * @generated from message wfo.vanalytics.v2.Transcript
  */
 export declare class Transcript extends Message<Transcript> {
   /**
+   * The metadata field contain metadata
+   * pertaining to the conversation type.
+   * They also contain the actual text of
+   * the transcript.
+   *
    * @generated from oneof wfo.vanalytics.v2.Transcript.metadata
    */
   metadata: {
@@ -73,16 +78,15 @@ export declare class Transcript extends Message<Transcript> {
   } | { case: undefined; value?: undefined };
 
   /**
-   * @generated from field: string org_id = 11;
-   */
-  orgId: string;
-
-  /**
+   * The type of communication.
+   *
    * @generated from field: wfo.vanalytics.v2.Channel channel = 12;
    */
   channel: Channel;
 
   /**
+   * The time the communication was initiated.
+   *
    * @generated from field: google.protobuf.Timestamp start_time = 13;
    */
   startTime?: Timestamp;
@@ -100,11 +104,15 @@ export declare class Transcript extends Message<Transcript> {
   deleteTime?: Timestamp;
 
   /**
+   * The flag summary of the transcript.
+   *
    * @generated from field: wfo.vanalytics.v2.FlagSummary flag_summary = 16;
    */
   flagSummary?: FlagSummary;
 
   /**
+   * The unique identifier of the transcript.
+   *
    * @generated from field: int64 transcript_sid = 17;
    */
   transcriptSid: bigint;
@@ -413,17 +421,21 @@ export declare class FlagSummary_Review extends Message<FlagSummary_Review> {
 }
 
 /**
- * Sms defines channel specific transcript metadata.
+ * A resource defining sms specific transcript metadata.
  *
  * @generated from message wfo.vanalytics.v2.Sms
  */
 export declare class Sms extends Message<Sms> {
   /**
+   * The unique identifier of the sms conversation.
+   *
    * @generated from field: int64 conversation_sid = 1;
    */
   conversationSid: bigint;
 
   /**
+   * The threads of the sms conversation.
+   *
    * @generated from field: repeated wfo.vanalytics.v2.Sms.Thread threads = 2;
    */
   threads: Sms_Thread[];
@@ -450,11 +462,15 @@ export declare class Sms extends Message<Sms> {
  */
 export declare class Sms_Thread extends Message<Sms_Thread> {
   /**
+   * TODO: ? A unique identifier for the thread.
+   *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
+   * A segment contains text of the thread.
+   *
    * @generated from field: repeated wfo.vanalytics.v2.Sms.Segment segments = 2;
    */
   segments: Sms_Segment[];
@@ -475,6 +491,8 @@ export declare class Sms_Thread extends Message<Sms_Thread> {
 }
 
 /**
+ * The text of a segment of a thread of a conversation.
+ *
  * @generated from message wfo.vanalytics.v2.Sms.Segment
  */
 export declare class Sms_Segment extends Message<Sms_Segment> {
@@ -505,21 +523,29 @@ export declare class Sms_Segment extends Message<Sms_Segment> {
  */
 export declare class Call extends Message<Call> {
   /**
+   * A unique identifier for a call.
+   *
    * @generated from field: int64 call_sid = 1;
    */
   callSid: bigint;
 
   /**
+   * The type of call.
+   *
    * @generated from field: api.commons.CallType.Enum call_type = 2;
    */
   callType: CallType_Enum;
 
   /**
+   * The total audio time of a call.
+   *
    * @generated from field: uint32 audio_time = 3;
    */
   audioTime: number;
 
   /**
+   * The threads of the call conversation.
+   *
    * @generated from field: repeated wfo.vanalytics.v2.Call.Thread threads = 4;
    */
   threads: Call_Thread[];
@@ -540,15 +566,21 @@ export declare class Call extends Message<Call> {
 }
 
 /**
+ * The text of the call.
+ *
  * @generated from message wfo.vanalytics.v2.Call.Thread
  */
 export declare class Call_Thread extends Message<Call_Thread> {
   /**
+   * A unique identifier for a thread.
+   *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
+   * The segments of a thread.
+   *
    * @generated from field: repeated wfo.vanalytics.v2.Call.Segment segments = 2;
    */
   segments: Call_Segment[];
@@ -569,6 +601,8 @@ export declare class Call_Thread extends Message<Call_Thread> {
 }
 
 /**
+ * The text of a segment of a thread of a call.
+ *
  * @generated from message wfo.vanalytics.v2.Call.Segment
  */
 export declare class Call_Segment extends Message<Call_Segment> {
@@ -597,35 +631,35 @@ export declare class Call_Segment extends Message<Call_Segment> {
  */
 export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsRequest> {
   /**
-   * number of hits included in response
+   * Optional. Number of hits included in response.
    *
    * @generated from field: uint32 page_size = 2;
    */
   pageSize: number;
 
   /**
-   * sort order for the fields
+   * Optional. Fields used to order the results.
    *
    * @generated from field: string order_by = 3;
    */
   orderBy: string;
 
   /**
-   * fields to populate in the response hits
+   * Optional. The fields to populate in the response results
    *
    * @generated from field: google.protobuf.FieldMask read_mask = 4;
    */
   readMask?: FieldMask;
 
   /**
-   * Query used to filter the results
+   * Required. Query used to filter the results
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptBoolQuery bool_query = 5;
    */
   boolQuery?: TranscriptBoolQuery;
 
   /**
-   * token for getting the next page of hits
+   * Optional. Token for getting the next page of results
    *
    * @generated from field: string page_token = 6;
    */
@@ -651,14 +685,14 @@ export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsR
  */
 export declare class SearchTranscriptsResponse extends Message<SearchTranscriptsResponse> {
   /**
-   * one page of hits
+   * One page of results.
    *
    * @generated from field: repeated wfo.vanalytics.v2.SearchTranscriptsResponse.Hit hits = 1;
    */
   hits: SearchTranscriptsResponse_Hit[];
 
   /**
-   * toke for the next page of hits
+   * Token for retrieving the next page of hits.
    *
    * @generated from field: string next_page_token = 2;
    */
@@ -680,20 +714,28 @@ export declare class SearchTranscriptsResponse extends Message<SearchTranscripts
 }
 
 /**
+ * A matching result.
+ *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsResponse.Hit
  */
 export declare class SearchTranscriptsResponse_Hit extends Message<SearchTranscriptsResponse_Hit> {
   /**
+   * A matching transcript.
+   *
    * @generated from field: wfo.vanalytics.v2.Transcript transcript = 1;
    */
   transcript?: Transcript;
 
   /**
+   * The index of the transcript.
+   *
    * @generated from field: string index = 2;
    */
   index: string;
 
   /**
+   * The version of the transcript.
+   *
    * @generated from field: int64 version = 3;
    */
   version: bigint;
@@ -714,6 +756,8 @@ export declare class SearchTranscriptsResponse_Hit extends Message<SearchTranscr
 }
 
 /**
+ * A query used to filter the transcripts.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptBoolQuery
  */
 export declare class TranscriptBoolQuery extends Message<TranscriptBoolQuery> {
@@ -742,21 +786,29 @@ export declare class TranscriptBoolQuery extends Message<TranscriptBoolQuery> {
  */
 export declare class TranscriptQuery extends Message<TranscriptQuery> {
   /**
+   * Optional. TranscriptSids to filter by.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.TranscriptSid transcript_sid = 1;
    */
   transcriptSid?: TranscriptQuery_TranscriptSid;
 
   /**
+   * Optional. Channel to filter by.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Channel channel = 2;
    */
   channel?: TranscriptQuery_Channel;
 
   /**
+   * Optional. Metadata to filter by.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Metadata metadata = 3;
    */
   metadata?: TranscriptQuery_Metadata;
 
   /**
+   * Optional. Criteria for filtering by the text of the transcript.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads threads = 4;
    */
   threads?: TranscriptQuery_Threads;
@@ -777,10 +829,14 @@ export declare class TranscriptQuery extends Message<TranscriptQuery> {
 }
 
 /**
+ * Represents a list of transcripts
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.TranscriptSid
  */
 export declare class TranscriptQuery_TranscriptSid extends Message<TranscriptQuery_TranscriptSid> {
   /**
+   * Will match any transcript with a transcript sid in the list.
+   *
    * @generated from field: repeated int64 any = 1;
    */
   any: bigint[];
@@ -801,10 +857,14 @@ export declare class TranscriptQuery_TranscriptSid extends Message<TranscriptQue
 }
 
 /**
+ * Represents a list of channels
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Channel
  */
 export declare class TranscriptQuery_Channel extends Message<TranscriptQuery_Channel> {
   /**
+   * Will match any transcript with a channel in the list.
+   *
    * @generated from field: repeated wfo.vanalytics.v2.Channel any = 1;
    */
   any: Channel[];
@@ -825,6 +885,8 @@ export declare class TranscriptQuery_Channel extends Message<TranscriptQuery_Cha
 }
 
 /**
+ * Queries on channel specific data.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Metadata
  */
 export declare class TranscriptQuery_Metadata extends Message<TranscriptQuery_Metadata> {
