@@ -219,63 +219,16 @@ export const Call_Segment = proto3.makeMessageType(
 );
 
 /**
- * @generated from message wfo.vanalytics.v2.CreateTranscriptRequest
- */
-export const CreateTranscriptRequest = proto3.makeMessageType(
-  "wfo.vanalytics.v2.CreateTranscriptRequest",
-  () => [
-    { no: 1, name: "transcript", kind: "message", T: Transcript },
-  ],
-);
-
-/**
- * @generated from message wfo.vanalytics.v2.CreateTranscriptResponse
- */
-export const CreateTranscriptResponse = proto3.makeMessageType(
-  "wfo.vanalytics.v2.CreateTranscriptResponse",
-  () => [
-    { no: 1, name: "transcript", kind: "message", T: Transcript },
-  ],
-);
-
-/**
- * @generated from message wfo.vanalytics.v2.UpdateTranscriptRequest
- */
-export const UpdateTranscriptRequest = proto3.makeMessageType(
-  "wfo.vanalytics.v2.UpdateTranscriptRequest",
-  [],
-);
-
-/**
- * @generated from message wfo.vanalytics.v2.UpdateTranscriptResponse
- */
-export const UpdateTranscriptResponse = proto3.makeMessageType(
-  "wfo.vanalytics.v2.UpdateTranscriptResponse",
-  [],
-);
-
-/**
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsRequest
  */
 export const SearchTranscriptsRequest = proto3.makeMessageType(
   "wfo.vanalytics.v2.SearchTranscriptsRequest",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "page_size", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 3, name: "order_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "read_mask", kind: "message", T: FieldMask },
     { no: 5, name: "bool_query", kind: "message", T: TranscriptBoolQuery },
     { no: 6, name: "page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message wfo.vanalytics.v2.SearchTranscriptsPageToken
- */
-export const SearchTranscriptsPageToken = proto3.makeMessageType(
-  "wfo.vanalytics.v2.SearchTranscriptsPageToken",
-  () => [
-    { no: 1, name: "search_after", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

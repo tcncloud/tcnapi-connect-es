@@ -593,121 +593,40 @@ export declare class Call_Segment extends Message<Call_Segment> {
 }
 
 /**
- * @generated from message wfo.vanalytics.v2.CreateTranscriptRequest
- */
-export declare class CreateTranscriptRequest extends Message<CreateTranscriptRequest> {
-  /**
-   * @generated from field: wfo.vanalytics.v2.Transcript transcript = 1;
-   */
-  transcript?: Transcript;
-
-  constructor(data?: PartialMessage<CreateTranscriptRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "wfo.vanalytics.v2.CreateTranscriptRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTranscriptRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTranscriptRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTranscriptRequest;
-
-  static equals(a: CreateTranscriptRequest | PlainMessage<CreateTranscriptRequest> | undefined, b: CreateTranscriptRequest | PlainMessage<CreateTranscriptRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message wfo.vanalytics.v2.CreateTranscriptResponse
- */
-export declare class CreateTranscriptResponse extends Message<CreateTranscriptResponse> {
-  /**
-   * @generated from field: wfo.vanalytics.v2.Transcript transcript = 1;
-   */
-  transcript?: Transcript;
-
-  constructor(data?: PartialMessage<CreateTranscriptResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "wfo.vanalytics.v2.CreateTranscriptResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateTranscriptResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateTranscriptResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateTranscriptResponse;
-
-  static equals(a: CreateTranscriptResponse | PlainMessage<CreateTranscriptResponse> | undefined, b: CreateTranscriptResponse | PlainMessage<CreateTranscriptResponse> | undefined): boolean;
-}
-
-/**
- * @generated from message wfo.vanalytics.v2.UpdateTranscriptRequest
- */
-export declare class UpdateTranscriptRequest extends Message<UpdateTranscriptRequest> {
-  constructor(data?: PartialMessage<UpdateTranscriptRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "wfo.vanalytics.v2.UpdateTranscriptRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTranscriptRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTranscriptRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTranscriptRequest;
-
-  static equals(a: UpdateTranscriptRequest | PlainMessage<UpdateTranscriptRequest> | undefined, b: UpdateTranscriptRequest | PlainMessage<UpdateTranscriptRequest> | undefined): boolean;
-}
-
-/**
- * @generated from message wfo.vanalytics.v2.UpdateTranscriptResponse
- */
-export declare class UpdateTranscriptResponse extends Message<UpdateTranscriptResponse> {
-  constructor(data?: PartialMessage<UpdateTranscriptResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "wfo.vanalytics.v2.UpdateTranscriptResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateTranscriptResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateTranscriptResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateTranscriptResponse;
-
-  static equals(a: UpdateTranscriptResponse | PlainMessage<UpdateTranscriptResponse> | undefined, b: UpdateTranscriptResponse | PlainMessage<UpdateTranscriptResponse> | undefined): boolean;
-}
-
-/**
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsRequest
  */
 export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsRequest> {
   /**
-   * @generated from field: string org_id = 1;
-   */
-  orgId: string;
-
-  /**
+   * number of hits included in response
+   *
    * @generated from field: uint32 page_size = 2;
    */
   pageSize: number;
 
   /**
+   * sort order for the fields
+   *
    * @generated from field: string order_by = 3;
    */
   orderBy: string;
 
   /**
+   * fields to populate in the response hits
+   *
    * @generated from field: google.protobuf.FieldMask read_mask = 4;
    */
   readMask?: FieldMask;
 
   /**
+   * Query used to filter the results
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptBoolQuery bool_query = 5;
    */
   boolQuery?: TranscriptBoolQuery;
 
   /**
+   * token for getting the next page of hits
+   *
    * @generated from field: string page_token = 6;
    */
   pageToken: string;
@@ -728,39 +647,19 @@ export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsR
 }
 
 /**
- * @generated from message wfo.vanalytics.v2.SearchTranscriptsPageToken
- */
-export declare class SearchTranscriptsPageToken extends Message<SearchTranscriptsPageToken> {
-  /**
-   * @generated from field: repeated string search_after = 1;
-   */
-  searchAfter: string[];
-
-  constructor(data?: PartialMessage<SearchTranscriptsPageToken>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "wfo.vanalytics.v2.SearchTranscriptsPageToken";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchTranscriptsPageToken;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchTranscriptsPageToken;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchTranscriptsPageToken;
-
-  static equals(a: SearchTranscriptsPageToken | PlainMessage<SearchTranscriptsPageToken> | undefined, b: SearchTranscriptsPageToken | PlainMessage<SearchTranscriptsPageToken> | undefined): boolean;
-}
-
-/**
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsResponse
  */
 export declare class SearchTranscriptsResponse extends Message<SearchTranscriptsResponse> {
   /**
+   * one page of hits
+   *
    * @generated from field: repeated wfo.vanalytics.v2.SearchTranscriptsResponse.Hit hits = 1;
    */
   hits: SearchTranscriptsResponse_Hit[];
 
   /**
+   * toke for the next page of hits
+   *
    * @generated from field: string next_page_token = 2;
    */
   nextPageToken: string;

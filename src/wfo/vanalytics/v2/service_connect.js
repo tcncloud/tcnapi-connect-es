@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateTranscriptRequest, CreateTranscriptResponse, SearchTranscriptsRequest, SearchTranscriptsResponse, UpdateTranscriptRequest, UpdateTranscriptResponse } from "./transcript_pb.js";
+import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateFilterRequest, CreateFilterResponse } from "./filter_pb.js";
 
@@ -14,28 +14,10 @@ export const Vanalytics = {
   typeName: "wfo.vanalytics.v2.Vanalytics",
   methods: {
     /**
-     * CreateTranscript audits the used transcription audio time for a client. The window
-     * of time to audit can be widened or narrowed using the request since and
-     * until fields.
+     * SearchTranscripts searches transcripts by search criteria. The search response
+     * contains one page of transcript hits. Traversing the paginated hits is
+     * achieved through subsequent requests using the response sort field.
      *
-     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateTranscript
-     */
-    createTranscript: {
-      name: "CreateTranscript",
-      I: CreateTranscriptRequest,
-      O: CreateTranscriptResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * @generated from rpc wfo.vanalytics.v2.Vanalytics.UpdateTranscript
-     */
-    updateTranscript: {
-      name: "UpdateTranscript",
-      I: UpdateTranscriptRequest,
-      O: UpdateTranscriptResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
      * @generated from rpc wfo.vanalytics.v2.Vanalytics.SearchTranscripts
      */
     searchTranscripts: {
@@ -45,6 +27,9 @@ export const Vanalytics = {
       kind: MethodKind.Unary,
     },
     /**
+     * CreateFilter creates a new filter. The filter contains a
+     * transcript query to filter transcripts.
+     *
      * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateFilter
      */
     createFilter: {
