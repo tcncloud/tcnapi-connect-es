@@ -5,7 +5,6 @@
 
 import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { CreateFilterRequest, CreateFilterResponse } from "./filter_pb.js";
 
 /**
  * @generated from service wfo.vanalytics.v2.Vanalytics
@@ -24,18 +23,6 @@ export const Vanalytics = {
       name: "SearchTranscripts",
       I: SearchTranscriptsRequest,
       O: SearchTranscriptsResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * CreateFilter creates a new filter. The filter contains a
-     * transcript query to filter transcripts.
-     *
-     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateFilter
-     */
-    createFilter: {
-      name: "CreateFilter",
-      I: CreateFilterRequest,
-      O: CreateFilterResponse,
       kind: MethodKind.Unary,
     },
   }
