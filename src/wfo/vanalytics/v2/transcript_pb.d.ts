@@ -85,16 +85,11 @@ export declare class Transcript extends Message<Transcript> {
   channel: Channel;
 
   /**
-   * The time the communication was initiated.
+   * The time this transcript was started.
    *
    * @generated from field: google.protobuf.Timestamp start_time = 13;
    */
   startTime?: Timestamp;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp create_time = 14;
-   */
-  createTime?: Timestamp;
 
   /**
    * The time this transcript was marked as deleted.
@@ -632,34 +627,37 @@ export declare class Call_Segment extends Message<Call_Segment> {
 export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsRequest> {
   /**
    * Optional. Number of hits included in response.
+   * If not set, it will default to 10.
    *
    * @generated from field: uint32 page_size = 2;
    */
   pageSize: number;
 
   /**
-   * Optional. Fields used to order the results.
+   * Optional. The order by which transcripts will be listed. Follows sql order by
+   * syntax. When not provided the order defaults to transcript_sid asc.
    *
    * @generated from field: string order_by = 3;
    */
   orderBy: string;
 
   /**
-   * Optional. The fields to populate in the response results
+   * Optional. A field mask which defines which transcript fields to return.
+   * When the mask is empty all fields will be returned.
    *
    * @generated from field: google.protobuf.FieldMask read_mask = 4;
    */
   readMask?: FieldMask;
 
   /**
-   * Required. Query used to filter the results
+   * Optional. Query by which to filter transcripts.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptBoolQuery bool_query = 5;
    */
   boolQuery?: TranscriptBoolQuery;
 
   /**
-   * Optional. Token for getting the next page of results
+   * Optional. Token for getting the next page of results.
    *
    * @generated from field: string page_token = 6;
    */
@@ -772,7 +770,7 @@ export declare class TranscriptBoolQuery extends Message<TranscriptBoolQuery> {
  */
 export declare class TranscriptQuery extends Message<TranscriptQuery> {
   /**
-   * Optional. TranscriptSids to filter by.
+   * Optional. Transcript sid to filter by.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.TranscriptSid transcript_sid = 1;
    */
@@ -1161,7 +1159,7 @@ export declare class Match extends Message<Match> {
   text: string;
 
   /**
-   * TODO: ???
+   * Optional. Operator must be one of: (AND, OR). Defaults to OR when empty.
    *
    * @generated from field: string operator = 2;
    */
@@ -1210,7 +1208,7 @@ export declare class Match extends Message<Match> {
  */
 export declare class SpanNear extends Message<SpanNear> {
   /**
-   * slop is the number of extra terms that can be in the query that
+   * The number of extra terms that can be in the query that
    * are not being searched for. For example: slop of 2 when searching for
    * "This is my dog" would allow "This is my quick brown dog".
    *
@@ -1219,7 +1217,7 @@ export declare class SpanNear extends Message<SpanNear> {
   slop: number;
 
   /**
-   * when in_order is true then the terms must be found in the order given.
+   * When in_order is true then the terms must be found in the order given.
    *
    * @generated from field: bool in_order = 2;
    */
@@ -1333,7 +1331,7 @@ export declare class SpanFuzzy extends Message<SpanFuzzy> {
   value: string;
 
   /**
-   * fuzziness allows the term to be spelled slightly incorrect and still
+   * Allows the term to be spelled slightly incorrect and still
    * match. fuzziness_value can have the values 0, 1, or 2; 0 would require
    * that the term matches exactly, 2 would allow 2 letter differences.
    * fuzziness_auto would automatically pick a number based on the word length

@@ -48,7 +48,6 @@ export const Transcript = proto3.makeMessageType(
     { no: 2, name: "sms", kind: "message", T: Sms, oneof: "metadata" },
     { no: 12, name: "channel", kind: "enum", T: proto3.getEnumType(Channel) },
     { no: 13, name: "start_time", kind: "message", T: Timestamp },
-    { no: 14, name: "create_time", kind: "message", T: Timestamp },
     { no: 15, name: "delete_time", kind: "message", T: Timestamp },
     { no: 16, name: "flag_summary", kind: "message", T: FlagSummary },
     { no: 17, name: "transcript_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
