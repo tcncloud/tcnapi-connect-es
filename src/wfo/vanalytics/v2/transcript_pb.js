@@ -315,7 +315,7 @@ export const TranscriptQuery_Channel = proto3.makeMessageType(
 );
 
 /**
- * Queries on channel specific data.
+ * Resource to query on channel specific data.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Metadata
  */
@@ -329,6 +329,8 @@ export const TranscriptQuery_Metadata = proto3.makeMessageType(
 );
 
 /**
+ * Resource to query on call specific data.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call
  */
 export const TranscriptQuery_Call = proto3.makeMessageType(
@@ -340,6 +342,8 @@ export const TranscriptQuery_Call = proto3.makeMessageType(
 );
 
 /**
+ * Represents a set of calls.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallSid
  */
 export const TranscriptQuery_Call_CallSid = proto3.makeMessageType(
@@ -351,6 +355,8 @@ export const TranscriptQuery_Call_CallSid = proto3.makeMessageType(
 );
 
 /**
+ * Resource to query on sms specific data.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms
  */
 export const TranscriptQuery_Sms = proto3.makeMessageType(
@@ -362,6 +368,8 @@ export const TranscriptQuery_Sms = proto3.makeMessageType(
 );
 
 /**
+ * Represents a set of sms conversations.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid
  */
 export const TranscriptQuery_Sms_ConversationSid = proto3.makeMessageType(
@@ -373,6 +381,8 @@ export const TranscriptQuery_Sms_ConversationSid = proto3.makeMessageType(
 );
 
 /**
+ * Resource to query for text in the threads.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads
  */
 export const TranscriptQuery_Threads = proto3.makeMessageType(
@@ -385,6 +395,8 @@ export const TranscriptQuery_Threads = proto3.makeMessageType(
 );
 
 /**
+ * Represents a set of threads.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Id
  */
 export const TranscriptQuery_Threads_Id = proto3.makeMessageType(
@@ -396,6 +408,8 @@ export const TranscriptQuery_Threads_Id = proto3.makeMessageType(
 );
 
 /**
+ * Represents text to match.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Text
  */
 export const TranscriptQuery_Threads_Text = proto3.makeMessageType(
@@ -408,6 +422,9 @@ export const TranscriptQuery_Threads_Text = proto3.makeMessageType(
 );
 
 /**
+ * Resourse that is used to automatically pick a fuzziness value
+ * based on the word length that is within the given bounds.
+ *
  * @generated from message wfo.vanalytics.v2.FuzzinessAuto
  */
 export const FuzzinessAuto = proto3.makeMessageType(
@@ -419,6 +436,8 @@ export const FuzzinessAuto = proto3.makeMessageType(
 );
 
 /**
+ * Used for a basic text match.
+ *
  * @generated from message wfo.vanalytics.v2.Match
  */
 export const Match = proto3.makeMessageType(
@@ -457,6 +476,8 @@ export const SpanNear_Clause = proto3.makeMessageType(
 );
 
 /**
+ * Represents a text term to match against.
+ *
  * @generated from message wfo.vanalytics.v2.SpanTerm
  */
 export const SpanTerm = proto3.makeMessageType(
@@ -467,6 +488,8 @@ export const SpanTerm = proto3.makeMessageType(
 );
 
 /**
+ * Represents a fuzzy text match.
+ *
  * @generated from message wfo.vanalytics.v2.SpanFuzzy
  */
 export const SpanFuzzy = proto3.makeMessageType(

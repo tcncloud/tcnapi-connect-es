@@ -462,7 +462,7 @@ export declare class Sms extends Message<Sms> {
  */
 export declare class Sms_Thread extends Message<Sms_Thread> {
   /**
-   * TODO: ? A unique identifier for the thread.
+   * A unique identifier for the thread.
    *
    * @generated from field: int32 id = 1;
    */
@@ -885,7 +885,7 @@ export declare class TranscriptQuery_Channel extends Message<TranscriptQuery_Cha
 }
 
 /**
- * Queries on channel specific data.
+ * Resource to query on channel specific data.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Metadata
  */
@@ -916,10 +916,14 @@ export declare class TranscriptQuery_Metadata extends Message<TranscriptQuery_Me
 }
 
 /**
+ * Resource to query on call specific data.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call
  */
 export declare class TranscriptQuery_Call extends Message<TranscriptQuery_Call> {
   /**
+   * Used to query for specific calls.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.CallSid call_sid = 1;
    */
   callSid?: TranscriptQuery_Call_CallSid;
@@ -940,10 +944,14 @@ export declare class TranscriptQuery_Call extends Message<TranscriptQuery_Call> 
 }
 
 /**
+ * Represents a set of calls.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallSid
  */
 export declare class TranscriptQuery_Call_CallSid extends Message<TranscriptQuery_Call_CallSid> {
   /**
+   * Will match any call with a call_sid in the list.
+   *
    * @generated from field: repeated int64 any = 1;
    */
   any: bigint[];
@@ -964,10 +972,14 @@ export declare class TranscriptQuery_Call_CallSid extends Message<TranscriptQuer
 }
 
 /**
+ * Resource to query on sms specific data.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms
  */
 export declare class TranscriptQuery_Sms extends Message<TranscriptQuery_Sms> {
   /**
+   * Used to query for specific sms conversations.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid conversation_sid = 1;
    */
   conversationSid?: TranscriptQuery_Sms_ConversationSid;
@@ -988,10 +1000,14 @@ export declare class TranscriptQuery_Sms extends Message<TranscriptQuery_Sms> {
 }
 
 /**
+ * Represents a set of sms conversations.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid
  */
 export declare class TranscriptQuery_Sms_ConversationSid extends Message<TranscriptQuery_Sms_ConversationSid> {
   /**
+   * Will match any sms with a conversation_sid in the list.
+   *
    * @generated from field: repeated int64 any = 1;
    */
   any: bigint[];
@@ -1012,15 +1028,21 @@ export declare class TranscriptQuery_Sms_ConversationSid extends Message<Transcr
 }
 
 /**
+ * Resource to query for text in the threads.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads
  */
 export declare class TranscriptQuery_Threads extends Message<TranscriptQuery_Threads> {
   /**
+   * Used to query for specific thread ids.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.Id id = 4;
    */
   id?: TranscriptQuery_Threads_Id;
 
   /**
+   * Used to query for text within the threads
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.Text text = 5;
    */
   text?: TranscriptQuery_Threads_Text;
@@ -1041,10 +1063,14 @@ export declare class TranscriptQuery_Threads extends Message<TranscriptQuery_Thr
 }
 
 /**
+ * Represents a set of threads.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Id
  */
 export declare class TranscriptQuery_Threads_Id extends Message<TranscriptQuery_Threads_Id> {
   /**
+   * Will match any thread with a thread id in the list.
+   *
    * @generated from field: repeated int32 any = 1;
    */
   any: number[];
@@ -1065,15 +1091,21 @@ export declare class TranscriptQuery_Threads_Id extends Message<TranscriptQuery_
 }
 
 /**
+ * Represents text to match.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Text
  */
 export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuery_Threads_Text> {
   /**
+   * Used for a more basic text match.
+   *
    * @generated from field: wfo.vanalytics.v2.Match match = 1;
    */
   match?: Match;
 
   /**
+   * Used for a more advanced text match.
+   *
    * @generated from field: wfo.vanalytics.v2.SpanNear span_near = 2;
    */
   spanNear?: SpanNear;
@@ -1094,15 +1126,22 @@ export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuer
 }
 
 /**
+ * Resourse that is used to automatically pick a fuzziness value
+ * based on the word length that is within the given bounds.
+ *
  * @generated from message wfo.vanalytics.v2.FuzzinessAuto
  */
 export declare class FuzzinessAuto extends Message<FuzzinessAuto> {
   /**
+   * lowest fuzziness value that will be used.
+   *
    * @generated from field: uint32 low = 1;
    */
   low: number;
 
   /**
+   * highest fuzziness value that will be used.
+   *
    * @generated from field: uint32 high = 2;
    */
   high: number;
@@ -1123,20 +1162,32 @@ export declare class FuzzinessAuto extends Message<FuzzinessAuto> {
 }
 
 /**
+ * Used for a basic text match.
+ *
  * @generated from message wfo.vanalytics.v2.Match
  */
 export declare class Match extends Message<Match> {
   /**
+   * The text used to check a match.
+   *
    * @generated from field: string text = 1;
    */
   text: string;
 
   /**
+   * TODO: ???
+   *
    * @generated from field: string operator = 2;
    */
   operator: string;
 
   /**
+   * fuzziness allows the term to be spelled slightly incorrect and still
+   * match. fuzziness_value can have the values 0, 1, or 2; 0 would require
+   * that the term matches exactly, 2 would allow 2 letter differences.
+   * fuzziness_auto would automatically pick a number based on the word length
+   * within the given bounds.
+   *
    * @generated from oneof wfo.vanalytics.v2.Match.fuzziness
    */
   fuzziness: {
@@ -1173,16 +1224,24 @@ export declare class Match extends Message<Match> {
  */
 export declare class SpanNear extends Message<SpanNear> {
   /**
+   * slop is the number of extra terms that can be in the query that
+   * are not being searched for. For example: slop of 2 when searching for
+   * "This is my dog" would allow "This is my quick brown dog".
+   *
    * @generated from field: int32 slop = 1;
    */
   slop: number;
 
   /**
+   * when in_order is true then the terms must be found in the order given.
+   *
    * @generated from field: bool in_order = 2;
    */
   inOrder: boolean;
 
   /**
+   * TODO: ???
+   *
    * @generated from field: repeated wfo.vanalytics.v2.SpanNear.Clause clauses = 3;
    */
   clauses: SpanNear_Clause[];
@@ -1207,6 +1266,8 @@ export declare class SpanNear extends Message<SpanNear> {
  */
 export declare class SpanNear_Clause extends Message<SpanNear_Clause> {
   /**
+   * TODO: ???
+   *
    * @generated from oneof wfo.vanalytics.v2.SpanNear.Clause.match
    */
   match: {
@@ -1245,10 +1306,14 @@ export declare class SpanNear_Clause extends Message<SpanNear_Clause> {
 }
 
 /**
+ * Represents a text term to match against.
+ *
  * @generated from message wfo.vanalytics.v2.SpanTerm
  */
 export declare class SpanTerm extends Message<SpanTerm> {
   /**
+   * The text to match against.
+   *
    * @generated from field: string value = 1;
    */
   value: string;
@@ -1269,15 +1334,25 @@ export declare class SpanTerm extends Message<SpanTerm> {
 }
 
 /**
+ * Represents a fuzzy text match.
+ *
  * @generated from message wfo.vanalytics.v2.SpanFuzzy
  */
 export declare class SpanFuzzy extends Message<SpanFuzzy> {
   /**
+   * The text to match against.
+   *
    * @generated from field: string value = 1;
    */
   value: string;
 
   /**
+   * fuzziness allows the term to be spelled slightly incorrect and still
+   * match. fuzziness_value can have the values 0, 1, or 2; 0 would require
+   * that the term matches exactly, 2 would allow 2 letter differences.
+   * fuzziness_auto would automatically pick a number based on the word length
+   * within the given bounds.
+   *
    * @generated from oneof wfo.vanalytics.v2.SpanFuzzy.fuzziness
    */
   fuzziness: {
