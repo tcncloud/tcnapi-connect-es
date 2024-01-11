@@ -726,20 +726,6 @@ export declare class SearchTranscriptsResponse_Hit extends Message<SearchTranscr
    */
   transcript?: Transcript;
 
-  /**
-   * The index of the transcript.
-   *
-   * @generated from field: string index = 2;
-   */
-  index: string;
-
-  /**
-   * The version of the transcript.
-   *
-   * @generated from field: int64 version = 3;
-   */
-  version: bigint;
-
   constructor(data?: PartialMessage<SearchTranscriptsResponse_Hit>);
 
   static readonly runtime: typeof proto3;

@@ -257,8 +257,6 @@ export const SearchTranscriptsResponse_Hit = proto3.makeMessageType(
   "wfo.vanalytics.v2.SearchTranscriptsResponse.Hit",
   () => [
     { no: 1, name: "transcript", kind: "message", T: Transcript },
-    { no: 2, name: "index", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "version", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
   {localName: "SearchTranscriptsResponse_Hit"},
 );
