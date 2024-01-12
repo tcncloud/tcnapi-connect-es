@@ -1334,6 +1334,7 @@ export const P3ExportProcess = proto3.makeMessageType(
     { no: 2, name: "contact_list_prefix", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "password", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 49, name: "access_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "dupe_policy", kind: "enum", T: proto3.getEnumType(DuplicatePolicyType) },
     { no: 7, name: "absent_policy", kind: "enum", T: proto3.getEnumType(AbsentPolicyType) },

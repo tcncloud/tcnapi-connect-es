@@ -4400,16 +4400,25 @@ export declare class P3ExportProcess extends Message<P3ExportProcess> {
   /**
    * P3 API Username
    *
-   * @generated from field: string username = 3;
+   * @generated from field: string username = 3 [deprecated = true];
+   * @deprecated
    */
   username: string;
 
   /**
    * P3 API Password
    *
-   * @generated from field: string password = 4;
+   * @generated from field: string password = 4 [deprecated = true];
+   * @deprecated
    */
   password: string;
+
+  /**
+   * user access token for authenticating with p3 without username password combo
+   *
+   * @generated from field: string access_token = 49;
+   */
+  accessToken: string;
 
   /**
    * Call List Country
