@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -537,5 +537,76 @@ export const ListHuntGroupIntegrationLinksResponse = proto3.makeMessageType(
   () => [
     { no: 1, name: "links", kind: "message", T: IntegrationLink, repeated: true },
   ],
+);
+
+/**
+ * ListAgentTriggersRequest is the request message for the ListAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListAgentTriggersRequest
+ */
+export const ListAgentTriggersRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.ListAgentTriggersRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * ListAgentTriggersResponse is the response message for the ListAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListAgentTriggersResponse
+ */
+export const ListAgentTriggersResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.ListAgentTriggersResponse",
+  () => [
+    { no: 1, name: "agent_triggers", kind: "message", T: AgentTrigger, repeated: true },
+  ],
+);
+
+/**
+ * CopyAgentTriggerRequest is the request message for the CopyAgentTrigger RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyAgentTriggerRequest
+ */
+export const CopyAgentTriggerRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyAgentTriggerRequest",
+  () => [
+    { no: 1, name: "from_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "to_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "agent_trigger", kind: "message", T: AgentTrigger },
+  ],
+);
+
+/**
+ * CopyAgentTriggerResponse is the response message for the CopyAgentTrigger RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyAgentTriggerResponse
+ */
+export const CopyAgentTriggerResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyAgentTriggerResponse",
+  [],
+);
+
+/**
+ * UpdateAgentTriggersRequest is the request message for the UpdateAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateAgentTriggersRequest
+ */
+export const UpdateAgentTriggersRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateAgentTriggersRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "agent_triggers", kind: "message", T: AgentTrigger, repeated: true },
+  ],
+);
+
+/**
+ * UpdateAgentTriggersResponse is the response message for the UpdateAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateAgentTriggersResponse
+ */
+export const UpdateAgentTriggersResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateAgentTriggersResponse",
+  [],
 );
 
