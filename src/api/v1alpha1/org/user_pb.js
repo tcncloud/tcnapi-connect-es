@@ -399,7 +399,22 @@ export const ListPublicUsersResponse = proto3.makeMessageType(
     { no: 2, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "users", kind: "message", T: ListPublicUsersResponse_User, repeated: true },
   ],
+);
+
+/**
+ * @generated from message api.v1alpha1.org.ListPublicUsersResponse.User
+ */
+export const ListPublicUsersResponse_User = proto3.makeMessageType(
+  "api.v1alpha1.org.ListPublicUsersResponse.User",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "ListPublicUsersResponse_User"},
 );
 
 /**
