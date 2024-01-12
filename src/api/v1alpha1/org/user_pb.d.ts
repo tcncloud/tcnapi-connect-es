@@ -1375,28 +1375,32 @@ export declare class ListPublicUsersResponse extends Message<ListPublicUsersResp
   /**
    * The user ID of the user
    *
-   * @generated from field: string user_id = 1;
+   * @generated from field: string user_id = 1 [deprecated = true];
+   * @deprecated
    */
   userId: string;
 
   /**
    * The user's first name
    *
-   * @generated from field: string first_name = 2;
+   * @generated from field: string first_name = 2 [deprecated = true];
+   * @deprecated
    */
   firstName: string;
 
   /**
    * The user's last name
    *
-   * @generated from field: string last_name = 3;
+   * @generated from field: string last_name = 3 [deprecated = true];
+   * @deprecated
    */
   lastName: string;
 
   /**
    * The user's username
    *
-   * @generated from field: string username = 4;
+   * @generated from field: string username = 4 [deprecated = true];
+   * @deprecated
    */
   username: string;
 
