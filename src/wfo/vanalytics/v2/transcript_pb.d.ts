@@ -1110,21 +1110,26 @@ export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuer
 }
 
 /**
- * Resourse that is used to automatically pick a fuzziness value
- * based on the word length that is within the given bounds.
+ *
+ * FuzzinessAuto defines an automatic max allowable edit distance based on the
+ * length of the match text.
+ *
+ * length  <  low -- Must match exactly.
+ * length  < high -- Must match with one edit allowed.
+ * length >= high -- Must match with two edits allowed.
  *
  * @generated from message wfo.vanalytics.v2.FuzzinessAuto
  */
 export declare class FuzzinessAuto extends Message<FuzzinessAuto> {
   /**
-   * lowest fuzziness value that will be used.
+   * The match text low length threshold.
    *
    * @generated from field: uint32 low = 1;
    */
   low: number;
 
   /**
-   * highest fuzziness value that will be used.
+   * The match text high length threshold.
    *
    * @generated from field: uint32 high = 2;
    */
@@ -1152,7 +1157,7 @@ export declare class FuzzinessAuto extends Message<FuzzinessAuto> {
  */
 export declare class Match extends Message<Match> {
   /**
-   * The text used to check a match.
+   * The text to be matched.
    *
    * @generated from field: string text = 1;
    */
@@ -1160,17 +1165,19 @@ export declare class Match extends Message<Match> {
 
   /**
    * Optional. Operator must be one of: (AND, OR). Defaults to OR when empty.
+   * When the match text contains multiple terms separated by spaces the
+   * operator determines whether any or all of the terms must be matched.
    *
    * @generated from field: string operator = 2;
    */
   operator: string;
 
   /**
-   * fuzziness allows the term to be spelled slightly incorrect and still
-   * match. fuzziness_value can have the values 0, 1, or 2; 0 would require
+   * Allows the term to be spelled slightly incorrect and still
+   * match. The fuzziness_value can have the values 0, 1, or 2; 0 would require
    * that the term matches exactly, 2 would allow 2 letter differences.
-   * fuzziness_auto would automatically pick a number based on the word length
-   * within the given bounds.
+   * The fuzziness_auto would automatically pick a number based on the
+   * word length within the given bounds.
    *
    * @generated from oneof wfo.vanalytics.v2.Match.fuzziness
    */
@@ -1296,7 +1303,7 @@ export declare class SpanNear_Clause extends Message<SpanNear_Clause> {
  */
 export declare class SpanTerm extends Message<SpanTerm> {
   /**
-   * The text to match against.
+   * The text to be matched.
    *
    * @generated from field: string value = 1;
    */
@@ -1332,10 +1339,10 @@ export declare class SpanFuzzy extends Message<SpanFuzzy> {
 
   /**
    * Allows the term to be spelled slightly incorrect and still
-   * match. fuzziness_value can have the values 0, 1, or 2; 0 would require
+   * match. The fuzziness_value can have the values 0, 1, or 2; 0 would require
    * that the term matches exactly, 2 would allow 2 letter differences.
-   * fuzziness_auto would automatically pick a number based on the word length
-   * within the given bounds.
+   * The fuzziness_auto would automatically pick a number based on the
+   * word length within the given bounds.
    *
    * @generated from oneof wfo.vanalytics.v2.SpanFuzzy.fuzziness
    */

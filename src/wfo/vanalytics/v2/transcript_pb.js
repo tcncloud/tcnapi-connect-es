@@ -419,8 +419,13 @@ export const TranscriptQuery_Threads_Text = proto3.makeMessageType(
 );
 
 /**
- * Resourse that is used to automatically pick a fuzziness value
- * based on the word length that is within the given bounds.
+ *
+ * FuzzinessAuto defines an automatic max allowable edit distance based on the
+ * length of the match text.
+ *
+ * length  <  low -- Must match exactly.
+ * length  < high -- Must match with one edit allowed.
+ * length >= high -- Must match with two edits allowed.
  *
  * @generated from message wfo.vanalytics.v2.FuzzinessAuto
  */
