@@ -2527,7 +2527,8 @@ export declare class EmailTransport extends Message<EmailTransport> {
   /**
    * which email we are sending to
    *
-   * @generated from field: string to_address = 2;
+   * @generated from field: string to_address = 2 [deprecated = true];
+   * @deprecated
    */
   toAddress: string;
 
@@ -2537,6 +2538,11 @@ export declare class EmailTransport extends Message<EmailTransport> {
    * @generated from field: repeated string cc_addresses = 3;
    */
   ccAddresses: string[];
+
+  /**
+   * @generated from field: repeated string to_addresses = 4;
+   */
+  toAddresses: string[];
 
   constructor(data?: PartialMessage<EmailTransport>);
 

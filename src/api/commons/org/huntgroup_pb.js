@@ -149,6 +149,61 @@ export const ParameterSourceType = proto3.makeEnum(
 );
 
 /**
+ * AgentStatus is the status of the agent on which the trigger is based
+ *
+ * @generated from enum api.commons.org.AgentStatus
+ */
+export const AgentStatus = proto3.makeEnum(
+  "api.commons.org.AgentStatus",
+  [
+    {no: 0, name: "AGENT_STATUS_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "AGENT_STATUS_LOGGED_IN", localName: "LOGGED_IN"},
+    {no: 2, name: "AGENT_STATUS_WAITING", localName: "WAITING"},
+    {no: 3, name: "AGENT_STATUS_PAUSED", localName: "PAUSED"},
+    {no: 4, name: "AGENT_STATUS_ON_CALL", localName: "ON_CALL"},
+    {no: 5, name: "AGENT_STATUS_TRANSFER_CALL", localName: "TRANSFER_CALL"},
+    {no: 6, name: "AGENT_STATUS_TRANSFER_LOST", localName: "TRANSFER_LOST"},
+    {no: 7, name: "AGENT_STATUS_TRANSFER_TARGET_LOST", localName: "TRANSFER_TARGET_LOST"},
+    {no: 8, name: "AGENT_STATUS_PREVIEW_CALL", localName: "PREVIEW_CALL"},
+    {no: 9, name: "AGENT_STATUS_MANUAL_DIAL_CALL", localName: "MANUAL_DIAL_CALL"},
+    {no: 10, name: "AGENT_STATUS_WRAP_UP", localName: "WRAP_UP"},
+  ],
+);
+
+/**
+ * SystemPauseCode controls if a system Pause code is being used
+ *
+ * @generated from enum api.commons.org.SystemPauseCode
+ */
+export const SystemPauseCode = proto3.makeEnum(
+  "api.commons.org.SystemPauseCode",
+  [
+    {no: 0, name: "SYSTEM_PAUSE_CODE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "SYSTEM_PAUSE_CODE_AGENT_TRIGGER_ADVANCE_TO_PAUSED", localName: "AGENT_TRIGGER_ADVANCE_TO_PAUSED"},
+    {no: 2, name: "SYSTEM_PAUSE_CODE_CHANGE_PASSWORD", localName: "CHANGE_PASSWORD"},
+    {no: 3, name: "SYSTEM_PAUSE_CODE_CHECK_VOICE_MAIL", localName: "CHECK_VOICE_MAIL"},
+    {no: 4, name: "SYSTEM_PAUSE_CODE_MANUALLY_APPROVE_CALLS", localName: "MANUALLY_APPROVE_CALLS"},
+  ],
+);
+
+/**
+ * TriggerAction is the action to take when the trigger is activated
+ *
+ * @generated from enum api.commons.org.TriggerAction
+ */
+export const TriggerAction = proto3.makeEnum(
+  "api.commons.org.TriggerAction",
+  [
+    {no: 0, name: "TRIGGER_ACTION_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "TRIGGER_ACTION_ADVANCE_TO_STATUS", localName: "ADVANCE_TO_STATUS"},
+    {no: 2, name: "TRIGGER_ACTION_DISPLAY_MESSAGE", localName: "DISPLAY_MESSAGE"},
+    {no: 3, name: "TRIGGER_ACTION_EJECT_AGENT", localName: "EJECT_AGENT"},
+    {no: 4, name: "TRIGGER_ACTION_EXECUTE_WEB_LINK", localName: "EXECUTE_WEB_LINK"},
+    {no: 5, name: "TRIGGER_ACTION_EXECUTE_INTEGRATION_LINK", localName: "EXECUTE_INTEGRATION_LINK"},
+  ],
+);
+
+/**
  * HuntGroupSettings contains all of the hunt group settings.
  *
  * @generated from message api.commons.org.HuntGroupSettings
@@ -1081,6 +1136,77 @@ export const IntegrationLinkSubParameterPart = proto3.makeMessageType(
     { no: 1, name: "contact_field_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "helper_value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "parameter_source_type", kind: "enum", T: proto3.getEnumType(ParameterSourceType) },
+  ],
+);
+
+/**
+ * AgentTrigger is the entity for agent triggers.
+ *
+ * @generated from message api.commons.org.AgentTrigger
+ */
+export const AgentTrigger = proto3.makeMessageType(
+  "api.commons.org.AgentTrigger",
+  () => [
+    { no: 1, name: "agent_trigger_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "agent_status_option", kind: "message", T: AgentStatusOption },
+    { no: 4, name: "trigger_action_option", kind: "message", T: TriggerActionOption },
+  ],
+);
+
+/**
+ * @generated from message api.commons.org.AgentStatusOption
+ */
+export const AgentStatusOption = proto3.makeMessageType(
+  "api.commons.org.AgentStatusOption",
+  () => [
+    { no: 1, name: "agent_status", kind: "enum", T: proto3.getEnumType(AgentStatus) },
+    { no: 2, name: "duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "pause_code", kind: "message", T: TriggerPauseCode },
+    { no: 4, name: "call_types", kind: "message", T: TriggerCallTypes },
+    { no: 5, name: "scheduled_callback_present", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * TriggerPauseCode is the pause code to use for the trigger
+ *
+ * @generated from message api.commons.org.TriggerPauseCode
+ */
+export const TriggerPauseCode = proto3.makeMessageType(
+  "api.commons.org.TriggerPauseCode",
+  () => [
+    { no: 1, name: "system_pause_code", kind: "enum", T: proto3.getEnumType(SystemPauseCode), oneof: "pause_code" },
+    { no: 2, name: "custom_pause_code", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "pause_code" },
+  ],
+);
+
+/**
+ * TriggerCallTypes is the call types to use for the trigger
+ *
+ * @generated from message api.commons.org.TriggerCallTypes
+ */
+export const TriggerCallTypes = proto3.makeMessageType(
+  "api.commons.org.TriggerCallTypes",
+  () => [
+    { no: 1, name: "outbound", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "inbound", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "manual", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "preview", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.org.TriggerActionOption
+ */
+export const TriggerActionOption = proto3.makeMessageType(
+  "api.commons.org.TriggerActionOption",
+  () => [
+    { no: 1, name: "action", kind: "enum", T: proto3.getEnumType(TriggerAction) },
+    { no: 2, name: "display_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "advance_to_status", kind: "enum", T: proto3.getEnumType(AgentStatus) },
+    { no: 4, name: "web_link_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "integration_link_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

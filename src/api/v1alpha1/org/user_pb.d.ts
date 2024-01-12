@@ -1375,6 +1375,62 @@ export declare class ListPublicUsersResponse extends Message<ListPublicUsersResp
   /**
    * The user ID of the user
    *
+   * @generated from field: string user_id = 1 [deprecated = true];
+   * @deprecated
+   */
+  userId: string;
+
+  /**
+   * The user's first name
+   *
+   * @generated from field: string first_name = 2 [deprecated = true];
+   * @deprecated
+   */
+  firstName: string;
+
+  /**
+   * The user's last name
+   *
+   * @generated from field: string last_name = 3 [deprecated = true];
+   * @deprecated
+   */
+  lastName: string;
+
+  /**
+   * The user's username
+   *
+   * @generated from field: string username = 4 [deprecated = true];
+   * @deprecated
+   */
+  username: string;
+
+  /**
+   * @generated from field: repeated api.v1alpha1.org.ListPublicUsersResponse.User users = 5;
+   */
+  users: ListPublicUsersResponse_User[];
+
+  constructor(data?: PartialMessage<ListPublicUsersResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListPublicUsersResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublicUsersResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublicUsersResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublicUsersResponse;
+
+  static equals(a: ListPublicUsersResponse | PlainMessage<ListPublicUsersResponse> | undefined, b: ListPublicUsersResponse | PlainMessage<ListPublicUsersResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.org.ListPublicUsersResponse.User
+ */
+export declare class ListPublicUsersResponse_User extends Message<ListPublicUsersResponse_User> {
+  /**
+   * The user ID of the user
+   *
    * @generated from field: string user_id = 1;
    */
   userId: string;
@@ -1400,19 +1456,19 @@ export declare class ListPublicUsersResponse extends Message<ListPublicUsersResp
    */
   username: string;
 
-  constructor(data?: PartialMessage<ListPublicUsersResponse>);
+  constructor(data?: PartialMessage<ListPublicUsersResponse_User>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.ListPublicUsersResponse";
+  static readonly typeName = "api.v1alpha1.org.ListPublicUsersResponse.User";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublicUsersResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPublicUsersResponse_User;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublicUsersResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPublicUsersResponse_User;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublicUsersResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPublicUsersResponse_User;
 
-  static equals(a: ListPublicUsersResponse | PlainMessage<ListPublicUsersResponse> | undefined, b: ListPublicUsersResponse | PlainMessage<ListPublicUsersResponse> | undefined): boolean;
+  static equals(a: ListPublicUsersResponse_User | PlainMessage<ListPublicUsersResponse_User> | undefined, b: ListPublicUsersResponse_User | PlainMessage<ListPublicUsersResponse_User> | undefined): boolean;
 }
 
 /**
