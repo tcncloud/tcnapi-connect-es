@@ -6,6 +6,7 @@
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { OperatorApplications } from "../../commons/org_pb.js";
 import { Encryption as Encryption$1, TransferStatus } from "../../commons/delivery_pb.js";
+import { SmsNumber } from "../../commons/omnichannel_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -984,6 +985,24 @@ export const Encryption = proto3.makeMessageType(
     { no: 6, name: "aes_password", kind: "message", T: AESPassword, oneof: "encryption" },
     { no: 10, name: "created_on", kind: "message", T: Timestamp },
     { no: 11, name: "last_edited", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListSMSNumbersReq
+ */
+export const ListSMSNumbersReq = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListSMSNumbersReq",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListSMSNumbersRes
+ */
+export const ListSMSNumbersRes = proto3.makeMessageType(
+  "api.v1alpha1.delivery.ListSMSNumbersRes",
+  () => [
+    { no: 1, name: "sms_numbers", kind: "message", T: SmsNumber, repeated: true },
   ],
 );
 
