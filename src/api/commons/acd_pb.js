@@ -599,9 +599,6 @@ export const TransferMember = proto3.makeMessageType(
     { no: 1, name: "identifier", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "display_label", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "member_type", kind: "enum", T: proto3.getEnumType(TransferMemberType) },
-    { no: 100, name: "agent_session", kind: "message", T: AgentSession, oneof: "locatable_data" },
-    { no: 101, name: "caller_sid", kind: "message", T: CallerSid, oneof: "locatable_data" },
-    { no: 102, name: "outbound_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "locatable_data" },
   ],
 );
 
