@@ -93,6 +93,13 @@ export declare enum SmsNumberProvider {
    * @generated from enum value: MEDIASAT_SMS_PROVIDER = 6;
    */
   MEDIASAT_SMS_PROVIDER = 6,
+
+  /**
+   * TextLocal sms provider
+   *
+   * @generated from enum value: TEXTLOCAL_SMS_PROVIDER = 7;
+   */
+  TEXTLOCAL_SMS_PROVIDER = 7,
 }
 
 /**
