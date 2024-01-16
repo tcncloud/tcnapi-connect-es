@@ -1548,6 +1548,8 @@ export const DeDupCriteria = proto3.makeMessageType(
   () => [
     { no: 3, name: "action", kind: "enum", T: proto3.getEnumType(DeDupActions) },
     { no: 2, name: "fields", kind: "message", T: FieldIndex, repeated: true },
+    { no: 4, name: "unless", kind: "message", T: FilterCheck },
+    { no: 5, name: "disjunct_keys", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
