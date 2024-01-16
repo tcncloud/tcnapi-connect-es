@@ -5365,6 +5365,20 @@ export declare class DeDupCriteria extends Message<DeDupCriteria> {
    */
   fields: FieldIndex[];
 
+  /**
+   * skip record if expression results in true
+   *
+   * @generated from field: api.v0alpha.FilterCheck unless = 4;
+   */
+  unless?: FilterCheck;
+
+  /**
+   * whether to treat the fields as a disjunct set or composite value
+   *
+   * @generated from field: bool disjunct_keys = 5;
+   */
+  disjunctKeys: boolean;
+
   constructor(data?: PartialMessage<DeDupCriteria>);
 
   static readonly runtime: typeof proto3;
