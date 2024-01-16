@@ -7,6 +7,7 @@ import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValu
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { OperatorApplications } from "../../commons/org_pb.js";
 import type { Encryption as Encryption$1, TransferStatus } from "../../commons/delivery_pb.js";
+import type { SmsNumber } from "../../commons/omnichannel_pb.js";
 
 /**
  * @generated from message api.v1alpha1.delivery.CreateTransferConfigReq
@@ -2836,5 +2837,48 @@ export declare class Encryption extends Message<Encryption> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Encryption;
 
   static equals(a: Encryption | PlainMessage<Encryption> | undefined, b: Encryption | PlainMessage<Encryption> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListSMSNumbersReq
+ */
+export declare class ListSMSNumbersReq extends Message<ListSMSNumbersReq> {
+  constructor(data?: PartialMessage<ListSMSNumbersReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.ListSMSNumbersReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSMSNumbersReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSMSNumbersReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSMSNumbersReq;
+
+  static equals(a: ListSMSNumbersReq | PlainMessage<ListSMSNumbersReq> | undefined, b: ListSMSNumbersReq | PlainMessage<ListSMSNumbersReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.ListSMSNumbersRes
+ */
+export declare class ListSMSNumbersRes extends Message<ListSMSNumbersRes> {
+  /**
+   * @generated from field: repeated api.commons.SmsNumber sms_numbers = 1;
+   */
+  smsNumbers: SmsNumber[];
+
+  constructor(data?: PartialMessage<ListSMSNumbersRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.ListSMSNumbersRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSMSNumbersRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSMSNumbersRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSMSNumbersRes;
+
+  static equals(a: ListSMSNumbersRes | PlainMessage<ListSMSNumbersRes> | undefined, b: ListSMSNumbersRes | PlainMessage<ListSMSNumbersRes> | undefined): boolean;
 }
 
