@@ -2146,6 +2146,29 @@ export declare class TransferMember extends Message<TransferMember> {
    */
   memberType: TransferMemberType;
 
+  /**
+   * @generated from oneof api.commons.TransferMember.locatable_data
+   */
+  locatableData: {
+    /**
+     * @generated from field: api.commons.AgentSession agent_session = 100;
+     */
+    value: AgentSession;
+    case: "agentSession";
+  } | {
+    /**
+     * @generated from field: api.commons.CallerSid caller_sid = 101;
+     */
+    value: CallerSid;
+    case: "callerSid";
+  } | {
+    /**
+     * @generated from field: string outbound_id = 102;
+     */
+    value: string;
+    case: "outboundId";
+  } | { case: undefined; value?: undefined };
+
   constructor(data?: PartialMessage<TransferMember>);
 
   static readonly runtime: typeof proto3;

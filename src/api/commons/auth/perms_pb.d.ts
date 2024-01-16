@@ -290,6 +290,13 @@ export declare enum Permission {
   AGENT_PLUGINS_VIEW = 342,
 
   /**
+   * Enables Agents to view plugins.
+   *
+   * @generated from enum value: PERMISSION_AGENT_HUNTGROUP_INTEGRATIONS_VIEW = 343;
+   */
+  AGENT_HUNTGROUP_INTEGRATIONS_VIEW = 343,
+
+  /**
    * Enables Agents to view portals.
    *
    *
