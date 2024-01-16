@@ -8,7 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../../../api/commons/acd_pb.js";
 
 /**
- * Channel defines types of communication.
+ * An enumeration of transcript communication channels.
  *
  * @generated from enum wfo.vanalytics.v2.Channel
  */
@@ -25,10 +25,9 @@ export declare enum Channel {
 }
 
 /**
- * ReviewStatus is an enumeration of a flagged transcripts review statuses.
- * Todo means there are flags that need review and have not been reviewed.
- * Done means every flag that needs review has been reviewed. None means zero
- * flags require review.
+ * An enumeration of a flagged transcripts review statuses. Todo means there
+ * are flags that need review and have not been reviewed. Done means every flag
+ * that needs review has been reviewed. None means no flags require review.
  *
  * @generated from enum wfo.vanalytics.v2.ReviewStatus
  */
@@ -50,27 +49,28 @@ export declare enum ReviewStatus {
 }
 
 /**
- * A Transcript is the textualized interaction between two or more parties.
+ * A textualized interaction between two or more participants.
  *
  * @generated from message wfo.vanalytics.v2.Transcript
  */
 export declare class Transcript extends Message<Transcript> {
   /**
-   * The metadata field contain metadata
-   * pertaining to the conversation type.
-   * They also contain the actual text of
-   * the transcript.
+   * Channel specific transcript metadata.
    *
    * @generated from oneof wfo.vanalytics.v2.Transcript.metadata
    */
   metadata: {
     /**
+     * Call specific transcript metadata.
+     *
      * @generated from field: wfo.vanalytics.v2.Call call = 1;
      */
     value: Call;
     case: "call";
   } | {
     /**
+     * Sms specific transcript metadata.
+     *
      * @generated from field: wfo.vanalytics.v2.Sms sms = 2;
      */
     value: Sms;
@@ -78,21 +78,21 @@ export declare class Transcript extends Message<Transcript> {
   } | { case: undefined; value?: undefined };
 
   /**
-   * The type of communication.
+   * The communication channel of the transcript.
    *
    * @generated from field: wfo.vanalytics.v2.Channel channel = 12;
    */
   channel: Channel;
 
   /**
-   * The time this transcript was started.
+   * The time the transcript was started.
    *
    * @generated from field: google.protobuf.Timestamp start_time = 13;
    */
   startTime?: Timestamp;
 
   /**
-   * The time this transcript was marked as deleted.
+   * The time the transcript was marked as deleted.
    *
    * @generated from field: google.protobuf.Timestamp delete_time = 15;
    */
@@ -416,7 +416,7 @@ export declare class FlagSummary_Review extends Message<FlagSummary_Review> {
 }
 
 /**
- * A resource defining sms specific transcript metadata.
+ * Sms specific transcript metadata.
  *
  * @generated from message wfo.vanalytics.v2.Sms
  */
@@ -429,7 +429,7 @@ export declare class Sms extends Message<Sms> {
   conversationSid: bigint;
 
   /**
-   * The threads of the sms conversation.
+   * The text from the sms in threads.
    *
    * @generated from field: repeated wfo.vanalytics.v2.Sms.Thread threads = 2;
    */
@@ -451,20 +451,20 @@ export declare class Sms extends Message<Sms> {
 }
 
 /**
- * Thread contains the text of the transcript
+ * A thread is the text from one participant.
  *
  * @generated from message wfo.vanalytics.v2.Sms.Thread
  */
 export declare class Sms_Thread extends Message<Sms_Thread> {
   /**
-   * A unique identifier for the thread.
+   * The unique identifier of the thread.
    *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
-   * A segment contains text of the thread.
+   * The text of the thread in segments.
    *
    * @generated from field: repeated wfo.vanalytics.v2.Sms.Segment segments = 2;
    */
@@ -486,7 +486,7 @@ export declare class Sms_Thread extends Message<Sms_Thread> {
 }
 
 /**
- * The text of a segment of a thread of a conversation.
+ * A segment of text.
  *
  * @generated from message wfo.vanalytics.v2.Sms.Segment
  */
@@ -512,13 +512,13 @@ export declare class Sms_Segment extends Message<Sms_Segment> {
 }
 
 /**
- * Call defines channel specific transcript metadata.
+ * Call specific transcript metadata.
  *
  * @generated from message wfo.vanalytics.v2.Call
  */
 export declare class Call extends Message<Call> {
   /**
-   * A unique identifier for a call.
+   * The unique identifier for the call.
    *
    * @generated from field: int64 call_sid = 1;
    */
@@ -539,7 +539,7 @@ export declare class Call extends Message<Call> {
   audioTime: number;
 
   /**
-   * The threads of the call conversation.
+   * The text from the call in threads.
    *
    * @generated from field: repeated wfo.vanalytics.v2.Call.Thread threads = 4;
    */
@@ -561,20 +561,20 @@ export declare class Call extends Message<Call> {
 }
 
 /**
- * The text of the call.
+ * A thread is the text from one participant.
  *
  * @generated from message wfo.vanalytics.v2.Call.Thread
  */
 export declare class Call_Thread extends Message<Call_Thread> {
   /**
-   * A unique identifier for a thread.
+   * The unique identifier of the thread.
    *
    * @generated from field: int32 id = 1;
    */
   id: number;
 
   /**
-   * The segments of a thread.
+   * The text of the thread in segments.
    *
    * @generated from field: repeated wfo.vanalytics.v2.Call.Segment segments = 2;
    */
@@ -596,7 +596,7 @@ export declare class Call_Thread extends Message<Call_Thread> {
 }
 
 /**
- * The text of a segment of a thread of a call.
+ * A segment of text.
  *
  * @generated from message wfo.vanalytics.v2.Call.Segment
  */
@@ -622,19 +622,20 @@ export declare class Call_Segment extends Message<Call_Segment> {
 }
 
 /**
+ * The request for the search transcripts RPC.
+ *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsRequest
  */
 export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsRequest> {
   /**
-   * Optional. Number of hits included in response.
-   * If not set, it will default to 10.
+   * Number of hits to include in response. Defaults to 10.
    *
    * @generated from field: uint32 page_size = 2;
    */
   pageSize: number;
 
   /**
-   * Optional. The order by which transcripts will be listed. Follows sql order by
+   * The order by which transcripts will be listed. Follows SQL order by
    * syntax. When not provided the order defaults to transcript_sid asc.
    *
    * @generated from field: string order_by = 3;
@@ -642,26 +643,33 @@ export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsR
   orderBy: string;
 
   /**
-   * Optional. A field mask which defines which transcript fields to return.
-   * When the mask is empty all fields will be returned.
+   * A field mask which defines which transcript fields to return. When empty
+   * all transcript fields will be returned.
    *
    * @generated from field: google.protobuf.FieldMask read_mask = 4;
    */
   readMask?: FieldMask;
 
   /**
-   * Optional. Query by which to filter transcripts.
+   * Query by which to filter transcripts.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptBoolQuery bool_query = 5;
    */
   boolQuery?: TranscriptBoolQuery;
 
   /**
-   * Optional. Token for getting the next page of results.
+   * The next page token from a previous response.
    *
    * @generated from field: string page_token = 6;
    */
   pageToken: string;
+
+  /**
+   * Configuration to enable and control text highlights.
+   *
+   * @generated from field: wfo.vanalytics.v2.Highlight highlight = 7;
+   */
+  highlight?: Highlight;
 
   constructor(data?: PartialMessage<SearchTranscriptsRequest>);
 
@@ -679,18 +687,56 @@ export declare class SearchTranscriptsRequest extends Message<SearchTranscriptsR
 }
 
 /**
+ * Configuration to enable and control text highlights.
+ *
+ * @generated from message wfo.vanalytics.v2.Highlight
+ */
+export declare class Highlight extends Message<Highlight> {
+  /**
+   * The prefix for highlighted text. Defaults to "{{" when empty.
+   *
+   * @generated from field: string prefix = 1;
+   */
+  prefix: string;
+
+  /**
+   * The suffix for highlighted text. Defaults to "}}" when empty.
+   *
+   * @generated from field: string suffix = 2;
+   */
+  suffix: string;
+
+  constructor(data?: PartialMessage<Highlight>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Highlight";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Highlight;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Highlight;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Highlight;
+
+  static equals(a: Highlight | PlainMessage<Highlight> | undefined, b: Highlight | PlainMessage<Highlight> | undefined): boolean;
+}
+
+/**
+ * The response for the search transcripts RPC.
+ *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsResponse
  */
 export declare class SearchTranscriptsResponse extends Message<SearchTranscriptsResponse> {
   /**
-   * One page of results.
+   * One page of search response hits.
    *
    * @generated from field: repeated wfo.vanalytics.v2.SearchTranscriptsResponse.Hit hits = 1;
    */
   hits: SearchTranscriptsResponse_Hit[];
 
   /**
-   * Token for retrieving the next page of hits.
+   * A page token which can be provided on a follow up request to retrieve the
+   * next page of transcript hits.
    *
    * @generated from field: string next_page_token = 2;
    */
@@ -712,13 +758,13 @@ export declare class SearchTranscriptsResponse extends Message<SearchTranscripts
 }
 
 /**
- * A matching result.
+ * A search response hit.
  *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsResponse.Hit
  */
 export declare class SearchTranscriptsResponse_Hit extends Message<SearchTranscriptsResponse_Hit> {
   /**
-   * A matching transcript.
+   * A transcript which matched the transcript query.
    *
    * @generated from field: wfo.vanalytics.v2.Transcript transcript = 1;
    */
@@ -740,12 +786,14 @@ export declare class SearchTranscriptsResponse_Hit extends Message<SearchTranscr
 }
 
 /**
- * A query used to filter the transcripts.
+ * Boolean query to filter transcripts.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptBoolQuery
  */
 export declare class TranscriptBoolQuery extends Message<TranscriptBoolQuery> {
   /**
+   * Query constraints on transcript.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery transcript = 1;
    */
   transcript?: TranscriptQuery;
@@ -766,32 +814,34 @@ export declare class TranscriptBoolQuery extends Message<TranscriptBoolQuery> {
 }
 
 /**
+ * Query to filter transcripts.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery
  */
 export declare class TranscriptQuery extends Message<TranscriptQuery> {
   /**
-   * Optional. Transcript sid to filter by.
+   * Query constraints on transcript sid.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.TranscriptSid transcript_sid = 1;
    */
   transcriptSid?: TranscriptQuery_TranscriptSid;
 
   /**
-   * Optional. Channel to filter by.
+   * Query constraints on channel.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Channel channel = 2;
    */
   channel?: TranscriptQuery_Channel;
 
   /**
-   * Optional. Metadata to filter by.
+   * Query constraints on metadata.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Metadata metadata = 3;
    */
   metadata?: TranscriptQuery_Metadata;
 
   /**
-   * Optional. Criteria for filtering by the text of the transcript.
+   * Query constraints on threads.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads threads = 4;
    */
@@ -813,13 +863,13 @@ export declare class TranscriptQuery extends Message<TranscriptQuery> {
 }
 
 /**
- * Represents a list of transcripts
+ * Query constraints on transcript sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.TranscriptSid
  */
 export declare class TranscriptQuery_TranscriptSid extends Message<TranscriptQuery_TranscriptSid> {
   /**
-   * Will match any transcript with a transcript sid in the list.
+   * Requires all transcript hits to have a transcript sid in the list.
    *
    * @generated from field: repeated int64 any = 1;
    */
@@ -841,13 +891,13 @@ export declare class TranscriptQuery_TranscriptSid extends Message<TranscriptQue
 }
 
 /**
- * Represents a list of channels
+ * Query constraints on channel.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Channel
  */
 export declare class TranscriptQuery_Channel extends Message<TranscriptQuery_Channel> {
   /**
-   * Will match any transcript with a channel in the list.
+   * Requires all transcript hits to have a channel in the list.
    *
    * @generated from field: repeated wfo.vanalytics.v2.Channel any = 1;
    */
@@ -869,17 +919,21 @@ export declare class TranscriptQuery_Channel extends Message<TranscriptQuery_Cha
 }
 
 /**
- * Resource to query on channel specific data.
+ * Query constraints on metadata.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Metadata
  */
 export declare class TranscriptQuery_Metadata extends Message<TranscriptQuery_Metadata> {
   /**
+   * Query constraints on call metadata.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call call = 1;
    */
   call?: TranscriptQuery_Call;
 
   /**
+   * Query constraints on sms metadata.
+   *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Sms sms = 2;
    */
   sms?: TranscriptQuery_Sms;
@@ -900,17 +954,31 @@ export declare class TranscriptQuery_Metadata extends Message<TranscriptQuery_Me
 }
 
 /**
- * Resource to query on call specific data.
+ * Query constraints on call metadata.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call
  */
 export declare class TranscriptQuery_Call extends Message<TranscriptQuery_Call> {
   /**
-   * Used to query for specific calls.
+   * Query constraints on call sid.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.CallSid call_sid = 1;
    */
   callSid?: TranscriptQuery_Call_CallSid;
+
+  /**
+   * Query constraints on audio time.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime audio_time = 2;
+   */
+  audioTime?: TranscriptQuery_Call_AudioTime;
+
+  /**
+   * Query constraints on call type.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.CallType call_type = 3;
+   */
+  callType?: TranscriptQuery_Call_CallType;
 
   constructor(data?: PartialMessage<TranscriptQuery_Call>);
 
@@ -928,13 +996,43 @@ export declare class TranscriptQuery_Call extends Message<TranscriptQuery_Call> 
 }
 
 /**
- * Represents a set of calls.
+ * Query constraints on call type.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallType
+ */
+export declare class TranscriptQuery_Call_CallType extends Message<TranscriptQuery_Call_CallType> {
+  /**
+   * Requires all call specific transcript hits to have a call type in the
+   * list.
+   *
+   * @generated from field: repeated api.commons.CallType.Enum any = 1;
+   */
+  any: CallType_Enum[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_CallType>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.CallType";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_CallType;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_CallType;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_CallType;
+
+  static equals(a: TranscriptQuery_Call_CallType | PlainMessage<TranscriptQuery_Call_CallType> | undefined, b: TranscriptQuery_Call_CallType | PlainMessage<TranscriptQuery_Call_CallType> | undefined): boolean;
+}
+
+/**
+ * Query constraints on call sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallSid
  */
 export declare class TranscriptQuery_Call_CallSid extends Message<TranscriptQuery_Call_CallSid> {
   /**
-   * Will match any call with a call_sid in the list.
+   * Requires all call specific transcript hits to have a call sid in the
+   * list.
    *
    * @generated from field: repeated int64 any = 1;
    */
@@ -956,13 +1054,62 @@ export declare class TranscriptQuery_Call_CallSid extends Message<TranscriptQuer
 }
 
 /**
- * Resource to query on sms specific data.
+ * Query constraints on audio time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime
+ */
+export declare class TranscriptQuery_Call_AudioTime extends Message<TranscriptQuery_Call_AudioTime> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Int32Value gte = 1;
+   */
+  gte?: number;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Int32Value lte = 2;
+   */
+  lte?: number;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Int32Value gt = 3;
+   */
+  gt?: number;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Int32Value lt = 4;
+   */
+  lt?: number;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_AudioTime>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_AudioTime;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AudioTime;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AudioTime;
+
+  static equals(a: TranscriptQuery_Call_AudioTime | PlainMessage<TranscriptQuery_Call_AudioTime> | undefined, b: TranscriptQuery_Call_AudioTime | PlainMessage<TranscriptQuery_Call_AudioTime> | undefined): boolean;
+}
+
+/**
+ * Query constraints on sms metadata.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms
  */
 export declare class TranscriptQuery_Sms extends Message<TranscriptQuery_Sms> {
   /**
-   * Used to query for specific sms conversations.
+   * Query constraints on conversation sid.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid conversation_sid = 1;
    */
@@ -984,13 +1131,14 @@ export declare class TranscriptQuery_Sms extends Message<TranscriptQuery_Sms> {
 }
 
 /**
- * Represents a set of sms conversations.
+ * Query constraints on conversation sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid
  */
 export declare class TranscriptQuery_Sms_ConversationSid extends Message<TranscriptQuery_Sms_ConversationSid> {
   /**
-   * Will match any sms with a conversation_sid in the list.
+   * Requires all sms specific transcript hits to have a conversation sid
+   * in the list.
    *
    * @generated from field: repeated int64 any = 1;
    */
@@ -1012,20 +1160,20 @@ export declare class TranscriptQuery_Sms_ConversationSid extends Message<Transcr
 }
 
 /**
- * Resource to query for text in the threads.
+ * Query constraints on threads.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads
  */
 export declare class TranscriptQuery_Threads extends Message<TranscriptQuery_Threads> {
   /**
-   * Used to query for specific thread ids.
+   * Query constraints on thread id.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.Id id = 4;
    */
   id?: TranscriptQuery_Threads_Id;
 
   /**
-   * Used to query for text within the threads
+   * Query constraints on thread text.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.Text text = 5;
    */
@@ -1047,13 +1195,13 @@ export declare class TranscriptQuery_Threads extends Message<TranscriptQuery_Thr
 }
 
 /**
- * Represents a set of threads.
+ * Query constraints on thread id.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Id
  */
 export declare class TranscriptQuery_Threads_Id extends Message<TranscriptQuery_Threads_Id> {
   /**
-   * Will match any thread with a thread id in the list.
+   * Requires all transcript hits to have a thread id in the list.
    *
    * @generated from field: repeated int32 any = 1;
    */
@@ -1075,20 +1223,20 @@ export declare class TranscriptQuery_Threads_Id extends Message<TranscriptQuery_
 }
 
 /**
- * Represents text to match.
+ * Query constraints on thread text.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Text
  */
 export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuery_Threads_Text> {
   /**
-   * Used for a more basic text match.
+   * Query text terms with optional fuzziness.
    *
    * @generated from field: wfo.vanalytics.v2.Match match = 1;
    */
   match?: Match;
 
   /**
-   * Used for a more advanced text match.
+   * Query text phrases.
    *
    * @generated from field: wfo.vanalytics.v2.SpanNear span_near = 2;
    */
@@ -1111,8 +1259,8 @@ export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuer
 
 /**
  *
- * FuzzinessAuto defines an automatic max allowable edit distance based on the
- * length of the match text.
+ * Defines an automatic max allowable edit distance based on the length of the
+ * text to match.
  *
  * length  <  low -- Must match exactly.
  * length  < high -- Must match with one edit allowed.
@@ -1122,14 +1270,14 @@ export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuer
  */
 export declare class FuzzinessAuto extends Message<FuzzinessAuto> {
   /**
-   * The match text low length threshold.
+   * The low length threshold.
    *
    * @generated from field: uint32 low = 1;
    */
   low: number;
 
   /**
-   * The match text high length threshold.
+   * The high length threshold.
    *
    * @generated from field: uint32 high = 2;
    */
@@ -1151,44 +1299,47 @@ export declare class FuzzinessAuto extends Message<FuzzinessAuto> {
 }
 
 /**
- * Used for a basic text match.
+ * Query text terms with optional fuzziness.
  *
  * @generated from message wfo.vanalytics.v2.Match
  */
 export declare class Match extends Message<Match> {
   /**
-   * The text to be matched.
+   * Required. The text to be matched. The field may contain multiple terms
+   * to match when separated by spaces.
    *
    * @generated from field: string text = 1;
    */
   text: string;
 
   /**
-   * Optional. Operator must be one of: (AND, OR). Defaults to OR when empty.
-   * When the match text contains multiple terms separated by spaces the
-   * operator determines whether any or all of the terms must be matched.
+   * Determines whether any or all of the terms must be matched. Operator must
+   * be one of: (AND, OR). Defaults to OR when empty.
    *
    * @generated from field: string operator = 2;
    */
   operator: string;
 
   /**
-   * Allows the term to be spelled slightly incorrect and still
-   * match. The fuzziness_value can have the values 0, 1, or 2; 0 would require
-   * that the term matches exactly, 2 would allow 2 letter differences.
-   * The fuzziness_auto would automatically pick a number based on the
-   * word length within the given bounds.
+   * Fuzziness controls the maximum edit distance that a similar term can have
+   * and be considered a match. For example, the edit distance between cat and
+   * bat would be 1 since only one letter is different. The edit distance
+   * between unity and united would be 2. Fuzziness auto is recommended.
    *
    * @generated from oneof wfo.vanalytics.v2.Match.fuzziness
    */
   fuzziness: {
     /**
+     * Variable fuzziness based on the match term length.
+     *
      * @generated from field: wfo.vanalytics.v2.FuzzinessAuto fuzziness_auto = 15;
      */
     value: FuzzinessAuto;
     case: "fuzzinessAuto";
   } | {
     /**
+     * Constant fuzziness with allowed range from 0, 1 and 2.
+     *
      * @generated from field: uint32 fuzziness_value = 16;
      */
     value: number;
@@ -1211,27 +1362,29 @@ export declare class Match extends Message<Match> {
 }
 
 /**
+ * Query which matches a list of clauses that are near to each other.
+ *
  * @generated from message wfo.vanalytics.v2.SpanNear
  */
 export declare class SpanNear extends Message<SpanNear> {
   /**
-   * The number of extra terms that can be in the query that
-   * are not being searched for. For example: slop of 2 when searching for
-   * "This is my dog" would allow "This is my quick brown dog".
+   * The number of allowed non matching terms within the span. For example, a
+   * slop of 2 when searching for "This is my dog" would allow a match on
+   * "This is my quick brown dog".
    *
    * @generated from field: int32 slop = 1;
    */
   slop: number;
 
   /**
-   * When in_order is true then the terms must be found in the order given.
+   * Requires clauses to be matched in the order.
    *
    * @generated from field: bool in_order = 2;
    */
   inOrder: boolean;
 
   /**
-   * TODO: ???
+   * Required. The clauses to be matched.
    *
    * @generated from field: repeated wfo.vanalytics.v2.SpanNear.Clause clauses = 3;
    */
@@ -1253,28 +1406,36 @@ export declare class SpanNear extends Message<SpanNear> {
 }
 
 /**
+ * Generic clause for use in span near queries.
+ *
  * @generated from message wfo.vanalytics.v2.SpanNear.Clause
  */
 export declare class SpanNear_Clause extends Message<SpanNear_Clause> {
   /**
-   * TODO: ???
+   * Generic clause matcher.
    *
    * @generated from oneof wfo.vanalytics.v2.SpanNear.Clause.match
    */
   match: {
     /**
+     * A span near clause to match a phrase.
+     *
      * @generated from field: wfo.vanalytics.v2.SpanNear span_near = 1;
      */
     value: SpanNear;
     case: "spanNear";
   } | {
     /**
+     * A span near clause to match a fuzzy term.
+     *
      * @generated from field: wfo.vanalytics.v2.SpanFuzzy span_fuzzy = 2;
      */
     value: SpanFuzzy;
     case: "spanFuzzy";
   } | {
     /**
+     * A span near clause to match a term.
+     *
      * @generated from field: wfo.vanalytics.v2.SpanTerm span_term = 3;
      */
     value: SpanTerm;
@@ -1297,13 +1458,13 @@ export declare class SpanNear_Clause extends Message<SpanNear_Clause> {
 }
 
 /**
- * Represents a text term to match against.
+ * Query which matches a span term exactly.
  *
  * @generated from message wfo.vanalytics.v2.SpanTerm
  */
 export declare class SpanTerm extends Message<SpanTerm> {
   /**
-   * The text to be matched.
+   * Required. The value to be matched.
    *
    * @generated from field: string value = 1;
    */
@@ -1325,35 +1486,38 @@ export declare class SpanTerm extends Message<SpanTerm> {
 }
 
 /**
- * Represents a fuzzy text match.
+ * Query which matches a span term with fuzziness.
  *
  * @generated from message wfo.vanalytics.v2.SpanFuzzy
  */
 export declare class SpanFuzzy extends Message<SpanFuzzy> {
   /**
-   * The text to match against.
+   * Required. The value to be fuzzy matched.
    *
    * @generated from field: string value = 1;
    */
   value: string;
 
   /**
-   * Allows the term to be spelled slightly incorrect and still
-   * match. The fuzziness_value can have the values 0, 1, or 2; 0 would require
-   * that the term matches exactly, 2 would allow 2 letter differences.
-   * The fuzziness_auto would automatically pick a number based on the
-   * word length within the given bounds.
+   * Fuzziness controls the maximum edit distance that a similar term can have
+   * and be considered a match. For example, the edit distance between cat and
+   * bat would be 1 since only one letter is different. The edit distance
+   * between unity and united would be 2. Fuzziness auto is recommended.
    *
    * @generated from oneof wfo.vanalytics.v2.SpanFuzzy.fuzziness
    */
   fuzziness: {
     /**
+     * Variable fuzziness based on the match term length.
+     *
      * @generated from field: wfo.vanalytics.v2.FuzzinessAuto fuzziness_auto = 10;
      */
     value: FuzzinessAuto;
     case: "fuzzinessAuto";
   } | {
     /**
+     * Constant fuzziness with allowed range from 0, 1 and 2.
+     *
      * @generated from field: uint32 fuzziness_value = 11;
      */
     value: number;

@@ -211,6 +211,11 @@ export declare enum PluginType {
    * @generated from enum value: RND = 3;
    */
   RND = 3,
+
+  /**
+   * @generated from enum value: MRS_COMPLIANCE = 4;
+   */
+  MRS_COMPLIANCE = 4,
 }
 
 /**
@@ -862,6 +867,28 @@ export declare class PluginExp extends Message<PluginExp> {
    * @generated from field: string date_last_contact = 10;
    */
   dateLastContact: string;
+
+  /**
+   * mrs compliance
+   *
+   * @generated from field: string lu = 12;
+   */
+  lu: string;
+
+  /**
+   * @generated from field: string account = 13;
+   */
+  account: string;
+
+  /**
+   * @generated from field: string master = 14;
+   */
+  master: string;
+
+  /**
+   * @generated from field: string client = 15;
+   */
+  client: string;
 
   constructor(data?: PartialMessage<PluginExp>);
 

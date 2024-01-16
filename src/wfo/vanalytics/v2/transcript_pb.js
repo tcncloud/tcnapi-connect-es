@@ -3,11 +3,11 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
+import { FieldMask, Int32Value, proto3, Timestamp } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../../../api/commons/acd_pb.js";
 
 /**
- * Channel defines types of communication.
+ * An enumeration of transcript communication channels.
  *
  * @generated from enum wfo.vanalytics.v2.Channel
  */
@@ -20,10 +20,9 @@ export const Channel = proto3.makeEnum(
 );
 
 /**
- * ReviewStatus is an enumeration of a flagged transcripts review statuses.
- * Todo means there are flags that need review and have not been reviewed.
- * Done means every flag that needs review has been reviewed. None means zero
- * flags require review.
+ * An enumeration of a flagged transcripts review statuses. Todo means there
+ * are flags that need review and have not been reviewed. Done means every flag
+ * that needs review has been reviewed. None means no flags require review.
  *
  * @generated from enum wfo.vanalytics.v2.ReviewStatus
  */
@@ -37,7 +36,7 @@ export const ReviewStatus = proto3.makeEnum(
 );
 
 /**
- * A Transcript is the textualized interaction between two or more parties.
+ * A textualized interaction between two or more participants.
  *
  * @generated from message wfo.vanalytics.v2.Transcript
  */
@@ -141,7 +140,7 @@ export const FlagSummary_Review = proto3.makeMessageType(
 );
 
 /**
- * A resource defining sms specific transcript metadata.
+ * Sms specific transcript metadata.
  *
  * @generated from message wfo.vanalytics.v2.Sms
  */
@@ -154,7 +153,7 @@ export const Sms = proto3.makeMessageType(
 );
 
 /**
- * Thread contains the text of the transcript
+ * A thread is the text from one participant.
  *
  * @generated from message wfo.vanalytics.v2.Sms.Thread
  */
@@ -168,7 +167,7 @@ export const Sms_Thread = proto3.makeMessageType(
 );
 
 /**
- * The text of a segment of a thread of a conversation.
+ * A segment of text.
  *
  * @generated from message wfo.vanalytics.v2.Sms.Segment
  */
@@ -181,7 +180,7 @@ export const Sms_Segment = proto3.makeMessageType(
 );
 
 /**
- * Call defines channel specific transcript metadata.
+ * Call specific transcript metadata.
  *
  * @generated from message wfo.vanalytics.v2.Call
  */
@@ -196,7 +195,7 @@ export const Call = proto3.makeMessageType(
 );
 
 /**
- * The text of the call.
+ * A thread is the text from one participant.
  *
  * @generated from message wfo.vanalytics.v2.Call.Thread
  */
@@ -210,7 +209,7 @@ export const Call_Thread = proto3.makeMessageType(
 );
 
 /**
- * The text of a segment of a thread of a call.
+ * A segment of text.
  *
  * @generated from message wfo.vanalytics.v2.Call.Segment
  */
@@ -223,6 +222,8 @@ export const Call_Segment = proto3.makeMessageType(
 );
 
 /**
+ * The request for the search transcripts RPC.
+ *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsRequest
  */
 export const SearchTranscriptsRequest = proto3.makeMessageType(
@@ -233,10 +234,26 @@ export const SearchTranscriptsRequest = proto3.makeMessageType(
     { no: 4, name: "read_mask", kind: "message", T: FieldMask },
     { no: 5, name: "bool_query", kind: "message", T: TranscriptBoolQuery },
     { no: 6, name: "page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "highlight", kind: "message", T: Highlight },
   ],
 );
 
 /**
+ * Configuration to enable and control text highlights.
+ *
+ * @generated from message wfo.vanalytics.v2.Highlight
+ */
+export const Highlight = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Highlight",
+  () => [
+    { no: 1, name: "prefix", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "suffix", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * The response for the search transcripts RPC.
+ *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsResponse
  */
 export const SearchTranscriptsResponse = proto3.makeMessageType(
@@ -248,7 +265,7 @@ export const SearchTranscriptsResponse = proto3.makeMessageType(
 );
 
 /**
- * A matching result.
+ * A search response hit.
  *
  * @generated from message wfo.vanalytics.v2.SearchTranscriptsResponse.Hit
  */
@@ -261,7 +278,7 @@ export const SearchTranscriptsResponse_Hit = proto3.makeMessageType(
 );
 
 /**
- * A query used to filter the transcripts.
+ * Boolean query to filter transcripts.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptBoolQuery
  */
@@ -273,6 +290,8 @@ export const TranscriptBoolQuery = proto3.makeMessageType(
 );
 
 /**
+ * Query to filter transcripts.
+ *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery
  */
 export const TranscriptQuery = proto3.makeMessageType(
@@ -286,7 +305,7 @@ export const TranscriptQuery = proto3.makeMessageType(
 );
 
 /**
- * Represents a list of transcripts
+ * Query constraints on transcript sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.TranscriptSid
  */
@@ -299,7 +318,7 @@ export const TranscriptQuery_TranscriptSid = proto3.makeMessageType(
 );
 
 /**
- * Represents a list of channels
+ * Query constraints on channel.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Channel
  */
@@ -312,7 +331,7 @@ export const TranscriptQuery_Channel = proto3.makeMessageType(
 );
 
 /**
- * Resource to query on channel specific data.
+ * Query constraints on metadata.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Metadata
  */
@@ -326,7 +345,7 @@ export const TranscriptQuery_Metadata = proto3.makeMessageType(
 );
 
 /**
- * Resource to query on call specific data.
+ * Query constraints on call metadata.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call
  */
@@ -334,12 +353,27 @@ export const TranscriptQuery_Call = proto3.makeMessageType(
   "wfo.vanalytics.v2.TranscriptQuery.Call",
   () => [
     { no: 1, name: "call_sid", kind: "message", T: TranscriptQuery_Call_CallSid },
+    { no: 2, name: "audio_time", kind: "message", T: TranscriptQuery_Call_AudioTime },
+    { no: 3, name: "call_type", kind: "message", T: TranscriptQuery_Call_CallType },
   ],
   {localName: "TranscriptQuery_Call"},
 );
 
 /**
- * Represents a set of calls.
+ * Query constraints on call type.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallType
+ */
+export const TranscriptQuery_Call_CallType = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.CallType",
+  () => [
+    { no: 1, name: "any", kind: "enum", T: proto3.getEnumType(CallType_Enum), repeated: true },
+  ],
+  {localName: "TranscriptQuery_Call_CallType"},
+);
+
+/**
+ * Query constraints on call sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallSid
  */
@@ -352,7 +386,23 @@ export const TranscriptQuery_Call_CallSid = proto3.makeMessageType(
 );
 
 /**
- * Resource to query on sms specific data.
+ * Query constraints on audio time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime
+ */
+export const TranscriptQuery_Call_AudioTime = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.AudioTime",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Int32Value },
+    { no: 2, name: "lte", kind: "message", T: Int32Value },
+    { no: 3, name: "gt", kind: "message", T: Int32Value },
+    { no: 4, name: "lt", kind: "message", T: Int32Value },
+  ],
+  {localName: "TranscriptQuery_Call_AudioTime"},
+);
+
+/**
+ * Query constraints on sms metadata.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms
  */
@@ -365,7 +415,7 @@ export const TranscriptQuery_Sms = proto3.makeMessageType(
 );
 
 /**
- * Represents a set of sms conversations.
+ * Query constraints on conversation sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid
  */
@@ -378,7 +428,7 @@ export const TranscriptQuery_Sms_ConversationSid = proto3.makeMessageType(
 );
 
 /**
- * Resource to query for text in the threads.
+ * Query constraints on threads.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads
  */
@@ -392,7 +442,7 @@ export const TranscriptQuery_Threads = proto3.makeMessageType(
 );
 
 /**
- * Represents a set of threads.
+ * Query constraints on thread id.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Id
  */
@@ -405,7 +455,7 @@ export const TranscriptQuery_Threads_Id = proto3.makeMessageType(
 );
 
 /**
- * Represents text to match.
+ * Query constraints on thread text.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Text
  */
@@ -420,8 +470,8 @@ export const TranscriptQuery_Threads_Text = proto3.makeMessageType(
 
 /**
  *
- * FuzzinessAuto defines an automatic max allowable edit distance based on the
- * length of the match text.
+ * Defines an automatic max allowable edit distance based on the length of the
+ * text to match.
  *
  * length  <  low -- Must match exactly.
  * length  < high -- Must match with one edit allowed.
@@ -438,7 +488,7 @@ export const FuzzinessAuto = proto3.makeMessageType(
 );
 
 /**
- * Used for a basic text match.
+ * Query text terms with optional fuzziness.
  *
  * @generated from message wfo.vanalytics.v2.Match
  */
@@ -453,6 +503,8 @@ export const Match = proto3.makeMessageType(
 );
 
 /**
+ * Query which matches a list of clauses that are near to each other.
+ *
  * @generated from message wfo.vanalytics.v2.SpanNear
  */
 export const SpanNear = proto3.makeMessageType(
@@ -465,6 +517,8 @@ export const SpanNear = proto3.makeMessageType(
 );
 
 /**
+ * Generic clause for use in span near queries.
+ *
  * @generated from message wfo.vanalytics.v2.SpanNear.Clause
  */
 export const SpanNear_Clause = proto3.makeMessageType(
@@ -478,7 +532,7 @@ export const SpanNear_Clause = proto3.makeMessageType(
 );
 
 /**
- * Represents a text term to match against.
+ * Query which matches a span term exactly.
  *
  * @generated from message wfo.vanalytics.v2.SpanTerm
  */
@@ -490,7 +544,7 @@ export const SpanTerm = proto3.makeMessageType(
 );
 
 /**
- * Represents a fuzzy text match.
+ * Query which matches a span term with fuzziness.
  *
  * @generated from message wfo.vanalytics.v2.SpanFuzzy
  */

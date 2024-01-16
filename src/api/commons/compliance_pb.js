@@ -101,6 +101,7 @@ export const PluginType = proto3.makeEnum(
     {no: 1, name: "GRYPHON"},
     {no: 2, name: "TCN_CONSENT"},
     {no: 3, name: "RND"},
+    {no: 4, name: "MRS_COMPLIANCE"},
   ],
 );
 
@@ -321,6 +322,10 @@ export const PluginExp = proto3.makeMessageType(
     { no: 9, name: "topic", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 11, name: "absent_action", kind: "enum", T: proto3.getEnumType(ConsentAbsentAction) },
     { no: 10, name: "date_last_contact", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "lu", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "account", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "master", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "client", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentResponseAutoRuleSet, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -1357,5 +1357,180 @@ export declare class ListHuntGroupIntegrationLinksResponse extends Message<ListH
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupIntegrationLinksResponse;
 
   static equals(a: ListHuntGroupIntegrationLinksResponse | PlainMessage<ListHuntGroupIntegrationLinksResponse> | undefined, b: ListHuntGroupIntegrationLinksResponse | PlainMessage<ListHuntGroupIntegrationLinksResponse> | undefined): boolean;
+}
+
+/**
+ * ListAgentTriggersRequest is the request message for the ListAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListAgentTriggersRequest
+ */
+export declare class ListAgentTriggersRequest extends Message<ListAgentTriggersRequest> {
+  /**
+   * The sid of the hunt group to get the triggers for
+   *
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  constructor(data?: PartialMessage<ListAgentTriggersRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListAgentTriggersRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentTriggersRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentTriggersRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentTriggersRequest;
+
+  static equals(a: ListAgentTriggersRequest | PlainMessage<ListAgentTriggersRequest> | undefined, b: ListAgentTriggersRequest | PlainMessage<ListAgentTriggersRequest> | undefined): boolean;
+}
+
+/**
+ * ListAgentTriggersResponse is the response message for the ListAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListAgentTriggersResponse
+ */
+export declare class ListAgentTriggersResponse extends Message<ListAgentTriggersResponse> {
+  /**
+   * The list of agent triggers for the hunt group
+   *
+   * @generated from field: repeated api.commons.org.AgentTrigger agent_triggers = 1;
+   */
+  agentTriggers: AgentTrigger[];
+
+  constructor(data?: PartialMessage<ListAgentTriggersResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListAgentTriggersResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentTriggersResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentTriggersResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentTriggersResponse;
+
+  static equals(a: ListAgentTriggersResponse | PlainMessage<ListAgentTriggersResponse> | undefined, b: ListAgentTriggersResponse | PlainMessage<ListAgentTriggersResponse> | undefined): boolean;
+}
+
+/**
+ * CopyAgentTriggerRequest is the request message for the CopyAgentTrigger RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyAgentTriggerRequest
+ */
+export declare class CopyAgentTriggerRequest extends Message<CopyAgentTriggerRequest> {
+  /**
+   * The sid of the hunt group from which the trigger is copied
+   *
+   * @generated from field: int64 from_hunt_group_sid = 1;
+   */
+  fromHuntGroupSid: bigint;
+
+  /**
+   * The sid of the hunt group to which the trigger is copied
+   *
+   * @generated from field: int64 to_hunt_group_sid = 2;
+   */
+  toHuntGroupSid: bigint;
+
+  /**
+   * The agent trigger to copy
+   *
+   * @generated from field: api.commons.org.AgentTrigger agent_trigger = 3;
+   */
+  agentTrigger?: AgentTrigger;
+
+  constructor(data?: PartialMessage<CopyAgentTriggerRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyAgentTriggerRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyAgentTriggerRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyAgentTriggerRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyAgentTriggerRequest;
+
+  static equals(a: CopyAgentTriggerRequest | PlainMessage<CopyAgentTriggerRequest> | undefined, b: CopyAgentTriggerRequest | PlainMessage<CopyAgentTriggerRequest> | undefined): boolean;
+}
+
+/**
+ * CopyAgentTriggerResponse is the response message for the CopyAgentTrigger RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyAgentTriggerResponse
+ */
+export declare class CopyAgentTriggerResponse extends Message<CopyAgentTriggerResponse> {
+  constructor(data?: PartialMessage<CopyAgentTriggerResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyAgentTriggerResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyAgentTriggerResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyAgentTriggerResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyAgentTriggerResponse;
+
+  static equals(a: CopyAgentTriggerResponse | PlainMessage<CopyAgentTriggerResponse> | undefined, b: CopyAgentTriggerResponse | PlainMessage<CopyAgentTriggerResponse> | undefined): boolean;
+}
+
+/**
+ * UpdateAgentTriggersRequest is the request message for the UpdateAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateAgentTriggersRequest
+ */
+export declare class UpdateAgentTriggersRequest extends Message<UpdateAgentTriggersRequest> {
+  /**
+   * The sid of the hunt group to update the trigger for
+   *
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * The list of agent triggers to update
+   *
+   * @generated from field: repeated api.commons.org.AgentTrigger agent_triggers = 2;
+   */
+  agentTriggers: AgentTrigger[];
+
+  constructor(data?: PartialMessage<UpdateAgentTriggersRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateAgentTriggersRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAgentTriggersRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAgentTriggersRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAgentTriggersRequest;
+
+  static equals(a: UpdateAgentTriggersRequest | PlainMessage<UpdateAgentTriggersRequest> | undefined, b: UpdateAgentTriggersRequest | PlainMessage<UpdateAgentTriggersRequest> | undefined): boolean;
+}
+
+/**
+ * UpdateAgentTriggersResponse is the response message for the UpdateAgentTriggers RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateAgentTriggersResponse
+ */
+export declare class UpdateAgentTriggersResponse extends Message<UpdateAgentTriggersResponse> {
+  constructor(data?: PartialMessage<UpdateAgentTriggersResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateAgentTriggersResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateAgentTriggersResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateAgentTriggersResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateAgentTriggersResponse;
+
+  static equals(a: UpdateAgentTriggersResponse | PlainMessage<UpdateAgentTriggersResponse> | undefined, b: UpdateAgentTriggersResponse | PlainMessage<UpdateAgentTriggersResponse> | undefined): boolean;
 }
 
