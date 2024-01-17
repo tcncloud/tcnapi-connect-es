@@ -31,6 +31,7 @@ export const PersistedWorkflowDefinition = proto3.makeMessageType(
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "application", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "labels", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "definition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "create_time", kind: "message", T: Timestamp },
@@ -131,6 +132,30 @@ export const UpdateWorkflowDefinitionRequest = proto3.makeMessageType(
  */
 export const UpdateWorkflowDefinitionResponse = proto3.makeMessageType(
   "api.v1alpha1.workflows.UpdateWorkflowDefinitionResponse",
+  () => [
+    { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
+  ],
+);
+
+/**
+ * DeleteWorkflowDefinitionRequest is the request object for deleting a flow definition
+ *
+ * @generated from message api.v1alpha1.workflows.DeleteWorkflowDefinitionRequest
+ */
+export const DeleteWorkflowDefinitionRequest = proto3.makeMessageType(
+  "api.v1alpha1.workflows.DeleteWorkflowDefinitionRequest",
+  () => [
+    { no: 1, name: "workflow_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * DeleteWorkflowDefinitionResponse is the response object for deleting a flow definition
+ *
+ * @generated from message api.v1alpha1.workflows.DeleteWorkflowDefinitionResponse
+ */
+export const DeleteWorkflowDefinitionResponse = proto3.makeMessageType(
+  "api.v1alpha1.workflows.DeleteWorkflowDefinitionResponse",
   () => [
     { no: 1, name: "workflow_definition", kind: "message", T: PersistedWorkflowDefinition },
   ],

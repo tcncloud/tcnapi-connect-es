@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateWorkflowDefinitionRequest, CreateWorkflowDefinitionResponse, GetWorkflowDefinitionRequest, GetWorkflowDefinitionResponse, ListWorkflowDefinitionsRequest, ListWorkflowDefinitionsResponse, UpdateWorkflowDefinitionRequest, UpdateWorkflowDefinitionResponse, ValidateWorkflowDefinitionRequest, ValidateWorkflowDefinitionResponse } from "./service_pb.js";
+import { CreateWorkflowDefinitionRequest, CreateWorkflowDefinitionResponse, DeleteWorkflowDefinitionRequest, DeleteWorkflowDefinitionResponse, GetWorkflowDefinitionRequest, GetWorkflowDefinitionResponse, ListWorkflowDefinitionsRequest, ListWorkflowDefinitionsResponse, UpdateWorkflowDefinitionRequest, UpdateWorkflowDefinitionResponse, ValidateWorkflowDefinitionRequest, ValidateWorkflowDefinitionResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -72,6 +72,17 @@ export declare const WorkflowDefinitionPersistService: {
       readonly name: "UpdateWorkflowDefinition",
       readonly I: typeof UpdateWorkflowDefinitionRequest,
       readonly O: typeof UpdateWorkflowDefinitionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteWorkflowDefinition deletes a flow definition from the database
+     *
+     * @generated from rpc api.v1alpha1.workflows.WorkflowDefinitionPersistService.DeleteWorkflowDefinition
+     */
+    readonly deleteWorkflowDefinition: {
+      readonly name: "DeleteWorkflowDefinition",
+      readonly I: typeof DeleteWorkflowDefinitionRequest,
+      readonly O: typeof DeleteWorkflowDefinitionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
