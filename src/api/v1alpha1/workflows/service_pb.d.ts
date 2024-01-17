@@ -55,6 +55,13 @@ export declare class PersistedWorkflowDefinition extends Message<PersistedWorkfl
   name: string;
 
   /**
+   * labels can be used to group/tag flow definitions together into logical categories
+   *
+   * @generated from field: repeated string labels = 9;
+   */
+  labels: string[];
+
+  /**
    * this definition description
    *
    * @generated from field: string description = 5;
@@ -339,6 +346,62 @@ export declare class UpdateWorkflowDefinitionResponse extends Message<UpdateWork
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateWorkflowDefinitionResponse;
 
   static equals(a: UpdateWorkflowDefinitionResponse | PlainMessage<UpdateWorkflowDefinitionResponse> | undefined, b: UpdateWorkflowDefinitionResponse | PlainMessage<UpdateWorkflowDefinitionResponse> | undefined): boolean;
+}
+
+/**
+ * DeleteWorkflowDefinitionRequest is the request object for deleting a flow definition
+ *
+ * @generated from message api.v1alpha1.workflows.DeleteWorkflowDefinitionRequest
+ */
+export declare class DeleteWorkflowDefinitionRequest extends Message<DeleteWorkflowDefinitionRequest> {
+  /**
+   * workflow_definition_id is the identifier for the flow definition to delete
+   *
+   * @generated from field: string workflow_definition_id = 1;
+   */
+  workflowDefinitionId: string;
+
+  constructor(data?: PartialMessage<DeleteWorkflowDefinitionRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.workflows.DeleteWorkflowDefinitionRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWorkflowDefinitionRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWorkflowDefinitionRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWorkflowDefinitionRequest;
+
+  static equals(a: DeleteWorkflowDefinitionRequest | PlainMessage<DeleteWorkflowDefinitionRequest> | undefined, b: DeleteWorkflowDefinitionRequest | PlainMessage<DeleteWorkflowDefinitionRequest> | undefined): boolean;
+}
+
+/**
+ * DeleteWorkflowDefinitionResponse is the response object for deleting a flow definition
+ *
+ * @generated from message api.v1alpha1.workflows.DeleteWorkflowDefinitionResponse
+ */
+export declare class DeleteWorkflowDefinitionResponse extends Message<DeleteWorkflowDefinitionResponse> {
+  /**
+   * workflow_definition is the deleted flow definition object
+   *
+   * @generated from field: api.v1alpha1.workflows.PersistedWorkflowDefinition workflow_definition = 1;
+   */
+  workflowDefinition?: PersistedWorkflowDefinition;
+
+  constructor(data?: PartialMessage<DeleteWorkflowDefinitionResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.workflows.DeleteWorkflowDefinitionResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteWorkflowDefinitionResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteWorkflowDefinitionResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteWorkflowDefinitionResponse;
+
+  static equals(a: DeleteWorkflowDefinitionResponse | PlainMessage<DeleteWorkflowDefinitionResponse> | undefined, b: DeleteWorkflowDefinitionResponse | PlainMessage<DeleteWorkflowDefinitionResponse> | undefined): boolean;
 }
 
 /**
