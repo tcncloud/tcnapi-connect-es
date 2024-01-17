@@ -206,6 +206,7 @@ export const EvaluationSection = proto3.makeMessageType(
     { no: 9, name: "created_at", kind: "message", T: Timestamp },
     { no: 10, name: "evaluation_questions", kind: "message", T: EvaluationQuestion, repeated: true },
     { no: 11, name: "auto_evaluation_questions", kind: "message", T: AutoEvaluationQuestion, repeated: true },
+    { no: 12, name: "skipped", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
