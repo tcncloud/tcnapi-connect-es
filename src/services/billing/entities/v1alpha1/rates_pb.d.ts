@@ -239,20 +239,18 @@ export declare class RateDefinition extends Message<RateDefinition> {
   rateDefinitionId: string;
 
   /**
-   * the feature this rate definition is a part of (i.e. event_type + config_type);
-   * should always be set unless adding a rate definition to the
-   * default billing plan.
+   * unused
    *
-   * @generated from field: string rate_definition_feature_id = 2;
+   * @generated from field: string rate_definition_feature_id = 2 [deprecated = true];
+   * @deprecated
    */
   rateDefinitionFeatureId: string;
 
   /**
-   * the group this rate definition is a part of (i.e. matching_rule + matching_config);
-   * should always be set unless adding a rate definition to the
-   * default billing plan.
+   * unused
    *
-   * @generated from field: string rate_definition_group_id = 3;
+   * @generated from field: string rate_definition_group_id = 3 [deprecated = true];
+   * @deprecated
    */
   rateDefinitionGroupId: string;
 
