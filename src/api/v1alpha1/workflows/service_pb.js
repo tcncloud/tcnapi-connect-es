@@ -98,6 +98,7 @@ export const ListWorkflowDefinitionsRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "application", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "labels", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

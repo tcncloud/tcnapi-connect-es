@@ -247,6 +247,13 @@ export declare class ListWorkflowDefinitionsRequest extends Message<ListWorkflow
    */
   application: string;
 
+  /**
+   * labels can be used to filter grouped/tagged flow definitions
+   *
+   * @generated from field: repeated string labels = 3;
+   */
+  labels: string[];
+
   constructor(data?: PartialMessage<ListWorkflowDefinitionsRequest>);
 
   static readonly runtime: typeof proto3;
