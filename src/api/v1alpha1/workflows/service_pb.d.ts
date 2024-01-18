@@ -78,7 +78,7 @@ export declare class PersistedWorkflowDefinition extends Message<PersistedWorkfl
   definition: string;
 
   /**
-   * create_time is the time the flow definition was created. Not used for the update request
+   * create_time is the time the flow definition was created. Not used for the create request
    *
    * @generated from field: google.protobuf.Timestamp create_time = 7;
    */
@@ -90,13 +90,6 @@ export declare class PersistedWorkflowDefinition extends Message<PersistedWorkfl
    * @generated from field: google.protobuf.Timestamp update_time = 8;
    */
   updateTime?: Timestamp;
-
-  /**
-   * delete_time is the time the flow definition was deleted. Not used for the create request
-   *
-   * @generated from field: google.protobuf.Timestamp delete_time = 10;
-   */
-  deleteTime?: Timestamp;
 
   /**
    * extra is a JSON serialized string that can be used to store extra data for the flow definition (e.g. UI positioning data)

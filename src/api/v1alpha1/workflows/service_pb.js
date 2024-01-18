@@ -36,7 +36,6 @@ export const PersistedWorkflowDefinition = proto3.makeMessageType(
     { no: 6, name: "definition", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "create_time", kind: "message", T: Timestamp },
     { no: 8, name: "update_time", kind: "message", T: Timestamp },
-    { no: 10, name: "delete_time", kind: "message", T: Timestamp },
     { no: 100, name: "extra", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
