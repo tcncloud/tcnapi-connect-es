@@ -3,9 +3,23 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { AgentCallHistoryScope, AgentRouting, AlphanumericKeypadDelimiter, CommunicationExpiration, DefaultCallbackRouting, DefaultManualDialCallerId, DefaultTransferCallerId, HuntGroupOrgDefaultCustom, InitialAgentStatus, ManualDialDataDipHandling, ManualDialDataDipIntegration, ManualDialDataDipScope, ManualDialTimeZoneValidation, PhonePostalDisplayOptions, RequeueTransferQueueConfig, TransferRecordingStatus } from "../org_pb.js";
 import { Country } from "../country_pb.js";
+
+/**
+ * HuntGroupType represents the type of a hunt group.
+ *
+ * @generated from enum api.commons.org.HuntGroupType
+ */
+export const HuntGroupType = proto3.makeEnum(
+  "api.commons.org.HuntGroupType",
+  [
+    {no: 0, name: "HUNT_GROUP_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "HUNT_GROUP_TYPE_CONNECTED", localName: "CONNECTED"},
+    {no: 2, name: "HUNT_GROUP_TYPE_SOFTPHONE", localName: "SOFTPHONE"},
+  ],
+);
 
 /**
  * Tempate category differentiates between template types
@@ -435,6 +449,101 @@ export const GeneralSettings_PrepareStateCallDelivery = proto3.makeMessageType(
     { no: 2, name: "preview_dial", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
   {localName: "GeneralSettings_PrepareStateCallDelivery"},
+);
+
+/**
+ * HuntGroupDetails is the entity for hunt group details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails
+ */
+export const HuntGroupDetails = proto3.makeMessageType(
+  "api.commons.org.HuntGroupDetails",
+  () => [
+    { no: 1, name: "general_details", kind: "message", T: HuntGroupDetails_GeneralDetails },
+    { no: 2, name: "template_details", kind: "message", T: HuntGroupDetails_ClientInfoDisplayTemplateDetails },
+    { no: 3, name: "web_link_details", kind: "message", T: HuntGroupDetails_WebLinkDetails, repeated: true },
+    { no: 4, name: "trigger_details", kind: "message", T: HuntGroupDetails_TriggerDetails, repeated: true },
+    { no: 5, name: "integration_link_details", kind: "message", T: HuntGroupDetails_IntegrationLinkDetails, repeated: true },
+  ],
+);
+
+/**
+ * GeneralDetails is the entity for hunt group general details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.GeneralDetails
+ */
+export const HuntGroupDetails_GeneralDetails = proto3.makeMessageType(
+  "api.commons.org.HuntGroupDetails.GeneralDetails",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "type", kind: "enum", T: proto3.getEnumType(HuntGroupType) },
+    { no: 4, name: "modify_date", kind: "message", T: Timestamp },
+    { no: 5, name: "agent_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+  {localName: "HuntGroupDetails_GeneralDetails"},
+);
+
+/**
+ * ClientInfoDisplayTemplateDetails is the entity for hunt group client info display template details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails
+ */
+export const HuntGroupDetails_ClientInfoDisplayTemplateDetails = proto3.makeMessageType(
+  "api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "display_all_fields", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "defined_field_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+  {localName: "HuntGroupDetails_ClientInfoDisplayTemplateDetails"},
+);
+
+/**
+ * WebLinkDetails is the entity for hunt group web link details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.WebLinkDetails
+ */
+export const HuntGroupDetails_WebLinkDetails = proto3.makeMessageType(
+  "api.commons.org.HuntGroupDetails.WebLinkDetails",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "base_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "parameter_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+  {localName: "HuntGroupDetails_WebLinkDetails"},
+);
+
+/**
+ * TriggerDetails is the entity for hunt group trigger details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.TriggerDetails
+ */
+export const HuntGroupDetails_TriggerDetails = proto3.makeMessageType(
+  "api.commons.org.HuntGroupDetails.TriggerDetails",
+  () => [
+    { no: 1, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "status", kind: "enum", T: proto3.getEnumType(AgentStatus) },
+    { no: 3, name: "duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "action", kind: "enum", T: proto3.getEnumType(TriggerAction) },
+  ],
+  {localName: "HuntGroupDetails_TriggerDetails"},
+);
+
+/**
+ * IntegrationLinkDetails is the entity for hunt group integration link details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.IntegrationLinkDetails
+ */
+export const HuntGroupDetails_IntegrationLinkDetails = proto3.makeMessageType(
+  "api.commons.org.HuntGroupDetails.IntegrationLinkDetails",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "HuntGroupDetails_IntegrationLinkDetails"},
 );
 
 /**

@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupType, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -216,6 +216,251 @@ export declare class UpdateHuntGroupSettingsResponse extends Message<UpdateHuntG
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupSettingsResponse;
 
   static equals(a: UpdateHuntGroupSettingsResponse | PlainMessage<UpdateHuntGroupSettingsResponse> | undefined, b: UpdateHuntGroupSettingsResponse | PlainMessage<UpdateHuntGroupSettingsResponse> | undefined): boolean;
+}
+
+/**
+ * CreateHuntGroupRequest represents the request message for the CreateHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupRequest
+ */
+export declare class CreateHuntGroupRequest extends Message<CreateHuntGroupRequest> {
+  /**
+   * The hunt group name.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The hunt group description.
+   *
+   * @generated from field: string description = 2;
+   */
+  description: string;
+
+  /**
+   * The hunt group type.
+   *
+   * @generated from field: api.commons.org.HuntGroupType type = 3;
+   */
+  type: HuntGroupType;
+
+  constructor(data?: PartialMessage<CreateHuntGroupRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreateHuntGroupRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateHuntGroupRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateHuntGroupRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateHuntGroupRequest;
+
+  static equals(a: CreateHuntGroupRequest | PlainMessage<CreateHuntGroupRequest> | undefined, b: CreateHuntGroupRequest | PlainMessage<CreateHuntGroupRequest> | undefined): boolean;
+}
+
+/**
+ * CreateHuntGroupResponse represents the response message for the CreateHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupResponse
+ */
+export declare class CreateHuntGroupResponse extends Message<CreateHuntGroupResponse> {
+  /**
+   * The hunt group sid.
+   *
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  constructor(data?: PartialMessage<CreateHuntGroupResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreateHuntGroupResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateHuntGroupResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateHuntGroupResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateHuntGroupResponse;
+
+  static equals(a: CreateHuntGroupResponse | PlainMessage<CreateHuntGroupResponse> | undefined, b: CreateHuntGroupResponse | PlainMessage<CreateHuntGroupResponse> | undefined): boolean;
+}
+
+/**
+ * UpdateHuntGroupGeneralDetailsRequest represents the request message for the UpdateHuntGroupGeneralDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupGeneralDetailsRequest
+ */
+export declare class UpdateHuntGroupGeneralDetailsRequest extends Message<UpdateHuntGroupGeneralDetailsRequest> {
+  /**
+   * The hunt group sid.
+   *
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * The hunt group name.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * The hunt group description.
+   *
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  /**
+   * The hunt group type.
+   *
+   * @generated from field: api.commons.org.HuntGroupType type = 4;
+   */
+  type: HuntGroupType;
+
+  constructor(data?: PartialMessage<UpdateHuntGroupGeneralDetailsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupGeneralDetailsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupGeneralDetailsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupGeneralDetailsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupGeneralDetailsRequest;
+
+  static equals(a: UpdateHuntGroupGeneralDetailsRequest | PlainMessage<UpdateHuntGroupGeneralDetailsRequest> | undefined, b: UpdateHuntGroupGeneralDetailsRequest | PlainMessage<UpdateHuntGroupGeneralDetailsRequest> | undefined): boolean;
+}
+
+/**
+ * UpdateHuntGroupGeneralDetailsResponse represents the response message for the UpdateHuntGroupGeneralDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupGeneralDetailsResponse
+ */
+export declare class UpdateHuntGroupGeneralDetailsResponse extends Message<UpdateHuntGroupGeneralDetailsResponse> {
+  constructor(data?: PartialMessage<UpdateHuntGroupGeneralDetailsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupGeneralDetailsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupGeneralDetailsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupGeneralDetailsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupGeneralDetailsResponse;
+
+  static equals(a: UpdateHuntGroupGeneralDetailsResponse | PlainMessage<UpdateHuntGroupGeneralDetailsResponse> | undefined, b: UpdateHuntGroupGeneralDetailsResponse | PlainMessage<UpdateHuntGroupGeneralDetailsResponse> | undefined): boolean;
+}
+
+/**
+ * DeleteHuntGroupRequest represents the request message for the DeleteHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupRequest
+ */
+export declare class DeleteHuntGroupRequest extends Message<DeleteHuntGroupRequest> {
+  /**
+   * The hunt group sid.
+   *
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  constructor(data?: PartialMessage<DeleteHuntGroupRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.DeleteHuntGroupRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteHuntGroupRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteHuntGroupRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteHuntGroupRequest;
+
+  static equals(a: DeleteHuntGroupRequest | PlainMessage<DeleteHuntGroupRequest> | undefined, b: DeleteHuntGroupRequest | PlainMessage<DeleteHuntGroupRequest> | undefined): boolean;
+}
+
+/**
+ * DeleteHuntGroupResponse represents the response message for the DeleteHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupResponse
+ */
+export declare class DeleteHuntGroupResponse extends Message<DeleteHuntGroupResponse> {
+  constructor(data?: PartialMessage<DeleteHuntGroupResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.DeleteHuntGroupResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteHuntGroupResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteHuntGroupResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteHuntGroupResponse;
+
+  static equals(a: DeleteHuntGroupResponse | PlainMessage<DeleteHuntGroupResponse> | undefined, b: DeleteHuntGroupResponse | PlainMessage<DeleteHuntGroupResponse> | undefined): boolean;
+}
+
+/**
+ * GetHuntGroupDetailsRequest is the request message for the GetHuntGroupDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupDetailsRequest
+ */
+export declare class GetHuntGroupDetailsRequest extends Message<GetHuntGroupDetailsRequest> {
+  /**
+   * The hunt group sid.
+   *
+   * @generated from field: int64 hunt_group_sid = 1;
+   */
+  huntGroupSid: bigint;
+
+  constructor(data?: PartialMessage<GetHuntGroupDetailsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetHuntGroupDetailsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHuntGroupDetailsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHuntGroupDetailsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHuntGroupDetailsRequest;
+
+  static equals(a: GetHuntGroupDetailsRequest | PlainMessage<GetHuntGroupDetailsRequest> | undefined, b: GetHuntGroupDetailsRequest | PlainMessage<GetHuntGroupDetailsRequest> | undefined): boolean;
+}
+
+/**
+ * GetHuntGroupDetailsResponse is the response message for the GetHuntGroupDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupDetailsResponse
+ */
+export declare class GetHuntGroupDetailsResponse extends Message<GetHuntGroupDetailsResponse> {
+  /**
+   * The hunt group details.
+   *
+   * @generated from field: api.commons.org.HuntGroupDetails hunt_group_details = 1;
+   */
+  huntGroupDetails?: HuntGroupDetails;
+
+  constructor(data?: PartialMessage<GetHuntGroupDetailsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetHuntGroupDetailsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetHuntGroupDetailsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetHuntGroupDetailsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetHuntGroupDetailsResponse;
+
+  static equals(a: GetHuntGroupDetailsResponse | PlainMessage<GetHuntGroupDetailsResponse> | undefined, b: GetHuntGroupDetailsResponse | PlainMessage<GetHuntGroupDetailsResponse> | undefined): boolean;
 }
 
 /**
