@@ -586,6 +586,13 @@ export declare class EvaluationSection extends Message<EvaluationSection> {
    */
   autoEvaluationQuestions: AutoEvaluationQuestion[];
 
+  /**
+   * whether the section is skipped (NOT included in score calculation)
+   *
+   * @generated from field: bool skipped = 12;
+   */
+  skipped: boolean;
+
   constructor(data?: PartialMessage<EvaluationSection>);
 
   static readonly runtime: typeof proto3;
