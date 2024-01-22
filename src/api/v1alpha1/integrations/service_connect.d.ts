@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreatePaymentPortalLinksReq, CreatePaymentPortalLinksRes, DeleteIntegrationConfigReq, DeletePortalConfigReq, Empty, GetAggregatedMetadataReq, GetAggregatedMetadataRes, GetIntegrationConfigReq, GetIntegrationTransactionReportDataReq, GetIntegrationTransactionReportDataRes, GetIntegrationTransactionReportReq, GetIntegrationTransactionReportRes, GetIntegrationTransactionReq, GetPortalConfigReq, GetPortalLinksByDateRangeReq, GetPortalLinksByDateRangeRes, GetPortalLogoReq, IntegrationConfig, IntegrationConfigs, IntegrationInfos, IntegrationTransaction, ListIntegrationConfigNamesReq, ListIntegrationConfigNamesRes, ListIntegrationsForOrgReq, ListIntegrationTemplatesByConfigReq, ListIntegrationTemplatesByConfigRes, ListJourneyConfigsReq, ListNonJourneyConfigsReq, ListPortalConfigsReq, Logo, PortalConfig, PortalConfigs, ProcessReq, ProcessRes, SearchPastTransactionsRequest, SearchPastTransactionsResponse, SummaryReq, SummaryRes, UpdateIntegrationConfigReq, UpdatePortalLogoReq } from "./service_pb.js";
+import { CallEpicPatientReq, CallEpicPatientRes, CreatePaymentPortalLinksReq, CreatePaymentPortalLinksRes, DeleteIntegrationConfigReq, DeletePortalConfigReq, Empty, GetAggregatedMetadataReq, GetAggregatedMetadataRes, GetIntegrationConfigReq, GetIntegrationTransactionReportDataReq, GetIntegrationTransactionReportDataRes, GetIntegrationTransactionReportReq, GetIntegrationTransactionReportRes, GetIntegrationTransactionReq, GetPortalConfigReq, GetPortalLinksByDateRangeReq, GetPortalLinksByDateRangeRes, GetPortalLogoReq, HangUpEpicPatientCallReq, IntegrationConfig, IntegrationConfigs, IntegrationInfos, IntegrationTransaction, ListIntegrationConfigNamesReq, ListIntegrationConfigNamesRes, ListIntegrationsForOrgReq, ListIntegrationTemplatesByConfigReq, ListIntegrationTemplatesByConfigRes, ListJourneyConfigsReq, ListNonJourneyConfigsReq, ListPortalConfigsReq, Logo, PortalConfig, PortalConfigs, ProcessReq, ProcessRes, SearchPastTransactionsRequest, SearchPastTransactionsResponse, SummaryReq, SummaryRes, UpdateIntegrationConfigReq, UpdatePortalLogoReq } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -289,6 +289,28 @@ export declare const Integrations: {
       readonly name: "ListIntegrationTemplatesByConfig",
       readonly I: typeof ListIntegrationTemplatesByConfigReq,
       readonly O: typeof ListIntegrationTemplatesByConfigRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CallEpicPatient initiates a call to the specified number from the agent using the click to call button within epic
+     *
+     * @generated from rpc api.v1alpha1.integrations.Integrations.CallEpicPatient
+     */
+    readonly callEpicPatient: {
+      readonly name: "CallEpicPatient",
+      readonly I: typeof CallEpicPatientReq,
+      readonly O: typeof CallEpicPatientRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CallEpicPatient initiates a call to the specified number from the agent using the click to call button within epic
+     *
+     * @generated from rpc api.v1alpha1.integrations.Integrations.HangUpEpicPatientCall
+     */
+    readonly hangUpEpicPatientCall: {
+      readonly name: "HangUpEpicPatientCall",
+      readonly I: typeof HangUpEpicPatientCallReq,
+      readonly O: typeof Empty,
       readonly kind: MethodKind.Unary,
     },
   }

@@ -4081,3 +4081,127 @@ export declare class GetPortalLinksByDateRangeRes extends Message<GetPortalLinks
   static equals(a: GetPortalLinksByDateRangeRes | PlainMessage<GetPortalLinksByDateRangeRes> | undefined, b: GetPortalLinksByDateRangeRes | PlainMessage<GetPortalLinksByDateRangeRes> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v1alpha1.integrations.CallEpicPatientReq
+ */
+export declare class CallEpicPatientReq extends Message<CallEpicPatientReq> {
+  /**
+   * The PhoneAgentID is the user’s ID in the phone system (TCN), which indicates to the phone system (TCN) which user is initiating a call.
+   * At least one of PhoneAgentID and OriginPhoneExtension must be populated.
+   * The property will always be sent, although it may not be populated.
+   *
+   * @generated from field: string PhoneAgentID = 1;
+   */
+  PhoneAgentID: string;
+
+  /**
+   * The extension used as the phone number for the call initiated from Epic.
+   * At least one of PhoneAgentID and OriginPhoneExtension must be populated.
+   * The property will always be sent, although it may not be populated.
+   *
+   * @generated from field: string OriginPhoneExtension = 2;
+   */
+  OriginPhoneExtension: string;
+
+  /**
+   * The phone number that should be dialed.
+   *
+   * @generated from field: string PhoneNumber = 3;
+   */
+  PhoneNumber: string;
+
+  /**
+   * The internal ID of the record in Epic that represents this call.
+   * The phone system can store the ID to allow later linking of reports,
+   * and to update Epic with information about the call if necessary in the future.
+   * The property will always be sent, although it may not be populated.
+   *
+   * @generated from field: string EpicCallID = 4;
+   */
+  EpicCallID: string;
+
+  constructor(data?: PartialMessage<CallEpicPatientReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.CallEpicPatientReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CallEpicPatientReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CallEpicPatientReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CallEpicPatientReq;
+
+  static equals(a: CallEpicPatientReq | PlainMessage<CallEpicPatientReq> | undefined, b: CallEpicPatientReq | PlainMessage<CallEpicPatientReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.CallEpicPatientRes
+ */
+export declare class CallEpicPatientRes extends Message<CallEpicPatientRes> {
+  /**
+   * A unique identifier for the call in the phone system. The VoiceSessionID.
+   *
+   * @generated from field: string PhoneSystemCallID = 1;
+   */
+  PhoneSystemCallID: string;
+
+  constructor(data?: PartialMessage<CallEpicPatientRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.CallEpicPatientRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CallEpicPatientRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CallEpicPatientRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CallEpicPatientRes;
+
+  static equals(a: CallEpicPatientRes | PlainMessage<CallEpicPatientRes> | undefined, b: CallEpicPatientRes | PlainMessage<CallEpicPatientRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.HangUpEpicPatientCallReq
+ */
+export declare class HangUpEpicPatientCallReq extends Message<HangUpEpicPatientCallReq> {
+  /**
+   * The PhoneAgentID is the user’s ID in the phone system (TCN), which indicates to the phone system (TCN) which user is initiating a call.
+   * At least one of PhoneAgentID and OriginPhoneExtension must be populated.
+   * The property will always be sent, although it may not be populated.
+   *
+   * @generated from field: string PhoneAgentID = 1;
+   */
+  PhoneAgentID: string;
+
+  /**
+   * The extension used as the phone number for the call initiated from Epic.
+   * At least one of PhoneAgentID and OriginPhoneExtension must be populated.
+   * The property will always be sent, although it may not be populated.
+   *
+   * @generated from field: string OriginPhoneExtension = 2;
+   */
+  OriginPhoneExtension: string;
+
+  /**
+   * The internal ID of the record in Epic that represents this call.
+   *
+   * @generated from field: string EpicCallID = 4;
+   */
+  EpicCallID: string;
+
+  constructor(data?: PartialMessage<HangUpEpicPatientCallReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.HangUpEpicPatientCallReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HangUpEpicPatientCallReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HangUpEpicPatientCallReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HangUpEpicPatientCallReq;
+
+  static equals(a: HangUpEpicPatientCallReq | PlainMessage<HangUpEpicPatientCallReq> | undefined, b: HangUpEpicPatientCallReq | PlainMessage<HangUpEpicPatientCallReq> | undefined): boolean;
+}
+
