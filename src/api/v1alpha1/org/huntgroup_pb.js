@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupType, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -66,6 +66,103 @@ export const UpdateHuntGroupSettingsRequest = proto3.makeMessageType(
 export const UpdateHuntGroupSettingsResponse = proto3.makeMessageType(
   "api.v1alpha1.org.UpdateHuntGroupSettingsResponse",
   [],
+);
+
+/**
+ * CreateHuntGroupRequest represents the request message for the CreateHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupRequest
+ */
+export const CreateHuntGroupRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateHuntGroupRequest",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "type", kind: "enum", T: proto3.getEnumType(HuntGroupType) },
+  ],
+);
+
+/**
+ * CreateHuntGroupResponse represents the response message for the CreateHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupResponse
+ */
+export const CreateHuntGroupResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateHuntGroupResponse",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * UpdateHuntGroupGeneralDetailsRequest represents the request message for the UpdateHuntGroupGeneralDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupGeneralDetailsRequest
+ */
+export const UpdateHuntGroupGeneralDetailsRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupGeneralDetailsRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "type", kind: "enum", T: proto3.getEnumType(HuntGroupType) },
+  ],
+);
+
+/**
+ * UpdateHuntGroupGeneralDetailsResponse represents the response message for the UpdateHuntGroupGeneralDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupGeneralDetailsResponse
+ */
+export const UpdateHuntGroupGeneralDetailsResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupGeneralDetailsResponse",
+  [],
+);
+
+/**
+ * DeleteHuntGroupRequest represents the request message for the DeleteHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupRequest
+ */
+export const DeleteHuntGroupRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteHuntGroupRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * DeleteHuntGroupResponse represents the response message for the DeleteHuntGroup RPC method.
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupResponse
+ */
+export const DeleteHuntGroupResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteHuntGroupResponse",
+  [],
+);
+
+/**
+ * GetHuntGroupDetailsRequest is the request message for the GetHuntGroupDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupDetailsRequest
+ */
+export const GetHuntGroupDetailsRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.GetHuntGroupDetailsRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * GetHuntGroupDetailsResponse is the response message for the GetHuntGroupDetails RPC method.
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupDetailsResponse
+ */
+export const GetHuntGroupDetailsResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.GetHuntGroupDetailsResponse",
+  () => [
+    { no: 1, name: "hunt_group_details", kind: "message", T: HuntGroupDetails },
+  ],
 );
 
 /**

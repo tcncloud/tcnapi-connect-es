@@ -3,10 +3,38 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AgentCallHistoryScope, AgentRouting, AlphanumericKeypadDelimiter, CommunicationExpiration, DefaultCallbackRouting, DefaultManualDialCallerId, DefaultTransferCallerId, HuntGroupOrgDefaultCustom, InitialAgentStatus, ManualDialDataDipHandling, ManualDialDataDipIntegration, ManualDialDataDipScope, ManualDialTimeZoneValidation, PhonePostalDisplayOptions, RequeueTransferQueueConfig, TransferRecordingStatus } from "../org_pb.js";
 import type { Country } from "../country_pb.js";
+
+/**
+ * HuntGroupType represents the type of a hunt group.
+ *
+ * @generated from enum api.commons.org.HuntGroupType
+ */
+export declare enum HuntGroupType {
+  /**
+   * 0 explicitly means unspecified or invalid; equivalent to unconnected.
+   *
+   * @generated from enum value: HUNT_GROUP_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Connected hunt group.
+   *
+   * @generated from enum value: HUNT_GROUP_TYPE_CONNECTED = 1;
+   */
+  CONNECTED = 1,
+
+  /**
+   * Softphone hunt group.
+   *
+   * @generated from enum value: HUNT_GROUP_TYPE_SOFTPHONE = 2;
+   */
+  SOFTPHONE = 2,
+}
 
 /**
  * Tempate category differentiates between template types
@@ -1557,6 +1585,300 @@ export declare class GeneralSettings_PrepareStateCallDelivery extends Message<Ge
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GeneralSettings_PrepareStateCallDelivery;
 
   static equals(a: GeneralSettings_PrepareStateCallDelivery | PlainMessage<GeneralSettings_PrepareStateCallDelivery> | undefined, b: GeneralSettings_PrepareStateCallDelivery | PlainMessage<GeneralSettings_PrepareStateCallDelivery> | undefined): boolean;
+}
+
+/**
+ * HuntGroupDetails is the entity for hunt group details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails
+ */
+export declare class HuntGroupDetails extends Message<HuntGroupDetails> {
+  /**
+   * The hunt group general details.
+   *
+   * @generated from field: api.commons.org.HuntGroupDetails.GeneralDetails general_details = 1;
+   */
+  generalDetails?: HuntGroupDetails_GeneralDetails;
+
+  /**
+   * The hunt group client info display template details.
+   *
+   * @generated from field: api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails template_details = 2;
+   */
+  templateDetails?: HuntGroupDetails_ClientInfoDisplayTemplateDetails;
+
+  /**
+   * A list of hunt group web link details.
+   *
+   * @generated from field: repeated api.commons.org.HuntGroupDetails.WebLinkDetails web_link_details = 3;
+   */
+  webLinkDetails: HuntGroupDetails_WebLinkDetails[];
+
+  /**
+   * A list of hunt group trigger details.
+   *
+   * @generated from field: repeated api.commons.org.HuntGroupDetails.TriggerDetails trigger_details = 4;
+   */
+  triggerDetails: HuntGroupDetails_TriggerDetails[];
+
+  /**
+   * A list of hunt group integration link details.
+   *
+   * @generated from field: repeated api.commons.org.HuntGroupDetails.IntegrationLinkDetails integration_link_details = 5;
+   */
+  integrationLinkDetails: HuntGroupDetails_IntegrationLinkDetails[];
+
+  constructor(data?: PartialMessage<HuntGroupDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupDetails;
+
+  static equals(a: HuntGroupDetails | PlainMessage<HuntGroupDetails> | undefined, b: HuntGroupDetails | PlainMessage<HuntGroupDetails> | undefined): boolean;
+}
+
+/**
+ * GeneralDetails is the entity for hunt group general details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.GeneralDetails
+ */
+export declare class HuntGroupDetails_GeneralDetails extends Message<HuntGroupDetails_GeneralDetails> {
+  /**
+   * The hunt group name
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The hunt group description.
+   *
+   * @generated from field: string description = 2;
+   */
+  description: string;
+
+  /**
+   * The hunt group type.
+   *
+   * @generated from field: api.commons.org.HuntGroupType type = 3;
+   */
+  type: HuntGroupType;
+
+  /**
+   * The hunt group last modified date.
+   *
+   * @generated from field: google.protobuf.Timestamp modify_date = 4;
+   */
+  modifyDate?: Timestamp;
+
+  /**
+   * The number of agents belong to the hunt group.
+   *
+   * @generated from field: int64 agent_count = 5;
+   */
+  agentCount: bigint;
+
+  constructor(data?: PartialMessage<HuntGroupDetails_GeneralDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupDetails.GeneralDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupDetails_GeneralDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupDetails_GeneralDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupDetails_GeneralDetails;
+
+  static equals(a: HuntGroupDetails_GeneralDetails | PlainMessage<HuntGroupDetails_GeneralDetails> | undefined, b: HuntGroupDetails_GeneralDetails | PlainMessage<HuntGroupDetails_GeneralDetails> | undefined): boolean;
+}
+
+/**
+ * ClientInfoDisplayTemplateDetails is the entity for hunt group client info display template details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails
+ */
+export declare class HuntGroupDetails_ClientInfoDisplayTemplateDetails extends Message<HuntGroupDetails_ClientInfoDisplayTemplateDetails> {
+  /**
+   * The hunt group client info display template name.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The hunt group client info display template description.
+   *
+   * @generated from field: string description = 2;
+   */
+  description: string;
+
+  /**
+   * Whether to display all fields in the hunt group client info display template.
+   *
+   * @generated from field: bool display_all_fields = 3;
+   */
+  displayAllFields: boolean;
+
+  /**
+   * The number of contact fields in the hunt group client info display template.
+   *
+   * @generated from field: int64 defined_field_count = 4;
+   */
+  definedFieldCount: bigint;
+
+  constructor(data?: PartialMessage<HuntGroupDetails_ClientInfoDisplayTemplateDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupDetails.ClientInfoDisplayTemplateDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupDetails_ClientInfoDisplayTemplateDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupDetails_ClientInfoDisplayTemplateDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupDetails_ClientInfoDisplayTemplateDetails;
+
+  static equals(a: HuntGroupDetails_ClientInfoDisplayTemplateDetails | PlainMessage<HuntGroupDetails_ClientInfoDisplayTemplateDetails> | undefined, b: HuntGroupDetails_ClientInfoDisplayTemplateDetails | PlainMessage<HuntGroupDetails_ClientInfoDisplayTemplateDetails> | undefined): boolean;
+}
+
+/**
+ * WebLinkDetails is the entity for hunt group web link details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.WebLinkDetails
+ */
+export declare class HuntGroupDetails_WebLinkDetails extends Message<HuntGroupDetails_WebLinkDetails> {
+  /**
+   * The hunt group web link name.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The hunt group web link description.
+   *
+   * @generated from field: string description = 2;
+   */
+  description: string;
+
+  /**
+   * The hunt group web link base url.
+   *
+   * @generated from field: string base_url = 3;
+   */
+  baseUrl: string;
+
+  /**
+   * The number of the hunt group web link parameters.
+   *
+   * @generated from field: int64 parameter_count = 4;
+   */
+  parameterCount: bigint;
+
+  constructor(data?: PartialMessage<HuntGroupDetails_WebLinkDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupDetails.WebLinkDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupDetails_WebLinkDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupDetails_WebLinkDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupDetails_WebLinkDetails;
+
+  static equals(a: HuntGroupDetails_WebLinkDetails | PlainMessage<HuntGroupDetails_WebLinkDetails> | undefined, b: HuntGroupDetails_WebLinkDetails | PlainMessage<HuntGroupDetails_WebLinkDetails> | undefined): boolean;
+}
+
+/**
+ * TriggerDetails is the entity for hunt group trigger details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.TriggerDetails
+ */
+export declare class HuntGroupDetails_TriggerDetails extends Message<HuntGroupDetails_TriggerDetails> {
+  /**
+   * The hunt group trigger description.
+   *
+   * @generated from field: string description = 1;
+   */
+  description: string;
+
+  /**
+   * The hunt group trigger agent status.
+   *
+   * @generated from field: api.commons.org.AgentStatus status = 2;
+   */
+  status: AgentStatus;
+
+  /**
+   * The hunt group trigger duration.
+   *
+   * @generated from field: int64 duration = 3;
+   */
+  duration: bigint;
+
+  /**
+   * The hunt group trigger action.
+   *
+   * @generated from field: api.commons.org.TriggerAction action = 4;
+   */
+  action: TriggerAction;
+
+  constructor(data?: PartialMessage<HuntGroupDetails_TriggerDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupDetails.TriggerDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupDetails_TriggerDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupDetails_TriggerDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupDetails_TriggerDetails;
+
+  static equals(a: HuntGroupDetails_TriggerDetails | PlainMessage<HuntGroupDetails_TriggerDetails> | undefined, b: HuntGroupDetails_TriggerDetails | PlainMessage<HuntGroupDetails_TriggerDetails> | undefined): boolean;
+}
+
+/**
+ * IntegrationLinkDetails is the entity for hunt group integration link details.
+ *
+ * @generated from message api.commons.org.HuntGroupDetails.IntegrationLinkDetails
+ */
+export declare class HuntGroupDetails_IntegrationLinkDetails extends Message<HuntGroupDetails_IntegrationLinkDetails> {
+  /**
+   * The hunt group integration link name.
+   *
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * The hunt group integration link description.
+   *
+   * @generated from field: string description = 2;
+   */
+  description: string;
+
+  constructor(data?: PartialMessage<HuntGroupDetails_IntegrationLinkDetails>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupDetails.IntegrationLinkDetails";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupDetails_IntegrationLinkDetails;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupDetails_IntegrationLinkDetails;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupDetails_IntegrationLinkDetails;
+
+  static equals(a: HuntGroupDetails_IntegrationLinkDetails | PlainMessage<HuntGroupDetails_IntegrationLinkDetails> | undefined, b: HuntGroupDetails_IntegrationLinkDetails | PlainMessage<HuntGroupDetails_IntegrationLinkDetails> | undefined): boolean;
 }
 
 /**
