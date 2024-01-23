@@ -19,9 +19,15 @@ export declare enum MatchingRule {
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: MATCHING_RULE_AREA_CODE = 1;
+   * @generated from enum value: MATCHING_RULE_AREA_CODE = 1 [deprecated = true];
+   * @deprecated
    */
   AREA_CODE = 1,
+
+  /**
+   * @generated from enum value: MATCHING_RULE_COUNTRY_PREFIX = 2;
+   */
+  COUNTRY_PREFIX = 2,
 }
 
 /**
@@ -32,14 +38,30 @@ export declare enum MatchingRule {
  */
 export declare class MatchingConfig extends Message<MatchingConfig> {
   /**
+   * the name of the matching configuration.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * the configuration data.
+   *
    * @generated from oneof services.billing.entities.v1alpha1.MatchingConfig.config
    */
   config: {
     /**
-     * @generated from field: services.billing.entities.v1alpha1.MatchingConfigAreaCode area_code = 1;
+     * @generated from field: services.billing.entities.v1alpha1.MatchingConfigAreaCode area_code = 1 [deprecated = true];
+     * @deprecated
      */
     value: MatchingConfigAreaCode;
     case: "areaCode";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha1.MatchingConfigCountryPrefix country_prefix = 100;
+     */
+    value: MatchingConfigCountryPrefix;
+    case: "countryPrefix";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<MatchingConfig>);
@@ -58,24 +80,19 @@ export declare class MatchingConfig extends Message<MatchingConfig> {
 }
 
 /**
- * MatchingConfigAreaCode represents the configuration for
- * matching an event to a rate definition based on the area
- * code of the event.
- *
  * @generated from message services.billing.entities.v1alpha1.MatchingConfigAreaCode
+ * @deprecated
  */
 export declare class MatchingConfigAreaCode extends Message<MatchingConfigAreaCode> {
   /**
-   * The name of this matching configuration.
-   *
-   * @generated from field: string name = 1;
+   * @generated from field: string name = 1 [deprecated = true];
+   * @deprecated
    */
   name: string;
 
   /**
-   * The area codes to match.
-   *
-   * @generated from field: repeated string area_codes = 2;
+   * @generated from field: repeated string area_codes = 2 [deprecated = true];
+   * @deprecated
    */
   areaCodes: string[];
 
@@ -92,5 +109,43 @@ export declare class MatchingConfigAreaCode extends Message<MatchingConfigAreaCo
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MatchingConfigAreaCode;
 
   static equals(a: MatchingConfigAreaCode | PlainMessage<MatchingConfigAreaCode> | undefined, b: MatchingConfigAreaCode | PlainMessage<MatchingConfigAreaCode> | undefined): boolean;
+}
+
+/**
+ * MatchingConfigCountryPrefix represents the configuration for matching
+ * an event to a rate definition using the country code and a set of
+ * prefixes. The longest prefix match is used.
+ *
+ * @generated from message services.billing.entities.v1alpha1.MatchingConfigCountryPrefix
+ */
+export declare class MatchingConfigCountryPrefix extends Message<MatchingConfigCountryPrefix> {
+  /**
+   * The country code to match.
+   *
+   * @generated from field: int32 country_code = 1;
+   */
+  countryCode: number;
+
+  /**
+   * The list of prefixes (if any) to match after successfully matching
+   * the country code.
+   *
+   * @generated from field: repeated string prefixes = 2;
+   */
+  prefixes: string[];
+
+  constructor(data?: PartialMessage<MatchingConfigCountryPrefix>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.entities.v1alpha1.MatchingConfigCountryPrefix";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MatchingConfigCountryPrefix;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MatchingConfigCountryPrefix;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MatchingConfigCountryPrefix;
+
+  static equals(a: MatchingConfigCountryPrefix | PlainMessage<MatchingConfigCountryPrefix> | undefined, b: MatchingConfigCountryPrefix | PlainMessage<MatchingConfigCountryPrefix> | undefined): boolean;
 }
 
