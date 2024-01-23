@@ -1307,3 +1307,38 @@ export const GetPortalLinksByDateRangeRes = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v1alpha1.integrations.CallEpicPatientReq
+ */
+export const CallEpicPatientReq = proto3.makeMessageType(
+  "api.v1alpha1.integrations.CallEpicPatientReq",
+  () => [
+    { no: 1, name: "PhoneAgentID", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "OriginPhoneExtension", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "PhoneNumber", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "EpicCallID", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.CallEpicPatientRes
+ */
+export const CallEpicPatientRes = proto3.makeMessageType(
+  "api.v1alpha1.integrations.CallEpicPatientRes",
+  () => [
+    { no: 1, name: "PhoneSystemCallID", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.HangUpEpicPatientCallReq
+ */
+export const HangUpEpicPatientCallReq = proto3.makeMessageType(
+  "api.v1alpha1.integrations.HangUpEpicPatientCallReq",
+  () => [
+    { no: 1, name: "PhoneAgentID", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "OriginPhoneExtension", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "EpicCallID", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
