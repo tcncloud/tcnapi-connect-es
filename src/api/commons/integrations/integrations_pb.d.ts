@@ -1186,6 +1186,16 @@ export declare enum RequestMethod {
   EPIC_GET_PATIENT_BILLING_DETAILS = 3711,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_CALL_PATIENT = 3712;
+   */
+  EPIC_CALL_PATIENT = 3712,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EPIC_HANGUP_CALL = 3713;
+   */
+  EPIC_HANGUP_CALL = 3713,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP = 3801;
    */
   NEWZWARE_PHONE_LOOKUP = 3801,
@@ -3709,6 +3719,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteEpicGetPatientBillingDetails;
     case: "epicGetPatientBillingDetails";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicCallPatient epic_call_patient = 3712;
+     */
+    value: ExecuteEpicCallPatient;
+    case: "epicCallPatient";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteEpicHangupCall epic_hangup_call = 3713;
+     */
+    value: ExecuteEpicHangupCall;
+    case: "epicHangupCall";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteNewzwarePhoneLookup newzware_phone_lookup = 3801;
@@ -8072,6 +8094,44 @@ export declare class ExecuteEpicGetPatientBillingDetails extends Message<Execute
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicGetPatientBillingDetails;
 
   static equals(a: ExecuteEpicGetPatientBillingDetails | PlainMessage<ExecuteEpicGetPatientBillingDetails> | undefined, b: ExecuteEpicGetPatientBillingDetails | PlainMessage<ExecuteEpicGetPatientBillingDetails> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicCallPatient
+ */
+export declare class ExecuteEpicCallPatient extends Message<ExecuteEpicCallPatient> {
+  constructor(data?: PartialMessage<ExecuteEpicCallPatient>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicCallPatient";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicCallPatient;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicCallPatient;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicCallPatient;
+
+  static equals(a: ExecuteEpicCallPatient | PlainMessage<ExecuteEpicCallPatient> | undefined, b: ExecuteEpicCallPatient | PlainMessage<ExecuteEpicCallPatient> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicHangupCall
+ */
+export declare class ExecuteEpicHangupCall extends Message<ExecuteEpicHangupCall> {
+  constructor(data?: PartialMessage<ExecuteEpicHangupCall>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteEpicHangupCall";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteEpicHangupCall;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteEpicHangupCall;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteEpicHangupCall;
+
+  static equals(a: ExecuteEpicHangupCall | PlainMessage<ExecuteEpicHangupCall> | undefined, b: ExecuteEpicHangupCall | PlainMessage<ExecuteEpicHangupCall> | undefined): boolean;
 }
 
 /**
