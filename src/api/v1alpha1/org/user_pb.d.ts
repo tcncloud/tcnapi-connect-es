@@ -3722,3 +3722,66 @@ export declare class Refresh2FALockoutResponse extends Message<Refresh2FALockout
   static equals(a: Refresh2FALockoutResponse | PlainMessage<Refresh2FALockoutResponse> | undefined, b: Refresh2FALockoutResponse | PlainMessage<Refresh2FALockoutResponse> | undefined): boolean;
 }
 
+/**
+ * Request message for the Refresh2FALockoutByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest
+ */
+export declare class Refresh2FALockoutByOrgIdRequest extends Message<Refresh2FALockoutByOrgIdRequest> {
+  /**
+   * The id of the user to refresh.
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * The id of the org the user belongs to.
+   *
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  constructor(data?: PartialMessage<Refresh2FALockoutByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdRequest;
+
+  static equals(a: Refresh2FALockoutByOrgIdRequest | PlainMessage<Refresh2FALockoutByOrgIdRequest> | undefined, b: Refresh2FALockoutByOrgIdRequest | PlainMessage<Refresh2FALockoutByOrgIdRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the Refresh2FALockoutByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse
+ */
+export declare class Refresh2FALockoutByOrgIdResponse extends Message<Refresh2FALockoutByOrgIdResponse> {
+  /**
+   * The new time that the user must setup 2fa by.
+   *
+   * @generated from field: google.protobuf.Timestamp timeout = 1;
+   */
+  timeout?: Timestamp;
+
+  constructor(data?: PartialMessage<Refresh2FALockoutByOrgIdResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutByOrgIdResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdResponse;
+
+  static equals(a: Refresh2FALockoutByOrgIdResponse | PlainMessage<Refresh2FALockoutByOrgIdResponse> | undefined, b: Refresh2FALockoutByOrgIdResponse | PlainMessage<Refresh2FALockoutByOrgIdResponse> | undefined): boolean;
+}
+

@@ -1185,3 +1185,28 @@ export const Refresh2FALockoutResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for the Refresh2FALockoutByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest
+ */
+export const Refresh2FALockoutByOrgIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the Refresh2FALockoutByOrgId rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse
+ */
+export const Refresh2FALockoutByOrgIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse",
+  () => [
+    { no: 1, name: "timeout", kind: "message", T: Timestamp },
+  ],
+);
+
