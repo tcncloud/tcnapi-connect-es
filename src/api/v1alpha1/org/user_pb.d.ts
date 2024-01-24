@@ -3666,3 +3666,59 @@ export declare class GetUserSessionDataResponse_User_RegionSids extends Message<
   static equals(a: GetUserSessionDataResponse_User_RegionSids | PlainMessage<GetUserSessionDataResponse_User_RegionSids> | undefined, b: GetUserSessionDataResponse_User_RegionSids | PlainMessage<GetUserSessionDataResponse_User_RegionSids> | undefined): boolean;
 }
 
+/**
+ * Request message for the Refresh2FALockout rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutRequest
+ */
+export declare class Refresh2FALockoutRequest extends Message<Refresh2FALockoutRequest> {
+  /**
+   * The id of the user to refresh.
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  constructor(data?: PartialMessage<Refresh2FALockoutRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutRequest;
+
+  static equals(a: Refresh2FALockoutRequest | PlainMessage<Refresh2FALockoutRequest> | undefined, b: Refresh2FALockoutRequest | PlainMessage<Refresh2FALockoutRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the Refresh2FALockout rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutResponse
+ */
+export declare class Refresh2FALockoutResponse extends Message<Refresh2FALockoutResponse> {
+  /**
+   * The new time that the user must setup 2fa by.
+   *
+   * @generated from field: google.protobuf.Timestamp timeout = 1;
+   */
+  timeout?: Timestamp;
+
+  constructor(data?: PartialMessage<Refresh2FALockoutResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutResponse;
+
+  static equals(a: Refresh2FALockoutResponse | PlainMessage<Refresh2FALockoutResponse> | undefined, b: Refresh2FALockoutResponse | PlainMessage<Refresh2FALockoutResponse> | undefined): boolean;
+}
+

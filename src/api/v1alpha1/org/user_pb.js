@@ -1161,3 +1161,27 @@ export const GetUserSessionDataResponse_User_RegionSids = proto3.makeMessageType
   {localName: "GetUserSessionDataResponse_User_RegionSids"},
 );
 
+/**
+ * Request message for the Refresh2FALockout rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutRequest
+ */
+export const Refresh2FALockoutRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.Refresh2FALockoutRequest",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the Refresh2FALockout rpc.
+ *
+ * @generated from message api.v1alpha1.org.Refresh2FALockoutResponse
+ */
+export const Refresh2FALockoutResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.Refresh2FALockoutResponse",
+  () => [
+    { no: 1, name: "timeout", kind: "message", T: Timestamp },
+  ],
+);
+

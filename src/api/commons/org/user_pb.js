@@ -48,6 +48,7 @@ export const User = proto3.makeMessageType(
     { no: 300, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 400, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 401, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 500, name: "mfa_info", kind: "message", T: UserMfaInfo },
   ],
 );
 
@@ -64,6 +65,52 @@ export const User_RegionSids = proto3.makeMessageType(
     { no: 3, name: "client_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
   {localName: "User_RegionSids"},
+);
+
+/**
+ * User's mfa/2fa information.
+ *
+ * @generated from message api.commons.org.UserMfaInfo
+ */
+export const UserMfaInfo = proto3.makeMessageType(
+  "api.commons.org.UserMfaInfo",
+  () => [
+    { no: 1, name: "mfa_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "mfa_locked_out", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 10, name: "none", kind: "message", T: UserMfaInfo_NoneSelected, oneof: "mfa_type" },
+    { no: 11, name: "otp", kind: "message", T: UserMfaInfo_OtpType, oneof: "mfa_type" },
+  ],
+);
+
+/**
+ * @generated from message api.commons.org.UserMfaInfo.NoneSelected
+ */
+export const UserMfaInfo_NoneSelected = proto3.makeMessageType(
+  "api.commons.org.UserMfaInfo.NoneSelected",
+  () => [
+    { no: 1, name: "timeout", kind: "message", T: Timestamp },
+  ],
+  {localName: "UserMfaInfo_NoneSelected"},
+);
+
+/**
+ * @generated from message api.commons.org.UserMfaInfo.OtpType
+ */
+export const UserMfaInfo_OtpType = proto3.makeMessageType(
+  "api.commons.org.UserMfaInfo.OtpType",
+  () => [
+    { no: 1, name: "email", kind: "message", T: UserMfaInfo_OtpType_EmailDeliveryMethod, oneof: "delivery_method" },
+  ],
+  {localName: "UserMfaInfo_OtpType"},
+);
+
+/**
+ * @generated from message api.commons.org.UserMfaInfo.OtpType.EmailDeliveryMethod
+ */
+export const UserMfaInfo_OtpType_EmailDeliveryMethod = proto3.makeMessageType(
+  "api.commons.org.UserMfaInfo.OtpType.EmailDeliveryMethod",
+  [],
+  {localName: "UserMfaInfo_OtpType_EmailDeliveryMethod"},
 );
 
 /**
