@@ -75,10 +75,8 @@ export const User_RegionSids = proto3.makeMessageType(
 export const UserMfaInfo = proto3.makeMessageType(
   "api.commons.org.UserMfaInfo",
   () => [
-    { no: 1, name: "mfa_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "mfa_locked_out", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 10, name: "none", kind: "message", T: UserMfaInfo_NoneSelected, oneof: "mfa_type" },
-    { no: 11, name: "otp", kind: "message", T: UserMfaInfo_OtpType, oneof: "mfa_type" },
+    { no: 1, name: "none", kind: "message", T: UserMfaInfo_NoneSelected, oneof: "mfa_type" },
+    { no: 2, name: "otp", kind: "message", T: UserMfaInfo_OtpType, oneof: "mfa_type" },
   ],
 );
 

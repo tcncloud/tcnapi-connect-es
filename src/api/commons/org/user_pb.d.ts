@@ -324,27 +324,17 @@ export declare class User_RegionSids extends Message<User_RegionSids> {
  */
 export declare class UserMfaInfo extends Message<UserMfaInfo> {
   /**
-   * @generated from field: bool mfa_enabled = 1;
-   */
-  mfaEnabled: boolean;
-
-  /**
-   * @generated from field: bool mfa_locked_out = 2;
-   */
-  mfaLockedOut: boolean;
-
-  /**
    * @generated from oneof api.commons.org.UserMfaInfo.mfa_type
    */
   mfaType: {
     /**
-     * @generated from field: api.commons.org.UserMfaInfo.NoneSelected none = 10;
+     * @generated from field: api.commons.org.UserMfaInfo.NoneSelected none = 1;
      */
     value: UserMfaInfo_NoneSelected;
     case: "none";
   } | {
     /**
-     * @generated from field: api.commons.org.UserMfaInfo.OtpType otp = 11;
+     * @generated from field: api.commons.org.UserMfaInfo.OtpType otp = 2;
      */
     value: UserMfaInfo_OtpType;
     case: "otp";
