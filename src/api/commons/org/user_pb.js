@@ -48,7 +48,6 @@ export const User = proto3.makeMessageType(
     { no: 300, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 400, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 401, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 500, name: "mfa_info", kind: "message", T: UserMfaInfo },
   ],
 );
 
@@ -68,47 +67,49 @@ export const User_RegionSids = proto3.makeMessageType(
 );
 
 /**
- * User's mfa/2fa information.
+ * MFA/2FA Information
  *
- * @generated from message api.commons.org.UserMfaInfo
+ * @generated from message api.commons.org.MfaInfo
  */
-export const UserMfaInfo = proto3.makeMessageType(
-  "api.commons.org.UserMfaInfo",
+export const MfaInfo = proto3.makeMessageType(
+  "api.commons.org.MfaInfo",
   () => [
-    { no: 1, name: "none", kind: "message", T: UserMfaInfo_NoneSelected, oneof: "mfa_type" },
-    { no: 2, name: "otp", kind: "message", T: UserMfaInfo_OtpType, oneof: "mfa_type" },
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "mfa_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "none", kind: "message", T: MfaInfo_NoneSelected, oneof: "mfa_type" },
+    { no: 4, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
   ],
 );
 
 /**
- * @generated from message api.commons.org.UserMfaInfo.NoneSelected
+ * @generated from message api.commons.org.MfaInfo.NoneSelected
  */
-export const UserMfaInfo_NoneSelected = proto3.makeMessageType(
-  "api.commons.org.UserMfaInfo.NoneSelected",
+export const MfaInfo_NoneSelected = proto3.makeMessageType(
+  "api.commons.org.MfaInfo.NoneSelected",
   () => [
     { no: 1, name: "timeout", kind: "message", T: Timestamp },
   ],
-  {localName: "UserMfaInfo_NoneSelected"},
+  {localName: "MfaInfo_NoneSelected"},
 );
 
 /**
- * @generated from message api.commons.org.UserMfaInfo.OtpType
+ * @generated from message api.commons.org.MfaInfo.OtpType
  */
-export const UserMfaInfo_OtpType = proto3.makeMessageType(
-  "api.commons.org.UserMfaInfo.OtpType",
+export const MfaInfo_OtpType = proto3.makeMessageType(
+  "api.commons.org.MfaInfo.OtpType",
   () => [
-    { no: 1, name: "email", kind: "message", T: UserMfaInfo_OtpType_EmailDeliveryMethod, oneof: "delivery_method" },
+    { no: 1, name: "email", kind: "message", T: MfaInfo_OtpType_EmailDeliveryMethod, oneof: "delivery_method" },
   ],
-  {localName: "UserMfaInfo_OtpType"},
+  {localName: "MfaInfo_OtpType"},
 );
 
 /**
- * @generated from message api.commons.org.UserMfaInfo.OtpType.EmailDeliveryMethod
+ * @generated from message api.commons.org.MfaInfo.OtpType.EmailDeliveryMethod
  */
-export const UserMfaInfo_OtpType_EmailDeliveryMethod = proto3.makeMessageType(
-  "api.commons.org.UserMfaInfo.OtpType.EmailDeliveryMethod",
+export const MfaInfo_OtpType_EmailDeliveryMethod = proto3.makeMessageType(
+  "api.commons.org.MfaInfo.OtpType.EmailDeliveryMethod",
   [],
-  {localName: "UserMfaInfo_OtpType_EmailDeliveryMethod"},
+  {localName: "MfaInfo_OtpType_EmailDeliveryMethod"},
 );
 
 /**

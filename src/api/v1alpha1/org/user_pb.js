@@ -6,7 +6,7 @@
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { OperatorApplications, TimeZoneWrapper } from "../../commons/org_pb.js";
 import { Label } from "../../commons/org/labels_pb.js";
-import { Skill } from "../../commons/org/user_pb.js";
+import { MfaInfo, MfaInfo_OtpType, Skill } from "../../commons/org/user_pb.js";
 import { P3PermissionGroup, PermissionGroup } from "../../commons/org/permissions_pb.js";
 import { Trust } from "../../commons/org/trusts_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
@@ -1162,36 +1162,36 @@ export const GetUserSessionDataResponse_User_RegionSids = proto3.makeMessageType
 );
 
 /**
- * Request message for the Refresh2FALockout rpc.
+ * Request message for the RefreshMfaLockout rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutRequest
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutRequest
  */
-export const Refresh2FALockoutRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.Refresh2FALockoutRequest",
+export const RefreshMfaLockoutRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.RefreshMfaLockoutRequest",
   () => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * Response message for the Refresh2FALockout rpc.
+ * Response message for the RefreshMfaLockout rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutResponse
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutResponse
  */
-export const Refresh2FALockoutResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.Refresh2FALockoutResponse",
+export const RefreshMfaLockoutResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.RefreshMfaLockoutResponse",
   () => [
     { no: 1, name: "timeout", kind: "message", T: Timestamp },
   ],
 );
 
 /**
- * Request message for the Refresh2FALockoutByOrgId rpc.
+ * Request message for the RefreshMfaLockoutByOrgId rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutByOrgIdRequest
  */
-export const Refresh2FALockoutByOrgIdRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest",
+export const RefreshMfaLockoutByOrgIdRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.RefreshMfaLockoutByOrgIdRequest",
   () => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -1199,14 +1199,105 @@ export const Refresh2FALockoutByOrgIdRequest = proto3.makeMessageType(
 );
 
 /**
- * Response message for the Refresh2FALockoutByOrgId rpc.
+ * Response message for the RefreshMfaLockoutByOrgId rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutByOrgIdResponse
  */
-export const Refresh2FALockoutByOrgIdResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse",
+export const RefreshMfaLockoutByOrgIdResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.RefreshMfaLockoutByOrgIdResponse",
   () => [
     { no: 1, name: "timeout", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * Request message for the SetMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMfaTypeRequest
+ */
+export const SetMfaTypeRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.SetMfaTypeRequest",
+  () => [
+    { no: 1, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
+  ],
+);
+
+/**
+ * Response message for the SetMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMfaTypeResponse
+ */
+export const SetMfaTypeResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.SetMfaTypeResponse",
+  [],
+);
+
+/**
+ * Request message for the EnableMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMfaRequest
+ */
+export const EnableMfaRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.EnableMfaRequest",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the EnableMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMfaResponse
+ */
+export const EnableMfaResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.EnableMfaResponse",
+  [],
+);
+
+/**
+ * Request message for the GetUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetUserMfaInfoRequest
+ */
+export const GetUserMfaInfoRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.GetUserMfaInfoRequest",
+  () => [
+    { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the GetUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetUserMfaInfoResponse
+ */
+export const GetUserMfaInfoResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.GetUserMfaInfoResponse",
+  () => [
+    { no: 1, name: "info", kind: "message", T: MfaInfo },
+  ],
+);
+
+/**
+ * Response message for the GetMyUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyUserMfaInfoRequest
+ */
+export const GetMyUserMfaInfoRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.GetMyUserMfaInfoRequest",
+  [],
+);
+
+/**
+ * Request message for the GetMyUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyUserMfaInfoResponse
+ */
+export const GetMyUserMfaInfoResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.GetMyUserMfaInfoResponse",
+  () => [
+    { no: 1, name: "info", kind: "message", T: MfaInfo },
   ],
 );
 

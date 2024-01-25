@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { OperatorApplications, TimeZoneWrapper } from "../../commons/org_pb.js";
 import type { Label } from "../../commons/org/labels_pb.js";
-import type { Skill } from "../../commons/org/user_pb.js";
+import type { MfaInfo, MfaInfo_OtpType, Skill } from "../../commons/org/user_pb.js";
 import type { P3PermissionGroup, PermissionGroup } from "../../commons/org/permissions_pb.js";
 import type { Trust } from "../../commons/org/trusts_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
@@ -3667,11 +3667,11 @@ export declare class GetUserSessionDataResponse_User_RegionSids extends Message<
 }
 
 /**
- * Request message for the Refresh2FALockout rpc.
+ * Request message for the RefreshMfaLockout rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutRequest
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutRequest
  */
-export declare class Refresh2FALockoutRequest extends Message<Refresh2FALockoutRequest> {
+export declare class RefreshMfaLockoutRequest extends Message<RefreshMfaLockoutRequest> {
   /**
    * The id of the user to refresh.
    *
@@ -3679,55 +3679,55 @@ export declare class Refresh2FALockoutRequest extends Message<Refresh2FALockoutR
    */
   userId: string;
 
-  constructor(data?: PartialMessage<Refresh2FALockoutRequest>);
+  constructor(data?: PartialMessage<RefreshMfaLockoutRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutRequest";
+  static readonly typeName = "api.v1alpha1.org.RefreshMfaLockoutRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshMfaLockoutRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshMfaLockoutRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshMfaLockoutRequest;
 
-  static equals(a: Refresh2FALockoutRequest | PlainMessage<Refresh2FALockoutRequest> | undefined, b: Refresh2FALockoutRequest | PlainMessage<Refresh2FALockoutRequest> | undefined): boolean;
+  static equals(a: RefreshMfaLockoutRequest | PlainMessage<RefreshMfaLockoutRequest> | undefined, b: RefreshMfaLockoutRequest | PlainMessage<RefreshMfaLockoutRequest> | undefined): boolean;
 }
 
 /**
- * Response message for the Refresh2FALockout rpc.
+ * Response message for the RefreshMfaLockout rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutResponse
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutResponse
  */
-export declare class Refresh2FALockoutResponse extends Message<Refresh2FALockoutResponse> {
+export declare class RefreshMfaLockoutResponse extends Message<RefreshMfaLockoutResponse> {
   /**
-   * The new time that the user must setup 2fa by.
+   * The new time that the user must setup mfa by.
    *
    * @generated from field: google.protobuf.Timestamp timeout = 1;
    */
   timeout?: Timestamp;
 
-  constructor(data?: PartialMessage<Refresh2FALockoutResponse>);
+  constructor(data?: PartialMessage<RefreshMfaLockoutResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutResponse";
+  static readonly typeName = "api.v1alpha1.org.RefreshMfaLockoutResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshMfaLockoutResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshMfaLockoutResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshMfaLockoutResponse;
 
-  static equals(a: Refresh2FALockoutResponse | PlainMessage<Refresh2FALockoutResponse> | undefined, b: Refresh2FALockoutResponse | PlainMessage<Refresh2FALockoutResponse> | undefined): boolean;
+  static equals(a: RefreshMfaLockoutResponse | PlainMessage<RefreshMfaLockoutResponse> | undefined, b: RefreshMfaLockoutResponse | PlainMessage<RefreshMfaLockoutResponse> | undefined): boolean;
 }
 
 /**
- * Request message for the Refresh2FALockoutByOrgId rpc.
+ * Request message for the RefreshMfaLockoutByOrgId rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutByOrgIdRequest
  */
-export declare class Refresh2FALockoutByOrgIdRequest extends Message<Refresh2FALockoutByOrgIdRequest> {
+export declare class RefreshMfaLockoutByOrgIdRequest extends Message<RefreshMfaLockoutByOrgIdRequest> {
   /**
    * The id of the user to refresh.
    *
@@ -3742,46 +3742,256 @@ export declare class Refresh2FALockoutByOrgIdRequest extends Message<Refresh2FAL
    */
   orgId: string;
 
-  constructor(data?: PartialMessage<Refresh2FALockoutByOrgIdRequest>);
+  constructor(data?: PartialMessage<RefreshMfaLockoutByOrgIdRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutByOrgIdRequest";
+  static readonly typeName = "api.v1alpha1.org.RefreshMfaLockoutByOrgIdRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutByOrgIdRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshMfaLockoutByOrgIdRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshMfaLockoutByOrgIdRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshMfaLockoutByOrgIdRequest;
 
-  static equals(a: Refresh2FALockoutByOrgIdRequest | PlainMessage<Refresh2FALockoutByOrgIdRequest> | undefined, b: Refresh2FALockoutByOrgIdRequest | PlainMessage<Refresh2FALockoutByOrgIdRequest> | undefined): boolean;
+  static equals(a: RefreshMfaLockoutByOrgIdRequest | PlainMessage<RefreshMfaLockoutByOrgIdRequest> | undefined, b: RefreshMfaLockoutByOrgIdRequest | PlainMessage<RefreshMfaLockoutByOrgIdRequest> | undefined): boolean;
 }
 
 /**
- * Response message for the Refresh2FALockoutByOrgId rpc.
+ * Response message for the RefreshMfaLockoutByOrgId rpc.
  *
- * @generated from message api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse
+ * @generated from message api.v1alpha1.org.RefreshMfaLockoutByOrgIdResponse
  */
-export declare class Refresh2FALockoutByOrgIdResponse extends Message<Refresh2FALockoutByOrgIdResponse> {
+export declare class RefreshMfaLockoutByOrgIdResponse extends Message<RefreshMfaLockoutByOrgIdResponse> {
   /**
-   * The new time that the user must setup 2fa by.
+   * The new time that the user must setup mfa by.
    *
    * @generated from field: google.protobuf.Timestamp timeout = 1;
    */
   timeout?: Timestamp;
 
-  constructor(data?: PartialMessage<Refresh2FALockoutByOrgIdResponse>);
+  constructor(data?: PartialMessage<RefreshMfaLockoutByOrgIdResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.Refresh2FALockoutByOrgIdResponse";
+  static readonly typeName = "api.v1alpha1.org.RefreshMfaLockoutByOrgIdResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Refresh2FALockoutByOrgIdResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RefreshMfaLockoutByOrgIdResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RefreshMfaLockoutByOrgIdResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Refresh2FALockoutByOrgIdResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RefreshMfaLockoutByOrgIdResponse;
 
-  static equals(a: Refresh2FALockoutByOrgIdResponse | PlainMessage<Refresh2FALockoutByOrgIdResponse> | undefined, b: Refresh2FALockoutByOrgIdResponse | PlainMessage<Refresh2FALockoutByOrgIdResponse> | undefined): boolean;
+  static equals(a: RefreshMfaLockoutByOrgIdResponse | PlainMessage<RefreshMfaLockoutByOrgIdResponse> | undefined, b: RefreshMfaLockoutByOrgIdResponse | PlainMessage<RefreshMfaLockoutByOrgIdResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the SetMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMfaTypeRequest
+ */
+export declare class SetMfaTypeRequest extends Message<SetMfaTypeRequest> {
+  /**
+   * @generated from oneof api.v1alpha1.org.SetMfaTypeRequest.mfa_type
+   */
+  mfaType: {
+    /**
+     * @generated from field: api.commons.org.MfaInfo.OtpType otp = 1;
+     */
+    value: MfaInfo_OtpType;
+    case: "otp";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<SetMfaTypeRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SetMfaTypeRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMfaTypeRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMfaTypeRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMfaTypeRequest;
+
+  static equals(a: SetMfaTypeRequest | PlainMessage<SetMfaTypeRequest> | undefined, b: SetMfaTypeRequest | PlainMessage<SetMfaTypeRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the SetMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMfaTypeResponse
+ */
+export declare class SetMfaTypeResponse extends Message<SetMfaTypeResponse> {
+  constructor(data?: PartialMessage<SetMfaTypeResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SetMfaTypeResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMfaTypeResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMfaTypeResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMfaTypeResponse;
+
+  static equals(a: SetMfaTypeResponse | PlainMessage<SetMfaTypeResponse> | undefined, b: SetMfaTypeResponse | PlainMessage<SetMfaTypeResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the EnableMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMfaRequest
+ */
+export declare class EnableMfaRequest extends Message<EnableMfaRequest> {
+  /**
+   * The user to enable mfa for.
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * Whether or not mfa is enabled for the user.
+   *
+   * @generated from field: bool enabled = 2;
+   */
+  enabled: boolean;
+
+  constructor(data?: PartialMessage<EnableMfaRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.EnableMfaRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableMfaRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableMfaRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableMfaRequest;
+
+  static equals(a: EnableMfaRequest | PlainMessage<EnableMfaRequest> | undefined, b: EnableMfaRequest | PlainMessage<EnableMfaRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the EnableMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMfaResponse
+ */
+export declare class EnableMfaResponse extends Message<EnableMfaResponse> {
+  constructor(data?: PartialMessage<EnableMfaResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.EnableMfaResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableMfaResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableMfaResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableMfaResponse;
+
+  static equals(a: EnableMfaResponse | PlainMessage<EnableMfaResponse> | undefined, b: EnableMfaResponse | PlainMessage<EnableMfaResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetUserMfaInfoRequest
+ */
+export declare class GetUserMfaInfoRequest extends Message<GetUserMfaInfoRequest> {
+  /**
+   * The user to get the mfa info of.
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  constructor(data?: PartialMessage<GetUserMfaInfoRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetUserMfaInfoRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserMfaInfoRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserMfaInfoRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserMfaInfoRequest;
+
+  static equals(a: GetUserMfaInfoRequest | PlainMessage<GetUserMfaInfoRequest> | undefined, b: GetUserMfaInfoRequest | PlainMessage<GetUserMfaInfoRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetUserMfaInfoResponse
+ */
+export declare class GetUserMfaInfoResponse extends Message<GetUserMfaInfoResponse> {
+  /**
+   * @generated from field: api.commons.org.MfaInfo info = 1;
+   */
+  info?: MfaInfo;
+
+  constructor(data?: PartialMessage<GetUserMfaInfoResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetUserMfaInfoResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetUserMfaInfoResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetUserMfaInfoResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetUserMfaInfoResponse;
+
+  static equals(a: GetUserMfaInfoResponse | PlainMessage<GetUserMfaInfoResponse> | undefined, b: GetUserMfaInfoResponse | PlainMessage<GetUserMfaInfoResponse> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetMyUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyUserMfaInfoRequest
+ */
+export declare class GetMyUserMfaInfoRequest extends Message<GetMyUserMfaInfoRequest> {
+  constructor(data?: PartialMessage<GetMyUserMfaInfoRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetMyUserMfaInfoRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserMfaInfoRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserMfaInfoRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserMfaInfoRequest;
+
+  static equals(a: GetMyUserMfaInfoRequest | PlainMessage<GetMyUserMfaInfoRequest> | undefined, b: GetMyUserMfaInfoRequest | PlainMessage<GetMyUserMfaInfoRequest> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetMyUserMfaInfo rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyUserMfaInfoResponse
+ */
+export declare class GetMyUserMfaInfoResponse extends Message<GetMyUserMfaInfoResponse> {
+  /**
+   * @generated from field: api.commons.org.MfaInfo info = 1;
+   */
+  info?: MfaInfo;
+
+  constructor(data?: PartialMessage<GetMyUserMfaInfoResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetMyUserMfaInfoResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyUserMfaInfoResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyUserMfaInfoResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserMfaInfoResponse;
+
+  static equals(a: GetMyUserMfaInfoResponse | PlainMessage<GetMyUserMfaInfoResponse> | undefined, b: GetMyUserMfaInfoResponse | PlainMessage<GetMyUserMfaInfoResponse> | undefined): boolean;
 }
 

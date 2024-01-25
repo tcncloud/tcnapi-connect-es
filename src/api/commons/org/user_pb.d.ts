@@ -253,13 +253,6 @@ export declare class User extends Message<User> {
    */
   emailVerified: boolean;
 
-  /**
-   * The user's mfa/2fa information.
-   *
-   * @generated from field: api.commons.org.UserMfaInfo mfa_info = 500;
-   */
-  mfaInfo?: UserMfaInfo;
-
   constructor(data?: PartialMessage<User>);
 
   static readonly runtime: typeof proto3;
@@ -318,114 +311,131 @@ export declare class User_RegionSids extends Message<User_RegionSids> {
 }
 
 /**
- * User's mfa/2fa information.
+ * MFA/2FA Information
  *
- * @generated from message api.commons.org.UserMfaInfo
+ * @generated from message api.commons.org.MfaInfo
  */
-export declare class UserMfaInfo extends Message<UserMfaInfo> {
+export declare class MfaInfo extends Message<MfaInfo> {
   /**
-   * @generated from oneof api.commons.org.UserMfaInfo.mfa_type
+   * The user that the MFA info belongs to.
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * Whether or not MFA is enabled for the user.
+   *
+   * @generated from field: bool mfa_enabled = 2;
+   */
+  mfaEnabled: boolean;
+
+  /**
+   * @generated from oneof api.commons.org.MfaInfo.mfa_type
    */
   mfaType: {
     /**
-     * @generated from field: api.commons.org.UserMfaInfo.NoneSelected none = 1;
+     * @generated from field: api.commons.org.MfaInfo.NoneSelected none = 3;
      */
-    value: UserMfaInfo_NoneSelected;
+    value: MfaInfo_NoneSelected;
     case: "none";
   } | {
     /**
-     * @generated from field: api.commons.org.UserMfaInfo.OtpType otp = 2;
+     * @generated from field: api.commons.org.MfaInfo.OtpType otp = 4;
      */
-    value: UserMfaInfo_OtpType;
+    value: MfaInfo_OtpType;
     case: "otp";
   } | { case: undefined; value?: undefined };
 
-  constructor(data?: PartialMessage<UserMfaInfo>);
+  constructor(data?: PartialMessage<MfaInfo>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.org.UserMfaInfo";
+  static readonly typeName = "api.commons.org.MfaInfo";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserMfaInfo;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MfaInfo;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserMfaInfo;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MfaInfo;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserMfaInfo;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MfaInfo;
 
-  static equals(a: UserMfaInfo | PlainMessage<UserMfaInfo> | undefined, b: UserMfaInfo | PlainMessage<UserMfaInfo> | undefined): boolean;
+  static equals(a: MfaInfo | PlainMessage<MfaInfo> | undefined, b: MfaInfo | PlainMessage<MfaInfo> | undefined): boolean;
 }
 
 /**
- * @generated from message api.commons.org.UserMfaInfo.NoneSelected
+ * @generated from message api.commons.org.MfaInfo.NoneSelected
  */
-export declare class UserMfaInfo_NoneSelected extends Message<UserMfaInfo_NoneSelected> {
+export declare class MfaInfo_NoneSelected extends Message<MfaInfo_NoneSelected> {
   /**
+   * The time by wich the user must setup MFA
+   * to avoid being locked out.
+   *
    * @generated from field: google.protobuf.Timestamp timeout = 1;
    */
   timeout?: Timestamp;
 
-  constructor(data?: PartialMessage<UserMfaInfo_NoneSelected>);
+  constructor(data?: PartialMessage<MfaInfo_NoneSelected>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.org.UserMfaInfo.NoneSelected";
+  static readonly typeName = "api.commons.org.MfaInfo.NoneSelected";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserMfaInfo_NoneSelected;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MfaInfo_NoneSelected;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserMfaInfo_NoneSelected;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MfaInfo_NoneSelected;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserMfaInfo_NoneSelected;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MfaInfo_NoneSelected;
 
-  static equals(a: UserMfaInfo_NoneSelected | PlainMessage<UserMfaInfo_NoneSelected> | undefined, b: UserMfaInfo_NoneSelected | PlainMessage<UserMfaInfo_NoneSelected> | undefined): boolean;
+  static equals(a: MfaInfo_NoneSelected | PlainMessage<MfaInfo_NoneSelected> | undefined, b: MfaInfo_NoneSelected | PlainMessage<MfaInfo_NoneSelected> | undefined): boolean;
 }
 
 /**
- * @generated from message api.commons.org.UserMfaInfo.OtpType
+ * @generated from message api.commons.org.MfaInfo.OtpType
  */
-export declare class UserMfaInfo_OtpType extends Message<UserMfaInfo_OtpType> {
+export declare class MfaInfo_OtpType extends Message<MfaInfo_OtpType> {
   /**
-   * @generated from oneof api.commons.org.UserMfaInfo.OtpType.delivery_method
+   * @generated from oneof api.commons.org.MfaInfo.OtpType.delivery_method
    */
   deliveryMethod: {
     /**
-     * @generated from field: api.commons.org.UserMfaInfo.OtpType.EmailDeliveryMethod email = 1;
+     * @generated from field: api.commons.org.MfaInfo.OtpType.EmailDeliveryMethod email = 1;
      */
-    value: UserMfaInfo_OtpType_EmailDeliveryMethod;
+    value: MfaInfo_OtpType_EmailDeliveryMethod;
     case: "email";
   } | { case: undefined; value?: undefined };
 
-  constructor(data?: PartialMessage<UserMfaInfo_OtpType>);
+  constructor(data?: PartialMessage<MfaInfo_OtpType>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.org.UserMfaInfo.OtpType";
+  static readonly typeName = "api.commons.org.MfaInfo.OtpType";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserMfaInfo_OtpType;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MfaInfo_OtpType;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserMfaInfo_OtpType;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MfaInfo_OtpType;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserMfaInfo_OtpType;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MfaInfo_OtpType;
 
-  static equals(a: UserMfaInfo_OtpType | PlainMessage<UserMfaInfo_OtpType> | undefined, b: UserMfaInfo_OtpType | PlainMessage<UserMfaInfo_OtpType> | undefined): boolean;
+  static equals(a: MfaInfo_OtpType | PlainMessage<MfaInfo_OtpType> | undefined, b: MfaInfo_OtpType | PlainMessage<MfaInfo_OtpType> | undefined): boolean;
 }
 
 /**
- * @generated from message api.commons.org.UserMfaInfo.OtpType.EmailDeliveryMethod
+ * @generated from message api.commons.org.MfaInfo.OtpType.EmailDeliveryMethod
  */
-export declare class UserMfaInfo_OtpType_EmailDeliveryMethod extends Message<UserMfaInfo_OtpType_EmailDeliveryMethod> {
-  constructor(data?: PartialMessage<UserMfaInfo_OtpType_EmailDeliveryMethod>);
+export declare class MfaInfo_OtpType_EmailDeliveryMethod extends Message<MfaInfo_OtpType_EmailDeliveryMethod> {
+  constructor(data?: PartialMessage<MfaInfo_OtpType_EmailDeliveryMethod>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.org.UserMfaInfo.OtpType.EmailDeliveryMethod";
+  static readonly typeName = "api.commons.org.MfaInfo.OtpType.EmailDeliveryMethod";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserMfaInfo_OtpType_EmailDeliveryMethod;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MfaInfo_OtpType_EmailDeliveryMethod;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UserMfaInfo_OtpType_EmailDeliveryMethod;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MfaInfo_OtpType_EmailDeliveryMethod;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UserMfaInfo_OtpType_EmailDeliveryMethod;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MfaInfo_OtpType_EmailDeliveryMethod;
 
-  static equals(a: UserMfaInfo_OtpType_EmailDeliveryMethod | PlainMessage<UserMfaInfo_OtpType_EmailDeliveryMethod> | undefined, b: UserMfaInfo_OtpType_EmailDeliveryMethod | PlainMessage<UserMfaInfo_OtpType_EmailDeliveryMethod> | undefined): boolean;
+  static equals(a: MfaInfo_OtpType_EmailDeliveryMethod | PlainMessage<MfaInfo_OtpType_EmailDeliveryMethod> | undefined, b: MfaInfo_OtpType_EmailDeliveryMethod | PlainMessage<MfaInfo_OtpType_EmailDeliveryMethod> | undefined): boolean;
 }
 
 /**
