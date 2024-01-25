@@ -104,7 +104,7 @@ export const ListSIPAccountsRequest = proto3.makeMessageType(
 export const ListSIPAccountsResponse = proto3.makeMessageType(
   "services.pbx.v2.ListSIPAccountsResponse",
   () => [
-    { no: 1, name: "users", kind: "message", T: PBXUser, repeated: true },
+    { no: 1, name: "sip_accounts", kind: "message", T: SIPAccount, repeated: true },
   ],
 );
 
@@ -122,7 +122,7 @@ export const GetSIPAccountRequest = proto3.makeMessageType(
 export const GetSIPAccountResponse = proto3.makeMessageType(
   "services.pbx.v2.GetSIPAccountResponse",
   () => [
-    { no: 1, name: "users", kind: "message", T: SIPAccount, repeated: true },
+    { no: 1, name: "sip_account", kind: "message", T: SIPAccount, repeated: true },
   ],
 );
 

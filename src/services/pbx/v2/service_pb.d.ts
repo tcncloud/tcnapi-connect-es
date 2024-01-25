@@ -242,9 +242,9 @@ export declare class ListSIPAccountsRequest extends Message<ListSIPAccountsReque
  */
 export declare class ListSIPAccountsResponse extends Message<ListSIPAccountsResponse> {
   /**
-   * @generated from field: repeated services.pbx.v2.PBXUser users = 1;
+   * @generated from field: repeated services.pbx.v2.SIPAccount sip_accounts = 1;
    */
-  users: PBXUser[];
+  sipAccounts: SIPAccount[];
 
   constructor(data?: PartialMessage<ListSIPAccountsResponse>);
 
@@ -285,9 +285,9 @@ export declare class GetSIPAccountRequest extends Message<GetSIPAccountRequest> 
  */
 export declare class GetSIPAccountResponse extends Message<GetSIPAccountResponse> {
   /**
-   * @generated from field: repeated services.pbx.v2.SIPAccount users = 1;
+   * @generated from field: repeated services.pbx.v2.SIPAccount sip_account = 1;
    */
-  users: SIPAccount[];
+  sipAccount: SIPAccount[];
 
   constructor(data?: PartialMessage<GetSIPAccountResponse>);
 
