@@ -1233,12 +1233,12 @@ export const SetMfaTypeResponse = proto3.makeMessageType(
 );
 
 /**
- * Request message for the EnableMfa rpc.
+ * Request message for the EnableUserMfa rpc.
  *
- * @generated from message api.v1alpha1.org.EnableMfaRequest
+ * @generated from message api.v1alpha1.org.EnableUserMfaRequest
  */
-export const EnableMfaRequest = proto3.makeMessageType(
-  "api.v1alpha1.org.EnableMfaRequest",
+export const EnableUserMfaRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.EnableUserMfaRequest",
   () => [
     { no: 1, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -1246,12 +1246,32 @@ export const EnableMfaRequest = proto3.makeMessageType(
 );
 
 /**
- * Response message for the EnableMfa rpc.
+ * Response message for the EnableUserMfa rpc.
  *
- * @generated from message api.v1alpha1.org.EnableMfaResponse
+ * @generated from message api.v1alpha1.org.EnableUserMfaResponse
  */
-export const EnableMfaResponse = proto3.makeMessageType(
-  "api.v1alpha1.org.EnableMfaResponse",
+export const EnableUserMfaResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.EnableUserMfaResponse",
+  [],
+);
+
+/**
+ * Request message for the EnableMyUserMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMyUserMfaRequest
+ */
+export const EnableMyUserMfaRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.EnableMyUserMfaRequest",
+  [],
+);
+
+/**
+ * Response message for the EnableUserMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMyUserMfaResponse
+ */
+export const EnableMyUserMfaResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.EnableMyUserMfaResponse",
   [],
 );
 

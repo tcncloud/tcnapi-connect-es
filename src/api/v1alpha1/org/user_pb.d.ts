@@ -3839,11 +3839,11 @@ export declare class SetMfaTypeResponse extends Message<SetMfaTypeResponse> {
 }
 
 /**
- * Request message for the EnableMfa rpc.
+ * Request message for the EnableUserMfa rpc.
  *
- * @generated from message api.v1alpha1.org.EnableMfaRequest
+ * @generated from message api.v1alpha1.org.EnableUserMfaRequest
  */
-export declare class EnableMfaRequest extends Message<EnableMfaRequest> {
+export declare class EnableUserMfaRequest extends Message<EnableUserMfaRequest> {
   /**
    * The user to enable mfa for.
    *
@@ -3858,40 +3858,82 @@ export declare class EnableMfaRequest extends Message<EnableMfaRequest> {
    */
   enabled: boolean;
 
-  constructor(data?: PartialMessage<EnableMfaRequest>);
+  constructor(data?: PartialMessage<EnableUserMfaRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.EnableMfaRequest";
+  static readonly typeName = "api.v1alpha1.org.EnableUserMfaRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableMfaRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableUserMfaRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableMfaRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableUserMfaRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableMfaRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableUserMfaRequest;
 
-  static equals(a: EnableMfaRequest | PlainMessage<EnableMfaRequest> | undefined, b: EnableMfaRequest | PlainMessage<EnableMfaRequest> | undefined): boolean;
+  static equals(a: EnableUserMfaRequest | PlainMessage<EnableUserMfaRequest> | undefined, b: EnableUserMfaRequest | PlainMessage<EnableUserMfaRequest> | undefined): boolean;
 }
 
 /**
- * Response message for the EnableMfa rpc.
+ * Response message for the EnableUserMfa rpc.
  *
- * @generated from message api.v1alpha1.org.EnableMfaResponse
+ * @generated from message api.v1alpha1.org.EnableUserMfaResponse
  */
-export declare class EnableMfaResponse extends Message<EnableMfaResponse> {
-  constructor(data?: PartialMessage<EnableMfaResponse>);
+export declare class EnableUserMfaResponse extends Message<EnableUserMfaResponse> {
+  constructor(data?: PartialMessage<EnableUserMfaResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.EnableMfaResponse";
+  static readonly typeName = "api.v1alpha1.org.EnableUserMfaResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableMfaResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableUserMfaResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableMfaResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableUserMfaResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableMfaResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableUserMfaResponse;
 
-  static equals(a: EnableMfaResponse | PlainMessage<EnableMfaResponse> | undefined, b: EnableMfaResponse | PlainMessage<EnableMfaResponse> | undefined): boolean;
+  static equals(a: EnableUserMfaResponse | PlainMessage<EnableUserMfaResponse> | undefined, b: EnableUserMfaResponse | PlainMessage<EnableUserMfaResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the EnableMyUserMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMyUserMfaRequest
+ */
+export declare class EnableMyUserMfaRequest extends Message<EnableMyUserMfaRequest> {
+  constructor(data?: PartialMessage<EnableMyUserMfaRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.EnableMyUserMfaRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableMyUserMfaRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableMyUserMfaRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableMyUserMfaRequest;
+
+  static equals(a: EnableMyUserMfaRequest | PlainMessage<EnableMyUserMfaRequest> | undefined, b: EnableMyUserMfaRequest | PlainMessage<EnableMyUserMfaRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the EnableUserMfa rpc.
+ *
+ * @generated from message api.v1alpha1.org.EnableMyUserMfaResponse
+ */
+export declare class EnableMyUserMfaResponse extends Message<EnableMyUserMfaResponse> {
+  constructor(data?: PartialMessage<EnableMyUserMfaResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.EnableMyUserMfaResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableMyUserMfaResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableMyUserMfaResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableMyUserMfaResponse;
+
+  static equals(a: EnableMyUserMfaResponse | PlainMessage<EnableMyUserMfaResponse> | undefined, b: EnableMyUserMfaResponse | PlainMessage<EnableMyUserMfaResponse> | undefined): boolean;
 }
 
 /**
