@@ -1105,7 +1105,7 @@ export const GetUserSessionDataResponse = proto3.makeMessageType(
     { no: 3, name: "p3_permissions", kind: "enum", T: proto3.getEnumType(Permission), repeated: true },
     { no: 4, name: "permission_groups", kind: "message", T: PermissionGroup, repeated: true },
     { no: 5, name: "labels", kind: "message", T: Label, repeated: true },
-    { no: 6, name: "org_allowed_2fa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 6, name: "org_allowed_mfa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

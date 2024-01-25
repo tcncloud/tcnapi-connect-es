@@ -3398,11 +3398,11 @@ export declare class GetUserSessionDataResponse extends Message<GetUserSessionDa
   labels: Label[];
 
   /**
-   * A boolean for if the organization allows two factor authentication
+   * A boolean for if the organization allows multi factor authentication
    *
-   * @generated from field: bool org_allowed_2fa = 6;
+   * @generated from field: bool org_allowed_mfa = 6;
    */
-  orgAllowed2fa: boolean;
+  orgAllowedMfa: boolean;
 
   constructor(data?: PartialMessage<GetUserSessionDataResponse>);
 
