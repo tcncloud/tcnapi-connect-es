@@ -102,6 +102,11 @@ export declare class SIPAccount extends Message<SIPAccount> {
    */
   ringGroupIds: string[];
 
+  /**
+   * @generated from field: string org_user_id = 5;
+   */
+  orgUserId: string;
+
   constructor(data?: PartialMessage<SIPAccount>);
 
   static readonly runtime: typeof proto3;
@@ -211,6 +216,92 @@ export declare class ListPBXUsersResponse extends Message<ListPBXUsersResponse> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPBXUsersResponse;
 
   static equals(a: ListPBXUsersResponse | PlainMessage<ListPBXUsersResponse> | undefined, b: ListPBXUsersResponse | PlainMessage<ListPBXUsersResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.pbx.v2.ListSIPAccountsRequest
+ */
+export declare class ListSIPAccountsRequest extends Message<ListSIPAccountsRequest> {
+  constructor(data?: PartialMessage<ListSIPAccountsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.pbx.v2.ListSIPAccountsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSIPAccountsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSIPAccountsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSIPAccountsRequest;
+
+  static equals(a: ListSIPAccountsRequest | PlainMessage<ListSIPAccountsRequest> | undefined, b: ListSIPAccountsRequest | PlainMessage<ListSIPAccountsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.pbx.v2.ListSIPAccountsResponse
+ */
+export declare class ListSIPAccountsResponse extends Message<ListSIPAccountsResponse> {
+  /**
+   * @generated from field: repeated services.pbx.v2.PBXUser users = 1;
+   */
+  users: PBXUser[];
+
+  constructor(data?: PartialMessage<ListSIPAccountsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.pbx.v2.ListSIPAccountsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListSIPAccountsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListSIPAccountsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListSIPAccountsResponse;
+
+  static equals(a: ListSIPAccountsResponse | PlainMessage<ListSIPAccountsResponse> | undefined, b: ListSIPAccountsResponse | PlainMessage<ListSIPAccountsResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.pbx.v2.GetSIPAccountRequest
+ */
+export declare class GetSIPAccountRequest extends Message<GetSIPAccountRequest> {
+  constructor(data?: PartialMessage<GetSIPAccountRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.pbx.v2.GetSIPAccountRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSIPAccountRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSIPAccountRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSIPAccountRequest;
+
+  static equals(a: GetSIPAccountRequest | PlainMessage<GetSIPAccountRequest> | undefined, b: GetSIPAccountRequest | PlainMessage<GetSIPAccountRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.pbx.v2.GetSIPAccountResponse
+ */
+export declare class GetSIPAccountResponse extends Message<GetSIPAccountResponse> {
+  /**
+   * @generated from field: repeated services.pbx.v2.SIPAccount users = 1;
+   */
+  users: SIPAccount[];
+
+  constructor(data?: PartialMessage<GetSIPAccountResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.pbx.v2.GetSIPAccountResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetSIPAccountResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetSIPAccountResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetSIPAccountResponse;
+
+  static equals(a: GetSIPAccountResponse | PlainMessage<GetSIPAccountResponse> | undefined, b: GetSIPAccountResponse | PlainMessage<GetSIPAccountResponse> | undefined): boolean;
 }
 
 /**

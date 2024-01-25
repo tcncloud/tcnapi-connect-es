@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignRandomExtensionRequest, AssignRandomExtensionResponse, CreateRingGroupRequest, CreateRingGroupResponse, DeleteRingGroupRequest, DeleteRingGroupResponse, GetPBXUserRequest, GetPBXUserResponse, GetRingGroupRequest, GetRingGroupResponse, ListPBXUsersRequest, ListPBXUsersResponse, ListRingGroupsRequest, ListRingGroupsResponse, UpdateRingGroupRequest, UpdateRingGroupResponse, UpdateSIPAccountRequest, UpdateSIPAccountResponse } from "./service_pb.js";
+import { AssignRandomExtensionRequest, AssignRandomExtensionResponse, CreateRingGroupRequest, CreateRingGroupResponse, DeleteRingGroupRequest, DeleteRingGroupResponse, GetPBXUserRequest, GetPBXUserResponse, GetRingGroupRequest, GetRingGroupResponse, GetSIPAccountRequest, GetSIPAccountResponse, ListPBXUsersRequest, ListPBXUsersResponse, ListRingGroupsRequest, ListRingGroupsResponse, ListSIPAccountsRequest, ListSIPAccountsResponse, UpdateRingGroupRequest, UpdateRingGroupResponse, UpdateSIPAccountRequest, UpdateSIPAccountResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -82,6 +82,42 @@ export const PBXService = {
       name: "GetRingGroup",
       I: GetRingGroupRequest,
       O: GetRingGroupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns details of the SIP Account associated with the sip_id
+     * Required permissions:
+     *   PBX-MANAGER
+     * Errors:
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.NotFound: The group does not exist or is not in the caller's ORG.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.pbx.v2.PBXService.GetSIPAccount
+     */
+    getSIPAccount: {
+      name: "GetSIPAccount",
+      I: GetSIPAccountRequest,
+      O: GetSIPAccountResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns details of all SIP Accounts associated with the authenticated callers ORG
+     * Required permissions:
+     *   PBX-MANAGER
+     * Errors:
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.pbx.v2.PBXService.ListSIPAccounts
+     */
+    listSIPAccounts: {
+      name: "ListSIPAccounts",
+      I: ListSIPAccountsRequest,
+      O: ListSIPAccountsResponse,
       kind: MethodKind.Unary,
     },
     /**
