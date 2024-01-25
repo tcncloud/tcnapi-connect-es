@@ -3397,6 +3397,13 @@ export declare class GetUserSessionDataResponse extends Message<GetUserSessionDa
    */
   labels: Label[];
 
+  /**
+   * A boolean for if the organization allows two factor authentication
+   *
+   * @generated from field: bool org_allowed_2fa = 6;
+   */
+  orgAllowed2fa: boolean;
+
   constructor(data?: PartialMessage<GetUserSessionDataResponse>);
 
   static readonly runtime: typeof proto3;
@@ -3608,6 +3615,13 @@ export declare class GetUserSessionDataResponse_User extends Message<GetUserSess
    * @generated from field: bool account_owner = 32;
    */
   accountOwner: boolean;
+
+  /**
+   * Timestamp beyond which the user is required to have multi factor authentication set up
+   *
+   * @generated from field: google.protobuf.Timestamp mfa_timestamp = 33;
+   */
+  mfaTimestamp?: Timestamp;
 
   constructor(data?: PartialMessage<GetUserSessionDataResponse_User>);
 
