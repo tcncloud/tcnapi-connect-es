@@ -317,16 +317,23 @@ export declare class User_RegionSids extends Message<User_RegionSids> {
  */
 export declare class MfaInfo extends Message<MfaInfo> {
   /**
+   * The org the user belongs to.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
    * The user that the MFA info belongs to.
    *
-   * @generated from field: string user_id = 1;
+   * @generated from field: string user_id = 2;
    */
   userId: string;
 
   /**
    * Whether or not MFA is enabled for the user.
    *
-   * @generated from field: bool mfa_enabled = 2;
+   * @generated from field: bool mfa_enabled = 3;
    */
   mfaEnabled: boolean;
 
@@ -335,13 +342,13 @@ export declare class MfaInfo extends Message<MfaInfo> {
    */
   mfaType: {
     /**
-     * @generated from field: api.commons.org.MfaInfo.NoneSelected none = 3;
+     * @generated from field: api.commons.org.MfaInfo.NoneSelected none = 10;
      */
     value: MfaInfo_NoneSelected;
     case: "none";
   } | {
     /**
-     * @generated from field: api.commons.org.MfaInfo.OtpType otp = 4;
+     * @generated from field: api.commons.org.MfaInfo.OtpType otp = 11;
      */
     value: MfaInfo_OtpType;
     case: "otp";
