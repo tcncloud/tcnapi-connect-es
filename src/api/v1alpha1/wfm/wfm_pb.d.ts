@@ -11937,7 +11937,7 @@ export declare class CreateShiftInstanceWithSegmentsRequest extends Message<Crea
 
   /**
    * If set to true, it will create the shift regardless of any diagnostics errors,
-   * otherwise it will return those diagnostic errors and not create the shift
+   * otherwise it will return those diagnostic errors and not create the shift.
    *
    * @generated from field: bool ignore_diagnostics_errors = 2;
    */
@@ -12332,6 +12332,78 @@ export declare class UpdateShiftInstanceV2Res extends Message<UpdateShiftInstanc
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShiftInstanceV2Res;
 
   static equals(a: UpdateShiftInstanceV2Res | PlainMessage<UpdateShiftInstanceV2Res> | undefined, b: UpdateShiftInstanceV2Res | PlainMessage<UpdateShiftInstanceV2Res> | undefined): boolean;
+}
+
+/**
+ * Request message for the UpdateShiftInstanceWithSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsRequest
+ */
+export declare class UpdateShiftInstanceWithSegmentsRequest extends Message<UpdateShiftInstanceWithSegmentsRequest> {
+  /**
+   * Instance to update with member shift segments to replace.
+   * Any existing shift segments belonging to the instances will be deleted.
+   *
+   * @generated from field: api.v1alpha1.wfm.ShiftInstance shift_instance = 1;
+   */
+  shiftInstance?: ShiftInstance;
+
+  /**
+   * If set to true, it will update the shift instance regardless of any diagnostics errors,
+   * otherwise it will return those diagnostic errors and not do the update.
+   *
+   * @generated from field: bool ignore_diagnostics_errors = 2;
+   */
+  ignoreDiagnosticsErrors: boolean;
+
+  constructor(data?: PartialMessage<UpdateShiftInstanceWithSegmentsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateShiftInstanceWithSegmentsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateShiftInstanceWithSegmentsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShiftInstanceWithSegmentsRequest;
+
+  static equals(a: UpdateShiftInstanceWithSegmentsRequest | PlainMessage<UpdateShiftInstanceWithSegmentsRequest> | undefined, b: UpdateShiftInstanceWithSegmentsRequest | PlainMessage<UpdateShiftInstanceWithSegmentsRequest> | undefined): boolean;
+}
+
+/**
+ * Reponse message for the UpdateShiftInstanceWithSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsResponse
+ */
+export declare class UpdateShiftInstanceWithSegmentsResponse extends Message<UpdateShiftInstanceWithSegmentsResponse> {
+  /**
+   * Instance that was updated, with member shift segments and call stats.
+   *
+   * @generated from field: api.v1alpha1.wfm.ShiftInstance shift_instance = 1;
+   */
+  shiftInstance?: ShiftInstance;
+
+  /**
+   * A list of diagnostics for any errors encountered with the shift instance in the request.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.Diagnostic diagnostics = 2;
+   */
+  diagnostics: Diagnostic[];
+
+  constructor(data?: PartialMessage<UpdateShiftInstanceWithSegmentsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateShiftInstanceWithSegmentsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateShiftInstanceWithSegmentsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateShiftInstanceWithSegmentsResponse;
+
+  static equals(a: UpdateShiftInstanceWithSegmentsResponse | PlainMessage<UpdateShiftInstanceWithSegmentsResponse> | undefined, b: UpdateShiftInstanceWithSegmentsResponse | PlainMessage<UpdateShiftInstanceWithSegmentsResponse> | undefined): boolean;
 }
 
 /**

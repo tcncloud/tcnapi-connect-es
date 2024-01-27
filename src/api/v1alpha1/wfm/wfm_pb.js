@@ -4198,6 +4198,32 @@ export const UpdateShiftInstanceV2Res = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the UpdateShiftInstanceWithSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsRequest
+ */
+export const UpdateShiftInstanceWithSegmentsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsRequest",
+  () => [
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
+    { no: 2, name: "ignore_diagnostics_errors", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Reponse message for the UpdateShiftInstanceWithSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsResponse
+ */
+export const UpdateShiftInstanceWithSegmentsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsResponse",
+  () => [
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the CopyShiftInstancesToSchedule RPC
  *
  * @generated from message api.v1alpha1.wfm.CopyShiftInstancesToScheduleReq
