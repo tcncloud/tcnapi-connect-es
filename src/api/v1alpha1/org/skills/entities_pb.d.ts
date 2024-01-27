@@ -288,6 +288,55 @@ export declare class DeleteSkillGroupResponse extends Message<DeleteSkillGroupRe
 }
 
 /**
+ * Request message for the RemoveSkillFromAllGroups rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest
+ */
+export declare class RemoveSkillFromAllGroupsRequest extends Message<RemoveSkillFromAllGroupsRequest> {
+  /**
+   * The skill sid of the skill to remove.
+   *
+   * @generated from field: int64 skill_sid = 1;
+   */
+  skillSid: bigint;
+
+  constructor(data?: PartialMessage<RemoveSkillFromAllGroupsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveSkillFromAllGroupsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveSkillFromAllGroupsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveSkillFromAllGroupsRequest;
+
+  static equals(a: RemoveSkillFromAllGroupsRequest | PlainMessage<RemoveSkillFromAllGroupsRequest> | undefined, b: RemoveSkillFromAllGroupsRequest | PlainMessage<RemoveSkillFromAllGroupsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the RemoveSkillFromAllGroups rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.RemoveSkillFromAllGroupsResponse
+ */
+export declare class RemoveSkillFromAllGroupsResponse extends Message<RemoveSkillFromAllGroupsResponse> {
+  constructor(data?: PartialMessage<RemoveSkillFromAllGroupsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.skills.RemoveSkillFromAllGroupsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveSkillFromAllGroupsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveSkillFromAllGroupsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveSkillFromAllGroupsResponse;
+
+  static equals(a: RemoveSkillFromAllGroupsResponse | PlainMessage<RemoveSkillFromAllGroupsResponse> | undefined, b: RemoveSkillFromAllGroupsResponse | PlainMessage<RemoveSkillFromAllGroupsResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the AssignSkillGroups rpc.
  *
  * @generated from message api.v1alpha1.org.skills.AssignSkillGroupsRequest

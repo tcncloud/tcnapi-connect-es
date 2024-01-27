@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse, UpdateUsersOnSkillGroupRequest, UpdateUsersOnSkillGroupResponse } from "./entities_pb.js";
+import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RemoveSkillFromAllGroupsRequest, RemoveSkillFromAllGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse, UpdateUsersOnSkillGroupRequest, UpdateUsersOnSkillGroupResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -65,6 +65,17 @@ export declare const SkillsService: {
       readonly name: "DeleteSkillGroup",
       readonly I: typeof DeleteSkillGroupRequest,
       readonly O: typeof DeleteSkillGroupResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * RemoveSkillFromAllGroups removes a skill from all skill groups which contain it.
+     *
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.RemoveSkillFromAllGroups
+     */
+    readonly removeSkillFromAllGroups: {
+      readonly name: "RemoveSkillFromAllGroups",
+      readonly I: typeof RemoveSkillFromAllGroupsRequest,
+      readonly O: typeof RemoveSkillFromAllGroupsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

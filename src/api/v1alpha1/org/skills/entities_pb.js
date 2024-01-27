@@ -125,6 +125,28 @@ export const DeleteSkillGroupResponse = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the RemoveSkillFromAllGroups rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest
+ */
+export const RemoveSkillFromAllGroupsRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.RemoveSkillFromAllGroupsRequest",
+  () => [
+    { no: 1, name: "skill_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for the RemoveSkillFromAllGroups rpc.
+ *
+ * @generated from message api.v1alpha1.org.skills.RemoveSkillFromAllGroupsResponse
+ */
+export const RemoveSkillFromAllGroupsResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.skills.RemoveSkillFromAllGroupsResponse",
+  [],
+);
+
+/**
  * Request message for the AssignSkillGroups rpc.
  *
  * @generated from message api.v1alpha1.org.skills.AssignSkillGroupsRequest
