@@ -3816,6 +3816,13 @@ export declare class SetMfaTypeRequest extends Message<SetMfaTypeRequest> {
     case: "otp";
   } | { case: undefined; value?: undefined };
 
+  /**
+   * The id of the user to set the mfa type for.
+   *
+   * @generated from field: string user_id = 2;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<SetMfaTypeRequest>);
 
   static readonly runtime: typeof proto3;
@@ -3850,6 +3857,59 @@ export declare class SetMfaTypeResponse extends Message<SetMfaTypeResponse> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMfaTypeResponse;
 
   static equals(a: SetMfaTypeResponse | PlainMessage<SetMfaTypeResponse> | undefined, b: SetMfaTypeResponse | PlainMessage<SetMfaTypeResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the SetMyMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMyMfaTypeRequest
+ */
+export declare class SetMyMfaTypeRequest extends Message<SetMyMfaTypeRequest> {
+  /**
+   * @generated from oneof api.v1alpha1.org.SetMyMfaTypeRequest.mfa_type
+   */
+  mfaType: {
+    /**
+     * @generated from field: api.commons.org.MfaInfo.OtpType otp = 1;
+     */
+    value: MfaInfo_OtpType;
+    case: "otp";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<SetMyMfaTypeRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SetMyMfaTypeRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMyMfaTypeRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMyMfaTypeRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMyMfaTypeRequest;
+
+  static equals(a: SetMyMfaTypeRequest | PlainMessage<SetMyMfaTypeRequest> | undefined, b: SetMyMfaTypeRequest | PlainMessage<SetMyMfaTypeRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the SetMyMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMyMfaTypeResponse
+ */
+export declare class SetMyMfaTypeResponse extends Message<SetMyMfaTypeResponse> {
+  constructor(data?: PartialMessage<SetMyMfaTypeResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SetMyMfaTypeResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetMyMfaTypeResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetMyMfaTypeResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetMyMfaTypeResponse;
+
+  static equals(a: SetMyMfaTypeResponse | PlainMessage<SetMyMfaTypeResponse> | undefined, b: SetMyMfaTypeResponse | PlainMessage<SetMyMfaTypeResponse> | undefined): boolean;
 }
 
 /**

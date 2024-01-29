@@ -1221,6 +1221,7 @@ export const SetMfaTypeRequest = proto3.makeMessageType(
   "api.v1alpha1.org.SetMfaTypeRequest",
   () => [
     { no: 1, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
+    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -1231,6 +1232,28 @@ export const SetMfaTypeRequest = proto3.makeMessageType(
  */
 export const SetMfaTypeResponse = proto3.makeMessageType(
   "api.v1alpha1.org.SetMfaTypeResponse",
+  [],
+);
+
+/**
+ * Request message for the SetMyMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMyMfaTypeRequest
+ */
+export const SetMyMfaTypeRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.SetMyMfaTypeRequest",
+  () => [
+    { no: 1, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
+  ],
+);
+
+/**
+ * Response message for the SetMyMfaTypeRequest rpc.
+ *
+ * @generated from message api.v1alpha1.org.SetMyMfaTypeResponse
+ */
+export const SetMyMfaTypeResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.SetMyMfaTypeResponse",
   [],
 );
 
