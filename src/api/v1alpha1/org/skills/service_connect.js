@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse, UpdateUsersOnSkillGroupRequest, UpdateUsersOnSkillGroupResponse } from "./entities_pb.js";
+import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RemoveSkillFromAllGroupsRequest, RemoveSkillFromAllGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse, UpdateUsersOnSkillGroupRequest, UpdateUsersOnSkillGroupResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -65,6 +65,17 @@ export const SkillsService = {
       name: "DeleteSkillGroup",
       I: DeleteSkillGroupRequest,
       O: DeleteSkillGroupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RemoveSkillFromAllGroups removes a skill from all skill groups which contain it.
+     *
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.RemoveSkillFromAllGroups
+     */
+    removeSkillFromAllGroups: {
+      name: "RemoveSkillFromAllGroups",
+      I: RemoveSkillFromAllGroupsRequest,
+      O: RemoveSkillFromAllGroupsResponse,
       kind: MethodKind.Unary,
     },
     /**
