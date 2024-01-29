@@ -6,7 +6,7 @@
 import { ArchiveOrganizationRequest, ArchiveOrganizationResponse, ConvertOrgToManualRequest, ConvertOrgToManualResponse, CreateOrganizationRequest, CreateOrganizationResponse, GetOrganizationByIdRequest, GetOrganizationByIdResponse, GetOrganizationRequest, GetOrganizationResponse, ListAllOrganizationsGloballyRequest, ListAllOrganizationsGloballyResponse, ListArchivedOrganizationsRequest, ListArchivedOrganizationsResponse, ListOrganizationsByRegionRequest, ListOrganizationsByRegionResponse, ListOwnedOrgsRequest, ListOwnedOrgsResponse, UnArchiveOrganizationRequest, UnArchiveOrganizationResponse, UpdateOrganizationRequest, UpdateOrganizationResponse } from "./organization_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { AcceptLinkbackRecordingTermsRequest, AcceptLinkbackRecordingTermsResponse, ClearEmailUnsubscribeAcknowledgementRequest, ClearEmailUnsubscribeAcknowledgementResponse, GetAdminClientPreferencesRequest, GetAdminClientPreferencesResponse, GetAgentPreferencesRequest, GetAgentPreferencesResponse, GetAuthenticationPreferencesRequest, GetAuthenticationPreferencesResponse, GetBroadcastPreferencesRequest, GetBroadcastPreferencesResponse, GetBusinessPreferencesRequest, GetBusinessPreferencesResponse, GetCompliancePreferencesRequest, GetCompliancePreferencesResponse, GetContactPreferencesRequest, GetContactPreferencesResponse, GetDashboardGeneralPreferencesRequest, GetDashboardGeneralPreferencesResponse, GetDashboardQueuePreferencesRequest, GetDashboardQueuePreferencesResponse, GetEmailSmsPreferencesRequest, GetEmailSmsPreferencesResponse, GetEndOfDayPreferencesRequest, GetEndOfDayPreferencesResponse, GetFilterPreferencesRequest, GetFilterPreferencesResponse, GetOrganizationPreferencesRequest, GetOrganizationPreferencesResponse, GetPhonePreferencesRequest, GetPhonePreferencesResponse, GetRecordingPreferencesRequest, GetRecordingPreferencesResponse, GetSchedulePreferencesRequest, GetSchedulePreferencesResponse, GetScorecardsPreferencesRequest, GetScorecardsPreferencesResponse, GetVoiceAnalyticsPreferencesRequest, GetVoiceAnalyticsPreferencesResponse, GetWebhookPreferencesRequest, GetWebhookPreferencesResponse, LinkbackUpdateBroadcastTemplatesRequest, LinkbackUpdateBroadcastTemplatesResponse, ListVoiceAnalyticsPreferencesRequest, ListVoiceAnalyticsPreferencesResponse, RecordEmailUnsubscribeAcknowledgementRequest, RecordEmailUnsubscribeAcknowledgementResponse, UpdateAdminBusinessPreferencesRequest, UpdateAdminBusinessPreferencesResponse, UpdateAdminClientPreferencesRequest, UpdateAdminClientPreferencesResponse, UpdateAgentPreferencesRequest, UpdateAgentPreferencesResponse, UpdateAuthenticationPreferencesRequest, UpdateAuthenticationPreferencesResponse, UpdateBroadcastPreferencesRequest, UpdateBroadcastPreferencesResponse, UpdateBusinessPreferencesRequest, UpdateBusinessPreferencesResponse, UpdateCompliancePreferencesRequest, UpdateCompliancePreferencesResponse, UpdateContactPreferencesRequest, UpdateContactPreferencesResponse, UpdateDashboardGeneralPreferencesRequest, UpdateDashboardGeneralPreferencesResponse, UpdateDashboardQueuePreferencesRequest, UpdateDashboardQueuePreferencesResponse, UpdateEmailSmsPreferencesRequest, UpdateEmailSmsPreferencesResponse, UpdateEndOfDayPreferencesRequest, UpdateEndOfDayPreferencesResponse, UpdateFilterPreferencesRequest, UpdateFilterPreferencesResponse, UpdateOrganizationPreferencesRequest, UpdateOrganizationPreferencesResponse, UpdatePhonePreferencesRequest, UpdatePhonePreferencesResponse, UpdateRecordingPreferencesRequest, UpdateRecordingPreferencesResponse, UpdateSchedulePreferencesRequest, UpdateSchedulePreferencesResponse, UpdateScorecardsPreferencesRequest, UpdateScorecardsPreferencesResponse, UpdateVoiceAnalyticsPreferencesRequest, UpdateVoiceAnalyticsPreferencesResponse, UpdateWebhookPreferencesRequest, UpdateWebhookPreferencesResponse } from "./preferences_pb.js";
-import { CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreatePasswordResetLinkByOrgIdRequest, CreatePasswordResetLinkByOrgIdResponse, CreatePasswordResetLinkRequest, CreatePasswordResetLinkResponse, CreateUserRequest, CreateUserResponse, EnableMyUserMfaRequest, EnableMyUserMfaResponse, EnableUserMfaRequest, EnableUserMfaResponse, GetMyUserMfaInfoRequest, GetMyUserMfaInfoResponse, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetMyUserRequest, GetMyUserResponse, GetUserByOrgIdRequest, GetUserByOrgIdResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserLoginInfoRequest, GetUserLoginInfoResponse, GetUserMfaInfoRequest, GetUserMfaInfoResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserRequest, GetUserResponse, GetUserSessionDataRequest, GetUserSessionDataResponse, ListAgentsRequest, ListAgentsResponse, ListPublicUsersRequest, ListPublicUsersResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse, ListUsersByRegionRequest, ListUsersByRegionResponse, ListUsersRequest, ListUsersResponse, RefreshMfaLockoutByOrgIdRequest, RefreshMfaLockoutByOrgIdResponse, RefreshMfaLockoutRequest, RefreshMfaLockoutResponse, ResetMyPasswordRequest, ResetMyPasswordResponse, ResetUserPasswordByOrgIdRequest, ResetUserPasswordByOrgIdResponse, ResetUserPasswordRequest, ResetUserPasswordResponse, SendPasswordResetByOrgIdRequest, SendPasswordResetByOrgIdResponse, SendPasswordResetRequest, SendPasswordResetResponse, SendUserEmailVerificationByOrgIdRequest, SendUserEmailVerificationByOrgIdResponse, SendUserEmailVerificationRequest, SendUserEmailVerificationResponse, SetMfaTypeRequest, SetMfaTypeResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserLabelsRequest, UpdateUserLabelsResponse, UpdateUserRequest, UpdateUserResponse } from "./user_pb.js";
+import { CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreatePasswordResetLinkByOrgIdRequest, CreatePasswordResetLinkByOrgIdResponse, CreatePasswordResetLinkRequest, CreatePasswordResetLinkResponse, CreateUserRequest, CreateUserResponse, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetMyUserRequest, GetMyUserResponse, GetUserByOrgIdRequest, GetUserByOrgIdResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserLoginInfoRequest, GetUserLoginInfoResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserRequest, GetUserResponse, GetUserSessionDataRequest, GetUserSessionDataResponse, ListAgentsRequest, ListAgentsResponse, ListPublicUsersRequest, ListPublicUsersResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse, ListUsersByRegionRequest, ListUsersByRegionResponse, ListUsersRequest, ListUsersResponse, ResetMyPasswordRequest, ResetMyPasswordResponse, ResetUserPasswordByOrgIdRequest, ResetUserPasswordByOrgIdResponse, ResetUserPasswordRequest, ResetUserPasswordResponse, SendPasswordResetByOrgIdRequest, SendPasswordResetByOrgIdResponse, SendPasswordResetRequest, SendPasswordResetResponse, SendUserEmailVerificationByOrgIdRequest, SendUserEmailVerificationByOrgIdResponse, SendUserEmailVerificationRequest, SendUserEmailVerificationResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserLabelsRequest, UpdateUserLabelsResponse, UpdateUserRequest, UpdateUserResponse } from "./user_pb.js";
 import { AssignAgentProfileGroupsRequest, AssignAgentProfileGroupsResponse, CreateAgentProfileGroupRequest, CreateAgentProfileGroupResponse, DeleteAgentProfileGroupRequest, DeleteAgentProfileGroupResponse, GetAgentProfileGroupRequest, GetAgentProfileGroupResponse, ListAgentProfileGroupsRequest, ListAgentProfileGroupsResponse, UpdateAgentProfileGroupRequest, UpdateAgentProfileGroupResponse } from "./agent_profile_group_pb.js";
 import { AddUserSubscriptionByUserIdRequest, AddUserSubscriptionByUserIdResponse, AddUserSubscriptionRequest, AddUserSubscriptionResponse, GetUserSubscriptionByUserIdRequest, GetUserSubscriptionByUserIdResponse, GetUserSubscriptionRequest, GetUserSubscriptionResponse, ListOrgSubscriptionsRequest, ListOrgSubscriptionsResponse, ListUserSubscriptionsByUserIdRequest, ListUserSubscriptionsByUserIdResponse, ListUserSubscriptionsRequest, ListUserSubscriptionsResponse, RemoveUserSubscriptionByUserIdRequest, RemoveUserSubscriptionByUserIdResponse, RemoveUserSubscriptionRequest, RemoveUserSubscriptionResponse, UpdateUserSubscriptionByUserIdRequest, UpdateUserSubscriptionByUserIdResponse, UpdateUserSubscriptionRequest, UpdateUserSubscriptionResponse } from "./notifications_pb.js";
 import { CreateAuthTokenByUserIdRequest, CreateAuthTokenByUserIdResponse, CreateAuthTokenRequest, CreateAuthTokenResponse, DeleteAuthTokenByUserIdRequest, DeleteAuthTokenByUserIdResponse, DeleteAuthTokenRequest, DeleteAuthTokenResponse, ListAuthTokensByUserIdRequest, ListAuthTokensByUserIdResponse, ListAuthTokensRequest, ListAuthTokensResponse, SetAuthTokenExpirationByUserIdRequest, SetAuthTokenExpirationByUserIdResponse, SetAuthTokenExpirationRequest, SetAuthTokenExpirationResponse } from "./auth_token_pb.js";
@@ -2105,83 +2105,6 @@ export declare const Org: {
       readonly name: "RevokeUsersP3PermissionGroup",
       readonly I: typeof RevokeUsersP3PermissionGroupRequest,
       readonly O: typeof RevokeUsersP3PermissionGroupResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * RefreshMfaLockout resets the lockout timer for the given user.
-     *
-     * @generated from rpc api.v1alpha1.org.Org.RefreshMfaLockout
-     */
-    readonly refreshMfaLockout: {
-      readonly name: "RefreshMfaLockout",
-      readonly I: typeof RefreshMfaLockoutRequest,
-      readonly O: typeof RefreshMfaLockoutResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * RefreshMfaLockoutByOrgId resets the lockout timer for the given user and org id.
-     *
-     * @generated from rpc api.v1alpha1.org.Org.RefreshMfaLockoutByOrgId
-     */
-    readonly refreshMfaLockoutByOrgId: {
-      readonly name: "RefreshMfaLockoutByOrgId",
-      readonly I: typeof RefreshMfaLockoutByOrgIdRequest,
-      readonly O: typeof RefreshMfaLockoutByOrgIdResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * SetMfaType sets the current user's mfa type.
-     *
-     * @generated from rpc api.v1alpha1.org.Org.SetMfaType
-     */
-    readonly setMfaType: {
-      readonly name: "SetMfaType",
-      readonly I: typeof SetMfaTypeRequest,
-      readonly O: typeof SetMfaTypeResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * EnableUserMfa enables or disables mfa for the given user
-     *
-     * @generated from rpc api.v1alpha1.org.Org.EnableUserMfa
-     */
-    readonly enableUserMfa: {
-      readonly name: "EnableUserMfa",
-      readonly I: typeof EnableUserMfaRequest,
-      readonly O: typeof EnableUserMfaResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * EnableMyUserMfa enables mfa for the current user
-     *
-     * @generated from rpc api.v1alpha1.org.Org.EnableMyUserMfa
-     */
-    readonly enableMyUserMfa: {
-      readonly name: "EnableMyUserMfa",
-      readonly I: typeof EnableMyUserMfaRequest,
-      readonly O: typeof EnableMyUserMfaResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * GetUserMfaInfo returns the mfa info for the given user.
-     *
-     * @generated from rpc api.v1alpha1.org.Org.GetUserMfaInfo
-     */
-    readonly getUserMfaInfo: {
-      readonly name: "GetUserMfaInfo",
-      readonly I: typeof GetUserMfaInfoRequest,
-      readonly O: typeof GetUserMfaInfoResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * GetMyUserMfaInfo returns the mfa info for the current user.
-     *
-     * @generated from rpc api.v1alpha1.org.Org.GetMyUserMfaInfo
-     */
-    readonly getMyUserMfaInfo: {
-      readonly name: "GetMyUserMfaInfo",
-      readonly I: typeof GetMyUserMfaInfoRequest,
-      readonly O: typeof GetMyUserMfaInfoResponse,
       readonly kind: MethodKind.Unary,
     },
   }

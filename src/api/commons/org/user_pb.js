@@ -67,53 +67,6 @@ export const User_RegionSids = proto3.makeMessageType(
 );
 
 /**
- * MFA/2FA Information
- *
- * @generated from message api.commons.org.MfaInfo
- */
-export const MfaInfo = proto3.makeMessageType(
-  "api.commons.org.MfaInfo",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "mfa_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 10, name: "none", kind: "message", T: MfaInfo_NoneSelected, oneof: "mfa_type" },
-    { no: 11, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
-  ],
-);
-
-/**
- * @generated from message api.commons.org.MfaInfo.NoneSelected
- */
-export const MfaInfo_NoneSelected = proto3.makeMessageType(
-  "api.commons.org.MfaInfo.NoneSelected",
-  () => [
-    { no: 1, name: "timeout", kind: "message", T: Timestamp },
-  ],
-  {localName: "MfaInfo_NoneSelected"},
-);
-
-/**
- * @generated from message api.commons.org.MfaInfo.OtpType
- */
-export const MfaInfo_OtpType = proto3.makeMessageType(
-  "api.commons.org.MfaInfo.OtpType",
-  () => [
-    { no: 1, name: "email", kind: "message", T: MfaInfo_OtpType_EmailDeliveryMethod, oneof: "delivery_method" },
-  ],
-  {localName: "MfaInfo_OtpType"},
-);
-
-/**
- * @generated from message api.commons.org.MfaInfo.OtpType.EmailDeliveryMethod
- */
-export const MfaInfo_OtpType_EmailDeliveryMethod = proto3.makeMessageType(
-  "api.commons.org.MfaInfo.OtpType.EmailDeliveryMethod",
-  [],
-  {localName: "MfaInfo_OtpType_EmailDeliveryMethod"},
-);
-
-/**
  * Agent skill
  *
  * @generated from message api.commons.org.Skill
