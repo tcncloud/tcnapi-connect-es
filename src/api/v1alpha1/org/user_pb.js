@@ -1105,7 +1105,6 @@ export const GetUserSessionDataResponse = proto3.makeMessageType(
     { no: 3, name: "p3_permissions", kind: "enum", T: proto3.getEnumType(Permission), repeated: true },
     { no: 4, name: "permission_groups", kind: "message", T: PermissionGroup, repeated: true },
     { no: 5, name: "labels", kind: "message", T: Label, repeated: true },
-    { no: 6, name: "org_allowed_mfa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -1143,7 +1142,6 @@ export const GetUserSessionDataResponse_User = proto3.makeMessageType(
     { no: 30, name: "agent_profile_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 31, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 32, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 33, name: "mfa_timestamp", kind: "message", T: Timestamp },
   ],
   {localName: "GetUserSessionDataResponse_User"},
 );
