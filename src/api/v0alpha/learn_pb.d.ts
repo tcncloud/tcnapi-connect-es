@@ -140,6 +140,13 @@ export declare class ContentRes extends Message<ContentRes> {
    */
   title: string;
 
+  /**
+   * view total count
+   *
+   * @generated from field: int64 total_view_count = 5;
+   */
+  totalViewCount: bigint;
+
   constructor(data?: PartialMessage<ContentRes>);
 
   static readonly runtime: typeof proto3;
