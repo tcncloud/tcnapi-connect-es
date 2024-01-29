@@ -49,6 +49,7 @@ export const SIPAccount = proto3.makeMessageType(
     { no: 2, name: "is_active", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "extension", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "ring_group_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "org_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -86,6 +87,42 @@ export const ListPBXUsersResponse = proto3.makeMessageType(
   "services.pbx.v2.ListPBXUsersResponse",
   () => [
     { no: 1, name: "users", kind: "message", T: PBXUser, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.pbx.v2.ListSIPAccountsRequest
+ */
+export const ListSIPAccountsRequest = proto3.makeMessageType(
+  "services.pbx.v2.ListSIPAccountsRequest",
+  [],
+);
+
+/**
+ * @generated from message services.pbx.v2.ListSIPAccountsResponse
+ */
+export const ListSIPAccountsResponse = proto3.makeMessageType(
+  "services.pbx.v2.ListSIPAccountsResponse",
+  () => [
+    { no: 1, name: "sip_accounts", kind: "message", T: SIPAccount, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.pbx.v2.GetSIPAccountRequest
+ */
+export const GetSIPAccountRequest = proto3.makeMessageType(
+  "services.pbx.v2.GetSIPAccountRequest",
+  [],
+);
+
+/**
+ * @generated from message services.pbx.v2.GetSIPAccountResponse
+ */
+export const GetSIPAccountResponse = proto3.makeMessageType(
+  "services.pbx.v2.GetSIPAccountResponse",
+  () => [
+    { no: 1, name: "sip_account", kind: "message", T: SIPAccount, repeated: true },
   ],
 );
 

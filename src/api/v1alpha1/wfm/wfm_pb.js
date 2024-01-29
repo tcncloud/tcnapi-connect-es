@@ -4060,6 +4060,32 @@ export const CreateShiftInstanceV2Res = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the CreateShiftInstanceWithSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateShiftInstanceWithSegmentsRequest
+ */
+export const CreateShiftInstanceWithSegmentsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateShiftInstanceWithSegmentsRequest",
+  () => [
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
+    { no: 2, name: "ignore_diagnostics_errors", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the CreateShiftInstanceWitSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.CreateShiftInstanceWithSegmentsResponse
+ */
+export const CreateShiftInstanceWithSegmentsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateShiftInstanceWithSegmentsResponse",
+  () => [
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
  * Request message for the SplitShiftInstance RPC
  *
  * @generated from message api.v1alpha1.wfm.SplitShiftInstanceReq
@@ -4165,6 +4191,32 @@ export const UpdateShiftInstanceV2Req = proto3.makeMessageType(
  */
 export const UpdateShiftInstanceV2Res = proto3.makeMessageType(
   "api.v1alpha1.wfm.UpdateShiftInstanceV2Res",
+  () => [
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
+    { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
+ * Request message for the UpdateShiftInstanceWithSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsRequest
+ */
+export const UpdateShiftInstanceWithSegmentsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsRequest",
+  () => [
+    { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
+    { no: 2, name: "ignore_diagnostics_errors", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Reponse message for the UpdateShiftInstanceWithSegments RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsResponse
+ */
+export const UpdateShiftInstanceWithSegmentsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.UpdateShiftInstanceWithSegmentsResponse",
   () => [
     { no: 1, name: "shift_instance", kind: "message", T: ShiftInstance },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
