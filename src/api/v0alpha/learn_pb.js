@@ -70,6 +70,7 @@ export const ContentRes = proto3.makeMessageType(
     { no: 3, name: "images", kind: "message", T: LearnImage, repeated: true },
     { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "total_view_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "last_edited_user", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

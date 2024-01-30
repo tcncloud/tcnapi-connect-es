@@ -147,6 +147,13 @@ export declare class ContentRes extends Message<ContentRes> {
    */
   totalViewCount: bigint;
 
+  /**
+   * The user who edited the content last
+   *
+   * @generated from field: string last_edited_user = 6;
+   */
+  lastEditedUser: string;
+
   constructor(data?: PartialMessage<ContentRes>);
 
   static readonly runtime: typeof proto3;
