@@ -303,7 +303,7 @@ export declare enum Permission {
   AGENT_HUNTGROUP_INTEGRATIONS_VIEW = 343,
 
   /**
-   * Enables agents to create manual campaigns
+   * Enables agents to create manual conversations
    *
    *
    * Voice Analytics
