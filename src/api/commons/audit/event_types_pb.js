@@ -127,6 +127,8 @@ export const EventType = proto3.makeEnum(
     {no: 610, name: "TICKET_TEMPLATE_EDIT_EVENT"},
     {no: 611, name: "TICKET_TEMPLATE_CLOSE_EVENT"},
     {no: 612, name: "TICKET_TEMPLATE_ASSIGN_EVENT"},
+    {no: 613, name: "TICKET_TEMPLATE_STATE_CHANGE_EVENT"},
+    {no: 614, name: "TICKET_PROJECT_STATE_CHANGE_EVENT"},
     {no: 700, name: "COMPLIANCE_RND_QUERY_EVENT"},
     {no: 701, name: "COMPLIANCE_RND_QUERY_CACHED_EVENT"},
     {no: 800, name: "AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT"},

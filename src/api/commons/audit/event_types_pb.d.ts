@@ -711,6 +711,16 @@ export declare enum EventType {
   TICKET_TEMPLATE_ASSIGN_EVENT = 612,
 
   /**
+   * @generated from enum value: TICKET_TEMPLATE_STATE_CHANGE_EVENT = 613;
+   */
+  TICKET_TEMPLATE_STATE_CHANGE_EVENT = 613,
+
+  /**
+   * @generated from enum value: TICKET_PROJECT_STATE_CHANGE_EVENT = 614;
+   */
+  TICKET_PROJECT_STATE_CHANGE_EVENT = 614,
+
+  /**
    * Compliance Events
    * rnd query event
    *
