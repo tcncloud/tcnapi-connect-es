@@ -691,6 +691,26 @@ export declare enum EventType {
   TICKET_REPLY_COMMENT_EVENT = 608,
 
   /**
+   * @generated from enum value: TICKET_TEMPLATE_CREATE_EVENT = 609;
+   */
+  TICKET_TEMPLATE_CREATE_EVENT = 609,
+
+  /**
+   * @generated from enum value: TICKET_TMPLATE_EDIT_EVENT = 610;
+   */
+  TICKET_TMPLATE_EDIT_EVENT = 610,
+
+  /**
+   * @generated from enum value: TICKET_TMPLATE_CLOSE_EVENT = 611;
+   */
+  TICKET_TMPLATE_CLOSE_EVENT = 611,
+
+  /**
+   * @generated from enum value: TICKET_TEMPLATE_ASSIGN_EVENT = 612;
+   */
+  TICKET_TEMPLATE_ASSIGN_EVENT = 612,
+
+  /**
    * Compliance Events
    * rnd query event
    *
