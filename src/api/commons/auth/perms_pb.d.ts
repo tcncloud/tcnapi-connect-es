@@ -277,7 +277,13 @@ export declare enum Permission {
 
   /**
    * Enables agents to view manual approve tasks
+   * Enables Agents to view portals.
    *
+   * @generated from enum value: PERMISSION_AGENT_PORTALS_VIEW = 340;
+   */
+  AGENT_PORTALS_VIEW = 340,
+
+  /**
    * @generated from enum value: PERMISSION_MANUAL_APPROVE = 341;
    */
   MANUAL_APPROVE = 341,
@@ -297,14 +303,14 @@ export declare enum Permission {
   AGENT_HUNTGROUP_INTEGRATIONS_VIEW = 343,
 
   /**
-   * Enables Agents to view portals.
+   * Enables agents to create manual campaigns
    *
    *
    * Voice Analytics
    *
-   * @generated from enum value: PERMISSION_AGENT_PORTALS_VIEW = 340;
+   * @generated from enum value: PERMISSION_MANUAL_CAMPAIGN = 344;
    */
-  AGENT_PORTALS_VIEW = 340,
+  MANUAL_CAMPAIGN = 344,
 
   /**
    * Enables access to voice analytics app.
