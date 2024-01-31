@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { ReportJob } from "./entities_pb.js";
 
@@ -124,6 +124,13 @@ export declare class UpdateReportJobRequest extends Message<UpdateReportJobReque
    * @generated from field: api.v1alpha1.bireportgenerator.ReportJob report_job = 1;
    */
   reportJob?: ReportJob;
+
+  /**
+   * The fields to update.
+   *
+   * @generated from field: google.protobuf.FieldMask update_mask = 2;
+   */
+  updateMask?: FieldMask;
 
   constructor(data?: PartialMessage<UpdateReportJobRequest>);
 

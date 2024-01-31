@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { FieldMask, proto3 } from "@bufbuild/protobuf";
 import { ReportJob } from "./entities_pb.js";
 
 /**
@@ -61,6 +61,7 @@ export const UpdateReportJobRequest = proto3.makeMessageType(
   "api.v1alpha1.bireportgenerator.UpdateReportJobRequest",
   () => [
     { no: 1, name: "report_job", kind: "message", T: ReportJob },
+    { no: 2, name: "update_mask", kind: "message", T: FieldMask },
   ],
 );
 
