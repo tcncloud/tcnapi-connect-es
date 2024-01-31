@@ -113,9 +113,7 @@ export const ListSIPAccountsResponse = proto3.makeMessageType(
  */
 export const GetSIPAccountRequest = proto3.makeMessageType(
   "services.pbx.v2.GetSIPAccountRequest",
-  () => [
-    { no: 1, name: "sip_account_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
+  [],
 );
 
 /**
