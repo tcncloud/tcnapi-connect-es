@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { OperatorApplications, TimeZoneWrapper } from "../../commons/org_pb.js";
 import type { Label } from "../../commons/org/labels_pb.js";
-import type { MfaInfo, MfaInfo_OtpType, Skill } from "../../commons/org/user_pb.js";
+import type { MfaInfo, Skill } from "../../commons/org/user_pb.js";
 import type { P3PermissionGroup, PermissionGroup } from "../../commons/org/permissions_pb.js";
 import type { Trust } from "../../commons/org/trusts_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
@@ -3827,22 +3827,12 @@ export declare class RefreshMfaLockoutByOrgIdResponse extends Message<RefreshMfa
  */
 export declare class SetMfaTypeRequest extends Message<SetMfaTypeRequest> {
   /**
-   * @generated from oneof api.v1alpha1.org.SetMfaTypeRequest.mfa_type
-   */
-  mfaType: {
-    /**
-     * @generated from field: api.commons.org.MfaInfo.OtpType otp = 1;
-     */
-    value: MfaInfo_OtpType;
-    case: "otp";
-  } | { case: undefined; value?: undefined };
-
-  /**
-   * The id of the user to set the mfa type for.
+   * The info object to pull the type from.
+   * The user id field must be provided.
    *
-   * @generated from field: string user_id = 2;
+   * @generated from field: api.commons.org.MfaInfo info = 3;
    */
-  userId: string;
+  info?: MfaInfo;
 
   constructor(data?: PartialMessage<SetMfaTypeRequest>);
 
@@ -3887,15 +3877,11 @@ export declare class SetMfaTypeResponse extends Message<SetMfaTypeResponse> {
  */
 export declare class SetMyMfaTypeRequest extends Message<SetMyMfaTypeRequest> {
   /**
-   * @generated from oneof api.v1alpha1.org.SetMyMfaTypeRequest.mfa_type
+   * The info object to pull the type from.
+   *
+   * @generated from field: api.commons.org.MfaInfo info = 2;
    */
-  mfaType: {
-    /**
-     * @generated from field: api.commons.org.MfaInfo.OtpType otp = 1;
-     */
-    value: MfaInfo_OtpType;
-    case: "otp";
-  } | { case: undefined; value?: undefined };
+  info?: MfaInfo;
 
   constructor(data?: PartialMessage<SetMyMfaTypeRequest>);
 

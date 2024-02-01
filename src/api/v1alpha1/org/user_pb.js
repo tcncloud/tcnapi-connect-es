@@ -6,7 +6,7 @@
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { OperatorApplications, TimeZoneWrapper } from "../../commons/org_pb.js";
 import { Label } from "../../commons/org/labels_pb.js";
-import { MfaInfo, MfaInfo_OtpType, Skill } from "../../commons/org/user_pb.js";
+import { MfaInfo, Skill } from "../../commons/org/user_pb.js";
 import { P3PermissionGroup, PermissionGroup } from "../../commons/org/permissions_pb.js";
 import { Trust } from "../../commons/org/trusts_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
@@ -1223,8 +1223,7 @@ export const RefreshMfaLockoutByOrgIdResponse = proto3.makeMessageType(
 export const SetMfaTypeRequest = proto3.makeMessageType(
   "api.v1alpha1.org.SetMfaTypeRequest",
   () => [
-    { no: 1, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
-    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "info", kind: "message", T: MfaInfo },
   ],
 );
 
@@ -1246,7 +1245,7 @@ export const SetMfaTypeResponse = proto3.makeMessageType(
 export const SetMyMfaTypeRequest = proto3.makeMessageType(
   "api.v1alpha1.org.SetMyMfaTypeRequest",
   () => [
-    { no: 1, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
+    { no: 2, name: "info", kind: "message", T: MfaInfo },
   ],
 );
 
