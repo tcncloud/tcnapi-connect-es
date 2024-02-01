@@ -114,6 +114,7 @@ export const GetMyUserResponse = proto3.makeMessageType(
     { no: 10, name: "agent_profile_group", kind: "message", T: GetMyUserResponse_AgentProfileGroup },
     { no: 11, name: "trusts", kind: "message", T: Trust, repeated: true },
     { no: 12, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -194,6 +195,7 @@ export const GetUserResponse = proto3.makeMessageType(
     { no: 27, name: "last_updated", kind: "message", T: Timestamp },
     { no: 28, name: "password_reset_required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 29, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 30, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -259,6 +261,7 @@ export const GetUserByOrgIdResponse = proto3.makeMessageType(
     { no: 10, name: "agent_profile_group", kind: "message", T: GetUserByOrgIdResponse_AgentProfileGroup },
     { no: 21, name: "trusts", kind: "message", T: Trust, repeated: true },
     { no: 22, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 23, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

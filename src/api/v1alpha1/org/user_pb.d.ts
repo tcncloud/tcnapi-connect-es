@@ -411,6 +411,13 @@ export declare class GetMyUserResponse extends Message<GetMyUserResponse> {
    */
   accountOwner: boolean;
 
+  /**
+   * if the user email is verified
+   *
+   * @generated from field: bool email_verified = 14;
+   */
+  emailVerified: boolean;
+
   constructor(data?: PartialMessage<GetMyUserResponse>);
 
   static readonly runtime: typeof proto3;
@@ -735,6 +742,13 @@ export declare class GetUserResponse extends Message<GetUserResponse> {
    */
   accountOwner: boolean;
 
+  /**
+   * if the user's email is verified
+   *
+   * @generated from field: bool email_verified = 30;
+   */
+  emailVerified: boolean;
+
   constructor(data?: PartialMessage<GetUserResponse>);
 
   static readonly runtime: typeof proto3;
@@ -951,6 +965,13 @@ export declare class GetUserByOrgIdResponse extends Message<GetUserByOrgIdRespon
    * @generated from field: bool account_owner = 22;
    */
   accountOwner: boolean;
+
+  /**
+   * if the user's email is verified
+   *
+   * @generated from field: bool email_verified = 23;
+   */
+  emailVerified: boolean;
 
   constructor(data?: PartialMessage<GetUserByOrgIdResponse>);
 

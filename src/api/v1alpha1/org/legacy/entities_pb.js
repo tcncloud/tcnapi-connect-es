@@ -443,6 +443,7 @@ export const UserDetails = proto3.makeMessageType(
     { no: 31, name: "delegated", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 32, name: "time_zone_override", kind: "message", T: TimeZoneWrapper },
     { no: 34, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 36, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 200, name: "trusts", kind: "message", T: Trust, repeated: true },
   ],
 );
