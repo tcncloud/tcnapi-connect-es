@@ -182,7 +182,7 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
    */
   originIdentifier: {
     /**
-     * Evaluation created from.
+     * (Scorecards) Evaluation created from.
      *
      * @generated from field: int64 evaluation_id = 16;
      */
@@ -190,7 +190,7 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
     case: "evaluationId";
   } | {
     /**
-     * Auto Evaluation created from.
+     * (Scorecards) Auto Evaluation created from.
      *
      * @generated from field: int64 auto_evaluation_id = 17;
      */
