@@ -976,3 +976,171 @@ export declare class DeleteLearnPagesRes extends Message<DeleteLearnPagesRes> {
   static equals(a: DeleteLearnPagesRes | PlainMessage<DeleteLearnPagesRes> | undefined, b: DeleteLearnPagesRes | PlainMessage<DeleteLearnPagesRes> | undefined): boolean;
 }
 
+/**
+ * request to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionReq
+ */
+export declare class CreateEditVersionReq extends Message<CreateEditVersionReq> {
+  /**
+   * src version
+   *
+   * @generated from field: string src_version = 1;
+   */
+  srcVersion: string;
+
+  /**
+   * dest version
+   *
+   * @generated from field: string dest_version = 2;
+   */
+  destVersion: string;
+
+  constructor(data?: PartialMessage<CreateEditVersionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateEditVersionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEditVersionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEditVersionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEditVersionReq;
+
+  static equals(a: CreateEditVersionReq | PlainMessage<CreateEditVersionReq> | undefined, b: CreateEditVersionReq | PlainMessage<CreateEditVersionReq> | undefined): boolean;
+}
+
+/**
+ * response to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionRes
+ */
+export declare class CreateEditVersionRes extends Message<CreateEditVersionRes> {
+  constructor(data?: PartialMessage<CreateEditVersionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateEditVersionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateEditVersionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateEditVersionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateEditVersionRes;
+
+  static equals(a: CreateEditVersionRes | PlainMessage<CreateEditVersionRes> | undefined, b: CreateEditVersionRes | PlainMessage<CreateEditVersionRes> | undefined): boolean;
+}
+
+/**
+ * request to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionReq
+ */
+export declare class PublishVersionReq extends Message<PublishVersionReq> {
+  /**
+   * publish version
+   *
+   * @generated from field: string publish_version = 1;
+   */
+  publishVersion: string;
+
+  constructor(data?: PartialMessage<PublishVersionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.PublishVersionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishVersionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishVersionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishVersionReq;
+
+  static equals(a: PublishVersionReq | PlainMessage<PublishVersionReq> | undefined, b: PublishVersionReq | PlainMessage<PublishVersionReq> | undefined): boolean;
+}
+
+/**
+ * response to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionRes
+ */
+export declare class PublishVersionRes extends Message<PublishVersionRes> {
+  constructor(data?: PartialMessage<PublishVersionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.PublishVersionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublishVersionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublishVersionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublishVersionRes;
+
+  static equals(a: PublishVersionRes | PlainMessage<PublishVersionRes> | undefined, b: PublishVersionRes | PlainMessage<PublishVersionRes> | undefined): boolean;
+}
+
+/**
+ * request to review version
+ *
+ * @generated from message api.v0alpha.ReviewVersionReq
+ */
+export declare class ReviewVersionReq extends Message<ReviewVersionReq> {
+  /**
+   * current version
+   *
+   * @generated from field: string current_version = 1;
+   */
+  currentVersion: string;
+
+  constructor(data?: PartialMessage<ReviewVersionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReviewVersionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReviewVersionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReviewVersionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReviewVersionReq;
+
+  static equals(a: ReviewVersionReq | PlainMessage<ReviewVersionReq> | undefined, b: ReviewVersionReq | PlainMessage<ReviewVersionReq> | undefined): boolean;
+}
+
+/**
+ * response to review version
+ *
+ * @generated from message api.v0alpha.ReviewVersionRes
+ */
+export declare class ReviewVersionRes extends Message<ReviewVersionRes> {
+  /**
+   * download url
+   *
+   * @generated from field: string download_url = 1;
+   */
+  downloadUrl: string;
+
+  /**
+   * contents
+   *
+   * @generated from field: string contents = 2;
+   */
+  contents: string;
+
+  constructor(data?: PartialMessage<ReviewVersionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReviewVersionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReviewVersionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReviewVersionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReviewVersionRes;
+
+  static equals(a: ReviewVersionRes | PlainMessage<ReviewVersionRes> | undefined, b: ReviewVersionRes | PlainMessage<ReviewVersionRes> | undefined): boolean;
+}
+

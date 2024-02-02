@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, ReviewVersionReq, ReviewVersionRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -173,6 +173,39 @@ export const Learn = {
       name: "DeleteLearnPages",
       I: DeleteLearnPagesReq,
       O: DeleteLearnPagesRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * create edit version
+     *
+     * @generated from rpc api.v0alpha.Learn.CreateEditVersion
+     */
+    createEditVersion: {
+      name: "CreateEditVersion",
+      I: CreateEditVersionReq,
+      O: CreateEditVersionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * publish version
+     *
+     * @generated from rpc api.v0alpha.Learn.PublishVersion
+     */
+    publishVersion: {
+      name: "PublishVersion",
+      I: PublishVersionReq,
+      O: PublishVersionRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * review version
+     *
+     * @generated from rpc api.v0alpha.Learn.ReviewVersion
+     */
+    reviewVersion: {
+      name: "ReviewVersion",
+      I: ReviewVersionReq,
+      O: ReviewVersionRes,
       kind: MethodKind.Unary,
     },
   }

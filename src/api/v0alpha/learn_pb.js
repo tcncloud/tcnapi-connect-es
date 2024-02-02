@@ -380,3 +380,73 @@ export const DeleteLearnPagesRes = proto3.makeMessageType(
   [],
 );
 
+/**
+ * request to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionReq
+ */
+export const CreateEditVersionReq = proto3.makeMessageType(
+  "api.v0alpha.CreateEditVersionReq",
+  () => [
+    { no: 1, name: "src_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "dest_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionRes
+ */
+export const CreateEditVersionRes = proto3.makeMessageType(
+  "api.v0alpha.CreateEditVersionRes",
+  [],
+);
+
+/**
+ * request to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionReq
+ */
+export const PublishVersionReq = proto3.makeMessageType(
+  "api.v0alpha.PublishVersionReq",
+  () => [
+    { no: 1, name: "publish_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionRes
+ */
+export const PublishVersionRes = proto3.makeMessageType(
+  "api.v0alpha.PublishVersionRes",
+  [],
+);
+
+/**
+ * request to review version
+ *
+ * @generated from message api.v0alpha.ReviewVersionReq
+ */
+export const ReviewVersionReq = proto3.makeMessageType(
+  "api.v0alpha.ReviewVersionReq",
+  () => [
+    { no: 1, name: "current_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to review version
+ *
+ * @generated from message api.v0alpha.ReviewVersionRes
+ */
+export const ReviewVersionRes = proto3.makeMessageType(
+  "api.v0alpha.ReviewVersionRes",
+  () => [
+    { no: 1, name: "download_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "contents", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
