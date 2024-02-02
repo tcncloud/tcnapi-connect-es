@@ -138,6 +138,8 @@ export const EventType = proto3.makeEnum(
     {no: 1008, name: "EVENT_TYPE_BILLING_UPDATE_BILLING_PLAN"},
     {no: 1009, name: "EVENT_TYPE_BILLING_UPDATE_INVOICE"},
     {no: 1010, name: "EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION"},
+    {no: 1100, name: "EVENT_TYPE_DELIVERY_FAILURE"},
+    {no: 1101, name: "EVENT_TYPE_DELIVERY_SUCCESS"},
   ],
 );
 
