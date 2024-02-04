@@ -175,29 +175,6 @@ export declare class LearningOpportunity extends Message<LearningOpportunity> {
    */
   creatorUserId: string;
 
-  /**
-   * (Optional) Identifier linking to the entity the opportunity was created from.
-   *
-   * @generated from oneof api.commons.LearningOpportunity.origin_identifier
-   */
-  originIdentifier: {
-    /**
-     * (Scorecards) Evaluation created from.
-     *
-     * @generated from field: int64 evaluation_id = 16;
-     */
-    value: bigint;
-    case: "evaluationId";
-  } | {
-    /**
-     * (Scorecards) Auto Evaluation created from.
-     *
-     * @generated from field: int64 auto_evaluation_id = 17;
-     */
-    value: bigint;
-    case: "autoEvaluationId";
-  } | { case: undefined; value?: undefined };
-
   constructor(data?: PartialMessage<LearningOpportunity>);
 
   static readonly runtime: typeof proto3;
