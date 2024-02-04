@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -173,6 +173,28 @@ export declare const Learn: {
       readonly name: "DeleteLearnPages",
       readonly I: typeof DeleteLearnPagesReq,
       readonly O: typeof DeleteLearnPagesRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * create edit version
+     *
+     * @generated from rpc api.v0alpha.Learn.CreateEditVersion
+     */
+    readonly createEditVersion: {
+      readonly name: "CreateEditVersion",
+      readonly I: typeof CreateEditVersionReq,
+      readonly O: typeof CreateEditVersionRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * publish version
+     *
+     * @generated from rpc api.v0alpha.Learn.PublishVersion
+     */
+    readonly publishVersion: {
+      readonly name: "PublishVersion",
+      readonly I: typeof PublishVersionReq,
+      readonly O: typeof PublishVersionRes,
       readonly kind: MethodKind.Unary,
     },
   }

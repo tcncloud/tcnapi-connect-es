@@ -16,6 +16,7 @@ import type { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import type { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
 import type { LMSPipelineFailureEvent } from "./lms_events_pb.js";
 import type { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
+import type { DeliveryFailureEvent, DeliverySuccessEvent } from "./delivery_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -868,6 +869,20 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: BillingUpdateRateDefinitionEvent;
     case: "billingUpdateRateDefinitionEvent";
+  } | {
+    /**
+     * Delivery Events class 1100
+     *
+     * @generated from field: api.commons.audit.DeliveryFailureEvent delivery_failure_event = 1100;
+     */
+    value: DeliveryFailureEvent;
+    case: "deliveryFailureEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.audit.DeliverySuccessEvent delivery_success_event = 1101;
+     */
+    value: DeliverySuccessEvent;
+    case: "deliverySuccessEvent";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<AuditEvent>);

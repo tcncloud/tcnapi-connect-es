@@ -15,6 +15,7 @@ import { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
 import { LMSPipelineFailureEvent } from "./lms_events_pb.js";
 import { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
+import { DeliveryFailureEvent, DeliverySuccessEvent } from "./delivery_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -133,6 +134,8 @@ export const AuditEvent = proto3.makeMessageType(
     { no: 1008, name: "billing_update_billing_plan_event", kind: "message", T: BillingUpdateBillingPlanEvent, oneof: "event" },
     { no: 1009, name: "billing_update_invoice_event", kind: "message", T: BillingUpdateInvoiceEvent, oneof: "event" },
     { no: 1010, name: "billing_update_rate_definition_event", kind: "message", T: BillingUpdateRateDefinitionEvent, oneof: "event" },
+    { no: 1100, name: "delivery_failure_event", kind: "message", T: DeliveryFailureEvent, oneof: "event" },
+    { no: 1101, name: "delivery_success_event", kind: "message", T: DeliverySuccessEvent, oneof: "event" },
   ],
 );
 
