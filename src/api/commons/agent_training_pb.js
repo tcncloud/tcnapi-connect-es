@@ -58,6 +58,8 @@ export const LearningOpportunity = proto3.makeMessageType(
     { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(LearningOpportunityStatus) },
     { no: 14, name: "origin", kind: "enum", T: proto3.getEnumType(LearningOpportunityOrigin) },
     { no: 15, name: "creator_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "evaluation_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, oneof: "origin_identifier" },
+    { no: 17, name: "auto_evaluation_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, oneof: "origin_identifier" },
   ],
 );
 

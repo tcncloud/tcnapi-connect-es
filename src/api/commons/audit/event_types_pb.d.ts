@@ -820,5 +820,17 @@ export declare enum EventType {
    * @generated from enum value: EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION = 1010;
    */
   EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION = 1010,
+
+  /**
+   * Delivery Events
+   *
+   * @generated from enum value: EVENT_TYPE_DELIVERY_FAILURE = 1100;
+   */
+  EVENT_TYPE_DELIVERY_FAILURE = 1100,
+
+  /**
+   * @generated from enum value: EVENT_TYPE_DELIVERY_SUCCESS = 1101;
+   */
+  EVENT_TYPE_DELIVERY_SUCCESS = 1101,
 }
 

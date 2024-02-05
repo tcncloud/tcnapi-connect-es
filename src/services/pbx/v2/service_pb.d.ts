@@ -265,6 +265,11 @@ export declare class ListSIPAccountsResponse extends Message<ListSIPAccountsResp
  * @generated from message services.pbx.v2.GetSIPAccountRequest
  */
 export declare class GetSIPAccountRequest extends Message<GetSIPAccountRequest> {
+  /**
+   * @generated from field: string sip_account_id = 1;
+   */
+  sipAccountId: string;
+
   constructor(data?: PartialMessage<GetSIPAccountRequest>);
 
   static readonly runtime: typeof proto3;
