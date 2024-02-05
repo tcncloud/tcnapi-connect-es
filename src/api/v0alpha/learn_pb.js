@@ -381,3 +381,48 @@ export const DeleteLearnPagesRes = proto3.makeMessageType(
   [],
 );
 
+/**
+ * request to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionReq
+ */
+export const CreateEditVersionReq = proto3.makeMessageType(
+  "api.v0alpha.CreateEditVersionReq",
+  () => [
+    { no: 1, name: "src_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "dest_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionRes
+ */
+export const CreateEditVersionRes = proto3.makeMessageType(
+  "api.v0alpha.CreateEditVersionRes",
+  [],
+);
+
+/**
+ * request to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionReq
+ */
+export const PublishVersionReq = proto3.makeMessageType(
+  "api.v0alpha.PublishVersionReq",
+  () => [
+    { no: 1, name: "publish_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionRes
+ */
+export const PublishVersionRes = proto3.makeMessageType(
+  "api.v0alpha.PublishVersionRes",
+  [],
+);
+
