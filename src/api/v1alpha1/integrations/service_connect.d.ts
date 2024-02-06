@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CallEpicPatientReq, CallEpicPatientRes, CreatePaymentPortalLinksReq, CreatePaymentPortalLinksRes, DeleteIntegrationConfigReq, DeletePortalConfigReq, Empty, GetAggregatedMetadataReq, GetAggregatedMetadataRes, GetIntegrationConfigReq, GetIntegrationTransactionReportDataReq, GetIntegrationTransactionReportDataRes, GetIntegrationTransactionReportReq, GetIntegrationTransactionReportRes, GetIntegrationTransactionReq, GetPortalConfigReq, GetPortalLinksByDateRangeReq, GetPortalLinksByDateRangeRes, GetPortalLogoReq, HangUpEpicPatientCallReq, IntegrationConfig, IntegrationConfigs, IntegrationInfos, IntegrationTransaction, ListIntegrationConfigNamesReq, ListIntegrationConfigNamesRes, ListIntegrationsForOrgReq, ListIntegrationTemplatesByConfigReq, ListIntegrationTemplatesByConfigRes, ListJourneyConfigsReq, ListNonJourneyConfigsReq, ListPortalConfigsReq, Logo, PortalConfig, PortalConfigs, ProcessReq, ProcessRes, SearchPastTransactionsRequest, SearchPastTransactionsResponse, SummaryReq, SummaryRes, UpdateIntegrationConfigReq, UpdatePortalLogoReq } from "./service_pb.js";
+import { CallEpicPatientReq, CallEpicPatientRes, CreatePaymentPortalLinksReq, CreatePaymentPortalLinksRes, DeleteIntegrationConfigReq, DeletePortalConfigReq, Empty, GenerateEpicKeyPairReq, GenerateEpicKeyPairRes, GetAggregatedMetadataReq, GetAggregatedMetadataRes, GetIntegrationConfigReq, GetIntegrationTransactionReportDataReq, GetIntegrationTransactionReportDataRes, GetIntegrationTransactionReportReq, GetIntegrationTransactionReportRes, GetIntegrationTransactionReq, GetPortalConfigReq, GetPortalLinksByDateRangeReq, GetPortalLinksByDateRangeRes, GetPortalLogoReq, HangUpEpicPatientCallReq, IntegrationConfig, IntegrationConfigs, IntegrationInfos, IntegrationTransaction, ListIntegrationConfigNamesReq, ListIntegrationConfigNamesRes, ListIntegrationsForOrgReq, ListIntegrationTemplatesByConfigReq, ListIntegrationTemplatesByConfigRes, ListJourneyConfigsReq, ListNonJourneyConfigsReq, ListPortalConfigsReq, Logo, PortalConfig, PortalConfigs, ProcessReq, ProcessRes, SearchPastTransactionsRequest, SearchPastTransactionsResponse, SummaryReq, SummaryRes, UpdateIntegrationConfigReq, UpdatePortalLogoReq } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -311,6 +311,17 @@ export declare const Integrations: {
       readonly name: "HangUpEpicPatientCall",
       readonly I: typeof HangUpEpicPatientCallReq,
       readonly O: typeof Empty,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GenerateEpicKeyPairs creates 2 key pairs, stores the private keys, and returns the public keys
+     *
+     * @generated from rpc api.v1alpha1.integrations.Integrations.GenerateEpicKeyPairs
+     */
+    readonly generateEpicKeyPairs: {
+      readonly name: "GenerateEpicKeyPairs",
+      readonly I: typeof GenerateEpicKeyPairReq,
+      readonly O: typeof GenerateEpicKeyPairRes,
       readonly kind: MethodKind.Unary,
     },
   }

@@ -4205,3 +4205,61 @@ export declare class HangUpEpicPatientCallReq extends Message<HangUpEpicPatientC
   static equals(a: HangUpEpicPatientCallReq | PlainMessage<HangUpEpicPatientCallReq> | undefined, b: HangUpEpicPatientCallReq | PlainMessage<HangUpEpicPatientCallReq> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v1alpha1.integrations.GenerateEpicKeyPairReq
+ */
+export declare class GenerateEpicKeyPairReq extends Message<GenerateEpicKeyPairReq> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string server = 2;
+   */
+  server: string;
+
+  constructor(data?: PartialMessage<GenerateEpicKeyPairReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.GenerateEpicKeyPairReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateEpicKeyPairReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateEpicKeyPairReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateEpicKeyPairReq;
+
+  static equals(a: GenerateEpicKeyPairReq | PlainMessage<GenerateEpicKeyPairReq> | undefined, b: GenerateEpicKeyPairReq | PlainMessage<GenerateEpicKeyPairReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.GenerateEpicKeyPairRes
+ */
+export declare class GenerateEpicKeyPairRes extends Message<GenerateEpicKeyPairRes> {
+  /**
+   * @generated from field: string production_public_key = 1;
+   */
+  productionPublicKey: string;
+
+  /**
+   * @generated from field: string non_production_public_key = 2;
+   */
+  nonProductionPublicKey: string;
+
+  constructor(data?: PartialMessage<GenerateEpicKeyPairRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.GenerateEpicKeyPairRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateEpicKeyPairRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateEpicKeyPairRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateEpicKeyPairRes;
+
+  static equals(a: GenerateEpicKeyPairRes | PlainMessage<GenerateEpicKeyPairRes> | undefined, b: GenerateEpicKeyPairRes | PlainMessage<GenerateEpicKeyPairRes> | undefined): boolean;
+}
+
