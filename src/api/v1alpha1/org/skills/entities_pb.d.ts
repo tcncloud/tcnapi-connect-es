@@ -839,13 +839,6 @@ export declare class ListSkillsForCurrentAgentResponse_AgentSkill extends Messag
  * @generated from message api.v1alpha1.org.skills.GetAgentSkillsRequest
  */
 export declare class GetAgentSkillsRequest extends Message<GetAgentSkillsRequest> {
-  /**
-   * id of the hunt group that will be used to get the hunt group skills (including PBX skills).
-   *
-   * @generated from field: int64 hunt_group_sid = 1;
-   */
-  huntGroupSid: bigint;
-
   constructor(data?: PartialMessage<GetAgentSkillsRequest>);
 
   static readonly runtime: typeof proto3;

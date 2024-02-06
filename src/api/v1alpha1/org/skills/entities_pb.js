@@ -364,9 +364,7 @@ export const ListSkillsForCurrentAgentResponse_AgentSkill = proto3.makeMessageTy
  */
 export const GetAgentSkillsRequest = proto3.makeMessageType(
   "api.v1alpha1.org.skills.GetAgentSkillsRequest",
-  () => [
-    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
+  [],
 );
 
 /**
