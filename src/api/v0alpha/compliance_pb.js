@@ -1311,6 +1311,16 @@ export const ProcessConsentListDeleteUploadMeta = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v0alpha.QueryHolidaysResponse
+ */
+export const QueryHolidaysResponse = proto3.makeMessageType(
+  "api.v0alpha.QueryHolidaysResponse",
+  () => [
+    { no: 1, name: "rows", kind: "message", T: Row, repeated: true },
+  ],
+);
+
+/**
  * @generated from message api.v0alpha.Row
  */
 export const Row = proto3.makeMessageType(

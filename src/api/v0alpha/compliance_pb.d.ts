@@ -3909,6 +3909,30 @@ export declare class ProcessConsentListDeleteUploadMeta extends Message<ProcessC
 }
 
 /**
+ * @generated from message api.v0alpha.QueryHolidaysResponse
+ */
+export declare class QueryHolidaysResponse extends Message<QueryHolidaysResponse> {
+  /**
+   * @generated from field: repeated api.v0alpha.Row rows = 1;
+   */
+  rows: Row[];
+
+  constructor(data?: PartialMessage<QueryHolidaysResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.QueryHolidaysResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryHolidaysResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryHolidaysResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryHolidaysResponse;
+
+  static equals(a: QueryHolidaysResponse | PlainMessage<QueryHolidaysResponse> | undefined, b: QueryHolidaysResponse | PlainMessage<QueryHolidaysResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message api.v0alpha.Row
  */
 export declare class Row extends Message<Row> {
