@@ -1310,3 +1310,41 @@ export const ProcessConsentListDeleteUploadMeta = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v0alpha.Row
+ */
+export const Row = proto3.makeMessageType(
+  "api.v0alpha.Row",
+  () => [
+    { no: 1, name: "date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "month", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "day", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "weekday", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "types", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "is_observed", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "states", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.Query
+ */
+export const Query = proto3.makeMessageType(
+  "api.v0alpha.Query",
+  () => [
+    { no: 1, name: "date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "month", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "day", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "weekday", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "is_observed", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "country", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "state", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

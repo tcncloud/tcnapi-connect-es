@@ -3908,3 +3908,141 @@ export declare class ProcessConsentListDeleteUploadMeta extends Message<ProcessC
   static equals(a: ProcessConsentListDeleteUploadMeta | PlainMessage<ProcessConsentListDeleteUploadMeta> | undefined, b: ProcessConsentListDeleteUploadMeta | PlainMessage<ProcessConsentListDeleteUploadMeta> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v0alpha.Row
+ */
+export declare class Row extends Message<Row> {
+  /**
+   * @generated from field: string date = 1;
+   */
+  date: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string year = 3;
+   */
+  year: string;
+
+  /**
+   * @generated from field: string month = 4;
+   */
+  month: string;
+
+  /**
+   * @generated from field: string day = 5;
+   */
+  day: string;
+
+  /**
+   * @generated from field: string weekday = 6;
+   */
+  weekday: string;
+
+  /**
+   * @generated from field: repeated string types = 7;
+   */
+  types: string[];
+
+  /**
+   * @generated from field: string is_observed = 8;
+   */
+  isObserved: string;
+
+  /**
+   * @generated from field: string country = 9;
+   */
+  country: string;
+
+  /**
+   * @generated from field: repeated string states = 11;
+   */
+  states: string[];
+
+  constructor(data?: PartialMessage<Row>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.Row";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Row;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Row;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Row;
+
+  static equals(a: Row | PlainMessage<Row> | undefined, b: Row | PlainMessage<Row> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.Query
+ */
+export declare class Query extends Message<Query> {
+  /**
+   * @generated from field: string date = 1;
+   */
+  date: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string year = 3;
+   */
+  year: string;
+
+  /**
+   * @generated from field: string month = 4;
+   */
+  month: string;
+
+  /**
+   * @generated from field: string day = 5;
+   */
+  day: string;
+
+  /**
+   * @generated from field: string weekday = 6;
+   */
+  weekday: string;
+
+  /**
+   * @generated from field: string type = 7;
+   */
+  type: string;
+
+  /**
+   * @generated from field: string is_observed = 8;
+   */
+  isObserved: string;
+
+  /**
+   * @generated from field: string country = 9;
+   */
+  country: string;
+
+  /**
+   * @generated from field: string state = 11;
+   */
+  state: string;
+
+  constructor(data?: PartialMessage<Query>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.Query";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Query;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Query;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Query;
+
+  static equals(a: Query | PlainMessage<Query> | undefined, b: Query | PlainMessage<Query> | undefined): boolean;
+}
+
