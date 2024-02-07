@@ -766,7 +766,7 @@ export const Compliance = {
      * Return the holidays that match the Query.
      * The method will return a stream of the matching holidays as Rows.
      * Required permissions:
-     *      COMPLIANCE
+     *      none
      *
      * @generated from rpc api.v0alpha.Compliance.QueryHolidays
      */
