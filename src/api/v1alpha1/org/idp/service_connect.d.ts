@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateClientReq, CreateClientResp, DeleteClientReq, DeleteClientResp, ListClientsReq, ListClientsResp, UpdateClientReq, UpdateClientResp } from "./entities_pb.js";
+import { CreateClientRequest, CreateClientResponse, DeleteClientRequest, DeleteClientResponse, ListClientsRequest, ListClientsResponse, UpdateClientRequest, UpdateClientResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,8 +19,8 @@ export declare const IdpService: {
      */
     readonly createClient: {
       readonly name: "CreateClient",
-      readonly I: typeof CreateClientReq,
-      readonly O: typeof CreateClientResp,
+      readonly I: typeof CreateClientRequest,
+      readonly O: typeof CreateClientResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -30,8 +30,8 @@ export declare const IdpService: {
      */
     readonly updateClient: {
       readonly name: "UpdateClient",
-      readonly I: typeof UpdateClientReq,
-      readonly O: typeof UpdateClientResp,
+      readonly I: typeof UpdateClientRequest,
+      readonly O: typeof UpdateClientResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -41,8 +41,8 @@ export declare const IdpService: {
      */
     readonly deleteClient: {
       readonly name: "DeleteClient",
-      readonly I: typeof DeleteClientReq,
-      readonly O: typeof DeleteClientResp,
+      readonly I: typeof DeleteClientRequest,
+      readonly O: typeof DeleteClientResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -52,8 +52,8 @@ export declare const IdpService: {
      */
     readonly listClients: {
       readonly name: "ListClients",
-      readonly I: typeof ListClientsReq,
-      readonly O: typeof ListClientsResp,
+      readonly I: typeof ListClientsRequest,
+      readonly O: typeof ListClientsResponse,
       readonly kind: MethodKind.Unary,
     },
   }

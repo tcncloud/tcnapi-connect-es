@@ -7,24 +7,24 @@ import { proto3 } from "@bufbuild/protobuf";
 import { IdpClient } from "../../../commons/org/idp_pb.js";
 
 /**
- * CreateClientReq is a request to make a client.
+ * CreateClientRequest is a request to make a client.
  *
- * @generated from message api.v1alpha1.org.idp.CreateClientReq
+ * @generated from message api.v1alpha1.org.idp.CreateClientRequest
  */
-export const CreateClientReq = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.CreateClientReq",
+export const CreateClientRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.CreateClientRequest",
   () => [
     { no: 1, name: "client", kind: "message", T: IdpClient },
   ],
 );
 
 /**
- * CreateClientResp returns the response from creating a client.
+ * CreateClientResponse returns the response from creating a client.
  *
- * @generated from message api.v1alpha1.org.idp.CreateClientResp
+ * @generated from message api.v1alpha1.org.idp.CreateClientResponse
  */
-export const CreateClientResp = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.CreateClientResp",
+export const CreateClientResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.CreateClientResponse",
   () => [
     { no: 1, name: "already_exists", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 2, name: "client", kind: "message", T: IdpClient },
@@ -32,66 +32,70 @@ export const CreateClientResp = proto3.makeMessageType(
 );
 
 /**
- * DeleteClientReq is a request to delete a client.
+ * DeleteClientRequest is a request to delete a client.
  *
- * @generated from message api.v1alpha1.org.idp.DeleteClientReq
+ * @generated from message api.v1alpha1.org.idp.DeleteClientRequest
  */
-export const DeleteClientReq = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.DeleteClientReq",
+export const DeleteClientRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.DeleteClientRequest",
   () => [
     { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * DeleteClientResp determines if the client is deleted successfully.
+ * DeleteClientResponse determines if the client is deleted successfully.
  *
- * @generated from message api.v1alpha1.org.idp.DeleteClientResp
+ * @generated from message api.v1alpha1.org.idp.DeleteClientResponse
  */
-export const DeleteClientResp = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.DeleteClientResp",
+export const DeleteClientResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.DeleteClientResponse",
   () => [
     { no: 1, name: "not_found", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
 /**
- * UpdateClientReq is a request to update an existing client.
+ * UpdateClientRequest is a request to update an existing client.
  *
- * @generated from message api.v1alpha1.org.idp.UpdateClientReq
+ * @generated from message api.v1alpha1.org.idp.UpdateClientRequest
  */
-export const UpdateClientReq = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.UpdateClientReq",
+export const UpdateClientRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.UpdateClientRequest",
   () => [
     { no: 1, name: "client", kind: "message", T: IdpClient },
   ],
 );
 
 /**
- * UpdateClientResp returns the response from updating a client.
+ * UpdateClientResponse returns the response from updating a client.
  *
- * @generated from message api.v1alpha1.org.idp.UpdateClientResp
+ * @generated from message api.v1alpha1.org.idp.UpdateClientResponse
  */
-export const UpdateClientResp = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.UpdateClientResp",
+export const UpdateClientResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.UpdateClientResponse",
   () => [
     { no: 1, name: "not_found", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
 /**
- * @generated from message api.v1alpha1.org.idp.ListClientsReq
+ * ListClientsRequest is a request to list all existing clients.
+ *
+ * @generated from message api.v1alpha1.org.idp.ListClientsRequest
  */
-export const ListClientsReq = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.ListClientsReq",
+export const ListClientsRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.ListClientsRequest",
   [],
 );
 
 /**
- * @generated from message api.v1alpha1.org.idp.ListClientsResp
+ * ListClientsResponse returns the response from listing all clients.
+ *
+ * @generated from message api.v1alpha1.org.idp.ListClientsResponse
  */
-export const ListClientsResp = proto3.makeMessageType(
-  "api.v1alpha1.org.idp.ListClientsResp",
+export const ListClientsResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.idp.ListClientsResponse",
   () => [
     { no: 1, name: "clients", kind: "message", T: IdpClient, repeated: true },
   ],

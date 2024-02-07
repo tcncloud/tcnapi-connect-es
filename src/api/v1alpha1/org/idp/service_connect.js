@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateClientReq, CreateClientResp, DeleteClientReq, DeleteClientResp, ListClientsReq, ListClientsResp, UpdateClientReq, UpdateClientResp } from "./entities_pb.js";
+import { CreateClientRequest, CreateClientResponse, DeleteClientRequest, DeleteClientResponse, ListClientsRequest, ListClientsResponse, UpdateClientRequest, UpdateClientResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,8 +19,8 @@ export const IdpService = {
      */
     createClient: {
       name: "CreateClient",
-      I: CreateClientReq,
-      O: CreateClientResp,
+      I: CreateClientRequest,
+      O: CreateClientResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -30,8 +30,8 @@ export const IdpService = {
      */
     updateClient: {
       name: "UpdateClient",
-      I: UpdateClientReq,
-      O: UpdateClientResp,
+      I: UpdateClientRequest,
+      O: UpdateClientResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -41,8 +41,8 @@ export const IdpService = {
      */
     deleteClient: {
       name: "DeleteClient",
-      I: DeleteClientReq,
-      O: DeleteClientResp,
+      I: DeleteClientRequest,
+      O: DeleteClientResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -52,8 +52,8 @@ export const IdpService = {
      */
     listClients: {
       name: "ListClients",
-      I: ListClientsReq,
-      O: ListClientsResp,
+      I: ListClientsRequest,
+      O: ListClientsResponse,
       kind: MethodKind.Unary,
     },
   }

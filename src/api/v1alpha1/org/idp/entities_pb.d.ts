@@ -8,37 +8,37 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { IdpClient } from "../../../commons/org/idp_pb.js";
 
 /**
- * CreateClientReq is a request to make a client.
+ * CreateClientRequest is a request to make a client.
  *
- * @generated from message api.v1alpha1.org.idp.CreateClientReq
+ * @generated from message api.v1alpha1.org.idp.CreateClientRequest
  */
-export declare class CreateClientReq extends Message<CreateClientReq> {
+export declare class CreateClientRequest extends Message<CreateClientRequest> {
   /**
    * @generated from field: api.commons.org.IdpClient client = 1;
    */
   client?: IdpClient;
 
-  constructor(data?: PartialMessage<CreateClientReq>);
+  constructor(data?: PartialMessage<CreateClientRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.CreateClientReq";
+  static readonly typeName = "api.v1alpha1.org.idp.CreateClientRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateClientReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateClientRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateClientReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateClientRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateClientReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateClientRequest;
 
-  static equals(a: CreateClientReq | PlainMessage<CreateClientReq> | undefined, b: CreateClientReq | PlainMessage<CreateClientReq> | undefined): boolean;
+  static equals(a: CreateClientRequest | PlainMessage<CreateClientRequest> | undefined, b: CreateClientRequest | PlainMessage<CreateClientRequest> | undefined): boolean;
 }
 
 /**
- * CreateClientResp returns the response from creating a client.
+ * CreateClientResponse returns the response from creating a client.
  *
- * @generated from message api.v1alpha1.org.idp.CreateClientResp
+ * @generated from message api.v1alpha1.org.idp.CreateClientResponse
  */
-export declare class CreateClientResp extends Message<CreateClientResp> {
+export declare class CreateClientResponse extends Message<CreateClientResponse> {
   /**
    * @generated from field: bool already_exists = 1;
    */
@@ -49,27 +49,27 @@ export declare class CreateClientResp extends Message<CreateClientResp> {
    */
   client?: IdpClient;
 
-  constructor(data?: PartialMessage<CreateClientResp>);
+  constructor(data?: PartialMessage<CreateClientResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.CreateClientResp";
+  static readonly typeName = "api.v1alpha1.org.idp.CreateClientResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateClientResp;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateClientResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateClientResp;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateClientResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateClientResp;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateClientResponse;
 
-  static equals(a: CreateClientResp | PlainMessage<CreateClientResp> | undefined, b: CreateClientResp | PlainMessage<CreateClientResp> | undefined): boolean;
+  static equals(a: CreateClientResponse | PlainMessage<CreateClientResponse> | undefined, b: CreateClientResponse | PlainMessage<CreateClientResponse> | undefined): boolean;
 }
 
 /**
- * DeleteClientReq is a request to delete a client.
+ * DeleteClientRequest is a request to delete a client.
  *
- * @generated from message api.v1alpha1.org.idp.DeleteClientReq
+ * @generated from message api.v1alpha1.org.idp.DeleteClientRequest
  */
-export declare class DeleteClientReq extends Message<DeleteClientReq> {
+export declare class DeleteClientRequest extends Message<DeleteClientRequest> {
   /**
    * The ID of the client.
    *
@@ -77,139 +77,143 @@ export declare class DeleteClientReq extends Message<DeleteClientReq> {
    */
   id: string;
 
-  constructor(data?: PartialMessage<DeleteClientReq>);
+  constructor(data?: PartialMessage<DeleteClientRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.DeleteClientReq";
+  static readonly typeName = "api.v1alpha1.org.idp.DeleteClientRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteClientReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteClientRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteClientReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteClientRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteClientReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteClientRequest;
 
-  static equals(a: DeleteClientReq | PlainMessage<DeleteClientReq> | undefined, b: DeleteClientReq | PlainMessage<DeleteClientReq> | undefined): boolean;
+  static equals(a: DeleteClientRequest | PlainMessage<DeleteClientRequest> | undefined, b: DeleteClientRequest | PlainMessage<DeleteClientRequest> | undefined): boolean;
 }
 
 /**
- * DeleteClientResp determines if the client is deleted successfully.
+ * DeleteClientResponse determines if the client is deleted successfully.
  *
- * @generated from message api.v1alpha1.org.idp.DeleteClientResp
+ * @generated from message api.v1alpha1.org.idp.DeleteClientResponse
  */
-export declare class DeleteClientResp extends Message<DeleteClientResp> {
+export declare class DeleteClientResponse extends Message<DeleteClientResponse> {
   /**
    * @generated from field: bool not_found = 1;
    */
   notFound: boolean;
 
-  constructor(data?: PartialMessage<DeleteClientResp>);
+  constructor(data?: PartialMessage<DeleteClientResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.DeleteClientResp";
+  static readonly typeName = "api.v1alpha1.org.idp.DeleteClientResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteClientResp;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteClientResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteClientResp;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteClientResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteClientResp;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteClientResponse;
 
-  static equals(a: DeleteClientResp | PlainMessage<DeleteClientResp> | undefined, b: DeleteClientResp | PlainMessage<DeleteClientResp> | undefined): boolean;
+  static equals(a: DeleteClientResponse | PlainMessage<DeleteClientResponse> | undefined, b: DeleteClientResponse | PlainMessage<DeleteClientResponse> | undefined): boolean;
 }
 
 /**
- * UpdateClientReq is a request to update an existing client.
+ * UpdateClientRequest is a request to update an existing client.
  *
- * @generated from message api.v1alpha1.org.idp.UpdateClientReq
+ * @generated from message api.v1alpha1.org.idp.UpdateClientRequest
  */
-export declare class UpdateClientReq extends Message<UpdateClientReq> {
+export declare class UpdateClientRequest extends Message<UpdateClientRequest> {
   /**
    * @generated from field: api.commons.org.IdpClient client = 1;
    */
   client?: IdpClient;
 
-  constructor(data?: PartialMessage<UpdateClientReq>);
+  constructor(data?: PartialMessage<UpdateClientRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.UpdateClientReq";
+  static readonly typeName = "api.v1alpha1.org.idp.UpdateClientRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateClientReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateClientRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateClientReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateClientRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateClientReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateClientRequest;
 
-  static equals(a: UpdateClientReq | PlainMessage<UpdateClientReq> | undefined, b: UpdateClientReq | PlainMessage<UpdateClientReq> | undefined): boolean;
+  static equals(a: UpdateClientRequest | PlainMessage<UpdateClientRequest> | undefined, b: UpdateClientRequest | PlainMessage<UpdateClientRequest> | undefined): boolean;
 }
 
 /**
- * UpdateClientResp returns the response from updating a client.
+ * UpdateClientResponse returns the response from updating a client.
  *
- * @generated from message api.v1alpha1.org.idp.UpdateClientResp
+ * @generated from message api.v1alpha1.org.idp.UpdateClientResponse
  */
-export declare class UpdateClientResp extends Message<UpdateClientResp> {
+export declare class UpdateClientResponse extends Message<UpdateClientResponse> {
   /**
    * @generated from field: bool not_found = 1;
    */
   notFound: boolean;
 
-  constructor(data?: PartialMessage<UpdateClientResp>);
+  constructor(data?: PartialMessage<UpdateClientResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.UpdateClientResp";
+  static readonly typeName = "api.v1alpha1.org.idp.UpdateClientResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateClientResp;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateClientResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateClientResp;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateClientResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateClientResp;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateClientResponse;
 
-  static equals(a: UpdateClientResp | PlainMessage<UpdateClientResp> | undefined, b: UpdateClientResp | PlainMessage<UpdateClientResp> | undefined): boolean;
+  static equals(a: UpdateClientResponse | PlainMessage<UpdateClientResponse> | undefined, b: UpdateClientResponse | PlainMessage<UpdateClientResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message api.v1alpha1.org.idp.ListClientsReq
+ * ListClientsRequest is a request to list all existing clients.
+ *
+ * @generated from message api.v1alpha1.org.idp.ListClientsRequest
  */
-export declare class ListClientsReq extends Message<ListClientsReq> {
-  constructor(data?: PartialMessage<ListClientsReq>);
+export declare class ListClientsRequest extends Message<ListClientsRequest> {
+  constructor(data?: PartialMessage<ListClientsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.ListClientsReq";
+  static readonly typeName = "api.v1alpha1.org.idp.ListClientsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListClientsReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListClientsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListClientsReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListClientsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListClientsReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListClientsRequest;
 
-  static equals(a: ListClientsReq | PlainMessage<ListClientsReq> | undefined, b: ListClientsReq | PlainMessage<ListClientsReq> | undefined): boolean;
+  static equals(a: ListClientsRequest | PlainMessage<ListClientsRequest> | undefined, b: ListClientsRequest | PlainMessage<ListClientsRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message api.v1alpha1.org.idp.ListClientsResp
+ * ListClientsResponse returns the response from listing all clients.
+ *
+ * @generated from message api.v1alpha1.org.idp.ListClientsResponse
  */
-export declare class ListClientsResp extends Message<ListClientsResp> {
+export declare class ListClientsResponse extends Message<ListClientsResponse> {
   /**
    * @generated from field: repeated api.commons.org.IdpClient clients = 1;
    */
   clients: IdpClient[];
 
-  constructor(data?: PartialMessage<ListClientsResp>);
+  constructor(data?: PartialMessage<ListClientsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.idp.ListClientsResp";
+  static readonly typeName = "api.v1alpha1.org.idp.ListClientsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListClientsResp;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListClientsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListClientsResp;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListClientsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListClientsResp;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListClientsResponse;
 
-  static equals(a: ListClientsResp | PlainMessage<ListClientsResp> | undefined, b: ListClientsResp | PlainMessage<ListClientsResp> | undefined): boolean;
+  static equals(a: ListClientsResponse | PlainMessage<ListClientsResponse> | undefined, b: ListClientsResponse | PlainMessage<ListClientsResponse> | undefined): boolean;
 }
 
