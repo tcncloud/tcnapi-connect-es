@@ -42,26 +42,11 @@ export declare class IdpClient extends Message<IdpClient> {
   trustedPeers: string[];
 
   /**
-   * Whether or not the client is public.
-   * This field cannot be updated after creation.
-   *
-   * @generated from field: bool public = 5;
-   */
-  public: boolean;
-
-  /**
    * The name of the client.
    *
-   * @generated from field: string name = 6;
+   * @generated from field: string name = 5;
    */
   name: string;
-
-  /**
-   * The url of the client's logo.
-   *
-   * @generated from field: string logo_url = 7;
-   */
-  logoUrl: string;
 
   constructor(data?: PartialMessage<IdpClient>);
 

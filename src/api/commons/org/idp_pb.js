@@ -17,9 +17,7 @@ export const IdpClient = proto3.makeMessageType(
     { no: 2, name: "secret", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "redirect_uris", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 4, name: "trusted_peers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 5, name: "public", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 6, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "logo_url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
