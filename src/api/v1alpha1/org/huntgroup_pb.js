@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupType, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -704,6 +704,99 @@ export const UpdateAgentTriggersRequest = proto3.makeMessageType(
  */
 export const UpdateAgentTriggersResponse = proto3.makeMessageType(
   "api.v1alpha1.org.UpdateAgentTriggersResponse",
+  [],
+);
+
+/**
+ * The request message for GetHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupScriptRequest
+ */
+export const GetHuntGroupScriptRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.GetHuntGroupScriptRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * The response message for GetHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.GetHuntGroupScriptResponse
+ */
+export const GetHuntGroupScriptResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.GetHuntGroupScriptResponse",
+  () => [
+    { no: 1, name: "hunt_group_script", kind: "message", T: HuntGroupScript },
+  ],
+);
+
+/**
+ * The request message for CreateHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupScriptRequest
+ */
+export const CreateHuntGroupScriptRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateHuntGroupScriptRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_script", kind: "message", T: HuntGroupScript },
+  ],
+);
+
+/**
+ * The response message for CreateHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.CreateHuntGroupScriptResponse
+ */
+export const CreateHuntGroupScriptResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateHuntGroupScriptResponse",
+  [],
+);
+
+/**
+ * The request message for UpdateHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupScriptRequest
+ */
+export const UpdateHuntGroupScriptRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupScriptRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_script", kind: "message", T: HuntGroupScript },
+  ],
+);
+
+/**
+ * The response message for UpdateHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupScriptResponse
+ */
+export const UpdateHuntGroupScriptResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupScriptResponse",
+  [],
+);
+
+/**
+ * The request message for DeleteHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupScriptRequest
+ */
+export const DeleteHuntGroupScriptRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteHuntGroupScriptRequest",
+  () => [
+    { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "script_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * The response message for DeleteHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.DeleteHuntGroupScriptResponse
+ */
+export const DeleteHuntGroupScriptResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteHuntGroupScriptResponse",
   [],
 );
 

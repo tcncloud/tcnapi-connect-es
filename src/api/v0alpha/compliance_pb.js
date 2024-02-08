@@ -1316,15 +1316,15 @@ export const ProcessConsentListDeleteUploadMeta = proto3.makeMessageType(
 export const QueryHolidaysResponse = proto3.makeMessageType(
   "api.v0alpha.QueryHolidaysResponse",
   () => [
-    { no: 1, name: "rows", kind: "message", T: Row, repeated: true },
+    { no: 1, name: "rows", kind: "message", T: HolidayData, repeated: true },
   ],
 );
 
 /**
- * @generated from message api.v0alpha.Row
+ * @generated from message api.v0alpha.HolidayData
  */
-export const Row = proto3.makeMessageType(
-  "api.v0alpha.Row",
+export const HolidayData = proto3.makeMessageType(
+  "api.v0alpha.HolidayData",
   () => [
     { no: 1, name: "date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -1340,10 +1340,10 @@ export const Row = proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v0alpha.Query
+ * @generated from message api.v0alpha.QueryHolidaysRequest
  */
-export const Query = proto3.makeMessageType(
-  "api.v0alpha.Query",
+export const QueryHolidaysRequest = proto3.makeMessageType(
+  "api.v0alpha.QueryHolidaysRequest",
   () => [
     { no: 1, name: "date", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddScrubListEntriesReq, AssignRuleSetReq, AssignRuleSetRes, AssignScenarioReq, CheckRuleSetReq, CheckRuleSetRes, Consent, ConsentProfile, ConsentTopic, CreateConsentProfileReq, CreateConsentProfileRes, CreateConsentReq, CreateConsentRes, CreateRuleSetReq, CreateScenarioReq, CreateScenarioRes, CreateScrubListReq, DeleteConsentReq, DeleteScenarioReq, DeleteScenarioRes, DeleteScrubListEntriesReq, DeleteScrubListReq, DisableConsentProfileReq, DisableRuleSetReq, DisableRuleSetRes, DisableScenarioReq, Empty as Empty$1, EnableConsentProfileReq, EnableRuleSetReq, EnableRuleSetRes, EnableScenarioReq, ExpireConsentReq, ExportScrubListReq, ExportScrubListRes, FieldNames, GetConsentByContentReq, GetConsentByContentRes, GetConsentByProfileAndContentReq, GetConsentByProfileAndContentRes, GetConsentProfileReq, GetConsentReq, GetConsentTopicReq, GetConsentUploadUrlReq, GetConsentUploadUrlRes, GetDefaultRulesReq, GetDefaultRulesRes, GetFieldNamesReq, GetResultDescriptionsReq, GetRuleSetByNameReq, GetRuleSetReq, GetScenarioReq, GetScenarioRes, GetScrubListReq, GetScrubListsReq, GetScrubListUploadUrlReq, GetScrubListUploadUrlRes, ListAllScenariosReq, ListAllScenariosRes, ListAssignedRuleSetsReq, ListAssignedRuleSetsRes, ListAssignedScenariosReq, ListAssignedScenariosRes, ListConsentProfilesReq, ListConsentProfilesRes, ListConsentTopicsReq, ListConsentTopicsRes, ListRuleSetsReq, ListRuleSetsRes, ListUnassignedScenariosReq, ListUnassignedScenariosRes, ProcessConsentListDeleteUploadReq, ProcessConsentUploadReq, ProcessOutboundCallReq, ProcessRes, ProcessScrubListDeleteUploadReq, ProcessScrubListUploadReq, PurgeScrubListReq, PurgeScrubListRes, Query, QueryHolidaysResponse, RenameRuleSetReq, RenameRuleSetRes, RevokeConsentReq, RuleAutoCompleteReq, RuleAutoCompleteRes, RuleSet, RunAssignedScenariosReq, RunAssignedScenariosRes, ScrubList, ScrubListRes, ScrubListsRes, SearchConsentByContentReq, SearchConsentByContentRes, SearchScrubListReq, UnassignScenarioReq, UpdateConsentReq, UpdateConsentTopicReq, UpdateScenarioReq, UpdateScenarioRes, UpdateScrubEntryReq, UpdateScrubEntryRes } from "./compliance_pb.js";
+import { AddScrubListEntriesReq, AssignRuleSetReq, AssignRuleSetRes, AssignScenarioReq, CheckRuleSetReq, CheckRuleSetRes, Consent, ConsentProfile, ConsentTopic, CreateConsentProfileReq, CreateConsentProfileRes, CreateConsentReq, CreateConsentRes, CreateRuleSetReq, CreateScenarioReq, CreateScenarioRes, CreateScrubListReq, DeleteConsentReq, DeleteScenarioReq, DeleteScenarioRes, DeleteScrubListEntriesReq, DeleteScrubListReq, DisableConsentProfileReq, DisableRuleSetReq, DisableRuleSetRes, DisableScenarioReq, Empty as Empty$1, EnableConsentProfileReq, EnableRuleSetReq, EnableRuleSetRes, EnableScenarioReq, ExpireConsentReq, ExportScrubListReq, ExportScrubListRes, FieldNames, GetConsentByContentReq, GetConsentByContentRes, GetConsentByProfileAndContentReq, GetConsentByProfileAndContentRes, GetConsentProfileReq, GetConsentReq, GetConsentTopicReq, GetConsentUploadUrlReq, GetConsentUploadUrlRes, GetDefaultRulesReq, GetDefaultRulesRes, GetFieldNamesReq, GetResultDescriptionsReq, GetRuleSetByNameReq, GetRuleSetReq, GetScenarioReq, GetScenarioRes, GetScrubListReq, GetScrubListsReq, GetScrubListUploadUrlReq, GetScrubListUploadUrlRes, ListAllScenariosReq, ListAllScenariosRes, ListAssignedRuleSetsReq, ListAssignedRuleSetsRes, ListAssignedScenariosReq, ListAssignedScenariosRes, ListConsentProfilesReq, ListConsentProfilesRes, ListConsentTopicsReq, ListConsentTopicsRes, ListRuleSetsReq, ListRuleSetsRes, ListUnassignedScenariosReq, ListUnassignedScenariosRes, ProcessConsentListDeleteUploadReq, ProcessConsentUploadReq, ProcessOutboundCallReq, ProcessRes, ProcessScrubListDeleteUploadReq, ProcessScrubListUploadReq, PurgeScrubListReq, PurgeScrubListRes, QueryHolidaysRequest, QueryHolidaysResponse, RenameRuleSetReq, RenameRuleSetRes, RevokeConsentReq, RuleAutoCompleteReq, RuleAutoCompleteRes, RuleSet, RunAssignedScenariosReq, RunAssignedScenariosRes, ScrubList, ScrubListRes, ScrubListsRes, SearchConsentByContentReq, SearchConsentByContentRes, SearchScrubListReq, UnassignScenarioReq, UpdateConsentReq, UpdateConsentTopicReq, UpdateScenarioReq, UpdateScenarioRes, UpdateScrubEntryReq, UpdateScrubEntryRes } from "./compliance_pb.js";
 import { Empty, MethodKind } from "@bufbuild/protobuf";
 import { Operation } from "../../google/longrunning/operations_pb.js";
 
@@ -763,8 +763,8 @@ export declare const Compliance: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * Return the holidays that match the Query.
-     * The method will return a stream of the matching holidays as Rows.
+     * Return the holidays that match the request.
+     * The method will return a stream of the matching holidays.
      * Required permissions:
      *      none
      *
@@ -772,7 +772,7 @@ export declare const Compliance: {
      */
     readonly queryHolidays: {
       readonly name: "QueryHolidays",
-      readonly I: typeof Query,
+      readonly I: typeof QueryHolidaysRequest,
       readonly O: typeof QueryHolidaysResponse,
       readonly kind: MethodKind.Unary,
     },

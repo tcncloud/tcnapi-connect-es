@@ -3913,9 +3913,9 @@ export declare class ProcessConsentListDeleteUploadMeta extends Message<ProcessC
  */
 export declare class QueryHolidaysResponse extends Message<QueryHolidaysResponse> {
   /**
-   * @generated from field: repeated api.v0alpha.Row rows = 1;
+   * @generated from field: repeated api.v0alpha.HolidayData rows = 1;
    */
-  rows: Row[];
+  rows: HolidayData[];
 
   constructor(data?: PartialMessage<QueryHolidaysResponse>);
 
@@ -3933,9 +3933,9 @@ export declare class QueryHolidaysResponse extends Message<QueryHolidaysResponse
 }
 
 /**
- * @generated from message api.v0alpha.Row
+ * @generated from message api.v0alpha.HolidayData
  */
-export declare class Row extends Message<Row> {
+export declare class HolidayData extends Message<HolidayData> {
   /**
    * @generated from field: string date = 1;
    */
@@ -3986,25 +3986,25 @@ export declare class Row extends Message<Row> {
    */
   states: string[];
 
-  constructor(data?: PartialMessage<Row>);
+  constructor(data?: PartialMessage<HolidayData>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.Row";
+  static readonly typeName = "api.v0alpha.HolidayData";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Row;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HolidayData;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Row;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HolidayData;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Row;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HolidayData;
 
-  static equals(a: Row | PlainMessage<Row> | undefined, b: Row | PlainMessage<Row> | undefined): boolean;
+  static equals(a: HolidayData | PlainMessage<HolidayData> | undefined, b: HolidayData | PlainMessage<HolidayData> | undefined): boolean;
 }
 
 /**
- * @generated from message api.v0alpha.Query
+ * @generated from message api.v0alpha.QueryHolidaysRequest
  */
-export declare class Query extends Message<Query> {
+export declare class QueryHolidaysRequest extends Message<QueryHolidaysRequest> {
   /**
    * @generated from field: string date = 1;
    */
@@ -4055,18 +4055,18 @@ export declare class Query extends Message<Query> {
    */
   state: string;
 
-  constructor(data?: PartialMessage<Query>);
+  constructor(data?: PartialMessage<QueryHolidaysRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.Query";
+  static readonly typeName = "api.v0alpha.QueryHolidaysRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Query;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryHolidaysRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Query;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryHolidaysRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Query;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryHolidaysRequest;
 
-  static equals(a: Query | PlainMessage<Query> | undefined, b: Query | PlainMessage<Query> | undefined): boolean;
+  static equals(a: QueryHolidaysRequest | PlainMessage<QueryHolidaysRequest> | undefined, b: QueryHolidaysRequest | PlainMessage<QueryHolidaysRequest> | undefined): boolean;
 }
 
