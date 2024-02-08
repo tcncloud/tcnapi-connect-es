@@ -70,6 +70,7 @@ export const ContentRes = proto3.makeMessageType(
     { no: 3, name: "images", kind: "message", T: LearnImage, repeated: true },
     { no: 4, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "total_view_count", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "last_edited_user", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -377,6 +378,51 @@ export const DeleteLearnPagesReq = proto3.makeMessageType(
  */
 export const DeleteLearnPagesRes = proto3.makeMessageType(
   "api.v0alpha.DeleteLearnPagesRes",
+  [],
+);
+
+/**
+ * request to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionReq
+ */
+export const CreateEditVersionReq = proto3.makeMessageType(
+  "api.v0alpha.CreateEditVersionReq",
+  () => [
+    { no: 1, name: "src_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "dest_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to create edit version
+ *
+ * @generated from message api.v0alpha.CreateEditVersionRes
+ */
+export const CreateEditVersionRes = proto3.makeMessageType(
+  "api.v0alpha.CreateEditVersionRes",
+  [],
+);
+
+/**
+ * request to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionReq
+ */
+export const PublishVersionReq = proto3.makeMessageType(
+  "api.v0alpha.PublishVersionReq",
+  () => [
+    { no: 1, name: "publish_version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to publish version
+ *
+ * @generated from message api.v0alpha.PublishVersionRes
+ */
+export const PublishVersionRes = proto3.makeMessageType(
+  "api.v0alpha.PublishVersionRes",
   [],
 );
 

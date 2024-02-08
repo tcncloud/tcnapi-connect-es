@@ -1379,6 +1379,13 @@ export declare class UserDetails extends Message<UserDetails> {
   email: string;
 
   /**
+   * if the user's email is verified
+   *
+   * @generated from field: bool email_verified = 36;
+   */
+  emailVerified: boolean;
+
+  /**
    * Trusts assigned to the user.
    *
    * @generated from field: repeated api.commons.org.Trust trusts = 200;

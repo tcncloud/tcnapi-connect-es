@@ -123,6 +123,12 @@ export const EventType = proto3.makeEnum(
     {no: 606, name: "TICKET_PARTICIPANT_EVENT"},
     {no: 607, name: "TICKET_CREATE_COMMENT_EVENT"},
     {no: 608, name: "TICKET_REPLY_COMMENT_EVENT"},
+    {no: 609, name: "TICKET_TEMPLATE_CREATE_EVENT"},
+    {no: 610, name: "TICKET_TEMPLATE_EDIT_EVENT"},
+    {no: 611, name: "TICKET_TEMPLATE_CLOSE_EVENT"},
+    {no: 612, name: "TICKET_TEMPLATE_ASSIGN_EVENT"},
+    {no: 613, name: "TICKET_TEMPLATE_STATE_CHANGE_EVENT"},
+    {no: 614, name: "TICKET_PROJECT_STATE_CHANGE_EVENT"},
     {no: 700, name: "COMPLIANCE_RND_QUERY_EVENT"},
     {no: 701, name: "COMPLIANCE_RND_QUERY_CACHED_EVENT"},
     {no: 800, name: "AGENT_TRAINING_CREATE_LEARNING_OPPORTUNITY_EVENT"},
@@ -138,6 +144,8 @@ export const EventType = proto3.makeEnum(
     {no: 1008, name: "EVENT_TYPE_BILLING_UPDATE_BILLING_PLAN"},
     {no: 1009, name: "EVENT_TYPE_BILLING_UPDATE_INVOICE"},
     {no: 1010, name: "EVENT_TYPE_BILLING_UPDATE_RATE_DEFINITION"},
+    {no: 1100, name: "EVENT_TYPE_DELIVERY_FAILURE"},
+    {no: 1101, name: "EVENT_TYPE_DELIVERY_SUCCESS"},
   ],
 );
 

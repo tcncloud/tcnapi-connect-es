@@ -6,7 +6,7 @@
 import { proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { OperatorApplications, TimeZoneWrapper } from "../../commons/org_pb.js";
 import { Label } from "../../commons/org/labels_pb.js";
-import { MfaInfo, MfaInfo_OtpType, Skill } from "../../commons/org/user_pb.js";
+import { MfaInfo, Skill } from "../../commons/org/user_pb.js";
 import { P3PermissionGroup, PermissionGroup } from "../../commons/org/permissions_pb.js";
 import { Trust } from "../../commons/org/trusts_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
@@ -114,6 +114,7 @@ export const GetMyUserResponse = proto3.makeMessageType(
     { no: 10, name: "agent_profile_group", kind: "message", T: GetMyUserResponse_AgentProfileGroup },
     { no: 11, name: "trusts", kind: "message", T: Trust, repeated: true },
     { no: 12, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -194,6 +195,7 @@ export const GetUserResponse = proto3.makeMessageType(
     { no: 27, name: "last_updated", kind: "message", T: Timestamp },
     { no: 28, name: "password_reset_required", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 29, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 30, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -259,6 +261,7 @@ export const GetUserByOrgIdResponse = proto3.makeMessageType(
     { no: 10, name: "agent_profile_group", kind: "message", T: GetUserByOrgIdResponse_AgentProfileGroup },
     { no: 21, name: "trusts", kind: "message", T: Trust, repeated: true },
     { no: 22, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 23, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -1220,8 +1223,7 @@ export const RefreshMfaLockoutByOrgIdResponse = proto3.makeMessageType(
 export const SetMfaTypeRequest = proto3.makeMessageType(
   "api.v1alpha1.org.SetMfaTypeRequest",
   () => [
-    { no: 1, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
-    { no: 2, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "info", kind: "message", T: MfaInfo },
   ],
 );
 
@@ -1243,7 +1245,7 @@ export const SetMfaTypeResponse = proto3.makeMessageType(
 export const SetMyMfaTypeRequest = proto3.makeMessageType(
   "api.v1alpha1.org.SetMyMfaTypeRequest",
   () => [
-    { no: 1, name: "otp", kind: "message", T: MfaInfo_OtpType, oneof: "mfa_type" },
+    { no: 2, name: "info", kind: "message", T: MfaInfo },
   ],
 );
 
