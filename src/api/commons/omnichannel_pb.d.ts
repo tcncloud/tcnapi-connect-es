@@ -3735,6 +3735,16 @@ export declare class OmniTaskConfig extends Message<OmniTaskConfig> {
    */
   agentTimeoutDuration?: Duration;
 
+  /**
+   * @generated from field: string subject = 4;
+   */
+  subject: string;
+
+  /**
+   * @generated from field: api.commons.OmniMessagePayload message = 5;
+   */
+  message?: OmniMessagePayload;
+
   constructor(data?: PartialMessage<OmniTaskConfig>);
 
   static readonly runtime: typeof proto3;

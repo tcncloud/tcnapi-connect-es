@@ -3908,3 +3908,165 @@ export declare class ProcessConsentListDeleteUploadMeta extends Message<ProcessC
   static equals(a: ProcessConsentListDeleteUploadMeta | PlainMessage<ProcessConsentListDeleteUploadMeta> | undefined, b: ProcessConsentListDeleteUploadMeta | PlainMessage<ProcessConsentListDeleteUploadMeta> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v0alpha.QueryHolidaysResponse
+ */
+export declare class QueryHolidaysResponse extends Message<QueryHolidaysResponse> {
+  /**
+   * @generated from field: repeated api.v0alpha.HolidayData rows = 1;
+   */
+  rows: HolidayData[];
+
+  constructor(data?: PartialMessage<QueryHolidaysResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.QueryHolidaysResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryHolidaysResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryHolidaysResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryHolidaysResponse;
+
+  static equals(a: QueryHolidaysResponse | PlainMessage<QueryHolidaysResponse> | undefined, b: QueryHolidaysResponse | PlainMessage<QueryHolidaysResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.HolidayData
+ */
+export declare class HolidayData extends Message<HolidayData> {
+  /**
+   * @generated from field: string date = 1;
+   */
+  date: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string year = 3;
+   */
+  year: string;
+
+  /**
+   * @generated from field: string month = 4;
+   */
+  month: string;
+
+  /**
+   * @generated from field: string day = 5;
+   */
+  day: string;
+
+  /**
+   * @generated from field: string weekday = 6;
+   */
+  weekday: string;
+
+  /**
+   * @generated from field: repeated string types = 7;
+   */
+  types: string[];
+
+  /**
+   * @generated from field: string is_observed = 8;
+   */
+  isObserved: string;
+
+  /**
+   * @generated from field: string country = 9;
+   */
+  country: string;
+
+  /**
+   * @generated from field: repeated string states = 11;
+   */
+  states: string[];
+
+  constructor(data?: PartialMessage<HolidayData>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.HolidayData";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HolidayData;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HolidayData;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HolidayData;
+
+  static equals(a: HolidayData | PlainMessage<HolidayData> | undefined, b: HolidayData | PlainMessage<HolidayData> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.QueryHolidaysRequest
+ */
+export declare class QueryHolidaysRequest extends Message<QueryHolidaysRequest> {
+  /**
+   * @generated from field: string date = 1;
+   */
+  date: string;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string year = 3;
+   */
+  year: string;
+
+  /**
+   * @generated from field: string month = 4;
+   */
+  month: string;
+
+  /**
+   * @generated from field: string day = 5;
+   */
+  day: string;
+
+  /**
+   * @generated from field: string weekday = 6;
+   */
+  weekday: string;
+
+  /**
+   * @generated from field: string type = 7;
+   */
+  type: string;
+
+  /**
+   * @generated from field: string is_observed = 8;
+   */
+  isObserved: string;
+
+  /**
+   * @generated from field: string country = 9;
+   */
+  country: string;
+
+  /**
+   * @generated from field: string state = 11;
+   */
+  state: string;
+
+  constructor(data?: PartialMessage<QueryHolidaysRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.QueryHolidaysRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryHolidaysRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryHolidaysRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryHolidaysRequest;
+
+  static equals(a: QueryHolidaysRequest | PlainMessage<QueryHolidaysRequest> | undefined, b: QueryHolidaysRequest | PlainMessage<QueryHolidaysRequest> | undefined): boolean;
+}
+

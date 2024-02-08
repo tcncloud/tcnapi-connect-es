@@ -426,3 +426,49 @@ export const PublishVersionRes = proto3.makeMessageType(
   [],
 );
 
+/**
+ * request to retrieve learning pages content from the url by version
+ *
+ * @generated from message api.v0alpha.ContentByVersionReq
+ */
+export const ContentByVersionReq = proto3.makeMessageType(
+  "api.v0alpha.ContentByVersionReq",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * request to update learning pages content based on the url by version
+ *
+ * @generated from message api.v0alpha.UpdateByVersionReq
+ */
+export const UpdateByVersionReq = proto3.makeMessageType(
+  "api.v0alpha.UpdateByVersionReq",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * request to search content in learning pages based on version
+ *
+ * @generated from message api.v0alpha.SearchContentByVersionReq
+ */
+export const SearchContentByVersionReq = proto3.makeMessageType(
+  "api.v0alpha.SearchContentByVersionReq",
+  () => [
+    { no: 1, name: "search_content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "field_mask", kind: "message", T: FieldMask },
+    { no: 6, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

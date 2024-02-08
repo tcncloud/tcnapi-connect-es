@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentByVersionReq, ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, SearchContentByVersionReq, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateByVersionReq, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -196,6 +196,40 @@ export declare const Learn: {
       readonly I: typeof PublishVersionReq,
       readonly O: typeof PublishVersionRes,
       readonly kind: MethodKind.Unary,
+    },
+    /**
+     * retrieve content from learning pages based on version
+     *
+     * @generated from rpc api.v0alpha.Learn.ContentByVersion
+     */
+    readonly contentByVersion: {
+      readonly name: "ContentByVersion",
+      readonly I: typeof ContentByVersionReq,
+      readonly O: typeof ContentRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * update contents for learning pages by version
+     *
+     * @generated from rpc api.v0alpha.Learn.UpdateByVersion
+     */
+    readonly updateByVersion: {
+      readonly name: "UpdateByVersion",
+      readonly I: typeof UpdateByVersionReq,
+      readonly O: typeof UpdateRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * stream search content results in learning pages by version
+     * we allow all the logged in agents/admins to view search content
+     *
+     * @generated from rpc api.v0alpha.Learn.ListSearchResultsByVersion
+     */
+    readonly listSearchResultsByVersion: {
+      readonly name: "ListSearchResultsByVersion",
+      readonly I: typeof SearchContentByVersionReq,
+      readonly O: typeof SearchRes,
+      readonly kind: MethodKind.ServerStreaming,
     },
   }
 };
