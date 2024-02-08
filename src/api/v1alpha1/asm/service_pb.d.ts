@@ -44,6 +44,11 @@ export declare class CreateSessionReq extends Message<CreateSessionReq> {
    */
   subsessionType: AsmSubsessionType;
 
+  /**
+   * @generated from field: bool enable_voice = 4;
+   */
+  enableVoice: boolean;
+
   constructor(data?: PartialMessage<CreateSessionReq>);
 
   static readonly runtime: typeof proto3;
@@ -77,6 +82,11 @@ export declare class CreateSessionRes extends Message<CreateSessionRes> {
    * @generated from field: api.v1alpha1.asm.VoiceRegistration voice_registration = 3;
    */
   voiceRegistration?: VoiceRegistration;
+
+  /**
+   * @generated from field: bool enable_voice = 4;
+   */
+  enableVoice: boolean;
 
   constructor(data?: PartialMessage<CreateSessionRes>);
 
