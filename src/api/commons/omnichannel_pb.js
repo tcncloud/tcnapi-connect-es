@@ -1117,6 +1117,8 @@ export const OmniTaskConfig = proto3.makeMessageType(
     { no: 1, name: "skills", kind: "message", T: OmniConversationSkills },
     { no: 2, name: "absolute_timeout_duration", kind: "message", T: Duration },
     { no: 3, name: "agent_timeout_duration", kind: "message", T: Duration },
+    { no: 4, name: "subject", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "message", kind: "message", T: OmniMessagePayload },
   ],
 );
 
