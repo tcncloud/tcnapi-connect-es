@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, Int32Value, proto3, Timestamp } from "@bufbuild/protobuf";
+import { Duration, FieldMask, Int32Value, proto3, Timestamp, UInt32Value } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../../../api/commons/acd_pb.js";
 
 /**
@@ -162,6 +162,7 @@ export const Sms_Thread = proto3.makeMessageType(
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "segments", kind: "message", T: Sms_Segment, repeated: true },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "Sms_Thread"},
 );
@@ -175,6 +176,7 @@ export const Sms_Segment = proto3.makeMessageType(
   "wfo.vanalytics.v2.Sms.Segment",
   () => [
     { no: 1, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "offset", kind: "message", T: Duration },
   ],
   {localName: "Sms_Segment"},
 );
@@ -191,6 +193,11 @@ export const Call = proto3.makeMessageType(
     { no: 2, name: "call_type", kind: "enum", T: proto3.getEnumType(CallType_Enum) },
     { no: 3, name: "audio_time", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
     { no: 4, name: "threads", kind: "message", T: Call_Thread, repeated: true },
+    { no: 5, name: "silence", kind: "message", T: Call_Silence },
+    { no: 6, name: "talk_over", kind: "message", T: Call_TalkOver },
+    { no: 7, name: "talk_time", kind: "message", T: Duration },
+    { no: 8, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "group_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -204,6 +211,7 @@ export const Call_Thread = proto3.makeMessageType(
   () => [
     { no: 1, name: "id", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "segments", kind: "message", T: Call_Segment, repeated: true },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "Call_Thread"},
 );
@@ -217,8 +225,95 @@ export const Call_Segment = proto3.makeMessageType(
   "wfo.vanalytics.v2.Call.Segment",
   () => [
     { no: 1, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "offset", kind: "message", T: Duration },
   ],
   {localName: "Call_Segment"},
+);
+
+/**
+ * The talk over stats for the call.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.TalkOver
+ */
+export const Call_TalkOver = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.TalkOver",
+  () => [
+    { no: 1, name: "duration", kind: "message", T: Call_TalkOver_Duration },
+    { no: 2, name: "occurrence", kind: "message", T: Call_TalkOver_Occurrence },
+    { no: 3, name: "threshold", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+  {localName: "Call_TalkOver"},
+);
+
+/**
+ * The talk over duration stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.TalkOver.Duration
+ */
+export const Call_TalkOver_Duration = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.TalkOver.Duration",
+  () => [
+    { no: 1, name: "total", kind: "message", T: Duration },
+    { no: 2, name: "max", kind: "message", T: Duration },
+    { no: 3, name: "percentage", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+  {localName: "Call_TalkOver_Duration"},
+);
+
+/**
+ * The talk over occurence stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.TalkOver.Occurrence
+ */
+export const Call_TalkOver_Occurrence = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.TalkOver.Occurrence",
+  () => [
+    { no: 1, name: "total", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+  {localName: "Call_TalkOver_Occurrence"},
+);
+
+/**
+ * The silence stats for the call.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Silence
+ */
+export const Call_Silence = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.Silence",
+  () => [
+    { no: 1, name: "duration", kind: "message", T: Call_Silence_Duration },
+    { no: 2, name: "occurrence", kind: "message", T: Call_Silence_Occurrence },
+    { no: 3, name: "threshold", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+  {localName: "Call_Silence"},
+);
+
+/**
+ * The silence duration stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Silence.Duration
+ */
+export const Call_Silence_Duration = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.Silence.Duration",
+  () => [
+    { no: 1, name: "total", kind: "message", T: Duration },
+    { no: 2, name: "max", kind: "message", T: Duration },
+    { no: 3, name: "percentage", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+  {localName: "Call_Silence_Duration"},
+);
+
+/**
+ * The silence occurence stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Silence.Occurrence
+ */
+export const Call_Silence_Occurrence = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.Silence.Occurrence",
+  () => [
+    { no: 1, name: "total", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+  {localName: "Call_Silence_Occurrence"},
 );
 
 /**
@@ -301,6 +396,9 @@ export const TranscriptQuery = proto3.makeMessageType(
     { no: 2, name: "channel", kind: "message", T: TranscriptQuery_Channel },
     { no: 3, name: "metadata", kind: "message", T: TranscriptQuery_Metadata },
     { no: 4, name: "threads", kind: "message", T: TranscriptQuery_Threads },
+    { no: 5, name: "flag_summary", kind: "message", T: TranscriptQuery_FlagSummary },
+    { no: 6, name: "start_time", kind: "message", T: TranscriptQuery_StartTime },
+    { no: 7, name: "delete_time", kind: "message", T: TranscriptQuery_DeleteTime },
   ],
 );
 
@@ -355,6 +453,11 @@ export const TranscriptQuery_Call = proto3.makeMessageType(
     { no: 1, name: "call_sid", kind: "message", T: TranscriptQuery_Call_CallSid },
     { no: 2, name: "audio_time", kind: "message", T: TranscriptQuery_Call_AudioTime },
     { no: 3, name: "call_type", kind: "message", T: TranscriptQuery_Call_CallType },
+    { no: 4, name: "silence", kind: "message", T: TranscriptQuery_Call_Silence },
+    { no: 5, name: "talk_over", kind: "message", T: TranscriptQuery_Call_TalkOver },
+    { no: 6, name: "talk_time", kind: "message", T: TranscriptQuery_Call_TalkTime },
+    { no: 7, name: "caller_id", kind: "message", T: TranscriptQuery_Call_CallerId },
+    { no: 8, name: "group_name", kind: "message", T: TranscriptQuery_Call_GroupName },
   ],
   {localName: "TranscriptQuery_Call"},
 );
@@ -373,6 +476,19 @@ export const TranscriptQuery_Call_CallType = proto3.makeMessageType(
 );
 
 /**
+ * Query constraints on group name.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.GroupName
+ */
+export const TranscriptQuery_Call_GroupName = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.GroupName",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Call_GroupName"},
+);
+
+/**
  * Query constraints on call sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallSid
@@ -383,6 +499,19 @@ export const TranscriptQuery_Call_CallSid = proto3.makeMessageType(
     { no: 1, name: "any", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
   {localName: "TranscriptQuery_Call_CallSid"},
+);
+
+/**
+ * Query constraints on caller id.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallerId
+ */
+export const TranscriptQuery_Call_CallerId = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.CallerId",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Call_CallerId"},
 );
 
 /**
@@ -399,6 +528,182 @@ export const TranscriptQuery_Call_AudioTime = proto3.makeMessageType(
     { no: 4, name: "lt", kind: "message", T: Int32Value },
   ],
   {localName: "TranscriptQuery_Call_AudioTime"},
+);
+
+/**
+ * Query constraints on talk time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime
+ */
+export const TranscriptQuery_Call_TalkTime = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Duration },
+    { no: 2, name: "lte", kind: "message", T: Duration },
+    { no: 3, name: "gt", kind: "message", T: Duration },
+    { no: 4, name: "lt", kind: "message", T: Duration },
+  ],
+  {localName: "TranscriptQuery_Call_TalkTime"},
+);
+
+/**
+ * Query constraints on talk over.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver
+ */
+export const TranscriptQuery_Call_TalkOver = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver",
+  () => [
+    { no: 1, name: "duration_total", kind: "message", T: TranscriptQuery_Call_TalkOver_DurationTotal },
+    { no: 2, name: "duration_max", kind: "message", T: TranscriptQuery_Call_TalkOver_DurationMax },
+    { no: 3, name: "occurrence_total", kind: "message", T: TranscriptQuery_Call_TalkOver_OccurrenceTotal },
+    { no: 4, name: "duration_percentage", kind: "message", T: TranscriptQuery_Call_TalkOver_DurationPercentage },
+  ],
+  {localName: "TranscriptQuery_Call_TalkOver"},
+);
+
+/**
+ * Query constraints on total duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal
+ */
+export const TranscriptQuery_Call_TalkOver_DurationTotal = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Duration },
+    { no: 2, name: "lte", kind: "message", T: Duration },
+    { no: 3, name: "gt", kind: "message", T: Duration },
+    { no: 4, name: "lt", kind: "message", T: Duration },
+  ],
+  {localName: "TranscriptQuery_Call_TalkOver_DurationTotal"},
+);
+
+/**
+ * Query constraints on max duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax
+ */
+export const TranscriptQuery_Call_TalkOver_DurationMax = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Duration },
+    { no: 2, name: "lte", kind: "message", T: Duration },
+    { no: 3, name: "gt", kind: "message", T: Duration },
+    { no: 4, name: "lt", kind: "message", T: Duration },
+  ],
+  {localName: "TranscriptQuery_Call_TalkOver_DurationMax"},
+);
+
+/**
+ * Query constraints on total occurences.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal
+ */
+export const TranscriptQuery_Call_TalkOver_OccurrenceTotal = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: UInt32Value },
+    { no: 2, name: "lte", kind: "message", T: UInt32Value },
+    { no: 3, name: "gt", kind: "message", T: UInt32Value },
+    { no: 4, name: "lt", kind: "message", T: UInt32Value },
+  ],
+  {localName: "TranscriptQuery_Call_TalkOver_OccurrenceTotal"},
+);
+
+/**
+ * Query constraints on duration percentage.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage
+ */
+export const TranscriptQuery_Call_TalkOver_DurationPercentage = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: UInt32Value },
+    { no: 2, name: "lte", kind: "message", T: UInt32Value },
+    { no: 3, name: "gt", kind: "message", T: UInt32Value },
+    { no: 4, name: "lt", kind: "message", T: UInt32Value },
+  ],
+  {localName: "TranscriptQuery_Call_TalkOver_DurationPercentage"},
+);
+
+/**
+ * Query constraints on silence.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence
+ */
+export const TranscriptQuery_Call_Silence = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.Silence",
+  () => [
+    { no: 1, name: "duration_total", kind: "message", T: TranscriptQuery_Call_Silence_DurationTotal },
+    { no: 2, name: "duration_max", kind: "message", T: TranscriptQuery_Call_Silence_DurationMax },
+    { no: 3, name: "occurrence_total", kind: "message", T: TranscriptQuery_Call_Silence_OccurrenceTotal },
+    { no: 4, name: "duration_percentage", kind: "message", T: TranscriptQuery_Call_Silence_DurationPercentage },
+  ],
+  {localName: "TranscriptQuery_Call_Silence"},
+);
+
+/**
+ * Query constraints on total duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal
+ */
+export const TranscriptQuery_Call_Silence_DurationTotal = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Duration },
+    { no: 2, name: "lte", kind: "message", T: Duration },
+    { no: 3, name: "gt", kind: "message", T: Duration },
+    { no: 4, name: "lt", kind: "message", T: Duration },
+  ],
+  {localName: "TranscriptQuery_Call_Silence_DurationTotal"},
+);
+
+/**
+ * Query constraints on max duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax
+ */
+export const TranscriptQuery_Call_Silence_DurationMax = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Duration },
+    { no: 2, name: "lte", kind: "message", T: Duration },
+    { no: 3, name: "gt", kind: "message", T: Duration },
+    { no: 4, name: "lt", kind: "message", T: Duration },
+  ],
+  {localName: "TranscriptQuery_Call_Silence_DurationMax"},
+);
+
+/**
+ * Query constraints on total occurences.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal
+ */
+export const TranscriptQuery_Call_Silence_OccurrenceTotal = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: UInt32Value },
+    { no: 2, name: "lte", kind: "message", T: UInt32Value },
+    { no: 3, name: "gt", kind: "message", T: UInt32Value },
+    { no: 4, name: "lt", kind: "message", T: UInt32Value },
+  ],
+  {localName: "TranscriptQuery_Call_Silence_OccurrenceTotal"},
+);
+
+/**
+ * Query constraints on duration percentage.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage
+ */
+export const TranscriptQuery_Call_Silence_DurationPercentage = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: UInt32Value },
+    { no: 2, name: "lte", kind: "message", T: UInt32Value },
+    { no: 3, name: "gt", kind: "message", T: UInt32Value },
+    { no: 4, name: "lt", kind: "message", T: UInt32Value },
+  ],
+  {localName: "TranscriptQuery_Call_Silence_DurationPercentage"},
 );
 
 /**
@@ -435,10 +740,26 @@ export const TranscriptQuery_Sms_ConversationSid = proto3.makeMessageType(
 export const TranscriptQuery_Threads = proto3.makeMessageType(
   "wfo.vanalytics.v2.TranscriptQuery.Threads",
   () => [
+    { no: 1, name: "and", kind: "message", T: TranscriptQuery_Threads, repeated: true },
+    { no: 2, name: "or", kind: "message", T: TranscriptQuery_Threads, repeated: true },
     { no: 4, name: "id", kind: "message", T: TranscriptQuery_Threads_Id },
     { no: 5, name: "text", kind: "message", T: TranscriptQuery_Threads_Text },
+    { no: 6, name: "user_id", kind: "message", T: TranscriptQuery_Threads_UserId },
   ],
   {localName: "TranscriptQuery_Threads"},
+);
+
+/**
+ * Query constraints on user id.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.UserId
+ */
+export const TranscriptQuery_Threads_UserId = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Threads.UserId",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Threads_UserId"},
 );
 
 /**
@@ -464,8 +785,155 @@ export const TranscriptQuery_Threads_Text = proto3.makeMessageType(
   () => [
     { no: 1, name: "match", kind: "message", T: Match },
     { no: 2, name: "span_near", kind: "message", T: SpanNear },
+    { no: 3, name: "timespan", kind: "message", T: TranscriptQuery_Threads_Text_Timespan },
+    { no: 4, name: "not", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
   {localName: "TranscriptQuery_Threads_Text"},
+);
+
+/**
+ * Timespan determines where text must be matched within a transcript.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan
+ */
+export const TranscriptQuery_Threads_Text_Timespan = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan",
+  () => [
+    { no: 1, name: "head", kind: "message", T: Duration },
+    { no: 2, name: "tail", kind: "message", T: Duration },
+  ],
+  {localName: "TranscriptQuery_Threads_Text_Timespan"},
+);
+
+/**
+ * FlagSummary defines a query on flag summary fields.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary
+ */
+export const TranscriptQuery_FlagSummary = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.FlagSummary",
+  () => [
+    { no: 1, name: "need_review", kind: "message", T: TranscriptQuery_FlagSummary_NeedReview },
+    { no: 2, name: "review_status", kind: "message", T: TranscriptQuery_FlagSummary_ReviewStatus },
+    { no: 3, name: "flags", kind: "message", T: TranscriptQuery_FlagSummary_Flags },
+    { no: 4, name: "count", kind: "message", T: TranscriptQuery_FlagSummary_Count },
+  ],
+  {localName: "TranscriptQuery_FlagSummary"},
+);
+
+/**
+ * NeedReview defines a query on need review fields.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview
+ */
+export const TranscriptQuery_FlagSummary_NeedReview = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview",
+  () => [
+    { no: 1, name: "flag_sids", kind: "message", T: TranscriptQuery_FlagSummary_NeedReview_FlagSids },
+  ],
+  {localName: "TranscriptQuery_FlagSummary_NeedReview"},
+);
+
+/**
+ * FlagSids defines a query on flag sids.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids
+ */
+export const TranscriptQuery_FlagSummary_NeedReview_FlagSids = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_FlagSummary_NeedReview_FlagSids"},
+);
+
+/**
+ * ReviewStatus defines a query on review status.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus
+ */
+export const TranscriptQuery_FlagSummary_ReviewStatus = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus",
+  () => [
+    { no: 1, name: "any", kind: "enum", T: proto3.getEnumType(ReviewStatus), repeated: true },
+  ],
+  {localName: "TranscriptQuery_FlagSummary_ReviewStatus"},
+);
+
+/**
+ * Flags defines a query on flags.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags
+ */
+export const TranscriptQuery_FlagSummary_Flags = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags",
+  () => [
+    { no: 1, name: "flag_sid", kind: "message", T: TranscriptQuery_FlagSummary_Flags_FlagSid },
+  ],
+  {localName: "TranscriptQuery_FlagSummary_Flags"},
+);
+
+/**
+ * FlagSid defines a query on flag sid.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid
+ */
+export const TranscriptQuery_FlagSummary_Flags_FlagSid = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "all", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_FlagSummary_Flags_FlagSid"},
+);
+
+/**
+ * Count defines a query on count.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count
+ */
+export const TranscriptQuery_FlagSummary_Count = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Int32Value },
+    { no: 2, name: "lte", kind: "message", T: Int32Value },
+    { no: 3, name: "gt", kind: "message", T: Int32Value },
+    { no: 4, name: "lt", kind: "message", T: Int32Value },
+    { no: 5, name: "eq", kind: "message", T: Int32Value },
+  ],
+  {localName: "TranscriptQuery_FlagSummary_Count"},
+);
+
+/**
+ * Query constraints on start time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.StartTime
+ */
+export const TranscriptQuery_StartTime = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.StartTime",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Timestamp },
+    { no: 2, name: "lte", kind: "message", T: Timestamp },
+    { no: 3, name: "gt", kind: "message", T: Timestamp },
+    { no: 4, name: "lt", kind: "message", T: Timestamp },
+  ],
+  {localName: "TranscriptQuery_StartTime"},
+);
+
+/**
+ * Query constraints on delete time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.DeleteTime
+ */
+export const TranscriptQuery_DeleteTime = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.DeleteTime",
+  () => [
+    { no: 1, name: "gte", kind: "message", T: Timestamp },
+    { no: 2, name: "lte", kind: "message", T: Timestamp },
+    { no: 3, name: "gt", kind: "message", T: Timestamp },
+    { no: 4, name: "lt", kind: "message", T: Timestamp },
+  ],
+  {localName: "TranscriptQuery_DeleteTime"},
 );
 
 /**
