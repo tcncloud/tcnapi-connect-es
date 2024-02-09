@@ -506,7 +506,7 @@ export declare class Sms_Segment extends Message<Sms_Segment> {
   text: string;
 
   /**
-   * The offset time duration from the last segment.
+   * The offset time duration from the beginning of the conversation.
    *
    * @generated from field: google.protobuf.Duration offset = 2;
    */
@@ -667,7 +667,7 @@ export declare class Call_Segment extends Message<Call_Segment> {
   text: string;
 
   /**
-   * The offset time duration from the last segment.
+   * The offset time duration from the beginning of the conversation.
    *
    * @generated from field: google.protobuf.Duration offset = 2;
    */
