@@ -83,11 +83,6 @@ export declare class CreateSessionRes extends Message<CreateSessionRes> {
    */
   voiceRegistration?: VoiceRegistration;
 
-  /**
-   * @generated from field: bool enable_voice = 4;
-   */
-  enableVoice: boolean;
-
   constructor(data?: PartialMessage<CreateSessionRes>);
 
   static readonly runtime: typeof proto3;

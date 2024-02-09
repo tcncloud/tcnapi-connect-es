@@ -46,7 +46,6 @@ export const CreateSessionRes = proto3.makeMessageType(
     { no: 1, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "voice_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "voice_registration", kind: "message", T: VoiceRegistration },
-    { no: 4, name: "enable_voice", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
