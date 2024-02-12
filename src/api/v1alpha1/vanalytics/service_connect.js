@@ -6,6 +6,7 @@
 import { AuditRequest, AuditResponse, GetRecordingUrlRequest, GetRecordingUrlResponse, ListBillingSpanRequest, ListBillingSpanResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { BulkDeleteTranscriptsRequest, BulkDeleteTranscriptsResponse, BulkRestoreTranscriptsRequest, BulkRestoreTranscriptsResponse, ListAgentResponseValuesRequest, ListAgentResponseValuesResponse, ListTranscriptGroupNamesRequest, ListTranscriptGroupNamesResponse, SearchRequest, SearchResponse } from "./transcript_pb.js";
+import { GetTranscriptSummaryRequest, GetTranscriptSummaryResponse } from "./transcript_summary_pb.js";
 import { CreateFilterRequest, DeleteFilterRequest, DeleteFilterResponse, Filter, GetFilterRequest, ListFiltersRequest, ListFiltersResponse, UpdateFilterRequest } from "./filter_pb.js";
 import { CreateFlagRequest, DeleteFlagRequest, DeleteFlagResponse, Flag, GetFlagRequest, ListFlagsRequest, ListFlagsResponse, UpdateFlagRequest } from "./flag_pb.js";
 import { BulkCreateFlagReviewRequest, BulkCreateFlagReviewResponse, CreateFlagReviewRequest, FlagReview, ListFlagReviewsRequest, ListFlagReviewsResponse } from "./flag_review_pb.js";
@@ -111,6 +112,17 @@ export const Vanalytics = {
       name: "ListAgentResponseValues",
       I: ListAgentResponseValuesRequest,
       O: ListAgentResponseValuesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetTranscriptSummary gets a transcript summary for a provided transcript.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.GetTranscriptSummary
+     */
+    getTranscriptSummary: {
+      name: "GetTranscriptSummary",
+      I: GetTranscriptSummaryRequest,
+      O: GetTranscriptSummaryResponse,
       kind: MethodKind.Unary,
     },
     /**
