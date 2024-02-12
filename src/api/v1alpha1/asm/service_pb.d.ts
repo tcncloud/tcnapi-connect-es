@@ -40,11 +40,16 @@ export declare class CreateSessionReq extends Message<CreateSessionReq> {
   skills: { [key: string]: bigint };
 
   /**
-   * @generated from field: api.commons.AsmSubsessionType subsession_type = 3;
+   * we are no longer using the subsession type.
+   *
+   * @generated from field: api.commons.AsmSubsessionType subsession_type = 3 [deprecated = true];
+   * @deprecated
    */
   subsessionType: AsmSubsessionType;
 
   /**
+   * enabe voice or omni voice.
+   *
    * @generated from field: bool enable_voice = 4;
    */
   enableVoice: boolean;
