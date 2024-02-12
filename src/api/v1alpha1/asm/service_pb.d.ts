@@ -40,10 +40,7 @@ export declare class CreateSessionReq extends Message<CreateSessionReq> {
   skills: { [key: string]: bigint };
 
   /**
-   * we are no longer using the subsession type.
-   *
-   * @generated from field: api.commons.AsmSubsessionType subsession_type = 3 [deprecated = true];
-   * @deprecated
+   * @generated from field: api.commons.AsmSubsessionType subsession_type = 3;
    */
   subsessionType: AsmSubsessionType;
 
