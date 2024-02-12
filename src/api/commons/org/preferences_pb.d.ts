@@ -2520,3 +2520,142 @@ export declare class AdminClientPreferences extends Message<AdminClientPreferenc
   static equals(a: AdminClientPreferences | PlainMessage<AdminClientPreferences> | undefined, b: AdminClientPreferences | PlainMessage<AdminClientPreferences> | undefined): boolean;
 }
 
+/**
+ * BusinessHours indicates when call may happen.
+ *
+ * @generated from message api.commons.org.BusinessHours
+ */
+export declare class BusinessHours extends Message<BusinessHours> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string id = 2;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: repeated api.commons.org.Range ranges = 5;
+   */
+  ranges: Range[];
+
+  constructor(data?: PartialMessage<BusinessHours>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.BusinessHours";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BusinessHours;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BusinessHours;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BusinessHours;
+
+  static equals(a: BusinessHours | PlainMessage<BusinessHours> | undefined, b: BusinessHours | PlainMessage<BusinessHours> | undefined): boolean;
+}
+
+/**
+ * Range including start and end times.
+ *
+ * @generated from message api.commons.org.Range
+ */
+export declare class Range extends Message<Range> {
+  /**
+   * @generated from field: int32 start_hour = 1;
+   */
+  startHour: number;
+
+  /**
+   * @generated from field: int32 start_minute = 2;
+   */
+  startMinute: number;
+
+  /**
+   * @generated from field: int32 end_hour = 3;
+   */
+  endHour: number;
+
+  /**
+   * @generated from field: int32 end_minute = 4;
+   */
+  endMinute: number;
+
+  constructor(data?: PartialMessage<Range>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.Range";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Range;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Range;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Range;
+
+  static equals(a: Range | PlainMessage<Range> | undefined, b: Range | PlainMessage<Range> | undefined): boolean;
+}
+
+/**
+ * CreateBusinessHoursRequest to add a new one.
+ *
+ * @generated from message api.commons.org.CreateBusinessHoursRequest
+ */
+export declare class CreateBusinessHoursRequest extends Message<CreateBusinessHoursRequest> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: api.commons.org.BusinessHours business_hours = 2;
+   */
+  businessHours?: BusinessHours;
+
+  constructor(data?: PartialMessage<CreateBusinessHoursRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.CreateBusinessHoursRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateBusinessHoursRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateBusinessHoursRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateBusinessHoursRequest;
+
+  static equals(a: CreateBusinessHoursRequest | PlainMessage<CreateBusinessHoursRequest> | undefined, b: CreateBusinessHoursRequest | PlainMessage<CreateBusinessHoursRequest> | undefined): boolean;
+}
+
+/**
+ * CreateBusinessHoursResponse when successful.
+ *
+ * @generated from message api.commons.org.CreateBusinessHoursResponse
+ */
+export declare class CreateBusinessHoursResponse extends Message<CreateBusinessHoursResponse> {
+  constructor(data?: PartialMessage<CreateBusinessHoursResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.CreateBusinessHoursResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateBusinessHoursResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateBusinessHoursResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateBusinessHoursResponse;
+
+  static equals(a: CreateBusinessHoursResponse | PlainMessage<CreateBusinessHoursResponse> | undefined, b: CreateBusinessHoursResponse | PlainMessage<CreateBusinessHoursResponse> | undefined): boolean;
+}
+
