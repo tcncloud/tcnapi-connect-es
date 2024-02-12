@@ -3923,7 +3923,8 @@ export declare class CallCenterNode extends Message<CallCenterNode> {
    * ID of the original Call Center Node that this node was copied from.
    * If this node is the original, field will be set as nil.
    *
-   * @generated from field: google.protobuf.Int64Value origin_sid = 13;
+   * @generated from field: google.protobuf.Int64Value origin_sid = 13 [deprecated = true];
+   * @deprecated
    */
   originSid?: bigint;
 
@@ -4093,7 +4094,8 @@ export declare class ClientNode extends Message<ClientNode> {
    * ID of the original Client Node that this node was copied from.
    * If this node is the original, field will be set as nil.
    *
-   * @generated from field: google.protobuf.Int64Value origin_sid = 14;
+   * @generated from field: google.protobuf.Int64Value origin_sid = 14 [deprecated = true];
+   * @deprecated
    */
   originSid?: bigint;
 
@@ -4332,7 +4334,8 @@ export declare class LocationNode extends Message<LocationNode> {
    * ID of the original Location Node that this node was copied from.
    * If this node is the original, field will be set as nil.
    *
-   * @generated from field: google.protobuf.Int64Value origin_sid = 16;
+   * @generated from field: google.protobuf.Int64Value origin_sid = 16 [deprecated = true];
+   * @deprecated
    */
   originSid?: bigint;
 
@@ -4571,7 +4574,8 @@ export declare class ProgramNode extends Message<ProgramNode> {
    * ID of the original Program Node that this node was copied from.
    * If this node is the original, field will be set as nil.
    *
-   * @generated from field: google.protobuf.Int64Value origin_sid = 16;
+   * @generated from field: google.protobuf.Int64Value origin_sid = 16 [deprecated = true];
+   * @deprecated
    */
   originSid?: bigint;
 
@@ -10290,7 +10294,8 @@ export declare class ShiftInstance extends Message<ShiftInstance> {
   /**
    * ID of the program node that the shift instance belongs to, which may be different that the one that the @parent_shift_template_sid belongs to.
    *
-   * @generated from field: int64 originating_program_node_sid = 6;
+   * @generated from field: int64 originating_program_node_sid = 6 [deprecated = true];
+   * @deprecated
    */
   originatingProgramNodeSid: bigint;
 
@@ -10525,7 +10530,6 @@ export declare class GetPublishedScheduleReq extends Message<GetPublishedSchedul
   includeActivity: boolean;
 
   /**
-   * The the shift instances will be associated with the origin node of @node_selector or the origin node of it's children program nodes.
    * Optional field, if left nil all matching the given parameters will be included.
    *
    * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 7;
@@ -11286,7 +11290,6 @@ export declare class GetDraftScheduleReq extends Message<GetDraftScheduleReq> {
   includeActivity: boolean;
 
   /**
-   * The the shift instances will be associated with the origin node of @node_selector or the origin node of it's children program nodes.
    * Optional field, if left nil all matching the given parameters will be included.
    *
    * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 8;
@@ -12668,7 +12671,7 @@ export declare class GetPerformanceMetricsReq extends Message<GetPerformanceMetr
   scheduleSelector?: ScheduleSelector;
 
   /**
-   * The origin node that the performance metrics should be associated with.
+   * The node that the performance metrics should be associated with.
    *
    * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 2;
    */
