@@ -475,6 +475,7 @@ export const ListUsersByOrgIdRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "archived_filter", kind: "enum", T: proto3.getEnumType(UserArchivedStateFilter) },
+    { no: 3, name: "permission_filter", kind: "enum", T: proto3.getEnumType(Permission), repeated: true },
   ],
 );
 

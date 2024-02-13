@@ -1659,6 +1659,13 @@ export declare class ListUsersByOrgIdRequest extends Message<ListUsersByOrgIdReq
    */
   archivedFilter: UserArchivedStateFilter;
 
+  /**
+   * Filter by permissions
+   *
+   * @generated from field: repeated api.commons.Permission permission_filter = 3;
+   */
+  permissionFilter: Permission[];
+
   constructor(data?: PartialMessage<ListUsersByOrgIdRequest>);
 
   static readonly runtime: typeof proto3;
