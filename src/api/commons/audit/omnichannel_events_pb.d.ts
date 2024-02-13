@@ -911,6 +911,13 @@ export declare class OmnichannelCloseConversationEvent extends Message<Omnichann
    */
   userId: string;
 
+  /**
+   * the transcript path of the conversation
+   *
+   * @generated from field: string transcript_path = 5;
+   */
+  transcriptPath: string;
+
   constructor(data?: PartialMessage<OmnichannelCloseConversationEvent>);
 
   static readonly runtime: typeof proto3;
