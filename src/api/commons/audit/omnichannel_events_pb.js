@@ -272,7 +272,6 @@ export const OmnichannelCloseConversationEvent = proto3.makeMessageType(
     { no: 2, name: "conversation", kind: "message", T: OmniConversation },
     { no: 3, name: "asm_session_sid", kind: "message", T: Int64Value },
     { no: 4, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "transcript_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
