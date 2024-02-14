@@ -5,6 +5,7 @@
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
 import { Filter } from "./filter_pb.js";
+import { DnclList } from "./dncl_list_pb.js";
 
 /**
  * CreateFlagRequest is a request for creating a flag.
@@ -123,6 +124,7 @@ export const Flag = proto3.makeMessageType(
     { no: 9, name: "must_review", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 10, name: "must_notify", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "bool_expr", kind: "message", T: Flag_BoolExpr },
+    { no: 12, name: "dncl_list", kind: "message", T: DnclList, repeated: true },
   ],
 );
 
