@@ -2521,8 +2521,7 @@ export declare class EmailTransport extends Message<EmailTransport> {
   /**
    * which email we want to show up as as from
    *
-   * @generated from field: string from_address = 1 [deprecated = true];
-   * @deprecated
+   * @generated from field: string from_address = 1;
    */
   fromAddress: string;
 
