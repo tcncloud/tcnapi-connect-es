@@ -4931,6 +4931,13 @@ export declare class CreateManualTaskReq extends Message<CreateManualTaskReq> {
    */
   campaignModuleSid: string;
 
+  /**
+   * task data
+   *
+   * @generated from field: api.commons.OmniTask task_data = 3;
+   */
+  taskData?: OmniTask;
+
   constructor(data?: PartialMessage<CreateManualTaskReq>);
 
   static readonly runtime: typeof proto3;

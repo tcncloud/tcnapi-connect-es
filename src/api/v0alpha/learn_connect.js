@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentByVersionReq, ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, SearchContentByVersionReq, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateByVersionReq, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -196,6 +196,40 @@ export const Learn = {
       I: PublishVersionReq,
       O: PublishVersionRes,
       kind: MethodKind.Unary,
+    },
+    /**
+     * retrieve content from learning pages based on version
+     *
+     * @generated from rpc api.v0alpha.Learn.ContentByVersion
+     */
+    contentByVersion: {
+      name: "ContentByVersion",
+      I: ContentByVersionReq,
+      O: ContentRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * update contents for learning pages by version
+     *
+     * @generated from rpc api.v0alpha.Learn.UpdateByVersion
+     */
+    updateByVersion: {
+      name: "UpdateByVersion",
+      I: UpdateByVersionReq,
+      O: UpdateRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * stream search content results in learning pages by version
+     * we allow all the logged in agents/admins to view search content
+     *
+     * @generated from rpc api.v0alpha.Learn.ListSearchResultsByVersion
+     */
+    listSearchResultsByVersion: {
+      name: "ListSearchResultsByVersion",
+      I: SearchContentByVersionReq,
+      O: SearchRes,
+      kind: MethodKind.ServerStreaming,
     },
   }
 };

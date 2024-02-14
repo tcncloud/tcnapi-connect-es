@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
+import { DnclList } from "./dncl_list_pb.js";
 
 /**
  * ListFlagSnapshotsRequest is a request for listing flag snapshots.
@@ -54,6 +55,7 @@ export const FlagSnapshot = proto3.makeMessageType(
     { no: 10, name: "must_review", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "must_notify", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 12, name: "bool_expr", kind: "message", T: FlagSnapshot_BoolExpr },
+    { no: 13, name: "dncl_list", kind: "message", T: DnclList, repeated: true },
   ],
 );
 

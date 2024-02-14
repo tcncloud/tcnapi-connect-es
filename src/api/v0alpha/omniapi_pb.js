@@ -1856,6 +1856,7 @@ export const CreateManualTaskReq = proto3.makeMessageType(
   () => [
     { no: 1, name: "campaign_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "campaign_module_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 3, name: "task_data", kind: "message", T: OmniTask },
   ],
 );
 
