@@ -752,26 +752,3 @@ export const Range = proto3.makeMessageType(
   ],
 );
 
-/**
- * CreateBusinessHoursRequest to add business hours.
- *
- * @generated from message api.commons.org.CreateBusinessHoursRequest
- */
-export const CreateBusinessHoursRequest = proto3.makeMessageType(
-  "api.commons.org.CreateBusinessHoursRequest",
-  () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "business_hours", kind: "message", T: BusinessHours },
-  ],
-);
-
-/**
- * CreateBusinessHoursResponse when successful.
- *
- * @generated from message api.commons.org.CreateBusinessHoursResponse
- */
-export const CreateBusinessHoursResponse = proto3.makeMessageType(
-  "api.commons.org.CreateBusinessHoursResponse",
-  [],
-);
-
