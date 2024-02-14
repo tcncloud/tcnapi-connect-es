@@ -927,6 +927,39 @@ export declare class OmnichannelCloseConversationEvent extends Message<Omnichann
 }
 
 /**
+ * @generated from message api.commons.audit.OmnichannelTranscriptSavedEvent
+ */
+export declare class OmnichannelTranscriptSavedEvent extends Message<OmnichannelTranscriptSavedEvent> {
+  /**
+   * the conversation sid of the transcript being saved
+   *
+   * @generated from field: int64 conversation_sid = 1;
+   */
+  conversationSid: bigint;
+
+  /**
+   * the transcript path of the conversation
+   *
+   * @generated from field: string transcript_path = 2;
+   */
+  transcriptPath: string;
+
+  constructor(data?: PartialMessage<OmnichannelTranscriptSavedEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.OmnichannelTranscriptSavedEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmnichannelTranscriptSavedEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmnichannelTranscriptSavedEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmnichannelTranscriptSavedEvent;
+
+  static equals(a: OmnichannelTranscriptSavedEvent | PlainMessage<OmnichannelTranscriptSavedEvent> | undefined, b: OmnichannelTranscriptSavedEvent | PlainMessage<OmnichannelTranscriptSavedEvent> | undefined): boolean;
+}
+
+/**
  * OmnichannelUpdateCampaignEvent - whenever a campaign is update
  *
  * @generated from message api.commons.audit.OmnichannelUpdateCampaignEvent

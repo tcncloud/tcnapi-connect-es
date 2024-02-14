@@ -276,6 +276,17 @@ export const OmnichannelCloseConversationEvent = proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.commons.audit.OmnichannelTranscriptSavedEvent
+ */
+export const OmnichannelTranscriptSavedEvent = proto3.makeMessageType(
+  "api.commons.audit.OmnichannelTranscriptSavedEvent",
+  () => [
+    { no: 1, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "transcript_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * OmnichannelUpdateCampaignEvent - whenever a campaign is update
  *
  * @generated from message api.commons.audit.OmnichannelUpdateCampaignEvent

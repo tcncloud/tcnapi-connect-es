@@ -404,6 +404,13 @@ export declare enum EventType {
   OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE = 361,
 
   /**
+   * transcript saved
+   *
+   * @generated from enum value: OMNICHANNEL_TRANSCRIPT_SAVED = 362;
+   */
+  OMNICHANNEL_TRANSCRIPT_SAVED = 362,
+
+  /**
    * ASM
    * agent logs into asm
    *
