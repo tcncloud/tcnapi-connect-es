@@ -2167,6 +2167,22 @@ export declare class TransferMember extends Message<TransferMember> {
      */
     value: string;
     case: "outboundId";
+  } | {
+    /**
+     * the number the caller called from
+     *
+     * @generated from field: string caller_id = 103;
+     */
+    value: string;
+    case: "callerId";
+  } | {
+    /**
+     * the number the caller called
+     *
+     * @generated from field: string destination_number = 104;
+     */
+    value: string;
+    case: "destinationNumber";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<TransferMember>);

@@ -602,6 +602,8 @@ export const TransferMember = proto3.makeMessageType(
     { no: 100, name: "agent_session", kind: "message", T: AgentSession, oneof: "locatable_data" },
     { no: 101, name: "caller_sid", kind: "message", T: CallerSid, oneof: "locatable_data" },
     { no: 102, name: "outbound_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "locatable_data" },
+    { no: 103, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "locatable_data" },
+    { no: 104, name: "destination_number", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "locatable_data" },
   ],
 );
 
