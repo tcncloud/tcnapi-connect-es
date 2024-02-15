@@ -800,3 +800,50 @@ export const DeleteHuntGroupScriptResponse = proto3.makeMessageType(
   [],
 );
 
+/**
+ * CopyHuntGroupClientInfoDisplayTemplate is the request message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest
+ */
+export const CopyHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "to_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * CopyHuntGroupClientInfoDisplayTemplateResponse is the response message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse
+ */
+export const CopyHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse",
+  [],
+);
+
+/**
+ * CreateCampaignClientInfoDisplayTemplateRequest is the request message for the CreateCampaignClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest
+ */
+export const CreateCampaignClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * CreateCampaignClientInfoDisplayTemplateResponse is the response message for the CreateCampaignClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse
+ */
+export const CreateCampaignClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse",
+  () => [
+    { no: 1, name: "template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+

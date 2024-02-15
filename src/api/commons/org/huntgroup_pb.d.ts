@@ -3768,6 +3768,13 @@ export declare class ClientInfoDisplayTemplate extends Message<ClientInfoDisplay
    */
   clientInfoDisplayTemplateSid: bigint;
 
+  /**
+   * The sid of the hunt group which the client info display template is associated with
+   *
+   * @generated from field: int64 hunt_group_sid = 9;
+   */
+  huntGroupSid: bigint;
+
   constructor(data?: PartialMessage<ClientInfoDisplayTemplate>);
 
   static readonly runtime: typeof proto3;

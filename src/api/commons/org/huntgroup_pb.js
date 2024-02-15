@@ -1092,6 +1092,7 @@ export const ClientInfoDisplayTemplate = proto3.makeMessageType(
     { no: 6, name: "contact_field_styles", kind: "message", T: ContactFieldStyle, repeated: true },
     { no: 7, name: "template_category", kind: "enum", T: proto3.getEnumType(TemplateCategory) },
     { no: 8, name: "client_info_display_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
