@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -1367,6 +1367,209 @@ export declare class DeleteHuntGroupClientInfoDisplayTemplateResponse extends Me
 }
 
 /**
+ * CopyHuntGroupClientInfoDisplayTemplate is the request message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest
+ */
+export declare class CopyHuntGroupClientInfoDisplayTemplateRequest extends Message<CopyHuntGroupClientInfoDisplayTemplateRequest> {
+  /**
+   * The sid of the hunt group to copy the template to
+   *
+   * @generated from field: int64 to_hunt_group_sid = 1;
+   */
+  toHuntGroupSid: bigint;
+
+  /**
+   * The client info display template to copy from the source hunt group
+   *
+   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 2;
+   */
+  template?: ClientInfoDisplayTemplate;
+
+  constructor(data?: PartialMessage<CopyHuntGroupClientInfoDisplayTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateRequest;
+
+  static equals(a: CopyHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateRequest> | undefined, b: CopyHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * CopyHuntGroupClientInfoDisplayTemplateResponse is the response message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse
+ */
+export declare class CopyHuntGroupClientInfoDisplayTemplateResponse extends Message<CopyHuntGroupClientInfoDisplayTemplateResponse> {
+  constructor(data?: PartialMessage<CopyHuntGroupClientInfoDisplayTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateResponse;
+
+  static equals(a: CopyHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateResponse> | undefined, b: CopyHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * CreateCampaignClientInfoDisplayTemplateRequest is the request message for the CreateCampaignClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest
+ */
+export declare class CreateCampaignClientInfoDisplayTemplateRequest extends Message<CreateCampaignClientInfoDisplayTemplateRequest> {
+  /**
+   * The client info display template to create for the campaign
+   *
+   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 1;
+   */
+  template?: ClientInfoDisplayTemplate;
+
+  constructor(data?: PartialMessage<CreateCampaignClientInfoDisplayTemplateRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCampaignClientInfoDisplayTemplateRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateRequest;
+
+  static equals(a: CreateCampaignClientInfoDisplayTemplateRequest | PlainMessage<CreateCampaignClientInfoDisplayTemplateRequest> | undefined, b: CreateCampaignClientInfoDisplayTemplateRequest | PlainMessage<CreateCampaignClientInfoDisplayTemplateRequest> | undefined): boolean;
+}
+
+/**
+ * CreateCampaignClientInfoDisplayTemplateResponse is the response message for the CreateCampaignClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse
+ */
+export declare class CreateCampaignClientInfoDisplayTemplateResponse extends Message<CreateCampaignClientInfoDisplayTemplateResponse> {
+  /**
+   * The sid of the created client info display template
+   *
+   * @generated from field: int64 template_sid = 1;
+   */
+  templateSid: bigint;
+
+  constructor(data?: PartialMessage<CreateCampaignClientInfoDisplayTemplateResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCampaignClientInfoDisplayTemplateResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateResponse;
+
+  static equals(a: CreateCampaignClientInfoDisplayTemplateResponse | PlainMessage<CreateCampaignClientInfoDisplayTemplateResponse> | undefined, b: CreateCampaignClientInfoDisplayTemplateResponse | PlainMessage<CreateCampaignClientInfoDisplayTemplateResponse> | undefined): boolean;
+}
+
+/**
+ * ListHuntGroupsWithClientInfoTemplateDataRequest is the request message for the ListHuntGroupsWithClientInfoTemplateData RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest
+ */
+export declare class ListHuntGroupsWithClientInfoTemplateDataRequest extends Message<ListHuntGroupsWithClientInfoTemplateDataRequest> {
+  /**
+   * The filter to list the hunt groups with their client info display template.
+   *
+   * @generated from field: api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter filter = 1;
+   */
+  filter: ListHuntGroupsWithClientInfoTemplateDataRequest_Filter;
+
+  constructor(data?: PartialMessage<ListHuntGroupsWithClientInfoTemplateDataRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHuntGroupsWithClientInfoTemplateDataRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHuntGroupsWithClientInfoTemplateDataRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupsWithClientInfoTemplateDataRequest;
+
+  static equals(a: ListHuntGroupsWithClientInfoTemplateDataRequest | PlainMessage<ListHuntGroupsWithClientInfoTemplateDataRequest> | undefined, b: ListHuntGroupsWithClientInfoTemplateDataRequest | PlainMessage<ListHuntGroupsWithClientInfoTemplateDataRequest> | undefined): boolean;
+}
+
+/**
+ * Filter is the entity for the filter to list the hunt groups with their client info display template.
+ *
+ * @generated from enum api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter
+ */
+export declare enum ListHuntGroupsWithClientInfoTemplateDataRequest_Filter {
+  /**
+   * FILTER_UNSPECIFIED is an unspecified filter.
+   *
+   * @generated from enum value: FILTER_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * FILTER_ALL returns all hunt groups whether they have a client info display template or not.
+   *
+   * @generated from enum value: FILTER_ALL = 1;
+   */
+  ALL = 1,
+
+  /**
+   * FILTER_WITH_TEMPLATE returns only all hunt groups that have a client info display template.
+   *
+   * @generated from enum value: FILTER_HUNT_GROUPS_WITH_TEMPLATE = 2;
+   */
+  HUNT_GROUPS_WITH_TEMPLATE = 2,
+
+  /**
+   * FILTER_WITHOUT_TEMPLATE returns only all hunt groups that do not have a client info display template.
+   *
+   * @generated from enum value: FILTER_HUNT_GROUPS_WITHOUT_TEMPLATE = 3;
+   */
+  HUNT_GROUPS_WITHOUT_TEMPLATE = 3,
+}
+
+/**
+ * ListHuntGroupsWithClientInfoTemplateDataResponse is the response message for the ListHuntGroupsWithClientInfoTemplateData RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse
+ */
+export declare class ListHuntGroupsWithClientInfoTemplateDataResponse extends Message<ListHuntGroupsWithClientInfoTemplateDataResponse> {
+  /**
+   * A list of hunt group with their client info display template data.
+   *
+   * @generated from field: repeated api.commons.org.HuntGroupWithClientInfoTemplateData hunt_groups_with_template_data = 1;
+   */
+  huntGroupsWithTemplateData: HuntGroupWithClientInfoTemplateData[];
+
+  constructor(data?: PartialMessage<ListHuntGroupsWithClientInfoTemplateDataResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHuntGroupsWithClientInfoTemplateDataResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHuntGroupsWithClientInfoTemplateDataResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupsWithClientInfoTemplateDataResponse;
+
+  static equals(a: ListHuntGroupsWithClientInfoTemplateDataResponse | PlainMessage<ListHuntGroupsWithClientInfoTemplateDataResponse> | undefined, b: ListHuntGroupsWithClientInfoTemplateDataResponse | PlainMessage<ListHuntGroupsWithClientInfoTemplateDataResponse> | undefined): boolean;
+}
+
+/**
  * Request message for ListHuntGroupWebLinks
  *
  * @generated from message api.v1alpha1.org.ListHuntGroupWebLinksRequest
@@ -2001,117 +2204,5 @@ export declare class DeleteHuntGroupScriptResponse extends Message<DeleteHuntGro
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteHuntGroupScriptResponse;
 
   static equals(a: DeleteHuntGroupScriptResponse | PlainMessage<DeleteHuntGroupScriptResponse> | undefined, b: DeleteHuntGroupScriptResponse | PlainMessage<DeleteHuntGroupScriptResponse> | undefined): boolean;
-}
-
-/**
- * CopyHuntGroupClientInfoDisplayTemplate is the request message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest
- */
-export declare class CopyHuntGroupClientInfoDisplayTemplateRequest extends Message<CopyHuntGroupClientInfoDisplayTemplateRequest> {
-  /**
-   * The sid of the hunt group to copy the template to
-   *
-   * @generated from field: int64 to_hunt_group_sid = 1;
-   */
-  toHuntGroupSid: bigint;
-
-  /**
-   * The client info display template to copy from the source hunt group
-   *
-   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 2;
-   */
-  template?: ClientInfoDisplayTemplate;
-
-  constructor(data?: PartialMessage<CopyHuntGroupClientInfoDisplayTemplateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupClientInfoDisplayTemplateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateRequest;
-
-  static equals(a: CopyHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateRequest> | undefined, b: CopyHuntGroupClientInfoDisplayTemplateRequest | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateRequest> | undefined): boolean;
-}
-
-/**
- * CopyHuntGroupClientInfoDisplayTemplateResponse is the response message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse
- */
-export declare class CopyHuntGroupClientInfoDisplayTemplateResponse extends Message<CopyHuntGroupClientInfoDisplayTemplateResponse> {
-  constructor(data?: PartialMessage<CopyHuntGroupClientInfoDisplayTemplateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupClientInfoDisplayTemplateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupClientInfoDisplayTemplateResponse;
-
-  static equals(a: CopyHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateResponse> | undefined, b: CopyHuntGroupClientInfoDisplayTemplateResponse | PlainMessage<CopyHuntGroupClientInfoDisplayTemplateResponse> | undefined): boolean;
-}
-
-/**
- * CreateCampaignClientInfoDisplayTemplateRequest is the request message for the CreateCampaignClientInfoDisplayTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest
- */
-export declare class CreateCampaignClientInfoDisplayTemplateRequest extends Message<CreateCampaignClientInfoDisplayTemplateRequest> {
-  /**
-   * The client info display template to create for the campaign
-   *
-   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 1;
-   */
-  template?: ClientInfoDisplayTemplate;
-
-  constructor(data?: PartialMessage<CreateCampaignClientInfoDisplayTemplateRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCampaignClientInfoDisplayTemplateRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateRequest;
-
-  static equals(a: CreateCampaignClientInfoDisplayTemplateRequest | PlainMessage<CreateCampaignClientInfoDisplayTemplateRequest> | undefined, b: CreateCampaignClientInfoDisplayTemplateRequest | PlainMessage<CreateCampaignClientInfoDisplayTemplateRequest> | undefined): boolean;
-}
-
-/**
- * CreateCampaignClientInfoDisplayTemplateResponse is the response message for the CreateCampaignClientInfoDisplayTemplate RPC method.
- *
- * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse
- */
-export declare class CreateCampaignClientInfoDisplayTemplateResponse extends Message<CreateCampaignClientInfoDisplayTemplateResponse> {
-  /**
-   * The sid of the created client info display template
-   *
-   * @generated from field: int64 template_sid = 1;
-   */
-  templateSid: bigint;
-
-  constructor(data?: PartialMessage<CreateCampaignClientInfoDisplayTemplateResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateCampaignClientInfoDisplayTemplateResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateCampaignClientInfoDisplayTemplateResponse;
-
-  static equals(a: CreateCampaignClientInfoDisplayTemplateResponse | PlainMessage<CreateCampaignClientInfoDisplayTemplateResponse> | undefined, b: CreateCampaignClientInfoDisplayTemplateResponse | PlainMessage<CreateCampaignClientInfoDisplayTemplateResponse> | undefined): boolean;
 }
 

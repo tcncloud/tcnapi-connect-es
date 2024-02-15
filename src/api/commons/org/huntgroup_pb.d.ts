@@ -3904,6 +3904,83 @@ export declare class DialedNumberFieldStyle extends Message<DialedNumberFieldSty
 }
 
 /**
+ * HuntGroupWithClientInfoTemplateData is the entity for a hunt group with its client info display template data.
+ *
+ * @generated from message api.commons.org.HuntGroupWithClientInfoTemplateData
+ */
+export declare class HuntGroupWithClientInfoTemplateData extends Message<HuntGroupWithClientInfoTemplateData> {
+  /**
+   * The hunt group details.
+   *
+   * @generated from field: api.commons.org.HuntGroupWithClientInfoTemplateData.HuntGroup hunt_group = 1;
+   */
+  huntGroup?: HuntGroupWithClientInfoTemplateData_HuntGroup;
+
+  /**
+   * The hunt group client info display template details.
+   *
+   * @generated from field: api.commons.org.ClientInfoDisplayTemplate template = 2;
+   */
+  template?: ClientInfoDisplayTemplate;
+
+  constructor(data?: PartialMessage<HuntGroupWithClientInfoTemplateData>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupWithClientInfoTemplateData";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupWithClientInfoTemplateData;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupWithClientInfoTemplateData;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupWithClientInfoTemplateData;
+
+  static equals(a: HuntGroupWithClientInfoTemplateData | PlainMessage<HuntGroupWithClientInfoTemplateData> | undefined, b: HuntGroupWithClientInfoTemplateData | PlainMessage<HuntGroupWithClientInfoTemplateData> | undefined): boolean;
+}
+
+/**
+ * HuntGroup is the entity for a simplified hunt group details.
+ *
+ * @generated from message api.commons.org.HuntGroupWithClientInfoTemplateData.HuntGroup
+ */
+export declare class HuntGroupWithClientInfoTemplateData_HuntGroup extends Message<HuntGroupWithClientInfoTemplateData_HuntGroup> {
+  /**
+   * The hunt group sid.
+   *
+   * @generated from field: int64 client_sid = 1;
+   */
+  clientSid: bigint;
+
+  /**
+   * The hunt group name.
+   *
+   * @generated from field: int64 hunt_group_sid = 2;
+   */
+  huntGroupSid: bigint;
+
+  /**
+   * The hunt group name.
+   *
+   * @generated from field: string hunt_group_name = 3;
+   */
+  huntGroupName: string;
+
+  constructor(data?: PartialMessage<HuntGroupWithClientInfoTemplateData_HuntGroup>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.HuntGroupWithClientInfoTemplateData.HuntGroup";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupWithClientInfoTemplateData_HuntGroup;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupWithClientInfoTemplateData_HuntGroup;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupWithClientInfoTemplateData_HuntGroup;
+
+  static equals(a: HuntGroupWithClientInfoTemplateData_HuntGroup | PlainMessage<HuntGroupWithClientInfoTemplateData_HuntGroup> | undefined, b: HuntGroupWithClientInfoTemplateData_HuntGroup | PlainMessage<HuntGroupWithClientInfoTemplateData_HuntGroup> | undefined): boolean;
+}
+
+/**
  * A structure used for representing a web link
  *
  * @generated from message api.commons.org.WebLink

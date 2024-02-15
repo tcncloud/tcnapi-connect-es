@@ -1138,6 +1138,34 @@ export const DialedNumberFieldStyle = proto3.makeMessageType(
 );
 
 /**
+ * HuntGroupWithClientInfoTemplateData is the entity for a hunt group with its client info display template data.
+ *
+ * @generated from message api.commons.org.HuntGroupWithClientInfoTemplateData
+ */
+export const HuntGroupWithClientInfoTemplateData = proto3.makeMessageType(
+  "api.commons.org.HuntGroupWithClientInfoTemplateData",
+  () => [
+    { no: 1, name: "hunt_group", kind: "message", T: HuntGroupWithClientInfoTemplateData_HuntGroup },
+    { no: 2, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * HuntGroup is the entity for a simplified hunt group details.
+ *
+ * @generated from message api.commons.org.HuntGroupWithClientInfoTemplateData.HuntGroup
+ */
+export const HuntGroupWithClientInfoTemplateData_HuntGroup = proto3.makeMessageType(
+  "api.commons.org.HuntGroupWithClientInfoTemplateData.HuntGroup",
+  () => [
+    { no: 1, name: "client_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "hunt_group_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "HuntGroupWithClientInfoTemplateData_HuntGroup"},
+);
+
+/**
  * A structure used for representing a web link
  *
  * @generated from message api.commons.org.WebLink
