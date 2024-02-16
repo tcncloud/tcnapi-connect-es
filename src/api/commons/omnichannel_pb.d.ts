@@ -100,13 +100,6 @@ export declare enum SmsNumberProvider {
    * @generated from enum value: TEXTLOCAL_SMS_PROVIDER = 7;
    */
   TEXTLOCAL_SMS_PROVIDER = 7,
-
-  /**
-   * smartping sms provider
-   *
-   * @generated from enum value: SMARTPING_SMS_PROVIDER = 8;
-   */
-  SMARTPING_SMS_PROVIDER = 8,
 }
 
 /**
