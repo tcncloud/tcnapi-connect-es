@@ -2264,6 +2264,7 @@ export const WFM = {
      *   NONE
      * Errors:
      *   -grpc.Invalid: one or more fields in the request have invalid values.
+     *   -grpc.NotFound: the fields referenced in @shift_instance or its member shift segments don't exist for the org.
      *   -grpc.Internal: error occurs when creating the shift instance or its members.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.CreateShiftInstanceWithSegments
