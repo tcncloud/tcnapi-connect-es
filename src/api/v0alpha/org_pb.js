@@ -6,6 +6,7 @@
 import { DoubleValue, FieldMask, FloatValue, Int64Value, proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { AdvanceStatusType, AgentFieldOption, AgentInfoSortBy, AnnouncementMixingOption, AutomaticSystemCode, ClientSkin, ConfigSound, DefaultDuplicateHandling, DigitWrapper, DisplayLanguage, IdentityProvider, InboundOverrideOption, IntercomConnection, OperatorApplications, PhoneFieldOption, PostalFieldOption, QueueInfoSortBy, RecordingFileType, SoundGender, SoundLanguage, StandardImportFormat, TimeZone, TimeZoneWrapper } from "../commons/org_pb.js";
 import { Trust } from "../commons/org/trusts_pb.js";
+import { MfaInfo } from "../commons/org/user_pb.js";
 import { ChannelType } from "../commons/omnichannel_pb.js";
 import { AgentProfileGroup } from "../commons/org/agent_profile_group_pb.js";
 import { Country as Country$1 } from "../commons/country_pb.js";
@@ -238,6 +239,8 @@ export const UserDescription = proto3.makeMessageType(
     { no: 169, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 170, name: "hunt_group_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 200, name: "trusts", kind: "message", T: Trust, repeated: true },
+    { no: 201, name: "mfa_info", kind: "message", T: MfaInfo },
+    { no: 202, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

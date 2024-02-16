@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, Duration, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../../../api/commons/acd_pb.js";
 
@@ -470,6 +470,13 @@ export declare class Sms_Thread extends Message<Sms_Thread> {
    */
   segments: Sms_Segment[];
 
+  /**
+   * The user id of the participant on this thread.
+   *
+   * @generated from field: string user_id = 3;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<Sms_Thread>);
 
   static readonly runtime: typeof proto3;
@@ -492,9 +499,18 @@ export declare class Sms_Thread extends Message<Sms_Thread> {
  */
 export declare class Sms_Segment extends Message<Sms_Segment> {
   /**
+   * The text in the segment.
+   *
    * @generated from field: string text = 1;
    */
   text: string;
+
+  /**
+   * The offset time duration from the beginning of the conversation.
+   *
+   * @generated from field: google.protobuf.Duration offset = 2;
+   */
+  offset?: Duration;
 
   constructor(data?: PartialMessage<Sms_Segment>);
 
@@ -545,6 +561,41 @@ export declare class Call extends Message<Call> {
    */
   threads: Call_Thread[];
 
+  /**
+   * The silence stats for this call.
+   *
+   * @generated from field: wfo.vanalytics.v2.Call.Silence silence = 5;
+   */
+  silence?: Call_Silence;
+
+  /**
+   * The stats for when 2 participants are talking at the same time.
+   *
+   * @generated from field: wfo.vanalytics.v2.Call.TalkOver talk_over = 6;
+   */
+  talkOver?: Call_TalkOver;
+
+  /**
+   * The total time duration of talk time in this call.
+   *
+   * @generated from field: google.protobuf.Duration talk_time = 7;
+   */
+  talkTime?: Duration;
+
+  /**
+   * The phone number that initiated the call.
+   *
+   * @generated from field: string caller_id = 8;
+   */
+  callerId: string;
+
+  /**
+   * The hunt group name for the agent who made the call.
+   *
+   * @generated from field: string group_name = 9;
+   */
+  groupName: string;
+
   constructor(data?: PartialMessage<Call>);
 
   static readonly runtime: typeof proto3;
@@ -580,6 +631,13 @@ export declare class Call_Thread extends Message<Call_Thread> {
    */
   segments: Call_Segment[];
 
+  /**
+   * The user id of the participant on this thread.
+   *
+   * @generated from field: string user_id = 3;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<Call_Thread>);
 
   static readonly runtime: typeof proto3;
@@ -602,9 +660,18 @@ export declare class Call_Thread extends Message<Call_Thread> {
  */
 export declare class Call_Segment extends Message<Call_Segment> {
   /**
+   * The text in the segment.
+   *
    * @generated from field: string text = 1;
    */
   text: string;
+
+  /**
+   * The offset time duration from the beginning of the conversation.
+   *
+   * @generated from field: google.protobuf.Duration offset = 2;
+   */
+  offset?: Duration;
 
   constructor(data?: PartialMessage<Call_Segment>);
 
@@ -619,6 +686,232 @@ export declare class Call_Segment extends Message<Call_Segment> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_Segment;
 
   static equals(a: Call_Segment | PlainMessage<Call_Segment> | undefined, b: Call_Segment | PlainMessage<Call_Segment> | undefined): boolean;
+}
+
+/**
+ * The talk over stats for the call.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.TalkOver
+ */
+export declare class Call_TalkOver extends Message<Call_TalkOver> {
+  /**
+   * The talk over duration stats.
+   *
+   * @generated from field: wfo.vanalytics.v2.Call.TalkOver.Duration duration = 1;
+   */
+  duration?: Call_TalkOver_Duration;
+
+  /**
+   * The talk over occurence stats.
+   *
+   * @generated from field: wfo.vanalytics.v2.Call.TalkOver.Occurrence occurrence = 2;
+   */
+  occurrence?: Call_TalkOver_Occurrence;
+
+  /**
+   * The threshold in milliseconds of how much overlap is required
+   * before it is considered talk over.
+   *
+   * @generated from field: uint32 threshold = 3;
+   */
+  threshold: number;
+
+  constructor(data?: PartialMessage<Call_TalkOver>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.TalkOver";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_TalkOver;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_TalkOver;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_TalkOver;
+
+  static equals(a: Call_TalkOver | PlainMessage<Call_TalkOver> | undefined, b: Call_TalkOver | PlainMessage<Call_TalkOver> | undefined): boolean;
+}
+
+/**
+ * The talk over duration stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.TalkOver.Duration
+ */
+export declare class Call_TalkOver_Duration extends Message<Call_TalkOver_Duration> {
+  /**
+   * The total talk over duration in the call.
+   *
+   * @generated from field: google.protobuf.Duration total = 1;
+   */
+  total?: Duration;
+
+  /**
+   * The largest talk over duration in the call.
+   *
+   * @generated from field: google.protobuf.Duration max = 2;
+   */
+  max?: Duration;
+
+  /**
+   * The percentage of talk over in the call.
+   *
+   * @generated from field: uint32 percentage = 3;
+   */
+  percentage: number;
+
+  constructor(data?: PartialMessage<Call_TalkOver_Duration>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.TalkOver.Duration";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_TalkOver_Duration;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_TalkOver_Duration;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_TalkOver_Duration;
+
+  static equals(a: Call_TalkOver_Duration | PlainMessage<Call_TalkOver_Duration> | undefined, b: Call_TalkOver_Duration | PlainMessage<Call_TalkOver_Duration> | undefined): boolean;
+}
+
+/**
+ * The talk over occurence stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.TalkOver.Occurrence
+ */
+export declare class Call_TalkOver_Occurrence extends Message<Call_TalkOver_Occurrence> {
+  /**
+   * The total number of talk over occurences in the call.
+   *
+   * @generated from field: uint32 total = 1;
+   */
+  total: number;
+
+  constructor(data?: PartialMessage<Call_TalkOver_Occurrence>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.TalkOver.Occurrence";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_TalkOver_Occurrence;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_TalkOver_Occurrence;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_TalkOver_Occurrence;
+
+  static equals(a: Call_TalkOver_Occurrence | PlainMessage<Call_TalkOver_Occurrence> | undefined, b: Call_TalkOver_Occurrence | PlainMessage<Call_TalkOver_Occurrence> | undefined): boolean;
+}
+
+/**
+ * The silence stats for the call.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Silence
+ */
+export declare class Call_Silence extends Message<Call_Silence> {
+  /**
+   * The silence duration stats.
+   *
+   * @generated from field: wfo.vanalytics.v2.Call.Silence.Duration duration = 1;
+   */
+  duration?: Call_Silence_Duration;
+
+  /**
+   * The silence occurence stats.
+   *
+   * @generated from field: wfo.vanalytics.v2.Call.Silence.Occurrence occurrence = 2;
+   */
+  occurrence?: Call_Silence_Occurrence;
+
+  /**
+   * The threshold in milliseconds of how much time without talking is
+   * required before it is considered silence.
+   *
+   * @generated from field: uint32 threshold = 3;
+   */
+  threshold: number;
+
+  constructor(data?: PartialMessage<Call_Silence>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.Silence";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_Silence;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_Silence;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_Silence;
+
+  static equals(a: Call_Silence | PlainMessage<Call_Silence> | undefined, b: Call_Silence | PlainMessage<Call_Silence> | undefined): boolean;
+}
+
+/**
+ * The silence duration stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Silence.Duration
+ */
+export declare class Call_Silence_Duration extends Message<Call_Silence_Duration> {
+  /**
+   * The total silence duration in the call.
+   *
+   * @generated from field: google.protobuf.Duration total = 1;
+   */
+  total?: Duration;
+
+  /**
+   * The largest silence duration in the call.
+   *
+   * @generated from field: google.protobuf.Duration max = 2;
+   */
+  max?: Duration;
+
+  /**
+   * The percentage of silence in the call.
+   *
+   * @generated from field: uint32 percentage = 3;
+   */
+  percentage: number;
+
+  constructor(data?: PartialMessage<Call_Silence_Duration>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.Silence.Duration";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_Silence_Duration;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_Silence_Duration;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_Silence_Duration;
+
+  static equals(a: Call_Silence_Duration | PlainMessage<Call_Silence_Duration> | undefined, b: Call_Silence_Duration | PlainMessage<Call_Silence_Duration> | undefined): boolean;
+}
+
+/**
+ * The silence occurence stats.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Silence.Occurrence
+ */
+export declare class Call_Silence_Occurrence extends Message<Call_Silence_Occurrence> {
+  /**
+   * The total number of silence occurences in the call.
+   *
+   * @generated from field: uint32 total = 1;
+   */
+  total: number;
+
+  constructor(data?: PartialMessage<Call_Silence_Occurrence>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.Silence.Occurrence";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_Silence_Occurrence;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_Silence_Occurrence;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_Silence_Occurrence;
+
+  static equals(a: Call_Silence_Occurrence | PlainMessage<Call_Silence_Occurrence> | undefined, b: Call_Silence_Occurrence | PlainMessage<Call_Silence_Occurrence> | undefined): boolean;
 }
 
 /**
@@ -847,6 +1140,27 @@ export declare class TranscriptQuery extends Message<TranscriptQuery> {
    */
   threads?: TranscriptQuery_Threads;
 
+  /**
+   * Query constraints on flag summary.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.FlagSummary flag_summary = 5;
+   */
+  flagSummary?: TranscriptQuery_FlagSummary;
+
+  /**
+   * Query constraints on start time.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.StartTime start_time = 6;
+   */
+  startTime?: TranscriptQuery_StartTime;
+
+  /**
+   * Query constraints on delete time.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.DeleteTime delete_time = 7;
+   */
+  deleteTime?: TranscriptQuery_DeleteTime;
+
   constructor(data?: PartialMessage<TranscriptQuery>);
 
   static readonly runtime: typeof proto3;
@@ -980,6 +1294,41 @@ export declare class TranscriptQuery_Call extends Message<TranscriptQuery_Call> 
    */
   callType?: TranscriptQuery_Call_CallType;
 
+  /**
+   * Query constraints on silence.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.Silence silence = 4;
+   */
+  silence?: TranscriptQuery_Call_Silence;
+
+  /**
+   * Query constraints on talk over.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver talk_over = 5;
+   */
+  talkOver?: TranscriptQuery_Call_TalkOver;
+
+  /**
+   * Query constraints on talk time.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime talk_time = 6;
+   */
+  talkTime?: TranscriptQuery_Call_TalkTime;
+
+  /**
+   * Query constraints on caller id.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.CallerId caller_id = 7;
+   */
+  callerId?: TranscriptQuery_Call_CallerId;
+
+  /**
+   * Query constraints on group name.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.GroupName group_name = 8;
+   */
+  groupName?: TranscriptQuery_Call_GroupName;
+
   constructor(data?: PartialMessage<TranscriptQuery_Call>);
 
   static readonly runtime: typeof proto3;
@@ -1025,6 +1374,35 @@ export declare class TranscriptQuery_Call_CallType extends Message<TranscriptQue
 }
 
 /**
+ * Query constraints on group name.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.GroupName
+ */
+export declare class TranscriptQuery_Call_GroupName extends Message<TranscriptQuery_Call_GroupName> {
+  /**
+   * Requires all call specific transcript hits to have a group name in the
+   * list.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_GroupName>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.GroupName";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_GroupName;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_GroupName;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_GroupName;
+
+  static equals(a: TranscriptQuery_Call_GroupName | PlainMessage<TranscriptQuery_Call_GroupName> | undefined, b: TranscriptQuery_Call_GroupName | PlainMessage<TranscriptQuery_Call_GroupName> | undefined): boolean;
+}
+
+/**
  * Query constraints on call sid.
  *
  * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallSid
@@ -1051,6 +1429,35 @@ export declare class TranscriptQuery_Call_CallSid extends Message<TranscriptQuer
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_CallSid;
 
   static equals(a: TranscriptQuery_Call_CallSid | PlainMessage<TranscriptQuery_Call_CallSid> | undefined, b: TranscriptQuery_Call_CallSid | PlainMessage<TranscriptQuery_Call_CallSid> | undefined): boolean;
+}
+
+/**
+ * Query constraints on caller id.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.CallerId
+ */
+export declare class TranscriptQuery_Call_CallerId extends Message<TranscriptQuery_Call_CallerId> {
+  /**
+   * Requires all call specific transcript hits to have a caller id in the
+   * list.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_CallerId>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.CallerId";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_CallerId;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_CallerId;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_CallerId;
+
+  static equals(a: TranscriptQuery_Call_CallerId | PlainMessage<TranscriptQuery_Call_CallerId> | undefined, b: TranscriptQuery_Call_CallerId | PlainMessage<TranscriptQuery_Call_CallerId> | undefined): boolean;
 }
 
 /**
@@ -1100,6 +1507,545 @@ export declare class TranscriptQuery_Call_AudioTime extends Message<TranscriptQu
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AudioTime;
 
   static equals(a: TranscriptQuery_Call_AudioTime | PlainMessage<TranscriptQuery_Call_AudioTime> | undefined, b: TranscriptQuery_Call_AudioTime | PlainMessage<TranscriptQuery_Call_AudioTime> | undefined): boolean;
+}
+
+/**
+ * Query constraints on talk time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime
+ */
+export declare class TranscriptQuery_Call_TalkTime extends Message<TranscriptQuery_Call_TalkTime> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Duration gte = 1;
+   */
+  gte?: Duration;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Duration lte = 2;
+   */
+  lte?: Duration;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Duration gt = 3;
+   */
+  gt?: Duration;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Duration lt = 4;
+   */
+  lt?: Duration;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_TalkTime>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.TalkTime";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_TalkTime;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkTime;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkTime;
+
+  static equals(a: TranscriptQuery_Call_TalkTime | PlainMessage<TranscriptQuery_Call_TalkTime> | undefined, b: TranscriptQuery_Call_TalkTime | PlainMessage<TranscriptQuery_Call_TalkTime> | undefined): boolean;
+}
+
+/**
+ * Query constraints on talk over.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver
+ */
+export declare class TranscriptQuery_Call_TalkOver extends Message<TranscriptQuery_Call_TalkOver> {
+  /**
+   * Query constraints on talk over duration total.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal duration_total = 1;
+   */
+  durationTotal?: TranscriptQuery_Call_TalkOver_DurationTotal;
+
+  /**
+   * Query constraints on talk over duration max.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax duration_max = 2;
+   */
+  durationMax?: TranscriptQuery_Call_TalkOver_DurationMax;
+
+  /**
+   * Query constraints on talk over occurrence total.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal occurrence_total = 3;
+   */
+  occurrenceTotal?: TranscriptQuery_Call_TalkOver_OccurrenceTotal;
+
+  /**
+   * Query constraints on talk over duration percentage.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage duration_percentage = 4;
+   */
+  durationPercentage?: TranscriptQuery_Call_TalkOver_DurationPercentage;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_TalkOver>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_TalkOver;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver;
+
+  static equals(a: TranscriptQuery_Call_TalkOver | PlainMessage<TranscriptQuery_Call_TalkOver> | undefined, b: TranscriptQuery_Call_TalkOver | PlainMessage<TranscriptQuery_Call_TalkOver> | undefined): boolean;
+}
+
+/**
+ * Query constraints on total duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal
+ */
+export declare class TranscriptQuery_Call_TalkOver_DurationTotal extends Message<TranscriptQuery_Call_TalkOver_DurationTotal> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Duration gte = 1;
+   */
+  gte?: Duration;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Duration lte = 2;
+   */
+  lte?: Duration;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Duration gt = 3;
+   */
+  gt?: Duration;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Duration lt = 4;
+   */
+  lt?: Duration;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_TalkOver_DurationTotal>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationTotal";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_TalkOver_DurationTotal;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_DurationTotal;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_DurationTotal;
+
+  static equals(a: TranscriptQuery_Call_TalkOver_DurationTotal | PlainMessage<TranscriptQuery_Call_TalkOver_DurationTotal> | undefined, b: TranscriptQuery_Call_TalkOver_DurationTotal | PlainMessage<TranscriptQuery_Call_TalkOver_DurationTotal> | undefined): boolean;
+}
+
+/**
+ * Query constraints on max duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax
+ */
+export declare class TranscriptQuery_Call_TalkOver_DurationMax extends Message<TranscriptQuery_Call_TalkOver_DurationMax> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Duration gte = 1;
+   */
+  gte?: Duration;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Duration lte = 2;
+   */
+  lte?: Duration;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Duration gt = 3;
+   */
+  gt?: Duration;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Duration lt = 4;
+   */
+  lt?: Duration;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_TalkOver_DurationMax>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationMax";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_TalkOver_DurationMax;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_DurationMax;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_DurationMax;
+
+  static equals(a: TranscriptQuery_Call_TalkOver_DurationMax | PlainMessage<TranscriptQuery_Call_TalkOver_DurationMax> | undefined, b: TranscriptQuery_Call_TalkOver_DurationMax | PlainMessage<TranscriptQuery_Call_TalkOver_DurationMax> | undefined): boolean;
+}
+
+/**
+ * Query constraints on total occurences.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal
+ */
+export declare class TranscriptQuery_Call_TalkOver_OccurrenceTotal extends Message<TranscriptQuery_Call_TalkOver_OccurrenceTotal> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value gte = 1;
+   */
+  gte?: number;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value lte = 2;
+   */
+  lte?: number;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.UInt32Value gt = 3;
+   */
+  gt?: number;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.UInt32Value lt = 4;
+   */
+  lt?: number;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_TalkOver_OccurrenceTotal>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.OccurrenceTotal";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_TalkOver_OccurrenceTotal;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_OccurrenceTotal;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_OccurrenceTotal;
+
+  static equals(a: TranscriptQuery_Call_TalkOver_OccurrenceTotal | PlainMessage<TranscriptQuery_Call_TalkOver_OccurrenceTotal> | undefined, b: TranscriptQuery_Call_TalkOver_OccurrenceTotal | PlainMessage<TranscriptQuery_Call_TalkOver_OccurrenceTotal> | undefined): boolean;
+}
+
+/**
+ * Query constraints on duration percentage.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage
+ */
+export declare class TranscriptQuery_Call_TalkOver_DurationPercentage extends Message<TranscriptQuery_Call_TalkOver_DurationPercentage> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value gte = 1;
+   */
+  gte?: number;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value lte = 2;
+   */
+  lte?: number;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.UInt32Value gt = 3;
+   */
+  gt?: number;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.UInt32Value lt = 4;
+   */
+  lt?: number;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_TalkOver_DurationPercentage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.TalkOver.DurationPercentage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_TalkOver_DurationPercentage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_DurationPercentage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_TalkOver_DurationPercentage;
+
+  static equals(a: TranscriptQuery_Call_TalkOver_DurationPercentage | PlainMessage<TranscriptQuery_Call_TalkOver_DurationPercentage> | undefined, b: TranscriptQuery_Call_TalkOver_DurationPercentage | PlainMessage<TranscriptQuery_Call_TalkOver_DurationPercentage> | undefined): boolean;
+}
+
+/**
+ * Query constraints on silence.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence
+ */
+export declare class TranscriptQuery_Call_Silence extends Message<TranscriptQuery_Call_Silence> {
+  /**
+   * Query constraints on silence duration total.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal duration_total = 1;
+   */
+  durationTotal?: TranscriptQuery_Call_Silence_DurationTotal;
+
+  /**
+   * Query constraints on silence duration max.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax duration_max = 2;
+   */
+  durationMax?: TranscriptQuery_Call_Silence_DurationMax;
+
+  /**
+   * Query constraints on silence occurrence total.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal occurrence_total = 3;
+   */
+  occurrenceTotal?: TranscriptQuery_Call_Silence_OccurrenceTotal;
+
+  /**
+   * Query constraints on silence duration percentage.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage duration_percentage = 4;
+   */
+  durationPercentage?: TranscriptQuery_Call_Silence_DurationPercentage;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_Silence>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.Silence";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_Silence;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence;
+
+  static equals(a: TranscriptQuery_Call_Silence | PlainMessage<TranscriptQuery_Call_Silence> | undefined, b: TranscriptQuery_Call_Silence | PlainMessage<TranscriptQuery_Call_Silence> | undefined): boolean;
+}
+
+/**
+ * Query constraints on total duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal
+ */
+export declare class TranscriptQuery_Call_Silence_DurationTotal extends Message<TranscriptQuery_Call_Silence_DurationTotal> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Duration gte = 1;
+   */
+  gte?: Duration;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Duration lte = 2;
+   */
+  lte?: Duration;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Duration gt = 3;
+   */
+  gt?: Duration;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Duration lt = 4;
+   */
+  lt?: Duration;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_Silence_DurationTotal>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationTotal";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_Silence_DurationTotal;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_DurationTotal;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_DurationTotal;
+
+  static equals(a: TranscriptQuery_Call_Silence_DurationTotal | PlainMessage<TranscriptQuery_Call_Silence_DurationTotal> | undefined, b: TranscriptQuery_Call_Silence_DurationTotal | PlainMessage<TranscriptQuery_Call_Silence_DurationTotal> | undefined): boolean;
+}
+
+/**
+ * Query constraints on max duration.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax
+ */
+export declare class TranscriptQuery_Call_Silence_DurationMax extends Message<TranscriptQuery_Call_Silence_DurationMax> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Duration gte = 1;
+   */
+  gte?: Duration;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Duration lte = 2;
+   */
+  lte?: Duration;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Duration gt = 3;
+   */
+  gt?: Duration;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Duration lt = 4;
+   */
+  lt?: Duration;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_Silence_DurationMax>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationMax";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_Silence_DurationMax;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_DurationMax;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_DurationMax;
+
+  static equals(a: TranscriptQuery_Call_Silence_DurationMax | PlainMessage<TranscriptQuery_Call_Silence_DurationMax> | undefined, b: TranscriptQuery_Call_Silence_DurationMax | PlainMessage<TranscriptQuery_Call_Silence_DurationMax> | undefined): boolean;
+}
+
+/**
+ * Query constraints on total occurences.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal
+ */
+export declare class TranscriptQuery_Call_Silence_OccurrenceTotal extends Message<TranscriptQuery_Call_Silence_OccurrenceTotal> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value gte = 1;
+   */
+  gte?: number;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value lte = 2;
+   */
+  lte?: number;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.UInt32Value gt = 3;
+   */
+  gt?: number;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.UInt32Value lt = 4;
+   */
+  lt?: number;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_Silence_OccurrenceTotal>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.OccurrenceTotal";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_Silence_OccurrenceTotal;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_OccurrenceTotal;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_OccurrenceTotal;
+
+  static equals(a: TranscriptQuery_Call_Silence_OccurrenceTotal | PlainMessage<TranscriptQuery_Call_Silence_OccurrenceTotal> | undefined, b: TranscriptQuery_Call_Silence_OccurrenceTotal | PlainMessage<TranscriptQuery_Call_Silence_OccurrenceTotal> | undefined): boolean;
+}
+
+/**
+ * Query constraints on duration percentage.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage
+ */
+export declare class TranscriptQuery_Call_Silence_DurationPercentage extends Message<TranscriptQuery_Call_Silence_DurationPercentage> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value gte = 1;
+   */
+  gte?: number;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.UInt32Value lte = 2;
+   */
+  lte?: number;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.UInt32Value gt = 3;
+   */
+  gt?: number;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.UInt32Value lt = 4;
+   */
+  lt?: number;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_Silence_DurationPercentage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.Silence.DurationPercentage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_Silence_DurationPercentage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_DurationPercentage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_Silence_DurationPercentage;
+
+  static equals(a: TranscriptQuery_Call_Silence_DurationPercentage | PlainMessage<TranscriptQuery_Call_Silence_DurationPercentage> | undefined, b: TranscriptQuery_Call_Silence_DurationPercentage | PlainMessage<TranscriptQuery_Call_Silence_DurationPercentage> | undefined): boolean;
 }
 
 /**
@@ -1166,6 +2112,20 @@ export declare class TranscriptQuery_Sms_ConversationSid extends Message<Transcr
  */
 export declare class TranscriptQuery_Threads extends Message<TranscriptQuery_Threads> {
   /**
+   * Query constraints on all threads in list.
+   *
+   * @generated from field: repeated wfo.vanalytics.v2.TranscriptQuery.Threads and = 1;
+   */
+  and: TranscriptQuery_Threads[];
+
+  /**
+   * Query constraints on any threads in list.
+   *
+   * @generated from field: repeated wfo.vanalytics.v2.TranscriptQuery.Threads or = 2;
+   */
+  or: TranscriptQuery_Threads[];
+
+  /**
    * Query constraints on thread id.
    *
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.Id id = 4;
@@ -1178,6 +2138,13 @@ export declare class TranscriptQuery_Threads extends Message<TranscriptQuery_Thr
    * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.Text text = 5;
    */
   text?: TranscriptQuery_Threads_Text;
+
+  /**
+   * Query constraints on user id.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.UserId user_id = 6;
+   */
+  userId?: TranscriptQuery_Threads_UserId;
 
   constructor(data?: PartialMessage<TranscriptQuery_Threads>);
 
@@ -1192,6 +2159,34 @@ export declare class TranscriptQuery_Threads extends Message<TranscriptQuery_Thr
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Threads;
 
   static equals(a: TranscriptQuery_Threads | PlainMessage<TranscriptQuery_Threads> | undefined, b: TranscriptQuery_Threads | PlainMessage<TranscriptQuery_Threads> | undefined): boolean;
+}
+
+/**
+ * Query constraints on user id.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.UserId
+ */
+export declare class TranscriptQuery_Threads_UserId extends Message<TranscriptQuery_Threads_UserId> {
+  /**
+   * Requires all transcript hits to have a user id in the list.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Threads_UserId>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Threads.UserId";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Threads_UserId;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Threads_UserId;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Threads_UserId;
+
+  static equals(a: TranscriptQuery_Threads_UserId | PlainMessage<TranscriptQuery_Threads_UserId> | undefined, b: TranscriptQuery_Threads_UserId | PlainMessage<TranscriptQuery_Threads_UserId> | undefined): boolean;
 }
 
 /**
@@ -1242,6 +2237,31 @@ export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuer
    */
   spanNear?: SpanNear;
 
+  /**
+   *
+   * Timespan determines where text must be matched within a transcript.
+   * +------+------+-------------------------------------------+
+   * | head | tail |              description                  |
+   * +------+------+-------------------------------------------+
+   * |    0 |    0 | match anywhere                            |
+   * |  +30 |  +60 | match between (head + 30) and (head + 60) |
+   * |    0 |  +30 | match between (head +  0) and (head + 30) |
+   * |    0 |  -30 | match between (head +  0) and (tail - 30) |
+   * |  -60 |  -30 | match between (tail - 60) and (tail - 30) |
+   * |  -30 |    0 | match between (tail - 30) and (tail -  0) |
+   * +------+------+-------------------------------------------+
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan timespan = 3;
+   */
+  timespan?: TranscriptQuery_Threads_Text_Timespan;
+
+  /**
+   * Query text that does not match.
+   *
+   * @generated from field: bool not = 4;
+   */
+  not: boolean;
+
   constructor(data?: PartialMessage<TranscriptQuery_Threads_Text>);
 
   static readonly runtime: typeof proto3;
@@ -1255,6 +2275,391 @@ export declare class TranscriptQuery_Threads_Text extends Message<TranscriptQuer
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Threads_Text;
 
   static equals(a: TranscriptQuery_Threads_Text | PlainMessage<TranscriptQuery_Threads_Text> | undefined, b: TranscriptQuery_Threads_Text | PlainMessage<TranscriptQuery_Threads_Text> | undefined): boolean;
+}
+
+/**
+ * Timespan determines where text must be matched within a transcript.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan
+ */
+export declare class TranscriptQuery_Threads_Text_Timespan extends Message<TranscriptQuery_Threads_Text_Timespan> {
+  /**
+   * The start offset to query text from.
+   *
+   * @generated from field: google.protobuf.Duration head = 1;
+   */
+  head?: Duration;
+
+  /**
+   * The end offset to query text from.
+   *
+   * @generated from field: google.protobuf.Duration tail = 2;
+   */
+  tail?: Duration;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Threads_Text_Timespan>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Threads.Text.Timespan";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Threads_Text_Timespan;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Threads_Text_Timespan;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Threads_Text_Timespan;
+
+  static equals(a: TranscriptQuery_Threads_Text_Timespan | PlainMessage<TranscriptQuery_Threads_Text_Timespan> | undefined, b: TranscriptQuery_Threads_Text_Timespan | PlainMessage<TranscriptQuery_Threads_Text_Timespan> | undefined): boolean;
+}
+
+/**
+ * FlagSummary defines a query on flag summary fields.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary
+ */
+export declare class TranscriptQuery_FlagSummary extends Message<TranscriptQuery_FlagSummary> {
+  /**
+   * Optional. Queries need review.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview need_review = 1;
+   */
+  needReview?: TranscriptQuery_FlagSummary_NeedReview;
+
+  /**
+   * Optional. Queries review status.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus review_status = 2;
+   */
+  reviewStatus?: TranscriptQuery_FlagSummary_ReviewStatus;
+
+  /**
+   * Optional. Queries flags.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags flags = 3;
+   */
+  flags?: TranscriptQuery_FlagSummary_Flags;
+
+  /**
+   * Optional. Queries count.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count count = 4;
+   */
+  count?: TranscriptQuery_FlagSummary_Count;
+
+  constructor(data?: PartialMessage<TranscriptQuery_FlagSummary>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.FlagSummary";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_FlagSummary;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary;
+
+  static equals(a: TranscriptQuery_FlagSummary | PlainMessage<TranscriptQuery_FlagSummary> | undefined, b: TranscriptQuery_FlagSummary | PlainMessage<TranscriptQuery_FlagSummary> | undefined): boolean;
+}
+
+/**
+ * NeedReview defines a query on need review fields.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview
+ */
+export declare class TranscriptQuery_FlagSummary_NeedReview extends Message<TranscriptQuery_FlagSummary_NeedReview> {
+  /**
+   * Optional. Queries flag sids.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids flag_sids = 1;
+   */
+  flagSids?: TranscriptQuery_FlagSummary_NeedReview_FlagSids;
+
+  constructor(data?: PartialMessage<TranscriptQuery_FlagSummary_NeedReview>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_FlagSummary_NeedReview;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_NeedReview;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_NeedReview;
+
+  static equals(a: TranscriptQuery_FlagSummary_NeedReview | PlainMessage<TranscriptQuery_FlagSummary_NeedReview> | undefined, b: TranscriptQuery_FlagSummary_NeedReview | PlainMessage<TranscriptQuery_FlagSummary_NeedReview> | undefined): boolean;
+}
+
+/**
+ * FlagSids defines a query on flag sids.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids
+ */
+export declare class TranscriptQuery_FlagSummary_NeedReview_FlagSids extends Message<TranscriptQuery_FlagSummary_NeedReview_FlagSids> {
+  /**
+   * Optional. Must have any provided flag sids.
+   *
+   * @generated from field: repeated int64 any = 1;
+   */
+  any: bigint[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_FlagSummary_NeedReview_FlagSids>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.NeedReview.FlagSids";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_FlagSummary_NeedReview_FlagSids;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_NeedReview_FlagSids;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_NeedReview_FlagSids;
+
+  static equals(a: TranscriptQuery_FlagSummary_NeedReview_FlagSids | PlainMessage<TranscriptQuery_FlagSummary_NeedReview_FlagSids> | undefined, b: TranscriptQuery_FlagSummary_NeedReview_FlagSids | PlainMessage<TranscriptQuery_FlagSummary_NeedReview_FlagSids> | undefined): boolean;
+}
+
+/**
+ * ReviewStatus defines a query on review status.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus
+ */
+export declare class TranscriptQuery_FlagSummary_ReviewStatus extends Message<TranscriptQuery_FlagSummary_ReviewStatus> {
+  /**
+   * Optional. Must have any provided review status.
+   *
+   * @generated from field: repeated wfo.vanalytics.v2.ReviewStatus any = 1;
+   */
+  any: ReviewStatus[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_FlagSummary_ReviewStatus>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.ReviewStatus";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_FlagSummary_ReviewStatus;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_ReviewStatus;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_ReviewStatus;
+
+  static equals(a: TranscriptQuery_FlagSummary_ReviewStatus | PlainMessage<TranscriptQuery_FlagSummary_ReviewStatus> | undefined, b: TranscriptQuery_FlagSummary_ReviewStatus | PlainMessage<TranscriptQuery_FlagSummary_ReviewStatus> | undefined): boolean;
+}
+
+/**
+ * Flags defines a query on flags.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags
+ */
+export declare class TranscriptQuery_FlagSummary_Flags extends Message<TranscriptQuery_FlagSummary_Flags> {
+  /**
+   * Optional. Queries flag sid.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid flag_sid = 1;
+   */
+  flagSid?: TranscriptQuery_FlagSummary_Flags_FlagSid;
+
+  constructor(data?: PartialMessage<TranscriptQuery_FlagSummary_Flags>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_FlagSummary_Flags;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_Flags;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_Flags;
+
+  static equals(a: TranscriptQuery_FlagSummary_Flags | PlainMessage<TranscriptQuery_FlagSummary_Flags> | undefined, b: TranscriptQuery_FlagSummary_Flags | PlainMessage<TranscriptQuery_FlagSummary_Flags> | undefined): boolean;
+}
+
+/**
+ * FlagSid defines a query on flag sid.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid
+ */
+export declare class TranscriptQuery_FlagSummary_Flags_FlagSid extends Message<TranscriptQuery_FlagSummary_Flags_FlagSid> {
+  /**
+   * Optional. Must have any of the provided flag sids.
+   *
+   * @generated from field: repeated int64 any = 1;
+   */
+  any: bigint[];
+
+  /**
+   * Optional. Must have all of the provided flag sids.
+   *
+   * @generated from field: repeated int64 all = 2;
+   */
+  all: bigint[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_FlagSummary_Flags_FlagSid>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Flags.FlagSid";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_FlagSummary_Flags_FlagSid;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_Flags_FlagSid;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_Flags_FlagSid;
+
+  static equals(a: TranscriptQuery_FlagSummary_Flags_FlagSid | PlainMessage<TranscriptQuery_FlagSummary_Flags_FlagSid> | undefined, b: TranscriptQuery_FlagSummary_Flags_FlagSid | PlainMessage<TranscriptQuery_FlagSummary_Flags_FlagSid> | undefined): boolean;
+}
+
+/**
+ * Count defines a query on count.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count
+ */
+export declare class TranscriptQuery_FlagSummary_Count extends Message<TranscriptQuery_FlagSummary_Count> {
+  /**
+   * Optional. Queries count greater than or equal.
+   *
+   * @generated from field: google.protobuf.Int32Value gte = 1;
+   */
+  gte?: number;
+
+  /**
+   * Optional. Queries count less than or equal.
+   *
+   * @generated from field: google.protobuf.Int32Value lte = 2;
+   */
+  lte?: number;
+
+  /**
+   * Optional. Queries count greater than.
+   *
+   * @generated from field: google.protobuf.Int32Value gt = 3;
+   */
+  gt?: number;
+
+  /**
+   * Optional. Queries count less than.
+   *
+   * @generated from field: google.protobuf.Int32Value lt = 4;
+   */
+  lt?: number;
+
+  /**
+   * Optional. Queries count equal to.
+   *
+   * @generated from field: google.protobuf.Int32Value eq = 5;
+   */
+  eq?: number;
+
+  constructor(data?: PartialMessage<TranscriptQuery_FlagSummary_Count>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.FlagSummary.Count";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_FlagSummary_Count;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_Count;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_FlagSummary_Count;
+
+  static equals(a: TranscriptQuery_FlagSummary_Count | PlainMessage<TranscriptQuery_FlagSummary_Count> | undefined, b: TranscriptQuery_FlagSummary_Count | PlainMessage<TranscriptQuery_FlagSummary_Count> | undefined): boolean;
+}
+
+/**
+ * Query constraints on start time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.StartTime
+ */
+export declare class TranscriptQuery_StartTime extends Message<TranscriptQuery_StartTime> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Timestamp gte = 1;
+   */
+  gte?: Timestamp;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Timestamp lte = 2;
+   */
+  lte?: Timestamp;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Timestamp gt = 3;
+   */
+  gt?: Timestamp;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Timestamp lt = 4;
+   */
+  lt?: Timestamp;
+
+  constructor(data?: PartialMessage<TranscriptQuery_StartTime>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.StartTime";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_StartTime;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_StartTime;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_StartTime;
+
+  static equals(a: TranscriptQuery_StartTime | PlainMessage<TranscriptQuery_StartTime> | undefined, b: TranscriptQuery_StartTime | PlainMessage<TranscriptQuery_StartTime> | undefined): boolean;
+}
+
+/**
+ * Query constraints on delete time.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.DeleteTime
+ */
+export declare class TranscriptQuery_DeleteTime extends Message<TranscriptQuery_DeleteTime> {
+  /**
+   * Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.Timestamp gte = 1;
+   */
+  gte?: Timestamp;
+
+  /**
+   * Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.Timestamp lte = 2;
+   */
+  lte?: Timestamp;
+
+  /**
+   * Queries where greater than.
+   *
+   * @generated from field: google.protobuf.Timestamp gt = 3;
+   */
+  gt?: Timestamp;
+
+  /**
+   * Queries where less than.
+   *
+   * @generated from field: google.protobuf.Timestamp lt = 4;
+   */
+  lt?: Timestamp;
+
+  constructor(data?: PartialMessage<TranscriptQuery_DeleteTime>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.DeleteTime";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_DeleteTime;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_DeleteTime;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_DeleteTime;
+
+  static equals(a: TranscriptQuery_DeleteTime | PlainMessage<TranscriptQuery_DeleteTime> | undefined, b: TranscriptQuery_DeleteTime | PlainMessage<TranscriptQuery_DeleteTime> | undefined): boolean;
 }
 
 /**

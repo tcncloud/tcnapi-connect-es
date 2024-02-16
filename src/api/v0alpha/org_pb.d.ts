@@ -7,6 +7,7 @@ import type { BinaryReadOptions, DoubleValue, FieldList, FieldMask, Int64Value, 
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AdvanceStatusType, AgentFieldOption, AgentInfoSortBy, AnnouncementMixingOption, AutomaticSystemCode, ClientSkin, ConfigSound, DefaultDuplicateHandling, DigitWrapper, DisplayLanguage, IdentityProvider, InboundOverrideOption, IntercomConnection, OperatorApplications, PhoneFieldOption, PostalFieldOption, QueueInfoSortBy, RecordingFileType, SoundGender, SoundLanguage, StandardImportFormat, TimeZone, TimeZoneWrapper } from "../commons/org_pb.js";
 import type { Trust } from "../commons/org/trusts_pb.js";
+import type { MfaInfo } from "../commons/org/user_pb.js";
 import type { ChannelType } from "../commons/omnichannel_pb.js";
 import type { AgentProfileGroup } from "../commons/org/agent_profile_group_pb.js";
 import type { Country as Country$1 } from "../commons/country_pb.js";
@@ -753,6 +754,20 @@ export declare class UserDescription extends Message<UserDescription> {
    * @generated from field: repeated api.commons.org.Trust trusts = 200;
    */
   trusts: Trust[];
+
+  /**
+   * MfaInfo of the user.
+   *
+   * @generated from field: api.commons.org.MfaInfo mfa_info = 201;
+   */
+  mfaInfo?: MfaInfo;
+
+  /**
+   * Whether or not the users email is verified.
+   *
+   * @generated from field: bool email_verified = 202;
+   */
+  emailVerified: boolean;
 
   constructor(data?: PartialMessage<UserDescription>);
 

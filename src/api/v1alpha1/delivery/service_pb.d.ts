@@ -2468,7 +2468,8 @@ export declare class SFTPTransport extends Message<SFTPTransport> {
   host: string;
 
   /**
-   * @generated from field: int32 port = 2;
+   * @generated from field: int32 port = 2 [deprecated = true];
+   * @deprecated
    */
   port: number;
 

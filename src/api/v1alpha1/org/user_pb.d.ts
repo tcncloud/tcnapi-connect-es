@@ -1624,6 +1624,20 @@ export declare class ListUsersResponse_UserDetails extends Message<ListUsersResp
    */
   trustIds: string[];
 
+  /**
+   * MfaInfo of the user.
+   *
+   * @generated from field: api.commons.org.MfaInfo mfa_info = 14;
+   */
+  mfaInfo?: MfaInfo;
+
+  /**
+   * Whether or not the users email is verified.
+   *
+   * @generated from field: bool email_verified = 15;
+   */
+  emailVerified: boolean;
+
   constructor(data?: PartialMessage<ListUsersResponse_UserDetails>);
 
   static readonly runtime: typeof proto3;
@@ -1792,6 +1806,20 @@ export declare class ListUsersByOrgIdResponse_UserDetails extends Message<ListUs
    */
   trustIds: string[];
 
+  /**
+   * MfaInfo of the user.
+   *
+   * @generated from field: api.commons.org.MfaInfo mfa_info = 14;
+   */
+  mfaInfo?: MfaInfo;
+
+  /**
+   * Whether or not the users email is verified.
+   *
+   * @generated from field: bool email_verified = 15;
+   */
+  emailVerified: boolean;
+
   constructor(data?: PartialMessage<ListUsersByOrgIdResponse_UserDetails>);
 
   static readonly runtime: typeof proto3;
@@ -1959,6 +1987,20 @@ export declare class ListUsersByRegionResponse_UserDetails extends Message<ListU
    * @generated from field: repeated string trust_ids = 13;
    */
   trustIds: string[];
+
+  /**
+   * MfaInfo of the user.
+   *
+   * @generated from field: api.commons.org.MfaInfo mfa_info = 14;
+   */
+  mfaInfo?: MfaInfo;
+
+  /**
+   * Whether or not the users email is verified.
+   *
+   * @generated from field: bool email_verified = 15;
+   */
+  emailVerified: boolean;
 
   constructor(data?: PartialMessage<ListUsersByRegionResponse_UserDetails>);
 

@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { DnclList } from "./dncl_list_pb.js";
 
 /**
  * ListFlagSnapshotsRequest is a request for listing flag snapshots.
@@ -200,6 +201,14 @@ export declare class FlagSnapshot extends Message<FlagSnapshot> {
    * @generated from field: api.v1alpha1.vanalytics.FlagSnapshot.BoolExpr bool_expr = 12;
    */
   boolExpr?: FlagSnapshot_BoolExpr;
+
+  /**
+   * Optional. Specifies dncl lists to update
+   * if a transcript is flagged.
+   *
+   * @generated from field: repeated api.v1alpha1.vanalytics.DnclList dncl_list = 13;
+   */
+  dnclList: DnclList[];
 
   constructor(data?: PartialMessage<FlagSnapshot>);
 

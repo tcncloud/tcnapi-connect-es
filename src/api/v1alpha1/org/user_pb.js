@@ -461,6 +461,8 @@ export const ListUsersResponse_UserDetails = proto3.makeMessageType(
     { no: 11, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 12, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 13, name: "trust_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 14, name: "mfa_info", kind: "message", T: MfaInfo },
+    { no: 15, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
   {localName: "ListUsersResponse_UserDetails"},
 );
@@ -510,6 +512,8 @@ export const ListUsersByOrgIdResponse_UserDetails = proto3.makeMessageType(
     { no: 10, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 12, name: "trust_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 14, name: "mfa_info", kind: "message", T: MfaInfo },
+    { no: 15, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
   {localName: "ListUsersByOrgIdResponse_UserDetails"},
 );
@@ -559,6 +563,8 @@ export const ListUsersByRegionResponse_UserDetails = proto3.makeMessageType(
     { no: 11, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 12, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 13, name: "trust_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 14, name: "mfa_info", kind: "message", T: MfaInfo },
+    { no: 15, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
   {localName: "ListUsersByRegionResponse_UserDetails"},
 );
