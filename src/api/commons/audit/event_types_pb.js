@@ -81,6 +81,7 @@ export const EventType = proto3.makeEnum(
     {no: 359, name: "OMNICHANNEL_MANUAL_APPROVE_TASK_REJECTED"},
     {no: 360, name: "OMNICHANNEL_MANUAL_APPROVE_TASK_TIMEOUT"},
     {no: 361, name: "OMNICHANNEL_MANUAL_APPROVE_TASK_REQUEUE"},
+    {no: 362, name: "OMNICHANNEL_TRANSCRIPT_SAVED"},
     {no: 400, name: "ASM_AGENT_LOGIN"},
     {no: 401, name: "ASM_OPEN_VOICE"},
     {no: 402, name: "ASM_OPEN_OMNI_AGENT"},

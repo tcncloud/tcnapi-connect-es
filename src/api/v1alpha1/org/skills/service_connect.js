@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, RemoveSkillFromAllGroupsRequest, RemoveSkillFromAllGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse, UpdateUsersOnSkillGroupRequest, UpdateUsersOnSkillGroupResponse } from "./entities_pb.js";
+import { AssignSkillGroupsRequest, AssignSkillGroupsResponse, CreateSkillGroupRequest, CreateSkillGroupResponse, DeleteSkillGroupRequest, DeleteSkillGroupResponse, GetAgentSkillsRequest, GetAgentSkillsResponse, GetSkillGroupMembersRequest, GetSkillGroupMembersResponse, GetSkillGroupRequest, GetSkillGroupResponse, GetUserSkillGroupsRequest, GetUserSkillGroupsResponse, GetUserSkillsRequest, GetUserSkillsResponse, ListSkillGroupsMembersRequest, ListSkillGroupsMembersResponse, ListSkillGroupsRequest, ListSkillGroupsResponse, ListSkillsForCurrentAgentRequest, ListSkillsForCurrentAgentResponse, RemoveSkillFromAllGroupsRequest, RemoveSkillFromAllGroupsResponse, RevokeSkillGroupsRequest, RevokeSkillGroupsResponse, UpdateSkillGroupRequest, UpdateSkillGroupResponse, UpdateUsersOnSkillGroupRequest, UpdateUsersOnSkillGroupResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -153,6 +153,37 @@ export const SkillsService = {
       name: "ListSkillGroupsMembers",
       I: ListSkillGroupsMembersRequest,
       O: ListSkillGroupsMembersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Gets the skills of the requesting agent. This includes agent skills, hunt group skills, and extension skills(PBX).
+     * Skills will be returned as a value pair (name, level).
+     * For agent skills, the name of each skill will be the agent_skill_sid.
+     * All other skills' names (hunt group and PBX) will be given special formats.
+     * The requesting agent and hunt_group_sid skills will be defaulted to the max level (1000 and 100 respectively).
+     *
+     * Required permissions:
+     *   NONE
+     * Errors:
+     *   - grpc.Invalid: the hunt_group_sid in the request in invalid.
+     *
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.GetAgentSkills
+     */
+    getAgentSkills: {
+      name: "GetAgentSkills",
+      I: GetAgentSkillsRequest,
+      O: GetAgentSkillsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns a list of skills for the current agent.
+     *
+     * @generated from rpc api.v1alpha1.org.skills.SkillsService.ListSkillsForCurrentAgent
+     */
+    listSkillsForCurrentAgent: {
+      name: "ListSkillsForCurrentAgent",
+      I: ListSkillsForCurrentAgentRequest,
+      O: ListSkillsForCurrentAgentResponse,
       kind: MethodKind.Unary,
     },
   }

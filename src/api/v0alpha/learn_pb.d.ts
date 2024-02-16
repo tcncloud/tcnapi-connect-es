@@ -1088,3 +1088,145 @@ export declare class PublishVersionRes extends Message<PublishVersionRes> {
   static equals(a: PublishVersionRes | PlainMessage<PublishVersionRes> | undefined, b: PublishVersionRes | PlainMessage<PublishVersionRes> | undefined): boolean;
 }
 
+/**
+ * request to retrieve learning pages content from the url by version
+ *
+ * @generated from message api.v0alpha.ContentByVersionReq
+ */
+export declare class ContentByVersionReq extends Message<ContentByVersionReq> {
+  /**
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  /**
+   * @generated from field: string locale = 2;
+   */
+  locale: string;
+
+  /**
+   * by version
+   *
+   * @generated from field: string version = 3;
+   */
+  version: string;
+
+  constructor(data?: PartialMessage<ContentByVersionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ContentByVersionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContentByVersionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContentByVersionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContentByVersionReq;
+
+  static equals(a: ContentByVersionReq | PlainMessage<ContentByVersionReq> | undefined, b: ContentByVersionReq | PlainMessage<ContentByVersionReq> | undefined): boolean;
+}
+
+/**
+ * request to update learning pages content based on the url by version
+ *
+ * @generated from message api.v0alpha.UpdateByVersionReq
+ */
+export declare class UpdateByVersionReq extends Message<UpdateByVersionReq> {
+  /**
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  /**
+   * @generated from field: string locale = 2;
+   */
+  locale: string;
+
+  /**
+   * @generated from field: string content = 3;
+   */
+  content: string;
+
+  /**
+   * @generated from field: string version = 4;
+   */
+  version: string;
+
+  /**
+   * commit message
+   *
+   * @generated from field: string message = 12;
+   */
+  message: string;
+
+  /**
+   * title of the article
+   *
+   * @generated from field: string title = 13;
+   */
+  title: string;
+
+  constructor(data?: PartialMessage<UpdateByVersionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.UpdateByVersionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateByVersionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateByVersionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateByVersionReq;
+
+  static equals(a: UpdateByVersionReq | PlainMessage<UpdateByVersionReq> | undefined, b: UpdateByVersionReq | PlainMessage<UpdateByVersionReq> | undefined): boolean;
+}
+
+/**
+ * request to search content in learning pages based on version
+ *
+ * @generated from message api.v0alpha.SearchContentByVersionReq
+ */
+export declare class SearchContentByVersionReq extends Message<SearchContentByVersionReq> {
+  /**
+   * search for the specific content in markdown contents
+   *
+   * @generated from field: string search_content = 1;
+   */
+  searchContent: string;
+
+  /**
+   * locale used for the markdown contents
+   *
+   * @generated from field: string locale = 2;
+   */
+  locale: string;
+
+  /**
+   * field mask to filter apps that are accessible to be searched
+   *
+   * @generated from field: google.protobuf.FieldMask field_mask = 5;
+   */
+  fieldMask?: FieldMask;
+
+  /**
+   * by version
+   *
+   * @generated from field: string version = 6;
+   */
+  version: string;
+
+  constructor(data?: PartialMessage<SearchContentByVersionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.SearchContentByVersionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchContentByVersionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchContentByVersionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchContentByVersionReq;
+
+  static equals(a: SearchContentByVersionReq | PlainMessage<SearchContentByVersionReq> | undefined, b: SearchContentByVersionReq | PlainMessage<SearchContentByVersionReq> | undefined): boolean;
+}
+

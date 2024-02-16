@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Filter } from "./filter_pb.js";
+import type { DnclList } from "./dncl_list_pb.js";
 
 /**
  * CreateFlagRequest is a request for creating a flag.
@@ -411,6 +412,14 @@ export declare class Flag extends Message<Flag> {
    * @generated from field: api.v1alpha1.vanalytics.Flag.BoolExpr bool_expr = 11;
    */
   boolExpr?: Flag_BoolExpr;
+
+  /**
+   * Optional. Specifies dncl lists to update
+   * if a transcript is flagged.
+   *
+   * @generated from field: repeated api.v1alpha1.vanalytics.DnclList dncl_list = 12;
+   */
+  dnclList: DnclList[];
 
   constructor(data?: PartialMessage<Flag>);
 
