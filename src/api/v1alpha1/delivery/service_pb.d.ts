@@ -2468,7 +2468,8 @@ export declare class SFTPTransport extends Message<SFTPTransport> {
   host: string;
 
   /**
-   * @generated from field: int32 port = 2;
+   * @generated from field: int32 port = 2 [deprecated = true];
+   * @deprecated
    */
   port: number;
 
@@ -2521,7 +2522,8 @@ export declare class EmailTransport extends Message<EmailTransport> {
   /**
    * which email we want to show up as as from
    *
-   * @generated from field: string from_address = 1;
+   * @generated from field: string from_address = 1 [deprecated = true];
+   * @deprecated
    */
   fromAddress: string;
 
