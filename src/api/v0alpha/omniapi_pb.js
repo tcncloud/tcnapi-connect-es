@@ -1846,3 +1846,29 @@ export const UpdateWhatsAppNumberResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * CreateManualTaskReq - create a manual task
+ *
+ * @generated from message api.v0alpha.CreateManualTaskReq
+ */
+export const CreateManualTaskReq = proto3.makeMessageType(
+  "api.v0alpha.CreateManualTaskReq",
+  () => [
+    { no: 1, name: "campaign_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "campaign_module_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 3, name: "task_data", kind: "message", T: OmniTask },
+  ],
+);
+
+/**
+ * CreateManualTaskRes -
+ *
+ * @generated from message api.v0alpha.CreateManualTaskRes
+ */
+export const CreateManualTaskRes = proto3.makeMessageType(
+  "api.v0alpha.CreateManualTaskRes",
+  () => [
+    { no: 1, name: "reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
