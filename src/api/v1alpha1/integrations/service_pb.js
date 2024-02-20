@@ -1342,3 +1342,25 @@ export const HangUpEpicPatientCallReq = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v1alpha1.integrations.GenerateEpicKeyPairReq
+ */
+export const GenerateEpicKeyPairReq = proto3.makeMessageType(
+  "api.v1alpha1.integrations.GenerateEpicKeyPairReq",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "server", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.GenerateEpicKeyPairRes
+ */
+export const GenerateEpicKeyPairRes = proto3.makeMessageType(
+  "api.v1alpha1.integrations.GenerateEpicKeyPairRes",
+  () => [
+    { no: 1, name: "production_public_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "non_production_public_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

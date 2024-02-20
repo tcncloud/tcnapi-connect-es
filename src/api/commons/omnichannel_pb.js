@@ -40,6 +40,7 @@ export const SmsNumberProvider = proto3.makeEnum(
     {no: 5, name: "AUSBURST_SMS_PROVIDER"},
     {no: 6, name: "MEDIASAT_SMS_PROVIDER"},
     {no: 7, name: "TEXTLOCAL_SMS_PROVIDER"},
+    {no: 8, name: "SMARTPING_SMS_PROVIDER"},
   ],
 );
 

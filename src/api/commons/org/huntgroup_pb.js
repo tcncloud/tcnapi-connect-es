@@ -1092,6 +1092,7 @@ export const ClientInfoDisplayTemplate = proto3.makeMessageType(
     { no: 6, name: "contact_field_styles", kind: "message", T: ContactFieldStyle, repeated: true },
     { no: 7, name: "template_category", kind: "enum", T: proto3.getEnumType(TemplateCategory) },
     { no: 8, name: "client_info_display_template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 9, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -1134,6 +1135,34 @@ export const DialedNumberFieldStyle = proto3.makeMessageType(
     { no: 1, name: "field_style", kind: "message", T: FieldStyle },
     { no: 2, name: "display_to_agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
+);
+
+/**
+ * HuntGroupWithClientInfoTemplateData is the entity for a hunt group with its client info display template data.
+ *
+ * @generated from message api.commons.org.HuntGroupWithClientInfoTemplateData
+ */
+export const HuntGroupWithClientInfoTemplateData = proto3.makeMessageType(
+  "api.commons.org.HuntGroupWithClientInfoTemplateData",
+  () => [
+    { no: 1, name: "hunt_group", kind: "message", T: HuntGroupWithClientInfoTemplateData_HuntGroup },
+    { no: 2, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * HuntGroup is the entity for a simplified hunt group details.
+ *
+ * @generated from message api.commons.org.HuntGroupWithClientInfoTemplateData.HuntGroup
+ */
+export const HuntGroupWithClientInfoTemplateData_HuntGroup = proto3.makeMessageType(
+  "api.commons.org.HuntGroupWithClientInfoTemplateData.HuntGroup",
+  () => [
+    { no: 1, name: "client_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "hunt_group_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "HuntGroupWithClientInfoTemplateData_HuntGroup"},
 );
 
 /**

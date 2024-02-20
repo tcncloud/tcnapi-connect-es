@@ -4911,3 +4911,73 @@ export declare class UpdateWhatsAppNumberResponse extends Message<UpdateWhatsApp
   static equals(a: UpdateWhatsAppNumberResponse | PlainMessage<UpdateWhatsAppNumberResponse> | undefined, b: UpdateWhatsAppNumberResponse | PlainMessage<UpdateWhatsAppNumberResponse> | undefined): boolean;
 }
 
+/**
+ * CreateManualTaskReq - create a manual task
+ *
+ * @generated from message api.v0alpha.CreateManualTaskReq
+ */
+export declare class CreateManualTaskReq extends Message<CreateManualTaskReq> {
+  /**
+   * campaign identifier
+   *
+   * @generated from field: int64 campaign_sid = 1 [jstype = JS_STRING];
+   */
+  campaignSid: string;
+
+  /**
+   * campaign module identifier
+   *
+   * @generated from field: int64 campaign_module_sid = 2 [jstype = JS_STRING];
+   */
+  campaignModuleSid: string;
+
+  /**
+   * task data
+   *
+   * @generated from field: api.commons.OmniTask task_data = 3;
+   */
+  taskData?: OmniTask;
+
+  constructor(data?: PartialMessage<CreateManualTaskReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateManualTaskReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateManualTaskReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateManualTaskReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateManualTaskReq;
+
+  static equals(a: CreateManualTaskReq | PlainMessage<CreateManualTaskReq> | undefined, b: CreateManualTaskReq | PlainMessage<CreateManualTaskReq> | undefined): boolean;
+}
+
+/**
+ * CreateManualTaskRes -
+ *
+ * @generated from message api.v0alpha.CreateManualTaskRes
+ */
+export declare class CreateManualTaskRes extends Message<CreateManualTaskRes> {
+  /**
+   * ghost notifier reference identifier
+   *
+   * @generated from field: string reference_id = 1;
+   */
+  referenceId: string;
+
+  constructor(data?: PartialMessage<CreateManualTaskRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.CreateManualTaskRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateManualTaskRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateManualTaskRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateManualTaskRes;
+
+  static equals(a: CreateManualTaskRes | PlainMessage<CreateManualTaskRes> | undefined, b: CreateManualTaskRes | PlainMessage<CreateManualTaskRes> | undefined): boolean;
+}
+
