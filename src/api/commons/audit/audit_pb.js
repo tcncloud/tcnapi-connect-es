@@ -13,7 +13,7 @@ import { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent, Sco
 import { TicketEvent } from "./tickets_events_pb.js";
 import { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
-import { LMSPipelineFailureEvent } from "./lms_events_pb.js";
+import { LMSPipelineFailureEvent, LMSPipelineNoOutputEvent, LMSPipelineSuccessfulEvent } from "./lms_events_pb.js";
 import { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
 import { DeliveryFailureEvent, DeliverySuccessEvent } from "./delivery_events_pb.js";
 
@@ -124,6 +124,8 @@ export const AuditEvent = proto3.makeMessageType(
     { no: 701, name: "compliance_rnd_query_cached_event", kind: "message", T: ComplianceRndQueryEvent, oneof: "event" },
     { no: 800, name: "agent_training_create_learning_opportunity_event", kind: "message", T: AgentTrainingCreateLearningOpportunityEvent, oneof: "event" },
     { no: 900, name: "lms_pipeline_failure_event", kind: "message", T: LMSPipelineFailureEvent, oneof: "event" },
+    { no: 901, name: "lms_pipeline_no_output_event", kind: "message", T: LMSPipelineNoOutputEvent, oneof: "event" },
+    { no: 902, name: "lms_pipeline_successful_event", kind: "message", T: LMSPipelineSuccessfulEvent, oneof: "event" },
     { no: 1000, name: "billing_commit_billing_plan_event", kind: "message", T: BillingCommitBillingPlanEvent, oneof: "event" },
     { no: 1001, name: "billing_create_billing_plan_event", kind: "message", T: BillingCreateBillingPlanEvent, oneof: "event" },
     { no: 1002, name: "billing_create_invoice_event", kind: "message", T: BillingCreateInvoiceEvent, oneof: "event" },
