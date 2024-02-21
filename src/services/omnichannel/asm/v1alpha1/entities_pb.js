@@ -7,28 +7,28 @@ import { proto3 } from "@bufbuild/protobuf";
 import { AsmSession, ListAsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionReq
+ * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRequest
  */
-export const CreateSessionReq = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.CreateSessionReq",
+export const CreateSessionRequest = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.CreateSessionRequest",
   [],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRes
+ * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionResponse
  */
-export const CreateSessionRes = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.CreateSessionRes",
+export const CreateSessionResponse = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.CreateSessionResponse",
   () => [
     { no: 1, name: "asm_session", kind: "message", T: AsmSession },
   ],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EndSessionReq
+ * @generated from message services.omnichannel.asm.v1alpha1.EndSessionRequest
  */
-export const EndSessionReq = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.EndSessionReq",
+export const EndSessionRequest = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.EndSessionRequest",
   () => [
     { no: 1, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "reason", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -36,36 +36,36 @@ export const EndSessionReq = proto3.makeMessageType(
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EndSessionRes
+ * @generated from message services.omnichannel.asm.v1alpha1.EndSessionResponse
  */
-export const EndSessionRes = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.EndSessionRes",
+export const EndSessionResponse = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.EndSessionResponse",
   [],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionReq
+ * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionRequest
  */
-export const GetCurrentSessionReq = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.GetCurrentSessionReq",
+export const GetCurrentSessionRequest = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.GetCurrentSessionRequest",
   [],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionRes
+ * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionResponse
  */
-export const GetCurrentSessionRes = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.GetCurrentSessionRes",
+export const GetCurrentSessionResponse = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.GetCurrentSessionResponse",
   () => [
     { no: 1, name: "asm_session", kind: "message", T: AsmSession },
   ],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceReq
+ * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceRequest
  */
-export const EnableVoiceReq = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.EnableVoiceReq",
+export const EnableVoiceRequest = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.EnableVoiceRequest",
   () => [
     { no: 1, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
@@ -74,10 +74,10 @@ export const EnableVoiceReq = proto3.makeMessageType(
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceRes
+ * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceResponse
  */
-export const EnableVoiceRes = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.EnableVoiceRes",
+export const EnableVoiceResponse = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.EnableVoiceResponse",
   () => [
     { no: 1, name: "voice_session", kind: "message", T: VoiceSession },
     { no: 2, name: "voice_registration", kind: "message", T: VoiceRegistration },
@@ -85,36 +85,36 @@ export const EnableVoiceRes = proto3.makeMessageType(
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceReq
+ * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceRequest
  */
-export const DisableVoiceReq = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.DisableVoiceReq",
+export const DisableVoiceRequest = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.DisableVoiceRequest",
   () => [
     { no: 1, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceRes
+ * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceResponse
  */
-export const DisableVoiceRes = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.DisableVoiceRes",
+export const DisableVoiceResponse = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.DisableVoiceResponse",
   [],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsReq
+ * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRequest
  */
-export const ListAsmUserDetailsReq = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsReq",
+export const ListAsmUserDetailsRequest = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRequest",
   [],
 );
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRes
+ * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse
  */
-export const ListAsmUserDetailsRes = proto3.makeMessageType(
-  "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRes",
+export const ListAsmUserDetailsResponse = proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse",
   () => [
     { no: 1, name: "sessions", kind: "message", T: ListAsmUserDetails, repeated: true },
   ],

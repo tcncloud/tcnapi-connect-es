@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateSessionReq, CreateSessionRes, DisableVoiceReq, DisableVoiceRes, EnableVoiceReq, EnableVoiceRes, EndSessionReq, EndSessionRes, GetCurrentSessionReq, GetCurrentSessionRes, ListAsmUserDetailsReq, ListAsmUserDetailsRes } from "./entities_pb.js";
+import { CreateSessionRequest, CreateSessionResponse, DisableVoiceRequest, DisableVoiceResponse, EnableVoiceRequest, EnableVoiceResponse, EndSessionRequest, EndSessionResponse, GetCurrentSessionRequest, GetCurrentSessionResponse, ListAsmUserDetailsRequest, ListAsmUserDetailsResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,8 +19,8 @@ export const AsmService = {
      */
     createSession: {
       name: "CreateSession",
-      I: CreateSessionReq,
-      O: CreateSessionRes,
+      I: CreateSessionRequest,
+      O: CreateSessionResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -30,8 +30,8 @@ export const AsmService = {
      */
     endSession: {
       name: "EndSession",
-      I: EndSessionReq,
-      O: EndSessionRes,
+      I: EndSessionRequest,
+      O: EndSessionResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -41,8 +41,8 @@ export const AsmService = {
      */
     getCurrentSession: {
       name: "GetCurrentSession",
-      I: GetCurrentSessionReq,
-      O: GetCurrentSessionRes,
+      I: GetCurrentSessionRequest,
+      O: GetCurrentSessionResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -52,8 +52,8 @@ export const AsmService = {
      */
     enableVoice: {
       name: "EnableVoice",
-      I: EnableVoiceReq,
-      O: EnableVoiceRes,
+      I: EnableVoiceRequest,
+      O: EnableVoiceResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -61,8 +61,8 @@ export const AsmService = {
      */
     disableVoice: {
       name: "DisableVoice",
-      I: DisableVoiceReq,
-      O: DisableVoiceRes,
+      I: DisableVoiceRequest,
+      O: DisableVoiceResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -72,8 +72,8 @@ export const AsmService = {
      */
     listAsmUserDetails: {
       name: "ListAsmUserDetails",
-      I: ListAsmUserDetailsReq,
-      O: ListAsmUserDetailsRes,
+      I: ListAsmUserDetailsRequest,
+      O: ListAsmUserDetailsResponse,
       kind: MethodKind.Unary,
     },
   }

@@ -8,28 +8,28 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AsmSession, ListAsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionReq
+ * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRequest
  */
-export declare class CreateSessionReq extends Message<CreateSessionReq> {
-  constructor(data?: PartialMessage<CreateSessionReq>);
+export declare class CreateSessionRequest extends Message<CreateSessionRequest> {
+  constructor(data?: PartialMessage<CreateSessionRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.CreateSessionReq";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.CreateSessionRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSessionReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSessionRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSessionReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSessionRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSessionReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSessionRequest;
 
-  static equals(a: CreateSessionReq | PlainMessage<CreateSessionReq> | undefined, b: CreateSessionReq | PlainMessage<CreateSessionReq> | undefined): boolean;
+  static equals(a: CreateSessionRequest | PlainMessage<CreateSessionRequest> | undefined, b: CreateSessionRequest | PlainMessage<CreateSessionRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRes
+ * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionResponse
  */
-export declare class CreateSessionRes extends Message<CreateSessionRes> {
+export declare class CreateSessionResponse extends Message<CreateSessionResponse> {
   /**
    * asm session
    *
@@ -37,25 +37,25 @@ export declare class CreateSessionRes extends Message<CreateSessionRes> {
    */
   asmSession?: AsmSession;
 
-  constructor(data?: PartialMessage<CreateSessionRes>);
+  constructor(data?: PartialMessage<CreateSessionResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.CreateSessionRes";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.CreateSessionResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSessionRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateSessionResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSessionRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateSessionResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSessionRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSessionResponse;
 
-  static equals(a: CreateSessionRes | PlainMessage<CreateSessionRes> | undefined, b: CreateSessionRes | PlainMessage<CreateSessionRes> | undefined): boolean;
+  static equals(a: CreateSessionResponse | PlainMessage<CreateSessionResponse> | undefined, b: CreateSessionResponse | PlainMessage<CreateSessionResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EndSessionReq
+ * @generated from message services.omnichannel.asm.v1alpha1.EndSessionRequest
  */
-export declare class EndSessionReq extends Message<EndSessionReq> {
+export declare class EndSessionRequest extends Message<EndSessionRequest> {
   /**
    * the asm session sid to be ended
    *
@@ -70,63 +70,63 @@ export declare class EndSessionReq extends Message<EndSessionReq> {
    */
   reason: string;
 
-  constructor(data?: PartialMessage<EndSessionReq>);
+  constructor(data?: PartialMessage<EndSessionRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.EndSessionReq";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.EndSessionRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EndSessionReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EndSessionRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EndSessionReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EndSessionRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EndSessionReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EndSessionRequest;
 
-  static equals(a: EndSessionReq | PlainMessage<EndSessionReq> | undefined, b: EndSessionReq | PlainMessage<EndSessionReq> | undefined): boolean;
+  static equals(a: EndSessionRequest | PlainMessage<EndSessionRequest> | undefined, b: EndSessionRequest | PlainMessage<EndSessionRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EndSessionRes
+ * @generated from message services.omnichannel.asm.v1alpha1.EndSessionResponse
  */
-export declare class EndSessionRes extends Message<EndSessionRes> {
-  constructor(data?: PartialMessage<EndSessionRes>);
+export declare class EndSessionResponse extends Message<EndSessionResponse> {
+  constructor(data?: PartialMessage<EndSessionResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.EndSessionRes";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.EndSessionResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EndSessionRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EndSessionResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EndSessionRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EndSessionResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EndSessionRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EndSessionResponse;
 
-  static equals(a: EndSessionRes | PlainMessage<EndSessionRes> | undefined, b: EndSessionRes | PlainMessage<EndSessionRes> | undefined): boolean;
+  static equals(a: EndSessionResponse | PlainMessage<EndSessionResponse> | undefined, b: EndSessionResponse | PlainMessage<EndSessionResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionReq
+ * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionRequest
  */
-export declare class GetCurrentSessionReq extends Message<GetCurrentSessionReq> {
-  constructor(data?: PartialMessage<GetCurrentSessionReq>);
+export declare class GetCurrentSessionRequest extends Message<GetCurrentSessionRequest> {
+  constructor(data?: PartialMessage<GetCurrentSessionRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.GetCurrentSessionReq";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.GetCurrentSessionRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrentSessionReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrentSessionRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrentSessionReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrentSessionRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrentSessionReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrentSessionRequest;
 
-  static equals(a: GetCurrentSessionReq | PlainMessage<GetCurrentSessionReq> | undefined, b: GetCurrentSessionReq | PlainMessage<GetCurrentSessionReq> | undefined): boolean;
+  static equals(a: GetCurrentSessionRequest | PlainMessage<GetCurrentSessionRequest> | undefined, b: GetCurrentSessionRequest | PlainMessage<GetCurrentSessionRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionRes
+ * @generated from message services.omnichannel.asm.v1alpha1.GetCurrentSessionResponse
  */
-export declare class GetCurrentSessionRes extends Message<GetCurrentSessionRes> {
+export declare class GetCurrentSessionResponse extends Message<GetCurrentSessionResponse> {
   /**
    * current asm session
    *
@@ -134,25 +134,25 @@ export declare class GetCurrentSessionRes extends Message<GetCurrentSessionRes> 
    */
   asmSession?: AsmSession;
 
-  constructor(data?: PartialMessage<GetCurrentSessionRes>);
+  constructor(data?: PartialMessage<GetCurrentSessionResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.GetCurrentSessionRes";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.GetCurrentSessionResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrentSessionRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetCurrentSessionResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrentSessionRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetCurrentSessionResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrentSessionRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrentSessionResponse;
 
-  static equals(a: GetCurrentSessionRes | PlainMessage<GetCurrentSessionRes> | undefined, b: GetCurrentSessionRes | PlainMessage<GetCurrentSessionRes> | undefined): boolean;
+  static equals(a: GetCurrentSessionResponse | PlainMessage<GetCurrentSessionResponse> | undefined, b: GetCurrentSessionResponse | PlainMessage<GetCurrentSessionResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceReq
+ * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceRequest
  */
-export declare class EnableVoiceReq extends Message<EnableVoiceReq> {
+export declare class EnableVoiceRequest extends Message<EnableVoiceRequest> {
   /**
    * asm session sid to start voice
    *
@@ -174,25 +174,25 @@ export declare class EnableVoiceReq extends Message<EnableVoiceReq> {
    */
   skills: { [key: string]: bigint };
 
-  constructor(data?: PartialMessage<EnableVoiceReq>);
+  constructor(data?: PartialMessage<EnableVoiceRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.EnableVoiceReq";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.EnableVoiceRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableVoiceReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableVoiceRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableVoiceReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableVoiceRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableVoiceReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableVoiceRequest;
 
-  static equals(a: EnableVoiceReq | PlainMessage<EnableVoiceReq> | undefined, b: EnableVoiceReq | PlainMessage<EnableVoiceReq> | undefined): boolean;
+  static equals(a: EnableVoiceRequest | PlainMessage<EnableVoiceRequest> | undefined, b: EnableVoiceRequest | PlainMessage<EnableVoiceRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceRes
+ * @generated from message services.omnichannel.asm.v1alpha1.EnableVoiceResponse
  */
-export declare class EnableVoiceRes extends Message<EnableVoiceRes> {
+export declare class EnableVoiceResponse extends Message<EnableVoiceResponse> {
   /**
    * voice session that was enabled
    *
@@ -207,25 +207,25 @@ export declare class EnableVoiceRes extends Message<EnableVoiceRes> {
    */
   voiceRegistration?: VoiceRegistration;
 
-  constructor(data?: PartialMessage<EnableVoiceRes>);
+  constructor(data?: PartialMessage<EnableVoiceResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.EnableVoiceRes";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.EnableVoiceResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableVoiceRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EnableVoiceResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableVoiceRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EnableVoiceResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableVoiceRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EnableVoiceResponse;
 
-  static equals(a: EnableVoiceRes | PlainMessage<EnableVoiceRes> | undefined, b: EnableVoiceRes | PlainMessage<EnableVoiceRes> | undefined): boolean;
+  static equals(a: EnableVoiceResponse | PlainMessage<EnableVoiceResponse> | undefined, b: EnableVoiceResponse | PlainMessage<EnableVoiceResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceReq
+ * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceRequest
  */
-export declare class DisableVoiceReq extends Message<DisableVoiceReq> {
+export declare class DisableVoiceRequest extends Message<DisableVoiceRequest> {
   /**
    * asm session to have voice disabled.
    *
@@ -233,63 +233,63 @@ export declare class DisableVoiceReq extends Message<DisableVoiceReq> {
    */
   asmSessionSid: bigint;
 
-  constructor(data?: PartialMessage<DisableVoiceReq>);
+  constructor(data?: PartialMessage<DisableVoiceRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.DisableVoiceReq";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.DisableVoiceRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DisableVoiceReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DisableVoiceRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DisableVoiceReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DisableVoiceRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DisableVoiceReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DisableVoiceRequest;
 
-  static equals(a: DisableVoiceReq | PlainMessage<DisableVoiceReq> | undefined, b: DisableVoiceReq | PlainMessage<DisableVoiceReq> | undefined): boolean;
+  static equals(a: DisableVoiceRequest | PlainMessage<DisableVoiceRequest> | undefined, b: DisableVoiceRequest | PlainMessage<DisableVoiceRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceRes
+ * @generated from message services.omnichannel.asm.v1alpha1.DisableVoiceResponse
  */
-export declare class DisableVoiceRes extends Message<DisableVoiceRes> {
-  constructor(data?: PartialMessage<DisableVoiceRes>);
+export declare class DisableVoiceResponse extends Message<DisableVoiceResponse> {
+  constructor(data?: PartialMessage<DisableVoiceResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.DisableVoiceRes";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.DisableVoiceResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DisableVoiceRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DisableVoiceResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DisableVoiceRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DisableVoiceResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DisableVoiceRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DisableVoiceResponse;
 
-  static equals(a: DisableVoiceRes | PlainMessage<DisableVoiceRes> | undefined, b: DisableVoiceRes | PlainMessage<DisableVoiceRes> | undefined): boolean;
+  static equals(a: DisableVoiceResponse | PlainMessage<DisableVoiceResponse> | undefined, b: DisableVoiceResponse | PlainMessage<DisableVoiceResponse> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsReq
+ * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRequest
  */
-export declare class ListAsmUserDetailsReq extends Message<ListAsmUserDetailsReq> {
-  constructor(data?: PartialMessage<ListAsmUserDetailsReq>);
+export declare class ListAsmUserDetailsRequest extends Message<ListAsmUserDetailsRequest> {
+  constructor(data?: PartialMessage<ListAsmUserDetailsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsReq";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAsmUserDetailsReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAsmUserDetailsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAsmUserDetailsReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAsmUserDetailsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetailsReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetailsRequest;
 
-  static equals(a: ListAsmUserDetailsReq | PlainMessage<ListAsmUserDetailsReq> | undefined, b: ListAsmUserDetailsReq | PlainMessage<ListAsmUserDetailsReq> | undefined): boolean;
+  static equals(a: ListAsmUserDetailsRequest | PlainMessage<ListAsmUserDetailsRequest> | undefined, b: ListAsmUserDetailsRequest | PlainMessage<ListAsmUserDetailsRequest> | undefined): boolean;
 }
 
 /**
- * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRes
+ * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse
  */
-export declare class ListAsmUserDetailsRes extends Message<ListAsmUserDetailsRes> {
+export declare class ListAsmUserDetailsResponse extends Message<ListAsmUserDetailsResponse> {
   /**
    * list of Sessions in the system with enrichments
    *
@@ -297,18 +297,18 @@ export declare class ListAsmUserDetailsRes extends Message<ListAsmUserDetailsRes
    */
   sessions: ListAsmUserDetails[];
 
-  constructor(data?: PartialMessage<ListAsmUserDetailsRes>);
+  constructor(data?: PartialMessage<ListAsmUserDetailsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsRes";
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAsmUserDetailsRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAsmUserDetailsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAsmUserDetailsRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAsmUserDetailsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetailsRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetailsResponse;
 
-  static equals(a: ListAsmUserDetailsRes | PlainMessage<ListAsmUserDetailsRes> | undefined, b: ListAsmUserDetailsRes | PlainMessage<ListAsmUserDetailsRes> | undefined): boolean;
+  static equals(a: ListAsmUserDetailsResponse | PlainMessage<ListAsmUserDetailsResponse> | undefined, b: ListAsmUserDetailsResponse | PlainMessage<ListAsmUserDetailsResponse> | undefined): boolean;
 }
 

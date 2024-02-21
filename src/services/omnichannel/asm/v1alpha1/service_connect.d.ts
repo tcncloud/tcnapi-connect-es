@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateSessionReq, CreateSessionRes, DisableVoiceReq, DisableVoiceRes, EnableVoiceReq, EnableVoiceRes, EndSessionReq, EndSessionRes, GetCurrentSessionReq, GetCurrentSessionRes, ListAsmUserDetailsReq, ListAsmUserDetailsRes } from "./entities_pb.js";
+import { CreateSessionRequest, CreateSessionResponse, DisableVoiceRequest, DisableVoiceResponse, EnableVoiceRequest, EnableVoiceResponse, EndSessionRequest, EndSessionResponse, GetCurrentSessionRequest, GetCurrentSessionResponse, ListAsmUserDetailsRequest, ListAsmUserDetailsResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -19,8 +19,8 @@ export declare const AsmService: {
      */
     readonly createSession: {
       readonly name: "CreateSession",
-      readonly I: typeof CreateSessionReq,
-      readonly O: typeof CreateSessionRes,
+      readonly I: typeof CreateSessionRequest,
+      readonly O: typeof CreateSessionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -30,8 +30,8 @@ export declare const AsmService: {
      */
     readonly endSession: {
       readonly name: "EndSession",
-      readonly I: typeof EndSessionReq,
-      readonly O: typeof EndSessionRes,
+      readonly I: typeof EndSessionRequest,
+      readonly O: typeof EndSessionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -41,8 +41,8 @@ export declare const AsmService: {
      */
     readonly getCurrentSession: {
       readonly name: "GetCurrentSession",
-      readonly I: typeof GetCurrentSessionReq,
-      readonly O: typeof GetCurrentSessionRes,
+      readonly I: typeof GetCurrentSessionRequest,
+      readonly O: typeof GetCurrentSessionResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -52,8 +52,8 @@ export declare const AsmService: {
      */
     readonly enableVoice: {
       readonly name: "EnableVoice",
-      readonly I: typeof EnableVoiceReq,
-      readonly O: typeof EnableVoiceRes,
+      readonly I: typeof EnableVoiceRequest,
+      readonly O: typeof EnableVoiceResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -61,8 +61,8 @@ export declare const AsmService: {
      */
     readonly disableVoice: {
       readonly name: "DisableVoice",
-      readonly I: typeof DisableVoiceReq,
-      readonly O: typeof DisableVoiceRes,
+      readonly I: typeof DisableVoiceRequest,
+      readonly O: typeof DisableVoiceResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -72,8 +72,8 @@ export declare const AsmService: {
      */
     readonly listAsmUserDetails: {
       readonly name: "ListAsmUserDetails",
-      readonly I: typeof ListAsmUserDetailsReq,
-      readonly O: typeof ListAsmUserDetailsRes,
+      readonly I: typeof ListAsmUserDetailsRequest,
+      readonly O: typeof ListAsmUserDetailsResponse,
       readonly kind: MethodKind.Unary,
     },
   }
