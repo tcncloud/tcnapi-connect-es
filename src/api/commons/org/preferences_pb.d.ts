@@ -2547,9 +2547,45 @@ export declare class BusinessHours extends Message<BusinessHours> {
   description: string;
 
   /**
-   * @generated from field: repeated api.commons.org.Range ranges = 5;
+   * @generated from field: repeated api.commons.org.Range ranges = 5 [deprecated = true];
+   * @deprecated
    */
   ranges: Range[];
+
+  /**
+   * @generated from field: repeated api.commons.org.Range sunday_ranges = 6;
+   */
+  sundayRanges: Range[];
+
+  /**
+   * @generated from field: repeated api.commons.org.Range monday_ranges = 7;
+   */
+  mondayRanges: Range[];
+
+  /**
+   * @generated from field: repeated api.commons.org.Range tuesday_ranges = 8;
+   */
+  tuesdayRanges: Range[];
+
+  /**
+   * @generated from field: repeated api.commons.org.Range wednesday_ranges = 9;
+   */
+  wednesdayRanges: Range[];
+
+  /**
+   * @generated from field: repeated api.commons.org.Range thursday_ranges = 10;
+   */
+  thursdayRanges: Range[];
+
+  /**
+   * @generated from field: repeated api.commons.org.Range friday_ranges = 11;
+   */
+  fridayRanges: Range[];
+
+  /**
+   * @generated from field: repeated api.commons.org.Range saturday_ranges = 12;
+   */
+  saturdayRanges: Range[];
 
   constructor(data?: PartialMessage<BusinessHours>);
 

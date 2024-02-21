@@ -734,6 +734,13 @@ export const BusinessHours = proto3.makeMessageType(
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "ranges", kind: "message", T: Range, repeated: true },
+    { no: 6, name: "sunday_ranges", kind: "message", T: Range, repeated: true },
+    { no: 7, name: "monday_ranges", kind: "message", T: Range, repeated: true },
+    { no: 8, name: "tuesday_ranges", kind: "message", T: Range, repeated: true },
+    { no: 9, name: "wednesday_ranges", kind: "message", T: Range, repeated: true },
+    { no: 10, name: "thursday_ranges", kind: "message", T: Range, repeated: true },
+    { no: 11, name: "friday_ranges", kind: "message", T: Range, repeated: true },
+    { no: 12, name: "saturday_ranges", kind: "message", T: Range, repeated: true },
   ],
 );
 
