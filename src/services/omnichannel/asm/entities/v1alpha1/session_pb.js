@@ -46,10 +46,10 @@ export const VoiceRegistration = proto3.makeMessageType(
 );
 
 /**
- * @generated from message services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails
+ * @generated from message services.omnichannel.asm.entities.v1alpha1.AsmUserDetails
  */
-export const ListAsmUserDetails = proto3.makeMessageType(
-  "services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails",
+export const AsmUserDetails = proto3.makeMessageType(
+  "services.omnichannel.asm.entities.v1alpha1.AsmUserDetails",
   [],
 );
 

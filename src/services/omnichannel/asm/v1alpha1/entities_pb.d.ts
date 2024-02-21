@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AsmSession, ListAsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
+import type { AsmSession, AsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
 
 /**
  * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRequest
@@ -293,9 +293,9 @@ export declare class ListAsmUserDetailsResponse extends Message<ListAsmUserDetai
   /**
    * list of Sessions in the system with enrichments
    *
-   * @generated from field: repeated services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails sessions = 1;
+   * @generated from field: repeated services.omnichannel.asm.entities.v1alpha1.AsmUserDetails sessions = 1;
    */
-  sessions: ListAsmUserDetails[];
+  sessions: AsmUserDetails[];
 
   constructor(data?: PartialMessage<ListAsmUserDetailsResponse>);
 

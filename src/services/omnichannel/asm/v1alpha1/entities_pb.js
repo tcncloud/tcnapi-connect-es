@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { AsmSession, ListAsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
+import { AsmSession, AsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
 
 /**
  * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRequest
@@ -116,7 +116,7 @@ export const ListAsmUserDetailsRequest = proto3.makeMessageType(
 export const ListAsmUserDetailsResponse = proto3.makeMessageType(
   "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse",
   () => [
-    { no: 1, name: "sessions", kind: "message", T: ListAsmUserDetails, repeated: true },
+    { no: 1, name: "sessions", kind: "message", T: AsmUserDetails, repeated: true },
   ],
 );
 

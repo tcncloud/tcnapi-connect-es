@@ -156,21 +156,21 @@ export declare class VoiceRegistration extends Message<VoiceRegistration> {
 }
 
 /**
- * @generated from message services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails
+ * @generated from message services.omnichannel.asm.entities.v1alpha1.AsmUserDetails
  */
-export declare class ListAsmUserDetails extends Message<ListAsmUserDetails> {
-  constructor(data?: PartialMessage<ListAsmUserDetails>);
+export declare class AsmUserDetails extends Message<AsmUserDetails> {
+  constructor(data?: PartialMessage<AsmUserDetails>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails";
+  static readonly typeName = "services.omnichannel.asm.entities.v1alpha1.AsmUserDetails";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAsmUserDetails;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AsmUserDetails;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAsmUserDetails;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AsmUserDetails;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetails;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AsmUserDetails;
 
-  static equals(a: ListAsmUserDetails | PlainMessage<ListAsmUserDetails> | undefined, b: ListAsmUserDetails | PlainMessage<ListAsmUserDetails> | undefined): boolean;
+  static equals(a: AsmUserDetails | PlainMessage<AsmUserDetails> | undefined, b: AsmUserDetails | PlainMessage<AsmUserDetails> | undefined): boolean;
 }
 
