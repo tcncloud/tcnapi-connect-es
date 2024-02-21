@@ -3,8 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { AsmSession, ListAsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
 
 /**
  * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionReq
@@ -32,7 +33,7 @@ export declare class CreateSessionRes extends Message<CreateSessionRes> {
   /**
    * asm session
    *
-   * @generated from field: services.omnichannel.asm.v1alpha1.AsmSession asm_session = 1;
+   * @generated from field: services.omnichannel.asm.entities.v1alpha1.AsmSession asm_session = 1;
    */
   asmSession?: AsmSession;
 
@@ -49,108 +50,6 @@ export declare class CreateSessionRes extends Message<CreateSessionRes> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateSessionRes;
 
   static equals(a: CreateSessionRes | PlainMessage<CreateSessionRes> | undefined, b: CreateSessionRes | PlainMessage<CreateSessionRes> | undefined): boolean;
-}
-
-/**
- * @generated from message services.omnichannel.asm.v1alpha1.VoiceRegistration
- */
-export declare class VoiceRegistration extends Message<VoiceRegistration> {
-  /**
-   * The pin used to log in via a connected phone
-   *
-   * @generated from field: string username = 2;
-   */
-  username: string;
-
-  /**
-   * The pass used to log in via a connected phone
-   *
-   * @generated from field: string password = 3;
-   */
-  password: string;
-
-  /**
-   * The extention appended
-   *
-   * @generated from field: string dial_url = 4;
-   */
-  dialUrl: string;
-
-  /**
-   * pstn phone number that will be used for the agent to dial in
-   * if it's an empty string then the voip connection must be used
-   *
-   * @generated from field: string pstn_phone = 5;
-   */
-  pstnPhone: string;
-
-  /**
-   * default time zone -
-   *
-   * @generated from field: string default_time_zone = 6;
-   */
-  defaultTimeZone: string;
-
-  /**
-   * expiration Timestamp When the registration will expire
-   *
-   * @generated from field: int64 expiration_timestamp = 7;
-   */
-  expirationTimestamp: bigint;
-
-  constructor(data?: PartialMessage<VoiceRegistration>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.VoiceRegistration";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VoiceRegistration;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VoiceRegistration;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VoiceRegistration;
-
-  static equals(a: VoiceRegistration | PlainMessage<VoiceRegistration> | undefined, b: VoiceRegistration | PlainMessage<VoiceRegistration> | undefined): boolean;
-}
-
-/**
- * @generated from message services.omnichannel.asm.v1alpha1.VoiceSession
- */
-export declare class VoiceSession extends Message<VoiceSession> {
-  /**
-   * voice session sid
-   *
-   * @generated from field: int64 voice_session_sid = 1;
-   */
-  voiceSessionSid: bigint;
-
-  /**
-   * time the voice session started
-   *
-   * @generated from field: google.protobuf.Timestamp voice_session_start = 2;
-   */
-  voiceSessionStart?: Timestamp;
-
-  /**
-   * time the voice session ended
-   *
-   * @generated from field: google.protobuf.Timestamp voice_session_end = 3;
-   */
-  voiceSessionEnd?: Timestamp;
-
-  constructor(data?: PartialMessage<VoiceSession>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.VoiceSession";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): VoiceSession;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): VoiceSession;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): VoiceSession;
-
-  static equals(a: VoiceSession | PlainMessage<VoiceSession> | undefined, b: VoiceSession | PlainMessage<VoiceSession> | undefined): boolean;
 }
 
 /**
@@ -231,7 +130,7 @@ export declare class GetCurrentSessionRes extends Message<GetCurrentSessionRes> 
   /**
    * current asm session
    *
-   * @generated from field: services.omnichannel.asm.v1alpha1.AsmSession asm_session = 1;
+   * @generated from field: services.omnichannel.asm.entities.v1alpha1.AsmSession asm_session = 1;
    */
   asmSession?: AsmSession;
 
@@ -248,53 +147,6 @@ export declare class GetCurrentSessionRes extends Message<GetCurrentSessionRes> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetCurrentSessionRes;
 
   static equals(a: GetCurrentSessionRes | PlainMessage<GetCurrentSessionRes> | undefined, b: GetCurrentSessionRes | PlainMessage<GetCurrentSessionRes> | undefined): boolean;
-}
-
-/**
- * @generated from message services.omnichannel.asm.v1alpha1.AsmSession
- */
-export declare class AsmSession extends Message<AsmSession> {
-  /**
-   * asm session sid
-   *
-   * @generated from field: int64 asm_session_sid = 1;
-   */
-  asmSessionSid: bigint;
-
-  /**
-   * time the asm session started
-   *
-   * @generated from field: google.protobuf.Timestamp asm_session_start = 4;
-   */
-  asmSessionStart?: Timestamp;
-
-  /**
-   * time the asm session ended
-   *
-   * @generated from field: google.protobuf.Timestamp asm_session_end = 5;
-   */
-  asmSessionEnd?: Timestamp;
-
-  /**
-   * voice session is there is one
-   *
-   * @generated from field: services.omnichannel.asm.v1alpha1.VoiceSession voice_session = 6;
-   */
-  voiceSession?: VoiceSession;
-
-  constructor(data?: PartialMessage<AsmSession>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.AsmSession";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AsmSession;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AsmSession;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AsmSession;
-
-  static equals(a: AsmSession | PlainMessage<AsmSession> | undefined, b: AsmSession | PlainMessage<AsmSession> | undefined): boolean;
 }
 
 /**
@@ -344,14 +196,14 @@ export declare class EnableVoiceRes extends Message<EnableVoiceRes> {
   /**
    * voice session that was enabled
    *
-   * @generated from field: services.omnichannel.asm.v1alpha1.VoiceSession voice_session = 1;
+   * @generated from field: services.omnichannel.asm.entities.v1alpha1.VoiceSession voice_session = 1;
    */
   voiceSession?: VoiceSession;
 
   /**
    * the registration with new voice session
    *
-   * @generated from field: services.omnichannel.asm.v1alpha1.VoiceRegistration voice_registration = 2;
+   * @generated from field: services.omnichannel.asm.entities.v1alpha1.VoiceRegistration voice_registration = 2;
    */
   voiceRegistration?: VoiceRegistration;
 
@@ -441,7 +293,7 @@ export declare class ListAsmUserDetailsRes extends Message<ListAsmUserDetailsRes
   /**
    * list of Sessions in the system with enrichments
    *
-   * @generated from field: repeated services.omnichannel.asm.v1alpha1.ListAsmUserDetails sessions = 1;
+   * @generated from field: repeated services.omnichannel.asm.entities.v1alpha1.ListAsmUserDetails sessions = 1;
    */
   sessions: ListAsmUserDetails[];
 
@@ -458,24 +310,5 @@ export declare class ListAsmUserDetailsRes extends Message<ListAsmUserDetailsRes
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetailsRes;
 
   static equals(a: ListAsmUserDetailsRes | PlainMessage<ListAsmUserDetailsRes> | undefined, b: ListAsmUserDetailsRes | PlainMessage<ListAsmUserDetailsRes> | undefined): boolean;
-}
-
-/**
- * @generated from message services.omnichannel.asm.v1alpha1.ListAsmUserDetails
- */
-export declare class ListAsmUserDetails extends Message<ListAsmUserDetails> {
-  constructor(data?: PartialMessage<ListAsmUserDetails>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "services.omnichannel.asm.v1alpha1.ListAsmUserDetails";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAsmUserDetails;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAsmUserDetails;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetails;
-
-  static equals(a: ListAsmUserDetails | PlainMessage<ListAsmUserDetails> | undefined, b: ListAsmUserDetails | PlainMessage<ListAsmUserDetails> | undefined): boolean;
 }
 
