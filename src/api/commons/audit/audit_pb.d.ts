@@ -14,7 +14,7 @@ import type { ScorecardsCloneScorecardEvent, ScorecardsCreateAutoEvaluationEvent
 import type { TicketEvent } from "./tickets_events_pb.js";
 import type { ComplianceRndQueryEvent } from "./compliance_events_pb.js";
 import type { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_events_pb.js";
-import type { LMSPipelineFailureEvent } from "./lms_events_pb.js";
+import type { LMSPipelineFailureEvent, LMSPipelineNoOutputEvent, LMSPipelineSuccessfulEvent } from "./lms_events_pb.js";
 import type { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
 import type { DeliveryFailureEvent, DeliverySuccessEvent } from "./delivery_events_pb.js";
 
@@ -809,6 +809,18 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: LMSPipelineFailureEvent;
     case: "lmsPipelineFailureEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.audit.LMSPipelineNoOutputEvent lms_pipeline_no_output_event = 901;
+     */
+    value: LMSPipelineNoOutputEvent;
+    case: "lmsPipelineNoOutputEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.audit.LMSPipelineSuccessfulEvent lms_pipeline_successful_event = 902;
+     */
+    value: LMSPipelineSuccessfulEvent;
+    case: "lmsPipelineSuccessfulEvent";
   } | {
     /**
      * Billing Events class 1000

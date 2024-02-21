@@ -18,3 +18,29 @@ export const LMSPipelineFailureEvent = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.commons.audit.LMSPipelineNoOutputEvent
+ */
+export const LMSPipelineNoOutputEvent = proto3.makeMessageType(
+  "api.commons.audit.LMSPipelineNoOutputEvent",
+  () => [
+    { no: 1, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "element_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "event_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.audit.LMSPipelineSuccessfulEvent
+ */
+export const LMSPipelineSuccessfulEvent = proto3.makeMessageType(
+  "api.commons.audit.LMSPipelineSuccessfulEvent",
+  () => [
+    { no: 1, name: "element_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "element_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "event_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

@@ -45,3 +45,81 @@ export declare class LMSPipelineFailureEvent extends Message<LMSPipelineFailureE
   static equals(a: LMSPipelineFailureEvent | PlainMessage<LMSPipelineFailureEvent> | undefined, b: LMSPipelineFailureEvent | PlainMessage<LMSPipelineFailureEvent> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.commons.audit.LMSPipelineNoOutputEvent
+ */
+export declare class LMSPipelineNoOutputEvent extends Message<LMSPipelineNoOutputEvent> {
+  /**
+   * @generated from field: string element_id = 1;
+   */
+  elementId: string;
+
+  /**
+   * @generated from field: string element_name = 2;
+   */
+  elementName: string;
+
+  /**
+   * @generated from field: string file_name = 3;
+   */
+  fileName: string;
+
+  /**
+   * @generated from field: string event_message = 4;
+   */
+  eventMessage: string;
+
+  constructor(data?: PartialMessage<LMSPipelineNoOutputEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.LMSPipelineNoOutputEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LMSPipelineNoOutputEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LMSPipelineNoOutputEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LMSPipelineNoOutputEvent;
+
+  static equals(a: LMSPipelineNoOutputEvent | PlainMessage<LMSPipelineNoOutputEvent> | undefined, b: LMSPipelineNoOutputEvent | PlainMessage<LMSPipelineNoOutputEvent> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.audit.LMSPipelineSuccessfulEvent
+ */
+export declare class LMSPipelineSuccessfulEvent extends Message<LMSPipelineSuccessfulEvent> {
+  /**
+   * @generated from field: string element_id = 1;
+   */
+  elementId: string;
+
+  /**
+   * @generated from field: string element_name = 2;
+   */
+  elementName: string;
+
+  /**
+   * @generated from field: string file_name = 3;
+   */
+  fileName: string;
+
+  /**
+   * @generated from field: string event_message = 4;
+   */
+  eventMessage: string;
+
+  constructor(data?: PartialMessage<LMSPipelineSuccessfulEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.audit.LMSPipelineSuccessfulEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LMSPipelineSuccessfulEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LMSPipelineSuccessfulEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LMSPipelineSuccessfulEvent;
+
+  static equals(a: LMSPipelineSuccessfulEvent | PlainMessage<LMSPipelineSuccessfulEvent> | undefined, b: LMSPipelineSuccessfulEvent | PlainMessage<LMSPipelineSuccessfulEvent> | undefined): boolean;
+}
+
