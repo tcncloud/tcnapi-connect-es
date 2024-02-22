@@ -15,6 +15,7 @@ export const DnclExpirePeriod = proto3.makeEnum(
     {no: 0, name: "DNCL_EXPIRE_PERIOD_HOUR", localName: "HOUR"},
     {no: 1, name: "DNCL_EXPIRE_PERIOD_DAY", localName: "DAY"},
     {no: 2, name: "DNCL_EXPIRE_PERIOD_WEEK", localName: "WEEK"},
+    {no: 3, name: "DNCL_EXPIRE_PERIOD_NEVER", localName: "NEVER"},
     {no: 4, name: "DNCL_EXPIRE_PERIOD_MONTH", localName: "MONTH"},
   ],
 );
