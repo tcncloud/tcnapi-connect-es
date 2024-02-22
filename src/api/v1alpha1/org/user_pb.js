@@ -345,6 +345,8 @@ export const ListAgentsResponse_AgentDetails = proto3.makeMessageType(
     { no: 20, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 21, name: "time_zone_override", kind: "message", T: TimeZoneWrapper },
     { no: 22, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 24, name: "mfa_info", kind: "message", T: MfaInfo },
   ],
   {localName: "ListAgentsResponse_AgentDetails"},
 );
