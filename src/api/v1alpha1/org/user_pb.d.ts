@@ -1267,6 +1267,20 @@ export declare class ListAgentsResponse_AgentDetails extends Message<ListAgentsR
    */
   email: string;
 
+  /**
+   * Whether or not the agent's email is verified.
+   *
+   * @generated from field: bool email_verified = 23;
+   */
+  emailVerified: boolean;
+
+  /**
+   * The agent's mfa information.
+   *
+   * @generated from field: api.commons.org.MfaInfo mfa_info = 24;
+   */
+  mfaInfo?: MfaInfo;
+
   constructor(data?: PartialMessage<ListAgentsResponse_AgentDetails>);
 
   static readonly runtime: typeof proto3;
