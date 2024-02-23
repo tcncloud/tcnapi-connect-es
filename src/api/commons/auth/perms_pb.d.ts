@@ -415,6 +415,7 @@ export declare enum Permission {
 
   /**
    * allows user to read insights for dashboards
+   * deprecated
    *
    * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_VIEW = 607;
    */
@@ -422,6 +423,7 @@ export declare enum Permission {
 
   /**
    * allows user to edit insights for dashboards
+   * deprecated
    *
    * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_EDIT = 608;
    */
