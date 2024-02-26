@@ -5275,66 +5275,66 @@ export const ReplaceAgentOnScheduleRes = proto3.makeMessageType(
 );
 
 /**
- * Request message for the HelloWorldAdmin RPC.
+ * Request message for the HelloWorldAdherenceAdmin RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdminRequest
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceAdminRequest
  */
-export const HelloWorldAdminRequest = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldAdminRequest",
+export const HelloWorldAdherenceAdminRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdherenceAdminRequest",
   [],
 );
 
 /**
- * Response message for the HelloWorldAdmin RPC.
+ * Response message for the HelloWorldAdherenceAdmin RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdminResponse
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceAdminResponse
  */
-export const HelloWorldAdminResponse = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldAdminResponse",
+export const HelloWorldAdherenceAdminResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdherenceAdminResponse",
   () => [
     { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * Request message for the HelloWorldManager RPC.
+ * Request message for the HelloWorldAdherenceManager RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldManagerRequest
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceManagerRequest
  */
-export const HelloWorldManagerRequest = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldManagerRequest",
+export const HelloWorldAdherenceManagerRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdherenceManagerRequest",
   [],
 );
 
 /**
- * Response message for the HelloWorldManager RPC.
+ * Response message for the HelloWorldAdherenceManager RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldManagerResponse
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceManagerResponse
  */
-export const HelloWorldManagerResponse = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldManagerResponse",
+export const HelloWorldAdherenceManagerResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdherenceManagerResponse",
   () => [
     { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * Request message for the HelloWorldMonitor RPC.
+ * Request message for the HelloWorldAdherenceMonitor RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldMonitorRequest
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceMonitorRequest
  */
-export const HelloWorldMonitorRequest = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldMonitorRequest",
+export const HelloWorldAdherenceMonitorRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdherenceMonitorRequest",
   [],
 );
 
 /**
- * Response message for the HelloWorldMonitor RPC.
+ * Response message for the HelloWorldAdherenceMonitor RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldMonitorResponse
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceMonitorResponse
  */
-export const HelloWorldMonitorResponse = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldMonitorResponse",
+export const HelloWorldAdherenceMonitorResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdherenceMonitorResponse",
   () => [
     { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
