@@ -105,7 +105,8 @@ export const Permission = proto3.makeEnum(
     {no: 4199, name: "PERMISSION_NEWSROOM_VIEW"},
     {no: 4200, name: "PERMISSION_NEWSROOM_EDIT"},
     {no: 4201, name: "PERMISSION_NEWSROOM_PUBLISH"},
-    {no: 5100, name: "PERMISSION_CONTACTMANAGER_APP"},
+    {no: 5100, name: "PERMISSION_CONTACTMANAGER_ADMIN"},
+    {no: 5101, name: "PERMISSION_CONTACTMANAGER_APP"},
   ],
 );
 
