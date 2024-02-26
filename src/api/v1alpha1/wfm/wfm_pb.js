@@ -5274,3 +5274,69 @@ export const ReplaceAgentOnScheduleRes = proto3.makeMessageType(
   ],
 );
 
+/**
+ * Request message for the HelloWorldAdmin RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdminRequest
+ */
+export const HelloWorldAdminRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdminRequest",
+  [],
+);
+
+/**
+ * Response message for the HelloWorldAdmin RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdminResponse
+ */
+export const HelloWorldAdminResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldAdminResponse",
+  () => [
+    { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Request message for the HelloWorldManager RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldManagerRequest
+ */
+export const HelloWorldManagerRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldManagerRequest",
+  [],
+);
+
+/**
+ * Response message for the HelloWorldManager RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldManagerResponse
+ */
+export const HelloWorldManagerResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldManagerResponse",
+  () => [
+    { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Request message for the HelloWorldMonitor RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldMonitorRequest
+ */
+export const HelloWorldMonitorRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldMonitorRequest",
+  [],
+);
+
+/**
+ * Response message for the HelloWorldMonitor RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldMonitorResponse
+ */
+export const HelloWorldMonitorResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.HelloWorldMonitorResponse",
+  () => [
+    { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

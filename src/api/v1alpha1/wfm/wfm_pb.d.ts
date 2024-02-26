@@ -15153,3 +15153,150 @@ export declare class ReplaceAgentOnScheduleRes extends Message<ReplaceAgentOnSch
   static equals(a: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined, b: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined): boolean;
 }
 
+/**
+ * Request message for the HelloWorldAdmin RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdminRequest
+ */
+export declare class HelloWorldAdminRequest extends Message<HelloWorldAdminRequest> {
+  constructor(data?: PartialMessage<HelloWorldAdminRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdminRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdminRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdminRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdminRequest;
+
+  static equals(a: HelloWorldAdminRequest | PlainMessage<HelloWorldAdminRequest> | undefined, b: HelloWorldAdminRequest | PlainMessage<HelloWorldAdminRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the HelloWorldAdmin RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldAdminResponse
+ */
+export declare class HelloWorldAdminResponse extends Message<HelloWorldAdminResponse> {
+  /**
+   * A string containing the hello world message
+   *
+   * @generated from field: string hello_message = 1;
+   */
+  helloMessage: string;
+
+  constructor(data?: PartialMessage<HelloWorldAdminResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdminResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdminResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdminResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdminResponse;
+
+  static equals(a: HelloWorldAdminResponse | PlainMessage<HelloWorldAdminResponse> | undefined, b: HelloWorldAdminResponse | PlainMessage<HelloWorldAdminResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the HelloWorldManager RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldManagerRequest
+ */
+export declare class HelloWorldManagerRequest extends Message<HelloWorldManagerRequest> {
+  constructor(data?: PartialMessage<HelloWorldManagerRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldManagerRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldManagerRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldManagerRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldManagerRequest;
+
+  static equals(a: HelloWorldManagerRequest | PlainMessage<HelloWorldManagerRequest> | undefined, b: HelloWorldManagerRequest | PlainMessage<HelloWorldManagerRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the HelloWorldManager RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldManagerResponse
+ */
+export declare class HelloWorldManagerResponse extends Message<HelloWorldManagerResponse> {
+  /**
+   * A string containing the hello world message
+   *
+   * @generated from field: string hello_message = 1;
+   */
+  helloMessage: string;
+
+  constructor(data?: PartialMessage<HelloWorldManagerResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldManagerResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldManagerResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldManagerResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldManagerResponse;
+
+  static equals(a: HelloWorldManagerResponse | PlainMessage<HelloWorldManagerResponse> | undefined, b: HelloWorldManagerResponse | PlainMessage<HelloWorldManagerResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the HelloWorldMonitor RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldMonitorRequest
+ */
+export declare class HelloWorldMonitorRequest extends Message<HelloWorldMonitorRequest> {
+  constructor(data?: PartialMessage<HelloWorldMonitorRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldMonitorRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldMonitorRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldMonitorRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldMonitorRequest;
+
+  static equals(a: HelloWorldMonitorRequest | PlainMessage<HelloWorldMonitorRequest> | undefined, b: HelloWorldMonitorRequest | PlainMessage<HelloWorldMonitorRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the HelloWorldMonitor RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldMonitorResponse
+ */
+export declare class HelloWorldMonitorResponse extends Message<HelloWorldMonitorResponse> {
+  /**
+   * A string containing the hello world message
+   *
+   * @generated from field: string hello_message = 1;
+   */
+  helloMessage: string;
+
+  constructor(data?: PartialMessage<HelloWorldMonitorResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldMonitorResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldMonitorResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldMonitorResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldMonitorResponse;
+
+  static equals(a: HelloWorldMonitorResponse | PlainMessage<HelloWorldMonitorResponse> | undefined, b: HelloWorldMonitorResponse | PlainMessage<HelloWorldMonitorResponse> | undefined): boolean;
+}
+

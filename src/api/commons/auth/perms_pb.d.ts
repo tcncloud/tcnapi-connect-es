@@ -548,14 +548,14 @@ export declare enum Permission {
   PERMISSION_ADHERENCE_ADMIN = 1502,
 
   /**
-   * Enables access to the Adherence app as an Admin user.
+   * Enables access to the Adherence app as a Manager user.
    *
    * @generated from enum value: PERMISSION_ADHERENCE_MANAGER = 1503;
    */
   PERMISSION_ADHERENCE_MANAGER = 1503,
 
   /**
-   * Enables access to the Adherence app as an Admin user.
+   * Enables access to the Adherence app as a Monitor user.
    *
    * @generated from enum value: PERMISSION_ADHERENCE_MONITOR = 1504;
    */
