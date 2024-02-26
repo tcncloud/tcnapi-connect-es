@@ -11,14 +11,14 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  */
 export declare class ContactManagerEntry extends Message<ContactManagerEntry> {
   /**
-   * @generated from field: int64 contact_manager_entry_id = 1;
+   * @generated from field: int64 contact_manager_entry_id = 1 [jstype = JS_STRING];
    */
-  contactManagerEntryId: bigint;
+  contactManagerEntryId: string;
 
   /**
-   * @generated from field: int64 contact_manager_entry_list_id = 2;
+   * @generated from field: int64 contact_manager_entry_list_id = 2 [jstype = JS_STRING];
    */
-  contactManagerEntryListId: bigint;
+  contactManagerEntryListId: string;
 
   /**
    * @generated from field: string key = 3;
@@ -60,9 +60,9 @@ export declare class ContactManagerEntry extends Message<ContactManagerEntry> {
  */
 export declare class ContactManagerList extends Message<ContactManagerList> {
   /**
-   * @generated from field: int64 contact_manager_list_id = 1;
+   * @generated from field: int64 contact_manager_list_id = 1 [jstype = JS_STRING];
    */
-  contactManagerListId: bigint;
+  contactManagerListId: string;
 
   /**
    * @generated from field: string org_id = 2;
@@ -70,7 +70,7 @@ export declare class ContactManagerList extends Message<ContactManagerList> {
   orgId: string;
 
   /**
-   * @generated from field: string project_id = 3;
+   * @generated from field: int64 project_id = 3 [jstype = JS_STRING];
    */
   projectId: string;
 
@@ -92,9 +92,9 @@ export declare class ContactManagerList extends Message<ContactManagerList> {
   listDetails: string[];
 
   /**
-   * @generated from field: int64 ttl = 7;
+   * @generated from field: int64 ttl = 7 [jstype = JS_STRING];
    */
-  ttl: bigint;
+  ttl: string;
 
   /**
    * @generated from field: google.protobuf.Timestamp date_created = 8;

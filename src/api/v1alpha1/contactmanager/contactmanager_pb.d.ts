@@ -24,7 +24,7 @@ export declare class GetContactListRequest extends Message<GetContactListRequest
   orgId: string;
 
   /**
-   * @generated from field: string project_id = 3;
+   * @generated from field: int64 project_id = 3 [jstype = JS_STRING];
    */
   projectId: string;
 
@@ -72,9 +72,9 @@ export declare class GetContactListResponse extends Message<GetContactListRespon
  */
 export declare class ListContactEntryListRequest extends Message<ListContactEntryListRequest> {
   /**
-   * @generated from field: int64 contact_manager_list_id = 1;
+   * @generated from field: int64 contact_manager_list_id = 1 [jstype = JS_STRING];
    */
-  contactManagerListId: bigint;
+  contactManagerListId: string;
 
   /**
    * @generated from field: string org_id = 2;
@@ -133,9 +133,9 @@ export declare class ListContactEntryListResponse extends Message<ListContactEnt
  */
 export declare class GetEncContactEntryRequest extends Message<GetEncContactEntryRequest> {
   /**
-   * @generated from field: int64 contact_manager_entry_id = 1;
+   * @generated from field: int64 contact_manager_entry_id = 1 [jstype = JS_STRING];
    */
-  contactManagerEntryId: bigint;
+  contactManagerEntryId: string;
 
   constructor(data?: PartialMessage<GetEncContactEntryRequest>);
 

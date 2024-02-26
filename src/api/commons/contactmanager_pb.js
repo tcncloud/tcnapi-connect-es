@@ -11,8 +11,8 @@ import { proto3, Timestamp } from "@bufbuild/protobuf";
 export const ContactManagerEntry = proto3.makeMessageType(
   "api.commons.ContactManagerEntry",
   () => [
-    { no: 1, name: "contact_manager_entry_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "contact_manager_entry_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "contact_manager_entry_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "contact_manager_entry_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 3, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -26,13 +26,13 @@ export const ContactManagerEntry = proto3.makeMessageType(
 export const ContactManagerList = proto3.makeMessageType(
   "api.commons.ContactManagerList",
   () => [
-    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "project_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 4, name: "file_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "list_details", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 7, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 8, name: "date_created", kind: "message", T: Timestamp },
   ],
 );

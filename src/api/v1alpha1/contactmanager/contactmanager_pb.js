@@ -16,7 +16,7 @@ export const GetContactListRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "request_mask", kind: "message", T: FieldMask },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "project_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
@@ -36,7 +36,7 @@ export const GetContactListResponse = proto3.makeMessageType(
 export const ListContactEntryListRequest = proto3.makeMessageType(
   "api.v1alpha1.contactmanager.ListContactEntryListRequest",
   () => [
-    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "project_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
@@ -61,7 +61,7 @@ export const ListContactEntryListResponse = proto3.makeMessageType(
 export const GetEncContactEntryRequest = proto3.makeMessageType(
   "api.v1alpha1.contactmanager.GetEncContactEntryRequest",
   () => [
-    { no: 1, name: "contact_manager_entry_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "contact_manager_entry_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
