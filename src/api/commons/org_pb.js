@@ -72,36 +72,6 @@ export const DisplayLanguage = proto3.makeEnum(
 );
 
 /**
- * OperatorDisplayLanguage represents the language supported in the Operator app
- *
- * @generated from enum api.commons.OperatorDisplayLanguage
- */
-export const OperatorDisplayLanguage = proto3.makeEnum(
-  "api.commons.OperatorDisplayLanguage",
-  [
-    {no: 0, name: "OPERATOR_DISPLAY_LANGUAGE_UNSPECIFIED", localName: "UNSPECIFIED"},
-    {no: 1, name: "OPERATOR_DISPLAY_LANGUAGE_SPANISH", localName: "SPANISH"},
-    {no: 2, name: "OPERATOR_DISPLAY_LANGUAGE_FRENCH_CANADA", localName: "FRENCH_CANADA"},
-    {no: 3, name: "OPERATOR_DISPLAY_LANGUAGE_PORTUGUESE", localName: "PORTUGUESE"},
-    {no: 4, name: "OPERATOR_DISPLAY_LANGUAGE_ENGLISH", localName: "ENGLISH"},
-  ],
-);
-
-/**
- * OperatorScriptDirection represents the direction of the script in the Operator app
- *
- * @generated from enum api.commons.OperatorScriptDirection
- */
-export const OperatorScriptDirection = proto3.makeEnum(
-  "api.commons.OperatorScriptDirection",
-  [
-    {no: 0, name: "OPERATOR_SCRIPT_DIRECTION_UNSPECIFIED", localName: "UNSPECIFIED"},
-    {no: 1, name: "OPERATOR_SCRIPT_DIRECTION_LEFT_TO_RIGHT", localName: "LEFT_TO_RIGHT"},
-    {no: 2, name: "OPERATOR_SCRIPT_DIRECTION_RIGHT_TO_LEFT", localName: "RIGHT_TO_LEFT"},
-  ],
-);
-
-/**
  * @generated from enum api.commons.DefaultDuplicateHandling
  */
 export const DefaultDuplicateHandling = proto3.makeEnum(

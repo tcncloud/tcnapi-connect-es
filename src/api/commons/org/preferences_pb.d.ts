@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Country } from "../country_pb.js";
-import type { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, OperatorDisplayLanguage, OperatorScriptDirection, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
+import type { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
 import type { AnsweringMachineDetection, BroadcastTemplateOrdering, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import type { DialOrderType } from "../lms_pb.js";
 import type { AnaTimeZone } from "../ana_pb.js";
@@ -46,18 +46,21 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
   displayLanguage: DisplayLanguage;
 
   /**
-   * Default language in Operator for users of the organization.
+   * Display language in Operator for users of the organization.
+   * Must be a valid language code supported in Operator.
+   * ISO 639 - https://en.m.wikipedia.org/wiki/List_of_ISO_639_language_codes.
    *
-   * @generated from field: api.commons.OperatorDisplayLanguage operator_display_language = 13;
+   * @generated from field: string operator_display_language = 13;
    */
-  operatorDisplayLanguage: OperatorDisplayLanguage;
+  operatorDisplayLanguage: string;
 
   /**
    * The direction of the script in Operator used in the organization.
+   * By default, it is set to false to indicate left-to-right.
    *
-   * @generated from field: api.commons.OperatorScriptDirection operator_script_direction = 14;
+   * @generated from field: bool script_direction_RTL = 14;
    */
-  operatorScriptDirection: OperatorScriptDirection;
+  scriptDirectionRTL: boolean;
 
   constructor(data?: PartialMessage<OrganizationPreferences>);
 
