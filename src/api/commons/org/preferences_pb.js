@@ -23,7 +23,7 @@ export const OrganizationPreferences = proto3.makeMessageType(
     { no: 11, name: "time_zone", kind: "enum", T: proto3.getEnumType(TimeZone) },
     { no: 12, name: "display_language", kind: "enum", T: proto3.getEnumType(DisplayLanguage) },
     { no: 13, name: "operator_display_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 14, name: "script_direction_RTL", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 14, name: "use_script_direction_RTL", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
