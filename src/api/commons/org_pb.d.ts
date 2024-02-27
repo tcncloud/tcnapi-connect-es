@@ -401,16 +401,22 @@ export declare enum OperatorDisplayLanguage {
  */
 export declare enum OperatorScriptDirection {
   /**
+   * Unspecified direction
+   *
    * @generated from enum value: OPERATOR_SCRIPT_DIRECTION_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
+   * Left to right direction (default)
+   *
    * @generated from enum value: OPERATOR_SCRIPT_DIRECTION_LEFT_TO_RIGHT = 1;
    */
   LEFT_TO_RIGHT = 1,
 
   /**
+   * Right to left direction (for languages like Arabic and Hebrew)
+   *
    * @generated from enum value: OPERATOR_SCRIPT_DIRECTION_RIGHT_TO_LEFT = 2;
    */
   RIGHT_TO_LEFT = 2,
