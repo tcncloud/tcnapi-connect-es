@@ -367,6 +367,20 @@ export declare class CallerSid extends Message<CallerSid> {
    */
   orgId: string;
 
+  /**
+   * the caller's caller id
+   *
+   * @generated from field: string caller_id = 5;
+   */
+  callerId: string;
+
+  /**
+   * the caller's destination number
+   *
+   * @generated from field: string destination_number = 6;
+   */
+  destinationNumber: string;
+
   constructor(data?: PartialMessage<CallerSid>);
 
   static readonly runtime: typeof proto3;
