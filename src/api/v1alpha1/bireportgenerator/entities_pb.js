@@ -31,6 +31,7 @@ export const ReportJob = proto3.makeMessageType(
     { no: 13, name: "send_empty_report", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 14, name: "dashboard_resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "time_zone_wrapper", kind: "message", T: TimeZoneWrapper },
+    { no: 16, name: "hide_csv_footer", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

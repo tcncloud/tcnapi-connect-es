@@ -122,6 +122,13 @@ export declare class ReportJob extends Message<ReportJob> {
    */
   timeZoneWrapper?: TimeZoneWrapper;
 
+  /**
+   * hide csv footer
+   *
+   * @generated from field: bool hide_csv_footer = 16;
+   */
+  hideCsvFooter: boolean;
+
   constructor(data?: PartialMessage<ReportJob>);
 
   static readonly runtime: typeof proto3;
