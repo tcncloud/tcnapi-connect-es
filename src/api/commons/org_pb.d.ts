@@ -353,6 +353,8 @@ export declare enum DisplayLanguage {
 }
 
 /**
+ * OperatorDisplayLanguage represents the language supported in the Operator app
+ *
  * @generated from enum api.commons.OperatorDisplayLanguage
  */
 export declare enum OperatorDisplayLanguage {
@@ -393,7 +395,7 @@ export declare enum OperatorDisplayLanguage {
 }
 
 /**
- * OperatorScriptDirection represents the direction of the script
+ * OperatorScriptDirection represents the direction of the script in the Operator app
  *
  * @generated from enum api.commons.OperatorScriptDirection
  */

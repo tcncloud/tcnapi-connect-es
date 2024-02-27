@@ -72,6 +72,8 @@ export const DisplayLanguage = proto3.makeEnum(
 );
 
 /**
+ * OperatorDisplayLanguage represents the language supported in the Operator app
+ *
  * @generated from enum api.commons.OperatorDisplayLanguage
  */
 export const OperatorDisplayLanguage = proto3.makeEnum(
@@ -86,7 +88,7 @@ export const OperatorDisplayLanguage = proto3.makeEnum(
 );
 
 /**
- * OperatorScriptDirection represents the direction of the script
+ * OperatorScriptDirection represents the direction of the script in the Operator app
  *
  * @generated from enum api.commons.OperatorScriptDirection
  */
