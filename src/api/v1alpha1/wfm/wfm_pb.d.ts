@@ -15154,32 +15154,32 @@ export declare class ReplaceAgentOnScheduleRes extends Message<ReplaceAgentOnSch
 }
 
 /**
- * Request message for the HelloWorldAdherenceAdmin RPC.
+ * Request message for the HelloWorldWFMAdherence RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceAdminRequest
+ * @generated from message api.v1alpha1.wfm.HelloWorldWFMAdherenceRequest
  */
-export declare class HelloWorldAdherenceAdminRequest extends Message<HelloWorldAdherenceAdminRequest> {
-  constructor(data?: PartialMessage<HelloWorldAdherenceAdminRequest>);
+export declare class HelloWorldWFMAdherenceRequest extends Message<HelloWorldWFMAdherenceRequest> {
+  constructor(data?: PartialMessage<HelloWorldWFMAdherenceRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdherenceAdminRequest";
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldWFMAdherenceRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdherenceAdminRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldWFMAdherenceRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdherenceAdminRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdherenceAdminRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceRequest;
 
-  static equals(a: HelloWorldAdherenceAdminRequest | PlainMessage<HelloWorldAdherenceAdminRequest> | undefined, b: HelloWorldAdherenceAdminRequest | PlainMessage<HelloWorldAdherenceAdminRequest> | undefined): boolean;
+  static equals(a: HelloWorldWFMAdherenceRequest | PlainMessage<HelloWorldWFMAdherenceRequest> | undefined, b: HelloWorldWFMAdherenceRequest | PlainMessage<HelloWorldWFMAdherenceRequest> | undefined): boolean;
 }
 
 /**
- * Response message for the HelloWorldAdherenceAdmin RPC.
+ * Response message for the HelloWorldWFMAdherence RPC.
  *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceAdminResponse
+ * @generated from message api.v1alpha1.wfm.HelloWorldWFMAdherenceResponse
  */
-export declare class HelloWorldAdherenceAdminResponse extends Message<HelloWorldAdherenceAdminResponse> {
+export declare class HelloWorldWFMAdherenceResponse extends Message<HelloWorldWFMAdherenceResponse> {
   /**
    * A string containing the hello world message
    *
@@ -15187,116 +15187,18 @@ export declare class HelloWorldAdherenceAdminResponse extends Message<HelloWorld
    */
   helloMessage: string;
 
-  constructor(data?: PartialMessage<HelloWorldAdherenceAdminResponse>);
+  constructor(data?: PartialMessage<HelloWorldWFMAdherenceResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdherenceAdminResponse";
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldWFMAdherenceResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdherenceAdminResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldWFMAdherenceResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdherenceAdminResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdherenceAdminResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceResponse;
 
-  static equals(a: HelloWorldAdherenceAdminResponse | PlainMessage<HelloWorldAdherenceAdminResponse> | undefined, b: HelloWorldAdherenceAdminResponse | PlainMessage<HelloWorldAdherenceAdminResponse> | undefined): boolean;
-}
-
-/**
- * Request message for the HelloWorldAdherenceManager RPC.
- *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceManagerRequest
- */
-export declare class HelloWorldAdherenceManagerRequest extends Message<HelloWorldAdherenceManagerRequest> {
-  constructor(data?: PartialMessage<HelloWorldAdherenceManagerRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdherenceManagerRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdherenceManagerRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdherenceManagerRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdherenceManagerRequest;
-
-  static equals(a: HelloWorldAdherenceManagerRequest | PlainMessage<HelloWorldAdherenceManagerRequest> | undefined, b: HelloWorldAdherenceManagerRequest | PlainMessage<HelloWorldAdherenceManagerRequest> | undefined): boolean;
-}
-
-/**
- * Response message for the HelloWorldAdherenceManager RPC.
- *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceManagerResponse
- */
-export declare class HelloWorldAdherenceManagerResponse extends Message<HelloWorldAdherenceManagerResponse> {
-  /**
-   * A string containing the hello world message
-   *
-   * @generated from field: string hello_message = 1;
-   */
-  helloMessage: string;
-
-  constructor(data?: PartialMessage<HelloWorldAdherenceManagerResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdherenceManagerResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdherenceManagerResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdherenceManagerResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdherenceManagerResponse;
-
-  static equals(a: HelloWorldAdherenceManagerResponse | PlainMessage<HelloWorldAdherenceManagerResponse> | undefined, b: HelloWorldAdherenceManagerResponse | PlainMessage<HelloWorldAdherenceManagerResponse> | undefined): boolean;
-}
-
-/**
- * Request message for the HelloWorldAdherenceMonitor RPC.
- *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceMonitorRequest
- */
-export declare class HelloWorldAdherenceMonitorRequest extends Message<HelloWorldAdherenceMonitorRequest> {
-  constructor(data?: PartialMessage<HelloWorldAdherenceMonitorRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdherenceMonitorRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdherenceMonitorRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdherenceMonitorRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdherenceMonitorRequest;
-
-  static equals(a: HelloWorldAdherenceMonitorRequest | PlainMessage<HelloWorldAdherenceMonitorRequest> | undefined, b: HelloWorldAdherenceMonitorRequest | PlainMessage<HelloWorldAdherenceMonitorRequest> | undefined): boolean;
-}
-
-/**
- * Response message for the HelloWorldAdherenceMonitor RPC.
- *
- * @generated from message api.v1alpha1.wfm.HelloWorldAdherenceMonitorResponse
- */
-export declare class HelloWorldAdherenceMonitorResponse extends Message<HelloWorldAdherenceMonitorResponse> {
-  /**
-   * A string containing the hello world message
-   *
-   * @generated from field: string hello_message = 1;
-   */
-  helloMessage: string;
-
-  constructor(data?: PartialMessage<HelloWorldAdherenceMonitorResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.HelloWorldAdherenceMonitorResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldAdherenceMonitorResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldAdherenceMonitorResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldAdherenceMonitorResponse;
-
-  static equals(a: HelloWorldAdherenceMonitorResponse | PlainMessage<HelloWorldAdherenceMonitorResponse> | undefined, b: HelloWorldAdherenceMonitorResponse | PlainMessage<HelloWorldAdherenceMonitorResponse> | undefined): boolean;
+  static equals(a: HelloWorldWFMAdherenceResponse | PlainMessage<HelloWorldWFMAdherenceResponse> | undefined, b: HelloWorldWFMAdherenceResponse | PlainMessage<HelloWorldWFMAdherenceResponse> | undefined): boolean;
 }
 

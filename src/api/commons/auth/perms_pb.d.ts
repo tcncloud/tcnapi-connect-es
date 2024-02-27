@@ -543,23 +543,23 @@ export declare enum Permission {
   /**
    * Enables access to the Adherence app as an Admin user.
    *
-   * @generated from enum value: PERMISSION_ADHERENCE_ADMIN = 1502;
+   * @generated from enum value: PERMISSION_WFM_ADHERENCE_ADMIN = 1502;
    */
-  PERMISSION_ADHERENCE_ADMIN = 1502,
+  PERMISSION_WFM_ADHERENCE_ADMIN = 1502,
 
   /**
    * Enables access to the Adherence app as a Manager user.
    *
-   * @generated from enum value: PERMISSION_ADHERENCE_MANAGER = 1503;
+   * @generated from enum value: PERMISSION_WFM_ADHERENCE_MANAGER = 1503;
    */
-  PERMISSION_ADHERENCE_MANAGER = 1503,
+  PERMISSION_WFM_ADHERENCE_MANAGER = 1503,
 
   /**
    * Enables access to the Adherence app as a Monitor user.
    *
-   * @generated from enum value: PERMISSION_ADHERENCE_MONITOR = 1504;
+   * @generated from enum value: PERMISSION_WFM_ADHERENCE_MONITOR = 1504;
    */
-  PERMISSION_ADHERENCE_MONITOR = 1504,
+  PERMISSION_WFM_ADHERENCE_MONITOR = 1504,
 
   /**
    * Enables access to Scorecards app.
