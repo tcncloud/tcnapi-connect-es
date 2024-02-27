@@ -353,6 +353,68 @@ export declare enum DisplayLanguage {
 }
 
 /**
+ * @generated from enum api.commons.OperatorDisplayLanguage
+ */
+export declare enum OperatorDisplayLanguage {
+  /**
+   * Unspecified
+   *
+   * @generated from enum value: OPERATOR_DISPLAY_LANGUAGE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * Spanish
+   *
+   * @generated from enum value: OPERATOR_DISPLAY_LANGUAGE_SPANISH = 1;
+   */
+  SPANISH = 1,
+
+  /**
+   * French (Canada)
+   *
+   * @generated from enum value: OPERATOR_DISPLAY_LANGUAGE_FRENCH_CANADA = 2;
+   */
+  FRENCH_CANADA = 2,
+
+  /**
+   * Portuguese
+   *
+   * @generated from enum value: OPERATOR_DISPLAY_LANGUAGE_PORTUGUESE = 3;
+   */
+  PORTUGUESE = 3,
+
+  /**
+   * English
+   *
+   * @generated from enum value: OPERATOR_DISPLAY_LANGUAGE_ENGLISH = 4;
+   */
+  ENGLISH = 4,
+}
+
+/**
+ * OperatorScriptDirection represents the direction of the script
+ *
+ * @generated from enum api.commons.OperatorScriptDirection
+ */
+export declare enum OperatorScriptDirection {
+  /**
+   * @generated from enum value: OPERATOR_SCRIPT_DIRECTION_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: OPERATOR_SCRIPT_DIRECTION_LEFT_TO_RIGHT = 1;
+   */
+  LEFT_TO_RIGHT = 1,
+
+  /**
+   * @generated from enum value: OPERATOR_SCRIPT_DIRECTION_RIGHT_TO_LEFT = 2;
+   */
+  RIGHT_TO_LEFT = 2,
+}
+
+/**
  * @generated from enum api.commons.DefaultDuplicateHandling
  */
 export declare enum DefaultDuplicateHandling {

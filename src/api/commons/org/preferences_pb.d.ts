@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Country } from "../country_pb.js";
-import type { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
+import type { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, OperatorDisplayLanguage, OperatorScriptDirection, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
 import type { AnsweringMachineDetection, BroadcastTemplateOrdering, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import type { DialOrderType } from "../lms_pb.js";
 import type { AnaTimeZone } from "../ana_pb.js";
@@ -39,11 +39,25 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
   timeZone: TimeZone;
 
   /**
-   * Display language for users of the organization.
+   * Display language in Backoffice for users of the organization.
    *
    * @generated from field: api.commons.DisplayLanguage display_language = 12;
    */
   displayLanguage: DisplayLanguage;
+
+  /**
+   * Default language in Operator for users of the organization.
+   *
+   * @generated from field: api.commons.OperatorDisplayLanguage operator_display_language = 13;
+   */
+  operatorDisplayLanguage: OperatorDisplayLanguage;
+
+  /**
+   * The direction of the script in Operator used in the organization.
+   *
+   * @generated from field: api.commons.OperatorScriptDirection operator_script_direction = 14;
+   */
+  operatorScriptDirection: OperatorScriptDirection;
 
   constructor(data?: PartialMessage<OrganizationPreferences>);
 
