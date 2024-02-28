@@ -487,6 +487,13 @@ export declare enum Permission {
   PERMISSION_LMS_EDIT = 1001,
 
   /**
+   * Enables access to V2 data manager
+   *
+   * @generated from enum value: PERMISSION_LMS_V2_DATA_MANAGER = 1002;
+   */
+  PERMISSION_LMS_V2_DATA_MANAGER = 1002,
+
+  /**
    * Enables access to omni boss app.
    *
    * @generated from enum value: PERMISSION_OMNI_BOSS = 1200;
