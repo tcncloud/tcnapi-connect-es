@@ -3,12 +3,29 @@
 /* eslint-disable */
 // @ts-nocheck
 
+import { HelloWorldWFMAdherenceRequest, HelloWorldWFMAdherenceResponse } from "./wfm_adherence_app_pb.js";
+import { MethodKind } from "@bufbuild/protobuf";
+
 /**
  * @generated from service api.v1alpha1.wfm.WfmAdherenceAppService
  */
 export const WfmAdherenceAppService = {
   typeName: "api.v1alpha1.wfm.WfmAdherenceAppService",
   methods: {
+    /**
+     * A hello world endpoint to test the WFM Adherence App.
+     * Returns a string with a hello world message.
+     * Required permissions:
+     *   PERMISSION_WFM_ADHERENCE_ADMIN, PERMISSION_WFM_ADHERENCE_MANAGER, or PERMISSION_WFM_ADHERENCE_MONITOR
+     *
+     * @generated from rpc api.v1alpha1.wfm.WfmAdherenceAppService.HelloWorldWFMAdherence
+     */
+    helloWorldWFMAdherence: {
+      name: "HelloWorldWFMAdherence",
+      I: HelloWorldWFMAdherenceRequest,
+      O: HelloWorldWFMAdherenceResponse,
+      kind: MethodKind.Unary,
+    },
   }
 };
 

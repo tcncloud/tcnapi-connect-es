@@ -5274,25 +5274,3 @@ export const ReplaceAgentOnScheduleRes = proto3.makeMessageType(
   ],
 );
 
-/**
- * Request message for the HelloWorldWFMAdherence RPC.
- *
- * @generated from message api.v1alpha1.wfm.HelloWorldWFMAdherenceRequest
- */
-export const HelloWorldWFMAdherenceRequest = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldWFMAdherenceRequest",
-  [],
-);
-
-/**
- * Response message for the HelloWorldWFMAdherence RPC.
- *
- * @generated from message api.v1alpha1.wfm.HelloWorldWFMAdherenceResponse
- */
-export const HelloWorldWFMAdherenceResponse = proto3.makeMessageType(
-  "api.v1alpha1.wfm.HelloWorldWFMAdherenceResponse",
-  () => [
-    { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
