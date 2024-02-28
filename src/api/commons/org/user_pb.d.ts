@@ -352,12 +352,6 @@ export declare class MfaInfo extends Message<MfaInfo> {
      */
     value: MfaInfo_OtpType;
     case: "otp";
-  } | {
-    /**
-     * @generated from field: api.commons.org.MfaInfo.Duo duo = 12;
-     */
-    value: MfaInfo_Duo;
-    case: "duo";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<MfaInfo>);
@@ -449,30 +443,6 @@ export declare class MfaInfo_OtpType_EmailDeliveryMethod extends Message<MfaInfo
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MfaInfo_OtpType_EmailDeliveryMethod;
 
   static equals(a: MfaInfo_OtpType_EmailDeliveryMethod | PlainMessage<MfaInfo_OtpType_EmailDeliveryMethod> | undefined, b: MfaInfo_OtpType_EmailDeliveryMethod | PlainMessage<MfaInfo_OtpType_EmailDeliveryMethod> | undefined): boolean;
-}
-
-/**
- * @generated from message api.commons.org.MfaInfo.Duo
- */
-export declare class MfaInfo_Duo extends Message<MfaInfo_Duo> {
-  /**
-   * @generated from field: string duo_username = 1;
-   */
-  duoUsername: string;
-
-  constructor(data?: PartialMessage<MfaInfo_Duo>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.org.MfaInfo.Duo";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MfaInfo_Duo;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MfaInfo_Duo;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MfaInfo_Duo;
-
-  static equals(a: MfaInfo_Duo | PlainMessage<MfaInfo_Duo> | undefined, b: MfaInfo_Duo | PlainMessage<MfaInfo_Duo> | undefined): boolean;
 }
 
 /**
