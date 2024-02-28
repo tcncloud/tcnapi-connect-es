@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, Duration, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../../../api/commons/acd_pb.js";
+import type { AgentCallLog, AgentCallLogQuery } from "./agent_call_log_pb.js";
 
 /**
  * An enumeration of transcript communication channels.
@@ -596,6 +597,34 @@ export declare class Call extends Message<Call> {
    */
   groupName: string;
 
+  /**
+   * The agent responses for this call.
+   *
+   * @generated from field: map<string, wfo.vanalytics.v2.Call.AgentResponse> agent_response = 10;
+   */
+  agentResponse: { [key: string]: Call_AgentResponse };
+
+  /**
+   * The hunt groups sids for this call.
+   *
+   * @generated from field: repeated int64 hunt_group_sids = 11;
+   */
+  huntGroupSids: bigint[];
+
+  /**
+   * The number format for numbers in the agent response for this call.
+   *
+   * @generated from field: string number_format = 12;
+   */
+  numberFormat: string;
+
+  /**
+   * Agent call log for this call.
+   *
+   * @generated from field: wfo.vanalytics.v2.AgentCallLog agent_call_log = 13;
+   */
+  agentCallLog?: AgentCallLog;
+
   constructor(data?: PartialMessage<Call>);
 
   static readonly runtime: typeof proto3;
@@ -609,6 +638,32 @@ export declare class Call extends Message<Call> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call;
 
   static equals(a: Call | PlainMessage<Call> | undefined, b: Call | PlainMessage<Call> | undefined): boolean;
+}
+
+/**
+ * AgentResponse contains the agent responses aka dispositions.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.AgentResponse
+ */
+export declare class Call_AgentResponse extends Message<Call_AgentResponse> {
+  /**
+   * @generated from field: repeated string values = 1;
+   */
+  values: string[];
+
+  constructor(data?: PartialMessage<Call_AgentResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.AgentResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_AgentResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_AgentResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_AgentResponse;
+
+  static equals(a: Call_AgentResponse | PlainMessage<Call_AgentResponse> | undefined, b: Call_AgentResponse | PlainMessage<Call_AgentResponse> | undefined): boolean;
 }
 
 /**
@@ -1329,6 +1384,27 @@ export declare class TranscriptQuery_Call extends Message<TranscriptQuery_Call> 
    */
   groupName?: TranscriptQuery_Call_GroupName;
 
+  /**
+   * Query constraints on agent response.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse agent_response = 9;
+   */
+  agentResponse?: TranscriptQuery_Call_AgentResponse;
+
+  /**
+   * Query constraints on hunt group sids.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids hunt_group_sids = 10;
+   */
+  huntGroupSids?: TranscriptQuery_Call_HuntGroupSids;
+
+  /**
+   * Query constraints on agent call log.
+   *
+   * @generated from field: wfo.vanalytics.v2.AgentCallLogQuery agent_call_log = 12;
+   */
+  agentCallLog?: AgentCallLogQuery;
+
   constructor(data?: PartialMessage<TranscriptQuery_Call>);
 
   static readonly runtime: typeof proto3;
@@ -1342,6 +1418,246 @@ export declare class TranscriptQuery_Call extends Message<TranscriptQuery_Call> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call;
 
   static equals(a: TranscriptQuery_Call | PlainMessage<TranscriptQuery_Call> | undefined, b: TranscriptQuery_Call | PlainMessage<TranscriptQuery_Call> | undefined): boolean;
+}
+
+/**
+ * Query constraints on hunt group sids.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids
+ */
+export declare class TranscriptQuery_Call_HuntGroupSids extends Message<TranscriptQuery_Call_HuntGroupSids> {
+  /**
+   * Requires all call specific transcript hits to have a hunt group sid
+   * in the list.
+   *
+   * @generated from field: repeated int64 any = 1;
+   */
+  any: bigint[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_HuntGroupSids>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_HuntGroupSids;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_HuntGroupSids;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_HuntGroupSids;
+
+  static equals(a: TranscriptQuery_Call_HuntGroupSids | PlainMessage<TranscriptQuery_Call_HuntGroupSids> | undefined, b: TranscriptQuery_Call_HuntGroupSids | PlainMessage<TranscriptQuery_Call_HuntGroupSids> | undefined): boolean;
+}
+
+/**
+ * Query constraints on agent response.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse
+ */
+export declare class TranscriptQuery_Call_AgentResponse extends Message<TranscriptQuery_Call_AgentResponse> {
+  /**
+   * Optional. Groups AgentResponse conditions with logical and.
+   *
+   * @generated from field: repeated wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse and = 1;
+   */
+  and: TranscriptQuery_Call_AgentResponse[];
+
+  /**
+   * Optional. Groups AgentResponse conditions with logical or.
+   *
+   * @generated from field: repeated wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse or = 2;
+   */
+  or: TranscriptQuery_Call_AgentResponse[];
+
+  /**
+   * Optional. Queries for what does not match the agent response query.
+   *
+   * @generated from field: bool not = 3;
+   */
+  not: boolean;
+
+  /**
+   * Optional. Key to query on.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key key = 4;
+   */
+  key?: TranscriptQuery_Call_AgentResponse_Key;
+
+  /**
+   * Optional. Queries values for the given keys. If no keys are provided then
+   * it will run the query on all values.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values values = 5;
+   */
+  values?: TranscriptQuery_Call_AgentResponse_Values;
+
+  /**
+   * Optional. Queries values as numbers for the given keys.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers numbers = 6;
+   */
+  numbers?: TranscriptQuery_Call_AgentResponse_Numbers;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_AgentResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_AgentResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse;
+
+  static equals(a: TranscriptQuery_Call_AgentResponse | PlainMessage<TranscriptQuery_Call_AgentResponse> | undefined, b: TranscriptQuery_Call_AgentResponse | PlainMessage<TranscriptQuery_Call_AgentResponse> | undefined): boolean;
+}
+
+/**
+ * Values defines a query on values.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values
+ */
+export declare class TranscriptQuery_Call_AgentResponse_Values extends Message<TranscriptQuery_Call_AgentResponse_Values> {
+  /**
+   * Optional. Queries where value in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  /**
+   * Optional. Queries where value for key starts with given string.
+   *
+   * @generated from field: string starts_with = 2;
+   */
+  startsWith: string;
+
+  /**
+   * Optional. Queries where value for key contains given string.
+   *
+   * @generated from field: string contains = 3;
+   */
+  contains: string;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_AgentResponse_Values>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_AgentResponse_Values;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse_Values;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse_Values;
+
+  static equals(a: TranscriptQuery_Call_AgentResponse_Values | PlainMessage<TranscriptQuery_Call_AgentResponse_Values> | undefined, b: TranscriptQuery_Call_AgentResponse_Values | PlainMessage<TranscriptQuery_Call_AgentResponse_Values> | undefined): boolean;
+}
+
+/**
+ * Numbers defines a query on values as numbers.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers
+ */
+export declare class TranscriptQuery_Call_AgentResponse_Numbers extends Message<TranscriptQuery_Call_AgentResponse_Numbers> {
+  /**
+   * Optional. Queries where value in list provided.
+   *
+   * @generated from field: repeated double in = 1;
+   */
+  in: number[];
+
+  /**
+   * Optional. Queries where greater than or equal.
+   *
+   * @generated from field: google.protobuf.DoubleValue gte = 2;
+   */
+  gte?: number;
+
+  /**
+   * Optional. Queries where less than or equal.
+   *
+   * @generated from field: google.protobuf.DoubleValue lte = 3;
+   */
+  lte?: number;
+
+  /**
+   * Optional. Queries where greater than.
+   *
+   * @generated from field: google.protobuf.DoubleValue gt = 4;
+   */
+  gt?: number;
+
+  /**
+   * Optional. Queries where less than.
+   *
+   * @generated from field: google.protobuf.DoubleValue lt = 5;
+   */
+  lt?: number;
+
+  /**
+   * Optional. Queries where equal to.
+   *
+   * @generated from field: google.protobuf.DoubleValue eq = 6;
+   */
+  eq?: number;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_AgentResponse_Numbers>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_AgentResponse_Numbers;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse_Numbers;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse_Numbers;
+
+  static equals(a: TranscriptQuery_Call_AgentResponse_Numbers | PlainMessage<TranscriptQuery_Call_AgentResponse_Numbers> | undefined, b: TranscriptQuery_Call_AgentResponse_Numbers | PlainMessage<TranscriptQuery_Call_AgentResponse_Numbers> | undefined): boolean;
+}
+
+/**
+ * Key defines a query on the key.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key
+ */
+export declare class TranscriptQuery_Call_AgentResponse_Key extends Message<TranscriptQuery_Call_AgentResponse_Key> {
+  /**
+   * Optional. Queries where key in list provided.
+   *
+   * @generated from field: repeated string in = 1;
+   */
+  in: string[];
+
+  /**
+   * Optional. Queries where key starts with given string.
+   *
+   * @generated from field: string starts_with = 2;
+   */
+  startsWith: string;
+
+  /**
+   * Optional. Queries where key contains given string.
+   *
+   * @generated from field: string contains = 3;
+   */
+  contains: string;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Call_AgentResponse_Key>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Call_AgentResponse_Key;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse_Key;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Call_AgentResponse_Key;
+
+  static equals(a: TranscriptQuery_Call_AgentResponse_Key | PlainMessage<TranscriptQuery_Call_AgentResponse_Key> | undefined, b: TranscriptQuery_Call_AgentResponse_Key | PlainMessage<TranscriptQuery_Call_AgentResponse_Key> | undefined): boolean;
 }
 
 /**
