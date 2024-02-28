@@ -58,9 +58,18 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
    * The direction of the script in Operator used in the organization.
    * By default, it is set to false to indicate left-to-right.
    *
-   * @generated from field: bool use_script_direction_rigth_to_left = 14;
+   * @generated from field: bool use_script_direction_right_to_left = 14;
    */
-  useScriptDirectionRigthToLeft: boolean;
+  useScriptDirectionRightToLeft: boolean;
+
+  /**
+   * The default currency used in the organization.
+   * Must be a valid language code supported in Operator.
+   * ISO 4217 - https://en.wikipedia.org/wiki/ISO_4217.
+   *
+   * @generated from field: string default_currency = 15;
+   */
+  defaultCurrency: string;
 
   constructor(data?: PartialMessage<OrganizationPreferences>);
 
