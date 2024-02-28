@@ -80,7 +80,6 @@ export const Permission = proto3.makeEnum(
     {no: 910, name: "PERMISSION_COMPLIANCE_CONSENT"},
     {no: 1000, name: "PERMISSION_LMS_VIEW"},
     {no: 1001, name: "PERMISSION_LMS_EDIT"},
-    {no: 1002, name: "PERMISSION_LMS_V2_DATA_MANAGER"},
     {no: 1200, name: "PERMISSION_OMNI_BOSS"},
     {no: 1210, name: "PERMISSION_OMNI_PORTALS_VIEW"},
     {no: 1300, name: "PERMISSION_INTEGRATIONS_VIEW"},
