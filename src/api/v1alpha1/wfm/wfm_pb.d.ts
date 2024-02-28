@@ -15153,3 +15153,52 @@ export declare class ReplaceAgentOnScheduleRes extends Message<ReplaceAgentOnSch
   static equals(a: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined, b: ReplaceAgentOnScheduleRes | PlainMessage<ReplaceAgentOnScheduleRes> | undefined): boolean;
 }
 
+/**
+ * Request message for the HelloWorldWFMAdherence RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldWFMAdherenceRequest
+ */
+export declare class HelloWorldWFMAdherenceRequest extends Message<HelloWorldWFMAdherenceRequest> {
+  constructor(data?: PartialMessage<HelloWorldWFMAdherenceRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldWFMAdherenceRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldWFMAdherenceRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceRequest;
+
+  static equals(a: HelloWorldWFMAdherenceRequest | PlainMessage<HelloWorldWFMAdherenceRequest> | undefined, b: HelloWorldWFMAdherenceRequest | PlainMessage<HelloWorldWFMAdherenceRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the HelloWorldWFMAdherence RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.HelloWorldWFMAdherenceResponse
+ */
+export declare class HelloWorldWFMAdherenceResponse extends Message<HelloWorldWFMAdherenceResponse> {
+  /**
+   * A string containing the hello world message
+   *
+   * @generated from field: string hello_message = 1;
+   */
+  helloMessage: string;
+
+  constructor(data?: PartialMessage<HelloWorldWFMAdherenceResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.HelloWorldWFMAdherenceResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HelloWorldWFMAdherenceResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceResponse;
+
+  static equals(a: HelloWorldWFMAdherenceResponse | PlainMessage<HelloWorldWFMAdherenceResponse> | undefined, b: HelloWorldWFMAdherenceResponse | PlainMessage<HelloWorldWFMAdherenceResponse> | undefined): boolean;
+}
+
