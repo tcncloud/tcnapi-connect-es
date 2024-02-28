@@ -58,9 +58,9 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
    * The direction of the script in Operator used in the organization.
    * By default, it is set to false to indicate left-to-right.
    *
-   * @generated from field: bool use_script_direction_RTL = 14;
+   * @generated from field: bool use_script_direction_rigth_to_left = 14;
    */
-  useScriptDirectionRTL: boolean;
+  useScriptDirectionRigthToLeft: boolean;
 
   constructor(data?: PartialMessage<OrganizationPreferences>);
 
