@@ -1216,6 +1216,13 @@ export declare class TranscriptQuery extends Message<TranscriptQuery> {
    */
   deleteTime?: TranscriptQuery_DeleteTime;
 
+  /**
+   * Query constraints on phone.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Phone phone = 8;
+   */
+  phone?: TranscriptQuery_Phone;
+
   constructor(data?: PartialMessage<TranscriptQuery>);
 
   static readonly runtime: typeof proto3;
@@ -1229,6 +1236,485 @@ export declare class TranscriptQuery extends Message<TranscriptQuery> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery;
 
   static equals(a: TranscriptQuery | PlainMessage<TranscriptQuery> | undefined, b: TranscriptQuery | PlainMessage<TranscriptQuery> | undefined): boolean;
+}
+
+/**
+ * Query constraints on phone.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone
+ */
+export declare class TranscriptQuery_Phone extends Message<TranscriptQuery_Phone> {
+  /**
+   * Query constraints on phone country code.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Cc cc = 1;
+   */
+  cc?: TranscriptQuery_Cc;
+
+  /**
+   * Query constraints on phone ndc (area code).
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Ndc ndc = 2;
+   */
+  ndc?: TranscriptQuery_Ndc;
+
+  /**
+   * Query constraints on phone subscriber number prefix.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Prefix prefix = 3;
+   */
+  prefix?: TranscriptQuery_Prefix;
+
+  /**
+   * Query constraints on phone city.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.City city = 4;
+   */
+  city?: TranscriptQuery_City;
+
+  /**
+   * Query constraints on phone iso2 country code.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Iso2 iso2 = 5;
+   */
+  iso2?: TranscriptQuery_Iso2;
+
+  /**
+   * Query constraints on phone region code.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.RegionCode region_code = 6;
+   */
+  regionCode?: TranscriptQuery_RegionCode;
+
+  /**
+   * Query constraints on phone region name.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.RegionName region_name = 7;
+   */
+  regionName?: TranscriptQuery_RegionName;
+
+  /**
+   * Query constraints on phone time zone.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.TimeZone time_zone = 8;
+   */
+  timeZone?: TranscriptQuery_TimeZone;
+
+  /**
+   * Query constraints on phone number type.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Type type = 9;
+   */
+  type?: TranscriptQuery_Type;
+
+  /**
+   * Query constraints on phone number utc.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Utc utc = 10;
+   */
+  utc?: TranscriptQuery_Utc;
+
+  /**
+   * Query constraints on phone number location.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Location location = 11;
+   */
+  location?: TranscriptQuery_Location;
+
+  /**
+   * Query constraints on raw phone number.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Phone.Raw raw = 12;
+   */
+  raw?: TranscriptQuery_Phone_Raw;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Phone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Phone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Phone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Phone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Phone;
+
+  static equals(a: TranscriptQuery_Phone | PlainMessage<TranscriptQuery_Phone> | undefined, b: TranscriptQuery_Phone | PlainMessage<TranscriptQuery_Phone> | undefined): boolean;
+}
+
+/**
+ * Query constraints on raw phone number.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Raw
+ */
+export declare class TranscriptQuery_Phone_Raw extends Message<TranscriptQuery_Phone_Raw> {
+  /**
+   * Optional. Queries where phone number in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Phone_Raw>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Phone.Raw";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Phone_Raw;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Phone_Raw;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Phone_Raw;
+
+  static equals(a: TranscriptQuery_Phone_Raw | PlainMessage<TranscriptQuery_Phone_Raw> | undefined, b: TranscriptQuery_Phone_Raw | PlainMessage<TranscriptQuery_Phone_Raw> | undefined): boolean;
+}
+
+/**
+ * Cc defines a query on the phone country code.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Cc
+ */
+export declare class TranscriptQuery_Cc extends Message<TranscriptQuery_Cc> {
+  /**
+   * Optional. Queries where cc in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Cc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Cc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Cc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Cc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Cc;
+
+  static equals(a: TranscriptQuery_Cc | PlainMessage<TranscriptQuery_Cc> | undefined, b: TranscriptQuery_Cc | PlainMessage<TranscriptQuery_Cc> | undefined): boolean;
+}
+
+/**
+ * Ndc defines a query on the phone ndc.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Ndc
+ */
+export declare class TranscriptQuery_Ndc extends Message<TranscriptQuery_Ndc> {
+  /**
+   * Optional. Queries where ndc in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Ndc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Ndc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Ndc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Ndc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Ndc;
+
+  static equals(a: TranscriptQuery_Ndc | PlainMessage<TranscriptQuery_Ndc> | undefined, b: TranscriptQuery_Ndc | PlainMessage<TranscriptQuery_Ndc> | undefined): boolean;
+}
+
+/**
+ * Prefix defines a query on the phone prefix.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Prefix
+ */
+export declare class TranscriptQuery_Prefix extends Message<TranscriptQuery_Prefix> {
+  /**
+   * Optional. Queries where prefix in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Prefix>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Prefix";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Prefix;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Prefix;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Prefix;
+
+  static equals(a: TranscriptQuery_Prefix | PlainMessage<TranscriptQuery_Prefix> | undefined, b: TranscriptQuery_Prefix | PlainMessage<TranscriptQuery_Prefix> | undefined): boolean;
+}
+
+/**
+ * City defines a query on the phone city.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.City
+ */
+export declare class TranscriptQuery_City extends Message<TranscriptQuery_City> {
+  /**
+   * Optional. Queries where city in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_City>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.City";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_City;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_City;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_City;
+
+  static equals(a: TranscriptQuery_City | PlainMessage<TranscriptQuery_City> | undefined, b: TranscriptQuery_City | PlainMessage<TranscriptQuery_City> | undefined): boolean;
+}
+
+/**
+ * Iso2 defines a query on the phone Iso2.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Iso2
+ */
+export declare class TranscriptQuery_Iso2 extends Message<TranscriptQuery_Iso2> {
+  /**
+   * Optional. Queries where iso2 in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Iso2>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Iso2";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Iso2;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Iso2;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Iso2;
+
+  static equals(a: TranscriptQuery_Iso2 | PlainMessage<TranscriptQuery_Iso2> | undefined, b: TranscriptQuery_Iso2 | PlainMessage<TranscriptQuery_Iso2> | undefined): boolean;
+}
+
+/**
+ * RegionCode defines a query on the phone region code.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.RegionCode
+ */
+export declare class TranscriptQuery_RegionCode extends Message<TranscriptQuery_RegionCode> {
+  /**
+   * Optional. Queries where region code in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_RegionCode>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.RegionCode";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_RegionCode;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_RegionCode;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_RegionCode;
+
+  static equals(a: TranscriptQuery_RegionCode | PlainMessage<TranscriptQuery_RegionCode> | undefined, b: TranscriptQuery_RegionCode | PlainMessage<TranscriptQuery_RegionCode> | undefined): boolean;
+}
+
+/**
+ * RegionName defines a query on the phone region name.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.RegionName
+ */
+export declare class TranscriptQuery_RegionName extends Message<TranscriptQuery_RegionName> {
+  /**
+   * Optional. Queries where region name in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_RegionName>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.RegionName";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_RegionName;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_RegionName;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_RegionName;
+
+  static equals(a: TranscriptQuery_RegionName | PlainMessage<TranscriptQuery_RegionName> | undefined, b: TranscriptQuery_RegionName | PlainMessage<TranscriptQuery_RegionName> | undefined): boolean;
+}
+
+/**
+ * TimeZone defines a query on the phone time zone.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.TimeZone
+ */
+export declare class TranscriptQuery_TimeZone extends Message<TranscriptQuery_TimeZone> {
+  /**
+   * Optional. Queries where time zone in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_TimeZone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.TimeZone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_TimeZone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_TimeZone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_TimeZone;
+
+  static equals(a: TranscriptQuery_TimeZone | PlainMessage<TranscriptQuery_TimeZone> | undefined, b: TranscriptQuery_TimeZone | PlainMessage<TranscriptQuery_TimeZone> | undefined): boolean;
+}
+
+/**
+ * Type defines a query on the phone type.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Type
+ */
+export declare class TranscriptQuery_Type extends Message<TranscriptQuery_Type> {
+  /**
+   * Optional. Queries where type in list provided.
+   *
+   * @generated from field: repeated string any = 1;
+   */
+  any: string[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Type>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Type";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Type;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Type;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Type;
+
+  static equals(a: TranscriptQuery_Type | PlainMessage<TranscriptQuery_Type> | undefined, b: TranscriptQuery_Type | PlainMessage<TranscriptQuery_Type> | undefined): boolean;
+}
+
+/**
+ * Utc defines a query on the phone utc.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Utc
+ */
+export declare class TranscriptQuery_Utc extends Message<TranscriptQuery_Utc> {
+  /**
+   * Optional. Queries where utc in list provided.
+   *
+   * @generated from field: repeated float any = 1;
+   */
+  any: number[];
+
+  constructor(data?: PartialMessage<TranscriptQuery_Utc>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Utc";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Utc;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Utc;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Utc;
+
+  static equals(a: TranscriptQuery_Utc | PlainMessage<TranscriptQuery_Utc> | undefined, b: TranscriptQuery_Utc | PlainMessage<TranscriptQuery_Utc> | undefined): boolean;
+}
+
+/**
+ * Location defines a query on the phone location.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Location
+ */
+export declare class TranscriptQuery_Location extends Message<TranscriptQuery_Location> {
+  /**
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery.Location.ZipCodeProximity zip_code_proximity = 1;
+   */
+  zipCodeProximity?: TranscriptQuery_Location_ZipCodeProximity;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Location>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Location";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Location;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Location;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Location;
+
+  static equals(a: TranscriptQuery_Location | PlainMessage<TranscriptQuery_Location> | undefined, b: TranscriptQuery_Location | PlainMessage<TranscriptQuery_Location> | undefined): boolean;
+}
+
+/**
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Location.ZipCodeProximity
+ */
+export declare class TranscriptQuery_Location_ZipCodeProximity extends Message<TranscriptQuery_Location_ZipCodeProximity> {
+  /**
+   * Required. Queries on phone number country code.
+   *
+   * @generated from field: string country_code = 1;
+   */
+  countryCode: string;
+
+  /**
+   * Required. Queries where phone location is within distance of zipcode.
+   *
+   * @generated from field: string zip_code = 2;
+   */
+  zipCode: string;
+
+  /**
+   * Required. Queries where phone location is within distance (km or mi) of zipcode. For example: 100km.
+   *
+   * @generated from field: string distance = 3;
+   */
+  distance: string;
+
+  constructor(data?: PartialMessage<TranscriptQuery_Location_ZipCodeProximity>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptQuery.Location.ZipCodeProximity";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptQuery_Location_ZipCodeProximity;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptQuery_Location_ZipCodeProximity;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_Location_ZipCodeProximity;
+
+  static equals(a: TranscriptQuery_Location_ZipCodeProximity | PlainMessage<TranscriptQuery_Location_ZipCodeProximity> | undefined, b: TranscriptQuery_Location_ZipCodeProximity | PlainMessage<TranscriptQuery_Location_ZipCodeProximity> | undefined): boolean;
 }
 
 /**

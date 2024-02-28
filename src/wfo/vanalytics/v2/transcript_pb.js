@@ -417,7 +417,201 @@ export const TranscriptQuery = proto3.makeMessageType(
     { no: 5, name: "flag_summary", kind: "message", T: TranscriptQuery_FlagSummary },
     { no: 6, name: "start_time", kind: "message", T: TranscriptQuery_StartTime },
     { no: 7, name: "delete_time", kind: "message", T: TranscriptQuery_DeleteTime },
+    { no: 8, name: "phone", kind: "message", T: TranscriptQuery_Phone },
   ],
+);
+
+/**
+ * Query constraints on phone.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone
+ */
+export const TranscriptQuery_Phone = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone",
+  () => [
+    { no: 1, name: "cc", kind: "message", T: TranscriptQuery_Cc },
+    { no: 2, name: "ndc", kind: "message", T: TranscriptQuery_Ndc },
+    { no: 3, name: "prefix", kind: "message", T: TranscriptQuery_Prefix },
+    { no: 4, name: "city", kind: "message", T: TranscriptQuery_City },
+    { no: 5, name: "iso2", kind: "message", T: TranscriptQuery_Iso2 },
+    { no: 6, name: "region_code", kind: "message", T: TranscriptQuery_RegionCode },
+    { no: 7, name: "region_name", kind: "message", T: TranscriptQuery_RegionName },
+    { no: 8, name: "time_zone", kind: "message", T: TranscriptQuery_TimeZone },
+    { no: 9, name: "type", kind: "message", T: TranscriptQuery_Type },
+    { no: 10, name: "utc", kind: "message", T: TranscriptQuery_Utc },
+    { no: 11, name: "location", kind: "message", T: TranscriptQuery_Location },
+    { no: 12, name: "raw", kind: "message", T: TranscriptQuery_Phone_Raw },
+  ],
+  {localName: "TranscriptQuery_Phone"},
+);
+
+/**
+ * Query constraints on raw phone number.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Raw
+ */
+export const TranscriptQuery_Phone_Raw = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Raw",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Raw"},
+);
+
+/**
+ * Cc defines a query on the phone country code.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Cc
+ */
+export const TranscriptQuery_Cc = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Cc",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Cc"},
+);
+
+/**
+ * Ndc defines a query on the phone ndc.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Ndc
+ */
+export const TranscriptQuery_Ndc = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Ndc",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Ndc"},
+);
+
+/**
+ * Prefix defines a query on the phone prefix.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Prefix
+ */
+export const TranscriptQuery_Prefix = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Prefix",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Prefix"},
+);
+
+/**
+ * City defines a query on the phone city.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.City
+ */
+export const TranscriptQuery_City = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.City",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_City"},
+);
+
+/**
+ * Iso2 defines a query on the phone Iso2.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Iso2
+ */
+export const TranscriptQuery_Iso2 = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Iso2",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Iso2"},
+);
+
+/**
+ * RegionCode defines a query on the phone region code.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.RegionCode
+ */
+export const TranscriptQuery_RegionCode = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.RegionCode",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_RegionCode"},
+);
+
+/**
+ * RegionName defines a query on the phone region name.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.RegionName
+ */
+export const TranscriptQuery_RegionName = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.RegionName",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_RegionName"},
+);
+
+/**
+ * TimeZone defines a query on the phone time zone.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.TimeZone
+ */
+export const TranscriptQuery_TimeZone = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.TimeZone",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_TimeZone"},
+);
+
+/**
+ * Type defines a query on the phone type.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Type
+ */
+export const TranscriptQuery_Type = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Type",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Type"},
+);
+
+/**
+ * Utc defines a query on the phone utc.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Utc
+ */
+export const TranscriptQuery_Utc = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Utc",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Utc"},
+);
+
+/**
+ * Location defines a query on the phone location.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Location
+ */
+export const TranscriptQuery_Location = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Location",
+  () => [
+    { no: 1, name: "zip_code_proximity", kind: "message", T: TranscriptQuery_Location_ZipCodeProximity },
+  ],
+  {localName: "TranscriptQuery_Location"},
+);
+
+/**
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Location.ZipCodeProximity
+ */
+export const TranscriptQuery_Location_ZipCodeProximity = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Location.ZipCodeProximity",
+  () => [
+    { no: 1, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "zip_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "distance", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "TranscriptQuery_Location_ZipCodeProximity"},
 );
 
 /**
