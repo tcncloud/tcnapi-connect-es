@@ -5,6 +5,7 @@
 
 import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { CreateCorrectionRequest, CreateCorrectionResponse } from "./correction_pb.js";
 
 /**
  * @generated from service wfo.vanalytics.v2.Vanalytics
@@ -23,6 +24,17 @@ export declare const Vanalytics: {
       readonly name: "SearchTranscripts",
       readonly I: typeof SearchTranscriptsRequest,
       readonly O: typeof SearchTranscriptsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateCorrection creates a correction.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateCorrection
+     */
+    readonly createCorrection: {
+      readonly name: "CreateCorrection",
+      readonly I: typeof CreateCorrectionRequest,
+      readonly O: typeof CreateCorrectionResponse,
       readonly kind: MethodKind.Unary,
     },
   }

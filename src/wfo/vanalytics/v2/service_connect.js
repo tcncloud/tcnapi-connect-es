@@ -5,6 +5,7 @@
 
 import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { CreateCorrectionRequest, CreateCorrectionResponse } from "./correction_pb.js";
 
 /**
  * @generated from service wfo.vanalytics.v2.Vanalytics
@@ -23,6 +24,17 @@ export const Vanalytics = {
       name: "SearchTranscripts",
       I: SearchTranscriptsRequest,
       O: SearchTranscriptsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * CreateCorrection creates a correction.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateCorrection
+     */
+    createCorrection: {
+      name: "CreateCorrection",
+      I: CreateCorrectionRequest,
+      O: CreateCorrectionResponse,
       kind: MethodKind.Unary,
     },
   }
