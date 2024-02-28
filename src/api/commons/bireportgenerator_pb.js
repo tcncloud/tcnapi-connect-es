@@ -171,7 +171,6 @@ export const DeliveryOptions = proto3.makeMessageType(
   () => [
     { no: 1, name: "transfer_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "failure_notification_emails", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 3, name: "failure_notification_transfer_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

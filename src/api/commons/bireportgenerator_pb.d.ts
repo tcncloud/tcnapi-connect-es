@@ -470,13 +470,6 @@ export declare class DeliveryOptions extends Message<DeliveryOptions> {
    */
   failureNotificationEmails: string[];
 
-  /**
-   * failure_notification_transfer_config_sid is delivery definition to deliver failure notifications.
-   *
-   * @generated from field: int64 failure_notification_transfer_config_sid = 3;
-   */
-  failureNotificationTransferConfigSid: bigint;
-
   constructor(data?: PartialMessage<DeliveryOptions>);
 
   static readonly runtime: typeof proto3;
