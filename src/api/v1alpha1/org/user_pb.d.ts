@@ -3481,6 +3481,13 @@ export declare class GetUserSessionDataResponse extends Message<GetUserSessionDa
    */
   orgAllowedMfa: boolean;
 
+  /**
+   * The default currency used in the organization.
+   *
+   * @generated from field: string org_currency = 15;
+   */
+  orgCurrency: string;
+
   constructor(data?: PartialMessage<GetUserSessionDataResponse>);
 
   static readonly runtime: typeof proto3;
