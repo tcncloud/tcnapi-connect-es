@@ -11,6 +11,7 @@ import { P3PermissionGroup, PermissionGroup } from "../../commons/org/permission
 import { Trust } from "../../commons/org/trusts_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
 import { Permission } from "../../commons/perms_pb.js";
+import { LocalePreferences } from "../../commons/org_preferences_pb.js";
 
 /**
  * Request message for the CreateUser rpc.
@@ -1117,7 +1118,7 @@ export const GetUserSessionDataResponse = proto3.makeMessageType(
     { no: 4, name: "permission_groups", kind: "message", T: PermissionGroup, repeated: true },
     { no: 5, name: "labels", kind: "message", T: Label, repeated: true },
     { no: 6, name: "org_allowed_mfa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 15, name: "org_currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "locale_preferences", kind: "message", T: LocalePreferences },
   ],
 );
 

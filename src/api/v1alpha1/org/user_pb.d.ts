@@ -12,6 +12,7 @@ import type { P3PermissionGroup, PermissionGroup } from "../../commons/org/permi
 import type { Trust } from "../../commons/org/trusts_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
 import type { Permission } from "../../commons/perms_pb.js";
+import type { LocalePreferences } from "../../commons/org_preferences_pb.js";
 
 /**
  * Request message for the CreateUser rpc.
@@ -3482,11 +3483,11 @@ export declare class GetUserSessionDataResponse extends Message<GetUserSessionDa
   orgAllowedMfa: boolean;
 
   /**
-   * The default currency used in the organization.
+   * The default locale preferences of the organization
    *
-   * @generated from field: string org_currency = 15;
+   * @generated from field: api.commons.LocalePreferences locale_preferences = 7;
    */
-  orgCurrency: string;
+  localePreferences?: LocalePreferences;
 
   constructor(data?: PartialMessage<GetUserSessionDataResponse>);
 
