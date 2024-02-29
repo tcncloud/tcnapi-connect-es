@@ -3,7 +3,32 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Duration, proto3 } from "@bufbuild/protobuf";
+import { Duration, FieldMask, proto3 } from "@bufbuild/protobuf";
+
+/**
+ * UpdateCorrectionRequest is a request for updating a correction.
+ *
+ * @generated from message wfo.vanalytics.v2.UpdateCorrectionRequest
+ */
+export const UpdateCorrectionRequest = proto3.makeMessageType(
+  "wfo.vanalytics.v2.UpdateCorrectionRequest",
+  () => [
+    { no: 1, name: "correction", kind: "message", T: Correction },
+    { no: 2, name: "update_mask", kind: "message", T: FieldMask },
+  ],
+);
+
+/**
+ * UpdateCorrectionResponse is a response for updating a correction.
+ *
+ * @generated from message wfo.vanalytics.v2.UpdateCorrectionResponse
+ */
+export const UpdateCorrectionResponse = proto3.makeMessageType(
+  "wfo.vanalytics.v2.UpdateCorrectionResponse",
+  () => [
+    { no: 1, name: "correction", kind: "message", T: Correction },
+  ],
+);
 
 /**
  * CreateCorrectionRequest is a request for creating a correction.
@@ -24,6 +49,61 @@ export const CreateCorrectionRequest = proto3.makeMessageType(
  */
 export const CreateCorrectionResponse = proto3.makeMessageType(
   "wfo.vanalytics.v2.CreateCorrectionResponse",
+  () => [
+    { no: 1, name: "correction", kind: "message", T: Correction },
+  ],
+);
+
+/**
+ * @generated from message wfo.vanalytics.v2.GetCorrectionRequest
+ */
+export const GetCorrectionRequest = proto3.makeMessageType(
+  "wfo.vanalytics.v2.GetCorrectionRequest",
+  () => [
+    { no: 2, name: "correction_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * ListCorrectionsRequest is a request for listing corrections.
+ *
+ * @generated from message wfo.vanalytics.v2.ListCorrectionsRequest
+ */
+export const ListCorrectionsRequest = proto3.makeMessageType(
+  "wfo.vanalytics.v2.ListCorrectionsRequest",
+  () => [
+    { no: 2, name: "transcript_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * ListCorrectionsResponse is a response for listing corrections.
+ *
+ * @generated from message wfo.vanalytics.v2.ListCorrectionsResponse
+ */
+export const ListCorrectionsResponse = proto3.makeMessageType(
+  "wfo.vanalytics.v2.ListCorrectionsResponse",
+  () => [
+    { no: 1, name: "corrections", kind: "message", T: Correction, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message wfo.vanalytics.v2.DeleteCorrectionRequest
+ */
+export const DeleteCorrectionRequest = proto3.makeMessageType(
+  "wfo.vanalytics.v2.DeleteCorrectionRequest",
+  () => [
+    { no: 1, name: "correction_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "return", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message wfo.vanalytics.v2.DeleteCorrectionResponse
+ */
+export const DeleteCorrectionResponse = proto3.makeMessageType(
+  "wfo.vanalytics.v2.DeleteCorrectionResponse",
   () => [
     { no: 1, name: "correction", kind: "message", T: Correction },
   ],
