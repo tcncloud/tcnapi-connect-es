@@ -1293,7 +1293,7 @@ export declare class ReviewFileVersionsRes extends Message<ReviewFileVersionsRes
   diffContent: string;
 
   /**
-   * List containing image links from parsing both file s
+   * List containing image links from parsing both files
    *
    * @generated from field: repeated api.v0alpha.LearnImage images = 3;
    */
