@@ -1237,18 +1237,18 @@ export declare class SearchContentByVersionReq extends Message<SearchContentByVe
  */
 export declare class ReviewFileVersionsReq extends Message<ReviewFileVersionsReq> {
   /**
-   * url with first version
+   * url to master version
    *
    * @generated from field: string url = 1;
    */
   url: string;
 
   /**
-   * url with second version
+   * version to be compared with
    *
-   * @generated from field: string compare_with_url = 2;
+   * @generated from field: string version = 2;
    */
-  compareWithUrl: string;
+  version: string;
 
   /**
    * locale
@@ -1279,21 +1279,21 @@ export declare class ReviewFileVersionsReq extends Message<ReviewFileVersionsReq
  */
 export declare class ReviewFileVersionsRes extends Message<ReviewFileVersionsRes> {
   /**
-   * existing file contents
+   * existing file contents from master
    *
    * @generated from field: string content = 1;
    */
   content: string;
 
   /**
-   * diff contents between both versions
+   * diff contents between both master and passed version
    *
    * @generated from field: string diff_content = 2;
    */
   diffContent: string;
 
   /**
-   * List containing image links from parsing both files
+   * List containing image links from parsing both file s
    *
    * @generated from field: repeated api.v0alpha.LearnImage images = 3;
    */
