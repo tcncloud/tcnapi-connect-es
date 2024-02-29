@@ -232,7 +232,7 @@ export const Learn = {
       kind: MethodKind.ServerStreaming,
     },
     /**
-     * return diff by comparing file contens in any version
+     * return diff by comparing file contens from any version
      *
      * @generated from rpc api.v0alpha.Learn.ReviewFileVersions
      */

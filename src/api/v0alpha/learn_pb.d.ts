@@ -1231,7 +1231,7 @@ export declare class SearchContentByVersionReq extends Message<SearchContentByVe
 }
 
 /**
- * request to retreive diff after comparing file contents in different versions
+ * request to retrieve diff after comparing file contents in different versions
  *
  * @generated from message api.v0alpha.ReviewFileVersionsReq
  */
@@ -1239,16 +1239,16 @@ export declare class ReviewFileVersionsReq extends Message<ReviewFileVersionsReq
   /**
    * url with first version
    *
-   * @generated from field: string first_url = 1;
+   * @generated from field: string url = 1;
    */
-  firstUrl: string;
+  url: string;
 
   /**
    * url with second version
    *
-   * @generated from field: string second_url = 2;
+   * @generated from field: string compare_with_url = 2;
    */
-  secondUrl: string;
+  compareWithUrl: string;
 
   /**
    * locale
@@ -1273,45 +1273,31 @@ export declare class ReviewFileVersionsReq extends Message<ReviewFileVersionsReq
 }
 
 /**
- * response to retreive diff after comparing file contents in different versions
+ * response to retrieve diff after comparing file contents in different versions
  *
  * @generated from message api.v0alpha.ReviewFileVersionsRes
  */
 export declare class ReviewFileVersionsRes extends Message<ReviewFileVersionsRes> {
   /**
-   * contents of first file version
+   * existing file contents
    *
-   * @generated from field: string first_content = 1;
+   * @generated from field: string content = 1;
    */
-  firstContent: string;
+  content: string;
 
   /**
-   * List containing first static file links from parsing markdown
+   * diff contents between both versions
    *
-   * @generated from field: repeated api.v0alpha.LearnImage first_content_images = 2;
-   */
-  firstContentImages: LearnImage[];
-
-  /**
-   * contents of second file version
-   *
-   * @generated from field: string second_content = 3;
-   */
-  secondContent: string;
-
-  /**
-   * List containing second static file links from parsing markdown
-   *
-   * @generated from field: repeated api.v0alpha.LearnImage second_content_images = 4;
-   */
-  secondContentImages: LearnImage[];
-
-  /**
-   * diff contents between 2 versions
-   *
-   * @generated from field: string diff_content = 5;
+   * @generated from field: string diff_content = 2;
    */
   diffContent: string;
+
+  /**
+   * List containing image links from parsing both files
+   *
+   * @generated from field: repeated api.v0alpha.LearnImage images = 3;
+   */
+  images: LearnImage[];
 
   constructor(data?: PartialMessage<ReviewFileVersionsRes>);
 
