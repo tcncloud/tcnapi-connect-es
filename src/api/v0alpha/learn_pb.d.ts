@@ -1230,3 +1230,101 @@ export declare class SearchContentByVersionReq extends Message<SearchContentByVe
   static equals(a: SearchContentByVersionReq | PlainMessage<SearchContentByVersionReq> | undefined, b: SearchContentByVersionReq | PlainMessage<SearchContentByVersionReq> | undefined): boolean;
 }
 
+/**
+ * request to retreive diff after comparing file contents in different versions
+ *
+ * @generated from message api.v0alpha.ReviewFileVersionsReq
+ */
+export declare class ReviewFileVersionsReq extends Message<ReviewFileVersionsReq> {
+  /**
+   * url with first version
+   *
+   * @generated from field: string first_url = 1;
+   */
+  firstUrl: string;
+
+  /**
+   * url with second version
+   *
+   * @generated from field: string second_url = 2;
+   */
+  secondUrl: string;
+
+  /**
+   * locale
+   *
+   * @generated from field: string locale = 3;
+   */
+  locale: string;
+
+  constructor(data?: PartialMessage<ReviewFileVersionsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReviewFileVersionsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReviewFileVersionsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReviewFileVersionsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReviewFileVersionsReq;
+
+  static equals(a: ReviewFileVersionsReq | PlainMessage<ReviewFileVersionsReq> | undefined, b: ReviewFileVersionsReq | PlainMessage<ReviewFileVersionsReq> | undefined): boolean;
+}
+
+/**
+ * response to retreive diff after comparing file contents in different versions
+ *
+ * @generated from message api.v0alpha.ReviewFileVersionsRes
+ */
+export declare class ReviewFileVersionsRes extends Message<ReviewFileVersionsRes> {
+  /**
+   * contents of first file version
+   *
+   * @generated from field: string first_content = 1;
+   */
+  firstContent: string;
+
+  /**
+   * List containing first static file links from parsing markdown
+   *
+   * @generated from field: repeated api.v0alpha.LearnImage first_content_images = 2;
+   */
+  firstContentImages: LearnImage[];
+
+  /**
+   * contents of second file version
+   *
+   * @generated from field: string second_content = 3;
+   */
+  secondContent: string;
+
+  /**
+   * List containing second static file links from parsing markdown
+   *
+   * @generated from field: repeated api.v0alpha.LearnImage second_content_images = 4;
+   */
+  secondContentImages: LearnImage[];
+
+  /**
+   * diff contents between 2 versions
+   *
+   * @generated from field: string diff_content = 5;
+   */
+  diffContent: string;
+
+  constructor(data?: PartialMessage<ReviewFileVersionsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReviewFileVersionsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReviewFileVersionsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReviewFileVersionsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReviewFileVersionsRes;
+
+  static equals(a: ReviewFileVersionsRes | PlainMessage<ReviewFileVersionsRes> | undefined, b: ReviewFileVersionsRes | PlainMessage<ReviewFileVersionsRes> | undefined): boolean;
+}
+
