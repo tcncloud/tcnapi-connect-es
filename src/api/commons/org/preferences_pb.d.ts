@@ -46,30 +46,11 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
   displayLanguage: DisplayLanguage;
 
   /**
-   * Display language in Operator for users of the organization.
-   * Must be a valid language code supported in Operator.
-   * ISO 639 - https://en.m.wikipedia.org/wiki/List_of_ISO_639_language_codes.
+   * Organization's locale preferences.
    *
-   * @generated from field: string operator_display_language = 13;
+   * @generated from field: api.commons.org.LocalePreferences locale_preferences = 13;
    */
-  operatorDisplayLanguage: string;
-
-  /**
-   * The direction of the script in Operator used in the organization.
-   * By default, it is set to false to indicate left-to-right.
-   *
-   * @generated from field: bool use_script_direction_right_to_left = 14;
-   */
-  useScriptDirectionRightToLeft: boolean;
-
-  /**
-   * The default currency used in the organization.
-   * Must be a valid language code supported in Operator.
-   * ISO 4217 - https://en.wikipedia.org/wiki/ISO_4217.
-   *
-   * @generated from field: string default_currency = 15;
-   */
-  defaultCurrency: string;
+  localePreferences?: LocalePreferences;
 
   constructor(data?: PartialMessage<OrganizationPreferences>);
 
@@ -84,6 +65,53 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OrganizationPreferences;
 
   static equals(a: OrganizationPreferences | PlainMessage<OrganizationPreferences> | undefined, b: OrganizationPreferences | PlainMessage<OrganizationPreferences> | undefined): boolean;
+}
+
+/**
+ * LocalePreferences represents the organization's locale settings.
+ *
+ * @generated from message api.commons.org.LocalePreferences
+ */
+export declare class LocalePreferences extends Message<LocalePreferences> {
+  /**
+   * Display language in Operator for users of the organization.
+   * Must be a valid language tag supported in Operator.
+   * IETF BCP 47 - https://en.wikipedia.org/wiki/IETF_language_tag
+   *
+   * @generated from field: string language_tag = 1;
+   */
+  languageTag: string;
+
+  /**
+   * The direction of the script in Operator used in the organization.
+   * By default, it is set to false to indicate left-to-right.
+   *
+   * @generated from field: bool use_script_direction_right_to_left = 2;
+   */
+  useScriptDirectionRightToLeft: boolean;
+
+  /**
+   * The default currency used in the organization.
+   * Must be a valid currency code supported in Operator.
+   * ISO 4217 - https://en.wikipedia.org/wiki/ISO_4217.
+   *
+   * @generated from field: string default_currency = 3;
+   */
+  defaultCurrency: string;
+
+  constructor(data?: PartialMessage<LocalePreferences>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.LocalePreferences";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LocalePreferences;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LocalePreferences;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LocalePreferences;
+
+  static equals(a: LocalePreferences | PlainMessage<LocalePreferences> | undefined, b: LocalePreferences | PlainMessage<LocalePreferences> | undefined): boolean;
 }
 
 /**

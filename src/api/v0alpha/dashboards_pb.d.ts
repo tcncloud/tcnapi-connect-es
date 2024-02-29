@@ -573,7 +573,8 @@ export declare class PanelSource extends Message<PanelSource> {
     /**
      * Used for new BI insights in operator
      *
-     * @generated from field: string insight_id = 1;
+     * @generated from field: string insight_id = 1 [deprecated = true];
+     * @deprecated
      */
     value: string;
     case: "insightId";
@@ -585,6 +586,14 @@ export declare class PanelSource extends Message<PanelSource> {
      */
     value: string;
     case: "legacyInsightId";
+  } | {
+    /**
+     * Used for BI Insights in operator
+     *
+     * @generated from field: string insight_resource_id = 3;
+     */
+    value: string;
+    case: "insightResourceId";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<PanelSource>);

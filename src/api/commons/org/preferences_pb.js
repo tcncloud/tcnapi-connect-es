@@ -22,9 +22,21 @@ export const OrganizationPreferences = proto3.makeMessageType(
     { no: 10, name: "default_country", kind: "enum", T: proto3.getEnumType(Country) },
     { no: 11, name: "time_zone", kind: "enum", T: proto3.getEnumType(TimeZone) },
     { no: 12, name: "display_language", kind: "enum", T: proto3.getEnumType(DisplayLanguage) },
-    { no: 13, name: "operator_display_language", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 14, name: "use_script_direction_right_to_left", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 15, name: "default_currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "locale_preferences", kind: "message", T: LocalePreferences },
+  ],
+);
+
+/**
+ * LocalePreferences represents the organization's locale settings.
+ *
+ * @generated from message api.commons.org.LocalePreferences
+ */
+export const LocalePreferences = proto3.makeMessageType(
+  "api.commons.org.LocalePreferences",
+  () => [
+    { no: 1, name: "language_tag", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "use_script_direction_right_to_left", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "default_currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
