@@ -6,7 +6,7 @@
 import { proto3 } from "@bufbuild/protobuf";
 import { Country } from "../country_pb.js";
 import { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
-import { AnsweringMachineDetection, BroadcastTemplateOrdering, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
+import { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import { DialOrderType } from "../lms_pb.js";
 import { AnaTimeZone } from "../ana_pb.js";
 
@@ -22,6 +22,7 @@ export const OrganizationPreferences = proto3.makeMessageType(
     { no: 10, name: "default_country", kind: "enum", T: proto3.getEnumType(Country) },
     { no: 11, name: "time_zone", kind: "enum", T: proto3.getEnumType(TimeZone) },
     { no: 12, name: "display_language", kind: "enum", T: proto3.getEnumType(DisplayLanguage) },
+    { no: 13, name: "locale_preferences", kind: "message", T: LocalePreferences },
   ],
 );
 
