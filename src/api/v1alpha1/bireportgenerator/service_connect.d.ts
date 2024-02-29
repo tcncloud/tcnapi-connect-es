@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateReportJobRequest, CreateReportJobResponse, DeleteReportJobRequest, DeleteReportJobResponse, GetReportJobRequest, GetReportJobResponse, ListReportJobsRequest, ListReportJobsResponse, UpdateReportJobRequest, UpdateReportJobResponse } from "./service_pb.js";
+import { CreateReportJobRequest, CreateReportJobResponse, DeleteReportJobRequest, DeleteReportJobResponse, GenerateReportRequest, GenerateReportResponse, GetReportJobRequest, GetReportJobResponse, ListReportJobsRequest, ListReportJobsResponse, UpdateReportJobRequest, UpdateReportJobResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -67,6 +67,15 @@ export declare const BIReportGeneratorService: {
       readonly name: "GetReportJob",
       readonly I: typeof GetReportJobRequest,
       readonly O: typeof GetReportJobResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.bireportgenerator.BIReportGeneratorService.GenerateReport
+     */
+    readonly generateReport: {
+      readonly name: "GenerateReport",
+      readonly I: typeof GenerateReportRequest,
+      readonly O: typeof GenerateReportResponse,
       readonly kind: MethodKind.Unary,
     },
   }

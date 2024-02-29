@@ -465,7 +465,8 @@ export declare class DeliveryOptions extends Message<DeliveryOptions> {
   /**
    * failure_notification_emails are the emails to notify on failure.
    *
-   * @generated from field: repeated string failure_notification_emails = 2;
+   * @generated from field: repeated string failure_notification_emails = 2 [deprecated = true];
+   * @deprecated
    */
   failureNotificationEmails: string[];
 

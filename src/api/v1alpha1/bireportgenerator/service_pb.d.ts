@@ -280,3 +280,52 @@ export declare class GetReportJobResponse extends Message<GetReportJobResponse> 
   static equals(a: GetReportJobResponse | PlainMessage<GetReportJobResponse> | undefined, b: GetReportJobResponse | PlainMessage<GetReportJobResponse> | undefined): boolean;
 }
 
+/**
+ * GenerateReportRequest is the request for generating a report.
+ *
+ * @generated from message api.v1alpha1.bireportgenerator.GenerateReportRequest
+ */
+export declare class GenerateReportRequest extends Message<GenerateReportRequest> {
+  /**
+   * The report job to generate the report for.
+   *
+   * @generated from field: api.v1alpha1.bireportgenerator.ReportJob report_job = 1;
+   */
+  reportJob?: ReportJob;
+
+  constructor(data?: PartialMessage<GenerateReportRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.bireportgenerator.GenerateReportRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateReportRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateReportRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateReportRequest;
+
+  static equals(a: GenerateReportRequest | PlainMessage<GenerateReportRequest> | undefined, b: GenerateReportRequest | PlainMessage<GenerateReportRequest> | undefined): boolean;
+}
+
+/**
+ * GenerateReportResponse is the response for generating a report.
+ *
+ * @generated from message api.v1alpha1.bireportgenerator.GenerateReportResponse
+ */
+export declare class GenerateReportResponse extends Message<GenerateReportResponse> {
+  constructor(data?: PartialMessage<GenerateReportResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.bireportgenerator.GenerateReportResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenerateReportResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GenerateReportResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateReportResponse;
+
+  static equals(a: GenerateReportResponse | PlainMessage<GenerateReportResponse> | undefined, b: GenerateReportResponse | PlainMessage<GenerateReportResponse> | undefined): boolean;
+}
+

@@ -123,3 +123,25 @@ export const GetReportJobResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * GenerateReportRequest is the request for generating a report.
+ *
+ * @generated from message api.v1alpha1.bireportgenerator.GenerateReportRequest
+ */
+export const GenerateReportRequest = proto3.makeMessageType(
+  "api.v1alpha1.bireportgenerator.GenerateReportRequest",
+  () => [
+    { no: 1, name: "report_job", kind: "message", T: ReportJob },
+  ],
+);
+
+/**
+ * GenerateReportResponse is the response for generating a report.
+ *
+ * @generated from message api.v1alpha1.bireportgenerator.GenerateReportResponse
+ */
+export const GenerateReportResponse = proto3.makeMessageType(
+  "api.v1alpha1.bireportgenerator.GenerateReportResponse",
+  [],
+);
+
