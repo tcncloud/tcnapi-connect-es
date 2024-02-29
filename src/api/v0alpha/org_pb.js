@@ -13,7 +13,7 @@ import { Country as Country$1 } from "../commons/country_pb.js";
 import { Permission } from "../commons/auth/perms_pb.js";
 import { Level } from "../commons/logging_pb.js";
 import { Permission as Permission$1 } from "../commons/perms_pb.js";
-import { AnsweringMachineDetection, BroadcastTemplateOrdering, ScheduleByTimeZoneScope, StandardReportFilter } from "../commons/org_preferences_pb.js";
+import { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../commons/org_preferences_pb.js";
 import { DialOrderType } from "../commons/lms_pb.js";
 import { AnaTimeZone } from "../commons/ana_pb.js";
 import { EventType } from "../commons/audit/event_types_pb.js";
@@ -1890,6 +1890,7 @@ export const OrganizationPreferences = proto3.makeMessageType(
     { no: 11, name: "default_country", kind: "enum", T: proto3.getEnumType(Country$1) },
     { no: 12, name: "time_zone", kind: "enum", T: proto3.getEnumType(TimeZone) },
     { no: 13, name: "display_language", kind: "enum", T: proto3.getEnumType(DisplayLanguage) },
+    { no: 14, name: "locale_preferences", kind: "message", T: LocalePreferences },
   ],
 );
 
