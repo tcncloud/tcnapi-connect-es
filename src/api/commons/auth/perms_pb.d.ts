@@ -683,5 +683,17 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_NEWSROOM_PUBLISH = 4201;
    */
   PERMISSION_NEWSROOM_PUBLISH = 4201,
+
+  /**
+   * ACCESS the Contact Manager APP: Routing, Listing the Contact Manager, List,Get, KYC etc.
+   *
+   * @generated from enum value: PERMISSION_CONTACTMANAGER_ADMIN = 5100;
+   */
+  PERMISSION_CONTACTMANAGER_ADMIN = 5100,
+
+  /**
+   * @generated from enum value: PERMISSION_CONTACTMANAGER_APP = 5101;
+   */
+  PERMISSION_CONTACTMANAGER_APP = 5101,
 }
 
