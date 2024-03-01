@@ -116,3 +116,32 @@ export declare class ContactManagerList extends Message<ContactManagerList> {
   static equals(a: ContactManagerList | PlainMessage<ContactManagerList> | undefined, b: ContactManagerList | PlainMessage<ContactManagerList> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.commons.ContactManagerEntryVal
+ */
+export declare class ContactManagerEntryVal extends Message<ContactManagerEntryVal> {
+  /**
+   * @generated from field: string type = 1;
+   */
+  type: string;
+
+  /**
+   * @generated from field: string value = 2;
+   */
+  value: string;
+
+  constructor(data?: PartialMessage<ContactManagerEntryVal>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.ContactManagerEntryVal";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContactManagerEntryVal;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContactManagerEntryVal;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContactManagerEntryVal;
+
+  static equals(a: ContactManagerEntryVal | PlainMessage<ContactManagerEntryVal> | undefined, b: ContactManagerEntryVal | PlainMessage<ContactManagerEntryVal> | undefined): boolean;
+}
+

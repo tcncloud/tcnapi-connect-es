@@ -415,6 +415,7 @@ export declare enum Permission {
 
   /**
    * allows user to read insights for dashboards
+   * deprecated
    *
    * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_VIEW = 607;
    */
@@ -422,6 +423,7 @@ export declare enum Permission {
 
   /**
    * allows user to edit insights for dashboards
+   * deprecated
    *
    * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_EDIT = 608;
    */
@@ -539,6 +541,27 @@ export declare enum Permission {
    * @generated from enum value: PERMISSION_AGENT_PORTAL = 1501;
    */
   PERMISSION_AGENT_PORTAL = 1501,
+
+  /**
+   * Enables access to the Adherence app as an Admin user.
+   *
+   * @generated from enum value: PERMISSION_WFM_ADHERENCE_ADMIN = 1502;
+   */
+  PERMISSION_WFM_ADHERENCE_ADMIN = 1502,
+
+  /**
+   * Enables access to the Adherence app as a Manager user.
+   *
+   * @generated from enum value: PERMISSION_WFM_ADHERENCE_MANAGER = 1503;
+   */
+  PERMISSION_WFM_ADHERENCE_MANAGER = 1503,
+
+  /**
+   * Enables access to the Adherence app as a Monitor user.
+   *
+   * @generated from enum value: PERMISSION_WFM_ADHERENCE_MONITOR = 1504;
+   */
+  PERMISSION_WFM_ADHERENCE_MONITOR = 1504,
 
   /**
    * Enables access to Scorecards app.

@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ContactManagerEntry, ContactManagerList } from "../../commons/contactmanager_pb.js";
+import type { ContactManagerEntry, ContactManagerEntryVal, ContactManagerList } from "../../commons/contactmanager_pb.js";
 
 /**
  * New Proto's For Get and List - Contact List and Contact Entries
@@ -174,5 +174,63 @@ export declare class GetEncContactEntryResponse extends Message<GetEncContactEnt
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetEncContactEntryResponse;
 
   static equals(a: GetEncContactEntryResponse | PlainMessage<GetEncContactEntryResponse> | undefined, b: GetEncContactEntryResponse | PlainMessage<GetEncContactEntryResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest
+ */
+export declare class GetKYCEncContactEntryRequest extends Message<GetKYCEncContactEntryRequest> {
+  /**
+   * @generated from field: int64 project_id = 1 [jstype = JS_STRING];
+   */
+  projectId: string;
+
+  /**
+   * @generated from field: repeated api.commons.ContactManagerEntryVal entry_val = 2;
+   */
+  entryVal: ContactManagerEntryVal[];
+
+  /**
+   * @generated from field: int64 min_kyc_limit = 3;
+   */
+  minKycLimit: bigint;
+
+  constructor(data?: PartialMessage<GetKYCEncContactEntryRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetKYCEncContactEntryRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetKYCEncContactEntryRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetKYCEncContactEntryRequest;
+
+  static equals(a: GetKYCEncContactEntryRequest | PlainMessage<GetKYCEncContactEntryRequest> | undefined, b: GetKYCEncContactEntryRequest | PlainMessage<GetKYCEncContactEntryRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse
+ */
+export declare class GetKYCEncContactEntryResponse extends Message<GetKYCEncContactEntryResponse> {
+  /**
+   * @generated from field: bool verified = 1;
+   */
+  verified: boolean;
+
+  constructor(data?: PartialMessage<GetKYCEncContactEntryResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetKYCEncContactEntryResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetKYCEncContactEntryResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetKYCEncContactEntryResponse;
+
+  static equals(a: GetKYCEncContactEntryResponse | PlainMessage<GetKYCEncContactEntryResponse> | undefined, b: GetKYCEncContactEntryResponse | PlainMessage<GetKYCEncContactEntryResponse> | undefined): boolean;
 }
 

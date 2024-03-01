@@ -472,3 +472,31 @@ export const SearchContentByVersionReq = proto3.makeMessageType(
   ],
 );
 
+/**
+ * request to retrieve diff after comparing file contents in different versions
+ *
+ * @generated from message api.v0alpha.ReviewFileVersionsReq
+ */
+export const ReviewFileVersionsReq = proto3.makeMessageType(
+  "api.v0alpha.ReviewFileVersionsReq",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * response to retrieve diff after comparing file contents in different versions
+ *
+ * @generated from message api.v0alpha.ReviewFileVersionsRes
+ */
+export const ReviewFileVersionsRes = proto3.makeMessageType(
+  "api.v0alpha.ReviewFileVersionsRes",
+  () => [
+    { no: 1, name: "content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "diff_content", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "images", kind: "message", T: LearnImage, repeated: true },
+  ],
+);
+

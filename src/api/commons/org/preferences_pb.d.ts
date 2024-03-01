@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Country } from "../country_pb.js";
 import type { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
-import type { AnsweringMachineDetection, BroadcastTemplateOrdering, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
+import type { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import type { DialOrderType } from "../lms_pb.js";
 import type { AnaTimeZone } from "../ana_pb.js";
 
@@ -39,11 +39,18 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
   timeZone: TimeZone;
 
   /**
-   * Display language for users of the organization.
+   * Display language in Backoffice for users of the organization.
    *
    * @generated from field: api.commons.DisplayLanguage display_language = 12;
    */
   displayLanguage: DisplayLanguage;
+
+  /**
+   * Organization's locale preferences.
+   *
+   * @generated from field: api.commons.LocalePreferences locale_preferences = 13;
+   */
+  localePreferences?: LocalePreferences;
 
   constructor(data?: PartialMessage<OrganizationPreferences>);
 

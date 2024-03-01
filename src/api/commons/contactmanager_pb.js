@@ -37,3 +37,14 @@ export const ContactManagerList = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.commons.ContactManagerEntryVal
+ */
+export const ContactManagerEntryVal = proto3.makeMessageType(
+  "api.commons.ContactManagerEntryVal",
+  () => [
+    { no: 1, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

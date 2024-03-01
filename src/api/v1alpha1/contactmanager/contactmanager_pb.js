@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { ContactManagerEntry, ContactManagerList } from "../../commons/contactmanager_pb.js";
+import { ContactManagerEntry, ContactManagerEntryVal, ContactManagerList } from "../../commons/contactmanager_pb.js";
 
 /**
  * New Proto's For Get and List - Contact List and Contact Entries
@@ -72,6 +72,28 @@ export const GetEncContactEntryResponse = proto3.makeMessageType(
   "api.v1alpha1.contactmanager.GetEncContactEntryResponse",
   () => [
     { no: 1, name: "contact_entry", kind: "message", T: ContactManagerEntry, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest
+ */
+export const GetKYCEncContactEntryRequest = proto3.makeMessageType(
+  "api.v1alpha1.contactmanager.GetKYCEncContactEntryRequest",
+  () => [
+    { no: 1, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "entry_val", kind: "message", T: ContactManagerEntryVal, repeated: true },
+    { no: 3, name: "min_kyc_limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse
+ */
+export const GetKYCEncContactEntryResponse = proto3.makeMessageType(
+  "api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse",
+  () => [
+    { no: 1, name: "verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
