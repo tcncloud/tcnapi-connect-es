@@ -243,7 +243,7 @@ export const Learn = {
       kind: MethodKind.Unary,
     },
     /**
-     * returns list of filenames that are different between any versions
+     * returns differences that are different between any version
      *
      * @generated from rpc api.v0alpha.Learn.ReviewVersion
      */

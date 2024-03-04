@@ -1315,29 +1315,22 @@ export declare class ReviewFileVersionsRes extends Message<ReviewFileVersionsRes
 }
 
 /**
- * request to retrieve list of file names after comparing different versions
+ * request to retrieve list of differences after comparing different versions
  *
  * @generated from message api.v0alpha.ReviewVersionReq
  */
 export declare class ReviewVersionReq extends Message<ReviewVersionReq> {
   /**
-   * url to version
-   *
-   * @generated from field: string url = 1;
-   */
-  url: string;
-
-  /**
    * version to be compared with
    *
-   * @generated from field: string version = 2;
+   * @generated from field: string version = 1;
    */
   version: string;
 
   /**
    * locale
    *
-   * @generated from field: string locale = 3;
+   * @generated from field: string locale = 2;
    */
   locale: string;
 
@@ -1357,15 +1350,22 @@ export declare class ReviewVersionReq extends Message<ReviewVersionReq> {
 }
 
 /**
- * response to list of file names after comparing different versions
+ * response to list of differences after comparing different versions
  *
  * @generated from message api.v0alpha.ReviewVersionRes
  */
 export declare class ReviewVersionRes extends Message<ReviewVersionRes> {
   /**
+   * diff of urls between both versions
+   *
+   * @generated from field: string diff_urls = 1;
+   */
+  diffUrls: string;
+
+  /**
    * diff of file names between both versions
    *
-   * @generated from field: string diff_file_names = 1;
+   * @generated from field: string diff_file_names = 2;
    */
   diffFileNames: string;
 

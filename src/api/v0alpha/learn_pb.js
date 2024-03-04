@@ -501,28 +501,28 @@ export const ReviewFileVersionsRes = proto3.makeMessageType(
 );
 
 /**
- * request to retrieve list of file names after comparing different versions
+ * request to retrieve list of differences after comparing different versions
  *
  * @generated from message api.v0alpha.ReviewVersionReq
  */
 export const ReviewVersionReq = proto3.makeMessageType(
   "api.v0alpha.ReviewVersionReq",
   () => [
-    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
 /**
- * response to list of file names after comparing different versions
+ * response to list of differences after comparing different versions
  *
  * @generated from message api.v0alpha.ReviewVersionRes
  */
 export const ReviewVersionRes = proto3.makeMessageType(
   "api.v0alpha.ReviewVersionRes",
   () => [
-    { no: 1, name: "diff_file_names", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "diff_urls", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "diff_file_names", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
