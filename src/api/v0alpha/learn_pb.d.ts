@@ -1321,16 +1321,23 @@ export declare class ReviewFileVersionsRes extends Message<ReviewFileVersionsRes
  */
 export declare class ReviewVersionReq extends Message<ReviewVersionReq> {
   /**
+   * url to master version
+   *
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  /**
    * version to be compared with
    *
-   * @generated from field: string version = 1;
+   * @generated from field: string version = 2;
    */
   version: string;
 
   /**
    * locale
    *
-   * @generated from field: string locale = 2;
+   * @generated from field: string locale = 3;
    */
   locale: string;
 

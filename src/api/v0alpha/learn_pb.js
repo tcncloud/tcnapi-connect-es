@@ -508,8 +508,9 @@ export const ReviewFileVersionsRes = proto3.makeMessageType(
 export const ReviewVersionReq = proto3.makeMessageType(
   "api.v0alpha.ReviewVersionReq",
   () => [
-    { no: 1, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "version", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "locale", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
