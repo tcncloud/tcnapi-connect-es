@@ -1314,3 +1314,73 @@ export declare class ReviewFileVersionsRes extends Message<ReviewFileVersionsRes
   static equals(a: ReviewFileVersionsRes | PlainMessage<ReviewFileVersionsRes> | undefined, b: ReviewFileVersionsRes | PlainMessage<ReviewFileVersionsRes> | undefined): boolean;
 }
 
+/**
+ * request to retrieve list of file names after comparing different versions
+ *
+ * @generated from message api.v0alpha.ReviewVersionReq
+ */
+export declare class ReviewVersionReq extends Message<ReviewVersionReq> {
+  /**
+   * url to version
+   *
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  /**
+   * version to be compared with
+   *
+   * @generated from field: string version = 2;
+   */
+  version: string;
+
+  /**
+   * locale
+   *
+   * @generated from field: string locale = 3;
+   */
+  locale: string;
+
+  constructor(data?: PartialMessage<ReviewVersionReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReviewVersionReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReviewVersionReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReviewVersionReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReviewVersionReq;
+
+  static equals(a: ReviewVersionReq | PlainMessage<ReviewVersionReq> | undefined, b: ReviewVersionReq | PlainMessage<ReviewVersionReq> | undefined): boolean;
+}
+
+/**
+ * response to list of file names after comparing different versions
+ *
+ * @generated from message api.v0alpha.ReviewVersionRes
+ */
+export declare class ReviewVersionRes extends Message<ReviewVersionRes> {
+  /**
+   * diff of file names between both versions
+   *
+   * @generated from field: string diff_file_names = 1;
+   */
+  diffFileNames: string;
+
+  constructor(data?: PartialMessage<ReviewVersionRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ReviewVersionRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ReviewVersionRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ReviewVersionRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReviewVersionRes;
+
+  static equals(a: ReviewVersionRes | PlainMessage<ReviewVersionRes> | undefined, b: ReviewVersionRes | PlainMessage<ReviewVersionRes> | undefined): boolean;
+}
+
