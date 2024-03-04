@@ -387,8 +387,7 @@ export declare enum Permission {
    * Enables writes for common library insights.
    * deprecated
    *
-   * @generated from enum value: PERMISSION_INSIGHTS_COMMON_LIBRARY_MANAGE = 603 [deprecated = true];
-   * @deprecated
+   * @generated from enum value: PERMISSION_INSIGHTS_COMMON_LIBRARY_MANAGE = 603;
    */
   PERMISSION_INSIGHTS_COMMON_LIBRARY_MANAGE = 603,
 
@@ -396,8 +395,7 @@ export declare enum Permission {
    * Enables access to insights.
    * deprecated
    *
-   * @generated from enum value: PERMISSION_INSIGHTS_MANAGE = 604 [deprecated = true];
-   * @deprecated
+   * @generated from enum value: PERMISSION_INSIGHTS_MANAGE = 604;
    */
   PERMISSION_INSIGHTS_MANAGE = 604,
 
@@ -419,8 +417,7 @@ export declare enum Permission {
    * allows user to read insights for dashboards
    * deprecated
    *
-   * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_VIEW = 607 [deprecated = true];
-   * @deprecated
+   * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_VIEW = 607;
    */
   PERMISSION_INSIGHTS_DASHBOARD_VIEW = 607,
 
@@ -428,8 +425,7 @@ export declare enum Permission {
    * allows user to edit insights for dashboards
    * deprecated
    *
-   * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_EDIT = 608 [deprecated = true];
-   * @deprecated
+   * @generated from enum value: PERMISSION_INSIGHTS_DASHBOARD_EDIT = 608;
    */
   PERMISSION_INSIGHTS_DASHBOARD_EDIT = 608,
 
