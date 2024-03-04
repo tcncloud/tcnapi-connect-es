@@ -371,6 +371,7 @@ export const OperatorApplications = proto3.makeEnum(
     {no: 31, name: "TICKETS_APP"},
     {no: 32, name: "AGENT_BETA_APP"},
     {no: 33, name: "NEWSROOM_APP"},
+    {no: 34, name: "CONTACTMANAGER_APP"},
   ],
 );
 

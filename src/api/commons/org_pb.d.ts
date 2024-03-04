@@ -1551,6 +1551,13 @@ export declare enum OperatorApplications {
    * @generated from enum value: NEWSROOM_APP = 33;
    */
   NEWSROOM_APP = 33,
+
+  /**
+   * Contact Manager
+   *
+   * @generated from enum value: CONTACTMANAGER_APP = 34;
+   */
+  CONTACTMANAGER_APP = 34,
 }
 
 /**
