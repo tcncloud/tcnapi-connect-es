@@ -234,3 +234,51 @@ export declare class GetKYCEncContactEntryResponse extends Message<GetKYCEncCont
   static equals(a: GetKYCEncContactEntryResponse | PlainMessage<GetKYCEncContactEntryResponse> | undefined, b: GetKYCEncContactEntryResponse | PlainMessage<GetKYCEncContactEntryResponse> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCKeysRequest
+ */
+export declare class GetKYCKeysRequest extends Message<GetKYCKeysRequest> {
+  constructor(data?: PartialMessage<GetKYCKeysRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.GetKYCKeysRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetKYCKeysRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetKYCKeysRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetKYCKeysRequest;
+
+  static equals(a: GetKYCKeysRequest | PlainMessage<GetKYCKeysRequest> | undefined, b: GetKYCKeysRequest | PlainMessage<GetKYCKeysRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCKeysResponse
+ */
+export declare class GetKYCKeysResponse extends Message<GetKYCKeysResponse> {
+  /**
+   * @generated from field: repeated api.commons.ContactManagerEntryVal entry_val = 1;
+   */
+  entryVal: ContactManagerEntryVal[];
+
+  /**
+   * @generated from field: int64 min_kyc_limit = 2;
+   */
+  minKycLimit: bigint;
+
+  constructor(data?: PartialMessage<GetKYCKeysResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.GetKYCKeysResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetKYCKeysResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetKYCKeysResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetKYCKeysResponse;
+
+  static equals(a: GetKYCKeysResponse | PlainMessage<GetKYCKeysResponse> | undefined, b: GetKYCKeysResponse | PlainMessage<GetKYCKeysResponse> | undefined): boolean;
+}
+

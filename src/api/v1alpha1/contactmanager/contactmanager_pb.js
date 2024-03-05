@@ -97,3 +97,22 @@ export const GetKYCEncContactEntryResponse = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCKeysRequest
+ */
+export const GetKYCKeysRequest = proto3.makeMessageType(
+  "api.v1alpha1.contactmanager.GetKYCKeysRequest",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCKeysResponse
+ */
+export const GetKYCKeysResponse = proto3.makeMessageType(
+  "api.v1alpha1.contactmanager.GetKYCKeysResponse",
+  () => [
+    { no: 1, name: "entry_val", kind: "message", T: ContactManagerEntryVal, repeated: true },
+    { no: 2, name: "min_kyc_limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
