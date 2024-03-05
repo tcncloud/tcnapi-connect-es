@@ -1530,38 +1530,3 @@ export declare class EditAttribute extends Message<EditAttribute> {
   static equals(a: EditAttribute | PlainMessage<EditAttribute> | undefined, b: EditAttribute | PlainMessage<EditAttribute> | undefined): boolean;
 }
 
-/**
- * AvailableTicketsFilter
- *
- * @generated from message api.commons.AvailableTicketsFilter
- */
-export declare class AvailableTicketsFilter extends Message<AvailableTicketsFilter> {
-  /**
-   * list of agent's skills
-   *
-   * @generated from field: repeated string agent_skill_id = 1;
-   */
-  agentSkillId: string[];
-
-  /**
-   * agent profile setting
-   *
-   * @generated from field: int64 agent_view_limit = 2;
-   */
-  agentViewLimit: bigint;
-
-  constructor(data?: PartialMessage<AvailableTicketsFilter>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.AvailableTicketsFilter";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AvailableTicketsFilter;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AvailableTicketsFilter;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AvailableTicketsFilter;
-
-  static equals(a: AvailableTicketsFilter | PlainMessage<AvailableTicketsFilter> | undefined, b: AvailableTicketsFilter | PlainMessage<AvailableTicketsFilter> | undefined): boolean;
-}
-

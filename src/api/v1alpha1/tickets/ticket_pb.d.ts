@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ActionType, AssignProjectTemplate, AvailableTicketsFilter, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import type { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -713,7 +713,7 @@ export declare class ListAvailableAgentTicketsRequest extends Message<ListAvaila
   selectFieldMask?: FieldMask;
 
   /**
-   * @generated from field: api.commons.AvailableTicketsFilter available_filter = 2;
+   * @generated from field: api.v1alpha1.tickets.AvailableTicketsFilter available_filter = 2;
    */
   availableFilter?: AvailableTicketsFilter;
 
@@ -730,6 +730,41 @@ export declare class ListAvailableAgentTicketsRequest extends Message<ListAvaila
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAvailableAgentTicketsRequest;
 
   static equals(a: ListAvailableAgentTicketsRequest | PlainMessage<ListAvailableAgentTicketsRequest> | undefined, b: ListAvailableAgentTicketsRequest | PlainMessage<ListAvailableAgentTicketsRequest> | undefined): boolean;
+}
+
+/**
+ * AvailableTicketsFilter
+ *
+ * @generated from message api.v1alpha1.tickets.AvailableTicketsFilter
+ */
+export declare class AvailableTicketsFilter extends Message<AvailableTicketsFilter> {
+  /**
+   * list of agent's skills
+   *
+   * @generated from field: repeated string agent_skill_id = 1;
+   */
+  agentSkillId: string[];
+
+  /**
+   * agent profile setting
+   *
+   * @generated from field: int64 agent_view_limit = 2;
+   */
+  agentViewLimit: bigint;
+
+  constructor(data?: PartialMessage<AvailableTicketsFilter>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.AvailableTicketsFilter";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AvailableTicketsFilter;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AvailableTicketsFilter;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AvailableTicketsFilter;
+
+  static equals(a: AvailableTicketsFilter | PlainMessage<AvailableTicketsFilter> | undefined, b: AvailableTicketsFilter | PlainMessage<AvailableTicketsFilter> | undefined): boolean;
 }
 
 /**

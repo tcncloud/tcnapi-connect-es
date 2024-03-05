@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { ActionType, AssignProjectTemplate, AvailableTicketsFilter, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -281,6 +281,19 @@ export const ListAvailableAgentTicketsRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "select_field_mask", kind: "message", T: FieldMask },
     { no: 2, name: "available_filter", kind: "message", T: AvailableTicketsFilter },
+  ],
+);
+
+/**
+ * AvailableTicketsFilter
+ *
+ * @generated from message api.v1alpha1.tickets.AvailableTicketsFilter
+ */
+export const AvailableTicketsFilter = proto3.makeMessageType(
+  "api.v1alpha1.tickets.AvailableTicketsFilter",
+  () => [
+    { no: 1, name: "agent_skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "agent_view_limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
