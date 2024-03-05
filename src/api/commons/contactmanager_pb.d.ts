@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
  * @generated from message api.commons.ContactManagerEntry
+ * @deprecated
  */
 export declare class ContactManagerEntry extends Message<ContactManagerEntry> {
   /**
@@ -57,6 +58,7 @@ export declare class ContactManagerEntry extends Message<ContactManagerEntry> {
 
 /**
  * @generated from message api.commons.ContactManagerList
+ * @deprecated
  */
 export declare class ContactManagerList extends Message<ContactManagerList> {
   /**
@@ -118,6 +120,7 @@ export declare class ContactManagerList extends Message<ContactManagerList> {
 
 /**
  * @generated from message api.commons.ContactManagerEntryVal
+ * @deprecated
  */
 export declare class ContactManagerEntryVal extends Message<ContactManagerEntryVal> {
   /**

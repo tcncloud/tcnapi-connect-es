@@ -7,6 +7,7 @@ import { proto3, Timestamp } from "@bufbuild/protobuf";
 
 /**
  * @generated from message api.commons.ContactManagerEntry
+ * @deprecated
  */
 export const ContactManagerEntry = proto3.makeMessageType(
   "api.commons.ContactManagerEntry",
@@ -22,6 +23,7 @@ export const ContactManagerEntry = proto3.makeMessageType(
 
 /**
  * @generated from message api.commons.ContactManagerList
+ * @deprecated
  */
 export const ContactManagerList = proto3.makeMessageType(
   "api.commons.ContactManagerList",
@@ -39,6 +41,7 @@ export const ContactManagerList = proto3.makeMessageType(
 
 /**
  * @generated from message api.commons.ContactManagerEntryVal
+ * @deprecated
  */
 export const ContactManagerEntryVal = proto3.makeMessageType(
   "api.commons.ContactManagerEntryVal",
