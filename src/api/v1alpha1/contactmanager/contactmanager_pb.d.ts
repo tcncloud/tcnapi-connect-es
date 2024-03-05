@@ -258,9 +258,9 @@ export declare class GetKYCKeysRequest extends Message<GetKYCKeysRequest> {
  */
 export declare class GetKYCKeysResponse extends Message<GetKYCKeysResponse> {
   /**
-   * @generated from field: repeated string entry_val = 1;
+   * @generated from field: repeated string entry_type = 1;
    */
-  entryVal: string[];
+  entryType: string[];
 
   /**
    * @generated from field: int64 kyc_limit = 2;

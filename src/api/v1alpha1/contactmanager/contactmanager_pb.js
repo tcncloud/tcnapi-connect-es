@@ -111,7 +111,7 @@ export const GetKYCKeysRequest = proto3.makeMessageType(
 export const GetKYCKeysResponse = proto3.makeMessageType(
   "api.v1alpha1.contactmanager.GetKYCKeysResponse",
   () => [
-    { no: 1, name: "entry_val", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "entry_type", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 2, name: "kyc_limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
