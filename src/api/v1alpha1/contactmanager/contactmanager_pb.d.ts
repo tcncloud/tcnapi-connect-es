@@ -3,9 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ContactManagerEntry, ContactManagerEntryVal, ContactManagerList } from "../../commons/contactmanager_pb.js";
+import type { ContactManagerEntry as ContactManagerEntry$1, ContactManagerEntryVal as ContactManagerEntryVal$1, ContactManagerList as ContactManagerList$1 } from "../../commons/contactmanager_pb.js";
 
 /**
  * New Proto's For Get and List - Contact List and Contact Entries
@@ -50,7 +50,7 @@ export declare class GetContactListResponse extends Message<GetContactListRespon
   /**
    * @generated from field: repeated api.commons.ContactManagerList contact_list = 1;
    */
-  contactList: ContactManagerList[];
+  contactList: ContactManagerList$1[];
 
   constructor(data?: PartialMessage<GetContactListResponse>);
 
@@ -111,7 +111,7 @@ export declare class ListContactEntryListResponse extends Message<ListContactEnt
   /**
    * @generated from field: repeated api.commons.ContactManagerEntry contact_entry = 1;
    */
-  contactEntry: ContactManagerEntry[];
+  contactEntry: ContactManagerEntry$1[];
 
   constructor(data?: PartialMessage<ListContactEntryListResponse>);
 
@@ -159,7 +159,7 @@ export declare class GetEncContactEntryResponse extends Message<GetEncContactEnt
   /**
    * @generated from field: repeated api.commons.ContactManagerEntry contact_entry = 1;
    */
-  contactEntry: ContactManagerEntry[];
+  contactEntry: ContactManagerEntry$1[];
 
   constructor(data?: PartialMessage<GetEncContactEntryResponse>);
 
@@ -188,7 +188,7 @@ export declare class GetKYCEncContactEntryRequest extends Message<GetKYCEncConta
   /**
    * @generated from field: repeated api.commons.ContactManagerEntryVal entry_val = 2;
    */
-  entryVal: ContactManagerEntryVal[];
+  entryVal: ContactManagerEntryVal$1[];
 
   /**
    * @generated from field: int64 min_kyc_limit = 3;
@@ -232,5 +232,194 @@ export declare class GetKYCEncContactEntryResponse extends Message<GetKYCEncCont
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetKYCEncContactEntryResponse;
 
   static equals(a: GetKYCEncContactEntryResponse | PlainMessage<GetKYCEncContactEntryResponse> | undefined, b: GetKYCEncContactEntryResponse | PlainMessage<GetKYCEncContactEntryResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCKeysRequest
+ */
+export declare class GetKYCKeysRequest extends Message<GetKYCKeysRequest> {
+  constructor(data?: PartialMessage<GetKYCKeysRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.GetKYCKeysRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetKYCKeysRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetKYCKeysRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetKYCKeysRequest;
+
+  static equals(a: GetKYCKeysRequest | PlainMessage<GetKYCKeysRequest> | undefined, b: GetKYCKeysRequest | PlainMessage<GetKYCKeysRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.GetKYCKeysResponse
+ */
+export declare class GetKYCKeysResponse extends Message<GetKYCKeysResponse> {
+  /**
+   * @generated from field: repeated string entry_type = 1;
+   */
+  entryType: string[];
+
+  /**
+   * @generated from field: int64 kyc_limit = 2;
+   */
+  kycLimit: bigint;
+
+  constructor(data?: PartialMessage<GetKYCKeysResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.GetKYCKeysResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetKYCKeysResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetKYCKeysResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetKYCKeysResponse;
+
+  static equals(a: GetKYCKeysResponse | PlainMessage<GetKYCKeysResponse> | undefined, b: GetKYCKeysResponse | PlainMessage<GetKYCKeysResponse> | undefined): boolean;
+}
+
+/**
+ * Common messages deprecated
+ *
+ * @generated from message api.v1alpha1.contactmanager.ContactManagerEntry
+ */
+export declare class ContactManagerEntry extends Message<ContactManagerEntry> {
+  /**
+   * @generated from field: int64 contact_manager_entry_id = 1 [jstype = JS_STRING];
+   */
+  contactManagerEntryId: string;
+
+  /**
+   * @generated from field: int64 contact_manager_entry_list_id = 2 [jstype = JS_STRING];
+   */
+  contactManagerEntryListId: string;
+
+  /**
+   * @generated from field: string key = 3;
+   */
+  key: string;
+
+  /**
+   * @generated from field: string value = 4;
+   */
+  value: string;
+
+  /**
+   * @generated from field: string type = 5;
+   */
+  type: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp date_created = 6;
+   */
+  dateCreated?: Timestamp;
+
+  constructor(data?: PartialMessage<ContactManagerEntry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.ContactManagerEntry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContactManagerEntry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContactManagerEntry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContactManagerEntry;
+
+  static equals(a: ContactManagerEntry | PlainMessage<ContactManagerEntry> | undefined, b: ContactManagerEntry | PlainMessage<ContactManagerEntry> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.ContactManagerList
+ */
+export declare class ContactManagerList extends Message<ContactManagerList> {
+  /**
+   * @generated from field: int64 contact_manager_list_id = 1 [jstype = JS_STRING];
+   */
+  contactManagerListId: string;
+
+  /**
+   * @generated from field: string org_id = 2;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: int64 project_id = 3 [jstype = JS_STRING];
+   */
+  projectId: string;
+
+  /**
+   * @generated from field: string file_name = 4;
+   */
+  fileName: string;
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description: string;
+
+  /**
+   * List of Columns In The Contact List. UI to render table based on this list
+   *
+   * @generated from field: repeated string list_details = 6;
+   */
+  listDetails: string[];
+
+  /**
+   * @generated from field: int64 ttl = 7 [jstype = JS_STRING];
+   */
+  ttl: string;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp date_created = 8;
+   */
+  dateCreated?: Timestamp;
+
+  constructor(data?: PartialMessage<ContactManagerList>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.ContactManagerList";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContactManagerList;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContactManagerList;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContactManagerList;
+
+  static equals(a: ContactManagerList | PlainMessage<ContactManagerList> | undefined, b: ContactManagerList | PlainMessage<ContactManagerList> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.ContactManagerEntryVal
+ */
+export declare class ContactManagerEntryVal extends Message<ContactManagerEntryVal> {
+  /**
+   * @generated from field: string type = 1;
+   */
+  type: string;
+
+  /**
+   * @generated from field: string value = 2;
+   */
+  value: string;
+
+  constructor(data?: PartialMessage<ContactManagerEntryVal>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.ContactManagerEntryVal";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContactManagerEntryVal;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContactManagerEntryVal;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContactManagerEntryVal;
+
+  static equals(a: ContactManagerEntryVal | PlainMessage<ContactManagerEntryVal> | undefined, b: ContactManagerEntryVal | PlainMessage<ContactManagerEntryVal> | undefined): boolean;
 }
 

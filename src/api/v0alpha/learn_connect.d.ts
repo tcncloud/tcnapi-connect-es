@@ -243,7 +243,7 @@ export declare const Learn: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * returns differences that are different between any version
+     * returns list of file details after comparing different versions
      *
      * @generated from rpc api.v0alpha.Learn.ReviewVersion
      */

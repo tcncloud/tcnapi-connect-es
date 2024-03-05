@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetContactListRequest, GetContactListResponse, GetEncContactEntryRequest, GetEncContactEntryResponse, GetKYCEncContactEntryRequest, GetKYCEncContactEntryResponse, ListContactEntryListRequest, ListContactEntryListResponse } from "./contactmanager_pb.js";
+import { GetContactListRequest, GetContactListResponse, GetEncContactEntryRequest, GetEncContactEntryResponse, GetKYCEncContactEntryRequest, GetKYCEncContactEntryResponse, GetKYCKeysRequest, GetKYCKeysResponse, ListContactEntryListRequest, ListContactEntryListResponse } from "./contactmanager_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -46,6 +46,15 @@ export const ContactManager = {
       name: "GetKYCEncContactEntry",
       I: GetKYCEncContactEntryRequest,
       O: GetKYCEncContactEntryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.contactmanager.ContactManager.GetKYCKeys
+     */
+    getKYCKeys: {
+      name: "GetKYCKeys",
+      I: GetKYCKeysRequest,
+      O: GetKYCKeysResponse,
       kind: MethodKind.Unary,
     },
   }
