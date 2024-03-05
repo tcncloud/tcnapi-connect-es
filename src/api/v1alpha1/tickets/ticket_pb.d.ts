@@ -713,15 +713,9 @@ export declare class ListAvailableAgentTicketsRequest extends Message<ListAvaila
   selectFieldMask?: FieldMask;
 
   /**
-   * @generated from oneof api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.ticket_list_type
+   * @generated from field: api.commons.AvailableTicketsFilter available_filter = 2;
    */
-  ticketListType: {
-    /**
-     * @generated from field: api.commons.AvailableTicketsFilter available_filter = 2;
-     */
-    value: AvailableTicketsFilter;
-    case: "availableFilter";
-  } | { case: undefined; value?: undefined };
+  availableFilter?: AvailableTicketsFilter;
 
   constructor(data?: PartialMessage<ListAvailableAgentTicketsRequest>);
 

@@ -280,7 +280,7 @@ export const ListAvailableAgentTicketsRequest = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListAvailableAgentTicketsRequest",
   () => [
     { no: 1, name: "select_field_mask", kind: "message", T: FieldMask },
-    { no: 2, name: "available_filter", kind: "message", T: AvailableTicketsFilter, oneof: "ticket_list_type" },
+    { no: 2, name: "available_filter", kind: "message", T: AvailableTicketsFilter },
   ],
 );
 
