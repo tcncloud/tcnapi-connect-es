@@ -132,6 +132,7 @@ export const GenerateReportRequest = proto3.makeMessageType(
   "api.v1alpha1.bireportgenerator.GenerateReportRequest",
   () => [
     { no: 1, name: "report_job", kind: "message", T: ReportJob },
+    { no: 2, name: "report_job_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
