@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -538,6 +538,92 @@ export const DeleteHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessag
 export const DeleteHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
   "api.v1alpha1.org.DeleteHuntGroupClientInfoDisplayTemplateResponse",
   [],
+);
+
+/**
+ * CopyHuntGroupClientInfoDisplayTemplate is the request message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest
+ */
+export const CopyHuntGroupClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "to_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * CopyHuntGroupClientInfoDisplayTemplateResponse is the response message for the CopyHuntGroupClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse
+ */
+export const CopyHuntGroupClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupClientInfoDisplayTemplateResponse",
+  [],
+);
+
+/**
+ * CreateCampaignClientInfoDisplayTemplateRequest is the request message for the CreateCampaignClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest
+ */
+export const CreateCampaignClientInfoDisplayTemplateRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateRequest",
+  () => [
+    { no: 1, name: "template", kind: "message", T: ClientInfoDisplayTemplate },
+  ],
+);
+
+/**
+ * CreateCampaignClientInfoDisplayTemplateResponse is the response message for the CreateCampaignClientInfoDisplayTemplate RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse
+ */
+export const CreateCampaignClientInfoDisplayTemplateResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CreateCampaignClientInfoDisplayTemplateResponse",
+  () => [
+    { no: 1, name: "template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * ListHuntGroupsWithClientInfoTemplateDataRequest is the request message for the ListHuntGroupsWithClientInfoTemplateData RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest
+ */
+export const ListHuntGroupsWithClientInfoTemplateDataRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest",
+  () => [
+    { no: 1, name: "filter", kind: "enum", T: proto3.getEnumType(ListHuntGroupsWithClientInfoTemplateDataRequest_Filter) },
+  ],
+);
+
+/**
+ * Filter is the entity for the filter to list the hunt groups with their client info display template.
+ *
+ * @generated from enum api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter
+ */
+export const ListHuntGroupsWithClientInfoTemplateDataRequest_Filter = proto3.makeEnum(
+  "api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataRequest.Filter",
+  [
+    {no: 0, name: "FILTER_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "FILTER_ALL", localName: "ALL"},
+    {no: 2, name: "FILTER_HUNT_GROUPS_WITH_TEMPLATE", localName: "HUNT_GROUPS_WITH_TEMPLATE"},
+    {no: 3, name: "FILTER_HUNT_GROUPS_WITHOUT_TEMPLATE", localName: "HUNT_GROUPS_WITHOUT_TEMPLATE"},
+  ],
+);
+
+/**
+ * ListHuntGroupsWithClientInfoTemplateDataResponse is the response message for the ListHuntGroupsWithClientInfoTemplateData RPC method.
+ *
+ * @generated from message api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse
+ */
+export const ListHuntGroupsWithClientInfoTemplateDataResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.ListHuntGroupsWithClientInfoTemplateDataResponse",
+  () => [
+    { no: 1, name: "hunt_groups_with_template_data", kind: "message", T: HuntGroupWithClientInfoTemplateData, repeated: true },
+  ],
 );
 
 /**

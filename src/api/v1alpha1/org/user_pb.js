@@ -11,6 +11,7 @@ import { P3PermissionGroup, PermissionGroup } from "../../commons/org/permission
 import { Trust } from "../../commons/org/trusts_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
 import { Permission } from "../../commons/perms_pb.js";
+import { LocalePreferences } from "../../commons/org_preferences_pb.js";
 
 /**
  * Request message for the CreateUser rpc.
@@ -345,6 +346,8 @@ export const ListAgentsResponse_AgentDetails = proto3.makeMessageType(
     { no: 20, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 21, name: "time_zone_override", kind: "message", T: TimeZoneWrapper },
     { no: 22, name: "email", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 23, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 24, name: "mfa_info", kind: "message", T: MfaInfo },
   ],
   {localName: "ListAgentsResponse_AgentDetails"},
 );
@@ -1115,6 +1118,7 @@ export const GetUserSessionDataResponse = proto3.makeMessageType(
     { no: 4, name: "permission_groups", kind: "message", T: PermissionGroup, repeated: true },
     { no: 5, name: "labels", kind: "message", T: Label, repeated: true },
     { no: 6, name: "org_allowed_mfa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "locale_preferences", kind: "message", T: LocalePreferences },
   ],
 );
 

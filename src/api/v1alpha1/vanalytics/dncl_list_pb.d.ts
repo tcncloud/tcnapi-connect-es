@@ -27,6 +27,11 @@ export declare enum DnclExpirePeriod {
   WEEK = 2,
 
   /**
+   * @generated from enum value: DNCL_EXPIRE_PERIOD_NEVER = 3;
+   */
+  NEVER = 3,
+
+  /**
    * @generated from enum value: DNCL_EXPIRE_PERIOD_MONTH = 4;
    */
   MONTH = 4,

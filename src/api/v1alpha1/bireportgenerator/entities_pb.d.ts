@@ -7,6 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
 import type { Month } from "../../commons/enums_pb.js";
+import type { TimeZoneWrapper } from "../../commons/org_pb.js";
 
 /**
  * ReportJob that can be scheduled to report dashboard data.
@@ -38,14 +39,16 @@ export declare class ReportJob extends Message<ReportJob> {
   /**
    * dashboard id to report
    *
-   * @generated from field: string dashboard_id = 4;
+   * @generated from field: string dashboard_id = 4 [deprecated = true];
+   * @deprecated
    */
   dashboardId: string;
 
   /**
    * timezone to use for the report schedule
    *
-   * @generated from field: string time_zone = 5;
+   * @generated from field: string time_zone = 5 [deprecated = true];
+   * @deprecated
    */
   timeZone: string;
 
@@ -104,6 +107,27 @@ export declare class ReportJob extends Message<ReportJob> {
    * @generated from field: bool send_empty_report = 13;
    */
   sendEmptyReport: boolean;
+
+  /**
+   * dashboard resource id to report
+   *
+   * @generated from field: string dashboard_resource_id = 14;
+   */
+  dashboardResourceId: string;
+
+  /**
+   * time_zone_wrapper to use for the report schedule
+   *
+   * @generated from field: api.commons.TimeZoneWrapper time_zone_wrapper = 15;
+   */
+  timeZoneWrapper?: TimeZoneWrapper;
+
+  /**
+   * hide csv footer
+   *
+   * @generated from field: bool hide_csv_footer = 16;
+   */
+  hideCsvFooter: boolean;
 
   constructor(data?: PartialMessage<ReportJob>);
 

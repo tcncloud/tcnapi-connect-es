@@ -217,6 +217,7 @@ export const PanelSource = proto3.makeMessageType(
   () => [
     { no: 1, name: "insight_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "panel_type" },
     { no: 2, name: "legacy_insight_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "panel_type" },
+    { no: 3, name: "insight_resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "panel_type" },
   ],
 );
 

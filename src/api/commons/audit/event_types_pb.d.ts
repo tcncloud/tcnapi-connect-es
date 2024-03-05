@@ -772,6 +772,16 @@ export declare enum EventType {
   LMS_PIPELINE_FAILURE_EVENT = 900,
 
   /**
+   * @generated from enum value: LMS_PIPELINE_NO_OUTPUT_EVENT = 901;
+   */
+  LMS_PIPELINE_NO_OUTPUT_EVENT = 901,
+
+  /**
+   * @generated from enum value: LMS_PIPELINE_SUCCESSFUL_EVENT = 902;
+   */
+  LMS_PIPELINE_SUCCESSFUL_EVENT = 902,
+
+  /**
    * Billing Events
    *
    * @generated from enum value: EVENT_TYPE_BILLING_COMMIT_BILLING_PLAN = 1000;

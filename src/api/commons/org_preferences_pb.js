@@ -101,3 +101,17 @@ export const StandardReportFilter = proto3.makeEnum(
   ],
 );
 
+/**
+ * LocalePreferences represents the organization's locale settings.
+ *
+ * @generated from message api.commons.LocalePreferences
+ */
+export const LocalePreferences = proto3.makeMessageType(
+  "api.commons.LocalePreferences",
+  () => [
+    { no: 1, name: "language_tag", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "use_script_direction_right_to_left", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "default_currency", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+

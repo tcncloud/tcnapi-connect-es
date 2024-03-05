@@ -12,6 +12,7 @@ import type { P3PermissionGroup, PermissionGroup } from "../../commons/org/permi
 import type { Trust } from "../../commons/org/trusts_pb.js";
 import type { UserArchivedStateFilter } from "../../commons/user_pb.js";
 import type { Permission } from "../../commons/perms_pb.js";
+import type { LocalePreferences } from "../../commons/org_preferences_pb.js";
 
 /**
  * Request message for the CreateUser rpc.
@@ -1266,6 +1267,20 @@ export declare class ListAgentsResponse_AgentDetails extends Message<ListAgentsR
    * @generated from field: string email = 22;
    */
   email: string;
+
+  /**
+   * Whether or not the agent's email is verified.
+   *
+   * @generated from field: bool email_verified = 23;
+   */
+  emailVerified: boolean;
+
+  /**
+   * The agent's mfa information.
+   *
+   * @generated from field: api.commons.org.MfaInfo mfa_info = 24;
+   */
+  mfaInfo?: MfaInfo;
 
   constructor(data?: PartialMessage<ListAgentsResponse_AgentDetails>);
 
@@ -3466,6 +3481,13 @@ export declare class GetUserSessionDataResponse extends Message<GetUserSessionDa
    * @generated from field: bool org_allowed_mfa = 6;
    */
   orgAllowedMfa: boolean;
+
+  /**
+   * The default locale preferences of the organization
+   *
+   * @generated from field: api.commons.LocalePreferences locale_preferences = 7;
+   */
+  localePreferences?: LocalePreferences;
 
   constructor(data?: PartialMessage<GetUserSessionDataResponse>);
 

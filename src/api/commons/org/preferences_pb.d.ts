@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { Country } from "../country_pb.js";
 import type { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
-import type { AnsweringMachineDetection, BroadcastTemplateOrdering, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
+import type { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import type { DialOrderType } from "../lms_pb.js";
 import type { AnaTimeZone } from "../ana_pb.js";
 
@@ -39,11 +39,18 @@ export declare class OrganizationPreferences extends Message<OrganizationPrefere
   timeZone: TimeZone;
 
   /**
-   * Display language for users of the organization.
+   * Display language in Backoffice for users of the organization.
    *
    * @generated from field: api.commons.DisplayLanguage display_language = 12;
    */
   displayLanguage: DisplayLanguage;
+
+  /**
+   * Organization's locale preferences.
+   *
+   * @generated from field: api.commons.LocalePreferences locale_preferences = 13;
+   */
+  localePreferences?: LocalePreferences;
 
   constructor(data?: PartialMessage<OrganizationPreferences>);
 
@@ -2518,5 +2525,92 @@ export declare class AdminClientPreferences extends Message<AdminClientPreferenc
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminClientPreferences;
 
   static equals(a: AdminClientPreferences | PlainMessage<AdminClientPreferences> | undefined, b: AdminClientPreferences | PlainMessage<AdminClientPreferences> | undefined): boolean;
+}
+
+/**
+ * BusinessHours or operating hours.
+ *
+ * @generated from message api.commons.org.BusinessHours
+ */
+export declare class BusinessHours extends Message<BusinessHours> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string id = 2;
+   */
+  id: string;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * @generated from field: repeated api.commons.org.Range ranges = 5;
+   */
+  ranges: Range[];
+
+  constructor(data?: PartialMessage<BusinessHours>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.BusinessHours";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BusinessHours;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BusinessHours;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BusinessHours;
+
+  static equals(a: BusinessHours | PlainMessage<BusinessHours> | undefined, b: BusinessHours | PlainMessage<BusinessHours> | undefined): boolean;
+}
+
+/**
+ * Range including start and end times.
+ *
+ * @generated from message api.commons.org.Range
+ */
+export declare class Range extends Message<Range> {
+  /**
+   * @generated from field: int32 start_hour = 1;
+   */
+  startHour: number;
+
+  /**
+   * @generated from field: int32 start_minute = 2;
+   */
+  startMinute: number;
+
+  /**
+   * @generated from field: int32 end_hour = 3;
+   */
+  endHour: number;
+
+  /**
+   * @generated from field: int32 end_minute = 4;
+   */
+  endMinute: number;
+
+  constructor(data?: PartialMessage<Range>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.Range";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Range;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Range;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Range;
+
+  static equals(a: Range | PlainMessage<Range> | undefined, b: Range | PlainMessage<Range> | undefined): boolean;
 }
 

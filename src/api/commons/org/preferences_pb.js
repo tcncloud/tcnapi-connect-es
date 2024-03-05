@@ -6,7 +6,7 @@
 import { proto3 } from "@bufbuild/protobuf";
 import { Country } from "../country_pb.js";
 import { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
-import { AnsweringMachineDetection, BroadcastTemplateOrdering, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
+import { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import { DialOrderType } from "../lms_pb.js";
 import { AnaTimeZone } from "../ana_pb.js";
 
@@ -22,6 +22,7 @@ export const OrganizationPreferences = proto3.makeMessageType(
     { no: 10, name: "default_country", kind: "enum", T: proto3.getEnumType(Country) },
     { no: 11, name: "time_zone", kind: "enum", T: proto3.getEnumType(TimeZone) },
     { no: 12, name: "display_language", kind: "enum", T: proto3.getEnumType(DisplayLanguage) },
+    { no: 13, name: "locale_preferences", kind: "message", T: LocalePreferences },
   ],
 );
 
@@ -718,6 +719,37 @@ export const AdminClientPreferences = proto3.makeMessageType(
     { no: 17, name: "callbacks_service_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 18, name: "agent_screen_recording", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 19, name: "allowed_countries", kind: "enum", T: proto3.getEnumType(Country), repeated: true },
+  ],
+);
+
+/**
+ * BusinessHours or operating hours.
+ *
+ * @generated from message api.commons.org.BusinessHours
+ */
+export const BusinessHours = proto3.makeMessageType(
+  "api.commons.org.BusinessHours",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "ranges", kind: "message", T: Range, repeated: true },
+  ],
+);
+
+/**
+ * Range including start and end times.
+ *
+ * @generated from message api.commons.org.Range
+ */
+export const Range = proto3.makeMessageType(
+  "api.commons.org.Range",
+  () => [
+    { no: 1, name: "start_hour", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "start_minute", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: "end_hour", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "end_minute", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 

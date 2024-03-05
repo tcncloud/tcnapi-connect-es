@@ -3,8 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Duration, FieldMask, Int32Value, proto3, Timestamp, UInt32Value } from "@bufbuild/protobuf";
+import { DoubleValue, Duration, FieldMask, Int32Value, proto3, Timestamp, UInt32Value } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../../../api/commons/acd_pb.js";
+import { AgentCallLog, AgentCallLogQuery } from "./agent_call_log_pb.js";
 
 /**
  * An enumeration of transcript communication channels.
@@ -198,7 +199,24 @@ export const Call = proto3.makeMessageType(
     { no: 7, name: "talk_time", kind: "message", T: Duration },
     { no: 8, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "group_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "agent_response", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: Call_AgentResponse} },
+    { no: 11, name: "hunt_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 12, name: "number_format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "agent_call_log", kind: "message", T: AgentCallLog },
   ],
+);
+
+/**
+ * AgentResponse contains the agent responses aka dispositions.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.AgentResponse
+ */
+export const Call_AgentResponse = proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.AgentResponse",
+  () => [
+    { no: 1, name: "values", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "Call_AgentResponse"},
 );
 
 /**
@@ -399,7 +417,201 @@ export const TranscriptQuery = proto3.makeMessageType(
     { no: 5, name: "flag_summary", kind: "message", T: TranscriptQuery_FlagSummary },
     { no: 6, name: "start_time", kind: "message", T: TranscriptQuery_StartTime },
     { no: 7, name: "delete_time", kind: "message", T: TranscriptQuery_DeleteTime },
+    { no: 8, name: "phone", kind: "message", T: TranscriptQuery_Phone },
   ],
+);
+
+/**
+ * Query constraints on phone.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone
+ */
+export const TranscriptQuery_Phone = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone",
+  () => [
+    { no: 1, name: "cc", kind: "message", T: TranscriptQuery_Phone_Cc },
+    { no: 2, name: "ndc", kind: "message", T: TranscriptQuery_Phone_Ndc },
+    { no: 3, name: "prefix", kind: "message", T: TranscriptQuery_Phone_Prefix },
+    { no: 4, name: "city", kind: "message", T: TranscriptQuery_Phone_City },
+    { no: 5, name: "iso2", kind: "message", T: TranscriptQuery_Phone_Iso2 },
+    { no: 6, name: "region_code", kind: "message", T: TranscriptQuery_Phone_RegionCode },
+    { no: 7, name: "region_name", kind: "message", T: TranscriptQuery_Phone_RegionName },
+    { no: 8, name: "time_zone", kind: "message", T: TranscriptQuery_Phone_TimeZone },
+    { no: 9, name: "type", kind: "message", T: TranscriptQuery_Phone_Type },
+    { no: 10, name: "utc", kind: "message", T: TranscriptQuery_Phone_Utc },
+    { no: 11, name: "location", kind: "message", T: TranscriptQuery_Phone_Location },
+    { no: 12, name: "raw", kind: "message", T: TranscriptQuery_Phone_Raw },
+  ],
+  {localName: "TranscriptQuery_Phone"},
+);
+
+/**
+ * Cc defines a query on the phone country code.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Cc
+ */
+export const TranscriptQuery_Phone_Cc = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Cc",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Cc"},
+);
+
+/**
+ * Ndc defines a query on the phone ndc.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Ndc
+ */
+export const TranscriptQuery_Phone_Ndc = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Ndc",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Ndc"},
+);
+
+/**
+ * Prefix defines a query on the phone prefix.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Prefix
+ */
+export const TranscriptQuery_Phone_Prefix = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Prefix",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Prefix"},
+);
+
+/**
+ * City defines a query on the phone city.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.City
+ */
+export const TranscriptQuery_Phone_City = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.City",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_City"},
+);
+
+/**
+ * Iso2 defines a query on the phone Iso2.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Iso2
+ */
+export const TranscriptQuery_Phone_Iso2 = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Iso2",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Iso2"},
+);
+
+/**
+ * RegionCode defines a query on the phone region code.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.RegionCode
+ */
+export const TranscriptQuery_Phone_RegionCode = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.RegionCode",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_RegionCode"},
+);
+
+/**
+ * RegionName defines a query on the phone region name.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.RegionName
+ */
+export const TranscriptQuery_Phone_RegionName = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.RegionName",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_RegionName"},
+);
+
+/**
+ * TimeZone defines a query on the phone time zone.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.TimeZone
+ */
+export const TranscriptQuery_Phone_TimeZone = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.TimeZone",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_TimeZone"},
+);
+
+/**
+ * Type defines a query on the phone type.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Type
+ */
+export const TranscriptQuery_Phone_Type = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Type",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Type"},
+);
+
+/**
+ * Utc defines a query on the phone utc.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Utc
+ */
+export const TranscriptQuery_Phone_Utc = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Utc",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 2 /* ScalarType.FLOAT */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Utc"},
+);
+
+/**
+ * Location defines a query on the phone location.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Location
+ */
+export const TranscriptQuery_Phone_Location = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Location",
+  () => [
+    { no: 1, name: "zip_code_proximity", kind: "message", T: TranscriptQuery_Phone_Location_ZipCodeProximity },
+  ],
+  {localName: "TranscriptQuery_Phone_Location"},
+);
+
+/**
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Location.ZipCodeProximity
+ */
+export const TranscriptQuery_Phone_Location_ZipCodeProximity = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Location.ZipCodeProximity",
+  () => [
+    { no: 1, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "zip_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "distance", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "TranscriptQuery_Phone_Location_ZipCodeProximity"},
+);
+
+/**
+ * Query constraints on raw phone number.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Phone.Raw
+ */
+export const TranscriptQuery_Phone_Raw = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Phone.Raw",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Phone_Raw"},
 );
 
 /**
@@ -458,8 +670,90 @@ export const TranscriptQuery_Call = proto3.makeMessageType(
     { no: 6, name: "talk_time", kind: "message", T: TranscriptQuery_Call_TalkTime },
     { no: 7, name: "caller_id", kind: "message", T: TranscriptQuery_Call_CallerId },
     { no: 8, name: "group_name", kind: "message", T: TranscriptQuery_Call_GroupName },
+    { no: 9, name: "agent_response", kind: "message", T: TranscriptQuery_Call_AgentResponse },
+    { no: 10, name: "hunt_group_sids", kind: "message", T: TranscriptQuery_Call_HuntGroupSids },
+    { no: 12, name: "agent_call_log", kind: "message", T: AgentCallLogQuery },
   ],
   {localName: "TranscriptQuery_Call"},
+);
+
+/**
+ * Query constraints on hunt group sids.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids
+ */
+export const TranscriptQuery_Call_HuntGroupSids = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.HuntGroupSids",
+  () => [
+    { no: 1, name: "any", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+  {localName: "TranscriptQuery_Call_HuntGroupSids"},
+);
+
+/**
+ * Query constraints on agent response.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse
+ */
+export const TranscriptQuery_Call_AgentResponse = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse",
+  () => [
+    { no: 1, name: "and", kind: "message", T: TranscriptQuery_Call_AgentResponse, repeated: true },
+    { no: 2, name: "or", kind: "message", T: TranscriptQuery_Call_AgentResponse, repeated: true },
+    { no: 3, name: "not", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 4, name: "key", kind: "message", T: TranscriptQuery_Call_AgentResponse_Key },
+    { no: 5, name: "values", kind: "message", T: TranscriptQuery_Call_AgentResponse_Values },
+    { no: 6, name: "numbers", kind: "message", T: TranscriptQuery_Call_AgentResponse_Numbers },
+  ],
+  {localName: "TranscriptQuery_Call_AgentResponse"},
+);
+
+/**
+ * Values defines a query on values.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values
+ */
+export const TranscriptQuery_Call_AgentResponse_Values = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Values",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "starts_with", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "contains", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "TranscriptQuery_Call_AgentResponse_Values"},
+);
+
+/**
+ * Numbers defines a query on values as numbers.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers
+ */
+export const TranscriptQuery_Call_AgentResponse_Numbers = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Numbers",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 1 /* ScalarType.DOUBLE */, repeated: true },
+    { no: 2, name: "gte", kind: "message", T: DoubleValue },
+    { no: 3, name: "lte", kind: "message", T: DoubleValue },
+    { no: 4, name: "gt", kind: "message", T: DoubleValue },
+    { no: 5, name: "lt", kind: "message", T: DoubleValue },
+    { no: 6, name: "eq", kind: "message", T: DoubleValue },
+  ],
+  {localName: "TranscriptQuery_Call_AgentResponse_Numbers"},
+);
+
+/**
+ * Key defines a query on the key.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key
+ */
+export const TranscriptQuery_Call_AgentResponse_Key = proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptQuery.Call.AgentResponse.Key",
+  () => [
+    { no: 1, name: "in", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "starts_with", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "contains", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "TranscriptQuery_Call_AgentResponse_Key"},
 );
 
 /**
