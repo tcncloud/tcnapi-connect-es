@@ -717,6 +717,13 @@ export declare class ListAvailableAgentTicketsRequest extends Message<ListAvaila
    */
   availableFilter?: AvailableTicketsFilter;
 
+  /**
+   * agent profile setting
+   *
+   * @generated from field: int64 agent_view_limit = 3;
+   */
+  agentViewLimit: bigint;
+
   constructor(data?: PartialMessage<ListAvailableAgentTicketsRequest>);
 
   static readonly runtime: typeof proto3;
@@ -744,13 +751,6 @@ export declare class AvailableTicketsFilter extends Message<AvailableTicketsFilt
    * @generated from field: repeated string agent_skill_id = 1;
    */
   agentSkillId: string[];
-
-  /**
-   * agent profile setting
-   *
-   * @generated from field: int64 agent_view_limit = 2;
-   */
-  agentViewLimit: bigint;
 
   constructor(data?: PartialMessage<AvailableTicketsFilter>);
 
