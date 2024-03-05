@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ActionType, AssignProjectTemplate, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
+import type { ActionType, AssignProjectTemplate, AvailableTicketsFilter, Comment, ConfirmReplyComment, Duration, EditAttribute, ListTemplate, Metadata, PhoneNumberType, ReplyComment, Skills, Sla, SlaConditions, TemplateDescription, Ticket, TicketAction, TicketProjectTemplate, TicketSla, TicketStatus, TicketTemplate } from "../../commons/tickets_pb.js";
 
 /**
  * @generated from message api.v1alpha1.tickets.PingReq
@@ -674,7 +674,8 @@ export declare class ListAllocatedTicketReq extends Message<ListAllocatedTicketR
  */
 export declare class ListAvailableAgentTicketsResponse extends Message<ListAvailableAgentTicketsResponse> {
   /**
-   * @generated from field: repeated int64 ticket_sid = 1 [jstype = JS_STRING];
+   * @generated from field: repeated int64 ticket_sid = 1 [jstype = JS_STRING, deprecated = true];
+   * @deprecated
    */
   ticketSid: string[];
 
@@ -704,6 +705,24 @@ export declare class ListAvailableAgentTicketsResponse extends Message<ListAvail
  * @generated from message api.v1alpha1.tickets.ListAvailableAgentTicketsRequest
  */
 export declare class ListAvailableAgentTicketsRequest extends Message<ListAvailableAgentTicketsRequest> {
+  /**
+   * defines the ticket fields to be returned
+   *
+   * @generated from field: google.protobuf.FieldMask select_field_mask = 1;
+   */
+  selectFieldMask?: FieldMask;
+
+  /**
+   * @generated from oneof api.v1alpha1.tickets.ListAvailableAgentTicketsRequest.ticket_list_type
+   */
+  ticketListType: {
+    /**
+     * @generated from field: api.commons.AvailableTicketsFilter available_filter = 2;
+     */
+    value: AvailableTicketsFilter;
+    case: "availableFilter";
+  } | { case: undefined; value?: undefined };
+
   constructor(data?: PartialMessage<ListAvailableAgentTicketsRequest>);
 
   static readonly runtime: typeof proto3;

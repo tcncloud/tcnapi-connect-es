@@ -472,3 +472,16 @@ export const EditAttribute = proto3.makeMessageType(
   ],
 );
 
+/**
+ * AvailableTicketsFilter
+ *
+ * @generated from message api.commons.AvailableTicketsFilter
+ */
+export const AvailableTicketsFilter = proto3.makeMessageType(
+  "api.commons.AvailableTicketsFilter",
+  () => [
+    { no: 1, name: "agent_skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "agent_view_limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
