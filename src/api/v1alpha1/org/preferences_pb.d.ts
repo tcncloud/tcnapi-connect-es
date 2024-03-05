@@ -413,6 +413,13 @@ export declare class UpdateAuthenticationPreferencesRequest extends Message<Upda
   authenticationPreferences?: AuthenticationPreferences;
 
   /**
+   * The duo client secret to be used for mfa
+   *
+   * @generated from field: string duo_client_secret = 5;
+   */
+  duoClientSecret: string;
+
+  /**
    * Field mask for filtering each field.
    *
    * @generated from field: google.protobuf.FieldMask field_mask = 10;
