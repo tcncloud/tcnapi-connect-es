@@ -278,7 +278,23 @@ export const ListAvailableAgentTicketsResponse = proto3.makeMessageType(
  */
 export const ListAvailableAgentTicketsRequest = proto3.makeMessageType(
   "api.v1alpha1.tickets.ListAvailableAgentTicketsRequest",
-  [],
+  () => [
+    { no: 1, name: "select_field_mask", kind: "message", T: FieldMask },
+    { no: 2, name: "available_filter", kind: "message", T: AvailableTicketsFilter },
+    { no: 3, name: "agent_view_limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * AvailableTicketsFilter
+ *
+ * @generated from message api.v1alpha1.tickets.AvailableTicketsFilter
+ */
+export const AvailableTicketsFilter = proto3.makeMessageType(
+  "api.v1alpha1.tickets.AvailableTicketsFilter",
+  () => [
+    { no: 1, name: "agent_skill_id", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
 );
 
 /**

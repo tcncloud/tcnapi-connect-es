@@ -289,17 +289,9 @@ export declare class GenerateReportRequest extends Message<GenerateReportRequest
   /**
    * The report job to generate the report for.
    *
-   * @generated from field: api.v1alpha1.bireportgenerator.ReportJob report_job = 1 [deprecated = true];
-   * @deprecated
+   * @generated from field: api.v1alpha1.bireportgenerator.ReportJob report_job = 1;
    */
   reportJob?: ReportJob;
-
-  /**
-   * The report job id to generate the report for.
-   *
-   * @generated from field: string report_job_id = 2;
-   */
-  reportJobId: string;
 
   constructor(data?: PartialMessage<GenerateReportRequest>);
 
