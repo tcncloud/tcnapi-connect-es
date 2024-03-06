@@ -32,6 +32,8 @@ export const Tcn = proto2.makeMessageType(
     { no: 2, name: "app", kind: "enum", T: proto2.getEnumType(Application), opt: true },
     { no: 3, name: "card", kind: "enum", T: proto2.getEnumType(Card), opt: true },
     { no: 4, name: "features", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "default_permission_groups", kind: "enum", T: proto2.getEnumType(DefaultPermissionGroup), repeated: true },
+    { no: 6, name: "blacklisted", kind: "scalar", T: 8 /* ScalarType.BOOL */, opt: true },
   ],
 );
 

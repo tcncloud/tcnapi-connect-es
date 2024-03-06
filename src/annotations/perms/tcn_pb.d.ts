@@ -75,6 +75,20 @@ export declare class Tcn extends Message<Tcn> {
    */
   features: string[];
 
+  /**
+   * The list of default permission groups the permission belongs to.
+   *
+   * @generated from field: repeated annotations.perms.DefaultPermissionGroup default_permission_groups = 5;
+   */
+  defaultPermissionGroups: DefaultPermissionGroup[];
+
+  /**
+   * Whether the permission has been blacklisted or removed.
+   *
+   * @generated from field: optional bool blacklisted = 6;
+   */
+  blacklisted?: boolean;
+
   constructor(data?: PartialMessage<Tcn>);
 
   static readonly runtime: typeof proto2;
