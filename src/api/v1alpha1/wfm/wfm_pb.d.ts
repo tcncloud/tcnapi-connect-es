@@ -6198,6 +6198,112 @@ export declare class ListWFMAgentSidsRes extends Message<ListWFMAgentSidsRes> {
 }
 
 /**
+ * Request message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsReq
+ */
+export declare class ListUnassignedWFMAgentsReq extends Message<ListUnassignedWFMAgentsReq> {
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsReq;
+
+  static equals(a: ListUnassignedWFMAgentsReq | PlainMessage<ListUnassignedWFMAgentsReq> | undefined, b: ListUnassignedWFMAgentsReq | PlainMessage<ListUnassignedWFMAgentsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRes
+ */
+export declare class ListUnassignedWFMAgentsRes extends Message<ListUnassignedWFMAgentsRes> {
+  /**
+   * List of found wfm agents.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.WFMAgent wfm_agents = 1;
+   */
+  wfmAgents: WFMAgent[];
+
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRes;
+
+  static equals(a: ListUnassignedWFMAgentsRes | PlainMessage<ListUnassignedWFMAgentsRes> | undefined, b: ListUnassignedWFMAgentsRes | PlainMessage<ListUnassignedWFMAgentsRes> | undefined): boolean;
+}
+
+/**
+ * Request message for the RemoveAgentFromOrg RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgRequest
+ */
+export declare class RemoveAgentFromOrgRequest extends Message<RemoveAgentFromOrgRequest> {
+  /**
+   * ID of the wfm agent sid to remove from the future schedules.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_remove = 1;
+   */
+  wfmAgentSidToRemove: bigint;
+
+  /**
+   * If set to true, a new unassigned agent will be created and it will be assigned to the shifts and agent groups from @wfm_agent_sid_to_remove.
+   * If set to false, the shifts will just be deleted.
+   *
+   * @generated from field: bool replace_with_new_unassigned_agent = 2;
+   */
+  replaceWithNewUnassignedAgent: boolean;
+
+  constructor(data?: PartialMessage<RemoveAgentFromOrgRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromOrgRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromOrgRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgRequest;
+
+  static equals(a: RemoveAgentFromOrgRequest | PlainMessage<RemoveAgentFromOrgRequest> | undefined, b: RemoveAgentFromOrgRequest | PlainMessage<RemoveAgentFromOrgRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the RemoveAgentFromOrg RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgResponse
+ */
+export declare class RemoveAgentFromOrgResponse extends Message<RemoveAgentFromOrgResponse> {
+  constructor(data?: PartialMessage<RemoveAgentFromOrgResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromOrgResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromOrgResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgResponse;
+
+  static equals(a: RemoveAgentFromOrgResponse | PlainMessage<RemoveAgentFromOrgResponse> | undefined, b: RemoveAgentFromOrgResponse | PlainMessage<RemoveAgentFromOrgResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the ListWFMAgentsAssociatedWithAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentsAssociatedWithAgentGroupReq
