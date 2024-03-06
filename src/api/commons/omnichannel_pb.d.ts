@@ -1794,6 +1794,16 @@ export declare class OmniMessage extends Message<OmniMessage> {
    */
   statusMessage?: string;
 
+  /**
+   * email = bcc email address for email
+   * chat = not set
+   * sms = not set
+   * whatsapp = not set
+   *
+   * @generated from field: google.protobuf.StringValue sent_bcc = 23;
+   */
+  sentBcc?: string;
+
   constructor(data?: PartialMessage<OmniMessage>);
 
   static readonly runtime: typeof proto3;

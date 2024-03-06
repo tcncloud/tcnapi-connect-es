@@ -553,6 +553,7 @@ export const OmniMessage = proto3.makeMessageType(
     { no: 19, name: "subject", kind: "message", T: StringValue },
     { no: 21, name: "sender_type", kind: "enum", T: proto3.getEnumType(OmniSenderType) },
     { no: 22, name: "status_message", kind: "message", T: StringValue },
+    { no: 23, name: "sent_bcc", kind: "message", T: StringValue },
   ],
 );
 
