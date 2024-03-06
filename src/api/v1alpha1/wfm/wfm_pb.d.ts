@@ -6198,6 +6198,55 @@ export declare class ListWFMAgentSidsRes extends Message<ListWFMAgentSidsRes> {
 }
 
 /**
+ * Request message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsReq
+ */
+export declare class ListUnassignedWFMAgentsReq extends Message<ListUnassignedWFMAgentsReq> {
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsReq;
+
+  static equals(a: ListUnassignedWFMAgentsReq | PlainMessage<ListUnassignedWFMAgentsReq> | undefined, b: ListUnassignedWFMAgentsReq | PlainMessage<ListUnassignedWFMAgentsReq> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRes
+ */
+export declare class ListUnassignedWFMAgentsRes extends Message<ListUnassignedWFMAgentsRes> {
+  /**
+   * List of found wfm agents.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.WFMAgent wfm_agents = 1;
+   */
+  wfmAgents: WFMAgent[];
+
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsRes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsRes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsRes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRes;
+
+  static equals(a: ListUnassignedWFMAgentsRes | PlainMessage<ListUnassignedWFMAgentsRes> | undefined, b: ListUnassignedWFMAgentsRes | PlainMessage<ListUnassignedWFMAgentsRes> | undefined): boolean;
+}
+
+/**
  * Request message for the ListWFMAgentsAssociatedWithAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentsAssociatedWithAgentGroupReq
