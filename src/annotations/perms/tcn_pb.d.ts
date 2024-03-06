@@ -8,6 +8,36 @@ import { EnumValueOptions, Message, proto2 } from "@bufbuild/protobuf";
 import type { Application, Card } from "./license_pb.js";
 
 /**
+ * @generated from enum annotations.perms.DefaultPermissionGroup
+ */
+export declare enum DefaultPermissionGroup {
+  /**
+   * @generated from enum value: ACCOUNT_OWNER_GROUP = 0;
+   */
+  ACCOUNT_OWNER_GROUP = 0,
+
+  /**
+   * @generated from enum value: SUPER_USER_GROUP = 1;
+   */
+  SUPER_USER_GROUP = 1,
+
+  /**
+   * @generated from enum value: USER_GROUP = 2;
+   */
+  USER_GROUP = 2,
+
+  /**
+   * @generated from enum value: MONITOR_GROUP = 3;
+   */
+  MONITOR_GROUP = 3,
+
+  /**
+   * @generated from enum value: AGENT_GROUP = 4;
+   */
+  AGENT_GROUP = 4,
+}
+
+/**
  * Tcn defines the enum value annotations which will be used for permissions.
  *
  * @generated from message annotations.perms.Tcn

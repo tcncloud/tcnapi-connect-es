@@ -7,6 +7,20 @@ import { EnumValueOptions, proto2 } from "@bufbuild/protobuf";
 import { Application, Card } from "./license_pb.js";
 
 /**
+ * @generated from enum annotations.perms.DefaultPermissionGroup
+ */
+export const DefaultPermissionGroup = proto2.makeEnum(
+  "annotations.perms.DefaultPermissionGroup",
+  [
+    {no: 0, name: "ACCOUNT_OWNER_GROUP"},
+    {no: 1, name: "SUPER_USER_GROUP"},
+    {no: 2, name: "USER_GROUP"},
+    {no: 3, name: "MONITOR_GROUP"},
+    {no: 4, name: "AGENT_GROUP"},
+  ],
+);
+
+/**
  * Tcn defines the enum value annotations which will be used for permissions.
  *
  * @generated from message annotations.perms.Tcn
