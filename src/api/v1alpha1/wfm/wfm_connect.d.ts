@@ -1246,7 +1246,7 @@ export declare const WFM: {
     },
     /**
      * Creates an agent that is not assigned a tcn agent for the org sending the request.
-     * If @wfm_agent_sid_to_copy_agent_group_associations is not set, it will also copy that agent's agent group associations to the new agent.
+     * If @wfm_agent_sid_to_copy_agent_group_associations is set, it will also copy that agent's agent group associations to the new agent.
      * Otherwise only the new agent will be created.
      * Required permissions:
      *   NONE
