@@ -5852,6 +5852,69 @@ export declare class WFMAgent extends Message<WFMAgent> {
 }
 
 /**
+ * Request message for the CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest
+ */
+export declare class CreateUnassignedWFMAgentRequest extends Message<CreateUnassignedWFMAgentRequest> {
+  /**
+   * ID of the wfm agent to copy the agent group associations onto the new agent.
+   *
+   * @generated from field: google.protobuf.Int64Value wfm_agent_sid_to_copy_agent_group_associations = 1;
+   */
+  wfmAgentSidToCopyAgentGroupAssociations?: bigint;
+
+  /**
+   * Name of the agent.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  constructor(data?: PartialMessage<CreateUnassignedWFMAgentRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateUnassignedWFMAgentRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentRequest;
+
+  static equals(a: CreateUnassignedWFMAgentRequest | PlainMessage<CreateUnassignedWFMAgentRequest> | undefined, b: CreateUnassignedWFMAgentRequest | PlainMessage<CreateUnassignedWFMAgentRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse
+ */
+export declare class CreateUnassignedWFMAgentResponse extends Message<CreateUnassignedWFMAgentResponse> {
+  /**
+   * ID of the newly created agent.
+   *
+   * @generated from field: int64 wfm_agent_sid = 1;
+   */
+  wfmAgentSid: bigint;
+
+  constructor(data?: PartialMessage<CreateUnassignedWFMAgentResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateUnassignedWFMAgentResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentResponse;
+
+  static equals(a: CreateUnassignedWFMAgentResponse | PlainMessage<CreateUnassignedWFMAgentResponse> | undefined, b: CreateUnassignedWFMAgentResponse | PlainMessage<CreateUnassignedWFMAgentResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the UpdateWFMAgent RPC
  *
  * @generated from message api.v1alpha1.wfm.UpdateWFMAgentReq
