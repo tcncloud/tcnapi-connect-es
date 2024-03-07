@@ -6200,30 +6200,30 @@ export declare class ListWFMAgentSidsRes extends Message<ListWFMAgentSidsRes> {
 /**
  * Request message for the ListUnassignedWFMAgents RPC
  *
- * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsReq
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest
  */
-export declare class ListUnassignedWFMAgentsReq extends Message<ListUnassignedWFMAgentsReq> {
-  constructor(data?: PartialMessage<ListUnassignedWFMAgentsReq>);
+export declare class ListUnassignedWFMAgentsRequest extends Message<ListUnassignedWFMAgentsRequest> {
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsReq";
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRequest;
 
-  static equals(a: ListUnassignedWFMAgentsReq | PlainMessage<ListUnassignedWFMAgentsReq> | undefined, b: ListUnassignedWFMAgentsReq | PlainMessage<ListUnassignedWFMAgentsReq> | undefined): boolean;
+  static equals(a: ListUnassignedWFMAgentsRequest | PlainMessage<ListUnassignedWFMAgentsRequest> | undefined, b: ListUnassignedWFMAgentsRequest | PlainMessage<ListUnassignedWFMAgentsRequest> | undefined): boolean;
 }
 
 /**
  * Response message for the ListUnassignedWFMAgents RPC
  *
- * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRes
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse
  */
-export declare class ListUnassignedWFMAgentsRes extends Message<ListUnassignedWFMAgentsRes> {
+export declare class ListUnassignedWFMAgentsResponse extends Message<ListUnassignedWFMAgentsResponse> {
   /**
    * List of found wfm agents.
    *
@@ -6231,19 +6231,19 @@ export declare class ListUnassignedWFMAgentsRes extends Message<ListUnassignedWF
    */
   wfmAgents: WFMAgent[];
 
-  constructor(data?: PartialMessage<ListUnassignedWFMAgentsRes>);
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsRes";
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsRes;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRes;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRes;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsResponse;
 
-  static equals(a: ListUnassignedWFMAgentsRes | PlainMessage<ListUnassignedWFMAgentsRes> | undefined, b: ListUnassignedWFMAgentsRes | PlainMessage<ListUnassignedWFMAgentsRes> | undefined): boolean;
+  static equals(a: ListUnassignedWFMAgentsResponse | PlainMessage<ListUnassignedWFMAgentsResponse> | undefined, b: ListUnassignedWFMAgentsResponse | PlainMessage<ListUnassignedWFMAgentsResponse> | undefined): boolean;
 }
 
 /**

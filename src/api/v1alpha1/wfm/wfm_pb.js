@@ -2169,20 +2169,20 @@ export const ListWFMAgentSidsRes = proto3.makeMessageType(
 /**
  * Request message for the ListUnassignedWFMAgents RPC
  *
- * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsReq
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest
  */
-export const ListUnassignedWFMAgentsReq = proto3.makeMessageType(
-  "api.v1alpha1.wfm.ListUnassignedWFMAgentsReq",
+export const ListUnassignedWFMAgentsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest",
   [],
 );
 
 /**
  * Response message for the ListUnassignedWFMAgents RPC
  *
- * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRes
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse
  */
-export const ListUnassignedWFMAgentsRes = proto3.makeMessageType(
-  "api.v1alpha1.wfm.ListUnassignedWFMAgentsRes",
+export const ListUnassignedWFMAgentsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse",
   () => [
     { no: 1, name: "wfm_agents", kind: "message", T: WFMAgent, repeated: true },
   ],
