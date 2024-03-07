@@ -4215,9 +4215,9 @@ export declare class GenerateEpicKeyPairReq extends Message<GenerateEpicKeyPairR
   orgId: string;
 
   /**
-   * @generated from field: string server = 2;
+   * @generated from field: repeated string servers = 3;
    */
-  server: string;
+  servers: string[];
 
   constructor(data?: PartialMessage<GenerateEpicKeyPairReq>);
 

@@ -1349,7 +1349,7 @@ export const GenerateEpicKeyPairReq = proto3.makeMessageType(
   "api.v1alpha1.integrations.GenerateEpicKeyPairReq",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "server", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "servers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
