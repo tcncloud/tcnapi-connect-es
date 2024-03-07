@@ -181,19 +181,3 @@ export const DeliveryOptions = proto3.makeMessageType(
   ],
 );
 
-/**
- * CronExpression is a message for the cron expression of a report.
- *
- * @generated from message api.commons.CronExpression
- */
-export const CronExpression = proto3.makeMessageType(
-  "api.commons.CronExpression",
-  () => [
-    { no: 1, name: "repeat_minutes", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "hours_of_day", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "days_of_month", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "months_of_year", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "day_of_week", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-

@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail, WhatsAppNumber } from "../commons/omnichannel_pb.js";
+import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignModuleType, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail, WhatsAppNumber } from "../commons/omnichannel_pb.js";
 import { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -97,6 +97,7 @@ export const ListCampaignsReq = proto3.makeMessageType(
     { no: 106, name: "by_sms_number", kind: "message", T: ListCampaignsReq_BySmsNumber, oneof: "filter" },
     { no: 107, name: "by_whatsapp_number", kind: "message", T: ListCampaignsReq_ByWhatsAppNumber, oneof: "filter" },
     { no: 108, name: "by_whats_app", kind: "message", T: ListCampaignsReq_ByWhatsApp, oneof: "filter" },
+    { no: 109, name: "by_module_type", kind: "message", T: ListCampaignsReq_ByModuleType, oneof: "filter" },
   ],
 );
 
@@ -216,6 +217,20 @@ export const ListCampaignsReq_ByWhatsApp = proto3.makeMessageType(
     { no: 1, name: "number", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "ListCampaignsReq_ByWhatsApp"},
+);
+
+/**
+ * ByModuleType - filter the list of campaigns by the module type and channel type
+ *
+ * @generated from message api.v0alpha.ListCampaignsReq.ByModuleType
+ */
+export const ListCampaignsReq_ByModuleType = proto3.makeMessageType(
+  "api.v0alpha.ListCampaignsReq.ByModuleType",
+  () => [
+    { no: 1, name: "module_type", kind: "enum", T: proto3.getEnumType(OmniCampaignModuleType), repeated: true },
+    { no: 2, name: "channel_type", kind: "enum", T: proto3.getEnumType(ChannelType), repeated: true },
+  ],
+  {localName: "ListCampaignsReq_ByModuleType"},
 );
 
 /**

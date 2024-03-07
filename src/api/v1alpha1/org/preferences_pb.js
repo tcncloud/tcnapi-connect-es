@@ -180,6 +180,7 @@ export const UpdateAuthenticationPreferencesRequest = proto3.makeMessageType(
   "api.v1alpha1.org.UpdateAuthenticationPreferencesRequest",
   () => [
     { no: 1, name: "authentication_preferences", kind: "message", T: AuthenticationPreferences },
+    { no: 5, name: "duo_client_secret", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "field_mask", kind: "message", T: FieldMask },
   ],
 );

@@ -453,6 +453,21 @@ export declare class AuthenticationPreferences extends Message<AuthenticationPre
    */
   blockUnverifiedUsers: boolean;
 
+  /**
+   * Contains the settings needed to set up email mfa for an organization.
+   *
+   * @generated from field: api.commons.org.AuthenticationPreferences.EmailMfaSettings email_mfa_settings = 15;
+   */
+  emailMfaSettings?: AuthenticationPreferences_EmailMfaSettings;
+
+  /**
+   * Contains the settings needed to set up a duo mfa client for an organization.
+   * The duo client secret is not included here - it only exists on the update api.
+   *
+   * @generated from field: api.commons.org.AuthenticationPreferences.DuoMfaSettings duo_mfa_settings = 16;
+   */
+  duoMfaSettings?: AuthenticationPreferences_DuoMfaSettings;
+
   constructor(data?: PartialMessage<AuthenticationPreferences>);
 
   static readonly runtime: typeof proto3;
@@ -466,6 +481,69 @@ export declare class AuthenticationPreferences extends Message<AuthenticationPre
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AuthenticationPreferences;
 
   static equals(a: AuthenticationPreferences | PlainMessage<AuthenticationPreferences> | undefined, b: AuthenticationPreferences | PlainMessage<AuthenticationPreferences> | undefined): boolean;
+}
+
+/**
+ * A message containing the settings needed to set up a duo mfa client for an organization.
+ * The duo client secret is not included here - it only exists on the update api.
+ *
+ * @generated from message api.commons.org.AuthenticationPreferences.DuoMfaSettings
+ */
+export declare class AuthenticationPreferences_DuoMfaSettings extends Message<AuthenticationPreferences_DuoMfaSettings> {
+  /**
+   * @generated from field: string duo_client_id = 1;
+   */
+  duoClientId: string;
+
+  /**
+   * @generated from field: string duo_api_host = 2;
+   */
+  duoApiHost: string;
+
+  /**
+   * @generated from field: bool enabled = 3;
+   */
+  enabled: boolean;
+
+  constructor(data?: PartialMessage<AuthenticationPreferences_DuoMfaSettings>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.AuthenticationPreferences.DuoMfaSettings";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AuthenticationPreferences_DuoMfaSettings;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AuthenticationPreferences_DuoMfaSettings;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AuthenticationPreferences_DuoMfaSettings;
+
+  static equals(a: AuthenticationPreferences_DuoMfaSettings | PlainMessage<AuthenticationPreferences_DuoMfaSettings> | undefined, b: AuthenticationPreferences_DuoMfaSettings | PlainMessage<AuthenticationPreferences_DuoMfaSettings> | undefined): boolean;
+}
+
+/**
+ * A message containing the settings needed for email mfa for an organization.
+ *
+ * @generated from message api.commons.org.AuthenticationPreferences.EmailMfaSettings
+ */
+export declare class AuthenticationPreferences_EmailMfaSettings extends Message<AuthenticationPreferences_EmailMfaSettings> {
+  /**
+   * @generated from field: bool enabled = 1;
+   */
+  enabled: boolean;
+
+  constructor(data?: PartialMessage<AuthenticationPreferences_EmailMfaSettings>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.AuthenticationPreferences.EmailMfaSettings";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AuthenticationPreferences_EmailMfaSettings;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AuthenticationPreferences_EmailMfaSettings;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AuthenticationPreferences_EmailMfaSettings;
+
+  static equals(a: AuthenticationPreferences_EmailMfaSettings | PlainMessage<AuthenticationPreferences_EmailMfaSettings> | undefined, b: AuthenticationPreferences_EmailMfaSettings | PlainMessage<AuthenticationPreferences_EmailMfaSettings> | undefined): boolean;
 }
 
 /**

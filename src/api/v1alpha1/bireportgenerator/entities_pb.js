@@ -4,9 +4,10 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { CronExpression, DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
+import { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
 import { Month } from "../../commons/enums_pb.js";
 import { TimeZoneWrapper } from "../../commons/org_pb.js";
+import { CronExpression } from "../../commons/types_pb.js";
 
 /**
  * ReportJob that can be scheduled to report dashboard data.

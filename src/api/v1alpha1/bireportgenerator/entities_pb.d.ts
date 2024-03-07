@@ -5,9 +5,10 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { CronExpression, DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
+import type { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
 import type { Month } from "../../commons/enums_pb.js";
 import type { TimeZoneWrapper } from "../../commons/org_pb.js";
+import type { CronExpression } from "../../commons/types_pb.js";
 
 /**
  * ReportJob that can be scheduled to report dashboard data.

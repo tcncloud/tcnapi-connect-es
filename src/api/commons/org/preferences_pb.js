@@ -134,7 +134,38 @@ export const AuthenticationPreferences = proto3.makeMessageType(
     { no: 12, name: "agent_api_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "enable_2fa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 14, name: "block_unverified_users", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 15, name: "email_mfa_settings", kind: "message", T: AuthenticationPreferences_EmailMfaSettings },
+    { no: 16, name: "duo_mfa_settings", kind: "message", T: AuthenticationPreferences_DuoMfaSettings },
   ],
+);
+
+/**
+ * A message containing the settings needed to set up a duo mfa client for an organization.
+ * The duo client secret is not included here - it only exists on the update api.
+ *
+ * @generated from message api.commons.org.AuthenticationPreferences.DuoMfaSettings
+ */
+export const AuthenticationPreferences_DuoMfaSettings = proto3.makeMessageType(
+  "api.commons.org.AuthenticationPreferences.DuoMfaSettings",
+  () => [
+    { no: 1, name: "duo_client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "duo_api_host", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+  {localName: "AuthenticationPreferences_DuoMfaSettings"},
+);
+
+/**
+ * A message containing the settings needed for email mfa for an organization.
+ *
+ * @generated from message api.commons.org.AuthenticationPreferences.EmailMfaSettings
+ */
+export const AuthenticationPreferences_EmailMfaSettings = proto3.makeMessageType(
+  "api.commons.org.AuthenticationPreferences.EmailMfaSettings",
+  () => [
+    { no: 1, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+  {localName: "AuthenticationPreferences_EmailMfaSettings"},
 );
 
 /**
