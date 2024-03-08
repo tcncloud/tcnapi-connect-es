@@ -6502,6 +6502,63 @@ export declare class DeleteWFMAgentsMembershipsRes extends Message<DeleteWFMAgen
 }
 
 /**
+ * Request message for the RemoveAgentFromOrg RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgRequest
+ */
+export declare class RemoveAgentFromOrgRequest extends Message<RemoveAgentFromOrgRequest> {
+  /**
+   * ID of the wfm agent sid to remove from the future schedules.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_remove = 1;
+   */
+  wfmAgentSidToRemove: bigint;
+
+  /**
+   * If set to true, a new unassigned agent will be created and it will be assigned to the shifts and agent groups from @wfm_agent_sid_to_remove.
+   * If set to false, the shifts will just be deleted.
+   *
+   * @generated from field: bool replace_with_new_unassigned_agent = 2;
+   */
+  replaceWithNewUnassignedAgent: boolean;
+
+  constructor(data?: PartialMessage<RemoveAgentFromOrgRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromOrgRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromOrgRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgRequest;
+
+  static equals(a: RemoveAgentFromOrgRequest | PlainMessage<RemoveAgentFromOrgRequest> | undefined, b: RemoveAgentFromOrgRequest | PlainMessage<RemoveAgentFromOrgRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the RemoveAgentFromOrg RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgResponse
+ */
+export declare class RemoveAgentFromOrgResponse extends Message<RemoveAgentFromOrgResponse> {
+  constructor(data?: PartialMessage<RemoveAgentFromOrgResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromOrgResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromOrgResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgResponse;
+
+  static equals(a: RemoveAgentFromOrgResponse | PlainMessage<RemoveAgentFromOrgResponse> | undefined, b: RemoveAgentFromOrgResponse | PlainMessage<RemoveAgentFromOrgResponse> | undefined): boolean;
+}
+
+/**
  * DOW Placement
  *
  * @generated from message api.v1alpha1.wfm.DOWPlacement
