@@ -5865,7 +5865,7 @@ export declare class CreateUnassignedWFMAgentRequest extends Message<CreateUnass
   wfmAgentSidToCopyAgentGroupAssociations?: bigint;
 
   /**
-   * Name of the agent.
+   * Optional: name to give the agent, if left blank it will be given a random name in the form 'Unassigned Agent - <random_number>'.
    *
    * @generated from field: string name = 2;
    */

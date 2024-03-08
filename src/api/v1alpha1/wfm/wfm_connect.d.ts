@@ -1251,7 +1251,7 @@ export declare const WFM: {
      * Required permissions:
      *   NONE
      * Errors:
-     *   - grpc.Invalid: the @name, or @wfm_agent_sid_to_copy_agent_group_associations in the request are invalid.
+     *   - grpc.Invalid: the @wfm_agent_sid_to_copy_agent_group_associations in the request is invalid.
      *   - grpc.Internal: error occurs creating the agent or the memberships.
      *   - grpc.NotFound: the given @wfm_agent_sid_to_copy_agent_group_associations doesn't exist for the org.
      *
