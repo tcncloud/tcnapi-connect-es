@@ -3,12 +3,13 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { proto3 } from "@bufbuild/protobuf";
+import { proto3, Timestamp } from "@bufbuild/protobuf";
 import { Country } from "../country_pb.js";
 import { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSortBy, RecordingFileType, StandardImportFormat, TimeZone } from "../org_pb.js";
 import { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import { DialOrderType } from "../lms_pb.js";
 import { AnaTimeZone } from "../ana_pb.js";
+import { Weekday_Enum } from "../enums_pb.js";
 
 /**
  * General preferences controlling organization properties.
@@ -766,6 +767,11 @@ export const BusinessHours = proto3.makeMessageType(
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "ranges", kind: "message", T: Range, repeated: true },
+    { no: 6, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "business_hours_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+    { no: 9, name: "day_intervals", kind: "message", T: DayInterval, repeated: true },
+    { no: 10, name: "last_updated", kind: "message", T: Timestamp },
   ],
 );
 
@@ -773,6 +779,7 @@ export const BusinessHours = proto3.makeMessageType(
  * Range including start and end times.
  *
  * @generated from message api.commons.org.Range
+ * @deprecated
  */
 export const Range = proto3.makeMessageType(
   "api.commons.org.Range",
@@ -781,6 +788,33 @@ export const Range = proto3.makeMessageType(
     { no: 2, name: "start_minute", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "end_hour", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: "end_minute", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * TimeOfDay describes the time of day via hour and minute.
+ *
+ * @generated from message api.commons.org.TimeOfDay
+ */
+export const TimeOfDay = proto3.makeMessageType(
+  "api.commons.org.TimeOfDay",
+  () => [
+    { no: 1, name: "hour", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "minute", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * DayInterval describes a time interval of a given day.
+ *
+ * @generated from message api.commons.org.DayInterval
+ */
+export const DayInterval = proto3.makeMessageType(
+  "api.commons.org.DayInterval",
+  () => [
+    { no: 1, name: "day", kind: "enum", T: proto3.getEnumType(Weekday_Enum) },
+    { no: 2, name: "start", kind: "message", T: TimeOfDay },
+    { no: 3, name: "end", kind: "message", T: TimeOfDay },
   ],
 );
 
