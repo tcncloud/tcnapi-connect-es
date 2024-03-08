@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { TimestampExpr, Uint32Expr, Uint32Range } from "./expr_pb.js";
 import type { AgentCallLogCallEnded, CallType_Enum } from "../../commons/acd_pb.js";
 import type { AgentCallLog } from "./aclpb/aclpb_pb.js";
+import type { TranscriptSummary } from "./transcript_summary_pb.js";
 
 /**
  * TranscriptReviewStatus is an enumeration of a flagged transcripts review
@@ -2596,6 +2597,11 @@ export declare class Transcript extends Message<Transcript> {
    * @generated from field: map<string, api.v1alpha1.vanalytics.AgentResponse> agent_response = 22;
    */
   agentResponse: { [key: string]: AgentResponse };
+
+  /**
+   * @generated from field: api.v1alpha1.vanalytics.TranscriptSummary summary = 24;
+   */
+  summary?: TranscriptSummary;
 
   constructor(data?: PartialMessage<Transcript>);
 

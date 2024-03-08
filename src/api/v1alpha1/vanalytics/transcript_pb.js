@@ -7,6 +7,7 @@ import { BoolValue, DoubleValue, Duration, FieldMask, Int32Value, Int64Value, pr
 import { TimestampExpr, Uint32Expr, Uint32Range } from "./expr_pb.js";
 import { AgentCallLogCallEnded, CallType_Enum } from "../../commons/acd_pb.js";
 import { AgentCallLog } from "./aclpb/aclpb_pb.js";
+import { TranscriptSummary } from "./transcript_summary_pb.js";
 
 /**
  * TranscriptReviewStatus is an enumeration of a flagged transcripts review
@@ -924,6 +925,7 @@ export const Transcript = proto3.makeMessageType(
     { no: 20, name: "delete_time", kind: "message", T: Timestamp },
     { no: 21, name: "number_format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 22, name: "agent_response", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: AgentResponse} },
+    { no: 24, name: "summary", kind: "message", T: TranscriptSummary },
   ],
 );
 
