@@ -2737,7 +2737,7 @@ export declare class Range extends Message<Range> {
 }
 
 /**
- * TimeOfDay describes the time of day via hour and minute.
+ * TimeOfDay describes the time of day by hour and minute.
  *
  * @generated from message api.commons.org.TimeOfDay
  */
