@@ -2030,6 +2030,31 @@ export const WFMAgent = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest
+ */
+export const CreateUnassignedWFMAgentRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest",
+  () => [
+    { no: 1, name: "wfm_agent_sid_to_copy_agent_group_associations", kind: "message", T: Int64Value },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse
+ */
+export const CreateUnassignedWFMAgentResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse",
+  () => [
+    { no: 1, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
  * Request message for the UpdateWFMAgent RPC
  *
  * @generated from message api.v1alpha1.wfm.UpdateWFMAgentReq
@@ -2163,6 +2188,28 @@ export const ListWFMAgentSidsRes = proto3.makeMessageType(
   "api.v1alpha1.wfm.ListWFMAgentSidsRes",
   () => [
     { no: 1, name: "sids", kind: "map", K: 3 /* ScalarType.INT64 */, V: {kind: "scalar", T: 3 /* ScalarType.INT64 */} },
+  ],
+);
+
+/**
+ * Request message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest
+ */
+export const ListUnassignedWFMAgentsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest",
+  [],
+);
+
+/**
+ * Response message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse
+ */
+export const ListUnassignedWFMAgentsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse",
+  () => [
+    { no: 1, name: "wfm_agents", kind: "message", T: WFMAgent, repeated: true },
   ],
 );
 
