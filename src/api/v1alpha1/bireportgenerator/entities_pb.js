@@ -7,6 +7,7 @@ import { proto3 } from "@bufbuild/protobuf";
 import { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
 import { Month } from "../../commons/enums_pb.js";
 import { TimeZoneWrapper } from "../../commons/org_pb.js";
+import { CronExpression } from "../../commons/types_pb.js";
 
 /**
  * ReportJob that can be scheduled to report dashboard data.
@@ -32,6 +33,8 @@ export const ReportJob = proto3.makeMessageType(
     { no: 14, name: "dashboard_resource_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "time_zone_wrapper", kind: "message", T: TimeZoneWrapper },
     { no: 16, name: "hide_csv_footer", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 17, name: "transfer_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 18, name: "cron_expression", kind: "message", T: CronExpression },
   ],
 );
 

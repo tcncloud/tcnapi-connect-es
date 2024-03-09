@@ -11,6 +11,7 @@ import type { Weekday_Enum } from "./enums_pb.js";
  * RepeatFrequency is an enum for how often a report should be executed.
  *
  * @generated from enum api.commons.RepeatFrequency
+ * @deprecated
  */
 export declare enum RepeatFrequency {
   /**
@@ -38,6 +39,7 @@ export declare enum RepeatFrequency {
  * DayFilterType is an enum for the type of day filter.
  *
  * @generated from enum api.commons.DayFilterType
+ * @deprecated
  */
 export declare enum DayFilterType {
   /**
@@ -264,6 +266,7 @@ export declare enum TimePeriod {
  * DeliveryTimes is a message for the delivery times of a report.
  *
  * @generated from message api.commons.DeliveryTimes
+ * @deprecated
  */
 export declare class DeliveryTimes extends Message<DeliveryTimes> {
   /**
@@ -299,6 +302,7 @@ export declare class DeliveryTimes extends Message<DeliveryTimes> {
  * DayOfWeekFilter filters the days of the week for a report.
  *
  * @generated from message api.commons.DayOfWeekFilter
+ * @deprecated
  */
 export declare class DayOfWeekFilter extends Message<DayOfWeekFilter> {
   /**
@@ -334,6 +338,7 @@ export declare class DayOfWeekFilter extends Message<DayOfWeekFilter> {
  * DayOfMonthFilter filters the days of the month for a report.
  *
  * @generated from message api.commons.DayOfMonthFilter
+ * @deprecated
  */
 export declare class DayOfMonthFilter extends Message<DayOfMonthFilter> {
   /**
@@ -369,6 +374,7 @@ export declare class DayOfMonthFilter extends Message<DayOfMonthFilter> {
  * DayFilter is used to specify days for a report to be delivered.
  *
  * @generated from message api.commons.DayFilter
+ * @deprecated
  */
 export declare class DayFilter extends Message<DayFilter> {
   /**
@@ -453,6 +459,7 @@ export declare class FormatOptions extends Message<FormatOptions> {
  * DeliveryOptions is a message for the delivery options of a report.
  *
  * @generated from message api.commons.DeliveryOptions
+ * @deprecated
  */
 export declare class DeliveryOptions extends Message<DeliveryOptions> {
   /**

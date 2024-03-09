@@ -8,6 +8,7 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import type { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
 import type { Month } from "../../commons/enums_pb.js";
 import type { TimeZoneWrapper } from "../../commons/org_pb.js";
+import type { CronExpression } from "../../commons/types_pb.js";
 
 /**
  * ReportJob that can be scheduled to report dashboard data.
@@ -45,7 +46,7 @@ export declare class ReportJob extends Message<ReportJob> {
   dashboardId: string;
 
   /**
-   * timezone to use for the report schedule
+   * time zone to use for the report schedule
    *
    * @generated from field: string time_zone = 5 [deprecated = true];
    * @deprecated
@@ -62,21 +63,24 @@ export declare class ReportJob extends Message<ReportJob> {
   /**
    * delivery times for the report
    *
-   * @generated from field: api.commons.DeliveryTimes delivery_times = 7;
+   * @generated from field: api.commons.DeliveryTimes delivery_times = 7 [deprecated = true];
+   * @deprecated
    */
   deliveryTimes?: DeliveryTimes;
 
   /**
    * days filter to report on
    *
-   * @generated from field: api.commons.DayFilter day_filter = 8;
+   * @generated from field: api.commons.DayFilter day_filter = 8 [deprecated = true];
+   * @deprecated
    */
   dayFilter?: DayFilter;
 
   /**
    * months filter to report on
    *
-   * @generated from field: repeated api.commons.Month months = 9;
+   * @generated from field: repeated api.commons.Month months = 9 [deprecated = true];
+   * @deprecated
    */
   months: Month[];
 
@@ -90,7 +94,8 @@ export declare class ReportJob extends Message<ReportJob> {
   /**
    * delivery options for the report
    *
-   * @generated from field: api.commons.DeliveryOptions delivery_options = 11;
+   * @generated from field: api.commons.DeliveryOptions delivery_options = 11 [deprecated = true];
+   * @deprecated
    */
   deliveryOptions?: DeliveryOptions;
 
@@ -128,6 +133,20 @@ export declare class ReportJob extends Message<ReportJob> {
    * @generated from field: bool hide_csv_footer = 16;
    */
   hideCsvFooter: boolean;
+
+  /**
+   * transfer_config_sid to use for the report schedule
+   *
+   * @generated from field: int64 transfer_config_sid = 17;
+   */
+  transferConfigSid: bigint;
+
+  /**
+   * cron expression for the report schedule
+   *
+   * @generated from field: api.commons.CronExpression cron_expression = 18;
+   */
+  cronExpression?: CronExpression;
 
   constructor(data?: PartialMessage<ReportJob>);
 
