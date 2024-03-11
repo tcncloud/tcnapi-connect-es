@@ -77,9 +77,9 @@ export declare class FileTemplate extends Message<FileTemplate> {
   orgId: string;
 
   /**
-   * @generated from field: string file_template_id = 2;
+   * @generated from field: int64 file_template_id = 2;
    */
-  fileTemplateId: string;
+  fileTemplateId: bigint;
 
   /**
    * @generated from field: string filename = 3;
@@ -423,9 +423,9 @@ export declare class NewTemplate extends Message<NewTemplate> {
  */
 export declare class ExistingTemplate extends Message<ExistingTemplate> {
   /**
-   * @generated from field: string file_template_id = 1;
+   * @generated from field: int64 file_template_id = 1;
    */
-  fileTemplateId: string;
+  fileTemplateId: bigint;
 
   /**
    * @generated from field: api.v1alpha1.lms.ParseOpts parse_opts = 2;

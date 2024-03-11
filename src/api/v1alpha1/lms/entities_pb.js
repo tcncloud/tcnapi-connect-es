@@ -34,7 +34,7 @@ export const FileTemplate = proto3.makeMessageType(
   "api.v1alpha1.lms.FileTemplate",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "file_template_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "file_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "fields", kind: "message", T: Field, repeated: true },
     { no: 5, name: "parse_opts", kind: "message", T: ParseOpts },
@@ -150,7 +150,7 @@ export const NewTemplate = proto3.makeMessageType(
 export const ExistingTemplate = proto3.makeMessageType(
   "api.v1alpha1.lms.ExistingTemplate",
   () => [
-    { no: 1, name: "file_template_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "file_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "parse_opts", kind: "message", T: ParseOpts },
   ],
 );
