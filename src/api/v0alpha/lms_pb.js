@@ -2802,8 +2802,6 @@ export const EpicEntrypoint = proto3.makeMessageType(
     { no: 12, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 13, name: "fields", kind: "message", T: Field, repeated: true },
     { no: 14, name: "raw_json", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 15, name: "non_prod", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 16, name: "auth_server", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
