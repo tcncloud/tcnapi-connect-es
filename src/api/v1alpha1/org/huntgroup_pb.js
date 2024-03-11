@@ -723,6 +723,31 @@ export const ListHuntGroupIntegrationLinksResponse = proto3.makeMessageType(
 );
 
 /**
+ * CopyHuntGroupIntegrationLinkRequest is the request message for the CopyHuntGroupIntegrationLink RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupIntegrationLinkRequest
+ */
+export const CopyHuntGroupIntegrationLinkRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupIntegrationLinkRequest",
+  () => [
+    { no: 1, name: "to_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "link", kind: "message", T: IntegrationLink },
+  ],
+);
+
+/**
+ * CopyHuntGroupIntegrationLinkResponse is the response message for the CopyHuntGroupIntegrationLink RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse
+ */
+export const CopyHuntGroupIntegrationLinkResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse",
+  () => [
+    { no: 1, name: "integration_link_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
  * ListAgentTriggersRequest is the request message for the ListAgentTriggers RPC method.
  *
  * @generated from message api.v1alpha1.org.ListAgentTriggersRequest

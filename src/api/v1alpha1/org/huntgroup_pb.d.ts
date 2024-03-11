@@ -1808,6 +1808,69 @@ export declare class ListHuntGroupIntegrationLinksResponse extends Message<ListH
 }
 
 /**
+ * CopyHuntGroupIntegrationLinkRequest is the request message for the CopyHuntGroupIntegrationLink RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupIntegrationLinkRequest
+ */
+export declare class CopyHuntGroupIntegrationLinkRequest extends Message<CopyHuntGroupIntegrationLinkRequest> {
+  /**
+   * The sid of the hunt group to copy the integration link to.
+   *
+   * @generated from field: int64 to_hunt_group_sid = 1;
+   */
+  toHuntGroupSid: bigint;
+
+  /**
+   * The integration link to copy from the source hunt group.
+   *
+   * @generated from field: api.commons.org.IntegrationLink link = 2;
+   */
+  link?: IntegrationLink;
+
+  constructor(data?: PartialMessage<CopyHuntGroupIntegrationLinkRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupIntegrationLinkRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupIntegrationLinkRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupIntegrationLinkRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupIntegrationLinkRequest;
+
+  static equals(a: CopyHuntGroupIntegrationLinkRequest | PlainMessage<CopyHuntGroupIntegrationLinkRequest> | undefined, b: CopyHuntGroupIntegrationLinkRequest | PlainMessage<CopyHuntGroupIntegrationLinkRequest> | undefined): boolean;
+}
+
+/**
+ * CopyHuntGroupIntegrationLinkResponse is the response message for the CopyHuntGroupIntegrationLink RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse
+ */
+export declare class CopyHuntGroupIntegrationLinkResponse extends Message<CopyHuntGroupIntegrationLinkResponse> {
+  /**
+   * The sid of the newly created integration link.
+   *
+   * @generated from field: int64 integration_link_sid = 1;
+   */
+  integrationLinkSid: bigint;
+
+  constructor(data?: PartialMessage<CopyHuntGroupIntegrationLinkResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyHuntGroupIntegrationLinkResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyHuntGroupIntegrationLinkResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyHuntGroupIntegrationLinkResponse;
+
+  static equals(a: CopyHuntGroupIntegrationLinkResponse | PlainMessage<CopyHuntGroupIntegrationLinkResponse> | undefined, b: CopyHuntGroupIntegrationLinkResponse | PlainMessage<CopyHuntGroupIntegrationLinkResponse> | undefined): boolean;
+}
+
+/**
  * ListAgentTriggersRequest is the request message for the ListAgentTriggers RPC method.
  *
  * @generated from message api.v1alpha1.org.ListAgentTriggersRequest
