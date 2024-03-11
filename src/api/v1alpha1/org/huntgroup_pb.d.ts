@@ -1848,13 +1848,6 @@ export declare class CopyHuntGroupIntegrationLinkRequest extends Message<CopyHun
  * @generated from message api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse
  */
 export declare class CopyHuntGroupIntegrationLinkResponse extends Message<CopyHuntGroupIntegrationLinkResponse> {
-  /**
-   * The sid of the newly created integration link.
-   *
-   * @generated from field: int64 integration_link_sid = 1;
-   */
-  integrationLinkSid: bigint;
-
   constructor(data?: PartialMessage<CopyHuntGroupIntegrationLinkResponse>);
 
   static readonly runtime: typeof proto3;

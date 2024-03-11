@@ -742,9 +742,7 @@ export const CopyHuntGroupIntegrationLinkRequest = proto3.makeMessageType(
  */
 export const CopyHuntGroupIntegrationLinkResponse = proto3.makeMessageType(
   "api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse",
-  () => [
-    { no: 1, name: "integration_link_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ],
+  [],
 );
 
 /**
