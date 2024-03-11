@@ -98,9 +98,8 @@ export declare class BillingPlan extends Message<BillingPlan> {
   status: BillingPlanStatus;
 
   /**
-   * the time the billing will actually take effect
-   *
-   * @generated from field: google.protobuf.Timestamp actual_start_time = 9;
+   * @generated from field: google.protobuf.Timestamp actual_start_time = 9 [deprecated = true];
+   * @deprecated
    */
   actualStartTime?: Timestamp;
 
