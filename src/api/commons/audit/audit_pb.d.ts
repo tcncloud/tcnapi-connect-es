@@ -837,7 +837,8 @@ export declare class AuditEvent extends Message<AuditEvent> {
     case: "billingCreateBillingPlanEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingCreateInvoiceEvent billing_create_invoice_event = 1002;
+     * @generated from field: api.commons.audit.BillingCreateInvoiceEvent billing_create_invoice_event = 1002 [deprecated = true];
+     * @deprecated
      */
     value: BillingCreateInvoiceEvent;
     case: "billingCreateInvoiceEvent";
@@ -855,7 +856,8 @@ export declare class AuditEvent extends Message<AuditEvent> {
     case: "billingDeleteBillingPlanEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingDeleteInvoiceEvent billing_delete_invoice_event = 1005;
+     * @generated from field: api.commons.audit.BillingDeleteInvoiceEvent billing_delete_invoice_event = 1005 [deprecated = true];
+     * @deprecated
      */
     value: BillingDeleteInvoiceEvent;
     case: "billingDeleteInvoiceEvent";
@@ -879,7 +881,8 @@ export declare class AuditEvent extends Message<AuditEvent> {
     case: "billingUpdateBillingPlanEvent";
   } | {
     /**
-     * @generated from field: api.commons.audit.BillingUpdateInvoiceEvent billing_update_invoice_event = 1009;
+     * @generated from field: api.commons.audit.BillingUpdateInvoiceEvent billing_update_invoice_event = 1009 [deprecated = true];
+     * @deprecated
      */
     value: BillingUpdateInvoiceEvent;
     case: "billingUpdateInvoiceEvent";

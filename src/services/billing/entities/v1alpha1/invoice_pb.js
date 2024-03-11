@@ -22,6 +22,7 @@ export const Invoice = proto3.makeMessageType(
     { no: 5, name: "delete_time", kind: "message", T: Timestamp },
     { no: 6, name: "items", kind: "message", T: InvoiceItem, repeated: true },
     { no: 7, name: "url", kind: "message", T: StringValue },
+    { no: 8, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -38,6 +39,22 @@ export const InvoiceItem = proto3.makeMessageType(
     { no: 3, name: "price", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 4, name: "create_time", kind: "message", T: Timestamp },
     { no: 5, name: "update_time", kind: "message", T: Timestamp },
+    { no: 6, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "date", kind: "message", T: Timestamp },
+    { no: 8, name: "columns", kind: "message", T: InvoiceItemColumn, repeated: true },
+  ],
+);
+
+/**
+ * InvoiceItemColumn represents a single column on an invoice item.
+ *
+ * @generated from message services.billing.entities.v1alpha1.InvoiceItemColumn
+ */
+export const InvoiceItemColumn = proto3.makeMessageType(
+  "services.billing.entities.v1alpha1.InvoiceItemColumn",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

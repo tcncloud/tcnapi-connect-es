@@ -127,6 +127,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateInvoice
+     * @deprecated
      */
     readonly createInvoice: {
       readonly name: "CreateInvoice",
@@ -230,6 +231,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteInvoice
+     * @deprecated
      */
     readonly deleteInvoice: {
       readonly name: "DeleteInvoice",
@@ -301,11 +303,10 @@ export declare const BillingService: {
     /**
      * Exports an invoice.
      * Required permissions:
-     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
      * Errors:
      *   - grpc.Internal: An internal error occurred.
      *   - grpc.InvalidArgument: The request is invalid.
-     *   - grpc.NotFound: The specified invoice doesn't exist.
      *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
@@ -370,6 +371,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetInvoice
+     * @deprecated
      */
     readonly getInvoice: {
       readonly name: "GetInvoice",
@@ -425,6 +427,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.ListInvoices
+     * @deprecated
      */
     readonly listInvoices: {
       readonly name: "ListInvoices",
@@ -524,6 +527,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateInvoice
+     * @deprecated
      */
     readonly updateInvoice: {
       readonly name: "UpdateInvoice",

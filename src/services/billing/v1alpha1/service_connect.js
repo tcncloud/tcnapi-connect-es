@@ -127,6 +127,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateInvoice
+     * @deprecated
      */
     createInvoice: {
       name: "CreateInvoice",
@@ -230,6 +231,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteInvoice
+     * @deprecated
      */
     deleteInvoice: {
       name: "DeleteInvoice",
@@ -301,11 +303,10 @@ export const BillingService = {
     /**
      * Exports an invoice.
      * Required permissions:
-     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
      * Errors:
      *   - grpc.Internal: An internal error occurred.
      *   - grpc.InvalidArgument: The request is invalid.
-     *   - grpc.NotFound: The specified invoice doesn't exist.
      *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
@@ -370,6 +371,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetInvoice
+     * @deprecated
      */
     getInvoice: {
       name: "GetInvoice",
@@ -425,6 +427,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.ListInvoices
+     * @deprecated
      */
     listInvoices: {
       name: "ListInvoices",
@@ -524,6 +527,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateInvoice
+     * @deprecated
      */
     updateInvoice: {
       name: "UpdateInvoice",
