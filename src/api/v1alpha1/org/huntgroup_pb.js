@@ -748,6 +748,28 @@ export const CopyHuntGroupIntegrationLinkResponse = proto3.makeMessageType(
 );
 
 /**
+ * UpdateHuntGroupIntegrationLinksRequest is the request message for the UpdateHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest
+ */
+export const UpdateHuntGroupIntegrationLinksRequest = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest",
+  () => [
+    { no: 1, name: "links", kind: "message", T: IntegrationLink, repeated: true },
+  ],
+);
+
+/**
+ * UpdateHuntGroupIntegrationLinksResponse is the response message for the UpdateHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupIntegrationLinksResponse
+ */
+export const UpdateHuntGroupIntegrationLinksResponse = proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupIntegrationLinksResponse",
+  [],
+);
+
+/**
  * ListAgentTriggersRequest is the request message for the ListAgentTriggers RPC method.
  *
  * @generated from message api.v1alpha1.org.ListAgentTriggersRequest

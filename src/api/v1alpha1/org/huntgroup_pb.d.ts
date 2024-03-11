@@ -1871,6 +1871,55 @@ export declare class CopyHuntGroupIntegrationLinkResponse extends Message<CopyHu
 }
 
 /**
+ * UpdateHuntGroupIntegrationLinksRequest is the request message for the UpdateHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest
+ */
+export declare class UpdateHuntGroupIntegrationLinksRequest extends Message<UpdateHuntGroupIntegrationLinksRequest> {
+  /**
+   * The list of integration links to update.
+   *
+   * @generated from field: repeated api.commons.org.IntegrationLink links = 1;
+   */
+  links: IntegrationLink[];
+
+  constructor(data?: PartialMessage<UpdateHuntGroupIntegrationLinksRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupIntegrationLinksRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupIntegrationLinksRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupIntegrationLinksRequest;
+
+  static equals(a: UpdateHuntGroupIntegrationLinksRequest | PlainMessage<UpdateHuntGroupIntegrationLinksRequest> | undefined, b: UpdateHuntGroupIntegrationLinksRequest | PlainMessage<UpdateHuntGroupIntegrationLinksRequest> | undefined): boolean;
+}
+
+/**
+ * UpdateHuntGroupIntegrationLinksResponse is the response message for the UpdateHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupIntegrationLinksResponse
+ */
+export declare class UpdateHuntGroupIntegrationLinksResponse extends Message<UpdateHuntGroupIntegrationLinksResponse> {
+  constructor(data?: PartialMessage<UpdateHuntGroupIntegrationLinksResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateHuntGroupIntegrationLinksResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateHuntGroupIntegrationLinksResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateHuntGroupIntegrationLinksResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateHuntGroupIntegrationLinksResponse;
+
+  static equals(a: UpdateHuntGroupIntegrationLinksResponse | PlainMessage<UpdateHuntGroupIntegrationLinksResponse> | undefined, b: UpdateHuntGroupIntegrationLinksResponse | PlainMessage<UpdateHuntGroupIntegrationLinksResponse> | undefined): boolean;
+}
+
+/**
  * ListAgentTriggersRequest is the request message for the ListAgentTriggers RPC method.
  *
  * @generated from message api.v1alpha1.org.ListAgentTriggersRequest
