@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, proto3 } from "@bufbuild/protobuf";
+import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { Invoice } from "../entities/v1alpha1/invoice_pb.js";
 import { Page, Sort } from "./core_pb.js";
 
@@ -20,6 +20,7 @@ export const InvoiceFormat = proto3.makeEnum(
 
 /**
  * @generated from message services.billing.v1alpha1.CreateInvoiceRequest
+ * @deprecated
  */
 export const CreateInvoiceRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.CreateInvoiceRequest",
@@ -31,6 +32,7 @@ export const CreateInvoiceRequest = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.CreateInvoiceResponse
+ * @deprecated
  */
 export const CreateInvoiceResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.CreateInvoiceResponse",
@@ -41,6 +43,7 @@ export const CreateInvoiceResponse = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.DeleteInvoiceRequest
+ * @deprecated
  */
 export const DeleteInvoiceRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.DeleteInvoiceRequest",
@@ -51,6 +54,7 @@ export const DeleteInvoiceRequest = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.DeleteInvoiceResponse
+ * @deprecated
  */
 export const DeleteInvoiceResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.DeleteInvoiceResponse",
@@ -65,6 +69,7 @@ export const ExportInvoiceRequest = proto3.makeMessageType(
   () => [
     { no: 1, name: "invoice_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "format", kind: "enum", T: proto3.getEnumType(InvoiceFormat) },
+    { no: 3, name: "invoice_date", kind: "message", T: Timestamp },
   ],
 );
 
@@ -80,6 +85,7 @@ export const ExportInvoiceResponse = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.GetInvoiceRequest
+ * @deprecated
  */
 export const GetInvoiceRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.GetInvoiceRequest",
@@ -90,6 +96,7 @@ export const GetInvoiceRequest = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.GetInvoiceResponse
+ * @deprecated
  */
 export const GetInvoiceResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.GetInvoiceResponse",
@@ -100,6 +107,7 @@ export const GetInvoiceResponse = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.ListInvoicesRequest
+ * @deprecated
  */
 export const ListInvoicesRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.ListInvoicesRequest",
@@ -114,6 +122,7 @@ export const ListInvoicesRequest = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.ListInvoicesResponse
+ * @deprecated
  */
 export const ListInvoicesResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.ListInvoicesResponse",
@@ -125,6 +134,7 @@ export const ListInvoicesResponse = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.UpdateInvoiceRequest
+ * @deprecated
  */
 export const UpdateInvoiceRequest = proto3.makeMessageType(
   "services.billing.v1alpha1.UpdateInvoiceRequest",
@@ -137,6 +147,7 @@ export const UpdateInvoiceRequest = proto3.makeMessageType(
 
 /**
  * @generated from message services.billing.v1alpha1.UpdateInvoiceResponse
+ * @deprecated
  */
 export const UpdateInvoiceResponse = proto3.makeMessageType(
   "services.billing.v1alpha1.UpdateInvoiceResponse",

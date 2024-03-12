@@ -72,15 +72,18 @@ export declare class BillingCreateBillingPlanEvent extends Message<BillingCreate
  * BillingCreateInvoiceEvent is fired when an invoice is created
  *
  * @generated from message api.commons.audit.BillingCreateInvoiceEvent
+ * @deprecated
  */
 export declare class BillingCreateInvoiceEvent extends Message<BillingCreateInvoiceEvent> {
   /**
-   * @generated from field: string invoice = 1;
+   * @generated from field: string invoice = 1 [deprecated = true];
+   * @deprecated
    */
   invoice: string;
 
   /**
-   * @generated from field: string user_id = 2;
+   * @generated from field: string user_id = 2 [deprecated = true];
+   * @deprecated
    */
   userId: string;
 
@@ -165,15 +168,18 @@ export declare class BillingDeleteBillingPlanEvent extends Message<BillingDelete
  * BillingDeleteInvoiceEvent is fired when an invoice is deleted
  *
  * @generated from message api.commons.audit.BillingDeleteInvoiceEvent
+ * @deprecated
  */
 export declare class BillingDeleteInvoiceEvent extends Message<BillingDeleteInvoiceEvent> {
   /**
-   * @generated from field: string invoice_id = 1;
+   * @generated from field: string invoice_id = 1 [deprecated = true];
+   * @deprecated
    */
   invoiceId: string;
 
   /**
-   * @generated from field: string user_id = 2;
+   * @generated from field: string user_id = 2 [deprecated = true];
+   * @deprecated
    */
   userId: string;
 
@@ -289,15 +295,18 @@ export declare class BillingUpdateBillingPlanEvent extends Message<BillingUpdate
  * BillingUpdateInvoiceEvent is fired when an invoice is updated
  *
  * @generated from message api.commons.audit.BillingUpdateInvoiceEvent
+ * @deprecated
  */
 export declare class BillingUpdateInvoiceEvent extends Message<BillingUpdateInvoiceEvent> {
   /**
-   * @generated from field: string invoice = 1;
+   * @generated from field: string invoice = 1 [deprecated = true];
+   * @deprecated
    */
   invoice: string;
 
   /**
-   * @generated from field: string user_id = 2;
+   * @generated from field: string user_id = 2 [deprecated = true];
+   * @deprecated
    */
   userId: string;
 

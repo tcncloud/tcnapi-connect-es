@@ -15,9 +15,8 @@ import type { Product } from "./product_pb.js";
  */
 export declare class Invoice extends Message<Invoice> {
   /**
-   * the invoice identifier
-   *
-   * @generated from field: string invoice_id = 1;
+   * @generated from field: string invoice_id = 1 [deprecated = true];
+   * @deprecated
    */
   invoiceId: string;
 
@@ -36,22 +35,19 @@ export declare class Invoice extends Message<Invoice> {
   createTime?: Timestamp;
 
   /**
-   * the time this invoice was last updated
-   *
-   * @generated from field: google.protobuf.Timestamp update_time = 4;
+   * @generated from field: google.protobuf.Timestamp update_time = 4 [deprecated = true];
+   * @deprecated
    */
   updateTime?: Timestamp;
 
   /**
-   * the time this invoice was deleted (if applicable)
-   *
-   * @generated from field: google.protobuf.Timestamp delete_time = 5;
+   * @generated from field: google.protobuf.Timestamp delete_time = 5 [deprecated = true];
+   * @deprecated
    */
   deleteTime?: Timestamp;
 
   /**
-   * the invoice items, where each product is
-   * a separate item.
+   * the items on this invoice
    *
    * @generated from field: repeated services.billing.entities.v1alpha1.InvoiceItem items = 6;
    */
@@ -63,6 +59,13 @@ export declare class Invoice extends Message<Invoice> {
    * @generated from field: google.protobuf.StringValue url = 7;
    */
   url?: string;
+
+  /**
+   * the client this invoice is for
+   *
+   * @generated from field: string client_id = 8;
+   */
+  clientId: string;
 
   constructor(data?: PartialMessage<Invoice>);
 
@@ -86,9 +89,8 @@ export declare class Invoice extends Message<Invoice> {
  */
 export declare class InvoiceItem extends Message<InvoiceItem> {
   /**
-   * the invoice item identifier
-   *
-   * @generated from field: string invoice_item_id = 1;
+   * @generated from field: string invoice_item_id = 1 [deprecated = true];
+   * @deprecated
    */
   invoiceItemId: string;
 
@@ -107,18 +109,37 @@ export declare class InvoiceItem extends Message<InvoiceItem> {
   price: number;
 
   /**
-   * the time this invoice item was created
-   *
-   * @generated from field: google.protobuf.Timestamp create_time = 4;
+   * @generated from field: google.protobuf.Timestamp create_time = 4 [deprecated = true];
+   * @deprecated
    */
   createTime?: Timestamp;
 
   /**
-   * the time this invoice item was last updated
-   *
-   * @generated from field: google.protobuf.Timestamp update_time = 5;
+   * @generated from field: google.protobuf.Timestamp update_time = 5 [deprecated = true];
+   * @deprecated
    */
   updateTime?: Timestamp;
+
+  /**
+   * description of the item
+   *
+   * @generated from field: string description = 6;
+   */
+  description: string;
+
+  /**
+   * the time this item was made
+   *
+   * @generated from field: google.protobuf.Timestamp date = 7;
+   */
+  date?: Timestamp;
+
+  /**
+   * other data columns
+   *
+   * @generated from field: repeated services.billing.entities.v1alpha1.InvoiceItemColumn columns = 8;
+   */
+  columns: InvoiceItemColumn[];
 
   constructor(data?: PartialMessage<InvoiceItem>);
 
@@ -133,5 +154,36 @@ export declare class InvoiceItem extends Message<InvoiceItem> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InvoiceItem;
 
   static equals(a: InvoiceItem | PlainMessage<InvoiceItem> | undefined, b: InvoiceItem | PlainMessage<InvoiceItem> | undefined): boolean;
+}
+
+/**
+ * InvoiceItemColumn represents a single column on an invoice item.
+ *
+ * @generated from message services.billing.entities.v1alpha1.InvoiceItemColumn
+ */
+export declare class InvoiceItemColumn extends Message<InvoiceItemColumn> {
+  /**
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * @generated from field: int64 value = 2;
+   */
+  value: bigint;
+
+  constructor(data?: PartialMessage<InvoiceItemColumn>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.entities.v1alpha1.InvoiceItemColumn";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): InvoiceItemColumn;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): InvoiceItemColumn;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): InvoiceItemColumn;
+
+  static equals(a: InvoiceItemColumn | PlainMessage<InvoiceItemColumn> | undefined, b: InvoiceItemColumn | PlainMessage<InvoiceItemColumn> | undefined): boolean;
 }
 

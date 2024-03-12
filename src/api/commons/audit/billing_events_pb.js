@@ -35,6 +35,7 @@ export const BillingCreateBillingPlanEvent = proto3.makeMessageType(
  * BillingCreateInvoiceEvent is fired when an invoice is created
  *
  * @generated from message api.commons.audit.BillingCreateInvoiceEvent
+ * @deprecated
  */
 export const BillingCreateInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingCreateInvoiceEvent",
@@ -74,6 +75,7 @@ export const BillingDeleteBillingPlanEvent = proto3.makeMessageType(
  * BillingDeleteInvoiceEvent is fired when an invoice is deleted
  *
  * @generated from message api.commons.audit.BillingDeleteInvoiceEvent
+ * @deprecated
  */
 export const BillingDeleteInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingDeleteInvoiceEvent",
@@ -126,6 +128,7 @@ export const BillingUpdateBillingPlanEvent = proto3.makeMessageType(
  * BillingUpdateInvoiceEvent is fired when an invoice is updated
  *
  * @generated from message api.commons.audit.BillingUpdateInvoiceEvent
+ * @deprecated
  */
 export const BillingUpdateInvoiceEvent = proto3.makeMessageType(
   "api.commons.audit.BillingUpdateInvoiceEvent",

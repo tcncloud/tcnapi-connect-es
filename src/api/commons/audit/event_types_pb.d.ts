@@ -794,7 +794,8 @@ export declare enum EventType {
   EVENT_TYPE_BILLING_CREATE_BILLING_PLAN = 1001,
 
   /**
-   * @generated from enum value: EVENT_TYPE_BILLING_CREATE_INVOICE = 1002;
+   * @generated from enum value: EVENT_TYPE_BILLING_CREATE_INVOICE = 1002 [deprecated = true];
+   * @deprecated
    */
   EVENT_TYPE_BILLING_CREATE_INVOICE = 1002,
 
@@ -809,7 +810,8 @@ export declare enum EventType {
   EVENT_TYPE_BILLING_DELETE_BILLING_PLAN = 1004,
 
   /**
-   * @generated from enum value: EVENT_TYPE_BILLING_DELETE_INVOICE = 1005;
+   * @generated from enum value: EVENT_TYPE_BILLING_DELETE_INVOICE = 1005 [deprecated = true];
+   * @deprecated
    */
   EVENT_TYPE_BILLING_DELETE_INVOICE = 1005,
 
@@ -829,7 +831,8 @@ export declare enum EventType {
   EVENT_TYPE_BILLING_UPDATE_BILLING_PLAN = 1008,
 
   /**
-   * @generated from enum value: EVENT_TYPE_BILLING_UPDATE_INVOICE = 1009;
+   * @generated from enum value: EVENT_TYPE_BILLING_UPDATE_INVOICE = 1009 [deprecated = true];
+   * @deprecated
    */
   EVENT_TYPE_BILLING_UPDATE_INVOICE = 1009,
 
