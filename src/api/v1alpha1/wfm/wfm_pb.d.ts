@@ -6614,6 +6614,70 @@ export declare class DeleteWFMAgentsMembershipsRes extends Message<DeleteWFMAgen
 }
 
 /**
+ * Request message for the RemoveAgentFromFutureShifts RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest
+ */
+export declare class RemoveAgentFromFutureShiftsRequest extends Message<RemoveAgentFromFutureShiftsRequest> {
+  /**
+   * ID of the wfm agent sid to remove from the future schedules.
+   *
+   * @generated from field: int64 wfm_agent_sid_to_remove = 1;
+   */
+  wfmAgentSidToRemove: bigint;
+
+  /**
+   * If set to true, a new unassigned agent will be created and it will be assigned to the shifts and agent groups from @wfm_agent_sid_to_remove.
+   * If set to false, the shifts will just be deleted.
+   *
+   * @generated from field: bool replace_with_new_unassigned_agent = 2;
+   */
+  replaceWithNewUnassignedAgent: boolean;
+
+  constructor(data?: PartialMessage<RemoveAgentFromFutureShiftsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromFutureShiftsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsRequest;
+
+  static equals(a: RemoveAgentFromFutureShiftsRequest | PlainMessage<RemoveAgentFromFutureShiftsRequest> | undefined, b: RemoveAgentFromFutureShiftsRequest | PlainMessage<RemoveAgentFromFutureShiftsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the RemoveAgentFromFutureShifts RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse
+ */
+export declare class RemoveAgentFromFutureShiftsResponse extends Message<RemoveAgentFromFutureShiftsResponse> {
+  /**
+   * ID of the new unassigned agent if @replace_with_new_unassigned_agent was set to true.
+   *
+   * @generated from field: google.protobuf.Int64Value unassigned_agent_sid = 1;
+   */
+  unassignedAgentSid?: bigint;
+
+  constructor(data?: PartialMessage<RemoveAgentFromFutureShiftsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromFutureShiftsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsResponse;
+
+  static equals(a: RemoveAgentFromFutureShiftsResponse | PlainMessage<RemoveAgentFromFutureShiftsResponse> | undefined, b: RemoveAgentFromFutureShiftsResponse | PlainMessage<RemoveAgentFromFutureShiftsResponse> | undefined): boolean;
+}
+
+/**
  * DOW Placement
  *
  * @generated from message api.v1alpha1.wfm.DOWPlacement
@@ -12810,6 +12874,15 @@ export declare class GetPerformanceMetricsReq extends Message<GetPerformanceMetr
    * @generated from field: int32 interval_width_in_minutes = 5;
    */
   intervalWidthInMinutes: number;
+
+  /**
+   * If set to true, the call stats will be recalculated for any changes made to the shift instances or segments on the schedule.
+   *    Requires that @node_selector be set to a call center node, as resync effects the entire schedule.
+   * If set to false, this step will be skipped.
+   *
+   * @generated from field: bool resync_call_stats = 6;
+   */
+  resyncCallStats: boolean;
 
   constructor(data?: PartialMessage<GetPerformanceMetricsReq>);
 

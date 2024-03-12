@@ -2334,6 +2334,31 @@ export const DeleteWFMAgentsMembershipsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the RemoveAgentFromFutureShifts RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest
+ */
+export const RemoveAgentFromFutureShiftsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest",
+  () => [
+    { no: 1, name: "wfm_agent_sid_to_remove", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "replace_with_new_unassigned_agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * Response message for the RemoveAgentFromFutureShifts RPC
+ *
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse
+ */
+export const RemoveAgentFromFutureShiftsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse",
+  () => [
+    { no: 1, name: "unassigned_agent_sid", kind: "message", T: Int64Value },
+  ],
+);
+
+/**
  * DOW Placement
  *
  * @generated from message api.v1alpha1.wfm.DOWPlacement
@@ -4374,6 +4399,7 @@ export const GetPerformanceMetricsReq = proto3.makeMessageType(
     { no: 3, name: "datetime_range", kind: "message", T: DatetimeRange },
     { no: 4, name: "metric_params", kind: "message", T: PerformanceMetricParameter, repeated: true },
     { no: 5, name: "interval_width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "resync_call_stats", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
