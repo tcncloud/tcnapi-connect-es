@@ -260,6 +260,8 @@ export const RequestMethod = proto3.makeEnum(
     {no: 3711, name: "REQUEST_METHOD_EPIC_GET_PATIENT_BILLING_DETAILS", localName: "EPIC_GET_PATIENT_BILLING_DETAILS"},
     {no: 3712, name: "REQUEST_METHOD_EPIC_CALL_PATIENT", localName: "EPIC_CALL_PATIENT"},
     {no: 3713, name: "REQUEST_METHOD_EPIC_HANGUP_CALL", localName: "EPIC_HANGUP_CALL"},
+    {no: 3714, name: "REQUEST_METHOD_EPIC_GET_ACCOUNT_ACCESS_IDENTIFIERS", localName: "EPIC_GET_ACCOUNT_ACCESS_IDENTIFIERS"},
+    {no: 3715, name: "REQUEST_METHOD_EPIC_GET_ACCOUNT_BILLING_SUMMARY", localName: "EPIC_GET_ACCOUNT_BILLING_SUMMARY"},
     {no: 3801, name: "REQUEST_METHOD_NEWZWARE_PHONE_LOOKUP", localName: "NEWZWARE_PHONE_LOOKUP"},
     {no: 3802, name: "REQUEST_METHOD_NEWZWARE_ACCOUNT_INQUIRY", localName: "NEWZWARE_ACCOUNT_INQUIRY"},
     {no: 3803, name: "REQUEST_METHOD_NEWZWARE_CC_PAYMENT", localName: "NEWZWARE_CC_PAYMENT"},
@@ -876,6 +878,8 @@ export const ExecuteFlow = proto3.makeMessageType(
     { no: 3711, name: "epic_get_patient_billing_details", kind: "message", T: ExecuteEpicGetPatientBillingDetails, oneof: "value" },
     { no: 3712, name: "epic_call_patient", kind: "message", T: ExecuteEpicCallPatient, oneof: "value" },
     { no: 3713, name: "epic_hangup_call", kind: "message", T: ExecuteEpicHangupCall, oneof: "value" },
+    { no: 3714, name: "epic_get_account_access_identifiers", kind: "message", T: ExecuteEpicGetAccountAccessIdentifiers, oneof: "value" },
+    { no: 3715, name: "epic_get_account_billing_summary", kind: "message", T: ExecuteEpicGetAccountBillingSummary, oneof: "value" },
     { no: 3801, name: "newzware_phone_lookup", kind: "message", T: ExecuteNewzwarePhoneLookup, oneof: "value" },
     { no: 3802, name: "newzware_account_inquiry", kind: "message", T: ExecuteNewzwareAccountInquiry, oneof: "value" },
     { no: 3803, name: "newzware_cc_payment", kind: "message", T: ExecuteNewzwareCcPayment, oneof: "value" },
@@ -2688,6 +2692,22 @@ export const ExecuteEpicCallPatient = proto3.makeMessageType(
  */
 export const ExecuteEpicHangupCall = proto3.makeMessageType(
   "api.commons.integrations.ExecuteEpicHangupCall",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetAccountAccessIdentifiers
+ */
+export const ExecuteEpicGetAccountAccessIdentifiers = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicGetAccountAccessIdentifiers",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteEpicGetAccountBillingSummary
+ */
+export const ExecuteEpicGetAccountBillingSummary = proto3.makeMessageType(
+  "api.commons.integrations.ExecuteEpicGetAccountBillingSummary",
   [],
 );
 
