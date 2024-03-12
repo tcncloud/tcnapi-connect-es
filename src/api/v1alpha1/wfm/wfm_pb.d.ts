@@ -6658,7 +6658,7 @@ export declare class RemoveAgentFromFutureShiftsResponse extends Message<RemoveA
   /**
    * ID of the new unassigned agent if @replace_with_new_unassigned_agent was set to true.
    *
-   * @generated from field: google.protobuf.Int64Value unassigned_agent_sid = 3;
+   * @generated from field: google.protobuf.Int64Value unassigned_agent_sid = 1;
    */
   unassignedAgentSid?: bigint;
 

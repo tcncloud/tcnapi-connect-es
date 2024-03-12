@@ -2354,7 +2354,7 @@ export const RemoveAgentFromFutureShiftsRequest = proto3.makeMessageType(
 export const RemoveAgentFromFutureShiftsResponse = proto3.makeMessageType(
   "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse",
   () => [
-    { no: 3, name: "unassigned_agent_sid", kind: "message", T: Int64Value },
+    { no: 1, name: "unassigned_agent_sid", kind: "message", T: Int64Value },
   ],
 );
 
