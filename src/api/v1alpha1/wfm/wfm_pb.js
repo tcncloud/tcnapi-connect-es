@@ -2030,6 +2030,31 @@ export const WFMAgent = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest
+ */
+export const CreateUnassignedWFMAgentRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest",
+  () => [
+    { no: 1, name: "wfm_agent_sid_to_copy_agent_group_associations", kind: "message", T: Int64Value },
+    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse
+ */
+export const CreateUnassignedWFMAgentResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse",
+  () => [
+    { no: 1, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
  * Request message for the UpdateWFMAgent RPC
  *
  * @generated from message api.v1alpha1.wfm.UpdateWFMAgentReq
@@ -2167,6 +2192,28 @@ export const ListWFMAgentSidsRes = proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest
+ */
+export const ListUnassignedWFMAgentsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest",
+  [],
+);
+
+/**
+ * Response message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse
+ */
+export const ListUnassignedWFMAgentsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse",
+  () => [
+    { no: 1, name: "wfm_agents", kind: "message", T: WFMAgent, repeated: true },
+  ],
+);
+
+/**
  * Request message for the ListWFMAgentsAssociatedWithAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentsAssociatedWithAgentGroupReq
@@ -2287,12 +2334,12 @@ export const DeleteWFMAgentsMembershipsRes = proto3.makeMessageType(
 );
 
 /**
- * Request message for the RemoveAgentFromOrg RPC
+ * Request message for the RemoveAgentFromFutureShifts RPC
  *
- * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgRequest
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest
  */
-export const RemoveAgentFromOrgRequest = proto3.makeMessageType(
-  "api.v1alpha1.wfm.RemoveAgentFromOrgRequest",
+export const RemoveAgentFromFutureShiftsRequest = proto3.makeMessageType(
+  "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest",
   () => [
     { no: 1, name: "wfm_agent_sid_to_remove", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "replace_with_new_unassigned_agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
@@ -2300,13 +2347,15 @@ export const RemoveAgentFromOrgRequest = proto3.makeMessageType(
 );
 
 /**
- * Response message for the RemoveAgentFromOrg RPC
+ * Response message for the RemoveAgentFromFutureShifts RPC
  *
- * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgResponse
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse
  */
-export const RemoveAgentFromOrgResponse = proto3.makeMessageType(
-  "api.v1alpha1.wfm.RemoveAgentFromOrgResponse",
-  [],
+export const RemoveAgentFromFutureShiftsResponse = proto3.makeMessageType(
+  "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse",
+  () => [
+    { no: 3, name: "unassigned_agent_sid", kind: "message", T: Int64Value },
+  ],
 );
 
 /**
@@ -4350,6 +4399,7 @@ export const GetPerformanceMetricsReq = proto3.makeMessageType(
     { no: 3, name: "datetime_range", kind: "message", T: DatetimeRange },
     { no: 4, name: "metric_params", kind: "message", T: PerformanceMetricParameter, repeated: true },
     { no: 5, name: "interval_width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 6, name: "resync_call_stats", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

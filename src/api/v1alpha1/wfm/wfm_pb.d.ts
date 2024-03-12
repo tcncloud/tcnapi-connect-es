@@ -5852,6 +5852,69 @@ export declare class WFMAgent extends Message<WFMAgent> {
 }
 
 /**
+ * Request message for the CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest
+ */
+export declare class CreateUnassignedWFMAgentRequest extends Message<CreateUnassignedWFMAgentRequest> {
+  /**
+   * ID of the wfm agent to copy the agent group associations onto the new agent.
+   *
+   * @generated from field: google.protobuf.Int64Value wfm_agent_sid_to_copy_agent_group_associations = 1;
+   */
+  wfmAgentSidToCopyAgentGroupAssociations?: bigint;
+
+  /**
+   * Optional: name to give the agent, if left blank it will be given a random name in the form 'Unassigned Agent - <random_number>'.
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  constructor(data?: PartialMessage<CreateUnassignedWFMAgentRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateUnassignedWFMAgentRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateUnassignedWFMAgentRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentRequest;
+
+  static equals(a: CreateUnassignedWFMAgentRequest | PlainMessage<CreateUnassignedWFMAgentRequest> | undefined, b: CreateUnassignedWFMAgentRequest | PlainMessage<CreateUnassignedWFMAgentRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for CreateUnassignedWFMAgent RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse
+ */
+export declare class CreateUnassignedWFMAgentResponse extends Message<CreateUnassignedWFMAgentResponse> {
+  /**
+   * ID of the newly created agent.
+   *
+   * @generated from field: int64 wfm_agent_sid = 1;
+   */
+  wfmAgentSid: bigint;
+
+  constructor(data?: PartialMessage<CreateUnassignedWFMAgentResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CreateUnassignedWFMAgentResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateUnassignedWFMAgentResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateUnassignedWFMAgentResponse;
+
+  static equals(a: CreateUnassignedWFMAgentResponse | PlainMessage<CreateUnassignedWFMAgentResponse> | undefined, b: CreateUnassignedWFMAgentResponse | PlainMessage<CreateUnassignedWFMAgentResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the UpdateWFMAgent RPC
  *
  * @generated from message api.v1alpha1.wfm.UpdateWFMAgentReq
@@ -6198,6 +6261,55 @@ export declare class ListWFMAgentSidsRes extends Message<ListWFMAgentSidsRes> {
 }
 
 /**
+ * Request message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest
+ */
+export declare class ListUnassignedWFMAgentsRequest extends Message<ListUnassignedWFMAgentsRequest> {
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsRequest;
+
+  static equals(a: ListUnassignedWFMAgentsRequest | PlainMessage<ListUnassignedWFMAgentsRequest> | undefined, b: ListUnassignedWFMAgentsRequest | PlainMessage<ListUnassignedWFMAgentsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListUnassignedWFMAgents RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse
+ */
+export declare class ListUnassignedWFMAgentsResponse extends Message<ListUnassignedWFMAgentsResponse> {
+  /**
+   * List of found wfm agents.
+   *
+   * @generated from field: repeated api.v1alpha1.wfm.WFMAgent wfm_agents = 1;
+   */
+  wfmAgents: WFMAgent[];
+
+  constructor(data?: PartialMessage<ListUnassignedWFMAgentsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListUnassignedWFMAgentsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUnassignedWFMAgentsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUnassignedWFMAgentsResponse;
+
+  static equals(a: ListUnassignedWFMAgentsResponse | PlainMessage<ListUnassignedWFMAgentsResponse> | undefined, b: ListUnassignedWFMAgentsResponse | PlainMessage<ListUnassignedWFMAgentsResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the ListWFMAgentsAssociatedWithAgentGroup RPC
  *
  * @generated from message api.v1alpha1.wfm.ListWFMAgentsAssociatedWithAgentGroupReq
@@ -6502,11 +6614,11 @@ export declare class DeleteWFMAgentsMembershipsRes extends Message<DeleteWFMAgen
 }
 
 /**
- * Request message for the RemoveAgentFromOrg RPC
+ * Request message for the RemoveAgentFromFutureShifts RPC
  *
- * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgRequest
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest
  */
-export declare class RemoveAgentFromOrgRequest extends Message<RemoveAgentFromOrgRequest> {
+export declare class RemoveAgentFromFutureShiftsRequest extends Message<RemoveAgentFromFutureShiftsRequest> {
   /**
    * ID of the wfm agent sid to remove from the future schedules.
    *
@@ -6522,40 +6634,47 @@ export declare class RemoveAgentFromOrgRequest extends Message<RemoveAgentFromOr
    */
   replaceWithNewUnassignedAgent: boolean;
 
-  constructor(data?: PartialMessage<RemoveAgentFromOrgRequest>);
+  constructor(data?: PartialMessage<RemoveAgentFromFutureShiftsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromOrgRequest";
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromOrgRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromFutureShiftsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsRequest;
 
-  static equals(a: RemoveAgentFromOrgRequest | PlainMessage<RemoveAgentFromOrgRequest> | undefined, b: RemoveAgentFromOrgRequest | PlainMessage<RemoveAgentFromOrgRequest> | undefined): boolean;
+  static equals(a: RemoveAgentFromFutureShiftsRequest | PlainMessage<RemoveAgentFromFutureShiftsRequest> | undefined, b: RemoveAgentFromFutureShiftsRequest | PlainMessage<RemoveAgentFromFutureShiftsRequest> | undefined): boolean;
 }
 
 /**
- * Response message for the RemoveAgentFromOrg RPC
+ * Response message for the RemoveAgentFromFutureShifts RPC
  *
- * @generated from message api.v1alpha1.wfm.RemoveAgentFromOrgResponse
+ * @generated from message api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse
  */
-export declare class RemoveAgentFromOrgResponse extends Message<RemoveAgentFromOrgResponse> {
-  constructor(data?: PartialMessage<RemoveAgentFromOrgResponse>);
+export declare class RemoveAgentFromFutureShiftsResponse extends Message<RemoveAgentFromFutureShiftsResponse> {
+  /**
+   * ID of the new unassigned agent if @replace_with_new_unassigned_agent was set to true.
+   *
+   * @generated from field: google.protobuf.Int64Value unassigned_agent_sid = 3;
+   */
+  unassignedAgentSid?: bigint;
+
+  constructor(data?: PartialMessage<RemoveAgentFromFutureShiftsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromOrgResponse";
+  static readonly typeName = "api.v1alpha1.wfm.RemoveAgentFromFutureShiftsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromOrgResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveAgentFromFutureShiftsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromOrgResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveAgentFromFutureShiftsResponse;
 
-  static equals(a: RemoveAgentFromOrgResponse | PlainMessage<RemoveAgentFromOrgResponse> | undefined, b: RemoveAgentFromOrgResponse | PlainMessage<RemoveAgentFromOrgResponse> | undefined): boolean;
+  static equals(a: RemoveAgentFromFutureShiftsResponse | PlainMessage<RemoveAgentFromFutureShiftsResponse> | undefined, b: RemoveAgentFromFutureShiftsResponse | PlainMessage<RemoveAgentFromFutureShiftsResponse> | undefined): boolean;
 }
 
 /**
@@ -12755,6 +12874,15 @@ export declare class GetPerformanceMetricsReq extends Message<GetPerformanceMetr
    * @generated from field: int32 interval_width_in_minutes = 5;
    */
   intervalWidthInMinutes: number;
+
+  /**
+   * If set to true, the call stats will be recalculated for any changes made to the shift instances or segments on the schedule.
+   *    Requires that @node_selector be set to a call center node, as resync effects the entire schedule.
+   * If set to false, this step will be skipped.
+   *
+   * @generated from field: bool resync_call_stats = 6;
+   */
+  resyncCallStats: boolean;
 
   constructor(data?: PartialMessage<GetPerformanceMetricsReq>);
 

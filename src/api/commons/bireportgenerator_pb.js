@@ -10,6 +10,7 @@ import { Weekday_Enum } from "./enums_pb.js";
  * RepeatFrequency is an enum for how often a report should be executed.
  *
  * @generated from enum api.commons.RepeatFrequency
+ * @deprecated
  */
 export const RepeatFrequency = proto3.makeEnum(
   "api.commons.RepeatFrequency",
@@ -25,6 +26,7 @@ export const RepeatFrequency = proto3.makeEnum(
  * DayFilterType is an enum for the type of day filter.
  *
  * @generated from enum api.commons.DayFilterType
+ * @deprecated
  */
 export const DayFilterType = proto3.makeEnum(
   "api.commons.DayFilterType",
@@ -99,6 +101,7 @@ export const TimePeriod = proto3.makeEnum(
  * DeliveryTimes is a message for the delivery times of a report.
  *
  * @generated from message api.commons.DeliveryTimes
+ * @deprecated
  */
 export const DeliveryTimes = proto3.makeMessageType(
   "api.commons.DeliveryTimes",
@@ -112,6 +115,7 @@ export const DeliveryTimes = proto3.makeMessageType(
  * DayOfWeekFilter filters the days of the week for a report.
  *
  * @generated from message api.commons.DayOfWeekFilter
+ * @deprecated
  */
 export const DayOfWeekFilter = proto3.makeMessageType(
   "api.commons.DayOfWeekFilter",
@@ -125,6 +129,7 @@ export const DayOfWeekFilter = proto3.makeMessageType(
  * DayOfMonthFilter filters the days of the month for a report.
  *
  * @generated from message api.commons.DayOfMonthFilter
+ * @deprecated
  */
 export const DayOfMonthFilter = proto3.makeMessageType(
   "api.commons.DayOfMonthFilter",
@@ -138,6 +143,7 @@ export const DayOfMonthFilter = proto3.makeMessageType(
  * DayFilter is used to specify days for a report to be delivered.
  *
  * @generated from message api.commons.DayFilter
+ * @deprecated
  */
 export const DayFilter = proto3.makeMessageType(
   "api.commons.DayFilter",
@@ -165,6 +171,7 @@ export const FormatOptions = proto3.makeMessageType(
  * DeliveryOptions is a message for the delivery options of a report.
  *
  * @generated from message api.commons.DeliveryOptions
+ * @deprecated
  */
 export const DeliveryOptions = proto3.makeMessageType(
   "api.commons.DeliveryOptions",
