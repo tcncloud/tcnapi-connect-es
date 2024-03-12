@@ -4070,3 +4070,51 @@ export declare class QueryHolidaysRequest extends Message<QueryHolidaysRequest> 
   static equals(a: QueryHolidaysRequest | PlainMessage<QueryHolidaysRequest> | undefined, b: QueryHolidaysRequest | PlainMessage<QueryHolidaysRequest> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v0alpha.ExportConsentListRequest
+ */
+export declare class ExportConsentListRequest extends Message<ExportConsentListRequest> {
+  /**
+   * @generated from field: string consent_profile_id = 1;
+   */
+  consentProfileId: string;
+
+  constructor(data?: PartialMessage<ExportConsentListRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ExportConsentListRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportConsentListRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportConsentListRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportConsentListRequest;
+
+  static equals(a: ExportConsentListRequest | PlainMessage<ExportConsentListRequest> | undefined, b: ExportConsentListRequest | PlainMessage<ExportConsentListRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ExportConsentListResponse
+ */
+export declare class ExportConsentListResponse extends Message<ExportConsentListResponse> {
+  /**
+   * @generated from field: string url = 1;
+   */
+  url: string;
+
+  constructor(data?: PartialMessage<ExportConsentListResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ExportConsentListResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExportConsentListResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExportConsentListResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExportConsentListResponse;
+
+  static equals(a: ExportConsentListResponse | PlainMessage<ExportConsentListResponse> | undefined, b: ExportConsentListResponse | PlainMessage<ExportConsentListResponse> | undefined): boolean;
+}
+

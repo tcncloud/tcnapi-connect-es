@@ -1358,3 +1358,23 @@ export const QueryHolidaysRequest = proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v0alpha.ExportConsentListRequest
+ */
+export const ExportConsentListRequest = proto3.makeMessageType(
+  "api.v0alpha.ExportConsentListRequest",
+  () => [
+    { no: 1, name: "consent_profile_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v0alpha.ExportConsentListResponse
+ */
+export const ExportConsentListResponse = proto3.makeMessageType(
+  "api.v0alpha.ExportConsentListResponse",
+  () => [
+    { no: 1, name: "url", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
