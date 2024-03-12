@@ -9207,6 +9207,20 @@ export declare class EpicEntrypoint extends Message<EpicEntrypoint> {
    */
   rawJson: boolean;
 
+  /**
+   * non prod specifies which key, and which client id we are going to use.
+   *
+   * @generated from field: bool non_prod = 15;
+   */
+  nonProd: boolean;
+
+  /**
+   * auth server urls can be different from the group base url
+   *
+   * @generated from field: string auth_server = 16;
+   */
+  authServer: string;
+
   constructor(data?: PartialMessage<EpicEntrypoint>);
 
   static readonly runtime: typeof proto3;
