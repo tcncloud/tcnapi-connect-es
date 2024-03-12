@@ -2319,6 +2319,12 @@ export declare class Process extends Message<Process> {
      */
     value: EpicEntrypoint;
     case: "epicEntryPoint";
+  } | {
+    /**
+     * @generated from field: api.v0alpha.ContactManagerSink contact_manager_sink = 77;
+     */
+    value: ContactManagerSink;
+    case: "contactManagerSink";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Process>);
@@ -7323,6 +7329,62 @@ export declare class ReshapeAction_Extract_Slice extends Message<ReshapeAction_E
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ReshapeAction_Extract_Slice;
 
   static equals(a: ReshapeAction_Extract_Slice | PlainMessage<ReshapeAction_Extract_Slice> | undefined, b: ReshapeAction_Extract_Slice | PlainMessage<ReshapeAction_Extract_Slice> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v0alpha.ContactManagerSink
+ */
+export declare class ContactManagerSink extends Message<ContactManagerSink> {
+  /**
+   * project id snet to Conatactmanager when sink is ran
+   *
+   * @generated from field: string project_id = 2;
+   */
+  projectId: string;
+
+  /**
+   * name sent to ContactManager when the sink is ran
+   *
+   * @generated from field: string contact_list_name = 3;
+   */
+  contactListName: string;
+
+  /**
+   * description to use for this contact list.
+   * Sent to contact manager when ran.
+   *
+   * @generated from field: string contact_list_description = 4;
+   */
+  contactListDescription: string;
+
+  /**
+   * time to live sent to contact manager
+   *
+   * @generated from field: int64 ttl = 7;
+   */
+  ttl: bigint;
+
+  /**
+   * if blank we export all fields.
+   * if provided, we export only the fields listed here
+   *
+   * @generated from field: repeated string fields = 8;
+   */
+  fields: string[];
+
+  constructor(data?: PartialMessage<ContactManagerSink>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v0alpha.ContactManagerSink";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ContactManagerSink;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ContactManagerSink;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ContactManagerSink;
+
+  static equals(a: ContactManagerSink | PlainMessage<ContactManagerSink> | undefined, b: ContactManagerSink | PlainMessage<ContactManagerSink> | undefined): boolean;
 }
 
 /**

@@ -760,6 +760,7 @@ export const Process = proto3.makeMessageType(
     { no: 74, name: "web_exchange_process", kind: "message", T: WebExchangeProcess, oneof: "proc" },
     { no: 75, name: "split", kind: "message", T: SplitCriteria, oneof: "proc" },
     { no: 76, name: "epic_entry_point", kind: "message", T: EpicEntrypoint, oneof: "proc" },
+    { no: 77, name: "contact_manager_sink", kind: "message", T: ContactManagerSink, oneof: "proc" },
   ],
 );
 
@@ -2212,6 +2213,20 @@ export const ReshapeAction_Extract_Slice = proto3.makeMessageType(
     { no: 36, name: "end_index", kind: "message", T: ReshapeAction_Extract_Index, repeated: true },
   ],
   {localName: "ReshapeAction_Extract_Slice"},
+);
+
+/**
+ * @generated from message api.v0alpha.ContactManagerSink
+ */
+export const ContactManagerSink = proto3.makeMessageType(
+  "api.v0alpha.ContactManagerSink",
+  () => [
+    { no: 2, name: "project_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "contact_list_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "contact_list_description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: "fields", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
 );
 
 /**
