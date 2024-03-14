@@ -1074,6 +1074,13 @@ export declare class OmniCampaign extends Message<OmniCampaign> {
    */
   complianceConfig?: OmniComplianceConfig;
 
+  /**
+   * dynamic content id for certain sms providers
+   *
+   * @generated from field: google.protobuf.StringValue content_id = 15;
+   */
+  contentId?: string;
+
   constructor(data?: PartialMessage<OmniCampaign>);
 
   static readonly runtime: typeof proto3;
