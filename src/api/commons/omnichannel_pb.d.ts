@@ -1074,13 +1074,6 @@ export declare class OmniCampaign extends Message<OmniCampaign> {
    */
   complianceConfig?: OmniComplianceConfig;
 
-  /**
-   * dynamic content id for certain sms providers
-   *
-   * @generated from field: google.protobuf.StringValue content_id = 15;
-   */
-  contentId?: string;
-
   constructor(data?: PartialMessage<OmniCampaign>);
 
   static readonly runtime: typeof proto3;
@@ -1416,6 +1409,13 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    * @generated from field: api.commons.WhatsAppNumber whatsapp_number = 22;
    */
   whatsappNumber?: WhatsAppNumber;
+
+  /**
+   * Optional dynamic content id for certain sms providers
+   *
+   * @generated from field: google.protobuf.StringValue content_id = 23;
+   */
+  contentId?: string;
 
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 

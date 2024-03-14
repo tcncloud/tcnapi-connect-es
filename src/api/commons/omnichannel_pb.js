@@ -384,7 +384,6 @@ export const OmniCampaign = /*@__PURE__*/ proto3.makeMessageType(
     { no: 12, name: "time_zone", kind: "message", T: TimeZoneWrapper },
     { no: 13, name: "shorten_url", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 14, name: "compliance_config", kind: "message", T: OmniComplianceConfig },
-    { no: 15, name: "content_id", kind: "message", T: StringValue },
   ],
 );
 
@@ -458,6 +457,7 @@ export const OmniCampaignModuleConfig = /*@__PURE__*/ proto3.makeMessageType(
     { no: 20, name: "flow_id", kind: "message", T: Int64Id },
     { no: 21, name: "skills", kind: "message", T: OmniConversationSkills },
     { no: 22, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
+    { no: 23, name: "content_id", kind: "message", T: StringValue },
   ],
 );
 
