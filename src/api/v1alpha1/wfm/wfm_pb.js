@@ -2295,7 +2295,7 @@ export const CreateWFMAgentMembershipsRes = /*@__PURE__*/ proto3.makeMessageType
 export const CopyWFMAgentMembershipsRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest",
   () => [
-    { no: 1, name: "originating_wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "originating_wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "target_wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );

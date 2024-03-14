@@ -6510,9 +6510,9 @@ export declare class CopyWFMAgentMembershipsRequest extends Message<CopyWFMAgent
   /**
    * ID of the wfm agent to copy the associations from.
    *
-   * @generated from field: int64 originating_wfm_agent_sids = 1;
+   * @generated from field: int64 originating_wfm_agent_sid = 1;
    */
-  originatingWfmAgentSids: bigint;
+  originatingWfmAgentSid: bigint;
 
   /**
    * ID of the wfm agent to copy the associations to.
