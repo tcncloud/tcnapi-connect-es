@@ -6502,6 +6502,62 @@ export declare class CreateWFMAgentMembershipsRes extends Message<CreateWFMAgent
 }
 
 /**
+ * Request message for the CopyWFMAgentMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest
+ */
+export declare class CopyWFMAgentMembershipsRequest extends Message<CopyWFMAgentMembershipsRequest> {
+  /**
+   * ID of the wfm agent to copy the associations from.
+   *
+   * @generated from field: int64 originating_wfm_agent_sids = 1;
+   */
+  originatingWfmAgentSids: bigint;
+
+  /**
+   * ID of the wfm agent to copy the associations to.
+   *
+   * @generated from field: int64 target_wfm_agent_sid = 2;
+   */
+  targetWfmAgentSid: bigint;
+
+  constructor(data?: PartialMessage<CopyWFMAgentMembershipsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyWFMAgentMembershipsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyWFMAgentMembershipsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyWFMAgentMembershipsRequest;
+
+  static equals(a: CopyWFMAgentMembershipsRequest | PlainMessage<CopyWFMAgentMembershipsRequest> | undefined, b: CopyWFMAgentMembershipsRequest | PlainMessage<CopyWFMAgentMembershipsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for CopyWFMAgentMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyWFMAgentMembershipsResponse
+ */
+export declare class CopyWFMAgentMembershipsResponse extends Message<CopyWFMAgentMembershipsResponse> {
+  constructor(data?: PartialMessage<CopyWFMAgentMembershipsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.CopyWFMAgentMembershipsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CopyWFMAgentMembershipsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CopyWFMAgentMembershipsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyWFMAgentMembershipsResponse;
+
+  static equals(a: CopyWFMAgentMembershipsResponse | PlainMessage<CopyWFMAgentMembershipsResponse> | undefined, b: CopyWFMAgentMembershipsResponse | PlainMessage<CopyWFMAgentMembershipsResponse> | undefined): boolean;
+}
+
+/**
  * Request message for the DeleteWFMAgentMemberships RPC
  *
  * @generated from message api.v1alpha1.wfm.DeleteWFMAgentMembershipsReq

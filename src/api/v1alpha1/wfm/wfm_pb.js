@@ -2288,6 +2288,29 @@ export const CreateWFMAgentMembershipsRes = /*@__PURE__*/ proto3.makeMessageType
 );
 
 /**
+ * Request message for the CopyWFMAgentMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest
+ */
+export const CopyWFMAgentMembershipsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyWFMAgentMembershipsRequest",
+  () => [
+    { no: 1, name: "originating_wfm_agent_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "target_wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Response message for CopyWFMAgentMemberships RPC
+ *
+ * @generated from message api.v1alpha1.wfm.CopyWFMAgentMembershipsResponse
+ */
+export const CopyWFMAgentMembershipsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.CopyWFMAgentMembershipsResponse",
+  [],
+);
+
+/**
  * Request message for the DeleteWFMAgentMemberships RPC
  *
  * @generated from message api.v1alpha1.wfm.DeleteWFMAgentMembershipsReq
