@@ -457,7 +457,7 @@ export const OmniCampaignModuleConfig = /*@__PURE__*/ proto3.makeMessageType(
     { no: 20, name: "flow_id", kind: "message", T: Int64Id },
     { no: 21, name: "skills", kind: "message", T: OmniConversationSkills },
     { no: 22, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
-    { no: 23, name: "provider_metadata", kind: "message", T: OmniProviderMetadata },
+    { no: 23, name: "provider_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ],
 );
 
@@ -1340,18 +1340,6 @@ export const WhatsAppNumber = /*@__PURE__*/ proto3.makeMessageType(
     { no: 5, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 6, name: "date_created", kind: "message", T: Timestamp },
     { no: 7, name: "date_modified", kind: "message", T: Timestamp },
-  ],
-);
-
-/**
- * OmniProviderMetadata -
- *
- * @generated from message api.commons.OmniProviderMetadata
- */
-export const OmniProviderMetadata = /*@__PURE__*/ proto3.makeMessageType(
-  "api.commons.OmniProviderMetadata",
-  () => [
-    { no: 1, name: "provider_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ],
 );
 

@@ -1415,9 +1415,9 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    *  - SmartPing
    *      content_id - the id of the premade message in the smartping system
    *
-   * @generated from field: api.commons.OmniProviderMetadata provider_metadata = 23;
+   * @generated from field: map<string, string> provider_metadata = 23;
    */
-  providerMetadata?: OmniProviderMetadata;
+  providerMetadata: { [key: string]: string };
 
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
@@ -4581,33 +4581,5 @@ export declare class WhatsAppNumber extends Message<WhatsAppNumber> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WhatsAppNumber;
 
   static equals(a: WhatsAppNumber | PlainMessage<WhatsAppNumber> | undefined, b: WhatsAppNumber | PlainMessage<WhatsAppNumber> | undefined): boolean;
-}
-
-/**
- * OmniProviderMetadata -
- *
- * @generated from message api.commons.OmniProviderMetadata
- */
-export declare class OmniProviderMetadata extends Message<OmniProviderMetadata> {
-  /**
-   * map of provider metadata
-   *
-   * @generated from field: map<string, string> provider_metadata = 1;
-   */
-  providerMetadata: { [key: string]: string };
-
-  constructor(data?: PartialMessage<OmniProviderMetadata>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.commons.OmniProviderMetadata";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniProviderMetadata;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniProviderMetadata;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniProviderMetadata;
-
-  static equals(a: OmniProviderMetadata | PlainMessage<OmniProviderMetadata> | undefined, b: OmniProviderMetadata | PlainMessage<OmniProviderMetadata> | undefined): boolean;
 }
 
