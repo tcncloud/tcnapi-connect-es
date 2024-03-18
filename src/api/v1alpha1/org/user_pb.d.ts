@@ -3596,11 +3596,6 @@ export declare class GetUserSessionDataResponse_User extends Message<GetUserSess
   authUserId: string;
 
   /**
-   * @generated from field: bool enable_mfa = 18;
-   */
-  enableMfa: boolean;
-
-  /**
    * The user's first name.
    *
    * @generated from field: string first_name = 19;

@@ -1141,7 +1141,6 @@ export const GetUserSessionDataResponse_User = /*@__PURE__*/ proto3.makeMessageT
     { no: 15, name: "caller_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 16, name: "linkback_numbers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 17, name: "auth_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 18, name: "enable_mfa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 19, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 21, name: "created", kind: "message", T: Timestamp },
