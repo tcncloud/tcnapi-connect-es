@@ -4136,7 +4136,7 @@ export declare class GetUserMfaInfoResponse extends Message<GetUserMfaInfoRespon
 }
 
 /**
- * Response message for the GetMyUserMfaInfo rpc.
+ * Request message for the GetMyUserMfaInfo rpc.
  *
  * @generated from message api.v1alpha1.org.GetMyUserMfaInfoRequest
  */
@@ -4157,7 +4157,7 @@ export declare class GetMyUserMfaInfoRequest extends Message<GetMyUserMfaInfoReq
 }
 
 /**
- * Request message for the GetMyUserMfaInfo rpc.
+ * Response message for the GetMyUserMfaInfo rpc.
  *
  * @generated from message api.v1alpha1.org.GetMyUserMfaInfoResponse
  */
@@ -4180,5 +4180,68 @@ export declare class GetMyUserMfaInfoResponse extends Message<GetMyUserMfaInfoRe
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyUserMfaInfoResponse;
 
   static equals(a: GetMyUserMfaInfoResponse | PlainMessage<GetMyUserMfaInfoResponse> | undefined, b: GetMyUserMfaInfoResponse | PlainMessage<GetMyUserMfaInfoResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the GetMyAllowedMfaMethods rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyAllowedMfaMethodsRequest
+ */
+export declare class GetMyAllowedMfaMethodsRequest extends Message<GetMyAllowedMfaMethodsRequest> {
+  constructor(data?: PartialMessage<GetMyAllowedMfaMethodsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetMyAllowedMfaMethodsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyAllowedMfaMethodsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyAllowedMfaMethodsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyAllowedMfaMethodsRequest;
+
+  static equals(a: GetMyAllowedMfaMethodsRequest | PlainMessage<GetMyAllowedMfaMethodsRequest> | undefined, b: GetMyAllowedMfaMethodsRequest | PlainMessage<GetMyAllowedMfaMethodsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the GetMyAllowedMfaMethods rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyAllowedMfaMethodsResponse
+ */
+export declare class GetMyAllowedMfaMethodsResponse extends Message<GetMyAllowedMfaMethodsResponse> {
+  /**
+   * If the user is allowed to set up mfa
+   *
+   * @generated from field: bool mfa_enabled = 1;
+   */
+  mfaEnabled: boolean;
+
+  /**
+   * If the user is allowed to set up email mfa
+   *
+   * @generated from field: bool email_enabled = 2;
+   */
+  emailEnabled: boolean;
+
+  /**
+   * If the user is allowed to set up duo mfa
+   *
+   * @generated from field: bool duo_enabled = 3;
+   */
+  duoEnabled: boolean;
+
+  constructor(data?: PartialMessage<GetMyAllowedMfaMethodsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.GetMyAllowedMfaMethodsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetMyAllowedMfaMethodsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetMyAllowedMfaMethodsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetMyAllowedMfaMethodsResponse;
+
+  static equals(a: GetMyAllowedMfaMethodsResponse | PlainMessage<GetMyAllowedMfaMethodsResponse> | undefined, b: GetMyAllowedMfaMethodsResponse | PlainMessage<GetMyAllowedMfaMethodsResponse> | undefined): boolean;
 }
 
