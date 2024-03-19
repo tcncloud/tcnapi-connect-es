@@ -2620,29 +2620,11 @@ export declare class BusinessHours extends Message<BusinessHours> {
   orgId: string;
 
   /**
-   * @generated from field: string id = 2 [deprecated = true];
-   * @deprecated
-   */
-  id: string;
-
-  /**
-   * @generated from field: string name = 3 [deprecated = true];
-   * @deprecated
-   */
-  name: string;
-
-  /**
    * The description of the BusinessHours object.
    *
    * @generated from field: string description = 4;
    */
   description: string;
-
-  /**
-   * @generated from field: repeated api.commons.org.Range ranges = 5 [deprecated = true];
-   * @deprecated
-   */
-  ranges: Range[];
 
   /**
    * The id of the BusinessHours object.
