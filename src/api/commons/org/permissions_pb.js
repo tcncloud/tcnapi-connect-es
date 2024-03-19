@@ -54,6 +54,7 @@ export const License = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "app", kind: "enum", T: proto3.getEnumType(Application) },
     { no: 2, name: "cards", kind: "message", T: License_Card, repeated: true },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
