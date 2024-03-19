@@ -2757,9 +2757,9 @@ export declare class SetBusinessHoursResponse extends Message<SetBusinessHoursRe
   /**
    * The id of the new business hours
    *
-   * @generated from field: string business_horus_id = 1;
+   * @generated from field: string business_hours_id = 1;
    */
-  businessHorusId: string;
+  businessHoursId: string;
 
   constructor(data?: PartialMessage<SetBusinessHoursResponse>);
 

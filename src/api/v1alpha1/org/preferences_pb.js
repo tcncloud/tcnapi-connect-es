@@ -1165,7 +1165,7 @@ export const SetBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const SetBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.SetBusinessHoursResponse",
   () => [
-    { no: 1, name: "business_horus_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
