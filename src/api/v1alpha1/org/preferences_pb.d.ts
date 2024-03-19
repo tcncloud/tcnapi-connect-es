@@ -2890,6 +2890,11 @@ export declare class UpdateBusinessHoursInfoRequest extends Message<UpdateBusine
    */
   timezone: TimeZone;
 
+  /**
+   * @generated from field: google.protobuf.FieldMask field_mask = 5;
+   */
+  fieldMask?: FieldMask;
+
   constructor(data?: PartialMessage<UpdateBusinessHoursInfoRequest>);
 
   static readonly runtime: typeof proto3;

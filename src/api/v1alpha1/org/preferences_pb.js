@@ -1227,6 +1227,7 @@ export const UpdateBusinessHoursInfoRequest = /*@__PURE__*/ proto3.makeMessageTy
     { no: 2, name: "business_hours_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+    { no: 5, name: "field_mask", kind: "message", T: FieldMask },
   ],
 );
 
