@@ -763,10 +763,7 @@ export const BusinessHours = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.org.BusinessHours",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "ranges", kind: "message", T: Range, repeated: true },
     { no: 6, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "business_hours_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
