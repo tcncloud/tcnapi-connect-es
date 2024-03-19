@@ -1141,7 +1141,6 @@ export const GetUserSessionDataResponse_User = /*@__PURE__*/ proto3.makeMessageT
     { no: 15, name: "caller_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 16, name: "linkback_numbers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 17, name: "auth_user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 18, name: "enable_mfa", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 19, name: "first_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 20, name: "last_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 21, name: "created", kind: "message", T: Timestamp },
@@ -1337,7 +1336,7 @@ export const GetUserMfaInfoResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * Response message for the GetMyUserMfaInfo rpc.
+ * Request message for the GetMyUserMfaInfo rpc.
  *
  * @generated from message api.v1alpha1.org.GetMyUserMfaInfoRequest
  */
@@ -1347,7 +1346,7 @@ export const GetMyUserMfaInfoRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * Request message for the GetMyUserMfaInfo rpc.
+ * Response message for the GetMyUserMfaInfo rpc.
  *
  * @generated from message api.v1alpha1.org.GetMyUserMfaInfoResponse
  */
@@ -1355,6 +1354,30 @@ export const GetMyUserMfaInfoResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.GetMyUserMfaInfoResponse",
   () => [
     { no: 1, name: "info", kind: "message", T: MfaInfo },
+  ],
+);
+
+/**
+ * Request message for the GetMyAllowedMfaMethods rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyAllowedMfaMethodsRequest
+ */
+export const GetMyAllowedMfaMethodsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.GetMyAllowedMfaMethodsRequest",
+  [],
+);
+
+/**
+ * Response message for the GetMyAllowedMfaMethods rpc.
+ *
+ * @generated from message api.v1alpha1.org.GetMyAllowedMfaMethodsResponse
+ */
+export const GetMyAllowedMfaMethodsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.GetMyAllowedMfaMethodsResponse",
+  () => [
+    { no: 1, name: "mfa_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "email_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 3, name: "duo_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
