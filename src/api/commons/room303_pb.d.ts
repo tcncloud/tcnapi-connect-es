@@ -267,11 +267,11 @@ export declare class Room extends Message$1<Room> {
   config?: RoomConfig;
 
   /**
-   * The id of the permission group that is being assigned to this room.
+   * Optional id of the permission group assigned to this room.
    *
-   * @generated from field: string permission_group_id = 11;
+   * @generated from field: google.protobuf.StringValue permission_group_id = 11;
    */
-  permissionGroupId: string;
+  permissionGroupId?: string;
 
   constructor(data?: PartialMessage<Room>);
 
