@@ -157,13 +157,6 @@ export declare class License extends Message<License> {
    */
   cards: License_Card[];
 
-  /**
-   * Name of the license (to be displayed in the UI)
-   *
-   * @generated from field: string name = 3;
-   */
-  name: string;
-
   constructor(data?: PartialMessage<License>);
 
   static readonly runtime: typeof proto3;
