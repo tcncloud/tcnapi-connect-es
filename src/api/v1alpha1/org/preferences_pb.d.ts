@@ -3014,3 +3014,60 @@ export declare class DeleteBusinessHoursResponse extends Message<DeleteBusinessH
   static equals(a: DeleteBusinessHoursResponse | PlainMessage<DeleteBusinessHoursResponse> | undefined, b: DeleteBusinessHoursResponse | PlainMessage<DeleteBusinessHoursResponse> | undefined): boolean;
 }
 
+/**
+ * Request for EvaluateBusinessHours
+ *
+ * @generated from message api.v1alpha1.org.EvaluateBusinessHoursRequest
+ */
+export declare class EvaluateBusinessHoursRequest extends Message<EvaluateBusinessHoursRequest> {
+  /**
+   * The id of the business hours to evaluate
+   *
+   * @generated from field: string business_hours_id = 1;
+   */
+  businessHoursId: string;
+
+  constructor(data?: PartialMessage<EvaluateBusinessHoursRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.EvaluateBusinessHoursRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvaluateBusinessHoursRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvaluateBusinessHoursRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvaluateBusinessHoursRequest;
+
+  static equals(a: EvaluateBusinessHoursRequest | PlainMessage<EvaluateBusinessHoursRequest> | undefined, b: EvaluateBusinessHoursRequest | PlainMessage<EvaluateBusinessHoursRequest> | undefined): boolean;
+}
+
+/**
+ * Response for EvaluateBusinessHours
+ *
+ * @generated from message api.v1alpha1.org.EvaluateBusinessHoursResponse
+ */
+export declare class EvaluateBusinessHoursResponse extends Message<EvaluateBusinessHoursResponse> {
+  /**
+   * Resulting boolean if the current time is within
+   * a day interval of a business hours object
+   *
+   * @generated from field: bool within_range = 1;
+   */
+  withinRange: boolean;
+
+  constructor(data?: PartialMessage<EvaluateBusinessHoursResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.EvaluateBusinessHoursResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EvaluateBusinessHoursResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EvaluateBusinessHoursResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EvaluateBusinessHoursResponse;
+
+  static equals(a: EvaluateBusinessHoursResponse | PlainMessage<EvaluateBusinessHoursResponse> | undefined, b: EvaluateBusinessHoursResponse | PlainMessage<EvaluateBusinessHoursResponse> | undefined): boolean;
+}
+

@@ -1263,3 +1263,27 @@ export const DeleteBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   [],
 );
 
+/**
+ * Request for EvaluateBusinessHours
+ *
+ * @generated from message api.v1alpha1.org.EvaluateBusinessHoursRequest
+ */
+export const EvaluateBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.EvaluateBusinessHoursRequest",
+  () => [
+    { no: 1, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response for EvaluateBusinessHours
+ *
+ * @generated from message api.v1alpha1.org.EvaluateBusinessHoursResponse
+ */
+export const EvaluateBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.EvaluateBusinessHoursResponse",
+  () => [
+    { no: 1, name: "within_range", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
