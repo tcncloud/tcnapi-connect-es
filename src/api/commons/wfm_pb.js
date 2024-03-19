@@ -371,6 +371,26 @@ export const InitialSetupState = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * Enum representing the real time state of a WFM agent.
+ *
+ * @generated from enum api.commons.AgentRTMState
+ */
+export const AgentRTMState = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.AgentRTMState",
+  [
+    {no: 0, name: "LOGGED_IN"},
+    {no: 1, name: "ACD_INBOUND_CALL"},
+    {no: 2, name: "DIRECT_OUTBOUND_CALL"},
+    {no: 3, name: "CALL_ON_HOLD"},
+    {no: 4, name: "OUTBOUND_CALL"},
+    {no: 5, name: "INBOUND_CALL"},
+    {no: 6, name: "TRANSFER"},
+    {no: 7, name: "CONFERENCE"},
+    {no: 8, name: "READY"},
+  ],
+);
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
@@ -677,6 +697,38 @@ export const InitialSetupStatus = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "state", kind: "enum", T: proto3.getEnumType(InitialSetupState) },
     { no: 2, name: "progress_percentage", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Represents an agents real time state over a period of time.
+ *
+ * @generated from message api.commons.AgentStateSegment
+ */
+export const AgentStateSegment = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.AgentStateSegment",
+  () => [
+    { no: 1, name: "order_in_rts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "state", kind: "enum", T: proto3.getEnumType(AgentRTMState) },
+    { no: 3, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "agent_state_segment_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "agent_state_sequence_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Represents a sequence of real time states for a WFM agent.
+ *
+ * @generated from message api.commons.AgentStateSequence
+ */
+export const AgentStateSequence = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.AgentStateSequence",
+  () => [
+    { no: 1, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "start_datetime", kind: "message", T: Timestamp },
+    { no: 3, name: "state_segments", kind: "message", T: AgentStateSegment, repeated: true },
+    { no: 4, name: "total_width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 5, name: "agent_state_sequence_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

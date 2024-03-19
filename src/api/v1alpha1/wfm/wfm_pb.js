@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -5389,6 +5389,31 @@ export const HelloWorldWFMAdherenceResponse = /*@__PURE__*/ proto3.makeMessageTy
   "api.v1alpha1.wfm.HelloWorldWFMAdherenceResponse",
   () => [
     { no: 1, name: "hello_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Request message for the ListAgentStatesForDay RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentStatesForDayRequest
+ */
+export const ListAgentStatesForDayRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListAgentStatesForDayRequest",
+  () => [
+    { no: 1, name: "start_datetime", kind: "message", T: Timestamp },
+    { no: 2, name: "end_datetime", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * Response message for the ListAgentStatesForDay RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentStatesForDayResponse
+ */
+export const ListAgentStatesForDayResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListAgentStatesForDayResponse",
+  () => [
+    { no: 1, name: "agent_states", kind: "message", T: AgentStateSequence, repeated: true },
   ],
 );
 

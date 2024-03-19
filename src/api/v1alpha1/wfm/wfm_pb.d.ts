@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -15446,5 +15446,73 @@ export declare class HelloWorldWFMAdherenceResponse extends Message<HelloWorldWF
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HelloWorldWFMAdherenceResponse;
 
   static equals(a: HelloWorldWFMAdherenceResponse | PlainMessage<HelloWorldWFMAdherenceResponse> | undefined, b: HelloWorldWFMAdherenceResponse | PlainMessage<HelloWorldWFMAdherenceResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListAgentStatesForDay RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentStatesForDayRequest
+ */
+export declare class ListAgentStatesForDayRequest extends Message<ListAgentStatesForDayRequest> {
+  /**
+   * An optional parameter.
+   * The datetime to start get agent states for.
+   * If set, agent states will be retrieved starting at this datetime.
+   * If not set, agent states will be retrieved starting from the start of today, based on the...
+   *
+   * @generated from field: google.protobuf.Timestamp start_datetime = 1;
+   */
+  startDatetime?: Timestamp;
+
+  /**
+   * An optional parameter.
+   * If set, all agent states will be retrieved for the given datetime range.
+   * If not set, all agent states will be retrieved for either a 24 hour period or until the current time.
+   *
+   * @generated from field: google.protobuf.Timestamp end_datetime = 2;
+   */
+  endDatetime?: Timestamp;
+
+  constructor(data?: PartialMessage<ListAgentStatesForDayRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListAgentStatesForDayRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentStatesForDayRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentStatesForDayRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentStatesForDayRequest;
+
+  static equals(a: ListAgentStatesForDayRequest | PlainMessage<ListAgentStatesForDayRequest> | undefined, b: ListAgentStatesForDayRequest | PlainMessage<ListAgentStatesForDayRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the ListAgentStatesForDay RPC.
+ *
+ * @generated from message api.v1alpha1.wfm.ListAgentStatesForDayResponse
+ */
+export declare class ListAgentStatesForDayResponse extends Message<ListAgentStatesForDayResponse> {
+  /**
+   * The list of requested agent states.
+   *
+   * @generated from field: repeated api.commons.AgentStateSequence agent_states = 1;
+   */
+  agentStates: AgentStateSequence[];
+
+  constructor(data?: PartialMessage<ListAgentStatesForDayResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListAgentStatesForDayResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentStatesForDayResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentStatesForDayResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentStatesForDayResponse;
+
+  static equals(a: ListAgentStatesForDayResponse | PlainMessage<ListAgentStatesForDayResponse> | undefined, b: ListAgentStatesForDayResponse | PlainMessage<ListAgentStatesForDayResponse> | undefined): boolean;
 }
 
