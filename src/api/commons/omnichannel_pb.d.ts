@@ -1410,6 +1410,15 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    */
   whatsappNumber?: WhatsAppNumber;
 
+  /**
+   * ProviderMetadata
+   *  - SmartPing
+   *      content_id - the id of the premade message in the smartping system
+   *
+   * @generated from field: map<string, string> provider_metadata = 23;
+   */
+  providerMetadata: { [key: string]: string };
+
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
   static readonly runtime: typeof proto3;
