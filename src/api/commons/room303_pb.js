@@ -99,6 +99,7 @@ export const Room = /*@__PURE__*/ proto3.makeMessageType(
     { no: 8, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "display_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "config", kind: "message", T: RoomConfig },
+    { no: 11, name: "permission_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
