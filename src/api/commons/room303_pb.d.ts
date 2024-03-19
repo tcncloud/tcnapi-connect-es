@@ -266,6 +266,13 @@ export declare class Room extends Message$1<Room> {
    */
   config?: RoomConfig;
 
+  /**
+   * Optional id of the permission group assigned to this room.
+   *
+   * @generated from field: google.protobuf.StringValue permission_group_id = 11;
+   */
+  permissionGroupId?: string;
+
   constructor(data?: PartialMessage<Room>);
 
   static readonly runtime: typeof proto3;
