@@ -2494,6 +2494,7 @@ export declare class ClearEmailUnsubscribeAcknowledgementResponse extends Messag
  * Request for persisting business hours.
  *
  * @generated from message api.v1alpha1.org.CreateBusinessHoursRequest
+ * @deprecated
  */
 export declare class CreateBusinessHoursRequest extends Message<CreateBusinessHoursRequest> {
   /**
@@ -2520,6 +2521,7 @@ export declare class CreateBusinessHoursRequest extends Message<CreateBusinessHo
  * Response for persisting business hours.
  *
  * @generated from message api.v1alpha1.org.CreateBusinessHoursResponse
+ * @deprecated
  */
 export declare class CreateBusinessHoursResponse extends Message<CreateBusinessHoursResponse> {
   /**
@@ -2546,6 +2548,7 @@ export declare class CreateBusinessHoursResponse extends Message<CreateBusinessH
  * Request for updating business hours.
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursRequest
+ * @deprecated
  */
 export declare class UpdateBusinessHoursRequest extends Message<UpdateBusinessHoursRequest> {
   /**
@@ -2572,6 +2575,7 @@ export declare class UpdateBusinessHoursRequest extends Message<UpdateBusinessHo
  * Response for updating business hours.
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursResponse
+ * @deprecated
  */
 export declare class UpdateBusinessHoursResponse extends Message<UpdateBusinessHoursResponse> {
   constructor(data?: PartialMessage<UpdateBusinessHoursResponse>);

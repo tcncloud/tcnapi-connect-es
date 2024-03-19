@@ -1049,6 +1049,7 @@ export const ClearEmailUnsubscribeAcknowledgementResponse = /*@__PURE__*/ proto3
  * Request for persisting business hours.
  *
  * @generated from message api.v1alpha1.org.CreateBusinessHoursRequest
+ * @deprecated
  */
 export const CreateBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.CreateBusinessHoursRequest",
@@ -1061,6 +1062,7 @@ export const CreateBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
  * Response for persisting business hours.
  *
  * @generated from message api.v1alpha1.org.CreateBusinessHoursResponse
+ * @deprecated
  */
 export const CreateBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.CreateBusinessHoursResponse",
@@ -1073,6 +1075,7 @@ export const CreateBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
  * Request for updating business hours.
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursRequest
+ * @deprecated
  */
 export const UpdateBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.UpdateBusinessHoursRequest",
@@ -1085,6 +1088,7 @@ export const UpdateBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
  * Response for updating business hours.
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursResponse
+ * @deprecated
  */
 export const UpdateBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.UpdateBusinessHoursResponse",
