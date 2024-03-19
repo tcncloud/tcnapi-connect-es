@@ -4,7 +4,8 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AdminClientPreferences, AgentPreferences, AuthenticationPreferences, BroadcastPreferences, BusinessHours, BusinessPreferences, CompliancePreferences, ContactPreferences, DashboardPreferences, DashboardQueuePreferences, EmailSmsPreferences, EndOfDayPreferences, FilterPreferences, OrganizationPreferences, PhonePreferences, RecordingPreferences, SchedulePreferences, ScorecardsPreferences, VoiceAnalyticsPreferences, WebhookPreferences } from "../../commons/org/preferences_pb.js";
+import { AdminClientPreferences, AgentPreferences, AuthenticationPreferences, BroadcastPreferences, BusinessHours, BusinessPreferences, CompliancePreferences, ContactPreferences, DashboardPreferences, DashboardQueuePreferences, DayInterval, EmailSmsPreferences, EndOfDayPreferences, FilterPreferences, OrganizationPreferences, PhonePreferences, RecordingPreferences, SchedulePreferences, ScorecardsPreferences, VoiceAnalyticsPreferences, WebhookPreferences } from "../../commons/org/preferences_pb.js";
+import { TimeZone } from "../../commons/org_pb.js";
 
 /**
  * Request for the GetOrganizationPreferences RPC.
@@ -1096,28 +1097,6 @@ export const UpdateBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * Request for deleting business hours.
- *
- * @generated from message api.v1alpha1.org.DeleteBusinessHoursRequest
- */
-export const DeleteBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.DeleteBusinessHoursRequest",
-  () => [
-    { no: 1, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * Response for deleting business hours.
- *
- * @generated from message api.v1alpha1.org.DeleteBusinessHoursResponse
- */
-export const DeleteBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.DeleteBusinessHoursResponse",
-  [],
-);
-
-/**
  * Request for listing business hours.
  *
  * @generated from message api.v1alpha1.org.ListBusinessHoursRequest
@@ -1135,7 +1114,7 @@ export const ListBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const ListBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.ListBusinessHoursResponse",
   () => [
-    { no: 1, name: "business_hours_lists", kind: "message", T: BusinessHours, repeated: true },
+    { no: 2, name: "business_hours", kind: "message", T: BusinessHours, repeated: true },
   ],
 );
 
@@ -1161,5 +1140,125 @@ export const GetBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "business_hours", kind: "message", T: BusinessHours },
   ],
+);
+
+/**
+ * Request for initializing a business hours object
+ *
+ * @generated from message api.v1alpha1.org.SetBusinessHoursRequest
+ */
+export const SetBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.SetBusinessHoursRequest",
+  () => [
+    { no: 1, name: "business_hours_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "day_intervals", kind: "message", T: DayInterval, repeated: true },
+    { no: 4, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+  ],
+);
+
+/**
+ * Response for initializing a business hours object
+ *
+ * @generated from message api.v1alpha1.org.SetBusinessHoursResponse
+ */
+export const SetBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.SetBusinessHoursResponse",
+  () => [
+    { no: 1, name: "business_horus_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Request for adding an interval to a business hours object
+ *
+ * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursRequest
+ */
+export const AddIntervalToBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AddIntervalToBusinessHoursRequest",
+  () => [
+    { no: 1, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "day_interval", kind: "message", T: DayInterval },
+  ],
+);
+
+/**
+ * Response for adding an interval to a business hours object
+ *
+ * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursResponse
+ */
+export const AddIntervalToBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AddIntervalToBusinessHoursResponse",
+  [],
+);
+
+/**
+ * Request for removing an interval from a business hours object
+ *
+ * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursRequest
+ */
+export const RemoveIntervalFromBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RemoveIntervalFromBusinessHoursRequest",
+  () => [
+    { no: 1, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "day_interval", kind: "message", T: DayInterval },
+  ],
+);
+
+/**
+ * Response for removing an interval from a business hours object
+ *
+ * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursResponse
+ */
+export const RemoveIntervalFromBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RemoveIntervalFromBusinessHoursResponse",
+  [],
+);
+
+/**
+ * Request for updating the business hours info
+ *
+ * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoRequest
+ */
+export const UpdateBusinessHoursInfoRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateBusinessHoursInfoRequest",
+  () => [
+    { no: 1, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "business_hours_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+  ],
+);
+
+/**
+ * Response for updating the business hours info
+ *
+ * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoResponse
+ */
+export const UpdateBusinessHoursInfoResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateBusinessHoursInfoResponse",
+  [],
+);
+
+/**
+ * Request for deleting business hours.
+ *
+ * @generated from message api.v1alpha1.org.DeleteBusinessHoursRequest
+ */
+export const DeleteBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteBusinessHoursRequest",
+  () => [
+    { no: 1, name: "business_hours_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response for deleting business hours.
+ *
+ * @generated from message api.v1alpha1.org.DeleteBusinessHoursResponse
+ */
+export const DeleteBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.DeleteBusinessHoursResponse",
+  [],
 );
 

@@ -5,7 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AdminClientPreferences, AgentPreferences, AuthenticationPreferences, BroadcastPreferences, BusinessHours, BusinessPreferences, CompliancePreferences, ContactPreferences, DashboardPreferences, DashboardQueuePreferences, EmailSmsPreferences, EndOfDayPreferences, FilterPreferences, OrganizationPreferences, PhonePreferences, RecordingPreferences, SchedulePreferences, ScorecardsPreferences, VoiceAnalyticsPreferences, WebhookPreferences } from "../../commons/org/preferences_pb.js";
+import type { AdminClientPreferences, AgentPreferences, AuthenticationPreferences, BroadcastPreferences, BusinessHours, BusinessPreferences, CompliancePreferences, ContactPreferences, DashboardPreferences, DashboardQueuePreferences, DayInterval, EmailSmsPreferences, EndOfDayPreferences, FilterPreferences, OrganizationPreferences, PhonePreferences, RecordingPreferences, SchedulePreferences, ScorecardsPreferences, VoiceAnalyticsPreferences, WebhookPreferences } from "../../commons/org/preferences_pb.js";
+import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
  * Request for the GetOrganizationPreferences RPC.
@@ -2594,53 +2595,6 @@ export declare class UpdateBusinessHoursResponse extends Message<UpdateBusinessH
 }
 
 /**
- * Request for deleting business hours.
- *
- * @generated from message api.v1alpha1.org.DeleteBusinessHoursRequest
- */
-export declare class DeleteBusinessHoursRequest extends Message<DeleteBusinessHoursRequest> {
-  /**
-   * @generated from field: string business_hours_id = 1;
-   */
-  businessHoursId: string;
-
-  constructor(data?: PartialMessage<DeleteBusinessHoursRequest>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.DeleteBusinessHoursRequest";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteBusinessHoursRequest;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteBusinessHoursRequest;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteBusinessHoursRequest;
-
-  static equals(a: DeleteBusinessHoursRequest | PlainMessage<DeleteBusinessHoursRequest> | undefined, b: DeleteBusinessHoursRequest | PlainMessage<DeleteBusinessHoursRequest> | undefined): boolean;
-}
-
-/**
- * Response for deleting business hours.
- *
- * @generated from message api.v1alpha1.org.DeleteBusinessHoursResponse
- */
-export declare class DeleteBusinessHoursResponse extends Message<DeleteBusinessHoursResponse> {
-  constructor(data?: PartialMessage<DeleteBusinessHoursResponse>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.DeleteBusinessHoursResponse";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteBusinessHoursResponse;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteBusinessHoursResponse;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteBusinessHoursResponse;
-
-  static equals(a: DeleteBusinessHoursResponse | PlainMessage<DeleteBusinessHoursResponse> | undefined, b: DeleteBusinessHoursResponse | PlainMessage<DeleteBusinessHoursResponse> | undefined): boolean;
-}
-
-/**
  * Request for listing business hours.
  *
  * @generated from message api.v1alpha1.org.ListBusinessHoursRequest
@@ -2668,9 +2622,9 @@ export declare class ListBusinessHoursRequest extends Message<ListBusinessHoursR
  */
 export declare class ListBusinessHoursResponse extends Message<ListBusinessHoursResponse> {
   /**
-   * @generated from field: repeated api.commons.org.BusinessHours business_hours_lists = 1;
+   * @generated from field: repeated api.commons.org.BusinessHours business_hours = 2;
    */
-  businessHoursLists: BusinessHours[];
+  businessHours: BusinessHours[];
 
   constructor(data?: PartialMessage<ListBusinessHoursResponse>);
 
@@ -2737,5 +2691,285 @@ export declare class GetBusinessHoursResponse extends Message<GetBusinessHoursRe
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBusinessHoursResponse;
 
   static equals(a: GetBusinessHoursResponse | PlainMessage<GetBusinessHoursResponse> | undefined, b: GetBusinessHoursResponse | PlainMessage<GetBusinessHoursResponse> | undefined): boolean;
+}
+
+/**
+ * Request for initializing a business hours object
+ *
+ * @generated from message api.v1alpha1.org.SetBusinessHoursRequest
+ */
+export declare class SetBusinessHoursRequest extends Message<SetBusinessHoursRequest> {
+  /**
+   * @generated from field: string business_hours_name = 1;
+   */
+  businessHoursName: string;
+
+  /**
+   * @generated from field: string description = 2;
+   */
+  description: string;
+
+  /**
+   * @generated from field: repeated api.commons.org.DayInterval day_intervals = 3;
+   */
+  dayIntervals: DayInterval[];
+
+  /**
+   * @generated from field: api.commons.TimeZone timezone = 4;
+   */
+  timezone: TimeZone;
+
+  constructor(data?: PartialMessage<SetBusinessHoursRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SetBusinessHoursRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetBusinessHoursRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetBusinessHoursRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetBusinessHoursRequest;
+
+  static equals(a: SetBusinessHoursRequest | PlainMessage<SetBusinessHoursRequest> | undefined, b: SetBusinessHoursRequest | PlainMessage<SetBusinessHoursRequest> | undefined): boolean;
+}
+
+/**
+ * Response for initializing a business hours object
+ *
+ * @generated from message api.v1alpha1.org.SetBusinessHoursResponse
+ */
+export declare class SetBusinessHoursResponse extends Message<SetBusinessHoursResponse> {
+  /**
+   * @generated from field: string business_horus_id = 1;
+   */
+  businessHorusId: string;
+
+  constructor(data?: PartialMessage<SetBusinessHoursResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.SetBusinessHoursResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SetBusinessHoursResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SetBusinessHoursResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SetBusinessHoursResponse;
+
+  static equals(a: SetBusinessHoursResponse | PlainMessage<SetBusinessHoursResponse> | undefined, b: SetBusinessHoursResponse | PlainMessage<SetBusinessHoursResponse> | undefined): boolean;
+}
+
+/**
+ * Request for adding an interval to a business hours object
+ *
+ * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursRequest
+ */
+export declare class AddIntervalToBusinessHoursRequest extends Message<AddIntervalToBusinessHoursRequest> {
+  /**
+   * @generated from field: string business_hours_id = 1;
+   */
+  businessHoursId: string;
+
+  /**
+   * @generated from field: api.commons.org.DayInterval day_interval = 2;
+   */
+  dayInterval?: DayInterval;
+
+  constructor(data?: PartialMessage<AddIntervalToBusinessHoursRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.AddIntervalToBusinessHoursRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddIntervalToBusinessHoursRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddIntervalToBusinessHoursRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddIntervalToBusinessHoursRequest;
+
+  static equals(a: AddIntervalToBusinessHoursRequest | PlainMessage<AddIntervalToBusinessHoursRequest> | undefined, b: AddIntervalToBusinessHoursRequest | PlainMessage<AddIntervalToBusinessHoursRequest> | undefined): boolean;
+}
+
+/**
+ * Response for adding an interval to a business hours object
+ *
+ * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursResponse
+ */
+export declare class AddIntervalToBusinessHoursResponse extends Message<AddIntervalToBusinessHoursResponse> {
+  constructor(data?: PartialMessage<AddIntervalToBusinessHoursResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.AddIntervalToBusinessHoursResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddIntervalToBusinessHoursResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddIntervalToBusinessHoursResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddIntervalToBusinessHoursResponse;
+
+  static equals(a: AddIntervalToBusinessHoursResponse | PlainMessage<AddIntervalToBusinessHoursResponse> | undefined, b: AddIntervalToBusinessHoursResponse | PlainMessage<AddIntervalToBusinessHoursResponse> | undefined): boolean;
+}
+
+/**
+ * Request for removing an interval from a business hours object
+ *
+ * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursRequest
+ */
+export declare class RemoveIntervalFromBusinessHoursRequest extends Message<RemoveIntervalFromBusinessHoursRequest> {
+  /**
+   * @generated from field: string business_hours_id = 1;
+   */
+  businessHoursId: string;
+
+  /**
+   * @generated from field: api.commons.org.DayInterval day_interval = 2;
+   */
+  dayInterval?: DayInterval;
+
+  constructor(data?: PartialMessage<RemoveIntervalFromBusinessHoursRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.RemoveIntervalFromBusinessHoursRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveIntervalFromBusinessHoursRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveIntervalFromBusinessHoursRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveIntervalFromBusinessHoursRequest;
+
+  static equals(a: RemoveIntervalFromBusinessHoursRequest | PlainMessage<RemoveIntervalFromBusinessHoursRequest> | undefined, b: RemoveIntervalFromBusinessHoursRequest | PlainMessage<RemoveIntervalFromBusinessHoursRequest> | undefined): boolean;
+}
+
+/**
+ * Response for removing an interval from a business hours object
+ *
+ * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursResponse
+ */
+export declare class RemoveIntervalFromBusinessHoursResponse extends Message<RemoveIntervalFromBusinessHoursResponse> {
+  constructor(data?: PartialMessage<RemoveIntervalFromBusinessHoursResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.RemoveIntervalFromBusinessHoursResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RemoveIntervalFromBusinessHoursResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RemoveIntervalFromBusinessHoursResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RemoveIntervalFromBusinessHoursResponse;
+
+  static equals(a: RemoveIntervalFromBusinessHoursResponse | PlainMessage<RemoveIntervalFromBusinessHoursResponse> | undefined, b: RemoveIntervalFromBusinessHoursResponse | PlainMessage<RemoveIntervalFromBusinessHoursResponse> | undefined): boolean;
+}
+
+/**
+ * Request for updating the business hours info
+ *
+ * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoRequest
+ */
+export declare class UpdateBusinessHoursInfoRequest extends Message<UpdateBusinessHoursInfoRequest> {
+  /**
+   * @generated from field: string business_hours_id = 1;
+   */
+  businessHoursId: string;
+
+  /**
+   * @generated from field: string business_hours_name = 2;
+   */
+  businessHoursName: string;
+
+  /**
+   * @generated from field: string description = 3;
+   */
+  description: string;
+
+  /**
+   * @generated from field: api.commons.TimeZone timezone = 4;
+   */
+  timezone: TimeZone;
+
+  constructor(data?: PartialMessage<UpdateBusinessHoursInfoRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateBusinessHoursInfoRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateBusinessHoursInfoRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateBusinessHoursInfoRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateBusinessHoursInfoRequest;
+
+  static equals(a: UpdateBusinessHoursInfoRequest | PlainMessage<UpdateBusinessHoursInfoRequest> | undefined, b: UpdateBusinessHoursInfoRequest | PlainMessage<UpdateBusinessHoursInfoRequest> | undefined): boolean;
+}
+
+/**
+ * Response for updating the business hours info
+ *
+ * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoResponse
+ */
+export declare class UpdateBusinessHoursInfoResponse extends Message<UpdateBusinessHoursInfoResponse> {
+  constructor(data?: PartialMessage<UpdateBusinessHoursInfoResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateBusinessHoursInfoResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateBusinessHoursInfoResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateBusinessHoursInfoResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateBusinessHoursInfoResponse;
+
+  static equals(a: UpdateBusinessHoursInfoResponse | PlainMessage<UpdateBusinessHoursInfoResponse> | undefined, b: UpdateBusinessHoursInfoResponse | PlainMessage<UpdateBusinessHoursInfoResponse> | undefined): boolean;
+}
+
+/**
+ * Request for deleting business hours.
+ *
+ * @generated from message api.v1alpha1.org.DeleteBusinessHoursRequest
+ */
+export declare class DeleteBusinessHoursRequest extends Message<DeleteBusinessHoursRequest> {
+  /**
+   * @generated from field: string business_hours_id = 1;
+   */
+  businessHoursId: string;
+
+  constructor(data?: PartialMessage<DeleteBusinessHoursRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.DeleteBusinessHoursRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteBusinessHoursRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteBusinessHoursRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteBusinessHoursRequest;
+
+  static equals(a: DeleteBusinessHoursRequest | PlainMessage<DeleteBusinessHoursRequest> | undefined, b: DeleteBusinessHoursRequest | PlainMessage<DeleteBusinessHoursRequest> | undefined): boolean;
+}
+
+/**
+ * Response for deleting business hours.
+ *
+ * @generated from message api.v1alpha1.org.DeleteBusinessHoursResponse
+ */
+export declare class DeleteBusinessHoursResponse extends Message<DeleteBusinessHoursResponse> {
+  constructor(data?: PartialMessage<DeleteBusinessHoursResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.DeleteBusinessHoursResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteBusinessHoursResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteBusinessHoursResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteBusinessHoursResponse;
+
+  static equals(a: DeleteBusinessHoursResponse | PlainMessage<DeleteBusinessHoursResponse> | undefined, b: DeleteBusinessHoursResponse | PlainMessage<DeleteBusinessHoursResponse> | undefined): boolean;
 }
 
