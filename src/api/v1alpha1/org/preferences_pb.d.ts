@@ -2622,6 +2622,8 @@ export declare class ListBusinessHoursRequest extends Message<ListBusinessHoursR
  */
 export declare class ListBusinessHoursResponse extends Message<ListBusinessHoursResponse> {
   /**
+   * The list of business hours
+   *
    * @generated from field: repeated api.commons.org.BusinessHours business_hours = 2;
    */
   businessHours: BusinessHours[];
@@ -2648,6 +2650,8 @@ export declare class ListBusinessHoursResponse extends Message<ListBusinessHours
  */
 export declare class GetBusinessHoursRequest extends Message<GetBusinessHoursRequest> {
   /**
+   * The id of the business hours object
+   *
    * @generated from field: string business_hours_id = 1;
    */
   businessHoursId: string;
@@ -2674,6 +2678,8 @@ export declare class GetBusinessHoursRequest extends Message<GetBusinessHoursReq
  */
 export declare class GetBusinessHoursResponse extends Message<GetBusinessHoursResponse> {
   /**
+   * The retrieved business hours
+   *
    * @generated from field: api.commons.org.BusinessHours business_hours = 1;
    */
   businessHours?: BusinessHours;
@@ -2700,21 +2706,29 @@ export declare class GetBusinessHoursResponse extends Message<GetBusinessHoursRe
  */
 export declare class SetBusinessHoursRequest extends Message<SetBusinessHoursRequest> {
   /**
+   * The name of the business hours
+   *
    * @generated from field: string business_hours_name = 1;
    */
   businessHoursName: string;
 
   /**
+   * The description of the business hours
+   *
    * @generated from field: string description = 2;
    */
   description: string;
 
   /**
+   * The list of day intervals for the business hours
+   *
    * @generated from field: repeated api.commons.org.DayInterval day_intervals = 3;
    */
   dayIntervals: DayInterval[];
 
   /**
+   * The timezone of the business hours
+   *
    * @generated from field: api.commons.TimeZone timezone = 4;
    */
   timezone: TimeZone;
@@ -2741,6 +2755,8 @@ export declare class SetBusinessHoursRequest extends Message<SetBusinessHoursReq
  */
 export declare class SetBusinessHoursResponse extends Message<SetBusinessHoursResponse> {
   /**
+   * The id of the new business hours
+   *
    * @generated from field: string business_horus_id = 1;
    */
   businessHorusId: string;
@@ -2767,11 +2783,15 @@ export declare class SetBusinessHoursResponse extends Message<SetBusinessHoursRe
  */
 export declare class AddIntervalToBusinessHoursRequest extends Message<AddIntervalToBusinessHoursRequest> {
   /**
+   * The id of the business hours to add an interval
+   *
    * @generated from field: string business_hours_id = 1;
    */
   businessHoursId: string;
 
   /**
+   * The day interval to be added
+   *
    * @generated from field: api.commons.org.DayInterval day_interval = 2;
    */
   dayInterval?: DayInterval;
@@ -2819,11 +2839,15 @@ export declare class AddIntervalToBusinessHoursResponse extends Message<AddInter
  */
 export declare class RemoveIntervalFromBusinessHoursRequest extends Message<RemoveIntervalFromBusinessHoursRequest> {
   /**
+   * The id of the business hours to remove an interval
+   *
    * @generated from field: string business_hours_id = 1;
    */
   businessHoursId: string;
 
   /**
+   * The day interval to be removed
+   *
    * @generated from field: api.commons.org.DayInterval day_interval = 2;
    */
   dayInterval?: DayInterval;
@@ -2871,26 +2895,36 @@ export declare class RemoveIntervalFromBusinessHoursResponse extends Message<Rem
  */
 export declare class UpdateBusinessHoursInfoRequest extends Message<UpdateBusinessHoursInfoRequest> {
   /**
+   * The id of the business hours object
+   *
    * @generated from field: string business_hours_id = 1;
    */
   businessHoursId: string;
 
   /**
+   * The updated name of the business hours
+   *
    * @generated from field: string business_hours_name = 2;
    */
   businessHoursName: string;
 
   /**
+   * The updated description of the business hours
+   *
    * @generated from field: string description = 3;
    */
   description: string;
 
   /**
+   * The updated timezone of the business hours
+   *
    * @generated from field: api.commons.TimeZone timezone = 4;
    */
   timezone: TimeZone;
 
   /**
+   * Field mask for the update request
+   *
    * @generated from field: google.protobuf.FieldMask field_mask = 5;
    */
   fieldMask?: FieldMask;
@@ -2938,6 +2972,8 @@ export declare class UpdateBusinessHoursInfoResponse extends Message<UpdateBusin
  */
 export declare class DeleteBusinessHoursRequest extends Message<DeleteBusinessHoursRequest> {
   /**
+   * The id of the business hours object to be deleted
+   *
    * @generated from field: string business_hours_id = 1;
    */
   businessHoursId: string;
