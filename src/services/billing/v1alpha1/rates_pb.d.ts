@@ -5,7 +5,10 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { RateDefinition } from "../entities/v1alpha1/rates_pb.js";
+import type { RateDefinition, RateDefinitionConfigType } from "../entities/v1alpha1/rates_pb.js";
+import type { RateHistoryItem } from "../entities/v1alpha1/history_pb.js";
+import type { EventType } from "../../../api/commons/audit/event_types_pb.js";
+import type { MatchingRule } from "../entities/v1alpha1/matching_pb.js";
 import type { Page, Sort } from "./core_pb.js";
 
 /**
@@ -246,6 +249,69 @@ export declare class GetRateDefinitionResponse extends Message<GetRateDefinition
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetRateDefinitionResponse;
 
   static equals(a: GetRateDefinitionResponse | PlainMessage<GetRateDefinitionResponse> | undefined, b: GetRateDefinitionResponse | PlainMessage<GetRateDefinitionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.ListHistoricalRateDefinitionsRequest
+ */
+export declare class ListHistoricalRateDefinitionsRequest extends Message<ListHistoricalRateDefinitionsRequest> {
+  /**
+   * @generated from field: services.billing.entities.v1alpha1.RateHistoryItem history_item = 1;
+   */
+  historyItem?: RateHistoryItem;
+
+  /**
+   * @generated from field: repeated api.commons.audit.EventType event_types = 2;
+   */
+  eventTypes: EventType[];
+
+  /**
+   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinitionConfigType config_types = 3;
+   */
+  configTypes: RateDefinitionConfigType[];
+
+  /**
+   * @generated from field: repeated services.billing.entities.v1alpha1.MatchingRule matching_rules = 4;
+   */
+  matchingRules: MatchingRule[];
+
+  constructor(data?: PartialMessage<ListHistoricalRateDefinitionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.ListHistoricalRateDefinitionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHistoricalRateDefinitionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHistoricalRateDefinitionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHistoricalRateDefinitionsRequest;
+
+  static equals(a: ListHistoricalRateDefinitionsRequest | PlainMessage<ListHistoricalRateDefinitionsRequest> | undefined, b: ListHistoricalRateDefinitionsRequest | PlainMessage<ListHistoricalRateDefinitionsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.ListHistoricalRateDefinitionsResponse
+ */
+export declare class ListHistoricalRateDefinitionsResponse extends Message<ListHistoricalRateDefinitionsResponse> {
+  /**
+   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinition rate_definitions = 1;
+   */
+  rateDefinitions: RateDefinition[];
+
+  constructor(data?: PartialMessage<ListHistoricalRateDefinitionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.ListHistoricalRateDefinitionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListHistoricalRateDefinitionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListHistoricalRateDefinitionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHistoricalRateDefinitionsResponse;
+
+  static equals(a: ListHistoricalRateDefinitionsResponse | PlainMessage<ListHistoricalRateDefinitionsResponse> | undefined, b: ListHistoricalRateDefinitionsResponse | PlainMessage<ListHistoricalRateDefinitionsResponse> | undefined): boolean;
 }
 
 /**

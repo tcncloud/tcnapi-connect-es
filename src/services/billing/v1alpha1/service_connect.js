@@ -5,8 +5,9 @@
 
 import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, DuplicateBillingPlanRequest, DuplicateBillingPlanResponse, DuplicateDefaultBillingPlanRequest, DuplicateDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
+import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListHistoricalRateDefinitionsRequest, ListHistoricalRateDefinitionsResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
+import { GetRateHistoryRequest, GetRateHistoryResponse } from "./history_pb.js";
 
 /**
  * @generated from service services.billing.v1alpha1.BillingService
@@ -399,6 +400,24 @@ export const BillingService = {
       kind: MethodKind.Unary,
     },
     /**
+     * Returns the rate history for the specified rate definition.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.GetRateHistory
+     */
+    getRateHistory: {
+      name: "GetRateHistory",
+      I: GetRateHistoryRequest,
+      O: GetRateHistoryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * Lists billing plans.
      * Required permissions:
      *   CUSTOMER_SUPPORT
@@ -414,6 +433,24 @@ export const BillingService = {
       name: "ListBillingPlans",
       I: ListBillingPlansRequest,
       O: ListBillingPlansResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * List all historical entries for rate definitions given the provided filters.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.ListHistoricalRateDefinitions
+     */
+    listHistoricalRateDefinitions: {
+      name: "ListHistoricalRateDefinitions",
+      I: ListHistoricalRateDefinitionsRequest,
+      O: ListHistoricalRateDefinitionsResponse,
       kind: MethodKind.Unary,
     },
     /**
