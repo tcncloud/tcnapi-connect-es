@@ -9,7 +9,7 @@ import { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueInfoSo
 import { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import { DialOrderType } from "../lms_pb.js";
 import { AnaTimeZone } from "../ana_pb.js";
-import { Weekday_Enum } from "../enums_pb.js";
+import { Month, Weekday_Enum } from "../enums_pb.js";
 
 /**
  * General preferences controlling organization properties.
@@ -812,6 +812,63 @@ export const DayInterval = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "day", kind: "enum", T: proto3.getEnumType(Weekday_Enum) },
     { no: 2, name: "start", kind: "message", T: TimeOfDay },
     { no: 3, name: "end", kind: "message", T: TimeOfDay },
+  ],
+);
+
+/**
+ * MonthDayDate enables custom named dates.
+ *
+ * @generated from message api.commons.org.MonthDayDate
+ */
+export const MonthDayDate = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.org.MonthDayDate",
+  () => [
+    { no: 1, name: "date_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "month", kind: "enum", T: proto3.getEnumType(Month) },
+    { no: 3, name: "day_of_month", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * CountryHoliday holiday service name and country.
+ *
+ * @generated from message api.commons.org.CountryHoliday
+ */
+export const CountryHoliday = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.org.CountryHoliday",
+  () => [
+    { no: 1, name: "holiday_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "country", kind: "enum", T: proto3.getEnumType(Country) },
+  ],
+);
+
+/**
+ * ProgrammedDay may be a named date or a holiday.
+ *
+ * @generated from message api.commons.org.ProgrammedDay
+ */
+export const ProgrammedDay = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.org.ProgrammedDay",
+  () => [
+    { no: 1, name: "day", kind: "message", T: MonthDayDate, oneof: "DayType" },
+    { no: 2, name: "holiday", kind: "message", T: CountryHoliday, oneof: "DayType" },
+  ],
+);
+
+/**
+ * ProgrammedDates a list of dates or holidays.
+ *
+ * @generated from message api.commons.org.ProgrammedDates
+ */
+export const ProgrammedDates = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.org.ProgrammedDates",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "programmed_dates_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "programmed_dates_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "days", kind: "message", T: ProgrammedDay, repeated: true },
+    { no: 6, name: "last_updated", kind: "message", T: Timestamp },
   ],
 );
 
