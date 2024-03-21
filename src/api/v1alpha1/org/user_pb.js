@@ -1156,6 +1156,7 @@ export const GetUserSessionDataResponse_User = /*@__PURE__*/ proto3.makeMessageT
     { no: 31, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 32, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 33, name: "mfa_timestamp", kind: "message", T: Timestamp },
+    { no: 34, name: "password_reset_date", kind: "message", T: Timestamp },
   ],
   {localName: "GetUserSessionDataResponse_User"},
 );
