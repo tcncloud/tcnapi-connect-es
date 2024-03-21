@@ -472,9 +472,9 @@ export declare class AuthenticationPreferences extends Message<AuthenticationPre
   /**
    * Org enables the ability to set the password reset interval
    *
-   * @generated from field: bool enable_force_password_reset_interval = 17;
+   * @generated from field: bool allow_force_password_reset_interval = 17;
    */
-  enableForcePasswordResetInterval: boolean;
+  allowForcePasswordResetInterval: boolean;
 
   /**
    * An interval in the form of days for users in the org to reset passwords
