@@ -160,6 +160,7 @@ export const RequestMethod = /*@__PURE__*/ proto3.makeEnum(
     {no: 2011, name: "REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN", localName: "EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN"},
     {no: 2012, name: "REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS", localName: "EXPERIAN_STELLA_PAYMENT_PLANS"},
     {no: 2013, name: "REQUEST_METHOD_EXPERIAN_STELLA_AUTH", localName: "EXPERIAN_STELLA_AUTH"},
+    {no: 2014, name: "REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION", localName: "EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION"},
     {no: 2101, name: "REQUEST_METHOD_NEWSCYCLE_LOGIN", localName: "NEWSCYCLE_LOGIN"},
     {no: 2102, name: "REQUEST_METHOD_NEWSCYCLE_SEARCHPAGE", localName: "NEWSCYCLE_SEARCHPAGE"},
     {no: 2103, name: "REQUEST_METHOD_NEWSCYCLE_BILLINGINFO", localName: "NEWSCYCLE_BILLINGINFO"},
@@ -778,6 +779,7 @@ export const ExecuteFlow = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2011, name: "experian_stella_add_usa_epay_token", kind: "message", T: ExecuteExperianStellaAddusaepaytoken, oneof: "value" },
     { no: 2012, name: "experian_stella_payment_plans", kind: "message", T: ExecuteExperianStellaPaymentPlans, oneof: "value" },
     { no: 2013, name: "experian_stella_auth", kind: "message", T: ExecuteExperianStellaAuth, oneof: "value" },
+    { no: 2014, name: "experian_stella_card_entry_tokenization", kind: "message", T: ExecuteExperianStellaCardEntryTokenization, oneof: "value" },
     { no: 2101, name: "newscycle_login", kind: "message", T: ExecuteNewscycleLogin, oneof: "value" },
     { no: 2102, name: "newscycle_search_page", kind: "message", T: ExecuteNewscycleSearchPage, oneof: "value" },
     { no: 2103, name: "newscycle_billing_info", kind: "message", T: ExecuteNewscycleBillingInfo, oneof: "value" },
@@ -1892,6 +1894,14 @@ export const ExecuteExperianStellaPaymentPlans = /*@__PURE__*/ proto3.makeMessag
  */
 export const ExecuteExperianStellaAuth = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.integrations.ExecuteExperianStellaAuth",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardEntryTokenization
+ */
+export const ExecuteExperianStellaCardEntryTokenization = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaCardEntryTokenization",
   [],
 );
 
