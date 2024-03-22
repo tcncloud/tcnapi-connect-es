@@ -5,9 +5,6 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { EventType } from "../../../api/commons/audit/event_types_pb.js";
-import type { RateDefinitionConfigType } from "../entities/v1alpha1/rates_pb.js";
-import type { MatchingRule } from "../entities/v1alpha1/matching_pb.js";
 import type { RateHistoryItem } from "../entities/v1alpha1/history_pb.js";
 
 /**
@@ -20,24 +17,9 @@ export declare class GetRateHistoryRequest extends Message<GetRateHistoryRequest
   orgId: string;
 
   /**
-   * @generated from field: repeated api.commons.audit.EventType event_types = 2;
+   * @generated from field: repeated string group_ids = 2;
    */
-  eventTypes: EventType[];
-
-  /**
-   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinitionConfigType config_types = 3;
-   */
-  configTypes: RateDefinitionConfigType[];
-
-  /**
-   * @generated from field: repeated services.billing.entities.v1alpha1.MatchingRule matching_rules = 4;
-   */
-  matchingRules: MatchingRule[];
-
-  /**
-   * @generated from field: repeated string matching_shas = 5;
-   */
-  matchingShas: string[];
+  groupIds: string[];
 
   constructor(data?: PartialMessage<GetRateHistoryRequest>);
 
