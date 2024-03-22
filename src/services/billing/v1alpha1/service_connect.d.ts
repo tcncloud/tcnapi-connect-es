@@ -5,7 +5,7 @@
 
 import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, DuplicateBillingPlanRequest, DuplicateBillingPlanResponse, DuplicateDefaultBillingPlanRequest, DuplicateDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListHistoricalRateDefinitionsRequest, ListHistoricalRateDefinitionsResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
+import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
 import { GetRateHistoryRequest, GetRateHistoryResponse } from "./history_pb.js";
 
@@ -433,24 +433,6 @@ export declare const BillingService: {
       readonly name: "ListBillingPlans",
       readonly I: typeof ListBillingPlansRequest,
       readonly O: typeof ListBillingPlansResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * List all historical entries for rate definitions given the provided filters.
-     * Required permissions:
-     *   CUSTOMER_SUPPORT
-     * Errors:
-     *   - grpc.Internal: An internal error occurred.
-     *   - grpc.InvalidArgument: The request is invalid.
-     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
-     *   - grpc.Unavailable: The operation is currently unavailable.
-     *
-     * @generated from rpc services.billing.v1alpha1.BillingService.ListHistoricalRateDefinitions
-     */
-    readonly listHistoricalRateDefinitions: {
-      readonly name: "ListHistoricalRateDefinitions",
-      readonly I: typeof ListHistoricalRateDefinitionsRequest,
-      readonly O: typeof ListHistoricalRateDefinitionsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

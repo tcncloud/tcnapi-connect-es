@@ -4,6 +4,9 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
+import { EventType } from "../../../api/commons/audit/event_types_pb.js";
+import { RateDefinitionConfigType } from "../entities/v1alpha1/rates_pb.js";
+import { MatchingRule } from "../entities/v1alpha1/matching_pb.js";
 import { RateHistoryItem } from "../entities/v1alpha1/history_pb.js";
 
 /**
@@ -13,6 +16,10 @@ export const GetRateHistoryRequest = /*@__PURE__*/ proto3.makeMessageType(
   "services.billing.v1alpha1.GetRateHistoryRequest",
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "event_types", kind: "enum", T: proto3.getEnumType(EventType), repeated: true },
+    { no: 3, name: "config_types", kind: "enum", T: proto3.getEnumType(RateDefinitionConfigType), repeated: true },
+    { no: 4, name: "matching_rules", kind: "enum", T: proto3.getEnumType(MatchingRule), repeated: true },
+    { no: 5, name: "matching_shas", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

@@ -5,25 +5,26 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { RateDefinition } from "./rates_pb.js";
 
 /**
  * @generated from message services.billing.entities.v1alpha1.RateHistoryItem
  */
 export declare class RateHistoryItem extends Message<RateHistoryItem> {
   /**
-   * @generated from field: string org_id = 1;
-   */
-  orgId: string;
-
-  /**
-   * @generated from field: google.protobuf.Timestamp start_date = 2;
+   * @generated from field: google.protobuf.Timestamp start_date = 1;
    */
   startDate?: Timestamp;
 
   /**
-   * @generated from field: google.protobuf.Timestamp end_date = 3;
+   * @generated from field: google.protobuf.Timestamp end_date = 2;
    */
   endDate?: Timestamp;
+
+  /**
+   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinition rates = 3;
+   */
+  rates: RateDefinition[];
 
   constructor(data?: PartialMessage<RateHistoryItem>);
 

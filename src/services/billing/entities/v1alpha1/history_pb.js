@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { RateDefinition } from "./rates_pb.js";
 
 /**
  * @generated from message services.billing.entities.v1alpha1.RateHistoryItem
@@ -11,9 +12,9 @@ import { proto3, Timestamp } from "@bufbuild/protobuf";
 export const RateHistoryItem = /*@__PURE__*/ proto3.makeMessageType(
   "services.billing.entities.v1alpha1.RateHistoryItem",
   () => [
-    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "start_date", kind: "message", T: Timestamp },
-    { no: 3, name: "end_date", kind: "message", T: Timestamp },
+    { no: 1, name: "start_date", kind: "message", T: Timestamp },
+    { no: 2, name: "end_date", kind: "message", T: Timestamp },
+    { no: 3, name: "rates", kind: "message", T: RateDefinition, repeated: true },
   ],
 );
 

@@ -4,10 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { RateDefinition, RateDefinitionConfigType } from "../entities/v1alpha1/rates_pb.js";
-import { RateHistoryItem } from "../entities/v1alpha1/history_pb.js";
-import { EventType } from "../../../api/commons/audit/event_types_pb.js";
-import { MatchingRule } from "../entities/v1alpha1/matching_pb.js";
+import { RateDefinition } from "../entities/v1alpha1/rates_pb.js";
 import { Page, Sort } from "./core_pb.js";
 
 /**
@@ -105,29 +102,6 @@ export const GetRateDefinitionResponse = /*@__PURE__*/ proto3.makeMessageType(
   "services.billing.v1alpha1.GetRateDefinitionResponse",
   () => [
     { no: 1, name: "rate_definition", kind: "message", T: RateDefinition },
-  ],
-);
-
-/**
- * @generated from message services.billing.v1alpha1.ListHistoricalRateDefinitionsRequest
- */
-export const ListHistoricalRateDefinitionsRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "services.billing.v1alpha1.ListHistoricalRateDefinitionsRequest",
-  () => [
-    { no: 1, name: "history_item", kind: "message", T: RateHistoryItem },
-    { no: 2, name: "event_types", kind: "enum", T: proto3.getEnumType(EventType), repeated: true },
-    { no: 3, name: "config_types", kind: "enum", T: proto3.getEnumType(RateDefinitionConfigType), repeated: true },
-    { no: 4, name: "matching_rules", kind: "enum", T: proto3.getEnumType(MatchingRule), repeated: true },
-  ],
-);
-
-/**
- * @generated from message services.billing.v1alpha1.ListHistoricalRateDefinitionsResponse
- */
-export const ListHistoricalRateDefinitionsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "services.billing.v1alpha1.ListHistoricalRateDefinitionsResponse",
-  () => [
-    { no: 1, name: "rate_definitions", kind: "message", T: RateDefinition, repeated: true },
   ],
 );
 
