@@ -469,6 +469,20 @@ export declare class AuthenticationPreferences extends Message<AuthenticationPre
    */
   duoMfaSettings?: AuthenticationPreferences_DuoMfaSettings;
 
+  /**
+   * Org enables the ability to set the password reset interval
+   *
+   * @generated from field: bool allow_force_password_reset_interval = 17;
+   */
+  allowForcePasswordResetInterval: boolean;
+
+  /**
+   * An interval in the form of days for users in the org to reset passwords
+   *
+   * @generated from field: int32 password_reset_day_interval = 18;
+   */
+  passwordResetDayInterval: number;
+
   constructor(data?: PartialMessage<AuthenticationPreferences>);
 
   static readonly runtime: typeof proto3;
