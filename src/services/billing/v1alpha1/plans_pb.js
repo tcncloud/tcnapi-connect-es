@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
+import { BillingPlan, BillingPlanSnapshot } from "../entities/v1alpha1/plan_pb.js";
 import { Page, Sort } from "./core_pb.js";
 
 /**
@@ -201,6 +201,27 @@ export const GetBillingPlanResponse = /*@__PURE__*/ proto3.makeMessageType(
   "services.billing.v1alpha1.GetBillingPlanResponse",
   () => [
     { no: 1, name: "billing_plan", kind: "message", T: BillingPlan },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.GetBillingPlanHistoryRequest
+ */
+export const GetBillingPlanHistoryRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha1.GetBillingPlanHistoryRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "group_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha1.GetBillingPlanHistoryResponse
+ */
+export const GetBillingPlanHistoryResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha1.GetBillingPlanHistoryResponse",
+  () => [
+    { no: 1, name: "history", kind: "message", T: BillingPlanSnapshot, repeated: true },
   ],
 );
 

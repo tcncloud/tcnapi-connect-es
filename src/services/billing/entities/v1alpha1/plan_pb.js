@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { proto3, Timestamp } from "@bufbuild/protobuf";
+import { RateDefinition } from "./rates_pb.js";
 
 /**
  * BillingPlanStatus represents the status of a billing plan
@@ -16,6 +17,21 @@ export const BillingPlanStatus = /*@__PURE__*/ proto3.makeEnum(
     {no: 0, name: "BILLING_PLAN_STATUS_UNSPECIFIED", localName: "UNSPECIFIED"},
     {no: 100, name: "BILLING_PLAN_STATUS_CREATING", localName: "CREATING"},
     {no: 200, name: "BILLING_PLAN_STATUS_CREATED", localName: "CREATED"},
+  ],
+);
+
+/**
+ * BillingPlanSnapshot represents a snapshot of a billing plan
+ * during a specific time period
+ *
+ * @generated from message services.billing.entities.v1alpha1.BillingPlanSnapshot
+ */
+export const BillingPlanSnapshot = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.entities.v1alpha1.BillingPlanSnapshot",
+  () => [
+    { no: 1, name: "start_date", kind: "message", T: Timestamp },
+    { no: 2, name: "end_date", kind: "message", T: Timestamp },
+    { no: 3, name: "rates", kind: "message", T: RateDefinition, repeated: true },
   ],
 );
 

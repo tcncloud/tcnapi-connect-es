@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { BillingPlan } from "../entities/v1alpha1/plan_pb.js";
+import type { BillingPlan, BillingPlanSnapshot } from "../entities/v1alpha1/plan_pb.js";
 import type { Page, Sort } from "./core_pb.js";
 
 /**
@@ -495,6 +495,59 @@ export declare class GetBillingPlanResponse extends Message<GetBillingPlanRespon
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBillingPlanResponse;
 
   static equals(a: GetBillingPlanResponse | PlainMessage<GetBillingPlanResponse> | undefined, b: GetBillingPlanResponse | PlainMessage<GetBillingPlanResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.GetBillingPlanHistoryRequest
+ */
+export declare class GetBillingPlanHistoryRequest extends Message<GetBillingPlanHistoryRequest> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: repeated string group_ids = 2;
+   */
+  groupIds: string[];
+
+  constructor(data?: PartialMessage<GetBillingPlanHistoryRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.GetBillingPlanHistoryRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBillingPlanHistoryRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBillingPlanHistoryRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBillingPlanHistoryRequest;
+
+  static equals(a: GetBillingPlanHistoryRequest | PlainMessage<GetBillingPlanHistoryRequest> | undefined, b: GetBillingPlanHistoryRequest | PlainMessage<GetBillingPlanHistoryRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha1.GetBillingPlanHistoryResponse
+ */
+export declare class GetBillingPlanHistoryResponse extends Message<GetBillingPlanHistoryResponse> {
+  /**
+   * @generated from field: repeated services.billing.entities.v1alpha1.BillingPlanSnapshot history = 1;
+   */
+  history: BillingPlanSnapshot[];
+
+  constructor(data?: PartialMessage<GetBillingPlanHistoryResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha1.GetBillingPlanHistoryResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetBillingPlanHistoryResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetBillingPlanHistoryResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetBillingPlanHistoryResponse;
+
+  static equals(a: GetBillingPlanHistoryResponse | PlainMessage<GetBillingPlanHistoryResponse> | undefined, b: GetBillingPlanHistoryResponse | PlainMessage<GetBillingPlanHistoryResponse> | undefined): boolean;
 }
 
 /**

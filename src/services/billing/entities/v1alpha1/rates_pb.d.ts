@@ -247,10 +247,9 @@ export declare class RateDefinition extends Message<RateDefinition> {
   rateDefinitionFeatureId: string;
 
   /**
-   * unused
+   * a group identifier for this rate definition; optional
    *
-   * @generated from field: string rate_definition_group_id = 3 [deprecated = true];
-   * @deprecated
+   * @generated from field: string rate_definition_group_id = 3;
    */
   rateDefinitionGroupId: string;
 

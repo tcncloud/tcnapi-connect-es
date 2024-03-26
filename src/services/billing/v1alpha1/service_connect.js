@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, DuplicateBillingPlanRequest, DuplicateBillingPlanResponse, DuplicateDefaultBillingPlanRequest, DuplicateDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
+import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, DuplicateBillingPlanRequest, DuplicateBillingPlanResponse, DuplicateDefaultBillingPlanRequest, DuplicateDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanHistoryRequest, GetBillingPlanHistoryResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
@@ -357,6 +357,24 @@ export const BillingService = {
       name: "GetBillingPlan",
       I: GetBillingPlanRequest,
       O: GetBillingPlanResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * Returns the billing plan history for the ORG or REGION.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.GetBillingPlanHistory
+     */
+    getBillingPlanHistory: {
+      name: "GetBillingPlanHistory",
+      I: GetBillingPlanHistoryRequest,
+      O: GetBillingPlanHistoryResponse,
       kind: MethodKind.Unary,
     },
     /**

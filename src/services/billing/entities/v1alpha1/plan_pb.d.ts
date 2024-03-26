@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { RateDefinition } from "./rates_pb.js";
 
 /**
  * BillingPlanStatus represents the status of a billing plan
@@ -33,6 +34,43 @@ export declare enum BillingPlanStatus {
    * @generated from enum value: BILLING_PLAN_STATUS_CREATED = 200;
    */
   CREATED = 200,
+}
+
+/**
+ * BillingPlanSnapshot represents a snapshot of a billing plan
+ * during a specific time period
+ *
+ * @generated from message services.billing.entities.v1alpha1.BillingPlanSnapshot
+ */
+export declare class BillingPlanSnapshot extends Message<BillingPlanSnapshot> {
+  /**
+   * @generated from field: google.protobuf.Timestamp start_date = 1;
+   */
+  startDate?: Timestamp;
+
+  /**
+   * @generated from field: google.protobuf.Timestamp end_date = 2;
+   */
+  endDate?: Timestamp;
+
+  /**
+   * @generated from field: repeated services.billing.entities.v1alpha1.RateDefinition rates = 3;
+   */
+  rates: RateDefinition[];
+
+  constructor(data?: PartialMessage<BillingPlanSnapshot>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.entities.v1alpha1.BillingPlanSnapshot";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BillingPlanSnapshot;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BillingPlanSnapshot;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BillingPlanSnapshot;
+
+  static equals(a: BillingPlanSnapshot | PlainMessage<BillingPlanSnapshot> | undefined, b: BillingPlanSnapshot | PlainMessage<BillingPlanSnapshot> | undefined): boolean;
 }
 
 /**
