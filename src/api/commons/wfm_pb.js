@@ -701,3 +701,31 @@ export const InitialSetupStatus = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * Represents an agents real time state over a period of time.
+ *
+ * @generated from message api.commons.AgentStateSegment
+ */
+export const AgentStateSegment = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.AgentStateSegment",
+  () => [
+    { no: 1, name: "order_in_rts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "states", kind: "enum", T: proto3.getEnumType(RealTimeManagementState), repeated: true },
+    { no: 3, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+  ],
+);
+
+/**
+ * Represents a sequence of real time states for a WFM agent.
+ *
+ * @generated from message api.commons.AgentStateSequence
+ */
+export const AgentStateSequence = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.AgentStateSequence",
+  () => [
+    { no: 1, name: "wfm_agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "start_datetime", kind: "message", T: Timestamp },
+    { no: 3, name: "state_segments", kind: "message", T: AgentStateSegment, repeated: true },
+  ],
+);
+

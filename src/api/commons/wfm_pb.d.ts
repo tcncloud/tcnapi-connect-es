@@ -2357,3 +2357,88 @@ export declare class InitialSetupStatus extends Message<InitialSetupStatus> {
   static equals(a: InitialSetupStatus | PlainMessage<InitialSetupStatus> | undefined, b: InitialSetupStatus | PlainMessage<InitialSetupStatus> | undefined): boolean;
 }
 
+/**
+ * Represents an agents real time state over a period of time.
+ *
+ * @generated from message api.commons.AgentStateSegment
+ */
+export declare class AgentStateSegment extends Message<AgentStateSegment> {
+  /**
+   * The order that this agent state segment fits into the AgentStateSequence.
+   * Sequence starts at 0.
+   *
+   * @generated from field: int32 order_in_rts = 1;
+   */
+  orderInRts: number;
+
+  /**
+   * The state of the agent during this segment.
+   *
+   * @generated from field: repeated api.commons.RealTimeManagementState states = 2;
+   */
+  states: RealTimeManagementState[];
+
+  /**
+   * The width of this segment in minutes.
+   *
+   * @generated from field: int32 width_in_minutes = 3;
+   */
+  widthInMinutes: number;
+
+  constructor(data?: PartialMessage<AgentStateSegment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.AgentStateSegment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AgentStateSegment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AgentStateSegment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AgentStateSegment;
+
+  static equals(a: AgentStateSegment | PlainMessage<AgentStateSegment> | undefined, b: AgentStateSegment | PlainMessage<AgentStateSegment> | undefined): boolean;
+}
+
+/**
+ * Represents a sequence of real time states for a WFM agent.
+ *
+ * @generated from message api.commons.AgentStateSequence
+ */
+export declare class AgentStateSequence extends Message<AgentStateSequence> {
+  /**
+   * ID of the agent that the real time state sequence relates to.
+   *
+   * @generated from field: int64 wfm_agent_sid = 1;
+   */
+  wfmAgentSid: bigint;
+
+  /**
+   * The datetime where the agent state sequence starts.
+   *
+   * @generated from field: google.protobuf.Timestamp start_datetime = 2;
+   */
+  startDatetime?: Timestamp;
+
+  /**
+   * The list of agent state segments that cover the length of the sequence.
+   *
+   * @generated from field: repeated api.commons.AgentStateSegment state_segments = 3;
+   */
+  stateSegments: AgentStateSegment[];
+
+  constructor(data?: PartialMessage<AgentStateSequence>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.AgentStateSequence";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AgentStateSequence;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AgentStateSequence;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AgentStateSequence;
+
+  static equals(a: AgentStateSequence | PlainMessage<AgentStateSequence> | undefined, b: AgentStateSequence | PlainMessage<AgentStateSequence> | undefined): boolean;
+}
+
