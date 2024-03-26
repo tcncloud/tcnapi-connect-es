@@ -657,6 +657,7 @@ export declare const Org: {
      * ListBusinessHours returns all business hours for an Org.
      *
      * @generated from rpc api.v1alpha1.org.Org.ListBusinessHours
+     * @deprecated
      */
     readonly listBusinessHours: {
       readonly name: "ListBusinessHours",
@@ -668,6 +669,7 @@ export declare const Org: {
      * GetBusinessHours returns the business hours for the ID.
      *
      * @generated from rpc api.v1alpha1.org.Org.GetBusinessHours
+     * @deprecated
      */
     readonly getBusinessHours: {
       readonly name: "GetBusinessHours",
@@ -679,6 +681,7 @@ export declare const Org: {
      * SetBusinessHours initializes a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.SetBusinessHours
+     * @deprecated
      */
     readonly setBusinessHours: {
       readonly name: "SetBusinessHours",
@@ -690,6 +693,7 @@ export declare const Org: {
      * AddIntervalToBusinessHours adds a day interval to a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.AddIntervalToBusinessHours
+     * @deprecated
      */
     readonly addIntervalToBusinessHours: {
       readonly name: "AddIntervalToBusinessHours",
@@ -701,6 +705,7 @@ export declare const Org: {
      * RemoveIntervalFromBusinessHours removes a day interval from a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.RemoveIntervalFromBusinessHours
+     * @deprecated
      */
     readonly removeIntervalFromBusinessHours: {
       readonly name: "RemoveIntervalFromBusinessHours",
@@ -712,6 +717,7 @@ export declare const Org: {
      * UpdateBusinessHoursInfo updates the general info of a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.UpdateBusinessHoursInfo
+     * @deprecated
      */
     readonly updateBusinessHoursInfo: {
       readonly name: "UpdateBusinessHoursInfo",
@@ -723,6 +729,7 @@ export declare const Org: {
      * DeleteBusinessHours removes business hours.
      *
      * @generated from rpc api.v1alpha1.org.Org.DeleteBusinessHours
+     * @deprecated
      */
     readonly deleteBusinessHours: {
       readonly name: "DeleteBusinessHours",
@@ -734,6 +741,7 @@ export declare const Org: {
      * EvaluateBusinessHours determines whether or not the current time is within a business hours day interval
      *
      * @generated from rpc api.v1alpha1.org.Org.EvaluateBusinessHours
+     * @deprecated
      */
     readonly evaluateBusinessHours: {
       readonly name: "EvaluateBusinessHours",
@@ -2379,6 +2387,7 @@ export declare const Org: {
      * CreateBusinessHours persists times businesses are available.
      *
      * @generated from rpc api.v1alpha1.org.Org.CreateBusinessHours
+     * @deprecated
      */
     readonly createBusinessHours: {
       readonly name: "CreateBusinessHours",
@@ -2390,6 +2399,7 @@ export declare const Org: {
      * UpdateBusinessHours persists changes to times businesses are available.
      *
      * @generated from rpc api.v1alpha1.org.Org.UpdateBusinessHours
+     * @deprecated
      */
     readonly updateBusinessHours: {
       readonly name: "UpdateBusinessHours",

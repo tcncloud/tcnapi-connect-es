@@ -2598,6 +2598,7 @@ export declare class UpdateBusinessHoursResponse extends Message<UpdateBusinessH
  * Request for listing business hours.
  *
  * @generated from message api.v1alpha1.org.ListBusinessHoursRequest
+ * @deprecated
  */
 export declare class ListBusinessHoursRequest extends Message<ListBusinessHoursRequest> {
   constructor(data?: PartialMessage<ListBusinessHoursRequest>);
@@ -2619,6 +2620,7 @@ export declare class ListBusinessHoursRequest extends Message<ListBusinessHoursR
  * Response for listing business hours.
  *
  * @generated from message api.v1alpha1.org.ListBusinessHoursResponse
+ * @deprecated
  */
 export declare class ListBusinessHoursResponse extends Message<ListBusinessHoursResponse> {
   /**
@@ -2647,6 +2649,7 @@ export declare class ListBusinessHoursResponse extends Message<ListBusinessHours
  * Request for fetching a business hours.
  *
  * @generated from message api.v1alpha1.org.GetBusinessHoursRequest
+ * @deprecated
  */
 export declare class GetBusinessHoursRequest extends Message<GetBusinessHoursRequest> {
   /**
@@ -2675,6 +2678,7 @@ export declare class GetBusinessHoursRequest extends Message<GetBusinessHoursReq
  * Response for fetching a business hours.
  *
  * @generated from message api.v1alpha1.org.GetBusinessHoursResponse
+ * @deprecated
  */
 export declare class GetBusinessHoursResponse extends Message<GetBusinessHoursResponse> {
   /**
@@ -2703,6 +2707,7 @@ export declare class GetBusinessHoursResponse extends Message<GetBusinessHoursRe
  * Request for initializing a business hours object
  *
  * @generated from message api.v1alpha1.org.SetBusinessHoursRequest
+ * @deprecated
  */
 export declare class SetBusinessHoursRequest extends Message<SetBusinessHoursRequest> {
   /**
@@ -2752,6 +2757,7 @@ export declare class SetBusinessHoursRequest extends Message<SetBusinessHoursReq
  * Response for initializing a business hours object
  *
  * @generated from message api.v1alpha1.org.SetBusinessHoursResponse
+ * @deprecated
  */
 export declare class SetBusinessHoursResponse extends Message<SetBusinessHoursResponse> {
   /**
@@ -2780,6 +2786,7 @@ export declare class SetBusinessHoursResponse extends Message<SetBusinessHoursRe
  * Request for adding an interval to a business hours object
  *
  * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursRequest
+ * @deprecated
  */
 export declare class AddIntervalToBusinessHoursRequest extends Message<AddIntervalToBusinessHoursRequest> {
   /**
@@ -2815,6 +2822,7 @@ export declare class AddIntervalToBusinessHoursRequest extends Message<AddInterv
  * Response for adding an interval to a business hours object
  *
  * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursResponse
+ * @deprecated
  */
 export declare class AddIntervalToBusinessHoursResponse extends Message<AddIntervalToBusinessHoursResponse> {
   constructor(data?: PartialMessage<AddIntervalToBusinessHoursResponse>);
@@ -2836,6 +2844,7 @@ export declare class AddIntervalToBusinessHoursResponse extends Message<AddInter
  * Request for removing an interval from a business hours object
  *
  * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursRequest
+ * @deprecated
  */
 export declare class RemoveIntervalFromBusinessHoursRequest extends Message<RemoveIntervalFromBusinessHoursRequest> {
   /**
@@ -2871,6 +2880,7 @@ export declare class RemoveIntervalFromBusinessHoursRequest extends Message<Remo
  * Response for removing an interval from a business hours object
  *
  * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursResponse
+ * @deprecated
  */
 export declare class RemoveIntervalFromBusinessHoursResponse extends Message<RemoveIntervalFromBusinessHoursResponse> {
   constructor(data?: PartialMessage<RemoveIntervalFromBusinessHoursResponse>);
@@ -2892,6 +2902,7 @@ export declare class RemoveIntervalFromBusinessHoursResponse extends Message<Rem
  * Request for updating the business hours info
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoRequest
+ * @deprecated
  */
 export declare class UpdateBusinessHoursInfoRequest extends Message<UpdateBusinessHoursInfoRequest> {
   /**
@@ -2948,6 +2959,7 @@ export declare class UpdateBusinessHoursInfoRequest extends Message<UpdateBusine
  * Response for updating the business hours info
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoResponse
+ * @deprecated
  */
 export declare class UpdateBusinessHoursInfoResponse extends Message<UpdateBusinessHoursInfoResponse> {
   constructor(data?: PartialMessage<UpdateBusinessHoursInfoResponse>);
@@ -2969,6 +2981,7 @@ export declare class UpdateBusinessHoursInfoResponse extends Message<UpdateBusin
  * Request for deleting business hours.
  *
  * @generated from message api.v1alpha1.org.DeleteBusinessHoursRequest
+ * @deprecated
  */
 export declare class DeleteBusinessHoursRequest extends Message<DeleteBusinessHoursRequest> {
   /**
@@ -2997,6 +3010,7 @@ export declare class DeleteBusinessHoursRequest extends Message<DeleteBusinessHo
  * Response for deleting business hours.
  *
  * @generated from message api.v1alpha1.org.DeleteBusinessHoursResponse
+ * @deprecated
  */
 export declare class DeleteBusinessHoursResponse extends Message<DeleteBusinessHoursResponse> {
   constructor(data?: PartialMessage<DeleteBusinessHoursResponse>);
@@ -3018,6 +3032,7 @@ export declare class DeleteBusinessHoursResponse extends Message<DeleteBusinessH
  * Request for EvaluateBusinessHours
  *
  * @generated from message api.v1alpha1.org.EvaluateBusinessHoursRequest
+ * @deprecated
  */
 export declare class EvaluateBusinessHoursRequest extends Message<EvaluateBusinessHoursRequest> {
   /**
@@ -3046,6 +3061,7 @@ export declare class EvaluateBusinessHoursRequest extends Message<EvaluateBusine
  * Response for EvaluateBusinessHours
  *
  * @generated from message api.v1alpha1.org.EvaluateBusinessHoursResponse
+ * @deprecated
  */
 export declare class EvaluateBusinessHoursResponse extends Message<EvaluateBusinessHoursResponse> {
   /**
