@@ -1291,6 +1291,83 @@ export declare enum InitialSetupState {
 }
 
 /**
+ * The RealTimeManagementState, which is translated as a reduced AgentStatus from the acd service.
+ *
+ * @generated from enum api.commons.RealTimeManagementState
+ */
+export declare enum RealTimeManagementState {
+  /**
+   * Not set.
+   *
+   * @generated from enum value: UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * The agent is logged in.
+   *
+   * @generated from enum value: LOGGED_IN = 1;
+   */
+  LOGGED_IN = 1,
+
+  /**
+   * The agent's call is on hold.
+   *
+   * @generated from enum value: CALL_ON_HOLD = 4;
+   */
+  CALL_ON_HOLD = 4,
+
+  /**
+   * Agent is on an outbound call.
+   *
+   * @generated from enum value: OUTBOUND_CALL = 5;
+   */
+  OUTBOUND_CALL = 5,
+
+  /**
+   * Agent is on a transfered call.
+   *
+   * @generated from enum value: TRANSFER = 7;
+   */
+  TRANSFER = 7,
+
+  /**
+   * Agent is on a conference call.
+   *
+   * @generated from enum value: CONFERENCE = 8;
+   */
+  CONFERENCE = 8,
+
+  /**
+   * Agent is ready to accept a call.
+   *
+   * @generated from enum value: READY = 9;
+   */
+  READY = 9,
+
+  /**
+   * Agent is not_ready to accept a call.
+   *
+   * @generated from enum value: NOT_READY = 10;
+   */
+  NOT_READY = 10,
+
+  /**
+   * The agent is is the wrap up state.
+   *
+   * @generated from enum value: WRAP_UP = 11;
+   */
+  WRAP_UP = 11,
+
+  /**
+   * The agent is logged out.
+   *
+   * @generated from enum value: LOGGED_OUT = 13;
+   */
+  LOGGED_OUT = 13,
+}
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType

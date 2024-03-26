@@ -371,6 +371,27 @@ export const InitialSetupState = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * The RealTimeManagementState, which is translated as a reduced AgentStatus from the acd service.
+ *
+ * @generated from enum api.commons.RealTimeManagementState
+ */
+export const RealTimeManagementState = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.RealTimeManagementState",
+  [
+    {no: 0, name: "UNSPECIFIED"},
+    {no: 1, name: "LOGGED_IN"},
+    {no: 4, name: "CALL_ON_HOLD"},
+    {no: 5, name: "OUTBOUND_CALL"},
+    {no: 7, name: "TRANSFER"},
+    {no: 8, name: "CONFERENCE"},
+    {no: 9, name: "READY"},
+    {no: 10, name: "NOT_READY"},
+    {no: 11, name: "WRAP_UP"},
+    {no: 13, name: "LOGGED_OUT"},
+  ],
+);
+
+/**
  * Represents the skill types that a client's skills can be.
  *
  * @generated from message api.commons.SkillType
