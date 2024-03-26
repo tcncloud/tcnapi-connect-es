@@ -723,6 +723,51 @@ export const ListHuntGroupIntegrationLinksResponse = /*@__PURE__*/ proto3.makeMe
 );
 
 /**
+ * CopyHuntGroupIntegrationLinkRequest is the request message for the CopyHuntGroupIntegrationLink RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupIntegrationLinkRequest
+ */
+export const CopyHuntGroupIntegrationLinkRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupIntegrationLinkRequest",
+  () => [
+    { no: 1, name: "to_hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "link", kind: "message", T: IntegrationLink },
+  ],
+);
+
+/**
+ * CopyHuntGroupIntegrationLinkResponse is the response message for the CopyHuntGroupIntegrationLink RPC method.
+ *
+ * @generated from message api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse
+ */
+export const CopyHuntGroupIntegrationLinkResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.CopyHuntGroupIntegrationLinkResponse",
+  [],
+);
+
+/**
+ * UpdateHuntGroupIntegrationLinksRequest is the request message for the UpdateHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest
+ */
+export const UpdateHuntGroupIntegrationLinksRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest",
+  () => [
+    { no: 1, name: "links", kind: "message", T: IntegrationLink, repeated: true },
+  ],
+);
+
+/**
+ * UpdateHuntGroupIntegrationLinksResponse is the response message for the UpdateHuntGroupIntegrationLinks RPC method.
+ *
+ * @generated from message api.v1alpha1.org.UpdateHuntGroupIntegrationLinksResponse
+ */
+export const UpdateHuntGroupIntegrationLinksResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateHuntGroupIntegrationLinksResponse",
+  [],
+);
+
+/**
  * ListAgentTriggersRequest is the request message for the ListAgentTriggers RPC method.
  *
  * @generated from message api.v1alpha1.org.ListAgentTriggersRequest
