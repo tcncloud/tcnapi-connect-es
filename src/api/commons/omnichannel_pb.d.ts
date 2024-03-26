@@ -3761,6 +3761,11 @@ export declare class OmniTaskConfig extends Message<OmniTaskConfig> {
    */
   message?: OmniMessagePayload;
 
+  /**
+   * @generated from field: string user_id = 6;
+   */
+  userId: string;
+
   constructor(data?: PartialMessage<OmniTaskConfig>);
 
   static readonly runtime: typeof proto3;

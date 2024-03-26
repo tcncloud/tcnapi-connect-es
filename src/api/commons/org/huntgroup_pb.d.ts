@@ -4384,6 +4384,13 @@ export declare class IntegrationLink extends Message<IntegrationLink> {
    */
   configurationName: string;
 
+  /**
+   * The sid of the hunt group which the integration link is associated with.
+   *
+   * @generated from field: int64 hunt_group_sid = 9;
+   */
+  huntGroupSid: bigint;
+
   constructor(data?: PartialMessage<IntegrationLink>);
 
   static readonly runtime: typeof proto3;

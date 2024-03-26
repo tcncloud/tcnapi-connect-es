@@ -1297,6 +1297,7 @@ export const IntegrationLink = /*@__PURE__*/ proto3.makeMessageType(
     { no: 6, name: "order", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 7, name: "parameters", kind: "message", T: IntegrationLinkParameter, repeated: true },
     { no: 8, name: "configuration_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

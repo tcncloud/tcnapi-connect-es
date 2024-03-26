@@ -96,6 +96,7 @@ export const RequestMethod = /*@__PURE__*/ proto3.makeEnum(
     {no: 412, name: "REQUEST_METHOD_CIRCPRO_LAW_IMMEDIATEPAYMENT", localName: "CIRCPRO_LAW_IMMEDIATEPAYMENT"},
     {no: 413, name: "REQUEST_METHOD_CIRCPRO_LAW_UPDATEDATAWITHPAC", localName: "CIRCPRO_LAW_UPDATEDATAWITHPAC"},
     {no: 414, name: "REQUEST_METHOD_CIRCPRO_LAW_GETCUSTOMERS", localName: "CIRCPRO_LAW_GETCUSTOMERS"},
+    {no: 415, name: "REQUEST_METHOD_CIRCPRO_LAW_GET_PAYMENT_TYPES", localName: "CIRCPRO_LAW_GET_PAYMENT_TYPES"},
     {no: 501, name: "REQUEST_METHOD_AUTHORIZENET_CHARGECREDITCARD", localName: "AUTHORIZENET_CHARGECREDITCARD"},
     {no: 502, name: "REQUEST_METHOD_AUTHORIZENET_DEBITBANKACCOUNT", localName: "AUTHORIZENET_DEBITBANKACCOUNT"},
     {no: 503, name: "REQUEST_METHOD_AUTHORIZENET_CREATECUSTOMERPAYMENTPROFILE", localName: "AUTHORIZENET_CREATECUSTOMERPAYMENTPROFILE"},
@@ -160,6 +161,8 @@ export const RequestMethod = /*@__PURE__*/ proto3.makeEnum(
     {no: 2011, name: "REQUEST_METHOD_EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN", localName: "EXPERIAN_STELLA_ADD_USA_EPAY_TOKEN"},
     {no: 2012, name: "REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS", localName: "EXPERIAN_STELLA_PAYMENT_PLANS"},
     {no: 2013, name: "REQUEST_METHOD_EXPERIAN_STELLA_AUTH", localName: "EXPERIAN_STELLA_AUTH"},
+    {no: 2014, name: "REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION", localName: "EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION"},
+    {no: 2015, name: "REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS_BY_PATIENT", localName: "EXPERIAN_STELLA_PAYMENT_PLANS_BY_PATIENT"},
     {no: 2101, name: "REQUEST_METHOD_NEWSCYCLE_LOGIN", localName: "NEWSCYCLE_LOGIN"},
     {no: 2102, name: "REQUEST_METHOD_NEWSCYCLE_SEARCHPAGE", localName: "NEWSCYCLE_SEARCHPAGE"},
     {no: 2103, name: "REQUEST_METHOD_NEWSCYCLE_BILLINGINFO", localName: "NEWSCYCLE_BILLINGINFO"},
@@ -714,6 +717,7 @@ export const ExecuteFlow = /*@__PURE__*/ proto3.makeMessageType(
     { no: 412, name: "circpro_law_immediate_payment", kind: "message", T: ExecuteCircproLawImmediatePayment, oneof: "value" },
     { no: 413, name: "circpro_law_update_data_with_pac", kind: "message", T: ExecuteCircproLawUpdateDataWithPac, oneof: "value" },
     { no: 414, name: "circpro_law_get_customers", kind: "message", T: ExecuteCircproLawGetCustomers, oneof: "value" },
+    { no: 415, name: "circpro_law_get_payment_types", kind: "message", T: ExecuteCircproLawGetPaymentTypes, oneof: "value" },
     { no: 501, name: "authorizenet_charge_credit_card", kind: "message", T: ExecuteAuthorizenetChargeCreditCard, oneof: "value" },
     { no: 502, name: "authorizenet_debit_bank_account", kind: "message", T: ExecuteAuthorizenetDebitBankAccount, oneof: "value" },
     { no: 503, name: "authorizenet_create_customer_payment_profile", kind: "message", T: ExecuteAuthorizenetCreateCustomerPaymentProfile, oneof: "value" },
@@ -778,6 +782,8 @@ export const ExecuteFlow = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2011, name: "experian_stella_add_usa_epay_token", kind: "message", T: ExecuteExperianStellaAddusaepaytoken, oneof: "value" },
     { no: 2012, name: "experian_stella_payment_plans", kind: "message", T: ExecuteExperianStellaPaymentPlans, oneof: "value" },
     { no: 2013, name: "experian_stella_auth", kind: "message", T: ExecuteExperianStellaAuth, oneof: "value" },
+    { no: 2014, name: "experian_stella_card_entry_tokenization", kind: "message", T: ExecuteExperianStellaCardEntryTokenization, oneof: "value" },
+    { no: 2015, name: "experian_stella_payment_plans_by_patient", kind: "message", T: ExecuteExperianStellaPaymentPlansByPatient, oneof: "value" },
     { no: 2101, name: "newscycle_login", kind: "message", T: ExecuteNewscycleLogin, oneof: "value" },
     { no: 2102, name: "newscycle_search_page", kind: "message", T: ExecuteNewscycleSearchPage, oneof: "value" },
     { no: 2103, name: "newscycle_billing_info", kind: "message", T: ExecuteNewscycleBillingInfo, oneof: "value" },
@@ -1384,6 +1390,14 @@ export const ExecuteCircproLawGetCustomers = /*@__PURE__*/ proto3.makeMessageTyp
 );
 
 /**
+ * @generated from message api.commons.integrations.ExecuteCircproLawGetPaymentTypes
+ */
+export const ExecuteCircproLawGetPaymentTypes = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteCircproLawGetPaymentTypes",
+  [],
+);
+
+/**
  * @generated from message api.commons.integrations.ExecuteAuthorizenetChargeCreditCard
  */
 export const ExecuteAuthorizenetChargeCreditCard = /*@__PURE__*/ proto3.makeMessageType(
@@ -1892,6 +1906,22 @@ export const ExecuteExperianStellaPaymentPlans = /*@__PURE__*/ proto3.makeMessag
  */
 export const ExecuteExperianStellaAuth = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.integrations.ExecuteExperianStellaAuth",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardEntryTokenization
+ */
+export const ExecuteExperianStellaCardEntryTokenization = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaCardEntryTokenization",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaPaymentPlansByPatient
+ */
+export const ExecuteExperianStellaPaymentPlansByPatient = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteExperianStellaPaymentPlansByPatient",
   [],
 );
 
