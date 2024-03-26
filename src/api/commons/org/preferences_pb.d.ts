@@ -10,7 +10,7 @@ import type { AgentInfoSortBy, DefaultDuplicateHandling, DisplayLanguage, QueueI
 import type { AnsweringMachineDetection, BroadcastTemplateOrdering, LocalePreferences, ScheduleByTimeZoneScope, StandardReportFilter } from "../org_preferences_pb.js";
 import type { DialOrderType } from "../lms_pb.js";
 import type { AnaTimeZone } from "../ana_pb.js";
-import type { Weekday_Enum } from "../enums_pb.js";
+import type { Month, Weekday_Enum } from "../enums_pb.js";
 
 /**
  * General preferences controlling organization properties.
@@ -2807,5 +2807,196 @@ export declare class DayInterval extends Message<DayInterval> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DayInterval;
 
   static equals(a: DayInterval | PlainMessage<DayInterval> | undefined, b: DayInterval | PlainMessage<DayInterval> | undefined): boolean;
+}
+
+/**
+ * MonthDayDate enables custom named dates.
+ *
+ * @generated from message api.commons.org.MonthDayDate
+ */
+export declare class MonthDayDate extends Message<MonthDayDate> {
+  /**
+   * A name for this date.
+   *
+   * @generated from field: string date_name = 1;
+   */
+  dateName: string;
+
+  /**
+   * Month of the year.
+   *
+   * @generated from field: api.commons.Month month = 2;
+   */
+  month: Month;
+
+  /**
+   * Day of the month.
+   *
+   * @generated from field: int32 day_of_month = 3;
+   */
+  dayOfMonth: number;
+
+  constructor(data?: PartialMessage<MonthDayDate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.MonthDayDate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MonthDayDate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MonthDayDate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MonthDayDate;
+
+  static equals(a: MonthDayDate | PlainMessage<MonthDayDate> | undefined, b: MonthDayDate | PlainMessage<MonthDayDate> | undefined): boolean;
+}
+
+/**
+ * CountryHoliday holiday service name and country.
+ *
+ * @generated from message api.commons.org.CountryHoliday
+ */
+export declare class CountryHoliday extends Message<CountryHoliday> {
+  /**
+   * The name.
+   *
+   * @generated from field: string holiday_name = 1;
+   */
+  holidayName: string;
+
+  /**
+   * The country.
+   *
+   * @generated from field: api.commons.Country country = 2;
+   */
+  country: Country;
+
+  constructor(data?: PartialMessage<CountryHoliday>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.CountryHoliday";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CountryHoliday;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CountryHoliday;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CountryHoliday;
+
+  static equals(a: CountryHoliday | PlainMessage<CountryHoliday> | undefined, b: CountryHoliday | PlainMessage<CountryHoliday> | undefined): boolean;
+}
+
+/**
+ * ProgrammedDay may be a named date or a holiday.
+ *
+ * @generated from message api.commons.org.ProgrammedDay
+ */
+export declare class ProgrammedDay extends Message<ProgrammedDay> {
+  /**
+   * A date or holiday
+   *
+   * @generated from oneof api.commons.org.ProgrammedDay.DayType
+   */
+  DayType: {
+    /**
+     * Named date.
+     *
+     * @generated from field: api.commons.org.MonthDayDate day = 1;
+     */
+    value: MonthDayDate;
+    case: "day";
+  } | {
+    /**
+     * Holiday service holiday.
+     *
+     * @generated from field: api.commons.org.CountryHoliday holiday = 2;
+     */
+    value: CountryHoliday;
+    case: "holiday";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<ProgrammedDay>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.ProgrammedDay";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProgrammedDay;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProgrammedDay;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProgrammedDay;
+
+  static equals(a: ProgrammedDay | PlainMessage<ProgrammedDay> | undefined, b: ProgrammedDay | PlainMessage<ProgrammedDay> | undefined): boolean;
+}
+
+/**
+ * ProgrammedDates a list of dates or holidays.
+ *
+ * @generated from message api.commons.org.ProgrammedDates
+ */
+export declare class ProgrammedDates extends Message<ProgrammedDates> {
+  /**
+   * ID of the Org related to this.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Unique ID.
+   *
+   * @generated from field: string programmed_dates_id = 2;
+   */
+  programmedDatesId: string;
+
+  /**
+   * Name of the list.
+   *
+   * @generated from field: string programmed_dates_name = 3;
+   */
+  programmedDatesName: string;
+
+  /**
+   * Description of the list.
+   *
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * The timezone.
+   *
+   * @generated from field: api.commons.TimeZone timezone = 5;
+   */
+  timezone: TimeZone;
+
+  /**
+   * The list of dates or holidays.
+   *
+   * @generated from field: repeated api.commons.org.ProgrammedDay days = 6;
+   */
+  days: ProgrammedDay[];
+
+  /**
+   * When the list was last updated.
+   *
+   * @generated from field: google.protobuf.Timestamp last_updated = 7;
+   */
+  lastUpdated?: Timestamp;
+
+  constructor(data?: PartialMessage<ProgrammedDates>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.ProgrammedDates";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ProgrammedDates;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ProgrammedDates;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ProgrammedDates;
+
+  static equals(a: ProgrammedDates | PlainMessage<ProgrammedDates> | undefined, b: ProgrammedDates | PlainMessage<ProgrammedDates> | undefined): boolean;
 }
 
