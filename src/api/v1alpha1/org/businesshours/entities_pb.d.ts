@@ -38,7 +38,7 @@ export declare class ListBusinessHoursResponse extends Message<ListBusinessHours
   /**
    * The list of business hours
    *
-   * @generated from field: repeated api.commons.org.BusinessHours business_hours = 2;
+   * @generated from field: repeated api.commons.org.BusinessHours business_hours = 1;
    */
   businessHours: BusinessHours[];
 

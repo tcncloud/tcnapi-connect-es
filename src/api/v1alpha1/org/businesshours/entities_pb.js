@@ -25,7 +25,7 @@ export const ListBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const ListBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.businesshours.ListBusinessHoursResponse",
   () => [
-    { no: 2, name: "business_hours", kind: "message", T: BusinessHours, repeated: true },
+    { no: 1, name: "business_hours", kind: "message", T: BusinessHours, repeated: true },
   ],
 );
 

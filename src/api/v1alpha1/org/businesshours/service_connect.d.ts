@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddIntervalToBusinessHoursRequest, AddIntervalToBusinessHoursResponse, DeleteBusinessHoursRequest, DeleteBusinessHoursResponse, EvaluateBusinessHoursRequest, EvaluateBusinessHoursResponse, GetBusinessHoursRequest, GetBusinessHoursResponse, RemoveIntervalFromBusinessHoursRequest, RemoveIntervalFromBusinessHoursResponse, SetBusinessHoursRequest, SetBusinessHoursResponse, UpdateBusinessHoursInfoRequest, UpdateBusinessHoursInfoResponse } from "./entities_pb.js";
+import { AddIntervalToBusinessHoursRequest, AddIntervalToBusinessHoursResponse, DeleteBusinessHoursRequest, DeleteBusinessHoursResponse, EvaluateBusinessHoursRequest, EvaluateBusinessHoursResponse, GetBusinessHoursRequest, GetBusinessHoursResponse, ListBusinessHoursRequest, ListBusinessHoursResponse, RemoveIntervalFromBusinessHoursRequest, RemoveIntervalFromBusinessHoursResponse, SetBusinessHoursRequest, SetBusinessHoursResponse, UpdateBusinessHoursInfoRequest, UpdateBusinessHoursInfoResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -12,6 +12,17 @@ import { MethodKind } from "@bufbuild/protobuf";
 export declare const BusinessHoursService: {
   readonly typeName: "api.v1alpha1.org.businesshours.BusinessHoursService",
   readonly methods: {
+    /**
+     * ListBusinessHours returns all business hours for an Org.
+     *
+     * @generated from rpc api.v1alpha1.org.businesshours.BusinessHoursService.ListBusinessHours
+     */
+    readonly listBusinessHours: {
+      readonly name: "ListBusinessHours",
+      readonly I: typeof ListBusinessHoursRequest,
+      readonly O: typeof ListBusinessHoursResponse,
+      readonly kind: MethodKind.Unary,
+    },
     /**
      * GetBusinessHours returns the business hours for the ID.
      *
