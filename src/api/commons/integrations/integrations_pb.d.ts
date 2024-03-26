@@ -376,6 +376,11 @@ export declare enum RequestMethod {
   CIRCPRO_LAW_GETCUSTOMERS = 414,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_CIRCPRO_LAW_GET_PAYMENT_TYPES = 415;
+   */
+  CIRCPRO_LAW_GET_PAYMENT_TYPES = 415,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_AUTHORIZENET_CHARGECREDITCARD = 501;
    */
   AUTHORIZENET_CHARGECREDITCARD = 501,
@@ -2769,6 +2774,12 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
     case: "circproLawGetCustomers";
   } | {
     /**
+     * @generated from field: api.commons.integrations.ExecuteCircproLawGetPaymentTypes circpro_law_get_payment_types = 415;
+     */
+    value: ExecuteCircproLawGetPaymentTypes;
+    case: "circproLawGetPaymentTypes";
+  } | {
+    /**
      * @generated from field: api.commons.integrations.ExecuteAuthorizenetChargeCreditCard authorizenet_charge_credit_card = 501;
      */
     value: ExecuteAuthorizenetChargeCreditCard;
@@ -5060,6 +5071,25 @@ export declare class ExecuteCircproLawGetCustomers extends Message<ExecuteCircpr
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteCircproLawGetCustomers;
 
   static equals(a: ExecuteCircproLawGetCustomers | PlainMessage<ExecuteCircproLawGetCustomers> | undefined, b: ExecuteCircproLawGetCustomers | PlainMessage<ExecuteCircproLawGetCustomers> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteCircproLawGetPaymentTypes
+ */
+export declare class ExecuteCircproLawGetPaymentTypes extends Message<ExecuteCircproLawGetPaymentTypes> {
+  constructor(data?: PartialMessage<ExecuteCircproLawGetPaymentTypes>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteCircproLawGetPaymentTypes";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteCircproLawGetPaymentTypes;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteCircproLawGetPaymentTypes;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteCircproLawGetPaymentTypes;
+
+  static equals(a: ExecuteCircproLawGetPaymentTypes | PlainMessage<ExecuteCircproLawGetPaymentTypes> | undefined, b: ExecuteCircproLawGetPaymentTypes | PlainMessage<ExecuteCircproLawGetPaymentTypes> | undefined): boolean;
 }
 
 /**

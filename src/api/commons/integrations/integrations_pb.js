@@ -96,6 +96,7 @@ export const RequestMethod = /*@__PURE__*/ proto3.makeEnum(
     {no: 412, name: "REQUEST_METHOD_CIRCPRO_LAW_IMMEDIATEPAYMENT", localName: "CIRCPRO_LAW_IMMEDIATEPAYMENT"},
     {no: 413, name: "REQUEST_METHOD_CIRCPRO_LAW_UPDATEDATAWITHPAC", localName: "CIRCPRO_LAW_UPDATEDATAWITHPAC"},
     {no: 414, name: "REQUEST_METHOD_CIRCPRO_LAW_GETCUSTOMERS", localName: "CIRCPRO_LAW_GETCUSTOMERS"},
+    {no: 415, name: "REQUEST_METHOD_CIRCPRO_LAW_GET_PAYMENT_TYPES", localName: "CIRCPRO_LAW_GET_PAYMENT_TYPES"},
     {no: 501, name: "REQUEST_METHOD_AUTHORIZENET_CHARGECREDITCARD", localName: "AUTHORIZENET_CHARGECREDITCARD"},
     {no: 502, name: "REQUEST_METHOD_AUTHORIZENET_DEBITBANKACCOUNT", localName: "AUTHORIZENET_DEBITBANKACCOUNT"},
     {no: 503, name: "REQUEST_METHOD_AUTHORIZENET_CREATECUSTOMERPAYMENTPROFILE", localName: "AUTHORIZENET_CREATECUSTOMERPAYMENTPROFILE"},
@@ -716,6 +717,7 @@ export const ExecuteFlow = /*@__PURE__*/ proto3.makeMessageType(
     { no: 412, name: "circpro_law_immediate_payment", kind: "message", T: ExecuteCircproLawImmediatePayment, oneof: "value" },
     { no: 413, name: "circpro_law_update_data_with_pac", kind: "message", T: ExecuteCircproLawUpdateDataWithPac, oneof: "value" },
     { no: 414, name: "circpro_law_get_customers", kind: "message", T: ExecuteCircproLawGetCustomers, oneof: "value" },
+    { no: 415, name: "circpro_law_get_payment_types", kind: "message", T: ExecuteCircproLawGetPaymentTypes, oneof: "value" },
     { no: 501, name: "authorizenet_charge_credit_card", kind: "message", T: ExecuteAuthorizenetChargeCreditCard, oneof: "value" },
     { no: 502, name: "authorizenet_debit_bank_account", kind: "message", T: ExecuteAuthorizenetDebitBankAccount, oneof: "value" },
     { no: 503, name: "authorizenet_create_customer_payment_profile", kind: "message", T: ExecuteAuthorizenetCreateCustomerPaymentProfile, oneof: "value" },
@@ -1384,6 +1386,14 @@ export const ExecuteCircproLawUpdateDataWithPac = /*@__PURE__*/ proto3.makeMessa
  */
 export const ExecuteCircproLawGetCustomers = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.integrations.ExecuteCircproLawGetCustomers",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteCircproLawGetPaymentTypes
+ */
+export const ExecuteCircproLawGetPaymentTypes = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteCircproLawGetPaymentTypes",
   [],
 );
 
