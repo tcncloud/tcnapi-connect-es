@@ -186,14 +186,21 @@ export declare class GetKYCEncContactEntryRequest extends Message<GetKYCEncConta
   projectId: string;
 
   /**
-   * @generated from field: repeated api.commons.ContactManagerEntryVal entry_val = 2;
+   * @generated from field: repeated api.commons.ContactManagerEntryVal entry_val = 2 [deprecated = true];
+   * @deprecated
    */
   entryVal: ContactManagerEntryVal$1[];
 
   /**
-   * @generated from field: int64 min_kyc_limit = 3;
+   * @generated from field: int64 min_kyc_limit = 3 [deprecated = true];
+   * @deprecated
    */
   minKycLimit: bigint;
+
+  /**
+   * @generated from field: repeated api.v1alpha1.contactmanager.ContactManagerEntryVal kyc_response = 4;
+   */
+  kycResponse: ContactManagerEntryVal[];
 
   constructor(data?: PartialMessage<GetKYCEncContactEntryRequest>);
 
@@ -215,9 +222,15 @@ export declare class GetKYCEncContactEntryRequest extends Message<GetKYCEncConta
  */
 export declare class GetKYCEncContactEntryResponse extends Message<GetKYCEncContactEntryResponse> {
   /**
-   * @generated from field: bool verified = 1;
+   * @generated from field: bool verified = 1 [deprecated = true];
+   * @deprecated
    */
   verified: boolean;
+
+  /**
+   * @generated from field: repeated api.v1alpha1.contactmanager.ContactManagerEntry contact_entry = 2;
+   */
+  contactEntry: ContactManagerEntry[];
 
   constructor(data?: PartialMessage<GetKYCEncContactEntryResponse>);
 
@@ -263,7 +276,8 @@ export declare class GetKYCKeysResponse extends Message<GetKYCKeysResponse> {
   entryType: string[];
 
   /**
-   * @generated from field: int64 kyc_limit = 2;
+   * @generated from field: int64 kyc_limit = 2 [deprecated = true];
+   * @deprecated
    */
   kycLimit: bigint;
 

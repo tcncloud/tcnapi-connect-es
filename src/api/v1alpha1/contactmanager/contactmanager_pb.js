@@ -84,6 +84,7 @@ export const GetKYCEncContactEntryRequest = /*@__PURE__*/ proto3.makeMessageType
     { no: 1, name: "project_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "entry_val", kind: "message", T: ContactManagerEntryVal$1, repeated: true },
     { no: 3, name: "min_kyc_limit", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "kyc_response", kind: "message", T: ContactManagerEntryVal, repeated: true },
   ],
 );
 
@@ -94,6 +95,7 @@ export const GetKYCEncContactEntryResponse = /*@__PURE__*/ proto3.makeMessageTyp
   "api.v1alpha1.contactmanager.GetKYCEncContactEntryResponse",
   () => [
     { no: 1, name: "verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "contact_entry", kind: "message", T: ContactManagerEntry, repeated: true },
   ],
 );
 
