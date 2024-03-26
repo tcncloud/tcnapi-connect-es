@@ -1291,10 +1291,14 @@ export declare enum InitialSetupState {
 }
 
 /**
+ * The RealTimeManagementState, which is translated as a reduced AgentStatus from the acd service.
+ *
  * @generated from enum api.commons.RealTimeManagementState
  */
 export declare enum RealTimeManagementState {
   /**
+   * Not set.
+   *
    * @generated from enum value: UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,

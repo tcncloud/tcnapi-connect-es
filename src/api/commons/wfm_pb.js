@@ -371,6 +371,8 @@ export const InitialSetupState = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * The RealTimeManagementState, which is translated as a reduced AgentStatus from the acd service.
+ *
  * @generated from enum api.commons.RealTimeManagementState
  */
 export const RealTimeManagementState = /*@__PURE__*/ proto3.makeEnum(
