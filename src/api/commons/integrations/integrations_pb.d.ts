@@ -696,6 +696,16 @@ export declare enum RequestMethod {
   EXPERIAN_STELLA_AUTH = 2013,
 
   /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION = 2014;
+   */
+  EXPERIAN_STELLA_CARD_ENTRY_TOKENIZATION = 2014,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_EXPERIAN_STELLA_PAYMENT_PLANS_BY_PATIENT = 2015;
+   */
+  EXPERIAN_STELLA_PAYMENT_PLANS_BY_PATIENT = 2015,
+
+  /**
    * @generated from enum value: REQUEST_METHOD_NEWSCYCLE_LOGIN = 2101;
    */
   NEWSCYCLE_LOGIN = 2101,
@@ -3141,6 +3151,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteExperianStellaAuth;
     case: "experianStellaAuth";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaCardEntryTokenization experian_stella_card_entry_tokenization = 2014;
+     */
+    value: ExecuteExperianStellaCardEntryTokenization;
+    case: "experianStellaCardEntryTokenization";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteExperianStellaPaymentPlansByPatient experian_stella_payment_plans_by_patient = 2015;
+     */
+    value: ExecuteExperianStellaPaymentPlansByPatient;
+    case: "experianStellaPaymentPlansByPatient";
   } | {
     /**
      * @generated from field: api.commons.integrations.ExecuteNewscycleLogin newscycle_login = 2101;
@@ -6254,6 +6276,44 @@ export declare class ExecuteExperianStellaAuth extends Message<ExecuteExperianSt
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaAuth;
 
   static equals(a: ExecuteExperianStellaAuth | PlainMessage<ExecuteExperianStellaAuth> | undefined, b: ExecuteExperianStellaAuth | PlainMessage<ExecuteExperianStellaAuth> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaCardEntryTokenization
+ */
+export declare class ExecuteExperianStellaCardEntryTokenization extends Message<ExecuteExperianStellaCardEntryTokenization> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaCardEntryTokenization>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaCardEntryTokenization";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaCardEntryTokenization;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardEntryTokenization;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaCardEntryTokenization;
+
+  static equals(a: ExecuteExperianStellaCardEntryTokenization | PlainMessage<ExecuteExperianStellaCardEntryTokenization> | undefined, b: ExecuteExperianStellaCardEntryTokenization | PlainMessage<ExecuteExperianStellaCardEntryTokenization> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteExperianStellaPaymentPlansByPatient
+ */
+export declare class ExecuteExperianStellaPaymentPlansByPatient extends Message<ExecuteExperianStellaPaymentPlansByPatient> {
+  constructor(data?: PartialMessage<ExecuteExperianStellaPaymentPlansByPatient>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteExperianStellaPaymentPlansByPatient";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteExperianStellaPaymentPlansByPatient;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteExperianStellaPaymentPlansByPatient;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteExperianStellaPaymentPlansByPatient;
+
+  static equals(a: ExecuteExperianStellaPaymentPlansByPatient | PlainMessage<ExecuteExperianStellaPaymentPlansByPatient> | undefined, b: ExecuteExperianStellaPaymentPlansByPatient | PlainMessage<ExecuteExperianStellaPaymentPlansByPatient> | undefined): boolean;
 }
 
 /**
