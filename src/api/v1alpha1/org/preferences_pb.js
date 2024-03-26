@@ -1100,6 +1100,7 @@ export const UpdateBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
  * Request for listing business hours.
  *
  * @generated from message api.v1alpha1.org.ListBusinessHoursRequest
+ * @deprecated
  */
 export const ListBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.ListBusinessHoursRequest",
@@ -1110,6 +1111,7 @@ export const ListBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
  * Response for listing business hours.
  *
  * @generated from message api.v1alpha1.org.ListBusinessHoursResponse
+ * @deprecated
  */
 export const ListBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.ListBusinessHoursResponse",
@@ -1122,6 +1124,7 @@ export const ListBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
  * Request for fetching a business hours.
  *
  * @generated from message api.v1alpha1.org.GetBusinessHoursRequest
+ * @deprecated
  */
 export const GetBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.GetBusinessHoursRequest",
@@ -1134,6 +1137,7 @@ export const GetBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
  * Response for fetching a business hours.
  *
  * @generated from message api.v1alpha1.org.GetBusinessHoursResponse
+ * @deprecated
  */
 export const GetBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.GetBusinessHoursResponse",
@@ -1146,6 +1150,7 @@ export const GetBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
  * Request for initializing a business hours object
  *
  * @generated from message api.v1alpha1.org.SetBusinessHoursRequest
+ * @deprecated
  */
 export const SetBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.SetBusinessHoursRequest",
@@ -1161,6 +1166,7 @@ export const SetBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
  * Response for initializing a business hours object
  *
  * @generated from message api.v1alpha1.org.SetBusinessHoursResponse
+ * @deprecated
  */
 export const SetBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.SetBusinessHoursResponse",
@@ -1173,6 +1179,7 @@ export const SetBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
  * Request for adding an interval to a business hours object
  *
  * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursRequest
+ * @deprecated
  */
 export const AddIntervalToBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.AddIntervalToBusinessHoursRequest",
@@ -1186,6 +1193,7 @@ export const AddIntervalToBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessag
  * Response for adding an interval to a business hours object
  *
  * @generated from message api.v1alpha1.org.AddIntervalToBusinessHoursResponse
+ * @deprecated
  */
 export const AddIntervalToBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.AddIntervalToBusinessHoursResponse",
@@ -1196,6 +1204,7 @@ export const AddIntervalToBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessa
  * Request for removing an interval from a business hours object
  *
  * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursRequest
+ * @deprecated
  */
 export const RemoveIntervalFromBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.RemoveIntervalFromBusinessHoursRequest",
@@ -1209,6 +1218,7 @@ export const RemoveIntervalFromBusinessHoursRequest = /*@__PURE__*/ proto3.makeM
  * Response for removing an interval from a business hours object
  *
  * @generated from message api.v1alpha1.org.RemoveIntervalFromBusinessHoursResponse
+ * @deprecated
  */
 export const RemoveIntervalFromBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.RemoveIntervalFromBusinessHoursResponse",
@@ -1219,6 +1229,7 @@ export const RemoveIntervalFromBusinessHoursResponse = /*@__PURE__*/ proto3.make
  * Request for updating the business hours info
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoRequest
+ * @deprecated
  */
 export const UpdateBusinessHoursInfoRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.UpdateBusinessHoursInfoRequest",
@@ -1235,6 +1246,7 @@ export const UpdateBusinessHoursInfoRequest = /*@__PURE__*/ proto3.makeMessageTy
  * Response for updating the business hours info
  *
  * @generated from message api.v1alpha1.org.UpdateBusinessHoursInfoResponse
+ * @deprecated
  */
 export const UpdateBusinessHoursInfoResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.UpdateBusinessHoursInfoResponse",
@@ -1245,6 +1257,7 @@ export const UpdateBusinessHoursInfoResponse = /*@__PURE__*/ proto3.makeMessageT
  * Request for deleting business hours.
  *
  * @generated from message api.v1alpha1.org.DeleteBusinessHoursRequest
+ * @deprecated
  */
 export const DeleteBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.DeleteBusinessHoursRequest",
@@ -1257,6 +1270,7 @@ export const DeleteBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
  * Response for deleting business hours.
  *
  * @generated from message api.v1alpha1.org.DeleteBusinessHoursResponse
+ * @deprecated
  */
 export const DeleteBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.DeleteBusinessHoursResponse",
@@ -1267,6 +1281,7 @@ export const DeleteBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
  * Request for EvaluateBusinessHours
  *
  * @generated from message api.v1alpha1.org.EvaluateBusinessHoursRequest
+ * @deprecated
  */
 export const EvaluateBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.EvaluateBusinessHoursRequest",
@@ -1279,6 +1294,7 @@ export const EvaluateBusinessHoursRequest = /*@__PURE__*/ proto3.makeMessageType
  * Response for EvaluateBusinessHours
  *
  * @generated from message api.v1alpha1.org.EvaluateBusinessHoursResponse
+ * @deprecated
  */
 export const EvaluateBusinessHoursResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.EvaluateBusinessHoursResponse",

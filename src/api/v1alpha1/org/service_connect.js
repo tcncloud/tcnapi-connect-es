@@ -657,6 +657,7 @@ export const Org = {
      * ListBusinessHours returns all business hours for an Org.
      *
      * @generated from rpc api.v1alpha1.org.Org.ListBusinessHours
+     * @deprecated
      */
     listBusinessHours: {
       name: "ListBusinessHours",
@@ -668,6 +669,7 @@ export const Org = {
      * GetBusinessHours returns the business hours for the ID.
      *
      * @generated from rpc api.v1alpha1.org.Org.GetBusinessHours
+     * @deprecated
      */
     getBusinessHours: {
       name: "GetBusinessHours",
@@ -679,6 +681,7 @@ export const Org = {
      * SetBusinessHours initializes a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.SetBusinessHours
+     * @deprecated
      */
     setBusinessHours: {
       name: "SetBusinessHours",
@@ -690,6 +693,7 @@ export const Org = {
      * AddIntervalToBusinessHours adds a day interval to a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.AddIntervalToBusinessHours
+     * @deprecated
      */
     addIntervalToBusinessHours: {
       name: "AddIntervalToBusinessHours",
@@ -701,6 +705,7 @@ export const Org = {
      * RemoveIntervalFromBusinessHours removes a day interval from a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.RemoveIntervalFromBusinessHours
+     * @deprecated
      */
     removeIntervalFromBusinessHours: {
       name: "RemoveIntervalFromBusinessHours",
@@ -712,6 +717,7 @@ export const Org = {
      * UpdateBusinessHoursInfo updates the general info of a business hours object
      *
      * @generated from rpc api.v1alpha1.org.Org.UpdateBusinessHoursInfo
+     * @deprecated
      */
     updateBusinessHoursInfo: {
       name: "UpdateBusinessHoursInfo",
@@ -723,6 +729,7 @@ export const Org = {
      * DeleteBusinessHours removes business hours.
      *
      * @generated from rpc api.v1alpha1.org.Org.DeleteBusinessHours
+     * @deprecated
      */
     deleteBusinessHours: {
       name: "DeleteBusinessHours",
@@ -734,6 +741,7 @@ export const Org = {
      * EvaluateBusinessHours determines whether or not the current time is within a business hours day interval
      *
      * @generated from rpc api.v1alpha1.org.Org.EvaluateBusinessHours
+     * @deprecated
      */
     evaluateBusinessHours: {
       name: "EvaluateBusinessHours",
@@ -2406,6 +2414,7 @@ export const Org = {
      * CreateBusinessHours persists times businesses are available.
      *
      * @generated from rpc api.v1alpha1.org.Org.CreateBusinessHours
+     * @deprecated
      */
     createBusinessHours: {
       name: "CreateBusinessHours",
@@ -2417,6 +2426,7 @@ export const Org = {
      * UpdateBusinessHours persists changes to times businesses are available.
      *
      * @generated from rpc api.v1alpha1.org.Org.UpdateBusinessHours
+     * @deprecated
      */
     updateBusinessHours: {
       name: "UpdateBusinessHours",
