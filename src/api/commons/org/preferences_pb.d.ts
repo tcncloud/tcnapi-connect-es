@@ -2965,16 +2965,23 @@ export declare class ProgrammedDates extends Message<ProgrammedDates> {
   description: string;
 
   /**
+   * The timezone.
+   *
+   * @generated from field: api.commons.TimeZone timezone = 5;
+   */
+  timezone: TimeZone;
+
+  /**
    * The list of dates or holidays.
    *
-   * @generated from field: repeated api.commons.org.ProgrammedDay days = 5;
+   * @generated from field: repeated api.commons.org.ProgrammedDay days = 6;
    */
   days: ProgrammedDay[];
 
   /**
    * When the list was last updated.
    *
-   * @generated from field: google.protobuf.Timestamp last_updated = 6;
+   * @generated from field: google.protobuf.Timestamp last_updated = 7;
    */
   lastUpdated?: Timestamp;
 

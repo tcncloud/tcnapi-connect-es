@@ -869,8 +869,9 @@ export const ProgrammedDates = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "programmed_dates_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "programmed_dates_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "days", kind: "message", T: ProgrammedDay, repeated: true },
-    { no: 6, name: "last_updated", kind: "message", T: Timestamp },
+    { no: 5, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+    { no: 6, name: "days", kind: "message", T: ProgrammedDay, repeated: true },
+    { no: 7, name: "last_updated", kind: "message", T: Timestamp },
   ],
 );
 
