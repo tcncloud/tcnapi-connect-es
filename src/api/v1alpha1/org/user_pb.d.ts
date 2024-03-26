@@ -3703,6 +3703,13 @@ export declare class GetUserSessionDataResponse_User extends Message<GetUserSess
    */
   mfaTimestamp?: Timestamp;
 
+  /**
+   * Timestamp of of when a user must reset their password before
+   *
+   * @generated from field: google.protobuf.Timestamp password_reset_date = 34;
+   */
+  passwordResetDate?: Timestamp;
+
   constructor(data?: PartialMessage<GetUserSessionDataResponse_User>);
 
   static readonly runtime: typeof proto3;

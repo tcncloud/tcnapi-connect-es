@@ -157,6 +157,13 @@ export declare class License extends Message<License> {
    */
   cards: License_Card[];
 
+  /**
+   * Name of the license (to be displayed in the UI)
+   *
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
   constructor(data?: PartialMessage<License>);
 
   static readonly runtime: typeof proto3;
@@ -189,6 +196,13 @@ export declare class License_Card extends Message<License_Card> {
    * @generated from field: repeated api.commons.org.License.Permission permissions = 2;
    */
   permissions: License_Permission[];
+
+  /**
+   * String version of the card/sub-section.
+   *
+   * @generated from field: string name = 3;
+   */
+  name: string;
 
   constructor(data?: PartialMessage<License_Card>);
 
@@ -227,6 +241,13 @@ export declare class License_Permission extends Message<License_Permission> {
    * @generated from field: repeated string features = 3;
    */
   features: string[];
+
+  /**
+   * String version of the permission.
+   *
+   * @generated from field: string name = 4;
+   */
+  name: string;
 
   constructor(data?: PartialMessage<License_Permission>);
 

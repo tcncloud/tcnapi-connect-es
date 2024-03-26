@@ -54,6 +54,7 @@ export const License = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "app", kind: "enum", T: proto3.getEnumType(Application) },
     { no: 2, name: "cards", kind: "message", T: License_Card, repeated: true },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -65,6 +66,7 @@ export const License_Card = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(Card) },
     { no: 2, name: "permissions", kind: "message", T: License_Permission, repeated: true },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "License_Card"},
 );
@@ -78,6 +80,7 @@ export const License_Permission = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "permission", kind: "enum", T: proto3.getEnumType(Permission) },
     { no: 2, name: "enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "features", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "License_Permission"},
 );
