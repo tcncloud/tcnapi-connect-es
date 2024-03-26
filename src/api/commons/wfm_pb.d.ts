@@ -1291,73 +1291,80 @@ export declare enum InitialSetupState {
 }
 
 /**
- * Enum representing the real time state of a WFM agent.
+ * The RealTimeManagementState, which is translated as a reduced AgentStatus from the acd service.
  *
- * @generated from enum api.commons.AgentRTMState
+ * @generated from enum api.commons.RealTimeManagementState
  */
-export declare enum AgentRTMState {
+export declare enum RealTimeManagementState {
   /**
-   * The agent is logged in, but not in any other call state.
+   * Not set.
    *
-   * @generated from enum value: LOGGED_IN = 0;
+   * @generated from enum value: UNSPECIFIED = 0;
    */
-  LOGGED_IN = 0,
+  UNSPECIFIED = 0,
 
   /**
-   * The agent is on an acd inbound call.
+   * The agent is logged in.
    *
-   * @generated from enum value: ACD_INBOUND_CALL = 1;
+   * @generated from enum value: LOGGED_IN = 1;
    */
-  ACD_INBOUND_CALL = 1,
+  LOGGED_IN = 1,
 
   /**
-   * The agent is on a dicrect outbound call.
+   * The agent's call is on hold.
    *
-   * @generated from enum value: DIRECT_OUTBOUND_CALL = 2;
+   * @generated from enum value: CALL_ON_HOLD = 4;
    */
-  DIRECT_OUTBOUND_CALL = 2,
-
-  /**
-   * cdn The agent's call is on hold.
-   *
-   * @generated from enum value: CALL_ON_HOLD = 3;
-   */
-  CALL_ON_HOLD = 3,
+  CALL_ON_HOLD = 4,
 
   /**
    * Agent is on an outbound call.
    *
-   * @generated from enum value: OUTBOUND_CALL = 4;
+   * @generated from enum value: OUTBOUND_CALL = 5;
    */
-  OUTBOUND_CALL = 4,
+  OUTBOUND_CALL = 5,
 
   /**
-   * Agent is taking an inbound call.
+   * Agent is on a transfered call.
    *
-   * @generated from enum value: INBOUND_CALL = 5;
+   * @generated from enum value: TRANSFER = 7;
    */
-  INBOUND_CALL = 5,
-
-  /**
-   * Agent is transferring a call.
-   *
-   * @generated from enum value: TRANSFER = 6;
-   */
-  TRANSFER = 6,
+  TRANSFER = 7,
 
   /**
    * Agent is on a conference call.
    *
-   * @generated from enum value: CONFERENCE = 7;
+   * @generated from enum value: CONFERENCE = 8;
    */
-  CONFERENCE = 7,
+  CONFERENCE = 8,
 
   /**
    * Agent is ready to accept a call.
    *
-   * @generated from enum value: READY = 8;
+   * @generated from enum value: READY = 9;
    */
-  READY = 8,
+  READY = 9,
+
+  /**
+   * Agent is not_ready to accept a call.
+   *
+   * @generated from enum value: NOT_READY = 10;
+   */
+  NOT_READY = 10,
+
+  /**
+   * The agent is is the wrap up state.
+   *
+   * @generated from enum value: WRAP_UP = 11;
+   */
+  WRAP_UP = 11,
+
+  /**
+   * The agent is logged out.
+   *
+   * @generated from enum value: LOGGED_OUT = 13;
+   */
+  LOGGED_OUT = 13,
 }
 
 /**
@@ -2357,7 +2364,7 @@ export declare class InitialSetupStatus extends Message<InitialSetupStatus> {
  */
 export declare class AgentStateSegment extends Message<AgentStateSegment> {
   /**
-   * The order that this agent state segment fits into the AgentRealTimeStateSequence.
+   * The order that this agent state segment fits into the AgentStateSequence.
    * Sequence starts at 0.
    *
    * @generated from field: int32 order_in_rts = 1;
@@ -2367,9 +2374,9 @@ export declare class AgentStateSegment extends Message<AgentStateSegment> {
   /**
    * The state of the agent during this segment.
    *
-   * @generated from field: api.commons.AgentRTMState state = 2;
+   * @generated from field: repeated api.commons.RealTimeManagementState states = 2;
    */
-  state: AgentRTMState;
+  states: RealTimeManagementState[];
 
   /**
    * The width of this segment in minutes.
@@ -2377,20 +2384,6 @@ export declare class AgentStateSegment extends Message<AgentStateSegment> {
    * @generated from field: int32 width_in_minutes = 3;
    */
   widthInMinutes: number;
-
-  /**
-   * ID of the agent state segment.
-   *
-   * @generated from field: int64 agent_state_segment_sid = 4;
-   */
-  agentStateSegmentSid: bigint;
-
-  /**
-   * ID of the agent state sequence that the segment belongs to.
-   *
-   * @generated from field: int64 agent_state_sequence_sid = 5;
-   */
-  agentStateSequenceSid: bigint;
 
   constructor(data?: PartialMessage<AgentStateSegment>);
 
@@ -2433,20 +2426,6 @@ export declare class AgentStateSequence extends Message<AgentStateSequence> {
    * @generated from field: repeated api.commons.AgentStateSegment state_segments = 3;
    */
   stateSegments: AgentStateSegment[];
-
-  /**
-   * The width of all of the sequences segments combined.
-   *
-   * @generated from field: int32 total_width_in_minutes = 4;
-   */
-  totalWidthInMinutes: number;
-
-  /**
-   * The ID of the agent state sequence.
-   *
-   * @generated from field: int64 agent_state_sequence_sid = 5;
-   */
-  agentStateSequenceSid: bigint;
 
   constructor(data?: PartialMessage<AgentStateSequence>);
 
