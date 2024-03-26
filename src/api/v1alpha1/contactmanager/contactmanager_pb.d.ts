@@ -222,8 +222,7 @@ export declare class GetKYCEncContactEntryRequest extends Message<GetKYCEncConta
  */
 export declare class GetKYCEncContactEntryResponse extends Message<GetKYCEncContactEntryResponse> {
   /**
-   * @generated from field: bool verified = 1 [deprecated = true];
-   * @deprecated
+   * @generated from field: bool verified = 1;
    */
   verified: boolean;
 
