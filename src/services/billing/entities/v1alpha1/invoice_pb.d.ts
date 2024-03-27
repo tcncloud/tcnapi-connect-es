@@ -63,7 +63,8 @@ export declare class Invoice extends Message<Invoice> {
   /**
    * the client this invoice is for
    *
-   * @generated from field: string client_id = 8;
+   * @generated from field: string client_id = 8 [deprecated = true];
+   * @deprecated
    */
   clientId: string;
 
@@ -141,6 +142,13 @@ export declare class InvoiceItem extends Message<InvoiceItem> {
    */
   columns: InvoiceItemColumn[];
 
+  /**
+   * the client this item is for
+   *
+   * @generated from field: string client_id = 9;
+   */
+  clientId: string;
+
   constructor(data?: PartialMessage<InvoiceItem>);
 
   static readonly runtime: typeof proto3;
@@ -168,9 +176,15 @@ export declare class InvoiceItemColumn extends Message<InvoiceItemColumn> {
   name: string;
 
   /**
-   * @generated from field: int64 value = 2;
+   * @generated from field: int64 value = 2 [deprecated = true];
+   * @deprecated
    */
   value: bigint;
+
+  /**
+   * @generated from field: string column_value = 3;
+   */
+  columnValue: string;
 
   constructor(data?: PartialMessage<InvoiceItemColumn>);
 
