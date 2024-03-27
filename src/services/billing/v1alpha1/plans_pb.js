@@ -212,6 +212,8 @@ export const GetBillingPlanHistoryRequest = /*@__PURE__*/ proto3.makeMessageType
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "group_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "start_time", kind: "message", T: Timestamp },
+    { no: 4, name: "end_time", kind: "message", T: Timestamp },
   ],
 );
 
