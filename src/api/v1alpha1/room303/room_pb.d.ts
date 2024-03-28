@@ -27,6 +27,13 @@ export declare class CreateRoomRequest extends Message<CreateRoomRequest> {
    */
   members: string[];
 
+  /**
+   * Optional id of the permission group assigned to this room.
+   *
+   * @generated from field: google.protobuf.StringValue permission_group_id = 4;
+   */
+  permissionGroupId?: string;
+
   constructor(data?: PartialMessage<CreateRoomRequest>);
 
   static readonly runtime: typeof proto3;
