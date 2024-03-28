@@ -173,3 +173,16 @@ export const GetGlobalConfigResponse = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * request to update room details
+ *
+ * @generated from message api.v1alpha1.room303.UpdateRoomRequest
+ */
+export const UpdateRoomRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.room303.UpdateRoomRequest",
+  () => [
+    { no: 1, name: "room", kind: "message", T: Room },
+    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
+  ],
+);
+
