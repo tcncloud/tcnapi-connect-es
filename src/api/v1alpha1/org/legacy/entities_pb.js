@@ -1951,6 +1951,7 @@ export const AuthenticationPreferences = /*@__PURE__*/ proto3.makeMessageType(
     { no: 10, name: "authorization_via_ip", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 11, name: "allowed_ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 12, name: "agent_api_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "user_authorization_via_ip", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

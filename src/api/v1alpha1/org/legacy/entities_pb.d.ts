@@ -5519,6 +5519,13 @@ export declare class AuthenticationPreferences extends Message<AuthenticationPre
    */
   agentApiKey: string;
 
+  /**
+   * Use IP based authentication per user
+   *
+   * @generated from field: bool user_authorization_via_ip = 13;
+   */
+  userAuthorizationViaIp: boolean;
+
   constructor(data?: PartialMessage<AuthenticationPreferences>);
 
   static readonly runtime: typeof proto3;
