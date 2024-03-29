@@ -1390,8 +1390,8 @@ export const GetMyAllowedMfaMethodsResponse = /*@__PURE__*/ proto3.makeMessageTy
 export const AddGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest",
   () => [
-    { no: 1, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
@@ -1413,8 +1413,8 @@ export const AddGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.makeMes
 export const RemoveGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest",
   () => [
-    { no: 1, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

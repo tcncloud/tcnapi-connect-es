@@ -4254,18 +4254,18 @@ export declare class GetMyAllowedMfaMethodsResponse extends Message<GetMyAllowed
  */
 export declare class AddGroupedUserIPRestrictionsRequest extends Message<AddGroupedUserIPRestrictionsRequest> {
   /**
-   * List of IPs to whitelist for the associated group of users.
-   *
-   * @generated from field: repeated string ips = 1;
-   */
-  ips: string[];
-
-  /**
    * List of users that can only use the provided IPs.
    *
-   * @generated from field: repeated string user_ids = 2;
+   * @generated from field: repeated string user_ids = 1;
    */
   userIds: string[];
+
+  /**
+   * List of IPs to whitelist for the associated group of users.
+   *
+   * @generated from field: repeated string ips = 2;
+   */
+  ips: string[];
 
   constructor(data?: PartialMessage<AddGroupedUserIPRestrictionsRequest>);
 
@@ -4310,18 +4310,18 @@ export declare class AddGroupedUserIPRestrictionsResponse extends Message<AddGro
  */
 export declare class RemoveGroupedUserIPRestrictionsRequest extends Message<RemoveGroupedUserIPRestrictionsRequest> {
   /**
-   * List of IPs to whitelist for the associated group of users.
+   * List of users to remove the restriction from.
    *
-   * @generated from field: repeated string ips = 1;
-   */
-  ips: string[];
-
-  /**
-   * List of users that can only use the provided IPs.
-   *
-   * @generated from field: repeated string user_ids = 2;
+   * @generated from field: repeated string user_ids = 1;
    */
   userIds: string[];
+
+  /**
+   * List of IPs to un-restrict. Empty list will delete all restrictions
+   *
+   * @generated from field: repeated string ips = 2;
+   */
+  ips: string[];
 
   constructor(data?: PartialMessage<RemoveGroupedUserIPRestrictionsRequest>);
 
