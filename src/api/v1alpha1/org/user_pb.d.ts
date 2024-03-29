@@ -4247,3 +4247,59 @@ export declare class GetMyAllowedMfaMethodsResponse extends Message<GetMyAllowed
   static equals(a: GetMyAllowedMfaMethodsResponse | PlainMessage<GetMyAllowedMfaMethodsResponse> | undefined, b: GetMyAllowedMfaMethodsResponse | PlainMessage<GetMyAllowedMfaMethodsResponse> | undefined): boolean;
 }
 
+/**
+ * Request message for the UpdateGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.UpdateGroupedUserIPRestrictionsRequest
+ */
+export declare class UpdateGroupedUserIPRestrictionsRequest extends Message<UpdateGroupedUserIPRestrictionsRequest> {
+  /**
+   * List of IPs to whitelist for the associated group of users.
+   *
+   * @generated from field: repeated string ips = 1;
+   */
+  ips: string[];
+
+  /**
+   * List of users that can only use the provided IPs.
+   *
+   * @generated from field: repeated string user_ids = 2;
+   */
+  userIds: string[];
+
+  constructor(data?: PartialMessage<UpdateGroupedUserIPRestrictionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateGroupedUserIPRestrictionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateGroupedUserIPRestrictionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateGroupedUserIPRestrictionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateGroupedUserIPRestrictionsRequest;
+
+  static equals(a: UpdateGroupedUserIPRestrictionsRequest | PlainMessage<UpdateGroupedUserIPRestrictionsRequest> | undefined, b: UpdateGroupedUserIPRestrictionsRequest | PlainMessage<UpdateGroupedUserIPRestrictionsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the UpdateGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.UpdateGroupedUserIPRestrictionsResponse
+ */
+export declare class UpdateGroupedUserIPRestrictionsResponse extends Message<UpdateGroupedUserIPRestrictionsResponse> {
+  constructor(data?: PartialMessage<UpdateGroupedUserIPRestrictionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.UpdateGroupedUserIPRestrictionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateGroupedUserIPRestrictionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateGroupedUserIPRestrictionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateGroupedUserIPRestrictionsResponse;
+
+  static equals(a: UpdateGroupedUserIPRestrictionsResponse | PlainMessage<UpdateGroupedUserIPRestrictionsResponse> | undefined, b: UpdateGroupedUserIPRestrictionsResponse | PlainMessage<UpdateGroupedUserIPRestrictionsResponse> | undefined): boolean;
+}
+

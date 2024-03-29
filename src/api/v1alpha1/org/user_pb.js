@@ -1382,3 +1382,26 @@ export const GetMyAllowedMfaMethodsResponse = /*@__PURE__*/ proto3.makeMessageTy
   ],
 );
 
+/**
+ * Request message for the UpdateGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.UpdateGroupedUserIPRestrictionsRequest
+ */
+export const UpdateGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateGroupedUserIPRestrictionsRequest",
+  () => [
+    { no: 1, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the UpdateGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.UpdateGroupedUserIPRestrictionsResponse
+ */
+export const UpdateGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UpdateGroupedUserIPRestrictionsResponse",
+  [],
+);
+
