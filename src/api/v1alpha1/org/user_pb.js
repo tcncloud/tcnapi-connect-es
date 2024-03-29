@@ -1383,12 +1383,12 @@ export const GetMyAllowedMfaMethodsResponse = /*@__PURE__*/ proto3.makeMessageTy
 );
 
 /**
- * Request message for the UpdateGroupedUserIPRestrictions rpc.
+ * Request message for the AddGroupedUserIPRestrictions rpc.
  *
- * @generated from message api.v1alpha1.org.UpdateGroupedUserIPRestrictionsRequest
+ * @generated from message api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest
  */
-export const UpdateGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.UpdateGroupedUserIPRestrictionsRequest",
+export const AddGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest",
   () => [
     { no: 1, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
@@ -1396,12 +1396,35 @@ export const UpdateGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeM
 );
 
 /**
- * Response message for the UpdateGroupedUserIPRestrictions rpc.
+ * Response message for the AddGroupedUserIPRestrictions rpc.
  *
- * @generated from message api.v1alpha1.org.UpdateGroupedUserIPRestrictionsResponse
+ * @generated from message api.v1alpha1.org.AddGroupedUserIPRestrictionsResponse
  */
-export const UpdateGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.UpdateGroupedUserIPRestrictionsResponse",
+export const AddGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AddGroupedUserIPRestrictionsResponse",
+  [],
+);
+
+/**
+ * Request message for the RemoveGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest
+ */
+export const RemoveGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest",
+  () => [
+    { no: 1, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the RemoveGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.RemoveGroupedUserIPRestrictionsResponse
+ */
+export const RemoveGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RemoveGroupedUserIPRestrictionsResponse",
   [],
 );
 
