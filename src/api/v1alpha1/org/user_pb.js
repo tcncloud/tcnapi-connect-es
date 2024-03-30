@@ -1382,3 +1382,49 @@ export const GetMyAllowedMfaMethodsResponse = /*@__PURE__*/ proto3.makeMessageTy
   ],
 );
 
+/**
+ * Request message for the AddGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest
+ */
+export const AddGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AddGroupedUserIPRestrictionsRequest",
+  () => [
+    { no: 1, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the AddGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.AddGroupedUserIPRestrictionsResponse
+ */
+export const AddGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AddGroupedUserIPRestrictionsResponse",
+  [],
+);
+
+/**
+ * Request message for the RemoveGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest
+ */
+export const RemoveGroupedUserIPRestrictionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RemoveGroupedUserIPRestrictionsRequest",
+  () => [
+    { no: 1, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * Response message for the RemoveGroupedUserIPRestrictions rpc.
+ *
+ * @generated from message api.v1alpha1.org.RemoveGroupedUserIPRestrictionsResponse
+ */
+export const RemoveGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RemoveGroupedUserIPRestrictionsResponse",
+  [],
+);
+
