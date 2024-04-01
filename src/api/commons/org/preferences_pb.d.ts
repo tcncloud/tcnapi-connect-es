@@ -483,6 +483,13 @@ export declare class AuthenticationPreferences extends Message<AuthenticationPre
    */
   passwordResetDayInterval: number;
 
+  /**
+   * Use IP based authorization per user.
+   *
+   * @generated from field: bool user_authorization_via_ip = 19;
+   */
+  userAuthorizationViaIp: boolean;
+
   constructor(data?: PartialMessage<AuthenticationPreferences>);
 
   static readonly runtime: typeof proto3;
