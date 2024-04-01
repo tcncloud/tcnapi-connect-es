@@ -139,6 +139,7 @@ export const AuthenticationPreferences = /*@__PURE__*/ proto3.makeMessageType(
     { no: 16, name: "duo_mfa_settings", kind: "message", T: AuthenticationPreferences_DuoMfaSettings },
     { no: 17, name: "allow_force_password_reset_interval", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 18, name: "password_reset_day_interval", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 19, name: "user_authorization_via_ip", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
