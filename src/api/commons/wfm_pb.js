@@ -712,6 +712,7 @@ export const AgentStateSegment = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "order_in_rts", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "states", kind: "enum", T: proto3.getEnumType(RealTimeManagementState), repeated: true },
     { no: 3, name: "width_in_minutes", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 4, name: "width_in_seconds", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
   ],
 );
 
