@@ -2381,9 +2381,17 @@ export declare class AgentStateSegment extends Message<AgentStateSegment> {
   /**
    * The width of this segment in minutes.
    *
-   * @generated from field: int32 width_in_minutes = 3;
+   * @generated from field: int32 width_in_minutes = 3 [deprecated = true];
+   * @deprecated
    */
   widthInMinutes: number;
+
+  /**
+   * The width of this segment in seconds.
+   *
+   * @generated from field: int32 width_in_seconds = 4;
+   */
+  widthInSeconds: number;
 
   constructor(data?: PartialMessage<AgentStateSegment>);
 
