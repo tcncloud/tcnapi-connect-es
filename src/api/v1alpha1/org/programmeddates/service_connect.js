@@ -13,7 +13,7 @@ export const ProgrammedDatesService = {
   typeName: "api.v1alpha1.org.programmeddates.ProgrammedDatesService",
   methods: {
     /**
-     * ListProgrammedDates returns all ListProgrammedDates for an Org.
+     * ListProgrammedDates returns all ProgrammedDates for an Org.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.ListProgrammedDates
      */
@@ -24,7 +24,7 @@ export const ProgrammedDatesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * GetProgrammedDates returns the programmed dates for the ID.
+     * GetProgrammedDates returns the ProgrammedDates for the ID.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.GetProgrammedDates
      */
@@ -35,7 +35,7 @@ export const ProgrammedDatesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * SetProgrammedDates creates a new programmed dates for an Org.
+     * SetProgrammedDates creates a new ProgrammedDates for an Org.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.SetProgrammedDates
      */
@@ -46,7 +46,7 @@ export const ProgrammedDatesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * AddToProgrammedDates adds a new programmed day for an Org.
+     * AddToProgrammedDates adds a new ProgrammedDay for an Org.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.AddToProgrammedDates
      */
@@ -57,7 +57,7 @@ export const ProgrammedDatesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * RemoveFromProgrammedDates removes an existing programmed day from an Org.
+     * RemoveFromProgrammedDates removes an existing ProgrammedDay from an Org.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.RemoveFromProgrammedDates
      */
@@ -68,7 +68,7 @@ export const ProgrammedDatesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateProgrammedDatesInfo updates the general info for a programmed date.
+     * UpdateProgrammedDatesInfo updates the general info for a specified ProgrammedDates.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.UpdateProgrammedDatesInfo
      */
@@ -79,7 +79,7 @@ export const ProgrammedDatesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * DeleteProgrammedDates deletes an existing programmed date.
+     * DeleteProgrammedDates deletes an existing ProgrammedDates.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.DeleteProgrammedDates
      */
@@ -90,7 +90,7 @@ export const ProgrammedDatesService = {
       kind: MethodKind.Unary,
     },
     /**
-     * EvaluateProgrammedDates evaluates the programmed date.
+     * EvaluateProgrammedDates evaluates the ProgrammedDates.
      *
      * @generated from rpc api.v1alpha1.org.programmeddates.ProgrammedDatesService.EvaluateProgrammedDates
      */
