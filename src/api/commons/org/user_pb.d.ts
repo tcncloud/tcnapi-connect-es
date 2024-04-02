@@ -253,13 +253,6 @@ export declare class User extends Message<User> {
    */
   emailVerified: boolean;
 
-  /**
-   * Whitelisted IPs for the user
-   *
-   * @generated from field: repeated string whitelisted_ips = 402;
-   */
-  whitelistedIps: string[];
-
   constructor(data?: PartialMessage<User>);
 
   static readonly runtime: typeof proto3;

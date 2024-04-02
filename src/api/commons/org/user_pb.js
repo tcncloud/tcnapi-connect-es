@@ -48,7 +48,6 @@ export const User = /*@__PURE__*/ proto3.makeMessageType(
     { no: 300, name: "agent", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 400, name: "account_owner", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 401, name: "email_verified", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 402, name: "whitelisted_ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
