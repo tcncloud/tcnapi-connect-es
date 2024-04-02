@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
+import { FieldMask, proto3, StringValue, Timestamp } from "@bufbuild/protobuf";
 import { GlobalConfig, Room, RoomConfig, RoomType } from "../../commons/room303_pb.js";
 import { UserArchivedStateFilter } from "../../commons/user_pb.js";
 
@@ -16,6 +16,7 @@ export const CreateRoomRequest = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(RoomType) },
     { no: 3, name: "members", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "permission_group_id", kind: "message", T: StringValue },
   ],
 );
 
@@ -170,6 +171,19 @@ export const GetGlobalConfigResponse = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "config", kind: "message", T: GlobalConfig },
     { no: 3, name: "date_created", kind: "message", T: Timestamp },
     { no: 4, name: "last_edited", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * request to update room details
+ *
+ * @generated from message api.v1alpha1.room303.UpdateRoomRequest
+ */
+export const UpdateRoomRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.room303.UpdateRoomRequest",
+  () => [
+    { no: 1, name: "room", kind: "message", T: Room },
+    { no: 100, name: "field_mask", kind: "message", T: FieldMask },
   ],
 );
 
