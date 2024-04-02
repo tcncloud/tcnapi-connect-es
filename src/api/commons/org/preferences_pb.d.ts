@@ -3007,3 +3007,117 @@ export declare class ProgrammedDates extends Message<ProgrammedDates> {
   static equals(a: ProgrammedDates | PlainMessage<ProgrammedDates> | undefined, b: ProgrammedDates | PlainMessage<ProgrammedDates> | undefined): boolean;
 }
 
+/**
+ * ObservedHolidays a list of dates or holidays.
+ *
+ * @generated from message api.commons.org.ObservedHolidays
+ */
+export declare class ObservedHolidays extends Message<ObservedHolidays> {
+  /**
+   * ID of the Org related to this.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Unique ID.
+   *
+   * @generated from field: string observed_holidays_id = 2;
+   */
+  observedHolidaysId: string;
+
+  /**
+   * Name of the list.
+   *
+   * @generated from field: string observed_holidays_name = 3;
+   */
+  observedHolidaysName: string;
+
+  /**
+   * Description of the list.
+   *
+   * @generated from field: string description = 4;
+   */
+  description: string;
+
+  /**
+   * The timezone.
+   *
+   * @generated from field: api.commons.TimeZone timezone = 5;
+   */
+  timezone: TimeZone;
+
+  /**
+   * The list of dates or holidays.
+   *
+   * @generated from field: repeated api.commons.org.ObservedHoliday days = 6;
+   */
+  days: ObservedHoliday[];
+
+  /**
+   * When the list was last updated.
+   *
+   * @generated from field: google.protobuf.Timestamp last_updated = 7;
+   */
+  lastUpdated?: Timestamp;
+
+  constructor(data?: PartialMessage<ObservedHolidays>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.ObservedHolidays";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObservedHolidays;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObservedHolidays;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObservedHolidays;
+
+  static equals(a: ObservedHolidays | PlainMessage<ObservedHolidays> | undefined, b: ObservedHolidays | PlainMessage<ObservedHolidays> | undefined): boolean;
+}
+
+/**
+ * ObservedHoliday may be a named date or a holiday.
+ *
+ * @generated from message api.commons.org.ObservedHoliday
+ */
+export declare class ObservedHoliday extends Message<ObservedHoliday> {
+  /**
+   * A date or holiday
+   *
+   * @generated from oneof api.commons.org.ObservedHoliday.DayType
+   */
+  DayType: {
+    /**
+     * Named date.
+     *
+     * @generated from field: api.commons.org.MonthDayDate day = 1;
+     */
+    value: MonthDayDate;
+    case: "day";
+  } | {
+    /**
+     * Holiday service holiday.
+     *
+     * @generated from field: api.commons.org.CountryHoliday holiday = 2;
+     */
+    value: CountryHoliday;
+    case: "holiday";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<ObservedHoliday>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.org.ObservedHoliday";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ObservedHoliday;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ObservedHoliday;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ObservedHoliday;
+
+  static equals(a: ObservedHoliday | PlainMessage<ObservedHoliday> | undefined, b: ObservedHoliday | PlainMessage<ObservedHoliday> | undefined): boolean;
+}
+
