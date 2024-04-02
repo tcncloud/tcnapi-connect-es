@@ -906,6 +906,7 @@ export const Room303Transport = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.delivery.Room303Transport",
   () => [
     { no: 1, name: "system_message", kind: "message", T: Room303SystemMessage, oneof: "transport" },
+    { no: 2, name: "system_messages", kind: "message", T: Room303SystemMessages, oneof: "transport" },
   ],
 );
 
@@ -918,6 +919,16 @@ export const Room303SystemMessage = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "room", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "username", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "user" },
     { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */, oneof: "user" },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.delivery.Room303SystemMessages
+ */
+export const Room303SystemMessages = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.delivery.Room303SystemMessages",
+  () => [
+    { no: 1, name: "system_messages", kind: "message", T: Room303SystemMessage, repeated: true },
   ],
 );
 

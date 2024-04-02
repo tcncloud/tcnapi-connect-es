@@ -42,6 +42,7 @@ export const InvoiceItem = /*@__PURE__*/ proto3.makeMessageType(
     { no: 6, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "date", kind: "message", T: Timestamp },
     { no: 8, name: "columns", kind: "message", T: InvoiceItemColumn, repeated: true },
+    { no: 9, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -55,6 +56,7 @@ export const InvoiceItemColumn = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "value", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "column_value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

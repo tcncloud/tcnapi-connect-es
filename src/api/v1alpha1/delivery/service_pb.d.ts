@@ -2575,10 +2575,17 @@ export declare class Room303Transport extends Message<Room303Transport> {
      * in the future, support different api calls,
      * maybe support multiple groups etc
      *
-     * @generated from field: api.v1alpha1.delivery.Room303SystemMessage system_message = 1;
+     * @generated from field: api.v1alpha1.delivery.Room303SystemMessage system_message = 1 [deprecated = true];
+     * @deprecated
      */
     value: Room303SystemMessage;
     case: "systemMessage";
+  } | {
+    /**
+     * @generated from field: api.v1alpha1.delivery.Room303SystemMessages system_messages = 2;
+     */
+    value: Room303SystemMessages;
+    case: "systemMessages";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<Room303Transport>);
@@ -2642,6 +2649,30 @@ export declare class Room303SystemMessage extends Message<Room303SystemMessage> 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Room303SystemMessage;
 
   static equals(a: Room303SystemMessage | PlainMessage<Room303SystemMessage> | undefined, b: Room303SystemMessage | PlainMessage<Room303SystemMessage> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.delivery.Room303SystemMessages
+ */
+export declare class Room303SystemMessages extends Message<Room303SystemMessages> {
+  /**
+   * @generated from field: repeated api.v1alpha1.delivery.Room303SystemMessage system_messages = 1;
+   */
+  systemMessages: Room303SystemMessage[];
+
+  constructor(data?: PartialMessage<Room303SystemMessages>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.delivery.Room303SystemMessages";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Room303SystemMessages;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Room303SystemMessages;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Room303SystemMessages;
+
+  static equals(a: Room303SystemMessages | PlainMessage<Room303SystemMessages> | undefined, b: Room303SystemMessages | PlainMessage<Room303SystemMessages> | undefined): boolean;
 }
 
 /**

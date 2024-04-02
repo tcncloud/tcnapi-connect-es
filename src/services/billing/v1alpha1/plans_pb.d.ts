@@ -511,6 +511,20 @@ export declare class GetBillingPlanHistoryRequest extends Message<GetBillingPlan
    */
   groupIds: string[];
 
+  /**
+   * Optional: if not set, will use the beginning of time
+   *
+   * @generated from field: google.protobuf.Timestamp start_time = 3;
+   */
+  startTime?: Timestamp;
+
+  /**
+   * Optional: if not set, will use the current time
+   *
+   * @generated from field: google.protobuf.Timestamp end_time = 4;
+   */
+  endTime?: Timestamp;
+
   constructor(data?: PartialMessage<GetBillingPlanHistoryRequest>);
 
   static readonly runtime: typeof proto3;
