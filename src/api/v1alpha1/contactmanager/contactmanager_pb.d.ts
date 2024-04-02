@@ -48,9 +48,15 @@ export declare class GetContactListRequest extends Message<GetContactListRequest
  */
 export declare class GetContactListResponse extends Message<GetContactListResponse> {
   /**
-   * @generated from field: repeated api.commons.ContactManagerList contact_list = 1;
+   * @generated from field: repeated api.commons.ContactManagerList contact_list = 1 [deprecated = true];
+   * @deprecated
    */
   contactList: ContactManagerList$1[];
+
+  /**
+   * @generated from field: repeated api.v1alpha1.contactmanager.ContactManagerList contact_manager_list = 2;
+   */
+  contactManagerList: ContactManagerList[];
 
   constructor(data?: PartialMessage<GetContactListResponse>);
 
@@ -109,9 +115,15 @@ export declare class ListContactEntryListRequest extends Message<ListContactEntr
  */
 export declare class ListContactEntryListResponse extends Message<ListContactEntryListResponse> {
   /**
-   * @generated from field: repeated api.commons.ContactManagerEntry contact_entry = 1;
+   * @generated from field: repeated api.commons.ContactManagerEntry contact_entry = 1 [deprecated = true];
+   * @deprecated
    */
   contactEntry: ContactManagerEntry$1[];
+
+  /**
+   * @generated from field: repeated api.v1alpha1.contactmanager.ContactManagerEntry contact_manager_entry = 2;
+   */
+  contactManagerEntry: ContactManagerEntry[];
 
   constructor(data?: PartialMessage<ListContactEntryListResponse>);
 
@@ -157,9 +169,15 @@ export declare class GetEncContactEntryRequest extends Message<GetEncContactEntr
  */
 export declare class GetEncContactEntryResponse extends Message<GetEncContactEntryResponse> {
   /**
-   * @generated from field: repeated api.commons.ContactManagerEntry contact_entry = 1;
+   * @generated from field: repeated api.commons.ContactManagerEntry contact_entry = 1 [deprecated = true];
+   * @deprecated
    */
   contactEntry: ContactManagerEntry$1[];
+
+  /**
+   * @generated from field: repeated api.v1alpha1.contactmanager.ContactManagerEntry contact_manager_entry = 2;
+   */
+  contactManagerEntry: ContactManagerEntry[];
 
   constructor(data?: PartialMessage<GetEncContactEntryResponse>);
 

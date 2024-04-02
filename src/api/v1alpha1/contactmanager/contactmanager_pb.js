@@ -27,6 +27,7 @@ export const GetContactListResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.contactmanager.GetContactListResponse",
   () => [
     { no: 1, name: "contact_list", kind: "message", T: ContactManagerList$1, repeated: true },
+    { no: 2, name: "contact_manager_list", kind: "message", T: ContactManagerList, repeated: true },
   ],
 );
 
@@ -52,6 +53,7 @@ export const ListContactEntryListResponse = /*@__PURE__*/ proto3.makeMessageType
   "api.v1alpha1.contactmanager.ListContactEntryListResponse",
   () => [
     { no: 1, name: "contact_entry", kind: "message", T: ContactManagerEntry$1, repeated: true },
+    { no: 2, name: "contact_manager_entry", kind: "message", T: ContactManagerEntry, repeated: true },
   ],
 );
 
@@ -72,6 +74,7 @@ export const GetEncContactEntryResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.contactmanager.GetEncContactEntryResponse",
   () => [
     { no: 1, name: "contact_entry", kind: "message", T: ContactManagerEntry$1, repeated: true },
+    { no: 2, name: "contact_manager_entry", kind: "message", T: ContactManagerEntry, repeated: true },
   ],
 );
 
