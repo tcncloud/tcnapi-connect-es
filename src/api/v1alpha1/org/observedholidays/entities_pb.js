@@ -171,7 +171,9 @@ export const DeleteObservedHolidaysRequest = /*@__PURE__*/ proto3.makeMessageTyp
  */
 export const DeleteObservedHolidaysResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse",
-  [],
+  () => [
+    { no: 1, name: "observed_holidays_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
 );
 
 /**

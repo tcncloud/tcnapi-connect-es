@@ -413,6 +413,13 @@ export declare class DeleteObservedHolidaysRequest extends Message<DeleteObserve
  * @generated from message api.v1alpha1.org.observedholidays.DeleteObservedHolidaysResponse
  */
 export declare class DeleteObservedHolidaysResponse extends Message<DeleteObservedHolidaysResponse> {
+  /**
+   * The ID of the deleted ObservedHolidays
+   *
+   * @generated from field: string observed_holidays_id = 1;
+   */
+  observedHolidaysId: string;
+
   constructor(data?: PartialMessage<DeleteObservedHolidaysResponse>);
 
   static readonly runtime: typeof proto3;
