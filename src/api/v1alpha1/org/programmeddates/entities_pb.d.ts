@@ -94,9 +94,9 @@ export declare class GetProgrammedDatesResponse extends Message<GetProgrammedDat
   /**
    * The retrieved ProgrammedDates
    *
-   * @generated from field: repeated api.commons.org.ProgrammedDates dates = 1;
+   * @generated from field: api.commons.org.ProgrammedDates programmed_dates = 1;
    */
-  dates: ProgrammedDates[];
+  programmedDates?: ProgrammedDates;
 
   constructor(data?: PartialMessage<GetProgrammedDatesResponse>);
 
@@ -462,6 +462,13 @@ export declare class EvaluateProgrammedDatesRequest extends Message<EvaluateProg
  * @generated from message api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse
  */
 export declare class EvaluateProgrammedDatesResponse extends Message<EvaluateProgrammedDatesResponse> {
+  /**
+   * The boolean to determine if the date is matched within the ProgrammedDates
+   *
+   * @generated from field: bool date_matched = 1;
+   */
+  dateMatched: boolean;
+
   constructor(data?: PartialMessage<EvaluateProgrammedDatesResponse>);
 
   static readonly runtime: typeof proto3;

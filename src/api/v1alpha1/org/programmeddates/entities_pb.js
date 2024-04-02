@@ -49,7 +49,7 @@ export const GetProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
 export const GetProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse",
   () => [
-    { no: 1, name: "dates", kind: "message", T: ProgrammedDates, repeated: true },
+    { no: 1, name: "programmed_dates", kind: "message", T: ProgrammedDates },
   ],
 );
 
@@ -193,6 +193,8 @@ export const EvaluateProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageTy
  */
 export const EvaluateProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse",
-  [],
+  () => [
+    { no: 1, name: "date_matched", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
 );
 
