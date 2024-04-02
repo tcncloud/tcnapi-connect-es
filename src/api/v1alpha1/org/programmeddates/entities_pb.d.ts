@@ -6,8 +6,11 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { ProgrammedDates, ProgrammedDay } from "../../../commons/org/preferences_pb.js";
+import type { TimeZone } from "../../../commons/org_pb.js";
 
 /**
+ * ListProgrammedDatesRequest is the request message for ListProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.ListProgrammedDatesRequest
  */
 export declare class ListProgrammedDatesRequest extends Message<ListProgrammedDatesRequest> {
@@ -27,10 +30,14 @@ export declare class ListProgrammedDatesRequest extends Message<ListProgrammedDa
 }
 
 /**
+ * ListProgrammedDatesResponse is the response message for ListProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.ListProgrammedDatesResponse
  */
 export declare class ListProgrammedDatesResponse extends Message<ListProgrammedDatesResponse> {
   /**
+   * A list of programmed dates
+   *
    * @generated from field: repeated api.commons.org.ProgrammedDates programmed_dates = 1;
    */
   programmedDates: ProgrammedDates[];
@@ -51,10 +58,14 @@ export declare class ListProgrammedDatesResponse extends Message<ListProgrammedD
 }
 
 /**
+ * GetProgrammedDatesRequest is the request message for GetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.GetProgrammedDatesRequest
  */
 export declare class GetProgrammedDatesRequest extends Message<GetProgrammedDatesRequest> {
   /**
+   * The ID of the desired ProgrammedDates
+   *
    * @generated from field: string programmed_dates_id = 1;
    */
   programmedDatesId: string;
@@ -75,10 +86,14 @@ export declare class GetProgrammedDatesRequest extends Message<GetProgrammedDate
 }
 
 /**
+ * GetProgrammedDatesResponse is the response message for GetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse
  */
 export declare class GetProgrammedDatesResponse extends Message<GetProgrammedDatesResponse> {
   /**
+   * The retrieved ProgrammedDates
+   *
    * @generated from field: repeated api.commons.org.ProgrammedDates dates = 1;
    */
   dates: ProgrammedDates[];
@@ -99,23 +114,38 @@ export declare class GetProgrammedDatesResponse extends Message<GetProgrammedDat
 }
 
 /**
+ * SetProgrammedDatesRequest is the request message for SetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest
  */
 export declare class SetProgrammedDatesRequest extends Message<SetProgrammedDatesRequest> {
   /**
+   * The name of the ProgrammedDates
+   *
    * @generated from field: string programmed_dates_name = 1;
    */
   programmedDatesName: string;
 
   /**
+   * The description of the ProgrammedDates
+   *
    * @generated from field: string description = 2;
    */
   description: string;
 
   /**
-   * @generated from field: repeated api.commons.org.ProgrammedDates dates = 3;
+   * The timezone of the ProgrammedDates
+   *
+   * @generated from field: api.commons.TimeZone timezone = 3;
    */
-  dates: ProgrammedDates[];
+  timezone: TimeZone;
+
+  /**
+   * The ProgrammedDays
+   *
+   * @generated from field: repeated api.commons.org.ProgrammedDay days = 4;
+   */
+  days: ProgrammedDay[];
 
   constructor(data?: PartialMessage<SetProgrammedDatesRequest>);
 
@@ -133,10 +163,14 @@ export declare class SetProgrammedDatesRequest extends Message<SetProgrammedDate
 }
 
 /**
+ * SetProgrammedDatesResponse is the response message for SetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.SetProgrammedDatesResponse
  */
 export declare class SetProgrammedDatesResponse extends Message<SetProgrammedDatesResponse> {
   /**
+   * The ID of the created ProgrammedDates
+   *
    * @generated from field: string programmed_dates_id = 1;
    */
   programmedDatesId: string;
@@ -157,15 +191,21 @@ export declare class SetProgrammedDatesResponse extends Message<SetProgrammedDat
 }
 
 /**
+ * AddToProgrammedDatesRequest is the request message for AddToProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.AddToProgrammedDatesRequest
  */
 export declare class AddToProgrammedDatesRequest extends Message<AddToProgrammedDatesRequest> {
   /**
+   * The ID of the ProgrammedDates to be added to
+   *
    * @generated from field: string programmed_dates_id = 1;
    */
   programmedDatesId: string;
 
   /**
+   * The ProgrammedDay to add (must not conflict with existing ProgrammedDays)
+   *
    * @generated from field: api.commons.org.ProgrammedDay day = 2;
    */
   day?: ProgrammedDay;
@@ -186,6 +226,8 @@ export declare class AddToProgrammedDatesRequest extends Message<AddToProgrammed
 }
 
 /**
+ * AddToProgrammedDatesResponse is the response message for AddToProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.AddToProgrammedDatesResponse
  */
 export declare class AddToProgrammedDatesResponse extends Message<AddToProgrammedDatesResponse> {
@@ -205,15 +247,21 @@ export declare class AddToProgrammedDatesResponse extends Message<AddToProgramme
 }
 
 /**
+ * RemoveFromProgrammedDatesRequest is request message for RemoveFromProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.RemoveFromProgrammedDatesRequest
  */
 export declare class RemoveFromProgrammedDatesRequest extends Message<RemoveFromProgrammedDatesRequest> {
   /**
+   * The ID of the ProgrammedDates to remove from
+   *
    * @generated from field: string programmed_dates_id = 1;
    */
   programmedDatesId: string;
 
   /**
+   * The specified ProgrammedDay to remove (must already exist within the ProgrammedDay)
+   *
    * @generated from field: api.commons.org.ProgrammedDay day = 2;
    */
   day?: ProgrammedDay;
@@ -234,6 +282,8 @@ export declare class RemoveFromProgrammedDatesRequest extends Message<RemoveFrom
 }
 
 /**
+ * RemoveFromProgrammedDatesResponse is the response message for RemoveFromProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.RemoveFromProgrammedDatesResponse
  */
 export declare class RemoveFromProgrammedDatesResponse extends Message<RemoveFromProgrammedDatesResponse> {
@@ -253,26 +303,43 @@ export declare class RemoveFromProgrammedDatesResponse extends Message<RemoveFro
 }
 
 /**
+ * UpdateProgrammedDatesInfoRequest is the request message for UpdateProgrammedDatesInfo
+ *
  * @generated from message api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest
  */
 export declare class UpdateProgrammedDatesInfoRequest extends Message<UpdateProgrammedDatesInfoRequest> {
   /**
+   * The ID of the ProgrammedDates to update
+   *
    * @generated from field: string programmed_dates_id = 1;
    */
   programmedDatesId: string;
 
   /**
+   * The updated name of the ProgrammedDates
+   *
    * @generated from field: string programmed_dates_name = 2;
    */
   programmedDatesName: string;
 
   /**
+   * The updated description of the ProgrammedDates
+   *
    * @generated from field: string description = 3;
    */
   description: string;
 
   /**
-   * @generated from field: google.protobuf.FieldMask field_mask = 4;
+   * The updated timezone
+   *
+   * @generated from field: api.commons.TimeZone timezone = 4;
+   */
+  timezone: TimeZone;
+
+  /**
+   * The FieldMask to determine which field to update
+   *
+   * @generated from field: google.protobuf.FieldMask field_mask = 5;
    */
   fieldMask?: FieldMask;
 
@@ -292,6 +359,8 @@ export declare class UpdateProgrammedDatesInfoRequest extends Message<UpdateProg
 }
 
 /**
+ * UpdateProgrammedDatesInfoResponse is the response message for UpdateProgrammedDatesInfo
+ *
  * @generated from message api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoResponse
  */
 export declare class UpdateProgrammedDatesInfoResponse extends Message<UpdateProgrammedDatesInfoResponse> {
@@ -311,10 +380,14 @@ export declare class UpdateProgrammedDatesInfoResponse extends Message<UpdatePro
 }
 
 /**
+ * DeleteProgrammedDatesRequest is the request message for DeleteProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.DeleteProgrammedDatesRequest
  */
 export declare class DeleteProgrammedDatesRequest extends Message<DeleteProgrammedDatesRequest> {
   /**
+   * The ID of the ProgrammedDates to delete
+   *
    * @generated from field: string programmed_dates_id = 1;
    */
   programmedDatesId: string;
@@ -335,6 +408,8 @@ export declare class DeleteProgrammedDatesRequest extends Message<DeleteProgramm
 }
 
 /**
+ * DeleteProgrammedDatesResponse is the response message for DeleteProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.DeleteProgrammedDatesResponse
  */
 export declare class DeleteProgrammedDatesResponse extends Message<DeleteProgrammedDatesResponse> {
@@ -354,10 +429,14 @@ export declare class DeleteProgrammedDatesResponse extends Message<DeleteProgram
 }
 
 /**
+ * EvaluateProgrammedDatesRequest is the request message for EvaluateProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesRequest
  */
 export declare class EvaluateProgrammedDatesRequest extends Message<EvaluateProgrammedDatesRequest> {
   /**
+   * The ID of the ProgrammedDates to evaluate
+   *
    * @generated from field: string programmed_dates_id = 1;
    */
   programmedDatesId: string;
@@ -378,6 +457,8 @@ export declare class EvaluateProgrammedDatesRequest extends Message<EvaluateProg
 }
 
 /**
+ * EvaluateProgrammedDatesResponse is the response message for EvaluateProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse
  */
 export declare class EvaluateProgrammedDatesResponse extends Message<EvaluateProgrammedDatesResponse> {

@@ -5,8 +5,11 @@
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
 import { ProgrammedDates, ProgrammedDay } from "../../../commons/org/preferences_pb.js";
+import { TimeZone } from "../../../commons/org_pb.js";
 
 /**
+ * ListProgrammedDatesRequest is the request message for ListProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.ListProgrammedDatesRequest
  */
 export const ListProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -15,6 +18,8 @@ export const ListProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * ListProgrammedDatesResponse is the response message for ListProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.ListProgrammedDatesResponse
  */
 export const ListProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -25,6 +30,8 @@ export const ListProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * GetProgrammedDatesRequest is the request message for GetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.GetProgrammedDatesRequest
  */
 export const GetProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -35,6 +42,8 @@ export const GetProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * GetProgrammedDatesResponse is the response message for GetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.GetProgrammedDatesResponse
  */
 export const GetProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -45,6 +54,8 @@ export const GetProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * SetProgrammedDatesRequest is the request message for SetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.SetProgrammedDatesRequest
  */
 export const SetProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -52,11 +63,14 @@ export const SetProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "programmed_dates_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "dates", kind: "message", T: ProgrammedDates, repeated: true },
+    { no: 3, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+    { no: 4, name: "days", kind: "message", T: ProgrammedDay, repeated: true },
   ],
 );
 
 /**
+ * SetProgrammedDatesResponse is the response message for SetProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.SetProgrammedDatesResponse
  */
 export const SetProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -67,6 +81,8 @@ export const SetProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * AddToProgrammedDatesRequest is the request message for AddToProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.AddToProgrammedDatesRequest
  */
 export const AddToProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -78,6 +94,8 @@ export const AddToProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * AddToProgrammedDatesResponse is the response message for AddToProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.AddToProgrammedDatesResponse
  */
 export const AddToProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -86,6 +104,8 @@ export const AddToProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType
 );
 
 /**
+ * RemoveFromProgrammedDatesRequest is request message for RemoveFromProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.RemoveFromProgrammedDatesRequest
  */
 export const RemoveFromProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -97,6 +117,8 @@ export const RemoveFromProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessage
 );
 
 /**
+ * RemoveFromProgrammedDatesResponse is the response message for RemoveFromProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.RemoveFromProgrammedDatesResponse
  */
 export const RemoveFromProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -105,6 +127,8 @@ export const RemoveFromProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessag
 );
 
 /**
+ * UpdateProgrammedDatesInfoRequest is the request message for UpdateProgrammedDatesInfo
+ *
  * @generated from message api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoRequest
  */
 export const UpdateProgrammedDatesInfoRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -113,11 +137,14 @@ export const UpdateProgrammedDatesInfoRequest = /*@__PURE__*/ proto3.makeMessage
     { no: 1, name: "programmed_dates_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "programmed_dates_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "field_mask", kind: "message", T: FieldMask },
+    { no: 4, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+    { no: 5, name: "field_mask", kind: "message", T: FieldMask },
   ],
 );
 
 /**
+ * UpdateProgrammedDatesInfoResponse is the response message for UpdateProgrammedDatesInfo
+ *
  * @generated from message api.v1alpha1.org.programmeddates.UpdateProgrammedDatesInfoResponse
  */
 export const UpdateProgrammedDatesInfoResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -126,6 +153,8 @@ export const UpdateProgrammedDatesInfoResponse = /*@__PURE__*/ proto3.makeMessag
 );
 
 /**
+ * DeleteProgrammedDatesRequest is the request message for DeleteProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.DeleteProgrammedDatesRequest
  */
 export const DeleteProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -136,6 +165,8 @@ export const DeleteProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType
 );
 
 /**
+ * DeleteProgrammedDatesResponse is the response message for DeleteProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.DeleteProgrammedDatesResponse
  */
 export const DeleteProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
@@ -144,6 +175,8 @@ export const DeleteProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageTyp
 );
 
 /**
+ * EvaluateProgrammedDatesRequest is the request message for EvaluateProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesRequest
  */
 export const EvaluateProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -154,6 +187,8 @@ export const EvaluateProgrammedDatesRequest = /*@__PURE__*/ proto3.makeMessageTy
 );
 
 /**
+ * EvaluateProgrammedDatesResponse is the response message for EvaluateProgrammedDates
+ *
  * @generated from message api.v1alpha1.org.programmeddates.EvaluateProgrammedDatesResponse
  */
 export const EvaluateProgrammedDatesResponse = /*@__PURE__*/ proto3.makeMessageType(
