@@ -4440,11 +4440,6 @@ export declare class OmniComplianceAction extends Message<OmniComplianceAction> 
    */
   confirmationMessage: string;
 
-  /**
-   * @generated from field: bool fuzzy_match = 3;
-   */
-  fuzzyMatch: boolean;
-
   constructor(data?: PartialMessage<OmniComplianceAction>);
 
   static readonly runtime: typeof proto3;
