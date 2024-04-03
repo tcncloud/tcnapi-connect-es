@@ -46,6 +46,28 @@ export const CreateFlagTranscriptResponse = /*@__PURE__*/ proto3.makeMessageType
 );
 
 /**
+ * DeleteFlagTranscriptRequest is a request for deleting a flag transcript.
+ *
+ * @generated from message api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest
+ */
+export const DeleteFlagTranscriptRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest",
+  () => [
+    { no: 1, name: "transcript_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * DeleteFlagTranscriptResponse is a response for deleting a flag transcript.
+ *
+ * @generated from message api.v1alpha1.vanalytics.DeleteFlagTranscriptResponse
+ */
+export const DeleteFlagTranscriptResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.DeleteFlagTranscriptResponse",
+  [],
+);
+
+/**
  * SearchFlagTranscriptsRequest is a request for searching flagged transcripts.
  *
  * @generated from message api.v1alpha1.vanalytics.SearchFlagTranscriptsRequest
