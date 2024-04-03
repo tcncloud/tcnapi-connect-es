@@ -50,7 +50,7 @@ export declare const Vanalytics: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * UpdateFilter updates a filter search request and/or name.
+     * UpdateFilter updates a filter transcript query and/or name.
      *
      * @generated from rpc wfo.vanalytics.v2.Vanalytics.UpdateFilter
      */
@@ -72,7 +72,7 @@ export declare const Vanalytics: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * GetFilter gets filter given a filter_sid, name or search request.
+     * GetFilter gets filter given a filter_sid or name.
      *
      * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetFilter
      */
