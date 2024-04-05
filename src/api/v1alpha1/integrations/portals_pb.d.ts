@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task } from "./service_pb.js";
-import type { FieldDefinition, Flow, FlowFieldLoc, PaymentFlow, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
+import type { FieldDefinition, Flow, FlowFieldLoc, FlowType, Invoices, PaymentFlow, RequestMethod, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.UpsertPortalConfigReq
@@ -1322,5 +1322,323 @@ export declare class ListAvailablePaymentFieldsRes extends Message<ListAvailable
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAvailablePaymentFieldsRes;
 
   static equals(a: ListAvailablePaymentFieldsRes | PlainMessage<ListAvailablePaymentFieldsRes> | undefined, b: ListAvailablePaymentFieldsRes | PlainMessage<ListAvailablePaymentFieldsRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalTypesReq
+ */
+export declare class ListPortalTypesReq extends Message<ListPortalTypesReq> {
+  constructor(data?: PartialMessage<ListPortalTypesReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalTypesReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalTypesReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalTypesReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalTypesReq;
+
+  static equals(a: ListPortalTypesReq | PlainMessage<ListPortalTypesReq> | undefined, b: ListPortalTypesReq | PlainMessage<ListPortalTypesReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalTypesResponse
+ */
+export declare class ListPortalTypesResponse extends Message<ListPortalTypesResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.PortalDefinition values = 1;
+   */
+  values: PortalDefinition[];
+
+  constructor(data?: PartialMessage<ListPortalTypesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalTypesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalTypesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalTypesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalTypesResponse;
+
+  static equals(a: ListPortalTypesResponse | PlainMessage<ListPortalTypesResponse> | undefined, b: ListPortalTypesResponse | PlainMessage<ListPortalTypesResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListFlowsReq
+ */
+export declare class ListFlowsReq extends Message<ListFlowsReq> {
+  constructor(data?: PartialMessage<ListFlowsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListFlowsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlowsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlowsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlowsReq;
+
+  static equals(a: ListFlowsReq | PlainMessage<ListFlowsReq> | undefined, b: ListFlowsReq | PlainMessage<ListFlowsReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListFlowsResponse
+ */
+export declare class ListFlowsResponse extends Message<ListFlowsResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.FlowDefinition values = 1;
+   */
+  values: FlowDefinition[];
+
+  constructor(data?: PartialMessage<ListFlowsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListFlowsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlowsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlowsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlowsResponse;
+
+  static equals(a: ListFlowsResponse | PlainMessage<ListFlowsResponse> | undefined, b: ListFlowsResponse | PlainMessage<ListFlowsResponse> | undefined): boolean;
+}
+
+/**
+ * this describes a portal type. any created portals must conform to a
+ * portal definition.
+ *
+ * @generated from message api.v1alpha1.integrations.PortalDefinition
+ */
+export declare class PortalDefinition extends Message<PortalDefinition> {
+  /**
+   * the name of this type of portal
+   *
+   * @generated from field: string defintion_name = 2;
+   */
+  defintionName: string;
+
+  /**
+   * each FlowRequirement in steps represents a screen that must be presented
+   * to the user in order. All flows in the steps must be completed in order.
+   * Payment portal would have 3 steps:
+   * steps: [
+   *   FlowRequirement{max_choices: 1, flow_type: VERIFICATION},
+   *   FlowRequirement{max_choices: 1, flow_type: INVOICE},
+   *   FlowRequirement{max_choices: 0, flow_type: PAYMENT},
+   * ]
+   *
+   * @generated from field: repeated api.v1alpha1.integrations.FlowRequirement steps = 3;
+   */
+  steps: FlowRequirement[];
+
+  constructor(data?: PartialMessage<PortalDefinition>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.PortalDefinition";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PortalDefinition;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PortalDefinition;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PortalDefinition;
+
+  static equals(a: PortalDefinition | PlainMessage<PortalDefinition> | undefined, b: PortalDefinition | PlainMessage<PortalDefinition> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.FlowRequirement
+ */
+export declare class FlowRequirement extends Message<FlowRequirement> {
+  /**
+   * how many different flows the user can choose from on this step.
+   * 0 and below is interpreted as unlimited flows.
+   * example:
+   * PaymentPortal would have this set to 1 for verification flow and invoice flows
+   * and set to 0 for payment flows. This forces the user to verify exactly 1 way
+   * see exactly 1 invoice, and choose credit card, ach paypal, etc to pay.
+   *
+   * @generated from field: int32 max_choices = 1;
+   */
+  maxChoices: number;
+
+  /**
+   * the flows for this step must be of this type
+   * FLOW_TYPE_UNKNOWN is interpreted as any flow type is acceptable
+   *
+   * @generated from field: api.commons.integrations.FlowType flow_type = 2;
+   */
+  flowType: FlowType;
+
+  constructor(data?: PartialMessage<FlowRequirement>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.FlowRequirement";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlowRequirement;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlowRequirement;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlowRequirement;
+
+  static equals(a: FlowRequirement | PlainMessage<FlowRequirement> | undefined, b: FlowRequirement | PlainMessage<FlowRequirement> | undefined): boolean;
+}
+
+/**
+ * this describes the requirements to build a Flow entity
+ * that matches this description.  All created flows must
+ * conform to a FlowDefinition.
+ *
+ * @generated from message api.v1alpha1.integrations.FlowDefinition
+ */
+export declare class FlowDefinition extends Message<FlowDefinition> {
+  /**
+   * the type of flow
+   *
+   * @generated from field: api.commons.integrations.FlowType flow_type = 1;
+   */
+  flowType: FlowType;
+
+  /**
+   * the name of this flow definition
+   *
+   * @generated from field: string definition_name = 2;
+   */
+  definitionName: string;
+
+  /**
+   * the api method performed for this flow.
+   *
+   * @generated from field: api.commons.integrations.RequestMethod method = 3;
+   */
+  method: RequestMethod;
+
+  /**
+   * the fields required to complete this flow
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition req_fields = 4;
+   */
+  reqFields: FieldDefinition[];
+
+  /**
+   * the fields returned from this flows execution
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition res_fields = 5;
+   */
+  resFields: FieldDefinition[];
+
+  /**
+   * a subset of req_fields we suggest go in the plugin instance.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition plugin_fields = 6;
+   */
+  pluginFields: FieldDefinition[];
+
+  /**
+   * a subset of req_fields we suggest go in the portal link
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition link_fields = 7;
+   */
+  linkFields: FieldDefinition[];
+
+  /**
+   * a subset of req_fields we suggest come from some previously called flow.
+   * this is usually empty. Experian Payment flows do have this populated with
+   * data that comes from the experian query balance flow.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition prev_fields = 8;
+   */
+  prevFields: FieldDefinition[];
+
+  /**
+   * a subset of either req_fields OR res_fields that is suggested comes from the user.
+   * Example:
+   * verification flows would have a subset of the res_fields here, because
+   * we want to verify the user provided data against the api call's result.
+   * but
+   * payment flows would have a subset of req_fields here, because
+   * we want to take the payment fields from the user to make the api call.
+   * Some flows have no form fields. Invoice Flows and Execute Flows don't need
+   * a user form, so this is empty on those flows.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition form_fields = 9;
+   */
+  formFields: FieldDefinition[];
+
+  /**
+   * The default template that can be used with the result data to make it pretty
+   * and grouped. Right now this is only used for invoices.
+   *
+   * @generated from field: api.v1alpha1.integrations.Template template = 10;
+   */
+  template?: Template;
+
+  /**
+   * Optional data that can be defined on Flow creation tine to affect the execution
+   * of the flow entity.
+   * Example:
+   * Experian flows have a 'use_invoice_account_number' field that is a boolean.
+   * if checked, we change the account number used for payment, rather than use the
+   * one provided in the portal link.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition opts = 11;
+   */
+  opts: FieldDefinition[];
+
+  constructor(data?: PartialMessage<FlowDefinition>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.FlowDefinition";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlowDefinition;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlowDefinition;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlowDefinition;
+
+  static equals(a: FlowDefinition | PlainMessage<FlowDefinition> | undefined, b: FlowDefinition | PlainMessage<FlowDefinition> | undefined): boolean;
+}
+
+/**
+ * template is a container for the different template types on each flow.
+ * each flow definition can have 0-1 templates. Right now we only have Templates
+ * on invoice flows, but that might not always be the case.
+ *
+ * @generated from message api.v1alpha1.integrations.Template
+ */
+export declare class Template extends Message<Template> {
+  /**
+   * @generated from oneof api.v1alpha1.integrations.Template.val
+   */
+  val: {
+    /**
+     * @generated from field: api.commons.integrations.Invoices invoice_template = 1;
+     */
+    value: Invoices;
+    case: "invoiceTemplate";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<Template>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.Template";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Template;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Template;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Template;
+
+  static equals(a: Template | PlainMessage<Template> | undefined, b: Template | PlainMessage<Template> | undefined): boolean;
 }
 
