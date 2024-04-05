@@ -5,8 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task } from "./service_pb.js";
-import type { FieldDefinition, Flow, FlowFieldLoc, FlowType, Invoices, PaymentFlow, RequestMethod, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
+import type { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task, Template } from "./service_pb.js";
+import type { FieldDefinition, Flow, FlowFieldLoc, FlowType, PaymentFlow, RequestMethod, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.UpsertPortalConfigReq
@@ -1606,39 +1606,5 @@ export declare class FlowDefinition extends Message<FlowDefinition> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlowDefinition;
 
   static equals(a: FlowDefinition | PlainMessage<FlowDefinition> | undefined, b: FlowDefinition | PlainMessage<FlowDefinition> | undefined): boolean;
-}
-
-/**
- * template is a container for the different template types on each flow.
- * each flow definition can have 0-1 templates. Right now we only have Templates
- * on invoice flows, but that might not always be the case.
- *
- * @generated from message api.v1alpha1.integrations.Template
- */
-export declare class Template extends Message<Template> {
-  /**
-   * @generated from oneof api.v1alpha1.integrations.Template.val
-   */
-  val: {
-    /**
-     * @generated from field: api.commons.integrations.Invoices invoice_template = 1;
-     */
-    value: Invoices;
-    case: "invoiceTemplate";
-  } | { case: undefined; value?: undefined };
-
-  constructor(data?: PartialMessage<Template>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.integrations.Template";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Template;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Template;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Template;
-
-  static equals(a: Template | PlainMessage<Template> | undefined, b: Template | PlainMessage<Template> | undefined): boolean;
 }
 

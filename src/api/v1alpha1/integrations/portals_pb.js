@@ -4,8 +4,8 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task } from "./service_pb.js";
-import { FieldDefinition, Flow, FlowFieldLoc, FlowType, Invoices, PaymentFlow, RequestMethod, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
+import { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task, Template } from "./service_pb.js";
+import { FieldDefinition, Flow, FlowFieldLoc, FlowType, PaymentFlow, RequestMethod, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.UpsertPortalConfigReq
@@ -606,20 +606,6 @@ export const FlowDefinition = /*@__PURE__*/ proto3.makeMessageType(
     { no: 9, name: "form_fields", kind: "message", T: FieldDefinition, repeated: true },
     { no: 10, name: "template", kind: "message", T: Template },
     { no: 11, name: "opts", kind: "message", T: FieldDefinition, repeated: true },
-  ],
-);
-
-/**
- * template is a container for the different template types on each flow.
- * each flow definition can have 0-1 templates. Right now we only have Templates
- * on invoice flows, but that might not always be the case.
- *
- * @generated from message api.v1alpha1.integrations.Template
- */
-export const Template = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.Template",
-  () => [
-    { no: 1, name: "invoice_template", kind: "message", T: Invoices, oneof: "val" },
   ],
 );
 
