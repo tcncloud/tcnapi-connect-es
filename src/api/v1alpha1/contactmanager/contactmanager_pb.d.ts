@@ -459,19 +459,14 @@ export declare class ContactManagerEntryVal extends Message<ContactManagerEntryV
  */
 export declare class AddContactEntryRequest extends Message<AddContactEntryRequest> {
   /**
-   * @generated from field: string project_id = 1;
-   */
-  projectId: string;
-
-  /**
-   * @generated from field: int64 contact_manager_list_id = 2 [jstype = JS_STRING];
+   * @generated from field: int64 contact_manager_list_id = 1 [jstype = JS_STRING];
    */
   contactManagerListId: string;
 
   /**
    * List of entries of a given contact
    *
-   * @generated from field: repeated api.v1alpha1.contactmanager.Entry entry = 3;
+   * @generated from field: repeated api.v1alpha1.contactmanager.Entry entry = 2;
    */
   entry: Entry[];
 
