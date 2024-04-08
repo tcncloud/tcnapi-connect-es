@@ -454,3 +454,99 @@ export declare class ContactManagerEntryVal extends Message<ContactManagerEntryV
   static equals(a: ContactManagerEntryVal | PlainMessage<ContactManagerEntryVal> | undefined, b: ContactManagerEntryVal | PlainMessage<ContactManagerEntryVal> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v1alpha1.contactmanager.AddContactEntryRequest
+ */
+export declare class AddContactEntryRequest extends Message<AddContactEntryRequest> {
+  /**
+   * @generated from field: string project_id = 1;
+   */
+  projectId: string;
+
+  /**
+   * @generated from field: int64 contact_manager_list_id = 2 [jstype = JS_STRING];
+   */
+  contactManagerListId: string;
+
+  /**
+   * List of entries of a given contact
+   *
+   * @generated from field: repeated api.v1alpha1.contactmanager.Entry entry = 3;
+   */
+  entry: Entry[];
+
+  constructor(data?: PartialMessage<AddContactEntryRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.AddContactEntryRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddContactEntryRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddContactEntryRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddContactEntryRequest;
+
+  static equals(a: AddContactEntryRequest | PlainMessage<AddContactEntryRequest> | undefined, b: AddContactEntryRequest | PlainMessage<AddContactEntryRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.Entry
+ */
+export declare class Entry extends Message<Entry> {
+  /**
+   * @generated from field: string name = 1;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string value = 2;
+   */
+  value: string;
+
+  /**
+   * @generated from field: string type = 3;
+   */
+  type: string;
+
+  constructor(data?: PartialMessage<Entry>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.Entry";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Entry;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Entry;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Entry;
+
+  static equals(a: Entry | PlainMessage<Entry> | undefined, b: Entry | PlainMessage<Entry> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.AddContactEntryResponse
+ */
+export declare class AddContactEntryResponse extends Message<AddContactEntryResponse> {
+  /**
+   * contact_manager_entry_list_id
+   *
+   * @generated from field: int64 contact_id = 1 [jstype = JS_STRING];
+   */
+  contactId: string;
+
+  constructor(data?: PartialMessage<AddContactEntryResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.contactmanager.AddContactEntryResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddContactEntryResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddContactEntryResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddContactEntryResponse;
+
+  static equals(a: AddContactEntryResponse | PlainMessage<AddContactEntryResponse> | undefined, b: AddContactEntryResponse | PlainMessage<AddContactEntryResponse> | undefined): boolean;
+}
+
