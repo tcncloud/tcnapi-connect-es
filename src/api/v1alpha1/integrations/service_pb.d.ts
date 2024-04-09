@@ -3684,9 +3684,9 @@ export declare class Portal extends Message<Portal> {
    * the user must choose and complete one of the FlowChoices in each position
    * in the "steps" array to be considered complete
    *
-   * @generated from field: repeated api.v1alpha1.integrations.FlowChoices steps = 12;
+   * @generated from field: api.v1alpha1.integrations.Steps portal_steps = 13;
    */
-  steps: FlowChoices[];
+  portalSteps?: Steps;
 
   constructor(data?: PartialMessage<Portal>);
 
@@ -3701,6 +3701,30 @@ export declare class Portal extends Message<Portal> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Portal;
 
   static equals(a: Portal | PlainMessage<Portal> | undefined, b: Portal | PlainMessage<Portal> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.Steps
+ */
+export declare class Steps extends Message<Steps> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.FlowChoices steps = 1;
+   */
+  steps: FlowChoices[];
+
+  constructor(data?: PartialMessage<Steps>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.Steps";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Steps;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Steps;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Steps;
+
+  static equals(a: Steps | PlainMessage<Steps> | undefined, b: Steps | PlainMessage<Steps> | undefined): boolean;
 }
 
 /**

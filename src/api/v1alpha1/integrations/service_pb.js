@@ -1178,7 +1178,17 @@ export const Portal = /*@__PURE__*/ proto3.makeMessageType(
     { no: 8, name: "ptype", kind: "message", T: PortalType },
     { no: 9, name: "last_edited", kind: "message", T: Timestamp },
     { no: 11, name: "definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 12, name: "steps", kind: "message", T: FlowChoices, repeated: true },
+    { no: 13, name: "portal_steps", kind: "message", T: Steps },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.Steps
+ */
+export const Steps = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.Steps",
+  () => [
+    { no: 1, name: "steps", kind: "message", T: FlowChoices, repeated: true },
   ],
 );
 
