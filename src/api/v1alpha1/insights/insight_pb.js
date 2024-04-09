@@ -102,6 +102,30 @@ export const ListInsightsResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * ListOrgInsightsRequest is the request to list insights for an org in support.
+ *
+ * @generated from message api.v1alpha1.insights.ListOrgInsightsRequest
+ */
+export const ListOrgInsightsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.insights.ListOrgInsightsRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * ListOrgInsightsResponse contains the Insights that were listed.
+ *
+ * @generated from message api.v1alpha1.insights.ListOrgInsightsResponse
+ */
+export const ListOrgInsightsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.insights.ListOrgInsightsResponse",
+  () => [
+    { no: 1, name: "insights", kind: "message", T: Insight, repeated: true },
+  ],
+);
+
+/**
  * UpdateInsightRequest is the request to update an insight.
  *
  * @generated from message api.v1alpha1.insights.UpdateInsightRequest
