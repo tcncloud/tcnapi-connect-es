@@ -53,7 +53,8 @@ export const CreateFlagTranscriptResponse = /*@__PURE__*/ proto3.makeMessageType
 export const DeleteFlagTranscriptRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.vanalytics.DeleteFlagTranscriptRequest",
   () => [
-    { no: 1, name: "transcript_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "transcript_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 

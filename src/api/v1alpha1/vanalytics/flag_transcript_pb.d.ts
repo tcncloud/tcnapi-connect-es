@@ -98,9 +98,16 @@ export declare class CreateFlagTranscriptResponse extends Message<CreateFlagTran
  */
 export declare class DeleteFlagTranscriptRequest extends Message<DeleteFlagTranscriptRequest> {
   /**
+   * Required. The org id of the flag transcripts to be deleted.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
    * Required. The transcript sids for the flag transcripts to be deleted.
    *
-   * @generated from field: repeated int64 transcript_sids = 1;
+   * @generated from field: repeated int64 transcript_sids = 2;
    */
   transcriptSids: bigint[];
 
