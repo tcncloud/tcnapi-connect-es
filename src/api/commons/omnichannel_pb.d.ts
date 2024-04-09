@@ -2068,6 +2068,14 @@ export declare class OmniMessagePayload extends Message<OmniMessagePayload> {
      */
     value: OmniCannedMessage;
     case: "cannedMessage";
+  } | {
+    /**
+     * data message
+     *
+     * @generated from field: api.commons.OmniDataMessage data_message = 116;
+     */
+    value: OmniDataMessage;
+    case: "dataMessage";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<OmniMessagePayload>);
@@ -2659,6 +2667,32 @@ export declare class OmniCannedMessage extends Message<OmniCannedMessage> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniCannedMessage;
 
   static equals(a: OmniCannedMessage | PlainMessage<OmniCannedMessage> | undefined, b: OmniCannedMessage | PlainMessage<OmniCannedMessage> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.OmniDataMessage
+ */
+export declare class OmniDataMessage extends Message<OmniDataMessage> {
+  /**
+   * Data for flows, should always be json
+   *
+   * @generated from field: string message = 1;
+   */
+  message: string;
+
+  constructor(data?: PartialMessage<OmniDataMessage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.OmniDataMessage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniDataMessage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniDataMessage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniDataMessage;
+
+  static equals(a: OmniDataMessage | PlainMessage<OmniDataMessage> | undefined, b: OmniDataMessage | PlainMessage<OmniDataMessage> | undefined): boolean;
 }
 
 /**
