@@ -608,7 +608,6 @@ export const OmniMessagePayload = /*@__PURE__*/ proto3.makeMessageType(
     { no: 113, name: "request_queue_information", kind: "message", T: OmniRequestQueueInformation, oneof: "payload" },
     { no: 114, name: "off_loaded_text_message", kind: "message", T: OmniOffLoadedTextMessage, oneof: "payload" },
     { no: 115, name: "canned_message", kind: "message", T: OmniCannedMessage, oneof: "payload" },
-    { no: 116, name: "data_message", kind: "message", T: OmniDataMessage, oneof: "payload" },
   ],
 );
 
@@ -799,16 +798,6 @@ export const OmniCannedMessage = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.OmniCannedMessage",
   () => [
     { no: 1, name: "canned_message_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
-);
-
-/**
- * @generated from message api.commons.OmniDataMessage
- */
-export const OmniDataMessage = /*@__PURE__*/ proto3.makeMessageType(
-  "api.commons.OmniDataMessage",
-  () => [
-    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
