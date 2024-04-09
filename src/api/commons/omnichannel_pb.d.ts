@@ -2683,9 +2683,9 @@ export declare class OmniDataMessage extends Message<OmniDataMessage> {
   /**
    * Message id of the html form this is in reply to
    *
-   * @generated from field: string message_id = 2;
+   * @generated from field: int64 message_sid = 2 [jstype = JS_STRING];
    */
-  messageId: string;
+  messageSid: string;
 
   constructor(data?: PartialMessage<OmniDataMessage>);
 
