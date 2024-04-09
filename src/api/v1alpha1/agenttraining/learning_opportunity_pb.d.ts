@@ -418,7 +418,7 @@ export declare class GetLearningOpportunityResponse extends Message<GetLearningO
 }
 
 /**
- * ListLearningOpportunitiesRequestByOrgId represents a request to list learning opportunities.
+ * ListLearningOpportunitiesByOrgIdRequest represents a request to list learning opportunities.
  *
  * @generated from message api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest
  */

@@ -183,7 +183,7 @@ export const GetLearningOpportunityResponse = /*@__PURE__*/ proto3.makeMessageTy
 );
 
 /**
- * ListLearningOpportunitiesRequestByOrgId represents a request to list learning opportunities.
+ * ListLearningOpportunitiesByOrgIdRequest represents a request to list learning opportunities.
  *
  * @generated from message api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest
  */
