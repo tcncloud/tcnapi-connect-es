@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { FileTemplate, ParseHints } from "../../commons/classifier_pb.js";
+import { FileTemplate, ParseHints } from "./entities_pb.js";
 
 /**
  * @generated from message api.v1alpha1.classifier.ParseFileRequest

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GetContactListRequest, GetContactListResponse, GetEncContactEntryRequest, GetEncContactEntryResponse, GetKYCEncContactEntryRequest, GetKYCEncContactEntryResponse, GetKYCKeysRequest, GetKYCKeysResponse, ListContactEntryListRequest, ListContactEntryListResponse } from "./contactmanager_pb.js";
+import { AddContactEntryRequest, AddContactEntryResponse, GetContactListRequest, GetContactListResponse, GetEncContactEntryRequest, GetEncContactEntryResponse, GetKYCEncContactEntryRequest, GetKYCEncContactEntryResponse, GetKYCKeysRequest, GetKYCKeysResponse, ListContactEntryListRequest, ListContactEntryListResponse } from "./contactmanager_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -55,6 +55,18 @@ export const ContactManager = {
       name: "GetKYCKeys",
       I: GetKYCKeysRequest,
       O: GetKYCKeysResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * *
+     * Adds a new contact entry based on the provided request.
+     *
+     * @generated from rpc api.v1alpha1.contactmanager.ContactManager.AddContactEntry
+     */
+    addContactEntry: {
+      name: "AddContactEntry",
+      I: AddContactEntryRequest,
+      O: AddContactEntryResponse,
       kind: MethodKind.Unary,
     },
   }

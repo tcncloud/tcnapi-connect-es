@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { FileTemplate, ParseHints } from "../../commons/classifier_pb.js";
+import type { FileTemplate, ParseHints } from "./entities_pb.js";
 
 /**
  * @generated from message api.v1alpha1.classifier.ParseFileRequest
@@ -62,7 +62,7 @@ export declare class ParseFileRequest_ReParseFile extends Message<ParseFileReque
   fileTemplateId: bigint;
 
   /**
-   * @generated from field: api.commons.ParseHints hints = 2;
+   * @generated from field: api.v1alpha1.classifier.ParseHints hints = 2;
    */
   hints?: ParseHints;
 
@@ -86,7 +86,7 @@ export declare class ParseFileRequest_ReParseFile extends Message<ParseFileReque
  */
 export declare class ParseFileResponse extends Message<ParseFileResponse> {
   /**
-   * @generated from field: api.commons.FileTemplate file_template = 1;
+   * @generated from field: api.v1alpha1.classifier.FileTemplate file_template = 1;
    */
   fileTemplate?: FileTemplate;
 
@@ -110,7 +110,7 @@ export declare class ParseFileResponse extends Message<ParseFileResponse> {
  */
 export declare class UpdateFileTemplateRequest extends Message<UpdateFileTemplateRequest> {
   /**
-   * @generated from field: api.commons.FileTemplate file_template = 1;
+   * @generated from field: api.v1alpha1.classifier.FileTemplate file_template = 1;
    */
   fileTemplate?: FileTemplate;
 
@@ -236,7 +236,7 @@ export declare class ListFileTemplatesRequest extends Message<ListFileTemplatesR
  */
 export declare class ListFileTemplatesResponse extends Message<ListFileTemplatesResponse> {
   /**
-   * @generated from field: repeated api.commons.FileTemplate file_templates = 1;
+   * @generated from field: repeated api.v1alpha1.classifier.FileTemplate file_templates = 1;
    */
   fileTemplates: FileTemplate[];
 
@@ -284,7 +284,7 @@ export declare class GetFileTemplateRequest extends Message<GetFileTemplateReque
  */
 export declare class GetFileTemplateResponse extends Message<GetFileTemplateResponse> {
   /**
-   * @generated from field: api.commons.FileTemplate file_template = 1;
+   * @generated from field: api.v1alpha1.classifier.FileTemplate file_template = 1;
    */
   fileTemplate?: FileTemplate;
 
