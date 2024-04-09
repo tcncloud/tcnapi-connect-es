@@ -182,3 +182,32 @@ export const GetLearningOpportunityResponse = /*@__PURE__*/ proto3.makeMessageTy
   ],
 );
 
+/**
+ * ListLearningOpportunitiesRequestByOrgId represents a request to list learning opportunities.
+ *
+ * @generated from message api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest
+ */
+export const ListLearningOpportunitiesByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "call_identifiers", kind: "message", T: CallIdentifier, repeated: true },
+    { no: 3, name: "transcript_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "agent_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "created_at", kind: "message", T: TimeFilter },
+  ],
+);
+
+/**
+ * DeleteLearningOpportunityByOrgIdRequest represents a request to delete a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityByOrgIdRequest
+ */
+export const DeleteLearningOpportunityByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.agenttraining.DeleteLearningOpportunityByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "learning_opportunity_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+

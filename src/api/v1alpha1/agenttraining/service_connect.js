@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CompleteAgentLearningOpportunityRequest, CompleteAgentLearningOpportunityResponse, CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListAgentLearningOpportunitiesRequest, ListAgentLearningOpportunitiesResponse, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
+import { CompleteAgentLearningOpportunityRequest, CompleteAgentLearningOpportunityResponse, CreateLearningOpportunityRequest, CreateLearningOpportunityResponse, DeleteLearningOpportunityByOrgIdRequest, DeleteLearningOpportunityRequest, DeleteLearningOpportunityResponse, GetLearningOpportunityRequest, GetLearningOpportunityResponse, ListAgentLearningOpportunitiesRequest, ListAgentLearningOpportunitiesResponse, ListLearningOpportunitiesByOrgIdRequest, ListLearningOpportunitiesRequest, ListLearningOpportunitiesResponse, UpdateLearningOpportunityRequest, UpdateLearningOpportunityResponse } from "./learning_opportunity_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -87,6 +87,28 @@ export const AgentTrainingService = {
       name: "GetLearningOpportunity",
       I: GetLearningOpportunityRequest,
       O: GetLearningOpportunityResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListLearningOpportunitiesByOrgId lists learning opportunities by org id.
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.ListLearningOpportunitiesByOrgId
+     */
+    listLearningOpportunitiesByOrgId: {
+      name: "ListLearningOpportunitiesByOrgId",
+      I: ListLearningOpportunitiesByOrgIdRequest,
+      O: ListLearningOpportunitiesResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteLearningOpportunityByOrgId deletes a learning opportunity in a specific org
+     *
+     * @generated from rpc api.v1alpha1.agenttraining.AgentTrainingService.DeleteLearningOpportunityByOrgId
+     */
+    deleteLearningOpportunityByOrgId: {
+      name: "DeleteLearningOpportunityByOrgId",
+      I: DeleteLearningOpportunityByOrgIdRequest,
+      O: DeleteLearningOpportunityResponse,
       kind: MethodKind.Unary,
     },
   }

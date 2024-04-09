@@ -128,3 +128,53 @@ export const StreamAutoEvaluationsResponse = /*@__PURE__*/ proto3.makeMessageTyp
   ],
 );
 
+/**
+ * ListAutoEvaluationsByOrgIdRequest is the request to get a list of auto evaluations.
+ *
+ * @generated from message api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest
+ */
+export const ListAutoEvaluationsByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "scorecard_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "completed_at", kind: "message", T: TimeFilter },
+    { no: 5, name: "category_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 6, name: "call_sid", kind: "message", T: ListAutoEvaluationsByOrgIdRequest_CallSidFilter },
+    { no: 7, name: "agent_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 8, name: "page_size", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 9, name: "order_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "page_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "risk_levels", kind: "enum", T: proto3.getEnumType(RiskLevel), repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest.CallSidFilter
+ */
+export const ListAutoEvaluationsByOrgIdRequest_CallSidFilter = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest.CallSidFilter",
+  () => [
+    { no: 1, name: "any_of", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 2, name: "eq", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "gte", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "lte", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "gt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "lt", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+  {localName: "ListAutoEvaluationsByOrgIdRequest_CallSidFilter"},
+);
+
+/**
+ * DeleteAutoEvaluationByOrgIdRequest is the request to delete an auto evaluation (with sub-entities).
+ *
+ * @generated from message api.v1alpha1.scorecards.DeleteAutoEvaluationByOrgIdRequest
+ */
+export const DeleteAutoEvaluationByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.DeleteAutoEvaluationByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "auto_evaluation_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+

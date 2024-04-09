@@ -417,3 +417,90 @@ export declare class GetLearningOpportunityResponse extends Message<GetLearningO
   static equals(a: GetLearningOpportunityResponse | PlainMessage<GetLearningOpportunityResponse> | undefined, b: GetLearningOpportunityResponse | PlainMessage<GetLearningOpportunityResponse> | undefined): boolean;
 }
 
+/**
+ * ListLearningOpportunitiesRequestByOrgId represents a request to list learning opportunities.
+ *
+ * @generated from message api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest
+ */
+export declare class ListLearningOpportunitiesByOrgIdRequest extends Message<ListLearningOpportunitiesByOrgIdRequest> {
+  /**
+   * Required. Specifies the org id to filter learning opportunities by.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated api.commons.CallIdentifier call_identifiers = 2;
+   */
+  callIdentifiers: CallIdentifier[];
+
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated int64 transcript_sids = 3;
+   */
+  transcriptSids: bigint[];
+
+  /**
+   * Optional - 'any of' if provided.
+   *
+   * @generated from field: repeated string agent_user_ids = 4;
+   */
+  agentUserIds: string[];
+
+  /**
+   * Optional.
+   *
+   * @generated from field: api.commons.TimeFilter created_at = 5;
+   */
+  createdAt?: TimeFilter;
+
+  constructor(data?: PartialMessage<ListLearningOpportunitiesByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.ListLearningOpportunitiesByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListLearningOpportunitiesByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListLearningOpportunitiesByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListLearningOpportunitiesByOrgIdRequest;
+
+  static equals(a: ListLearningOpportunitiesByOrgIdRequest | PlainMessage<ListLearningOpportunitiesByOrgIdRequest> | undefined, b: ListLearningOpportunitiesByOrgIdRequest | PlainMessage<ListLearningOpportunitiesByOrgIdRequest> | undefined): boolean;
+}
+
+/**
+ * DeleteLearningOpportunityByOrgIdRequest represents a request to delete a learning opportunity.
+ *
+ * @generated from message api.v1alpha1.agenttraining.DeleteLearningOpportunityByOrgIdRequest
+ */
+export declare class DeleteLearningOpportunityByOrgIdRequest extends Message<DeleteLearningOpportunityByOrgIdRequest> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: int64 learning_opportunity_id = 3;
+   */
+  learningOpportunityId: bigint;
+
+  constructor(data?: PartialMessage<DeleteLearningOpportunityByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.agenttraining.DeleteLearningOpportunityByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteLearningOpportunityByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteLearningOpportunityByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteLearningOpportunityByOrgIdRequest;
+
+  static equals(a: DeleteLearningOpportunityByOrgIdRequest | PlainMessage<DeleteLearningOpportunityByOrgIdRequest> | undefined, b: DeleteLearningOpportunityByOrgIdRequest | PlainMessage<DeleteLearningOpportunityByOrgIdRequest> | undefined): boolean;
+}
+
