@@ -3,16 +3,16 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateScorecardRequest, CreateScorecardResponse, DeleteScorecardRequest, DeleteScorecardResponse, GetScorecardRequest, GetScorecardResponse, ListScorecardsByOrgIdRequest, ListScorecardsRequest, ListScorecardsResponse, UpdateScorecardRequest, UpdateScorecardResponse } from "./scorecard_pb.js";
+import { CreateScorecardRequest, CreateScorecardResponse, DeleteScorecardRequest, DeleteScorecardResponse, GetScorecardRequest, GetScorecardResponse, ListScorecardsRequest, ListScorecardsResponse, UpdateScorecardRequest, UpdateScorecardResponse } from "./scorecard_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { BulkCreateQuestionsRequest, BulkCreateQuestionsResponse, CreateQuestionCategoryRequest, CreateQuestionCategoryResponse, CreateQuestionRequest, CreateQuestionResponse, DeleteQuestionCategoryRequest, DeleteQuestionCategoryResponse, DeleteQuestionRequest, DeleteQuestionResponse, GetQuestionRequest, GetQuestionResponse, ListQuestionsRequest, ListQuestionsResponse, UpdateQuestionRequest, UpdateQuestionResponse } from "./question_pb.js";
 import { CreateCategoryRequest, CreateCategoryResponse, DeleteCategoryRequest, DeleteCategoryResponse, GetCategoryRequest, GetCategoryResponse, ListCategoriesRequest, ListCategoriesResponse, SampleCallsByCategoryRequest, SampleCallsByCategoryResponse, UpdateCategoryRequest, UpdateCategoryResponse } from "./category_pb.js";
 import { CreateScorecardQuestionRequest, CreateScorecardQuestionResponse, DeleteScorecardQuestionRequest, DeleteScorecardQuestionResponse, GetScorecardQuestionRequest, GetScorecardQuestionResponse, UpdateScorecardQuestionRequest, UpdateScorecardQuestionResponse } from "./scorecard_question_pb.js";
 import { CreateSectionRequest, CreateSectionResponse, DeleteSectionRequest, DeleteSectionResponse, GetSectionRequest, GetSectionResponse, ListSectionsRequest, ListSectionsResponse, UpdateSectionRequest, UpdateSectionResponse } from "./section_pb.js";
-import { CreateEvaluationRequest, CreateEvaluationResponse, DeleteEvaluationByOrgIdRequest, DeleteEvaluationRequest, DeleteEvaluationResponse, GetEvaluationRequest, GetEvaluationResponse, ListEvaluationsByOrgIdRequest, ListEvaluationsRequest, ListEvaluationsResponse, PreviewEvaluationScoreRequest, PreviewEvaluationScoreResponse, ScoreEvaluationRequest, ScoreEvaluationResponse, UpdateEvaluationRequest, UpdateEvaluationResponse } from "./evaluation_pb.js";
+import { CreateEvaluationRequest, CreateEvaluationResponse, DeleteEvaluationRequest, DeleteEvaluationResponse, GetEvaluationRequest, GetEvaluationResponse, ListEvaluationsRequest, ListEvaluationsResponse, PreviewEvaluationScoreRequest, PreviewEvaluationScoreResponse, ScoreEvaluationRequest, ScoreEvaluationResponse, UpdateEvaluationRequest, UpdateEvaluationResponse } from "./evaluation_pb.js";
 import { CreateEvaluationQuestionRequest, CreateEvaluationQuestionResponse, DeleteEvaluationQuestionRequest, DeleteEvaluationQuestionResponse, UpdateEvaluationQuestionRequest, UpdateEvaluationQuestionResponse } from "./evaluation_question_pb.js";
 import { CreateAutoQuestionRequest, CreateAutoQuestionResponse, DeleteAutoQuestionRequest, DeleteAutoQuestionResponse, GetAutoQuestionRequest, GetAutoQuestionResponse, UpdateAutoQuestionRequest, UpdateAutoQuestionResponse } from "./auto_question_pb.js";
-import { DeleteAutoEvaluationByOrgIdRequest, DeleteAutoEvaluationRequest, DeleteAutoEvaluationResponse, GetAutoEvaluationRequest, GetAutoEvaluationResponse, ListAutoEvaluationsByOrgIdRequest, ListAutoEvaluationsRequest, ListAutoEvaluationsResponse, StreamAutoEvaluationsRequest, StreamAutoEvaluationsResponse } from "./auto_evaluation_pb.js";
+import { DeleteAutoEvaluationRequest, DeleteAutoEvaluationResponse, GetAutoEvaluationRequest, GetAutoEvaluationResponse, ListAutoEvaluationsRequest, ListAutoEvaluationsResponse, StreamAutoEvaluationsRequest, StreamAutoEvaluationsResponse } from "./auto_evaluation_pb.js";
 
 /**
  * @generated from service api.v1alpha1.scorecards.Scorecards
@@ -525,61 +525,6 @@ export declare const Scorecards: {
       readonly name: "PreviewEvaluationScore",
       readonly I: typeof PreviewEvaluationScoreRequest,
       readonly O: typeof PreviewEvaluationScoreResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * ListEvaluationsByOrgId gets a list of evaluations by org id
-     *
-     * @generated from rpc api.v1alpha1.scorecards.Scorecards.ListEvaluationsByOrgId
-     */
-    readonly listEvaluationsByOrgId: {
-      readonly name: "ListEvaluationsByOrgId",
-      readonly I: typeof ListEvaluationsByOrgIdRequest,
-      readonly O: typeof ListEvaluationsResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * ListAutoEvaluationsByOrgId gets a list of auto evaluations
-     *
-     * @generated from rpc api.v1alpha1.scorecards.Scorecards.ListAutoEvaluationsByOrgId
-     */
-    readonly listAutoEvaluationsByOrgId: {
-      readonly name: "ListAutoEvaluationsByOrgId",
-      readonly I: typeof ListAutoEvaluationsByOrgIdRequest,
-      readonly O: typeof ListAutoEvaluationsResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * DeleteEvaluationByOrgId delete an evaluation in a specific org
-     *
-     * @generated from rpc api.v1alpha1.scorecards.Scorecards.DeleteEvaluationByOrgId
-     */
-    readonly deleteEvaluationByOrgId: {
-      readonly name: "DeleteEvaluationByOrgId",
-      readonly I: typeof DeleteEvaluationByOrgIdRequest,
-      readonly O: typeof DeleteEvaluationResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * DeleteAutoEvaluationByOrgId deletes an auto evaluations
-     *
-     * @generated from rpc api.v1alpha1.scorecards.Scorecards.DeleteAutoEvaluationByOrgId
-     */
-    readonly deleteAutoEvaluationByOrgId: {
-      readonly name: "DeleteAutoEvaluationByOrgId",
-      readonly I: typeof DeleteAutoEvaluationByOrgIdRequest,
-      readonly O: typeof DeleteAutoEvaluationResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * ListScorecardsByOrgId lists scorecards
-     *
-     * @generated from rpc api.v1alpha1.scorecards.Scorecards.ListScorecardsByOrgId
-     */
-    readonly listScorecardsByOrgId: {
-      readonly name: "ListScorecardsByOrgId",
-      readonly I: typeof ListScorecardsByOrgIdRequest,
-      readonly O: typeof ListScorecardsResponse,
       readonly kind: MethodKind.Unary,
     },
   }
