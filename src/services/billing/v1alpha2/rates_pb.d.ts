@@ -62,6 +62,54 @@ export declare class CreateDefaultRateDefinitionResponse extends Message<CreateD
 }
 
 /**
+ * @generated from message services.billing.v1alpha2.CreateDefaultRateDefinitionsRequest
+ */
+export declare class CreateDefaultRateDefinitionsRequest extends Message<CreateDefaultRateDefinitionsRequest> {
+  /**
+   * @generated from field: repeated services.billing.v1alpha2.CreateDefaultRateDefinitionRequest rates = 1;
+   */
+  rates: CreateDefaultRateDefinitionRequest[];
+
+  constructor(data?: PartialMessage<CreateDefaultRateDefinitionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.CreateDefaultRateDefinitionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDefaultRateDefinitionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDefaultRateDefinitionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDefaultRateDefinitionsRequest;
+
+  static equals(a: CreateDefaultRateDefinitionsRequest | PlainMessage<CreateDefaultRateDefinitionsRequest> | undefined, b: CreateDefaultRateDefinitionsRequest | PlainMessage<CreateDefaultRateDefinitionsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha2.CreateDefaultRateDefinitionsResponse
+ */
+export declare class CreateDefaultRateDefinitionsResponse extends Message<CreateDefaultRateDefinitionsResponse> {
+  /**
+   * @generated from field: repeated services.billing.v1alpha2.CreateDefaultRateDefinitionResponse rates = 1;
+   */
+  rates: CreateDefaultRateDefinitionResponse[];
+
+  constructor(data?: PartialMessage<CreateDefaultRateDefinitionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.CreateDefaultRateDefinitionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateDefaultRateDefinitionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateDefaultRateDefinitionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateDefaultRateDefinitionsResponse;
+
+  static equals(a: CreateDefaultRateDefinitionsResponse | PlainMessage<CreateDefaultRateDefinitionsResponse> | undefined, b: CreateDefaultRateDefinitionsResponse | PlainMessage<CreateDefaultRateDefinitionsResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message services.billing.v1alpha2.CreateRateDefinitionRequest
  */
 export declare class CreateRateDefinitionRequest extends Message<CreateRateDefinitionRequest> {
@@ -112,6 +160,54 @@ export declare class CreateRateDefinitionResponse extends Message<CreateRateDefi
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateRateDefinitionResponse;
 
   static equals(a: CreateRateDefinitionResponse | PlainMessage<CreateRateDefinitionResponse> | undefined, b: CreateRateDefinitionResponse | PlainMessage<CreateRateDefinitionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha2.CreateRateDefinitionsRequest
+ */
+export declare class CreateRateDefinitionsRequest extends Message<CreateRateDefinitionsRequest> {
+  /**
+   * @generated from field: repeated services.billing.v1alpha2.CreateRateDefinitionRequest rates = 1;
+   */
+  rates: CreateRateDefinitionRequest[];
+
+  constructor(data?: PartialMessage<CreateRateDefinitionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.CreateRateDefinitionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateRateDefinitionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateRateDefinitionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateRateDefinitionsRequest;
+
+  static equals(a: CreateRateDefinitionsRequest | PlainMessage<CreateRateDefinitionsRequest> | undefined, b: CreateRateDefinitionsRequest | PlainMessage<CreateRateDefinitionsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha2.CreateRateDefinitionsResponse
+ */
+export declare class CreateRateDefinitionsResponse extends Message<CreateRateDefinitionsResponse> {
+  /**
+   * @generated from field: repeated services.billing.v1alpha2.CreateRateDefinitionResponse rates = 1;
+   */
+  rates: CreateRateDefinitionResponse[];
+
+  constructor(data?: PartialMessage<CreateRateDefinitionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.CreateRateDefinitionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): CreateRateDefinitionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): CreateRateDefinitionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CreateRateDefinitionsResponse;
+
+  static equals(a: CreateRateDefinitionsResponse | PlainMessage<CreateRateDefinitionsResponse> | undefined, b: CreateRateDefinitionsResponse | PlainMessage<CreateRateDefinitionsResponse> | undefined): boolean;
 }
 
 /**

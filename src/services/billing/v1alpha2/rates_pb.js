@@ -29,6 +29,26 @@ export const CreateDefaultRateDefinitionResponse = /*@__PURE__*/ proto3.makeMess
 );
 
 /**
+ * @generated from message services.billing.v1alpha2.CreateDefaultRateDefinitionsRequest
+ */
+export const CreateDefaultRateDefinitionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.CreateDefaultRateDefinitionsRequest",
+  () => [
+    { no: 1, name: "rates", kind: "message", T: CreateDefaultRateDefinitionRequest, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha2.CreateDefaultRateDefinitionsResponse
+ */
+export const CreateDefaultRateDefinitionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.CreateDefaultRateDefinitionsResponse",
+  () => [
+    { no: 1, name: "rates", kind: "message", T: CreateDefaultRateDefinitionResponse, repeated: true },
+  ],
+);
+
+/**
  * @generated from message services.billing.v1alpha2.CreateRateDefinitionRequest
  */
 export const CreateRateDefinitionRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -46,6 +66,26 @@ export const CreateRateDefinitionResponse = /*@__PURE__*/ proto3.makeMessageType
   "services.billing.v1alpha2.CreateRateDefinitionResponse",
   () => [
     { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha2.CreateRateDefinitionsRequest
+ */
+export const CreateRateDefinitionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.CreateRateDefinitionsRequest",
+  () => [
+    { no: 1, name: "rates", kind: "message", T: CreateRateDefinitionRequest, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha2.CreateRateDefinitionsResponse
+ */
+export const CreateRateDefinitionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.CreateRateDefinitionsResponse",
+  () => [
+    { no: 1, name: "rates", kind: "message", T: CreateRateDefinitionResponse, repeated: true },
   ],
 );
 

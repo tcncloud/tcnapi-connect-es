@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, GetRateHistoryRequest, GetRateHistoryResponse, ListActiveRateDefinitionsRequest, ListActiveRateDefinitionsResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
+import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateDefaultRateDefinitionsRequest, CreateDefaultRateDefinitionsResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, CreateRateDefinitionsRequest, CreateRateDefinitionsResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, GetRateHistoryRequest, GetRateHistoryResponse, ListActiveRateDefinitionsRequest, ListActiveRateDefinitionsResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { ExportInvoiceRequest, ExportInvoiceResponse } from "./invoices_pb.js";
 
@@ -19,7 +19,7 @@ export declare const BillingService: {
      *   CUSTOMER_SUPPORT
      *   TCN_BILLING_ADMIN
      * Errors:
-     *   - grpc.AlreadyExists: A rate definition with the same feature already exists.
+     *   - grpc.AlreadyExists: A rate definition with the same data already exists.
      *   - grpc.Internal: An internal error occurred.
      *   - grpc.InvalidArgument: The request is invalid.
      *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
@@ -34,11 +34,31 @@ export declare const BillingService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Creates rate definitions for the REGION.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
+     * Errors:
+     *   - grpc.AlreadyExists: A rate definition with the same data already exists.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha2.BillingService.CreateDefaultRateDefinitions
+     */
+    readonly createDefaultRateDefinitions: {
+      readonly name: "CreateDefaultRateDefinitions",
+      readonly I: typeof CreateDefaultRateDefinitionsRequest,
+      readonly O: typeof CreateDefaultRateDefinitionsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * Creates a rate definition for an ORG.
      * Required permissions:
      *   CUSTOMER_SUPPORT
      * Errors:
-     *   - grpc.AlreadyExists: A rate definition with the same feature id already exists.
+     *   - grpc.AlreadyExists: A rate definition with the same data already exists.
      *   - grpc.Internal: An internal error occurred.
      *   - grpc.InvalidArgument: The request is invalid.
      *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
@@ -50,6 +70,25 @@ export declare const BillingService: {
       readonly name: "CreateRateDefinition",
       readonly I: typeof CreateRateDefinitionRequest,
       readonly O: typeof CreateRateDefinitionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Creates rate definitions for an ORG.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.AlreadyExists: A rate definition with the same data already exists.
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha2.BillingService.CreateRateDefinitions
+     */
+    readonly createRateDefinitions: {
+      readonly name: "CreateRateDefinitions",
+      readonly I: typeof CreateRateDefinitionsRequest,
+      readonly O: typeof CreateRateDefinitionsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
