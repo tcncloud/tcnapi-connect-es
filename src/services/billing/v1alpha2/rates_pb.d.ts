@@ -316,6 +316,89 @@ export declare class GetRateHistoryResponse extends Message<GetRateHistoryRespon
 }
 
 /**
+ * @generated from message services.billing.v1alpha2.ListActiveRateDefinitionsRequest
+ */
+export declare class ListActiveRateDefinitionsRequest extends Message<ListActiveRateDefinitionsRequest> {
+  /**
+   * @generated from field: string rate_definition_id = 1;
+   */
+  rateDefinitionId: string;
+
+  /**
+   * Optional: defaults to no filter
+   *
+   * @generated from field: string filter = 2;
+   */
+  filter: string;
+
+  /**
+   * Optional: defaults to all fields.
+   *
+   * @generated from field: google.protobuf.FieldMask fields = 3;
+   */
+  fields?: FieldMask;
+
+  /**
+   * Optional: defaults to no sort.
+   *
+   * @generated from field: repeated services.billing.v1alpha2.Sort sort = 4;
+   */
+  sort: Sort[];
+
+  /**
+   * Optional: defaults to no paging.
+   *
+   * @generated from field: services.billing.v1alpha2.Page page = 5;
+   */
+  page?: Page;
+
+  constructor(data?: PartialMessage<ListActiveRateDefinitionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.ListActiveRateDefinitionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListActiveRateDefinitionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListActiveRateDefinitionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListActiveRateDefinitionsRequest;
+
+  static equals(a: ListActiveRateDefinitionsRequest | PlainMessage<ListActiveRateDefinitionsRequest> | undefined, b: ListActiveRateDefinitionsRequest | PlainMessage<ListActiveRateDefinitionsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha2.ListActiveRateDefinitionsResponse
+ */
+export declare class ListActiveRateDefinitionsResponse extends Message<ListActiveRateDefinitionsResponse> {
+  /**
+   * @generated from field: repeated services.billing.entities.v1alpha2.RateDefinition rate_definitions = 1;
+   */
+  rateDefinitions: RateDefinition[];
+
+  /**
+   * Optional: only present if paginating.
+   *
+   * @generated from field: string token = 2;
+   */
+  token: string;
+
+  constructor(data?: PartialMessage<ListActiveRateDefinitionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.ListActiveRateDefinitionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListActiveRateDefinitionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListActiveRateDefinitionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListActiveRateDefinitionsResponse;
+
+  static equals(a: ListActiveRateDefinitionsResponse | PlainMessage<ListActiveRateDefinitionsResponse> | undefined, b: ListActiveRateDefinitionsResponse | PlainMessage<ListActiveRateDefinitionsResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message services.billing.v1alpha2.ListRateDefinitionsRequest
  */
 export declare class ListRateDefinitionsRequest extends Message<ListRateDefinitionsRequest> {

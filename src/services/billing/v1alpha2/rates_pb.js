@@ -129,6 +129,31 @@ export const GetRateHistoryResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * @generated from message services.billing.v1alpha2.ListActiveRateDefinitionsRequest
+ */
+export const ListActiveRateDefinitionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.ListActiveRateDefinitionsRequest",
+  () => [
+    { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "filter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "fields", kind: "message", T: FieldMask },
+    { no: 4, name: "sort", kind: "message", T: Sort, repeated: true },
+    { no: 5, name: "page", kind: "message", T: Page },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha2.ListActiveRateDefinitionsResponse
+ */
+export const ListActiveRateDefinitionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.ListActiveRateDefinitionsResponse",
+  () => [
+    { no: 1, name: "rate_definitions", kind: "message", T: RateDefinition, repeated: true },
+    { no: 2, name: "token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
  * @generated from message services.billing.v1alpha2.ListRateDefinitionsRequest
  */
 export const ListRateDefinitionsRequest = /*@__PURE__*/ proto3.makeMessageType(

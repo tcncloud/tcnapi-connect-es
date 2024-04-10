@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, GetRateHistoryRequest, GetRateHistoryResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
+import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, GetRateHistoryRequest, GetRateHistoryResponse, ListActiveRateDefinitionsRequest, ListActiveRateDefinitionsResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { ExportInvoiceRequest, ExportInvoiceResponse } from "./invoices_pb.js";
 
@@ -144,6 +144,24 @@ export declare const BillingService: {
       readonly name: "GetRateHistory",
       readonly I: typeof GetRateHistoryRequest,
       readonly O: typeof GetRateHistoryResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Lists active rate definitions.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha2.BillingService.ListActiveRateDefinitions
+     */
+    readonly listActiveRateDefinitions: {
+      readonly name: "ListActiveRateDefinitions",
+      readonly I: typeof ListActiveRateDefinitionsRequest,
+      readonly O: typeof ListActiveRateDefinitionsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
