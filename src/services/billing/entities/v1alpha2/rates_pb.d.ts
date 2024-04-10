@@ -53,6 +53,11 @@ export declare enum RateDefinitionConfigType {
   OMNI_AGENT_MESSAGE_CHAT_SIZE = 1601,
 
   /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_CHAT_UNITS = 1602;
+   */
+  OMNI_AGENT_MESSAGE_CHAT_UNITS = 1602,
+
+  /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_EMAIL = 1610;
    */
   OMNI_AGENT_MESSAGE_EMAIL = 1610,
@@ -61,6 +66,11 @@ export declare enum RateDefinitionConfigType {
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_EMAIL_SIZE = 1611;
    */
   OMNI_AGENT_MESSAGE_EMAIL_SIZE = 1611,
+
+  /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_EMAIL_UNITS = 1612;
+   */
+  OMNI_AGENT_MESSAGE_EMAIL_UNITS = 1612,
 
   /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_SMS = 1620;
@@ -73,6 +83,11 @@ export declare enum RateDefinitionConfigType {
   OMNI_AGENT_MESSAGE_SMS_SIZE = 1621,
 
   /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_AGENT_MESSAGE_SMS_UNITS = 1622;
+   */
+  OMNI_AGENT_MESSAGE_SMS_UNITS = 1622,
+
+  /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_CHAT = 1700;
    */
   OMNI_MANAGER_MESSAGE_CHAT = 1700,
@@ -81,6 +96,11 @@ export declare enum RateDefinitionConfigType {
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_CHAT_SIZE = 1701;
    */
   OMNI_MANAGER_MESSAGE_CHAT_SIZE = 1701,
+
+  /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_CHAT_UNITS = 1702;
+   */
+  OMNI_MANAGER_MESSAGE_CHAT_UNITS = 1702,
 
   /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_EMAIL = 1710;
@@ -93,6 +113,11 @@ export declare enum RateDefinitionConfigType {
   OMNI_MANAGER_MESSAGE_EMAIL_SIZE = 1711,
 
   /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_EMAIL_UNITS = 1712;
+   */
+  OMNI_MANAGER_MESSAGE_EMAIL_UNITS = 1712,
+
+  /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_SMS = 1720;
    */
   OMNI_MANAGER_MESSAGE_SMS = 1720,
@@ -101,6 +126,11 @@ export declare enum RateDefinitionConfigType {
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_SMS_SIZE = 1721;
    */
   OMNI_MANAGER_MESSAGE_SMS_SIZE = 1721,
+
+  /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_MANAGER_MESSAGE_SMS_UNITS = 1722;
+   */
+  OMNI_MANAGER_MESSAGE_SMS_UNITS = 1722,
 
   /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_CHAT = 1800;
@@ -113,6 +143,11 @@ export declare enum RateDefinitionConfigType {
   OMNI_SYSTEM_MESSAGE_CHAT_SIZE = 1801,
 
   /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_CHAT_UNITS = 1802;
+   */
+  OMNI_SYSTEM_MESSAGE_CHAT_UNITS = 1802,
+
+  /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_EMAIL = 1810;
    */
   OMNI_SYSTEM_MESSAGE_EMAIL = 1810,
@@ -121,6 +156,11 @@ export declare enum RateDefinitionConfigType {
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_EMAIL_SIZE = 1811;
    */
   OMNI_SYSTEM_MESSAGE_EMAIL_SIZE = 1811,
+
+  /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_EMAIL_UNITS = 1812;
+   */
+  OMNI_SYSTEM_MESSAGE_EMAIL_UNITS = 1812,
 
   /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_SMS = 1820;
@@ -133,6 +173,11 @@ export declare enum RateDefinitionConfigType {
   OMNI_SYSTEM_MESSAGE_SMS_SIZE = 1821,
 
   /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_SYSTEM_MESSAGE_SMS_UNITS = 1822;
+   */
+  OMNI_SYSTEM_MESSAGE_SMS_UNITS = 1822,
+
+  /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_CHAT = 1900;
    */
   OMNI_CUSTOMER_MESSAGE_CHAT = 1900,
@@ -141,6 +186,11 @@ export declare enum RateDefinitionConfigType {
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_CHAT_SIZE = 1901;
    */
   OMNI_CUSTOMER_MESSAGE_CHAT_SIZE = 1901,
+
+  /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_CHAT_UNITS = 1902;
+   */
+  OMNI_CUSTOMER_MESSAGE_CHAT_UNITS = 1902,
 
   /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_EMAIL = 1910;
@@ -153,6 +203,11 @@ export declare enum RateDefinitionConfigType {
   OMNI_CUSTOMER_MESSAGE_EMAIL_SIZE = 1911,
 
   /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_EMAIL_UNITS = 1912;
+   */
+  OMNI_CUSTOMER_MESSAGE_EMAIL_UNITS = 1912,
+
+  /**
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_SMS = 1920;
    */
   OMNI_CUSTOMER_MESSAGE_SMS = 1920,
@@ -161,6 +216,11 @@ export declare enum RateDefinitionConfigType {
    * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_SMS_SIZE = 1921;
    */
   OMNI_CUSTOMER_MESSAGE_SMS_SIZE = 1921,
+
+  /**
+   * @generated from enum value: RATE_DEFINITION_CONFIG_TYPE_OMNI_CUSTOMER_MESSAGE_SMS_UNITS = 1922;
+   */
+  OMNI_CUSTOMER_MESSAGE_SMS_UNITS = 1922,
 
   /**
    * compliance config types (2000-2999)
@@ -327,10 +387,10 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "connectedInboxCreated";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_chat_config = 1600;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_chat = 1600;
      */
     value: BasicConfig;
-    case: "agentMessageChatConfig";
+    case: "agentMessageChat";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig agent_message_chat_size = 1601;
@@ -339,10 +399,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "agentMessageChatSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_email_config = 1610;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_chat_units = 1602;
      */
     value: BasicConfig;
-    case: "agentMessageEmailConfig";
+    case: "agentMessageChatUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_email = 1610;
+     */
+    value: BasicConfig;
+    case: "agentMessageEmail";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig agent_message_email_size = 1611;
@@ -351,10 +417,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "agentMessageEmailSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_sms_config = 1620;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_email_units = 1612;
      */
     value: BasicConfig;
-    case: "agentMessageSmsConfig";
+    case: "agentMessageEmailUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_sms = 1620;
+     */
+    value: BasicConfig;
+    case: "agentMessageSms";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig agent_message_sms_size = 1621;
@@ -363,10 +435,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "agentMessageSmsSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_chat_config = 1700;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig agent_message_sms_units = 1622;
      */
     value: BasicConfig;
-    case: "managerMessageChatConfig";
+    case: "agentMessageSmsUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_chat = 1700;
+     */
+    value: BasicConfig;
+    case: "managerMessageChat";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig manager_message_chat_size = 1701;
@@ -375,10 +453,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "managerMessageChatSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_email_config = 1710;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_chat_units = 1702;
      */
     value: BasicConfig;
-    case: "managerMessageEmailConfig";
+    case: "managerMessageChatUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_email = 1710;
+     */
+    value: BasicConfig;
+    case: "managerMessageEmail";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig manager_message_email_size = 1711;
@@ -387,10 +471,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "managerMessageEmailSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_sms_config = 1720;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_email_units = 1712;
      */
     value: BasicConfig;
-    case: "managerMessageSmsConfig";
+    case: "managerMessageEmailUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_sms = 1720;
+     */
+    value: BasicConfig;
+    case: "managerMessageSms";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig manager_message_sms_size = 1721;
@@ -399,10 +489,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "managerMessageSmsSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_chat_config = 1800;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig manager_message_sms_units = 1722;
      */
     value: BasicConfig;
-    case: "systemMessageChatConfig";
+    case: "managerMessageSmsUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_chat = 1800;
+     */
+    value: BasicConfig;
+    case: "systemMessageChat";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig system_message_chat_size = 1801;
@@ -411,10 +507,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "systemMessageChatSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_email_config = 1810;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_chat_units = 1802;
      */
     value: BasicConfig;
-    case: "systemMessageEmailConfig";
+    case: "systemMessageChatUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_email = 1810;
+     */
+    value: BasicConfig;
+    case: "systemMessageEmail";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig system_message_email_size = 1811;
@@ -423,10 +525,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "systemMessageEmailSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_sms_config = 1820;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_email_units = 1812;
      */
     value: BasicConfig;
-    case: "systemMessageSmsConfig";
+    case: "systemMessageEmailUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_sms = 1820;
+     */
+    value: BasicConfig;
+    case: "systemMessageSms";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig system_message_sms_size = 1821;
@@ -435,10 +543,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "systemMessageSmsSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_chat_config = 1900;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig system_message_sms_units = 1822;
      */
     value: BasicConfig;
-    case: "customerMessageChatConfig";
+    case: "systemMessageSmsUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_chat = 1900;
+     */
+    value: BasicConfig;
+    case: "customerMessageChat";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig customer_message_chat_size = 1901;
@@ -447,10 +561,16 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "customerMessageChatSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_email_config = 1910;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_chat_units = 1902;
      */
     value: BasicConfig;
-    case: "customerMessageEmailConfig";
+    case: "customerMessageChatUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_email = 1910;
+     */
+    value: BasicConfig;
+    case: "customerMessageEmail";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig customer_message_email_size = 1911;
@@ -459,16 +579,28 @@ export declare class RateDefinitionConfig extends Message<RateDefinitionConfig> 
     case: "customerMessageEmailSize";
   } | {
     /**
-     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_sms_config = 1920;
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_email_units = 1912;
      */
     value: BasicConfig;
-    case: "customerMessageSmsConfig";
+    case: "customerMessageEmailUnits";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_sms = 1920;
+     */
+    value: BasicConfig;
+    case: "customerMessageSms";
   } | {
     /**
      * @generated from field: services.billing.entities.v1alpha2.BasicUnitConfig customer_message_sms_size = 1921;
      */
     value: BasicUnitConfig;
     case: "customerMessageSmsSize";
+  } | {
+    /**
+     * @generated from field: services.billing.entities.v1alpha2.BasicConfig customer_message_sms_units = 1922;
+     */
+    value: BasicConfig;
+    case: "customerMessageSmsUnits";
   } | {
     /**
      * compliance configs
