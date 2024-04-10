@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateInsightRequest, CreateInsightResponse, DeleteInsightRequest, DeleteInsightResponse, GetInsightRequest, GetInsightResponse, GetVfsSchemaRequest, GetVfsSchemaResponse, ListInsightsRequest, ListInsightsResponse, ListVfsesRequest, ListVfsesResponse, ListVfsSchemasRequest, ListVfsSchemasResponse, PublishInsightRequest, PublishInsightResponse, UpdateInsightRequest, UpdateInsightResponse } from "./insight_pb.js";
+import { CreateInsightRequest, CreateInsightResponse, DeleteInsightRequest, DeleteInsightResponse, GetInsightRequest, GetInsightResponse, GetVfsSchemaRequest, GetVfsSchemaResponse, ListInsightsRequest, ListInsightsResponse, ListOrgInsightsRequest, ListOrgInsightsResponse, ListVfsesRequest, ListVfsesResponse, ListVfsSchemasRequest, ListVfsSchemasResponse, PublishInsightRequest, PublishInsightResponse, UpdateInsightRequest, UpdateInsightResponse } from "./insight_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -32,6 +32,17 @@ export const Insights = {
       name: "ListInsights",
       I: ListInsightsRequest,
       O: ListInsightsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListOrgInsights lists insights for an org. Used for support app.
+     *
+     * @generated from rpc api.v1alpha1.insights.Insights.ListOrgInsights
+     */
+    listOrgInsights: {
+      name: "ListOrgInsights",
+      I: ListOrgInsightsRequest,
+      O: ListOrgInsightsResponse,
       kind: MethodKind.Unary,
     },
     /**

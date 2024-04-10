@@ -1306,6 +1306,7 @@ export const OmniComplianceAction = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "keywords", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 2, name: "confirmation_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "is_fuzzy_match", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
