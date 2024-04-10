@@ -108,6 +108,24 @@ export const DeleteDefaultRateDefinitionResponse = /*@__PURE__*/ proto3.makeMess
 );
 
 /**
+ * @generated from message services.billing.v1alpha2.DeleteDefaultRateDefinitionsRequest
+ */
+export const DeleteDefaultRateDefinitionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.DeleteDefaultRateDefinitionsRequest",
+  () => [
+    { no: 1, name: "rate_definition_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha2.DeleteDefaultRateDefinitionsResponse
+ */
+export const DeleteDefaultRateDefinitionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.DeleteDefaultRateDefinitionsResponse",
+  [],
+);
+
+/**
  * @generated from message services.billing.v1alpha2.DeleteRateDefinitionRequest
  */
 export const DeleteRateDefinitionRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -122,6 +140,24 @@ export const DeleteRateDefinitionRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const DeleteRateDefinitionResponse = /*@__PURE__*/ proto3.makeMessageType(
   "services.billing.v1alpha2.DeleteRateDefinitionResponse",
+  [],
+);
+
+/**
+ * @generated from message services.billing.v1alpha2.DeleteRateDefinitionsRequest
+ */
+export const DeleteRateDefinitionsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.DeleteRateDefinitionsRequest",
+  () => [
+    { no: 1, name: "rate_definition_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.billing.v1alpha2.DeleteRateDefinitionsResponse
+ */
+export const DeleteRateDefinitionsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "services.billing.v1alpha2.DeleteRateDefinitionsResponse",
   [],
 );
 

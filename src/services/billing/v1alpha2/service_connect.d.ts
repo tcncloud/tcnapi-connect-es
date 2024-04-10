@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateDefaultRateDefinitionsRequest, CreateDefaultRateDefinitionsResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, CreateRateDefinitionsRequest, CreateRateDefinitionsResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, GetRateHistoryRequest, GetRateHistoryResponse, ListActiveRateDefinitionsRequest, ListActiveRateDefinitionsResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
+import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateDefaultRateDefinitionsRequest, CreateDefaultRateDefinitionsResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, CreateRateDefinitionsRequest, CreateRateDefinitionsResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteDefaultRateDefinitionsRequest, DeleteDefaultRateDefinitionsResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, DeleteRateDefinitionsRequest, DeleteRateDefinitionsResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, GetRateHistoryRequest, GetRateHistoryResponse, ListActiveRateDefinitionsRequest, ListActiveRateDefinitionsResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { ExportInvoiceRequest, ExportInvoiceResponse } from "./invoices_pb.js";
 
@@ -112,6 +112,26 @@ export declare const BillingService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * Deletes rate definitions from the REGION.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The rate definition doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha2.BillingService.DeleteDefaultRateDefinitions
+     */
+    readonly deleteDefaultRateDefinitions: {
+      readonly name: "DeleteDefaultRateDefinitions",
+      readonly I: typeof DeleteDefaultRateDefinitionsRequest,
+      readonly O: typeof DeleteDefaultRateDefinitionsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * Deletes a rate definition from an ORG.
      * Required permissions:
      *   CUSTOMER_SUPPORT
@@ -128,6 +148,25 @@ export declare const BillingService: {
       readonly name: "DeleteRateDefinition",
       readonly I: typeof DeleteRateDefinitionRequest,
       readonly O: typeof DeleteRateDefinitionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Deletes rate definitions from an ORG.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.NotFound: The specified rate definition doesn't exist.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
+     *
+     * @generated from rpc services.billing.v1alpha2.BillingService.DeleteRateDefinitions
+     */
+    readonly deleteRateDefinitions: {
+      readonly name: "DeleteRateDefinitions",
+      readonly I: typeof DeleteRateDefinitionsRequest,
+      readonly O: typeof DeleteRateDefinitionsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

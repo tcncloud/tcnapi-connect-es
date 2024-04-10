@@ -254,6 +254,49 @@ export declare class DeleteDefaultRateDefinitionResponse extends Message<DeleteD
 }
 
 /**
+ * @generated from message services.billing.v1alpha2.DeleteDefaultRateDefinitionsRequest
+ */
+export declare class DeleteDefaultRateDefinitionsRequest extends Message<DeleteDefaultRateDefinitionsRequest> {
+  /**
+   * @generated from field: repeated string rate_definition_ids = 1;
+   */
+  rateDefinitionIds: string[];
+
+  constructor(data?: PartialMessage<DeleteDefaultRateDefinitionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.DeleteDefaultRateDefinitionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDefaultRateDefinitionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDefaultRateDefinitionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDefaultRateDefinitionsRequest;
+
+  static equals(a: DeleteDefaultRateDefinitionsRequest | PlainMessage<DeleteDefaultRateDefinitionsRequest> | undefined, b: DeleteDefaultRateDefinitionsRequest | PlainMessage<DeleteDefaultRateDefinitionsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha2.DeleteDefaultRateDefinitionsResponse
+ */
+export declare class DeleteDefaultRateDefinitionsResponse extends Message<DeleteDefaultRateDefinitionsResponse> {
+  constructor(data?: PartialMessage<DeleteDefaultRateDefinitionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.DeleteDefaultRateDefinitionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteDefaultRateDefinitionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteDefaultRateDefinitionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteDefaultRateDefinitionsResponse;
+
+  static equals(a: DeleteDefaultRateDefinitionsResponse | PlainMessage<DeleteDefaultRateDefinitionsResponse> | undefined, b: DeleteDefaultRateDefinitionsResponse | PlainMessage<DeleteDefaultRateDefinitionsResponse> | undefined): boolean;
+}
+
+/**
  * @generated from message services.billing.v1alpha2.DeleteRateDefinitionRequest
  */
 export declare class DeleteRateDefinitionRequest extends Message<DeleteRateDefinitionRequest> {
@@ -294,6 +337,49 @@ export declare class DeleteRateDefinitionResponse extends Message<DeleteRateDefi
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRateDefinitionResponse;
 
   static equals(a: DeleteRateDefinitionResponse | PlainMessage<DeleteRateDefinitionResponse> | undefined, b: DeleteRateDefinitionResponse | PlainMessage<DeleteRateDefinitionResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha2.DeleteRateDefinitionsRequest
+ */
+export declare class DeleteRateDefinitionsRequest extends Message<DeleteRateDefinitionsRequest> {
+  /**
+   * @generated from field: repeated string rate_definition_ids = 1;
+   */
+  rateDefinitionIds: string[];
+
+  constructor(data?: PartialMessage<DeleteRateDefinitionsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.DeleteRateDefinitionsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRateDefinitionsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRateDefinitionsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRateDefinitionsRequest;
+
+  static equals(a: DeleteRateDefinitionsRequest | PlainMessage<DeleteRateDefinitionsRequest> | undefined, b: DeleteRateDefinitionsRequest | PlainMessage<DeleteRateDefinitionsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.billing.v1alpha2.DeleteRateDefinitionsResponse
+ */
+export declare class DeleteRateDefinitionsResponse extends Message<DeleteRateDefinitionsResponse> {
+  constructor(data?: PartialMessage<DeleteRateDefinitionsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.billing.v1alpha2.DeleteRateDefinitionsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteRateDefinitionsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteRateDefinitionsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteRateDefinitionsResponse;
+
+  static equals(a: DeleteRateDefinitionsResponse | PlainMessage<DeleteRateDefinitionsResponse> | undefined, b: DeleteRateDefinitionsResponse | PlainMessage<DeleteRateDefinitionsResponse> | undefined): boolean;
 }
 
 /**
