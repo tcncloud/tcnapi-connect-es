@@ -556,7 +556,7 @@ export const ListFlowsReq = /*@__PURE__*/ proto3.makeMessageType(
 export const ListFlowsResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.integrations.ListFlowsResponse",
   () => [
-    { no: 1, name: "values", kind: "message", T: FlowDefinition, repeated: true },
+    { no: 1, name: "values", kind: "message", T: WorkflowDefinition, repeated: true },
   ],
 );
 
@@ -569,16 +569,16 @@ export const ListFlowsResponse = /*@__PURE__*/ proto3.makeMessageType(
 export const PortalDefinition = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.integrations.PortalDefinition",
   () => [
-    { no: 2, name: "defintion_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "steps", kind: "message", T: FlowRequirement, repeated: true },
+    { no: 2, name: "definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "workflow_requirements", kind: "message", T: WorkflowRequirement, repeated: true },
   ],
 );
 
 /**
- * @generated from message api.v1alpha1.integrations.FlowRequirement
+ * @generated from message api.v1alpha1.integrations.WorkflowRequirement
  */
-export const FlowRequirement = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.FlowRequirement",
+export const WorkflowRequirement = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.WorkflowRequirement",
   () => [
     { no: 1, name: "max_choices", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
     { no: 2, name: "flow_type", kind: "enum", T: proto3.getEnumType(FlowType) },
@@ -590,10 +590,10 @@ export const FlowRequirement = /*@__PURE__*/ proto3.makeMessageType(
  * that matches this description.  All created flows must
  * conform to a FlowDefinition.
  *
- * @generated from message api.v1alpha1.integrations.FlowDefinition
+ * @generated from message api.v1alpha1.integrations.WorkflowDefinition
  */
-export const FlowDefinition = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.FlowDefinition",
+export const WorkflowDefinition = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.WorkflowDefinition",
   () => [
     { no: 1, name: "flow_type", kind: "enum", T: proto3.getEnumType(FlowType) },
     { no: 2, name: "definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },

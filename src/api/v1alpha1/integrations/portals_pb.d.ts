@@ -1391,9 +1391,9 @@ export declare class ListFlowsReq extends Message<ListFlowsReq> {
  */
 export declare class ListFlowsResponse extends Message<ListFlowsResponse> {
   /**
-   * @generated from field: repeated api.v1alpha1.integrations.FlowDefinition values = 1;
+   * @generated from field: repeated api.v1alpha1.integrations.WorkflowDefinition values = 1;
    */
-  values: FlowDefinition[];
+  values: WorkflowDefinition[];
 
   constructor(data?: PartialMessage<ListFlowsResponse>);
 
@@ -1420,23 +1420,23 @@ export declare class PortalDefinition extends Message<PortalDefinition> {
   /**
    * the name of this type of portal
    *
-   * @generated from field: string defintion_name = 2;
+   * @generated from field: string definition_name = 2;
    */
-  defintionName: string;
+  definitionName: string;
 
   /**
-   * each FlowRequirement in steps represents a screen that must be presented
-   * to the user in order. All flows in the steps must be completed in order.
-   * Payment portal would have 3 steps:
-   * steps: [
+   * each FlowRequirement below represents a screen that must be presented
+   * to the user in order. All flows in the workflow_requirements must be completed in order.
+   * Payment portal would have 3 workflow_requirements:
+   * workflow_requirements: [
    *   FlowRequirement{max_choices: 1, flow_type: VERIFICATION},
    *   FlowRequirement{max_choices: 1, flow_type: INVOICE},
    *   FlowRequirement{max_choices: 0, flow_type: PAYMENT},
    * ]
    *
-   * @generated from field: repeated api.v1alpha1.integrations.FlowRequirement steps = 3;
+   * @generated from field: repeated api.v1alpha1.integrations.WorkflowRequirement workflow_requirements = 3;
    */
-  steps: FlowRequirement[];
+  workflowRequirements: WorkflowRequirement[];
 
   constructor(data?: PartialMessage<PortalDefinition>);
 
@@ -1454,9 +1454,9 @@ export declare class PortalDefinition extends Message<PortalDefinition> {
 }
 
 /**
- * @generated from message api.v1alpha1.integrations.FlowRequirement
+ * @generated from message api.v1alpha1.integrations.WorkflowRequirement
  */
-export declare class FlowRequirement extends Message<FlowRequirement> {
+export declare class WorkflowRequirement extends Message<WorkflowRequirement> {
   /**
    * how many different flows the user can choose from on this step.
    * 0 and below is interpreted as unlimited flows.
@@ -1477,19 +1477,19 @@ export declare class FlowRequirement extends Message<FlowRequirement> {
    */
   flowType: FlowType;
 
-  constructor(data?: PartialMessage<FlowRequirement>);
+  constructor(data?: PartialMessage<WorkflowRequirement>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.integrations.FlowRequirement";
+  static readonly typeName = "api.v1alpha1.integrations.WorkflowRequirement";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlowRequirement;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WorkflowRequirement;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlowRequirement;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WorkflowRequirement;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlowRequirement;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WorkflowRequirement;
 
-  static equals(a: FlowRequirement | PlainMessage<FlowRequirement> | undefined, b: FlowRequirement | PlainMessage<FlowRequirement> | undefined): boolean;
+  static equals(a: WorkflowRequirement | PlainMessage<WorkflowRequirement> | undefined, b: WorkflowRequirement | PlainMessage<WorkflowRequirement> | undefined): boolean;
 }
 
 /**
@@ -1497,9 +1497,9 @@ export declare class FlowRequirement extends Message<FlowRequirement> {
  * that matches this description.  All created flows must
  * conform to a FlowDefinition.
  *
- * @generated from message api.v1alpha1.integrations.FlowDefinition
+ * @generated from message api.v1alpha1.integrations.WorkflowDefinition
  */
-export declare class FlowDefinition extends Message<FlowDefinition> {
+export declare class WorkflowDefinition extends Message<WorkflowDefinition> {
   /**
    * the type of flow
    *
@@ -1593,18 +1593,18 @@ export declare class FlowDefinition extends Message<FlowDefinition> {
    */
   opts: FieldDefinition[];
 
-  constructor(data?: PartialMessage<FlowDefinition>);
+  constructor(data?: PartialMessage<WorkflowDefinition>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.integrations.FlowDefinition";
+  static readonly typeName = "api.v1alpha1.integrations.WorkflowDefinition";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FlowDefinition;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WorkflowDefinition;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FlowDefinition;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WorkflowDefinition;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FlowDefinition;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WorkflowDefinition;
 
-  static equals(a: FlowDefinition | PlainMessage<FlowDefinition> | undefined, b: FlowDefinition | PlainMessage<FlowDefinition> | undefined): boolean;
+  static equals(a: WorkflowDefinition | PlainMessage<WorkflowDefinition> | undefined, b: WorkflowDefinition | PlainMessage<WorkflowDefinition> | undefined): boolean;
 }
 

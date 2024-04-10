@@ -1178,17 +1178,17 @@ export const Portal = /*@__PURE__*/ proto3.makeMessageType(
     { no: 8, name: "ptype", kind: "message", T: PortalType },
     { no: 9, name: "last_edited", kind: "message", T: Timestamp },
     { no: 11, name: "definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 13, name: "portal_steps", kind: "message", T: Steps },
+    { no: 13, name: "portal_segments", kind: "message", T: PortalSegments },
   ],
 );
 
 /**
- * @generated from message api.v1alpha1.integrations.Steps
+ * @generated from message api.v1alpha1.integrations.PortalSegments
  */
-export const Steps = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.Steps",
+export const PortalSegments = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.PortalSegments",
   () => [
-    { no: 1, name: "steps", kind: "message", T: FlowChoices, repeated: true },
+    { no: 1, name: "portal_segments", kind: "message", T: PortalSegment, repeated: true },
   ],
 );
 
@@ -1377,42 +1377,42 @@ export const GenerateEpicKeyPairRes = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * FlowChoices is a set a flows where user must complete one of set.
+ * PortalSegment contains a set a flows where user must complete one of set.
  * usually this is selected by the user.
  * Example:
- * with payment portal, our payment step would have a FlowChoices like this:
- * FlowChoices{
- *  choices: [
- *    <Credit Card Flow>,
- *    <ACH Flow>,
- *    <PayPal Flow>,
+ * with payment portal, our payment step would have a WorkflowChoices like this:
+ * PortalSegment{
+ *  workflow_choices: [
+ *    <Credit Card Workflow>,
+ *    <ACH Workflow>,
+ *    <PayPal Workflow>,
  *  ]
  * }
  * The user doesn't need to do all the choices, just needs to select one to complete.
  *
- * @generated from message api.v1alpha1.integrations.FlowChoices
+ * @generated from message api.v1alpha1.integrations.PortalSegment
  */
-export const FlowChoices = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.FlowChoices",
+export const PortalSegment = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.PortalSegment",
   () => [
-    { no: 1, name: "choices", kind: "message", T: Flow2, repeated: true },
+    { no: 1, name: "workflow_choices", kind: "message", T: PortalWorkflow, repeated: true },
   ],
 );
 
 /**
- * a Flow is an entity that describes a set of steps that must be completed in order.
- * each step is fed the data as input, and the result is merged on top of the input.
- * after completing all the steps successfully, we consider the flow completed.
+ * a PortalWorkflow is an entity that describes a set of segments that must be completed in sequence.
+ * each segment is fed the data as input, and the result is merged on top of the input.
+ * after completing all the segments successfully, we consider the flow completed.
  * A Flow also comes with the user defined template, form_fields, opts, and text.
  * None of these are required but will affect how the information is shown to the user.
  *
- * @generated from message api.v1alpha1.integrations.Flow2
+ * @generated from message api.v1alpha1.integrations.PortalWorkflow
  */
-export const Flow2 = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.Flow2",
+export const PortalWorkflow = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.PortalWorkflow",
   () => [
     { no: 1, name: "plugin_instance_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "steps", kind: "message", T: Action, repeated: true },
+    { no: 2, name: "actions", kind: "message", T: Action, repeated: true },
     { no: 3, name: "template", kind: "message", T: Template },
     { no: 4, name: "form_fields", kind: "message", T: FieldDefinition, repeated: true },
     { no: 5, name: "opts", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
@@ -1433,7 +1433,7 @@ export const Flow2 = /*@__PURE__*/ proto3.makeMessageType(
 export const Action = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.integrations.Action",
   () => [
-    { no: 1, name: "flow_definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 1, name: "workflow_definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "rename", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ],
 );
