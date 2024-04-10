@@ -10,7 +10,7 @@ import { GetTranscriptSummaryRequest, GetTranscriptSummaryResponse } from "./tra
 import { CreateFilterRequest, DeleteFilterRequest, DeleteFilterResponse, Filter, GetFilterRequest, ListFiltersRequest, ListFiltersResponse, UpdateFilterRequest } from "./filter_pb.js";
 import { CreateFlagRequest, DeleteFlagRequest, DeleteFlagResponse, Flag, GetFlagRequest, ListFlagsRequest, ListFlagsResponse, UpdateFlagRequest } from "./flag_pb.js";
 import { BulkCreateFlagReviewRequest, BulkCreateFlagReviewResponse, CreateFlagReviewRequest, FlagReview, ListFlagReviewsRequest, ListFlagReviewsResponse } from "./flag_review_pb.js";
-import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse, DeleteFlagTranscriptRequest, DeleteFlagTranscriptResponse, SearchFlagTranscriptsRequest, SearchFlagTranscriptsResponse } from "./flag_transcript_pb.js";
+import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse, SearchFlagTranscriptsRequest, SearchFlagTranscriptsResponse } from "./flag_transcript_pb.js";
 import { CreateFlagFilterRequest, DeleteFlagFilterRequest, DeleteFlagFilterResponse, FlagFilter, ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
 import { ListFlagSnapshotsRequest, ListFlagSnapshotsResponse } from "./flag_snapshot_pb.js";
 import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
@@ -278,17 +278,6 @@ export const Vanalytics = {
       name: "CreateFlagTranscript",
       I: CreateFlagTranscriptRequest,
       O: CreateFlagTranscriptResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * DeleteFlagTranscript deletes a flag transcript.
-     *
-     * @generated from rpc api.v1alpha1.vanalytics.Vanalytics.DeleteFlagTranscript
-     */
-    deleteFlagTranscript: {
-      name: "DeleteFlagTranscript",
-      I: DeleteFlagTranscriptRequest,
-      O: DeleteFlagTranscriptResponse,
       kind: MethodKind.Unary,
     },
     /**

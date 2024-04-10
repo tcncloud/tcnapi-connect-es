@@ -270,6 +270,62 @@ export declare class ListInsightsResponse extends Message<ListInsightsResponse> 
 }
 
 /**
+ * ListOrgInsightsRequest is the request to list insights for an org in support.
+ *
+ * @generated from message api.v1alpha1.insights.ListOrgInsightsRequest
+ */
+export declare class ListOrgInsightsRequest extends Message<ListOrgInsightsRequest> {
+  /**
+   * Required - org id to list insights for
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  constructor(data?: PartialMessage<ListOrgInsightsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.insights.ListOrgInsightsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrgInsightsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrgInsightsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrgInsightsRequest;
+
+  static equals(a: ListOrgInsightsRequest | PlainMessage<ListOrgInsightsRequest> | undefined, b: ListOrgInsightsRequest | PlainMessage<ListOrgInsightsRequest> | undefined): boolean;
+}
+
+/**
+ * ListOrgInsightsResponse contains the Insights that were listed.
+ *
+ * @generated from message api.v1alpha1.insights.ListOrgInsightsResponse
+ */
+export declare class ListOrgInsightsResponse extends Message<ListOrgInsightsResponse> {
+  /**
+   * Requested insights
+   *
+   * @generated from field: repeated api.v1alpha1.insights.Insight insights = 1;
+   */
+  insights: Insight[];
+
+  constructor(data?: PartialMessage<ListOrgInsightsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.insights.ListOrgInsightsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrgInsightsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrgInsightsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrgInsightsResponse;
+
+  static equals(a: ListOrgInsightsResponse | PlainMessage<ListOrgInsightsResponse> | undefined, b: ListOrgInsightsResponse | PlainMessage<ListOrgInsightsResponse> | undefined): boolean;
+}
+
+/**
  * UpdateInsightRequest is the request to update an insight.
  *
  * @generated from message api.v1alpha1.insights.UpdateInsightRequest
