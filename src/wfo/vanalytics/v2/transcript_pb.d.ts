@@ -668,6 +668,13 @@ export declare class Call extends Message<Call> {
    */
   phone?: Call_Phone;
 
+  /**
+   * The audio bytes for this call.
+   *
+   * @generated from field: int64 audio_bytes = 16;
+   */
+  audioBytes: bigint;
+
   constructor(data?: PartialMessage<Call>);
 
   static readonly runtime: typeof proto3;

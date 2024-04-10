@@ -219,6 +219,7 @@ export const Call = /*@__PURE__*/ proto3.makeMessageType(
     { no: 12, name: "number_format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "agent_call_log", kind: "message", T: AgentCallLog },
     { no: 14, name: "phone", kind: "message", T: Call_Phone },
+    { no: 16, name: "audio_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
