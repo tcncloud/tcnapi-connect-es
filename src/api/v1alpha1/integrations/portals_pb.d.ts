@@ -1368,46 +1368,46 @@ export declare class ListPortalTypesResponse extends Message<ListPortalTypesResp
 }
 
 /**
- * @generated from message api.v1alpha1.integrations.ListFlowsReq
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsReq
  */
-export declare class ListFlowsReq extends Message<ListFlowsReq> {
-  constructor(data?: PartialMessage<ListFlowsReq>);
+export declare class ListPortalWorkflowsReq extends Message<ListPortalWorkflowsReq> {
+  constructor(data?: PartialMessage<ListPortalWorkflowsReq>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.integrations.ListFlowsReq";
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalWorkflowsReq";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlowsReq;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalWorkflowsReq;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlowsReq;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalWorkflowsReq;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlowsReq;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalWorkflowsReq;
 
-  static equals(a: ListFlowsReq | PlainMessage<ListFlowsReq> | undefined, b: ListFlowsReq | PlainMessage<ListFlowsReq> | undefined): boolean;
+  static equals(a: ListPortalWorkflowsReq | PlainMessage<ListPortalWorkflowsReq> | undefined, b: ListPortalWorkflowsReq | PlainMessage<ListPortalWorkflowsReq> | undefined): boolean;
 }
 
 /**
- * @generated from message api.v1alpha1.integrations.ListFlowsResponse
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsResponse
  */
-export declare class ListFlowsResponse extends Message<ListFlowsResponse> {
+export declare class ListPortalWorkflowsResponse extends Message<ListPortalWorkflowsResponse> {
   /**
    * @generated from field: repeated api.v1alpha1.integrations.WorkflowDefinition values = 1;
    */
   values: WorkflowDefinition[];
 
-  constructor(data?: PartialMessage<ListFlowsResponse>);
+  constructor(data?: PartialMessage<ListPortalWorkflowsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.integrations.ListFlowsResponse";
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalWorkflowsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlowsResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalWorkflowsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlowsResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalWorkflowsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlowsResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalWorkflowsResponse;
 
-  static equals(a: ListFlowsResponse | PlainMessage<ListFlowsResponse> | undefined, b: ListFlowsResponse | PlainMessage<ListFlowsResponse> | undefined): boolean;
+  static equals(a: ListPortalWorkflowsResponse | PlainMessage<ListPortalWorkflowsResponse> | undefined, b: ListPortalWorkflowsResponse | PlainMessage<ListPortalWorkflowsResponse> | undefined): boolean;
 }
 
 /**

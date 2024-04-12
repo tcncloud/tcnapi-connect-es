@@ -543,18 +543,18 @@ export const ListPortalTypesResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v1alpha1.integrations.ListFlowsReq
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsReq
  */
-export const ListFlowsReq = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.ListFlowsReq",
+export const ListPortalWorkflowsReq = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.ListPortalWorkflowsReq",
   [],
 );
 
 /**
- * @generated from message api.v1alpha1.integrations.ListFlowsResponse
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsResponse
  */
-export const ListFlowsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.integrations.ListFlowsResponse",
+export const ListPortalWorkflowsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.ListPortalWorkflowsResponse",
   () => [
     { no: 1, name: "values", kind: "message", T: WorkflowDefinition, repeated: true },
   ],
