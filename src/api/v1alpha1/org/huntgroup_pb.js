@@ -754,7 +754,6 @@ export const UpdateHuntGroupIntegrationLinksRequest = /*@__PURE__*/ proto3.makeM
   "api.v1alpha1.org.UpdateHuntGroupIntegrationLinksRequest",
   () => [
     { no: 1, name: "links", kind: "message", T: IntegrationLink, repeated: true },
-    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

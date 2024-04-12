@@ -1876,13 +1876,6 @@ export declare class UpdateHuntGroupIntegrationLinksRequest extends Message<Upda
    */
   links: IntegrationLink[];
 
-  /**
-   * The sid of the hunt group to update the integration links for.
-   *
-   * @generated from field: int64 hunt_group_sid = 2;
-   */
-  huntGroupSid: bigint;
-
   constructor(data?: PartialMessage<UpdateHuntGroupIntegrationLinksRequest>);
 
   static readonly runtime: typeof proto3;
