@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreatePortalLinksReq, CreatePortalLinksRes, DeletePluginInstanceReq, DeletePluginInstanceRes, DeletePortalConfigRes, DeletePortalLinkReq, DeletePortalLinkRes, DeletePortalReq, DeletePortalRes, GetDetailedPortalReq, GetDetailedPortalRes, GetPluginInstanceReq, GetPluginInstanceRes, GetPortalConfigLogoReq, GetPortalConfigLogoRes, GetPortalConfigRes, GetPortalLinkReq, GetPortalLinkRes, GetPortalReq, GetPortalRes, ListAvailablePaymentFieldsReq, ListAvailablePaymentFieldsRes, ListAvailableVerificationFieldsReq, ListAvailableVerificationFieldsRes, ListDetailedPortalsReq, ListDetailedPortalsRes, ListFlowFieldNamesReq, ListFlowFieldNamesRes, ListPluginInstanceReq, ListPluginInstanceRes, ListPortalConfigsRes, ListPortalLinksReq, ListPortalLinksRes, ListPortalsReq, ListPortalsRes, UpdatePortalConfigLogoReq, UpdatePortalConfigLogoRes, UpsertPluginInstanceReq, UpsertPluginInstanceRes, UpsertPortalConfigReq, UpsertPortalConfigRes, UpsertPortalReq, UpsertPortalRes } from "./portals_pb.js";
+import { CreatePortalLinksReq, CreatePortalLinksRes, DeletePluginInstanceReq, DeletePluginInstanceRes, DeletePortalConfigRes, DeletePortalLinkReq, DeletePortalLinkRes, DeletePortalReq, DeletePortalRes, GetDetailedPortalReq, GetDetailedPortalRes, GetPluginInstanceReq, GetPluginInstanceRes, GetPortalConfigLogoReq, GetPortalConfigLogoRes, GetPortalConfigRes, GetPortalLinkReq, GetPortalLinkRes, GetPortalReq, GetPortalRes, ListAvailablePaymentFieldsReq, ListAvailablePaymentFieldsRes, ListAvailableVerificationFieldsReq, ListAvailableVerificationFieldsRes, ListDetailedPortalsReq, ListDetailedPortalsRes, ListFlowFieldNamesReq, ListFlowFieldNamesRes, ListPluginInstanceReq, ListPluginInstanceRes, ListPortalConfigsRes, ListPortalLinksReq, ListPortalLinksRes, ListPortalsReq, ListPortalsRes, ListPortalTypesReq, ListPortalTypesResponse, ListPortalWorkflowsReq, ListPortalWorkflowsResponse, UpdatePortalConfigLogoReq, UpdatePortalConfigLogoRes, UpsertPluginInstanceReq, UpsertPluginInstanceRes, UpsertPortalConfigReq, UpsertPortalConfigRes, UpsertPortalReq, UpsertPortalRes } from "./portals_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { DeletePortalConfigReq, GetPortalConfigReq, ListPortalConfigsReq } from "./service_pb.js";
 
@@ -228,6 +228,24 @@ export declare const PortalManagerApi: {
       readonly name: "ListAvailablePaymentFields",
       readonly I: typeof ListAvailablePaymentFieldsReq,
       readonly O: typeof ListAvailablePaymentFieldsRes,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.integrations.PortalManagerApi.ListPortalTypes
+     */
+    readonly listPortalTypes: {
+      readonly name: "ListPortalTypes",
+      readonly I: typeof ListPortalTypesReq,
+      readonly O: typeof ListPortalTypesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc api.v1alpha1.integrations.PortalManagerApi.ListPortalWorkflows
+     */
+    readonly listPortalWorkflows: {
+      readonly name: "ListPortalWorkflows",
+      readonly I: typeof ListPortalWorkflowsReq,
+      readonly O: typeof ListPortalWorkflowsResponse,
       readonly kind: MethodKind.Unary,
     },
   }

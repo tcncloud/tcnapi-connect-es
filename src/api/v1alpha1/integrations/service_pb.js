@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
-import { CompareOperation, FieldSource, IntegrationType as IntegrationType$1, InvoiceFlow, PaymentFlow, RequestMethod as RequestMethod$1, RequestSource as RequestSource$1, TransactionResult as TransactionResult$1, TransactionType as TransactionType$1, Validation as Validation$1, ValueType, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
+import { CompareOperation, FieldDefinition, FieldSource, IntegrationType as IntegrationType$1, InvoiceFlow, Invoices, PaymentFlow, RequestMethod as RequestMethod$1, RequestSource as RequestSource$1, TransactionResult as TransactionResult$1, TransactionType as TransactionType$1, Validation as Validation$1, ValueType, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.ListJourneyConfigsReq
@@ -1177,6 +1177,18 @@ export const Portal = /*@__PURE__*/ proto3.makeMessageType(
     { no: 7, name: "plugin_inst_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 8, name: "ptype", kind: "message", T: PortalType },
     { no: 9, name: "last_edited", kind: "message", T: Timestamp },
+    { no: 11, name: "definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "portal_segments", kind: "message", T: PortalSegments },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.PortalSegments
+ */
+export const PortalSegments = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.PortalSegments",
+  () => [
+    { no: 1, name: "portal_segments", kind: "message", T: PortalSegment, repeated: true },
   ],
 );
 
@@ -1361,6 +1373,82 @@ export const GenerateEpicKeyPairRes = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "production_public_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "non_production_public_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * PortalSegment contains a set a flows where user must complete one of set.
+ * usually this is selected by the user.
+ * Example:
+ * with payment portal, our payment step would have a WorkflowChoices like this:
+ * PortalSegment{
+ *  workflow_choices: [
+ *    <Credit Card Workflow>,
+ *    <ACH Workflow>,
+ *    <PayPal Workflow>,
+ *  ]
+ * }
+ * The user doesn't need to do all the choices, just needs to select one to complete.
+ *
+ * @generated from message api.v1alpha1.integrations.PortalSegment
+ */
+export const PortalSegment = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.PortalSegment",
+  () => [
+    { no: 1, name: "workflow_choices", kind: "message", T: PortalWorkflow, repeated: true },
+  ],
+);
+
+/**
+ * a PortalWorkflow is an entity that describes a set of segments that must be completed in sequence.
+ * each segment is fed the data as input, and the result is merged on top of the input.
+ * after completing all the segments successfully, we consider the flow completed.
+ * A Flow also comes with the user defined template, form_fields, opts, and text.
+ * None of these are required but will affect how the information is shown to the user.
+ *
+ * @generated from message api.v1alpha1.integrations.PortalWorkflow
+ */
+export const PortalWorkflow = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.PortalWorkflow",
+  () => [
+    { no: 1, name: "plugin_instance_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "actions", kind: "message", T: Action, repeated: true },
+    { no: 3, name: "template", kind: "message", T: Template },
+    { no: 4, name: "form_fields", kind: "message", T: FieldDefinition, repeated: true },
+    { no: 5, name: "opts", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 6, name: "header_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "footer_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "demo_mode", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: "demo_fail_conditions", kind: "message", T: Condition, repeated: true },
+    { no: 10, name: "demo_pass_conditions", kind: "message", T: Condition, repeated: true },
+    { no: 11, name: "demo_results", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+  ],
+);
+
+/**
+ * an Action is 1 api execution + optional rename of result data step.
+ *
+ * @generated from message api.v1alpha1.integrations.Action
+ */
+export const Action = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.Action",
+  () => [
+    { no: 1, name: "workflow_definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "rename", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+  ],
+);
+
+/**
+ * template is a container for the different template types on each flow.
+ * each flow definition can have 0-1 templates. Right now we only have Templates
+ * on invoice flows, but that might not always be the case.
+ *
+ * @generated from message api.v1alpha1.integrations.Template
+ */
+export const Template = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.Template",
+  () => [
+    { no: 1, name: "invoice_template", kind: "message", T: Invoices, oneof: "val" },
   ],
 );
 
