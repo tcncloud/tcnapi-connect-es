@@ -28,6 +28,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CommitBillingPlan
+     * @deprecated
      */
     commitBillingPlan: {
       name: "CommitBillingPlan",
@@ -50,6 +51,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CommitDefaultBillingPlan
+     * @deprecated
      */
     commitDefaultBillingPlan: {
       name: "CommitDefaultBillingPlan",
@@ -68,6 +70,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateBillingPlan
+     * @deprecated
      */
     createBillingPlan: {
       name: "CreateBillingPlan",
@@ -87,6 +90,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateDefaultBillingPlan
+     * @deprecated
      */
     createDefaultBillingPlan: {
       name: "CreateDefaultBillingPlan",
@@ -168,6 +172,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteBillingPlan
+     * @deprecated
      */
     deleteBillingPlan: {
       name: "DeleteBillingPlan",
@@ -190,6 +195,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteDefaultBillingPlan
+     * @deprecated
      */
     deleteDefaultBillingPlan: {
       name: "DeleteDefaultBillingPlan",
@@ -272,6 +278,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DuplicateBillingPlan
+     * @deprecated
      */
     duplicateBillingPlan: {
       name: "DuplicateBillingPlan",
@@ -293,6 +300,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DuplicateDefaultBillingPlan
+     * @deprecated
      */
     duplicateDefaultBillingPlan: {
       name: "DuplicateDefaultBillingPlan",
@@ -333,6 +341,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetActiveBillingPlan
+     * @deprecated
      */
     getActiveBillingPlan: {
       name: "GetActiveBillingPlan",
@@ -352,6 +361,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetBillingPlan
+     * @deprecated
      */
     getBillingPlan: {
       name: "GetBillingPlan",
@@ -370,6 +380,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetBillingPlanHistory
+     * @deprecated
      */
     getBillingPlanHistory: {
       name: "GetBillingPlanHistory",
@@ -427,6 +438,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.ListBillingPlans
+     * @deprecated
      */
     listBillingPlans: {
       name: "ListBillingPlans",
@@ -484,6 +496,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateBillingPlan
+     * @deprecated
      */
     updateBillingPlan: {
       name: "UpdateBillingPlan",
@@ -505,6 +518,7 @@ export const BillingService = {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateDefaultBillingPlan
+     * @deprecated
      */
     updateDefaultBillingPlan: {
       name: "UpdateDefaultBillingPlan",
