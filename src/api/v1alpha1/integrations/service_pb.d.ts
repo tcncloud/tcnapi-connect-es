@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { CompareOperation, FieldSource, IntegrationType as IntegrationType$1, InvoiceFlow, PaymentFlow, RequestMethod as RequestMethod$1, RequestSource as RequestSource$1, TransactionResult as TransactionResult$1, TransactionType as TransactionType$1, Validation as Validation$1, ValueType, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
+import type { CompareOperation, FieldDefinition, FieldSource, IntegrationType as IntegrationType$1, InvoiceFlow, Invoices, PaymentFlow, RequestMethod as RequestMethod$1, RequestSource as RequestSource$1, TransactionResult as TransactionResult$1, TransactionType as TransactionType$1, Validation as Validation$1, ValueType, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.ListJourneyConfigsReq
@@ -3672,6 +3672,22 @@ export declare class Portal extends Message<Portal> {
    */
   lastEdited?: Timestamp;
 
+  /**
+   * the portal definition this came from
+   *
+   * @generated from field: string definition_name = 11;
+   */
+  definitionName: string;
+
+  /**
+   * each item in "segments" represents a task for the user.
+   * the user must choose and complete one of the FlowChoices in each position
+   * in the "segments" array to be considered complete
+   *
+   * @generated from field: api.v1alpha1.integrations.PortalSegments portal_segments = 13;
+   */
+  portalSegments?: PortalSegments;
+
   constructor(data?: PartialMessage<Portal>);
 
   static readonly runtime: typeof proto3;
@@ -3685,6 +3701,30 @@ export declare class Portal extends Message<Portal> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Portal;
 
   static equals(a: Portal | PlainMessage<Portal> | undefined, b: Portal | PlainMessage<Portal> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.PortalSegments
+ */
+export declare class PortalSegments extends Message<PortalSegments> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.PortalSegment portal_segments = 1;
+   */
+  portalSegments: PortalSegment[];
+
+  constructor(data?: PartialMessage<PortalSegments>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.PortalSegments";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PortalSegments;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PortalSegments;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PortalSegments;
+
+  static equals(a: PortalSegments | PlainMessage<PortalSegments> | undefined, b: PortalSegments | PlainMessage<PortalSegments> | undefined): boolean;
 }
 
 /**
@@ -4261,5 +4301,208 @@ export declare class GenerateEpicKeyPairRes extends Message<GenerateEpicKeyPairR
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GenerateEpicKeyPairRes;
 
   static equals(a: GenerateEpicKeyPairRes | PlainMessage<GenerateEpicKeyPairRes> | undefined, b: GenerateEpicKeyPairRes | PlainMessage<GenerateEpicKeyPairRes> | undefined): boolean;
+}
+
+/**
+ * PortalSegment contains a set a flows where user must complete one of set.
+ * usually this is selected by the user.
+ * Example:
+ * with payment portal, our payment step would have a WorkflowChoices like this:
+ * PortalSegment{
+ *  workflow_choices: [
+ *    <Credit Card Workflow>,
+ *    <ACH Workflow>,
+ *    <PayPal Workflow>,
+ *  ]
+ * }
+ * The user doesn't need to do all the choices, just needs to select one to complete.
+ *
+ * @generated from message api.v1alpha1.integrations.PortalSegment
+ */
+export declare class PortalSegment extends Message<PortalSegment> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.PortalWorkflow workflow_choices = 1;
+   */
+  workflowChoices: PortalWorkflow[];
+
+  constructor(data?: PartialMessage<PortalSegment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.PortalSegment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PortalSegment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PortalSegment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PortalSegment;
+
+  static equals(a: PortalSegment | PlainMessage<PortalSegment> | undefined, b: PortalSegment | PlainMessage<PortalSegment> | undefined): boolean;
+}
+
+/**
+ * a PortalWorkflow is an entity that describes a set of segments that must be completed in sequence.
+ * each segment is fed the data as input, and the result is merged on top of the input.
+ * after completing all the segments successfully, we consider the flow completed.
+ * A Flow also comes with the user defined template, form_fields, opts, and text.
+ * None of these are required but will affect how the information is shown to the user.
+ *
+ * @generated from message api.v1alpha1.integrations.PortalWorkflow
+ */
+export declare class PortalWorkflow extends Message<PortalWorkflow> {
+  /**
+   * the global data for this flow.
+   * the portal_link data + the plugin_instance data
+   * make up the inital data set that is given to the Actions in "segments".
+   *
+   * @generated from field: string plugin_instance_id = 1;
+   */
+  pluginInstanceId: string;
+
+  /**
+   * the set of actions on the integrations api that must be executed in order
+   *
+   * @generated from field: repeated api.v1alpha1.integrations.Action actions = 2;
+   */
+  actions: Action[];
+
+  /**
+   * the template that belongs with the result dataset.
+   *
+   * @generated from field: api.v1alpha1.integrations.Template template = 3;
+   */
+  template?: Template;
+
+  /**
+   * the data that appears on the user form. This is untrusted data.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition form_fields = 4;
+   */
+  formFields: FieldDefinition[];
+
+  /**
+   * the data that controls optional functionality for some flows.
+   *
+   * @generated from field: map<string, string> opts = 5;
+   */
+  opts: { [key: string]: string };
+
+  /**
+   * text presented to the user for this flow
+   *
+   * @generated from field: string header_text = 6;
+   */
+  headerText: string;
+
+  /**
+   * @generated from field: string footer_text = 7;
+   */
+  footerText: string;
+
+  /**
+   * if true we do not perform the actions in the "segments" array
+   * instead we check pass/fail demo conditions and return demo results
+   *
+   * @generated from field: bool demo_mode = 8;
+   */
+  demoMode: boolean;
+
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.Condition demo_fail_conditions = 9;
+   */
+  demoFailConditions: Condition[];
+
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.Condition demo_pass_conditions = 10;
+   */
+  demoPassConditions: Condition[];
+
+  /**
+   * @generated from field: map<string, string> demo_results = 11;
+   */
+  demoResults: { [key: string]: string };
+
+  constructor(data?: PartialMessage<PortalWorkflow>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.PortalWorkflow";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PortalWorkflow;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PortalWorkflow;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PortalWorkflow;
+
+  static equals(a: PortalWorkflow | PlainMessage<PortalWorkflow> | undefined, b: PortalWorkflow | PlainMessage<PortalWorkflow> | undefined): boolean;
+}
+
+/**
+ * an Action is 1 api execution + optional rename of result data step.
+ *
+ * @generated from message api.v1alpha1.integrations.Action
+ */
+export declare class Action extends Message<Action> {
+  /**
+   * @generated from field: string workflow_definition_name = 1;
+   */
+  workflowDefinitionName: string;
+
+  /**
+   * when a flow is executed if we find in the result any keys that match
+   * the keys in rename, we will rename the result keys to the matching
+   * value in rename map's.
+   *
+   * @generated from field: map<string, string> rename = 4;
+   */
+  rename: { [key: string]: string };
+
+  constructor(data?: PartialMessage<Action>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.Action";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Action;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Action;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Action;
+
+  static equals(a: Action | PlainMessage<Action> | undefined, b: Action | PlainMessage<Action> | undefined): boolean;
+}
+
+/**
+ * template is a container for the different template types on each flow.
+ * each flow definition can have 0-1 templates. Right now we only have Templates
+ * on invoice flows, but that might not always be the case.
+ *
+ * @generated from message api.v1alpha1.integrations.Template
+ */
+export declare class Template extends Message<Template> {
+  /**
+   * @generated from oneof api.v1alpha1.integrations.Template.val
+   */
+  val: {
+    /**
+     * @generated from field: api.commons.integrations.Invoices invoice_template = 1;
+     */
+    value: Invoices;
+    case: "invoiceTemplate";
+  } | { case: undefined; value?: undefined };
+
+  constructor(data?: PartialMessage<Template>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.Template";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Template;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Template;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Template;
+
+  static equals(a: Template | PlainMessage<Template> | undefined, b: Template | PlainMessage<Template> | undefined): boolean;
 }
 
