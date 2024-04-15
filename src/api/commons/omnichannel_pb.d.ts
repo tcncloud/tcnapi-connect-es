@@ -481,6 +481,33 @@ export declare enum AgentConversationAssignmentType {
 }
 
 /**
+ * MessageFormat -
+ *
+ * @generated from enum api.commons.MessageFormat
+ */
+export declare enum MessageFormat {
+  /**
+   * default (plain text)
+   *
+   * @generated from enum value: MESSAGE_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MESSAGE_FORMAT_HTML = 1;
+   */
+  HTML = 1,
+
+  /**
+   * For forms from flows; should be sanitized, but keep form elements
+   * The frontend handles the form logic (the message can't have js)
+   *
+   * @generated from enum value: MESSAGE_FORMAT_HTML_FORM = 2;
+   */
+  HTML_FORM = 2,
+}
+
+/**
  * @generated from enum api.commons.OmniMessageStatus
  */
 export declare enum OmniMessageStatus {
@@ -1917,6 +1944,13 @@ export declare class AgentChatWidgetMessage extends Message<AgentChatWidgetMessa
    * @generated from field: api.commons.OmniSenderType sender_type = 6;
    */
   senderType: OmniSenderType;
+
+  /**
+   * the message format
+   *
+   * @generated from field: api.commons.MessageFormat message_format = 7;
+   */
+  messageFormat: MessageFormat;
 
   constructor(data?: PartialMessage<AgentChatWidgetMessage>);
 
