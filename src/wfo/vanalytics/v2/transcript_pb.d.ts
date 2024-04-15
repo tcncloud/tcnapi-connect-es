@@ -436,6 +436,27 @@ export declare class Sms extends Message<Sms> {
    */
   threads: Sms_Thread[];
 
+  /**
+   * The phone number of the agent.
+   *
+   * @generated from field: string caller_id = 4;
+   */
+  callerId: string;
+
+  /**
+   * The omni campain this sms belongs to.
+   *
+   * @generated from field: int64 campaign_sid = 5;
+   */
+  campaignSid: bigint;
+
+  /**
+   * The size of the transcript.
+   *
+   * @generated from field: int64 conversation_bytes = 6;
+   */
+  conversationBytes: bigint;
+
   constructor(data?: PartialMessage<Sms>);
 
   static readonly runtime: typeof proto3;
