@@ -133,3 +133,20 @@ export const GetScorecardResponse = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * ListScorecardsByOrgIdRequest is the request for listing scorecards by certain criteria.
+ *
+ * @generated from message api.v1alpha1.scorecards.ListScorecardsByOrgIdRequest
+ */
+export const ListScorecardsByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.ListScorecardsByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "author_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "category_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "states", kind: "enum", T: proto3.getEnumType(ScorecardState), repeated: true },
+    { no: 5, name: "evaluation_types", kind: "enum", T: proto3.getEnumType(EvaluationType), repeated: true },
+    { no: 6, name: "call_types", kind: "enum", T: proto3.getEnumType(CallType_Enum), repeated: true },
+  ],
+);
+
