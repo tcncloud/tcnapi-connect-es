@@ -450,13 +450,6 @@ export declare class Sms extends Message<Sms> {
    */
   campaignSid: bigint;
 
-  /**
-   * The size of the transcript.
-   *
-   * @generated from field: int64 conversation_bytes = 6;
-   */
-  conversationBytes: bigint;
-
   constructor(data?: PartialMessage<Sms>);
 
   static readonly runtime: typeof proto3;
