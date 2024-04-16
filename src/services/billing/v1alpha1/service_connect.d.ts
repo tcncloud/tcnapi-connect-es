@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, DuplicateBillingPlanRequest, DuplicateBillingPlanResponse, DuplicateDefaultBillingPlanRequest, DuplicateDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
+import { CommitBillingPlanRequest, CommitBillingPlanResponse, CommitDefaultBillingPlanRequest, CommitDefaultBillingPlanResponse, CreateBillingPlanRequest, CreateBillingPlanResponse, CreateDefaultBillingPlanRequest, CreateDefaultBillingPlanResponse, DeleteBillingPlanRequest, DeleteBillingPlanResponse, DeleteDefaultBillingPlanRequest, DeleteDefaultBillingPlanResponse, DuplicateBillingPlanRequest, DuplicateBillingPlanResponse, DuplicateDefaultBillingPlanRequest, DuplicateDefaultBillingPlanResponse, GetActiveBillingPlanRequest, GetActiveBillingPlanResponse, GetBillingPlanHistoryRequest, GetBillingPlanHistoryResponse, GetBillingPlanRequest, GetBillingPlanResponse, ListBillingPlansRequest, ListBillingPlansResponse, UpdateBillingPlanRequest, UpdateBillingPlanResponse, UpdateDefaultBillingPlanRequest, UpdateDefaultBillingPlanResponse } from "./plans_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateDefaultRateDefinitionRequest, CreateDefaultRateDefinitionResponse, CreateRateDefinitionRequest, CreateRateDefinitionResponse, DeleteDefaultRateDefinitionRequest, DeleteDefaultRateDefinitionResponse, DeleteRateDefinitionRequest, DeleteRateDefinitionResponse, GetRateDefinitionRequest, GetRateDefinitionResponse, ListRateDefinitionsRequest, ListRateDefinitionsResponse, UpdateDefaultRateDefinitionRequest, UpdateDefaultRateDefinitionResponse, UpdateRateDefinitionRequest, UpdateRateDefinitionResponse } from "./rates_pb.js";
 import { CreateInvoiceRequest, CreateInvoiceResponse, DeleteInvoiceRequest, DeleteInvoiceResponse, ExportInvoiceRequest, ExportInvoiceResponse, GetInvoiceRequest, GetInvoiceResponse, ListInvoicesRequest, ListInvoicesResponse, UpdateInvoiceRequest, UpdateInvoiceResponse } from "./invoices_pb.js";
@@ -28,6 +28,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CommitBillingPlan
+     * @deprecated
      */
     readonly commitBillingPlan: {
       readonly name: "CommitBillingPlan",
@@ -50,6 +51,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CommitDefaultBillingPlan
+     * @deprecated
      */
     readonly commitDefaultBillingPlan: {
       readonly name: "CommitDefaultBillingPlan",
@@ -68,6 +70,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateBillingPlan
+     * @deprecated
      */
     readonly createBillingPlan: {
       readonly name: "CreateBillingPlan",
@@ -87,6 +90,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateDefaultBillingPlan
+     * @deprecated
      */
     readonly createDefaultBillingPlan: {
       readonly name: "CreateDefaultBillingPlan",
@@ -127,6 +131,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.CreateInvoice
+     * @deprecated
      */
     readonly createInvoice: {
       readonly name: "CreateInvoice",
@@ -167,6 +172,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteBillingPlan
+     * @deprecated
      */
     readonly deleteBillingPlan: {
       readonly name: "DeleteBillingPlan",
@@ -189,6 +195,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteDefaultBillingPlan
+     * @deprecated
      */
     readonly deleteDefaultBillingPlan: {
       readonly name: "DeleteDefaultBillingPlan",
@@ -230,6 +237,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DeleteInvoice
+     * @deprecated
      */
     readonly deleteInvoice: {
       readonly name: "DeleteInvoice",
@@ -270,6 +278,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DuplicateBillingPlan
+     * @deprecated
      */
     readonly duplicateBillingPlan: {
       readonly name: "DuplicateBillingPlan",
@@ -291,6 +300,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.DuplicateDefaultBillingPlan
+     * @deprecated
      */
     readonly duplicateDefaultBillingPlan: {
       readonly name: "DuplicateDefaultBillingPlan",
@@ -301,11 +311,10 @@ export declare const BillingService: {
     /**
      * Exports an invoice.
      * Required permissions:
-     *   CUSTOMER_SUPPORT
+     *   TCN_BILLING_ADMIN
      * Errors:
      *   - grpc.Internal: An internal error occurred.
      *   - grpc.InvalidArgument: The request is invalid.
-     *   - grpc.NotFound: The specified invoice doesn't exist.
      *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
@@ -332,6 +341,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetActiveBillingPlan
+     * @deprecated
      */
     readonly getActiveBillingPlan: {
       readonly name: "GetActiveBillingPlan",
@@ -351,11 +361,31 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetBillingPlan
+     * @deprecated
      */
     readonly getBillingPlan: {
       readonly name: "GetBillingPlan",
       readonly I: typeof GetBillingPlanRequest,
       readonly O: typeof GetBillingPlanResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * Returns the billing plan history for the ORG or REGION.
+     * Required permissions:
+     *   CUSTOMER_SUPPORT
+     * Errors:
+     *   - grpc.Internal: An internal error occurred.
+     *   - grpc.InvalidArgument: The request is invalid.
+     *   - grpc.PermissionDenied: Caller doesn't have the required permissions.
+     *   - grpc.Unavailable: The operation is currently unavailable.
+     *
+     * @generated from rpc services.billing.v1alpha1.BillingService.GetBillingPlanHistory
+     * @deprecated
+     */
+    readonly getBillingPlanHistory: {
+      readonly name: "GetBillingPlanHistory",
+      readonly I: typeof GetBillingPlanHistoryRequest,
+      readonly O: typeof GetBillingPlanHistoryResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -370,6 +400,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.GetInvoice
+     * @deprecated
      */
     readonly getInvoice: {
       readonly name: "GetInvoice",
@@ -407,6 +438,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.ListBillingPlans
+     * @deprecated
      */
     readonly listBillingPlans: {
       readonly name: "ListBillingPlans",
@@ -425,6 +457,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.ListInvoices
+     * @deprecated
      */
     readonly listInvoices: {
       readonly name: "ListInvoices",
@@ -463,6 +496,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateBillingPlan
+     * @deprecated
      */
     readonly updateBillingPlan: {
       readonly name: "UpdateBillingPlan",
@@ -484,6 +518,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateDefaultBillingPlan
+     * @deprecated
      */
     readonly updateDefaultBillingPlan: {
       readonly name: "UpdateDefaultBillingPlan",
@@ -524,6 +559,7 @@ export declare const BillingService: {
      *   - grpc.Unavailable: The operation is currently unavailable. Likely a transient issue with a downstream service.
      *
      * @generated from rpc services.billing.v1alpha1.BillingService.UpdateInvoice
+     * @deprecated
      */
     readonly updateInvoice: {
       readonly name: "UpdateInvoice",
