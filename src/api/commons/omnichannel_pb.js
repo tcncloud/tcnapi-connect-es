@@ -180,6 +180,20 @@ export const AgentConversationAssignmentType = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * MessageFormat -
+ *
+ * @generated from enum api.commons.MessageFormat
+ */
+export const MessageFormat = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.MessageFormat",
+  [
+    {no: 0, name: "MESSAGE_FORMAT_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "MESSAGE_FORMAT_HTML", localName: "HTML"},
+    {no: 2, name: "MESSAGE_FORMAT_HTML_FORM", localName: "HTML_FORM"},
+  ],
+);
+
+/**
  * @generated from enum api.commons.OmniMessageStatus
  */
 export const OmniMessageStatus = /*@__PURE__*/ proto3.makeEnum(
@@ -583,6 +597,7 @@ export const AgentChatWidgetMessage = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4, name: "ui_reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "user_information", kind: "message", T: OmniConversationUserInformation },
     { no: 6, name: "sender_type", kind: "enum", T: proto3.getEnumType(OmniSenderType) },
+    { no: 7, name: "message_format", kind: "enum", T: proto3.getEnumType(MessageFormat) },
   ],
 );
 
