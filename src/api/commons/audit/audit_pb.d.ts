@@ -17,6 +17,7 @@ import type { AgentTrainingCreateLearningOpportunityEvent } from "./agent_traini
 import type { LMSPipelineFailureEvent, LMSPipelineNoOutputEvent, LMSPipelineSuccessfulEvent } from "./lms_events_pb.js";
 import type { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
 import type { DeliveryFailureEvent, DeliverySuccessEvent } from "./delivery_events_pb.js";
+import type { ContactManagerDeleteEvent, ContactManagerEntryAddEvent, ContactManagerEntryGetEncEvent, ContactManagerKycEvent } from "./contactmanager_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -906,6 +907,32 @@ export declare class AuditEvent extends Message<AuditEvent> {
      */
     value: DeliverySuccessEvent;
     case: "deliverySuccessEvent";
+  } | {
+    /**
+     * Contact Manager event
+     *
+     * @generated from field: api.commons.audit.ContactManagerEntryAddEvent contact_manager_entry_add_event = 1200;
+     */
+    value: ContactManagerEntryAddEvent;
+    case: "contactManagerEntryAddEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.audit.ContactManagerEntryGetEncEvent contact_manager_entry_get_enc_event = 1201;
+     */
+    value: ContactManagerEntryGetEncEvent;
+    case: "contactManagerEntryGetEncEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.audit.ContactManagerDeleteEvent contact_manager_delete_event = 1202;
+     */
+    value: ContactManagerDeleteEvent;
+    case: "contactManagerDeleteEvent";
+  } | {
+    /**
+     * @generated from field: api.commons.audit.ContactManagerKycEvent contact_manager_kyc_event = 1203;
+     */
+    value: ContactManagerKycEvent;
+    case: "contactManagerKycEvent";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<AuditEvent>);

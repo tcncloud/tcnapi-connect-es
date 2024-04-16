@@ -410,6 +410,11 @@ export declare class ContactManagerList extends Message<ContactManagerList> {
    */
   dateCreated?: Timestamp;
 
+  /**
+   * @generated from field: bool is_deleted = 9;
+   */
+  isDeleted: boolean;
+
   constructor(data?: PartialMessage<ContactManagerList>);
 
   static readonly runtime: typeof proto3;

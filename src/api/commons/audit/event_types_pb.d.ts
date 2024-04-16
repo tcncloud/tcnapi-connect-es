@@ -852,5 +852,34 @@ export declare enum EventType {
    * @generated from enum value: EVENT_TYPE_DELIVERY_SUCCESS = 1101;
    */
   EVENT_TYPE_DELIVERY_SUCCESS = 1101,
+
+  /**
+   * ContactManager Events
+   * add event
+   *
+   * @generated from enum value: EVENT_TYPE_CONTACT_MANAGER_ADD_EVENT = 1200;
+   */
+  EVENT_TYPE_CONTACT_MANAGER_ADD_EVENT = 1200,
+
+  /**
+   * view event
+   *
+   * @generated from enum value: EVENT_TYPE_CONTACT_MANAGER_ENTRY_VIEW_EVENT = 1201;
+   */
+  EVENT_TYPE_CONTACT_MANAGER_ENTRY_VIEW_EVENT = 1201,
+
+  /**
+   * kyc event
+   *
+   * @generated from enum value: EVENT_TYPE_CONTACT_MANAGER_KYC_ENC_VIEW_EVENT = 1202;
+   */
+  EVENT_TYPE_CONTACT_MANAGER_KYC_ENC_VIEW_EVENT = 1202,
+
+  /**
+   * ttl event
+   *
+   * @generated from enum value: EVENT_TYPE_CONTACT_MANAGER_TTL_EVENT = 1203;
+   */
+  EVENT_TYPE_CONTACT_MANAGER_TTL_EVENT = 1203,
 }
 

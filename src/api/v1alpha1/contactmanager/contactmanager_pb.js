@@ -152,6 +152,7 @@ export const ContactManagerList = /*@__PURE__*/ proto3.makeMessageType(
     { no: 6, name: "list_details", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 7, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 8, name: "date_created", kind: "message", T: Timestamp },
+    { no: 9, name: "is_deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

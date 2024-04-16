@@ -16,6 +16,7 @@ import { AgentTrainingCreateLearningOpportunityEvent } from "./agent_training_ev
 import { LMSPipelineFailureEvent, LMSPipelineNoOutputEvent, LMSPipelineSuccessfulEvent } from "./lms_events_pb.js";
 import { BillingCommitBillingPlanEvent, BillingCreateBillingPlanEvent, BillingCreateInvoiceEvent, BillingCreateRateDefinitionEvent, BillingDeleteBillingPlanEvent, BillingDeleteInvoiceEvent, BillingDeleteRateDefinitionEvent, BillingExportInvoiceEvent, BillingUpdateBillingPlanEvent, BillingUpdateInvoiceEvent, BillingUpdateRateDefinitionEvent } from "./billing_events_pb.js";
 import { DeliveryFailureEvent, DeliverySuccessEvent } from "./delivery_events_pb.js";
+import { ContactManagerDeleteEvent, ContactManagerEntryAddEvent, ContactManagerEntryGetEncEvent, ContactManagerKycEvent } from "./contactmanager_events_pb.js";
 
 /**
  * This represents a generic audit event that is sent to the audit service
@@ -139,6 +140,10 @@ export const AuditEvent = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1010, name: "billing_update_rate_definition_event", kind: "message", T: BillingUpdateRateDefinitionEvent, oneof: "event" },
     { no: 1100, name: "delivery_failure_event", kind: "message", T: DeliveryFailureEvent, oneof: "event" },
     { no: 1101, name: "delivery_success_event", kind: "message", T: DeliverySuccessEvent, oneof: "event" },
+    { no: 1200, name: "contact_manager_entry_add_event", kind: "message", T: ContactManagerEntryAddEvent, oneof: "event" },
+    { no: 1201, name: "contact_manager_entry_get_enc_event", kind: "message", T: ContactManagerEntryGetEncEvent, oneof: "event" },
+    { no: 1202, name: "contact_manager_delete_event", kind: "message", T: ContactManagerDeleteEvent, oneof: "event" },
+    { no: 1203, name: "contact_manager_kyc_event", kind: "message", T: ContactManagerKycEvent, oneof: "event" },
   ],
 );
 
