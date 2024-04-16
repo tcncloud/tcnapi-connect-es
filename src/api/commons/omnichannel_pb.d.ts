@@ -1419,6 +1419,21 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    */
   providerMetadata: { [key: string]: string };
 
+  /**
+   * The country code and postal code field together determine timezone for email time based compliance rulesets
+   * country code
+   *
+   * @generated from field: int32 country_code = 24;
+   */
+  countryCode: number;
+
+  /**
+   * postal code field
+   *
+   * @generated from field: string postal_code_field = 25;
+   */
+  postalCodeField: string;
+
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
   static readonly runtime: typeof proto3;
