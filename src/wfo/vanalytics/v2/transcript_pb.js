@@ -152,6 +152,8 @@ export const Sms = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "threads", kind: "message", T: Sms_Thread, repeated: true },
     { no: 3, name: "phone", kind: "message", T: Sms_Phone },
+    { no: 4, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "campaign_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

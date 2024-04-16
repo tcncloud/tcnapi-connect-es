@@ -444,6 +444,20 @@ export declare class Sms extends Message<Sms> {
    */
   phone?: Sms_Phone;
 
+  /**
+   * The phone number of the agent.
+   *
+   * @generated from field: string caller_id = 4;
+   */
+  callerId: string;
+
+  /**
+   * The omni campain this sms belongs to.
+   *
+   * @generated from field: int64 campaign_sid = 5;
+   */
+  campaignSid: bigint;
+
   constructor(data?: PartialMessage<Sms>);
 
   static readonly runtime: typeof proto3;
