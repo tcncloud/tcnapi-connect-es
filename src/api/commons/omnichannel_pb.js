@@ -472,6 +472,8 @@ export const OmniCampaignModuleConfig = /*@__PURE__*/ proto3.makeMessageType(
     { no: 21, name: "skills", kind: "message", T: OmniConversationSkills },
     { no: 22, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
     { no: 23, name: "provider_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 24, name: "country_code", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 25, name: "postal_code_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
