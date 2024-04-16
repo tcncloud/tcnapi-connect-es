@@ -736,3 +736,79 @@ export const ChangeTicketStatusResponse = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * @generated from message api.v1alpha1.tickets.AddEntityRefRequest
+ */
+export const AddEntityRefRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.tickets.AddEntityRefRequest",
+  () => [
+    { no: 1, name: "entity_ref", kind: "message", T: EntityRef },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.AddEntityRefResponse
+ */
+export const AddEntityRefResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.tickets.AddEntityRefResponse",
+  () => [
+    { no: 1, name: "is_added", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListEntityRefsByTicketRequest
+ */
+export const ListEntityRefsByTicketRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListEntityRefsByTicketRequest",
+  () => [
+    { no: 1, name: "ticket_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListEntityRefsByTicketResponse
+ */
+export const ListEntityRefsByTicketResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListEntityRefsByTicketResponse",
+  () => [
+    { no: 1, name: "entity_ref", kind: "message", T: EntityRef, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketsByEntityRefRequest
+ */
+export const ListTicketsByEntityRefRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListTicketsByEntityRefRequest",
+  () => [
+    { no: 1, name: "entity_ref_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketsByEntityRefResponse
+ */
+export const ListTicketsByEntityRefResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.tickets.ListTicketsByEntityRefResponse",
+  () => [
+    { no: 1, name: "tickets", kind: "message", T: Ticket, repeated: true },
+  ],
+);
+
+/**
+ * should this be in a separate folder / file
+ *
+ * @generated from message api.v1alpha1.tickets.EntityRef
+ */
+export const EntityRef = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.tickets.EntityRef",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "region_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "ticket_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+  ],
+);
+
