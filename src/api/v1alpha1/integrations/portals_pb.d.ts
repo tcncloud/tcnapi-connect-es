@@ -5,8 +5,8 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task } from "./service_pb.js";
-import type { FieldDefinition, Flow, FlowFieldLoc, PaymentFlow, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
+import type { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task, Template } from "./service_pb.js";
+import type { FieldDefinition, Flow, FlowFieldLoc, FlowType, PaymentFlow, RequestMethod, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.UpsertPortalConfigReq
@@ -1322,5 +1322,289 @@ export declare class ListAvailablePaymentFieldsRes extends Message<ListAvailable
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAvailablePaymentFieldsRes;
 
   static equals(a: ListAvailablePaymentFieldsRes | PlainMessage<ListAvailablePaymentFieldsRes> | undefined, b: ListAvailablePaymentFieldsRes | PlainMessage<ListAvailablePaymentFieldsRes> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalTypesReq
+ */
+export declare class ListPortalTypesReq extends Message<ListPortalTypesReq> {
+  constructor(data?: PartialMessage<ListPortalTypesReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalTypesReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalTypesReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalTypesReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalTypesReq;
+
+  static equals(a: ListPortalTypesReq | PlainMessage<ListPortalTypesReq> | undefined, b: ListPortalTypesReq | PlainMessage<ListPortalTypesReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalTypesResponse
+ */
+export declare class ListPortalTypesResponse extends Message<ListPortalTypesResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.PortalDefinition values = 1;
+   */
+  values: PortalDefinition[];
+
+  constructor(data?: PartialMessage<ListPortalTypesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalTypesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalTypesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalTypesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalTypesResponse;
+
+  static equals(a: ListPortalTypesResponse | PlainMessage<ListPortalTypesResponse> | undefined, b: ListPortalTypesResponse | PlainMessage<ListPortalTypesResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsReq
+ */
+export declare class ListPortalWorkflowsReq extends Message<ListPortalWorkflowsReq> {
+  constructor(data?: PartialMessage<ListPortalWorkflowsReq>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalWorkflowsReq";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalWorkflowsReq;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalWorkflowsReq;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalWorkflowsReq;
+
+  static equals(a: ListPortalWorkflowsReq | PlainMessage<ListPortalWorkflowsReq> | undefined, b: ListPortalWorkflowsReq | PlainMessage<ListPortalWorkflowsReq> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsResponse
+ */
+export declare class ListPortalWorkflowsResponse extends Message<ListPortalWorkflowsResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.integrations.WorkflowDefinition values = 1;
+   */
+  values: WorkflowDefinition[];
+
+  constructor(data?: PartialMessage<ListPortalWorkflowsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.ListPortalWorkflowsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListPortalWorkflowsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListPortalWorkflowsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListPortalWorkflowsResponse;
+
+  static equals(a: ListPortalWorkflowsResponse | PlainMessage<ListPortalWorkflowsResponse> | undefined, b: ListPortalWorkflowsResponse | PlainMessage<ListPortalWorkflowsResponse> | undefined): boolean;
+}
+
+/**
+ * this describes a portal type. any created portals must conform to a
+ * portal definition.
+ *
+ * @generated from message api.v1alpha1.integrations.PortalDefinition
+ */
+export declare class PortalDefinition extends Message<PortalDefinition> {
+  /**
+   * the name of this type of portal
+   *
+   * @generated from field: string definition_name = 2;
+   */
+  definitionName: string;
+
+  /**
+   * each FlowRequirement below represents a screen that must be presented
+   * to the user in order. All flows in the workflow_requirements must be completed in order.
+   * Payment portal would have 3 workflow_requirements:
+   * workflow_requirements: [
+   *   FlowRequirement{max_choices: 1, flow_type: VERIFICATION},
+   *   FlowRequirement{max_choices: 1, flow_type: INVOICE},
+   *   FlowRequirement{max_choices: 0, flow_type: PAYMENT},
+   * ]
+   *
+   * @generated from field: repeated api.v1alpha1.integrations.WorkflowRequirement workflow_requirements = 3;
+   */
+  workflowRequirements: WorkflowRequirement[];
+
+  constructor(data?: PartialMessage<PortalDefinition>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.PortalDefinition";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PortalDefinition;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PortalDefinition;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PortalDefinition;
+
+  static equals(a: PortalDefinition | PlainMessage<PortalDefinition> | undefined, b: PortalDefinition | PlainMessage<PortalDefinition> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.integrations.WorkflowRequirement
+ */
+export declare class WorkflowRequirement extends Message<WorkflowRequirement> {
+  /**
+   * how many different flows the user can choose from on this step.
+   * 0 and below is interpreted as unlimited flows.
+   * example:
+   * PaymentPortal would have this set to 1 for verification flow and invoice flows
+   * and set to 0 for payment flows. This forces the user to verify exactly 1 way
+   * see exactly 1 invoice, and choose credit card, ach paypal, etc to pay.
+   *
+   * @generated from field: int32 max_choices = 1;
+   */
+  maxChoices: number;
+
+  /**
+   * the flows for this step must be of this type
+   * FLOW_TYPE_UNKNOWN is interpreted as any flow type is acceptable
+   *
+   * @generated from field: api.commons.integrations.FlowType flow_type = 2;
+   */
+  flowType: FlowType;
+
+  constructor(data?: PartialMessage<WorkflowRequirement>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.WorkflowRequirement";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WorkflowRequirement;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WorkflowRequirement;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WorkflowRequirement;
+
+  static equals(a: WorkflowRequirement | PlainMessage<WorkflowRequirement> | undefined, b: WorkflowRequirement | PlainMessage<WorkflowRequirement> | undefined): boolean;
+}
+
+/**
+ * this describes the requirements to build a Flow entity
+ * that matches this description.  All created flows must
+ * conform to a FlowDefinition.
+ *
+ * @generated from message api.v1alpha1.integrations.WorkflowDefinition
+ */
+export declare class WorkflowDefinition extends Message<WorkflowDefinition> {
+  /**
+   * the type of flow
+   *
+   * @generated from field: api.commons.integrations.FlowType flow_type = 1;
+   */
+  flowType: FlowType;
+
+  /**
+   * the name of this flow definition
+   *
+   * @generated from field: string definition_name = 2;
+   */
+  definitionName: string;
+
+  /**
+   * the api method performed for this flow.
+   *
+   * @generated from field: api.commons.integrations.RequestMethod method = 3;
+   */
+  method: RequestMethod;
+
+  /**
+   * the fields required to complete this flow
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition req_fields = 4;
+   */
+  reqFields: FieldDefinition[];
+
+  /**
+   * the fields returned from this flows execution
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition res_fields = 5;
+   */
+  resFields: FieldDefinition[];
+
+  /**
+   * a subset of req_fields we suggest go in the plugin instance.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition plugin_fields = 6;
+   */
+  pluginFields: FieldDefinition[];
+
+  /**
+   * a subset of req_fields we suggest go in the portal link
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition link_fields = 7;
+   */
+  linkFields: FieldDefinition[];
+
+  /**
+   * a subset of req_fields we suggest come from some previously called flow.
+   * this is usually empty. Experian Payment flows do have this populated with
+   * data that comes from the experian query balance flow.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition prev_fields = 8;
+   */
+  prevFields: FieldDefinition[];
+
+  /**
+   * a subset of either req_fields OR res_fields that is suggested comes from the user.
+   * Example:
+   * verification flows would have a subset of the res_fields here, because
+   * we want to verify the user provided data against the api call's result.
+   * but
+   * payment flows would have a subset of req_fields here, because
+   * we want to take the payment fields from the user to make the api call.
+   * Some flows have no form fields. Invoice Flows and Execute Flows don't need
+   * a user form, so this is empty on those flows.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition form_fields = 9;
+   */
+  formFields: FieldDefinition[];
+
+  /**
+   * The default template that can be used with the result data to make it pretty
+   * and grouped. Right now this is only used for invoices.
+   *
+   * @generated from field: api.v1alpha1.integrations.Template template = 10;
+   */
+  template?: Template;
+
+  /**
+   * Optional data that can be defined on Flow creation tine to affect the execution
+   * of the flow entity.
+   * Example:
+   * Experian flows have a 'use_invoice_account_number' field that is a boolean.
+   * if checked, we change the account number used for payment, rather than use the
+   * one provided in the portal link.
+   *
+   * @generated from field: repeated api.commons.integrations.FieldDefinition opts = 11;
+   */
+  opts: FieldDefinition[];
+
+  constructor(data?: PartialMessage<WorkflowDefinition>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.integrations.WorkflowDefinition";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): WorkflowDefinition;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): WorkflowDefinition;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): WorkflowDefinition;
+
+  static equals(a: WorkflowDefinition | PlainMessage<WorkflowDefinition> | undefined, b: WorkflowDefinition | PlainMessage<WorkflowDefinition> | undefined): boolean;
 }
 

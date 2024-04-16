@@ -366,3 +366,193 @@ export declare class StreamAutoEvaluationsResponse extends Message<StreamAutoEva
   static equals(a: StreamAutoEvaluationsResponse | PlainMessage<StreamAutoEvaluationsResponse> | undefined, b: StreamAutoEvaluationsResponse | PlainMessage<StreamAutoEvaluationsResponse> | undefined): boolean;
 }
 
+/**
+ * ListAutoEvaluationsByOrgIdRequest is the request to get a list of auto evaluations.
+ *
+ * @generated from message api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest
+ */
+export declare class ListAutoEvaluationsByOrgIdRequest extends Message<ListAutoEvaluationsByOrgIdRequest> {
+  /**
+   * Required - org id of auto evaluations
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Optional - filter by scorecard ids.
+   *
+   * @generated from field: repeated int64 scorecard_ids = 2;
+   */
+  scorecardIds: bigint[];
+
+  /**
+   * Optional, filter completed timestamp by a specific range
+   *
+   * @generated from field: api.commons.TimeFilter completed_at = 3;
+   */
+  completedAt?: TimeFilter;
+
+  /**
+   * Optional - filter by category ids.
+   *
+   * @generated from field: repeated int64 category_ids = 5;
+   */
+  categoryIds: bigint[];
+
+  /**
+   * Optional - filter by call sid.
+   *
+   * @generated from field: api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest.CallSidFilter call_sid = 6;
+   */
+  callSid?: ListAutoEvaluationsByOrgIdRequest_CallSidFilter;
+
+  /**
+   * Optional - filter by agent user ids.
+   *
+   * @generated from field: repeated string agent_user_ids = 7;
+   */
+  agentUserIds: string[];
+
+  /**
+   * Optional - number of auto evaluations included in response.
+   *
+   * @generated from field: int32 page_size = 8;
+   */
+  pageSize: number;
+
+  /**
+   * Optional. The order by which auto evaluations will be listed. Follows sql order by
+   * syntax. When not provided the order defaults to "completed_at DESC".
+   *
+   * @generated from field: string order_by = 9;
+   */
+  orderBy: string;
+
+  /**
+   * Optional. The next_page_token returned from a previous List request, if any.
+   *
+   * @generated from field: string page_token = 10;
+   */
+  pageToken: string;
+
+  /**
+   * Optional - filter by risk level.
+   *
+   * @generated from field: repeated api.commons.RiskLevel risk_levels = 11;
+   */
+  riskLevels: RiskLevel[];
+
+  constructor(data?: PartialMessage<ListAutoEvaluationsByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAutoEvaluationsByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAutoEvaluationsByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAutoEvaluationsByOrgIdRequest;
+
+  static equals(a: ListAutoEvaluationsByOrgIdRequest | PlainMessage<ListAutoEvaluationsByOrgIdRequest> | undefined, b: ListAutoEvaluationsByOrgIdRequest | PlainMessage<ListAutoEvaluationsByOrgIdRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest.CallSidFilter
+ */
+export declare class ListAutoEvaluationsByOrgIdRequest_CallSidFilter extends Message<ListAutoEvaluationsByOrgIdRequest_CallSidFilter> {
+  /**
+   * Optional - filter by any of the provided sids.
+   *
+   * @generated from field: repeated int64 any_of = 1;
+   */
+  anyOf: bigint[];
+
+  /**
+   * filter values must be non-zero to be applied
+   *
+   * Optional - filter by equal to.
+   *
+   * @generated from field: int64 eq = 2;
+   */
+  eq: bigint;
+
+  /**
+   * Optional - filter by greater than or equal to.
+   *
+   * @generated from field: int64 gte = 3;
+   */
+  gte: bigint;
+
+  /**
+   * Optional - filter by less than or equal to.
+   *
+   * @generated from field: int64 lte = 4;
+   */
+  lte: bigint;
+
+  /**
+   * Optional - filter by greater than.
+   *
+   * @generated from field: int64 gt = 5;
+   */
+  gt: bigint;
+
+  /**
+   * Optional - filter by less than.
+   *
+   * @generated from field: int64 lt = 6;
+   */
+  lt: bigint;
+
+  constructor(data?: PartialMessage<ListAutoEvaluationsByOrgIdRequest_CallSidFilter>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.ListAutoEvaluationsByOrgIdRequest.CallSidFilter";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAutoEvaluationsByOrgIdRequest_CallSidFilter;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAutoEvaluationsByOrgIdRequest_CallSidFilter;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAutoEvaluationsByOrgIdRequest_CallSidFilter;
+
+  static equals(a: ListAutoEvaluationsByOrgIdRequest_CallSidFilter | PlainMessage<ListAutoEvaluationsByOrgIdRequest_CallSidFilter> | undefined, b: ListAutoEvaluationsByOrgIdRequest_CallSidFilter | PlainMessage<ListAutoEvaluationsByOrgIdRequest_CallSidFilter> | undefined): boolean;
+}
+
+/**
+ * DeleteAutoEvaluationByOrgIdRequest is the request to delete an auto evaluation (with sub-entities).
+ *
+ * @generated from message api.v1alpha1.scorecards.DeleteAutoEvaluationByOrgIdRequest
+ */
+export declare class DeleteAutoEvaluationByOrgIdRequest extends Message<DeleteAutoEvaluationByOrgIdRequest> {
+  /**
+   * Required - org id of auto evaluations
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Required - unique id of auto evalution to delete.
+   *
+   * @generated from field: int64 auto_evaluation_id = 2;
+   */
+  autoEvaluationId: bigint;
+
+  constructor(data?: PartialMessage<DeleteAutoEvaluationByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.DeleteAutoEvaluationByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteAutoEvaluationByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteAutoEvaluationByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteAutoEvaluationByOrgIdRequest;
+
+  static equals(a: DeleteAutoEvaluationByOrgIdRequest | PlainMessage<DeleteAutoEvaluationByOrgIdRequest> | undefined, b: DeleteAutoEvaluationByOrgIdRequest | PlainMessage<DeleteAutoEvaluationByOrgIdRequest> | undefined): boolean;
+}
+

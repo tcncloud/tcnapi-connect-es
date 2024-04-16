@@ -320,3 +320,66 @@ export declare class GetScorecardResponse extends Message<GetScorecardResponse> 
   static equals(a: GetScorecardResponse | PlainMessage<GetScorecardResponse> | undefined, b: GetScorecardResponse | PlainMessage<GetScorecardResponse> | undefined): boolean;
 }
 
+/**
+ * ListScorecardsByOrgIdRequest is the request for listing scorecards by certain criteria.
+ *
+ * @generated from message api.v1alpha1.scorecards.ListScorecardsByOrgIdRequest
+ */
+export declare class ListScorecardsByOrgIdRequest extends Message<ListScorecardsByOrgIdRequest> {
+  /**
+   * Required. Specifies the org in which to list scorecards.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Optional. Results include any of the authors
+   *
+   * @generated from field: repeated string author_ids = 2;
+   */
+  authorIds: string[];
+
+  /**
+   * Optional. Results include any of the categories listed.
+   *
+   * @generated from field: repeated int64 category_ids = 3;
+   */
+  categoryIds: bigint[];
+
+  /**
+   * Optional. Results include scorecard in any of the given states.
+   *
+   * @generated from field: repeated api.commons.ScorecardState states = 4;
+   */
+  states: ScorecardState[];
+
+  /**
+   * Optional. Results include scorecard with any of the given types
+   *
+   * @generated from field: repeated api.commons.EvaluationType evaluation_types = 5;
+   */
+  evaluationTypes: EvaluationType[];
+
+  /**
+   * Optional. Results include scorecard with any of the given call types.
+   *
+   * @generated from field: repeated api.commons.CallType.Enum call_types = 6;
+   */
+  callTypes: CallType_Enum[];
+
+  constructor(data?: PartialMessage<ListScorecardsByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.ListScorecardsByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListScorecardsByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListScorecardsByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListScorecardsByOrgIdRequest;
+
+  static equals(a: ListScorecardsByOrgIdRequest | PlainMessage<ListScorecardsByOrgIdRequest> | undefined, b: ListScorecardsByOrgIdRequest | PlainMessage<ListScorecardsByOrgIdRequest> | undefined): boolean;
+}
+

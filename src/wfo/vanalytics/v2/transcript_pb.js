@@ -6,6 +6,7 @@
 import { DoubleValue, Duration, FieldMask, Int32Value, proto3, Timestamp, UInt32Value } from "@bufbuild/protobuf";
 import { CallType_Enum } from "../../../api/commons/acd_pb.js";
 import { AgentCallLog, AgentCallLogQuery } from "./agent_call_log_pb.js";
+import { Interval } from "../../../api/commons/vanalytics_pb.js";
 
 /**
  * An enumeration of transcript communication channels.
@@ -150,7 +151,23 @@ export const Sms = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "threads", kind: "message", T: Sms_Thread, repeated: true },
+    { no: 3, name: "phone", kind: "message", T: Sms_Phone },
+    { no: 4, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "campaign_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
+);
+
+/**
+ * The phone data.
+ *
+ * @generated from message wfo.vanalytics.v2.Sms.Phone
+ */
+export const Sms_Phone = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.Sms.Phone",
+  () => [
+    { no: 12, name: "raw", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "Sms_Phone"},
 );
 
 /**
@@ -203,7 +220,22 @@ export const Call = /*@__PURE__*/ proto3.makeMessageType(
     { no: 11, name: "hunt_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
     { no: 12, name: "number_format", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "agent_call_log", kind: "message", T: AgentCallLog },
+    { no: 14, name: "phone", kind: "message", T: Call_Phone },
+    { no: 16, name: "audio_bytes", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
+);
+
+/**
+ * The phone data.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Phone
+ */
+export const Call_Phone = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.Call.Phone",
+  () => [
+    { no: 12, name: "raw", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+  {localName: "Call_Phone"},
 );
 
 /**
@@ -1210,6 +1242,7 @@ export const TranscriptQuery_StartTime = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "lte", kind: "message", T: Timestamp },
     { no: 3, name: "gt", kind: "message", T: Timestamp },
     { no: 4, name: "lt", kind: "message", T: Timestamp },
+    { no: 5, name: "moment", kind: "message", T: Moment },
   ],
   {localName: "TranscriptQuery_StartTime"},
 );
@@ -1228,6 +1261,17 @@ export const TranscriptQuery_DeleteTime = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4, name: "lt", kind: "message", T: Timestamp },
   ],
   {localName: "TranscriptQuery_DeleteTime"},
+);
+
+/**
+ * @generated from message wfo.vanalytics.v2.Moment
+ */
+export const Moment = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.Moment",
+  () => [
+    { no: 1, name: "time_zone", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "interval", kind: "enum", T: proto3.getEnumType(Interval) },
+  ],
 );
 
 /**

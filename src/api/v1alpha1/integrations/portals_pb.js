@@ -4,8 +4,8 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task } from "./service_pb.js";
-import { FieldDefinition, Flow, FlowFieldLoc, PaymentFlow, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
+import { PluginInstance, PluginInstanceId, Portal, PortalConfig, PortalConfigId, PortalId, PortalLink, PortalLinkId, PortalType, Task, Template } from "./service_pb.js";
+import { FieldDefinition, Flow, FlowFieldLoc, FlowType, PaymentFlow, RequestMethod, VerificationFlow } from "../../commons/integrations/integrations_pb.js";
 
 /**
  * @generated from message api.v1alpha1.integrations.UpsertPortalConfigReq
@@ -521,6 +521,91 @@ export const ListAvailablePaymentFieldsRes = /*@__PURE__*/ proto3.makeMessageTyp
   "api.v1alpha1.integrations.ListAvailablePaymentFieldsRes",
   () => [
     { no: 2, name: "payment_fields", kind: "message", T: FieldDefinition, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalTypesReq
+ */
+export const ListPortalTypesReq = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.ListPortalTypesReq",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalTypesResponse
+ */
+export const ListPortalTypesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.ListPortalTypesResponse",
+  () => [
+    { no: 1, name: "values", kind: "message", T: PortalDefinition, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsReq
+ */
+export const ListPortalWorkflowsReq = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.ListPortalWorkflowsReq",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.ListPortalWorkflowsResponse
+ */
+export const ListPortalWorkflowsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.ListPortalWorkflowsResponse",
+  () => [
+    { no: 1, name: "values", kind: "message", T: WorkflowDefinition, repeated: true },
+  ],
+);
+
+/**
+ * this describes a portal type. any created portals must conform to a
+ * portal definition.
+ *
+ * @generated from message api.v1alpha1.integrations.PortalDefinition
+ */
+export const PortalDefinition = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.PortalDefinition",
+  () => [
+    { no: 2, name: "definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "workflow_requirements", kind: "message", T: WorkflowRequirement, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.integrations.WorkflowRequirement
+ */
+export const WorkflowRequirement = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.WorkflowRequirement",
+  () => [
+    { no: 1, name: "max_choices", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: "flow_type", kind: "enum", T: proto3.getEnumType(FlowType) },
+  ],
+);
+
+/**
+ * this describes the requirements to build a Flow entity
+ * that matches this description.  All created flows must
+ * conform to a FlowDefinition.
+ *
+ * @generated from message api.v1alpha1.integrations.WorkflowDefinition
+ */
+export const WorkflowDefinition = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.integrations.WorkflowDefinition",
+  () => [
+    { no: 1, name: "flow_type", kind: "enum", T: proto3.getEnumType(FlowType) },
+    { no: 2, name: "definition_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "method", kind: "enum", T: proto3.getEnumType(RequestMethod) },
+    { no: 4, name: "req_fields", kind: "message", T: FieldDefinition, repeated: true },
+    { no: 5, name: "res_fields", kind: "message", T: FieldDefinition, repeated: true },
+    { no: 6, name: "plugin_fields", kind: "message", T: FieldDefinition, repeated: true },
+    { no: 7, name: "link_fields", kind: "message", T: FieldDefinition, repeated: true },
+    { no: 8, name: "prev_fields", kind: "message", T: FieldDefinition, repeated: true },
+    { no: 9, name: "form_fields", kind: "message", T: FieldDefinition, repeated: true },
+    { no: 10, name: "template", kind: "message", T: Template },
+    { no: 11, name: "opts", kind: "message", T: FieldDefinition, repeated: true },
   ],
 );
 
