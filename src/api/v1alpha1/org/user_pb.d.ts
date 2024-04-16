@@ -4364,6 +4364,8 @@ export declare class RemoveGroupedUserIPRestrictionsResponse extends Message<Rem
  */
 export declare class ListUsersAllowedIpsRequest extends Message<ListUsersAllowedIpsRequest> {
   /**
+   * list of user ids to get mapping of restricted ips
+   *
    * @generated from field: repeated string user_ids = 1;
    */
   userIds: string[];
@@ -4388,6 +4390,8 @@ export declare class ListUsersAllowedIpsRequest extends Message<ListUsersAllowed
  */
 export declare class ListUsersAllowedIpsResponse extends Message<ListUsersAllowedIpsResponse> {
   /**
+   * user id to allowed ips map
+   *
    * @generated from field: map<string, api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps> user_allowed_ips_map = 1;
    */
   userAllowedIpsMap: { [key: string]: ListUsersAllowedIpsResponse_AllowedIps };
@@ -4412,6 +4416,8 @@ export declare class ListUsersAllowedIpsResponse extends Message<ListUsersAllowe
  */
 export declare class ListUsersAllowedIpsResponse_AllowedIps extends Message<ListUsersAllowedIpsResponse_AllowedIps> {
   /**
+   * list of ips for a given user
+   *
    * @generated from field: repeated string ips = 1;
    */
   ips: string[];
