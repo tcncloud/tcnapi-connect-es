@@ -441,3 +441,117 @@ export declare class PreviewEvaluationScoreResponse extends Message<PreviewEvalu
   static equals(a: PreviewEvaluationScoreResponse | PlainMessage<PreviewEvaluationScoreResponse> | undefined, b: PreviewEvaluationScoreResponse | PlainMessage<PreviewEvaluationScoreResponse> | undefined): boolean;
 }
 
+/**
+ * ListEvaluationsByOrgIdRequest is request to get list of evaluations
+ *
+ * @generated from message api.v1alpha1.scorecards.ListEvaluationsByOrgIdRequest
+ */
+export declare class ListEvaluationsByOrgIdRequest extends Message<ListEvaluationsByOrgIdRequest> {
+  /**
+   * Required. Specifies the org id to filter evaluations by.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * optional, list by scorer_id
+   *
+   * @generated from field: repeated string scorer_id = 2;
+   */
+  scorerId: string[];
+
+  /**
+   * optional, filter completed_at by a specific range
+   *
+   * @generated from field: api.commons.TimeFilter completed_at = 3;
+   */
+  completedAt?: TimeFilter;
+
+  /**
+   * optional, list by category_ids
+   *
+   * @generated from field: repeated int64 category_ids = 4;
+   */
+  categoryIds: bigint[];
+
+  /**
+   * Optional. List by agent user ids.
+   *
+   * @generated from field: repeated string agent_user_ids = 5;
+   */
+  agentUserIds: string[];
+
+  /**
+   * Optional. List by scorecard_ids
+   *
+   * @generated from field: repeated int64 scorecard_ids = 6;
+   */
+  scorecardIds: bigint[];
+
+  /**
+   * Optional. Fields to return. Defaults to all evaluation fields (no sub entities).
+   *
+   * Example selecting score, section points, and question answers:
+   * {
+   *   paths: [
+   *     "score",
+   *     "evaluation_section.points",
+   *     "evaluation_section.evaluation_question.answers"
+   *   ]
+   * }
+   *
+   * @generated from field: google.protobuf.FieldMask return_fields = 10;
+   */
+  returnFields?: FieldMask;
+
+  constructor(data?: PartialMessage<ListEvaluationsByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.ListEvaluationsByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEvaluationsByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEvaluationsByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEvaluationsByOrgIdRequest;
+
+  static equals(a: ListEvaluationsByOrgIdRequest | PlainMessage<ListEvaluationsByOrgIdRequest> | undefined, b: ListEvaluationsByOrgIdRequest | PlainMessage<ListEvaluationsByOrgIdRequest> | undefined): boolean;
+}
+
+/**
+ * DeleteEvaluationByOrgIdRequest is request to delete an evaluation
+ *
+ * @generated from message api.v1alpha1.scorecards.DeleteEvaluationByOrgIdRequest
+ */
+export declare class DeleteEvaluationByOrgIdRequest extends Message<DeleteEvaluationByOrgIdRequest> {
+  /**
+   * Required. Specifies the org in which to delete the evaluation.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Required - unique id of evaluation to get
+   *
+   * @generated from field: int64 evaluation_id = 2;
+   */
+  evaluationId: bigint;
+
+  constructor(data?: PartialMessage<DeleteEvaluationByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.DeleteEvaluationByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteEvaluationByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteEvaluationByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteEvaluationByOrgIdRequest;
+
+  static equals(a: DeleteEvaluationByOrgIdRequest | PlainMessage<DeleteEvaluationByOrgIdRequest> | undefined, b: DeleteEvaluationByOrgIdRequest | PlainMessage<DeleteEvaluationByOrgIdRequest> | undefined): boolean;
+}
+
