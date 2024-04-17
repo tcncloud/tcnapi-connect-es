@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddEntityRefRequest, AddEntityRefResponse, AssignProjectTemplateRequest, AssignProjectTemplateResponse, AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, CreateTicketTemplateRequest, CreateTicketTemplateResponse, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, EditTicketTemplateRequest, EditTicketTemplateResponse, GetActionTypeRequest, GetActionTypeResponse, GetPhoneNumberTypeRequest, GetPhoneNumberTypeResponse, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListEntityRefsByTicketRequest, ListEntityRefsByTicketResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsByEntityRefRequest, ListTicketsByEntityRefResponse, ListTicketsReq, ListTicketsRes, ListTicketTemplateRequest, ListTicketTemplateResponse, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignProjectTemplateRequest, AssignProjectTemplateResponse, AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, CreateTicketTemplateRequest, CreateTicketTemplateResponse, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, EditTicketTemplateRequest, EditTicketTemplateResponse, GetActionTypeRequest, GetActionTypeResponse, GetPhoneNumberTypeRequest, GetPhoneNumberTypeResponse, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListTicketTemplateRequest, ListTicketTemplateResponse, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -356,39 +356,6 @@ export const Tickets = {
       name: "GetPhoneNumberType",
       I: GetPhoneNumberTypeRequest,
       O: GetPhoneNumberTypeResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Public method to addEntityRef
-     *
-     * @generated from rpc api.v1alpha1.tickets.Tickets.AddEntityRef
-     */
-    addEntityRef: {
-      name: "AddEntityRef",
-      I: AddEntityRefRequest,
-      O: AddEntityRefResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Public method to listTicketsByEntityRef
-     *
-     * @generated from rpc api.v1alpha1.tickets.Tickets.ListTicketsByEntityRef
-     */
-    listTicketsByEntityRef: {
-      name: "ListTicketsByEntityRef",
-      I: ListTicketsByEntityRefRequest,
-      O: ListTicketsByEntityRefResponse,
-      kind: MethodKind.Unary,
-    },
-    /**
-     * Public method to listEntityRefsByTicket
-     *
-     * @generated from rpc api.v1alpha1.tickets.Tickets.ListEntityRefsByTicket
-     */
-    listEntityRefsByTicket: {
-      name: "ListEntityRefsByTicket",
-      I: ListEntityRefsByTicketRequest,
-      O: ListEntityRefsByTicketResponse,
       kind: MethodKind.Unary,
     },
   }

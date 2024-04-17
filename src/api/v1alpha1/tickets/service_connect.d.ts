@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddEntityRefRequest, AddEntityRefResponse, AssignProjectTemplateRequest, AssignProjectTemplateResponse, AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, CreateTicketTemplateRequest, CreateTicketTemplateResponse, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, EditTicketTemplateRequest, EditTicketTemplateResponse, GetActionTypeRequest, GetActionTypeResponse, GetPhoneNumberTypeRequest, GetPhoneNumberTypeResponse, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListEntityRefsByTicketRequest, ListEntityRefsByTicketResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsByEntityRefRequest, ListTicketsByEntityRefResponse, ListTicketsReq, ListTicketsRes, ListTicketTemplateRequest, ListTicketTemplateResponse, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
+import { AssignProjectTemplateRequest, AssignProjectTemplateResponse, AssignTicketActionRequest, AssignTicketActionResponse, AssignTicketReq, AssignTicketRes, ChangeTicketStatusRequest, ChangeTicketStatusResponse, CloseTicketActionRequest, CloseTicketActionResponse, CloseTicketReq, CloseTicketRes, CreateCommentReq, CreateCommentRes, CreateSelfAssignReq, CreateSelfAssignRes, CreateSlaReq, CreateSlaRes, CreateTicketActionRequest, CreateTicketActionResponse, CreateTicketReq, CreateTicketRes, CreateTicketTemplateRequest, CreateTicketTemplateResponse, EditMaskTicketReq, EditMaskTicketRes, EditTicketReq, EditTicketRes, EditTicketTemplateRequest, EditTicketTemplateResponse, GetActionTypeRequest, GetActionTypeResponse, GetPhoneNumberTypeRequest, GetPhoneNumberTypeResponse, ListAllocatedTicketReq, ListAllocatedTicketRes, ListAvailableAgentTicketsRequest, ListAvailableAgentTicketsResponse, ListSkillsRequest, ListSkillsResponse, ListSlaConditionReq, ListSlaConditionRes, ListSlaReq, ListSlaRes, ListTicketsReq, ListTicketsRes, ListTicketTemplateRequest, ListTicketTemplateResponse, ListUsersRequest, ListUsersResponse, ReplyCommentReq, ReplyCommentRes, UpdateSlaReq, UpdateSlaRes, ViewTicketReq, ViewTicketRes } from "./ticket_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { EnableProjectReq, EnableProjectRes, ListEnabledProjectsReq, ListEnabledProjectsRes, ListTicketAuditLogReq, ListTicketAuditLogRes } from "./project_pb.js";
 
@@ -356,39 +356,6 @@ export declare const Tickets: {
       readonly name: "GetPhoneNumberType",
       readonly I: typeof GetPhoneNumberTypeRequest,
       readonly O: typeof GetPhoneNumberTypeResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Public method to addEntityRef
-     *
-     * @generated from rpc api.v1alpha1.tickets.Tickets.AddEntityRef
-     */
-    readonly addEntityRef: {
-      readonly name: "AddEntityRef",
-      readonly I: typeof AddEntityRefRequest,
-      readonly O: typeof AddEntityRefResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Public method to listTicketsByEntityRef
-     *
-     * @generated from rpc api.v1alpha1.tickets.Tickets.ListTicketsByEntityRef
-     */
-    readonly listTicketsByEntityRef: {
-      readonly name: "ListTicketsByEntityRef",
-      readonly I: typeof ListTicketsByEntityRefRequest,
-      readonly O: typeof ListTicketsByEntityRefResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * Public method to listEntityRefsByTicket
-     *
-     * @generated from rpc api.v1alpha1.tickets.Tickets.ListEntityRefsByTicket
-     */
-    readonly listEntityRefsByTicket: {
-      readonly name: "ListEntityRefsByTicket",
-      readonly I: typeof ListEntityRefsByTicketRequest,
-      readonly O: typeof ListEntityRefsByTicketResponse,
       readonly kind: MethodKind.Unary,
     },
   }
