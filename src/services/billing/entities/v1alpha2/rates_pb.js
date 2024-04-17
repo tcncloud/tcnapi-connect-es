@@ -94,6 +94,8 @@ export const RateDefinition = /*@__PURE__*/ proto3.makeMessageType(
     { no: 10, name: "effective_time", kind: "message", T: Timestamp },
     { no: 11, name: "config", kind: "message", T: RateDefinitionConfig },
     { no: 12, name: "group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 13, name: "config_sha", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: "thread_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

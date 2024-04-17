@@ -7,6 +7,7 @@ import type { BinaryReadOptions, Duration, FieldList, FieldMask, JsonReadOptions
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { CallType_Enum } from "../../../api/commons/acd_pb.js";
 import type { AgentCallLog, AgentCallLogQuery } from "./agent_call_log_pb.js";
+import type { Interval } from "../../../api/commons/vanalytics_pb.js";
 
 /**
  * An enumeration of transcript communication channels.
@@ -436,6 +437,27 @@ export declare class Sms extends Message<Sms> {
    */
   threads: Sms_Thread[];
 
+  /**
+   * The phone data.
+   *
+   * @generated from field: wfo.vanalytics.v2.Sms.Phone phone = 3;
+   */
+  phone?: Sms_Phone;
+
+  /**
+   * The phone number of the agent.
+   *
+   * @generated from field: string caller_id = 4;
+   */
+  callerId: string;
+
+  /**
+   * The omni campain this sms belongs to.
+   *
+   * @generated from field: int64 campaign_sid = 5;
+   */
+  campaignSid: bigint;
+
   constructor(data?: PartialMessage<Sms>);
 
   static readonly runtime: typeof proto3;
@@ -449,6 +471,34 @@ export declare class Sms extends Message<Sms> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Sms;
 
   static equals(a: Sms | PlainMessage<Sms> | undefined, b: Sms | PlainMessage<Sms> | undefined): boolean;
+}
+
+/**
+ * The phone data.
+ *
+ * @generated from message wfo.vanalytics.v2.Sms.Phone
+ */
+export declare class Sms_Phone extends Message<Sms_Phone> {
+  /**
+   * The raw phone number.
+   *
+   * @generated from field: string raw = 12;
+   */
+  raw: string;
+
+  constructor(data?: PartialMessage<Sms_Phone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Sms.Phone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Sms_Phone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Sms_Phone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Sms_Phone;
+
+  static equals(a: Sms_Phone | PlainMessage<Sms_Phone> | undefined, b: Sms_Phone | PlainMessage<Sms_Phone> | undefined): boolean;
 }
 
 /**
@@ -625,6 +675,20 @@ export declare class Call extends Message<Call> {
    */
   agentCallLog?: AgentCallLog;
 
+  /**
+   * The phone data.
+   *
+   * @generated from field: wfo.vanalytics.v2.Call.Phone phone = 14;
+   */
+  phone?: Call_Phone;
+
+  /**
+   * The audio bytes for this call.
+   *
+   * @generated from field: int64 audio_bytes = 16;
+   */
+  audioBytes: bigint;
+
   constructor(data?: PartialMessage<Call>);
 
   static readonly runtime: typeof proto3;
@@ -638,6 +702,34 @@ export declare class Call extends Message<Call> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call;
 
   static equals(a: Call | PlainMessage<Call> | undefined, b: Call | PlainMessage<Call> | undefined): boolean;
+}
+
+/**
+ * The phone data.
+ *
+ * @generated from message wfo.vanalytics.v2.Call.Phone
+ */
+export declare class Call_Phone extends Message<Call_Phone> {
+  /**
+   * The raw phone number.
+   *
+   * @generated from field: string raw = 12;
+   */
+  raw: string;
+
+  constructor(data?: PartialMessage<Call_Phone>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Call.Phone";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Call_Phone;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Call_Phone;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Call_Phone;
+
+  static equals(a: Call_Phone | PlainMessage<Call_Phone> | undefined, b: Call_Phone | PlainMessage<Call_Phone> | undefined): boolean;
 }
 
 /**
@@ -3400,6 +3492,13 @@ export declare class TranscriptQuery_StartTime extends Message<TranscriptQuery_S
    */
   lt?: Timestamp;
 
+  /**
+   * Optional. Dynamic time period to match.
+   *
+   * @generated from field: wfo.vanalytics.v2.Moment moment = 5;
+   */
+  moment?: Moment;
+
   constructor(data?: PartialMessage<TranscriptQuery_StartTime>);
 
   static readonly runtime: typeof proto3;
@@ -3462,6 +3561,40 @@ export declare class TranscriptQuery_DeleteTime extends Message<TranscriptQuery_
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptQuery_DeleteTime;
 
   static equals(a: TranscriptQuery_DeleteTime | PlainMessage<TranscriptQuery_DeleteTime> | undefined, b: TranscriptQuery_DeleteTime | PlainMessage<TranscriptQuery_DeleteTime> | undefined): boolean;
+}
+
+/**
+ * @generated from message wfo.vanalytics.v2.Moment
+ */
+export declare class Moment extends Message<Moment> {
+  /**
+   * Required. Timezone of the client.
+   *
+   * @generated from field: string time_zone = 1;
+   */
+  timeZone: string;
+
+  /**
+   * Optional. Dynamic time period to match which
+   * defaults to today.
+   *
+   * @generated from field: api.commons.Interval interval = 2;
+   */
+  interval: Interval;
+
+  constructor(data?: PartialMessage<Moment>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.Moment";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Moment;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Moment;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Moment;
+
+  static equals(a: Moment | PlainMessage<Moment> | undefined, b: Moment | PlainMessage<Moment> | undefined): boolean;
 }
 
 /**

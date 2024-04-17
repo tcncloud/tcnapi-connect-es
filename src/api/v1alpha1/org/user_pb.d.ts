@@ -4359,3 +4359,81 @@ export declare class RemoveGroupedUserIPRestrictionsResponse extends Message<Rem
   static equals(a: RemoveGroupedUserIPRestrictionsResponse | PlainMessage<RemoveGroupedUserIPRestrictionsResponse> | undefined, b: RemoveGroupedUserIPRestrictionsResponse | PlainMessage<RemoveGroupedUserIPRestrictionsResponse> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v1alpha1.org.ListUsersAllowedIpsRequest
+ */
+export declare class ListUsersAllowedIpsRequest extends Message<ListUsersAllowedIpsRequest> {
+  /**
+   * list of user ids to get mapping of restricted ips
+   *
+   * @generated from field: repeated string user_ids = 1;
+   */
+  userIds: string[];
+
+  constructor(data?: PartialMessage<ListUsersAllowedIpsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListUsersAllowedIpsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersAllowedIpsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersAllowedIpsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersAllowedIpsRequest;
+
+  static equals(a: ListUsersAllowedIpsRequest | PlainMessage<ListUsersAllowedIpsRequest> | undefined, b: ListUsersAllowedIpsRequest | PlainMessage<ListUsersAllowedIpsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.org.ListUsersAllowedIpsResponse
+ */
+export declare class ListUsersAllowedIpsResponse extends Message<ListUsersAllowedIpsResponse> {
+  /**
+   * user id to allowed ips map
+   *
+   * @generated from field: map<string, api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps> user_allowed_ips_map = 1;
+   */
+  userAllowedIpsMap: { [key: string]: ListUsersAllowedIpsResponse_AllowedIps };
+
+  constructor(data?: PartialMessage<ListUsersAllowedIpsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListUsersAllowedIpsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersAllowedIpsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersAllowedIpsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersAllowedIpsResponse;
+
+  static equals(a: ListUsersAllowedIpsResponse | PlainMessage<ListUsersAllowedIpsResponse> | undefined, b: ListUsersAllowedIpsResponse | PlainMessage<ListUsersAllowedIpsResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps
+ */
+export declare class ListUsersAllowedIpsResponse_AllowedIps extends Message<ListUsersAllowedIpsResponse_AllowedIps> {
+  /**
+   * list of ips for a given user
+   *
+   * @generated from field: repeated string ips = 1;
+   */
+  ips: string[];
+
+  constructor(data?: PartialMessage<ListUsersAllowedIpsResponse_AllowedIps>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListUsersAllowedIpsResponse_AllowedIps;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListUsersAllowedIpsResponse_AllowedIps;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListUsersAllowedIpsResponse_AllowedIps;
+
+  static equals(a: ListUsersAllowedIpsResponse_AllowedIps | PlainMessage<ListUsersAllowedIpsResponse_AllowedIps> | undefined, b: ListUsersAllowedIpsResponse_AllowedIps | PlainMessage<ListUsersAllowedIpsResponse_AllowedIps> | undefined): boolean;
+}
+

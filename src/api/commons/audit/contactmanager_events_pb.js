@@ -4,7 +4,6 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { ContactManagerEntryVal } from "../../v1alpha1/contactmanager/contactmanager_pb.js";
 
 /**
  * @generated from message api.commons.audit.ContactManagerEntryAddEvent
@@ -19,11 +18,7 @@ export const ContactManagerEntryAddEvent = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const ContactManagerEntryGetEncEvent = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.audit.ContactManagerEntryGetEncEvent",
-  () => [
-    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "contact_manager_entry_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 3, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
+  [],
 );
 
 /**
@@ -31,10 +26,7 @@ export const ContactManagerEntryGetEncEvent = /*@__PURE__*/ proto3.makeMessageTy
  */
 export const ContactManagerDeleteEvent = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.audit.ContactManagerDeleteEvent",
-  () => [
-    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "deleted_by", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ],
+  [],
 );
 
 /**
@@ -42,12 +34,6 @@ export const ContactManagerDeleteEvent = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const ContactManagerKycEvent = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.audit.ContactManagerKycEvent",
-  () => [
-    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "kyc_details", kind: "message", T: ContactManagerEntryVal, repeated: true },
-    { no: 3, name: "project_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "created_by_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "is_encrypted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
+  [],
 );
 

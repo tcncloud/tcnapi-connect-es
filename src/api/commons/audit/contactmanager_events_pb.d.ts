@@ -5,7 +5,6 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { ContactManagerEntryVal } from "../../v1alpha1/contactmanager/contactmanager_pb.js";
 
 /**
  * @generated from message api.commons.audit.ContactManagerEntryAddEvent
@@ -30,21 +29,6 @@ export declare class ContactManagerEntryAddEvent extends Message<ContactManagerE
  * @generated from message api.commons.audit.ContactManagerEntryGetEncEvent
  */
 export declare class ContactManagerEntryGetEncEvent extends Message<ContactManagerEntryGetEncEvent> {
-  /**
-   * @generated from field: int64 contact_manager_list_id = 1;
-   */
-  contactManagerListId: bigint;
-
-  /**
-   * @generated from field: int64 contact_manager_entry_id = 2;
-   */
-  contactManagerEntryId: bigint;
-
-  /**
-   * @generated from field: string created_by_id = 3;
-   */
-  createdById: string;
-
   constructor(data?: PartialMessage<ContactManagerEntryGetEncEvent>);
 
   static readonly runtime: typeof proto3;
@@ -64,16 +48,6 @@ export declare class ContactManagerEntryGetEncEvent extends Message<ContactManag
  * @generated from message api.commons.audit.ContactManagerDeleteEvent
  */
 export declare class ContactManagerDeleteEvent extends Message<ContactManagerDeleteEvent> {
-  /**
-   * @generated from field: int64 contact_manager_list_id = 1;
-   */
-  contactManagerListId: bigint;
-
-  /**
-   * @generated from field: string deleted_by = 2;
-   */
-  deletedBy: string;
-
   constructor(data?: PartialMessage<ContactManagerDeleteEvent>);
 
   static readonly runtime: typeof proto3;
@@ -93,31 +67,6 @@ export declare class ContactManagerDeleteEvent extends Message<ContactManagerDel
  * @generated from message api.commons.audit.ContactManagerKycEvent
  */
 export declare class ContactManagerKycEvent extends Message<ContactManagerKycEvent> {
-  /**
-   * @generated from field: int64 contact_manager_list_id = 1;
-   */
-  contactManagerListId: bigint;
-
-  /**
-   * @generated from field: repeated api.v1alpha1.contactmanager.ContactManagerEntryVal kyc_details = 2;
-   */
-  kycDetails: ContactManagerEntryVal[];
-
-  /**
-   * @generated from field: string project_id = 3;
-   */
-  projectId: string;
-
-  /**
-   * @generated from field: string created_by_id = 4;
-   */
-  createdById: string;
-
-  /**
-   * @generated from field: bool is_encrypted = 5;
-   */
-  isEncrypted: boolean;
-
   constructor(data?: PartialMessage<ContactManagerKycEvent>);
 
   static readonly runtime: typeof proto3;

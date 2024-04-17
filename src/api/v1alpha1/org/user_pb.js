@@ -1428,3 +1428,34 @@ export const RemoveGroupedUserIPRestrictionsResponse = /*@__PURE__*/ proto3.make
   [],
 );
 
+/**
+ * @generated from message api.v1alpha1.org.ListUsersAllowedIpsRequest
+ */
+export const ListUsersAllowedIpsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.ListUsersAllowedIpsRequest",
+  () => [
+    { no: 1, name: "user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.org.ListUsersAllowedIpsResponse
+ */
+export const ListUsersAllowedIpsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.ListUsersAllowedIpsResponse",
+  () => [
+    { no: 1, name: "user_allowed_ips_map", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: ListUsersAllowedIpsResponse_AllowedIps} },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps
+ */
+export const ListUsersAllowedIpsResponse_AllowedIps = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.ListUsersAllowedIpsResponse.AllowedIps",
+  () => [
+    { no: 1, name: "ips", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+  {localName: "ListUsersAllowedIpsResponse_AllowedIps"},
+);
+
