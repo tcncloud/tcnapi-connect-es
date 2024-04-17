@@ -1881,13 +1881,6 @@ export declare class AddEntityRefRequest extends Message<AddEntityRefRequest> {
  * @generated from message api.v1alpha1.tickets.AddEntityRefResponse
  */
 export declare class AddEntityRefResponse extends Message<AddEntityRefResponse> {
-  /**
-   * ack success/failure
-   *
-   * @generated from field: bool is_added = 1;
-   */
-  isAdded: boolean;
-
   constructor(data?: PartialMessage<AddEntityRefResponse>);
 
   static readonly runtime: typeof proto3;
@@ -1956,11 +1949,11 @@ export declare class ListEntityRefsByTicketResponse extends Message<ListEntityRe
  */
 export declare class ListTicketsByEntityRefRequest extends Message<ListTicketsByEntityRefRequest> {
   /**
-   * identifies any entity associated with a ticket
+   * uri that uniquely identifies any entity associated with a ticket
    *
-   * @generated from field: int64 entity_ref_id = 1;
+   * @generated from field: string uri = 1;
    */
-  entityRefId: bigint;
+  uri: string;
 
   constructor(data?: PartialMessage<ListTicketsByEntityRefRequest>);
 
@@ -2026,11 +2019,6 @@ export declare class EntityRef extends Message<EntityRef> {
    * @generated from field: string uri = 4;
    */
   uri: string;
-
-  /**
-   * @generated from field: bool deleted = 5;
-   */
-  deleted: boolean;
 
   constructor(data?: PartialMessage<EntityRef>);
 

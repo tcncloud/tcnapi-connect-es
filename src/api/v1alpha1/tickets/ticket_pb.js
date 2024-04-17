@@ -751,9 +751,7 @@ export const AddEntityRefRequest = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const AddEntityRefResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.tickets.AddEntityRefResponse",
-  () => [
-    { no: 1, name: "is_added", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-  ],
+  [],
 );
 
 /**
@@ -782,7 +780,7 @@ export const ListEntityRefsByTicketResponse = /*@__PURE__*/ proto3.makeMessageTy
 export const ListTicketsByEntityRefRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.tickets.ListTicketsByEntityRefRequest",
   () => [
-    { no: 1, name: "entity_ref_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -808,7 +806,6 @@ export const EntityRef = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "region_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "ticket_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
