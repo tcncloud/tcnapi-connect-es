@@ -293,9 +293,15 @@ export declare class ListAsmUserDetailsResponse extends Message<ListAsmUserDetai
   /**
    * list of Sessions in the system with enrichments
    *
-   * @generated from field: repeated services.omnichannel.asm.entities.v1alpha1.AsmUserDetails sessions = 1;
+   * @generated from field: repeated services.omnichannel.asm.entities.v1alpha1.AsmUserDetails sessions = 1 [deprecated = true];
+   * @deprecated
    */
   sessions: AsmUserDetails[];
+
+  /**
+   * @generated from field: repeated services.omnichannel.asm.entities.v1alpha1.AsmUserDetails asm_user_details = 2;
+   */
+  asmUserDetails: AsmUserDetails[];
 
   constructor(data?: PartialMessage<ListAsmUserDetailsResponse>);
 

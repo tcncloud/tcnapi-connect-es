@@ -117,6 +117,7 @@ export const ListAsmUserDetailsResponse = /*@__PURE__*/ proto3.makeMessageType(
   "services.omnichannel.asm.v1alpha1.ListAsmUserDetailsResponse",
   () => [
     { no: 1, name: "sessions", kind: "message", T: AsmUserDetails, repeated: true },
+    { no: 2, name: "asm_user_details", kind: "message", T: AsmUserDetails, repeated: true },
   ],
 );
 
