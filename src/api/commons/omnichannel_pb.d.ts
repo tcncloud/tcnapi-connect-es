@@ -481,6 +481,33 @@ export declare enum AgentConversationAssignmentType {
 }
 
 /**
+ * MessageFormat -
+ *
+ * @generated from enum api.commons.MessageFormat
+ */
+export declare enum MessageFormat {
+  /**
+   * default (plain text)
+   *
+   * @generated from enum value: MESSAGE_FORMAT_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: MESSAGE_FORMAT_HTML = 1;
+   */
+  HTML = 1,
+
+  /**
+   * For forms from flows; should be sanitized, but keep form elements
+   * The frontend handles the form logic (the message can't have js)
+   *
+   * @generated from enum value: MESSAGE_FORMAT_HTML_FORM = 2;
+   */
+  HTML_FORM = 2,
+}
+
+/**
  * @generated from enum api.commons.OmniMessageStatus
  */
 export declare enum OmniMessageStatus {
@@ -1419,6 +1446,21 @@ export declare class OmniCampaignModuleConfig extends Message<OmniCampaignModule
    */
   providerMetadata: { [key: string]: string };
 
+  /**
+   * The country code and postal code field together determine timezone for email time based compliance rulesets
+   * country code
+   *
+   * @generated from field: int32 country_code = 24;
+   */
+  countryCode: number;
+
+  /**
+   * postal code field
+   *
+   * @generated from field: string postal_code_field = 25;
+   */
+  postalCodeField: string;
+
   constructor(data?: PartialMessage<OmniCampaignModuleConfig>);
 
   static readonly runtime: typeof proto3;
@@ -1918,6 +1960,13 @@ export declare class AgentChatWidgetMessage extends Message<AgentChatWidgetMessa
    */
   senderType: OmniSenderType;
 
+  /**
+   * the message format
+   *
+   * @generated from field: api.commons.MessageFormat message_format = 7;
+   */
+  messageFormat: MessageFormat;
+
   constructor(data?: PartialMessage<AgentChatWidgetMessage>);
 
   static readonly runtime: typeof proto3;
@@ -2068,6 +2117,14 @@ export declare class OmniMessagePayload extends Message<OmniMessagePayload> {
      */
     value: OmniCannedMessage;
     case: "cannedMessage";
+  } | {
+    /**
+     * data message
+     *
+     * @generated from field: api.commons.OmniDataMessage data_message = 116;
+     */
+    value: OmniDataMessage;
+    case: "dataMessage";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<OmniMessagePayload>);
@@ -2659,6 +2716,39 @@ export declare class OmniCannedMessage extends Message<OmniCannedMessage> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniCannedMessage;
 
   static equals(a: OmniCannedMessage | PlainMessage<OmniCannedMessage> | undefined, b: OmniCannedMessage | PlainMessage<OmniCannedMessage> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.OmniDataMessage
+ */
+export declare class OmniDataMessage extends Message<OmniDataMessage> {
+  /**
+   * Data for flows, should always be json
+   *
+   * @generated from field: string message = 1;
+   */
+  message: string;
+
+  /**
+   * Message id of the html form this is in reply to
+   *
+   * @generated from field: int64 message_sid = 2 [jstype = JS_STRING];
+   */
+  messageSid: string;
+
+  constructor(data?: PartialMessage<OmniDataMessage>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.OmniDataMessage";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): OmniDataMessage;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): OmniDataMessage;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): OmniDataMessage;
+
+  static equals(a: OmniDataMessage | PlainMessage<OmniDataMessage> | undefined, b: OmniDataMessage | PlainMessage<OmniDataMessage> | undefined): boolean;
 }
 
 /**
