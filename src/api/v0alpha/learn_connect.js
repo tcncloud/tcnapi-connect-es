@@ -17,7 +17,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ContentByVersionReq, ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, SearchContentByVersionReq, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateByVersionReq, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
+import { ContentByVersionReq, ContentEditorDataReq, ContentEditorDataRes, ContentReq, ContentRes, CreateEditVersionReq, CreateEditVersionRes, DeleteLearnPagesReq, DeleteLearnPagesRes, DeleteStandaloneReq, DeleteStandaloneRes, ExistReq, ExistRes, ExportManyReq, ExportRes, PublishVersionReq, PublishVersionRes, ReviewFileVersionsReq, ReviewFileVersionsRes, ReviewVersionReq, ReviewVersionRes, SearchContentByVersionReq, SearchContentReq, SearchRes, SnippetReq, SnippetRes, StandaloneReq, StandaloneRes, StoreStaticImageReq, StoreStaticImageRes, UpdateByVersionReq, UpdateReq, UpdateRes, UploadDynamicScreenshotReq, UploadDynamicScreenshotRes } from "./learn_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -230,6 +230,28 @@ export const Learn = {
       I: SearchContentByVersionReq,
       O: SearchRes,
       kind: MethodKind.ServerStreaming,
+    },
+    /**
+     * return diff by comparing file contens from any version
+     *
+     * @generated from rpc api.v0alpha.Learn.ReviewFileVersions
+     */
+    reviewFileVersions: {
+      name: "ReviewFileVersions",
+      I: ReviewFileVersionsReq,
+      O: ReviewFileVersionsRes,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * returns list of file details after comparing different versions
+     *
+     * @generated from rpc api.v0alpha.Learn.ReviewVersion
+     */
+    reviewVersion: {
+      name: "ReviewVersion",
+      I: ReviewVersionReq,
+      O: ReviewVersionRes,
+      kind: MethodKind.Unary,
     },
   }
 };

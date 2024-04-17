@@ -5,12 +5,12 @@
 
 import { ArchiveOrganizationRequest, ArchiveOrganizationResponse, ConvertOrgToManualRequest, ConvertOrgToManualResponse, CreateOrganizationRequest, CreateOrganizationResponse, GetOrganizationByIdRequest, GetOrganizationByIdResponse, GetOrganizationRequest, GetOrganizationResponse, ListAllOrganizationsGloballyRequest, ListAllOrganizationsGloballyResponse, ListArchivedOrganizationsRequest, ListArchivedOrganizationsResponse, ListOrganizationsByRegionRequest, ListOrganizationsByRegionResponse, ListOwnedOrgsRequest, ListOwnedOrgsResponse, UnArchiveOrganizationRequest, UnArchiveOrganizationResponse, UpdateOrganizationRequest, UpdateOrganizationResponse } from "./organization_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { AcceptLinkbackRecordingTermsRequest, AcceptLinkbackRecordingTermsResponse, ClearEmailUnsubscribeAcknowledgementRequest, ClearEmailUnsubscribeAcknowledgementResponse, CreateBusinessHoursRequest, CreateBusinessHoursResponse, DeleteBusinessHoursRequest, DeleteBusinessHoursResponse, GetAdminClientPreferencesRequest, GetAdminClientPreferencesResponse, GetAgentPreferencesRequest, GetAgentPreferencesResponse, GetAuthenticationPreferencesRequest, GetAuthenticationPreferencesResponse, GetBroadcastPreferencesRequest, GetBroadcastPreferencesResponse, GetBusinessHoursRequest, GetBusinessHoursResponse, GetBusinessPreferencesRequest, GetBusinessPreferencesResponse, GetCompliancePreferencesRequest, GetCompliancePreferencesResponse, GetContactPreferencesRequest, GetContactPreferencesResponse, GetDashboardGeneralPreferencesRequest, GetDashboardGeneralPreferencesResponse, GetDashboardQueuePreferencesRequest, GetDashboardQueuePreferencesResponse, GetEmailSmsPreferencesRequest, GetEmailSmsPreferencesResponse, GetEndOfDayPreferencesRequest, GetEndOfDayPreferencesResponse, GetFilterPreferencesRequest, GetFilterPreferencesResponse, GetOrganizationPreferencesRequest, GetOrganizationPreferencesResponse, GetPhonePreferencesRequest, GetPhonePreferencesResponse, GetRecordingPreferencesRequest, GetRecordingPreferencesResponse, GetSchedulePreferencesRequest, GetSchedulePreferencesResponse, GetScorecardsPreferencesRequest, GetScorecardsPreferencesResponse, GetVoiceAnalyticsPreferencesRequest, GetVoiceAnalyticsPreferencesResponse, GetWebhookPreferencesRequest, GetWebhookPreferencesResponse, LinkbackUpdateBroadcastTemplatesRequest, LinkbackUpdateBroadcastTemplatesResponse, ListBusinessHoursRequest, ListBusinessHoursResponse, ListVoiceAnalyticsPreferencesRequest, ListVoiceAnalyticsPreferencesResponse, RecordEmailUnsubscribeAcknowledgementRequest, RecordEmailUnsubscribeAcknowledgementResponse, UpdateAdminBusinessPreferencesRequest, UpdateAdminBusinessPreferencesResponse, UpdateAdminClientPreferencesRequest, UpdateAdminClientPreferencesResponse, UpdateAgentPreferencesRequest, UpdateAgentPreferencesResponse, UpdateAuthenticationPreferencesRequest, UpdateAuthenticationPreferencesResponse, UpdateBroadcastPreferencesRequest, UpdateBroadcastPreferencesResponse, UpdateBusinessHoursRequest, UpdateBusinessHoursResponse, UpdateBusinessPreferencesRequest, UpdateBusinessPreferencesResponse, UpdateCompliancePreferencesRequest, UpdateCompliancePreferencesResponse, UpdateContactPreferencesRequest, UpdateContactPreferencesResponse, UpdateDashboardGeneralPreferencesRequest, UpdateDashboardGeneralPreferencesResponse, UpdateDashboardQueuePreferencesRequest, UpdateDashboardQueuePreferencesResponse, UpdateEmailSmsPreferencesRequest, UpdateEmailSmsPreferencesResponse, UpdateEndOfDayPreferencesRequest, UpdateEndOfDayPreferencesResponse, UpdateFilterPreferencesRequest, UpdateFilterPreferencesResponse, UpdateOrganizationPreferencesRequest, UpdateOrganizationPreferencesResponse, UpdatePhonePreferencesRequest, UpdatePhonePreferencesResponse, UpdateRecordingPreferencesRequest, UpdateRecordingPreferencesResponse, UpdateSchedulePreferencesRequest, UpdateSchedulePreferencesResponse, UpdateScorecardsPreferencesRequest, UpdateScorecardsPreferencesResponse, UpdateVoiceAnalyticsPreferencesRequest, UpdateVoiceAnalyticsPreferencesResponse, UpdateWebhookPreferencesRequest, UpdateWebhookPreferencesResponse } from "./preferences_pb.js";
-import { CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreatePasswordResetLinkByOrgIdRequest, CreatePasswordResetLinkByOrgIdResponse, CreatePasswordResetLinkRequest, CreatePasswordResetLinkResponse, CreateUserRequest, CreateUserResponse, EnableMyUserMfaRequest, EnableMyUserMfaResponse, EnableUserMfaRequest, EnableUserMfaResponse, GetMyUserMfaInfoRequest, GetMyUserMfaInfoResponse, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetMyUserRequest, GetMyUserResponse, GetUserByOrgIdRequest, GetUserByOrgIdResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserLoginInfoRequest, GetUserLoginInfoResponse, GetUserMfaInfoRequest, GetUserMfaInfoResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserRequest, GetUserResponse, GetUserSessionDataRequest, GetUserSessionDataResponse, ListAgentsRequest, ListAgentsResponse, ListPublicUsersRequest, ListPublicUsersResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse, ListUsersByRegionRequest, ListUsersByRegionResponse, ListUsersRequest, ListUsersResponse, RefreshMfaLockoutByOrgIdRequest, RefreshMfaLockoutByOrgIdResponse, RefreshMfaLockoutRequest, RefreshMfaLockoutResponse, ResetMyPasswordRequest, ResetMyPasswordResponse, ResetUserPasswordByOrgIdRequest, ResetUserPasswordByOrgIdResponse, ResetUserPasswordRequest, ResetUserPasswordResponse, SendPasswordResetByOrgIdRequest, SendPasswordResetByOrgIdResponse, SendPasswordResetRequest, SendPasswordResetResponse, SendUserEmailVerificationByOrgIdRequest, SendUserEmailVerificationByOrgIdResponse, SendUserEmailVerificationRequest, SendUserEmailVerificationResponse, SetMfaTypeRequest, SetMfaTypeResponse, SetMyMfaTypeRequest, SetMyMfaTypeResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserLabelsRequest, UpdateUserLabelsResponse, UpdateUserRequest, UpdateUserResponse } from "./user_pb.js";
+import { AcceptLinkbackRecordingTermsRequest, AcceptLinkbackRecordingTermsResponse, AddIntervalToBusinessHoursRequest, AddIntervalToBusinessHoursResponse, ClearEmailUnsubscribeAcknowledgementRequest, ClearEmailUnsubscribeAcknowledgementResponse, CreateBusinessHoursRequest, CreateBusinessHoursResponse, DeleteBusinessHoursRequest, DeleteBusinessHoursResponse, EvaluateBusinessHoursRequest, EvaluateBusinessHoursResponse, GetAdminClientPreferencesRequest, GetAdminClientPreferencesResponse, GetAgentPreferencesRequest, GetAgentPreferencesResponse, GetAuthenticationPreferencesRequest, GetAuthenticationPreferencesResponse, GetBroadcastPreferencesRequest, GetBroadcastPreferencesResponse, GetBusinessHoursRequest, GetBusinessHoursResponse, GetBusinessPreferencesRequest, GetBusinessPreferencesResponse, GetCompliancePreferencesRequest, GetCompliancePreferencesResponse, GetContactPreferencesRequest, GetContactPreferencesResponse, GetDashboardGeneralPreferencesRequest, GetDashboardGeneralPreferencesResponse, GetDashboardQueuePreferencesRequest, GetDashboardQueuePreferencesResponse, GetEmailSmsPreferencesRequest, GetEmailSmsPreferencesResponse, GetEndOfDayPreferencesRequest, GetEndOfDayPreferencesResponse, GetFilterPreferencesRequest, GetFilterPreferencesResponse, GetOrganizationPreferencesRequest, GetOrganizationPreferencesResponse, GetPhonePreferencesRequest, GetPhonePreferencesResponse, GetRecordingPreferencesRequest, GetRecordingPreferencesResponse, GetSchedulePreferencesRequest, GetSchedulePreferencesResponse, GetScorecardsPreferencesRequest, GetScorecardsPreferencesResponse, GetVoiceAnalyticsPreferencesRequest, GetVoiceAnalyticsPreferencesResponse, GetWebhookPreferencesRequest, GetWebhookPreferencesResponse, LinkbackUpdateBroadcastTemplatesRequest, LinkbackUpdateBroadcastTemplatesResponse, ListBusinessHoursRequest, ListBusinessHoursResponse, ListVoiceAnalyticsPreferencesRequest, ListVoiceAnalyticsPreferencesResponse, RecordEmailUnsubscribeAcknowledgementRequest, RecordEmailUnsubscribeAcknowledgementResponse, RemoveIntervalFromBusinessHoursRequest, RemoveIntervalFromBusinessHoursResponse, SetBusinessHoursRequest, SetBusinessHoursResponse, UpdateAdminBusinessPreferencesRequest, UpdateAdminBusinessPreferencesResponse, UpdateAdminClientPreferencesRequest, UpdateAdminClientPreferencesResponse, UpdateAgentPreferencesRequest, UpdateAgentPreferencesResponse, UpdateAuthenticationPreferencesRequest, UpdateAuthenticationPreferencesResponse, UpdateBroadcastPreferencesRequest, UpdateBroadcastPreferencesResponse, UpdateBusinessHoursInfoRequest, UpdateBusinessHoursInfoResponse, UpdateBusinessHoursRequest, UpdateBusinessHoursResponse, UpdateBusinessPreferencesRequest, UpdateBusinessPreferencesResponse, UpdateCompliancePreferencesRequest, UpdateCompliancePreferencesResponse, UpdateContactPreferencesRequest, UpdateContactPreferencesResponse, UpdateDashboardGeneralPreferencesRequest, UpdateDashboardGeneralPreferencesResponse, UpdateDashboardQueuePreferencesRequest, UpdateDashboardQueuePreferencesResponse, UpdateEmailSmsPreferencesRequest, UpdateEmailSmsPreferencesResponse, UpdateEndOfDayPreferencesRequest, UpdateEndOfDayPreferencesResponse, UpdateFilterPreferencesRequest, UpdateFilterPreferencesResponse, UpdateOrganizationPreferencesRequest, UpdateOrganizationPreferencesResponse, UpdatePhonePreferencesRequest, UpdatePhonePreferencesResponse, UpdateRecordingPreferencesRequest, UpdateRecordingPreferencesResponse, UpdateSchedulePreferencesRequest, UpdateSchedulePreferencesResponse, UpdateScorecardsPreferencesRequest, UpdateScorecardsPreferencesResponse, UpdateVoiceAnalyticsPreferencesRequest, UpdateVoiceAnalyticsPreferencesResponse, UpdateWebhookPreferencesRequest, UpdateWebhookPreferencesResponse } from "./preferences_pb.js";
+import { AddGroupedUserIPRestrictionsRequest, AddGroupedUserIPRestrictionsResponse, CreateDelegatedUserRequest, CreateDelegatedUserResponse, CreatePasswordResetLinkByOrgIdRequest, CreatePasswordResetLinkByOrgIdResponse, CreatePasswordResetLinkRequest, CreatePasswordResetLinkResponse, CreateUserRequest, CreateUserResponse, EnableMyUserMfaRequest, EnableMyUserMfaResponse, EnableUserMfaRequest, EnableUserMfaResponse, GetMyAllowedMfaMethodsRequest, GetMyAllowedMfaMethodsResponse, GetMyUserMfaInfoRequest, GetMyUserMfaInfoResponse, GetMyUserPasswordResetLinkRequest, GetMyUserPasswordResetLinkResponse, GetMyUserRequest, GetMyUserResponse, GetUserByOrgIdRequest, GetUserByOrgIdResponse, GetUserEmailVerifiedByOrgIdRequest, GetUserEmailVerifiedByOrgIdResponse, GetUserEmailVerifiedRequest, GetUserEmailVerifiedResponse, GetUserLoginInfoRequest, GetUserLoginInfoResponse, GetUserMfaInfoRequest, GetUserMfaInfoResponse, GetUserPasswordResetLinkByOrgIdRequest, GetUserPasswordResetLinkByOrgIdResponse, GetUserPasswordResetLinkRequest, GetUserPasswordResetLinkResponse, GetUserRequest, GetUserResponse, GetUserSessionDataRequest, GetUserSessionDataResponse, ListAgentsRequest, ListAgentsResponse, ListPublicUsersRequest, ListPublicUsersResponse, ListUsersAllowedIpsRequest, ListUsersAllowedIpsResponse, ListUsersByOrgIdRequest, ListUsersByOrgIdResponse, ListUsersByRegionRequest, ListUsersByRegionResponse, ListUsersRequest, ListUsersResponse, RefreshMfaLockoutByOrgIdRequest, RefreshMfaLockoutByOrgIdResponse, RefreshMfaLockoutRequest, RefreshMfaLockoutResponse, RemoveGroupedUserIPRestrictionsRequest, RemoveGroupedUserIPRestrictionsResponse, ResetMyPasswordRequest, ResetMyPasswordResponse, ResetUserPasswordByOrgIdRequest, ResetUserPasswordByOrgIdResponse, ResetUserPasswordRequest, ResetUserPasswordResponse, SendPasswordResetByOrgIdRequest, SendPasswordResetByOrgIdResponse, SendPasswordResetRequest, SendPasswordResetResponse, SendUserEmailVerificationByOrgIdRequest, SendUserEmailVerificationByOrgIdResponse, SendUserEmailVerificationRequest, SendUserEmailVerificationResponse, SetMfaTypeRequest, SetMfaTypeResponse, SetMyMfaTypeRequest, SetMyMfaTypeResponse, UpdateMyUserRequest, UpdateMyUserResponse, UpdateUserCallerIdRequest, UpdateUserCallerIdResponse, UpdateUserDisabledByOrgIdRequest, UpdateUserDisabledByOrgIdResponse, UpdateUserDisabledRequest, UpdateUserDisabledResponse, UpdateUserLabelsRequest, UpdateUserLabelsResponse, UpdateUserRequest, UpdateUserResponse } from "./user_pb.js";
 import { AssignAgentProfileGroupsRequest, AssignAgentProfileGroupsResponse, CreateAgentProfileGroupRequest, CreateAgentProfileGroupResponse, DeleteAgentProfileGroupRequest, DeleteAgentProfileGroupResponse, GetAgentProfileGroupRequest, GetAgentProfileGroupResponse, ListAgentProfileGroupsRequest, ListAgentProfileGroupsResponse, UpdateAgentProfileGroupRequest, UpdateAgentProfileGroupResponse } from "./agent_profile_group_pb.js";
 import { AddUserSubscriptionByUserIdRequest, AddUserSubscriptionByUserIdResponse, AddUserSubscriptionRequest, AddUserSubscriptionResponse, GetUserSubscriptionByUserIdRequest, GetUserSubscriptionByUserIdResponse, GetUserSubscriptionRequest, GetUserSubscriptionResponse, ListOrgSubscriptionsRequest, ListOrgSubscriptionsResponse, ListUserSubscriptionsByUserIdRequest, ListUserSubscriptionsByUserIdResponse, ListUserSubscriptionsRequest, ListUserSubscriptionsResponse, RemoveUserSubscriptionByUserIdRequest, RemoveUserSubscriptionByUserIdResponse, RemoveUserSubscriptionRequest, RemoveUserSubscriptionResponse, UpdateUserSubscriptionByUserIdRequest, UpdateUserSubscriptionByUserIdResponse, UpdateUserSubscriptionRequest, UpdateUserSubscriptionResponse } from "./notifications_pb.js";
 import { CreateAuthTokenByUserIdRequest, CreateAuthTokenByUserIdResponse, CreateAuthTokenRequest, CreateAuthTokenResponse, DeleteAuthTokenByUserIdRequest, DeleteAuthTokenByUserIdResponse, DeleteAuthTokenRequest, DeleteAuthTokenResponse, ListAuthTokensByUserIdRequest, ListAuthTokensByUserIdResponse, ListAuthTokensRequest, ListAuthTokensResponse, SetAuthTokenExpirationByUserIdRequest, SetAuthTokenExpirationByUserIdResponse, SetAuthTokenExpirationRequest, SetAuthTokenExpirationResponse } from "./auth_token_pb.js";
-import { CopyAgentTriggerRequest, CopyAgentTriggerResponse, CopyDataDipTemplateRequest, CopyDataDipTemplateResponse, CopyDataDipTemplateToOrganizationRequest, CopyDataDipTemplateToOrganizationResponse, CopyHuntGroupClientInfoDisplayTemplateRequest, CopyHuntGroupClientInfoDisplayTemplateResponse, CopyHuntGroupWebLinkRequest, CopyHuntGroupWebLinkResponse, CreateAgentResponseAutoRulesRequest, CreateAgentResponseAutoRulesResponse, CreateCampaignClientInfoDisplayTemplateRequest, CreateCampaignClientInfoDisplayTemplateResponse, CreateDataDipTemplateRequest, CreateDataDipTemplateResponse, CreateHuntGroupClientInfoDisplayTemplateRequest, CreateHuntGroupClientInfoDisplayTemplateResponse, CreateHuntGroupRequest, CreateHuntGroupResponse, CreateHuntGroupScriptRequest, CreateHuntGroupScriptResponse, DeleteAgentResponseAutoRulesRequest, DeleteAgentResponseAutoRulesResponse, DeleteDataDipTemplateRequest, DeleteDataDipTemplateResponse, DeleteHuntGroupClientInfoDisplayTemplateRequest, DeleteHuntGroupClientInfoDisplayTemplateResponse, DeleteHuntGroupRequest, DeleteHuntGroupResponse, DeleteHuntGroupScriptRequest, DeleteHuntGroupScriptResponse, GetDataDipTemplateRequest, GetDataDipTemplateResponse, GetHuntGroupClientInfoDisplayTemplateRequest, GetHuntGroupClientInfoDisplayTemplateResponse, GetHuntGroupDetailsRequest, GetHuntGroupDetailsResponse, GetHuntGroupScriptRequest, GetHuntGroupScriptResponse, GetHuntGroupSettingsRequest, GetHuntGroupSettingsResponse, ListAgentResponseAutoRulesRequest, ListAgentResponseAutoRulesResponse, ListAgentTriggersRequest, ListAgentTriggersResponse, ListCallerIdBucketsRequest, ListCallerIdBucketsResponse, ListDataDipTemplatesRequest, ListDataDipTemplatesResponse, ListHuntGroupIntegrationLinksRequest, ListHuntGroupIntegrationLinksResponse, ListHuntGroupsWithClientInfoTemplateDataRequest, ListHuntGroupsWithClientInfoTemplateDataResponse, ListHuntGroupWebLinksRequest, ListHuntGroupWebLinksResponse, UpdateAgentResponseAutoRulesRequest, UpdateAgentResponseAutoRulesResponse, UpdateAgentTriggersRequest, UpdateAgentTriggersResponse, UpdateDataDipTemplateRequest, UpdateDataDipTemplateResponse, UpdateHuntGroupClientInfoDisplayTemplateRequest, UpdateHuntGroupClientInfoDisplayTemplateResponse, UpdateHuntGroupGeneralDetailsRequest, UpdateHuntGroupGeneralDetailsResponse, UpdateHuntGroupScriptRequest, UpdateHuntGroupScriptResponse, UpdateHuntGroupSettingsRequest, UpdateHuntGroupSettingsResponse, UpdateHuntGroupWebLinksRequest, UpdateHuntGroupWebLinksResponse } from "./huntgroup_pb.js";
+import { CopyAgentTriggerRequest, CopyAgentTriggerResponse, CopyDataDipTemplateRequest, CopyDataDipTemplateResponse, CopyDataDipTemplateToOrganizationRequest, CopyDataDipTemplateToOrganizationResponse, CopyHuntGroupClientInfoDisplayTemplateRequest, CopyHuntGroupClientInfoDisplayTemplateResponse, CopyHuntGroupIntegrationLinkRequest, CopyHuntGroupIntegrationLinkResponse, CopyHuntGroupWebLinkRequest, CopyHuntGroupWebLinkResponse, CreateAgentResponseAutoRulesRequest, CreateAgentResponseAutoRulesResponse, CreateCampaignClientInfoDisplayTemplateRequest, CreateCampaignClientInfoDisplayTemplateResponse, CreateDataDipTemplateRequest, CreateDataDipTemplateResponse, CreateHuntGroupClientInfoDisplayTemplateRequest, CreateHuntGroupClientInfoDisplayTemplateResponse, CreateHuntGroupRequest, CreateHuntGroupResponse, CreateHuntGroupScriptRequest, CreateHuntGroupScriptResponse, DeleteAgentResponseAutoRulesRequest, DeleteAgentResponseAutoRulesResponse, DeleteDataDipTemplateRequest, DeleteDataDipTemplateResponse, DeleteHuntGroupClientInfoDisplayTemplateRequest, DeleteHuntGroupClientInfoDisplayTemplateResponse, DeleteHuntGroupRequest, DeleteHuntGroupResponse, DeleteHuntGroupScriptRequest, DeleteHuntGroupScriptResponse, GetDataDipTemplateRequest, GetDataDipTemplateResponse, GetHuntGroupClientInfoDisplayTemplateRequest, GetHuntGroupClientInfoDisplayTemplateResponse, GetHuntGroupDetailsRequest, GetHuntGroupDetailsResponse, GetHuntGroupScriptRequest, GetHuntGroupScriptResponse, GetHuntGroupSettingsRequest, GetHuntGroupSettingsResponse, ListAgentResponseAutoRulesRequest, ListAgentResponseAutoRulesResponse, ListAgentTriggersRequest, ListAgentTriggersResponse, ListCallerIdBucketsRequest, ListCallerIdBucketsResponse, ListDataDipTemplatesRequest, ListDataDipTemplatesResponse, ListHuntGroupIntegrationLinksRequest, ListHuntGroupIntegrationLinksResponse, ListHuntGroupsWithClientInfoTemplateDataRequest, ListHuntGroupsWithClientInfoTemplateDataResponse, ListHuntGroupWebLinksRequest, ListHuntGroupWebLinksResponse, UpdateAgentResponseAutoRulesRequest, UpdateAgentResponseAutoRulesResponse, UpdateAgentTriggersRequest, UpdateAgentTriggersResponse, UpdateDataDipTemplateRequest, UpdateDataDipTemplateResponse, UpdateHuntGroupClientInfoDisplayTemplateRequest, UpdateHuntGroupClientInfoDisplayTemplateResponse, UpdateHuntGroupGeneralDetailsRequest, UpdateHuntGroupGeneralDetailsResponse, UpdateHuntGroupIntegrationLinksRequest, UpdateHuntGroupIntegrationLinksResponse, UpdateHuntGroupScriptRequest, UpdateHuntGroupScriptResponse, UpdateHuntGroupSettingsRequest, UpdateHuntGroupSettingsResponse, UpdateHuntGroupWebLinksRequest, UpdateHuntGroupWebLinksResponse } from "./huntgroup_pb.js";
 import { AcceptTrustRequest, AcceptTrustResponse, AssignTrustRequest, AssignTrustResponse, CreateTrustRequest, CreateTrustResponse, DeleteTrustRequest, DeleteTrustResponse, GetTrustRequest, GetTrustResponse, ListAssignableTrustsRequest, ListAssignableTrustsResponse, ListGivenTrustsRequest, ListGivenTrustsResponse, ListIncomingTrustsRequest, ListIncomingTrustsResponse, RejectTrustRequest, RejectTrustResponse, UnassignTrustRequest, UnassignTrustResponse } from "./trusts_pb.js";
 import { AssignLabelRequest, AssignLabelResponse, CreateLabelRequest, CreateLabelResponse, DeleteLabelRequest, DeleteLabelResponse, GetAssignableLabelsRequest, GetAssignableLabelsResponse, GetAssignmentCountsRequest, GetAssignmentCountsResponse, GetLabelRequest, GetLabelResponse, ListLabelsRequest, ListLabelsResponse, UnassignLabelRequest, UnassignLabelResponse, UpdateLabelRequest, UpdateLabelResponse } from "./labels_pb.js";
 import { AssignAccountOwnerPermissionToUserRequest, AssignAccountOwnerPermissionToUserResponse, AssignUsersPermissionGroupRequest, AssignUsersPermissionGroupResponse, CreatePermissionGroupRequest, CreatePermissionGroupResponse, DeletePermissionGroupRequest, DeletePermissionGroupResponse, GetAccountOwnerGroupRequest, GetAccountOwnerGroupResponse, GetLicensesRequest, GetLicensesResponse, GetOrgLicensesRequest, GetOrgLicensesResponse, GetPermissionsRequest, GetPermissionsResponse, GetUserPermissionsRequest, GetUserPermissionsResponse, InitDefaultPermissionGroupsRequest, InitDefaultPermissionGroupsResponse, ListPermissionGroupsByOrgIdRequest, ListPermissionGroupsByOrgIdResponse, ListPermissionGroupsRequest, ListPermissionGroupsResponse, RemovePermissionFromAllPermissionGroupsRequest, RemovePermissionFromAllPermissionGroupsResponse, RevokeAccountOwnerPermissionFromUserRequest, RevokeAccountOwnerPermissionFromUserResponse, RevokeUsersPermissionGroupRequest, RevokeUsersPermissionGroupResponse, UpdateLicensesRequest, UpdateLicensesResponse, UpdatePermissionGroupRequest, UpdatePermissionGroupResponse } from "./permissions_pb.js";
@@ -651,6 +651,102 @@ export const Org = {
       name: "ClearEmailUnsubscribeAcknowledgement",
       I: ClearEmailUnsubscribeAcknowledgementRequest,
       O: ClearEmailUnsubscribeAcknowledgementResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListBusinessHours returns all business hours for an Org.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ListBusinessHours
+     * @deprecated
+     */
+    listBusinessHours: {
+      name: "ListBusinessHours",
+      I: ListBusinessHoursRequest,
+      O: ListBusinessHoursResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetBusinessHours returns the business hours for the ID.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.GetBusinessHours
+     * @deprecated
+     */
+    getBusinessHours: {
+      name: "GetBusinessHours",
+      I: GetBusinessHoursRequest,
+      O: GetBusinessHoursResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SetBusinessHours initializes a business hours object
+     *
+     * @generated from rpc api.v1alpha1.org.Org.SetBusinessHours
+     * @deprecated
+     */
+    setBusinessHours: {
+      name: "SetBusinessHours",
+      I: SetBusinessHoursRequest,
+      O: SetBusinessHoursResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * AddIntervalToBusinessHours adds a day interval to a business hours object
+     *
+     * @generated from rpc api.v1alpha1.org.Org.AddIntervalToBusinessHours
+     * @deprecated
+     */
+    addIntervalToBusinessHours: {
+      name: "AddIntervalToBusinessHours",
+      I: AddIntervalToBusinessHoursRequest,
+      O: AddIntervalToBusinessHoursResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RemoveIntervalFromBusinessHours removes a day interval from a business hours object
+     *
+     * @generated from rpc api.v1alpha1.org.Org.RemoveIntervalFromBusinessHours
+     * @deprecated
+     */
+    removeIntervalFromBusinessHours: {
+      name: "RemoveIntervalFromBusinessHours",
+      I: RemoveIntervalFromBusinessHoursRequest,
+      O: RemoveIntervalFromBusinessHoursResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateBusinessHoursInfo updates the general info of a business hours object
+     *
+     * @generated from rpc api.v1alpha1.org.Org.UpdateBusinessHoursInfo
+     * @deprecated
+     */
+    updateBusinessHoursInfo: {
+      name: "UpdateBusinessHoursInfo",
+      I: UpdateBusinessHoursInfoRequest,
+      O: UpdateBusinessHoursInfoResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteBusinessHours removes business hours.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.DeleteBusinessHours
+     * @deprecated
+     */
+    deleteBusinessHours: {
+      name: "DeleteBusinessHours",
+      I: DeleteBusinessHoursRequest,
+      O: DeleteBusinessHoursResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * EvaluateBusinessHours determines whether or not the current time is within a business hours day interval
+     *
+     * @generated from rpc api.v1alpha1.org.Org.EvaluateBusinessHours
+     * @deprecated
+     */
+    evaluateBusinessHours: {
+      name: "EvaluateBusinessHours",
+      I: EvaluateBusinessHoursRequest,
+      O: EvaluateBusinessHoursResponse,
       kind: MethodKind.Unary,
     },
     /**
@@ -1530,6 +1626,33 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * CopyHuntGroupIntegrationLink copies the integration link from one hunt group to another.
+     * It will create a new integration link in the destination hunt group with the same settings
+     * as the source integration link.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.CopyHuntGroupIntegrationLink
+     */
+    copyHuntGroupIntegrationLink: {
+      name: "CopyHuntGroupIntegrationLink",
+      I: CopyHuntGroupIntegrationLinkRequest,
+      O: CopyHuntGroupIntegrationLinkResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateHuntGroupIntegrationLinks updates the integration links for a hunt group.
+     * It will create any new integration links that do not already exist in the hunt group,
+     * update any existing integration links with the new settings, and delete any integration links
+     * that are not in the request.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.UpdateHuntGroupIntegrationLinks
+     */
+    updateHuntGroupIntegrationLinks: {
+      name: "UpdateHuntGroupIntegrationLinks",
+      I: UpdateHuntGroupIntegrationLinksRequest,
+      O: UpdateHuntGroupIntegrationLinksResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * GetHuntGroupClientInfoDisplayTemplate returns the client info display template for a given hunt group.
      *
      * @generated from rpc api.v1alpha1.org.Org.GetHuntGroupClientInfoDisplayTemplate
@@ -2277,9 +2400,21 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
+     * GetMyAllowedMfaMethods returns the mfa methods allowed to the current user.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.GetMyAllowedMfaMethods
+     */
+    getMyAllowedMfaMethods: {
+      name: "GetMyAllowedMfaMethods",
+      I: GetMyAllowedMfaMethodsRequest,
+      O: GetMyAllowedMfaMethodsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
      * CreateBusinessHours persists times businesses are available.
      *
      * @generated from rpc api.v1alpha1.org.Org.CreateBusinessHours
+     * @deprecated
      */
     createBusinessHours: {
       name: "CreateBusinessHours",
@@ -2291,6 +2426,7 @@ export const Org = {
      * UpdateBusinessHours persists changes to times businesses are available.
      *
      * @generated from rpc api.v1alpha1.org.Org.UpdateBusinessHours
+     * @deprecated
      */
     updateBusinessHours: {
       name: "UpdateBusinessHours",
@@ -2299,36 +2435,38 @@ export const Org = {
       kind: MethodKind.Unary,
     },
     /**
-     * DeleteBusinessHours removes business hours.
+     * AddGroupedUserIPRestrictions adds a user or list of user's IPs they
+     * are required to authenticate with
      *
-     * @generated from rpc api.v1alpha1.org.Org.DeleteBusinessHours
+     * @generated from rpc api.v1alpha1.org.Org.AddGroupedUserIPRestrictions
      */
-    deleteBusinessHours: {
-      name: "DeleteBusinessHours",
-      I: DeleteBusinessHoursRequest,
-      O: DeleteBusinessHoursResponse,
+    addGroupedUserIPRestrictions: {
+      name: "AddGroupedUserIPRestrictions",
+      I: AddGroupedUserIPRestrictionsRequest,
+      O: AddGroupedUserIPRestrictionsResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * ListBusinessHours returns all business hours for an Org.
+     * RemoveGroupedUserIPRestrictions removes a user or list of user's IPs they
+     * are required to authenticate with
      *
-     * @generated from rpc api.v1alpha1.org.Org.ListBusinessHours
+     * @generated from rpc api.v1alpha1.org.Org.RemoveGroupedUserIPRestrictions
      */
-    listBusinessHours: {
-      name: "ListBusinessHours",
-      I: ListBusinessHoursRequest,
-      O: ListBusinessHoursResponse,
+    removeGroupedUserIPRestrictions: {
+      name: "RemoveGroupedUserIPRestrictions",
+      I: RemoveGroupedUserIPRestrictionsRequest,
+      O: RemoveGroupedUserIPRestrictionsResponse,
       kind: MethodKind.Unary,
     },
     /**
-     * GetBusinessHours returns the business hours for the ID.
+     * ListUsersAllowedIps -
      *
-     * @generated from rpc api.v1alpha1.org.Org.GetBusinessHours
+     * @generated from rpc api.v1alpha1.org.Org.ListUsersAllowedIps
      */
-    getBusinessHours: {
-      name: "GetBusinessHours",
-      I: GetBusinessHoursRequest,
-      O: GetBusinessHoursResponse,
+    listUsersAllowedIps: {
+      name: "ListUsersAllowedIps",
+      I: ListUsersAllowedIpsRequest,
+      O: ListUsersAllowedIpsResponse,
       kind: MethodKind.Unary,
     },
   }
