@@ -1851,3 +1851,187 @@ export declare class ChangeTicketStatusResponse extends Message<ChangeTicketStat
   static equals(a: ChangeTicketStatusResponse | PlainMessage<ChangeTicketStatusResponse> | undefined, b: ChangeTicketStatusResponse | PlainMessage<ChangeTicketStatusResponse> | undefined): boolean;
 }
 
+/**
+ * @generated from message api.v1alpha1.tickets.AddEntityRefRequest
+ */
+export declare class AddEntityRefRequest extends Message<AddEntityRefRequest> {
+  /**
+   * be able to assign entity ref to a ticket
+   *
+   * @generated from field: api.v1alpha1.tickets.EntityRef entity_ref = 1;
+   */
+  entityRef?: EntityRef;
+
+  constructor(data?: PartialMessage<AddEntityRefRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.AddEntityRefRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddEntityRefRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddEntityRefRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddEntityRefRequest;
+
+  static equals(a: AddEntityRefRequest | PlainMessage<AddEntityRefRequest> | undefined, b: AddEntityRefRequest | PlainMessage<AddEntityRefRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.AddEntityRefResponse
+ */
+export declare class AddEntityRefResponse extends Message<AddEntityRefResponse> {
+  constructor(data?: PartialMessage<AddEntityRefResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.AddEntityRefResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AddEntityRefResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AddEntityRefResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AddEntityRefResponse;
+
+  static equals(a: AddEntityRefResponse | PlainMessage<AddEntityRefResponse> | undefined, b: AddEntityRefResponse | PlainMessage<AddEntityRefResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListEntityRefsByTicketRequest
+ */
+export declare class ListEntityRefsByTicketRequest extends Message<ListEntityRefsByTicketRequest> {
+  /**
+   * @generated from field: string ticket_code = 1;
+   */
+  ticketCode: string;
+
+  constructor(data?: PartialMessage<ListEntityRefsByTicketRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListEntityRefsByTicketRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEntityRefsByTicketRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEntityRefsByTicketRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEntityRefsByTicketRequest;
+
+  static equals(a: ListEntityRefsByTicketRequest | PlainMessage<ListEntityRefsByTicketRequest> | undefined, b: ListEntityRefsByTicketRequest | PlainMessage<ListEntityRefsByTicketRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListEntityRefsByTicketResponse
+ */
+export declare class ListEntityRefsByTicketResponse extends Message<ListEntityRefsByTicketResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.tickets.EntityRef entity_ref = 1;
+   */
+  entityRef: EntityRef[];
+
+  constructor(data?: PartialMessage<ListEntityRefsByTicketResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListEntityRefsByTicketResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListEntityRefsByTicketResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListEntityRefsByTicketResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListEntityRefsByTicketResponse;
+
+  static equals(a: ListEntityRefsByTicketResponse | PlainMessage<ListEntityRefsByTicketResponse> | undefined, b: ListEntityRefsByTicketResponse | PlainMessage<ListEntityRefsByTicketResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketsByEntityRefRequest
+ */
+export declare class ListTicketsByEntityRefRequest extends Message<ListTicketsByEntityRefRequest> {
+  /**
+   * uri that uniquely identifies any entity associated with a ticket
+   *
+   * @generated from field: string uri = 1;
+   */
+  uri: string;
+
+  constructor(data?: PartialMessage<ListTicketsByEntityRefRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListTicketsByEntityRefRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTicketsByEntityRefRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTicketsByEntityRefRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTicketsByEntityRefRequest;
+
+  static equals(a: ListTicketsByEntityRefRequest | PlainMessage<ListTicketsByEntityRefRequest> | undefined, b: ListTicketsByEntityRefRequest | PlainMessage<ListTicketsByEntityRefRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.tickets.ListTicketsByEntityRefResponse
+ */
+export declare class ListTicketsByEntityRefResponse extends Message<ListTicketsByEntityRefResponse> {
+  /**
+   * @generated from field: repeated api.commons.Ticket tickets = 1;
+   */
+  tickets: Ticket[];
+
+  constructor(data?: PartialMessage<ListTicketsByEntityRefResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.ListTicketsByEntityRefResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTicketsByEntityRefResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTicketsByEntityRefResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTicketsByEntityRefResponse;
+
+  static equals(a: ListTicketsByEntityRefResponse | PlainMessage<ListTicketsByEntityRefResponse> | undefined, b: ListTicketsByEntityRefResponse | PlainMessage<ListTicketsByEntityRefResponse> | undefined): boolean;
+}
+
+/**
+ * should this be in a separate folder / file
+ *
+ * @generated from message api.v1alpha1.tickets.EntityRef
+ */
+export declare class EntityRef extends Message<EntityRef> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: string region_id = 2;
+   */
+  regionId: string;
+
+  /**
+   * @generated from field: string ticket_code = 3;
+   */
+  ticketCode: string;
+
+  /**
+   * @generated from field: string uri = 4;
+   */
+  uri: string;
+
+  constructor(data?: PartialMessage<EntityRef>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.tickets.EntityRef";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EntityRef;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EntityRef;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EntityRef;
+
+  static equals(a: EntityRef | PlainMessage<EntityRef> | undefined, b: EntityRef | PlainMessage<EntityRef> | undefined): boolean;
+}
+
