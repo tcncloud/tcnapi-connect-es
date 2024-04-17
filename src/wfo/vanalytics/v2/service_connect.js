@@ -6,6 +6,7 @@
 import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateFilterRequest, DeleteFilterRequest, DeleteFilterResponse, Filter, GetFilterRequest, ListFiltersRequest, ListFiltersResponse, UpdateFilterRequest } from "./filter_pb.js";
+import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
 
 /**
  * @generated from service wfo.vanalytics.v2.Vanalytics
@@ -80,6 +81,17 @@ export const Vanalytics = {
       name: "GetFilter",
       I: GetFilterRequest,
       O: Filter,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListFlagTranscriptFilters lists flag transcript filters in an organization.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListFlagTranscriptFilters
+     */
+    listFlagTranscriptFilters: {
+      name: "ListFlagTranscriptFilters",
+      I: ListFlagTranscriptFiltersRequest,
+      O: ListFlagTranscriptFiltersResponse,
       kind: MethodKind.Unary,
     },
   }

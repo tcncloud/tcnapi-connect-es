@@ -876,3 +876,34 @@ export const ProgrammedDates = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * ObservedHolidays a list of dates or holidays.
+ *
+ * @generated from message api.commons.org.ObservedHolidays
+ */
+export const ObservedHolidays = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.org.ObservedHolidays",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "observed_holidays_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "observed_holidays_name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "timezone", kind: "enum", T: proto3.getEnumType(TimeZone) },
+    { no: 6, name: "days", kind: "message", T: ObservedHoliday, repeated: true },
+    { no: 7, name: "last_updated", kind: "message", T: Timestamp },
+  ],
+);
+
+/**
+ * ObservedHoliday may be a named date or a holiday.
+ *
+ * @generated from message api.commons.org.ObservedHoliday
+ */
+export const ObservedHoliday = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.org.ObservedHoliday",
+  () => [
+    { no: 1, name: "day", kind: "message", T: MonthDayDate, oneof: "DayType" },
+    { no: 2, name: "holiday", kind: "message", T: CountryHoliday, oneof: "DayType" },
+  ],
+);
+

@@ -152,6 +152,7 @@ export const ContactManagerList = /*@__PURE__*/ proto3.makeMessageType(
     { no: 6, name: "list_details", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 7, name: "ttl", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 8, name: "date_created", kind: "message", T: Timestamp },
+    { no: 9, name: "is_deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -163,6 +164,39 @@ export const ContactManagerEntryVal = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.AddContactEntryRequest
+ */
+export const AddContactEntryRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.contactmanager.AddContactEntryRequest",
+  () => [
+    { no: 1, name: "contact_manager_list_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
+    { no: 2, name: "entry", kind: "message", T: Entry, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.Entry
+ */
+export const Entry = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.contactmanager.Entry",
+  () => [
+    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.contactmanager.AddContactEntryResponse
+ */
+export const AddContactEntryResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.contactmanager.AddContactEntryResponse",
+  () => [
+    { no: 1, name: "contact_id", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 

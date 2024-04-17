@@ -180,6 +180,20 @@ export const AgentConversationAssignmentType = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * MessageFormat -
+ *
+ * @generated from enum api.commons.MessageFormat
+ */
+export const MessageFormat = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.MessageFormat",
+  [
+    {no: 0, name: "MESSAGE_FORMAT_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "MESSAGE_FORMAT_HTML", localName: "HTML"},
+    {no: 2, name: "MESSAGE_FORMAT_HTML_FORM", localName: "HTML_FORM"},
+  ],
+);
+
+/**
  * @generated from enum api.commons.OmniMessageStatus
  */
 export const OmniMessageStatus = /*@__PURE__*/ proto3.makeEnum(
@@ -458,6 +472,8 @@ export const OmniCampaignModuleConfig = /*@__PURE__*/ proto3.makeMessageType(
     { no: 21, name: "skills", kind: "message", T: OmniConversationSkills },
     { no: 22, name: "whatsapp_number", kind: "message", T: WhatsAppNumber },
     { no: 23, name: "provider_metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 24, name: "country_code", kind: "scalar", T: 5 /* ScalarType.INT32 */ },
+    { no: 25, name: "postal_code_field", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -583,6 +599,7 @@ export const AgentChatWidgetMessage = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4, name: "ui_reference_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "user_information", kind: "message", T: OmniConversationUserInformation },
     { no: 6, name: "sender_type", kind: "enum", T: proto3.getEnumType(OmniSenderType) },
+    { no: 7, name: "message_format", kind: "enum", T: proto3.getEnumType(MessageFormat) },
   ],
 );
 
@@ -608,6 +625,7 @@ export const OmniMessagePayload = /*@__PURE__*/ proto3.makeMessageType(
     { no: 113, name: "request_queue_information", kind: "message", T: OmniRequestQueueInformation, oneof: "payload" },
     { no: 114, name: "off_loaded_text_message", kind: "message", T: OmniOffLoadedTextMessage, oneof: "payload" },
     { no: 115, name: "canned_message", kind: "message", T: OmniCannedMessage, oneof: "payload" },
+    { no: 116, name: "data_message", kind: "message", T: OmniDataMessage, oneof: "payload" },
   ],
 );
 
@@ -798,6 +816,17 @@ export const OmniCannedMessage = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.OmniCannedMessage",
   () => [
     { no: 1, name: "canned_message_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * @generated from message api.commons.OmniDataMessage
+ */
+export const OmniDataMessage = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.OmniDataMessage",
+  () => [
+    { no: 1, name: "message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "message_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
   ],
 );
 
@@ -1306,6 +1335,7 @@ export const OmniComplianceAction = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "keywords", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 2, name: "confirmation_message", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "is_fuzzy_match", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
