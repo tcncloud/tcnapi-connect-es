@@ -3427,3 +3427,34 @@ export declare class AgentResponse extends Message<AgentResponse> {
   static equals(a: AgentResponse | PlainMessage<AgentResponse> | undefined, b: AgentResponse | PlainMessage<AgentResponse> | undefined): boolean;
 }
 
+/**
+ * SearchByOrgIdRequest is a support-only request for searching transcripts.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchByOrgIdRequest
+ */
+export declare class SearchByOrgIdRequest extends Message<SearchByOrgIdRequest> {
+  /**
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * @generated from field: api.v1alpha1.vanalytics.SearchRequest request = 2;
+   */
+  request?: SearchRequest;
+
+  constructor(data?: PartialMessage<SearchByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchByOrgIdRequest;
+
+  static equals(a: SearchByOrgIdRequest | PlainMessage<SearchByOrgIdRequest> | undefined, b: SearchByOrgIdRequest | PlainMessage<SearchByOrgIdRequest> | undefined): boolean;
+}
+
