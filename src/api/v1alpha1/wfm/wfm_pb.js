@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RealTimeManagementState, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, RgbaColor, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -5414,6 +5414,63 @@ export const ListAgentStatesForDayResponse = /*@__PURE__*/ proto3.makeMessageTyp
   "api.v1alpha1.wfm.ListAgentStatesForDayResponse",
   () => [
     { no: 1, name: "agent_states", kind: "message", T: AgentStateSequence, repeated: true },
+  ],
+);
+
+/**
+ * Request message for ListRealTimeManagementStates.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStatesRequest
+ */
+export const ListRealTimeManagementStatesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListRealTimeManagementStatesRequest",
+  [],
+);
+
+/**
+ * Response message for ListRealTimeManagementStates.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStatesResponse
+ */
+export const ListRealTimeManagementStatesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListRealTimeManagementStatesResponse",
+  () => [
+    { no: 1, name: "states", kind: "enum", T: proto3.getEnumType(RealTimeManagementState), repeated: true },
+  ],
+);
+
+/**
+ * Combines RealTimeManagementState and RgbaColor.
+ *
+ * @generated from message api.v1alpha1.wfm.RealTimeManagementStateColor
+ */
+export const RealTimeManagementStateColor = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.RealTimeManagementStateColor",
+  () => [
+    { no: 1, name: "state", kind: "enum", T: proto3.getEnumType(RealTimeManagementState) },
+    { no: 2, name: "color", kind: "message", T: RgbaColor },
+  ],
+);
+
+/**
+ * Request message for ListRealTimeManagementStateColors.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStateColorsRequest
+ */
+export const ListRealTimeManagementStateColorsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListRealTimeManagementStateColorsRequest",
+  [],
+);
+
+/**
+ * Response message for ListRealTimeManagementStateColors.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStateColorsResponse
+ */
+export const ListRealTimeManagementStateColorsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListRealTimeManagementStateColorsResponse",
+  () => [
+    { no: 1, name: "state_colors", kind: "message", T: RealTimeManagementStateColor, repeated: true },
   ],
 );
 

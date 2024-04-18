@@ -2450,3 +2450,52 @@ export declare class AgentStateSequence extends Message<AgentStateSequence> {
   static equals(a: AgentStateSequence | PlainMessage<AgentStateSequence> | undefined, b: AgentStateSequence | PlainMessage<AgentStateSequence> | undefined): boolean;
 }
 
+/**
+ * An rgba color.
+ *
+ * @generated from message api.commons.RgbaColor
+ */
+export declare class RgbaColor extends Message<RgbaColor> {
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float red = 1;
+   */
+  red: number;
+
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float green = 2;
+   */
+  green: number;
+
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float blue = 3;
+   */
+  blue: number;
+
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float alpha = 4;
+   */
+  alpha: number;
+
+  constructor(data?: PartialMessage<RgbaColor>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.RgbaColor";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RgbaColor;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RgbaColor;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RgbaColor;
+
+  static equals(a: RgbaColor | PlainMessage<RgbaColor> | undefined, b: RgbaColor | PlainMessage<RgbaColor> | undefined): boolean;
+}
+

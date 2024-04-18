@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RealTimeManagementState, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, RgbaColor, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -15511,5 +15511,130 @@ export declare class ListAgentStatesForDayResponse extends Message<ListAgentStat
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentStatesForDayResponse;
 
   static equals(a: ListAgentStatesForDayResponse | PlainMessage<ListAgentStatesForDayResponse> | undefined, b: ListAgentStatesForDayResponse | PlainMessage<ListAgentStatesForDayResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for ListRealTimeManagementStates.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStatesRequest
+ */
+export declare class ListRealTimeManagementStatesRequest extends Message<ListRealTimeManagementStatesRequest> {
+  constructor(data?: PartialMessage<ListRealTimeManagementStatesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListRealTimeManagementStatesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRealTimeManagementStatesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRealTimeManagementStatesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRealTimeManagementStatesRequest;
+
+  static equals(a: ListRealTimeManagementStatesRequest | PlainMessage<ListRealTimeManagementStatesRequest> | undefined, b: ListRealTimeManagementStatesRequest | PlainMessage<ListRealTimeManagementStatesRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for ListRealTimeManagementStates.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStatesResponse
+ */
+export declare class ListRealTimeManagementStatesResponse extends Message<ListRealTimeManagementStatesResponse> {
+  /**
+   * @generated from field: repeated api.commons.RealTimeManagementState states = 1;
+   */
+  states: RealTimeManagementState[];
+
+  constructor(data?: PartialMessage<ListRealTimeManagementStatesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListRealTimeManagementStatesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRealTimeManagementStatesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRealTimeManagementStatesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRealTimeManagementStatesResponse;
+
+  static equals(a: ListRealTimeManagementStatesResponse | PlainMessage<ListRealTimeManagementStatesResponse> | undefined, b: ListRealTimeManagementStatesResponse | PlainMessage<ListRealTimeManagementStatesResponse> | undefined): boolean;
+}
+
+/**
+ * Combines RealTimeManagementState and RgbaColor.
+ *
+ * @generated from message api.v1alpha1.wfm.RealTimeManagementStateColor
+ */
+export declare class RealTimeManagementStateColor extends Message<RealTimeManagementStateColor> {
+  /**
+   * @generated from field: api.commons.RealTimeManagementState state = 1;
+   */
+  state: RealTimeManagementState;
+
+  /**
+   * @generated from field: api.commons.RgbaColor color = 2;
+   */
+  color?: RgbaColor;
+
+  constructor(data?: PartialMessage<RealTimeManagementStateColor>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RealTimeManagementStateColor";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RealTimeManagementStateColor;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RealTimeManagementStateColor;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RealTimeManagementStateColor;
+
+  static equals(a: RealTimeManagementStateColor | PlainMessage<RealTimeManagementStateColor> | undefined, b: RealTimeManagementStateColor | PlainMessage<RealTimeManagementStateColor> | undefined): boolean;
+}
+
+/**
+ * Request message for ListRealTimeManagementStateColors.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStateColorsRequest
+ */
+export declare class ListRealTimeManagementStateColorsRequest extends Message<ListRealTimeManagementStateColorsRequest> {
+  constructor(data?: PartialMessage<ListRealTimeManagementStateColorsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListRealTimeManagementStateColorsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRealTimeManagementStateColorsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRealTimeManagementStateColorsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRealTimeManagementStateColorsRequest;
+
+  static equals(a: ListRealTimeManagementStateColorsRequest | PlainMessage<ListRealTimeManagementStateColorsRequest> | undefined, b: ListRealTimeManagementStateColorsRequest | PlainMessage<ListRealTimeManagementStateColorsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for ListRealTimeManagementStateColors.
+ *
+ * @generated from message api.v1alpha1.wfm.ListRealTimeManagementStateColorsResponse
+ */
+export declare class ListRealTimeManagementStateColorsResponse extends Message<ListRealTimeManagementStateColorsResponse> {
+  /**
+   * @generated from field: repeated api.v1alpha1.wfm.RealTimeManagementStateColor state_colors = 1;
+   */
+  stateColors: RealTimeManagementStateColor[];
+
+  constructor(data?: PartialMessage<ListRealTimeManagementStateColorsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListRealTimeManagementStateColorsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListRealTimeManagementStateColorsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListRealTimeManagementStateColorsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListRealTimeManagementStateColorsResponse;
+
+  static equals(a: ListRealTimeManagementStateColorsResponse | PlainMessage<ListRealTimeManagementStateColorsResponse> | undefined, b: ListRealTimeManagementStateColorsResponse | PlainMessage<ListRealTimeManagementStateColorsResponse> | undefined): boolean;
 }
 

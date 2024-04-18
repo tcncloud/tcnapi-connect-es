@@ -730,3 +730,18 @@ export const AgentStateSequence = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * An rgba color.
+ *
+ * @generated from message api.commons.RgbaColor
+ */
+export const RgbaColor = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.RgbaColor",
+  () => [
+    { no: 1, name: "red", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 2, name: "green", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 3, name: "blue", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 4, name: "alpha", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+  ],
+);
+
