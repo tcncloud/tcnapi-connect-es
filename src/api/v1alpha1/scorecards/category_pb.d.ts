@@ -506,3 +506,86 @@ export declare class SampleAgentCall extends Message<SampleAgentCall> {
   static equals(a: SampleAgentCall | PlainMessage<SampleAgentCall> | undefined, b: SampleAgentCall | PlainMessage<SampleAgentCall> | undefined): boolean;
 }
 
+/**
+ * ListCategoriesByOrgIdRequest is the request to list categories by some criteria.
+ *
+ * @generated from message api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest
+ */
+export declare class ListCategoriesByOrgIdRequest extends Message<ListCategoriesByOrgIdRequest> {
+  /**
+   * Required. Specifies the org in which to list categories.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Optional. Returns categories by any author.
+   *
+   * @generated from field: repeated string author_ids = 2;
+   */
+  authorIds: string[];
+
+  /**
+   * Optional. Returns categories with any skill.
+   *
+   * @generated from field: repeated int64 skill_profiles = 3;
+   */
+  skillProfiles: bigint[];
+
+  /**
+   * Deprecated.
+   *
+   * @generated from field: repeated api.commons.CallType.Enum call_types = 4 [deprecated = true];
+   * @deprecated
+   */
+  callTypes: CallType_Enum[];
+
+  /**
+   * Required. Returns categories matching type.
+   *
+   * @generated from field: api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType category_type = 5;
+   */
+  categoryType: ListCategoriesByOrgIdRequest_CategoryType;
+
+  constructor(data?: PartialMessage<ListCategoriesByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListCategoriesByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListCategoriesByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListCategoriesByOrgIdRequest;
+
+  static equals(a: ListCategoriesByOrgIdRequest | PlainMessage<ListCategoriesByOrgIdRequest> | undefined, b: ListCategoriesByOrgIdRequest | PlainMessage<ListCategoriesByOrgIdRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from enum api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType
+ */
+export declare enum ListCategoriesByOrgIdRequest_CategoryType {
+  /**
+   * Default. Returns all category types.
+   *
+   * @generated from enum value: ANY = 0;
+   */
+  ANY = 0,
+
+  /**
+   * System created category (cannot be edited by users).
+   *
+   * @generated from enum value: SYSTEM = 1;
+   */
+  SYSTEM = 1,
+
+  /**
+   *  User created category.
+   *
+   * @generated from enum value: USER = 2;
+   */
+  USER = 2,
+}
+

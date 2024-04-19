@@ -192,3 +192,31 @@ export const SampleAgentCall = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * ListCategoriesByOrgIdRequest is the request to list categories by some criteria.
+ *
+ * @generated from message api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest
+ */
+export const ListCategoriesByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "author_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 3, name: "skill_profiles", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "call_types", kind: "enum", T: proto3.getEnumType(CallType_Enum), repeated: true },
+    { no: 5, name: "category_type", kind: "enum", T: proto3.getEnumType(ListCategoriesByOrgIdRequest_CategoryType) },
+  ],
+);
+
+/**
+ * @generated from enum api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType
+ */
+export const ListCategoriesByOrgIdRequest_CategoryType = /*@__PURE__*/ proto3.makeEnum(
+  "api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType",
+  [
+    {no: 0, name: "ANY"},
+    {no: 1, name: "SYSTEM"},
+    {no: 2, name: "USER"},
+  ],
+);
+
