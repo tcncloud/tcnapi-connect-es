@@ -203,8 +203,7 @@ export const ListCategoriesByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "author_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 3, name: "skill_profiles", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-    { no: 4, name: "call_types", kind: "enum", T: proto3.getEnumType(CallType_Enum), repeated: true },
-    { no: 5, name: "category_type", kind: "enum", T: proto3.getEnumType(ListCategoriesByOrgIdRequest_CategoryType) },
+    { no: 4, name: "category_type", kind: "enum", T: proto3.getEnumType(ListCategoriesByOrgIdRequest_CategoryType) },
   ],
 );
 

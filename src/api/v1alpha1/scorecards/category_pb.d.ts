@@ -534,17 +534,9 @@ export declare class ListCategoriesByOrgIdRequest extends Message<ListCategories
   skillProfiles: bigint[];
 
   /**
-   * Deprecated.
-   *
-   * @generated from field: repeated api.commons.CallType.Enum call_types = 4 [deprecated = true];
-   * @deprecated
-   */
-  callTypes: CallType_Enum[];
-
-  /**
    * Required. Returns categories matching type.
    *
-   * @generated from field: api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType category_type = 5;
+   * @generated from field: api.v1alpha1.scorecards.ListCategoriesByOrgIdRequest.CategoryType category_type = 4;
    */
   categoryType: ListCategoriesByOrgIdRequest_CategoryType;
 
