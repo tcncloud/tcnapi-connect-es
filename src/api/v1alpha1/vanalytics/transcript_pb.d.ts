@@ -3428,33 +3428,308 @@ export declare class AgentResponse extends Message<AgentResponse> {
 }
 
 /**
- * SearchByOrgIdRequest is a support-only request for searching transcripts.
+ * ListFlaggedTranscriptsByOrgIdRequest is a support-only request for searching flagged transcripts.
  *
- * @generated from message api.v1alpha1.vanalytics.SearchByOrgIdRequest
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest
  */
-export declare class SearchByOrgIdRequest extends Message<SearchByOrgIdRequest> {
+export declare class ListFlaggedTranscriptsByOrgIdRequest extends Message<ListFlaggedTranscriptsByOrgIdRequest> {
   /**
    * @generated from field: string org_id = 1;
    */
   orgId: string;
 
   /**
-   * @generated from field: api.v1alpha1.vanalytics.SearchRequest request = 2;
+   * number of hits included in response
+   *
+   * @generated from field: uint32 page_size = 2;
    */
-  request?: SearchRequest;
+  pageSize: number;
 
-  constructor(data?: PartialMessage<SearchByOrgIdRequest>);
+  /**
+   * @generated from field: api.v1alpha1.vanalytics.Sort sort = 3;
+   */
+  sort?: Sort;
+
+  /**
+   * Optional. transcript_mask contains a list of transcript fields to be returned.
+   * If no transcript_mask is provided it defaults to returning all fields.
+   *
+   * @generated from field: google.protobuf.FieldMask transcript_mask = 4;
+   */
+  transcriptMask?: FieldMask;
+
+  /**
+   * Optional. defines a query on flag summary.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary flag_summary = 5;
+   */
+  flagSummary?: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary;
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.vanalytics.SearchByOrgIdRequest";
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchByOrgIdRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchByOrgIdRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchByOrgIdRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest;
 
-  static equals(a: SearchByOrgIdRequest | PlainMessage<SearchByOrgIdRequest> | undefined, b: SearchByOrgIdRequest | PlainMessage<SearchByOrgIdRequest> | undefined): boolean;
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest> | undefined): boolean;
+}
+
+/**
+ * FlagSummary defines a query on flag summary fields.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary
+ */
+export declare class ListFlaggedTranscriptsByOrgIdRequest_FlagSummary extends Message<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary> {
+  /**
+   * Optional. Queries need review.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview need_review = 1;
+   */
+  needReview?: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview;
+
+  /**
+   * Optional. Queries review status.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.ReviewStatus review_status = 2;
+   */
+  reviewStatus?: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus;
+
+  /**
+   * Optional. Queries flags.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags flags = 3;
+   */
+  flags?: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags;
+
+  /**
+   * Optional. Queries count.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Count count = 4;
+   */
+  count?: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count;
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary;
+
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary> | undefined): boolean;
+}
+
+/**
+ * NeedReview defines a query on need review fields.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview
+ */
+export declare class ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview extends Message<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview> {
+  /**
+   * Optional. Queries flag sids. If no flag sids are given then
+   * it will filer on need review count > 0.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview.FlagSids flag_sids = 1;
+   */
+  flagSids?: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids;
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview;
+
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview> | undefined): boolean;
+}
+
+/**
+ * FlagSids defines a query on flag sids.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview.FlagSids
+ */
+export declare class ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids extends Message<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids> {
+  /**
+   * Optional. Must have any provided flag sids.
+   *
+   * @generated from field: repeated int64 any = 1;
+   */
+  any: bigint[];
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.NeedReview.FlagSids";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids;
+
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_NeedReview_FlagSids> | undefined): boolean;
+}
+
+/**
+ * ReviewStatus defines a query on review status.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.ReviewStatus
+ */
+export declare class ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus extends Message<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus> {
+  /**
+   * Optional. Must have any provided review status.
+   *
+   * @generated from field: repeated api.v1alpha1.vanalytics.TranscriptReviewStatus any = 1;
+   */
+  any: TranscriptReviewStatus[];
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.ReviewStatus";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus;
+
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_ReviewStatus> | undefined): boolean;
+}
+
+/**
+ * Flags defines a query on flags.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags
+ */
+export declare class ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags extends Message<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags> {
+  /**
+   * Optional. Queries flag sid.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags.FlagSid flag_sid = 1;
+   */
+  flagSid?: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid;
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags;
+
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags> | undefined): boolean;
+}
+
+/**
+ * FlagSid defines a query on flag sid.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags.FlagSid
+ */
+export declare class ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid extends Message<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid> {
+  /**
+   * Optional. Must have any of the provided flag sids.
+   *
+   * @generated from field: repeated int64 any = 1;
+   */
+  any: bigint[];
+
+  /**
+   * Optional. Must have all of the provided flag sids.
+   *
+   * @generated from field: repeated int64 all = 2;
+   */
+  all: bigint[];
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Flags.FlagSid";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid;
+
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Flags_FlagSid> | undefined): boolean;
+}
+
+/**
+ * Count defines a query on count.
+ *
+ * @generated from message api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Count
+ */
+export declare class ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count extends Message<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count> {
+  /**
+   * Optional. Queries count greater than or equal.
+   *
+   * @generated from field: google.protobuf.Int32Value gte = 1;
+   */
+  gte?: number;
+
+  /**
+   * Optional. Queries count less than or equal.
+   *
+   * @generated from field: google.protobuf.Int32Value lte = 2;
+   */
+  lte?: number;
+
+  /**
+   * Optional. Queries count greater than.
+   *
+   * @generated from field: google.protobuf.Int32Value gt = 3;
+   */
+  gt?: number;
+
+  /**
+   * Optional. Queries count less than.
+   *
+   * @generated from field: google.protobuf.Int32Value lt = 4;
+   */
+  lt?: number;
+
+  /**
+   * Optional. Queries count equal to.
+   *
+   * @generated from field: google.protobuf.Int32Value eq = 5;
+   */
+  eq?: number;
+
+  constructor(data?: PartialMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary.Count";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count;
+
+  static equals(a: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count> | undefined, b: ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count | PlainMessage<ListFlaggedTranscriptsByOrgIdRequest_FlagSummary_Count> | undefined): boolean;
 }
 
