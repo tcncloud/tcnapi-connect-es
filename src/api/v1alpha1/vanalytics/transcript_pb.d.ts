@@ -3434,32 +3434,37 @@ export declare class AgentResponse extends Message<AgentResponse> {
  */
 export declare class ListFlaggedTranscriptsByOrgIdRequest extends Message<ListFlaggedTranscriptsByOrgIdRequest> {
   /**
+   * Required. The organization id to search by.
+   *
    * @generated from field: string org_id = 1;
    */
   orgId: string;
 
   /**
-   * number of hits included in response
+   * Optional. The number of hits included in response.
+   * Will default to 10 if not provided
    *
    * @generated from field: uint32 page_size = 2;
    */
   pageSize: number;
 
   /**
+   * Optional. The sort order.
+   *
    * @generated from field: api.v1alpha1.vanalytics.Sort sort = 3;
    */
   sort?: Sort;
 
   /**
-   * Optional. transcript_mask contains a list of transcript fields to be returned.
-   * If no transcript_mask is provided it defaults to returning all fields.
+   * Optional. Transcript mask contains a list of transcript fields to be returned.
+   * If no transcript mask is provided it defaults to returning all fields.
    *
    * @generated from field: google.protobuf.FieldMask transcript_mask = 4;
    */
   transcriptMask?: FieldMask;
 
   /**
-   * Optional. defines a query on flag summary.
+   * Optional. Defines a query on flag summary.
    *
    * @generated from field: api.v1alpha1.vanalytics.ListFlaggedTranscriptsByOrgIdRequest.FlagSummary flag_summary = 5;
    */
