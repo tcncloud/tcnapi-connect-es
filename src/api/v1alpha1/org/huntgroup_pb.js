@@ -840,6 +840,37 @@ export const UpdateAgentTriggersResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * @generated from message api.v1alpha1.org.HuntGroupScriptDetails
+ */
+export const HuntGroupScriptDetails = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.HuntGroupScriptDetails",
+  () => [
+    { no: 1, name: "script", kind: "message", T: HuntGroupScript },
+    { no: 2, name: "hunt_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "outbound_broadcast_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "inbound_broadcast_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.org.ListHuntGroupScriptsRequest
+ */
+export const ListHuntGroupScriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.ListHuntGroupScriptsRequest",
+  [],
+);
+
+/**
+ * @generated from message api.v1alpha1.org.ListHuntGroupScriptsResponse
+ */
+export const ListHuntGroupScriptsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.ListHuntGroupScriptsResponse",
+  () => [
+    { no: 1, name: "scripts", kind: "message", T: HuntGroupScript, repeated: true },
+  ],
+);
+
+/**
  * The request message for GetHuntGroupScript
  *
  * @generated from message api.v1alpha1.org.GetHuntGroupScriptRequest
@@ -848,6 +879,7 @@ export const GetHuntGroupScriptRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.GetHuntGroupScriptRequest",
   () => [
     { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "script_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -860,6 +892,7 @@ export const GetHuntGroupScriptResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.GetHuntGroupScriptResponse",
   () => [
     { no: 1, name: "hunt_group_script", kind: "message", T: HuntGroupScript },
+    { no: 2, name: "script_details", kind: "message", T: HuntGroupScriptDetails },
   ],
 );
 
@@ -896,6 +929,7 @@ export const UpdateHuntGroupScriptRequest = /*@__PURE__*/ proto3.makeMessageType
   () => [
     { no: 1, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "hunt_group_script", kind: "message", T: HuntGroupScript },
+    { no: 3, name: "script_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 
@@ -929,6 +963,52 @@ export const DeleteHuntGroupScriptRequest = /*@__PURE__*/ proto3.makeMessageType
  */
 export const DeleteHuntGroupScriptResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.DeleteHuntGroupScriptResponse",
+  [],
+);
+
+/**
+ * The request message for AssignHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.AssignHuntGroupScriptRequest
+ */
+export const AssignHuntGroupScriptRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AssignHuntGroupScriptRequest",
+  () => [
+    { no: 1, name: "script_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * The response message for AssignHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.AssignHuntGroupScriptResponse
+ */
+export const AssignHuntGroupScriptResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AssignHuntGroupScriptResponse",
+  [],
+);
+
+/**
+ * The request message for UnassignHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.UnassignHuntGroupScriptRequest
+ */
+export const UnassignHuntGroupScriptRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UnassignHuntGroupScriptRequest",
+  () => [
+    { no: 1, name: "script_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * The response message for UnassignHuntGroupScript
+ *
+ * @generated from message api.v1alpha1.org.UnassignHuntGroupScriptResponse
+ */
+export const UnassignHuntGroupScriptResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.UnassignHuntGroupScriptResponse",
   [],
 );
 
