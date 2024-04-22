@@ -2142,6 +2142,8 @@ export declare class HuntGroupScriptDetails extends Message<HuntGroupScriptDetai
 }
 
 /**
+ * The request message for ListHuntGroupScript
+ *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsRequest
  */
 export declare class ListHuntGroupScriptsRequest extends Message<ListHuntGroupScriptsRequest> {
@@ -2161,10 +2163,14 @@ export declare class ListHuntGroupScriptsRequest extends Message<ListHuntGroupSc
 }
 
 /**
+ * The response message for ListHuntGroupScript
+ *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsResponse
  */
 export declare class ListHuntGroupScriptsResponse extends Message<ListHuntGroupScriptsResponse> {
   /**
+   * The scripts belonging to an org
+   *
    * @generated from field: repeated api.commons.org.HuntGroupScript scripts = 1;
    */
   scripts: HuntGroupScript[];
@@ -2441,11 +2447,15 @@ export declare class DeleteHuntGroupScriptResponse extends Message<DeleteHuntGro
  */
 export declare class AssignHuntGroupScriptRequest extends Message<AssignHuntGroupScriptRequest> {
   /**
+   * The script to be assigned
+   *
    * @generated from field: int64 script_sid = 1;
    */
   scriptSid: bigint;
 
   /**
+   * The hunt group of where the script will be assigned
+   *
    * @generated from field: int64 hunt_group_sid = 2;
    */
   huntGroupSid: bigint;
@@ -2493,11 +2503,15 @@ export declare class AssignHuntGroupScriptResponse extends Message<AssignHuntGro
  */
 export declare class UnassignHuntGroupScriptRequest extends Message<UnassignHuntGroupScriptRequest> {
   /**
+   * The script to be assigned
+   *
    * @generated from field: int64 script_sid = 1;
    */
   scriptSid: bigint;
 
   /**
+   * The hunt group of where the script will be assigned
+   *
    * @generated from field: int64 hunt_group_sid = 2;
    */
   huntGroupSid: bigint;

@@ -853,6 +853,8 @@ export const HuntGroupScriptDetails = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * The request message for ListHuntGroupScript
+ *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsRequest
  */
 export const ListHuntGroupScriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -861,6 +863,8 @@ export const ListHuntGroupScriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * The response message for ListHuntGroupScript
+ *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsResponse
  */
 export const ListHuntGroupScriptsResponse = /*@__PURE__*/ proto3.makeMessageType(
