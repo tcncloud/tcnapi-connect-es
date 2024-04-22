@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { Filter } from "./filter_pb.js";
 import type { DnclList } from "./dncl_list_pb.js";
 
 /**
@@ -382,6 +383,13 @@ export declare class Flag extends Message<Flag> {
    * @generated from field: int64 version = 7;
    */
   version: bigint;
+
+  /**
+   * Output only. Filters associated with this flag.
+   *
+   * @generated from field: repeated wfo.vanalytics.v2.Filter filters = 8;
+   */
+  filters: Filter[];
 
   /**
    * Output only. Determines whether this flag must be reviewed.
