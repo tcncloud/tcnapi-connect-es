@@ -3427,3 +3427,61 @@ export declare class AgentResponse extends Message<AgentResponse> {
   static equals(a: AgentResponse | PlainMessage<AgentResponse> | undefined, b: AgentResponse | PlainMessage<AgentResponse> | undefined): boolean;
 }
 
+/**
+ * SearchByOrgIdRequest is a support-only request for searching transcripts by org id.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchByOrgIdRequest
+ */
+export declare class SearchByOrgIdRequest extends Message<SearchByOrgIdRequest> {
+  /**
+   * Required. The organization id to search by.
+   *
+   * @generated from field: string org_id = 1;
+   */
+  orgId: string;
+
+  /**
+   * Optional. The number of hits included in response.
+   * Will default to 10 if not provided
+   *
+   * @generated from field: uint32 page_size = 2;
+   */
+  pageSize: number;
+
+  /**
+   * Optional. The sort order.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.Sort sort = 3;
+   */
+  sort?: Sort;
+
+  /**
+   * Optional. Transcript mask contains a list of transcript fields to be returned.
+   * If no transcript mask is provided it defaults to returning all fields.
+   *
+   * @generated from field: google.protobuf.FieldMask transcript_mask = 4;
+   */
+  transcriptMask?: FieldMask;
+
+  /**
+   * Optional. Defines a query on flag summary.
+   *
+   * @generated from field: api.v1alpha1.vanalytics.SearchQuery.FlagSummary flag_summary = 5;
+   */
+  flagSummary?: SearchQuery_FlagSummary;
+
+  constructor(data?: PartialMessage<SearchByOrgIdRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.vanalytics.SearchByOrgIdRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SearchByOrgIdRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SearchByOrgIdRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SearchByOrgIdRequest;
+
+  static equals(a: SearchByOrgIdRequest | PlainMessage<SearchByOrgIdRequest> | undefined, b: SearchByOrgIdRequest | PlainMessage<SearchByOrgIdRequest> | undefined): boolean;
+}
+
