@@ -3170,6 +3170,11 @@ export declare const WFM: {
     },
     /**
      * List org-level RealTimeManagementStates.
+     * Required permissions:
+     *   PERMISSION_WFM_ADHERENCE_ADMIN, PERMISSION_WFM_ADHERENCE_MANAGER, or PERMISSION_WFM_ADHERENCE_MONITOR
+     * Errors:
+     *   - grpc.Invalid: on invalid input.
+     *   - grpc.Internal: on unexpected error.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListRealTimeManagementStates
      */
@@ -3181,6 +3186,11 @@ export declare const WFM: {
     },
     /**
      * List org-level RealTimeManagementStateColors.
+     * Required permissions:
+     *   PERMISSION_WFM_ADHERENCE_ADMIN, PERMISSION_WFM_ADHERENCE_MANAGER, or PERMISSION_WFM_ADHERENCE_MONITOR
+     * Errors:
+     *   - grpc.Invalid: on invalid input.
+     *   - grpc.Internal: on unexpected error.
      *
      * @generated from rpc api.v1alpha1.wfm.WFM.ListRealTimeManagementStateColors
      */
