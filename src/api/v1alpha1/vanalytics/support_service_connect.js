@@ -5,6 +5,7 @@
 
 import { DeleteFlagTranscriptRequest, DeleteFlagTranscriptResponse } from "./flag_transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { SearchByOrgIdRequest, SearchResponse } from "./transcript_pb.js";
 
 /**
  * @generated from service api.v1alpha1.vanalytics.VanalyticsSupport
@@ -21,6 +22,17 @@ export const VanalyticsSupport = {
       name: "DeleteFlagTranscript",
       I: DeleteFlagTranscriptRequest,
       O: DeleteFlagTranscriptResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * SearchByOrgId searches transcripts for a specific org.
+     *
+     * @generated from rpc api.v1alpha1.vanalytics.VanalyticsSupport.SearchByOrgId
+     */
+    searchByOrgId: {
+      name: "SearchByOrgId",
+      I: SearchByOrgIdRequest,
+      O: SearchResponse,
       kind: MethodKind.Unary,
     },
   }

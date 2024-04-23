@@ -19,7 +19,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RealTimeManagementState, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, RgbaColor, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import type { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RealTimeManagementState, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import type { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -15400,6 +15400,55 @@ export declare class ReplaceAgentOnScheduleRes extends Message<ReplaceAgentOnSch
 }
 
 /**
+ * An rgba color.
+ *
+ * @generated from message api.v1alpha1.wfm.RgbaColor
+ */
+export declare class RgbaColor extends Message<RgbaColor> {
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float red = 1;
+   */
+  red: number;
+
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float green = 2;
+   */
+  green: number;
+
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float blue = 3;
+   */
+  blue: number;
+
+  /**
+   * [0.0, 1.0]
+   *
+   * @generated from field: float alpha = 4;
+   */
+  alpha: number;
+
+  constructor(data?: PartialMessage<RgbaColor>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.RgbaColor";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RgbaColor;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RgbaColor;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RgbaColor;
+
+  static equals(a: RgbaColor | PlainMessage<RgbaColor> | undefined, b: RgbaColor | PlainMessage<RgbaColor> | undefined): boolean;
+}
+
+/**
  * Request message for the HelloWorldWFMAdherence RPC.
  *
  * @generated from message api.v1alpha1.wfm.HelloWorldWFMAdherenceRequest
@@ -15578,7 +15627,7 @@ export declare class RealTimeManagementStateColor extends Message<RealTimeManage
   /**
    * The color.
    *
-   * @generated from field: api.commons.RgbaColor color = 2;
+   * @generated from field: api.v1alpha1.wfm.RgbaColor color = 2;
    */
   color?: RgbaColor;
 

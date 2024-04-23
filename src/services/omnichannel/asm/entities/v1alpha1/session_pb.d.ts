@@ -7,6 +7,39 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3 } from "@bufbuild/protobuf";
 
 /**
+ * @generated from enum services.omnichannel.asm.entities.v1alpha1.StatusState
+ */
+export declare enum StatusState {
+  /**
+   * unknown
+   *
+   * @generated from enum value: STATUS_STATE_UNKNOWN = 0;
+   */
+  STATUS_STATE_UNKNOWN = 0,
+
+  /**
+   * no conversations assigned
+   *
+   * @generated from enum value: WAITING = 1;
+   */
+  WAITING = 1,
+
+  /**
+   * conversations assigned but none open
+   *
+   * @generated from enum value: IDLE = 2;
+   */
+  IDLE = 2,
+
+  /**
+   * conversation is open
+   *
+   * @generated from enum value: CONVERSATION_OPEN = 3;
+   */
+  CONVERSATION_OPEN = 3,
+}
+
+/**
  * @generated from message services.omnichannel.asm.entities.v1alpha1.AsmSession
  */
 export declare class AsmSession extends Message<AsmSession> {
@@ -159,6 +192,90 @@ export declare class VoiceRegistration extends Message<VoiceRegistration> {
  * @generated from message services.omnichannel.asm.entities.v1alpha1.AsmUserDetails
  */
 export declare class AsmUserDetails extends Message<AsmUserDetails> {
+  /**
+   * agents user id
+   *
+   * @generated from field: string user_id = 1;
+   */
+  userId: string;
+
+  /**
+   * agents name
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * the agents sid
+   *
+   * @generated from field: int64 agent_sid = 3;
+   */
+  agentSid: bigint;
+
+  /**
+   * enum of agents status
+   *
+   * @generated from field: services.omnichannel.asm.entities.v1alpha1.StatusState agent_status = 4;
+   */
+  agentStatus: StatusState;
+
+  /**
+   * agents profile group name
+   *
+   * @generated from field: string agent_profile_group_name = 5;
+   */
+  agentProfileGroupName: string;
+
+  /**
+   * the agents current conversation
+   *
+   * @generated from field: int64 current_conversation_sid = 6 [jstype = JS_STRING];
+   */
+  currentConversationSid: string;
+
+  /**
+   * time from first customer message to agent response. between all conversations.
+   *
+   * @generated from field: int64 average_customer_wait_time_seconds = 7;
+   */
+  averageCustomerWaitTimeSeconds: bigint;
+
+  /**
+   * responste time between all conversations.
+   *
+   * @generated from field: int64 average_time_to_respond_seconds = 8;
+   */
+  averageTimeToRespondSeconds: bigint;
+
+  /**
+   * last event time
+   *
+   * @generated from field: google.protobuf.Timestamp last_event_time = 9;
+   */
+  lastEventTime?: Timestamp;
+
+  /**
+   * Agents Skills
+   *
+   * @generated from field: map<string, int64> skills = 10;
+   */
+  skills: { [key: string]: bigint };
+
+  /**
+   * Asm Session Sid
+   *
+   * @generated from field: google.protobuf.Int64Value asm_session_sid = 11;
+   */
+  asmSessionSid?: bigint;
+
+  /**
+   * the list of response events
+   *
+   * @generated from field: repeated services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent events = 12;
+   */
+  events: DashboardAgentResponseEvent[];
+
   constructor(data?: PartialMessage<AsmUserDetails>);
 
   static readonly runtime: typeof proto3;
@@ -172,5 +289,47 @@ export declare class AsmUserDetails extends Message<AsmUserDetails> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AsmUserDetails;
 
   static equals(a: AsmUserDetails | PlainMessage<AsmUserDetails> | undefined, b: AsmUserDetails | PlainMessage<AsmUserDetails> | undefined): boolean;
+}
+
+/**
+ * The response event information for an agent
+ *
+ * @generated from message services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent
+ */
+export declare class DashboardAgentResponseEvent extends Message<DashboardAgentResponseEvent> {
+  /**
+   * the time it took to respond in seconds
+   *
+   * @generated from field: int64 response_time_seconds = 1;
+   */
+  responseTimeSeconds: bigint;
+
+  /**
+   * the time of the event
+   *
+   * @generated from field: google.protobuf.Timestamp time = 2;
+   */
+  time?: Timestamp;
+
+  /**
+   * whether or not this was the initial message sent by the agent
+   *
+   * @generated from field: bool is_initial_agent_message = 3;
+   */
+  isInitialAgentMessage: boolean;
+
+  constructor(data?: PartialMessage<DashboardAgentResponseEvent>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.omnichannel.asm.entities.v1alpha1.DashboardAgentResponseEvent";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DashboardAgentResponseEvent;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DashboardAgentResponseEvent;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DashboardAgentResponseEvent;
+
+  static equals(a: DashboardAgentResponseEvent | PlainMessage<DashboardAgentResponseEvent> | undefined, b: DashboardAgentResponseEvent | PlainMessage<DashboardAgentResponseEvent> | undefined): boolean;
 }
 

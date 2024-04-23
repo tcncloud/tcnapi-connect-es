@@ -18,7 +18,7 @@
 // @ts-nocheck
 
 import { FloatValue, Int64Value, proto3, Timestamp } from "@bufbuild/protobuf";
-import { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RealTimeManagementState, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, RgbaColor, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
+import { AgentStateSequence, AvailabilityOption, BitmapType, CallProfileGroupAvgs, CallProfileGroupCalls, ClientHistoryCacheInfo, ConfigEntityType, ConfigRelationshipType, ConstraintRuleType, ConstraintTimeUnit, DatetimeRange, DayOfWeek, DiagnosticCode, DiagnosticLevel, DOWPlacementType, ForecastingParameters, InitialSetupStatus, OpenTimesOption, OptionTypes, PerformanceMetricType, ProfileDOW, ProfileMOY, ProfileTOD, ProfileWOMS, RealTimeManagementState, RegressionForecasterAvgsProcessingType, RegressionForecasterModelTypes, ScheduleSelector, ScheduleType, SchedulingResultMetric, SchedulingTargetType, SkillProfileCategory, SkillType_Enum } from "../../commons/wfm_pb.js";
 import { TimeZone } from "../../commons/org_pb.js";
 
 /**
@@ -5367,6 +5367,21 @@ export const ReplaceAgentOnScheduleRes = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "updated_shift_instances", kind: "message", T: ShiftInstance, repeated: true },
     { no: 2, name: "diagnostics", kind: "message", T: Diagnostic, repeated: true },
+  ],
+);
+
+/**
+ * An rgba color.
+ *
+ * @generated from message api.v1alpha1.wfm.RgbaColor
+ */
+export const RgbaColor = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.RgbaColor",
+  () => [
+    { no: 1, name: "red", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 2, name: "green", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 3, name: "blue", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 4, name: "alpha", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
 );
 

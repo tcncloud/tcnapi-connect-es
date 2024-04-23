@@ -221,6 +221,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_PAYNSECONDS = 4100;
    */
   PAYNSECONDS = 4100,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_SUTHERLANDREV = 4200;
+   */
+  SUTHERLANDREV = 4200,
 }
 
 /**
@@ -1299,6 +1304,11 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD = 4101;
    */
   REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD = 4101,
+
+  /**
+   * @generated from enum value: REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT = 4201;
+   */
+  REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT = 4201,
 }
 
 /**
@@ -3892,6 +3902,12 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecutePaynsecondsTokenizeCard;
     case: "paynsecondsTokenizeCard";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteSutherlandrevPaymentConnect sutherlandrev_payment_connect = 4201;
+     */
+    value: ExecuteSutherlandrevPaymentConnect;
+    case: "sutherlandrevPaymentConnect";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -8608,5 +8624,24 @@ export declare class ExecutePaynsecondsTokenizeCard extends Message<ExecutePayns
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecutePaynsecondsTokenizeCard;
 
   static equals(a: ExecutePaynsecondsTokenizeCard | PlainMessage<ExecutePaynsecondsTokenizeCard> | undefined, b: ExecutePaynsecondsTokenizeCard | PlainMessage<ExecutePaynsecondsTokenizeCard> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteSutherlandrevPaymentConnect
+ */
+export declare class ExecuteSutherlandrevPaymentConnect extends Message<ExecuteSutherlandrevPaymentConnect> {
+  constructor(data?: PartialMessage<ExecuteSutherlandrevPaymentConnect>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteSutherlandrevPaymentConnect";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteSutherlandrevPaymentConnect;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteSutherlandrevPaymentConnect;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteSutherlandrevPaymentConnect;
+
+  static equals(a: ExecuteSutherlandrevPaymentConnect | PlainMessage<ExecuteSutherlandrevPaymentConnect> | undefined, b: ExecuteSutherlandrevPaymentConnect | PlainMessage<ExecuteSutherlandrevPaymentConnect> | undefined): boolean;
 }
 

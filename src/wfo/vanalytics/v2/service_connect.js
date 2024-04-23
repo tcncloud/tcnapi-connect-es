@@ -5,6 +5,9 @@
 
 import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { CreateFilterRequest, DeleteFilterRequest, DeleteFilterResponse, Filter, GetFilterRequest, ListFiltersRequest, ListFiltersResponse, UpdateFilterRequest } from "./filter_pb.js";
+import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
+import { ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
 
 /**
  * @generated from service wfo.vanalytics.v2.Vanalytics
@@ -23,6 +26,84 @@ export const Vanalytics = {
       name: "SearchTranscripts",
       I: SearchTranscriptsRequest,
       O: SearchTranscriptsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * CreateFilter creates a new filter. The filter contains a transcript query
+     * to filter transcripts.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateFilter
+     */
+    createFilter: {
+      name: "CreateFilter",
+      I: CreateFilterRequest,
+      O: Filter,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListFilters lists filters.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListFilters
+     */
+    listFilters: {
+      name: "ListFilters",
+      I: ListFiltersRequest,
+      O: ListFiltersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateFilter updates a filter transcript query and/or name.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.UpdateFilter
+     */
+    updateFilter: {
+      name: "UpdateFilter",
+      I: UpdateFilterRequest,
+      O: Filter,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteFilter deletes filter given a filter_sid.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.DeleteFilter
+     */
+    deleteFilter: {
+      name: "DeleteFilter",
+      I: DeleteFilterRequest,
+      O: DeleteFilterResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * GetFilter gets filter given a filter_sid or name.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetFilter
+     */
+    getFilter: {
+      name: "GetFilter",
+      I: GetFilterRequest,
+      O: Filter,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListFlagTranscriptFilters lists flag transcript filters in an organization.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListFlagTranscriptFilters
+     */
+    listFlagTranscriptFilters: {
+      name: "ListFlagTranscriptFilters",
+      I: ListFlagTranscriptFiltersRequest,
+      O: ListFlagTranscriptFiltersResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * ListFlagFilters lists flag filter associations.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListFlagFilters
+     */
+    listFlagFilters: {
+      name: "ListFlagFilters",
+      I: ListFlagFiltersRequest,
+      O: ListFlagFiltersResponse,
       kind: MethodKind.Unary,
     },
   }

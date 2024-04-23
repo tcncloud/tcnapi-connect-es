@@ -55,6 +55,7 @@ export const IntegrationType = /*@__PURE__*/ proto3.makeEnum(
     {no: 3900, name: "INTEGRATION_TYPE_PRIOCOMMERCE", localName: "PRIOCOMMERCE"},
     {no: 4000, name: "INTEGRATION_TYPE_NAVIGA", localName: "NAVIGA"},
     {no: 4100, name: "INTEGRATION_TYPE_PAYNSECONDS", localName: "PAYNSECONDS"},
+    {no: 4200, name: "INTEGRATION_TYPE_SUTHERLANDREV", localName: "SUTHERLANDREV"},
   ],
 );
 
@@ -281,6 +282,7 @@ export const RequestMethod = /*@__PURE__*/ proto3.makeEnum(
     {no: 4001, name: "REQUEST_METHOD_NAVIGA_CREATE_PAYMENT"},
     {no: 4002, name: "REQUEST_METHOD_NAVIGA_CHANGE_BILLING"},
     {no: 4101, name: "REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD"},
+    {no: 4201, name: "REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT"},
   ],
 );
 
@@ -904,6 +906,7 @@ export const ExecuteFlow = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4001, name: "naviga_create_payment", kind: "message", T: ExecuteNavigaCreatePayment, oneof: "value" },
     { no: 4002, name: "naviga_change_billing", kind: "message", T: ExecuteNavigaChangeBilling, oneof: "value" },
     { no: 4101, name: "paynseconds_tokenize_card", kind: "message", T: ExecutePaynsecondsTokenizeCard, oneof: "value" },
+    { no: 4201, name: "sutherlandrev_payment_connect", kind: "message", T: ExecuteSutherlandrevPaymentConnect, oneof: "value" },
   ],
 );
 
@@ -2870,6 +2873,14 @@ export const ExecuteNavigaChangeBilling = /*@__PURE__*/ proto3.makeMessageType(
  */
 export const ExecutePaynsecondsTokenizeCard = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.integrations.ExecutePaynsecondsTokenizeCard",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteSutherlandrevPaymentConnect
+ */
+export const ExecuteSutherlandrevPaymentConnect = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteSutherlandrevPaymentConnect",
   [],
 );
 
