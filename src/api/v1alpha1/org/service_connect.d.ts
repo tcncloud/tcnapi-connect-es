@@ -1811,7 +1811,7 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * DeleteHuntGroupScript removes a hunt group script
+     * DeleteHuntGroupScript deletes a hunt group script
      *
      * @generated from rpc api.v1alpha1.org.Org.DeleteHuntGroupScript
      */
@@ -1833,7 +1833,7 @@ export declare const Org: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * UnassignHuntGroupScript unassigns a script to a hunt group
+     * UnassignHuntGroupScript unassigns a script from a hunt group
      *
      * @generated from rpc api.v1alpha1.org.Org.UnassignHuntGroupScript
      */
