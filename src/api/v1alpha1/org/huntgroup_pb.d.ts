@@ -2394,11 +2394,11 @@ export declare class DeleteHuntGroupScriptResponse extends Message<DeleteHuntGro
 }
 
 /**
- * The request message for AssignHuntGroupScript
+ * The request message for AssignScriptToHuntGroups
  *
- * @generated from message api.v1alpha1.org.AssignHuntGroupScriptRequest
+ * @generated from message api.v1alpha1.org.AssignScriptToHuntGroupsRequest
  */
-export declare class AssignHuntGroupScriptRequest extends Message<AssignHuntGroupScriptRequest> {
+export declare class AssignScriptToHuntGroupsRequest extends Message<AssignScriptToHuntGroupsRequest> {
   /**
    * The script to be assigned
    *
@@ -2413,48 +2413,48 @@ export declare class AssignHuntGroupScriptRequest extends Message<AssignHuntGrou
    */
   huntGroupSids: bigint[];
 
-  constructor(data?: PartialMessage<AssignHuntGroupScriptRequest>);
+  constructor(data?: PartialMessage<AssignScriptToHuntGroupsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.AssignHuntGroupScriptRequest";
+  static readonly typeName = "api.v1alpha1.org.AssignScriptToHuntGroupsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignHuntGroupScriptRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignScriptToHuntGroupsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignHuntGroupScriptRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignScriptToHuntGroupsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignHuntGroupScriptRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignScriptToHuntGroupsRequest;
 
-  static equals(a: AssignHuntGroupScriptRequest | PlainMessage<AssignHuntGroupScriptRequest> | undefined, b: AssignHuntGroupScriptRequest | PlainMessage<AssignHuntGroupScriptRequest> | undefined): boolean;
+  static equals(a: AssignScriptToHuntGroupsRequest | PlainMessage<AssignScriptToHuntGroupsRequest> | undefined, b: AssignScriptToHuntGroupsRequest | PlainMessage<AssignScriptToHuntGroupsRequest> | undefined): boolean;
 }
 
 /**
- * The response message for AssignHuntGroupScript
+ * The response message for AssignScriptToHuntGroups
  *
- * @generated from message api.v1alpha1.org.AssignHuntGroupScriptResponse
+ * @generated from message api.v1alpha1.org.AssignScriptToHuntGroupsResponse
  */
-export declare class AssignHuntGroupScriptResponse extends Message<AssignHuntGroupScriptResponse> {
-  constructor(data?: PartialMessage<AssignHuntGroupScriptResponse>);
+export declare class AssignScriptToHuntGroupsResponse extends Message<AssignScriptToHuntGroupsResponse> {
+  constructor(data?: PartialMessage<AssignScriptToHuntGroupsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.AssignHuntGroupScriptResponse";
+  static readonly typeName = "api.v1alpha1.org.AssignScriptToHuntGroupsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignHuntGroupScriptResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignScriptToHuntGroupsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignHuntGroupScriptResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignScriptToHuntGroupsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignHuntGroupScriptResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignScriptToHuntGroupsResponse;
 
-  static equals(a: AssignHuntGroupScriptResponse | PlainMessage<AssignHuntGroupScriptResponse> | undefined, b: AssignHuntGroupScriptResponse | PlainMessage<AssignHuntGroupScriptResponse> | undefined): boolean;
+  static equals(a: AssignScriptToHuntGroupsResponse | PlainMessage<AssignScriptToHuntGroupsResponse> | undefined, b: AssignScriptToHuntGroupsResponse | PlainMessage<AssignScriptToHuntGroupsResponse> | undefined): boolean;
 }
 
 /**
- * The request message for UnassignHuntGroupScript
+ * The request message for UnassignScriptFromHuntGroups
  *
- * @generated from message api.v1alpha1.org.UnassignHuntGroupScriptRequest
+ * @generated from message api.v1alpha1.org.UnassignScriptFromHuntGroupsRequest
  */
-export declare class UnassignHuntGroupScriptRequest extends Message<UnassignHuntGroupScriptRequest> {
+export declare class UnassignScriptFromHuntGroupsRequest extends Message<UnassignScriptFromHuntGroupsRequest> {
   /**
    * The script to be unassigned
    *
@@ -2469,39 +2469,39 @@ export declare class UnassignHuntGroupScriptRequest extends Message<UnassignHunt
    */
   huntGroupSids: bigint[];
 
-  constructor(data?: PartialMessage<UnassignHuntGroupScriptRequest>);
+  constructor(data?: PartialMessage<UnassignScriptFromHuntGroupsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.UnassignHuntGroupScriptRequest";
+  static readonly typeName = "api.v1alpha1.org.UnassignScriptFromHuntGroupsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnassignHuntGroupScriptRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnassignScriptFromHuntGroupsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnassignHuntGroupScriptRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnassignScriptFromHuntGroupsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnassignHuntGroupScriptRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnassignScriptFromHuntGroupsRequest;
 
-  static equals(a: UnassignHuntGroupScriptRequest | PlainMessage<UnassignHuntGroupScriptRequest> | undefined, b: UnassignHuntGroupScriptRequest | PlainMessage<UnassignHuntGroupScriptRequest> | undefined): boolean;
+  static equals(a: UnassignScriptFromHuntGroupsRequest | PlainMessage<UnassignScriptFromHuntGroupsRequest> | undefined, b: UnassignScriptFromHuntGroupsRequest | PlainMessage<UnassignScriptFromHuntGroupsRequest> | undefined): boolean;
 }
 
 /**
- * The response message for UnassignHuntGroupScript
+ * The response message for UnassignScriptFromHuntGroups
  *
- * @generated from message api.v1alpha1.org.UnassignHuntGroupScriptResponse
+ * @generated from message api.v1alpha1.org.UnassignScriptFromHuntGroupsResponse
  */
-export declare class UnassignHuntGroupScriptResponse extends Message<UnassignHuntGroupScriptResponse> {
-  constructor(data?: PartialMessage<UnassignHuntGroupScriptResponse>);
+export declare class UnassignScriptFromHuntGroupsResponse extends Message<UnassignScriptFromHuntGroupsResponse> {
+  constructor(data?: PartialMessage<UnassignScriptFromHuntGroupsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.UnassignHuntGroupScriptResponse";
+  static readonly typeName = "api.v1alpha1.org.UnassignScriptFromHuntGroupsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnassignHuntGroupScriptResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnassignScriptFromHuntGroupsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnassignHuntGroupScriptResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnassignScriptFromHuntGroupsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnassignHuntGroupScriptResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnassignScriptFromHuntGroupsResponse;
 
-  static equals(a: UnassignHuntGroupScriptResponse | PlainMessage<UnassignHuntGroupScriptResponse> | undefined, b: UnassignHuntGroupScriptResponse | PlainMessage<UnassignHuntGroupScriptResponse> | undefined): boolean;
+  static equals(a: UnassignScriptFromHuntGroupsResponse | PlainMessage<UnassignScriptFromHuntGroupsResponse> | undefined, b: UnassignScriptFromHuntGroupsResponse | PlainMessage<UnassignScriptFromHuntGroupsResponse> | undefined): boolean;
 }
 
