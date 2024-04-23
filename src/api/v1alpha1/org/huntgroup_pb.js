@@ -3,10 +3,9 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
+import { FieldMask, proto3 } from "@bufbuild/protobuf";
 import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
-import { BroadcastType } from "../../commons/broadcasts_pb.js";
 
 /**
  * Request message for the GetHuntGroupSettings RPC method.
@@ -355,42 +354,6 @@ export const CopyDataDipTemplateToOrganizationRequest = /*@__PURE__*/ proto3.mak
 export const CopyDataDipTemplateToOrganizationResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.CopyDataDipTemplateToOrganizationResponse",
   [],
-);
-
-/**
- * Request message for ListBroadcastTemplateGeneralDetails RPC method
- *
- * @generated from message api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsRequest
- */
-export const ListBroadcastTemplateGeneralDetailsRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsRequest",
-  [],
-);
-
-/**
- * Response message for ListBroadcastTemplateGeneralDetails RPC method
- *
- * @generated from message api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse
- */
-export const ListBroadcastTemplateGeneralDetailsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse",
-  () => [
-    { no: 1, name: "templates", kind: "message", T: ListBroadcastTemplateGeneralDetailsResponse_Data, repeated: true },
-  ],
-);
-
-/**
- * @generated from message api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse.Data
- */
-export const ListBroadcastTemplateGeneralDetailsResponse_Data = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse.Data",
-  () => [
-    { no: 1, name: "template_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "broadcast_type", kind: "enum", T: proto3.getEnumType(BroadcastType) },
-    { no: 4, name: "last_scheduled_date", kind: "message", T: Timestamp },
-  ],
-  {localName: "ListBroadcastTemplateGeneralDetailsResponse_Data"},
 );
 
 /**
