@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupScriptDetails, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -2095,53 +2095,6 @@ export declare class UpdateAgentTriggersResponse extends Message<UpdateAgentTrig
 }
 
 /**
- * @generated from message api.v1alpha1.org.HuntGroupScriptDetails
- */
-export declare class HuntGroupScriptDetails extends Message<HuntGroupScriptDetails> {
-  /**
-   * The hunt group script
-   *
-   * @generated from field: api.commons.org.HuntGroupScript script = 1;
-   */
-  script?: HuntGroupScript;
-
-  /**
-   * The hunt groups that have been assigned this script
-   *
-   * @generated from field: repeated int64 hunt_group_sids = 2;
-   */
-  huntGroupSids: bigint[];
-
-  /**
-   * The outbound broadcast templates that have been assigned this script
-   *
-   * @generated from field: repeated int64 outbound_broadcast_template_sids = 3;
-   */
-  outboundBroadcastTemplateSids: bigint[];
-
-  /**
-   * The inbound broadcast templates that have been assigned this script
-   *
-   * @generated from field: repeated int64 inbound_broadcast_template_sids = 4;
-   */
-  inboundBroadcastTemplateSids: bigint[];
-
-  constructor(data?: PartialMessage<HuntGroupScriptDetails>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.org.HuntGroupScriptDetails";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): HuntGroupScriptDetails;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): HuntGroupScriptDetails;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): HuntGroupScriptDetails;
-
-  static equals(a: HuntGroupScriptDetails | PlainMessage<HuntGroupScriptDetails> | undefined, b: HuntGroupScriptDetails | PlainMessage<HuntGroupScriptDetails> | undefined): boolean;
-}
-
-/**
  * The request message for ListHuntGroupScript
  *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsRequest
@@ -2243,7 +2196,7 @@ export declare class GetHuntGroupScriptResponse extends Message<GetHuntGroupScri
   /**
    * The details of the hunt group script
    *
-   * @generated from field: api.v1alpha1.org.HuntGroupScriptDetails script_details = 2;
+   * @generated from field: api.commons.org.HuntGroupScriptDetails script_details = 2;
    */
   scriptDetails?: HuntGroupScriptDetails;
 
@@ -2454,11 +2407,11 @@ export declare class AssignHuntGroupScriptRequest extends Message<AssignHuntGrou
   scriptSid: bigint;
 
   /**
-   * The target hunt group to assign the specified script
+   * The target hunt groups to assign the specified script
    *
-   * @generated from field: int64 hunt_group_sid = 2;
+   * @generated from field: repeated int64 hunt_group_sids = 2;
    */
-  huntGroupSid: bigint;
+  huntGroupSids: bigint[];
 
   constructor(data?: PartialMessage<AssignHuntGroupScriptRequest>);
 
@@ -2510,11 +2463,11 @@ export declare class UnassignHuntGroupScriptRequest extends Message<UnassignHunt
   scriptSid: bigint;
 
   /**
-   * The target hunt group to unassign the specified script
+   * The target hunt groups to unassign the specified script
    *
-   * @generated from field: int64 hunt_group_sid = 2;
+   * @generated from field: repeated int64 hunt_group_sids = 2;
    */
-  huntGroupSid: bigint;
+  huntGroupSids: bigint[];
 
   constructor(data?: PartialMessage<UnassignHuntGroupScriptRequest>);
 

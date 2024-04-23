@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { FieldMask, proto3 } from "@bufbuild/protobuf";
-import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
+import { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupScriptDetails, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import { DataDipTemplateFilterType } from "../../commons/org_pb.js";
 
 /**
@@ -840,19 +840,6 @@ export const UpdateAgentTriggersResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v1alpha1.org.HuntGroupScriptDetails
- */
-export const HuntGroupScriptDetails = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.HuntGroupScriptDetails",
-  () => [
-    { no: 1, name: "script", kind: "message", T: HuntGroupScript },
-    { no: 2, name: "hunt_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-    { no: 3, name: "outbound_broadcast_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-    { no: 4, name: "inbound_broadcast_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
-  ],
-);
-
-/**
  * The request message for ListHuntGroupScript
  *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsRequest
@@ -979,7 +966,7 @@ export const AssignHuntGroupScriptRequest = /*@__PURE__*/ proto3.makeMessageType
   "api.v1alpha1.org.AssignHuntGroupScriptRequest",
   () => [
     { no: 1, name: "script_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 
@@ -1002,7 +989,7 @@ export const UnassignHuntGroupScriptRequest = /*@__PURE__*/ proto3.makeMessageTy
   "api.v1alpha1.org.UnassignHuntGroupScriptRequest",
   () => [
     { no: 1, name: "script_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 2, name: "hunt_group_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "hunt_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
   ],
 );
 

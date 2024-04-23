@@ -1544,3 +1544,18 @@ export const SimpleCompareExpression = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * HuntGroupScriptDetails represents the details of a hunt group script.
+ *
+ * @generated from message api.commons.org.HuntGroupScriptDetails
+ */
+export const HuntGroupScriptDetails = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.org.HuntGroupScriptDetails",
+  () => [
+    { no: 1, name: "script", kind: "message", T: HuntGroupScript },
+    { no: 2, name: "hunt_group_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 3, name: "outbound_broadcast_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 4, name: "inbound_broadcast_template_sids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+  ],
+);
+
