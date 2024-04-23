@@ -5,7 +5,7 @@
 
 import { DeleteFlagTranscriptRequest, DeleteFlagTranscriptResponse } from "./flag_transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
-import { ListFlaggedTranscriptsByOrgIdRequest, SearchResponse } from "./transcript_pb.js";
+import { SearchByOrgIdRequest, SearchResponse } from "./transcript_pb.js";
 
 /**
  * @generated from service api.v1alpha1.vanalytics.VanalyticsSupport
@@ -25,13 +25,13 @@ export const VanalyticsSupport = {
       kind: MethodKind.Unary,
     },
     /**
-     * ListFlaggedTranscriptsByOrgId lists flagged transcripts.
+     * SearchByOrgId searches transcripts for a specific org.
      *
-     * @generated from rpc api.v1alpha1.vanalytics.VanalyticsSupport.ListFlaggedTranscriptsByOrgId
+     * @generated from rpc api.v1alpha1.vanalytics.VanalyticsSupport.SearchByOrgId
      */
-    listFlaggedTranscriptsByOrgId: {
-      name: "ListFlaggedTranscriptsByOrgId",
-      I: ListFlaggedTranscriptsByOrgIdRequest,
+    searchByOrgId: {
+      name: "SearchByOrgId",
+      I: SearchByOrgIdRequest,
       O: SearchResponse,
       kind: MethodKind.Unary,
     },
