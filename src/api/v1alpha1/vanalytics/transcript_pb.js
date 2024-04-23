@@ -1187,3 +1187,19 @@ export const AgentResponse = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * SearchByOrgIdRequest is a support-only request for searching transcripts by org id.
+ *
+ * @generated from message api.v1alpha1.vanalytics.SearchByOrgIdRequest
+ */
+export const SearchByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.vanalytics.SearchByOrgIdRequest",
+  () => [
+    { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "page_size", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 3, name: "sort", kind: "message", T: Sort },
+    { no: 4, name: "transcript_mask", kind: "message", T: FieldMask },
+    { no: 5, name: "flag_summary", kind: "message", T: SearchQuery_FlagSummary },
+  ],
+);
+
