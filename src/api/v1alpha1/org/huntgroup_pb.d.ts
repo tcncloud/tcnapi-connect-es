@@ -3,10 +3,11 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AgentResponseAutoRuleSet, AgentTrigger, CallbackSettings, CallerIdBucketData, ClientInfoDisplayTemplate, CommunicationSettings, DataDipConfig, GeneralSettings, HuntGroupDetails, HuntGroupScript, HuntGroupType, HuntGroupWithClientInfoTemplateData, IntegrationLink, ManualDialSettings, NumberHistorySettings, PreviewDialSettings, TransferCallSettings, WebLink } from "../../commons/org/huntgroup_pb.js";
 import type { DataDipTemplateFilterType } from "../../commons/org_pb.js";
+import type { BroadcastType } from "../../commons/broadcasts_pb.js";
 
 /**
  * Request message for the GetHuntGroupSettings RPC method.
@@ -930,6 +931,102 @@ export declare class CopyDataDipTemplateToOrganizationResponse extends Message<C
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): CopyDataDipTemplateToOrganizationResponse;
 
   static equals(a: CopyDataDipTemplateToOrganizationResponse | PlainMessage<CopyDataDipTemplateToOrganizationResponse> | undefined, b: CopyDataDipTemplateToOrganizationResponse | PlainMessage<CopyDataDipTemplateToOrganizationResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for ListBroadcastTemplateGeneralDetails RPC method
+ *
+ * @generated from message api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsRequest
+ */
+export declare class ListBroadcastTemplateGeneralDetailsRequest extends Message<ListBroadcastTemplateGeneralDetailsRequest> {
+  constructor(data?: PartialMessage<ListBroadcastTemplateGeneralDetailsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListBroadcastTemplateGeneralDetailsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListBroadcastTemplateGeneralDetailsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListBroadcastTemplateGeneralDetailsRequest;
+
+  static equals(a: ListBroadcastTemplateGeneralDetailsRequest | PlainMessage<ListBroadcastTemplateGeneralDetailsRequest> | undefined, b: ListBroadcastTemplateGeneralDetailsRequest | PlainMessage<ListBroadcastTemplateGeneralDetailsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for ListBroadcastTemplateGeneralDetails RPC method
+ *
+ * @generated from message api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse
+ */
+export declare class ListBroadcastTemplateGeneralDetailsResponse extends Message<ListBroadcastTemplateGeneralDetailsResponse> {
+  /**
+   * A list of broadcast tempaltes
+   *
+   * @generated from field: repeated api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse.Data templates = 1;
+   */
+  templates: ListBroadcastTemplateGeneralDetailsResponse_Data[];
+
+  constructor(data?: PartialMessage<ListBroadcastTemplateGeneralDetailsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListBroadcastTemplateGeneralDetailsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListBroadcastTemplateGeneralDetailsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListBroadcastTemplateGeneralDetailsResponse;
+
+  static equals(a: ListBroadcastTemplateGeneralDetailsResponse | PlainMessage<ListBroadcastTemplateGeneralDetailsResponse> | undefined, b: ListBroadcastTemplateGeneralDetailsResponse | PlainMessage<ListBroadcastTemplateGeneralDetailsResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse.Data
+ */
+export declare class ListBroadcastTemplateGeneralDetailsResponse_Data extends Message<ListBroadcastTemplateGeneralDetailsResponse_Data> {
+  /**
+   * The unique sid of the template
+   *
+   * @generated from field: int64 template_sid = 1;
+   */
+  templateSid: bigint;
+
+  /**
+   * The template name
+   *
+   * @generated from field: string name = 2;
+   */
+  name: string;
+
+  /**
+   * The broadcast template type
+   *
+   * @generated from field: api.commons.BroadcastType broadcast_type = 3;
+   */
+  broadcastType: BroadcastType;
+
+  /**
+   * The last scheduled date of the template
+   *
+   * @generated from field: google.protobuf.Timestamp last_scheduled_date = 4;
+   */
+  lastScheduledDate?: Timestamp;
+
+  constructor(data?: PartialMessage<ListBroadcastTemplateGeneralDetailsResponse_Data>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListBroadcastTemplateGeneralDetailsResponse.Data";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListBroadcastTemplateGeneralDetailsResponse_Data;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListBroadcastTemplateGeneralDetailsResponse_Data;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListBroadcastTemplateGeneralDetailsResponse_Data;
+
+  static equals(a: ListBroadcastTemplateGeneralDetailsResponse_Data | PlainMessage<ListBroadcastTemplateGeneralDetailsResponse_Data> | undefined, b: ListBroadcastTemplateGeneralDetailsResponse_Data | PlainMessage<ListBroadcastTemplateGeneralDetailsResponse_Data> | undefined): boolean;
 }
 
 /**
