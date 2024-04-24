@@ -3879,3 +3879,59 @@ export declare class SpanFuzzy extends Message<SpanFuzzy> {
   static equals(a: SpanFuzzy | PlainMessage<SpanFuzzy> | undefined, b: SpanFuzzy | PlainMessage<SpanFuzzy> | undefined): boolean;
 }
 
+/**
+ * BulkDeleteTranscriptsRequest defines the bulk delete transcripts request.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsRequest
+ */
+export declare class BulkDeleteTranscriptsRequest extends Message<BulkDeleteTranscriptsRequest> {
+  /**
+   * Required. A query which determines which transcripts to delete.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery query = 1;
+   */
+  query?: TranscriptQuery;
+
+  constructor(data?: PartialMessage<BulkDeleteTranscriptsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.BulkDeleteTranscriptsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BulkDeleteTranscriptsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsRequest;
+
+  static equals(a: BulkDeleteTranscriptsRequest | PlainMessage<BulkDeleteTranscriptsRequest> | undefined, b: BulkDeleteTranscriptsRequest | PlainMessage<BulkDeleteTranscriptsRequest> | undefined): boolean;
+}
+
+/**
+ * BulkDeleteTranscriptsResponse defines the bulk delete transcripts response.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsResponse
+ */
+export declare class BulkDeleteTranscriptsResponse extends Message<BulkDeleteTranscriptsResponse> {
+  /**
+   * The number of transcripts deleted.
+   *
+   * @generated from field: uint32 total = 1;
+   */
+  total: number;
+
+  constructor(data?: PartialMessage<BulkDeleteTranscriptsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.BulkDeleteTranscriptsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BulkDeleteTranscriptsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsResponse;
+
+  static equals(a: BulkDeleteTranscriptsResponse | PlainMessage<BulkDeleteTranscriptsResponse> | undefined, b: BulkDeleteTranscriptsResponse | PlainMessage<BulkDeleteTranscriptsResponse> | undefined): boolean;
+}
+

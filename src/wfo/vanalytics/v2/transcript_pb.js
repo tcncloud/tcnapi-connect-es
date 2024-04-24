@@ -1363,3 +1363,27 @@ export const SpanFuzzy = /*@__PURE__*/ proto3.makeMessageType(
   ],
 );
 
+/**
+ * BulkDeleteTranscriptsRequest defines the bulk delete transcripts request.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsRequest
+ */
+export const BulkDeleteTranscriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.BulkDeleteTranscriptsRequest",
+  () => [
+    { no: 1, name: "query", kind: "message", T: TranscriptQuery },
+  ],
+);
+
+/**
+ * BulkDeleteTranscriptsResponse defines the bulk delete transcripts response.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsResponse
+ */
+export const BulkDeleteTranscriptsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.BulkDeleteTranscriptsResponse",
+  () => [
+    { no: 1, name: "total", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+);
+
