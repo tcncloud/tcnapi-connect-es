@@ -56,6 +56,7 @@ export const IntegrationType = /*@__PURE__*/ proto3.makeEnum(
     {no: 4000, name: "INTEGRATION_TYPE_NAVIGA", localName: "NAVIGA"},
     {no: 4100, name: "INTEGRATION_TYPE_PAYNSECONDS", localName: "PAYNSECONDS"},
     {no: 4200, name: "INTEGRATION_TYPE_SUTHERLANDREV", localName: "SUTHERLANDREV"},
+    {no: 5000, name: "INTEGRATION_TYPE_DEBUG", localName: "DEBUG"},
   ],
 );
 
@@ -283,6 +284,8 @@ export const RequestMethod = /*@__PURE__*/ proto3.makeEnum(
     {no: 4002, name: "REQUEST_METHOD_NAVIGA_CHANGE_BILLING"},
     {no: 4101, name: "REQUEST_METHOD_PAYNSECONDS_TOKENIZE_CARD"},
     {no: 4201, name: "REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT"},
+    {no: 50001, name: "REQUEST_METHOD_DEBUG_ECHO"},
+    {no: 50002, name: "REQUESET_METHOD_DEBUG_VALIDATE"},
   ],
 );
 
