@@ -4,6 +4,11 @@
 // @ts-nocheck
 
 /**
+ * The original plan was to use this for public endpoints to wfm-adherence-app,
+ * but we ended up putting them in wfm.proto and wfm-api.
+ *
+ * This should be unused until we remove wfm-api in favor of using individual services.
+ *
  * @generated from service api.v1alpha1.wfm.WfmAdherenceAppService
  */
 export declare const WfmAdherenceAppService: {

@@ -7,6 +7,7 @@ import { DeleteEvaluationByOrgIdRequest, DeleteEvaluationResponse, ListEvaluatio
 import { MethodKind } from "@bufbuild/protobuf";
 import { DeleteAutoEvaluationByOrgIdRequest, DeleteAutoEvaluationResponse, ListAutoEvaluationsByOrgIdRequest, ListAutoEvaluationsResponse } from "./auto_evaluation_pb.js";
 import { ListScorecardsByOrgIdRequest, ListScorecardsResponse } from "./scorecard_pb.js";
+import { ListCategoriesByOrgIdRequest, ListCategoriesResponse } from "./category_pb.js";
 
 /**
  * ScorecardsSupport provies customer support
@@ -70,6 +71,17 @@ export declare const ScorecardsSupport: {
       readonly name: "ListScorecardsByOrgId",
       readonly I: typeof ListScorecardsByOrgIdRequest,
       readonly O: typeof ListScorecardsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListCategoriesByOrgId lists categories
+     *
+     * @generated from rpc api.v1alpha1.scorecards.ScorecardsSupport.ListCategoriesByOrgId
+     */
+    readonly listCategoriesByOrgId: {
+      readonly name: "ListCategoriesByOrgId",
+      readonly I: typeof ListCategoriesByOrgIdRequest,
+      readonly O: typeof ListCategoriesResponse,
       readonly kind: MethodKind.Unary,
     },
   }
