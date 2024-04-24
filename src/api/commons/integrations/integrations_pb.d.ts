@@ -226,6 +226,11 @@ export declare enum IntegrationType {
    * @generated from enum value: INTEGRATION_TYPE_SUTHERLANDREV = 4200;
    */
   SUTHERLANDREV = 4200,
+
+  /**
+   * @generated from enum value: INTEGRATION_TYPE_DEBUG = 5000;
+   */
+  DEBUG = 5000,
 }
 
 /**
@@ -1309,6 +1314,22 @@ export declare enum RequestMethod {
    * @generated from enum value: REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT = 4201;
    */
   REQUEST_METHOD_SUTHERLANDREV_PAYMENT_CONNECT = 4201,
+
+  /**
+   * just evaluates the request and sends back the data
+   * this is useful for CompositeValue types, or when we are wanting to see
+   * what a request would look like if it were to be called on a different method
+   *
+   * @generated from enum value: REQUEST_METHOD_DEBUG_ECHO = 5001;
+   */
+  REQUEST_METHOD_DEBUG_ECHO = 5001,
+
+  /**
+   * this method takes a method id to another method and ensures the params are correct
+   *
+   * @generated from enum value: REQUESET_METHOD_DEBUG_VALIDATE = 5002;
+   */
+  REQUESET_METHOD_DEBUG_VALIDATE = 5002,
 }
 
 /**
