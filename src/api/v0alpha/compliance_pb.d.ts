@@ -223,6 +223,11 @@ export declare class CreateScrubListReq extends Message<CreateScrubListReq> {
    */
   scrubEntryDetails: ScrubEntryDetails[];
 
+  /**
+   * @generated from field: bool durable = 14;
+   */
+  durable: boolean;
+
   constructor(data?: PartialMessage<CreateScrubListReq>);
 
   static readonly runtime: typeof proto3;
