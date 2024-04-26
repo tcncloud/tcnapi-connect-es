@@ -76,6 +76,7 @@ export const AsmUserDetails = /*@__PURE__*/ proto3.makeMessageType(
     { no: 10, name: "skills", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 3 /* ScalarType.INT64 */} },
     { no: 11, name: "asm_session_sid", kind: "message", T: Int64Value },
     { no: 12, name: "events", kind: "message", T: DashboardAgentResponseEvent, repeated: true },
+    { no: 13, name: "login_tome", kind: "message", T: Timestamp },
   ],
 );
 

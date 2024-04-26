@@ -276,6 +276,13 @@ export declare class AsmUserDetails extends Message<AsmUserDetails> {
    */
   events: DashboardAgentResponseEvent[];
 
+  /**
+   * login time
+   *
+   * @generated from field: google.protobuf.Timestamp login_tome = 13;
+   */
+  loginTome?: Timestamp;
+
   constructor(data?: PartialMessage<AsmUserDetails>);
 
   static readonly runtime: typeof proto3;
