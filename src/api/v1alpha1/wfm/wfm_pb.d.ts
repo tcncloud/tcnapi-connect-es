@@ -15433,6 +15433,11 @@ export declare class RgbaColor extends Message<RgbaColor> {
    */
   alpha: number;
 
+  /**
+   * @generated from field: string name = 5;
+   */
+  name: string;
+
   constructor(data?: PartialMessage<RgbaColor>);
 
   static readonly runtime: typeof proto3;
