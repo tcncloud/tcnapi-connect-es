@@ -276,6 +276,7 @@ export const Call_Segment = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offset", kind: "message", T: Duration },
+    { no: 3, name: "duration", kind: "message", T: Duration },
   ],
   {localName: "Call_Segment"},
 );

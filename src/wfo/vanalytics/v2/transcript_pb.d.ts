@@ -820,6 +820,13 @@ export declare class Call_Segment extends Message<Call_Segment> {
    */
   offset?: Duration;
 
+  /**
+   * The duration of the segment.
+   *
+   * @generated from field: google.protobuf.Duration duration = 3;
+   */
+  duration?: Duration;
+
   constructor(data?: PartialMessage<Call_Segment>);
 
   static readonly runtime: typeof proto3;
