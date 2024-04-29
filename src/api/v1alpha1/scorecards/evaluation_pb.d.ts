@@ -177,6 +177,62 @@ export declare class DeleteEvaluationResponse extends Message<DeleteEvaluationRe
 }
 
 /**
+ * RestoreEvaluationRequest is request to restore a deleted evaluation
+ *
+ * @generated from message api.v1alpha1.scorecards.RestoreEvaluationRequest
+ */
+export declare class RestoreEvaluationRequest extends Message<RestoreEvaluationRequest> {
+  /**
+   * Required - unique id of evaluation to restore
+   *
+   * @generated from field: int64 evaluation_id = 2;
+   */
+  evaluationId: bigint;
+
+  constructor(data?: PartialMessage<RestoreEvaluationRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.RestoreEvaluationRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RestoreEvaluationRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RestoreEvaluationRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RestoreEvaluationRequest;
+
+  static equals(a: RestoreEvaluationRequest | PlainMessage<RestoreEvaluationRequest> | undefined, b: RestoreEvaluationRequest | PlainMessage<RestoreEvaluationRequest> | undefined): boolean;
+}
+
+/**
+ * RestoreEvaluationReponse contains the restored evaluation
+ *
+ * @generated from message api.v1alpha1.scorecards.RestoreEvaluationResponse
+ */
+export declare class RestoreEvaluationResponse extends Message<RestoreEvaluationResponse> {
+  /**
+   * restored evaluation
+   *
+   * @generated from field: api.commons.Evaluation evaluation = 1;
+   */
+  evaluation?: Evaluation;
+
+  constructor(data?: PartialMessage<RestoreEvaluationResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.scorecards.RestoreEvaluationResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RestoreEvaluationResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RestoreEvaluationResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RestoreEvaluationResponse;
+
+  static equals(a: RestoreEvaluationResponse | PlainMessage<RestoreEvaluationResponse> | undefined, b: RestoreEvaluationResponse | PlainMessage<RestoreEvaluationResponse> | undefined): boolean;
+}
+
+/**
  * GetEvaluationRequest is request to get an evaluation
  *
  * @generated from message api.v1alpha1.scorecards.GetEvaluationRequest

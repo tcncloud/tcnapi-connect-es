@@ -76,6 +76,30 @@ export const DeleteEvaluationResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * RestoreEvaluationRequest is request to restore a deleted evaluation
+ *
+ * @generated from message api.v1alpha1.scorecards.RestoreEvaluationRequest
+ */
+export const RestoreEvaluationRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.RestoreEvaluationRequest",
+  () => [
+    { no: 2, name: "evaluation_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * RestoreEvaluationReponse contains the restored evaluation
+ *
+ * @generated from message api.v1alpha1.scorecards.RestoreEvaluationResponse
+ */
+export const RestoreEvaluationResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.RestoreEvaluationResponse",
+  () => [
+    { no: 1, name: "evaluation", kind: "message", T: Evaluation },
+  ],
+);
+
+/**
  * GetEvaluationRequest is request to get an evaluation
  *
  * @generated from message api.v1alpha1.scorecards.GetEvaluationRequest
