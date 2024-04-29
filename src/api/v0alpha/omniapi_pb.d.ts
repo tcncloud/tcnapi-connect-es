@@ -6,7 +6,6 @@
 import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignModuleType, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail, WhatsAppNumber } from "../commons/omnichannel_pb.js";
-import type { FieldType } from "../commons/lms_pb.js";
 import type { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -2048,37 +2047,6 @@ export declare class GetAvailableHeadersRes extends Message<GetAvailableHeadersR
 }
 
 /**
- * Header - represents a header for a contact list
- *
- * @generated from message api.v0alpha.Header
- */
-export declare class Header extends Message<Header> {
-  /**
-   * @generated from field: string name = 1;
-   */
-  name: string;
-
-  /**
-   * @generated from field: api.commons.FieldType type = 2;
-   */
-  type: FieldType;
-
-  constructor(data?: PartialMessage<Header>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v0alpha.Header";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Header;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Header;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Header;
-
-  static equals(a: Header | PlainMessage<Header> | undefined, b: Header | PlainMessage<Header> | undefined): boolean;
-}
-
-/**
  * HeaderGroup - represents a group of headers for a contact list
  *
  * @generated from message api.v0alpha.HeaderGroup
@@ -2092,17 +2060,11 @@ export declare class HeaderGroup extends Message<HeaderGroup> {
   name: string;
 
   /**
-   * @generated from field: repeated string headers = 2 [deprecated = true];
-   * @deprecated
-   */
-  headers: string[];
-
-  /**
    * the headers provided by this group
    *
-   * @generated from field: repeated api.v0alpha.Header list_headers = 3;
+   * @generated from field: repeated string headers = 2;
    */
-  listHeaders: Header[];
+  headers: string[];
 
   constructor(data?: PartialMessage<HeaderGroup>);
 

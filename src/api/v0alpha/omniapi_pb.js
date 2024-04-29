@@ -5,7 +5,6 @@
 
 import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { ChannelType, ConnectedInbox, ContactList, ConversationStatus, Disposition, OmniAttachment, OmniCampaign, OmniCampaignDirection, OmniCampaignModule, OmniCampaignModuleType, OmniCampaignStatus, OmniConversation, OmniConversationSkills, OmniCustomUnsubscribeLink, OmniMessagePayload, OmniProjectComplianceConfig, OmniTask, ProjectStatus, Signature, VerifiedEmail, WhatsAppNumber } from "../commons/omnichannel_pb.js";
-import { FieldType } from "../commons/lms_pb.js";
 import { SkillType_Enum } from "../commons/wfm_pb.js";
 
 /**
@@ -764,19 +763,6 @@ export const GetAvailableHeadersRes = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * Header - represents a header for a contact list
- *
- * @generated from message api.v0alpha.Header
- */
-export const Header = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v0alpha.Header",
-  () => [
-    { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "type", kind: "enum", T: proto3.getEnumType(FieldType) },
-  ],
-);
-
-/**
  * HeaderGroup - represents a group of headers for a contact list
  *
  * @generated from message api.v0alpha.HeaderGroup
@@ -786,7 +772,6 @@ export const HeaderGroup = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "headers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 3, name: "list_headers", kind: "message", T: Header, repeated: true },
   ],
 );
 
