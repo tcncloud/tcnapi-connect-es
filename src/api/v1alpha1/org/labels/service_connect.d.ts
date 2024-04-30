@@ -13,7 +13,7 @@ export declare const LabelsService: {
   readonly typeName: "api.v1alpha1.org.labels.LabelsService",
   readonly methods: {
     /**
-     * CreateLabel creates a new skill group.
+     * CreateLabel creates a new label.
      *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.CreateLabel
      */
@@ -35,7 +35,7 @@ export declare const LabelsService: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * UpdateLabel gets a single label
+     * UpdateLabel updates a single label
      *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.UpdateLabel
      */
@@ -46,7 +46,7 @@ export declare const LabelsService: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * ListLabels gets a single label
+     * ListLabels lists all labels for a given organization
      *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.ListLabels
      */
