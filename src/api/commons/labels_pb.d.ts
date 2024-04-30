@@ -10,7 +10,6 @@
  * iota in the labels app.
  *
  * @generated from enum api.commons.EntityType
- * @deprecated
  */
 export declare enum EntityType {
   /**
@@ -33,7 +32,6 @@ export declare enum EntityType {
  * LabeledEntity is an enum that represents the different types of entities that can be labeled.
  *
  * @generated from enum api.commons.LabeledEntity
- * @deprecated
  */
 export declare enum LabeledEntity {
   /**
