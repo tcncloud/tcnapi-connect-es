@@ -3,15 +3,13 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BulkDeleteTranscriptsRequest, BulkDeleteTranscriptsResponse, SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
+import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 import { CreateFilterRequest, DeleteFilterRequest, DeleteFilterResponse, Filter, GetFilterRequest, ListFiltersRequest, ListFiltersResponse, UpdateFilterRequest } from "./filter_pb.js";
 import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
 import { ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
 
 /**
- * [TRANSCRIPT] ==============================================================
- *
  * @generated from service wfo.vanalytics.v2.Vanalytics
  */
 export declare const Vanalytics: {
@@ -28,17 +26,6 @@ export declare const Vanalytics: {
       readonly name: "SearchTranscripts",
       readonly I: typeof SearchTranscriptsRequest,
       readonly O: typeof SearchTranscriptsResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * BulkDeleteTranscripts bulk deletes transcripts matching the provided query.
-     *
-     * @generated from rpc wfo.vanalytics.v2.Vanalytics.BulkDeleteTranscripts
-     */
-    readonly bulkDeleteTranscripts: {
-      readonly name: "BulkDeleteTranscripts",
-      readonly I: typeof BulkDeleteTranscriptsRequest,
-      readonly O: typeof BulkDeleteTranscriptsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

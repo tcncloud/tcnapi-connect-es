@@ -944,13 +944,6 @@ export declare class OmnichannelTranscriptSavedEvent extends Message<Omnichannel
    */
   transcriptPath: string;
 
-  /**
-   * the conversation of the transcript being saved.
-   *
-   * @generated from field: api.commons.OmniConversation conversation = 3;
-   */
-  conversation?: OmniConversation;
-
   constructor(data?: PartialMessage<OmnichannelTranscriptSavedEvent>);
 
   static readonly runtime: typeof proto3;

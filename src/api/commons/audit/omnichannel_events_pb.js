@@ -283,7 +283,6 @@ export const OmnichannelTranscriptSavedEvent = /*@__PURE__*/ proto3.makeMessageT
   () => [
     { no: 1, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "transcript_path", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "conversation", kind: "message", T: OmniConversation },
   ],
 );
 
