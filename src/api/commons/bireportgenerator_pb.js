@@ -98,6 +98,24 @@ export const TimePeriod = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * @generated from enum api.commons.FilenamePartType
+ */
+export const FilenamePartType = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.FilenamePartType",
+  [
+    {no: 0, name: "FILENAME_PART_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "FILENAME_PART_TYPE_DASHBOARD_NAME", localName: "DASHBOARD_NAME"},
+    {no: 2, name: "FILENAME_PART_TYPE_JOB_NAME", localName: "JOB_NAME"},
+    {no: 3, name: "FILENAME_PART_TYPE_INSIGHT_NAME", localName: "INSIGHT_NAME"},
+    {no: 4, name: "FILENAME_PART_TYPE_DATE_TIME_FILTER_TEXT", localName: "DATE_TIME_FILTER_TEXT"},
+    {no: 5, name: "FILENAME_PART_TYPE_START_DATE_TIME", localName: "START_DATE_TIME"},
+    {no: 6, name: "FILENAME_PART_TYPE_END_DATE_TIME", localName: "END_DATE_TIME"},
+    {no: 7, name: "FILENAME_PART_TYPE_REPORT_DATE_TIME", localName: "REPORT_DATE_TIME"},
+    {no: 8, name: "FILENAME_PART_TYPE_STATIC_TEXT", localName: "STATIC_TEXT"},
+  ],
+);
+
+/**
  * DeliveryTimes is a message for the delivery times of a report.
  *
  * @generated from message api.commons.DeliveryTimes
@@ -178,6 +196,17 @@ export const DeliveryOptions = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "transfer_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "failure_notification_emails", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message api.commons.FilenamePart
+ */
+export const FilenamePart = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.FilenamePart",
+  () => [
+    { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(FilenamePartType) },
+    { no: 2, name: "static_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

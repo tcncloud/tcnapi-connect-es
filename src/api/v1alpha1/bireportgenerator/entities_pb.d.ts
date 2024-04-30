@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
+import type { DayFilter, DeliveryOptions, DeliveryTimes, FilenamePart, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
 import type { Month } from "../../commons/enums_pb.js";
 import type { TimeZoneWrapper } from "../../commons/org_pb.js";
 import type { CronExpression } from "../../commons/types_pb.js";
@@ -135,7 +135,7 @@ export declare class ReportJob extends Message<ReportJob> {
   hideCsvFooter: boolean;
 
   /**
-   * transfer_config_sid to use for the report schedule
+   * transfer_config_sid to use for the report delivery
    *
    * @generated from field: int64 transfer_config_sid = 17;
    */
@@ -147,6 +147,13 @@ export declare class ReportJob extends Message<ReportJob> {
    * @generated from field: api.commons.CronExpression cron_expression = 18;
    */
   cronExpression?: CronExpression;
+
+  /**
+   * filename parts for the report
+   *
+   * @generated from field: repeated api.commons.FilenamePart filename_parts = 19;
+   */
+  filenameParts: FilenamePart[];
 
   constructor(data?: PartialMessage<ReportJob>);
 
