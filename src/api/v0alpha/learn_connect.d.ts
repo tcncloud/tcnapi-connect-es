@@ -253,17 +253,6 @@ export declare const Learn: {
       readonly O: typeof ReviewVersionRes,
       readonly kind: MethodKind.Unary,
     },
-    /**
-     * exports multiple pages of the learning center markdown as PDF file stream
-     *
-     * @generated from rpc api.v0alpha.Learn.ExportManyStream
-     */
-    readonly exportManyStream: {
-      readonly name: "ExportManyStream",
-      readonly I: typeof ExportManyReq,
-      readonly O: typeof ExportRes,
-      readonly kind: MethodKind.ServerStreaming,
-    },
   }
 };
 
