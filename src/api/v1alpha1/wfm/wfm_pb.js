@@ -2773,12 +2773,12 @@ export const GetOpenTimesBitmapsRes = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * Request message for the GetOpenCloseTimesForDateRange RPC
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
  *
- * @generated from message api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeRequest
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest
  */
-export const GetOpenCloseTimesForDateRangeRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeRequest",
+export const ListOpenDateRangesForNodeOpenTimesBitmapsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest",
   () => [
     { no: 1, name: "datetime_range", kind: "message", T: DatetimeRange },
     { no: 2, name: "node_selector", kind: "message", T: ParentEntity },
@@ -2787,12 +2787,12 @@ export const GetOpenCloseTimesForDateRangeRequest = /*@__PURE__*/ proto3.makeMes
 );
 
 /**
- * Request message for the GetOpenCloseTimesForDateRange RPC
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
  *
- * @generated from message api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeResponse
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse
  */
-export const GetOpenCloseTimesForDateRangeResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeResponse",
+export const ListOpenDateRangesForNodeOpenTimesBitmapsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse",
   () => [
     { no: 1, name: "open_close_ranges", kind: "message", T: DatetimeRange, repeated: true },
   ],

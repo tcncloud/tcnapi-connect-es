@@ -7848,11 +7848,11 @@ export declare class GetOpenTimesBitmapsRes extends Message<GetOpenTimesBitmapsR
 }
 
 /**
- * Request message for the GetOpenCloseTimesForDateRange RPC
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
  *
- * @generated from message api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeRequest
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest
  */
-export declare class GetOpenCloseTimesForDateRangeRequest extends Message<GetOpenCloseTimesForDateRangeRequest> {
+export declare class ListOpenDateRangesForNodeOpenTimesBitmapsRequest extends Message<ListOpenDateRangesForNodeOpenTimesBitmapsRequest> {
   /**
    * Datetime range that the @open_close_ranges will cover for @node_selector.
    *
@@ -7874,27 +7874,27 @@ export declare class GetOpenCloseTimesForDateRangeRequest extends Message<GetOpe
    */
   scheduleScenarioSid: bigint;
 
-  constructor(data?: PartialMessage<GetOpenCloseTimesForDateRangeRequest>);
+  constructor(data?: PartialMessage<ListOpenDateRangesForNodeOpenTimesBitmapsRequest>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeRequest";
+  static readonly typeName = "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOpenCloseTimesForDateRangeRequest;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOpenCloseTimesForDateRangeRequest;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOpenCloseTimesForDateRangeRequest;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
 
-  static equals(a: GetOpenCloseTimesForDateRangeRequest | PlainMessage<GetOpenCloseTimesForDateRangeRequest> | undefined, b: GetOpenCloseTimesForDateRangeRequest | PlainMessage<GetOpenCloseTimesForDateRangeRequest> | undefined): boolean;
+  static equals(a: ListOpenDateRangesForNodeOpenTimesBitmapsRequest | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsRequest> | undefined, b: ListOpenDateRangesForNodeOpenTimesBitmapsRequest | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsRequest> | undefined): boolean;
 }
 
 /**
- * Request message for the GetOpenCloseTimesForDateRange RPC
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
  *
- * @generated from message api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeResponse
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse
  */
-export declare class GetOpenCloseTimesForDateRangeResponse extends Message<GetOpenCloseTimesForDateRangeResponse> {
+export declare class ListOpenDateRangesForNodeOpenTimesBitmapsResponse extends Message<ListOpenDateRangesForNodeOpenTimesBitmapsResponse> {
   /**
    * Datetime ranges over which the @node_selector is open throughout @datetime_range.
    *
@@ -7902,19 +7902,19 @@ export declare class GetOpenCloseTimesForDateRangeResponse extends Message<GetOp
    */
   openCloseRanges: DatetimeRange[];
 
-  constructor(data?: PartialMessage<GetOpenCloseTimesForDateRangeResponse>);
+  constructor(data?: PartialMessage<ListOpenDateRangesForNodeOpenTimesBitmapsResponse>);
 
   static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.wfm.GetOpenCloseTimesForDateRangeResponse";
+  static readonly typeName = "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse";
   static readonly fields: FieldList;
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetOpenCloseTimesForDateRangeResponse;
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetOpenCloseTimesForDateRangeResponse;
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetOpenCloseTimesForDateRangeResponse;
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
 
-  static equals(a: GetOpenCloseTimesForDateRangeResponse | PlainMessage<GetOpenCloseTimesForDateRangeResponse> | undefined, b: GetOpenCloseTimesForDateRangeResponse | PlainMessage<GetOpenCloseTimesForDateRangeResponse> | undefined): boolean;
+  static equals(a: ListOpenDateRangesForNodeOpenTimesBitmapsResponse | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsResponse> | undefined, b: ListOpenDateRangesForNodeOpenTimesBitmapsResponse | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsResponse> | undefined): boolean;
 }
 
 /**
