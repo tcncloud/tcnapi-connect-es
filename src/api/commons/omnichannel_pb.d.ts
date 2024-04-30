@@ -1845,6 +1845,13 @@ export declare class OmniMessage extends Message<OmniMessage> {
    */
   statusMessage?: string;
 
+  /**
+   * the message format
+   *
+   * @generated from field: api.commons.MessageFormat message_format = 23;
+   */
+  messageFormat: MessageFormat;
+
   constructor(data?: PartialMessage<OmniMessage>);
 
   static readonly runtime: typeof proto3;
