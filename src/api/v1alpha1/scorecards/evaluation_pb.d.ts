@@ -344,9 +344,9 @@ export declare class ListEvaluationsRequest extends Message<ListEvaluationsReque
   /**
    * Optional. If true, will only show deleted evaluations.
    *
-   * @generated from field: bool include_deleted = 11;
+   * @generated from field: bool is_deleted = 11;
    */
-  includeDeleted: boolean;
+  isDeleted: boolean;
 
   constructor(data?: PartialMessage<ListEvaluationsRequest>);
 
