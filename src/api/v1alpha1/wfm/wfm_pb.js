@@ -2773,6 +2773,32 @@ export const GetOpenTimesBitmapsRes = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest
+ */
+export const ListOpenDateRangesForNodeOpenTimesBitmapsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest",
+  () => [
+    { no: 1, name: "datetime_range", kind: "message", T: DatetimeRange },
+    { no: 2, name: "node_selector", kind: "message", T: ParentEntity },
+    { no: 3, name: "schedule_scenario_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse
+ */
+export const ListOpenDateRangesForNodeOpenTimesBitmapsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse",
+  () => [
+    { no: 1, name: "open_close_ranges", kind: "message", T: DatetimeRange, repeated: true },
+  ],
+);
+
+/**
  * Represents and Agent Availability Pattern
  *
  * @generated from message api.v1alpha1.wfm.AgentAvailabilityPattern
