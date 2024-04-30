@@ -1710,7 +1710,7 @@ export declare const WFM: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * Gets the datetime ranges over which the given @node_selector is open througout the given @datetime_range for the org sending the request.
+     * Gets the datetime ranges over which the given @node_selector open times patterns are open throughout the given @datetime_range for the org sending the request.
      * If the @node_selector is not open during that range, no ranges will be returned.
      * If the @node_selector is opened before or after the given @datetime_range, those times outside of @datetime_range will not be included in the returned @open_close_ranges.
      * Required permissions:
