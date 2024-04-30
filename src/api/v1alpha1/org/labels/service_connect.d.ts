@@ -35,7 +35,7 @@ export declare const LabelsService: {
       readonly kind: MethodKind.Unary,
     },
     /**
-     * UpdateLabel gets a single label
+     * UpdateLabel updates a single label
      *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.UpdateLabel
      */
