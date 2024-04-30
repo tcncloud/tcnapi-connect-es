@@ -22,3 +22,16 @@ export const EntityType = /*@__PURE__*/ proto3.makeEnum(
   ],
 );
 
+/**
+ * LabeledEntity is an enum that represents the different types of entities that can be labeled.
+ *
+ * @generated from enum api.commons.LabeledEntity
+ */
+export const LabeledEntity = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.LabeledEntity",
+  [
+    {no: 0, name: "LABELED_ENTITY_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "LABELED_ENTITY_SKILL_GROUP", localName: "SKILL_GROUP"},
+  ],
+);
+

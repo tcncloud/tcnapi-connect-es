@@ -413,3 +413,49 @@ export const RemovePermissionFromAllPermissionGroupsResponse = /*@__PURE__*/ pro
   [],
 );
 
+/**
+ * Request message for the AssignLabelsRequest RPC.
+ *
+ * @generated from message api.v1alpha1.org.AssignLabelsRequest
+ */
+export const AssignLabelsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AssignLabelsRequest",
+  () => [
+    { no: 1, name: "label_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "permission_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the AssignLabelsResponse RPC.
+ *
+ * @generated from message api.v1alpha1.org.AssignLabelsResponse
+ */
+export const AssignLabelsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.AssignLabelsResponse",
+  [],
+);
+
+/**
+ * Request message for the RevokeLabelsRequest RPC.
+ *
+ * @generated from message api.v1alpha1.org.RevokeLabelsRequest
+ */
+export const RevokeLabelsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RevokeLabelsRequest",
+  () => [
+    { no: 1, name: "label_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "permission_group_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * Response message for the RevokeLabelsResponse RPC.
+ *
+ * @generated from message api.v1alpha1.org.RevokeLabelsResponse
+ */
+export const RevokeLabelsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.RevokeLabelsResponse",
+  [],
+);
+

@@ -28,3 +28,24 @@ export declare enum EntityType {
   LMS_PIPELINE = 2,
 }
 
+/**
+ * LabeledEntity is an enum that represents the different types of entities that can be labeled.
+ *
+ * @generated from enum api.commons.LabeledEntity
+ */
+export declare enum LabeledEntity {
+  /**
+   * LABELED_ENTITY_UNSPECIFIED is an unspecified entity type.
+   *
+   * @generated from enum value: LABELED_ENTITY_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * LABELED_ENTITY_SKILL_GROUP is a skill group entity type.
+   *
+   * @generated from enum value: LABELED_ENTITY_SKILL_GROUP = 1;
+   */
+  SKILL_GROUP = 1,
+}
+
