@@ -31,6 +31,8 @@ export const BasicUnitConfig = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "rate", kind: "scalar", T: 1 /* ScalarType.DOUBLE */ },
     { no: 3, name: "min_units", kind: "message", T: Int64Value },
     { no: 4, name: "max_units", kind: "message", T: Int64Value },
+    { no: 5, name: "min_units_per_cycle", kind: "message", T: Int64Value },
+    { no: 6, name: "max_units_per_cycle", kind: "message", T: Int64Value },
   ],
 );
 
