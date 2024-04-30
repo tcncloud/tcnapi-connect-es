@@ -149,6 +149,8 @@ export const AttachLabelResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * Request message for the GetLabeledEntityMapRequest rpc.
+ *
  * @generated from message api.v1alpha1.org.labels.GetLabeledEntityMapRequest
  */
 export const GetLabeledEntityMapRequest = /*@__PURE__*/ proto3.makeMessageType(
@@ -159,6 +161,8 @@ export const GetLabeledEntityMapRequest = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * Response message for the GetLabeledEntityMapResponse rpc.
+ *
  * @generated from message api.v1alpha1.org.labels.GetLabeledEntityMapResponse
  */
 export const GetLabeledEntityMapResponse = /*@__PURE__*/ proto3.makeMessageType(

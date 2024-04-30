@@ -345,6 +345,8 @@ export declare class AttachLabelResponse extends Message<AttachLabelResponse> {
 }
 
 /**
+ * Request message for the GetLabeledEntityMapRequest rpc.
+ *
  * @generated from message api.v1alpha1.org.labels.GetLabeledEntityMapRequest
  */
 export declare class GetLabeledEntityMapRequest extends Message<GetLabeledEntityMapRequest> {
@@ -371,10 +373,14 @@ export declare class GetLabeledEntityMapRequest extends Message<GetLabeledEntity
 }
 
 /**
+ * Response message for the GetLabeledEntityMapResponse rpc.
+ *
  * @generated from message api.v1alpha1.org.labels.GetLabeledEntityMapResponse
  */
 export declare class GetLabeledEntityMapResponse extends Message<GetLabeledEntityMapResponse> {
   /**
+   * The map of entity ID to its attached labels
+   *
    * @generated from field: map<string, api.v1alpha1.org.labels.GetLabeledEntityMapResponse.EntityLabels> entity_map = 1;
    */
   entityMap: { [key: string]: GetLabeledEntityMapResponse_EntityLabels };
@@ -399,6 +405,8 @@ export declare class GetLabeledEntityMapResponse extends Message<GetLabeledEntit
  */
 export declare class GetLabeledEntityMapResponse_EntityLabels extends Message<GetLabeledEntityMapResponse_EntityLabels> {
   /**
+   * Attached labels of a given entity
+   *
    * @generated from field: repeated api.commons.org.Label labels = 1;
    */
   labels: Label[];
