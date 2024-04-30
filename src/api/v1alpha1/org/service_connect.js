@@ -1779,14 +1779,27 @@ export const Org = {
     },
     /**
      * ListHuntGroupScripts lists all hunt group scripts for the current organization.
+     * DEPRECATED. Use ListOrgHuntGroupScripts instead
      *
      * @generated from rpc api.v1alpha1.org.Org.ListHuntGroupScripts
+     * @deprecated
      */
     listHuntGroupScripts: {
       name: "ListHuntGroupScripts",
       I: ListHuntGroupScriptsRequest,
       O: ListHuntGroupScriptsResponse,
       kind: MethodKind.Unary,
+    },
+    /**
+     * ListOrgHuntGroupScripts lists all hunt group scripts for the current organization with a streamed response.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ListOrgHuntGroupScripts
+     */
+    listOrgHuntGroupScripts: {
+      name: "ListOrgHuntGroupScripts",
+      I: ListHuntGroupScriptsRequest,
+      O: ListHuntGroupScriptsResponse,
+      kind: MethodKind.ServerStreaming,
     },
     /**
      * GetHuntGroupScript gets the specified script from the given script sid
