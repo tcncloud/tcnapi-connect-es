@@ -13,7 +13,7 @@ export const LabelsService = {
   typeName: "api.v1alpha1.org.labels.LabelsService",
   methods: {
     /**
-     * CreateLabel creates a new label.
+     * CreateLabel creates a new skill group.
      *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.CreateLabel
      */
@@ -35,7 +35,7 @@ export const LabelsService = {
       kind: MethodKind.Unary,
     },
     /**
-     * UpdateLabel updates a single label
+     * UpdateLabel gets a single label
      *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.UpdateLabel
      */
