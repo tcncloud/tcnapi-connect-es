@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AddContactEntryRequest, AddContactEntryResponse, GetContactListRequest, GetContactListResponse, GetEncContactEntryRequest, GetEncContactEntryResponse, GetKYCEncContactEntryRequest, GetKYCEncContactEntryResponse, GetKYCKeysRequest, GetKYCKeysResponse, ListContactEntryListRequest, ListContactEntryListResponse } from "./contactmanager_pb.js";
+import { AddContactEntryRequest, AddContactEntryResponse, EditContactEntryRequest, EditContactEntryResponse, GetContactListRequest, GetContactListResponse, GetEncContactEntryRequest, GetEncContactEntryResponse, GetKYCEncContactEntryRequest, GetKYCEncContactEntryResponse, GetKYCKeysRequest, GetKYCKeysResponse, ListContactEntryListRequest, ListContactEntryListResponse } from "./contactmanager_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -67,6 +67,18 @@ export const ContactManager = {
       name: "AddContactEntry",
       I: AddContactEntryRequest,
       O: AddContactEntryResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * *
+     * Edits the fields of an existing contact entry...
+     *
+     * @generated from rpc api.v1alpha1.contactmanager.ContactManager.EditContactEntry
+     */
+    editContactEntry: {
+      name: "EditContactEntry",
+      I: EditContactEntryRequest,
+      O: EditContactEntryResponse,
       kind: MethodKind.Unary,
     },
   }
