@@ -13,7 +13,7 @@ import { CreateAuthTokenByUserIdRequest, CreateAuthTokenByUserIdResponse, Create
 import { AssignScriptToHuntGroupsRequest, AssignScriptToHuntGroupsResponse, CopyAgentTriggerRequest, CopyAgentTriggerResponse, CopyDataDipTemplateRequest, CopyDataDipTemplateResponse, CopyDataDipTemplateToOrganizationRequest, CopyDataDipTemplateToOrganizationResponse, CopyHuntGroupClientInfoDisplayTemplateRequest, CopyHuntGroupClientInfoDisplayTemplateResponse, CopyHuntGroupIntegrationLinkRequest, CopyHuntGroupIntegrationLinkResponse, CopyHuntGroupWebLinkRequest, CopyHuntGroupWebLinkResponse, CreateAgentResponseAutoRulesRequest, CreateAgentResponseAutoRulesResponse, CreateCampaignClientInfoDisplayTemplateRequest, CreateCampaignClientInfoDisplayTemplateResponse, CreateDataDipTemplateRequest, CreateDataDipTemplateResponse, CreateHuntGroupClientInfoDisplayTemplateRequest, CreateHuntGroupClientInfoDisplayTemplateResponse, CreateHuntGroupRequest, CreateHuntGroupResponse, CreateHuntGroupScriptRequest, CreateHuntGroupScriptResponse, DeleteAgentResponseAutoRulesRequest, DeleteAgentResponseAutoRulesResponse, DeleteDataDipTemplateRequest, DeleteDataDipTemplateResponse, DeleteHuntGroupClientInfoDisplayTemplateRequest, DeleteHuntGroupClientInfoDisplayTemplateResponse, DeleteHuntGroupRequest, DeleteHuntGroupResponse, DeleteHuntGroupScriptRequest, DeleteHuntGroupScriptResponse, GetDataDipTemplateRequest, GetDataDipTemplateResponse, GetHuntGroupClientInfoDisplayTemplateRequest, GetHuntGroupClientInfoDisplayTemplateResponse, GetHuntGroupDetailsRequest, GetHuntGroupDetailsResponse, GetHuntGroupScriptRequest, GetHuntGroupScriptResponse, GetHuntGroupSettingsRequest, GetHuntGroupSettingsResponse, ListAgentResponseAutoRulesRequest, ListAgentResponseAutoRulesResponse, ListAgentTriggersRequest, ListAgentTriggersResponse, ListBroadcastTemplateGeneralDetailsRequest, ListBroadcastTemplateGeneralDetailsResponse, ListCallerIdBucketsRequest, ListCallerIdBucketsResponse, ListDataDipTemplatesRequest, ListDataDipTemplatesResponse, ListHuntGroupIntegrationLinksRequest, ListHuntGroupIntegrationLinksResponse, ListHuntGroupScriptsRequest, ListHuntGroupScriptsResponse, ListHuntGroupsWithClientInfoTemplateDataRequest, ListHuntGroupsWithClientInfoTemplateDataResponse, ListHuntGroupWebLinksRequest, ListHuntGroupWebLinksResponse, UnassignScriptFromHuntGroupsRequest, UnassignScriptFromHuntGroupsResponse, UpdateAgentResponseAutoRulesRequest, UpdateAgentResponseAutoRulesResponse, UpdateAgentTriggersRequest, UpdateAgentTriggersResponse, UpdateDataDipTemplateRequest, UpdateDataDipTemplateResponse, UpdateHuntGroupClientInfoDisplayTemplateRequest, UpdateHuntGroupClientInfoDisplayTemplateResponse, UpdateHuntGroupGeneralDetailsRequest, UpdateHuntGroupGeneralDetailsResponse, UpdateHuntGroupIntegrationLinksRequest, UpdateHuntGroupIntegrationLinksResponse, UpdateHuntGroupScriptRequest, UpdateHuntGroupScriptResponse, UpdateHuntGroupSettingsRequest, UpdateHuntGroupSettingsResponse, UpdateHuntGroupWebLinksRequest, UpdateHuntGroupWebLinksResponse } from "./huntgroup_pb.js";
 import { AcceptTrustRequest, AcceptTrustResponse, AssignTrustRequest, AssignTrustResponse, CreateTrustRequest, CreateTrustResponse, DeleteTrustRequest, DeleteTrustResponse, GetTrustRequest, GetTrustResponse, ListAssignableTrustsRequest, ListAssignableTrustsResponse, ListGivenTrustsRequest, ListGivenTrustsResponse, ListIncomingTrustsRequest, ListIncomingTrustsResponse, RejectTrustRequest, RejectTrustResponse, UnassignTrustRequest, UnassignTrustResponse } from "./trusts_pb.js";
 import { AssignLabelRequest, AssignLabelResponse, CreateLabelRequest, CreateLabelResponse, DeleteLabelRequest, DeleteLabelResponse, GetAssignableLabelsRequest, GetAssignableLabelsResponse, GetAssignmentCountsRequest, GetAssignmentCountsResponse, GetLabelRequest, GetLabelResponse, ListLabelsRequest, ListLabelsResponse, UnassignLabelRequest, UnassignLabelResponse, UpdateLabelRequest, UpdateLabelResponse } from "./labels_pb.js";
-import { AssignAccountOwnerPermissionToUserRequest, AssignAccountOwnerPermissionToUserResponse, AssignUsersPermissionGroupRequest, AssignUsersPermissionGroupResponse, CreatePermissionGroupRequest, CreatePermissionGroupResponse, DeletePermissionGroupRequest, DeletePermissionGroupResponse, GetAccountOwnerGroupRequest, GetAccountOwnerGroupResponse, GetLicensesRequest, GetLicensesResponse, GetOrgLicensesRequest, GetOrgLicensesResponse, GetPermissionsRequest, GetPermissionsResponse, GetUserPermissionsRequest, GetUserPermissionsResponse, InitDefaultPermissionGroupsRequest, InitDefaultPermissionGroupsResponse, ListPermissionGroupsByOrgIdRequest, ListPermissionGroupsByOrgIdResponse, ListPermissionGroupsRequest, ListPermissionGroupsResponse, RemovePermissionFromAllPermissionGroupsRequest, RemovePermissionFromAllPermissionGroupsResponse, RevokeAccountOwnerPermissionFromUserRequest, RevokeAccountOwnerPermissionFromUserResponse, RevokeUsersPermissionGroupRequest, RevokeUsersPermissionGroupResponse, UpdateLicensesRequest, UpdateLicensesResponse, UpdatePermissionGroupRequest, UpdatePermissionGroupResponse } from "./permissions_pb.js";
+import { AssignAccountOwnerPermissionToUserRequest, AssignAccountOwnerPermissionToUserResponse, AssignLabelsRequest, AssignLabelsResponse, AssignUsersPermissionGroupRequest, AssignUsersPermissionGroupResponse, CreatePermissionGroupRequest, CreatePermissionGroupResponse, DeletePermissionGroupRequest, DeletePermissionGroupResponse, GetAccountOwnerGroupRequest, GetAccountOwnerGroupResponse, GetLicensesRequest, GetLicensesResponse, GetOrgLicensesRequest, GetOrgLicensesResponse, GetPermissionsRequest, GetPermissionsResponse, GetUserPermissionsRequest, GetUserPermissionsResponse, InitDefaultPermissionGroupsRequest, InitDefaultPermissionGroupsResponse, ListPermissionGroupsByOrgIdRequest, ListPermissionGroupsByOrgIdResponse, ListPermissionGroupsRequest, ListPermissionGroupsResponse, RemovePermissionFromAllPermissionGroupsRequest, RemovePermissionFromAllPermissionGroupsResponse, RevokeAccountOwnerPermissionFromUserRequest, RevokeAccountOwnerPermissionFromUserResponse, RevokeLabelsRequest, RevokeLabelsResponse, RevokeUsersPermissionGroupRequest, RevokeUsersPermissionGroupResponse, UpdateLicensesRequest, UpdateLicensesResponse, UpdatePermissionGroupRequest, UpdatePermissionGroupResponse } from "./permissions_pb.js";
 import { AssignUsersP3PermissionGroupRequest, AssignUsersP3PermissionGroupResponse, CreateP3PermissionGroupRequest, CreateP3PermissionGroupResponse, DeleteP3PermissionGroupRequest, DeleteP3PermissionGroupResponse, ListP3PermissionGroupsRequest, ListP3PermissionGroupsResponse, RevokeUsersP3PermissionGroupRequest, RevokeUsersP3PermissionGroupResponse, UpdateP3PermissionGroupByOrgIdRequest, UpdateP3PermissionGroupByOrgIdResponse, UpdateP3PermissionGroupRequest, UpdateP3PermissionGroupResponse } from "./p3_permissions_pb.js";
 
 /**
@@ -1779,14 +1779,27 @@ export const Org = {
     },
     /**
      * ListHuntGroupScripts lists all hunt group scripts for the current organization.
+     * DEPRECATED. Use ListOrgHuntGroupScripts instead
      *
      * @generated from rpc api.v1alpha1.org.Org.ListHuntGroupScripts
+     * @deprecated
      */
     listHuntGroupScripts: {
       name: "ListHuntGroupScripts",
       I: ListHuntGroupScriptsRequest,
       O: ListHuntGroupScriptsResponse,
       kind: MethodKind.Unary,
+    },
+    /**
+     * ListOrgHuntGroupScripts lists all hunt group scripts for the current organization with a streamed response.
+     *
+     * @generated from rpc api.v1alpha1.org.Org.ListOrgHuntGroupScripts
+     */
+    listOrgHuntGroupScripts: {
+      name: "ListOrgHuntGroupScripts",
+      I: ListHuntGroupScriptsRequest,
+      O: ListHuntGroupScriptsResponse,
+      kind: MethodKind.ServerStreaming,
     },
     /**
      * GetHuntGroupScript gets the specified script from the given script sid
@@ -2167,6 +2180,28 @@ export const Org = {
       name: "RevokeUsersPermissionGroup",
       I: RevokeUsersPermissionGroupRequest,
       O: RevokeUsersPermissionGroupResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * AssignLabels assigns labels to a given permission group
+     *
+     * @generated from rpc api.v1alpha1.org.Org.AssignLabels
+     */
+    assignLabels: {
+      name: "AssignLabels",
+      I: AssignLabelsRequest,
+      O: AssignLabelsResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RevokeLabels revokes labels from a given permission group
+     *
+     * @generated from rpc api.v1alpha1.org.Org.RevokeLabels
+     */
+    revokeLabels: {
+      name: "RevokeLabels",
+      I: RevokeLabelsRequest,
+      O: RevokeLabelsResponse,
       kind: MethodKind.Unary,
     },
     /**

@@ -68,6 +68,7 @@ export const CreateScrubListReq = /*@__PURE__*/ proto3.makeMessageType(
     { no: 11, name: "content_type", kind: "enum", T: proto3.getEnumType(ContentType) },
     { no: 12, name: "country_code", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "scrub_entry_details", kind: "message", T: ScrubEntryDetails, repeated: true },
+    { no: 14, name: "durable", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

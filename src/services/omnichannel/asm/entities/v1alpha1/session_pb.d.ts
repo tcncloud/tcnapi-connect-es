@@ -279,9 +279,9 @@ export declare class AsmUserDetails extends Message<AsmUserDetails> {
   /**
    * login time
    *
-   * @generated from field: google.protobuf.Timestamp login_tome = 13;
+   * @generated from field: google.protobuf.Timestamp login_time = 13;
    */
-  loginTome?: Timestamp;
+  loginTime?: Timestamp;
 
   constructor(data?: PartialMessage<AsmUserDetails>);
 

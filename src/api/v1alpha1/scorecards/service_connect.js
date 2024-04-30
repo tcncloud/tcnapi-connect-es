@@ -9,7 +9,7 @@ import { BulkCreateQuestionsRequest, BulkCreateQuestionsResponse, CreateQuestion
 import { CreateCategoryRequest, CreateCategoryResponse, DeleteCategoryRequest, DeleteCategoryResponse, GetCategoryRequest, GetCategoryResponse, ListCategoriesRequest, ListCategoriesResponse, SampleCallsByCategoryRequest, SampleCallsByCategoryResponse, UpdateCategoryRequest, UpdateCategoryResponse } from "./category_pb.js";
 import { CreateScorecardQuestionRequest, CreateScorecardQuestionResponse, DeleteScorecardQuestionRequest, DeleteScorecardQuestionResponse, GetScorecardQuestionRequest, GetScorecardQuestionResponse, UpdateScorecardQuestionRequest, UpdateScorecardQuestionResponse } from "./scorecard_question_pb.js";
 import { CreateSectionRequest, CreateSectionResponse, DeleteSectionRequest, DeleteSectionResponse, GetSectionRequest, GetSectionResponse, ListSectionsRequest, ListSectionsResponse, UpdateSectionRequest, UpdateSectionResponse } from "./section_pb.js";
-import { CreateEvaluationRequest, CreateEvaluationResponse, DeleteEvaluationRequest, DeleteEvaluationResponse, GetEvaluationRequest, GetEvaluationResponse, ListEvaluationsRequest, ListEvaluationsResponse, PreviewEvaluationScoreRequest, PreviewEvaluationScoreResponse, ScoreEvaluationRequest, ScoreEvaluationResponse, UpdateEvaluationRequest, UpdateEvaluationResponse } from "./evaluation_pb.js";
+import { CreateEvaluationRequest, CreateEvaluationResponse, DeleteEvaluationRequest, DeleteEvaluationResponse, GetEvaluationRequest, GetEvaluationResponse, ListEvaluationsRequest, ListEvaluationsResponse, PreviewEvaluationScoreRequest, PreviewEvaluationScoreResponse, RestoreEvaluationRequest, RestoreEvaluationResponse, ScoreEvaluationRequest, ScoreEvaluationResponse, UpdateEvaluationRequest, UpdateEvaluationResponse } from "./evaluation_pb.js";
 import { CreateEvaluationQuestionRequest, CreateEvaluationQuestionResponse, DeleteEvaluationQuestionRequest, DeleteEvaluationQuestionResponse, UpdateEvaluationQuestionRequest, UpdateEvaluationQuestionResponse } from "./evaluation_question_pb.js";
 import { CreateAutoQuestionRequest, CreateAutoQuestionResponse, DeleteAutoQuestionRequest, DeleteAutoQuestionResponse, GetAutoQuestionRequest, GetAutoQuestionResponse, UpdateAutoQuestionRequest, UpdateAutoQuestionResponse } from "./auto_question_pb.js";
 import { DeleteAutoEvaluationRequest, DeleteAutoEvaluationResponse, GetAutoEvaluationRequest, GetAutoEvaluationResponse, ListAutoEvaluationsRequest, ListAutoEvaluationsResponse, StreamAutoEvaluationsRequest, StreamAutoEvaluationsResponse } from "./auto_evaluation_pb.js";
@@ -525,6 +525,17 @@ export const Scorecards = {
       name: "PreviewEvaluationScore",
       I: PreviewEvaluationScoreRequest,
       O: PreviewEvaluationScoreResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * RestoreEvaluation restores an evaluation previously deleted.
+     *
+     * @generated from rpc api.v1alpha1.scorecards.Scorecards.RestoreEvaluation
+     */
+    restoreEvaluation: {
+      name: "RestoreEvaluation",
+      I: RestoreEvaluationRequest,
+      O: RestoreEvaluationResponse,
       kind: MethodKind.Unary,
     },
   }
