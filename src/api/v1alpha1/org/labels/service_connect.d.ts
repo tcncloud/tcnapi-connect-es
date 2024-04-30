@@ -57,6 +57,8 @@ export declare const LabelsService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     *   DeleteLabel deletes a single label
+     *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.DeleteLabel
      */
     readonly deleteLabel: {
@@ -66,6 +68,8 @@ export declare const LabelsService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * AttachLabel attaches a label to a given entity type
+     *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.AttachLabel
      */
     readonly attachLabel: {
@@ -75,6 +79,8 @@ export declare const LabelsService: {
       readonly kind: MethodKind.Unary,
     },
     /**
+     * GetLabeledEntityMap gives back a map of entity Id to attached labels. The Entity type is specified on the request
+     *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.GetLabeledEntityMap
      */
     readonly getLabeledEntityMap: {
