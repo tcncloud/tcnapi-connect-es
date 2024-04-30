@@ -137,6 +137,7 @@ export const ListEvaluationsRequest = /*@__PURE__*/ proto3.makeMessageType(
     { no: 5, name: "agent_user_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 6, name: "scorecard_ids", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
     { no: 10, name: "return_fields", kind: "message", T: FieldMask },
+    { no: 11, name: "is_deleted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -201,6 +202,31 @@ export const DeleteEvaluationByOrgIdRequest = /*@__PURE__*/ proto3.makeMessageTy
   () => [
     { no: 1, name: "org_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "evaluation_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ],
+);
+
+/**
+ * RestoreEvaluationRequest is request to restore a deleted evaluation
+ *
+ * @generated from message api.v1alpha1.scorecards.RestoreEvaluationRequest
+ */
+export const RestoreEvaluationRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.RestoreEvaluationRequest",
+  () => [
+    { no: 2, name: "evaluation_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 3, name: "user_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * RestoreEvaluationReponse contains the restored evaluation
+ *
+ * @generated from message api.v1alpha1.scorecards.RestoreEvaluationResponse
+ */
+export const RestoreEvaluationResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.scorecards.RestoreEvaluationResponse",
+  () => [
+    { no: 1, name: "evaluation", kind: "message", T: Evaluation },
   ],
 );
 

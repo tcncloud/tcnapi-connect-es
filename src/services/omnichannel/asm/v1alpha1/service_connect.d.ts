@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateSessionRequest, CreateSessionResponse, DisableVoiceRequest, DisableVoiceResponse, EnableVoiceRequest, EnableVoiceResponse, EndSessionRequest, EndSessionResponse, GetCurrentSessionRequest, GetCurrentSessionResponse, ListAsmUserDetailsRequest, ListAsmUserDetailsResponse } from "./entities_pb.js";
+import { CreateSessionRequest, CreateSessionResponse, DisableVoiceRequest, DisableVoiceResponse, EnableVoiceRequest, EnableVoiceResponse, EndSessionRequest, EndSessionResponse, GetCurrentSessionRequest, GetCurrentSessionResponse, ListAsmUserDetailsRequest, ListAsmUserDetailsResponse, PushEventResponse, PushEventsRequest } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -74,6 +74,17 @@ export declare const AsmService: {
       readonly name: "ListAsmUserDetails",
       readonly I: typeof ListAsmUserDetailsRequest,
       readonly O: typeof ListAsmUserDetailsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * puah events push a list of events
+     *
+     * @generated from rpc services.omnichannel.asm.v1alpha1.AsmService.PushEvents
+     */
+    readonly pushEvents: {
+      readonly name: "PushEvents",
+      readonly I: typeof PushEventsRequest,
+      readonly O: typeof PushEventResponse,
       readonly kind: MethodKind.Unary,
     },
   }

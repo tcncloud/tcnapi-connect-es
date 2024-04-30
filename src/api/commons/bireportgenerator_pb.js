@@ -42,6 +42,7 @@ export const DayFilterType = /*@__PURE__*/ proto3.makeEnum(
  * ReportFormat is an enum for the format of the report.
  *
  * @generated from enum api.commons.ReportFormat
+ * @deprecated
  */
 export const ReportFormat = /*@__PURE__*/ proto3.makeEnum(
   "api.commons.ReportFormat",
@@ -98,6 +99,8 @@ export const TimePeriod = /*@__PURE__*/ proto3.makeEnum(
 );
 
 /**
+ * FilenamePartType is an enum for the type of filename part.
+ *
  * @generated from enum api.commons.FilenamePartType
  */
 export const FilenamePartType = /*@__PURE__*/ proto3.makeEnum(
@@ -176,6 +179,7 @@ export const DayFilter = /*@__PURE__*/ proto3.makeMessageType(
  * FormatOptions is a message for the format options of a report.
  *
  * @generated from message api.commons.FormatOptions
+ * @deprecated
  */
 export const FormatOptions = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.FormatOptions",
@@ -200,6 +204,8 @@ export const DeliveryOptions = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * FilenamePart is a message for a part of the filename.
+ *
  * @generated from message api.commons.FilenamePart
  */
 export const FilenamePart = /*@__PURE__*/ proto3.makeMessageType(
@@ -207,6 +213,19 @@ export const FilenamePart = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(FilenamePartType) },
     { no: 2, name: "static_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * TransferOptions is a message for the transfer options of a report.
+ *
+ * @generated from message api.commons.TransferOptions
+ */
+export const TransferOptions = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.TransferOptions",
+  () => [
+    { no: 1, name: "transfer_config_sid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "filename_parts", kind: "message", T: FilenamePart, repeated: true },
   ],
 );
 

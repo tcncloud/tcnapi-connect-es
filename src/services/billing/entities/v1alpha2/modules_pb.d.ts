@@ -62,7 +62,7 @@ export declare class BasicUnitConfig extends Message<BasicUnitConfig> {
    * Optional. the minimum number of units to rate; for example, a
    * unit size of 5 seconds and a min_units of 2 would mean that
    * any event less than 10 seconds would be billed as if it were
-   * two units (10 seconds).
+   * two units (10 seconds). This is per event.
    *
    * @generated from field: google.protobuf.Int64Value min_units = 3;
    */
@@ -72,11 +72,25 @@ export declare class BasicUnitConfig extends Message<BasicUnitConfig> {
    * Optional. the maximum number of units to rate; for example, a
    * unit size of 5 seconds and a max_units of 2 would mean that
    * any event more than 10 seconds would be billed as if it were
-   * two units (10 seconds).
+   * two units (10 seconds). This is per event.
    *
    * @generated from field: google.protobuf.Int64Value max_units = 4;
    */
   maxUnits?: bigint;
+
+  /**
+   * Optional. the minimum number of units to rate per cycle
+   *
+   * @generated from field: google.protobuf.Int64Value min_units_per_cycle = 5;
+   */
+  minUnitsPerCycle?: bigint;
+
+  /**
+   * Optional. the maximum number of units to rate per cycle
+   *
+   * @generated from field: google.protobuf.Int64Value max_units_per_cycle = 6;
+   */
+  maxUnitsPerCycle?: bigint;
 
   constructor(data?: PartialMessage<BasicUnitConfig>);
 

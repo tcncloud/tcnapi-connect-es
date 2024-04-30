@@ -29,6 +29,7 @@ export const Permission = /*@__PURE__*/ proto3.makeEnum(
     {no: 110, name: "PERMISSION_PERMISSION_GROUP_EDIT"},
     {no: 111, name: "PERMISSION_PERMISSION_GROUP_ASSIGN"},
     {no: 150, name: "PERMISSION_LABEL_MANAGEMENT"},
+    {no: 151, name: "PERMISSION_LABEL_ATTACH"},
     {no: 160, name: "PERMISSION_TRUST_MANAGEMENT"},
     {no: 1900, name: "PERMISSION_HUNTGROUP_VIEW"},
     {no: 1901, name: "PERMISSION_HUNTGROUP_EDIT"},
