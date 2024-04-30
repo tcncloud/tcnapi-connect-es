@@ -124,6 +124,13 @@ export declare enum Permission {
   PERMISSION_LABEL_MANAGEMENT = 150,
 
   /**
+   * Enables attachment of labels to entities
+   *
+   * @generated from enum value: PERMISSION_LABEL_ATTACH = 151;
+   */
+  PERMISSION_LABEL_ATTACH = 151,
+
+  /**
    * Enables CRUD operations for Trusts.
    *
    * @generated from enum value: PERMISSION_TRUST_MANAGEMENT = 160;

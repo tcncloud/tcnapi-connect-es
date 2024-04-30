@@ -986,3 +986,115 @@ export declare class RemovePermissionFromAllPermissionGroupsResponse extends Mes
   static equals(a: RemovePermissionFromAllPermissionGroupsResponse | PlainMessage<RemovePermissionFromAllPermissionGroupsResponse> | undefined, b: RemovePermissionFromAllPermissionGroupsResponse | PlainMessage<RemovePermissionFromAllPermissionGroupsResponse> | undefined): boolean;
 }
 
+/**
+ * Request message for the AssignLabelsRequest RPC.
+ *
+ * @generated from message api.v1alpha1.org.AssignLabelsRequest
+ */
+export declare class AssignLabelsRequest extends Message<AssignLabelsRequest> {
+  /**
+   * Ids of labels getting assigned to a permission group
+   *
+   * @generated from field: repeated string label_ids = 1;
+   */
+  labelIds: string[];
+
+  /**
+   * Id of the permission group to be assigned labels.
+   *
+   * @generated from field: string permission_group_id = 2;
+   */
+  permissionGroupId: string;
+
+  constructor(data?: PartialMessage<AssignLabelsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.AssignLabelsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignLabelsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignLabelsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignLabelsRequest;
+
+  static equals(a: AssignLabelsRequest | PlainMessage<AssignLabelsRequest> | undefined, b: AssignLabelsRequest | PlainMessage<AssignLabelsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the AssignLabelsResponse RPC.
+ *
+ * @generated from message api.v1alpha1.org.AssignLabelsResponse
+ */
+export declare class AssignLabelsResponse extends Message<AssignLabelsResponse> {
+  constructor(data?: PartialMessage<AssignLabelsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.AssignLabelsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssignLabelsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssignLabelsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssignLabelsResponse;
+
+  static equals(a: AssignLabelsResponse | PlainMessage<AssignLabelsResponse> | undefined, b: AssignLabelsResponse | PlainMessage<AssignLabelsResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the RevokeLabelsRequest RPC.
+ *
+ * @generated from message api.v1alpha1.org.RevokeLabelsRequest
+ */
+export declare class RevokeLabelsRequest extends Message<RevokeLabelsRequest> {
+  /**
+   * Ids of labels getting revoked from a permission group
+   *
+   * @generated from field: repeated string label_ids = 1;
+   */
+  labelIds: string[];
+
+  /**
+   * Id of the permission group to have labels revoked.
+   *
+   * @generated from field: string permission_group_id = 2;
+   */
+  permissionGroupId: string;
+
+  constructor(data?: PartialMessage<RevokeLabelsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.RevokeLabelsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeLabelsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeLabelsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeLabelsRequest;
+
+  static equals(a: RevokeLabelsRequest | PlainMessage<RevokeLabelsRequest> | undefined, b: RevokeLabelsRequest | PlainMessage<RevokeLabelsRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the RevokeLabelsResponse RPC.
+ *
+ * @generated from message api.v1alpha1.org.RevokeLabelsResponse
+ */
+export declare class RevokeLabelsResponse extends Message<RevokeLabelsResponse> {
+  constructor(data?: PartialMessage<RevokeLabelsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.RevokeLabelsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeLabelsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeLabelsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeLabelsResponse;
+
+  static equals(a: RevokeLabelsResponse | PlainMessage<RevokeLabelsResponse> | undefined, b: RevokeLabelsResponse | PlainMessage<RevokeLabelsResponse> | undefined): boolean;
+}
+

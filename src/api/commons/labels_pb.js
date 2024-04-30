@@ -12,6 +12,7 @@ import { proto3 } from "@bufbuild/protobuf";
  * iota in the labels app.
  *
  * @generated from enum api.commons.EntityType
+ * @deprecated
  */
 export const EntityType = /*@__PURE__*/ proto3.makeEnum(
   "api.commons.EntityType",
@@ -19,6 +20,20 @@ export const EntityType = /*@__PURE__*/ proto3.makeEnum(
     {no: 0, name: "ENTITY_TYPE_INVALID", localName: "INVALID"},
     {no: 1, name: "ENTITY_TYPE_USER", localName: "USER"},
     {no: 2, name: "ENTITY_TYPE_LMS_PIPELINE", localName: "LMS_PIPELINE"},
+  ],
+);
+
+/**
+ * LabeledEntity is an enum that represents the different types of entities that can be labeled.
+ *
+ * @generated from enum api.commons.LabeledEntity
+ * @deprecated
+ */
+export const LabeledEntity = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.LabeledEntity",
+  [
+    {no: 0, name: "LABELED_ENTITY_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "LABELED_ENTITY_SKILL_GROUP", localName: "SKILL_GROUP"},
   ],
 );
 
