@@ -880,7 +880,6 @@ export const UpdateAgentTriggersResponse = /*@__PURE__*/ proto3.makeMessageType(
  * The request message for ListHuntGroupScript
  *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsRequest
- * @deprecated
  */
 export const ListHuntGroupScriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.ListHuntGroupScriptsRequest",
@@ -891,32 +890,9 @@ export const ListHuntGroupScriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
  * The response message for ListHuntGroupScript
  *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsResponse
- * @deprecated
  */
 export const ListHuntGroupScriptsResponse = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.org.ListHuntGroupScriptsResponse",
-  () => [
-    { no: 1, name: "scripts", kind: "message", T: HuntGroupScript, repeated: true },
-  ],
-);
-
-/**
- * The request message for ListOrgHuntGroupScripts
- *
- * @generated from message api.v1alpha1.org.ListOrgHuntGroupScriptsRequest
- */
-export const ListOrgHuntGroupScriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.ListOrgHuntGroupScriptsRequest",
-  [],
-);
-
-/**
- * The response message for ListOrgHuntGroupScripts
- *
- * @generated from message api.v1alpha1.org.ListOrgHuntGroupScriptsResponse
- */
-export const ListOrgHuntGroupScriptsResponse = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.org.ListOrgHuntGroupScriptsResponse",
   () => [
     { no: 1, name: "scripts", kind: "message", T: HuntGroupScript, repeated: true },
   ],
