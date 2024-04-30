@@ -5382,6 +5382,7 @@ export const RgbaColor = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "green", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 3, name: "blue", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
     { no: 4, name: "alpha", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
+    { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
