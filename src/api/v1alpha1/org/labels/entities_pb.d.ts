@@ -78,7 +78,7 @@ export declare class UpdateLabelRequest extends Message<UpdateLabelRequest> {
   label?: Label;
 
   /**
-   *   The field to be updated
+   * The field to be updated
    *
    * @generated from field: google.protobuf.FieldMask field_mask = 3;
    */
@@ -106,7 +106,7 @@ export declare class UpdateLabelRequest extends Message<UpdateLabelRequest> {
  */
 export declare class UpdateLabelResponse extends Message<UpdateLabelResponse> {
   /**
-   * The updated resouce
+   * The updated resource
    *
    * @generated from field: api.commons.org.Label label = 1;
    */
