@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { AsmSession, AsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
+import type { AsmEvent } from "../../../../api/commons/event_pb.js";
 
 /**
  * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRequest
@@ -316,5 +317,53 @@ export declare class ListAsmUserDetailsResponse extends Message<ListAsmUserDetai
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAsmUserDetailsResponse;
 
   static equals(a: ListAsmUserDetailsResponse | PlainMessage<ListAsmUserDetailsResponse> | undefined, b: ListAsmUserDetailsResponse | PlainMessage<ListAsmUserDetailsResponse> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.omnichannel.asm.v1alpha1.PushEventsRequest
+ */
+export declare class PushEventsRequest extends Message<PushEventsRequest> {
+  /**
+   * @generated from field: int64 ams_session_sid = 1;
+   */
+  amsSessionSid: bigint;
+
+  /**
+   * @generated from field: repeated api.commons.AsmEvent asm_events = 2;
+   */
+  asmEvents: AsmEvent[];
+
+  constructor(data?: PartialMessage<PushEventsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.PushEventsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PushEventsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PushEventsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PushEventsRequest;
+
+  static equals(a: PushEventsRequest | PlainMessage<PushEventsRequest> | undefined, b: PushEventsRequest | PlainMessage<PushEventsRequest> | undefined): boolean;
+}
+
+/**
+ * @generated from message services.omnichannel.asm.v1alpha1.PushEventResponse
+ */
+export declare class PushEventResponse extends Message<PushEventResponse> {
+  constructor(data?: PartialMessage<PushEventResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "services.omnichannel.asm.v1alpha1.PushEventResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PushEventResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PushEventResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PushEventResponse;
+
+  static equals(a: PushEventResponse | PlainMessage<PushEventResponse> | undefined, b: PushEventResponse | PlainMessage<PushEventResponse> | undefined): boolean;
 }
 
