@@ -1779,6 +1779,7 @@ export const Org = {
     },
     /**
      * ListHuntGroupScripts lists all hunt group scripts for the current organization.
+     * DEPRECATED. Use ListOrgHuntGroupScripts instead
      *
      * @generated from rpc api.v1alpha1.org.Org.ListHuntGroupScripts
      * @deprecated
