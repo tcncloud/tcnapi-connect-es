@@ -2195,6 +2195,7 @@ export declare class UpdateAgentTriggersResponse extends Message<UpdateAgentTrig
  * The request message for ListHuntGroupScript
  *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsRequest
+ * @deprecated
  */
 export declare class ListHuntGroupScriptsRequest extends Message<ListHuntGroupScriptsRequest> {
   constructor(data?: PartialMessage<ListHuntGroupScriptsRequest>);
@@ -2216,6 +2217,7 @@ export declare class ListHuntGroupScriptsRequest extends Message<ListHuntGroupSc
  * The response message for ListHuntGroupScript
  *
  * @generated from message api.v1alpha1.org.ListHuntGroupScriptsResponse
+ * @deprecated
  */
 export declare class ListHuntGroupScriptsResponse extends Message<ListHuntGroupScriptsResponse> {
   /**
@@ -2238,6 +2240,55 @@ export declare class ListHuntGroupScriptsResponse extends Message<ListHuntGroupS
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListHuntGroupScriptsResponse;
 
   static equals(a: ListHuntGroupScriptsResponse | PlainMessage<ListHuntGroupScriptsResponse> | undefined, b: ListHuntGroupScriptsResponse | PlainMessage<ListHuntGroupScriptsResponse> | undefined): boolean;
+}
+
+/**
+ * The request message for ListOrgHuntGroupScripts
+ *
+ * @generated from message api.v1alpha1.org.ListOrgHuntGroupScriptsRequest
+ */
+export declare class ListOrgHuntGroupScriptsRequest extends Message<ListOrgHuntGroupScriptsRequest> {
+  constructor(data?: PartialMessage<ListOrgHuntGroupScriptsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListOrgHuntGroupScriptsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrgHuntGroupScriptsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrgHuntGroupScriptsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrgHuntGroupScriptsRequest;
+
+  static equals(a: ListOrgHuntGroupScriptsRequest | PlainMessage<ListOrgHuntGroupScriptsRequest> | undefined, b: ListOrgHuntGroupScriptsRequest | PlainMessage<ListOrgHuntGroupScriptsRequest> | undefined): boolean;
+}
+
+/**
+ * The response message for ListOrgHuntGroupScripts
+ *
+ * @generated from message api.v1alpha1.org.ListOrgHuntGroupScriptsResponse
+ */
+export declare class ListOrgHuntGroupScriptsResponse extends Message<ListOrgHuntGroupScriptsResponse> {
+  /**
+   * The scripts belonging to an org
+   *
+   * @generated from field: repeated api.commons.org.HuntGroupScript scripts = 1;
+   */
+  scripts: HuntGroupScript[];
+
+  constructor(data?: PartialMessage<ListOrgHuntGroupScriptsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.ListOrgHuntGroupScriptsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOrgHuntGroupScriptsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOrgHuntGroupScriptsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOrgHuntGroupScriptsResponse;
+
+  static equals(a: ListOrgHuntGroupScriptsResponse | PlainMessage<ListOrgHuntGroupScriptsResponse> | undefined, b: ListOrgHuntGroupScriptsResponse | PlainMessage<ListOrgHuntGroupScriptsResponse> | undefined): boolean;
 }
 
 /**
