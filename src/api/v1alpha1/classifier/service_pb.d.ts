@@ -37,13 +37,6 @@ export declare class ParseFileRequest extends Message<ParseFileRequest> {
    */
   name: string;
 
-  /**
-   * keys are old field names, values are new field names
-   *
-   * @generated from field: map<string, string> rename_fields = 6;
-   */
-  renameFields: { [key: string]: string };
-
   constructor(data?: PartialMessage<ParseFileRequest>);
 
   static readonly runtime: typeof proto3;
