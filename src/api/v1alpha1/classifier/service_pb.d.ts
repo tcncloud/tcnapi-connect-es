@@ -66,6 +66,13 @@ export declare class ParseFileRequest_ReParseFile extends Message<ParseFileReque
    */
   hints?: ParseHints;
 
+  /**
+   * keys are old field names, values are new field names
+   *
+   * @generated from field: map<string, string> rename_fields = 6;
+   */
+  renameFields: { [key: string]: string };
+
   constructor(data?: PartialMessage<ParseFileRequest_ReParseFile>);
 
   static readonly runtime: typeof proto3;
