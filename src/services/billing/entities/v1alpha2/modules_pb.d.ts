@@ -45,7 +45,8 @@ export declare class BasicUnitConfig extends Message<BasicUnitConfig> {
   /**
    * Required. the size of an individual unit. For example, a unit
    * size of 300 (with bytes as a unit of measurement) and an event
-   * of size 400 bytes will get billed as if it were 2 units.
+   * of size 400 bytes will get billed as if it were 2 units. This
+   * is per event.
    *
    * @generated from field: int64 unit_size = 1;
    */
@@ -91,6 +92,17 @@ export declare class BasicUnitConfig extends Message<BasicUnitConfig> {
    * @generated from field: google.protobuf.Int64Value max_units_per_cycle = 6;
    */
   maxUnitsPerCycle?: bigint;
+
+  /**
+   * Optional. the size of an individual unit; to be calculated
+   * for the entire billing cycle. For example, a unit size of 300
+   * (with bytes as a unit of measurement) with the sum of event
+   * sizes (over the course of a billing cycle) of 4000 bytes will
+   * get billed as if it were 14 units. This is per billing cycle.
+   *
+   * @generated from field: int64 unit_size_per_cycle = 7;
+   */
+  unitSizePerCycle: bigint;
 
   constructor(data?: PartialMessage<BasicUnitConfig>);
 
