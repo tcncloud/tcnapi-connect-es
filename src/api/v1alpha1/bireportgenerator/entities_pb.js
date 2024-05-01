@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod } from "../../commons/bireportgenerator_pb.js";
+import { DayFilter, DeliveryOptions, DeliveryTimes, FormatOptions, TimePeriod, TransferOptions } from "../../commons/bireportgenerator_pb.js";
 import { Month } from "../../commons/enums_pb.js";
 import { TimeZoneWrapper } from "../../commons/org_pb.js";
 import { CronExpression } from "../../commons/types_pb.js";
@@ -35,6 +35,7 @@ export const ReportJob = /*@__PURE__*/ proto3.makeMessageType(
     { no: 16, name: "hide_csv_footer", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 17, name: "transfer_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 18, name: "cron_expression", kind: "message", T: CronExpression },
+    { no: 19, name: "transfer_options", kind: "message", T: TransferOptions },
   ],
 );
 
