@@ -15,6 +15,7 @@ export const ParseFileRequest = /*@__PURE__*/ proto3.makeMessageType(
     { no: 3, name: "raw_data", kind: "scalar", T: 12 /* ScalarType.BYTES */, oneof: "opt" },
     { no: 4, name: "reparse_file", kind: "message", T: ParseFileRequest_ReParseFile, oneof: "opt" },
     { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "rename_fields", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ],
 );
 
