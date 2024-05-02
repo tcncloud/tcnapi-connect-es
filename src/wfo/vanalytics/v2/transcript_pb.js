@@ -149,7 +149,7 @@ export const FlagSummary_Review = /*@__PURE__*/ proto3.makeMessageType(
 export const Sms = /*@__PURE__*/ proto3.makeMessageType(
   "wfo.vanalytics.v2.Sms",
   () => [
-    { no: 1, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 1, name: "conversation_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */ },
     { no: 2, name: "threads", kind: "message", T: Sms_Thread, repeated: true },
     { no: 3, name: "phone", kind: "message", T: Sms_Phone },
     { no: 4, name: "caller_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
@@ -1054,7 +1054,7 @@ export const TranscriptQuery_Sms = /*@__PURE__*/ proto3.makeMessageType(
 export const TranscriptQuery_Sms_ConversationSid = /*@__PURE__*/ proto3.makeMessageType(
   "wfo.vanalytics.v2.TranscriptQuery.Sms.ConversationSid",
   () => [
-    { no: 1, name: "any", kind: "scalar", T: 3 /* ScalarType.INT64 */, repeated: true },
+    { no: 1, name: "any", kind: "scalar", T: 3 /* ScalarType.INT64 */, L: 1 /* LongType.STRING */, repeated: true },
   ],
   {localName: "TranscriptQuery_Sms_ConversationSid"},
 );

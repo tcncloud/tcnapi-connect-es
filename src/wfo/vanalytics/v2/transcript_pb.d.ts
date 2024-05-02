@@ -426,9 +426,9 @@ export declare class Sms extends Message<Sms> {
   /**
    * The unique identifier of the sms conversation.
    *
-   * @generated from field: int64 conversation_sid = 1;
+   * @generated from field: int64 conversation_sid = 1 [jstype = JS_STRING];
    */
-  conversationSid: bigint;
+  conversationSid: string;
 
   /**
    * The text from the sms in threads.
@@ -2987,9 +2987,9 @@ export declare class TranscriptQuery_Sms_ConversationSid extends Message<Transcr
    * Requires all sms specific transcript hits to have a conversation sid
    * in the list.
    *
-   * @generated from field: repeated int64 any = 1;
+   * @generated from field: repeated int64 any = 1 [jstype = JS_STRING];
    */
-  any: bigint[];
+  any: string[];
 
   constructor(data?: PartialMessage<TranscriptQuery_Sms_ConversationSid>);
 
