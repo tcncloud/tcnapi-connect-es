@@ -79,7 +79,7 @@ export const LabelsService = {
       kind: MethodKind.Unary,
     },
     /**
-     * DetachLabel attaches a label to a given entity type
+     * DetachLabel detaches a label from an entity based on an entity type
      *
      * @generated from rpc api.v1alpha1.org.labels.LabelsService.DetachLabel
      */
