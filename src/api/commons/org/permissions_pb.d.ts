@@ -10,7 +10,7 @@ import type { Permission as Permission$1 } from "../perms_pb.js";
 import type { Application, Card } from "../../../annotations/perms/license_pb.js";
 
 /**
- * PermissionGroup defines the permission group entity.
+ * PermiissionGroup defines the permission group entity.
  *
  * @generated from message api.commons.org.PermissionGroup
  */
@@ -56,13 +56,6 @@ export declare class PermissionGroup extends Message<PermissionGroup> {
    * @generated from field: bool read_only = 6;
    */
   readOnly: boolean;
-
-  /**
-   * A list of label ids that are assigned to this group.
-   *
-   * @generated from field: repeated string label_ids = 7;
-   */
-  labelIds: string[];
 
   constructor(data?: PartialMessage<PermissionGroup>);
 
