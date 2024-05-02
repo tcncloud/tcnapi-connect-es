@@ -7848,6 +7848,76 @@ export declare class GetOpenTimesBitmapsRes extends Message<GetOpenTimesBitmapsR
 }
 
 /**
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest
+ */
+export declare class ListOpenDateRangesForNodeOpenTimesBitmapsRequest extends Message<ListOpenDateRangesForNodeOpenTimesBitmapsRequest> {
+  /**
+   * Datetime range that the @open_close_ranges will cover for @node_selector.
+   *
+   * @generated from field: api.commons.DatetimeRange datetime_range = 1;
+   */
+  datetimeRange?: DatetimeRange;
+
+  /**
+   * The node that @open_close_ranges will be associated with.
+   *
+   * @generated from field: api.v1alpha1.wfm.ParentEntity node_selector = 2;
+   */
+  nodeSelector?: ParentEntity;
+
+  /**
+   * ID of the scenario that @node_selector belongs to.
+   *
+   * @generated from field: int64 schedule_scenario_sid = 3;
+   */
+  scheduleScenarioSid: bigint;
+
+  constructor(data?: PartialMessage<ListOpenDateRangesForNodeOpenTimesBitmapsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsRequest;
+
+  static equals(a: ListOpenDateRangesForNodeOpenTimesBitmapsRequest | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsRequest> | undefined, b: ListOpenDateRangesForNodeOpenTimesBitmapsRequest | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsRequest> | undefined): boolean;
+}
+
+/**
+ * Request message for the ListOpenDateRangesForNodeOpenTimesBitmaps RPC
+ *
+ * @generated from message api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse
+ */
+export declare class ListOpenDateRangesForNodeOpenTimesBitmapsResponse extends Message<ListOpenDateRangesForNodeOpenTimesBitmapsResponse> {
+  /**
+   * Datetime ranges over which the @node_selector is open throughout @datetime_range.
+   *
+   * @generated from field: repeated api.commons.DatetimeRange open_close_ranges = 1;
+   */
+  openCloseRanges: DatetimeRange[];
+
+  constructor(data?: PartialMessage<ListOpenDateRangesForNodeOpenTimesBitmapsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.wfm.ListOpenDateRangesForNodeOpenTimesBitmapsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListOpenDateRangesForNodeOpenTimesBitmapsResponse;
+
+  static equals(a: ListOpenDateRangesForNodeOpenTimesBitmapsResponse | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsResponse> | undefined, b: ListOpenDateRangesForNodeOpenTimesBitmapsResponse | PlainMessage<ListOpenDateRangesForNodeOpenTimesBitmapsResponse> | undefined): boolean;
+}
+
+/**
  * Represents and Agent Availability Pattern
  *
  * @generated from message api.v1alpha1.wfm.AgentAvailabilityPattern
@@ -15432,6 +15502,11 @@ export declare class RgbaColor extends Message<RgbaColor> {
    * @generated from field: float alpha = 4;
    */
   alpha: number;
+
+  /**
+   * @generated from field: string name = 5;
+   */
+  name: string;
 
   constructor(data?: PartialMessage<RgbaColor>);
 

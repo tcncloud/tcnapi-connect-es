@@ -5,6 +5,7 @@
 
 import { proto3 } from "@bufbuild/protobuf";
 import { AsmSession, AsmUserDetails, VoiceRegistration, VoiceSession } from "../entities/v1alpha1/session_pb.js";
+import { AsmEvent } from "../../../../api/commons/event_pb.js";
 
 /**
  * @generated from message services.omnichannel.asm.v1alpha1.CreateSessionRequest
@@ -119,5 +120,24 @@ export const ListAsmUserDetailsResponse = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "sessions", kind: "message", T: AsmUserDetails, repeated: true },
     { no: 2, name: "asm_user_details", kind: "message", T: AsmUserDetails, repeated: true },
   ],
+);
+
+/**
+ * @generated from message services.omnichannel.asm.v1alpha1.PushEventsRequest
+ */
+export const PushEventsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.PushEventsRequest",
+  () => [
+    { no: 1, name: "ams_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 2, name: "asm_events", kind: "message", T: AsmEvent, repeated: true },
+  ],
+);
+
+/**
+ * @generated from message services.omnichannel.asm.v1alpha1.PushEventResponse
+ */
+export const PushEventResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "services.omnichannel.asm.v1alpha1.PushEventResponse",
+  [],
 );
 

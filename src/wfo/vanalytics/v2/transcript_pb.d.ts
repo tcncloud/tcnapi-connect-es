@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, Duration, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
+import type { TranscriptSummary } from "./transcript_summary_pb.js";
 import type { CallType_Enum } from "../../../api/commons/acd_pb.js";
 import type { AgentCallLog, AgentCallLogQuery } from "./agent_call_log_pb.js";
 import type { Interval } from "../../../api/commons/vanalytics_pb.js";
@@ -113,6 +114,13 @@ export declare class Transcript extends Message<Transcript> {
    * @generated from field: int64 transcript_sid = 17;
    */
   transcriptSid: bigint;
+
+  /**
+   * The summary for the transcript.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptSummary summary = 18;
+   */
+  summary?: TranscriptSummary;
 
   constructor(data?: PartialMessage<Transcript>);
 
@@ -819,6 +827,13 @@ export declare class Call_Segment extends Message<Call_Segment> {
    * @generated from field: google.protobuf.Duration offset = 2;
    */
   offset?: Duration;
+
+  /**
+   * The duration of the segment.
+   *
+   * @generated from field: google.protobuf.Duration duration = 3;
+   */
+  duration?: Duration;
 
   constructor(data?: PartialMessage<Call_Segment>);
 
@@ -3877,5 +3892,248 @@ export declare class SpanFuzzy extends Message<SpanFuzzy> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SpanFuzzy;
 
   static equals(a: SpanFuzzy | PlainMessage<SpanFuzzy> | undefined, b: SpanFuzzy | PlainMessage<SpanFuzzy> | undefined): boolean;
+}
+
+/**
+ * BulkDeleteTranscriptsRequest defines the bulk delete transcripts request.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsRequest
+ */
+export declare class BulkDeleteTranscriptsRequest extends Message<BulkDeleteTranscriptsRequest> {
+  /**
+   * Required. A query which determines which transcripts to delete.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery query = 1;
+   */
+  query?: TranscriptQuery;
+
+  constructor(data?: PartialMessage<BulkDeleteTranscriptsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.BulkDeleteTranscriptsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BulkDeleteTranscriptsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsRequest;
+
+  static equals(a: BulkDeleteTranscriptsRequest | PlainMessage<BulkDeleteTranscriptsRequest> | undefined, b: BulkDeleteTranscriptsRequest | PlainMessage<BulkDeleteTranscriptsRequest> | undefined): boolean;
+}
+
+/**
+ * BulkDeleteTranscriptsResponse defines the bulk delete transcripts response.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsResponse
+ */
+export declare class BulkDeleteTranscriptsResponse extends Message<BulkDeleteTranscriptsResponse> {
+  /**
+   * The number of transcripts deleted.
+   *
+   * @generated from field: uint32 total = 1;
+   */
+  total: number;
+
+  constructor(data?: PartialMessage<BulkDeleteTranscriptsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.BulkDeleteTranscriptsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BulkDeleteTranscriptsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BulkDeleteTranscriptsResponse;
+
+  static equals(a: BulkDeleteTranscriptsResponse | PlainMessage<BulkDeleteTranscriptsResponse> | undefined, b: BulkDeleteTranscriptsResponse | PlainMessage<BulkDeleteTranscriptsResponse> | undefined): boolean;
+}
+
+/**
+ * BulkRestoreTranscriptsRequest defines the bulk restore transcripts request.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkRestoreTranscriptsRequest
+ */
+export declare class BulkRestoreTranscriptsRequest extends Message<BulkRestoreTranscriptsRequest> {
+  /**
+   * Required. A query which determines which transcripts to restore.
+   *
+   * @generated from field: wfo.vanalytics.v2.TranscriptQuery query = 1;
+   */
+  query?: TranscriptQuery;
+
+  constructor(data?: PartialMessage<BulkRestoreTranscriptsRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.BulkRestoreTranscriptsRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BulkRestoreTranscriptsRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BulkRestoreTranscriptsRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BulkRestoreTranscriptsRequest;
+
+  static equals(a: BulkRestoreTranscriptsRequest | PlainMessage<BulkRestoreTranscriptsRequest> | undefined, b: BulkRestoreTranscriptsRequest | PlainMessage<BulkRestoreTranscriptsRequest> | undefined): boolean;
+}
+
+/**
+ * BulkRestoreTranscriptsResponse defines the bulk restore transcripts response.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkRestoreTranscriptsResponse
+ */
+export declare class BulkRestoreTranscriptsResponse extends Message<BulkRestoreTranscriptsResponse> {
+  /**
+   * The number of transcripts restored.
+   *
+   * @generated from field: uint32 total = 1;
+   */
+  total: number;
+
+  constructor(data?: PartialMessage<BulkRestoreTranscriptsResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.BulkRestoreTranscriptsResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BulkRestoreTranscriptsResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): BulkRestoreTranscriptsResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): BulkRestoreTranscriptsResponse;
+
+  static equals(a: BulkRestoreTranscriptsResponse | PlainMessage<BulkRestoreTranscriptsResponse> | undefined, b: BulkRestoreTranscriptsResponse | PlainMessage<BulkRestoreTranscriptsResponse> | undefined): boolean;
+}
+
+/**
+ * ListTranscriptGroupNamesRequest is a request for listing group names.
+ *
+ * @generated from message wfo.vanalytics.v2.ListTranscriptGroupNamesRequest
+ */
+export declare class ListTranscriptGroupNamesRequest extends Message<ListTranscriptGroupNamesRequest> {
+  constructor(data?: PartialMessage<ListTranscriptGroupNamesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.ListTranscriptGroupNamesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTranscriptGroupNamesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTranscriptGroupNamesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTranscriptGroupNamesRequest;
+
+  static equals(a: ListTranscriptGroupNamesRequest | PlainMessage<ListTranscriptGroupNamesRequest> | undefined, b: ListTranscriptGroupNamesRequest | PlainMessage<ListTranscriptGroupNamesRequest> | undefined): boolean;
+}
+
+/**
+ * ListTranscriptGroupNamesResponse is a response for listing group names.
+ *
+ * @generated from message wfo.vanalytics.v2.ListTranscriptGroupNamesResponse
+ */
+export declare class ListTranscriptGroupNamesResponse extends Message<ListTranscriptGroupNamesResponse> {
+  /**
+   * Group names are the transcript group names.
+   *
+   * @generated from field: repeated wfo.vanalytics.v2.TranscriptGroupName group_names = 1;
+   */
+  groupNames: TranscriptGroupName[];
+
+  constructor(data?: PartialMessage<ListTranscriptGroupNamesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.ListTranscriptGroupNamesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListTranscriptGroupNamesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListTranscriptGroupNamesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListTranscriptGroupNamesResponse;
+
+  static equals(a: ListTranscriptGroupNamesResponse | PlainMessage<ListTranscriptGroupNamesResponse> | undefined, b: ListTranscriptGroupNamesResponse | PlainMessage<ListTranscriptGroupNamesResponse> | undefined): boolean;
+}
+
+/**
+ * TranscriptGroupName is the transcript group name.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptGroupName
+ */
+export declare class TranscriptGroupName extends Message<TranscriptGroupName> {
+  /**
+   * value is a group name value.
+   *
+   * @generated from field: string value = 1;
+   */
+  value: string;
+
+  constructor(data?: PartialMessage<TranscriptGroupName>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.TranscriptGroupName";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TranscriptGroupName;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TranscriptGroupName;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TranscriptGroupName;
+
+  static equals(a: TranscriptGroupName | PlainMessage<TranscriptGroupName> | undefined, b: TranscriptGroupName | PlainMessage<TranscriptGroupName> | undefined): boolean;
+}
+
+/**
+ * ListAgentResponseValuesRequest is a request for listing agent reponse values.
+ *
+ * @generated from message wfo.vanalytics.v2.ListAgentResponseValuesRequest
+ */
+export declare class ListAgentResponseValuesRequest extends Message<ListAgentResponseValuesRequest> {
+  /**
+   * @generated from field: string key = 2;
+   */
+  key: string;
+
+  constructor(data?: PartialMessage<ListAgentResponseValuesRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.ListAgentResponseValuesRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentResponseValuesRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentResponseValuesRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentResponseValuesRequest;
+
+  static equals(a: ListAgentResponseValuesRequest | PlainMessage<ListAgentResponseValuesRequest> | undefined, b: ListAgentResponseValuesRequest | PlainMessage<ListAgentResponseValuesRequest> | undefined): boolean;
+}
+
+/**
+ * ListAgentResponseValuesResponse is a response for listing agent response values.
+ *
+ * @generated from message wfo.vanalytics.v2.ListAgentResponseValuesResponse
+ */
+export declare class ListAgentResponseValuesResponse extends Message<ListAgentResponseValuesResponse> {
+  /**
+   * Values are the transcript agent response values.
+   *
+   * @generated from field: repeated string values = 1;
+   */
+  values: string[];
+
+  constructor(data?: PartialMessage<ListAgentResponseValuesResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "wfo.vanalytics.v2.ListAgentResponseValuesResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ListAgentResponseValuesResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ListAgentResponseValuesResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ListAgentResponseValuesResponse;
+
+  static equals(a: ListAgentResponseValuesResponse | PlainMessage<ListAgentResponseValuesResponse> | undefined, b: ListAgentResponseValuesResponse | PlainMessage<ListAgentResponseValuesResponse> | undefined): boolean;
 }
 

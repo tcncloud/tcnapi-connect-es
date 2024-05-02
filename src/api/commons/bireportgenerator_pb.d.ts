@@ -67,6 +67,7 @@ export declare enum DayFilterType {
  * ReportFormat is an enum for the format of the report.
  *
  * @generated from enum api.commons.ReportFormat
+ * @deprecated
  */
 export declare enum ReportFormat {
   /**
@@ -263,6 +264,58 @@ export declare enum TimePeriod {
 }
 
 /**
+ * FilenamePartType is an enum for the type of filename part.
+ *
+ * @generated from enum api.commons.FilenamePartType
+ */
+export declare enum FilenamePartType {
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_UNSPECIFIED = 0;
+   */
+  UNSPECIFIED = 0,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_DASHBOARD_NAME = 1;
+   */
+  DASHBOARD_NAME = 1,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_JOB_NAME = 2;
+   */
+  JOB_NAME = 2,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_INSIGHT_NAME = 3;
+   */
+  INSIGHT_NAME = 3,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_DATE_TIME_FILTER_TEXT = 4;
+   */
+  DATE_TIME_FILTER_TEXT = 4,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_START_DATE_TIME = 5;
+   */
+  START_DATE_TIME = 5,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_END_DATE_TIME = 6;
+   */
+  END_DATE_TIME = 6,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_REPORT_DATE_TIME = 7;
+   */
+  REPORT_DATE_TIME = 7,
+
+  /**
+   * @generated from enum value: FILENAME_PART_TYPE_STATIC_TEXT = 8;
+   */
+  STATIC_TEXT = 8,
+}
+
+/**
  * DeliveryTimes is a message for the delivery times of a report.
  *
  * @generated from message api.commons.DeliveryTimes
@@ -424,6 +477,7 @@ export declare class DayFilter extends Message<DayFilter> {
  * FormatOptions is a message for the format options of a report.
  *
  * @generated from message api.commons.FormatOptions
+ * @deprecated
  */
 export declare class FormatOptions extends Message<FormatOptions> {
   /**
@@ -490,5 +544,75 @@ export declare class DeliveryOptions extends Message<DeliveryOptions> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeliveryOptions;
 
   static equals(a: DeliveryOptions | PlainMessage<DeliveryOptions> | undefined, b: DeliveryOptions | PlainMessage<DeliveryOptions> | undefined): boolean;
+}
+
+/**
+ * FilenamePart is a message for a part of the filename.
+ *
+ * @generated from message api.commons.FilenamePart
+ */
+export declare class FilenamePart extends Message<FilenamePart> {
+  /**
+   * type is the type of the filename part.
+   *
+   * @generated from field: api.commons.FilenamePartType type = 1;
+   */
+  type: FilenamePartType;
+
+  /**
+   * static_text is the static text for the filename part.
+   *
+   * @generated from field: string static_text = 2;
+   */
+  staticText: string;
+
+  constructor(data?: PartialMessage<FilenamePart>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.FilenamePart";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FilenamePart;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FilenamePart;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FilenamePart;
+
+  static equals(a: FilenamePart | PlainMessage<FilenamePart> | undefined, b: FilenamePart | PlainMessage<FilenamePart> | undefined): boolean;
+}
+
+/**
+ * TransferOptions is a message for the transfer options of a report.
+ *
+ * @generated from message api.commons.TransferOptions
+ */
+export declare class TransferOptions extends Message<TransferOptions> {
+  /**
+   * transfer_config_sid is the delivery definition used to deliver reports.
+   *
+   * @generated from field: string transfer_config_sid = 1;
+   */
+  transferConfigSid: string;
+
+  /**
+   * filename_parts are the parts to build the filename.
+   *
+   * @generated from field: repeated api.commons.FilenamePart filename_parts = 2;
+   */
+  filenameParts: FilenamePart[];
+
+  constructor(data?: PartialMessage<TransferOptions>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.TransferOptions";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TransferOptions;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): TransferOptions;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): TransferOptions;
+
+  static equals(a: TransferOptions | PlainMessage<TransferOptions> | undefined, b: TransferOptions | PlainMessage<TransferOptions> | undefined): boolean;
 }
 

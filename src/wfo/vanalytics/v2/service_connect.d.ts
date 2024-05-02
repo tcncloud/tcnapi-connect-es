@@ -3,8 +3,10 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
+import { AuditRequest, AuditResponse, GetRecordingUrlRequest, GetRecordingUrlResponse, ListBillingSpanRequest, ListBillingSpanResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { BulkDeleteTranscriptsRequest, BulkDeleteTranscriptsResponse, BulkRestoreTranscriptsRequest, BulkRestoreTranscriptsResponse, ListAgentResponseValuesRequest, ListAgentResponseValuesResponse, ListTranscriptGroupNamesRequest, ListTranscriptGroupNamesResponse, SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
+import { GetTranscriptSummaryRequest, GetTranscriptSummaryResponse } from "./transcript_summary_pb.js";
 import { CreateFilterRequest, DeleteFilterRequest, DeleteFilterResponse, Filter, GetFilterRequest, ListFiltersRequest, ListFiltersResponse, UpdateFilterRequest } from "./filter_pb.js";
 import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
 import { ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
@@ -21,6 +23,41 @@ export declare const Vanalytics: {
   readonly typeName: "wfo.vanalytics.v2.Vanalytics",
   readonly methods: {
     /**
+     * Audit audits the used transcription audio time for a client. The window
+     * of time to audit can be widened or narrowed using the request since and
+     * until fields.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.Audit
+     */
+    readonly audit: {
+      readonly name: "Audit",
+      readonly I: typeof AuditRequest,
+      readonly O: typeof AuditResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetRecordingUrl gets a signed url to download a transcript recording.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetRecordingUrl
+     */
+    readonly getRecordingUrl: {
+      readonly name: "GetRecordingUrl",
+      readonly I: typeof GetRecordingUrlRequest,
+      readonly O: typeof GetRecordingUrlResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListBillingSpan lists billing spans.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListBillingSpan
+     */
+    readonly listBillingSpan: {
+      readonly name: "ListBillingSpan",
+      readonly I: typeof ListBillingSpanRequest,
+      readonly O: typeof ListBillingSpanResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
      * SearchTranscripts searches transcripts by search criteria. The search response
      * contains one page of transcript hits. Traversing the paginated hits is
      * achieved by making use of the given page token.
@@ -31,6 +68,61 @@ export declare const Vanalytics: {
       readonly name: "SearchTranscripts",
       readonly I: typeof SearchTranscriptsRequest,
       readonly O: typeof SearchTranscriptsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * BulkDeleteTranscripts bulk deletes transcripts matching the provided query.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.BulkDeleteTranscripts
+     */
+    readonly bulkDeleteTranscripts: {
+      readonly name: "BulkDeleteTranscripts",
+      readonly I: typeof BulkDeleteTranscriptsRequest,
+      readonly O: typeof BulkDeleteTranscriptsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * BulkRestoreTranscripts bulk restores transcripts matching the provided query.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.BulkRestoreTranscripts
+     */
+    readonly bulkRestoreTranscripts: {
+      readonly name: "BulkRestoreTranscripts",
+      readonly I: typeof BulkRestoreTranscriptsRequest,
+      readonly O: typeof BulkRestoreTranscriptsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListTranscriptGroupNames lists transcript group names.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListTranscriptGroupNames
+     */
+    readonly listTranscriptGroupNames: {
+      readonly name: "ListTranscriptGroupNames",
+      readonly I: typeof ListTranscriptGroupNamesRequest,
+      readonly O: typeof ListTranscriptGroupNamesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListAgentResponseValues lists transcript agent response values.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListAgentResponseValues
+     */
+    readonly listAgentResponseValues: {
+      readonly name: "ListAgentResponseValues",
+      readonly I: typeof ListAgentResponseValuesRequest,
+      readonly O: typeof ListAgentResponseValuesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetTranscriptSummary gets a transcript summary for a provided transcript.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetTranscriptSummary
+     */
+    readonly getTranscriptSummary: {
+      readonly name: "GetTranscriptSummary",
+      readonly I: typeof GetTranscriptSummaryRequest,
+      readonly O: typeof GetTranscriptSummaryResponse,
       readonly kind: MethodKind.Unary,
     },
     /**

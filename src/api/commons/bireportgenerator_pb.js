@@ -42,6 +42,7 @@ export const DayFilterType = /*@__PURE__*/ proto3.makeEnum(
  * ReportFormat is an enum for the format of the report.
  *
  * @generated from enum api.commons.ReportFormat
+ * @deprecated
  */
 export const ReportFormat = /*@__PURE__*/ proto3.makeEnum(
   "api.commons.ReportFormat",
@@ -94,6 +95,26 @@ export const TimePeriod = /*@__PURE__*/ proto3.makeEnum(
     {no: 32, name: "TIME_PERIOD_LAST_1_YEAR", localName: "LAST_1_YEAR"},
     {no: 33, name: "TIME_PERIOD_LAST_2_YEARS", localName: "LAST_2_YEARS"},
     {no: 34, name: "TIME_PERIOD_LAST_5_YEARS", localName: "LAST_5_YEARS"},
+  ],
+);
+
+/**
+ * FilenamePartType is an enum for the type of filename part.
+ *
+ * @generated from enum api.commons.FilenamePartType
+ */
+export const FilenamePartType = /*@__PURE__*/ proto3.makeEnum(
+  "api.commons.FilenamePartType",
+  [
+    {no: 0, name: "FILENAME_PART_TYPE_UNSPECIFIED", localName: "UNSPECIFIED"},
+    {no: 1, name: "FILENAME_PART_TYPE_DASHBOARD_NAME", localName: "DASHBOARD_NAME"},
+    {no: 2, name: "FILENAME_PART_TYPE_JOB_NAME", localName: "JOB_NAME"},
+    {no: 3, name: "FILENAME_PART_TYPE_INSIGHT_NAME", localName: "INSIGHT_NAME"},
+    {no: 4, name: "FILENAME_PART_TYPE_DATE_TIME_FILTER_TEXT", localName: "DATE_TIME_FILTER_TEXT"},
+    {no: 5, name: "FILENAME_PART_TYPE_START_DATE_TIME", localName: "START_DATE_TIME"},
+    {no: 6, name: "FILENAME_PART_TYPE_END_DATE_TIME", localName: "END_DATE_TIME"},
+    {no: 7, name: "FILENAME_PART_TYPE_REPORT_DATE_TIME", localName: "REPORT_DATE_TIME"},
+    {no: 8, name: "FILENAME_PART_TYPE_STATIC_TEXT", localName: "STATIC_TEXT"},
   ],
 );
 
@@ -158,6 +179,7 @@ export const DayFilter = /*@__PURE__*/ proto3.makeMessageType(
  * FormatOptions is a message for the format options of a report.
  *
  * @generated from message api.commons.FormatOptions
+ * @deprecated
  */
 export const FormatOptions = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.FormatOptions",
@@ -178,6 +200,32 @@ export const DeliveryOptions = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "transfer_config_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "failure_notification_emails", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ],
+);
+
+/**
+ * FilenamePart is a message for a part of the filename.
+ *
+ * @generated from message api.commons.FilenamePart
+ */
+export const FilenamePart = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.FilenamePart",
+  () => [
+    { no: 1, name: "type", kind: "enum", T: proto3.getEnumType(FilenamePartType) },
+    { no: 2, name: "static_text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * TransferOptions is a message for the transfer options of a report.
+ *
+ * @generated from message api.commons.TransferOptions
+ */
+export const TransferOptions = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.TransferOptions",
+  () => [
+    { no: 1, name: "transfer_config_sid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "filename_parts", kind: "message", T: FilenamePart, repeated: true },
   ],
 );
 

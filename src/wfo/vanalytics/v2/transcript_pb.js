@@ -4,6 +4,7 @@
 // @ts-nocheck
 
 import { DoubleValue, Duration, FieldMask, Int32Value, proto3, Timestamp, UInt32Value } from "@bufbuild/protobuf";
+import { TranscriptSummary } from "./transcript_summary_pb.js";
 import { CallType_Enum } from "../../../api/commons/acd_pb.js";
 import { AgentCallLog, AgentCallLogQuery } from "./agent_call_log_pb.js";
 import { Interval } from "../../../api/commons/vanalytics_pb.js";
@@ -52,6 +53,7 @@ export const Transcript = /*@__PURE__*/ proto3.makeMessageType(
     { no: 15, name: "delete_time", kind: "message", T: Timestamp },
     { no: 16, name: "flag_summary", kind: "message", T: FlagSummary },
     { no: 17, name: "transcript_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 18, name: "summary", kind: "message", T: TranscriptSummary },
   ],
 );
 
@@ -276,6 +278,7 @@ export const Call_Segment = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "text", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "offset", kind: "message", T: Duration },
+    { no: 3, name: "duration", kind: "message", T: Duration },
   ],
   {localName: "Call_Segment"},
 );
@@ -1360,6 +1363,112 @@ export const SpanFuzzy = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "fuzziness_auto", kind: "message", T: FuzzinessAuto, oneof: "fuzziness" },
     { no: 11, name: "fuzziness_value", kind: "scalar", T: 13 /* ScalarType.UINT32 */, oneof: "fuzziness" },
+  ],
+);
+
+/**
+ * BulkDeleteTranscriptsRequest defines the bulk delete transcripts request.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsRequest
+ */
+export const BulkDeleteTranscriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.BulkDeleteTranscriptsRequest",
+  () => [
+    { no: 1, name: "query", kind: "message", T: TranscriptQuery },
+  ],
+);
+
+/**
+ * BulkDeleteTranscriptsResponse defines the bulk delete transcripts response.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkDeleteTranscriptsResponse
+ */
+export const BulkDeleteTranscriptsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.BulkDeleteTranscriptsResponse",
+  () => [
+    { no: 1, name: "total", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+);
+
+/**
+ * BulkRestoreTranscriptsRequest defines the bulk restore transcripts request.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkRestoreTranscriptsRequest
+ */
+export const BulkRestoreTranscriptsRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.BulkRestoreTranscriptsRequest",
+  () => [
+    { no: 1, name: "query", kind: "message", T: TranscriptQuery },
+  ],
+);
+
+/**
+ * BulkRestoreTranscriptsResponse defines the bulk restore transcripts response.
+ *
+ * @generated from message wfo.vanalytics.v2.BulkRestoreTranscriptsResponse
+ */
+export const BulkRestoreTranscriptsResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.BulkRestoreTranscriptsResponse",
+  () => [
+    { no: 1, name: "total", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ],
+);
+
+/**
+ * ListTranscriptGroupNamesRequest is a request for listing group names.
+ *
+ * @generated from message wfo.vanalytics.v2.ListTranscriptGroupNamesRequest
+ */
+export const ListTranscriptGroupNamesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.ListTranscriptGroupNamesRequest",
+  [],
+);
+
+/**
+ * ListTranscriptGroupNamesResponse is a response for listing group names.
+ *
+ * @generated from message wfo.vanalytics.v2.ListTranscriptGroupNamesResponse
+ */
+export const ListTranscriptGroupNamesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.ListTranscriptGroupNamesResponse",
+  () => [
+    { no: 1, name: "group_names", kind: "message", T: TranscriptGroupName, repeated: true },
+  ],
+);
+
+/**
+ * TranscriptGroupName is the transcript group name.
+ *
+ * @generated from message wfo.vanalytics.v2.TranscriptGroupName
+ */
+export const TranscriptGroupName = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.TranscriptGroupName",
+  () => [
+    { no: 1, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * ListAgentResponseValuesRequest is a request for listing agent reponse values.
+ *
+ * @generated from message wfo.vanalytics.v2.ListAgentResponseValuesRequest
+ */
+export const ListAgentResponseValuesRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.ListAgentResponseValuesRequest",
+  () => [
+    { no: 2, name: "key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ],
+);
+
+/**
+ * ListAgentResponseValuesResponse is a response for listing agent response values.
+ *
+ * @generated from message wfo.vanalytics.v2.ListAgentResponseValuesResponse
+ */
+export const ListAgentResponseValuesResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "wfo.vanalytics.v2.ListAgentResponseValuesResponse",
+  () => [
+    { no: 1, name: "values", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
