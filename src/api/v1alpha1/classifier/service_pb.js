@@ -14,6 +14,7 @@ export const ParseFileRequest = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 3, name: "raw_data", kind: "scalar", T: 12 /* ScalarType.BYTES */, oneof: "opt" },
     { no: 4, name: "reparse_file", kind: "message", T: ParseFileRequest_ReParseFile, oneof: "opt" },
+    { no: 6, name: "parse_with_hints", kind: "message", T: ParseFileRequest_ParseWithHints, oneof: "opt" },
     { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -29,6 +30,18 @@ export const ParseFileRequest_ReParseFile = /*@__PURE__*/ proto3.makeMessageType
     { no: 6, name: "rename_fields", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
   ],
   {localName: "ParseFileRequest_ReParseFile"},
+);
+
+/**
+ * @generated from message api.v1alpha1.classifier.ParseFileRequest.ParseWithHints
+ */
+export const ParseFileRequest_ParseWithHints = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.classifier.ParseFileRequest.ParseWithHints",
+  () => [
+    { no: 7, name: "raw_data", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 8, name: "hints", kind: "message", T: ParseHints },
+  ],
+  {localName: "ParseFileRequest_ParseWithHints"},
 );
 
 /**

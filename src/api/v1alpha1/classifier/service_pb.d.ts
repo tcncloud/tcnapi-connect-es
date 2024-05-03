@@ -17,6 +17,8 @@ export declare class ParseFileRequest extends Message<ParseFileRequest> {
   opt: {
     /**
      * the raw file, no more than 2mb
+     * use raw_data if file is simple.
+     * a header immediately followed by data
      *
      * @generated from field: bytes raw_data = 3;
      */
@@ -30,6 +32,15 @@ export declare class ParseFileRequest extends Message<ParseFileRequest> {
      */
     value: ParseFileRequest_ReParseFile;
     case: "reparseFile";
+  } | {
+    /**
+     * parse with hints if file is not
+     * a header immediately followed by data
+     *
+     * @generated from field: api.v1alpha1.classifier.ParseFileRequest.ParseWithHints parse_with_hints = 6;
+     */
+    value: ParseFileRequest_ParseWithHints;
+    case: "parseWithHints";
   } | { case: undefined; value?: undefined };
 
   /**
@@ -86,6 +97,37 @@ export declare class ParseFileRequest_ReParseFile extends Message<ParseFileReque
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParseFileRequest_ReParseFile;
 
   static equals(a: ParseFileRequest_ReParseFile | PlainMessage<ParseFileRequest_ReParseFile> | undefined, b: ParseFileRequest_ReParseFile | PlainMessage<ParseFileRequest_ReParseFile> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.classifier.ParseFileRequest.ParseWithHints
+ */
+export declare class ParseFileRequest_ParseWithHints extends Message<ParseFileRequest_ParseWithHints> {
+  /**
+   * the raw file, no more than 2mb
+   *
+   * @generated from field: bytes raw_data = 7;
+   */
+  rawData: Uint8Array;
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.ParseHints hints = 8;
+   */
+  hints?: ParseHints;
+
+  constructor(data?: PartialMessage<ParseFileRequest_ParseWithHints>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.classifier.ParseFileRequest.ParseWithHints";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ParseFileRequest_ParseWithHints;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ParseFileRequest_ParseWithHints;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParseFileRequest_ParseWithHints;
+
+  static equals(a: ParseFileRequest_ParseWithHints | PlainMessage<ParseFileRequest_ParseWithHints> | undefined, b: ParseFileRequest_ParseWithHints | PlainMessage<ParseFileRequest_ParseWithHints> | undefined): boolean;
 }
 
 /**
