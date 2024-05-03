@@ -40,7 +40,6 @@ export const ParseFileRequest_ParseWithHints = /*@__PURE__*/ proto3.makeMessageT
   () => [
     { no: 7, name: "raw_data", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
     { no: 8, name: "has_header", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 9, name: "header", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
   {localName: "ParseFileRequest_ParseWithHints"},
 );

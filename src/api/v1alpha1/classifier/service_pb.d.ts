@@ -115,11 +115,6 @@ export declare class ParseFileRequest_ParseWithHints extends Message<ParseFileRe
    */
   hasHeader: boolean;
 
-  /**
-   * @generated from field: repeated string header = 9;
-   */
-  header: string[];
-
   constructor(data?: PartialMessage<ParseFileRequest_ParseWithHints>);
 
   static readonly runtime: typeof proto3;
