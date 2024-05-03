@@ -49,7 +49,7 @@ export declare enum LabeledEntity {
   SKILL_GROUP = 1,
 
   /**
-   * LABELED_ENTITY_User is a user entity type.
+   * LABELED_ENTITY_USER is a user entity type.
    *
    * @generated from enum value: LABELED_ENTITY_USER = 2;
    */
