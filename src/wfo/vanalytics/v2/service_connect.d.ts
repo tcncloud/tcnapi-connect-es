@@ -12,7 +12,7 @@ import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } f
 import { ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
 import { CreateFlagRequest, DeleteFlagRequest, DeleteFlagResponse, Flag, GetFlagRequest, ListFlagsRequest, ListFlagsResponse, UpdateFlagRequest } from "./flag_pb.js";
 import { BulkCreateFlagReviewRequest, BulkCreateFlagReviewResponse, CreateFlagReviewRequest, FlagReview, ListFlagReviewsRequest, ListFlagReviewsResponse } from "./flag_review_pb.js";
-import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse, SearchFlagTranscriptsRequest, SearchFlagTranscriptsResponse } from "./flag_transcript_pb.js";
+import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse } from "./flag_transcript_pb.js";
 import { ListFlagSnapshotsRequest, ListFlagSnapshotsResponse } from "./flag_snapshot_pb.js";
 import { Correction, CreateCorrectionRequest, CreateCorrectionResponse, DeleteCorrectionRequest, DeleteCorrectionResponse, GetCorrectionRequest, ListCorrectionsRequest, ListCorrectionsResponse, UpdateCorrectionRequest, UpdateCorrectionResponse } from "./correction_pb.js";
 
@@ -300,17 +300,6 @@ export declare const Vanalytics: {
       readonly name: "CreateFlagTranscript",
       readonly I: typeof CreateFlagTranscriptRequest,
       readonly O: typeof CreateFlagTranscriptResponse,
-      readonly kind: MethodKind.Unary,
-    },
-    /**
-     * SearchFlagTranscripts searches flag transcripts.
-     *
-     * @generated from rpc wfo.vanalytics.v2.Vanalytics.SearchFlagTranscripts
-     */
-    readonly searchFlagTranscripts: {
-      readonly name: "SearchFlagTranscripts",
-      readonly I: typeof SearchFlagTranscriptsRequest,
-      readonly O: typeof SearchFlagTranscriptsResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
