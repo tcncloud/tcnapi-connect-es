@@ -112,6 +112,7 @@ export const OptsFixed = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.classifier.OptsFixed",
   () => [
     { no: 1, name: "positions", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: OptsFixed_FieldOpts} },
+    { no: 2, name: "has_header", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 

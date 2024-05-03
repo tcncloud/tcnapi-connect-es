@@ -305,6 +305,11 @@ export declare class OptsFixed extends Message<OptsFixed> {
    */
   positions: { [key: string]: OptsFixed_FieldOpts };
 
+  /**
+   * @generated from field: bool has_header = 2;
+   */
+  hasHeader: boolean;
+
   constructor(data?: PartialMessage<OptsFixed>);
 
   static readonly runtime: typeof proto3;
