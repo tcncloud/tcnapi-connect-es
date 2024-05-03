@@ -111,9 +111,14 @@ export declare class ParseFileRequest_ParseWithHints extends Message<ParseFileRe
   rawData: Uint8Array;
 
   /**
-   * @generated from field: api.v1alpha1.classifier.ParseHints hints = 8;
+   * @generated from field: bool has_header = 8;
    */
-  hints?: ParseHints;
+  hasHeader: boolean;
+
+  /**
+   * @generated from field: repeated string header = 9;
+   */
+  header: string[];
 
   constructor(data?: PartialMessage<ParseFileRequest_ParseWithHints>);
 
