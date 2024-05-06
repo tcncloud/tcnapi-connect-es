@@ -152,9 +152,9 @@ export declare class Opts extends Message<Opts> {
   renameFields: { [key: string]: string };
 
   /**
-   * @generated from field: api.v1alpha1.classifier.ParseOpts type_opts = 3;
+   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 3;
    */
-  typeOpts?: ParseOpts;
+  parseOpts?: ParseOpts;
 
   constructor(data?: PartialMessage<Opts>);
 

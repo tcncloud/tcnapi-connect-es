@@ -55,7 +55,7 @@ export const Opts = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "date_formats", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 2, name: "rename_fields", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
-    { no: 3, name: "type_opts", kind: "message", T: ParseOpts },
+    { no: 3, name: "parse_opts", kind: "message", T: ParseOpts },
   ],
 );
 
