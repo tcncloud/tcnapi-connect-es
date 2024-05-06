@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { OmniConversation } from "../omnichannel_pb.js";
 import type { StatusState } from "../asm_pb.js";
@@ -237,6 +237,20 @@ export declare class AsmAgentStateChangedEvent extends Message<AsmAgentStateChan
    * @generated from field: api.commons.StatusState old_status = 4;
    */
   oldStatus: StatusState;
+
+  /**
+   * timestamp of last state change
+   *
+   * @generated from field: google.protobuf.Timestamp last_state_change_time = 5;
+   */
+  lastStateChangeTime?: Timestamp;
+
+  /**
+   * duration of last state
+   *
+   * @generated from field: int64 last_state_duration = 6;
+   */
+  lastStateDuration: bigint;
 
   constructor(data?: PartialMessage<AsmAgentStateChangedEvent>);
 
