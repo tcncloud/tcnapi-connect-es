@@ -77,13 +77,6 @@ export declare class ParseFileRequest_ReParseFile extends Message<ParseFileReque
    */
   hints?: ParseHints;
 
-  /**
-   * keys are old field names, values are new field names
-   *
-   * @generated from field: map<string, string> rename_fields = 6;
-   */
-  renameFields: { [key: string]: string };
-
   constructor(data?: PartialMessage<ParseFileRequest_ReParseFile>);
 
   static readonly runtime: typeof proto3;
@@ -111,9 +104,9 @@ export declare class ParseFileRequest_ParseWithHints extends Message<ParseFileRe
   rawData: Uint8Array;
 
   /**
-   * @generated from field: bool has_header = 8;
+   * @generated from field: api.v1alpha1.classifier.ParseHints hints = 8;
    */
-  hasHeader: boolean;
+  hints?: ParseHints;
 
   constructor(data?: PartialMessage<ParseFileRequest_ParseWithHints>);
 
