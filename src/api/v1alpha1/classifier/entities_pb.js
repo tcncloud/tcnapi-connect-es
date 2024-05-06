@@ -26,9 +26,9 @@ export const FileTemplate = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "filename", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "fields", kind: "message", T: FileTemplate_Field, repeated: true },
     { no: 4, name: "parse_opts", kind: "message", T: ParseOpts },
-    { no: 7, name: "opts", kind: "message", T: Opts },
     { no: 5, name: "constraints", kind: "message", T: Constraints },
     { no: 6, name: "foid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "opts", kind: "message", T: Opts },
   ],
 );
 
@@ -56,6 +56,7 @@ export const Opts = /*@__PURE__*/ proto3.makeMessageType(
     { no: 1, name: "date_formats", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 2, name: "rename_fields", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 3, name: "parse_opts", kind: "message", T: ParseOpts },
+    { no: 4, name: "constraints", kind: "message", T: Constraints },
   ],
 );
 
@@ -160,7 +161,6 @@ export const ParseHints = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "parse_opts", kind: "message", T: ParseOpts },
     { no: 2, name: "constraints", kind: "message", T: Constraints },
-    { no: 3, name: "opts", kind: "message", T: Opts },
   ],
 );
 

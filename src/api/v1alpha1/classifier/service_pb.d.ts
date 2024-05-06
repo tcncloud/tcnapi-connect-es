@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import type { FileTemplate, ParseHints } from "./entities_pb.js";
+import type { FileTemplate, Opts, ParseHints } from "./entities_pb.js";
 
 /**
  * @generated from message api.v1alpha1.classifier.ParseFileRequest
@@ -73,9 +73,15 @@ export declare class ParseFileRequest_ReParseFile extends Message<ParseFileReque
   fileTemplateId: bigint;
 
   /**
-   * @generated from field: api.v1alpha1.classifier.ParseHints hints = 2;
+   * @generated from field: api.v1alpha1.classifier.ParseHints hints = 2 [deprecated = true];
+   * @deprecated
    */
   hints?: ParseHints;
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.Opts opts = 3;
+   */
+  opts?: Opts;
 
   constructor(data?: PartialMessage<ParseFileRequest_ReParseFile>);
 
@@ -104,9 +110,9 @@ export declare class ParseFileRequest_ParseWithHints extends Message<ParseFileRe
   rawData: Uint8Array;
 
   /**
-   * @generated from field: api.v1alpha1.classifier.ParseHints hints = 8;
+   * @generated from field: api.v1alpha1.classifier.Opts opts = 8;
    */
-  hints?: ParseHints;
+  opts?: Opts;
 
   constructor(data?: PartialMessage<ParseFileRequest_ParseWithHints>);
 

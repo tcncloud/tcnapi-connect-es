@@ -57,12 +57,8 @@ export declare class FileTemplate extends Message<FileTemplate> {
   parseOpts?: ParseOpts;
 
   /**
-   * @generated from field: api.v1alpha1.classifier.Opts opts = 7;
-   */
-  opts?: Opts;
-
-  /**
-   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 5;
+   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 5 [deprecated = true];
+   * @deprecated
    */
   constraints?: Constraints;
 
@@ -70,6 +66,11 @@ export declare class FileTemplate extends Message<FileTemplate> {
    * @generated from field: int64 foid = 6;
    */
   foid: bigint;
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.Opts opts = 7;
+   */
+  opts?: Opts;
 
   constructor(data?: PartialMessage<FileTemplate>);
 
@@ -155,6 +156,11 @@ export declare class Opts extends Message<Opts> {
    * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 3;
    */
   parseOpts?: ParseOpts;
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 4;
+   */
+  constraints?: Constraints;
 
   constructor(data?: PartialMessage<Opts>);
 
@@ -435,8 +441,7 @@ export declare class Constraints extends Message<Constraints> {
  */
 export declare class ParseHints extends Message<ParseHints> {
   /**
-   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 1 [deprecated = true];
-   * @deprecated
+   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 1;
    */
   parseOpts?: ParseOpts;
 
@@ -444,11 +449,6 @@ export declare class ParseHints extends Message<ParseHints> {
    * @generated from field: api.v1alpha1.classifier.Constraints constraints = 2;
    */
   constraints?: Constraints;
-
-  /**
-   * @generated from field: api.v1alpha1.classifier.Opts opts = 3;
-   */
-  opts?: Opts;
 
   constructor(data?: PartialMessage<ParseHints>);
 
