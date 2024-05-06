@@ -239,7 +239,7 @@ export declare class AsmAgentStateChangedEvent extends Message<AsmAgentStateChan
   oldStatus: StatusState;
 
   /**
-   * duration of last state
+   * duration of old state
    *
    * @generated from field: int64 old_status_duration = 5;
    */
