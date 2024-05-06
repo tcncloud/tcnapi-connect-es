@@ -357,6 +357,11 @@ export declare class ManagerStreamAgentStateRes extends Message<ManagerStreamAge
     case: "heartBeat";
   } | { case: undefined; value?: undefined };
 
+  /**
+   * @generated from field: string uuid = 3;
+   */
+  uuid: string;
+
   constructor(data?: PartialMessage<ManagerStreamAgentStateRes>);
 
   static readonly runtime: typeof proto3;

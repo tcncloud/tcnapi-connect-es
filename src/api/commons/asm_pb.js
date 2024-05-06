@@ -101,6 +101,7 @@ export const ManagerStreamAgentStateRes = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "state", kind: "message", T: AgentState, oneof: "manager_agent_state" },
     { no: 2, name: "heart_beat", kind: "message", T: KeepAlive, oneof: "manager_agent_state" },
+    { no: 3, name: "uuid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
