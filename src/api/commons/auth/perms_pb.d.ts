@@ -447,6 +447,13 @@ export declare enum Permission {
   PERMISSION_INSIGHTS_DASHBOARD_EDIT = 608,
 
   /**
+   * Enables write access to automated reports
+   *
+   * @generated from enum value: PERMISSION_REPORT_GENERATOR_EDIT = 609;
+   */
+  PERMISSION_REPORT_GENERATOR_EDIT = 609,
+
+  /**
    * Enables access to room 303 chat at a base level
    * Lowest tier permissions for unconfigured rooms and direct messaging
    *
