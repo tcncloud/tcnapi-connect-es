@@ -246,6 +246,13 @@ export declare class FlagSnapshot_BoolExpr extends Message<FlagSnapshot_BoolExpr
   or: FlagSnapshot_BoolExpr[];
 
   /**
+   * Optional. Filter to match.
+   *
+   * @generated from field: wfo.vanalytics.v2.FlagSnapshot.BoolExpr.Filter filter = 3;
+   */
+  filter?: FlagSnapshot_BoolExpr_Filter;
+
+  /**
    * Optional. Boolean not operator.
    *
    * @generated from field: wfo.vanalytics.v2.FlagSnapshot.BoolExpr not = 4;

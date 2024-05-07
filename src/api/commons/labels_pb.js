@@ -32,6 +32,7 @@ export const LabeledEntity = /*@__PURE__*/ proto3.makeEnum(
   [
     {no: 0, name: "LABELED_ENTITY_UNSPECIFIED", localName: "UNSPECIFIED"},
     {no: 1, name: "LABELED_ENTITY_SKILL_GROUP", localName: "SKILL_GROUP"},
+    {no: 2, name: "LABELED_ENTITY_USER", localName: "USER"},
   ],
 );
 

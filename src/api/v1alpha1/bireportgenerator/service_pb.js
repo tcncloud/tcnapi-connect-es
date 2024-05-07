@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { FieldMask, proto3 } from "@bufbuild/protobuf";
+import { FieldMask, proto3, Timestamp } from "@bufbuild/protobuf";
 import { ReportJob } from "./entities_pb.js";
 
 /**
@@ -132,6 +132,7 @@ export const GenerateReportRequest = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.bireportgenerator.GenerateReportRequest",
   () => [
     { no: 1, name: "report_job", kind: "message", T: ReportJob },
+    { no: 2, name: "send_as_of_date", kind: "message", T: Timestamp },
   ],
 );
 

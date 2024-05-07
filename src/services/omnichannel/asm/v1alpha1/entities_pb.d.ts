@@ -324,7 +324,8 @@ export declare class ListAsmUserDetailsResponse extends Message<ListAsmUserDetai
  */
 export declare class PushEventsRequest extends Message<PushEventsRequest> {
   /**
-   * @generated from field: int64 ams_session_sid = 1;
+   * @generated from field: int64 ams_session_sid = 1 [deprecated = true];
+   * @deprecated
    */
   amsSessionSid: bigint;
 
@@ -332,6 +333,11 @@ export declare class PushEventsRequest extends Message<PushEventsRequest> {
    * @generated from field: repeated api.commons.AsmEvent asm_events = 2;
    */
   asmEvents: AsmEvent[];
+
+  /**
+   * @generated from field: int64 asm_session_sid = 3;
+   */
+  asmSessionSid: bigint;
 
   constructor(data?: PartialMessage<PushEventsRequest>);
 

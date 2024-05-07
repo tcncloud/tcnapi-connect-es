@@ -3929,6 +3929,18 @@ export declare class ExecuteFlow extends Message<ExecuteFlow> {
      */
     value: ExecuteSutherlandrevPaymentConnect;
     case: "sutherlandrevPaymentConnect";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteDebugEcho debug_echo = 5001;
+     */
+    value: ExecuteDebugEcho;
+    case: "debugEcho";
+  } | {
+    /**
+     * @generated from field: api.commons.integrations.ExecuteDebugValidate debug_validate = 5002;
+     */
+    value: ExecuteDebugValidate;
+    case: "debugValidate";
   } | { case: undefined; value?: undefined };
 
   constructor(data?: PartialMessage<ExecuteFlow>);
@@ -8664,5 +8676,43 @@ export declare class ExecuteSutherlandrevPaymentConnect extends Message<ExecuteS
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteSutherlandrevPaymentConnect;
 
   static equals(a: ExecuteSutherlandrevPaymentConnect | PlainMessage<ExecuteSutherlandrevPaymentConnect> | undefined, b: ExecuteSutherlandrevPaymentConnect | PlainMessage<ExecuteSutherlandrevPaymentConnect> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteDebugEcho
+ */
+export declare class ExecuteDebugEcho extends Message<ExecuteDebugEcho> {
+  constructor(data?: PartialMessage<ExecuteDebugEcho>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteDebugEcho";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteDebugEcho;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteDebugEcho;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteDebugEcho;
+
+  static equals(a: ExecuteDebugEcho | PlainMessage<ExecuteDebugEcho> | undefined, b: ExecuteDebugEcho | PlainMessage<ExecuteDebugEcho> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.commons.integrations.ExecuteDebugValidate
+ */
+export declare class ExecuteDebugValidate extends Message<ExecuteDebugValidate> {
+  constructor(data?: PartialMessage<ExecuteDebugValidate>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.commons.integrations.ExecuteDebugValidate";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExecuteDebugValidate;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ExecuteDebugValidate;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ExecuteDebugValidate;
+
+  static equals(a: ExecuteDebugValidate | PlainMessage<ExecuteDebugValidate> | undefined, b: ExecuteDebugValidate | PlainMessage<ExecuteDebugValidate> | undefined): boolean;
 }
 

@@ -110,9 +110,9 @@ export declare class ParseFileRequest_ParseWithHints extends Message<ParseFileRe
   rawData: Uint8Array;
 
   /**
-   * @generated from field: bool has_header = 8;
+   * @generated from field: api.v1alpha1.classifier.Opts opts = 8;
    */
-  hasHeader: boolean;
+  opts?: Opts;
 
   constructor(data?: PartialMessage<ParseFileRequest_ParseWithHints>);
 
