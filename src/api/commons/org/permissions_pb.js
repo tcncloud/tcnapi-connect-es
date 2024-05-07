@@ -9,7 +9,7 @@ import { Permission as Permission$1 } from "../perms_pb.js";
 import { Application, Card } from "../../../annotations/perms/license_pb.js";
 
 /**
- * PermiissionGroup defines the permission group entity.
+ * PermissionGroup defines the permission group entity.
  *
  * @generated from message api.commons.org.PermissionGroup
  */
@@ -22,6 +22,7 @@ export const PermissionGroup = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "permissions", kind: "enum", T: proto3.getEnumType(Permission), repeated: true },
     { no: 6, name: "read_only", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: "label_ids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 

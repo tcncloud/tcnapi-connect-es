@@ -288,7 +288,7 @@ export declare class DeleteLabelResponse extends Message<DeleteLabelResponse> {
  */
 export declare class AttachLabelRequest extends Message<AttachLabelRequest> {
   /**
-   * The label id to delete the label
+   * The label id to attach to the entity
    *
    * @generated from field: string label_id = 1;
    */
@@ -342,6 +342,69 @@ export declare class AttachLabelResponse extends Message<AttachLabelResponse> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AttachLabelResponse;
 
   static equals(a: AttachLabelResponse | PlainMessage<AttachLabelResponse> | undefined, b: AttachLabelResponse | PlainMessage<AttachLabelResponse> | undefined): boolean;
+}
+
+/**
+ * Request message for the DetachLabel rpc.
+ *
+ * @generated from message api.v1alpha1.org.labels.DetachLabelRequest
+ */
+export declare class DetachLabelRequest extends Message<DetachLabelRequest> {
+  /**
+   * The label id to detach from the entity
+   *
+   * @generated from field: string label_id = 1;
+   */
+  labelId: string;
+
+  /**
+   * The ID of the entity that will have the label detached
+   *
+   * @generated from field: string entity_id = 2;
+   */
+  entityId: string;
+
+  /**
+   * The entity type to detach the label from
+   *
+   * @generated from field: api.commons.LabeledEntity entity_type = 3;
+   */
+  entityType: LabeledEntity;
+
+  constructor(data?: PartialMessage<DetachLabelRequest>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.labels.DetachLabelRequest";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DetachLabelRequest;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DetachLabelRequest;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DetachLabelRequest;
+
+  static equals(a: DetachLabelRequest | PlainMessage<DetachLabelRequest> | undefined, b: DetachLabelRequest | PlainMessage<DetachLabelRequest> | undefined): boolean;
+}
+
+/**
+ * Response message for the DetachLabel rpc.
+ *
+ * @generated from message api.v1alpha1.org.labels.DetachLabelResponse
+ */
+export declare class DetachLabelResponse extends Message<DetachLabelResponse> {
+  constructor(data?: PartialMessage<DetachLabelResponse>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.org.labels.DetachLabelResponse";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DetachLabelResponse;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DetachLabelResponse;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DetachLabelResponse;
+
+  static equals(a: DetachLabelResponse | PlainMessage<DetachLabelResponse> | undefined, b: DetachLabelResponse | PlainMessage<DetachLabelResponse> | undefined): boolean;
 }
 
 /**

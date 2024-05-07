@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
+import type { BinaryReadOptions, FieldList, FieldMask, JsonReadOptions, JsonValue, PartialMessage, PlainMessage, Timestamp } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import type { ReportJob } from "./entities_pb.js";
 
@@ -292,6 +292,13 @@ export declare class GenerateReportRequest extends Message<GenerateReportRequest
    * @generated from field: api.v1alpha1.bireportgenerator.ReportJob report_job = 1;
    */
   reportJob?: ReportJob;
+
+  /**
+   * When to send the report as
+   *
+   * @generated from field: google.protobuf.Timestamp send_as_of_date = 2;
+   */
+  sendAsOfDate?: Timestamp;
 
   constructor(data?: PartialMessage<GenerateReportRequest>);
 

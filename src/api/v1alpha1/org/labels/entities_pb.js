@@ -149,6 +149,30 @@ export const AttachLabelResponse = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
+ * Request message for the DetachLabel rpc.
+ *
+ * @generated from message api.v1alpha1.org.labels.DetachLabelRequest
+ */
+export const DetachLabelRequest = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.labels.DetachLabelRequest",
+  () => [
+    { no: 1, name: "label_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "entity_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "entity_type", kind: "enum", T: proto3.getEnumType(LabeledEntity) },
+  ],
+);
+
+/**
+ * Response message for the DetachLabel rpc.
+ *
+ * @generated from message api.v1alpha1.org.labels.DetachLabelResponse
+ */
+export const DetachLabelResponse = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.org.labels.DetachLabelResponse",
+  [],
+);
+
+/**
  * Request message for the GetLabeledEntityMapRequest rpc.
  *
  * @generated from message api.v1alpha1.org.labels.GetLabeledEntityMapRequest

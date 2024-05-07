@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { AttachLabelRequest, AttachLabelResponse, CreateLabelRequest, CreateLabelResponse, DeleteLabelRequest, DeleteLabelResponse, GetLabeledEntityMapRequest, GetLabeledEntityMapResponse, GetLabelRequest, GetLabelResponse, ListLabelsRequest, ListLabelsResponse, UpdateLabelRequest, UpdateLabelResponse } from "./entities_pb.js";
+import { AttachLabelRequest, AttachLabelResponse, CreateLabelRequest, CreateLabelResponse, DeleteLabelRequest, DeleteLabelResponse, DetachLabelRequest, DetachLabelResponse, GetLabeledEntityMapRequest, GetLabeledEntityMapResponse, GetLabelRequest, GetLabelResponse, ListLabelsRequest, ListLabelsResponse, UpdateLabelRequest, UpdateLabelResponse } from "./entities_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -76,6 +76,17 @@ export const LabelsService = {
       name: "AttachLabel",
       I: AttachLabelRequest,
       O: AttachLabelResponse,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * DetachLabel detaches a label from an entity based on an entity type
+     *
+     * @generated from rpc api.v1alpha1.org.labels.LabelsService.DetachLabel
+     */
+    detachLabel: {
+      name: "DetachLabel",
+      I: DetachLabelRequest,
+      O: DetachLabelResponse,
       kind: MethodKind.Unary,
     },
     /**
