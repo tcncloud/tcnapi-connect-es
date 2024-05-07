@@ -87,7 +87,7 @@ export const AsmAgentStateChangedEvent = /*@__PURE__*/ proto3.makeMessageType(
     { no: 2, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 3, name: "new_status", kind: "enum", T: proto3.getEnumType(StatusState) },
     { no: 4, name: "old_status", kind: "enum", T: proto3.getEnumType(StatusState) },
-    { no: 5, name: "old_status_duration", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "old_status_duration_milliseconds", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

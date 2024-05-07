@@ -910,6 +910,8 @@ export const ExecuteFlow = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4002, name: "naviga_change_billing", kind: "message", T: ExecuteNavigaChangeBilling, oneof: "value" },
     { no: 4101, name: "paynseconds_tokenize_card", kind: "message", T: ExecutePaynsecondsTokenizeCard, oneof: "value" },
     { no: 4201, name: "sutherlandrev_payment_connect", kind: "message", T: ExecuteSutherlandrevPaymentConnect, oneof: "value" },
+    { no: 5001, name: "debug_echo", kind: "message", T: ExecuteDebugEcho, oneof: "value" },
+    { no: 5002, name: "debug_validate", kind: "message", T: ExecuteDebugValidate, oneof: "value" },
   ],
 );
 
@@ -2884,6 +2886,22 @@ export const ExecutePaynsecondsTokenizeCard = /*@__PURE__*/ proto3.makeMessageTy
  */
 export const ExecuteSutherlandrevPaymentConnect = /*@__PURE__*/ proto3.makeMessageType(
   "api.commons.integrations.ExecuteSutherlandrevPaymentConnect",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteDebugEcho
+ */
+export const ExecuteDebugEcho = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteDebugEcho",
+  [],
+);
+
+/**
+ * @generated from message api.commons.integrations.ExecuteDebugValidate
+ */
+export const ExecuteDebugValidate = /*@__PURE__*/ proto3.makeMessageType(
+  "api.commons.integrations.ExecuteDebugValidate",
   [],
 );
 

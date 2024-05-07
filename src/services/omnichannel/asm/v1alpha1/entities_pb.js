@@ -130,6 +130,7 @@ export const PushEventsRequest = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "ams_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "asm_events", kind: "message", T: AsmEvent, repeated: true },
+    { no: 3, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ],
 );
 

@@ -239,11 +239,11 @@ export declare class AsmAgentStateChangedEvent extends Message<AsmAgentStateChan
   oldStatus: StatusState;
 
   /**
-   * duration of old state
+   * duration of old status in milliseconds
    *
-   * @generated from field: int64 old_status_duration = 5;
+   * @generated from field: int64 old_status_duration_milliseconds = 5;
    */
-  oldStatusDuration: bigint;
+  oldStatusDurationMilliseconds: bigint;
 
   constructor(data?: PartialMessage<AsmAgentStateChangedEvent>);
 
