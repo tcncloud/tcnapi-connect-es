@@ -3,20 +3,60 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { BulkDeleteTranscriptsRequest, BulkDeleteTranscriptsResponse, SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
+import { AuditRequest, AuditResponse, GetRecordingUrlRequest, GetRecordingUrlResponse, ListBillingSpanRequest, ListBillingSpanResponse } from "./service_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
+import { BulkDeleteTranscriptsRequest, BulkDeleteTranscriptsResponse, BulkRestoreTranscriptsRequest, BulkRestoreTranscriptsResponse, ListAgentResponseValuesRequest, ListAgentResponseValuesResponse, ListTranscriptGroupNamesRequest, ListTranscriptGroupNamesResponse, SearchTranscriptsRequest, SearchTranscriptsResponse } from "./transcript_pb.js";
+import { GetTranscriptSummaryRequest, GetTranscriptSummaryResponse } from "./transcript_summary_pb.js";
 import { CreateFilterRequest, DeleteFilterRequest, DeleteFilterResponse, Filter, GetFilterRequest, ListFiltersRequest, ListFiltersResponse, UpdateFilterRequest } from "./filter_pb.js";
 import { ListFlagTranscriptFiltersRequest, ListFlagTranscriptFiltersResponse } from "./flag_transcript_filter_pb.js";
 import { ListFlagFiltersRequest, ListFlagFiltersResponse } from "./flag_filter_pb.js";
+import { CreateFlagRequest, DeleteFlagRequest, DeleteFlagResponse, Flag, GetFlagRequest, ListFlagsRequest, ListFlagsResponse, UpdateFlagRequest } from "./flag_pb.js";
+import { BulkCreateFlagReviewRequest, BulkCreateFlagReviewResponse, CreateFlagReviewRequest, FlagReview, ListFlagReviewsRequest, ListFlagReviewsResponse } from "./flag_review_pb.js";
+import { CreateFlagTranscriptRequest, CreateFlagTranscriptResponse } from "./flag_transcript_pb.js";
+import { ListFlagSnapshotsRequest, ListFlagSnapshotsResponse } from "./flag_snapshot_pb.js";
+import { Correction, CreateCorrectionRequest, CreateCorrectionResponse, DeleteCorrectionRequest, DeleteCorrectionResponse, GetCorrectionRequest, ListCorrectionsRequest, ListCorrectionsResponse, UpdateCorrectionRequest, UpdateCorrectionResponse } from "./correction_pb.js";
 
 /**
- * [TRANSCRIPT] ==============================================================
- *
  * @generated from service wfo.vanalytics.v2.Vanalytics
  */
 export declare const Vanalytics: {
   readonly typeName: "wfo.vanalytics.v2.Vanalytics",
   readonly methods: {
+    /**
+     * Audit audits the used transcription audio time for a client. The window
+     * of time to audit can be widened or narrowed using the request since and
+     * until fields.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.Audit
+     */
+    readonly audit: {
+      readonly name: "Audit",
+      readonly I: typeof AuditRequest,
+      readonly O: typeof AuditResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetRecordingUrl gets a signed url to download a transcript recording.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetRecordingUrl
+     */
+    readonly getRecordingUrl: {
+      readonly name: "GetRecordingUrl",
+      readonly I: typeof GetRecordingUrlRequest,
+      readonly O: typeof GetRecordingUrlResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListBillingSpan lists billing spans.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListBillingSpan
+     */
+    readonly listBillingSpan: {
+      readonly name: "ListBillingSpan",
+      readonly I: typeof ListBillingSpanRequest,
+      readonly O: typeof ListBillingSpanResponse,
+      readonly kind: MethodKind.Unary,
+    },
     /**
      * SearchTranscripts searches transcripts by search criteria. The search response
      * contains one page of transcript hits. Traversing the paginated hits is
@@ -39,6 +79,50 @@ export declare const Vanalytics: {
       readonly name: "BulkDeleteTranscripts",
       readonly I: typeof BulkDeleteTranscriptsRequest,
       readonly O: typeof BulkDeleteTranscriptsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * BulkRestoreTranscripts bulk restores transcripts matching the provided query.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.BulkRestoreTranscripts
+     */
+    readonly bulkRestoreTranscripts: {
+      readonly name: "BulkRestoreTranscripts",
+      readonly I: typeof BulkRestoreTranscriptsRequest,
+      readonly O: typeof BulkRestoreTranscriptsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListTranscriptGroupNames lists transcript group names.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListTranscriptGroupNames
+     */
+    readonly listTranscriptGroupNames: {
+      readonly name: "ListTranscriptGroupNames",
+      readonly I: typeof ListTranscriptGroupNamesRequest,
+      readonly O: typeof ListTranscriptGroupNamesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListAgentResponseValues lists transcript agent response values.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListAgentResponseValues
+     */
+    readonly listAgentResponseValues: {
+      readonly name: "ListAgentResponseValues",
+      readonly I: typeof ListAgentResponseValuesRequest,
+      readonly O: typeof ListAgentResponseValuesResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetTranscriptSummary gets a transcript summary for a provided transcript.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetTranscriptSummary
+     */
+    readonly getTranscriptSummary: {
+      readonly name: "GetTranscriptSummary",
+      readonly I: typeof GetTranscriptSummaryRequest,
+      readonly O: typeof GetTranscriptSummaryResponse,
       readonly kind: MethodKind.Unary,
     },
     /**
@@ -117,6 +201,171 @@ export declare const Vanalytics: {
       readonly name: "ListFlagFilters",
       readonly I: typeof ListFlagFiltersRequest,
       readonly O: typeof ListFlagFiltersResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetFlag gets a flag.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetFlag
+     */
+    readonly getFlag: {
+      readonly name: "GetFlag",
+      readonly I: typeof GetFlagRequest,
+      readonly O: typeof Flag,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateFlag creates a new flag.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateFlag
+     */
+    readonly createFlag: {
+      readonly name: "CreateFlag",
+      readonly I: typeof CreateFlagRequest,
+      readonly O: typeof Flag,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListFlags lists flags in an organization.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListFlags
+     */
+    readonly listFlags: {
+      readonly name: "ListFlags",
+      readonly I: typeof ListFlagsRequest,
+      readonly O: typeof ListFlagsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateFlag updates a flag.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.UpdateFlag
+     */
+    readonly updateFlag: {
+      readonly name: "UpdateFlag",
+      readonly I: typeof UpdateFlagRequest,
+      readonly O: typeof Flag,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteFlag deletes the flag identified by the given flag_sid.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.DeleteFlag
+     */
+    readonly deleteFlag: {
+      readonly name: "DeleteFlag",
+      readonly I: typeof DeleteFlagRequest,
+      readonly O: typeof DeleteFlagResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateFlagReview creates a flag review.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateFlagReview
+     */
+    readonly createFlagReview: {
+      readonly name: "CreateFlagReview",
+      readonly I: typeof CreateFlagReviewRequest,
+      readonly O: typeof FlagReview,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * BulkCreateFlagReview creates flag reviews.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.BulkCreateFlagReview
+     */
+    readonly bulkCreateFlagReview: {
+      readonly name: "BulkCreateFlagReview",
+      readonly I: typeof BulkCreateFlagReviewRequest,
+      readonly O: typeof BulkCreateFlagReviewResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListFlagReviews lists reviews in an organization.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListFlagReviews
+     */
+    readonly listFlagReviews: {
+      readonly name: "ListFlagReviews",
+      readonly I: typeof ListFlagReviewsRequest,
+      readonly O: typeof ListFlagReviewsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateFlagTranscript creates a flag transcript.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateFlagTranscript
+     */
+    readonly createFlagTranscript: {
+      readonly name: "CreateFlagTranscript",
+      readonly I: typeof CreateFlagTranscriptRequest,
+      readonly O: typeof CreateFlagTranscriptResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListFlagSnapshots lists flag snapshots in an organization.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListFlagSnapshots
+     */
+    readonly listFlagSnapshots: {
+      readonly name: "ListFlagSnapshots",
+      readonly I: typeof ListFlagSnapshotsRequest,
+      readonly O: typeof ListFlagSnapshotsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * CreateCorrection creates a correction.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.CreateCorrection
+     */
+    readonly createCorrection: {
+      readonly name: "CreateCorrection",
+      readonly I: typeof CreateCorrectionRequest,
+      readonly O: typeof CreateCorrectionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * GetCorrection gets a correction.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.GetCorrection
+     */
+    readonly getCorrection: {
+      readonly name: "GetCorrection",
+      readonly I: typeof GetCorrectionRequest,
+      readonly O: typeof Correction,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * DeleteCorrection deletes a correction.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.DeleteCorrection
+     */
+    readonly deleteCorrection: {
+      readonly name: "DeleteCorrection",
+      readonly I: typeof DeleteCorrectionRequest,
+      readonly O: typeof DeleteCorrectionResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * ListCorrections lists corrections.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.ListCorrections
+     */
+    readonly listCorrections: {
+      readonly name: "ListCorrections",
+      readonly I: typeof ListCorrectionsRequest,
+      readonly O: typeof ListCorrectionsResponse,
+      readonly kind: MethodKind.Unary,
+    },
+    /**
+     * UpdateCorrection updates a correction.
+     *
+     * @generated from rpc wfo.vanalytics.v2.Vanalytics.UpdateCorrection
+     */
+    readonly updateCorrection: {
+      readonly name: "UpdateCorrection",
+      readonly I: typeof UpdateCorrectionRequest,
+      readonly O: typeof UpdateCorrectionResponse,
       readonly kind: MethodKind.Unary,
     },
   }

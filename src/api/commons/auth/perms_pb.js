@@ -74,6 +74,7 @@ export const Permission = /*@__PURE__*/ proto3.makeEnum(
     {no: 606, name: "PERMISSION_INSIGHTS_INSIGHT_EDIT"},
     {no: 607, name: "PERMISSION_INSIGHTS_DASHBOARD_VIEW"},
     {no: 608, name: "PERMISSION_INSIGHTS_DASHBOARD_EDIT"},
+    {no: 609, name: "PERMISSION_REPORT_GENERATOR_EDIT"},
     {no: 700, name: "PERMISSION_ROOM303"},
     {no: 701, name: "PERMISSION_ROOM303_MEMBER"},
     {no: 702, name: "PERMISSION_ROOM303_SUPERVISOR"},
