@@ -693,6 +693,7 @@ export const AgentState = /*@__PURE__*/ proto3.makeMessageType(
     { no: 17, name: "agent_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 18, name: "asm_session_sid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 19, name: "agent_is_muted", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 20, name: "uuid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

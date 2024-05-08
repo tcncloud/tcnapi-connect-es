@@ -32,35 +32,6 @@ export declare class ClassifierEntityTypes extends Message<ClassifierEntityTypes
 }
 
 /**
- * @generated from message api.v1alpha1.classifier.ParseHints
- */
-export declare class ParseHints extends Message<ParseHints> {
-  /**
-   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 1;
-   */
-  parseOpts?: ParseOpts;
-
-  /**
-   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 2;
-   */
-  constraints?: Constraints;
-
-  constructor(data?: PartialMessage<ParseHints>);
-
-  static readonly runtime: typeof proto3;
-  static readonly typeName = "api.v1alpha1.classifier.ParseHints";
-  static readonly fields: FieldList;
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ParseHints;
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ParseHints;
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParseHints;
-
-  static equals(a: ParseHints | PlainMessage<ParseHints> | undefined, b: ParseHints | PlainMessage<ParseHints> | undefined): boolean;
-}
-
-/**
  * @generated from message api.v1alpha1.classifier.FileTemplate
  */
 export declare class FileTemplate extends Message<FileTemplate> {
@@ -80,12 +51,14 @@ export declare class FileTemplate extends Message<FileTemplate> {
   fields: FileTemplate_Field[];
 
   /**
-   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 4;
+   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 4 [deprecated = true];
+   * @deprecated
    */
   parseOpts?: ParseOpts;
 
   /**
-   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 5;
+   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 5 [deprecated = true];
+   * @deprecated
    */
   constraints?: Constraints;
 
@@ -93,6 +66,11 @@ export declare class FileTemplate extends Message<FileTemplate> {
    * @generated from field: int64 foid = 6;
    */
   foid: bigint;
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.Opts opts = 7;
+   */
+  opts?: Opts;
 
   constructor(data?: PartialMessage<FileTemplate>);
 
@@ -153,6 +131,50 @@ export declare class FileTemplate_Field extends Message<FileTemplate_Field> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FileTemplate_Field;
 
   static equals(a: FileTemplate_Field | PlainMessage<FileTemplate_Field> | undefined, b: FileTemplate_Field | PlainMessage<FileTemplate_Field> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.classifier.Opts
+ */
+export declare class Opts extends Message<Opts> {
+  /**
+   * map from field name to date format
+   * e.g: "dob": yyyy/mm/dd
+   *
+   * @generated from field: map<string, string> date_formats = 1;
+   */
+  dateFormats: { [key: string]: string };
+
+  /**
+   * keys are old field names, values are new field names
+   *
+   * @generated from field: map<string, string> rename_fields = 2;
+   */
+  renameFields: { [key: string]: string };
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 3;
+   */
+  parseOpts?: ParseOpts;
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 4;
+   */
+  constraints?: Constraints;
+
+  constructor(data?: PartialMessage<Opts>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.classifier.Opts";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Opts;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Opts;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Opts;
+
+  static equals(a: Opts | PlainMessage<Opts> | undefined, b: Opts | PlainMessage<Opts> | undefined): boolean;
 }
 
 /**
@@ -305,6 +327,11 @@ export declare class OptsFixed extends Message<OptsFixed> {
    */
   positions: { [key: string]: OptsFixed_FieldOpts };
 
+  /**
+   * @generated from field: bool has_header = 2;
+   */
+  hasHeader: boolean;
+
   constructor(data?: PartialMessage<OptsFixed>);
 
   static readonly runtime: typeof proto3;
@@ -407,5 +434,34 @@ export declare class Constraints extends Message<Constraints> {
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Constraints;
 
   static equals(a: Constraints | PlainMessage<Constraints> | undefined, b: Constraints | PlainMessage<Constraints> | undefined): boolean;
+}
+
+/**
+ * @generated from message api.v1alpha1.classifier.ParseHints
+ */
+export declare class ParseHints extends Message<ParseHints> {
+  /**
+   * @generated from field: api.v1alpha1.classifier.ParseOpts parse_opts = 1;
+   */
+  parseOpts?: ParseOpts;
+
+  /**
+   * @generated from field: api.v1alpha1.classifier.Constraints constraints = 2;
+   */
+  constraints?: Constraints;
+
+  constructor(data?: PartialMessage<ParseHints>);
+
+  static readonly runtime: typeof proto3;
+  static readonly typeName = "api.v1alpha1.classifier.ParseHints";
+  static readonly fields: FieldList;
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ParseHints;
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ParseHints;
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ParseHints;
+
+  static equals(a: ParseHints | PlainMessage<ParseHints> | undefined, b: ParseHints | PlainMessage<ParseHints> | undefined): boolean;
 }
 

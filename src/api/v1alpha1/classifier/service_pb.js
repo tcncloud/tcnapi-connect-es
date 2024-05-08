@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import { proto3 } from "@bufbuild/protobuf";
-import { FileTemplate, ParseHints } from "./entities_pb.js";
+import { FileTemplate, Opts, ParseHints } from "./entities_pb.js";
 
 /**
  * @generated from message api.v1alpha1.classifier.ParseFileRequest
@@ -14,6 +14,7 @@ export const ParseFileRequest = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 3, name: "raw_data", kind: "scalar", T: 12 /* ScalarType.BYTES */, oneof: "opt" },
     { no: 4, name: "reparse_file", kind: "message", T: ParseFileRequest_ReParseFile, oneof: "opt" },
+    { no: 6, name: "parse_with_hints", kind: "message", T: ParseFileRequest_ParseWithHints, oneof: "opt" },
     { no: 5, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
@@ -26,8 +27,21 @@ export const ParseFileRequest_ReParseFile = /*@__PURE__*/ proto3.makeMessageType
   () => [
     { no: 1, name: "file_template_id", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 2, name: "hints", kind: "message", T: ParseHints },
+    { no: 3, name: "opts", kind: "message", T: Opts },
   ],
   {localName: "ParseFileRequest_ReParseFile"},
+);
+
+/**
+ * @generated from message api.v1alpha1.classifier.ParseFileRequest.ParseWithHints
+ */
+export const ParseFileRequest_ParseWithHints = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.classifier.ParseFileRequest.ParseWithHints",
+  () => [
+    { no: 7, name: "raw_data", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 8, name: "opts", kind: "message", T: Opts },
+  ],
+  {localName: "ParseFileRequest_ParseWithHints"},
 );
 
 /**

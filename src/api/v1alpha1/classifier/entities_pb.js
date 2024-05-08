@@ -17,17 +17,6 @@ export const ClassifierEntityTypes = /*@__PURE__*/ proto3.makeMessageType(
 );
 
 /**
- * @generated from message api.v1alpha1.classifier.ParseHints
- */
-export const ParseHints = /*@__PURE__*/ proto3.makeMessageType(
-  "api.v1alpha1.classifier.ParseHints",
-  () => [
-    { no: 1, name: "parse_opts", kind: "message", T: ParseOpts },
-    { no: 2, name: "constraints", kind: "message", T: Constraints },
-  ],
-);
-
-/**
  * @generated from message api.v1alpha1.classifier.FileTemplate
  */
 export const FileTemplate = /*@__PURE__*/ proto3.makeMessageType(
@@ -39,6 +28,7 @@ export const FileTemplate = /*@__PURE__*/ proto3.makeMessageType(
     { no: 4, name: "parse_opts", kind: "message", T: ParseOpts },
     { no: 5, name: "constraints", kind: "message", T: Constraints },
     { no: 6, name: "foid", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "opts", kind: "message", T: Opts },
   ],
 );
 
@@ -55,6 +45,19 @@ export const FileTemplate_Field = /*@__PURE__*/ proto3.makeMessageType(
     { no: 5, name: "raw_value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
   {localName: "FileTemplate_Field"},
+);
+
+/**
+ * @generated from message api.v1alpha1.classifier.Opts
+ */
+export const Opts = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.classifier.Opts",
+  () => [
+    { no: 1, name: "date_formats", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 2, name: "rename_fields", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 3, name: "parse_opts", kind: "message", T: ParseOpts },
+    { no: 4, name: "constraints", kind: "message", T: Constraints },
+  ],
 );
 
 /**
@@ -112,6 +115,7 @@ export const OptsFixed = /*@__PURE__*/ proto3.makeMessageType(
   "api.v1alpha1.classifier.OptsFixed",
   () => [
     { no: 1, name: "positions", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: OptsFixed_FieldOpts} },
+    { no: 2, name: "has_header", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
   ],
 );
 
@@ -146,6 +150,17 @@ export const Constraints = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "forbid", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: ClassifierEntityTypes} },
     { no: 2, name: "allow", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: ClassifierEntityTypes} },
+  ],
+);
+
+/**
+ * @generated from message api.v1alpha1.classifier.ParseHints
+ */
+export const ParseHints = /*@__PURE__*/ proto3.makeMessageType(
+  "api.v1alpha1.classifier.ParseHints",
+  () => [
+    { no: 1, name: "parse_opts", kind: "message", T: ParseOpts },
+    { no: 2, name: "constraints", kind: "message", T: Constraints },
   ],
 );
 

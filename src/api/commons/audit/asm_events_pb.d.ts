@@ -238,6 +238,13 @@ export declare class AsmAgentStateChangedEvent extends Message<AsmAgentStateChan
    */
   oldStatus: StatusState;
 
+  /**
+   * duration of old status in milliseconds
+   *
+   * @generated from field: int64 old_status_duration_milliseconds = 5;
+   */
+  oldStatusDurationMilliseconds: bigint;
+
   constructor(data?: PartialMessage<AsmAgentStateChangedEvent>);
 
   static readonly runtime: typeof proto3;

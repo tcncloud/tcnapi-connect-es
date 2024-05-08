@@ -2548,6 +2548,13 @@ export declare class AgentState extends Message<AgentState> {
    */
   agentIsMuted: boolean;
 
+  /**
+   * uuid for the agent state
+   *
+   * @generated from field: string uuid = 20;
+   */
+  uuid: string;
+
   constructor(data?: PartialMessage<AgentState>);
 
   static readonly runtime: typeof proto3;
