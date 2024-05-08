@@ -109,7 +109,6 @@ export const Publishing = /*@__PURE__*/ proto3.makeMessageType(
     { no: 107, name: "organization", kind: "enum", T: proto3.getEnumType(ClientLibraryOrganization) },
     { no: 109, name: "library_settings", kind: "message", T: ClientLibrarySettings, repeated: true },
     { no: 110, name: "proto_reference_documentation_uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 111, name: "rest_reference_documentation_uri", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 
@@ -226,7 +225,6 @@ export const MethodSettings = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "selector", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "long_running", kind: "message", T: MethodSettings_LongRunning },
-    { no: 3, name: "auto_populated_fields", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ],
 );
 
@@ -342,29 +340,5 @@ export const oauth_scopes = proto3.makeExtension(
   "google.api.oauth_scopes", 
   ServiceOptions, 
   { no: 1050, kind: "scalar", T: 9 /* ScalarType.STRING */ },
-);
-
-/**
- * The API version of this service, which should be sent by version-aware
- * clients to the service. This allows services to abide by the schema and
- * behavior of the service at the time this API version was deployed.
- * The format of the API version must be treated as opaque by clients.
- * Services may use a format with an apparent structure, but clients must
- * not rely on this to determine components within an API version, or attempt
- * to construct other valid API versions. Note that this is for upcoming
- * functionality and may not be implemented for all services.
- *
- * Example:
- *
- *   service Foo {
- *     option (google.api.api_version) = "v1_20230821_preview";
- *   }
- *
- * @generated from extension: string api_version = 525000001;
- */
-export const api_version = proto3.makeExtension(
-  "google.api.api_version", 
-  ServiceOptions, 
-  { no: 525000001, kind: "scalar", T: 9 /* ScalarType.STRING */ },
 );
 
