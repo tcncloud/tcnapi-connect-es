@@ -56,7 +56,6 @@ export const CreateRateDefinitionRequest = /*@__PURE__*/ proto3.makeMessageType(
   () => [
     { no: 1, name: "rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "rate_definition", kind: "message", T: RateDefinition },
-    { no: 3, name: "default_rate_definition_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ],
 );
 

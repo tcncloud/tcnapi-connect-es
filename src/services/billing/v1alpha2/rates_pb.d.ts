@@ -123,11 +123,6 @@ export declare class CreateRateDefinitionRequest extends Message<CreateRateDefin
    */
   rateDefinition?: RateDefinition;
 
-  /**
-   * @generated from field: string default_rate_definition_id = 3;
-   */
-  defaultRateDefinitionId: string;
-
   constructor(data?: PartialMessage<CreateRateDefinitionRequest>);
 
   static readonly runtime: typeof proto3;
