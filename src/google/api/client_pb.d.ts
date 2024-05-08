@@ -341,6 +341,14 @@ export declare class Publishing extends Message<Publishing> {
    */
   protoReferenceDocumentationUri: string;
 
+  /**
+   * Optional link to REST reference documentation.  Example:
+   * https://cloud.google.com/pubsub/lite/docs/reference/rest
+   *
+   * @generated from field: string rest_reference_documentation_uri = 111;
+   */
+  restReferenceDocumentationUri: string;
+
   constructor(data?: PartialMessage<Publishing>);
 
   static readonly runtime: typeof proto3;
@@ -704,6 +712,23 @@ export declare class MethodSettings extends Message<MethodSettings> {
    */
   longRunning?: MethodSettings_LongRunning;
 
+  /**
+   * List of top-level fields of the request message, that should be
+   * automatically populated by the client libraries based on their
+   * (google.api.field_info).format. Currently supported format: UUID4.
+   *
+   * Example of a YAML configuration:
+   *
+   *  publishing:
+   *    method_settings:
+   *      - selector: google.example.v1.ExampleService.CreateExample
+   *        auto_populated_fields:
+   *        - request_id
+   *
+   * @generated from field: repeated string auto_populated_fields = 3;
+   */
+  autoPopulatedFields: string[];
+
   constructor(data?: PartialMessage<MethodSettings>);
 
   static readonly runtime: typeof proto3;
@@ -858,4 +883,24 @@ export declare const default_host: Extension<ServiceOptions, string>;
  * @generated from extension: string oauth_scopes = 1050;
  */
 export declare const oauth_scopes: Extension<ServiceOptions, string>;
+
+/**
+ * The API version of this service, which should be sent by version-aware
+ * clients to the service. This allows services to abide by the schema and
+ * behavior of the service at the time this API version was deployed.
+ * The format of the API version must be treated as opaque by clients.
+ * Services may use a format with an apparent structure, but clients must
+ * not rely on this to determine components within an API version, or attempt
+ * to construct other valid API versions. Note that this is for upcoming
+ * functionality and may not be implemented for all services.
+ *
+ * Example:
+ *
+ *   service Foo {
+ *     option (google.api.api_version) = "v1_20230821_preview";
+ *   }
+ *
+ * @generated from extension: string api_version = 525000001;
+ */
+export declare const api_version: Extension<ServiceOptions, string>;
 
