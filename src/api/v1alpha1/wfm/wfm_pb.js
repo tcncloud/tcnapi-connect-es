@@ -3683,6 +3683,7 @@ export const ShiftInstance = /*@__PURE__*/ proto3.makeMessageType(
     { no: 9, name: "schedule_type", kind: "enum", T: proto3.getEnumType(ScheduleType) },
     { no: 10, name: "shift_segments", kind: "message", T: ShiftSegment, repeated: true },
     { no: 11, name: "shift_template", kind: "message", T: ShiftTemplate },
+    { no: 12, name: "planned_shrinkage_percent", kind: "scalar", T: 2 /* ScalarType.FLOAT */ },
   ],
 );
 

@@ -10640,6 +10640,13 @@ export declare class ShiftInstance extends Message<ShiftInstance> {
    */
   shiftTemplate?: ShiftTemplate;
 
+  /**
+   * the percentage shrinkage expected for this shift [0.0, 100.0).
+   *
+   * @generated from field: float planned_shrinkage_percent = 12;
+   */
+  plannedShrinkagePercent: number;
+
   constructor(data?: PartialMessage<ShiftInstance>);
 
   static readonly runtime: typeof proto3;
